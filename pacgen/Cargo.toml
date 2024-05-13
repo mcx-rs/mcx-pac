@@ -1,0 +1,22 @@
+[package]
+name = "pacgen"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+log = "0"
+env_logger = "0"
+
+anyhow = "1"
+regex = "1"
+proc-macro2 = "1"
+serde = { version = "1", features = ["derive"] }
+serde_yaml = "0"
+chiptool = { git = "https://github.com/mcx-rs/chiptool", rev = "4eb4feb74bd469a1c8244364b9adc3b7f3e9404d" }
+quote = "1.0.36"
+
+svd-parser = "0.14.5"
+fancy-regex = "0.13.0"
+glob = "0.3.1"
