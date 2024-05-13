@@ -7,9 +7,12 @@ edition = "2021"
 
 [dependencies]
 cortex-m = "0"
+paste = "1.0.15"
 
 [features]
-mcxn947 = []
+mcxn947 = ["device-selected"]
+
+device-selected = []
 
 [workspace]
 members = ["pacgen"]
