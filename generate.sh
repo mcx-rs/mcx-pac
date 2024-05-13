@@ -1,9 +1,15 @@
 #!/bin/bash
 
 make -C data transform
-for f in data/peripherals/*.yaml; do
-    name=$(basename $f .yaml)
-    echo "Generating $name.rs"
-    chiptool gen-block -i $f -o src/peripherals/$name.rs
-    rustfmt src/peripherals/$name.rs
+
+RUST_LOG=debug cargo run -p pacgen -- all
+
+echo "Formatting..."
+cargo fmt
+for f in src/peripherals/*; do
+    rustfmt $f
+done
+
+for f in src/devices/*/pac.rs; do
+    rustfmt $f
 done
