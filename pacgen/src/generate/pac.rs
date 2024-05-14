@@ -1,4 +1,4 @@
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 
 use anyhow::Result;
 use chiptool::ir;
@@ -58,11 +58,11 @@ pub fn generate_pac(
 
     let mut sorted_peripheralss = (&device.peripherals).into_iter().collect::<Vec<_>>();
     sorted_peripheralss.sort_by_key(|i| i.base_address);
+    // let mut peripherals_mods = HashMap::new();
     for p in sorted_peripheralss {
         let name = Ident::new(&p.name, span);
         let address = chiptool::util::hex_usize(p.base_address);
         let doc = chiptool::util::doc(&p.description);
-
         if let Some(block_name) = &p.block {
             if let Some(p0) = mapping.get_mapped_peripheral_name(device_name, &block_name) {
                 let p0 = Ident::new(&p0, span);
@@ -74,18 +74,15 @@ pub fn generate_pac(
                     None => p.name.clone(),
                 };
                 let p1 = Ident::new(&p1.to_sanitized_pascal_case(), span);
-
-                let path = quote!(#p0::#p1);
+                let path = quote!(super::#p0::#p1);
                 peripherals.extend(quote! {
                     #doc
                     pub const #name: #path = unsafe { #path::from_ptr(#address as _) };
                 });
                 mods.insert(p0);
-
                 continue;
             }
         }
-
         peripherals.extend(quote! {
             #doc
             pub const #name: *mut () = #address as _;
@@ -124,7 +121,9 @@ pub fn generate_pac(
             ];
         }
 
-        #peripherals
+        pub mod instance {
+            #peripherals
+        }
     });
 
     if let Some(nvic_priority_bits) = device.nvic_priority_bits {
@@ -135,12 +134,13 @@ pub fn generate_pac(
         });
     }
 
-    // items.extend(quote! {
-    //     #[cfg(feature = "rt")]
-    //     pub use cortex_m_rt::interrupt;
-    //     #[cfg(feature = "rt")]
-    //     pub use Interrupt as interrupt;
-    // });
+    // #[cfg(feature = "rt")]
+    // pub use cortex_m_rt::interrupt;
+
+    items.extend(quote! {
+        #[cfg(feature = "rt")]
+        pub use Interrupt as interrupt;
+    });
 
     for m in mods {
         let path = format!("../../peripherals/{}.rs", m);
