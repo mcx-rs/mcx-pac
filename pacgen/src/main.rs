@@ -14,8 +14,6 @@ use pacgen::{
     generate::{generate_linker_script, generate_pac, generate_peripheral},
     PeripheralMappings,
 };
-use proc_macro2::TokenStream;
-use quote::quote;
 
 #[derive(Debug, Parser)]
 struct Opts {
@@ -104,7 +102,7 @@ fn extract(devices: &Vec<String>) -> Result<()> {
                 "--svd",
                 &format!("./data/svds/{}.svd.patched", device),
                 "--output",
-                &format!("temp/{}", device),
+                &format!("./data/temp/{}", device),
             ])
             .env("RUST_LOG", "info")
             .stdout(Stdio::null())
@@ -233,58 +231,6 @@ fn pacs(devices: &Vec<String>, mappings: &PeripheralMappings) -> Result<()> {
             generate_linker_script(&device)?,
         )?;
     }
-
-    Ok(())
-}
-
-fn pcrate() -> Result<()> {
-    let names = glob("data/svds/*.svd.patched")?
-        .into_iter()
-        .map(|f| {
-            f.unwrap()
-                .file_stem()
-                .unwrap()
-                .to_string_lossy()
-                .strip_suffix(".svd")
-                .unwrap()
-                .to_string()
-        })
-        .collect::<Vec<_>>();
-
-    let mut items = TokenStream::new();
-    items.extend(quote! {
-        #![no_std]
-        #![allow(non_camel_case_types)]
-
-        pub mod common;
-
-        macro_rules! mod_pac {
-            ($($device:literal),*) => {
-                paste::paste! {
-                    $(
-                        #[cfg(feature = $device)]
-                        #[path = "devices/" $device "/pac.rs"]
-                        pub mod pac;
-                    )*
-                }
-            }
-        }
-
-        #[cfg(not(feature = "device-selected"))]
-        compile_error!("No device selected");
-
-        #(
-            mod_pac!(#names);
-        )*
-    });
-    fs::write("src/lib.rs", items.to_string())?;
-
-    fs::write(
-        "src/common.rs",
-        TokenStream::from_str(std::str::from_utf8(chiptool::generate::COMMON_MODULE).unwrap())
-            .unwrap()
-            .to_string(),
-    )?;
 
     Ok(())
 }
