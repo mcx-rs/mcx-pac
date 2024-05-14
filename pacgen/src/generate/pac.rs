@@ -6,12 +6,12 @@ use chiptool::util::{ToSanitizedPascalCase, ToSanitizedUpperCase};
 use proc_macro2::{Ident, Span, TokenStream};
 use quote::quote;
 
-use crate::Peripherals;
+use crate::PeripheralMappings;
 
 pub fn generate_pac(
     device: &ir::Device,
     device_name: &str,
-    mapping: &Peripherals,
+    mapping: &PeripheralMappings,
 ) -> Result<TokenStream> {
     let mut items = TokenStream::new();
 
@@ -64,7 +64,7 @@ pub fn generate_pac(
         let doc = chiptool::util::doc(&p.description);
 
         if let Some(block_name) = &p.block {
-            if let Some(p0) = mapping.get_peripheral_name(device_name, &block_name) {
+            if let Some(p0) = mapping.get_mapped_peripheral_name(device_name, &block_name) {
                 let p0 = Ident::new(&p0, span);
                 let p1 = match unsuffixed_re.captures(&p.name)? {
                     Some(caps) => {
@@ -135,12 +135,12 @@ pub fn generate_pac(
         });
     }
 
-    items.extend(quote! {
-        #[cfg(feature = "rt")]
-        pub use cortex_m_rt::interrupt;
-        #[cfg(feature = "rt")]
-        pub use Interrupt as interrupt;
-    });
+    // items.extend(quote! {
+    //     #[cfg(feature = "rt")]
+    //     pub use cortex_m_rt::interrupt;
+    //     #[cfg(feature = "rt")]
+    //     pub use Interrupt as interrupt;
+    // });
 
     for m in mods {
         let path = format!("../../peripherals/{}.rs", m);

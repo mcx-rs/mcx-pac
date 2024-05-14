@@ -6,12 +6,17 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-cortex-m = "0"
-paste = "1.0.15"
+cortex-m = "0.7"
 
 [features]
-mcxn947 = ["device-selected"]
+default = ["rt"]
 
+mcxn947 = ["device-selected"]
+mcxn946 = ["device-selected"]
+mcxn547 = ["device-selected"]
+mcxn546 = ["device-selected"]
+
+rt = []
 device-selected = []
 
 [workspace]
