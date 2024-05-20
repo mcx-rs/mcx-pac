@@ -1,0 +1,10 @@
+#[repr(C)]
+pub struct RegisterBlock {
+    {% for reg in regs %}
+    {{reg}}
+    {% endfor %}
+}
+
+impl RegisterBlock {
+
+}
