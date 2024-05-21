@@ -1,0 +1,3 @@
+svdsuite==0.0.1
+packaging
+jinja2

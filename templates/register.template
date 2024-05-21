@@ -1,0 +1,44 @@
+#[doc = r"{{ reg.description }}"]
+pub mod {{ name }} {
+    {% for field in reg.fields -%}
+    #[doc = r"{{ field.description }}"]
+    pub mod {{ field.name }} {
+        pub const offset: u32 = {{ field.bit_offset }};
+        pub const mask: u32 = {{ width_to_mask(field.bit_width) }} << offset;
+        {% if field.enumerated_values.__len__() == 0 -%}
+        pub mod R {}
+        pub mod W {}
+        pub mod RW {}
+        {% else -%}
+        {% if field.access.value == "write-only" -%}
+        pub mod R {}
+        pub mod W {
+            {% for e in field.enumerated_values[0].enumerated_values_map -%}
+            #[doc = r"{{ e.description }}"]
+            pub const {{ e.name }}: u32 = {{ e.value }};
+            {% endfor %}
+        }
+        pub mod RW {}
+        {% elif field.access.value == "read-only" -%}
+        pub mod R {
+            {% for e in field.enumerated_values[0].enumerated_values_map -%}
+            #[doc = r"{{ e.description }}"]
+            pub const {{ e.name }}: u32 = {{ e.value }};
+            {% endfor %}
+        }
+        pub mod W {}
+        pub mod RW {}
+        {% elif field.access.value == "read-write" -%}
+        pub mod R {}
+        pub mod W {}
+        pub mod RW {
+            {% for e in field.enumerated_values[0].enumerated_values_map -%}
+            #[doc = r"{{ e.description }}"]
+            pub const {{ e.name }}: u32 = {{ e.value }};
+            {% endfor %}
+        }
+        {%- endif %}
+        {%- endif %}
+    }
+    {% endfor %}
+}

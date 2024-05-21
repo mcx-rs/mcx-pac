@@ -2,7 +2,7 @@ import os
 import time
 from typing import Dict, List, Tuple
 
-from jinja2 import Environment, FileSystemLoader, Template
+from jinja2 import Environment, FileSystemLoader
 from svdsuite import (
     SVDCPU,
     SVDCluster,
@@ -12,7 +12,57 @@ from svdsuite import (
     SVDRegister,
 )
 
+from mappings import *
+
 _environment = Environment(loader=FileSystemLoader("templates/"))
+
+
+def width_to_mask(width: int) -> str:
+    return "0b" + "1" * width
+
+
+def render_register(r: SVDRegister, name_prefix="") -> str:
+    if r.dim:
+        name = r.name.replace("[%s]", "_").replace("%s", "_").removesuffix("_")
+    else:
+        name = r.name
+    name = name_prefix + name
+    return _environment.get_template("register.template").render(
+        reg=r,
+        width_to_mask=width_to_mask,
+        name=name,
+    )
+
+
+def render_cluster(c: SVDCluster) -> str:
+    out = ""
+    for i in range(c.dim):
+        prefix = c.name.replace("[%s]", "%s").replace("%s", str(i)) + "_"
+        for r in c.registers_clusters:
+            out += render_register(r, prefix)
+            out += "\n"
+
+    return out
+
+
+def render_peripheral(p: SVDPeripheral) -> str:
+    out = ""
+    regs = []
+    for e in p.registers_clusters:
+        if isinstance(e, SVDRegister):
+            regs.append(
+                (
+                    e.name,
+                    e.address_offset,
+                    e.dim,
+                    e.dim_increment if e.dim_increment else e.size / 8,
+                )
+            )
+        elif isinstance(e, SVDCluster):
+            for i in range(e.dim):
+                prefix = e.name.replace("[%s]", "%s").replace("%s", str(i)) + "_"
+                
+    return out
 
 
 class SVD:
@@ -69,49 +119,55 @@ class SVD:
 
         return template.render(irqs=self.irqs, vectors=vectors)
 
-    def generate_peripherals(self) -> dict[str, str]:
-        # TODO: generate all peripheral groups
-        ret = {}
-        pb = None
-        for g in self.peripherals:
-            for p in self.peripherals[g]:
-                if len(p.registers_clusters) != 0:
-                    pb = p
-                    break
+    # def generate_peripherals(self) -> dict[str, str]:
+    #     # TODO: generate all peripheral groups
+    #     ret = {}
+    #     pb = None
+    #     for g in self.peripherals:
+    #         for p in self.peripherals[g]:
+    #             if len(p.registers_clusters) != 0:
+    #                 pb = p
+    #                 break
 
-            regs = []
-            offset = 0
-            reserved_num = 0
-            pb.registers_clusters.sort(key=lambda r: r.address_offset)
-            for i in range(len(pb.registers_clusters)):
-                r = pb.registers_clusters[i]
-                if offset < r.address_offset:
-                    regs.append(
-                        f"_reserved{reserved_num}: [u8; {hex(r.address_offset - offset)}],"
-                    )
-                    reserved_num += 1
-                    offset += r.address_offset
-                name = r.name.replace("[%s]", "_").removesuffix("_")
+    #         regs = []
+    #         offset = 0
+    #         reserved_num = 0
+    #         pb.registers_clusters.sort(key=lambda r: r.address_offset)
+    #         for i in range(len(pb.registers_clusters)):
+    #             r = pb.registers_clusters[i]
+    #             if offset < r.address_offset:
+    #                 regs.append(
+    #                     f"_reserved{reserved_num}: [u8; {hex(r.address_offset - offset)}],"
+    #                 )
+    #                 reserved_num += 1
+    #                 offset += r.address_offset
+    #             name = r.name.replace("[%s]", "_").removesuffix("_")
 
-                if isinstance(r, SVDRegister):
-                    if r.dim is None:
-                        regs.append(f"{name.lower()}: {name},")
-                        offset += int(r.size / 8)
-                    else:
-                        regs.append(f"{name.lower()}: [{name}; {r.dim}],")
-                        offset += r.size * r.dim
-                elif isinstance(r, SVDCluster):
-                    regs.append(f"{name.lower()}: [{name}; {r.dim}]")
-                    offset += (
-                        r.registers_clusters[-1].address_offset
-                        + int(r.registers_clusters[-1].size / 8)
-                    ) * r.dim
-                else:
-                    raise TypeError("Unreachable")
+    #             if isinstance(r, SVDRegister):
+    #                 if r.dim is None:
+    #                     regs.append(f"{name.lower()}: {name},")
+    #                     offset += int(r.size / 8)
+    #                 else:
+    #                     regs.append(f"{name.lower()}: [{name}; {r.dim}],")
+    #                     offset += r.size * r.dim
+    #             elif isinstance(r, SVDCluster):
+    #                 regs.append(f"{name.lower()}: [{name}; {r.dim}]")
+    #                 offset += (
+    #                     r.registers_clusters[-1].address_offset
+    #                     + int(r.registers_clusters[-1].size / 8)
+    #                 ) * r.dim
+    #             else:
+    #                 raise TypeError("Unreachable")
 
-            template = _environment.get_template("peripheral.rs.template")
-            ret[g] = template.render(regs=regs)
-        return ret
+    #         template = _environment.get_template("peripheral.rs.template")
+    #         ret[g] = template.render(regs=regs)
+    #     return ret
+
+    # def generate_peripheral(self, p: SVDPeripheral) -> str:
+    #     for r in p.registers_clusters:
+
+    #         pass
+    #     pass
 
     @classmethod
     def from_svd_file(cls, path: str) -> "SVD":
@@ -122,4 +178,14 @@ class SVD:
 
 if __name__ == "__main__":
     svd = SVD.from_svd_file("./data/mcxn947.svd.patched")
-    out = svd.generate_peripherals()
+
+    out = ""
+
+    # r = svd.peripherals["SYSCON"][0].registers_clusters[9]
+    # out = render_register(r)
+
+    # r = svd.peripherals["SYSCON"][0].registers_clusters[0]
+    # out = render_register(r)
+
+    with open("test.rs", "w") as f:
+        f.write(out)

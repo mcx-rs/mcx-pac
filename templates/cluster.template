@@ -1,0 +1,5 @@
+{% for i in range(c.dim) %}
+{% for r in c.registers_clusters %}
+pub mod {{ c.name.replace("[%s]", "%s").replace("%s", i.__str__()) + "_" + r.name }}
+{% endfor %}
+{% endfor %}

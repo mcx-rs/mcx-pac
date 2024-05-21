@@ -279,22 +279,22 @@ SEMA42_0:
   _array:
     GATE?,GATE??: {}
 
-SYSCON0:
-  _cluster:
-    CMP%s:
-      CMP?FCLKSEL: {}
-      CMP?FCLKDIV: {}
-      CMP?RRCLKSEL: {}
-      CMP?RRCLKDIV: {}
-  _array:
-    SYSTICKCLKSEL?: {}
-    SYSTICKCLKDIV?: {}
-    PLL1CLK?DIV: {}
-    SAI?CLKSEL: {}
-    SAI?CLKDIV: {}
-    EMVSIM?CLKSEL: {}
-    EMVSIM?CLKDIV: {}
-    PWM?SUBCTL: {}
+# SYSCON0:
+#   _cluster:
+#     CMP%s:
+#       CMP?FCLKSEL: {}
+#       CMP?FCLKDIV: {}
+#       CMP?RRCLKSEL: {}
+#       CMP?RRCLKDIV: {}
+#   _array:
+#     SYSTICKCLKSEL?: {}
+#     SYSTICKCLKDIV?: {}
+#     PLL1CLK?DIV: {}
+#     SAI?CLKSEL: {}
+#     SAI?CLKDIV: {}
+#     EMVSIM?CLKSEL: {}
+#     EMVSIM?CLKDIV: {}
+#     PWM?SUBCTL: {}
 
 _derive:
   PORT1: PORT0
