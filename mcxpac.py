@@ -55,13 +55,21 @@ def render_peripheral(p: SVDPeripheral) -> str:
                     e.name,
                     e.address_offset,
                     e.dim,
-                    e.dim_increment if e.dim_increment else e.size / 8,
+                    e.dim_increment * e.dim if e.dim_increment else int(e.size / 8),
                 )
             )
         elif isinstance(e, SVDCluster):
             for i in range(e.dim):
                 prefix = e.name.replace("[%s]", "%s").replace("%s", str(i)) + "_"
-                
+                for r in e.registers_clusters:
+                    regs.append(
+                        (
+                            prefix + r.name,
+                            e.address_offset + i * e.dim_increment + r.address_offset,
+                            None,
+                            int(r.size / 8),
+                        )
+                    )
     return out
 
 
@@ -186,6 +194,8 @@ if __name__ == "__main__":
 
     # r = svd.peripherals["SYSCON"][0].registers_clusters[0]
     # out = render_register(r)
+
+    render_peripheral(svd.peripherals["CAN"][0])
 
     with open("test.rs", "w") as f:
         f.write(out)
