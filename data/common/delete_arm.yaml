@@ -1,0 +1,8 @@
+_delete:
+  - MPU
+  - SCnSCB
+  - NVIC
+  - AHBSC
+  - "SysTick*"
+  - SAU
+  - SCB

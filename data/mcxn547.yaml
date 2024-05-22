@@ -1,0 +1,3 @@
+_svd: mcxn547.svd
+_include:
+  - common/mcxnx4x_common.yaml

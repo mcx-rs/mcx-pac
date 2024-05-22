@@ -1,0 +1,264 @@
+_include:
+  - delete_alias.yaml
+  - delete_arm.yaml
+
+_delete:
+  - FMU0TEST
+
+_modify:
+  EDMA_0_TCD:
+    name: EDMA_TCD0
+  EDMA_1_TCD:
+    name: EDMA_TCD1
+
+PORT0:
+  _modify:
+    PCR0:
+      name: PCR%s
+      dim: 32
+      dimIncrement: 0x4
+      dimIndex: 0-31
+      resetValue: 0x00000000
+      resetMask: 0xFFFFFFFF
+  PCR%s:
+    _add:
+      "PV":
+        description: "Pull Value"
+        bitOffset: 2
+        bitWidth: 1
+        access: read-write
+      "PFE":
+        description: "Passive Filter Enable"
+        bitOffset: 4
+        bitWidth: 1
+        access: read-write
+    "PV":
+      "pv0": [0, "Low"]
+      "pv1": [1, "High"]
+    "PFE":
+      "pfe0": [0, "Disable"]
+      "pfe1": [1, "Enable"]
+  _delete:
+    - "PCR[123456789]"
+    - "PCR1*"
+    - "PCR2*"
+    - "PCR3*"
+
+EDMA_TCD0:
+  _cluster:
+    CH%s:
+      "CH?_CSR,CH??_CSR":
+        name: CSR
+      "CH?_ES,CH??_ES":
+        name: ES
+      "CH?_INT,CH??_INT":
+        name: INT
+      "CH?_SBR,CH??_SBR":
+        name: SBR
+      "CH?_PRI,CH??_PRI":
+        name: PRI
+      "CH?_MUX,CH??_MUX":
+        name: MUX
+    TCD%s:
+      "TCD?_SADDR,TCD??_SADDR":
+        name: SADDR
+      "TCD?_SOFF,TCD??_SOFF":
+        name: SOFF
+      "TCD?_ATTR,TCD??_ATTR":
+        name: ATTR
+      "TCD?_NBYTES_MLOFFNO,TCD??_NBYTES_MLOFFNO":
+        name: NBYTES_MLOFFNO
+      "TCD?_NBYTES_MLOFFYES,TCD??_NBYTES_MLOFFYES":
+        name: NBYTES_MLOFFYES
+      "TCD?_SLAST_SDA,TCD??_SLAST_SDA":
+        name: SLAST_SDA
+      "TCD?_DADDR,TCD??_DADDR":
+        name: DADDR
+      "TCD?_DOFF,TCD??_DOFF":
+        name: DOFF
+      "TCD?_CITER_ELINKNO,TCD??_CITER_ELINKNO":
+        name: CITER_ELINKNO
+      "TCD?_CITER_ELINKYES,TCD??_CITER_ELINKYES":
+        name: CITER_ELINKYES
+      "TCD?_DLAST_SGA,TCD??_DLAST_SGA":
+        name: DLAST_SGA
+      "TCD?_CSR,TCD??_CSR":
+        name: CSR
+      "TCD?_BITER_ELINKNO,TCD??_BITER_ELINKNO":
+        name: BITER_ELINKNO
+      "TCD?_BITER_ELINKYES,TCD??_BITER_ELINKYES":
+        name: BITER_ELINKYES
+
+CAN0:
+  _delete:
+    - "MB*_*B_*"
+  _cluster:
+    MB%s:
+      "CS?,CS??": {}
+      "ID?,ID??": {}
+      "WORD0?,WORD0??": {}
+      "WORD1?,WORD1??": {}
+
+ENET0:
+  _cluster:
+    QUEUE%s:
+      MTL_TXQ?_OPERATION_MODE:
+        name: MTL_TX_OPERATION_MODE
+      MTL_TXQ?_UNDERFLOW:
+        name: MTL_TX_UNDERFLOW
+      MTL_TXQ?_DEBUG:
+        name: MTL_TX_DEBUG
+      MTL_TXQ?_ETS_STATUS:
+        name: MTL_TX_ETS_STATUS
+      MTL_TXQ?_QUANTUM_WEIGHT:
+        name: MTL_TX_QUANTUM_WEIGHT
+      MTL_Q?_INTERRUPT_CONTROL_STATUS:
+        name: MTL_TX_INTERRUPT_CONTROL_STATUS
+      MTL_RXQ?_OPERATION_MODE:
+        name: MTL_RX_OPERATION_MODE
+      MTL_RXQ?_MISSED_PACKET_OVERFLOW_CNT:
+        name: MTL_RX_MISSED_PACKET_OVERFLOW_CNT
+      MTL_RXQ?_DEBUG:
+        name: MTL_RX_DEBUG
+      MTL_RXQ?_CONTROL:
+        name: MTL_RX_CONTROL
+    DMA_CH%s:
+      DMA_CH?_CONTROL:
+        name: CONTROL
+      DMA_CH?_TX_CONTROL:
+        name: TX_CONTROL
+      DMA_CH?_RX_CONTROL:
+        name: RX_CONTROL
+      DMA_CH?_TXDESC_LIST_ADDRESS:
+        name: TXDESC_LIST_ADDRESS
+      DMA_CH?_RXDESC_LIST_ADDRESS:
+        name: RXDESC_LIST_ADDRESS
+      DMA_CH?_TXDESC_TAIL_POINTER:
+        name: TXDESC_TAIL_POINTER
+      DMA_CH?_RXDESC_TAIL_POINTER:
+        name: RXDESC_TAIL_POINTER
+      DMA_CH?_TXDESC_RING_LENGTH:
+        name: TXDESC_RING_LENGTH
+      DMA_CH?_RX_CONTROL2:
+        name: TX_CONTROL2
+      DMA_CH?_INTERRUPT_ENABLE:
+        name: INTERRUPT_ENABLE
+      DMA_CH?_RX_INTERRUPT_WATCHDOG_TIMER:
+        name: RX_INTERRUPT_WATCHDOG_TIMER
+      DMA_CH?_SLOT_FUNCTION_CONTROL_STATUS:
+        name: SLOT_FUNCTION_CONTROL_STATUS
+      DMA_CH?_CURRENT_APP_TXDESC:
+        name: CURRENT_APP_TXDESC
+      DMA_CH?_CURRENT_APP_RXDESC:
+        name: CURRENT_APP_RXDESC
+      DMA_CH?_CURRENT_APP_TXBUFFER:
+        name: CURRENT_APP_TXBUFFER
+      DMA_CH?_CURRENT_APP_RXBUFFER:
+        name: CURRENT_APP_RXBUFFER
+      DMA_CH?_STATUS:
+        name: STATUS
+      DMA_CH?_MISS_FRAME_CNT:
+        name: MISS_FRAME_CNT
+      DMA_CH?_RX_ERI_CNT:
+        name: RX_ERI_CNT
+
+FLEXSPI0:
+  _array:
+    AHBRXBUF?CR0: {}
+    AHBBUFREGIONSTART?: {}
+    AHBBUFREGIONEND?: {}
+  _modify:
+    FLSHA1CR0:
+      name: FLASHCR0%s
+      dim: 4
+      dimIncrement: 0x4
+      dimIndex: A1, A2, B1, B2
+  _delete:
+    - FLSHA2CR0
+    - FLSHB1CR0
+    - FLSHB2CR0
+  _cluster:
+    IPEDCTX%s:
+      IPEDCTX?IV0:
+        name: IV0
+      IPEDCTX?IV1:
+        name: IV1
+      IPEDCTX?START:
+        name: START
+      IPEDCTX?END:
+        name: END
+      IPEDCTX?AAD0:
+        name: AAD0
+      IPEDCTX?AAD1:
+        name: AAD1
+
+# SYSCON0:
+#   _cluster:
+#     CMP%s:
+#       CMP?FCLKSEL: {}
+#       CMP?FCLKDIV: {}
+#       CMP?RRCLKSEL: {}
+#       CMP?RRCLKDIV: {}
+#   _array:
+#     SYSTICKCLKSEL?: {}
+#     SYSTICKCLKDIV?: {}
+#     PLL1CLK?DIV: {}
+#     SAI?CLKSEL: {}
+#     SAI?CLKDIV: {}
+#     EMVSIM?CLKSEL: {}
+#     EMVSIM?CLKDIV: {}
+#     PWM?SUBCTL: {}
+
+SCT0:
+  _array:
+    "CAP?,CAP??": {}
+    "MATCH?,MATCH??": {}
+    "CAPCTRL?,CAPCTRL??": {}
+    "MATCHREL?,MATCHREL??": {}
+
+INPUTMUX0:
+  _array:
+    DAC?_TRIG: {}
+    "EVTG_TRIG?,EVTG_TRIG??": {}
+    EXT_TRIG?: {}
+    SINC_FILTER_CH?: {}
+    OPAMP?_TRIG: {}
+    FLEXCOMM?_TRIG: {}
+    FLEXIO_TRIG?: {}
+  _cluster:
+    CTIMER%s:
+      "CTIMER[012]CAP0": {}
+      "CTIMER[012]CAP1": {}
+      "CTIMER[012]CAP2": {}
+      "CTIMER[012]CAP3": {}
+      "TIMER[012]TRIG": {}
+    ENC%s:
+      ENC?_TRIG: {}
+      ENC?_HOME: {}
+      ENC?_INDEX: {}
+      ENC?_PHASEB: {}
+      ENC?_PHASEA: {}
+    DMA%s:
+      DMA?_REQ_ENABLE0: {}
+      DMA?_REQ_ENABLE0_SET: {}
+      DMA?_REQ_ENABLE0_CLR: {}
+      DMA?_REQ_ENABLE0_TOG: {}
+      DMA?_REQ_ENABLE1: {}
+      DMA?_REQ_ENABLE1_SET: {}
+      DMA?_REQ_ENABLE1_CLR: {}
+      DMA?_REQ_ENABLE1_TOG: {}
+      DMA?_REQ_ENABLE2: {}
+      DMA?_REQ_ENABLE2_SET: {}
+      DMA?_REQ_ENABLE2_CLR: {}
+      DMA?_REQ_ENABLE2_TOG: {}
+      DMA?_REQ_ENABLE3: {}
+      DMA?_REQ_ENABLE3_SET: {}
+      DMA?_REQ_ENABLE3_CLR: {}
+
+_derive:
+  PORT1: PORT0
+  PORT2: PORT0
+  PORT3: PORT0
+  PORT4: PORT0
+  PORT5: PORT0
+  EDMA_TCD1: EDMA_TCD0
