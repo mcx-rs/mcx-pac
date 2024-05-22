@@ -293,8 +293,8 @@ if __name__ == "__main__":
         os.path.basename(f).removesuffix(".svd.patched")
         for f in glob("data/*.svd.patched")
     ]
-    # svds = [SVD.from_svd_file(f) for f in glob("data/*.svd.patched")]
     svds = {}
     for d in devices:
         svds[d] = SVD.from_svd_file(f"data/{d}.svd.patched")
+    generate_peripherals(svds)
     generate_device(svds)
