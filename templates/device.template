@@ -1,0 +1,46 @@
+#[path = "."]
+pub mod {{ name.lower() }} {
+    {% for p in peripherals %}
+    pub const {{ p.name.upper() }}: *const RegisterBlock = {{ hex(p.base_address) }} as *const RegisterBlock;  
+    {% endfor %}
+
+    #[path = "../peripherals/{{ path.lower() }}.rs"]
+    mod blocks;
+    pub use blocks::*;
+
+    pub type Instance<const N: u8> = crate::Instance<RegisterBlock, N>;
+
+    {% if peripherals.__len__() == 1 %}
+    {% set pname = peripherals[0].name.upper() %}
+    pub type {{ pname }} = Instance<{ crate::SOLE_INSTANCE }>;
+    impl crate::sealed::Sealed for {{ pname }} {}
+    impl {{ pname }} {
+        #[inline]
+        pub const unsafe fn instance() -> Self {
+            Instance::new({{ pname }})
+        }
+    }
+    pub fn number(rb: *const RegisterBlock) -> Option<u8> {
+        core::ptr::eq(rb, {{ pname }}).then_some(0)
+    }
+    {% else %}
+    {% for i in range(peripherals.__len__()) %}
+    {% set pname = peripherals[i].name.upper() %}
+    pub type {{ pname }} = Instance<{{ i }}>;
+    impl crate::sealed::Sealed for {{ pname }} {}
+    impl {{ pname }} {
+        #[inline]
+        pub const unsafe fn instance() -> Self {
+            Instance::new({{ pname }})
+        }
+    }
+    {% endfor %}
+    pub fn number(rb: *const RegisterBlock) -> Option<u8> {
+        [
+            {% for i in range(peripherals.__len__()) %}
+            ({{ peripherals[i].name.upper() }}, {{ i }}),
+            {% endfor %}
+        ].into_iter().find(|(ptr, _)| core::ptr::eq(rb, *ptr)).map(|(_, inst)| inst)
+    }
+    {% endif %}
+}
