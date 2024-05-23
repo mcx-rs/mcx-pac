@@ -20,10 +20,6 @@ from mappings import *
 _environment = Environment(loader=FileSystemLoader("templates/"))
 
 
-class Crate:
-    pass
-
-
 class SVD:
     device: SVDDevice
     name: str
@@ -69,24 +65,6 @@ class SVD:
         for k in self.peripherals:
             self.peripherals[k].sort(key=lambda x: x.name)
         self.cpu = device.cpu
-
-    def generate_vectors(self) -> str:
-        template = _environment.get_template("vectors.rs.template")
-        vectors = []
-        vectors_index = 0
-        for i in self.irqs:
-            while vectors_index < i[2]:
-                vectors.append("Vector { _reserved: 0 },")
-                vectors_index += 1
-            vectors.append(f"Vector {{ _handler: {i[0]} }},")
-            vectors_index += 1
-
-        return template.render(
-            irqs=self.irqs,
-            vectors=vectors,
-            description_escape=description_escape,
-            sanitize_str=sanitize_str,
-        )
 
     @classmethod
     def from_svd_file(cls, path: str) -> "SVD":
@@ -140,12 +118,13 @@ def render_block(b: SVDCluster | SVDPeripheral, bit_size: int = 8) -> str:
     out = f'#[doc = "{description_escape(b.description)}"]\n#[repr(C)]\n'
     out += "pub struct RegisterBlock {\n"
 
+    b.registers_clusters.sort(key=lambda x: x.address_offset)
     for i in range(len(b.registers_clusters)):
         e = b.registers_clusters[i]
         if offset < e.address_offset:
             out += f"    _reserved{reserved_num}: [u8; {hex(e.address_offset - offset)}],\n"
             reserved_num += 1
-            offset += e.address_offset
+            offset = e.address_offset
         name = e.name.replace("[%s]", "_").replace("%s", "_").removesuffix("_")
         name = sanitize_str(name)
         out += f'    #[doc = "{description_escape(e.description)}"]\n'
@@ -241,8 +220,12 @@ def generate_device(svds: Dict[str, SVD]):
         "    non_upper_case_globals,\n"
         "    dead_code\n"
         ")]\n"
+        "\n"
+        "mod irq;\n"
+        "pub use irq::*;\n"
     )
-    template = _environment.get_template("device.template")
+    instances = "pub struct Instances {\n"
+    template = _environment.get_template("block.template")
 
     for d in svds:
         os.makedirs(f"src/devices/{d}")
@@ -263,6 +246,17 @@ def generate_device(svds: Dict[str, SVD]):
                 )
                 + "\n"
             )
+            if svds[d].peripherals[g].__len__() == 1:
+                pname = svds[d].peripherals[g][0].name.upper()
+                instances += f"    pub {pname}: {g.lower()}::{pname},\n"
+            else:
+                for i in range(svds[d].peripherals[g].__len__()):
+                    pname = svds[d].peripherals[g][i].name.upper()
+                    instances += f"    pub {pname}: {g.lower()}::{pname},\n"
+                pass
+
+        instances += "}"
+
         with open(f"src/devices/{d}/mod.rs", "w") as f:
             f.write(out)
         with open(f"src/devices/{d}/irq.rs", "w") as f:
@@ -275,25 +269,11 @@ def generate_device(svds: Dict[str, SVD]):
 
 
 if __name__ == "__main__":
-
-    # svd = SVD.from_svd_file("data/mcxn947.svd.patched")
-    # peripherals = svd.peripherals["LP_FLEXCOMM"]
-    # name = "syscon"
-    # path = "syscon_n94x"
-
-    # with open("test.rs", "w") as f:
-    #     out = _environment.get_template("device.template").render(
-    #         name=name,
-    #         path=path,
-    #         peripherals=peripherals,
-    #         hex=hex,
-    #     )
-    #     f.write(out)
     devices = [
         os.path.basename(f).removesuffix(".svd.patched")
         for f in glob("data/*.svd.patched")
     ]
-    svds = {}
+    svds: Dict[str, SVD] = {}
     for d in devices:
         svds[d] = SVD.from_svd_file(f"data/{d}.svd.patched")
     generate_peripherals(svds)

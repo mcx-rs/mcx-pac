@@ -1,3 +1,9 @@
+#[repr(C)]
+pub union Vector {
+    _handler: unsafe extern "C" fn(),
+    _reserved: u32,
+}
+
 #[cfg(feature = "rt")]
 extern "C" {
     {% for irq in irqs %}
