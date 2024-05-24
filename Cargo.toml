@@ -9,6 +9,7 @@ keywords = ["nxp", "mcx", "no_std", "embedded"]
 categories = ["embedded", "no_std"]
 license = "MIT"
 include = ["src/*", "build.rs", "Cargo.toml"]
+repository = "https://github.com/mcx-rs/mcx-pac"
 
 [dependencies]
 cortex-m = "0.7"
