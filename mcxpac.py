@@ -213,19 +213,10 @@ def generate_peripherals(svds: Dict[str, SVD]):
 
 def generate_device(svds: Dict[str, SVD]):
     shutil.rmtree("src/devices")
-    out = (
-        "#![allow(\n"
-        "    non_camel_case_types,\n"
-        "    non_snake_case,\n"
-        "    non_upper_case_globals,\n"
-        "    dead_code\n"
-        ")]\n"
-        "\n"
-        "mod irq;\n"
-        "pub use irq::*;\n"
-    )
-    instances = "pub struct Instances {\n"
+    out = ""
+    instances = []
     template = _environment.get_template("block.template")
+    device_template = _environment.get_template("device.template")
 
     for d in svds:
         os.makedirs(f"src/devices/{d}")
@@ -248,17 +239,26 @@ def generate_device(svds: Dict[str, SVD]):
             )
             if svds[d].peripherals[g].__len__() == 1:
                 pname = svds[d].peripherals[g][0].name.upper()
-                instances += f"    pub {pname}: {g.lower()}::{pname},\n"
+                instances.append({"name": pname, "type": f"{g.lower()}::{pname}"})
+                # instances += f"    pub {pname}: {g.lower()}::{pname},\n"
             else:
                 for i in range(svds[d].peripherals[g].__len__()):
                     pname = svds[d].peripherals[g][i].name.upper()
-                    instances += f"    pub {pname}: {g.lower()}::{pname},\n"
+                    # instances += f"    pub {pname}: {g.lower()}::{pname},\n"
+                    instances.append({"name": pname, "type": f"{g.lower()}::{pname}"})
                 pass
 
-        instances += "}"
+        # instances += "}"
+        # out += instances
+        # out += (
+        #     "impl Instances {\n"
+        #     "    pub const unsafe fn instances() -> Self {\n"
+        #     "        Self {\n"
+        #     "            "
+        # )
 
         with open(f"src/devices/{d}/mod.rs", "w") as f:
-            f.write(out)
+            f.write(device_template.render(blocks=out, instances=instances))
         with open(f"src/devices/{d}/irq.rs", "w") as f:
             f.write(generate_vectors(svds[d].irqs))
         with open(f"src/devices/{d}/device.x", "w") as f:

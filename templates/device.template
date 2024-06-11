@@ -10,3 +10,13 @@ pub use irq::*;
 
 {{ blocks }}
 
+pub struct Instances {
+    {% for i in instances %}pub {{ i["name"] }}: {{ i["type"] }},{% endfor %}
+}
+impl Instances {
+    pub const unsafe fn instances() -> Self {
+        Self {
+            {% for i in instances %}{{ i["name"] }}: {{ i["type"] }}::instance(),{% endfor %}
+        }
+    }
+}
