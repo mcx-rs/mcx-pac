@@ -1,6 +1,6 @@
 [package]
 name = "mcx-pac"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2021"
 authors = ["Logiase Song <logiase.song@gmail.com>"]
 description = "Peripheral Access Crate for all NXP MCX Series MCUs"
