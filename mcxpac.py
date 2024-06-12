@@ -258,7 +258,7 @@ def generate_device(svds: Dict[str, SVD]):
         # )
 
         with open(f"src/devices/{d}/mod.rs", "w") as f:
-            f.write(device_template.render(blocks=out, instances=instances))
+            f.write(device_template.render(blocks=out, instances=instances, nvic_prio_bits=svds[d].cpu.nvic_prio_bits))
         with open(f"src/devices/{d}/irq.rs", "w") as f:
             f.write(generate_vectors(svds[d].irqs))
         with open(f"src/devices/{d}/device.x", "w") as f:

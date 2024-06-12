@@ -10,6 +10,7 @@ pub use irq::*;
 
 {{ blocks }}
 
+/// Instances for all peripherals in this device
 pub struct Instances {
     {% for i in instances %}pub {{ i["name"] }}: {{ i["type"] }},{% endfor %}
 }
@@ -20,3 +21,6 @@ impl Instances {
         }
     }
 }
+
+/// Number available in the NVIC for configuring priority
+pub const NVIC_PRIO_BITS: u8 = {{ nvic_prio_bits }};

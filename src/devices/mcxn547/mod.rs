@@ -5422,6 +5422,7 @@ pub mod vref {
     }
 }
 
+/// Instances for all peripherals in this device
 pub struct Instances {
     pub SYSCON0: syscon::SYSCON0,
     pub PINT0: pint::PINT0,
@@ -6012,3 +6013,6 @@ impl Instances {
         }
     }
 }
+
+/// Number available in the NVIC for configuring priority
+pub const NVIC_PRIO_BITS: u8 = 3;
