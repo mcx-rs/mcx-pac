@@ -1,0 +1,20 @@
+[package]
+name = "mcx-pac"
+version = "0.0.1"
+edition = "2021"
+license = "MIT"
+keywords = ["no-std", "arm", "cortex-m", "nxp", "mcx"]
+repository = "https://github.com/mcx-rs/mcx-pac"
+
+[dependencies]
+cortex-m = "0.7"
+cortex-m-rt = { version = "0.7", optional = true }
+
+cfg-if = "1"
+
+[features]
+rt = ["cortex-m-rt/device"]
+
+mcxn947 = ["_device_selected"]
+
+_device_selected = []
