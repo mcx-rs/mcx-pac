@@ -1,7 +1,7 @@
 [package]
 name = "mcx-pac"
 description = "Peripheral Access Crate for NXP MCX Series MCUs"
-version = "0.0.3"
+version = "0.0.4"
 edition = "2021"
 license = "MIT"
 keywords = ["no-std", "arm", "cortex-m", "nxp", "mcx"]
@@ -13,6 +13,9 @@ repository = "https://github.com/mcx-rs/mcx-pac"
 [dependencies]
 cortex-m = "0.7"
 cortex-m-rt = { version = "0.7", optional = true }
+
+[dev-dependencies]
+panic-halt = "0"
 
 [features]
 rt = ["cortex-m-rt/device"]

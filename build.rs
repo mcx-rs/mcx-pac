@@ -13,7 +13,7 @@ fn main() {
                 .to_lowercase();
 
             println!(
-                "cargo:rust-link-search={}/src/{}",
+                "cargo:rustc-link-search={}/src/{}",
                 env!("CARGO_MANIFEST_DIR"),
                 device
             );
