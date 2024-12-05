@@ -20,6 +20,7 @@
 // pub use device::*;
 
 #![no_std]
+#![allow(unused_attributes)]
 #![allow(non_camel_case_types)]
 
 mod common;
