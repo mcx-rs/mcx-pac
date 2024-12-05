@@ -1,0 +1,251 @@
+transforms:
+  - !DeleteUselessEnums
+  - !DeleteFieldsets
+    from: .*
+    useless: true
+ 
+  - !Delete
+    from: fmu0test::.*
+ 
+  # PORT
+  - !Rename
+    from: port0::(.*)
+    to: port::$1
+  - !Rename
+    from: port::Port0
+    to: port::Port
+  - !MergeBlocks
+    from: port\d*::Port\d*
+    to: port::Port
+    main: port::Port
+  - !Delete
+    from: port\d+::.*
+ 
+  # CAN
+  - !DeleteRegisters
+    block: can::Can
+    from: mb\d+_\d+b_.*
+  - !DeleteFieldsets
+    from: can::regs::Mb.*
+  - !MakeBlock
+    blocks: can::Can
+    from: (cs|id|word0|word1)(\d+)
+    to_block: can::MessageBuffer
+    to_outer: mb$2
+    to_inner: $1
+  - !MergeFieldsets
+    from: can::regs::(Cs|Id|Word0|Word1)\d+
+    to: can::regs::$1
+  - !MakeRegisterArray
+    blocks: can::Can
+    from: mb\d+
+    to: mb
+ 
+  # INPUTMUX
+  - !DeleteEnumsUsedIn
+    fieldsets: inputmux0::regs::.*
+  - !MergeFieldsets
+    from:
+      include: inputmux0::regs::([a-zA-Z]*)\d+([a-zA-Z]*)
+      exclude: inputmux0::regs::Pwm.*
+    to: inputmux0::regs::$1$2
+    main: inputmux0::regs::$10$2
+  - !MakeFieldArray
+    fieldsets: inputmux0::regs::Dma\d+ReqEnable\d+.*
+    from: req\d+_en\d+
+    to: req_en
+    mode: Holey
+ 
+  # AHBSC
+  - !MergeEnums
+    from: ahbsc::vals::.*Rule\d
+    to: ahbsc::vals::Rule
+  - !DeleteEnumsUsedIn
+    fieldsets: ahbsc::regs::.*Rule.*
+  - !MergeEnums
+    from:
+      include: ahbsc::vals::.*Mask
+    to: ahbsc::vals::Mask
+ 
+  # SYSCON
+  - !MergeEnums
+    from:
+      include: syscon0::vals::.+(Rst|Reset)
+    to: syscon0::vals::Reset
+  - !MergeEnums
+    from:
+      include: syscon0::vals::.+Halt
+    to: syscon0::vals::Halt
+    check: Layout
+  - !MergeEnums
+    from:
+      include: syscon0::vals::.+Unstab
+    to: syscon0::vals::Unstab
+    check: Layout
+  - !MergeEnums
+    from:
+      include: syscon0::vals::(Pri|Ahbmatprio)(.*)
+    to: syscon0::vals::Priority
+    check: Layout
+  - !MergeEnums
+    from:
+      include: syscon0::vals::.*Noref
+    to: syscon0::vals::Noref
+    check: Layout
+  - !MergeEnums
+    from:
+      include: syscon0::vals::.*Skew
+    to: syscon0::vals::Skew
+    check: Layout
+  - !MergeEnums
+    from:
+      include: syscon0::vals::.*lockup
+    to: syscon0::vals::Lockup
+    check: Layout
+  - !MergeEnums
+    from:
+      include: syscon0::vals::.*sleeping
+    to: syscon0::vals::Sleeping
+    check: Layout
+  - !MergeEnums
+    from:
+      include: syscon0::vals::.*(Dbgen|iden)
+    to: syscon0::vals::DbgEn
+ 
+  # EDMA TCD
+  - !Rename # Rename to avoid unnecessary suffix
+    from: edma_0_tcd::(.*)
+    to: edma_tcd::$1
+  - !Rename
+    from: edma_tcd::Edma0Tcd
+    to: edma_tcd::EdmaTcd
+  - !MergeBlocks
+    from: (edma_tcd::EdmaTcd|edma_\d_tcd::Edma\dTcd)
+    to: edma_tcd::EdmaTcd
+    main: edma_tcd::EdmaTcd
+  - !Delete # Delete unused namespace
+    from: edma_\d+_tcd::.*
+  - !MergeEnums
+    from: edma_tcd::vals::(Ch|Tcd)\d+(.*)
+    to: edma_tcd::vals::$1$2
+    main: edma_tcd::vals::$10$2
+  - !MergeFieldsets
+    from: edma_tcd::regs::(Ch|Tcd)\d+(.*)
+    to: edma_tcd::regs::$1$2
+    main: edma_tcd::regs::$10$2
+  - !MakeBlock
+    blocks: edma_tcd::EdmaTcd
+    from: (ch|tcd)(\d+)_(.*)
+    to_block: edma_tcd::Channel
+    to_outer: ch$2
+    to_inner: $1$3
+  - !MakeRegisterArray
+    blocks: edma_tcd::EdmaTcd
+    from: ch\d+
+    to: ch
+ 
+  # TRDC
+  - !MergeEnums
+    from: trdc::vals::.*Mbacsel\d+
+    to: trdc::vals::Mbacsel
+  - !MergeEnums
+    from: trdc::vals::.*(Nse|Bit)\d+
+    to: trdc::vals::Nse
+ 
+  # GPIO
+  - !DeleteEnumsUsedIn
+    fieldsets: gpio::regs::P.*
+  - !MergeEnums
+    from: gpio::vals::(Giwe|Isf|IcnsNse|IcnpNpe)\d*
+    to: gpio::vals::$1
+    main: gpio::vals::$10
+  - !MakeFieldArray
+    fieldsets: gpio::regs::P(c|d|i|s|t).*
+    from: ([a-zA-Z]*)\d+
+    to: $1
+  - !MakeFieldArray
+    fieldsets: gpio::regs::(Isfr|Gichr|Giclr)
+    from: ([a-zA-Z]*)\d+
+    to: $1
+ 
+  # PORT
+  - !MergeEnums
+    from: port::vals::([a-zA-Z]*)\d+([a-zA-Z]*)
+    to: port::vals::$1$2
+    main: $10$2
+  - !MergeFieldsets
+    from: port::regs::Pcr\d+
+    to: port::regs::Pcr
+    main: port::regs::Pcr16
+    check: NoCheck
+  - !MakeFieldArray
+    fieldsets: port::regs::(Gpchr|Gpclr)
+    from: gpwe\d+
+    to: gpwe
+  - !MakeFieldArray
+    fieldsets: port::regs::(Edier|Edfr)
+    from: ([a-zA-Z]*)\d+
+    to: $1
+ 
+  # ADC
+  - !MergeEnums
+    from: adc::vals::Cmd([a-zA-Z]*)\d+([a-zA-Z]*)
+    to: adc::vals::Cmd$1$2
+    main: adc::vals::Cmd$10$2
+  - !MergeFieldsets
+    from: adc::regs::Cmd(h|l)\d+
+    to: adc::regs::Cmd$1
+    main: adc::regs::Cmd$10
+  - !MakeBlock
+    blocks: adc::Adc
+    from: cmd(l|h)(\d+)
+    to_block: adc::Cmd
+    to_outer: cmd$2
+    to_inner: cmd$1
+  - !MakeRegisterArray
+    blocks: adc::Adc
+    from: cmd\d+
+    to: cmd
+ 
+  # CTIMER
+  - !MergeEnums
+    from: ctimer::vals::([a-zA-Z]*)\d+([a-zA-Z]*)
+    to: ctimer::vals::$1$2
+    main: ctimer::vals::$10$2
+    check: Layout
+  - !MakeFieldArray
+    fieldsets: ctimer::regs::(Ccr|Emr|Ir|Mcr|Pwmc)
+    from: ([a-zA-Z]*)\d([a-zA-Z]*)
+    to: $1$2
+ 
+  # EMVSIM
+  - !MergeEnums
+    from: emvsim::vals::([a-zA-Z]*)\d+([a-zA-Z]*)
+    to: emvsim::vals::$1$2
+    main: emvsim::vals::$10$2
+    check: Layout
+ 
+  # FLEXSPI
+  - !MergeEnums
+    from: flexspi0::vals::.*(en|En)
+    to: flexspi0::vals::En
+    check: Layout
+  - !MergeEnums
+    from: flexspi0::vals::.*(idle|Idle)
+    to: flexspi0::vals::Idle
+    check: Layout
+  - !MergeEnums
+    from:
+      include: flexspi0::vals::.*(lock|Lock)
+      exclude: flexspi0::vals::Unlock
+    to: flexspi0::vals::Lock
+    check: Layout
+  - !MergeEnums
+    from: flexspi0::vals::([a-zA-Z]*)\d+([a-zA-Z]*)
+    to: flexspi0::vals::$1$2
+    main: flexspi0::vals::$10$2
+ 
+  # Rename USB related
+  - !Rename
+    from: usbhs1__(.*)::(.*)
+    to: usbhs1_$1::$2
