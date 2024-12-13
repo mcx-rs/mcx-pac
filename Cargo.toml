@@ -15,11 +15,12 @@ cortex-m = "0.7"
 cortex-m-rt = { version = "0.7", optional = true }
 
 [dev-dependencies]
-panic-halt = "0"
+panic-halt = "1"
 
 [features]
 rt = ["cortex-m-rt/device"]
 
 mcxn947 = ["_device_selected"]
+mcxn236 = ["_device_selected"]
 
 _device_selected = []

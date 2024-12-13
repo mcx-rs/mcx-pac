@@ -5,8 +5,19 @@
 
 mod common;
 
-#[cfg_attr(feature = "mcxn947", path = "mcxn947/chip.rs")]
-mod device;
+macro_rules! mod_device {
+    ($(($feat:literal, $path:literal))*) => {
+        $(
+            #[cfg_attr(feature = $feat, path = $path)]
+        )*
+        mod device;
+    };
+}
+
+mod_device! {
+    ("mcxn947", "mcxn947/chip.rs")
+    ("mcxn236", "mcxn236/chip.rs")
+}
 
 #[cfg(feature = "_device_selected")]
 pub use device::*;
