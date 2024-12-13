@@ -1,3 +1,7 @@
+[env]
+DEVICES = ['MCXN947', 'MCXN236', 'MCXA153', 'MCXA156']
+USE_MIRROR_IN_CHINA = '1'
+
 [tasks.pacgen]
 script_runner = "@rust"
 script = '''
@@ -12,6 +16,7 @@ script = '''
 //! serde_yaml = "=0.9.34-deprecated"
 //! svd-parser = { git = "https://github.com/Dirbaio/svd.git", rev = "8426f3bb40dd2391e26cd087a0d6510fe21fdcbc", features = ["derive-from", "expand"] }
 //! chiptool = { git = "https://github.com/embassy-rs/chiptool.git", rev = "63e36008ecbc1b68e49160703e256e2db7e40b89" }
+//! env_logger = "0"
 //! ```
 
 use std::collections::HashMap;
@@ -54,6 +59,8 @@ impl Config {
 }
 
 fn main() -> Result<()> {
+    env_logger::init();
+
     let devices: Vec<_> = glob(&format!("{}/*.svd", SVDS_DIR))?
         .map(|p| {
             p.unwrap()
@@ -103,4 +110,40 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+'''
+
+[tasks.download_svds]
+alias = "download_svds_unix"
+windows_alias = "download_svds_windows"
+
+[tasks.download_svds_unix]
+script_runner = "bash"
+script_extension = "sh"
+script = '''
+while IFS=';' read -ra DEVICES; do
+    for DEVICE in "${DEVICES[@]}"; do
+        if [ -f svds/$DEVICE.svd ]; then continue; fi
+        download_url=$(curl -s https://api.github.com/repos/nxp-mcuxpresso/mcux-soc-svd/contents/$DEVICE | jq '.[0].download_url')
+        save_path=svds/$DEVICE.svd
+        if [ $USE_MIRROR_IN_CHINA == '1' ]; then download_url=https://ghp.ci/$download_url; fi
+        curl --output $save_path --progress-bar $download_url
+    done
+done <<< $DEVICES
+'''
+
+[tasks.download_svds_windows]
+script_runner = "powershell"
+script_extension = "ps1"
+script = '''
+$DEVICES = $env:DEVICES -Split ";"
+foreach ($DEVICE in $DEVICES)
+{
+    if (Test-Path ./svds/$DEVICE.svd) { continue }
+    $json = (curl.exe -s https://api.github.com/repos/nxp-mcuxpresso/mcux-soc-svd/contents/$DEVICE | ConvertFrom-Json)[0]
+    $download_url = $json.download_url
+    Write-Host "Saving $DEVICE.svd"
+    $save_path = "svds/$DEVICE.svd"
+    if ($env:USE_MIRROR_IN_CHINA -eq '1') { $download_url = "https://ghp.ci/$download_url" }
+    curl.exe --output $save_path --progress-bar $download_url
+}
 '''
