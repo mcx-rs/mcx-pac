@@ -14,10 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build
-        run: cargo run --release -- crate svds transforms output
+        run: |
+          cargo install svdtools
+          make patch
+          make crate
       - name: Push nightly
         working-directory: ./output
-
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
