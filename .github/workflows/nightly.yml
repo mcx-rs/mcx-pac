@@ -1,20 +1,29 @@
-name: Rust
+name: Push nightly branch
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-env:
-  CARGO_TERM_COLOR: always
+    branches:
+      - main
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Build
-      run: cargo run --release -- crate svds transforms output
+      - uses: actions/checkout@v4
+      - name: Build
+        run: cargo run --release -- crate svds transforms output
+      - name: Push nightly
+        working-directory: ./output
+        permissions:
+          contents: write
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git init
+          git config user.name "Github Actions"
+          git config user.email "actions@github.com"
+          git branch -m nightly
+          git remote add origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+          git add .
+          git commit -m "nightly"
+          git push -f -u origin nightly
