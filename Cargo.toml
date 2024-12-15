@@ -23,4 +23,4 @@ svd-parser = { git = "https://github.com/Dirbaio/svd.git", rev = "8426f3bb40dd23
     "derive-from",
     "expand",
 ] }
-chiptool = { git = "https://github.com/embassy-rs/chiptool.git", rev = "63e36008ecbc1b68e49160703e256e2db7e40b89" }
+chiptool = { git = "https://github.com/mcx-rs/chiptool.git", rev = "36966f1ac288ec7bd0623ea53130807c60e99aee" }

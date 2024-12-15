@@ -12,4 +12,8 @@ for i in svds/MCX*.yaml; do
     $svdtools patch $i
 done
 
-cargo run --release -- crate
+echo "Generating crate"
+RUST_LOG=mcx_pac_generator=debug cargo run --release -- crate
+
+echo "Formatting output crate"
+cargo fmt --manifest-path output/Cargo.toml

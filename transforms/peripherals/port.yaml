@@ -1,31 +1,18 @@
 transforms:
-  - !Rename
-    from: port0::(.*)
-    to: port::$1
-  - !Rename
-    from: port::Port0
-    to: port::Port
   - !MergeBlocks
     from: port\d*::Port\d*
     to: port::Port
     main: port::Port
   - !Delete
     from: port\d+::.*
-  - !MergeEnums
-    from: port::vals::([a-zA-Z]*)\d+([a-zA-Z]*)
-    to: port::vals::$1$2
-    main: $10$2
-  - !MergeFieldsets
-    from: port::regs::Pcr\d+
-    to: port::regs::Pcr
-    main: port::regs::Pcr16
-    check: NoCheck
+  - !DeletePeripherals
+    devices: .*
+    from: PORT
   - !MakeFieldArray
-    fieldsets: port::regs::(Gpchr|Gpclr)
+    fieldsets: port::regs::(Edfr|Edier)
+    from: (.*?)\d+
+    to: $1
+  - !MakeFieldArray
+    fieldsets: port::regs::Gpcl|hr
     from: gpwe\d+
     to: gpwe
-  - !MakeFieldArray
-    fieldsets: port::regs::(Edier|Edfr)
-    from: ([a-zA-Z]*)\d+
-    to: $1
-    mode: Holey

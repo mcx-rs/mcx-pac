@@ -89,7 +89,15 @@ fn main() -> Result<()> {
             let devices: Vec<String> = glob(svds.to_str().unwrap())
                 .unwrap()
                 .filter_map(Result::ok)
-                .map(|p| p.file_stem().unwrap().to_str().unwrap().to_string())
+                .map(|p| {
+                    p.file_name()
+                        .unwrap()
+                        .to_str()
+                        .unwrap()
+                        .split(".")
+                        .collect::<Vec<_>>()[0]
+                        .to_string()
+                })
                 .collect();
             let items = render_lib(&devices)?;
             std::fs::write(output.join("src").join("lib.rs"), items.to_string())?;
@@ -172,7 +180,14 @@ fn generate(svd: &PathBuf, transform: &PathBuf, output: &PathBuf) -> Result<()> 
 fn generate_all(svds: &PathBuf, transforms: &PathBuf, output: &PathBuf) -> Result<()> {
     std::fs::create_dir_all(output.join("src"))?;
     for path in glob(svds.to_str().unwrap()).unwrap().filter_map(Result::ok) {
-        let device_name = path.file_stem().unwrap().to_str().unwrap().to_string();
+        let device_name = path
+            .file_name()
+            .unwrap()
+            .to_str()
+            .unwrap()
+            .split(".")
+            .collect::<Vec<_>>()[0]
+            .to_string();
         info!("generating device {}", device_name);
         let svd = path.clone();
         let transform = transforms.join(format!("{}.yaml", device_name));
