@@ -1,5 +1,5 @@
 [env]
-DEVICES = ['MCXN947', 'MCXN236', 'MCXA153', 'MCXA156']
+DEVICES = ['MCXN947', 'MCXN236', 'MCXA153', 'MCXA156', 'MCXA276']
 USE_MIRROR_IN_CHINA = '1'
 
 [tasks.pacgen]
@@ -8,113 +8,113 @@ script = '''
 //! ```cargo
 //! [dependencies]
 //! anyhow = "1"
-//! glob = "0.3"
+//! glob = "0"
 //! regex = "1"
+//! log = "0"
+//! env_logger = "0"
+//! 
+//! clap = { version = "4", features = ["derive"] }
 //! quote = "1"
 //! proc-macro2 = "1"
+//! 
 //! serde = "1"
 //! serde_yaml = "=0.9.34-deprecated"
-//! svd-parser = { git = "https://github.com/Dirbaio/svd.git", rev = "8426f3bb40dd2391e26cd087a0d6510fe21fdcbc", features = ["derive-from", "expand"] }
+//! svd-parser = { git = "https://github.com/Dirbaio/svd.git", rev = "8426f3bb40dd2391e26cd087a0d6510fe21fdcbc", features = [
+//!     "derive-from",
+//!     "expand",
+//! ] }
 //! chiptool = { git = "https://github.com/embassy-rs/chiptool.git", rev = "63e36008ecbc1b68e49160703e256e2db7e40b89" }
-//! env_logger = "0"
 //! ```
-
-use std::collections::HashMap;
-
-use anyhow::{Context, Result};
-use glob::glob;
+use anyhow::Result;
+use chiptool::ir::IR;
+use chiptool::transform::Transform;
+use clap::{Parser, Subcommand};
+use log::debug;
 use quote::quote;
-
-const SVDS_DIR: &str = "./svds";
-const TRANSFORMS_DIR: &str = "./transforms";
-const CRATE_DIR: &str = ".";
 
 #[derive(Debug, serde::Deserialize)]
 struct Config {
     includes: Option<Vec<String>>,
-    transforms: Option<Vec<chiptool::transform::Transform>>,
+    transforms: Option<Vec<Transform>>,
 }
 
-impl Config {
-    fn from_file<P: AsRef<std::path::Path>>(path: P) -> Result<Self> {
-        serde_yaml::from_slice(&std::fs::read(path)?).context("unable to read config")
-    }
+fn apply<P: AsRef<std::path::Path>>(ir: &mut IR, p: P) -> Result<()> {
+    let content = std::fs::read(&p)?;
+    let config: Config = serde_yaml::from_slice(&content)?;
 
-    fn apply(&self, ir: &mut chiptool::ir::IR) -> Result<()> {
-        if let Some(includes) = &self.includes {
-            for include in includes {
-                let c = Self::from_file(&format!("{}/{}", TRANSFORMS_DIR, include))?;
-                c.apply(ir)?;
-            }
+    if let Some(includes) = &config.includes {
+        for include in includes {
+            let subp = &p.as_ref().join(include);
+            apply(ir, subp)?;
         }
+    }
 
-        if let Some(transforms) = &self.transforms {
-            for transform in transforms {
-                transform.run(ir)?;
-            }
+    if let Some(transforms) = &config.transforms {
+        for transform in transforms {
+            transform.run(ir)?;
         }
-
-        Ok(())
-    }
-}
-
-fn main() -> Result<()> {
-    env_logger::init();
-
-    let devices: Vec<_> = glob(&format!("{}/*.svd", SVDS_DIR))?
-        .map(|p| {
-            p.unwrap()
-                .file_stem()
-                .unwrap()
-                .to_string_lossy()
-                .to_string()
-        })
-        .collect();
-
-    let mut configs = HashMap::new();
-    for d in &devices {
-        configs.insert(
-            d.clone(),
-            Config::from_file(&format!("{}/{}.yaml", TRANSFORMS_DIR, d))?,
-        );
-    }
-
-    std::fs::create_dir_all(CRATE_DIR)?;
-    std::fs::write(
-        &format!("{}/src/common.rs", CRATE_DIR),
-        chiptool::generate::COMMON_MODULE,
-    )?;
-
-    let svd_parser_config = svd_parser::Config::default();
-    let render_opts = chiptool::generate::Options {
-        common_module: chiptool::generate::CommonModule::External(quote!(crate::common)),
-    };
-    for device in &devices {
-        let svd = svd_parser::parse_with_config(
-            std::fs::read_to_string(&format!("{}/{}.svd", SVDS_DIR, device))?.as_ref(),
-            &svd_parser_config,
-        )?;
-        let mut ir = chiptool::svd2ir::convert_svd(&svd)?;
-        configs[device].apply(&mut ir)?;
-
-        std::fs::create_dir_all(&format!("{}/src/{}", CRATE_DIR, device.to_lowercase()))?;
-        let items = chiptool::generate::render(&mut ir, &render_opts)?;
-        let path = format!("{}/src/{}/chip.rs", CRATE_DIR, device.to_lowercase());
-        std::fs::write(&path, items.to_string())?;
-        std::process::Command::new("rustfmt").arg(&path).output()?;
-        let items = chiptool::generate::render_device_x(&ir, &ir.devices.values().next().unwrap())?;
-        let path = format!("{}/src/{}/device.x", CRATE_DIR, device.to_lowercase());
-        std::fs::write(&path, items.to_string())?;
     }
 
     Ok(())
 }
 
-'''
+#[derive(Debug, Parser)]
+struct Cli {
+    #[command(subcommand)]
+    command: Commands,
+}
 
-[tasks.download_svds]
-alias = "download_svds_unix"
-windows_alias = "download_svds_windows"
+#[derive(Debug, Subcommand)]
+enum Commands {
+    Generate {
+        #[arg(required = true)]
+        svd: std::path::PathBuf,
+
+        #[arg(required = true)]
+        transform: std::path::PathBuf,
+
+        #[arg(required = true)]
+        output: std::path::PathBuf,
+    },
+}
+
+fn main() -> Result<()> {
+    env_logger::init();
+
+    let args = Cli::parse();
+    debug!("{:?}", args);
+
+    let svd_parser_config = svd_parser::Config::default();
+    let render_opts = chiptool::generate::Options {
+        common_module: chiptool::generate::CommonModule::External(quote!(crate::common)),
+    };
+
+    match args.command {
+        Commands::Generate {
+            svd,
+            transform,
+            output,
+        } => {
+            std::fs::create_dir_all(&output)?;
+            let content = std::fs::read_to_string(svd)?;
+            let device = svd_parser::parse_with_config(&content, &svd_parser_config)?;
+            let mut ir = chiptool::svd2ir::convert_svd(&device)?;
+            apply(&mut ir, transform)?;
+
+            let items = chiptool::generate::render(&mut ir, &render_opts)?;
+            let path = output.join("device.rs");
+            std::fs::write(path, items.to_string())?;
+
+            let items =
+                chiptool::generate::render_device_x(&ir, &ir.devices.values().next().unwrap())?;
+            let path = output.join("device.x");
+            std::fs::write(path, items.to_string())?;
+        }
+    }
+
+    Ok(())
+}
+'''
 
 [tasks.download_svds_unix]
 script_runner = "bash"
@@ -123,9 +123,9 @@ script = '''
 while IFS=';' read -ra DEVICES; do
     for DEVICE in "${DEVICES[@]}"; do
         if [ -f svds/$DEVICE.svd ]; then continue; fi
-        download_url=$(curl -s https://api.github.com/repos/nxp-mcuxpresso/mcux-soc-svd/contents/$DEVICE | jq '.[0].download_url')
+        download_url=$(curl -s https://api.github.com/repos/nxp-mcuxpresso/mcux-soc-svd/contents/$DEVICE | jq '.[0].download_url' | tr -d '"')
         save_path=svds/$DEVICE.svd
-        if [ $USE_MIRROR_IN_CHINA == '1' ]; then download_url=https://ghp.ci/$download_url; fi
+        # if [ $USE_MIRROR_IN_CHINA == '1' ]; then download_url=https://ghp.ci/$download_url; fi
         curl --output $save_path --progress-bar $download_url
     done
 done <<< $DEVICES
