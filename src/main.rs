@@ -102,6 +102,10 @@ fn main() -> Result<()> {
             let items = render_build()?;
             std::fs::write(output.join("build.rs"), items)?;
 
+            let mut ignores = String::new();
+            writeln!(&mut ignores, "/target\n/Cargo.lock")?;
+            std::fs::write(output.join(".gitignore"), ignores)?;
+
             std::process::Command::new("cargo")
                 .args([
                     "fmt",
