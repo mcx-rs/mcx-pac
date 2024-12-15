@@ -1,0 +1,5 @@
+_svd: MCXN236.svd
+_include:
+  - port.yaml
+  - port_eft.yaml
+  - port_calibration.yaml

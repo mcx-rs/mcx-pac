@@ -1,0 +1,4 @@
+_chiptool:
+  includes:
+    - common/delete_useless.yaml
+  # - peripherals/port.yaml

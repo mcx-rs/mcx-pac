@@ -1,0 +1,3 @@
+_svd: MCXA153.svd
+_include:
+  - port.yaml

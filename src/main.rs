@@ -36,24 +36,24 @@ enum Commands {
     },
 
     GenerateAll {
-        #[arg(required = true)]
+        #[arg(long, short, default_value = "svds/*.svd.patched")]
         svds: std::path::PathBuf,
 
-        #[arg(required = true)]
+        #[arg(long, short, default_value = "transforms")]
         transforms: std::path::PathBuf,
 
-        #[arg(required = true)]
+        #[arg(long, short, default_value = "output")]
         output: std::path::PathBuf,
     },
 
     Crate {
-        #[arg(required = true)]
+        #[arg(long, short, default_value = "svds/*.svd.patched")]
         svds: std::path::PathBuf,
 
-        #[arg(required = true)]
+        #[arg(long, short, default_value = "transforms")]
         transforms: std::path::PathBuf,
 
-        #[arg(required = true)]
+        #[arg(long, short, default_value = "output")]
         output: std::path::PathBuf,
     },
 }
@@ -86,7 +86,7 @@ fn main() -> Result<()> {
                 chiptool::generate::COMMON_MODULE,
             )?;
 
-            let devices: Vec<String> = glob(svds.join("*.svd").to_str().unwrap())
+            let devices: Vec<String> = glob(svds.to_str().unwrap())
                 .unwrap()
                 .filter_map(Result::ok)
                 .map(|p| p.file_stem().unwrap().to_str().unwrap().to_string())
@@ -171,10 +171,7 @@ fn generate(svd: &PathBuf, transform: &PathBuf, output: &PathBuf) -> Result<()> 
 
 fn generate_all(svds: &PathBuf, transforms: &PathBuf, output: &PathBuf) -> Result<()> {
     std::fs::create_dir_all(output.join("src"))?;
-    for path in glob(svds.join("*.svd").to_str().unwrap())
-        .unwrap()
-        .filter_map(Result::ok)
-    {
+    for path in glob(svds.to_str().unwrap()).unwrap().filter_map(Result::ok) {
         let device_name = path.file_stem().unwrap().to_str().unwrap().to_string();
         info!("generating device {}", device_name);
         let svd = path.clone();

@@ -1,0 +1,238 @@
+_add:
+  # Fix PORT
+  # NXP's original PORTn peripheral is too hard to fix with chiptool,
+  # so use svdtools to generate a new PORT instance, and delete the original PORTn peripherals
+  # and replace them with this new PORT.
+  PORT:
+    description: PORT
+    groupName: PORT
+    # create a fake address, it will be ignored, because this peripheral is just a prototype to provide registers
+    baseAddress: 0x00000000
+    addressBlock:
+      offset: 0
+      size: 0xC8
+      usage: registers
+    registers:
+      VERID:
+        description: Version ID
+        addressOffset: 0x0
+        access: read-only
+        resetValue: 0x2000000
+        fields:
+          FEATURE:
+            description: Feature Specification Number
+            bitOffset: 0
+            bitWidth: 16
+          MINOR:
+            description: Minor Version Number
+            bitOffset: 16
+            bitWidth: 8
+          MAJOR:
+            description: Major Version Number
+            bitOffset: 24
+            bitWidth: 8
+      GPCLR:
+        description: Global Pin Control Low
+        addressOffset: 0x10
+        access: read-write
+        resetValue: 0x0
+        fields:
+          GPWD:
+            description: Global Pin Write Data
+            bitOffset: 0
+            bitWidth: 16
+          # chiptool does not support field array now
+          GPWE0:
+            description: Global PIn Write Enable
+            bitOffset: 16
+            bitWidth: 1
+          GPWE1:
+            description: Global PIn Write Enable
+            bitOffset: 17
+            bitWidth: 1
+          GPWE3:
+            description: Global PIn Write Enable
+            bitOffset: 18
+            bitWidth: 1
+          GPWE4:
+            description: Global PIn Write Enable
+            bitOffset: 19
+            bitWidth: 1
+          GPWE5:
+            description: Global PIn Write Enable
+            bitOffset: 20
+            bitWidth: 1
+          GPWE6:
+            description: Global PIn Write Enable
+            bitOffset: 21
+            bitWidth: 1
+          GPWE7:
+            description: Global PIn Write Enable
+            bitOffset: 22
+            bitWidth: 1
+          GPWE8:
+            description: Global PIn Write Enable
+            bitOffset: 23
+            bitWidth: 1
+          GPWE9:
+            description: Global PIn Write Enable
+            bitOffset: 24
+            bitWidth: 1
+          GPWE10:
+            description: Global PIn Write Enable
+            bitOffset: 25
+            bitWidth: 1
+          GPWE11:
+            description: Global PIn Write Enable
+            bitOffset: 26
+            bitWidth: 1
+          GPWE12:
+            description: Global PIn Write Enable
+            bitOffset: 27
+            bitWidth: 1
+          GPWE13:
+            description: Global PIn Write Enable
+            bitOffset: 28
+            bitWidth: 1
+          GPWE14:
+            description: Global PIn Write Enable
+            bitOffset: 29
+            bitWidth: 1
+          GPWE15:
+            description: Global PIn Write Enable
+            bitOffset: 30
+            bitWidth: 1
+      GPCHR:  
+        description: Global Pin Control High
+        addressOffset: 0x10
+        access: read-write
+        resetValue: 0x0
+        fields:
+          GPWD:
+            description: Global Pin Write Data
+            bitOffset: 0
+            bitWidth: 16
+          # chiptool does not support field array now
+          GPWE0:
+            description: Global PIn Write Enable
+            bitOffset: 16
+            bitWidth: 1
+          GPWE1:
+            description: Global PIn Write Enable
+            bitOffset: 17
+            bitWidth: 1
+          GPWE3:
+            description: Global PIn Write Enable
+            bitOffset: 18
+            bitWidth: 1
+          GPWE4:
+            description: Global PIn Write Enable
+            bitOffset: 19
+            bitWidth: 1
+          GPWE5:
+            description: Global PIn Write Enable
+            bitOffset: 20
+            bitWidth: 1
+          GPWE6:
+            description: Global PIn Write Enable
+            bitOffset: 21
+            bitWidth: 1
+          GPWE7:
+            description: Global PIn Write Enable
+            bitOffset: 22
+            bitWidth: 1
+          GPWE8:
+            description: Global PIn Write Enable
+            bitOffset: 23
+            bitWidth: 1
+          GPWE9:
+            description: Global PIn Write Enable
+            bitOffset: 24
+            bitWidth: 1
+          GPWE10:
+            description: Global PIn Write Enable
+            bitOffset: 25
+            bitWidth: 1
+          GPWE11:
+            description: Global PIn Write Enable
+            bitOffset: 26
+            bitWidth: 1
+          GPWE12:
+            description: Global PIn Write Enable
+            bitOffset: 27
+            bitWidth: 1
+          GPWE13:
+            description: Global PIn Write Enable
+            bitOffset: 28
+            bitWidth: 1
+          GPWE14:
+            description: Global PIn Write Enable
+            bitOffset: 29
+            bitWidth: 1
+          GPWE15:
+            description: Global PIn Write Enable
+            bitOffset: 30
+            bitWidth: 1
+
+      CONFIG:
+        description: Configuration
+        addressOffset: 0x20
+        access: read-write
+        resetValue: 0x0
+        fields:
+          RANGE:
+            description: Port Voltage Range
+            bitOffset: 0
+            bitWidth: 1
+      PCR[%s]:
+        dim: 32
+        dimIncrement: 1
+        dimIndex: 0-31
+        description: Pin Control
+        addressOffset: 0x80
+        access: read-write
+        fields:
+          PS:
+            desription: Pull Select
+            bitOffset: 0
+            bitWidth: 1
+          PE:
+            description: Pull Enable
+            bitOffset: 1
+            bitWidth: 1
+          PV:
+            description: Pull Value
+            bitOffset: 2
+            bitWidth: 1
+          SRE:
+            description: Slew Rate Enable
+            bitOffset: 3
+            bitWidth: 1
+          PFE:
+            description: Passive Filter Enable
+            bitOffset: 4
+            bitWidth: 1
+          ODE:
+            description: Open Drain Enable
+            bitOffset: 5
+            bitWidth: 1
+          DSE:
+            description: Drive Strength Enable
+            bitOffset: 6
+            bitWidth: 1
+          MUX:
+            description: Pin Multiplex Control
+            bitOffset: 8
+            bitWidth: 3
+          IBE:
+            description: Input Buffer Enable
+            bitOffset: 12
+            bitWidth: 1
+          INV:
+            description: Invert Input
+            bitOffset: 13
+            bitWidth: 1
+          LK:
+            description: Lock Register
+            bitOffset: 15
+            bitWidth: 1

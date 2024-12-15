@@ -1,0 +1,28 @@
+PORT:
+  _add:
+    CALIB0:
+      description: Calibration 0
+      addressOffset: 0x60
+      access: read-write
+      fields:
+        NCAL:
+          description: Calibration of NMOS Output Driver
+          bitOffset: 0
+          bitWidth: 6
+        PCAL:
+          description: Calibration of PMOS Output Driver
+          bitOffset: 16
+          bitWidth: 6
+    CALIB1:
+      description: Calibration 1
+      addressOffset: 0x64
+      access: read-write
+      fields:
+        NCAL:
+          description: Calibration of NMOS Output Driver
+          bitOffset: 0
+          bitWidth: 6
+        PCAL:
+          description: Calibration of PMOS Output Driver
+          bitOffset: 16
+          bitWidth: 6

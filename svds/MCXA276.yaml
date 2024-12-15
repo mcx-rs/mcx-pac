@@ -1,0 +1,4 @@
+_svd: MCXA276.svd
+_include:
+  - port.yaml
+  - port_calibration.yaml

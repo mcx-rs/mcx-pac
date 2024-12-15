@@ -1,6 +1,5 @@
 includes:
   - common/delete_useless.yaml
-  - common/merge_ports.yaml
   - common/rename_usb.yaml
   - peripherals/gpio.yaml
   - peripherals/port.yaml

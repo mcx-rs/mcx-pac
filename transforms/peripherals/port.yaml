@@ -1,4 +1,16 @@
 transforms:
+  - !Rename
+    from: port0::(.*)
+    to: port::$1
+  - !Rename
+    from: port::Port0
+    to: port::Port
+  - !MergeBlocks
+    from: port\d*::Port\d*
+    to: port::Port
+    main: port::Port
+  - !Delete
+    from: port\d+::.*
   - !MergeEnums
     from: port::vals::([a-zA-Z]*)\d+([a-zA-Z]*)
     to: port::vals::$1$2

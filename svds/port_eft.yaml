@@ -1,0 +1,281 @@
+PORT:
+  _add:
+    EDFR:
+      description: EFT Detect Flag
+      addressOffset: 0x40
+      access: read-only
+      fields:
+        EDF0:
+          description: EFT Detect Flag
+          bitOffset: 0
+          bitWidth: 1
+        EDF1:
+          description: EFT Detect Flag
+          bitOffset: 1
+          bitWidth: 1
+        EDF2:
+          description: EFT Detect Flag
+          bitOffset: 2
+          bitWidth: 1
+        EDF3:
+          description: EFT Detect Flag
+          bitOffset: 3
+          bitWidth: 1
+        EDF4:
+          description: EFT Detect Flag
+          bitOffset: 4
+          bitWidth: 1
+        EDF5:
+          description: EFT Detect Flag
+          bitOffset: 5
+          bitWidth: 1
+        EDF6:
+          description: EFT Detect Flag
+          bitOffset: 6
+          bitWidth: 1
+        EDF7:
+          description: EFT Detect Flag
+          bitOffset: 7
+          bitWidth: 1
+        EDF8:
+          description: EFT Detect Flag
+          bitOffset: 8
+          bitWidth: 1
+        EDF9:
+          description: EFT Detect Flag
+          bitOffset: 9
+          bitWidth: 1
+        EDF10:
+          description: EFT Detect Flag
+          bitOffset: 10
+          bitWidth: 1
+        EDF11:
+          description: EFT Detect Flag
+          bitOffset: 11
+          bitWidth: 1
+        EDF12:
+          description: EFT Detect Flag
+          bitOffset: 12
+          bitWidth: 1
+        EDF13:
+          description: EFT Detect Flag
+          bitOffset: 13
+          bitWidth: 1
+        EDF14:
+          description: EFT Detect Flag
+          bitOffset: 14
+          bitWidth: 1
+        EDF15:
+          description: EFT Detect Flag
+          bitOffset: 15
+          bitWidth: 1
+        EDF16:
+          description: EFT Detect Flag
+          bitOffset: 16
+          bitWidth: 1
+        EDF17:
+          description: EFT Detect Flag
+          bitOffset: 17
+          bitWidth: 1
+        EDF18:
+          description: EFT Detect Flag
+          bitOffset: 18
+          bitWidth: 1
+        EDF19:
+          description: EFT Detect Flag
+          bitOffset: 19
+          bitWidth: 1
+        EDF20:
+          description: EFT Detect Flag
+          bitOffset: 20
+          bitWidth: 1
+        EDF21:
+          description: EFT Detect Flag
+          bitOffset: 21
+          bitWidth: 1
+        EDF22:
+          description: EFT Detect Flag
+          bitOffset: 22
+          bitWidth: 1
+        EDF23:
+          description: EFT Detect Flag
+          bitOffset: 23
+          bitWidth: 1
+        EDF24:
+          description: EFT Detect Flag
+          bitOffset: 24
+          bitWidth: 1
+        EDF25:
+          description: EFT Detect Flag
+          bitOffset: 25
+          bitWidth: 1
+        EDF26:
+          description: EFT Detect Flag
+          bitOffset: 26
+          bitWidth: 1
+        EDF27:
+          description: EFT Detect Flag
+          bitOffset: 27
+          bitWidth: 1
+        EDF28:
+          description: EFT Detect Flag
+          bitOffset: 28
+          bitWidth: 1
+        EDF29:
+          description: EFT Detect Flag
+          bitOffset: 29
+          bitWidth: 1
+        EDF30:
+          description: EFT Detect Flag
+          bitOffset: 30
+          bitWidth: 1
+        EDF31:
+          description: EFT Detect Flag
+          bitOffset: 31
+          bitWidth: 1
+    EDIER:
+      description: EFT Detect Interrupt Enable
+      addressOffset: 0x44
+      access: read-write
+      fields:
+        EDIE0:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 0
+          bitWidth: 1
+        EDIE1:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 1
+          bitWidth: 1
+        EDIE2:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 2
+          bitWidth: 1
+        EDIE3:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 3
+          bitWidth: 1
+        EDIE4:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 4
+          bitWidth: 1
+        EDIE5:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 5
+          bitWidth: 1
+        EDIE6:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 6
+          bitWidth: 1
+        EDIE7:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 7
+          bitWidth: 1
+        EDIE8:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 8
+          bitWidth: 1
+        EDIE9:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 9
+          bitWidth: 1
+        EDIE10:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 10
+          bitWidth: 1
+        EDIE11:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 11
+          bitWidth: 1
+        EDIE12:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 12
+          bitWidth: 1
+        EDIE13:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 13
+          bitWidth: 1
+        EDIE14:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 14
+          bitWidth: 1
+        EDIE15:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 15
+          bitWidth: 1
+        EDIE16:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 16
+          bitWidth: 1
+        EDIE17:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 17
+          bitWidth: 1
+        EDIE18:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 18
+          bitWidth: 1
+        EDIE19:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 19
+          bitWidth: 1
+        EDIE20:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 20
+          bitWidth: 1
+        EDIE21:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 21
+          bitWidth: 1
+        EDIE22:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 22
+          bitWidth: 1
+        EDIE23:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 23
+          bitWidth: 1
+        EDIE24:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 24
+          bitWidth: 1
+        EDIE25:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 25
+          bitWidth: 1
+        EDIE26:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 26
+          bitWidth: 1
+        EDIE27:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 27
+          bitWidth: 1
+        EDIE28:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 28
+          bitWidth: 1
+        EDIE29:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 29
+          bitWidth: 1
+        EDIE30:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 30
+          bitWidth: 1
+        EDIE31:
+          description: EFT Detect Interrupt Enable
+          bitOffset: 31
+          bitWidth: 1
+    EDCR:
+      description: EFT Detect Clear
+      addressOffset: 0x48
+      access: read-write
+      fields:
+        EDHC:
+          description: EFT Detect High Clear
+          bitOffset: 0
+          bitWidth: 1
+        EDLC:
+          description: EFT Detect Low Clear
+          bitOffset: 1
+          bitWidth: 1

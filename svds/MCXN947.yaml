@@ -1,0 +1,5 @@
+_svd: MCXN947.svd
+_include:
+  - port.yaml
+  - port_calibration.yaml
+  - port_eft.yaml
