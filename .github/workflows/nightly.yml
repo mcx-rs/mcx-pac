@@ -15,9 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build
         run: |
-          cargo install svdtools
-          make patch
-          make crate
+          ./generate.sh
       - name: Push nightly
         working-directory: ./output
         env:

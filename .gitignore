@@ -1,10 +1,8 @@
 /target
-
 /Cargo.lock
-
-/.cargo
-/.vscode
+/.cargo-root
 
 .DS_Store
 
 /output
+*.svd.patched
