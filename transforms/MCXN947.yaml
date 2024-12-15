@@ -1,2 +1,16 @@
 includes:
-  - mcxn_common.yaml
+  - common/delete_useless.yaml
+  - common/merge_ports.yaml
+  - common/rename_usb.yaml
+  - peripherals/gpio.yaml
+  - peripherals/port.yaml
+  - peripherals/can.yaml
+  - peripherals/inputmux.yaml
+  - peripherals/ahbsc.yaml
+  - peripherals/syscon.yaml
+  - peripherals/edma.yaml
+  - peripherals/trdc.yaml
+  - peripherals/adc.yaml
+  - peripherals/ctimer.yaml
+  - peripherals/emvsim.yaml
+  - peripherals/flexspi.yaml

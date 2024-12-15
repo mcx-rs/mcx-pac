@@ -1,0 +1,10 @@
+transforms:
+  - !MergeEnums
+    from: ahbsc::vals::.*Rule\d
+    to: ahbsc::vals::Rule
+  - !DeleteEnumsUsedIn
+    fieldsets: ahbsc::regs::.*Rule.*
+  - !MergeEnums
+    from:
+      include: ahbsc::vals::.*Mask
+    to: ahbsc::vals::Mask

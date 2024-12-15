@@ -1,0 +1,45 @@
+transforms:
+  # SYSCON
+  - !MergeEnums
+    from:
+      include: syscon0::vals::.+(Rst|Reset)
+    to: syscon0::vals::Reset
+  - !MergeEnums
+    from:
+      include: syscon0::vals::.+Halt
+    to: syscon0::vals::Halt
+    check: Layout
+  - !MergeEnums
+    from:
+      include: syscon0::vals::.+Unstab
+    to: syscon0::vals::Unstab
+    check: Layout
+  - !MergeEnums
+    from:
+      include: syscon0::vals::(Pri|Ahbmatprio)(.*)
+    to: syscon0::vals::Priority
+    check: Layout
+  - !MergeEnums
+    from:
+      include: syscon0::vals::.*Noref
+    to: syscon0::vals::Noref
+    check: Layout
+  - !MergeEnums
+    from:
+      include: syscon0::vals::.*Skew
+    to: syscon0::vals::Skew
+    check: Layout
+  - !MergeEnums
+    from:
+      include: syscon0::vals::.*lockup
+    to: syscon0::vals::Lockup
+    check: Layout
+  - !MergeEnums
+    from:
+      include: syscon0::vals::.*sleeping
+    to: syscon0::vals::Sleeping
+    check: Layout
+  - !MergeEnums
+    from:
+      include: syscon0::vals::.*(Dbgen|iden)
+    to: syscon0::vals::DbgEn

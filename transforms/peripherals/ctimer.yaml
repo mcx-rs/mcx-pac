@@ -1,0 +1,11 @@
+transforms:
+  # CTIMER
+  - !MergeEnums
+    from: ctimer::vals::([a-zA-Z]*)\d+([a-zA-Z]*)
+    to: ctimer::vals::$1$2
+    main: ctimer::vals::$10$2
+    check: Layout
+  - !MakeFieldArray
+    fieldsets: ctimer::regs::(Ccr|Emr|Ir|Mcr|Pwmc)
+    from: ([a-zA-Z]*)\d([a-zA-Z]*)
+    to: $1$2

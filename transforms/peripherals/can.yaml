@@ -1,0 +1,19 @@
+transforms:
+  - !DeleteRegisters
+    block: can::Can
+    from: mb\d+_\d+b_.*
+  - !DeleteFieldsets
+    from: can::regs::Mb.*
+  - !MakeBlock
+    blocks: can::Can
+    from: (cs|id|word0|word1)(\d+)
+    to_block: can::MessageBuffer
+    to_outer: mb$2
+    to_inner: $1
+  - !MergeFieldsets
+    from: can::regs::(Cs|Id|Word0|Word1)\d+
+    to: can::regs::$1
+  - !MakeRegisterArray
+    blocks: can::Can
+    from: mb\d+
+    to: mb

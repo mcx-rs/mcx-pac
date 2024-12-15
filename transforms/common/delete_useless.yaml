@@ -1,0 +1,5 @@
+transforms:
+  - !DeleteUselessEnums
+  - !DeleteFieldsets
+    from: .*
+    useless: true

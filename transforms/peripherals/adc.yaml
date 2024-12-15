@@ -1,0 +1,20 @@
+transforms:
+  # ADC
+  - !MergeEnums
+    from: adc::vals::Cmd([a-zA-Z]*)\d+([a-zA-Z]*)
+    to: adc::vals::Cmd$1$2
+    main: adc::vals::Cmd$10$2
+  - !MergeFieldsets
+    from: adc::regs::Cmd(h|l)\d+
+    to: adc::regs::Cmd$1
+    main: adc::regs::Cmd$10
+  - !MakeBlock
+    blocks: adc::Adc
+    from: cmd(l|h)(\d+)
+    to_block: adc::Cmd
+    to_outer: cmd$2
+    to_inner: cmd$1
+  - !MakeRegisterArray
+    blocks: adc::Adc
+    from: cmd\d+
+    to: cmd

@@ -1,0 +1,7 @@
+transforms:
+  - !MergeEnums
+    from: trdc::vals::.*Mbacsel\d+
+    to: trdc::vals::Mbacsel
+  - !MergeEnums
+    from: trdc::vals::.*(Nse|Bit)\d+
+    to: trdc::vals::Nse

@@ -1,0 +1,14 @@
+transforms:
+  - !DeleteEnumsUsedIn
+    fieldsets: inputmux0::regs::.*
+  - !MergeFieldsets
+    from:
+      include: inputmux0::regs::([a-zA-Z]*)\d+([a-zA-Z]*)
+      exclude: inputmux0::regs::Pwm.*
+    to: inputmux0::regs::$1$2
+    main: inputmux0::regs::$10$2
+  - !MakeFieldArray
+    fieldsets: inputmux0::regs::Dma\d+ReqEnable\d+.*
+    from: req\d+_en\d+
+    to: req_en
+    mode: Holey

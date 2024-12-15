@@ -1,0 +1,5 @@
+transforms:
+  # Rename USB related
+  - !Rename
+    from: usbhs1__(.*)::(.*)
+    to: usbhs1_$1::$2

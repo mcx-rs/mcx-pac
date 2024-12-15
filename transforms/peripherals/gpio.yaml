@@ -1,0 +1,27 @@
+transforms:
+  - !Rename
+    from: gpio0::(.*)
+    to: gpio::$1
+  - !Rename
+    from: gpio0::Gpio0
+    to: gpio::Gpio
+  - !MergeBlocks
+    from: gpio\d*(_alias1)?::.*
+    to: gpio::Gpio
+    main: gpio::Gpio
+  - !Delete
+    from: gpio\d+(_alias1)?::.*
+  - !DeleteEnumsUsedIn
+    fieldsets: gpio::regs::P.*
+  - !MergeEnums
+    from: gpio::vals::(Giwe|Isf|IcnsNse|IcnpNpe)\d*
+    to: gpio::vals::$1
+    main: gpio::vals::$10
+  - !MakeFieldArray
+    fieldsets: gpio::regs::P(c|d|i|s|t).*
+    from: ([a-zA-Z]*)\d+
+    to: $1
+  - !MakeFieldArray
+    fieldsets: gpio::regs::(Isfr|Gichr|Giclr)
+    from: ([a-zA-Z]*)\d+
+    to: $1

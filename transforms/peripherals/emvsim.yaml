@@ -1,0 +1,7 @@
+transforms:
+  # EMVSIM
+  - !MergeEnums
+    from: emvsim::vals::([a-zA-Z]*)\d+([a-zA-Z]*)
+    to: emvsim::vals::$1$2
+    main: emvsim::vals::$10$2
+    check: Layout
