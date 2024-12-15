@@ -6413,84 +6413,11 @@ SPDX-License-Identifier: BSD-3-Clause
           </fields>
         </register>
         <register>
-          <dim>5</dim>
+          <dim>8</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>EXT_TRIG[%s]</name>
           <description>EXT trigger connections 0-4</description>
           <addressOffset>0x4C0</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0x1F</resetValue>
-          <resetMask>0xFFFFFFFF</resetMask>
-          <fields>
-            <field>
-              <name>INP</name>
-              <description>EXT trigger input connections</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>5</bitWidth>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>val1</name>
-                  <description>ARM_TXEV input is selected</description>
-                  <value>0x1</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>val2</name>
-                  <description>AOI0_OUT0 input is selected</description>
-                  <value>0x2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>val3</name>
-                  <description>AOI0_OUT1 input is selected</description>
-                  <value>0x3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>val4</name>
-                  <description>AOI0_OUT2 input is selected</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>val5</name>
-                  <description>AOI0_OUT3 input is selected</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>val6</name>
-                  <description>CMP0_OUT input is selected</description>
-                  <value>0x6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>val7</name>
-                  <description>CMP1_OUT input is selected</description>
-                  <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>val9</name>
-                  <description>LPUART0 input is selected</description>
-                  <value>0x9</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>val10</name>
-                  <description>LPUART1 input is selected</description>
-                  <value>0xA</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>val11</name>
-                  <description>LPUART2 input is selected</description>
-                  <value>0xB</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <dim>2</dim>
-          <dimIncrement>0x4</dimIncrement>
-          <dimIndex>6,7</dimIndex>
-          <name>EXT_TRIG%s</name>
-          <description>EXT trigger connections 6-7</description>
-          <addressOffset>0x4D8</addressOffset>
           <size>32</size>
           <access>read-write</access>
           <resetValue>0x1F</resetValue>
