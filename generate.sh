@@ -24,25 +24,26 @@ for i in svds/*.svd; do
 done
 cd $top_dir
 
-echo "Copying Cargo.toml"
+echo "Copying crate files"
 if version=`git describe 2>/dev/null`; [ $? -ne 0 ]; then
     version="0.0.0-nightly"
 fi
 sed "s/__VERSION__/$version/" src/Cargo.toml > "${crate_dir%%/}/Cargo.toml"
-echo "Copying build.rs"
 cp src/build.rs $crate_dir
-echo "Copying common.rs"
 cp src/common.rs $crate_src_dir
-echo "Copying lib.rs"
 cp src/lib.rs $crate_src_dir
 for i in svds/*.svd; do
     device=`basename -- $i`
-    device=${device%。*}
+    device=${device%.*}
     device=${device,,}
     echo "#[cfg_attr(feature = \"$device\", path = \"$device/lib.rs\")]" >> ${crate_src_dir%%/}/lib.rs
+    echo "$device = [\"_device_selected\"]" >> ${crate_dir%%/}/Cargo.toml
 done
 echo "mod device;" >> ${crate_src_dir%%/}/lib.rs
 echo "#[cfg(feature = \"_device_selected\")]" >> ${crate_src_dir%%/}/lib.rs
 echo "pub use device::*;" >> ${crate_src_dir%%/}/lib.rs
 touch ${crate_src_dir%%/}/device.rs
 cp .gitignore $crate_dir
+
+echo "Formatting output crate"
+cargo fmt --manifest-path ${crate_dir%%/}/Cargo.toml
