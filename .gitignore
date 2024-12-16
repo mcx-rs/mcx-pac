@@ -1,0 +1,8 @@
+/target
+/Cargo.lock
+/.cargo-root
+
+.DS_Store
+
+/output
+*.svd.patched
