@@ -1,0 +1,19 @@
+transforms:
+  - !MergeEnums
+    from: lpadc::vals::Cmd(h|l)\d+([a-zA-Z0-9]*)
+    to: lpadc::vals::Cmd$1$2
+    main: lpadc::vals::Cmd$10$2
+  - !MergeFieldsets
+    from: lpadc::regs::Cmd(h|l)\d+
+    to: lpadc::regs::Cmd$1
+    main: lpadc::regs::Cmd$10
+  - !MakeBlock
+    blocks: lpadc::LPADC
+    from: cmd(l|h)(\d+)
+    to_block: lpadc::Cmd
+    to_outer: cmd$2
+    to_inner: cmd$1
+  - !MakeRegisterArray
+    blocks: lpadc::LPADC
+    from: cmd\d+
+    to: cmd

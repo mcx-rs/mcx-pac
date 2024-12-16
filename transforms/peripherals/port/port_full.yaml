@@ -1,0 +1,170 @@
+transforms:
+  - !Add
+    ir:
+      block/port::Port:
+        description: PORT
+        items:
+          - name: version_id
+            description: Version ID
+            byte_offset: 0
+            access: Read
+            fieldset: port::regs::VersionID
+          - name: gpclr
+            description: Global Pin Control Low
+            byte_offset: 0x10
+            fieldset: port::regs::GPC
+          - name: gpchr
+            description: Global Pin Control High
+            byte_offset: 0x14
+            fieldset: port::regs::GPC
+          - name: config
+            description: Configuration
+            byte_offset: 0x20
+            fieldset: port::regs::Config
+          - name: edfr
+            description: EFT Detect Flag
+            byte_offset: 0x40
+            fieldset: port::regs::EFT
+          - name: edier
+            description: EFT Detect Interrupt Enable
+            byte_offset: 0x44
+            fieldset: port::regs::EFT
+          - name: edcr
+            description: EFT Detect Clear
+            byte_offset: 0x48
+            fieldset: port::regs::EDCR
+          - name: calibration0
+            description: Calibration
+            byte_offset: 0x60
+            fieldset: port::regs::Calibration
+          - name: calibration1
+            description: Calibration
+            byte_offset: 0x64
+            fieldset: port::regs::Calibration
+          - name: pcr
+            description: Pin Control
+            byte_offset: 0x80
+            array:
+              len: 32
+              stride: 0x04
+
+      fieldset/port::regs::VersionID:
+        description: VersionID
+        fields:
+          - name: feature
+            description: Feature Specification Number
+            bit_offset: 0
+            bit_size: 16
+          - name: minor
+            description: Minor Version Number
+            bit_offset: 16
+            bit_size: 8
+          - name: major
+            description: Major Version Number
+            bit_offset: 24
+            bit_size: 8
+      fieldset/port::regs::GPC:
+        description: Global Pin Control
+        fields:
+          - name: gpwd
+            description: Global Pin Write Data
+            bit_offset: 0
+            bit_size: 16
+          - name: gpwe
+            description: Global PIn Write Enable
+            bit_offset: 16
+            bit_size: 1
+            array:
+              len: 16
+              stride: 1
+      fieldset/port::regs::Config:
+        description: Configuration
+        fields:
+          - name: range
+            description: Port Voltage Range
+            bit_offset: 0
+            bit_size: 1
+      fieldset/port::regs::PCR:
+        description: Pin Control
+        fields:
+          - name: ps
+            description: Pull Select
+            bit_offset: 0
+            bit_size: 1
+          - name: pe
+            description: Pull Enable
+            bit_offset: 1
+            bit_size: 1
+          - name: pv
+            description: Pull Value
+            bit_offset: 2
+            bit_size: 1
+          - name: sre
+            description: Slew Rate Enable
+            bit_offset: 3
+            bit_size: 1
+          - name: pfe
+            description: Passive Filter Enable
+            bit_offset: 4
+            bit_size: 1
+          - name: ode
+            description: Open Drain Enable
+            bit_offset: 5
+            bit_size: 1
+          - name: dse
+            description: Drive Strength Enable
+            bit_offset: 6
+            bit_size: 1
+          - name: mux
+            description: Pin Multiplex Control
+            bit_offset: 8
+            bit_size: 3
+          - name: ibe
+            description: Input Buffer Enable
+            bit_offset: 12
+            bit_size: 1
+          - name: inv
+            description: Invert Input
+            bit_offset: 13
+            bit_size: 1
+          - name: lk
+            description: Lock Register
+            bit_offset: 15
+            bit_size: 1
+      fieldset/port::regs::EFT:
+        description: EFT Detect Flag
+        fields:
+          - name: edf
+            description: EFT Detect Flag
+            bit_offset: 0
+            bit_size: 1
+            array:
+              len: 32
+              stride: 1
+      fieldset/port::regs::EDCR:
+        description: EFT Detect Clear
+        fields:
+          - name: edhc
+            description: EFT Detect High Clear
+            bit_offset: 0
+            bit_size: 1
+          - name: edlc
+            description: EFT Detect Low Clear
+            bit_offset: 1
+            bit_size: 1
+      fieldset/port::regs::Calibration:
+        description: Calibration
+        fields:
+          - name: ncal
+            bit_offset: 0
+            bit_size: 6
+          - name: pcal
+            bit_offset: 16
+            bit_size: 6
+
+  - !MergeBlocks
+    from: port\d*::Port\d*
+    to: port::Port
+    main: port::Port
+  - !Delete
+    from: port\d+::.*

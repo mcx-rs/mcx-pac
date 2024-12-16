@@ -1,0 +1,23 @@
+transforms:
+  - !Rename
+    from: hsadc::Hsadc\d*
+    to: hsadc::HSADC
+  
+  - !MergeEnums
+    from: hsadc::vals::Cmd(h|l)\d+([a-zA-Z0-9]*)
+    to: hsadc::vals::Cmd$1$2
+    main: hsadc::vals::Cmd$10$2
+  - !MergeFieldsets
+    from: hsadc::regs::Cmd(h|l)\d+
+    to: hsadc::regs::Cmd$1
+    main: hsadc::regs::Cmd$10
+  - !MakeBlock
+    blocks: hsadc::HSADC
+    from: cmd(l|h)(\d+)
+    to_block: hsadc::Cmd
+    to_outer: cmd$2
+    to_inner: cmd$1
+  - !MakeRegisterArray
+    blocks: hsadc::HSADC
+    from: cmd\d+
+    to: cmd

@@ -1,0 +1,7 @@
+transforms:
+  - !Rename
+    from: adc0::(.*)
+    to: lpadc::$1
+  - !Rename
+    from: lpadc::Adc\d*
+    to: lpadc::LPADC

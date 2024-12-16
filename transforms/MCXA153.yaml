@@ -1,4 +1,7 @@
-_chiptool:
-  includes:
-    - common/delete_useless.yaml
-  # - peripherals/port.yaml
+includes:
+  - common/delete_useless.yaml
+  
+  - peripherals/port/port_base.yaml
+  
+  - peripherals/adc/rename_adc_a1.yaml
+  - peripherals/adc/lpadc.yaml
