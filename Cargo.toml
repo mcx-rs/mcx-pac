@@ -7,6 +7,9 @@ edition = "2021"
 cortex-m = "0.7"
 cortex-m-rt = { version = "0.7", optional = true }
 
+[dev-dependencies]
+panic-halt = "1"
+
 [features]
 rt = ["cortex-m-rt/device"]
 

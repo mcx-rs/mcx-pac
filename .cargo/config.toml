@@ -2,4 +2,4 @@
 target = "thumbv8m.main-none-eabihf"
 
 [target.thumbv8m.main-none-eabihf]
-rustflags = ["-C", "link-arg=-Tlink.x"]
+rustflags = ["-Clink-arg=-Tlink.x", "-Ctarget-cpu=cortex-m33"]
