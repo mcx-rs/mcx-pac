@@ -16,27 +16,27 @@ impl EWM {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn CTRL(self) -> crate::common::Reg<u8, crate::common::RW> {
+    pub const fn CTRL(self) -> crate::common::Reg<regs::CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SERV(self) -> crate::common::Reg<u8, crate::common::RW> {
+    pub const fn SERV(self) -> crate::common::Reg<regs::SERV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01usize) as _) }
     }
     #[inline(always)]
-    pub const fn CMPL(self) -> crate::common::Reg<u8, crate::common::RW> {
+    pub const fn CMPL(self) -> crate::common::Reg<regs::CMPL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02usize) as _) }
     }
     #[inline(always)]
-    pub const fn CMPH(self) -> crate::common::Reg<u8, crate::common::RW> {
+    pub const fn CMPH(self) -> crate::common::Reg<regs::CMPH, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03usize) as _) }
     }
     #[inline(always)]
-    pub const fn CLKCTRL(self) -> crate::common::Reg<u8, crate::common::RW> {
+    pub const fn CLKCTRL(self) -> crate::common::Reg<regs::CLKCTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn CLKPRESCALER(self) -> crate::common::Reg<u8, crate::common::RW> {
+    pub const fn CLKPRESCALER(self) -> crate::common::Reg<regs::CLKPRESCALER, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05usize) as _) }
     }
 }

@@ -128,19 +128,19 @@ impl DMA {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn MP_CSR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MP_CSR(self) -> crate::common::Reg<regs::MP_CSR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn MP_ES(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MP_ES(self) -> crate::common::Reg<regs::MP_ES, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn MP_INT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MP_INT(self) -> crate::common::Reg<regs::MP_INT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn MP_HRS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MP_HRS(self) -> crate::common::Reg<regs::MP_HRS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]

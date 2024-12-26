@@ -16,87 +16,93 @@ impl RTC {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn YEARMON(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn YEARMON(self) -> crate::common::Reg<regs::YEARMON, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn DAYS(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn DAYS(self) -> crate::common::Reg<regs::DAYS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02usize) as _) }
     }
     #[inline(always)]
-    pub const fn HOURMIN(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn HOURMIN(self) -> crate::common::Reg<regs::HOURMIN, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn SECONDS(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn SECONDS(self) -> crate::common::Reg<regs::SECONDS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06usize) as _) }
     }
     #[inline(always)]
-    pub const fn ALM_YEARMON(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn ALM_YEARMON(self) -> crate::common::Reg<regs::ALM_YEARMON, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn ALM_DAYS(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn ALM_DAYS(self) -> crate::common::Reg<regs::ALM_DAYS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ausize) as _) }
     }
     #[inline(always)]
-    pub const fn ALM_HOURMIN(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn ALM_HOURMIN(self) -> crate::common::Reg<regs::ALM_HOURMIN, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn ALM_SECONDS(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn ALM_SECONDS(self) -> crate::common::Reg<regs::ALM_SECONDS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0eusize) as _) }
     }
     #[inline(always)]
-    pub const fn CTRL(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn CTRL(self) -> crate::common::Reg<regs::CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn STATUS(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn STATUS(self) -> crate::common::Reg<regs::STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x12usize) as _) }
     }
     #[inline(always)]
-    pub const fn ISR(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn ISR(self) -> crate::common::Reg<regs::ISR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn IER(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn IER(self) -> crate::common::Reg<regs::IER, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x16usize) as _) }
     }
     #[inline(always)]
-    pub const fn RTC_TEST2(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn RTC_TEST2(self) -> crate::common::Reg<regs::RTC_TEST2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[inline(always)]
-    pub const fn DST_HOUR(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn DST_HOUR(self) -> crate::common::Reg<regs::DST_HOUR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x22usize) as _) }
     }
     #[inline(always)]
-    pub const fn DST_MONTH(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn DST_MONTH(self) -> crate::common::Reg<regs::DST_MONTH, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[inline(always)]
-    pub const fn DST_DAY(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn DST_DAY(self) -> crate::common::Reg<regs::DST_DAY, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x26usize) as _) }
     }
     #[inline(always)]
-    pub const fn COMPEN(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn COMPEN(self) -> crate::common::Reg<regs::COMPEN, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
-    pub const fn SUBSECOND_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SUBSECOND_CTRL(
+        self,
+    ) -> crate::common::Reg<regs::SUBSECOND_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0800usize) as _) }
     }
     #[inline(always)]
-    pub const fn SUBSECOND_CNT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SUBSECOND_CNT(self) -> crate::common::Reg<regs::SUBSECOND_CNT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0804usize) as _) }
     }
     #[inline(always)]
-    pub const fn WAKE_TIMER_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn WAKE_TIMER_CTRL(
+        self,
+    ) -> crate::common::Reg<regs::WAKE_TIMER_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0c00usize) as _) }
     }
     #[inline(always)]
-    pub const fn WAKE_TIMER_CNT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn WAKE_TIMER_CNT(
+        self,
+    ) -> crate::common::Reg<regs::WAKE_TIMER_CNT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0c0cusize) as _) }
     }
 }

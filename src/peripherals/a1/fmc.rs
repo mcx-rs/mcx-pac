@@ -16,7 +16,7 @@ impl FMC {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn REMAP(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn REMAP(self) -> crate::common::Reg<regs::REMAP, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
 }

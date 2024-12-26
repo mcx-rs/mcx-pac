@@ -16,31 +16,31 @@ impl OSTIMER {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn EVTIMERL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EVTIMERL(self) -> crate::common::Reg<regs::EVTIMERL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn EVTIMERH(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EVTIMERH(self) -> crate::common::Reg<regs::EVTIMERH, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAPTURE_L(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAPTURE_L(self) -> crate::common::Reg<regs::CAPTURE_L, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAPTURE_H(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAPTURE_H(self) -> crate::common::Reg<regs::CAPTURE_H, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn MATCH_L(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MATCH_L(self) -> crate::common::Reg<regs::MATCH_L, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn MATCH_H(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MATCH_H(self) -> crate::common::Reg<regs::MATCH_H, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn OSEVENT_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn OSEVENT_CTRL(self) -> crate::common::Reg<regs::OSEVENT_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
 }

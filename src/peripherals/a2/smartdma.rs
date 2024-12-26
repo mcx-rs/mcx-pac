@@ -16,47 +16,47 @@ impl SMARTDMA {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn BOOTADR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn BOOTADR(self) -> crate::common::Reg<regs::BOOTADR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]
-    pub const fn CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CTRL(self) -> crate::common::Reg<regs::CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[inline(always)]
-    pub const fn PC(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PC(self) -> crate::common::Reg<regs::PC, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
-    pub const fn SP(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SP(self) -> crate::common::Reg<regs::SP, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[inline(always)]
-    pub const fn BREAK_ADDR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn BREAK_ADDR(self) -> crate::common::Reg<regs::BREAK_ADDR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[inline(always)]
-    pub const fn BREAK_VECT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn BREAK_VECT(self) -> crate::common::Reg<regs::BREAK_VECT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[inline(always)]
-    pub const fn EMER_VECT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EMER_VECT(self) -> crate::common::Reg<regs::EMER_VECT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[inline(always)]
-    pub const fn EMER_SEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EMER_SEL(self) -> crate::common::Reg<regs::EMER_SEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[inline(always)]
-    pub const fn ARM2EZH(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ARM2EZH(self) -> crate::common::Reg<regs::ARM2EZH, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[inline(always)]
-    pub const fn EZH2ARM(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EZH2ARM(self) -> crate::common::Reg<regs::EZH2ARM, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[inline(always)]
-    pub const fn PENDTRAP(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PENDTRAP(self) -> crate::common::Reg<regs::PENDTRAP, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
 }

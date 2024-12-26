@@ -16,7 +16,7 @@ impl CRC {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn DATA(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn DATA(self) -> crate::common::Reg<regs::DATA, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
@@ -44,7 +44,7 @@ impl CRC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03usize) as _) }
     }
     #[inline(always)]
-    pub const fn GPOLY(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn GPOLY(self) -> crate::common::Reg<regs::GPOLY, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
@@ -72,7 +72,7 @@ impl CRC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07usize) as _) }
     }
     #[inline(always)]
-    pub const fn CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CTRL(self) -> crate::common::Reg<regs::CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]

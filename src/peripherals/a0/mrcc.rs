@@ -16,219 +16,315 @@ impl MRCC {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_RST0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_GLB_RST0(self) -> crate::common::Reg<regs::MRCC_GLB_RST0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_RST0_SET(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_GLB_RST0_SET(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_GLB_RST0_SET, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_RST0_CLR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_GLB_RST0_CLR(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_GLB_RST0_CLR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_RST1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_GLB_RST1(self) -> crate::common::Reg<regs::MRCC_GLB_RST1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_RST1_SET(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_GLB_RST1_SET(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_GLB_RST1_SET, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_RST1_CLR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_GLB_RST1_CLR(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_GLB_RST1_CLR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_CC0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_GLB_CC0(self) -> crate::common::Reg<regs::MRCC_GLB_CC0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_CC0_SET(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_GLB_CC0_SET(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_GLB_CC0_SET, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_CC0_CLR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_GLB_CC0_CLR(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_GLB_CC0_CLR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_CC1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_GLB_CC1(self) -> crate::common::Reg<regs::MRCC_GLB_CC1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_CC1_SET(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_GLB_CC1_SET(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_GLB_CC1_SET, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_CC1_CLR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_GLB_CC1_CLR(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_GLB_CC1_CLR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_ACC0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_GLB_ACC0(self) -> crate::common::Reg<regs::MRCC_GLB_ACC0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_ACC1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_GLB_ACC1(self) -> crate::common::Reg<regs::MRCC_GLB_ACC1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_I3C0_FCLK_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_I3C0_FCLK_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_I3C0_FCLK_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa0usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_I3C0_FCLK_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_I3C0_FCLK_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_I3C0_FCLK_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_CTIMER0_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_CTIMER0_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_CTIMER0_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa8usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_CTIMER0_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_CTIMER0_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_CTIMER0_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xacusize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_CTIMER1_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_CTIMER1_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_CTIMER1_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb0usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_CTIMER1_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_CTIMER1_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_CTIMER1_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_CTIMER2_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_CTIMER2_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_CTIMER2_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb8usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_CTIMER2_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_CTIMER2_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_CTIMER2_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xbcusize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_WWDT0_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_WWDT0_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_WWDT0_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_LPI2C0_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_LPI2C0_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_LPI2C0_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc8usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_LPI2C0_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_LPI2C0_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_LPI2C0_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xccusize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_LPSPI0_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_LPSPI0_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_LPSPI0_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd0usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_LPSPI0_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_LPSPI0_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_LPSPI0_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_LPSPI1_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_LPSPI1_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_LPSPI1_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd8usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_LPSPI1_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_LPSPI1_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_LPSPI1_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xdcusize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_LPUART0_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_LPUART0_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_LPUART0_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe0usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_LPUART0_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_LPUART0_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_LPUART0_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_LPUART1_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_LPUART1_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_LPUART1_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe8usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_LPUART1_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_LPUART1_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_LPUART1_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xecusize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_LPUART2_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_LPUART2_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_LPUART2_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf0usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_LPUART2_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_LPUART2_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_LPUART2_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_USB0_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_USB0_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_USB0_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf8usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_LPTMR0_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_LPTMR0_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_LPTMR0_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_LPTMR0_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_LPTMR0_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_LPTMR0_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_OSTIMER0_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_OSTIMER0_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_OSTIMER0_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_ADC0_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_ADC0_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_ADC0_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0110usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_ADC0_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_ADC0_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_ADC0_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0114usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_CMP0_FUNC_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_CMP0_FUNC_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_CMP0_FUNC_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x011cusize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_CMP0_RR_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_CMP0_RR_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_CMP0_RR_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0120usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_CMP0_RR_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_CMP0_RR_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_CMP0_RR_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0124usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_CMP1_FUNC_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_CMP1_FUNC_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_CMP1_FUNC_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x012cusize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_CMP1_RR_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_CMP1_RR_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_CMP1_RR_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0130usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_CMP1_RR_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_CMP1_RR_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_CMP1_RR_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0134usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_DBG_TRACE_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_DBG_TRACE_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_DBG_TRACE_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0138usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_DBG_TRACE_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_DBG_TRACE_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_DBG_TRACE_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x013cusize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_CLKOUT_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_CLKOUT_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_CLKOUT_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0140usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_CLKOUT_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_CLKOUT_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_CLKOUT_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0144usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_SYSTICK_CLKSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_SYSTICK_CLKSEL(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_SYSTICK_CLKSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0148usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_SYSTICK_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_SYSTICK_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_SYSTICK_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x014cusize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_FRO_HF_DIV_CLKDIV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MRCC_FRO_HF_DIV_CLKDIV(
+        self,
+    ) -> crate::common::Reg<regs::MRCC_FRO_HF_DIV_CLKDIV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0154usize) as _) }
     }
 }

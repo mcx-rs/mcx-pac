@@ -146,218 +146,299 @@ impl ENET {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn MAC_CONFIGURATION(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_CONFIGURATION(
+        self,
+    ) -> crate::common::Reg<regs::MAC_CONFIGURATION, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_EXT_CONFIGURATION(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_EXT_CONFIGURATION(
+        self,
+    ) -> crate::common::Reg<regs::MAC_EXT_CONFIGURATION, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_PACKET_FILTER(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_PACKET_FILTER(
+        self,
+    ) -> crate::common::Reg<regs::MAC_PACKET_FILTER, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_WATCHDOG_TIMEOUT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_WATCHDOG_TIMEOUT(
+        self,
+    ) -> crate::common::Reg<regs::MAC_WATCHDOG_TIMEOUT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_VLAN_TAG_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_VLAN_TAG_CTRL(
+        self,
+    ) -> crate::common::Reg<regs::MAC_VLAN_TAG_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_VLAN_INCL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_VLAN_INCL(self) -> crate::common::Reg<regs::MAC_VLAN_INCL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_INNER_VLAN_INCL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_INNER_VLAN_INCL(
+        self,
+    ) -> crate::common::Reg<regs::MAC_INNER_VLAN_INCL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_TX_FLOW_CTRL_Q(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_TX_FLOW_CTRL_Q(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::MAC_TX_FLOW_CTRL_Q, crate::common::RW> {
         assert!(n < 1usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x70usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_RX_FLOW_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_RX_FLOW_CTRL(
+        self,
+    ) -> crate::common::Reg<regs::MAC_RX_FLOW_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_RXQ_CTRL4(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_RXQ_CTRL4(self) -> crate::common::Reg<regs::MAC_RXQ_CTRL4, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x94usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_RXQ_CTRL(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_RXQ_CTRL(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::MAC_RXQ_CTRL, crate::common::RW> {
         assert!(n < 3usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa0usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_INTERRUPT_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_INTERRUPT_STATUS(
+        self,
+    ) -> crate::common::Reg<regs::MAC_INTERRUPT_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb0usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_INTERRUPT_ENABLE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_INTERRUPT_ENABLE(
+        self,
+    ) -> crate::common::Reg<regs::MAC_INTERRUPT_ENABLE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_RX_TX_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_RX_TX_STATUS(
+        self,
+    ) -> crate::common::Reg<regs::MAC_RX_TX_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb8usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_PMT_CONTROL_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_PMT_CONTROL_STATUS(
+        self,
+    ) -> crate::common::Reg<regs::MAC_PMT_CONTROL_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_RWK_PACKET_FILTER(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_RWK_PACKET_FILTER(
+        self,
+    ) -> crate::common::Reg<regs::MAC_RWK_PACKET_FILTER, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_LPI_CONTROL_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_LPI_CONTROL_STATUS(
+        self,
+    ) -> crate::common::Reg<regs::MAC_LPI_CONTROL_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd0usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_LPI_TIMERS_CONTROL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_LPI_TIMERS_CONTROL(
+        self,
+    ) -> crate::common::Reg<regs::MAC_LPI_TIMERS_CONTROL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_LPI_ENTRY_TIMER(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_LPI_ENTRY_TIMER(
+        self,
+    ) -> crate::common::Reg<regs::MAC_LPI_ENTRY_TIMER, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd8usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_ONEUS_TIC_COUNTER(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_ONEUS_TIC_COUNTER(
+        self,
+    ) -> crate::common::Reg<regs::MAC_ONEUS_TIC_COUNTER, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xdcusize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_VERSION(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_VERSION(self) -> crate::common::Reg<regs::MAC_VERSION, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0110usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_DEBUG(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_DEBUG(self) -> crate::common::Reg<regs::MAC_DEBUG, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0114usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_HW_FEAT(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_HW_FEAT(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::MAC_HW_FEAT, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x011cusize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_MDIO_ADDRESS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_MDIO_ADDRESS(
+        self,
+    ) -> crate::common::Reg<regs::MAC_MDIO_ADDRESS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_MDIO_DATA(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_MDIO_DATA(self) -> crate::common::Reg<regs::MAC_MDIO_DATA, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0204usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_CSR_SW_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_CSR_SW_CTRL(
+        self,
+    ) -> crate::common::Reg<regs::MAC_CSR_SW_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0230usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_ADDRESS0_HIGH(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_ADDRESS0_HIGH(
+        self,
+    ) -> crate::common::Reg<regs::MAC_ADDRESS0_HIGH, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0300usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_ADDRESS0_LOW(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_ADDRESS0_LOW(
+        self,
+    ) -> crate::common::Reg<regs::MAC_ADDRESS0_LOW, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0304usize) as _) }
     }
     #[inline(always)]
-    pub const fn INDIR_ACCESS_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn INDIR_ACCESS_CTRL(
+        self,
+    ) -> crate::common::Reg<regs::INDIR_ACCESS_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0a70usize) as _) }
     }
     #[inline(always)]
-    pub const fn INDIR_ACCESS_DATA(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn INDIR_ACCESS_DATA(
+        self,
+    ) -> crate::common::Reg<regs::INDIR_ACCESS_DATA, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0a74usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_TIMESTAMP_CONTROL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_TIMESTAMP_CONTROL(
+        self,
+    ) -> crate::common::Reg<regs::MAC_TIMESTAMP_CONTROL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b00usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_SUB_SECOND_INCREMENT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_SUB_SECOND_INCREMENT(
+        self,
+    ) -> crate::common::Reg<regs::MAC_SUB_SECOND_INCREMENT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b04usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_SYSTEM_TIME_SECONDS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_SYSTEM_TIME_SECONDS(
+        self,
+    ) -> crate::common::Reg<regs::MAC_SYSTEM_TIME_SECONDS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b08usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_SYSTEM_TIME_NANOSECONDS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_SYSTEM_TIME_NANOSECONDS(
+        self,
+    ) -> crate::common::Reg<regs::MAC_SYSTEM_TIME_NANOSECONDS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b0cusize) as _) }
     }
     #[inline(always)]
     pub const fn MAC_SYSTEM_TIME_SECONDS_UPDATE(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::MAC_SYSTEM_TIME_SECONDS_UPDATE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b10usize) as _) }
     }
     #[inline(always)]
     pub const fn MAC_SYSTEM_TIME_NANOSECONDS_UPDATE(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::MAC_SYSTEM_TIME_NANOSECONDS_UPDATE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b14usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_TIMESTAMP_ADDEND(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_TIMESTAMP_ADDEND(
+        self,
+    ) -> crate::common::Reg<regs::MAC_TIMESTAMP_ADDEND, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b18usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_TIMESTAMP_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_TIMESTAMP_STATUS(
+        self,
+    ) -> crate::common::Reg<regs::MAC_TIMESTAMP_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b20usize) as _) }
     }
     #[inline(always)]
     pub const fn MAC_TX_TIMESTAMP_STATUS_NANOSECONDS(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::MAC_TX_TIMESTAMP_STATUS_NANOSECONDS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b30usize) as _) }
     }
     #[inline(always)]
     pub const fn MAC_TX_TIMESTAMP_STATUS_SECONDS(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::MAC_TX_TIMESTAMP_STATUS_SECONDS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b34usize) as _) }
     }
     #[inline(always)]
     pub const fn MAC_TIMESTAMP_INGRESS_CORR_NANOSECOND(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::MAC_TIMESTAMP_INGRESS_CORR_NANOSECOND, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b58usize) as _) }
     }
     #[inline(always)]
     pub const fn MAC_TIMESTAMP_EGRESS_CORR_NANOSECOND(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::MAC_TIMESTAMP_EGRESS_CORR_NANOSECOND, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b5cusize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_TIMESTAMP_INGRESS_LATENCY(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_TIMESTAMP_INGRESS_LATENCY(
+        self,
+    ) -> crate::common::Reg<regs::MAC_TIMESTAMP_INGRESS_LATENCY, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b68usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_TIMESTAMP_EGRESS_LATENCY(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_TIMESTAMP_EGRESS_LATENCY(
+        self,
+    ) -> crate::common::Reg<regs::MAC_TIMESTAMP_EGRESS_LATENCY, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b6cusize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_PPS_CONTROL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAC_PPS_CONTROL(
+        self,
+    ) -> crate::common::Reg<regs::MAC_PPS_CONTROL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b70usize) as _) }
     }
     #[inline(always)]
-    pub const fn PPS0_TARGET_TIME_SECONDS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PPS0_TARGET_TIME_SECONDS(
+        self,
+    ) -> crate::common::Reg<regs::PPS0_TARGET_TIME_SECONDS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b80usize) as _) }
     }
     #[inline(always)]
-    pub const fn PPS0_TARGET_TIME_NANOSECONDS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PPS0_TARGET_TIME_NANOSECONDS(
+        self,
+    ) -> crate::common::Reg<regs::PPS0_TARGET_TIME_NANOSECONDS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b84usize) as _) }
     }
     #[inline(always)]
-    pub const fn MTL_OPERATION_MODE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MTL_OPERATION_MODE(
+        self,
+    ) -> crate::common::Reg<regs::MTL_OPERATION_MODE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0c00usize) as _) }
     }
     #[inline(always)]
-    pub const fn MTL_INTERRUPT_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MTL_INTERRUPT_STATUS(
+        self,
+    ) -> crate::common::Reg<regs::MTL_INTERRUPT_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0c20usize) as _) }
     }
     #[inline(always)]
-    pub const fn MTL_RXQ_DMA_MAP0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MTL_RXQ_DMA_MAP0(
+        self,
+    ) -> crate::common::Reg<regs::MTL_RXQ_DMA_MAP0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0c30usize) as _) }
     }
     #[inline(always)]
@@ -366,19 +447,25 @@ impl ENET {
         unsafe { MTL_QUEUE::from_ptr(self.ptr.add(0x0d00usize + n * 128usize) as _) }
     }
     #[inline(always)]
-    pub const fn DMA_MODE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn DMA_MODE(self) -> crate::common::Reg<regs::DMA_MODE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1000usize) as _) }
     }
     #[inline(always)]
-    pub const fn DMA_SYSBUS_MODE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn DMA_SYSBUS_MODE(
+        self,
+    ) -> crate::common::Reg<regs::DMA_SYSBUS_MODE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1004usize) as _) }
     }
     #[inline(always)]
-    pub const fn DMA_INTERRUPT_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn DMA_INTERRUPT_STATUS(
+        self,
+    ) -> crate::common::Reg<regs::DMA_INTERRUPT_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1008usize) as _) }
     }
     #[inline(always)]
-    pub const fn DMA_DEBUG_STATUS0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn DMA_DEBUG_STATUS0(
+        self,
+    ) -> crate::common::Reg<regs::DMA_DEBUG_STATUS0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x100cusize) as _) }
     }
     #[inline(always)]

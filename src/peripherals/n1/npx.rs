@@ -42,19 +42,19 @@ impl NPX {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn NPXCR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn NPXCR(self) -> crate::common::Reg<regs::NPXCR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn NPXSR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn NPXSR(self) -> crate::common::Reg<regs::NPXSR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn CACMSK(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CACMSK(self) -> crate::common::Reg<regs::CACMSK, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn REMAP(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn REMAP(self) -> crate::common::Reg<regs::REMAP, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]

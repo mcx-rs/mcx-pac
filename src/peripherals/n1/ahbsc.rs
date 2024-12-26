@@ -16,20 +16,30 @@ impl AHBSC {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn FLASH00_MEM_RULE(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FLASH00_MEM_RULE(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::FLASH00_MEM_RULE, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn FLASH02_MEM_RULE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FLASH02_MEM_RULE(
+        self,
+    ) -> crate::common::Reg<regs::FLASH02_MEM_RULE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[inline(always)]
-    pub const fn FLASH03_MEM_RULE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FLASH03_MEM_RULE(
+        self,
+    ) -> crate::common::Reg<regs::FLASH03_MEM_RULE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[inline(always)]
-    pub const fn ROM_MEM_RULE(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ROM_MEM_RULE(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::ROM_MEM_RULE, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize + n * 4usize) as _) }
     }
@@ -39,122 +49,148 @@ impl AHBSC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn RAMA_MEM_RULE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn RAMA_MEM_RULE(self) -> crate::common::Reg<regs::RAMA_MEM_RULE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa0usize) as _) }
     }
     #[inline(always)]
-    pub const fn RAMB_MEM_RULE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn RAMB_MEM_RULE(self) -> crate::common::Reg<regs::RAMB_MEM_RULE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize) as _) }
     }
     #[inline(always)]
-    pub const fn RAMC_MEM_RULE(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn RAMC_MEM_RULE(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::RAMC_MEM_RULE, crate::common::RW> {
         assert!(n < 2usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe0usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn RAMD_MEM_RULE(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn RAMD_MEM_RULE(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::RAMD_MEM_RULE, crate::common::RW> {
         assert!(n < 2usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn RAME_MEM_RULE(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn RAME_MEM_RULE(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::RAME_MEM_RULE, crate::common::RW> {
         assert!(n < 2usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0120usize + n * 4usize) as _) }
     }
     #[inline(always)]
     pub const fn APB_PERIPHERAL_GROUP0_MEM_RULE0(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::APB_PERIPHERAL_GROUP0_MEM_RULE0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01a0usize) as _) }
     }
     #[inline(always)]
     pub const fn APB_PERIPHERAL_GROUP0_MEM_RULE1(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::APB_PERIPHERAL_GROUP0_MEM_RULE1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01a4usize) as _) }
     }
     #[inline(always)]
     pub const fn APB_PERIPHERAL_GROUP0_MEM_RULE2(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::APB_PERIPHERAL_GROUP0_MEM_RULE2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01a8usize) as _) }
     }
     #[inline(always)]
     pub const fn APB_PERIPHERAL_GROUP0_MEM_RULE3(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::APB_PERIPHERAL_GROUP0_MEM_RULE3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01acusize) as _) }
     }
     #[inline(always)]
     pub const fn APB_PERIPHERAL_GROUP1_MEM_RULE0(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::APB_PERIPHERAL_GROUP1_MEM_RULE0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01b0usize) as _) }
     }
     #[inline(always)]
     pub const fn APB_PERIPHERAL_GROUP1_MEM_RULE1(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::APB_PERIPHERAL_GROUP1_MEM_RULE1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01b4usize) as _) }
     }
     #[inline(always)]
     pub const fn APB_PERIPHERAL_GROUP1_MEM_RULE2(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::APB_PERIPHERAL_GROUP1_MEM_RULE2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01bcusize) as _) }
     }
     #[inline(always)]
-    pub const fn AIPS_BRIDGE_GROUP0_MEM_RULE0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AIPS_BRIDGE_GROUP0_MEM_RULE0(
+        self,
+    ) -> crate::common::Reg<regs::AIPS_BRIDGE_GROUP0_MEM_RULE0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c0usize) as _) }
     }
     #[inline(always)]
-    pub const fn AIPS_BRIDGE_GROUP0_MEM_RULE1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AIPS_BRIDGE_GROUP0_MEM_RULE1(
+        self,
+    ) -> crate::common::Reg<regs::AIPS_BRIDGE_GROUP0_MEM_RULE1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c4usize) as _) }
     }
     #[inline(always)]
-    pub const fn AIPS_BRIDGE_GROUP0_MEM_RULE2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AIPS_BRIDGE_GROUP0_MEM_RULE2(
+        self,
+    ) -> crate::common::Reg<regs::AIPS_BRIDGE_GROUP0_MEM_RULE2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c8usize) as _) }
     }
     #[inline(always)]
-    pub const fn AIPS_BRIDGE_GROUP0_MEM_RULE3(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AIPS_BRIDGE_GROUP0_MEM_RULE3(
+        self,
+    ) -> crate::common::Reg<regs::AIPS_BRIDGE_GROUP0_MEM_RULE3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01ccusize) as _) }
     }
     #[inline(always)]
     pub const fn AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE0(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE0, crate::common::RW>
+    {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01d0usize) as _) }
     }
     #[inline(always)]
     pub const fn AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE1(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE1, crate::common::RW>
+    {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01d4usize) as _) }
     }
     #[inline(always)]
     pub const fn AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2, crate::common::RW>
+    {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01d8usize) as _) }
     }
     #[inline(always)]
-    pub const fn AIPS_BRIDGE_GROUP1_MEM_RULE0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AIPS_BRIDGE_GROUP1_MEM_RULE0(
+        self,
+    ) -> crate::common::Reg<regs::AIPS_BRIDGE_GROUP1_MEM_RULE0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01e0usize) as _) }
     }
     #[inline(always)]
-    pub const fn AIPS_BRIDGE_GROUP1_MEM_RULE1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AIPS_BRIDGE_GROUP1_MEM_RULE1(
+        self,
+    ) -> crate::common::Reg<regs::AIPS_BRIDGE_GROUP1_MEM_RULE1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01e4usize) as _) }
     }
     #[inline(always)]
     pub const fn AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0, crate::common::RW>
+    {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01f0usize) as _) }
     }
     #[inline(always)]
     pub const fn AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE1(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE1, crate::common::RW>
+    {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01f4usize) as _) }
     }
     #[inline(always)]
@@ -164,49 +200,69 @@ impl AHBSC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01f8usize) as _) }
     }
     #[inline(always)]
-    pub const fn AIPS_BRIDGE_GROUP2_MEM_RULE0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AIPS_BRIDGE_GROUP2_MEM_RULE0(
+        self,
+    ) -> crate::common::Reg<regs::AIPS_BRIDGE_GROUP2_MEM_RULE0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize) as _) }
     }
     #[inline(always)]
-    pub const fn AIPS_BRIDGE_GROUP2_MEM_RULE1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AIPS_BRIDGE_GROUP2_MEM_RULE1(
+        self,
+    ) -> crate::common::Reg<regs::AIPS_BRIDGE_GROUP2_MEM_RULE1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0204usize) as _) }
     }
     #[inline(always)]
-    pub const fn AIPS_BRIDGE_GROUP3_MEM_RULE0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AIPS_BRIDGE_GROUP3_MEM_RULE0(
+        self,
+    ) -> crate::common::Reg<regs::AIPS_BRIDGE_GROUP3_MEM_RULE0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0220usize) as _) }
     }
     #[inline(always)]
-    pub const fn AIPS_BRIDGE_GROUP3_MEM_RULE1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AIPS_BRIDGE_GROUP3_MEM_RULE1(
+        self,
+    ) -> crate::common::Reg<regs::AIPS_BRIDGE_GROUP3_MEM_RULE1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0224usize) as _) }
     }
     #[inline(always)]
-    pub const fn AIPS_BRIDGE_GROUP3_MEM_RULE2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AIPS_BRIDGE_GROUP3_MEM_RULE2(
+        self,
+    ) -> crate::common::Reg<regs::AIPS_BRIDGE_GROUP3_MEM_RULE2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0228usize) as _) }
     }
     #[inline(always)]
-    pub const fn AIPS_BRIDGE_GROUP3_MEM_RULE3(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AIPS_BRIDGE_GROUP3_MEM_RULE3(
+        self,
+    ) -> crate::common::Reg<regs::AIPS_BRIDGE_GROUP3_MEM_RULE3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x022cusize) as _) }
     }
     #[inline(always)]
-    pub const fn AIPS_BRIDGE_GROUP4_MEM_RULE0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AIPS_BRIDGE_GROUP4_MEM_RULE0(
+        self,
+    ) -> crate::common::Reg<regs::AIPS_BRIDGE_GROUP4_MEM_RULE0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0240usize) as _) }
     }
     #[inline(always)]
-    pub const fn AIPS_BRIDGE_GROUP4_MEM_RULE1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AIPS_BRIDGE_GROUP4_MEM_RULE1(
+        self,
+    ) -> crate::common::Reg<regs::AIPS_BRIDGE_GROUP4_MEM_RULE1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0244usize) as _) }
     }
     #[inline(always)]
-    pub const fn AIPS_BRIDGE_GROUP4_MEM_RULE2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AIPS_BRIDGE_GROUP4_MEM_RULE2(
+        self,
+    ) -> crate::common::Reg<regs::AIPS_BRIDGE_GROUP4_MEM_RULE2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0248usize) as _) }
     }
     #[inline(always)]
-    pub const fn AIPS_BRIDGE_GROUP4_MEM_RULE3(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AIPS_BRIDGE_GROUP4_MEM_RULE3(
+        self,
+    ) -> crate::common::Reg<regs::AIPS_BRIDGE_GROUP4_MEM_RULE3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x024cusize) as _) }
     }
     #[inline(always)]
     pub const fn AHB_SECURE_CTRL_PERIPHERAL_RULE0(
         self,
-    ) -> crate::common::Reg<u32, crate::common::RW> {
+    ) -> crate::common::Reg<regs::AHB_SECURE_CTRL_PERIPHERAL_RULE0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0250usize) as _) }
     }
     #[inline(always)]
@@ -220,7 +276,9 @@ impl AHBSC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e80usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SEC_VIO_INFO_VALID(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SEC_VIO_INFO_VALID(
+        self,
+    ) -> crate::common::Reg<regs::SEC_VIO_INFO_VALID, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0f00usize) as _) }
     }
     #[inline(always)]
@@ -229,23 +287,29 @@ impl AHBSC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0f80usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MASTER_SEC_LEVEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MASTER_SEC_LEVEL(
+        self,
+    ) -> crate::common::Reg<regs::MASTER_SEC_LEVEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fd0usize) as _) }
     }
     #[inline(always)]
-    pub const fn MASTER_SEC_ANTI_POL_REG(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MASTER_SEC_ANTI_POL_REG(
+        self,
+    ) -> crate::common::Reg<regs::MASTER_SEC_ANTI_POL_REG, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fd4usize) as _) }
     }
     #[inline(always)]
-    pub const fn CPU0_LOCK_REG(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CPU0_LOCK_REG(self) -> crate::common::Reg<regs::CPU0_LOCK_REG, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fecusize) as _) }
     }
     #[inline(always)]
-    pub const fn MISC_CTRL_DP_REG(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MISC_CTRL_DP_REG(
+        self,
+    ) -> crate::common::Reg<regs::MISC_CTRL_DP_REG, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ff8usize) as _) }
     }
     #[inline(always)]
-    pub const fn MISC_CTRL_REG(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MISC_CTRL_REG(self) -> crate::common::Reg<regs::MISC_CTRL_REG, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ffcusize) as _) }
     }
 }

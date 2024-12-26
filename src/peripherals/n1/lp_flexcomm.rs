@@ -16,11 +16,11 @@ impl LP_FLEXCOMM {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn ISTAT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ISTAT(self) -> crate::common::Reg<regs::ISTAT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ff4usize) as _) }
     }
     #[inline(always)]
-    pub const fn PSELID(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PSELID(self) -> crate::common::Reg<regs::PSELID, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ff8usize) as _) }
     }
 }

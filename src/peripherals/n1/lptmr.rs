@@ -16,19 +16,19 @@ impl LPTMR {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn CSR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CSR(self) -> crate::common::Reg<regs::CSR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn PSR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PSR(self) -> crate::common::Reg<regs::PSR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn CMR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CMR(self) -> crate::common::Reg<regs::CMR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn CNR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CNR(self) -> crate::common::Reg<regs::CNR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
 }

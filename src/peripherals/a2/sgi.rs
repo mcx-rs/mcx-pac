@@ -16,311 +16,331 @@ impl SGI {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn SGI_DATIN0A(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATIN0A(self) -> crate::common::Reg<regs::SGI_DATIN0A, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN0B(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATIN0B(self) -> crate::common::Reg<regs::SGI_DATIN0B, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0204usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN0C(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATIN0C(self) -> crate::common::Reg<regs::SGI_DATIN0C, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0208usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN0D(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATIN0D(self) -> crate::common::Reg<regs::SGI_DATIN0D, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x020cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN1A(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATIN1A(self) -> crate::common::Reg<regs::SGI_DATIN1A, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0210usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN1B(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATIN1B(self) -> crate::common::Reg<regs::SGI_DATIN1B, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0214usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN1C(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATIN1C(self) -> crate::common::Reg<regs::SGI_DATIN1C, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0218usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN1D(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATIN1D(self) -> crate::common::Reg<regs::SGI_DATIN1D, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x021cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN2A(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATIN2A(self) -> crate::common::Reg<regs::SGI_DATIN2A, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0220usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN2B(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATIN2B(self) -> crate::common::Reg<regs::SGI_DATIN2B, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0224usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN2C(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATIN2C(self) -> crate::common::Reg<regs::SGI_DATIN2C, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0228usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN2D(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATIN2D(self) -> crate::common::Reg<regs::SGI_DATIN2D, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x022cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN3A(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATIN3A(self) -> crate::common::Reg<regs::SGI_DATIN3A, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0230usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN3B(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATIN3B(self) -> crate::common::Reg<regs::SGI_DATIN3B, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0234usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN3C(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATIN3C(self) -> crate::common::Reg<regs::SGI_DATIN3C, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0238usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN3D(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATIN3D(self) -> crate::common::Reg<regs::SGI_DATIN3D, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x023cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY0A(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY0A(self) -> crate::common::Reg<regs::SGI_KEY0A, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0240usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY0B(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY0B(self) -> crate::common::Reg<regs::SGI_KEY0B, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0244usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY0C(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY0C(self) -> crate::common::Reg<regs::SGI_KEY0C, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0248usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY0D(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY0D(self) -> crate::common::Reg<regs::SGI_KEY0D, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x024cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY1A(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY1A(self) -> crate::common::Reg<regs::SGI_KEY1A, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0250usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY1B(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY1B(self) -> crate::common::Reg<regs::SGI_KEY1B, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0254usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY1C(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY1C(self) -> crate::common::Reg<regs::SGI_KEY1C, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0258usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY1D(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY1D(self) -> crate::common::Reg<regs::SGI_KEY1D, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x025cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY2A(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY2A(self) -> crate::common::Reg<regs::SGI_KEY2A, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0260usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY2B(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY2B(self) -> crate::common::Reg<regs::SGI_KEY2B, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0264usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY2C(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY2C(self) -> crate::common::Reg<regs::SGI_KEY2C, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0268usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY2D(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY2D(self) -> crate::common::Reg<regs::SGI_KEY2D, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x026cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY3A(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY3A(self) -> crate::common::Reg<regs::SGI_KEY3A, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0270usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY3B(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY3B(self) -> crate::common::Reg<regs::SGI_KEY3B, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0274usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY3C(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY3C(self) -> crate::common::Reg<regs::SGI_KEY3C, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0278usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY3D(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY3D(self) -> crate::common::Reg<regs::SGI_KEY3D, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x027cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY4A(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY4A(self) -> crate::common::Reg<regs::SGI_KEY4A, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0280usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY4B(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY4B(self) -> crate::common::Reg<regs::SGI_KEY4B, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0284usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY4C(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY4C(self) -> crate::common::Reg<regs::SGI_KEY4C, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0288usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY4D(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY4D(self) -> crate::common::Reg<regs::SGI_KEY4D, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x028cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY5A(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY5A(self) -> crate::common::Reg<regs::SGI_KEY5A, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0290usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY5B(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY5B(self) -> crate::common::Reg<regs::SGI_KEY5B, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0294usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY5C(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY5C(self) -> crate::common::Reg<regs::SGI_KEY5C, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0298usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY5D(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY5D(self) -> crate::common::Reg<regs::SGI_KEY5D, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x029cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY6A(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY6A(self) -> crate::common::Reg<regs::SGI_KEY6A, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02a0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY6B(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY6B(self) -> crate::common::Reg<regs::SGI_KEY6B, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02a4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY6C(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY6C(self) -> crate::common::Reg<regs::SGI_KEY6C, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02a8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY6D(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY6D(self) -> crate::common::Reg<regs::SGI_KEY6D, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02acusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY7A(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY7A(self) -> crate::common::Reg<regs::SGI_KEY7A, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02b0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY7B(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY7B(self) -> crate::common::Reg<regs::SGI_KEY7B, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02b4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY7C(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY7C(self) -> crate::common::Reg<regs::SGI_KEY7C, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02b8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY7D(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY7D(self) -> crate::common::Reg<regs::SGI_KEY7D, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02bcusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATOUTA(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATOUTA(self) -> crate::common::Reg<regs::SGI_DATOUTA, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02c0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATOUTB(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATOUTB(self) -> crate::common::Reg<regs::SGI_DATOUTB, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02c4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATOUTC(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATOUTC(self) -> crate::common::Reg<regs::SGI_DATOUTC, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02c8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATOUTD(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DATOUTD(self) -> crate::common::Reg<regs::SGI_DATOUTD, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02ccusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_STATUS(self) -> crate::common::Reg<regs::SGI_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0c00usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_COUNT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_COUNT(self) -> crate::common::Reg<regs::SGI_COUNT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0c04usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEYCHK(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEYCHK(self) -> crate::common::Reg<regs::SGI_KEYCHK, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0c08usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_CTRL(self) -> crate::common::Reg<regs::SGI_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d00usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_CTRL2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_CTRL2(self) -> crate::common::Reg<regs::SGI_CTRL2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d04usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DUMMY_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_DUMMY_CTRL(
+        self,
+    ) -> crate::common::Reg<regs::SGI_DUMMY_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d08usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_SFR_SW_MASK(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_SFR_SW_MASK(
+        self,
+    ) -> crate::common::Reg<regs::SGI_SFR_SW_MASK, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_SFRSEED(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_SFRSEED(self) -> crate::common::Reg<regs::SGI_SFRSEED, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d10usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_SHA2_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_SHA2_CTRL(self) -> crate::common::Reg<regs::SGI_SHA2_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d14usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_SHA_FIFO(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_SHA_FIFO(self) -> crate::common::Reg<regs::SGI_SHA_FIFO, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d18usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_CONFIG(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_CONFIG(self) -> crate::common::Reg<regs::SGI_CONFIG, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d1cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_CONFIG2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_CONFIG2(self) -> crate::common::Reg<regs::SGI_CONFIG2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d20usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_AUTO_MODE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_AUTO_MODE(self) -> crate::common::Reg<regs::SGI_AUTO_MODE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d24usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_AUTO_DMA_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_AUTO_DMA_CTRL(
+        self,
+    ) -> crate::common::Reg<regs::SGI_AUTO_DMA_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d28usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_PRNG_SW_SEED(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_PRNG_SW_SEED(
+        self,
+    ) -> crate::common::Reg<regs::SGI_PRNG_SW_SEED, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d30usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY_CTRL(self) -> crate::common::Reg<regs::SGI_KEY_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d40usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY_WRAP(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_KEY_WRAP(self) -> crate::common::Reg<regs::SGI_KEY_WRAP, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d50usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_VERSION(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_VERSION(self) -> crate::common::Reg<regs::SGI_VERSION, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0f08usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_ACCESS_ERR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_ACCESS_ERR(
+        self,
+    ) -> crate::common::Reg<regs::SGI_ACCESS_ERR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fc0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_ACCESS_ERR_CLR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_ACCESS_ERR_CLR(
+        self,
+    ) -> crate::common::Reg<regs::SGI_ACCESS_ERR_CLR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fc4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_INT_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_INT_STATUS(
+        self,
+    ) -> crate::common::Reg<regs::SGI_INT_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fe0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_INT_ENABLE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_INT_ENABLE(
+        self,
+    ) -> crate::common::Reg<regs::SGI_INT_ENABLE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fe4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_INT_STATUS_CLR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_INT_STATUS_CLR(
+        self,
+    ) -> crate::common::Reg<regs::SGI_INT_STATUS_CLR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fe8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_INT_STATUS_SET(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_INT_STATUS_SET(
+        self,
+    ) -> crate::common::Reg<regs::SGI_INT_STATUS_SET, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fecusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_MODULE_ID(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SGI_MODULE_ID(self) -> crate::common::Reg<regs::SGI_MODULE_ID, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ffcusize) as _) }
     }
 }

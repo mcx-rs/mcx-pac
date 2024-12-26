@@ -16,35 +16,35 @@ impl RTC {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn TSR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn TSR(self) -> crate::common::Reg<regs::TSR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn TPR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn TPR(self) -> crate::common::Reg<regs::TPR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn TAR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn TAR(self) -> crate::common::Reg<regs::TAR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn TCR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn TCR(self) -> crate::common::Reg<regs::TCR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CR(self) -> crate::common::Reg<regs::CR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn SR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SR(self) -> crate::common::Reg<regs::SR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn LR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn LR(self) -> crate::common::Reg<regs::LR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
-    pub const fn IER(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn IER(self) -> crate::common::Reg<regs::IER, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
 }

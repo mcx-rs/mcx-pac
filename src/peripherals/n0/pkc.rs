@@ -16,107 +16,123 @@ impl PKC {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn PKC_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_STATUS(self) -> crate::common::Reg<regs::PKC_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_CTRL(self) -> crate::common::Reg<regs::PKC_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_CFG(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_CFG(self) -> crate::common::Reg<regs::PKC_CFG, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_MODE1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_MODE1(self) -> crate::common::Reg<regs::PKC_MODE1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_XYPTR1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_XYPTR1(self) -> crate::common::Reg<regs::PKC_XYPTR1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_ZRPTR1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_ZRPTR1(self) -> crate::common::Reg<regs::PKC_ZRPTR1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_LEN1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_LEN1(self) -> crate::common::Reg<regs::PKC_LEN1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_MODE2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_MODE2(self) -> crate::common::Reg<regs::PKC_MODE2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_XYPTR2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_XYPTR2(self) -> crate::common::Reg<regs::PKC_XYPTR2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_ZRPTR2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_ZRPTR2(self) -> crate::common::Reg<regs::PKC_ZRPTR2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_LEN2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_LEN2(self) -> crate::common::Reg<regs::PKC_LEN2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_UPTR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_UPTR(self) -> crate::common::Reg<regs::PKC_UPTR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_UPTRT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_UPTRT(self) -> crate::common::Reg<regs::PKC_UPTRT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_ULEN(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_ULEN(self) -> crate::common::Reg<regs::PKC_ULEN, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_MCDATA(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_MCDATA(self) -> crate::common::Reg<regs::PKC_MCDATA, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_VERSION(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_VERSION(self) -> crate::common::Reg<regs::PKC_VERSION, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_SOFT_RST(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_SOFT_RST(self) -> crate::common::Reg<regs::PKC_SOFT_RST, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fb0usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_ACCESS_ERR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_ACCESS_ERR(
+        self,
+    ) -> crate::common::Reg<regs::PKC_ACCESS_ERR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fc0usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_ACCESS_ERR_CLR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_ACCESS_ERR_CLR(
+        self,
+    ) -> crate::common::Reg<regs::PKC_ACCESS_ERR_CLR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fc4usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_INT_CLR_ENABLE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_INT_CLR_ENABLE(
+        self,
+    ) -> crate::common::Reg<regs::PKC_INT_CLR_ENABLE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fd8usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_INT_SET_ENABLE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_INT_SET_ENABLE(
+        self,
+    ) -> crate::common::Reg<regs::PKC_INT_SET_ENABLE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fdcusize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_INT_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_INT_STATUS(
+        self,
+    ) -> crate::common::Reg<regs::PKC_INT_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fe0usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_INT_ENABLE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_INT_ENABLE(
+        self,
+    ) -> crate::common::Reg<regs::PKC_INT_ENABLE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fe4usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_INT_CLR_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_INT_CLR_STATUS(
+        self,
+    ) -> crate::common::Reg<regs::PKC_INT_CLR_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fe8usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_INT_SET_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_INT_SET_STATUS(
+        self,
+    ) -> crate::common::Reg<regs::PKC_INT_SET_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fecusize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_MODULE_ID(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PKC_MODULE_ID(self) -> crate::common::Reg<regs::PKC_MODULE_ID, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ffcusize) as _) }
     }
 }

@@ -16,35 +16,35 @@ impl SLCD {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn LCD_GCR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn LCD_GCR(self) -> crate::common::Reg<regs::LCD_GCR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn LCD_AR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn LCD_AR(self) -> crate::common::Reg<regs::LCD_AR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn LCD_FDCR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn LCD_FDCR(self) -> crate::common::Reg<regs::LCD_FDCR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn LCD_FDSR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn LCD_FDSR(self) -> crate::common::Reg<regs::LCD_FDSR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn LCD_PEN0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn LCD_PEN0(self) -> crate::common::Reg<regs::LCD_PEN0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn LCD_PEN1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn LCD_PEN1(self) -> crate::common::Reg<regs::LCD_PEN1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn LCD_BPEN0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn LCD_BPEN0(self) -> crate::common::Reg<regs::LCD_BPEN0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
-    pub const fn LCD_BPEN1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn LCD_BPEN1(self) -> crate::common::Reg<regs::LCD_BPEN1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[inline(always)]

@@ -16,19 +16,19 @@ impl FMU {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn FSTAT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FSTAT(self) -> crate::common::Reg<regs::FSTAT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn FCNFG(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FCNFG(self) -> crate::common::Reg<regs::FCNFG, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn FCTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FCTRL(self) -> crate::common::Reg<regs::FCTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn FCCOB(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FCCOB(self, n: usize) -> crate::common::Reg<regs::FCCOB, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize + n * 4usize) as _) }
     }

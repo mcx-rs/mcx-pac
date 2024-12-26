@@ -16,15 +16,15 @@ impl VREF {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn VERID(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn VERID(self) -> crate::common::Reg<regs::VERID, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn CSR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CSR(self) -> crate::common::Reg<regs::CSR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn UTRIM(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn UTRIM(self) -> crate::common::Reg<regs::UTRIM, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
 }

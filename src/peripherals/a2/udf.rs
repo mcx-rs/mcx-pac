@@ -16,19 +16,19 @@ impl UDF {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn UDF_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn UDF_CTRL(self) -> crate::common::Reg<regs::UDF_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn UDF_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn UDF_STATUS(self) -> crate::common::Reg<regs::UDF_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn UDF_WR_DATA(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn UDF_WR_DATA(self) -> crate::common::Reg<regs::UDF_WR_DATA, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn UDF_RD_DATA(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn UDF_RD_DATA(self) -> crate::common::Reg<regs::UDF_RD_DATA, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
 }

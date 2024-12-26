@@ -16,43 +16,43 @@ impl GDET {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn GDET_CONF_0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn GDET_CONF_0(self) -> crate::common::Reg<regs::GDET_CONF_0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn GDET_CONF_1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn GDET_CONF_1(self) -> crate::common::Reg<regs::GDET_CONF_1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn GDET_ENABLE1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn GDET_ENABLE1(self) -> crate::common::Reg<regs::GDET_ENABLE1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn GDET_CONF_2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn GDET_CONF_2(self) -> crate::common::Reg<regs::GDET_CONF_2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn GDET_CONF_3(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn GDET_CONF_3(self) -> crate::common::Reg<regs::GDET_CONF_3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn GDET_CONF_4(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn GDET_CONF_4(self) -> crate::common::Reg<regs::GDET_CONF_4, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn GDET_CONF_5(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn GDET_CONF_5(self) -> crate::common::Reg<regs::GDET_CONF_5, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
-    pub const fn GDET_RESET(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn GDET_RESET(self) -> crate::common::Reg<regs::GDET_RESET, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fc0usize) as _) }
     }
     #[inline(always)]
-    pub const fn GDET_TEST(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn GDET_TEST(self) -> crate::common::Reg<regs::GDET_TEST, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fc4usize) as _) }
     }
     #[inline(always)]
-    pub const fn GDET_DLY_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn GDET_DLY_CTRL(self) -> crate::common::Reg<regs::GDET_DLY_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fccusize) as _) }
     }
 }

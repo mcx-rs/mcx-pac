@@ -16,7 +16,7 @@ impl OPAMP {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn VERID(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn VERID(self) -> crate::common::Reg<regs::VERID, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
@@ -24,7 +24,7 @@ impl OPAMP {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn OPAMP_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn OPAMP_CTRL(self) -> crate::common::Reg<regs::OPAMP_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
 }

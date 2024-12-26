@@ -21,7 +21,7 @@ impl MAILBOX {
         unsafe { MBOXIRQ::from_ptr(self.ptr.add(0x0usize + n * 32usize) as _) }
     }
     #[inline(always)]
-    pub const fn MUTEX(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MUTEX(self) -> crate::common::Reg<regs::MUTEX, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf8usize) as _) }
     }
 }

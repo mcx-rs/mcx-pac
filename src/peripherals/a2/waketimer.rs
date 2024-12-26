@@ -16,11 +16,15 @@ impl WAKETIMER {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn WAKE_TIMER_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn WAKE_TIMER_CTRL(
+        self,
+    ) -> crate::common::Reg<regs::WAKE_TIMER_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn WAKE_TIMER_CNT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn WAKE_TIMER_CNT(
+        self,
+    ) -> crate::common::Reg<regs::WAKE_TIMER_CNT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
 }

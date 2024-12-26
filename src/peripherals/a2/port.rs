@@ -16,31 +16,31 @@ impl PORT {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn VERID(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn VERID(self) -> crate::common::Reg<regs::VERID, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn GPCLR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn GPCLR(self) -> crate::common::Reg<regs::GPCLR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn GPCHR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn GPCHR(self) -> crate::common::Reg<regs::GPCHR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn CONFIG(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CONFIG(self) -> crate::common::Reg<regs::CONFIG, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]
-    pub const fn CALIB0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CALIB0(self) -> crate::common::Reg<regs::CALIB0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
     #[inline(always)]
-    pub const fn CALIB1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CALIB1(self) -> crate::common::Reg<regs::CALIB1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
     }
     #[inline(always)]
-    pub const fn PCR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PCR(self, n: usize) -> crate::common::Reg<regs::PCR, crate::common::RW> {
         assert!(n < 32usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize + n * 4usize) as _) }
     }

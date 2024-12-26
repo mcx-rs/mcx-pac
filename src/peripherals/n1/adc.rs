@@ -16,66 +16,66 @@ impl ADC {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn VERID(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn VERID(self) -> crate::common::Reg<regs::VERID, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn PARAM(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PARAM(self) -> crate::common::Reg<regs::PARAM, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CTRL(self) -> crate::common::Reg<regs::CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn STAT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn STAT(self) -> crate::common::Reg<regs::STAT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn IE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn IE(self) -> crate::common::Reg<regs::IE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
-    pub const fn DE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn DE(self) -> crate::common::Reg<regs::DE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CFG(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CFG(self) -> crate::common::Reg<regs::CFG, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]
-    pub const fn PAUSE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PAUSE(self) -> crate::common::Reg<regs::PAUSE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[inline(always)]
-    pub const fn SWTRIG(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SWTRIG(self) -> crate::common::Reg<regs::SWTRIG, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[inline(always)]
-    pub const fn TSTAT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn TSTAT(self) -> crate::common::Reg<regs::TSTAT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[inline(always)]
-    pub const fn OFSTRIM(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn OFSTRIM(self) -> crate::common::Reg<regs::OFSTRIM, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[inline(always)]
-    pub const fn TCTRL(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn TCTRL(self, n: usize) -> crate::common::Reg<regs::TCTRL, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa0usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn FCTRL(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FCTRL(self, n: usize) -> crate::common::Reg<regs::FCTRL, crate::common::RW> {
         assert!(n < 2usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe0usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn GCC(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn GCC(self, n: usize) -> crate::common::Reg<regs::GCC, crate::common::RW> {
         assert!(n < 2usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf0usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn GCR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn GCR(self, n: usize) -> crate::common::Reg<regs::GCR, crate::common::RW> {
         assert!(n < 2usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf8usize + n * 4usize) as _) }
     }
@@ -85,277 +85,277 @@ impl ADC {
         unsafe { CMD::from_ptr(self.ptr.add(0x0100usize + n * 120usize) as _) }
     }
     #[inline(always)]
-    pub const fn CV(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CV(self, n: usize) -> crate::common::Reg<regs::CV, crate::common::RW> {
         assert!(n < 15usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn RESFIFO(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn RESFIFO(self, n: usize) -> crate::common::Reg<regs::RESFIFO, crate::common::RW> {
         assert!(n < 2usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0300usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR0(self) -> crate::common::Reg<regs::CAL_GAR0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0400usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR1(self) -> crate::common::Reg<regs::CAL_GAR1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0404usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR2(self) -> crate::common::Reg<regs::CAL_GAR2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0408usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR3(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR3(self) -> crate::common::Reg<regs::CAL_GAR3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x040cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR4(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR4(self) -> crate::common::Reg<regs::CAL_GAR4, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0410usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR5(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR5(self) -> crate::common::Reg<regs::CAL_GAR5, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0414usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR6(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR6(self) -> crate::common::Reg<regs::CAL_GAR6, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0418usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR7(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR7(self) -> crate::common::Reg<regs::CAL_GAR7, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x041cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR8(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR8(self) -> crate::common::Reg<regs::CAL_GAR8, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0420usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR9(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR9(self) -> crate::common::Reg<regs::CAL_GAR9, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0424usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR10(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR10(self) -> crate::common::Reg<regs::CAL_GAR10, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0428usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR11(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR11(self) -> crate::common::Reg<regs::CAL_GAR11, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x042cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR12(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR12(self) -> crate::common::Reg<regs::CAL_GAR12, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0430usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR13(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR13(self) -> crate::common::Reg<regs::CAL_GAR13, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0434usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR14(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR14(self) -> crate::common::Reg<regs::CAL_GAR14, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0438usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR15(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR15(self) -> crate::common::Reg<regs::CAL_GAR15, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x043cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR16(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR16(self) -> crate::common::Reg<regs::CAL_GAR16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0440usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR17(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR17(self) -> crate::common::Reg<regs::CAL_GAR17, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0444usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR18(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR18(self) -> crate::common::Reg<regs::CAL_GAR18, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0448usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR19(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR19(self) -> crate::common::Reg<regs::CAL_GAR19, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x044cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR20(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR20(self) -> crate::common::Reg<regs::CAL_GAR20, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0450usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR21(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR21(self) -> crate::common::Reg<regs::CAL_GAR21, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0454usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR22(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR22(self) -> crate::common::Reg<regs::CAL_GAR22, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0458usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR23(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR23(self) -> crate::common::Reg<regs::CAL_GAR23, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x045cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR24(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR24(self) -> crate::common::Reg<regs::CAL_GAR24, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0460usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR25(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR25(self) -> crate::common::Reg<regs::CAL_GAR25, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0464usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR26(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR26(self) -> crate::common::Reg<regs::CAL_GAR26, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0468usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR27(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR27(self) -> crate::common::Reg<regs::CAL_GAR27, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x046cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR28(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR28(self) -> crate::common::Reg<regs::CAL_GAR28, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0470usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR29(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR29(self) -> crate::common::Reg<regs::CAL_GAR29, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0474usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR30(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR30(self) -> crate::common::Reg<regs::CAL_GAR30, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0478usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR31(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR31(self) -> crate::common::Reg<regs::CAL_GAR31, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x047cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR32(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR32(self) -> crate::common::Reg<regs::CAL_GAR32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0480usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR0(self) -> crate::common::Reg<regs::CAL_GBR0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0500usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR1(self) -> crate::common::Reg<regs::CAL_GBR1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0504usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR2(self) -> crate::common::Reg<regs::CAL_GBR2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0508usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR3(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR3(self) -> crate::common::Reg<regs::CAL_GBR3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x050cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR4(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR4(self) -> crate::common::Reg<regs::CAL_GBR4, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0510usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR5(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR5(self) -> crate::common::Reg<regs::CAL_GBR5, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0514usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR6(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR6(self) -> crate::common::Reg<regs::CAL_GBR6, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0518usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR7(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR7(self) -> crate::common::Reg<regs::CAL_GBR7, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x051cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR8(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR8(self) -> crate::common::Reg<regs::CAL_GBR8, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0520usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR9(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR9(self) -> crate::common::Reg<regs::CAL_GBR9, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0524usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR10(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR10(self) -> crate::common::Reg<regs::CAL_GBR10, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0528usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR11(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR11(self) -> crate::common::Reg<regs::CAL_GBR11, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x052cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR12(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR12(self) -> crate::common::Reg<regs::CAL_GBR12, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0530usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR13(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR13(self) -> crate::common::Reg<regs::CAL_GBR13, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0534usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR14(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR14(self) -> crate::common::Reg<regs::CAL_GBR14, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0538usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR15(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR15(self) -> crate::common::Reg<regs::CAL_GBR15, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x053cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR16(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR16(self) -> crate::common::Reg<regs::CAL_GBR16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0540usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR17(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR17(self) -> crate::common::Reg<regs::CAL_GBR17, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0544usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR18(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR18(self) -> crate::common::Reg<regs::CAL_GBR18, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0548usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR19(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR19(self) -> crate::common::Reg<regs::CAL_GBR19, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x054cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR20(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR20(self) -> crate::common::Reg<regs::CAL_GBR20, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0550usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR21(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR21(self) -> crate::common::Reg<regs::CAL_GBR21, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0554usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR22(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR22(self) -> crate::common::Reg<regs::CAL_GBR22, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0558usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR23(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR23(self) -> crate::common::Reg<regs::CAL_GBR23, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x055cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR24(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR24(self) -> crate::common::Reg<regs::CAL_GBR24, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0560usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR25(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR25(self) -> crate::common::Reg<regs::CAL_GBR25, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0564usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR26(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR26(self) -> crate::common::Reg<regs::CAL_GBR26, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0568usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR27(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR27(self) -> crate::common::Reg<regs::CAL_GBR27, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x056cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR28(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR28(self) -> crate::common::Reg<regs::CAL_GBR28, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0570usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR29(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR29(self) -> crate::common::Reg<regs::CAL_GBR29, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0574usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR30(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR30(self) -> crate::common::Reg<regs::CAL_GBR30, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0578usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR31(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR31(self) -> crate::common::Reg<regs::CAL_GBR31, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x057cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR32(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GBR32(self) -> crate::common::Reg<regs::CAL_GBR32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0580usize) as _) }
     }
 }

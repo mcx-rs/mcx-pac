@@ -16,103 +16,103 @@ impl ERM {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn CR0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CR0(self) -> crate::common::Reg<regs::CR0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn CR1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CR1(self) -> crate::common::Reg<regs::CR1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn SR0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SR0(self) -> crate::common::Reg<regs::SR0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn SR1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SR1(self) -> crate::common::Reg<regs::SR1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn EAR0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EAR0(self) -> crate::common::Reg<regs::EAR0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[inline(always)]
-    pub const fn SYN0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SYN0(self) -> crate::common::Reg<regs::SYN0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
     #[inline(always)]
-    pub const fn CORR_ERR_CNT0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CORR_ERR_CNT0(self) -> crate::common::Reg<regs::CORR_ERR_CNT0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
     }
     #[inline(always)]
-    pub const fn EAR1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EAR1(self) -> crate::common::Reg<regs::EAR1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0110usize) as _) }
     }
     #[inline(always)]
-    pub const fn SYN1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SYN1(self) -> crate::common::Reg<regs::SYN1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0114usize) as _) }
     }
     #[inline(always)]
-    pub const fn CORR_ERR_CNT1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CORR_ERR_CNT1(self) -> crate::common::Reg<regs::CORR_ERR_CNT1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0118usize) as _) }
     }
     #[inline(always)]
-    pub const fn EAR2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EAR2(self) -> crate::common::Reg<regs::EAR2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0120usize) as _) }
     }
     #[inline(always)]
-    pub const fn SYN2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SYN2(self) -> crate::common::Reg<regs::SYN2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0124usize) as _) }
     }
     #[inline(always)]
-    pub const fn CORR_ERR_CNT2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CORR_ERR_CNT2(self) -> crate::common::Reg<regs::CORR_ERR_CNT2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0128usize) as _) }
     }
     #[inline(always)]
-    pub const fn EAR3(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EAR3(self) -> crate::common::Reg<regs::EAR3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0130usize) as _) }
     }
     #[inline(always)]
-    pub const fn SYN3(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SYN3(self) -> crate::common::Reg<regs::SYN3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0134usize) as _) }
     }
     #[inline(always)]
-    pub const fn CORR_ERR_CNT3(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CORR_ERR_CNT3(self) -> crate::common::Reg<regs::CORR_ERR_CNT3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0138usize) as _) }
     }
     #[inline(always)]
-    pub const fn EAR4(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EAR4(self) -> crate::common::Reg<regs::EAR4, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0140usize) as _) }
     }
     #[inline(always)]
-    pub const fn SYN4(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SYN4(self) -> crate::common::Reg<regs::SYN4, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0144usize) as _) }
     }
     #[inline(always)]
-    pub const fn CORR_ERR_CNT4(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CORR_ERR_CNT4(self) -> crate::common::Reg<regs::CORR_ERR_CNT4, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0148usize) as _) }
     }
     #[inline(always)]
-    pub const fn CORR_ERR_CNT5(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CORR_ERR_CNT5(self) -> crate::common::Reg<regs::CORR_ERR_CNT5, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0158usize) as _) }
     }
     #[inline(always)]
-    pub const fn CORR_ERR_CNT6(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CORR_ERR_CNT6(self) -> crate::common::Reg<regs::CORR_ERR_CNT6, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0168usize) as _) }
     }
     #[inline(always)]
-    pub const fn CORR_ERR_CNT7(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CORR_ERR_CNT7(self) -> crate::common::Reg<regs::CORR_ERR_CNT7, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0178usize) as _) }
     }
     #[inline(always)]
-    pub const fn SYN8(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SYN8(self) -> crate::common::Reg<regs::SYN8, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0184usize) as _) }
     }
     #[inline(always)]
-    pub const fn CORR_ERR_CNT8(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CORR_ERR_CNT8(self) -> crate::common::Reg<regs::CORR_ERR_CNT8, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0188usize) as _) }
     }
     #[inline(always)]
-    pub const fn CORR_ERR_CNT9(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CORR_ERR_CNT9(self) -> crate::common::Reg<regs::CORR_ERR_CNT9, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0198usize) as _) }
     }
 }

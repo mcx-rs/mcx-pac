@@ -16,19 +16,19 @@ impl DEBUGMAILBOX {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn CSW(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CSW(self) -> crate::common::Reg<regs::CSW, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn REQUEST(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn REQUEST(self) -> crate::common::Reg<regs::REQUEST, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn RETURN(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn RETURN(self) -> crate::common::Reg<regs::RETURN, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn ID(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ID(self) -> crate::common::Reg<regs::ID, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xfcusize) as _) }
     }
 }

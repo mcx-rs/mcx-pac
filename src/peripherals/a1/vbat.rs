@@ -16,19 +16,19 @@ impl VBAT {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn VERID(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn VERID(self) -> crate::common::Reg<regs::VERID, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn FROCTLA(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FROCTLA(self) -> crate::common::Reg<regs::FROCTLA, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize) as _) }
     }
     #[inline(always)]
-    pub const fn FROLCKA(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FROLCKA(self) -> crate::common::Reg<regs::FROLCKA, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0218usize) as _) }
     }
     #[inline(always)]
-    pub const fn FROCLKE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FROCLKE(self) -> crate::common::Reg<regs::FROCLKE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0220usize) as _) }
     }
     #[inline(always)]
@@ -37,7 +37,7 @@ impl VBAT {
         unsafe { WAKEUP::from_ptr(self.ptr.add(0x0700usize + n * 16usize) as _) }
     }
     #[inline(always)]
-    pub const fn WAKLCKA(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn WAKLCKA(self) -> crate::common::Reg<regs::WAKLCKA, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x07f8usize) as _) }
     }
 }

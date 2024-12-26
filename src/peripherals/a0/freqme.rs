@@ -16,23 +16,23 @@ impl FREQME {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn CTRL_R(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CTRL_R(self) -> crate::common::Reg<regs::CTRL_R, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn CTRL_W(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CTRL_W(self) -> crate::common::Reg<regs::CTRL_W, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn CTRLSTAT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CTRLSTAT(self) -> crate::common::Reg<regs::CTRLSTAT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn MIN(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MIN(self) -> crate::common::Reg<regs::MIN, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAX(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MAX(self) -> crate::common::Reg<regs::MAX, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
 }

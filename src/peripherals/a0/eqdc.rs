@@ -16,163 +16,163 @@ impl EQDC {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn CTRL(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn CTRL(self) -> crate::common::Reg<regs::CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn CTRL2(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn CTRL2(self) -> crate::common::Reg<regs::CTRL2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02usize) as _) }
     }
     #[inline(always)]
-    pub const fn FILT(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn FILT(self) -> crate::common::Reg<regs::FILT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn LASTEDGE(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn LASTEDGE(self) -> crate::common::Reg<regs::LASTEDGE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06usize) as _) }
     }
     #[inline(always)]
-    pub const fn POSDPER(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn POSDPER(self) -> crate::common::Reg<regs::POSDPER, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn POSDPERBFR(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn POSDPERBFR(self) -> crate::common::Reg<regs::POSDPERBFR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ausize) as _) }
     }
     #[inline(always)]
-    pub const fn UPOS(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn UPOS(self) -> crate::common::Reg<regs::UPOS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn LPOS(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn LPOS(self) -> crate::common::Reg<regs::LPOS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0eusize) as _) }
     }
     #[inline(always)]
-    pub const fn POSD(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn POSD(self) -> crate::common::Reg<regs::POSD, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn POSDH(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn POSDH(self) -> crate::common::Reg<regs::POSDH, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x12usize) as _) }
     }
     #[inline(always)]
-    pub const fn UPOSH(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn UPOSH(self) -> crate::common::Reg<regs::UPOSH, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn LPOSH(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn LPOSH(self) -> crate::common::Reg<regs::LPOSH, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x16usize) as _) }
     }
     #[inline(always)]
-    pub const fn LASTEDGEH(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn LASTEDGEH(self) -> crate::common::Reg<regs::LASTEDGEH, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
-    pub const fn POSDPERH(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn POSDPERH(self) -> crate::common::Reg<regs::POSDPERH, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1ausize) as _) }
     }
     #[inline(always)]
-    pub const fn REVH(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn REVH(self) -> crate::common::Reg<regs::REVH, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[inline(always)]
-    pub const fn REV(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn REV(self) -> crate::common::Reg<regs::REV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1eusize) as _) }
     }
     #[inline(always)]
-    pub const fn UINIT(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn UINIT(self) -> crate::common::Reg<regs::UINIT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]
-    pub const fn LINIT(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn LINIT(self) -> crate::common::Reg<regs::LINIT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x22usize) as _) }
     }
     #[inline(always)]
-    pub const fn UMOD(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn UMOD(self) -> crate::common::Reg<regs::UMOD, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[inline(always)]
-    pub const fn LMOD(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn LMOD(self) -> crate::common::Reg<regs::LMOD, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x26usize) as _) }
     }
     #[inline(always)]
-    pub const fn UCOMP0(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn UCOMP0(self) -> crate::common::Reg<regs::UCOMP0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
-    pub const fn LCOMP0(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn LCOMP0(self) -> crate::common::Reg<regs::LCOMP0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2ausize) as _) }
     }
     #[inline(always)]
-    pub const fn UCOMP1(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn UCOMP1(self) -> crate::common::Reg<regs::UCOMP1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[inline(always)]
-    pub const fn UPOSH1(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn UPOSH1(self) -> crate::common::Reg<regs::UPOSH1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[inline(always)]
-    pub const fn LCOMP1(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn LCOMP1(self) -> crate::common::Reg<regs::LCOMP1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2eusize) as _) }
     }
     #[inline(always)]
-    pub const fn LPOSH1(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn LPOSH1(self) -> crate::common::Reg<regs::LPOSH1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2eusize) as _) }
     }
     #[inline(always)]
-    pub const fn UCOMP2(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn UCOMP2(self) -> crate::common::Reg<regs::UCOMP2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[inline(always)]
-    pub const fn UPOSH2(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn UPOSH2(self) -> crate::common::Reg<regs::UPOSH2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[inline(always)]
-    pub const fn LCOMP2(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn LCOMP2(self) -> crate::common::Reg<regs::LCOMP2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x32usize) as _) }
     }
     #[inline(always)]
-    pub const fn LPOSH2(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn LPOSH2(self) -> crate::common::Reg<regs::LPOSH2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x32usize) as _) }
     }
     #[inline(always)]
-    pub const fn UCOMP3(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn UCOMP3(self) -> crate::common::Reg<regs::UCOMP3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[inline(always)]
-    pub const fn UPOSH3(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn UPOSH3(self) -> crate::common::Reg<regs::UPOSH3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[inline(always)]
-    pub const fn LCOMP3(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn LCOMP3(self) -> crate::common::Reg<regs::LCOMP3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x36usize) as _) }
     }
     #[inline(always)]
-    pub const fn LPOSH3(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn LPOSH3(self) -> crate::common::Reg<regs::LPOSH3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x36usize) as _) }
     }
     #[inline(always)]
-    pub const fn INTCTRL(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn INTCTRL(self) -> crate::common::Reg<regs::INTCTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[inline(always)]
-    pub const fn WTR(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn WTR(self) -> crate::common::Reg<regs::WTR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3ausize) as _) }
     }
     #[inline(always)]
-    pub const fn IMR(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn IMR(self) -> crate::common::Reg<regs::IMR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[inline(always)]
-    pub const fn TST(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn TST(self) -> crate::common::Reg<regs::TST, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3eusize) as _) }
     }
     #[inline(always)]
-    pub const fn UVERID(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn UVERID(self) -> crate::common::Reg<regs::UVERID, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[inline(always)]
-    pub const fn LVERID(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn LVERID(self) -> crate::common::Reg<regs::LVERID, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x52usize) as _) }
     }
 }

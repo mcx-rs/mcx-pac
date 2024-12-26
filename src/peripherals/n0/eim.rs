@@ -16,83 +16,83 @@ impl EIM {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn EIMCR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EIMCR(self) -> crate::common::Reg<regs::EIMCR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHEN(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHEN(self) -> crate::common::Reg<regs::EICHEN, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD0_WORD0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD0_WORD0(self) -> crate::common::Reg<regs::EICHD0_WORD0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD0_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD0_WORD1(self) -> crate::common::Reg<regs::EICHD0_WORD1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD1_WORD0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD1_WORD0(self) -> crate::common::Reg<regs::EICHD1_WORD0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0140usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD1_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD1_WORD1(self) -> crate::common::Reg<regs::EICHD1_WORD1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0144usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD2_WORD0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD2_WORD0(self) -> crate::common::Reg<regs::EICHD2_WORD0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0180usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD2_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD2_WORD1(self) -> crate::common::Reg<regs::EICHD2_WORD1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0184usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD3_WORD0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD3_WORD0(self) -> crate::common::Reg<regs::EICHD3_WORD0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c0usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD3_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD3_WORD1(self) -> crate::common::Reg<regs::EICHD3_WORD1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c4usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD4_WORD0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD4_WORD0(self) -> crate::common::Reg<regs::EICHD4_WORD0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD4_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD4_WORD1(self) -> crate::common::Reg<regs::EICHD4_WORD1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0204usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD5_WORD0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD5_WORD0(self) -> crate::common::Reg<regs::EICHD5_WORD0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0240usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD5_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD5_WORD1(self) -> crate::common::Reg<regs::EICHD5_WORD1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0244usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD6_WORD0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD6_WORD0(self) -> crate::common::Reg<regs::EICHD6_WORD0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0280usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD6_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD6_WORD1(self) -> crate::common::Reg<regs::EICHD6_WORD1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0284usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD7_WORD0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD7_WORD0(self) -> crate::common::Reg<regs::EICHD7_WORD0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02c0usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD7_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD7_WORD1(self) -> crate::common::Reg<regs::EICHD7_WORD1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02c4usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD8_WORD0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD8_WORD0(self) -> crate::common::Reg<regs::EICHD8_WORD0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0300usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD8_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD8_WORD1(self) -> crate::common::Reg<regs::EICHD8_WORD1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0304usize) as _) }
     }
 }

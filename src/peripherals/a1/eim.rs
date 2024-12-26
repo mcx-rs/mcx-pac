@@ -16,19 +16,19 @@ impl EIM {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn EIMCR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EIMCR(self) -> crate::common::Reg<regs::EIMCR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHEN(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHEN(self) -> crate::common::Reg<regs::EICHEN, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD0_WORD0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD0_WORD0(self) -> crate::common::Reg<regs::EICHD0_WORD0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD0_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EICHD0_WORD1(self) -> crate::common::Reg<regs::EICHD0_WORD1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
 }

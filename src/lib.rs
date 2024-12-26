@@ -5,4 +5,5 @@
 
 mod common;
 
-pub mod device;
+mod device;
+pub use device::*;

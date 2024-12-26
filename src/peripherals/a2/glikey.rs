@@ -16,23 +16,23 @@ impl GLIKEY {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn CTRL_0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CTRL_0(self) -> crate::common::Reg<regs::CTRL_0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn CTRL_1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CTRL_1(self) -> crate::common::Reg<regs::CTRL_1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn INTR_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn INTR_CTRL(self) -> crate::common::Reg<regs::INTR_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn STATUS(self) -> crate::common::Reg<regs::STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn VERSION(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn VERSION(self) -> crate::common::Reg<regs::VERSION, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xfcusize) as _) }
     }
 }

@@ -53,15 +53,15 @@ impl MRT {
         unsafe { CHANNEL::from_ptr(self.ptr.add(0x0usize + n * 64usize) as _) }
     }
     #[inline(always)]
-    pub const fn MODCFG(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MODCFG(self) -> crate::common::Reg<regs::MODCFG, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf0usize) as _) }
     }
     #[inline(always)]
-    pub const fn IDLE_CH(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn IDLE_CH(self) -> crate::common::Reg<regs::IDLE_CH, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf4usize) as _) }
     }
     #[inline(always)]
-    pub const fn IRQ_FLAG(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn IRQ_FLAG(self) -> crate::common::Reg<regs::IRQ_FLAG, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf8usize) as _) }
     }
 }

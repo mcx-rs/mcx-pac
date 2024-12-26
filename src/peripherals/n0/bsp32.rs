@@ -16,59 +16,67 @@ impl BSP32 {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn OFFSET_PMEM(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn OFFSET_PMEM(self) -> crate::common::Reg<regs::OFFSET_PMEM, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn OFFSET_XMEM(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn OFFSET_XMEM(self) -> crate::common::Reg<regs::OFFSET_XMEM, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn OFFSET_YMEM(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn OFFSET_YMEM(self) -> crate::common::Reg<regs::OFFSET_YMEM, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn OFFSET_MAILBOX(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn OFFSET_MAILBOX(
+        self,
+    ) -> crate::common::Reg<regs::OFFSET_MAILBOX, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn INTERRUPTS_EXTERNAL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn INTERRUPTS_EXTERNAL(
+        self,
+    ) -> crate::common::Reg<regs::INTERRUPTS_EXTERNAL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn INTERRUPTS_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn INTERRUPTS_STATUS(
+        self,
+    ) -> crate::common::Reg<regs::INTERRUPTS_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn CF_GATING_OVERRIDE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CF_GATING_OVERRIDE(
+        self,
+    ) -> crate::common::Reg<regs::CF_GATING_OVERRIDE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
-    pub const fn IVT_OFFSET(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn IVT_OFFSET(self) -> crate::common::Reg<regs::IVT_OFFSET, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SLEEP_MODE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SLEEP_MODE(self) -> crate::common::Reg<regs::SLEEP_MODE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]
-    pub const fn IVT0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn IVT0(self) -> crate::common::Reg<regs::IVT0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[inline(always)]
-    pub const fn IVT1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn IVT1(self) -> crate::common::Reg<regs::IVT1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
-    pub const fn IVT2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn IVT2(self) -> crate::common::Reg<regs::IVT2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[inline(always)]
-    pub const fn IVT3(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn IVT3(self) -> crate::common::Reg<regs::IVT3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[inline(always)]
-    pub const fn IVT_DISABLE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn IVT_DISABLE(self) -> crate::common::Reg<regs::IVT_DISABLE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
 }

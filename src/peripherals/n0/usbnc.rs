@@ -16,15 +16,15 @@ impl USBNC {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn CTRL1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CTRL1(self) -> crate::common::Reg<regs::CTRL1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn CTRL2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CTRL2(self) -> crate::common::Reg<regs::CTRL2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn HSIC_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn HSIC_CTRL(self) -> crate::common::Reg<regs::HSIC_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
 }

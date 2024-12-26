@@ -16,15 +16,15 @@ impl CACHE64_POLSEL {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn REG0_TOP(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn REG0_TOP(self) -> crate::common::Reg<regs::REG0_TOP, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn REG1_TOP(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn REG1_TOP(self) -> crate::common::Reg<regs::REG1_TOP, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
-    pub const fn POLSEL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn POLSEL(self) -> crate::common::Reg<regs::POLSEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
 }

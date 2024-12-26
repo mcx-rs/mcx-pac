@@ -16,19 +16,19 @@ impl CACHE64_CTRL {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn CCR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CCR(self) -> crate::common::Reg<regs::CCR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0800usize) as _) }
     }
     #[inline(always)]
-    pub const fn CLCR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CLCR(self) -> crate::common::Reg<regs::CLCR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0804usize) as _) }
     }
     #[inline(always)]
-    pub const fn CSAR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CSAR(self) -> crate::common::Reg<regs::CSAR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0808usize) as _) }
     }
     #[inline(always)]
-    pub const fn CCVR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CCVR(self) -> crate::common::Reg<regs::CCVR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x080cusize) as _) }
     }
 }

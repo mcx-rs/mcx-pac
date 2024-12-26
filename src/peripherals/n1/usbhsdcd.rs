@@ -16,35 +16,37 @@ impl USBHSDCD {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn CONTROL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CONTROL(self) -> crate::common::Reg<regs::CONTROL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn CLOCK(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CLOCK(self) -> crate::common::Reg<regs::CLOCK, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn STATUS(self) -> crate::common::Reg<regs::STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn SIGNAL_OVERRIDE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SIGNAL_OVERRIDE(
+        self,
+    ) -> crate::common::Reg<regs::SIGNAL_OVERRIDE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn TIMER0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn TIMER0(self) -> crate::common::Reg<regs::TIMER0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn TIMER1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn TIMER1(self) -> crate::common::Reg<regs::TIMER1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn TIMER2_BC11(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn TIMER2_BC11(self) -> crate::common::Reg<regs::TIMER2_BC11, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
-    pub const fn TIMER2_BC12(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn TIMER2_BC12(self) -> crate::common::Reg<regs::TIMER2_BC12, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
 }

@@ -16,27 +16,27 @@ impl WWDT {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn MOD(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn MOD(self) -> crate::common::Reg<regs::MOD, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn TC(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn TC(self) -> crate::common::Reg<regs::TC, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn FEED(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FEED(self) -> crate::common::Reg<regs::FEED, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn TV(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn TV(self) -> crate::common::Reg<regs::TV, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn WARNINT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn WARNINT(self) -> crate::common::Reg<regs::WARNINT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn WINDOW(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn WINDOW(self) -> crate::common::Reg<regs::WINDOW, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
 }

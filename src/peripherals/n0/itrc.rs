@@ -16,11 +16,11 @@ impl ITRC {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn STATUS(self) -> crate::common::Reg<regs::STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn STATUS1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn STATUS1(self) -> crate::common::Reg<regs::STATUS1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
@@ -39,11 +39,11 @@ impl ITRC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize + n * 8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SW_EVENT0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SW_EVENT0(self) -> crate::common::Reg<regs::SW_EVENT0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SW_EVENT1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SW_EVENT1(self) -> crate::common::Reg<regs::SW_EVENT1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf4usize) as _) }
     }
 }

@@ -16,191 +16,215 @@ impl S50 {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn ELS_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_STATUS(self) -> crate::common::Reg<regs::ELS_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_CTRL(self) -> crate::common::Reg<regs::ELS_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_CMDCFG0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_CMDCFG0(self) -> crate::common::Reg<regs::ELS_CMDCFG0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_CFG(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_CFG(self) -> crate::common::Reg<regs::ELS_CFG, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KIDX0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KIDX0(self) -> crate::common::Reg<regs::ELS_KIDX0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KIDX1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KIDX1(self) -> crate::common::Reg<regs::ELS_KIDX1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KPROPIN(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KPROPIN(self) -> crate::common::Reg<regs::ELS_KPROPIN, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_DMA_SRC0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_DMA_SRC0(self) -> crate::common::Reg<regs::ELS_DMA_SRC0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_DMA_SRC0_LEN(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_DMA_SRC0_LEN(
+        self,
+    ) -> crate::common::Reg<regs::ELS_DMA_SRC0_LEN, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_DMA_SRC1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_DMA_SRC1(self) -> crate::common::Reg<regs::ELS_DMA_SRC1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_DMA_SRC2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_DMA_SRC2(self) -> crate::common::Reg<regs::ELS_DMA_SRC2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_DMA_SRC2_LEN(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_DMA_SRC2_LEN(
+        self,
+    ) -> crate::common::Reg<regs::ELS_DMA_SRC2_LEN, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_DMA_RES0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_DMA_RES0(self) -> crate::common::Reg<regs::ELS_DMA_RES0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_DMA_RES0_LEN(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_DMA_RES0_LEN(
+        self,
+    ) -> crate::common::Reg<regs::ELS_DMA_RES0_LEN, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_INT_ENABLE(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_INT_ENABLE(
+        self,
+    ) -> crate::common::Reg<regs::ELS_INT_ENABLE, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_INT_STATUS_CLR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_INT_STATUS_CLR(
+        self,
+    ) -> crate::common::Reg<regs::ELS_INT_STATUS_CLR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_INT_STATUS_SET(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_INT_STATUS_SET(
+        self,
+    ) -> crate::common::Reg<regs::ELS_INT_STATUS_SET, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_ERR_STATUS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_ERR_STATUS(
+        self,
+    ) -> crate::common::Reg<regs::ELS_ERR_STATUS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_ERR_STATUS_CLR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_ERR_STATUS_CLR(
+        self,
+    ) -> crate::common::Reg<regs::ELS_ERR_STATUS_CLR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_VERSION(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_VERSION(self) -> crate::common::Reg<regs::ELS_VERSION, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_PRNG_DATOUT(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_PRNG_DATOUT(
+        self,
+    ) -> crate::common::Reg<regs::ELS_PRNG_DATOUT, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_CMDCRC_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_CMDCRC_CTRL(
+        self,
+    ) -> crate::common::Reg<regs::ELS_CMDCRC_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_CMDCRC(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_CMDCRC(self) -> crate::common::Reg<regs::ELS_CMDCRC, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_SESSION_ID(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_SESSION_ID(
+        self,
+    ) -> crate::common::Reg<regs::ELS_SESSION_ID, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_DMA_FIN_ADDR(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_DMA_FIN_ADDR(
+        self,
+    ) -> crate::common::Reg<regs::ELS_DMA_FIN_ADDR, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x70usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_MASTER_ID(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_MASTER_ID(self) -> crate::common::Reg<regs::ELS_MASTER_ID, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x74usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KIDX2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KIDX2(self) -> crate::common::Reg<regs::ELS_KIDX2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x78usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS0(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS0(self) -> crate::common::Reg<regs::ELS_KS0, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0150usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS1(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS1(self) -> crate::common::Reg<regs::ELS_KS1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0154usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS2(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS2(self) -> crate::common::Reg<regs::ELS_KS2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0158usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS3(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS3(self) -> crate::common::Reg<regs::ELS_KS3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x015cusize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS4(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS4(self) -> crate::common::Reg<regs::ELS_KS4, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0160usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS5(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS5(self) -> crate::common::Reg<regs::ELS_KS5, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0164usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS6(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS6(self) -> crate::common::Reg<regs::ELS_KS6, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0168usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS7(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS7(self) -> crate::common::Reg<regs::ELS_KS7, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x016cusize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS8(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS8(self) -> crate::common::Reg<regs::ELS_KS8, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0170usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS9(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS9(self) -> crate::common::Reg<regs::ELS_KS9, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0174usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS10(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS10(self) -> crate::common::Reg<regs::ELS_KS10, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0178usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS11(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS11(self) -> crate::common::Reg<regs::ELS_KS11, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x017cusize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS12(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS12(self) -> crate::common::Reg<regs::ELS_KS12, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0180usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS13(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS13(self) -> crate::common::Reg<regs::ELS_KS13, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0184usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS14(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS14(self) -> crate::common::Reg<regs::ELS_KS14, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0188usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS15(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS15(self) -> crate::common::Reg<regs::ELS_KS15, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x018cusize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS16(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS16(self) -> crate::common::Reg<regs::ELS_KS16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0190usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS17(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS17(self) -> crate::common::Reg<regs::ELS_KS17, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0194usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS18(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS18(self) -> crate::common::Reg<regs::ELS_KS18, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0198usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KS19(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_KS19(self) -> crate::common::Reg<regs::ELS_KS19, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x019cusize) as _) }
     }
 }

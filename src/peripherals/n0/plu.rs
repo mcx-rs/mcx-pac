@@ -47,15 +47,18 @@ impl PLU {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0800usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn OUTPUTS(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn OUTPUTS(self) -> crate::common::Reg<regs::OUTPUTS, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0900usize) as _) }
     }
     #[inline(always)]
-    pub const fn WAKEINT_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn WAKEINT_CTRL(self) -> crate::common::Reg<regs::WAKEINT_CTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0904usize) as _) }
     }
     #[inline(always)]
-    pub const fn OUTPUT_MUX(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn OUTPUT_MUX(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::OUTPUT_MUX, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0c00usize + n * 4usize) as _) }
     }
