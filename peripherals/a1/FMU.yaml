@@ -1,0 +1,91 @@
+block/FMU:
+  items:
+  - name: FSTAT
+    byte_offset: 0
+    fieldset: regs::FSTAT
+  - name: FCNFG
+    byte_offset: 4
+    fieldset: regs::FCNFG
+  - name: FCTRL
+    byte_offset: 8
+    fieldset: regs::FCTRL
+  - name: FCCOB
+    array:
+      len: 8
+      stride: 4
+    byte_offset: 16
+fieldset/regs::FCNFG:
+  description: Flash Configuration Register
+  fields:
+  - name: CCIE
+    bit_offset: 7
+    bit_size: 1
+  - name: ERSREQ
+    bit_offset: 8
+    bit_size: 1
+  - name: DFDIE
+    bit_offset: 16
+    bit_size: 1
+  - name: ERSIEN0
+    bit_offset: 24
+    bit_size: 4
+  - name: ERSIEN1
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::FCTRL:
+  description: Flash Control Register
+  fields:
+  - name: RWSC
+    bit_offset: 0
+    bit_size: 4
+  - name: LSACTIVE
+    bit_offset: 8
+    bit_size: 1
+  - name: FDFD
+    bit_offset: 16
+    bit_size: 1
+  - name: ABTREQ
+    bit_offset: 24
+    bit_size: 1
+fieldset/regs::FSTAT:
+  description: Flash Status Register
+  fields:
+  - name: FAIL
+    bit_offset: 0
+    bit_size: 1
+  - name: CMDABT
+    bit_offset: 2
+    bit_size: 1
+  - name: PVIOL
+    bit_offset: 4
+    bit_size: 1
+  - name: ACCERR
+    bit_offset: 5
+    bit_size: 1
+  - name: CWSABT
+    bit_offset: 6
+    bit_size: 1
+  - name: CCIF
+    bit_offset: 7
+    bit_size: 1
+  - name: CMDPRT
+    bit_offset: 8
+    bit_size: 2
+  - name: CMDP
+    bit_offset: 11
+    bit_size: 1
+  - name: CMDDID
+    bit_offset: 12
+    bit_size: 4
+  - name: DFDIF
+    bit_offset: 16
+    bit_size: 1
+  - name: SALV_USED
+    bit_offset: 17
+    bit_size: 1
+  - name: PEWEN
+    bit_offset: 24
+    bit_size: 2
+  - name: PERDY
+    bit_offset: 31
+    bit_size: 1

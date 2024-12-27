@@ -1,0 +1,335 @@
+block/TSI:
+  items:
+  - name: CONFIG_MUTUAL
+    byte_offset: 0
+    fieldset: regs::CONFIG_MUTUAL
+  - name: CONFIG
+    byte_offset: 0
+    fieldset: regs::CONFIG
+  - name: TSHD
+    byte_offset: 4
+    fieldset: regs::TSHD
+  - name: GENCS
+    byte_offset: 8
+    fieldset: regs::GENCS
+  - name: MUL
+    byte_offset: 12
+    fieldset: regs::MUL
+  - name: SINC
+    byte_offset: 16
+    fieldset: regs::SINC
+  - name: SSC0
+    byte_offset: 20
+    fieldset: regs::SSC0
+  - name: SSC1
+    byte_offset: 24
+    fieldset: regs::SSC1
+  - name: SSC2
+    byte_offset: 28
+    fieldset: regs::SSC2
+  - name: BASELINE
+    byte_offset: 32
+    fieldset: regs::BASELINE
+  - name: CHMERGE
+    byte_offset: 36
+    fieldset: regs::CHMERGE
+  - name: SHIELD
+    byte_offset: 40
+    fieldset: regs::SHIELD
+  - name: DATA
+    byte_offset: 256
+    fieldset: regs::DATA
+  - name: MISC
+    byte_offset: 264
+    fieldset: regs::MISC
+  - name: TRIG
+    byte_offset: 268
+    fieldset: regs::TRIG
+fieldset/regs::BASELINE:
+  description: TSI Baseline
+  fields:
+  - name: BASELINE
+    bit_offset: 0
+    bit_size: 16
+  - name: BASE_TRACE_DEBOUNCE
+    bit_offset: 16
+    bit_size: 4
+  - name: BASE_TRACE_EN
+    bit_offset: 20
+    bit_size: 1
+  - name: THESHOLD_RATIO
+    bit_offset: 28
+    bit_size: 3
+  - name: THRESHOLD_TRACE_EN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CHMERGE:
+  description: TSI Channel Merge
+  fields:
+  - name: CHANNEL_ENABLE
+    bit_offset: 0
+    bit_size: 25
+fieldset/regs::CONFIG:
+  description: TSI CONFIG (TSI_CONFIG) for Self-Capacitor
+  fields:
+  - name: MODE
+    bit_offset: 0
+    bit_size: 1
+  - name: TSICH
+    bit_offset: 1
+    bit_size: 5
+  - name: S_NOISE
+    bit_offset: 19
+    bit_size: 1
+  - name: S_XCH
+    bit_offset: 20
+    bit_size: 3
+  - name: S_XIN
+    bit_offset: 23
+    bit_size: 1
+  - name: S_CTRIM
+    bit_offset: 24
+    bit_size: 3
+  - name: S_SEN
+    bit_offset: 27
+    bit_size: 1
+  - name: S_XDN
+    bit_offset: 28
+    bit_size: 3
+  - name: S_XIN_ADD
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CONFIG_MUTUAL:
+  description: TSI CONFIG (TSI_CONFIG) for Mutual-Capacitor
+  fields:
+  - name: MODE
+    bit_offset: 0
+    bit_size: 1
+  - name: M_NMIRROR
+    bit_offset: 1
+    bit_size: 2
+  - name: M_PMIRRORR
+    bit_offset: 3
+    bit_size: 2
+  - name: M_PMIRRORL
+    bit_offset: 5
+    bit_size: 3
+  - name: M_SEL_RX
+    bit_offset: 8
+    bit_size: 5
+  - name: M_SEL_TX
+    bit_offset: 13
+    bit_size: 3
+  - name: M_CNT_EN
+    bit_offset: 16
+    bit_size: 1
+  - name: M_TX_PD_EN
+    bit_offset: 17
+    bit_size: 1
+  - name: M_SEN_BOOST
+    bit_offset: 18
+    bit_size: 5
+  - name: M_PRE_RES
+    bit_offset: 26
+    bit_size: 3
+  - name: M_PRE_CURRENT
+    bit_offset: 29
+    bit_size: 3
+fieldset/regs::DATA:
+  description: TSI Data and Status
+  fields:
+  - name: TSICNT
+    bit_offset: 0
+    bit_size: 16
+  - name: EOSF
+    bit_offset: 27
+    bit_size: 1
+  - name: OVERRUNF
+    bit_offset: 29
+    bit_size: 1
+  - name: OUTRGF
+    bit_offset: 30
+    bit_size: 1
+fieldset/regs::GENCS:
+  description: TSI General Control and Status
+  fields:
+  - name: DMAEN_EOS
+    bit_offset: 0
+    bit_size: 1
+  - name: DMAEN_OUTRG
+    bit_offset: 2
+    bit_size: 1
+  - name: STM
+    bit_offset: 3
+    bit_size: 1
+  - name: STPE
+    bit_offset: 4
+    bit_size: 1
+  - name: TSIEN
+    bit_offset: 5
+    bit_size: 1
+  - name: SWTS
+    bit_offset: 7
+    bit_size: 1
+  - name: CTRIM_FINE
+    bit_offset: 9
+    bit_size: 3
+  - name: DVOLT
+    bit_offset: 12
+    bit_size: 3
+  - name: DEBOUNCE
+    bit_offset: 16
+    bit_size: 5
+  - name: S_PROX_EN
+    bit_offset: 22
+    bit_size: 1
+  - name: SETCLK
+    bit_offset: 24
+    bit_size: 3
+  - name: ESOR
+    bit_offset: 27
+    bit_size: 1
+  - name: OUTRG_EN
+    bit_offset: 30
+    bit_size: 1
+fieldset/regs::MISC:
+  description: TSI Miscellaneous
+  fields:
+  - name: OSC_CLK_SEL
+    bit_offset: 19
+    bit_size: 1
+  - name: TEST_FINGER
+    bit_offset: 20
+    bit_size: 3
+  - name: TEST_FINGER_EN
+    bit_offset: 23
+    bit_size: 1
+  - name: CLKDIVIDER
+    bit_offset: 24
+    bit_size: 5
+fieldset/regs::MUL:
+  description: TSI Mutual-Capacitance
+  fields:
+  - name: M_VPRE_CHOOSE
+    bit_offset: 1
+    bit_size: 1
+  - name: M_MODE
+    bit_offset: 2
+    bit_size: 1
+  - name: M_TRIM_CAP
+    bit_offset: 3
+    bit_size: 2
+  - name: M_TX_USED
+    bit_offset: 5
+    bit_size: 8
+  - name: M_TRIM
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::SHIELD:
+  description: TSI Shield
+  fields:
+  - name: SHIELD_ENABLE
+    bit_offset: 0
+    bit_size: 4
+  - name: M_SEN_RES
+    bit_offset: 25
+    bit_size: 6
+fieldset/regs::SINC:
+  description: TSI SINC Filter
+  fields:
+  - name: SSC_CONTROL_OUT
+    bit_offset: 0
+    bit_size: 1
+  - name: SINC_VALID
+    bit_offset: 1
+    bit_size: 1
+  - name: SINC_OVERFLOW_FLAG
+    bit_offset: 2
+    bit_size: 1
+  - name: SWITCH_ENABLE
+    bit_offset: 3
+    bit_size: 1
+  - name: DECIMATION
+    bit_offset: 16
+    bit_size: 5
+  - name: ORDER
+    bit_offset: 21
+    bit_size: 1
+  - name: CUTOFF
+    bit_offset: 24
+    bit_size: 4
+fieldset/regs::SSC0:
+  description: TSI SSC 0
+  fields:
+  - name: SSC_PRESCALE_NUM
+    bit_offset: 0
+    bit_size: 8
+  - name: BASE_NOCHARGE_NUM
+    bit_offset: 16
+    bit_size: 4
+  - name: CHARGE_NUM
+    bit_offset: 20
+    bit_size: 4
+  - name: SSC_CONTROL_REVERSE
+    bit_offset: 24
+    bit_size: 1
+  - name: SSC_MODE
+    bit_offset: 25
+    bit_size: 2
+  - name: PRBS_OUTSEL
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::SSC1:
+  description: TSI SSC 1
+  fields:
+  - name: PRBS_SEED_LO
+    bit_offset: 0
+    bit_size: 8
+  - name: PRBS_SEED_HI
+    bit_offset: 8
+    bit_size: 8
+  - name: PRBS_WEIGHT_LO
+    bit_offset: 16
+    bit_size: 8
+  - name: PRBS_WEIGHT_HI
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::SSC2:
+  description: TSI SSC 2
+  fields:
+  - name: MOVE_REPEAT_NUM
+    bit_offset: 0
+    bit_size: 5
+  - name: MOVE_STEPS_NUM
+    bit_offset: 8
+    bit_size: 3
+  - name: MOVE_NOCHARGE_MAX
+    bit_offset: 16
+    bit_size: 6
+  - name: MOVE_NOCHARGE_MIN
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::TRIG:
+  description: TSI AUTO TRIG
+  fields:
+  - name: TRIG_PERIOD_COUNTER
+    bit_offset: 0
+    bit_size: 20
+  - name: TRIG_CLK_DIVIDER
+    bit_offset: 24
+    bit_size: 5
+  - name: TRIG_EN
+    bit_offset: 30
+    bit_size: 1
+  - name: TRIG_CLK_SEL
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::TSHD:
+  description: TSI Threshold
+  fields:
+  - name: THRESL
+    bit_offset: 0
+    bit_size: 16
+  - name: THRESH
+    bit_offset: 16
+    bit_size: 16

@@ -1,0 +1,105 @@
+block/RTC:
+  items:
+  - name: TSR
+    byte_offset: 0
+  - name: TPR
+    byte_offset: 4
+    fieldset: regs::TPR
+  - name: TAR
+    byte_offset: 8
+  - name: TCR
+    byte_offset: 12
+    fieldset: regs::TCR
+  - name: CR
+    byte_offset: 16
+    fieldset: regs::CR
+  - name: SR
+    byte_offset: 20
+    fieldset: regs::SR
+  - name: LR
+    byte_offset: 24
+    fieldset: regs::LR
+  - name: IER
+    byte_offset: 28
+    fieldset: regs::IER
+fieldset/regs::CR:
+  description: RTC Control
+  fields:
+  - name: SWR
+    bit_offset: 0
+    bit_size: 1
+  - name: UM
+    bit_offset: 3
+    bit_size: 1
+  - name: LPOS
+    bit_offset: 7
+    bit_size: 1
+fieldset/regs::IER:
+  description: RTC Interrupt Enable
+  fields:
+  - name: TIIE
+    bit_offset: 0
+    bit_size: 1
+  - name: TOIE
+    bit_offset: 1
+    bit_size: 1
+  - name: TAIE
+    bit_offset: 2
+    bit_size: 1
+  - name: TSIE
+    bit_offset: 4
+    bit_size: 1
+  - name: TSIC
+    bit_offset: 16
+    bit_size: 3
+fieldset/regs::LR:
+  description: RTC Lock
+  fields:
+  - name: TCL
+    bit_offset: 3
+    bit_size: 1
+  - name: CRL
+    bit_offset: 4
+    bit_size: 1
+  - name: SRL
+    bit_offset: 5
+    bit_size: 1
+  - name: LRL
+    bit_offset: 6
+    bit_size: 1
+fieldset/regs::SR:
+  description: RTC Status
+  fields:
+  - name: TIF
+    bit_offset: 0
+    bit_size: 1
+  - name: TOF
+    bit_offset: 1
+    bit_size: 1
+  - name: TAF
+    bit_offset: 2
+    bit_size: 1
+  - name: TCE
+    bit_offset: 4
+    bit_size: 1
+fieldset/regs::TCR:
+  description: RTC Time Compensation
+  fields:
+  - name: TCR
+    bit_offset: 0
+    bit_size: 8
+  - name: CIR
+    bit_offset: 8
+    bit_size: 8
+  - name: TCV
+    bit_offset: 16
+    bit_size: 8
+  - name: CIC
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::TPR:
+  description: RTC Time Prescaler
+  fields:
+  - name: TPR
+    bit_offset: 0
+    bit_size: 16

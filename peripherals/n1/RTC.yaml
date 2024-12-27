@@ -1,0 +1,354 @@
+block/RTC:
+  items:
+  - name: YEARMON
+    byte_offset: 0
+    bit_size: 16
+    fieldset: regs::YEARMON
+  - name: DAYS
+    byte_offset: 2
+    bit_size: 16
+    fieldset: regs::DAYS
+  - name: HOURMIN
+    byte_offset: 4
+    bit_size: 16
+    fieldset: regs::HOURMIN
+  - name: SECONDS
+    byte_offset: 6
+    bit_size: 16
+    fieldset: regs::SECONDS
+  - name: ALM_YEARMON
+    byte_offset: 8
+    bit_size: 16
+    fieldset: regs::ALM_YEARMON
+  - name: ALM_DAYS
+    byte_offset: 10
+    bit_size: 16
+    fieldset: regs::ALM_DAYS
+  - name: ALM_HOURMIN
+    byte_offset: 12
+    bit_size: 16
+    fieldset: regs::ALM_HOURMIN
+  - name: ALM_SECONDS
+    byte_offset: 14
+    bit_size: 16
+    fieldset: regs::ALM_SECONDS
+  - name: CTRL
+    byte_offset: 16
+    bit_size: 16
+    fieldset: regs::CTRL
+  - name: STATUS
+    byte_offset: 18
+    bit_size: 16
+    fieldset: regs::STATUS
+  - name: ISR
+    byte_offset: 20
+    bit_size: 16
+    fieldset: regs::ISR
+  - name: IER
+    byte_offset: 22
+    bit_size: 16
+    fieldset: regs::IER
+  - name: RTC_TEST2
+    byte_offset: 28
+    bit_size: 16
+    fieldset: regs::RTC_TEST2
+  - name: DST_HOUR
+    byte_offset: 34
+    bit_size: 16
+    fieldset: regs::DST_HOUR
+  - name: DST_MONTH
+    byte_offset: 36
+    bit_size: 16
+    fieldset: regs::DST_MONTH
+  - name: DST_DAY
+    byte_offset: 38
+    bit_size: 16
+    fieldset: regs::DST_DAY
+  - name: COMPEN
+    byte_offset: 40
+    bit_size: 16
+    fieldset: regs::COMPEN
+  - name: SUBSECOND_CTRL
+    byte_offset: 2048
+    fieldset: regs::SUBSECOND_CTRL
+  - name: SUBSECOND_CNT
+    byte_offset: 2052
+    fieldset: regs::SUBSECOND_CNT
+  - name: WAKE_TIMER_CTRL
+    byte_offset: 3072
+    fieldset: regs::WAKE_TIMER_CTRL
+  - name: WAKE_TIMER_CNT
+    byte_offset: 3084
+fieldset/regs::ALM_DAYS:
+  description: Days Alarm
+  fields:
+  - name: ALM_DAY
+    bit_offset: 0
+    bit_size: 5
+fieldset/regs::ALM_HOURMIN:
+  description: Hours and Minutes Alarm
+  fields:
+  - name: ALM_MIN
+    bit_offset: 0
+    bit_size: 6
+  - name: ALM_HOUR
+    bit_offset: 8
+    bit_size: 5
+fieldset/regs::ALM_SECONDS:
+  description: Seconds Alarm
+  fields:
+  - name: ALM_SEC
+    bit_offset: 0
+    bit_size: 6
+  - name: DEC_SEC
+    bit_offset: 8
+    bit_size: 1
+  - name: INC_SEC
+    bit_offset: 9
+    bit_size: 1
+fieldset/regs::ALM_YEARMON:
+  description: Year and Months Alarm
+  fields:
+  - name: ALM_MON
+    bit_offset: 0
+    bit_size: 4
+  - name: ALM_YEAR
+    bit_offset: 8
+    bit_size: 8
+fieldset/regs::COMPEN:
+  description: Compensation
+  fields:
+  - name: COMPEN_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::CTRL:
+  description: Control
+  fields:
+  - name: FINEEN
+    bit_offset: 0
+    bit_size: 1
+  - name: COMP_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: ALM_MATCH
+    bit_offset: 2
+    bit_size: 2
+  - name: DST_EN
+    bit_offset: 6
+    bit_size: 1
+  - name: SWR
+    bit_offset: 8
+    bit_size: 1
+  - name: CLK_SEL
+    bit_offset: 9
+    bit_size: 1
+  - name: CLKO_DIS
+    bit_offset: 10
+    bit_size: 1
+  - name: CLKOUT
+    bit_offset: 13
+    bit_size: 2
+fieldset/regs::DAYS:
+  description: Days and Day-of-Week Counters
+  fields:
+  - name: DAY_CNT
+    bit_offset: 0
+    bit_size: 5
+  - name: DOW
+    bit_offset: 8
+    bit_size: 3
+fieldset/regs::DST_DAY:
+  description: Daylight Saving Day
+  fields:
+  - name: DST_END_DAY
+    bit_offset: 0
+    bit_size: 5
+  - name: DST_START_DAY
+    bit_offset: 8
+    bit_size: 5
+fieldset/regs::DST_HOUR:
+  description: Daylight Saving Hour
+  fields:
+  - name: DST_END_HOUR
+    bit_offset: 0
+    bit_size: 5
+  - name: DST_START_HOUR
+    bit_offset: 8
+    bit_size: 5
+fieldset/regs::DST_MONTH:
+  description: Daylight Saving Month
+  fields:
+  - name: DST_END_MONTH
+    bit_offset: 0
+    bit_size: 4
+  - name: DST_START_MONTH
+    bit_offset: 8
+    bit_size: 4
+fieldset/regs::HOURMIN:
+  description: Hours and Minutes Counters
+  fields:
+  - name: MIN_CNT
+    bit_offset: 0
+    bit_size: 6
+  - name: HOUR_CNT
+    bit_offset: 8
+    bit_size: 5
+fieldset/regs::IER:
+  description: Interrupt Enable
+  fields:
+  - name: ALM_IE
+    bit_offset: 2
+    bit_size: 1
+  - name: DAY_IE
+    bit_offset: 3
+    bit_size: 1
+  - name: HOUR_IE
+    bit_offset: 4
+    bit_size: 1
+  - name: MIN_IE
+    bit_offset: 5
+    bit_size: 1
+  - name: IE_1HZ
+    bit_offset: 6
+    bit_size: 1
+  - name: IE_2HZ
+    bit_offset: 7
+    bit_size: 1
+  - name: IE_4HZ
+    bit_offset: 8
+    bit_size: 1
+  - name: IE_8HZ
+    bit_offset: 9
+    bit_size: 1
+  - name: IE_16HZ
+    bit_offset: 10
+    bit_size: 1
+  - name: IE_32HZ
+    bit_offset: 11
+    bit_size: 1
+  - name: IE_64HZ
+    bit_offset: 12
+    bit_size: 1
+  - name: IE_128HZ
+    bit_offset: 13
+    bit_size: 1
+  - name: IE_256HZ
+    bit_offset: 14
+    bit_size: 1
+  - name: IE_512HZ
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::ISR:
+  description: Interrupt Status
+  fields:
+  - name: ALM_IS
+    bit_offset: 2
+    bit_size: 1
+  - name: DAY_IS
+    bit_offset: 3
+    bit_size: 1
+  - name: HOUR_IS
+    bit_offset: 4
+    bit_size: 1
+  - name: MIN_IS
+    bit_offset: 5
+    bit_size: 1
+  - name: IS_1HZ
+    bit_offset: 6
+    bit_size: 1
+  - name: IS_2HZ
+    bit_offset: 7
+    bit_size: 1
+  - name: IS_4HZ
+    bit_offset: 8
+    bit_size: 1
+  - name: IS_8HZ
+    bit_offset: 9
+    bit_size: 1
+  - name: IS_16HZ
+    bit_offset: 10
+    bit_size: 1
+  - name: IS_32HZ
+    bit_offset: 11
+    bit_size: 1
+  - name: IS_64HZ
+    bit_offset: 12
+    bit_size: 1
+  - name: IS_128HZ
+    bit_offset: 13
+    bit_size: 1
+  - name: IS_256HZ
+    bit_offset: 14
+    bit_size: 1
+  - name: IS_512HZ
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::RTC_TEST2:
+  description: Sub Second Counter
+  fields:
+  - name: SUB_SECOND_COUNT
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::SECONDS:
+  description: Seconds Counters
+  fields:
+  - name: SEC_CNT
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::STATUS:
+  description: Status
+  fields:
+  - name: INVAL_BIT
+    bit_offset: 0
+    bit_size: 1
+  - name: WRITE_PROT_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: CMP_INT
+    bit_offset: 5
+    bit_size: 1
+  - name: WE
+    bit_offset: 6
+    bit_size: 2
+  - name: BUS_ERR
+    bit_offset: 8
+    bit_size: 1
+  - name: CMP_DONE
+    bit_offset: 11
+    bit_size: 1
+fieldset/regs::SUBSECOND_CNT:
+  description: Subsecond Counter
+  fields:
+  - name: SUBSECOND_CNT
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::SUBSECOND_CTRL:
+  description: Subsecond Control
+  fields:
+  - name: SUB_SECOND_CNT_EN
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::WAKE_TIMER_CTRL:
+  description: Wake Timer Control
+  fields:
+  - name: WAKE_FLAG
+    bit_offset: 1
+    bit_size: 1
+  - name: CLR_WAKE_TIMER
+    bit_offset: 2
+    bit_size: 1
+  - name: OSC_DIV_ENA
+    bit_offset: 4
+    bit_size: 1
+  - name: INTR_EN
+    bit_offset: 5
+    bit_size: 1
+fieldset/regs::YEARMON:
+  description: Year and Month Counters
+  fields:
+  - name: MON_CNT
+    bit_offset: 0
+    bit_size: 4
+  - name: YROFST
+    bit_offset: 8
+    bit_size: 8

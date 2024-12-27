@@ -1,0 +1,72 @@
+block/AOI:
+  items:
+  - name: BFCRT
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 0
+    block: BFCRT
+block/BFCRT:
+  items:
+  - name: BFCRT01
+    byte_offset: 0
+    bit_size: 16
+    fieldset: regs::BFCRT_BFCRT01
+  - name: BFCRT23
+    byte_offset: 2
+    bit_size: 16
+    fieldset: regs::BFCRT_BFCRT23
+fieldset/regs::BFCRT_BFCRT01:
+  description: Boolean Function Term 0 and 1 Configuration for EVENT0..Boolean Function Term 0 and 1 Configuration for EVENT3
+  fields:
+  - name: PT1_DC
+    bit_offset: 0
+    bit_size: 2
+  - name: PT1_CC
+    bit_offset: 2
+    bit_size: 2
+  - name: PT1_BC
+    bit_offset: 4
+    bit_size: 2
+  - name: PT1_AC
+    bit_offset: 6
+    bit_size: 2
+  - name: PT0_DC
+    bit_offset: 8
+    bit_size: 2
+  - name: PT0_CC
+    bit_offset: 10
+    bit_size: 2
+  - name: PT0_BC
+    bit_offset: 12
+    bit_size: 2
+  - name: PT0_AC
+    bit_offset: 14
+    bit_size: 2
+fieldset/regs::BFCRT_BFCRT23:
+  description: Boolean Function Term 2 and 3 Configuration for EVENT0..Boolean Function Term 2 and 3 Configuration for EVENT3
+  fields:
+  - name: PT3_DC
+    bit_offset: 0
+    bit_size: 2
+  - name: PT3_CC
+    bit_offset: 2
+    bit_size: 2
+  - name: PT3_BC
+    bit_offset: 4
+    bit_size: 2
+  - name: PT3_AC
+    bit_offset: 6
+    bit_size: 2
+  - name: PT2_DC
+    bit_offset: 8
+    bit_size: 2
+  - name: PT2_CC
+    bit_offset: 10
+    bit_size: 2
+  - name: PT2_BC
+    bit_offset: 12
+    bit_size: 2
+  - name: PT2_AC
+    bit_offset: 14
+    bit_size: 2

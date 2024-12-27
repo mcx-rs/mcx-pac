@@ -1,0 +1,275 @@
+block/SPC:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: SC
+    byte_offset: 16
+    fieldset: regs::SC
+  - name: LPREQ_CFG
+    byte_offset: 28
+    fieldset: regs::LPREQ_CFG
+  - name: CFG
+    byte_offset: 32
+    fieldset: regs::CFG
+  - name: PD_STATUS
+    array:
+      len: 1
+      stride: 4
+    byte_offset: 48
+    fieldset: regs::PD_STATUS
+  - name: SRAMCTL
+    byte_offset: 64
+    fieldset: regs::SRAMCTL
+  - name: SRAMRETLDO_REFTRIM
+    byte_offset: 84
+    fieldset: regs::SRAMRETLDO_REFTRIM
+  - name: SRAMRETLDO_CNTRL
+    byte_offset: 88
+    fieldset: regs::SRAMRETLDO_CNTRL
+  - name: ACTIVE_CFG
+    byte_offset: 256
+    fieldset: regs::ACTIVE_CFG
+  - name: ACTIVE_CFG1
+    byte_offset: 260
+  - name: LP_CFG
+    byte_offset: 264
+    fieldset: regs::LP_CFG
+  - name: LP_CFG1
+    byte_offset: 268
+  - name: LPWKUP_DELAY
+    byte_offset: 288
+    fieldset: regs::LPWKUP_DELAY
+  - name: ACTIVE_VDELAY
+    byte_offset: 292
+    fieldset: regs::ACTIVE_VDELAY
+  - name: VD_STAT
+    byte_offset: 304
+    fieldset: regs::VD_STAT
+  - name: VD_CORE_CFG
+    byte_offset: 308
+    fieldset: regs::VD_CORE_CFG
+  - name: VD_SYS_CFG
+    byte_offset: 312
+    fieldset: regs::VD_SYS_CFG
+  - name: EVD_CFG
+    byte_offset: 320
+    fieldset: regs::EVD_CFG
+  - name: CORELDO_CFG
+    byte_offset: 768
+fieldset/regs::ACTIVE_CFG:
+  description: Active Power Mode Configuration
+  fields:
+  - name: CORELDO_VDD_DS
+    bit_offset: 0
+    bit_size: 1
+  - name: CORELDO_VDD_LVL
+    bit_offset: 2
+    bit_size: 2
+  - name: BGMODE
+    bit_offset: 20
+    bit_size: 2
+  - name: VDD_VD_DISABLE
+    bit_offset: 23
+    bit_size: 1
+  - name: CORE_LVDE
+    bit_offset: 24
+    bit_size: 1
+  - name: SYS_LVDE
+    bit_offset: 25
+    bit_size: 1
+  - name: SYS_HVDE
+    bit_offset: 28
+    bit_size: 1
+fieldset/regs::ACTIVE_VDELAY:
+  description: Active Voltage Trim Delay
+  fields:
+  - name: ACTIVE_VDELAY
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::CFG:
+  description: SPC Configuration
+  fields:
+  - name: INTG_PWSWTCH_SLEEP_EN
+    bit_offset: 0
+    bit_size: 1
+  - name: INTG_PWSWTCH_WKUP_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: INTG_PWSWTCH_SLEEP_ACTIVE_EN
+    bit_offset: 2
+    bit_size: 1
+  - name: INTG_PWSWTCH_WKUP_ACTIVE_EN
+    bit_offset: 3
+    bit_size: 1
+fieldset/regs::EVD_CFG:
+  description: External Voltage Domain Configuration
+  fields:
+  - name: EVDISO
+    bit_offset: 0
+    bit_size: 3
+  - name: EVDLPISO
+    bit_offset: 8
+    bit_size: 3
+  - name: EVDSTAT
+    bit_offset: 16
+    bit_size: 3
+fieldset/regs::LPREQ_CFG:
+  description: Low-Power Request Configuration
+  fields:
+  - name: LPREQOE
+    bit_offset: 0
+    bit_size: 1
+  - name: LPREQPOL
+    bit_offset: 1
+    bit_size: 1
+  - name: LPREQOV
+    bit_offset: 2
+    bit_size: 2
+fieldset/regs::LPWKUP_DELAY:
+  description: Low Power Wake-Up Delay
+  fields:
+  - name: LPWKUP_DELAY
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::LP_CFG:
+  description: Low-Power Mode Configuration
+  fields:
+  - name: CORELDO_VDD_DS
+    bit_offset: 0
+    bit_size: 1
+  - name: CORELDO_VDD_LVL
+    bit_offset: 2
+    bit_size: 2
+  - name: SRAMLDO_DPD_ON
+    bit_offset: 19
+    bit_size: 1
+  - name: BGMODE
+    bit_offset: 20
+    bit_size: 2
+  - name: LP_IREFEN
+    bit_offset: 23
+    bit_size: 1
+  - name: CORE_LVDE
+    bit_offset: 24
+    bit_size: 1
+  - name: SYS_LVDE
+    bit_offset: 25
+    bit_size: 1
+  - name: SYS_HVDE
+    bit_offset: 28
+    bit_size: 1
+fieldset/regs::PD_STATUS:
+  description: SPC Power Domain Mode Status
+  fields:
+  - name: PWR_REQ_STATUS
+    bit_offset: 0
+    bit_size: 1
+  - name: PD_LP_REQ
+    bit_offset: 4
+    bit_size: 1
+  - name: LP_MODE
+    bit_offset: 8
+    bit_size: 4
+fieldset/regs::SC:
+  description: Status Control
+  fields:
+  - name: BUSY
+    bit_offset: 0
+    bit_size: 1
+  - name: SPC_LP_REQ
+    bit_offset: 1
+    bit_size: 1
+  - name: SPC_LP_MODE
+    bit_offset: 4
+    bit_size: 4
+  - name: ISO_CLR
+    bit_offset: 16
+    bit_size: 1
+  - name: SWITCH_STATE
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::SRAMCTL:
+  description: SRAM Control
+  fields:
+  - name: VSM
+    bit_offset: 0
+    bit_size: 2
+  - name: REQ
+    bit_offset: 30
+    bit_size: 1
+  - name: ACK
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::SRAMRETLDO_CNTRL:
+  description: SRAM Retention LDO Control
+  fields:
+  - name: SRAMLDO_ON
+    bit_offset: 0
+    bit_size: 1
+  - name: SRAM_RET_EN
+    bit_offset: 8
+    bit_size: 4
+fieldset/regs::SRAMRETLDO_REFTRIM:
+  description: SRAM Retention Reference Trim
+  fields:
+  - name: REFTRIM
+    bit_offset: 0
+    bit_size: 5
+fieldset/regs::VD_CORE_CFG:
+  description: Core Voltage Detect Configuration
+  fields:
+  - name: LVDRE
+    bit_offset: 0
+    bit_size: 1
+  - name: LVDIE
+    bit_offset: 1
+    bit_size: 1
+  - name: LOCK
+    bit_offset: 16
+    bit_size: 1
+fieldset/regs::VD_STAT:
+  description: Voltage Detect Status
+  fields:
+  - name: COREVDD_LVDF
+    bit_offset: 0
+    bit_size: 1
+  - name: SYSVDD_LVDF
+    bit_offset: 1
+    bit_size: 1
+  - name: SYSVDD_HVDF
+    bit_offset: 5
+    bit_size: 1
+fieldset/regs::VD_SYS_CFG:
+  description: System Voltage Detect Configuration
+  fields:
+  - name: LVDRE
+    bit_offset: 0
+    bit_size: 1
+  - name: LVDIE
+    bit_offset: 1
+    bit_size: 1
+  - name: HVDRE
+    bit_offset: 2
+    bit_size: 1
+  - name: HVDIE
+    bit_offset: 3
+    bit_size: 1
+  - name: LVSEL
+    bit_offset: 8
+    bit_size: 1
+  - name: LOCK
+    bit_offset: 16
+    bit_size: 1
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

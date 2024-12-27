@@ -1,0 +1,326 @@
+block/CMC:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: CKCTRL
+    byte_offset: 16
+    fieldset: regs::CKCTRL
+  - name: CKSTAT
+    byte_offset: 20
+    fieldset: regs::CKSTAT
+  - name: PMPROT
+    byte_offset: 24
+    fieldset: regs::PMPROT
+  - name: GPMCTRL
+    byte_offset: 28
+    fieldset: regs::GPMCTRL
+  - name: PMCTRL
+    array:
+      len: 1
+      stride: 4
+    byte_offset: 32
+    fieldset: regs::PMCTRL
+  - name: SRS
+    byte_offset: 128
+    fieldset: regs::SRS
+  - name: RPC
+    byte_offset: 132
+    fieldset: regs::RPC
+  - name: SSRS
+    byte_offset: 136
+    fieldset: regs::SSRS
+  - name: SRIE
+    byte_offset: 140
+    fieldset: regs::SRIE
+  - name: SRIF
+    byte_offset: 144
+    fieldset: regs::SRIF
+  - name: MR
+    array:
+      len: 1
+      stride: 4
+    byte_offset: 160
+    fieldset: regs::MR
+  - name: FM
+    array:
+      len: 1
+      stride: 4
+    byte_offset: 176
+    fieldset: regs::FM
+  - name: FLASHCR
+    byte_offset: 224
+    fieldset: regs::FLASHCR
+  - name: CORECTL
+    byte_offset: 272
+    fieldset: regs::CORECTL
+  - name: DBGCTL
+    byte_offset: 288
+    fieldset: regs::DBGCTL
+fieldset/regs::CKCTRL:
+  description: Clock Control
+  fields:
+  - name: CKMODE
+    bit_offset: 0
+    bit_size: 4
+  - name: LOCK
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CKSTAT:
+  description: Clock Status
+  fields:
+  - name: CKMODE
+    bit_offset: 0
+    bit_size: 4
+  - name: WAKEUP
+    bit_offset: 8
+    bit_size: 8
+  - name: VALID
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CORECTL:
+  description: Core Control
+  fields:
+  - name: NPIE
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::DBGCTL:
+  description: Debug Control
+  fields:
+  - name: SOD
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::FLASHCR:
+  description: Flash Control
+  fields:
+  - name: FLASHDIS
+    bit_offset: 0
+    bit_size: 1
+  - name: FLASHDOZE
+    bit_offset: 1
+    bit_size: 1
+  - name: FLASHWAKE
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::FM:
+  description: Force Mode
+  fields:
+  - name: FORCECFG
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::GPMCTRL:
+  description: Global Power Mode Control
+  fields:
+  - name: LPMODE
+    bit_offset: 0
+    bit_size: 4
+fieldset/regs::MR:
+  description: Mode
+  fields:
+  - name: ISPMODE_n
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::PMCTRL:
+  description: Power Mode Control
+  fields:
+  - name: LPMODE
+    bit_offset: 0
+    bit_size: 4
+fieldset/regs::PMPROT:
+  description: Power Mode Protection
+  fields:
+  - name: LPMODE
+    bit_offset: 0
+    bit_size: 4
+  - name: LOCK
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::RPC:
+  description: Reset Pin Control
+  fields:
+  - name: FILTCFG
+    bit_offset: 0
+    bit_size: 5
+  - name: FILTEN
+    bit_offset: 8
+    bit_size: 1
+  - name: LPFEN
+    bit_offset: 9
+    bit_size: 1
+fieldset/regs::SRIE:
+  description: System Reset Interrupt Enable
+  fields:
+  - name: PIN
+    bit_offset: 8
+    bit_size: 1
+  - name: DAP
+    bit_offset: 9
+    bit_size: 1
+  - name: LPACK
+    bit_offset: 11
+    bit_size: 1
+  - name: SCG
+    bit_offset: 12
+    bit_size: 1
+  - name: WWDT0
+    bit_offset: 13
+    bit_size: 1
+  - name: SW
+    bit_offset: 14
+    bit_size: 1
+  - name: LOCKUP
+    bit_offset: 15
+    bit_size: 1
+  - name: CDOG0
+    bit_offset: 26
+    bit_size: 1
+  - name: CDOG1
+    bit_offset: 27
+    bit_size: 1
+fieldset/regs::SRIF:
+  description: System Reset Interrupt Flag
+  fields:
+  - name: PIN
+    bit_offset: 8
+    bit_size: 1
+  - name: DAP
+    bit_offset: 9
+    bit_size: 1
+  - name: LPACK
+    bit_offset: 11
+    bit_size: 1
+  - name: WWDT0
+    bit_offset: 13
+    bit_size: 1
+  - name: SW
+    bit_offset: 14
+    bit_size: 1
+  - name: LOCKUP
+    bit_offset: 15
+    bit_size: 1
+  - name: CDOG0
+    bit_offset: 26
+    bit_size: 1
+  - name: CDOG1
+    bit_offset: 27
+    bit_size: 1
+fieldset/regs::SRS:
+  description: System Reset Status
+  fields:
+  - name: WAKEUP
+    bit_offset: 0
+    bit_size: 1
+  - name: POR
+    bit_offset: 1
+    bit_size: 1
+  - name: VD
+    bit_offset: 2
+    bit_size: 1
+  - name: WARM
+    bit_offset: 4
+    bit_size: 1
+  - name: FATAL
+    bit_offset: 5
+    bit_size: 1
+  - name: PIN
+    bit_offset: 8
+    bit_size: 1
+  - name: DAP
+    bit_offset: 9
+    bit_size: 1
+  - name: RSTACK
+    bit_offset: 10
+    bit_size: 1
+  - name: LPACK
+    bit_offset: 11
+    bit_size: 1
+  - name: SCG
+    bit_offset: 12
+    bit_size: 1
+  - name: WWDT0
+    bit_offset: 13
+    bit_size: 1
+  - name: SW
+    bit_offset: 14
+    bit_size: 1
+  - name: LOCKUP
+    bit_offset: 15
+    bit_size: 1
+  - name: CDOG0
+    bit_offset: 26
+    bit_size: 1
+  - name: CDOG1
+    bit_offset: 27
+    bit_size: 1
+  - name: JTAG
+    bit_offset: 28
+    bit_size: 1
+  - name: TAMPER
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::SSRS:
+  description: Sticky System Reset Status
+  fields:
+  - name: WAKEUP
+    bit_offset: 0
+    bit_size: 1
+  - name: POR
+    bit_offset: 1
+    bit_size: 1
+  - name: VD
+    bit_offset: 2
+    bit_size: 1
+  - name: WARM
+    bit_offset: 4
+    bit_size: 1
+  - name: FATAL
+    bit_offset: 5
+    bit_size: 1
+  - name: PIN
+    bit_offset: 8
+    bit_size: 1
+  - name: DAP
+    bit_offset: 9
+    bit_size: 1
+  - name: RSTACK
+    bit_offset: 10
+    bit_size: 1
+  - name: LPACK
+    bit_offset: 11
+    bit_size: 1
+  - name: SCG
+    bit_offset: 12
+    bit_size: 1
+  - name: WWDT0
+    bit_offset: 13
+    bit_size: 1
+  - name: SW
+    bit_offset: 14
+    bit_size: 1
+  - name: LOCKUP
+    bit_offset: 15
+    bit_size: 1
+  - name: CDOG0
+    bit_offset: 26
+    bit_size: 1
+  - name: CDOG1
+    bit_offset: 27
+    bit_size: 1
+  - name: JTAG
+    bit_offset: 28
+    bit_size: 1
+  - name: TAMPER
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

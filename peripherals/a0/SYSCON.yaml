@@ -1,0 +1,363 @@
+block/SYSCON:
+  items:
+  - name: REMAP
+    byte_offset: 512
+    fieldset: regs::REMAP
+  - name: AHBMATPRIO
+    byte_offset: 528
+    fieldset: regs::AHBMATPRIO
+  - name: CPU0NSTCKCAL
+    byte_offset: 572
+    fieldset: regs::CPU0NSTCKCAL
+  - name: NMISRC
+    byte_offset: 584
+    fieldset: regs::NMISRC
+  - name: SLOWCLKDIV
+    byte_offset: 888
+    fieldset: regs::SLOWCLKDIV
+  - name: AHBCLKDIV
+    byte_offset: 896
+    fieldset: regs::AHBCLKDIV
+  - name: CLKUNLOCK
+    byte_offset: 1020
+    fieldset: regs::CLKUNLOCK
+  - name: NVM_CTRL
+    byte_offset: 1024
+    fieldset: regs::NVM_CTRL
+  - name: ROMCR
+    byte_offset: 1028
+  - name: CPUSTAT
+    byte_offset: 2060
+    fieldset: regs::CPUSTAT
+  - name: LPCAC_CTRL
+    byte_offset: 2084
+    fieldset: regs::LPCAC_CTRL
+  - name: PWM0SUBCTL
+    byte_offset: 2360
+    fieldset: regs::PWM0SUBCTL
+  - name: CTIMERGLOBALSTARTEN
+    byte_offset: 2368
+    fieldset: regs::CTIMERGLOBALSTARTEN
+  - name: RAM_CTRL
+    byte_offset: 2372
+    fieldset: regs::RAM_CTRL
+  - name: GRAY_CODE_LSB
+    byte_offset: 2912
+  - name: GRAY_CODE_MSB
+    byte_offset: 2916
+    fieldset: regs::GRAY_CODE_MSB
+  - name: BINARY_CODE_LSB
+    byte_offset: 2920
+  - name: BINARY_CODE_MSB
+    byte_offset: 2924
+    fieldset: regs::BINARY_CODE_MSB
+  - name: OVP_PAD_STATE
+    byte_offset: 3648
+  - name: PROBE_STATE
+    byte_offset: 3652
+  - name: FT_STATE_A
+    byte_offset: 3656
+  - name: ROP_STATE
+    byte_offset: 3660
+  - name: SRAM_XEN
+    byte_offset: 3672
+    fieldset: regs::SRAM_XEN
+  - name: SRAM_XEN_DP
+    byte_offset: 3676
+    fieldset: regs::SRAM_XEN_DP
+  - name: ELS_OTP_LC_STATE
+    byte_offset: 3712
+    fieldset: regs::ELS_OTP_LC_STATE
+  - name: ELS_OTP_LC_STATE_DP
+    byte_offset: 3716
+    fieldset: regs::ELS_OTP_LC_STATE_DP
+  - name: DEBUG_LOCK_EN
+    byte_offset: 4000
+    fieldset: regs::DEBUG_LOCK_EN
+  - name: DEBUG_FEATURES
+    byte_offset: 4004
+    fieldset: regs::DEBUG_FEATURES
+  - name: DEBUG_FEATURES_DP
+    byte_offset: 4008
+    fieldset: regs::DEBUG_FEATURES_DP
+  - name: SWD_ACCESS_CPU0
+    byte_offset: 4020
+  - name: DEBUG_AUTH_BEACON
+    byte_offset: 4032
+  - name: JTAG_ID
+    byte_offset: 4080
+  - name: DEVICE_TYPE
+    byte_offset: 4084
+  - name: DEVICE_ID0
+    byte_offset: 4088
+    fieldset: regs::DEVICE_ID0
+  - name: DIEID
+    byte_offset: 4092
+    fieldset: regs::DIEID
+fieldset/regs::AHBCLKDIV:
+  description: System Clock Divider
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 8
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::AHBMATPRIO:
+  description: AHB Matrix Priority Control
+  fields:
+  - name: CPU0_CBUS
+    bit_offset: 0
+    bit_size: 2
+  - name: CPU0_SBUS
+    bit_offset: 2
+    bit_size: 2
+  - name: DMA0
+    bit_offset: 8
+    bit_size: 2
+  - name: USB_FS_ENET
+    bit_offset: 24
+    bit_size: 2
+fieldset/regs::BINARY_CODE_MSB:
+  description: Gray to Binary Converter Binary Code [41:32]
+  fields:
+  - name: code_bin_41_32
+    bit_offset: 0
+    bit_size: 10
+fieldset/regs::CLKUNLOCK:
+  description: Clock Configuration Unlock
+  fields:
+  - name: UNLOCK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::CPU0NSTCKCAL:
+  description: Non-Secure CPU0 System Tick Calibration
+  fields:
+  - name: TENMS
+    bit_offset: 0
+    bit_size: 24
+  - name: SKEW
+    bit_offset: 24
+    bit_size: 1
+  - name: NOREF
+    bit_offset: 25
+    bit_size: 1
+fieldset/regs::CPUSTAT:
+  description: CPU Status
+  fields:
+  - name: CPU0SLEEPING
+    bit_offset: 0
+    bit_size: 1
+  - name: CPU0LOCKUP
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::CTIMERGLOBALSTARTEN:
+  description: CTIMER Global Start Enable
+  fields:
+  - name: CTIMER0_CLK_EN
+    bit_offset: 0
+    bit_size: 1
+  - name: CTIMER1_CLK_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: CTIMER2_CLK_EN
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::DEBUG_FEATURES:
+  description: Cortex Debug Features Control
+  fields:
+  - name: CPU0_DBGEN
+    bit_offset: 0
+    bit_size: 2
+  - name: CPU0_NIDEN
+    bit_offset: 2
+    bit_size: 2
+fieldset/regs::DEBUG_FEATURES_DP:
+  description: Cortex Debug Features Control (Duplicate)
+  fields:
+  - name: CPU0_DBGEN
+    bit_offset: 0
+    bit_size: 2
+  - name: CPU0_NIDEN
+    bit_offset: 2
+    bit_size: 2
+fieldset/regs::DEBUG_LOCK_EN:
+  description: Control Write Access to Security
+  fields:
+  - name: LOCK_ALL
+    bit_offset: 0
+    bit_size: 4
+fieldset/regs::DEVICE_ID0:
+  description: Device ID
+  fields:
+  - name: ROM_REV_MINOR
+    bit_offset: 20
+    bit_size: 4
+fieldset/regs::DIEID:
+  description: Chip Revision ID and Number
+  fields:
+  - name: MINOR_REVISION
+    bit_offset: 0
+    bit_size: 4
+  - name: MAJOR_REVISION
+    bit_offset: 4
+    bit_size: 4
+  - name: MCO_NUM_IN_DIE_ID
+    bit_offset: 8
+    bit_size: 20
+fieldset/regs::ELS_OTP_LC_STATE:
+  description: Life Cycle State Register
+  fields:
+  - name: OTP_LC_STATE
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::ELS_OTP_LC_STATE_DP:
+  description: Life Cycle State Register (Duplicate)
+  fields:
+  - name: OTP_LC_STATE_DP
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::GRAY_CODE_MSB:
+  description: Gray to Binary Converter Gray Code [41:32]
+  fields:
+  - name: code_gray_41_32
+    bit_offset: 0
+    bit_size: 10
+fieldset/regs::LPCAC_CTRL:
+  description: LPCAC Control
+  fields:
+  - name: DIS_LPCAC
+    bit_offset: 0
+    bit_size: 1
+  - name: CLR_LPCAC
+    bit_offset: 1
+    bit_size: 1
+  - name: FRC_NO_ALLOC
+    bit_offset: 2
+    bit_size: 1
+  - name: DIS_LPCAC_WTBF
+    bit_offset: 4
+    bit_size: 1
+  - name: LIM_LPCAC_WTBF
+    bit_offset: 5
+    bit_size: 1
+  - name: LPCAC_XOM
+    bit_offset: 7
+    bit_size: 1
+  - name: LPCAC_MEM_REQ
+    bit_offset: 8
+    bit_size: 1
+fieldset/regs::NMISRC:
+  description: NMI Source Select
+  fields:
+  - name: IRQCPU0
+    bit_offset: 0
+    bit_size: 8
+  - name: NMIENCPU0
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::NVM_CTRL:
+  description: NVM Control
+  fields:
+  - name: DIS_FLASH_SPEC
+    bit_offset: 0
+    bit_size: 1
+  - name: DIS_DATA_SPEC
+    bit_offset: 1
+    bit_size: 1
+  - name: FLASH_STALL_EN
+    bit_offset: 10
+    bit_size: 1
+  - name: DIS_MBECC_ERR_INST
+    bit_offset: 16
+    bit_size: 1
+  - name: DIS_MBECC_ERR_DATA
+    bit_offset: 17
+    bit_size: 1
+fieldset/regs::PWM0SUBCTL:
+  description: PWM0 Submodule Control
+  fields:
+  - name: CLK0_EN
+    bit_offset: 0
+    bit_size: 1
+  - name: CLK1_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: CLK2_EN
+    bit_offset: 2
+    bit_size: 1
+  - name: CLK3_EN
+    bit_offset: 3
+    bit_size: 1
+fieldset/regs::RAM_CTRL:
+  description: RAM Control
+  fields:
+  - name: RAMA_ECC_ENABLE
+    bit_offset: 0
+    bit_size: 1
+  - name: RAMA_CG_OVERRIDE
+    bit_offset: 16
+    bit_size: 1
+  - name: RAMX_CG_OVERRIDE
+    bit_offset: 17
+    bit_size: 1
+fieldset/regs::REMAP:
+  description: AHB Matrix Remap Control
+  fields:
+  - name: CPU0_SBUS
+    bit_offset: 0
+    bit_size: 2
+  - name: DMA0
+    bit_offset: 2
+    bit_size: 2
+  - name: USB0
+    bit_offset: 4
+    bit_size: 2
+  - name: LOCK
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::SLOWCLKDIV:
+  description: SLOW_CLK Clock Divider
+  fields:
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::SRAM_XEN:
+  description: RAM XEN Control
+  fields:
+  - name: RAMX0_XEN
+    bit_offset: 0
+    bit_size: 1
+  - name: RAMX1_XEN
+    bit_offset: 1
+    bit_size: 1
+  - name: RAMA0_XEN
+    bit_offset: 2
+    bit_size: 1
+  - name: RAMA1_XEN
+    bit_offset: 3
+    bit_size: 1
+  - name: LOCK
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::SRAM_XEN_DP:
+  description: RAM XEN Control (Duplicate)
+  fields:
+  - name: RAMX0_XEN
+    bit_offset: 0
+    bit_size: 1
+  - name: RAMX1_XEN
+    bit_offset: 1
+    bit_size: 1
+  - name: RAMA0_XEN
+    bit_offset: 2
+    bit_size: 1
+  - name: RAMA1_XEN
+    bit_offset: 3
+    bit_size: 1

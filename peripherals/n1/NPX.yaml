@@ -1,0 +1,292 @@
+block/CTX_VALID_IV_ARRAY:
+  items:
+  - name: VMAPCTX_WD
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 0
+  - name: BIVCTX_WD
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 8
+block/NPX:
+  items:
+  - name: NPXCR
+    byte_offset: 0
+    fieldset: regs::NPXCR
+  - name: NPXSR
+    byte_offset: 8
+    fieldset: regs::NPXSR
+  - name: CACMSK
+    byte_offset: 16
+  - name: REMAP
+    byte_offset: 32
+    fieldset: regs::REMAP
+  - name: CTX_VALID_IV_ARRAY
+    array:
+      len: 4
+      stride: 16
+    byte_offset: 64
+    block: CTX_VALID_IV_ARRAY
+fieldset/regs::CTX_VALID_IV_ARRAY_BIVCTX_WD:
+  description: Block Initial Vector for Memory Context 0..Block Initial Vector for Memory Context 3
+  fields:
+  - name: BIV_WD0
+    bit_offset: 0
+    bit_size: 32
+  - name: BIV_WD1
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::CTX_VALID_IV_ARRAY_VMAPCTX_WD:
+  description: Bitmap of Valid Control for Memory Context 0..Bitmap of Valid Control for Memory Context 3
+  fields:
+  - name: VAL0
+    bit_offset: 0
+    bit_size: 1
+  - name: VAL32
+    bit_offset: 0
+    bit_size: 1
+  - name: VAL1
+    bit_offset: 1
+    bit_size: 1
+  - name: VAL33
+    bit_offset: 1
+    bit_size: 1
+  - name: VAL2
+    bit_offset: 2
+    bit_size: 1
+  - name: VAL34
+    bit_offset: 2
+    bit_size: 1
+  - name: VAL3
+    bit_offset: 3
+    bit_size: 1
+  - name: VAL35
+    bit_offset: 3
+    bit_size: 1
+  - name: VAL4
+    bit_offset: 4
+    bit_size: 1
+  - name: VAL36
+    bit_offset: 4
+    bit_size: 1
+  - name: VAL5
+    bit_offset: 5
+    bit_size: 1
+  - name: VAL37
+    bit_offset: 5
+    bit_size: 1
+  - name: VAL6
+    bit_offset: 6
+    bit_size: 1
+  - name: VAL38
+    bit_offset: 6
+    bit_size: 1
+  - name: VAL7
+    bit_offset: 7
+    bit_size: 1
+  - name: VAL39
+    bit_offset: 7
+    bit_size: 1
+  - name: VAL8
+    bit_offset: 8
+    bit_size: 1
+  - name: VAL40
+    bit_offset: 8
+    bit_size: 1
+  - name: VAL9
+    bit_offset: 9
+    bit_size: 1
+  - name: VAL41
+    bit_offset: 9
+    bit_size: 1
+  - name: VAL10
+    bit_offset: 10
+    bit_size: 1
+  - name: VAL42
+    bit_offset: 10
+    bit_size: 1
+  - name: VAL11
+    bit_offset: 11
+    bit_size: 1
+  - name: VAL43
+    bit_offset: 11
+    bit_size: 1
+  - name: VAL12
+    bit_offset: 12
+    bit_size: 1
+  - name: VAL44
+    bit_offset: 12
+    bit_size: 1
+  - name: VAL13
+    bit_offset: 13
+    bit_size: 1
+  - name: VAL45
+    bit_offset: 13
+    bit_size: 1
+  - name: VAL14
+    bit_offset: 14
+    bit_size: 1
+  - name: VAL46
+    bit_offset: 14
+    bit_size: 1
+  - name: VAL15
+    bit_offset: 15
+    bit_size: 1
+  - name: VAL47
+    bit_offset: 15
+    bit_size: 1
+  - name: VAL16
+    bit_offset: 16
+    bit_size: 1
+  - name: VAL48
+    bit_offset: 16
+    bit_size: 1
+  - name: VAL17
+    bit_offset: 17
+    bit_size: 1
+  - name: VAL49
+    bit_offset: 17
+    bit_size: 1
+  - name: VAL18
+    bit_offset: 18
+    bit_size: 1
+  - name: VAL50
+    bit_offset: 18
+    bit_size: 1
+  - name: VAL19
+    bit_offset: 19
+    bit_size: 1
+  - name: VAL51
+    bit_offset: 19
+    bit_size: 1
+  - name: VAL20
+    bit_offset: 20
+    bit_size: 1
+  - name: VAL52
+    bit_offset: 20
+    bit_size: 1
+  - name: VAL21
+    bit_offset: 21
+    bit_size: 1
+  - name: VAL53
+    bit_offset: 21
+    bit_size: 1
+  - name: VAL22
+    bit_offset: 22
+    bit_size: 1
+  - name: VAL54
+    bit_offset: 22
+    bit_size: 1
+  - name: VAL23
+    bit_offset: 23
+    bit_size: 1
+  - name: VAL55
+    bit_offset: 23
+    bit_size: 1
+  - name: VAL24
+    bit_offset: 24
+    bit_size: 1
+  - name: VAL56
+    bit_offset: 24
+    bit_size: 1
+  - name: VAL25
+    bit_offset: 25
+    bit_size: 1
+  - name: VAL57
+    bit_offset: 25
+    bit_size: 1
+  - name: VAL26
+    bit_offset: 26
+    bit_size: 1
+  - name: VAL58
+    bit_offset: 26
+    bit_size: 1
+  - name: VAL27
+    bit_offset: 27
+    bit_size: 1
+  - name: VAL59
+    bit_offset: 27
+    bit_size: 1
+  - name: VAL28
+    bit_offset: 28
+    bit_size: 1
+  - name: VAL60
+    bit_offset: 28
+    bit_size: 1
+  - name: VAL29
+    bit_offset: 29
+    bit_size: 1
+  - name: VAL61
+    bit_offset: 29
+    bit_size: 1
+  - name: VAL30
+    bit_offset: 30
+    bit_size: 1
+  - name: VAL62
+    bit_offset: 30
+    bit_size: 1
+  - name: VAL31
+    bit_offset: 31
+    bit_size: 1
+  - name: VAL63
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::NPXCR:
+  description: NPX Control Register
+  fields:
+  - name: GEE
+    bit_offset: 0
+    bit_size: 1
+  - name: GDE
+    bit_offset: 2
+    bit_size: 1
+  - name: GLK
+    bit_offset: 4
+    bit_size: 1
+  - name: MLK
+    bit_offset: 6
+    bit_size: 1
+  - name: CTX0LK
+    bit_offset: 8
+    bit_size: 1
+  - name: CTX1LK
+    bit_offset: 10
+    bit_size: 1
+  - name: CTX2LK
+    bit_offset: 12
+    bit_size: 1
+  - name: CTX3LK
+    bit_offset: 14
+    bit_size: 1
+fieldset/regs::NPXSR:
+  description: NPX Status Register
+  fields:
+  - name: NUMCTX
+    bit_offset: 0
+    bit_size: 4
+  - name: V0
+    bit_offset: 8
+    bit_size: 1
+  - name: V1
+    bit_offset: 9
+    bit_size: 1
+  - name: V2
+    bit_offset: 10
+    bit_size: 1
+  - name: V3
+    bit_offset: 11
+    bit_size: 1
+fieldset/regs::REMAP:
+  description: Data Remap
+  fields:
+  - name: REMAPLK
+    bit_offset: 0
+    bit_size: 1
+  - name: LIM
+    bit_offset: 16
+    bit_size: 5
+  - name: LIMDP
+    bit_offset: 24
+    bit_size: 5

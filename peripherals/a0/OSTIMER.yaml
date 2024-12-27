@@ -1,0 +1,53 @@
+block/OSTIMER:
+  items:
+  - name: EVTIMERL
+    byte_offset: 0
+  - name: EVTIMERH
+    byte_offset: 4
+    fieldset: regs::EVTIMERH
+  - name: CAPTURE_L
+    byte_offset: 8
+  - name: CAPTURE_H
+    byte_offset: 12
+    fieldset: regs::CAPTURE_H
+  - name: MATCH_L
+    byte_offset: 16
+  - name: MATCH_H
+    byte_offset: 20
+    fieldset: regs::MATCH_H
+  - name: OSEVENT_CTRL
+    byte_offset: 28
+    fieldset: regs::OSEVENT_CTRL
+fieldset/regs::CAPTURE_H:
+  description: Local Capture High for CPU
+  fields:
+  - name: CAPTURE_VALUE
+    bit_offset: 0
+    bit_size: 10
+fieldset/regs::EVTIMERH:
+  description: EVTIMER High
+  fields:
+  - name: EVTIMER_COUNT_VALUE
+    bit_offset: 0
+    bit_size: 10
+fieldset/regs::MATCH_H:
+  description: Local Match High for CPU
+  fields:
+  - name: MATCH_VALUE
+    bit_offset: 0
+    bit_size: 10
+fieldset/regs::OSEVENT_CTRL:
+  description: OSTIMER Control for CPU
+  fields:
+  - name: OSTIMER_INTRFLAG
+    bit_offset: 0
+    bit_size: 1
+  - name: OSTIMER_INTENA
+    bit_offset: 1
+    bit_size: 1
+  - name: MATCH_WR_RDY
+    bit_offset: 2
+    bit_size: 1
+  - name: DEBUG_EN
+    bit_offset: 3
+    bit_size: 1

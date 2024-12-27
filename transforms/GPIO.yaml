@@ -1,0 +1,5 @@
+transforms:
+- !MakeFieldArray
+  fieldsets: regs::P(CO|DD|DI|DO|ID|SO|TO)R
+  from: (.*?)\d+
+  to: $1

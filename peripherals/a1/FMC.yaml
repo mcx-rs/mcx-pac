@@ -1,0 +1,17 @@
+block/FMC:
+  items:
+  - name: REMAP
+    byte_offset: 32
+    fieldset: regs::REMAP
+fieldset/regs::REMAP:
+  description: Data Remap
+  fields:
+  - name: REMAPLK
+    bit_offset: 0
+    bit_size: 1
+  - name: LIM
+    bit_offset: 16
+    bit_size: 7
+  - name: LIMDP
+    bit_offset: 24
+    bit_size: 7

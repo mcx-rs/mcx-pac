@@ -1,0 +1,385 @@
+block/QDC:
+  items:
+  - name: CTRL
+    byte_offset: 0
+    bit_size: 16
+    fieldset: regs::CTRL
+  - name: FILT
+    byte_offset: 2
+    bit_size: 16
+    fieldset: regs::FILT
+  - name: WTR
+    byte_offset: 4
+    bit_size: 16
+    fieldset: regs::WTR
+  - name: POSD
+    byte_offset: 6
+    bit_size: 16
+    fieldset: regs::POSD
+  - name: POSDH
+    byte_offset: 8
+    bit_size: 16
+    fieldset: regs::POSDH
+  - name: REV
+    byte_offset: 10
+    bit_size: 16
+    fieldset: regs::REV
+  - name: REVH
+    byte_offset: 12
+    bit_size: 16
+    fieldset: regs::REVH
+  - name: UPOS
+    byte_offset: 14
+    bit_size: 16
+    fieldset: regs::UPOS
+  - name: LPOS
+    byte_offset: 16
+    bit_size: 16
+    fieldset: regs::LPOS
+  - name: UPOSH
+    byte_offset: 18
+    bit_size: 16
+    fieldset: regs::UPOSH
+  - name: LPOSH
+    byte_offset: 20
+    bit_size: 16
+    fieldset: regs::LPOSH
+  - name: UINIT
+    byte_offset: 22
+    bit_size: 16
+    fieldset: regs::UINIT
+  - name: LINIT
+    byte_offset: 24
+    bit_size: 16
+    fieldset: regs::LINIT
+  - name: IMR
+    byte_offset: 26
+    bit_size: 16
+    fieldset: regs::IMR
+  - name: TST
+    byte_offset: 28
+    bit_size: 16
+    fieldset: regs::TST
+  - name: CTRL2
+    byte_offset: 30
+    bit_size: 16
+    fieldset: regs::CTRL2
+  - name: UMOD
+    byte_offset: 32
+    bit_size: 16
+    fieldset: regs::UMOD
+  - name: LMOD
+    byte_offset: 34
+    bit_size: 16
+    fieldset: regs::LMOD
+  - name: UCOMP
+    byte_offset: 36
+    bit_size: 16
+    fieldset: regs::UCOMP
+  - name: LCOMP
+    byte_offset: 38
+    bit_size: 16
+    fieldset: regs::LCOMP
+  - name: LASTEDGE
+    byte_offset: 40
+    bit_size: 16
+    fieldset: regs::LASTEDGE
+  - name: LASTEDGEH
+    byte_offset: 42
+    bit_size: 16
+    fieldset: regs::LASTEDGEH
+  - name: POSDPER
+    byte_offset: 44
+    bit_size: 16
+    fieldset: regs::POSDPER
+  - name: POSDPERBFR
+    byte_offset: 46
+    bit_size: 16
+    fieldset: regs::POSDPERBFR
+  - name: POSDPERH
+    byte_offset: 48
+    bit_size: 16
+    fieldset: regs::POSDPERH
+  - name: CTRL3
+    byte_offset: 50
+    bit_size: 16
+    fieldset: regs::CTRL3
+fieldset/regs::CTRL:
+  description: Control
+  fields:
+  - name: CMPIE
+    bit_offset: 0
+    bit_size: 1
+  - name: CMPIRQ
+    bit_offset: 1
+    bit_size: 1
+  - name: WDE
+    bit_offset: 2
+    bit_size: 1
+  - name: DIE
+    bit_offset: 3
+    bit_size: 1
+  - name: DIRQ
+    bit_offset: 4
+    bit_size: 1
+  - name: XNE
+    bit_offset: 5
+    bit_size: 1
+  - name: XIP
+    bit_offset: 6
+    bit_size: 1
+  - name: XIE
+    bit_offset: 7
+    bit_size: 1
+  - name: XIRQ
+    bit_offset: 8
+    bit_size: 1
+  - name: PH1
+    bit_offset: 9
+    bit_size: 1
+  - name: REV
+    bit_offset: 10
+    bit_size: 1
+  - name: SWIP
+    bit_offset: 11
+    bit_size: 1
+  - name: HNE
+    bit_offset: 12
+    bit_size: 1
+  - name: HIP
+    bit_offset: 13
+    bit_size: 1
+  - name: HIE
+    bit_offset: 14
+    bit_size: 1
+  - name: HIRQ
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::CTRL2:
+  description: Control 2
+  fields:
+  - name: UPDHLD
+    bit_offset: 0
+    bit_size: 1
+  - name: UPDPOS
+    bit_offset: 1
+    bit_size: 1
+  - name: MOD
+    bit_offset: 2
+    bit_size: 1
+  - name: DIR
+    bit_offset: 3
+    bit_size: 1
+  - name: RUIE
+    bit_offset: 4
+    bit_size: 1
+  - name: RUIRQ
+    bit_offset: 5
+    bit_size: 1
+  - name: ROIE
+    bit_offset: 6
+    bit_size: 1
+  - name: ROIRQ
+    bit_offset: 7
+    bit_size: 1
+  - name: REVMOD
+    bit_offset: 8
+    bit_size: 1
+  - name: OUTCTL
+    bit_offset: 9
+    bit_size: 1
+  - name: SABIE
+    bit_offset: 10
+    bit_size: 1
+  - name: SABIRQ
+    bit_offset: 11
+    bit_size: 1
+  - name: INITPOS
+    bit_offset: 12
+    bit_size: 1
+fieldset/regs::CTRL3:
+  description: Control 3
+  fields:
+  - name: PMEN
+    bit_offset: 0
+    bit_size: 1
+  - name: PRSC
+    bit_offset: 4
+    bit_size: 4
+fieldset/regs::FILT:
+  description: Input Filter
+  fields:
+  - name: FILT_PER
+    bit_offset: 0
+    bit_size: 8
+  - name: FILT_CNT
+    bit_offset: 8
+    bit_size: 3
+  - name: FILT_PRSC
+    bit_offset: 13
+    bit_size: 3
+fieldset/regs::IMR:
+  description: Input Monitor
+  fields:
+  - name: HOME
+    bit_offset: 0
+    bit_size: 1
+  - name: INDEX
+    bit_offset: 1
+    bit_size: 1
+  - name: PHB
+    bit_offset: 2
+    bit_size: 1
+  - name: PHA
+    bit_offset: 3
+    bit_size: 1
+  - name: FHOM
+    bit_offset: 4
+    bit_size: 1
+  - name: FIND
+    bit_offset: 5
+    bit_size: 1
+  - name: FPHB
+    bit_offset: 6
+    bit_size: 1
+  - name: FPHA
+    bit_offset: 7
+    bit_size: 1
+fieldset/regs::LASTEDGE:
+  description: Last Edge Time
+  fields:
+  - name: LASTEDGE
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::LASTEDGEH:
+  description: Last Edge Time Hold
+  fields:
+  - name: LASTEDGEH
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::LCOMP:
+  description: Lower Position Compare
+  fields:
+  - name: COMP
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::LINIT:
+  description: Lower Initialization
+  fields:
+  - name: INIT
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::LMOD:
+  description: Lower Modulus
+  fields:
+  - name: MOD
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::LPOS:
+  description: Lower Position Counter
+  fields:
+  - name: POS
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::LPOSH:
+  description: Lower Position Hold
+  fields:
+  - name: POSH
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::POSD:
+  description: Position Difference Counter
+  fields:
+  - name: POSD
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::POSDH:
+  description: Position Difference Hold
+  fields:
+  - name: POSDH
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::POSDPER:
+  description: Position Difference Period Counter
+  fields:
+  - name: POSDPER
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::POSDPERBFR:
+  description: Position Difference Period Buffer
+  fields:
+  - name: POSDPERBFR
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::POSDPERH:
+  description: Position Difference Period Hold
+  fields:
+  - name: POSDPERH
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::REV:
+  description: Revolution Counter
+  fields:
+  - name: REV
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::REVH:
+  description: Revolution Hold
+  fields:
+  - name: REVH
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::TST:
+  description: Test
+  fields:
+  - name: TEST_COUNT
+    bit_offset: 0
+    bit_size: 8
+  - name: TEST_PERIOD
+    bit_offset: 8
+    bit_size: 5
+  - name: QDN
+    bit_offset: 13
+    bit_size: 1
+  - name: TCE
+    bit_offset: 14
+    bit_size: 1
+  - name: TEN
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::UCOMP:
+  description: Upper Position Compare
+  fields:
+  - name: COMP
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::UINIT:
+  description: Upper Initialization
+  fields:
+  - name: INIT
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::UMOD:
+  description: Upper Modulus
+  fields:
+  - name: MOD
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::UPOS:
+  description: Upper Position Counter
+  fields:
+  - name: POS
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::UPOSH:
+  description: Upper Position Hold
+  fields:
+  - name: POSH
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::WTR:
+  description: Watchdog Timeout
+  fields:
+  - name: WDOG
+    bit_offset: 0
+    bit_size: 16

@@ -1,0 +1,357 @@
+block/GPIO:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: PARAM
+    byte_offset: 4
+    fieldset: regs::PARAM
+  - name: PDOR
+    byte_offset: 64
+    fieldset: regs::PDOR
+  - name: PSOR
+    byte_offset: 68
+    fieldset: regs::PSOR
+  - name: PCOR
+    byte_offset: 72
+    fieldset: regs::PCOR
+  - name: PTOR
+    byte_offset: 76
+    fieldset: regs::PTOR
+  - name: PDIR
+    byte_offset: 80
+    fieldset: regs::PDIR
+  - name: PDDR
+    byte_offset: 84
+    fieldset: regs::PDDR
+  - name: PIDR
+    byte_offset: 88
+    fieldset: regs::PIDR
+  - name: PDR
+    array:
+      len: 32
+      stride: 1
+    byte_offset: 96
+    bit_size: 8
+    fieldset: regs::PDR
+  - name: ICR
+    array:
+      len: 32
+      stride: 4
+    byte_offset: 128
+    fieldset: regs::ICR
+  - name: GICLR
+    byte_offset: 256
+    fieldset: regs::GICLR
+  - name: GICHR
+    byte_offset: 260
+    fieldset: regs::GICHR
+  - name: ISFR
+    array:
+      len: 1
+      stride: 4
+    byte_offset: 288
+    fieldset: regs::ISFR
+fieldset/regs::GICHR:
+  description: Global Interrupt Control High
+  fields:
+  - name: GIWE16
+    bit_offset: 0
+    bit_size: 1
+  - name: GIWE17
+    bit_offset: 1
+    bit_size: 1
+  - name: GIWE18
+    bit_offset: 2
+    bit_size: 1
+  - name: GIWE19
+    bit_offset: 3
+    bit_size: 1
+  - name: GIWE20
+    bit_offset: 4
+    bit_size: 1
+  - name: GIWE21
+    bit_offset: 5
+    bit_size: 1
+  - name: GIWE22
+    bit_offset: 6
+    bit_size: 1
+  - name: GIWE23
+    bit_offset: 7
+    bit_size: 1
+  - name: GIWE24
+    bit_offset: 8
+    bit_size: 1
+  - name: GIWE25
+    bit_offset: 9
+    bit_size: 1
+  - name: GIWE26
+    bit_offset: 10
+    bit_size: 1
+  - name: GIWE27
+    bit_offset: 11
+    bit_size: 1
+  - name: GIWE28
+    bit_offset: 12
+    bit_size: 1
+  - name: GIWE29
+    bit_offset: 13
+    bit_size: 1
+  - name: GIWE30
+    bit_offset: 14
+    bit_size: 1
+  - name: GIWE31
+    bit_offset: 15
+    bit_size: 1
+  - name: GIWD
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::GICLR:
+  description: Global Interrupt Control Low
+  fields:
+  - name: GIWE0
+    bit_offset: 0
+    bit_size: 1
+  - name: GIWE1
+    bit_offset: 1
+    bit_size: 1
+  - name: GIWE2
+    bit_offset: 2
+    bit_size: 1
+  - name: GIWE3
+    bit_offset: 3
+    bit_size: 1
+  - name: GIWE4
+    bit_offset: 4
+    bit_size: 1
+  - name: GIWE5
+    bit_offset: 5
+    bit_size: 1
+  - name: GIWE6
+    bit_offset: 6
+    bit_size: 1
+  - name: GIWE7
+    bit_offset: 7
+    bit_size: 1
+  - name: GIWE8
+    bit_offset: 8
+    bit_size: 1
+  - name: GIWE9
+    bit_offset: 9
+    bit_size: 1
+  - name: GIWE10
+    bit_offset: 10
+    bit_size: 1
+  - name: GIWE11
+    bit_offset: 11
+    bit_size: 1
+  - name: GIWE12
+    bit_offset: 12
+    bit_size: 1
+  - name: GIWE13
+    bit_offset: 13
+    bit_size: 1
+  - name: GIWE14
+    bit_offset: 14
+    bit_size: 1
+  - name: GIWE15
+    bit_offset: 15
+    bit_size: 1
+  - name: GIWD
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::ICR:
+  description: Interrupt Control 0..Interrupt Control 31
+  fields:
+  - name: IRQC
+    bit_offset: 16
+    bit_size: 4
+  - name: ISF
+    bit_offset: 24
+    bit_size: 1
+fieldset/regs::ISFR:
+  description: Interrupt Status Flag
+  fields:
+  - name: ISF0
+    bit_offset: 0
+    bit_size: 1
+  - name: ISF1
+    bit_offset: 1
+    bit_size: 1
+  - name: ISF2
+    bit_offset: 2
+    bit_size: 1
+  - name: ISF3
+    bit_offset: 3
+    bit_size: 1
+  - name: ISF4
+    bit_offset: 4
+    bit_size: 1
+  - name: ISF5
+    bit_offset: 5
+    bit_size: 1
+  - name: ISF6
+    bit_offset: 6
+    bit_size: 1
+  - name: ISF7
+    bit_offset: 7
+    bit_size: 1
+  - name: ISF8
+    bit_offset: 8
+    bit_size: 1
+  - name: ISF9
+    bit_offset: 9
+    bit_size: 1
+  - name: ISF10
+    bit_offset: 10
+    bit_size: 1
+  - name: ISF11
+    bit_offset: 11
+    bit_size: 1
+  - name: ISF12
+    bit_offset: 12
+    bit_size: 1
+  - name: ISF13
+    bit_offset: 13
+    bit_size: 1
+  - name: ISF14
+    bit_offset: 14
+    bit_size: 1
+  - name: ISF15
+    bit_offset: 15
+    bit_size: 1
+  - name: ISF16
+    bit_offset: 16
+    bit_size: 1
+  - name: ISF17
+    bit_offset: 17
+    bit_size: 1
+  - name: ISF18
+    bit_offset: 18
+    bit_size: 1
+  - name: ISF19
+    bit_offset: 19
+    bit_size: 1
+  - name: ISF20
+    bit_offset: 20
+    bit_size: 1
+  - name: ISF21
+    bit_offset: 21
+    bit_size: 1
+  - name: ISF22
+    bit_offset: 22
+    bit_size: 1
+  - name: ISF23
+    bit_offset: 23
+    bit_size: 1
+  - name: ISF24
+    bit_offset: 24
+    bit_size: 1
+  - name: ISF25
+    bit_offset: 25
+    bit_size: 1
+  - name: ISF26
+    bit_offset: 26
+    bit_size: 1
+  - name: ISF27
+    bit_offset: 27
+    bit_size: 1
+  - name: ISF28
+    bit_offset: 28
+    bit_size: 1
+  - name: ISF29
+    bit_offset: 29
+    bit_size: 1
+  - name: ISF30
+    bit_offset: 30
+    bit_size: 1
+  - name: ISF31
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::PARAM:
+  description: Parameter
+  fields:
+  - name: IRQNUM
+    bit_offset: 0
+    bit_size: 4
+fieldset/regs::PCOR:
+  description: Port Clear Output
+  fields:
+  - name: PTCO
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+fieldset/regs::PDDR:
+  description: Port Data Direction
+  fields:
+  - name: PDD
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+fieldset/regs::PDIR:
+  description: Port Data Input
+  fields:
+  - name: PDI
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+fieldset/regs::PDOR:
+  description: Port Data Output
+  fields:
+  - name: PDO
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+fieldset/regs::PDR:
+  description: Pin Data
+  fields:
+  - name: PD
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::PIDR:
+  description: Port Input Disable
+  fields:
+  - name: PID
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+fieldset/regs::PSOR:
+  description: Port Set Output
+  fields:
+  - name: PTSO
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+fieldset/regs::PTOR:
+  description: Port Toggle Output
+  fields:
+  - name: PTTO
+    bit_offset: 0
+    bit_size: 1
+    array:
+      len: 32
+      stride: 1
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

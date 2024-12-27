@@ -1,0 +1,107 @@
+block/SMARTDMA:
+  items:
+  - name: BOOTADR
+    byte_offset: 32
+    fieldset: regs::BOOTADR
+  - name: CTRL
+    byte_offset: 36
+    fieldset: regs::CTRL
+  - name: PC
+    byte_offset: 40
+  - name: SP
+    byte_offset: 44
+  - name: BREAK_ADDR
+    byte_offset: 48
+    fieldset: regs::BREAK_ADDR
+  - name: BREAK_VECT
+    byte_offset: 52
+    fieldset: regs::BREAK_VECT
+  - name: EMER_VECT
+    byte_offset: 56
+    fieldset: regs::EMER_VECT
+  - name: EMER_SEL
+    byte_offset: 60
+    fieldset: regs::EMER_SEL
+  - name: ARM2EZH
+    byte_offset: 64
+    fieldset: regs::ARM2EZH
+  - name: EZH2ARM
+    byte_offset: 68
+  - name: PENDTRAP
+    byte_offset: 72
+    fieldset: regs::PENDTRAP
+fieldset/regs::ARM2EZH:
+  description: ARM to EZH Interrupt Control
+  fields:
+  - name: IE
+    bit_offset: 0
+    bit_size: 2
+  - name: GP
+    bit_offset: 2
+    bit_size: 30
+fieldset/regs::BOOTADR:
+  description: Boot Address
+  fields:
+  - name: ADDR
+    bit_offset: 2
+    bit_size: 30
+fieldset/regs::BREAK_ADDR:
+  description: Breakpoint Address
+  fields:
+  - name: ADDR
+    bit_offset: 2
+    bit_size: 30
+fieldset/regs::BREAK_VECT:
+  description: Breakpoint Vector
+  fields:
+  - name: VEC
+    bit_offset: 2
+    bit_size: 30
+fieldset/regs::CTRL:
+  description: Control
+  fields:
+  - name: START
+    bit_offset: 0
+    bit_size: 1
+  - name: EXF
+    bit_offset: 1
+    bit_size: 1
+  - name: ERRDIS
+    bit_offset: 2
+    bit_size: 1
+  - name: BUFEN
+    bit_offset: 3
+    bit_size: 1
+  - name: SYNCEN
+    bit_offset: 4
+    bit_size: 1
+  - name: WKEY
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::EMER_SEL:
+  description: Emergency Select
+  fields:
+  - name: EN
+    bit_offset: 8
+    bit_size: 1
+  - name: RQ
+    bit_offset: 9
+    bit_size: 1
+fieldset/regs::EMER_VECT:
+  description: Emergency Vector
+  fields:
+  - name: VEC
+    bit_offset: 2
+    bit_size: 30
+fieldset/regs::PENDTRAP:
+  description: Pending Trap Control
+  fields:
+  - name: STATUS
+    bit_offset: 0
+    bit_size: 8
+  - name: POL
+    bit_offset: 8
+    bit_size: 8
+  - name: EN
+    bit_offset: 16
+    bit_size: 8

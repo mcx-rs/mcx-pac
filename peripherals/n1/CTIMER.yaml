@@ -1,0 +1,233 @@
+block/CTIMER:
+  items:
+  - name: IR
+    byte_offset: 0
+    fieldset: regs::IR
+  - name: TCR
+    byte_offset: 4
+    fieldset: regs::TCR
+  - name: TC
+    byte_offset: 8
+  - name: PR
+    byte_offset: 12
+  - name: PC
+    byte_offset: 16
+  - name: MCR
+    byte_offset: 20
+    fieldset: regs::MCR
+  - name: MR
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 24
+  - name: CCR
+    byte_offset: 40
+    fieldset: regs::CCR
+  - name: CR
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 44
+  - name: EMR
+    byte_offset: 60
+    fieldset: regs::EMR
+  - name: CTCR
+    byte_offset: 112
+    fieldset: regs::CTCR
+  - name: PWMC
+    byte_offset: 116
+    fieldset: regs::PWMC
+  - name: MSR
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 120
+fieldset/regs::CCR:
+  description: Capture Control
+  fields:
+  - name: CAP0RE
+    bit_offset: 0
+    bit_size: 1
+  - name: CAP0FE
+    bit_offset: 1
+    bit_size: 1
+  - name: CAP0I
+    bit_offset: 2
+    bit_size: 1
+  - name: CAP1RE
+    bit_offset: 3
+    bit_size: 1
+  - name: CAP1FE
+    bit_offset: 4
+    bit_size: 1
+  - name: CAP1I
+    bit_offset: 5
+    bit_size: 1
+  - name: CAP2RE
+    bit_offset: 6
+    bit_size: 1
+  - name: CAP2FE
+    bit_offset: 7
+    bit_size: 1
+  - name: CAP2I
+    bit_offset: 8
+    bit_size: 1
+  - name: CAP3RE
+    bit_offset: 9
+    bit_size: 1
+  - name: CAP3FE
+    bit_offset: 10
+    bit_size: 1
+  - name: CAP3I
+    bit_offset: 11
+    bit_size: 1
+fieldset/regs::CTCR:
+  description: Count Control
+  fields:
+  - name: CTMODE
+    bit_offset: 0
+    bit_size: 2
+  - name: CINSEL
+    bit_offset: 2
+    bit_size: 2
+  - name: ENCC
+    bit_offset: 4
+    bit_size: 1
+  - name: SELCC
+    bit_offset: 5
+    bit_size: 3
+fieldset/regs::EMR:
+  description: External Match
+  fields:
+  - name: EM0
+    bit_offset: 0
+    bit_size: 1
+  - name: EM1
+    bit_offset: 1
+    bit_size: 1
+  - name: EM2
+    bit_offset: 2
+    bit_size: 1
+  - name: EM3
+    bit_offset: 3
+    bit_size: 1
+  - name: EMC0
+    bit_offset: 4
+    bit_size: 2
+  - name: EMC1
+    bit_offset: 6
+    bit_size: 2
+  - name: EMC2
+    bit_offset: 8
+    bit_size: 2
+  - name: EMC3
+    bit_offset: 10
+    bit_size: 2
+fieldset/regs::IR:
+  description: Interrupt
+  fields:
+  - name: MR0INT
+    bit_offset: 0
+    bit_size: 1
+  - name: MR1INT
+    bit_offset: 1
+    bit_size: 1
+  - name: MR2INT
+    bit_offset: 2
+    bit_size: 1
+  - name: MR3INT
+    bit_offset: 3
+    bit_size: 1
+  - name: CR0INT
+    bit_offset: 4
+    bit_size: 1
+  - name: CR1INT
+    bit_offset: 5
+    bit_size: 1
+  - name: CR2INT
+    bit_offset: 6
+    bit_size: 1
+  - name: CR3INT
+    bit_offset: 7
+    bit_size: 1
+fieldset/regs::MCR:
+  description: Match Control
+  fields:
+  - name: MR0I
+    bit_offset: 0
+    bit_size: 1
+  - name: MR0R
+    bit_offset: 1
+    bit_size: 1
+  - name: MR0S
+    bit_offset: 2
+    bit_size: 1
+  - name: MR1I
+    bit_offset: 3
+    bit_size: 1
+  - name: MR1R
+    bit_offset: 4
+    bit_size: 1
+  - name: MR1S
+    bit_offset: 5
+    bit_size: 1
+  - name: MR2I
+    bit_offset: 6
+    bit_size: 1
+  - name: MR2R
+    bit_offset: 7
+    bit_size: 1
+  - name: MR2S
+    bit_offset: 8
+    bit_size: 1
+  - name: MR3I
+    bit_offset: 9
+    bit_size: 1
+  - name: MR3R
+    bit_offset: 10
+    bit_size: 1
+  - name: MR3S
+    bit_offset: 11
+    bit_size: 1
+  - name: MR0RL
+    bit_offset: 24
+    bit_size: 1
+  - name: MR1RL
+    bit_offset: 25
+    bit_size: 1
+  - name: MR2RL
+    bit_offset: 26
+    bit_size: 1
+  - name: MR3RL
+    bit_offset: 27
+    bit_size: 1
+fieldset/regs::PWMC:
+  description: PWM Control
+  fields:
+  - name: PWMEN0
+    bit_offset: 0
+    bit_size: 1
+  - name: PWMEN1
+    bit_offset: 1
+    bit_size: 1
+  - name: PWMEN2
+    bit_offset: 2
+    bit_size: 1
+  - name: PWMEN3
+    bit_offset: 3
+    bit_size: 1
+fieldset/regs::TCR:
+  description: Timer Control
+  fields:
+  - name: CEN
+    bit_offset: 0
+    bit_size: 1
+  - name: CRST
+    bit_offset: 1
+    bit_size: 1
+  - name: AGCEN
+    bit_offset: 4
+    bit_size: 1
+  - name: ATCEN
+    bit_offset: 5
+    bit_size: 1

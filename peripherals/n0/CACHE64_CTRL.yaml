@@ -1,0 +1,85 @@
+block/CACHE64_CTRL:
+  items:
+  - name: CCR
+    byte_offset: 2048
+    fieldset: regs::CCR
+  - name: CLCR
+    byte_offset: 2052
+    fieldset: regs::CLCR
+  - name: CSAR
+    byte_offset: 2056
+    fieldset: regs::CSAR
+  - name: CCVR
+    byte_offset: 2060
+fieldset/regs::CCR:
+  description: Cache Control
+  fields:
+  - name: ENCACHE
+    bit_offset: 0
+    bit_size: 1
+  - name: ENWRBUF
+    bit_offset: 1
+    bit_size: 1
+  - name: FRCWT
+    bit_offset: 2
+    bit_size: 1
+  - name: FRCNOALLC
+    bit_offset: 3
+    bit_size: 1
+  - name: INVW0
+    bit_offset: 24
+    bit_size: 1
+  - name: PUSHW0
+    bit_offset: 25
+    bit_size: 1
+  - name: INVW1
+    bit_offset: 26
+    bit_size: 1
+  - name: PUSHW1
+    bit_offset: 27
+    bit_size: 1
+  - name: GO
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CLCR:
+  description: Cache Line Control
+  fields:
+  - name: LGO
+    bit_offset: 0
+    bit_size: 1
+  - name: CACHEADDR
+    bit_offset: 2
+    bit_size: 11
+  - name: WSEL
+    bit_offset: 14
+    bit_size: 1
+  - name: TDSEL
+    bit_offset: 16
+    bit_size: 1
+  - name: LCIVB
+    bit_offset: 20
+    bit_size: 1
+  - name: LCIMB
+    bit_offset: 21
+    bit_size: 1
+  - name: LCWAY
+    bit_offset: 22
+    bit_size: 1
+  - name: LCMD
+    bit_offset: 24
+    bit_size: 2
+  - name: LADSEL
+    bit_offset: 26
+    bit_size: 1
+  - name: LACC
+    bit_offset: 27
+    bit_size: 1
+fieldset/regs::CSAR:
+  description: Cache Search Address
+  fields:
+  - name: LGO
+    bit_offset: 0
+    bit_size: 1
+  - name: PHYADDR
+    bit_offset: 1
+    bit_size: 31

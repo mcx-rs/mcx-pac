@@ -1,0 +1,422 @@
+block/LPUART:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: PARAM
+    byte_offset: 4
+    fieldset: regs::PARAM
+  - name: GLOBAL
+    byte_offset: 8
+    fieldset: regs::GLOBAL
+  - name: PINCFG
+    byte_offset: 12
+    fieldset: regs::PINCFG
+  - name: BAUD
+    byte_offset: 16
+    fieldset: regs::BAUD
+  - name: STAT
+    byte_offset: 20
+    fieldset: regs::STAT
+  - name: CTRL
+    byte_offset: 24
+    fieldset: regs::CTRL
+  - name: DATA
+    byte_offset: 28
+    fieldset: regs::DATA
+  - name: MATCH
+    byte_offset: 32
+    fieldset: regs::MATCH
+  - name: MODIR
+    byte_offset: 36
+    fieldset: regs::MODIR
+  - name: FIFO
+    byte_offset: 40
+    fieldset: regs::FIFO
+  - name: WATER
+    byte_offset: 44
+    fieldset: regs::WATER
+  - name: DATARO
+    byte_offset: 48
+    fieldset: regs::DATARO
+fieldset/regs::BAUD:
+  description: Baud Rate
+  fields:
+  - name: SBR
+    bit_offset: 0
+    bit_size: 13
+  - name: SBNS
+    bit_offset: 13
+    bit_size: 1
+  - name: RXEDGIE
+    bit_offset: 14
+    bit_size: 1
+  - name: LBKDIE
+    bit_offset: 15
+    bit_size: 1
+  - name: RESYNCDIS
+    bit_offset: 16
+    bit_size: 1
+  - name: BOTHEDGE
+    bit_offset: 17
+    bit_size: 1
+  - name: MATCFG
+    bit_offset: 18
+    bit_size: 2
+  - name: RIDMAE
+    bit_offset: 20
+    bit_size: 1
+  - name: RDMAE
+    bit_offset: 21
+    bit_size: 1
+  - name: TDMAE
+    bit_offset: 23
+    bit_size: 1
+  - name: OSR
+    bit_offset: 24
+    bit_size: 5
+  - name: M10
+    bit_offset: 29
+    bit_size: 1
+  - name: MAEN2
+    bit_offset: 30
+    bit_size: 1
+  - name: MAEN1
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CTRL:
+  description: Control
+  fields:
+  - name: PT
+    bit_offset: 0
+    bit_size: 1
+  - name: PE
+    bit_offset: 1
+    bit_size: 1
+  - name: ILT
+    bit_offset: 2
+    bit_size: 1
+  - name: WAKE
+    bit_offset: 3
+    bit_size: 1
+  - name: M
+    bit_offset: 4
+    bit_size: 1
+  - name: RSRC
+    bit_offset: 5
+    bit_size: 1
+  - name: DOZEEN
+    bit_offset: 6
+    bit_size: 1
+  - name: LOOPS
+    bit_offset: 7
+    bit_size: 1
+  - name: IDLECFG
+    bit_offset: 8
+    bit_size: 3
+  - name: M7
+    bit_offset: 11
+    bit_size: 1
+  - name: MA2IE
+    bit_offset: 14
+    bit_size: 1
+  - name: MA1IE
+    bit_offset: 15
+    bit_size: 1
+  - name: SBK
+    bit_offset: 16
+    bit_size: 1
+  - name: RWU
+    bit_offset: 17
+    bit_size: 1
+  - name: RE
+    bit_offset: 18
+    bit_size: 1
+  - name: TE
+    bit_offset: 19
+    bit_size: 1
+  - name: ILIE
+    bit_offset: 20
+    bit_size: 1
+  - name: RIE
+    bit_offset: 21
+    bit_size: 1
+  - name: TCIE
+    bit_offset: 22
+    bit_size: 1
+  - name: TIE
+    bit_offset: 23
+    bit_size: 1
+  - name: PEIE
+    bit_offset: 24
+    bit_size: 1
+  - name: FEIE
+    bit_offset: 25
+    bit_size: 1
+  - name: NEIE
+    bit_offset: 26
+    bit_size: 1
+  - name: ORIE
+    bit_offset: 27
+    bit_size: 1
+  - name: TXINV
+    bit_offset: 28
+    bit_size: 1
+  - name: TXDIR
+    bit_offset: 29
+    bit_size: 1
+  - name: R9T8
+    bit_offset: 30
+    bit_size: 1
+  - name: R8T9
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DATA:
+  description: Data
+  fields:
+  - name: R0T0
+    bit_offset: 0
+    bit_size: 1
+  - name: R1T1
+    bit_offset: 1
+    bit_size: 1
+  - name: R2T2
+    bit_offset: 2
+    bit_size: 1
+  - name: R3T3
+    bit_offset: 3
+    bit_size: 1
+  - name: R4T4
+    bit_offset: 4
+    bit_size: 1
+  - name: R5T5
+    bit_offset: 5
+    bit_size: 1
+  - name: R6T6
+    bit_offset: 6
+    bit_size: 1
+  - name: R7T7
+    bit_offset: 7
+    bit_size: 1
+  - name: R8T8
+    bit_offset: 8
+    bit_size: 1
+  - name: R9T9
+    bit_offset: 9
+    bit_size: 1
+  - name: LINBRK
+    bit_offset: 10
+    bit_size: 1
+  - name: IDLINE
+    bit_offset: 11
+    bit_size: 1
+  - name: RXEMPT
+    bit_offset: 12
+    bit_size: 1
+  - name: FRETSC
+    bit_offset: 13
+    bit_size: 1
+  - name: PARITYE
+    bit_offset: 14
+    bit_size: 1
+  - name: NOISY
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::DATARO:
+  description: Data Read-Only
+  fields:
+  - name: DATA
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::FIFO:
+  description: FIFO
+  fields:
+  - name: RXFIFOSIZE
+    bit_offset: 0
+    bit_size: 3
+  - name: RXFE
+    bit_offset: 3
+    bit_size: 1
+  - name: TXFIFOSIZE
+    bit_offset: 4
+    bit_size: 3
+  - name: TXFE
+    bit_offset: 7
+    bit_size: 1
+  - name: RXUFE
+    bit_offset: 8
+    bit_size: 1
+  - name: TXOFE
+    bit_offset: 9
+    bit_size: 1
+  - name: RXIDEN
+    bit_offset: 10
+    bit_size: 3
+  - name: RXFLUSH
+    bit_offset: 14
+    bit_size: 1
+  - name: TXFLUSH
+    bit_offset: 15
+    bit_size: 1
+  - name: RXUF
+    bit_offset: 16
+    bit_size: 1
+  - name: TXOF
+    bit_offset: 17
+    bit_size: 1
+  - name: RXEMPT
+    bit_offset: 22
+    bit_size: 1
+  - name: TXEMPT
+    bit_offset: 23
+    bit_size: 1
+fieldset/regs::GLOBAL:
+  description: Global
+  fields:
+  - name: RST
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::MATCH:
+  description: Match Address
+  fields:
+  - name: MA1
+    bit_offset: 0
+    bit_size: 10
+  - name: MA2
+    bit_offset: 16
+    bit_size: 10
+fieldset/regs::MODIR:
+  description: MODEM IrDA
+  fields:
+  - name: TXCTSE
+    bit_offset: 0
+    bit_size: 1
+  - name: TXRTSE
+    bit_offset: 1
+    bit_size: 1
+  - name: TXRTSPOL
+    bit_offset: 2
+    bit_size: 1
+  - name: RXRTSE
+    bit_offset: 3
+    bit_size: 1
+  - name: TXCTSC
+    bit_offset: 4
+    bit_size: 1
+  - name: TXCTSSRC
+    bit_offset: 5
+    bit_size: 1
+  - name: RTSWATER
+    bit_offset: 8
+    bit_size: 2
+  - name: TNP
+    bit_offset: 16
+    bit_size: 2
+  - name: IREN
+    bit_offset: 18
+    bit_size: 1
+fieldset/regs::PARAM:
+  description: Parameter
+  fields:
+  - name: TXFIFO
+    bit_offset: 0
+    bit_size: 8
+  - name: RXFIFO
+    bit_offset: 8
+    bit_size: 8
+fieldset/regs::PINCFG:
+  description: Pin Configuration
+  fields:
+  - name: TRGSEL
+    bit_offset: 0
+    bit_size: 2
+fieldset/regs::STAT:
+  description: Status
+  fields:
+  - name: LBKFE
+    bit_offset: 0
+    bit_size: 1
+  - name: AME
+    bit_offset: 1
+    bit_size: 1
+  - name: MA2F
+    bit_offset: 14
+    bit_size: 1
+  - name: MA1F
+    bit_offset: 15
+    bit_size: 1
+  - name: PF
+    bit_offset: 16
+    bit_size: 1
+  - name: FE
+    bit_offset: 17
+    bit_size: 1
+  - name: NF
+    bit_offset: 18
+    bit_size: 1
+  - name: OR
+    bit_offset: 19
+    bit_size: 1
+  - name: IDLE
+    bit_offset: 20
+    bit_size: 1
+  - name: RDRF
+    bit_offset: 21
+    bit_size: 1
+  - name: TC
+    bit_offset: 22
+    bit_size: 1
+  - name: TDRE
+    bit_offset: 23
+    bit_size: 1
+  - name: RAF
+    bit_offset: 24
+    bit_size: 1
+  - name: LBKDE
+    bit_offset: 25
+    bit_size: 1
+  - name: BRK13
+    bit_offset: 26
+    bit_size: 1
+  - name: RWUID
+    bit_offset: 27
+    bit_size: 1
+  - name: RXINV
+    bit_offset: 28
+    bit_size: 1
+  - name: MSBF
+    bit_offset: 29
+    bit_size: 1
+  - name: RXEDGIF
+    bit_offset: 30
+    bit_size: 1
+  - name: LBKDIF
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::WATER:
+  description: Watermark
+  fields:
+  - name: TXWATER
+    bit_offset: 0
+    bit_size: 2
+  - name: TXCOUNT
+    bit_offset: 8
+    bit_size: 3
+  - name: RXWATER
+    bit_offset: 16
+    bit_size: 2
+  - name: RXCOUNT
+    bit_offset: 24
+    bit_size: 3

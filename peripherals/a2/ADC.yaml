@@ -1,0 +1,414 @@
+block/ADC:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: PARAM
+    byte_offset: 4
+    fieldset: regs::PARAM
+  - name: CTRL
+    byte_offset: 16
+    fieldset: regs::CTRL
+  - name: STAT
+    byte_offset: 20
+    fieldset: regs::STAT
+  - name: IE
+    byte_offset: 24
+    fieldset: regs::IE
+  - name: DE
+    byte_offset: 28
+    fieldset: regs::DE
+  - name: CFG
+    byte_offset: 32
+    fieldset: regs::CFG
+  - name: PAUSE
+    byte_offset: 36
+    fieldset: regs::PAUSE
+  - name: SWTRIG
+    byte_offset: 52
+    fieldset: regs::SWTRIG
+  - name: TSTAT
+    byte_offset: 56
+    fieldset: regs::TSTAT
+  - name: OFSTRIM
+    byte_offset: 64
+    fieldset: regs::OFSTRIM
+  - name: HSTRIM
+    byte_offset: 72
+    fieldset: regs::HSTRIM
+  - name: TCTRL
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 160
+    fieldset: regs::TCTRL
+  - name: FCTRL
+    byte_offset: 224
+    fieldset: regs::FCTRL
+  - name: GCC
+    array:
+      len: 1
+      stride: 4
+    byte_offset: 240
+    fieldset: regs::GCC
+  - name: GCR
+    array:
+      len: 1
+      stride: 4
+    byte_offset: 248
+    fieldset: regs::GCR
+  - name: CMD
+    array:
+      len: 7
+      stride: 8
+    byte_offset: 256
+    block: CMD
+  - name: CV
+    array:
+      len: 7
+      stride: 4
+    byte_offset: 512
+    fieldset: regs::CV
+  - name: RESFIFO
+    byte_offset: 768
+    fieldset: regs::RESFIFO
+  - name: CFG2
+    byte_offset: 4088
+    fieldset: regs::CFG2
+  - name: CAL_GAR
+    array:
+      len: 34
+      stride: 4
+    byte_offset: 1024
+block/CMD:
+  items:
+  - name: CMDL
+    byte_offset: 0
+    fieldset: regs::CMD_CMDL
+  - name: CMDH
+    byte_offset: 4
+    fieldset: regs::CMD_CMDH
+fieldset/regs::CFG:
+  description: Configuration Register
+  fields:
+  - name: TPRICTRL
+    bit_offset: 0
+    bit_size: 2
+  - name: PWRSEL
+    bit_offset: 5
+    bit_size: 1
+  - name: REFSEL
+    bit_offset: 6
+    bit_size: 2
+  - name: TRES
+    bit_offset: 8
+    bit_size: 1
+  - name: TCMDRES
+    bit_offset: 9
+    bit_size: 1
+  - name: HPT_EXDI
+    bit_offset: 10
+    bit_size: 1
+  - name: PUDLY
+    bit_offset: 16
+    bit_size: 8
+  - name: PWREN
+    bit_offset: 28
+    bit_size: 1
+fieldset/regs::CFG2:
+  description: Configuration 2 Register
+  fields:
+  - name: JLEFT
+    bit_offset: 8
+    bit_size: 1
+  - name: HS
+    bit_offset: 9
+    bit_size: 1
+  - name: HSEXTRA
+    bit_offset: 10
+    bit_size: 1
+  - name: TUNE
+    bit_offset: 12
+    bit_size: 2
+fieldset/regs::CMD_CMDH:
+  description: Command High Buffer Register
+  fields:
+  - name: CMPEN
+    bit_offset: 0
+    bit_size: 2
+  - name: WAIT_TRIG
+    bit_offset: 2
+    bit_size: 1
+  - name: LWI
+    bit_offset: 7
+    bit_size: 1
+  - name: STS
+    bit_offset: 8
+    bit_size: 3
+  - name: AVGS
+    bit_offset: 12
+    bit_size: 4
+  - name: LOOP
+    bit_offset: 16
+    bit_size: 4
+  - name: NEXT
+    bit_offset: 24
+    bit_size: 3
+fieldset/regs::CMD_CMDL:
+  description: Command Low Buffer Register
+  fields:
+  - name: ADCH
+    bit_offset: 0
+    bit_size: 5
+  - name: CTYPE
+    bit_offset: 5
+    bit_size: 2
+  - name: MODE
+    bit_offset: 7
+    bit_size: 1
+fieldset/regs::CTRL:
+  description: Control Register
+  fields:
+  - name: ADCEN
+    bit_offset: 0
+    bit_size: 1
+  - name: RST
+    bit_offset: 1
+    bit_size: 1
+  - name: DOZEN
+    bit_offset: 2
+    bit_size: 1
+  - name: CAL_REQ
+    bit_offset: 3
+    bit_size: 1
+  - name: CALOFS
+    bit_offset: 4
+    bit_size: 1
+  - name: CALHS
+    bit_offset: 6
+    bit_size: 1
+  - name: RSTFIFO0
+    bit_offset: 8
+    bit_size: 1
+  - name: CAL_AVGS
+    bit_offset: 16
+    bit_size: 4
+fieldset/regs::CV:
+  description: Compare Value Register
+  fields:
+  - name: CVL
+    bit_offset: 0
+    bit_size: 16
+  - name: CVH
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::DE:
+  description: DMA Enable Register
+  fields:
+  - name: FWMDE0
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::FCTRL:
+  description: FIFO Control Register
+  fields:
+  - name: FCOUNT
+    bit_offset: 0
+    bit_size: 4
+  - name: FWMARK
+    bit_offset: 16
+    bit_size: 3
+fieldset/regs::GCC:
+  description: Gain Calibration Control
+  fields:
+  - name: GAIN_CAL
+    bit_offset: 0
+    bit_size: 16
+  - name: RDY
+    bit_offset: 24
+    bit_size: 1
+fieldset/regs::GCR:
+  description: Gain Calculation Result
+  fields:
+  - name: GCALR
+    bit_offset: 0
+    bit_size: 17
+  - name: RDY
+    bit_offset: 24
+    bit_size: 1
+fieldset/regs::HSTRIM:
+  description: High Speed Trim Register
+  fields:
+  - name: HSTRIM
+    bit_offset: 0
+    bit_size: 5
+fieldset/regs::IE:
+  description: Interrupt Enable Register
+  fields:
+  - name: FWMIE0
+    bit_offset: 0
+    bit_size: 1
+  - name: FOFIE0
+    bit_offset: 1
+    bit_size: 1
+  - name: TEXC_IE
+    bit_offset: 8
+    bit_size: 1
+  - name: TCOMP_IE
+    bit_offset: 16
+    bit_size: 4
+fieldset/regs::OFSTRIM:
+  description: Offset Trim Register
+  fields:
+  - name: OFSTRIM
+    bit_offset: 0
+    bit_size: 10
+fieldset/regs::PARAM:
+  description: Parameter Register
+  fields:
+  - name: TRIG_NUM
+    bit_offset: 0
+    bit_size: 8
+  - name: FIFOSIZE
+    bit_offset: 8
+    bit_size: 8
+  - name: CV_NUM
+    bit_offset: 16
+    bit_size: 8
+  - name: CMD_NUM
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::PAUSE:
+  description: Pause Register
+  fields:
+  - name: PAUSEDLY
+    bit_offset: 0
+    bit_size: 9
+  - name: PAUSEEN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::RESFIFO:
+  description: Data Result FIFO Register
+  fields:
+  - name: D
+    bit_offset: 0
+    bit_size: 16
+  - name: TSRC
+    bit_offset: 16
+    bit_size: 2
+  - name: LOOPCNT
+    bit_offset: 20
+    bit_size: 4
+  - name: CMDSRC
+    bit_offset: 24
+    bit_size: 3
+  - name: VALID
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::STAT:
+  description: Status Register
+  fields:
+  - name: RDY0
+    bit_offset: 0
+    bit_size: 1
+  - name: FOF0
+    bit_offset: 1
+    bit_size: 1
+  - name: TEXC_INT
+    bit_offset: 8
+    bit_size: 1
+  - name: TCOMP_INT
+    bit_offset: 9
+    bit_size: 1
+  - name: CAL_RDY
+    bit_offset: 10
+    bit_size: 1
+  - name: ADC_ACTIVE
+    bit_offset: 11
+    bit_size: 1
+  - name: TRGACT
+    bit_offset: 16
+    bit_size: 2
+  - name: CMDACT
+    bit_offset: 24
+    bit_size: 3
+fieldset/regs::SWTRIG:
+  description: Software Trigger Register
+  fields:
+  - name: SWT0
+    bit_offset: 0
+    bit_size: 1
+  - name: SWT1
+    bit_offset: 1
+    bit_size: 1
+  - name: SWT2
+    bit_offset: 2
+    bit_size: 1
+  - name: SWT3
+    bit_offset: 3
+    bit_size: 1
+fieldset/regs::TCTRL:
+  description: Trigger Control Register
+  fields:
+  - name: HTEN
+    bit_offset: 0
+    bit_size: 1
+  - name: TPRI
+    bit_offset: 8
+    bit_size: 2
+  - name: RSYNC
+    bit_offset: 15
+    bit_size: 1
+  - name: TDLY
+    bit_offset: 16
+    bit_size: 4
+  - name: TSYNC
+    bit_offset: 23
+    bit_size: 1
+  - name: TCMD
+    bit_offset: 24
+    bit_size: 3
+fieldset/regs::TSTAT:
+  description: Trigger Status Register
+  fields:
+  - name: TEXC_NUM
+    bit_offset: 0
+    bit_size: 4
+  - name: TCOMP_FLAG
+    bit_offset: 16
+    bit_size: 4
+fieldset/regs::VERID:
+  description: Version ID Register
+  fields:
+  - name: RES
+    bit_offset: 0
+    bit_size: 1
+  - name: DIFFEN
+    bit_offset: 1
+    bit_size: 1
+  - name: MVI
+    bit_offset: 3
+    bit_size: 1
+  - name: CSW
+    bit_offset: 4
+    bit_size: 3
+  - name: VR1RNGI
+    bit_offset: 8
+    bit_size: 1
+  - name: IADCKI
+    bit_offset: 9
+    bit_size: 1
+  - name: CALOFSI
+    bit_offset: 10
+    bit_size: 1
+  - name: NUM_SEC
+    bit_offset: 11
+    bit_size: 1
+  - name: NUM_FIFO
+    bit_offset: 12
+    bit_size: 3
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

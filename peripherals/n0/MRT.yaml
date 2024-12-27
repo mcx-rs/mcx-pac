@@ -1,0 +1,100 @@
+block/CHANNEL:
+  items:
+  - name: INTVAL
+    byte_offset: 0
+    fieldset: regs::CHANNEL_INTVAL
+  - name: TIMER
+    byte_offset: 4
+    fieldset: regs::CHANNEL_TIMER
+  - name: CTRL
+    byte_offset: 8
+    fieldset: regs::CHANNEL_CTRL
+  - name: STAT
+    byte_offset: 12
+    fieldset: regs::CHANNEL_STAT
+block/MRT:
+  items:
+  - name: CHANNEL
+    array:
+      len: 4
+      stride: 16
+    byte_offset: 0
+    block: CHANNEL
+  - name: MODCFG
+    byte_offset: 240
+    fieldset: regs::MODCFG
+  - name: IDLE_CH
+    byte_offset: 244
+    fieldset: regs::IDLE_CH
+  - name: IRQ_FLAG
+    byte_offset: 248
+    fieldset: regs::IRQ_FLAG
+fieldset/regs::CHANNEL_CTRL:
+  description: Control
+  fields:
+  - name: INTEN
+    bit_offset: 0
+    bit_size: 1
+  - name: MODE
+    bit_offset: 1
+    bit_size: 2
+fieldset/regs::CHANNEL_INTVAL:
+  description: Time Interval Value
+  fields:
+  - name: IVALUE
+    bit_offset: 0
+    bit_size: 24
+  - name: LOAD
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CHANNEL_STAT:
+  description: Status
+  fields:
+  - name: INTFLAG
+    bit_offset: 0
+    bit_size: 1
+  - name: RUN
+    bit_offset: 1
+    bit_size: 1
+  - name: INUSE
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::CHANNEL_TIMER:
+  description: Timer
+  fields:
+  - name: VALUE
+    bit_offset: 0
+    bit_size: 24
+fieldset/regs::IDLE_CH:
+  description: Idle Channel
+  fields:
+  - name: CHAN
+    bit_offset: 4
+    bit_size: 4
+fieldset/regs::IRQ_FLAG:
+  description: Global Interrupt Flag
+  fields:
+  - name: GFLAG0
+    bit_offset: 0
+    bit_size: 1
+  - name: GFLAG1
+    bit_offset: 1
+    bit_size: 1
+  - name: GFLAG2
+    bit_offset: 2
+    bit_size: 1
+  - name: GFLAG3
+    bit_offset: 3
+    bit_size: 1
+fieldset/regs::MODCFG:
+  description: Module Configuration
+  fields:
+  - name: NOC
+    bit_offset: 0
+    bit_size: 4
+  - name: NOB
+    bit_offset: 4
+    bit_size: 5
+  - name: MULTITASK
+    bit_offset: 31
+    bit_size: 1

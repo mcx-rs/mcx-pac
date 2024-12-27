@@ -1,0 +1,290 @@
+block/LPCMP:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: PARAM
+    byte_offset: 4
+    fieldset: regs::PARAM
+  - name: CCR0
+    byte_offset: 8
+    fieldset: regs::CCR0
+  - name: CCR1
+    byte_offset: 12
+    fieldset: regs::CCR1
+  - name: CCR2
+    byte_offset: 16
+    fieldset: regs::CCR2
+  - name: DCR
+    byte_offset: 24
+    fieldset: regs::DCR
+  - name: IER
+    byte_offset: 28
+    fieldset: regs::IER
+  - name: CSR
+    byte_offset: 32
+    fieldset: regs::CSR
+  - name: RRCR0
+    byte_offset: 36
+    fieldset: regs::RRCR0
+  - name: RRCR1
+    byte_offset: 40
+    fieldset: regs::RRCR1
+  - name: RRCSR
+    byte_offset: 44
+    fieldset: regs::RRCSR
+  - name: RRSR
+    byte_offset: 48
+    fieldset: regs::RRSR
+  - name: RRCR2
+    byte_offset: 56
+    fieldset: regs::RRCR2
+fieldset/regs::CCR0:
+  description: Comparator Control Register 0
+  fields:
+  - name: CMP_EN
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::CCR1:
+  description: Comparator Control Register 1
+  fields:
+  - name: WINDOW_EN
+    bit_offset: 0
+    bit_size: 1
+  - name: SAMPLE_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: DMA_EN
+    bit_offset: 2
+    bit_size: 1
+  - name: COUT_INV
+    bit_offset: 3
+    bit_size: 1
+  - name: COUT_SEL
+    bit_offset: 4
+    bit_size: 1
+  - name: COUT_PEN
+    bit_offset: 5
+    bit_size: 1
+  - name: COUTA_OWEN
+    bit_offset: 6
+    bit_size: 1
+  - name: COUTA_OW
+    bit_offset: 7
+    bit_size: 1
+  - name: WINDOW_INV
+    bit_offset: 8
+    bit_size: 1
+  - name: WINDOW_CLS
+    bit_offset: 9
+    bit_size: 1
+  - name: EVT_SEL
+    bit_offset: 10
+    bit_size: 2
+  - name: FUNC_CLK_SEL
+    bit_offset: 12
+    bit_size: 2
+  - name: FILT_CNT
+    bit_offset: 16
+    bit_size: 3
+  - name: FILT_PER
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::CCR2:
+  description: Comparator Control Register 2
+  fields:
+  - name: CMP_HPMD
+    bit_offset: 0
+    bit_size: 1
+  - name: CMP_NPMD
+    bit_offset: 1
+    bit_size: 1
+  - name: HYSTCTR
+    bit_offset: 4
+    bit_size: 2
+  - name: PSEL
+    bit_offset: 16
+    bit_size: 3
+  - name: MSEL
+    bit_offset: 20
+    bit_size: 3
+fieldset/regs::CSR:
+  description: Comparator Status
+  fields:
+  - name: CFR
+    bit_offset: 0
+    bit_size: 1
+  - name: CFF
+    bit_offset: 1
+    bit_size: 1
+  - name: RRF
+    bit_offset: 2
+    bit_size: 1
+  - name: COUT
+    bit_offset: 8
+    bit_size: 1
+fieldset/regs::DCR:
+  description: DAC Control
+  fields:
+  - name: DAC_EN
+    bit_offset: 0
+    bit_size: 1
+  - name: DAC_HPMD
+    bit_offset: 1
+    bit_size: 1
+  - name: VRSEL
+    bit_offset: 8
+    bit_size: 1
+  - name: DAC_DATA
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::IER:
+  description: Interrupt Enable
+  fields:
+  - name: CFR_IE
+    bit_offset: 0
+    bit_size: 1
+  - name: CFF_IE
+    bit_offset: 1
+    bit_size: 1
+  - name: RRF_IE
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::PARAM:
+  description: Parameter
+  fields:
+  - name: DAC_RES
+    bit_offset: 0
+    bit_size: 4
+fieldset/regs::RRCR0:
+  description: Round Robin Control Register 0
+  fields:
+  - name: RR_EN
+    bit_offset: 0
+    bit_size: 1
+  - name: RR_TRG_SEL
+    bit_offset: 1
+    bit_size: 1
+  - name: RR_NSAM
+    bit_offset: 8
+    bit_size: 2
+  - name: RR_CLK_SEL
+    bit_offset: 12
+    bit_size: 2
+  - name: RR_INITMOD
+    bit_offset: 16
+    bit_size: 6
+  - name: RR_SAMPLE_CNT
+    bit_offset: 24
+    bit_size: 4
+  - name: RR_SAMPLE_THRESHOLD
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::RRCR1:
+  description: Round Robin Control Register 1
+  fields:
+  - name: RR_CH0EN
+    bit_offset: 0
+    bit_size: 1
+  - name: RR_CH1EN
+    bit_offset: 1
+    bit_size: 1
+  - name: RR_CH2EN
+    bit_offset: 2
+    bit_size: 1
+  - name: RR_CH3EN
+    bit_offset: 3
+    bit_size: 1
+  - name: RR_CH4EN
+    bit_offset: 4
+    bit_size: 1
+  - name: RR_CH5EN
+    bit_offset: 5
+    bit_size: 1
+  - name: RR_CH6EN
+    bit_offset: 6
+    bit_size: 1
+  - name: RR_CH7EN
+    bit_offset: 7
+    bit_size: 1
+  - name: FIXP
+    bit_offset: 16
+    bit_size: 1
+  - name: FIXCH
+    bit_offset: 20
+    bit_size: 3
+fieldset/regs::RRCR2:
+  description: Round Robin Control Register 2
+  fields:
+  - name: RR_TIMER_RELOAD
+    bit_offset: 0
+    bit_size: 28
+  - name: RR_TIMER_EN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::RRCSR:
+  description: Round Robin Control and Status
+  fields:
+  - name: RR_CH0OUT
+    bit_offset: 0
+    bit_size: 1
+  - name: RR_CH1OUT
+    bit_offset: 1
+    bit_size: 1
+  - name: RR_CH2OUT
+    bit_offset: 2
+    bit_size: 1
+  - name: RR_CH3OUT
+    bit_offset: 3
+    bit_size: 1
+  - name: RR_CH4OUT
+    bit_offset: 4
+    bit_size: 1
+  - name: RR_CH5OUT
+    bit_offset: 5
+    bit_size: 1
+  - name: RR_CH6OUT
+    bit_offset: 6
+    bit_size: 1
+  - name: RR_CH7OUT
+    bit_offset: 7
+    bit_size: 1
+fieldset/regs::RRSR:
+  description: Round Robin Status
+  fields:
+  - name: RR_CH0F
+    bit_offset: 0
+    bit_size: 1
+  - name: RR_CH1F
+    bit_offset: 1
+    bit_size: 1
+  - name: RR_CH2F
+    bit_offset: 2
+    bit_size: 1
+  - name: RR_CH3F
+    bit_offset: 3
+    bit_size: 1
+  - name: RR_CH4F
+    bit_offset: 4
+    bit_size: 1
+  - name: RR_CH5F
+    bit_offset: 5
+    bit_size: 1
+  - name: RR_CH6F
+    bit_offset: 6
+    bit_size: 1
+  - name: RR_CH7F
+    bit_offset: 7
+    bit_size: 1
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

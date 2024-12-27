@@ -1,0 +1,1122 @@
+block/I3C:
+  items:
+  - name: MCONFIG
+    byte_offset: 0
+    fieldset: regs::MCONFIG
+  - name: SCONFIG
+    byte_offset: 4
+    fieldset: regs::SCONFIG
+  - name: SSTATUS
+    byte_offset: 8
+    fieldset: regs::SSTATUS
+  - name: SCTRL
+    byte_offset: 12
+    fieldset: regs::SCTRL
+  - name: SINTSET
+    byte_offset: 16
+    fieldset: regs::SINTSET
+  - name: SINTCLR
+    byte_offset: 20
+    fieldset: regs::SINTCLR
+  - name: SINTMASKED
+    byte_offset: 24
+    fieldset: regs::SINTMASKED
+  - name: SERRWARN
+    byte_offset: 28
+    fieldset: regs::SERRWARN
+  - name: SDMACTRL
+    byte_offset: 32
+    fieldset: regs::SDMACTRL
+  - name: SDATACTRL
+    byte_offset: 44
+    fieldset: regs::SDATACTRL
+  - name: SWDATAB
+    byte_offset: 48
+    fieldset: regs::SWDATAB
+  - name: SWDATABE
+    byte_offset: 52
+    fieldset: regs::SWDATABE
+  - name: SWDATAH
+    byte_offset: 56
+    fieldset: regs::SWDATAH
+  - name: SWDATAHE
+    byte_offset: 60
+    fieldset: regs::SWDATAHE
+  - name: SRDATAB
+    byte_offset: 64
+    fieldset: regs::SRDATAB
+  - name: SRDATAH
+    byte_offset: 72
+    fieldset: regs::SRDATAH
+  - name: SWDATAB1
+    byte_offset: 84
+    fieldset: regs::SWDATAB1
+  - name: SCAPABILITIES2
+    byte_offset: 92
+    fieldset: regs::SCAPABILITIES2
+  - name: SCAPABILITIES
+    byte_offset: 96
+    fieldset: regs::SCAPABILITIES
+  - name: SDYNADDR
+    byte_offset: 100
+    fieldset: regs::SDYNADDR
+  - name: SMAXLIMITS
+    byte_offset: 104
+    fieldset: regs::SMAXLIMITS
+  - name: SIDPARTNO
+    byte_offset: 108
+  - name: SIDEXT
+    byte_offset: 112
+    fieldset: regs::SIDEXT
+  - name: SVENDORID
+    byte_offset: 116
+    fieldset: regs::SVENDORID
+  - name: STCCLOCK
+    byte_offset: 120
+    fieldset: regs::STCCLOCK
+  - name: SMSGMAPADDR
+    byte_offset: 124
+    fieldset: regs::SMSGMAPADDR
+  - name: MCTRL
+    byte_offset: 132
+    fieldset: regs::MCTRL
+  - name: MSTATUS
+    byte_offset: 136
+    fieldset: regs::MSTATUS
+  - name: MIBIRULES
+    byte_offset: 140
+    fieldset: regs::MIBIRULES
+  - name: MINTSET
+    byte_offset: 144
+    fieldset: regs::MINTSET
+  - name: MINTCLR
+    byte_offset: 148
+    fieldset: regs::MINTCLR
+  - name: MINTMASKED
+    byte_offset: 152
+    fieldset: regs::MINTMASKED
+  - name: MERRWARN
+    byte_offset: 156
+    fieldset: regs::MERRWARN
+  - name: MDMACTRL
+    byte_offset: 160
+    fieldset: regs::MDMACTRL
+  - name: MDATACTRL
+    byte_offset: 172
+    fieldset: regs::MDATACTRL
+  - name: MWDATAB
+    byte_offset: 176
+    fieldset: regs::MWDATAB
+  - name: MWDATABE
+    byte_offset: 180
+    fieldset: regs::MWDATABE
+  - name: MWDATAH
+    byte_offset: 184
+    fieldset: regs::MWDATAH
+  - name: MWDATAHE
+    byte_offset: 188
+    fieldset: regs::MWDATAHE
+  - name: MRDATAB
+    byte_offset: 192
+    fieldset: regs::MRDATAB
+  - name: MRDATAH
+    byte_offset: 200
+    fieldset: regs::MRDATAH
+  - name: MWDATAB1
+    byte_offset: 204
+    fieldset: regs::MWDATAB1
+  - name: MWMSG_SDR_CONTROL
+    byte_offset: 208
+    fieldset: regs::MWMSG_SDR_CONTROL
+  - name: MWMSG_SDR_DATA
+    byte_offset: 208
+    fieldset: regs::MWMSG_SDR_DATA
+  - name: MRMSG_SDR
+    byte_offset: 212
+    fieldset: regs::MRMSG_SDR
+  - name: MWMSG_DDR_CONTROL
+    byte_offset: 216
+    fieldset: regs::MWMSG_DDR_CONTROL
+  - name: MWMSG_DDR_CONTROL2
+    byte_offset: 216
+    fieldset: regs::MWMSG_DDR_CONTROL2
+  - name: MWMSG_DDR_DATA
+    byte_offset: 216
+    fieldset: regs::MWMSG_DDR_DATA
+  - name: MRMSG_DDR
+    byte_offset: 220
+    fieldset: regs::MRMSG_DDR
+  - name: MDYNADDR
+    byte_offset: 228
+    fieldset: regs::MDYNADDR
+  - name: SMAPCTRL0
+    byte_offset: 284
+    fieldset: regs::SMAPCTRL0
+  - name: IBIEXT1
+    byte_offset: 320
+    fieldset: regs::IBIEXT1
+  - name: IBIEXT2
+    byte_offset: 324
+    fieldset: regs::IBIEXT2
+  - name: SID
+    byte_offset: 4092
+fieldset/regs::IBIEXT1:
+  description: Extended IBI Data 1
+  fields:
+  - name: CNT
+    bit_offset: 0
+    bit_size: 3
+  - name: MAX
+    bit_offset: 4
+    bit_size: 3
+  - name: EXT1
+    bit_offset: 8
+    bit_size: 8
+  - name: EXT2
+    bit_offset: 16
+    bit_size: 8
+  - name: EXT3
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::IBIEXT2:
+  description: Extended IBI Data 2
+  fields:
+  - name: EXT4
+    bit_offset: 0
+    bit_size: 8
+  - name: EXT5
+    bit_offset: 8
+    bit_size: 8
+  - name: EXT6
+    bit_offset: 16
+    bit_size: 8
+  - name: EXT7
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::MCONFIG:
+  description: Controller Configuration
+  fields:
+  - name: MSTENA
+    bit_offset: 0
+    bit_size: 2
+  - name: DISTO
+    bit_offset: 3
+    bit_size: 1
+  - name: HKEEP
+    bit_offset: 4
+    bit_size: 2
+  - name: ODSTOP
+    bit_offset: 6
+    bit_size: 1
+  - name: PPBAUD
+    bit_offset: 8
+    bit_size: 4
+  - name: PPLOW
+    bit_offset: 12
+    bit_size: 4
+  - name: ODBAUD
+    bit_offset: 16
+    bit_size: 8
+  - name: ODHPP
+    bit_offset: 24
+    bit_size: 1
+  - name: SKEW
+    bit_offset: 25
+    bit_size: 3
+  - name: I2CBAUD
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::MCTRL:
+  description: Controller Control
+  fields:
+  - name: REQUEST
+    bit_offset: 0
+    bit_size: 3
+  - name: TYPE
+    bit_offset: 4
+    bit_size: 2
+  - name: IBIRESP
+    bit_offset: 6
+    bit_size: 2
+  - name: DIR
+    bit_offset: 8
+    bit_size: 1
+  - name: ADDR
+    bit_offset: 9
+    bit_size: 7
+  - name: RDTERM
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::MDATACTRL:
+  description: Controller Data Control
+  fields:
+  - name: FLUSHTB
+    bit_offset: 0
+    bit_size: 1
+  - name: FLUSHFB
+    bit_offset: 1
+    bit_size: 1
+  - name: UNLOCK
+    bit_offset: 3
+    bit_size: 1
+  - name: TXTRIG
+    bit_offset: 4
+    bit_size: 2
+  - name: RXTRIG
+    bit_offset: 6
+    bit_size: 2
+  - name: TXCOUNT
+    bit_offset: 16
+    bit_size: 5
+  - name: RXCOUNT
+    bit_offset: 24
+    bit_size: 5
+  - name: TXFULL
+    bit_offset: 30
+    bit_size: 1
+  - name: RXEMPTY
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MDMACTRL:
+  description: Controller DMA Control
+  fields:
+  - name: DMAFB
+    bit_offset: 0
+    bit_size: 2
+  - name: DMATB
+    bit_offset: 2
+    bit_size: 2
+  - name: DMAWIDTH
+    bit_offset: 4
+    bit_size: 2
+fieldset/regs::MDYNADDR:
+  description: Controller Dynamic Address
+  fields:
+  - name: DAVALID
+    bit_offset: 0
+    bit_size: 1
+  - name: DADDR
+    bit_offset: 1
+    bit_size: 7
+fieldset/regs::MERRWARN:
+  description: Controller Errors and Warnings
+  fields:
+  - name: NACK
+    bit_offset: 2
+    bit_size: 1
+  - name: WRABT
+    bit_offset: 3
+    bit_size: 1
+  - name: HPAR
+    bit_offset: 9
+    bit_size: 1
+  - name: HCRC
+    bit_offset: 10
+    bit_size: 1
+  - name: OREAD
+    bit_offset: 16
+    bit_size: 1
+  - name: OWRITE
+    bit_offset: 17
+    bit_size: 1
+  - name: MSGERR
+    bit_offset: 18
+    bit_size: 1
+  - name: INVREQ
+    bit_offset: 19
+    bit_size: 1
+  - name: TIMEOUT
+    bit_offset: 20
+    bit_size: 1
+fieldset/regs::MIBIRULES:
+  description: Controller In-band Interrupt Registry and Rules
+  fields:
+  - name: ADDR0
+    bit_offset: 0
+    bit_size: 6
+  - name: ADDR1
+    bit_offset: 6
+    bit_size: 6
+  - name: ADDR2
+    bit_offset: 12
+    bit_size: 6
+  - name: ADDR3
+    bit_offset: 18
+    bit_size: 6
+  - name: ADDR4
+    bit_offset: 24
+    bit_size: 6
+  - name: MSB0
+    bit_offset: 30
+    bit_size: 1
+  - name: NOBYTE
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MINTCLR:
+  description: Controller Interrupt Clear
+  fields:
+  - name: SLVSTART
+    bit_offset: 8
+    bit_size: 1
+  - name: MCTRLDONE
+    bit_offset: 9
+    bit_size: 1
+  - name: COMPLETE
+    bit_offset: 10
+    bit_size: 1
+  - name: RXPEND
+    bit_offset: 11
+    bit_size: 1
+  - name: TXNOTFULL
+    bit_offset: 12
+    bit_size: 1
+  - name: IBIWON
+    bit_offset: 13
+    bit_size: 1
+  - name: ERRWARN
+    bit_offset: 15
+    bit_size: 1
+  - name: NOWMASTER
+    bit_offset: 19
+    bit_size: 1
+fieldset/regs::MINTMASKED:
+  description: Controller Interrupt Mask
+  fields:
+  - name: SLVSTART
+    bit_offset: 8
+    bit_size: 1
+  - name: MCTRLDONE
+    bit_offset: 9
+    bit_size: 1
+  - name: COMPLETE
+    bit_offset: 10
+    bit_size: 1
+  - name: RXPEND
+    bit_offset: 11
+    bit_size: 1
+  - name: TXNOTFULL
+    bit_offset: 12
+    bit_size: 1
+  - name: IBIWON
+    bit_offset: 13
+    bit_size: 1
+  - name: ERRWARN
+    bit_offset: 15
+    bit_size: 1
+  - name: NOWMASTER
+    bit_offset: 19
+    bit_size: 1
+fieldset/regs::MINTSET:
+  description: Controller Interrupt Set
+  fields:
+  - name: SLVSTART
+    bit_offset: 8
+    bit_size: 1
+  - name: MCTRLDONE
+    bit_offset: 9
+    bit_size: 1
+  - name: COMPLETE
+    bit_offset: 10
+    bit_size: 1
+  - name: RXPEND
+    bit_offset: 11
+    bit_size: 1
+  - name: TXNOTFULL
+    bit_offset: 12
+    bit_size: 1
+  - name: IBIWON
+    bit_offset: 13
+    bit_size: 1
+  - name: ERRWARN
+    bit_offset: 15
+    bit_size: 1
+  - name: NOWMASTER
+    bit_offset: 19
+    bit_size: 1
+fieldset/regs::MRDATAB:
+  description: Controller Read Data Byte
+  fields:
+  - name: VALUE
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::MRDATAH:
+  description: Controller Read Data Halfword
+  fields:
+  - name: LSB
+    bit_offset: 0
+    bit_size: 8
+  - name: MSB
+    bit_offset: 8
+    bit_size: 8
+fieldset/regs::MRMSG_DDR:
+  description: Controller Read Message in DDR mode
+  fields:
+  - name: DATA
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::MRMSG_SDR:
+  description: Controller Read Message in SDR mode
+  fields:
+  - name: DATA
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::MSTATUS:
+  description: Controller Status
+  fields:
+  - name: STATE
+    bit_offset: 0
+    bit_size: 3
+  - name: BETWEEN
+    bit_offset: 4
+    bit_size: 1
+  - name: NACKED
+    bit_offset: 5
+    bit_size: 1
+  - name: IBITYPE
+    bit_offset: 6
+    bit_size: 2
+  - name: SLVSTART
+    bit_offset: 8
+    bit_size: 1
+  - name: MCTRLDONE
+    bit_offset: 9
+    bit_size: 1
+  - name: COMPLETE
+    bit_offset: 10
+    bit_size: 1
+  - name: RXPEND
+    bit_offset: 11
+    bit_size: 1
+  - name: TXNOTFULL
+    bit_offset: 12
+    bit_size: 1
+  - name: IBIWON
+    bit_offset: 13
+    bit_size: 1
+  - name: ERRWARN
+    bit_offset: 15
+    bit_size: 1
+  - name: NOWMASTER
+    bit_offset: 19
+    bit_size: 1
+  - name: IBIADDR
+    bit_offset: 24
+    bit_size: 7
+fieldset/regs::MWDATAB:
+  description: Controller Write Data Byte
+  fields:
+  - name: VALUE
+    bit_offset: 0
+    bit_size: 8
+  - name: END
+    bit_offset: 8
+    bit_size: 1
+  - name: END_ALSO
+    bit_offset: 16
+    bit_size: 1
+fieldset/regs::MWDATAB1:
+  description: Controller Write Byte Data 1 (to Bus)
+  fields:
+  - name: VALUE
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::MWDATABE:
+  description: Controller Write Data Byte End
+  fields:
+  - name: VALUE
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::MWDATAH:
+  description: Controller Write Data Halfword
+  fields:
+  - name: DATA0
+    bit_offset: 0
+    bit_size: 8
+  - name: DATA1
+    bit_offset: 8
+    bit_size: 8
+  - name: END
+    bit_offset: 16
+    bit_size: 1
+fieldset/regs::MWDATAHE:
+  description: Controller Write Data Halfword End
+  fields:
+  - name: DATA0
+    bit_offset: 0
+    bit_size: 8
+  - name: DATA1
+    bit_offset: 8
+    bit_size: 8
+fieldset/regs::MWMSG_DDR_CONTROL:
+  description: 'Controller Write Message in DDR mode: First Control Word'
+  fields:
+  - name: ADDRCMD
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::MWMSG_DDR_CONTROL2:
+  description: Controller Write Message in DDR Mode Control 2
+  fields:
+  - name: LEN
+    bit_offset: 0
+    bit_size: 10
+  - name: END
+    bit_offset: 14
+    bit_size: 1
+fieldset/regs::MWMSG_DDR_DATA:
+  description: Controller Write Message Data in DDR mode
+  fields:
+  - name: DATA16B
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::MWMSG_SDR_CONTROL:
+  description: Controller Write Message Control in SDR mode
+  fields:
+  - name: DIR
+    bit_offset: 0
+    bit_size: 1
+  - name: ADDR
+    bit_offset: 1
+    bit_size: 7
+  - name: END
+    bit_offset: 8
+    bit_size: 1
+  - name: I2C
+    bit_offset: 10
+    bit_size: 1
+  - name: LEN
+    bit_offset: 11
+    bit_size: 5
+fieldset/regs::MWMSG_SDR_DATA:
+  description: Controller Write Message Data in SDR mode
+  fields:
+  - name: DATA16B
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::SCAPABILITIES:
+  description: Target Capabilities
+  fields:
+  - name: IDENA
+    bit_offset: 0
+    bit_size: 2
+  - name: IDREG
+    bit_offset: 2
+    bit_size: 4
+  - name: HDRSUPP
+    bit_offset: 6
+    bit_size: 2
+  - name: MASTER
+    bit_offset: 9
+    bit_size: 1
+  - name: SADDR
+    bit_offset: 10
+    bit_size: 2
+  - name: CCCHANDLE
+    bit_offset: 12
+    bit_size: 4
+  - name: IBI_MR_HJ
+    bit_offset: 16
+    bit_size: 5
+  - name: TIMECTRL
+    bit_offset: 21
+    bit_size: 1
+  - name: EXTFIFO
+    bit_offset: 23
+    bit_size: 3
+  - name: FIFOTX
+    bit_offset: 26
+    bit_size: 2
+  - name: FIFORX
+    bit_offset: 28
+    bit_size: 2
+  - name: INT
+    bit_offset: 30
+    bit_size: 1
+  - name: DMA
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::SCAPABILITIES2:
+  description: Target Capabilities 2
+  fields:
+  - name: MAPCNT
+    bit_offset: 0
+    bit_size: 4
+  - name: I2C10B
+    bit_offset: 4
+    bit_size: 1
+  - name: I2CRST
+    bit_offset: 5
+    bit_size: 1
+  - name: I2CDEVID
+    bit_offset: 6
+    bit_size: 1
+  - name: IBIEXT
+    bit_offset: 8
+    bit_size: 1
+  - name: IBIXREG
+    bit_offset: 9
+    bit_size: 1
+  - name: SLVRST
+    bit_offset: 17
+    bit_size: 1
+  - name: GROUP
+    bit_offset: 18
+    bit_size: 2
+  - name: AASA
+    bit_offset: 21
+    bit_size: 1
+  - name: SSTSUB
+    bit_offset: 22
+    bit_size: 1
+  - name: SSTWR
+    bit_offset: 23
+    bit_size: 1
+fieldset/regs::SCONFIG:
+  description: Target Configuration
+  fields:
+  - name: SLVENA
+    bit_offset: 0
+    bit_size: 1
+  - name: NACK
+    bit_offset: 1
+    bit_size: 1
+  - name: MATCHSS
+    bit_offset: 2
+    bit_size: 1
+  - name: S0IGNORE
+    bit_offset: 3
+    bit_size: 1
+  - name: DDROK
+    bit_offset: 4
+    bit_size: 1
+  - name: IDRAND
+    bit_offset: 8
+    bit_size: 1
+  - name: OFFLINE
+    bit_offset: 9
+    bit_size: 1
+  - name: BAMATCH
+    bit_offset: 16
+    bit_size: 8
+  - name: SADDR
+    bit_offset: 25
+    bit_size: 7
+fieldset/regs::SCTRL:
+  description: Target Control
+  fields:
+  - name: EVENT
+    bit_offset: 0
+    bit_size: 2
+  - name: EXTDATA
+    bit_offset: 3
+    bit_size: 1
+  - name: IBIDATA
+    bit_offset: 8
+    bit_size: 8
+  - name: PENDINT
+    bit_offset: 16
+    bit_size: 4
+  - name: ACTSTATE
+    bit_offset: 20
+    bit_size: 2
+  - name: VENDINFO
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::SDATACTRL:
+  description: Target Data Control
+  fields:
+  - name: FLUSHTB
+    bit_offset: 0
+    bit_size: 1
+  - name: FLUSHFB
+    bit_offset: 1
+    bit_size: 1
+  - name: UNLOCK
+    bit_offset: 3
+    bit_size: 1
+  - name: TXTRIG
+    bit_offset: 4
+    bit_size: 2
+  - name: RXTRIG
+    bit_offset: 6
+    bit_size: 2
+  - name: TXCOUNT
+    bit_offset: 16
+    bit_size: 5
+  - name: RXCOUNT
+    bit_offset: 24
+    bit_size: 5
+  - name: TXFULL
+    bit_offset: 30
+    bit_size: 1
+  - name: RXEMPTY
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::SDMACTRL:
+  description: Target DMA Control
+  fields:
+  - name: DMAFB
+    bit_offset: 0
+    bit_size: 2
+  - name: DMATB
+    bit_offset: 2
+    bit_size: 2
+  - name: DMAWIDTH
+    bit_offset: 4
+    bit_size: 2
+fieldset/regs::SDYNADDR:
+  description: Target Dynamic Address
+  fields:
+  - name: DAVALID
+    bit_offset: 0
+    bit_size: 1
+  - name: DADDR
+    bit_offset: 1
+    bit_size: 7
+  - name: MAPSA
+    bit_offset: 12
+    bit_size: 1
+  - name: SA10B
+    bit_offset: 13
+    bit_size: 3
+  - name: KEY
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::SERRWARN:
+  description: Target Errors and Warnings
+  fields:
+  - name: ORUN
+    bit_offset: 0
+    bit_size: 1
+  - name: URUN
+    bit_offset: 1
+    bit_size: 1
+  - name: URUNNACK
+    bit_offset: 2
+    bit_size: 1
+  - name: TERM
+    bit_offset: 3
+    bit_size: 1
+  - name: INVSTART
+    bit_offset: 4
+    bit_size: 1
+  - name: SPAR
+    bit_offset: 8
+    bit_size: 1
+  - name: HPAR
+    bit_offset: 9
+    bit_size: 1
+  - name: HCRC
+    bit_offset: 10
+    bit_size: 1
+  - name: S0S1
+    bit_offset: 11
+    bit_size: 1
+  - name: OREAD
+    bit_offset: 16
+    bit_size: 1
+  - name: OWRITE
+    bit_offset: 17
+    bit_size: 1
+fieldset/regs::SIDEXT:
+  description: Target ID Extension
+  fields:
+  - name: DCR
+    bit_offset: 8
+    bit_size: 8
+  - name: BCR
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::SINTCLR:
+  description: Target Interrupt Clear
+  fields:
+  - name: START
+    bit_offset: 8
+    bit_size: 1
+  - name: MATCHED
+    bit_offset: 9
+    bit_size: 1
+  - name: STOP
+    bit_offset: 10
+    bit_size: 1
+  - name: RXPEND
+    bit_offset: 11
+    bit_size: 1
+  - name: TXSEND
+    bit_offset: 12
+    bit_size: 1
+  - name: DACHG
+    bit_offset: 13
+    bit_size: 1
+  - name: CCC
+    bit_offset: 14
+    bit_size: 1
+  - name: ERRWARN
+    bit_offset: 15
+    bit_size: 1
+  - name: DDRMATCHED
+    bit_offset: 16
+    bit_size: 1
+  - name: CHANDLED
+    bit_offset: 17
+    bit_size: 1
+  - name: EVENT
+    bit_offset: 18
+    bit_size: 1
+fieldset/regs::SINTMASKED:
+  description: Target Interrupt Mask
+  fields:
+  - name: START
+    bit_offset: 8
+    bit_size: 1
+  - name: MATCHED
+    bit_offset: 9
+    bit_size: 1
+  - name: STOP
+    bit_offset: 10
+    bit_size: 1
+  - name: RXPEND
+    bit_offset: 11
+    bit_size: 1
+  - name: TXSEND
+    bit_offset: 12
+    bit_size: 1
+  - name: DACHG
+    bit_offset: 13
+    bit_size: 1
+  - name: CCC
+    bit_offset: 14
+    bit_size: 1
+  - name: ERRWARN
+    bit_offset: 15
+    bit_size: 1
+  - name: DDRMATCHED
+    bit_offset: 16
+    bit_size: 1
+  - name: CHANDLED
+    bit_offset: 17
+    bit_size: 1
+  - name: EVENT
+    bit_offset: 18
+    bit_size: 1
+fieldset/regs::SINTSET:
+  description: Target Interrupt Set
+  fields:
+  - name: START
+    bit_offset: 8
+    bit_size: 1
+  - name: MATCHED
+    bit_offset: 9
+    bit_size: 1
+  - name: STOP
+    bit_offset: 10
+    bit_size: 1
+  - name: RXPEND
+    bit_offset: 11
+    bit_size: 1
+  - name: TXSEND
+    bit_offset: 12
+    bit_size: 1
+  - name: DACHG
+    bit_offset: 13
+    bit_size: 1
+  - name: CCC
+    bit_offset: 14
+    bit_size: 1
+  - name: ERRWARN
+    bit_offset: 15
+    bit_size: 1
+  - name: DDRMATCHED
+    bit_offset: 16
+    bit_size: 1
+  - name: CHANDLED
+    bit_offset: 17
+    bit_size: 1
+  - name: EVENT
+    bit_offset: 18
+    bit_size: 1
+fieldset/regs::SMAPCTRL0:
+  description: Map Feature Control 0
+  fields:
+  - name: ENA
+    bit_offset: 0
+    bit_size: 1
+  - name: DA
+    bit_offset: 1
+    bit_size: 7
+  - name: CAUSE
+    bit_offset: 8
+    bit_size: 3
+fieldset/regs::SMAXLIMITS:
+  description: Target Maximum Limits
+  fields:
+  - name: MAXRD
+    bit_offset: 0
+    bit_size: 12
+  - name: MAXWR
+    bit_offset: 16
+    bit_size: 12
+fieldset/regs::SMSGMAPADDR:
+  description: Target Message Map Address
+  fields:
+  - name: MAPLAST
+    bit_offset: 0
+    bit_size: 4
+  - name: LASTSTATIC
+    bit_offset: 4
+    bit_size: 1
+  - name: MAPLASTM1
+    bit_offset: 8
+    bit_size: 4
+  - name: MAPLASTM2
+    bit_offset: 16
+    bit_size: 4
+fieldset/regs::SRDATAB:
+  description: Target Read Data Byte
+  fields:
+  - name: DATA0
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::SRDATAH:
+  description: Target Read Data Halfword
+  fields:
+  - name: LSB
+    bit_offset: 0
+    bit_size: 8
+  - name: MSB
+    bit_offset: 8
+    bit_size: 8
+fieldset/regs::SSTATUS:
+  description: Target Status
+  fields:
+  - name: STNOTSTOP
+    bit_offset: 0
+    bit_size: 1
+  - name: STMSG
+    bit_offset: 1
+    bit_size: 1
+  - name: STCCCH
+    bit_offset: 2
+    bit_size: 1
+  - name: STREQRD
+    bit_offset: 3
+    bit_size: 1
+  - name: STREQWR
+    bit_offset: 4
+    bit_size: 1
+  - name: STDAA
+    bit_offset: 5
+    bit_size: 1
+  - name: STHDR
+    bit_offset: 6
+    bit_size: 1
+  - name: START
+    bit_offset: 8
+    bit_size: 1
+  - name: MATCHED
+    bit_offset: 9
+    bit_size: 1
+  - name: STOP
+    bit_offset: 10
+    bit_size: 1
+  - name: RX_PEND
+    bit_offset: 11
+    bit_size: 1
+  - name: TXNOTFULL
+    bit_offset: 12
+    bit_size: 1
+  - name: DACHG
+    bit_offset: 13
+    bit_size: 1
+  - name: CCC
+    bit_offset: 14
+    bit_size: 1
+  - name: ERRWARN
+    bit_offset: 15
+    bit_size: 1
+  - name: HDRMATCH
+    bit_offset: 16
+    bit_size: 1
+  - name: CHANDLED
+    bit_offset: 17
+    bit_size: 1
+  - name: EVENT
+    bit_offset: 18
+    bit_size: 1
+  - name: EVDET
+    bit_offset: 20
+    bit_size: 2
+  - name: IBIDIS
+    bit_offset: 24
+    bit_size: 1
+  - name: MRDIS
+    bit_offset: 25
+    bit_size: 1
+  - name: HJDIS
+    bit_offset: 27
+    bit_size: 1
+  - name: ACTSTATE
+    bit_offset: 28
+    bit_size: 2
+  - name: TIMECTRL
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::STCCLOCK:
+  description: Target Time Control Clock
+  fields:
+  - name: ACCURACY
+    bit_offset: 0
+    bit_size: 8
+  - name: FREQ
+    bit_offset: 8
+    bit_size: 8
+fieldset/regs::SVENDORID:
+  description: Target Vendor ID
+  fields:
+  - name: VID
+    bit_offset: 0
+    bit_size: 15
+fieldset/regs::SWDATAB:
+  description: Target Write Data Byte
+  fields:
+  - name: DATA
+    bit_offset: 0
+    bit_size: 8
+  - name: END
+    bit_offset: 8
+    bit_size: 1
+  - name: END_ALSO
+    bit_offset: 16
+    bit_size: 1
+fieldset/regs::SWDATAB1:
+  description: Target Write Data Byte
+  fields:
+  - name: DATA
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::SWDATABE:
+  description: Target Write Data Byte End
+  fields:
+  - name: DATA
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::SWDATAH:
+  description: Target Write Data Halfword
+  fields:
+  - name: DATA0
+    bit_offset: 0
+    bit_size: 8
+  - name: DATA1
+    bit_offset: 8
+    bit_size: 8
+  - name: END
+    bit_offset: 16
+    bit_size: 1
+fieldset/regs::SWDATAHE:
+  description: Target Write Data Halfword End
+  fields:
+  - name: DATA0
+    bit_offset: 0
+    bit_size: 8
+  - name: DATA1
+    bit_offset: 8
+    bit_size: 8

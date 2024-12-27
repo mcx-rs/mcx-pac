@@ -1,0 +1,565 @@
+block/SLCD:
+  items:
+  - name: LCD_GCR
+    byte_offset: 0
+    fieldset: regs::LCD_GCR
+  - name: LCD_AR
+    byte_offset: 4
+    fieldset: regs::LCD_AR
+  - name: LCD_FDCR
+    byte_offset: 8
+    fieldset: regs::LCD_FDCR
+  - name: LCD_FDSR
+    byte_offset: 12
+    fieldset: regs::LCD_FDSR
+  - name: LCD_PEN0
+    byte_offset: 16
+    fieldset: regs::LCD_PEN0
+  - name: LCD_PEN1
+    byte_offset: 20
+    fieldset: regs::LCD_PEN1
+  - name: LCD_BPEN0
+    byte_offset: 24
+    fieldset: regs::LCD_BPEN0
+  - name: LCD_BPEN1
+    byte_offset: 28
+    fieldset: regs::LCD_BPEN1
+  - name: LCD_WFTO
+    array:
+      len: 12
+      stride: 4
+    byte_offset: 32
+fieldset/regs::LCD_AR:
+  description: LCD Auxiliary Register
+  fields:
+  - name: BRATE
+    bit_offset: 0
+    bit_size: 3
+  - name: BMODE
+    bit_offset: 3
+    bit_size: 1
+  - name: BLANK
+    bit_offset: 5
+    bit_size: 1
+  - name: ALT
+    bit_offset: 6
+    bit_size: 1
+  - name: BLINK
+    bit_offset: 7
+    bit_size: 1
+  - name: LCDIF
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::LCD_BPEN0:
+  description: LCD Back Plane Enable Register 0
+  fields:
+  - name: PIN_0_BPEN
+    bit_offset: 0
+    bit_size: 1
+  - name: PIN_1_BPEN
+    bit_offset: 1
+    bit_size: 1
+  - name: PIN_2_BPEN
+    bit_offset: 2
+    bit_size: 1
+  - name: PIN_3_BPEN
+    bit_offset: 3
+    bit_size: 1
+  - name: PIN_4_BPEN
+    bit_offset: 4
+    bit_size: 1
+  - name: PIN_5_BPEN
+    bit_offset: 5
+    bit_size: 1
+  - name: PIN_6_BPEN
+    bit_offset: 6
+    bit_size: 1
+  - name: PIN_7_BPEN
+    bit_offset: 7
+    bit_size: 1
+  - name: PIN_8_BPEN
+    bit_offset: 8
+    bit_size: 1
+  - name: PIN_9_BPEN
+    bit_offset: 9
+    bit_size: 1
+  - name: PIN_10_BPEN
+    bit_offset: 10
+    bit_size: 1
+  - name: PIN_11_BPEN
+    bit_offset: 11
+    bit_size: 1
+  - name: PIN_12_BPEN
+    bit_offset: 12
+    bit_size: 1
+  - name: PIN_13_BPEN
+    bit_offset: 13
+    bit_size: 1
+  - name: PIN_14_BPEN
+    bit_offset: 14
+    bit_size: 1
+  - name: PIN_15_BPEN
+    bit_offset: 15
+    bit_size: 1
+  - name: PIN_16_BPEN
+    bit_offset: 16
+    bit_size: 1
+  - name: PIN_17_BPEN
+    bit_offset: 17
+    bit_size: 1
+  - name: PIN_18_BPEN
+    bit_offset: 18
+    bit_size: 1
+  - name: PIN_19_BPEN
+    bit_offset: 19
+    bit_size: 1
+  - name: PIN_20_BPEN
+    bit_offset: 20
+    bit_size: 1
+  - name: PIN_21_BPEN
+    bit_offset: 21
+    bit_size: 1
+  - name: PIN_22_BPEN
+    bit_offset: 22
+    bit_size: 1
+  - name: PIN_23_BPEN
+    bit_offset: 23
+    bit_size: 1
+  - name: PIN_24_BPEN
+    bit_offset: 24
+    bit_size: 1
+  - name: PIN_25_BPEN
+    bit_offset: 25
+    bit_size: 1
+  - name: PIN_26_BPEN
+    bit_offset: 26
+    bit_size: 1
+  - name: PIN_27_BPEN
+    bit_offset: 27
+    bit_size: 1
+  - name: PIN_28_BPEN
+    bit_offset: 28
+    bit_size: 1
+  - name: PIN_29_BPEN
+    bit_offset: 29
+    bit_size: 1
+  - name: PIN_30_BPEN
+    bit_offset: 30
+    bit_size: 1
+  - name: PIN_31_BPEN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::LCD_BPEN1:
+  description: LCD Back Plane Enable Register 1
+  fields:
+  - name: PIN_32_BPEN
+    bit_offset: 0
+    bit_size: 1
+  - name: PIN_33_BPEN
+    bit_offset: 1
+    bit_size: 1
+  - name: PIN_34_BPEN
+    bit_offset: 2
+    bit_size: 1
+  - name: PIN_35_BPEN
+    bit_offset: 3
+    bit_size: 1
+  - name: PIN_36_BPEN
+    bit_offset: 4
+    bit_size: 1
+  - name: PIN_37_BPEN
+    bit_offset: 5
+    bit_size: 1
+  - name: PIN_38_BPEN
+    bit_offset: 6
+    bit_size: 1
+  - name: PIN_39_BPEN
+    bit_offset: 7
+    bit_size: 1
+  - name: PIN_40_BPEN
+    bit_offset: 8
+    bit_size: 1
+  - name: PIN_41_BPEN
+    bit_offset: 9
+    bit_size: 1
+  - name: PIN_42_BPEN
+    bit_offset: 10
+    bit_size: 1
+  - name: PIN_43_BPEN
+    bit_offset: 11
+    bit_size: 1
+  - name: PIN_44_BPEN
+    bit_offset: 12
+    bit_size: 1
+  - name: PIN_45_BPEN
+    bit_offset: 13
+    bit_size: 1
+  - name: PIN_46_BPEN
+    bit_offset: 14
+    bit_size: 1
+  - name: PIN_47_BPEN
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::LCD_FDCR:
+  description: LCD Fault Detect Control Register
+  fields:
+  - name: FDPINID
+    bit_offset: 0
+    bit_size: 6
+  - name: FDBPEN
+    bit_offset: 6
+    bit_size: 1
+  - name: FDEN
+    bit_offset: 7
+    bit_size: 1
+  - name: FDSWW
+    bit_offset: 9
+    bit_size: 3
+  - name: FDPRS
+    bit_offset: 12
+    bit_size: 3
+fieldset/regs::LCD_FDSR:
+  description: LCD Fault Detect Status Register
+  fields:
+  - name: FDCNT
+    bit_offset: 0
+    bit_size: 8
+  - name: FDCF
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::LCD_GCR:
+  description: LCD General Control Register
+  fields:
+  - name: DUTY
+    bit_offset: 0
+    bit_size: 2
+  - name: LCLK
+    bit_offset: 3
+    bit_size: 3
+  - name: LCDLP
+    bit_offset: 6
+    bit_size: 1
+  - name: LCDEN
+    bit_offset: 7
+    bit_size: 1
+  - name: LCDSTP
+    bit_offset: 8
+    bit_size: 1
+  - name: LCDDOZE
+    bit_offset: 9
+    bit_size: 1
+  - name: FDCIEN
+    bit_offset: 14
+    bit_size: 1
+  - name: LCDIEN
+    bit_offset: 15
+    bit_size: 1
+  - name: SHCYCLE
+    bit_offset: 16
+    bit_size: 1
+  - name: SHEN
+    bit_offset: 23
+    bit_size: 1
+  - name: VLL1TRIM
+    bit_offset: 24
+    bit_size: 4
+  - name: VLL2TRIM
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::LCD_PEN0:
+  description: LCD Pin Enable Register 0
+  fields:
+  - name: PIN_0_EN
+    bit_offset: 0
+    bit_size: 1
+  - name: PIN_1_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: PIN_2_EN
+    bit_offset: 2
+    bit_size: 1
+  - name: PIN_3_EN
+    bit_offset: 3
+    bit_size: 1
+  - name: PIN_4_EN
+    bit_offset: 4
+    bit_size: 1
+  - name: PIN_5_EN
+    bit_offset: 5
+    bit_size: 1
+  - name: PIN_6_EN
+    bit_offset: 6
+    bit_size: 1
+  - name: PIN_7_EN
+    bit_offset: 7
+    bit_size: 1
+  - name: PIN_8_EN
+    bit_offset: 8
+    bit_size: 1
+  - name: PIN_9_EN
+    bit_offset: 9
+    bit_size: 1
+  - name: PIN_10_EN
+    bit_offset: 10
+    bit_size: 1
+  - name: PIN_11_EN
+    bit_offset: 11
+    bit_size: 1
+  - name: PIN_12_EN
+    bit_offset: 12
+    bit_size: 1
+  - name: PIN_13_EN
+    bit_offset: 13
+    bit_size: 1
+  - name: PIN_14_EN
+    bit_offset: 14
+    bit_size: 1
+  - name: PIN_15_EN
+    bit_offset: 15
+    bit_size: 1
+  - name: PIN_16_EN
+    bit_offset: 16
+    bit_size: 1
+  - name: PIN_17_EN
+    bit_offset: 17
+    bit_size: 1
+  - name: PIN_18_EN
+    bit_offset: 18
+    bit_size: 1
+  - name: PIN_19_EN
+    bit_offset: 19
+    bit_size: 1
+  - name: PIN_20_EN
+    bit_offset: 20
+    bit_size: 1
+  - name: PIN_21_EN
+    bit_offset: 21
+    bit_size: 1
+  - name: PIN_22_EN
+    bit_offset: 22
+    bit_size: 1
+  - name: PIN_23_EN
+    bit_offset: 23
+    bit_size: 1
+  - name: PIN_24_EN
+    bit_offset: 24
+    bit_size: 1
+  - name: PIN_25_EN
+    bit_offset: 25
+    bit_size: 1
+  - name: PIN_26_EN
+    bit_offset: 26
+    bit_size: 1
+  - name: PIN_27_EN
+    bit_offset: 27
+    bit_size: 1
+  - name: PIN_28_EN
+    bit_offset: 28
+    bit_size: 1
+  - name: PIN_29_EN
+    bit_offset: 29
+    bit_size: 1
+  - name: PIN_30_EN
+    bit_offset: 30
+    bit_size: 1
+  - name: PIN_31_EN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::LCD_PEN1:
+  description: LCD Pin Enable Register 1
+  fields:
+  - name: PIN_32_EN
+    bit_offset: 0
+    bit_size: 1
+  - name: PIN_33_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: PIN_34_EN
+    bit_offset: 2
+    bit_size: 1
+  - name: PIN_35_EN
+    bit_offset: 3
+    bit_size: 1
+  - name: PIN_36_EN
+    bit_offset: 4
+    bit_size: 1
+  - name: PIN_37_EN
+    bit_offset: 5
+    bit_size: 1
+  - name: PIN_38_EN
+    bit_offset: 6
+    bit_size: 1
+  - name: PIN_39_EN
+    bit_offset: 7
+    bit_size: 1
+  - name: PIN_40_EN
+    bit_offset: 8
+    bit_size: 1
+  - name: PIN_41_EN
+    bit_offset: 9
+    bit_size: 1
+  - name: PIN_42_EN
+    bit_offset: 10
+    bit_size: 1
+  - name: PIN_43_EN
+    bit_offset: 11
+    bit_size: 1
+  - name: PIN_44_EN
+    bit_offset: 12
+    bit_size: 1
+  - name: PIN_45_EN
+    bit_offset: 13
+    bit_size: 1
+  - name: PIN_46_EN
+    bit_offset: 14
+    bit_size: 1
+  - name: PIN_47_EN
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::LCD_WFTO:
+  description: LCD Waveform 3 to 0 Register..LCD Waveform 47 to 44 Register
+  fields:
+  - name: WF0
+    bit_offset: 0
+    bit_size: 8
+  - name: WF4
+    bit_offset: 0
+    bit_size: 8
+  - name: WF8
+    bit_offset: 0
+    bit_size: 8
+  - name: WF12
+    bit_offset: 0
+    bit_size: 8
+  - name: WF16
+    bit_offset: 0
+    bit_size: 8
+  - name: WF20
+    bit_offset: 0
+    bit_size: 8
+  - name: WF24
+    bit_offset: 0
+    bit_size: 8
+  - name: WF28
+    bit_offset: 0
+    bit_size: 8
+  - name: WF32
+    bit_offset: 0
+    bit_size: 8
+  - name: WF36
+    bit_offset: 0
+    bit_size: 8
+  - name: WF40
+    bit_offset: 0
+    bit_size: 8
+  - name: WF44
+    bit_offset: 0
+    bit_size: 8
+  - name: WF1
+    bit_offset: 8
+    bit_size: 8
+  - name: WF5
+    bit_offset: 8
+    bit_size: 8
+  - name: WF9
+    bit_offset: 8
+    bit_size: 8
+  - name: WF13
+    bit_offset: 8
+    bit_size: 8
+  - name: WF17
+    bit_offset: 8
+    bit_size: 8
+  - name: WF21
+    bit_offset: 8
+    bit_size: 8
+  - name: WF25
+    bit_offset: 8
+    bit_size: 8
+  - name: WF29
+    bit_offset: 8
+    bit_size: 8
+  - name: WF33
+    bit_offset: 8
+    bit_size: 8
+  - name: WF37
+    bit_offset: 8
+    bit_size: 8
+  - name: WF41
+    bit_offset: 8
+    bit_size: 8
+  - name: WF45
+    bit_offset: 8
+    bit_size: 8
+  - name: WF2
+    bit_offset: 16
+    bit_size: 8
+  - name: WF6
+    bit_offset: 16
+    bit_size: 8
+  - name: WF10
+    bit_offset: 16
+    bit_size: 8
+  - name: WF14
+    bit_offset: 16
+    bit_size: 8
+  - name: WF18
+    bit_offset: 16
+    bit_size: 8
+  - name: WF22
+    bit_offset: 16
+    bit_size: 8
+  - name: WF26
+    bit_offset: 16
+    bit_size: 8
+  - name: WF30
+    bit_offset: 16
+    bit_size: 8
+  - name: WF34
+    bit_offset: 16
+    bit_size: 8
+  - name: WF38
+    bit_offset: 16
+    bit_size: 8
+  - name: WF42
+    bit_offset: 16
+    bit_size: 8
+  - name: WF46
+    bit_offset: 16
+    bit_size: 8
+  - name: WF3
+    bit_offset: 24
+    bit_size: 8
+  - name: WF7
+    bit_offset: 24
+    bit_size: 8
+  - name: WF11
+    bit_offset: 24
+    bit_size: 8
+  - name: WF15
+    bit_offset: 24
+    bit_size: 8
+  - name: WF19
+    bit_offset: 24
+    bit_size: 8
+  - name: WF23
+    bit_offset: 24
+    bit_size: 8
+  - name: WF27
+    bit_offset: 24
+    bit_size: 8
+  - name: WF31
+    bit_offset: 24
+    bit_size: 8
+  - name: WF35
+    bit_offset: 24
+    bit_size: 8
+  - name: WF39
+    bit_offset: 24
+    bit_size: 8
+  - name: WF43
+    bit_offset: 24
+    bit_size: 8
+  - name: WF47
+    bit_offset: 24
+    bit_size: 8

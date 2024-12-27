@@ -1,0 +1,387 @@
+block/CH:
+  items:
+  - name: CH_CSR
+    byte_offset: 0
+    fieldset: regs::CH_CH_CSR
+  - name: CH_ES
+    byte_offset: 4
+    fieldset: regs::CH_CH_ES
+  - name: CH_INT
+    byte_offset: 8
+    fieldset: regs::CH_CH_INT
+  - name: CH_SBR
+    byte_offset: 12
+    fieldset: regs::CH_CH_SBR
+  - name: CH_PRI
+    byte_offset: 16
+    fieldset: regs::CH_CH_PRI
+  - name: CH_MUX
+    byte_offset: 20
+    fieldset: regs::CH_CH_MUX
+  - name: TCD_SADDR
+    byte_offset: 32
+  - name: TCD_SOFF
+    byte_offset: 36
+    bit_size: 16
+    fieldset: regs::CH_TCD_SOFF
+  - name: TCD_ATTR
+    byte_offset: 38
+    bit_size: 16
+    fieldset: regs::CH_TCD_ATTR
+  - name: TCD_NBYTES_MLOFFNO
+    byte_offset: 40
+    fieldset: regs::CH_TCD_NBYTES_MLOFFNO
+  - name: TCD_NBYTES_MLOFFYES
+    byte_offset: 40
+    fieldset: regs::CH_TCD_NBYTES_MLOFFYES
+  - name: TCD_SLAST_SDA
+    byte_offset: 44
+  - name: TCD_DADDR
+    byte_offset: 48
+  - name: TCD_DOFF
+    byte_offset: 52
+    bit_size: 16
+    fieldset: regs::CH_TCD_DOFF
+  - name: TCD_CITER_ELINKNO
+    byte_offset: 54
+    bit_size: 16
+    fieldset: regs::CH_TCD_CITER_ELINKNO
+  - name: TCD_CITER_ELINKYES
+    byte_offset: 54
+    bit_size: 16
+    fieldset: regs::CH_TCD_CITER_ELINKYES
+  - name: TCD_DLAST_SGA
+    byte_offset: 56
+  - name: TCD_CSR
+    byte_offset: 60
+    bit_size: 16
+    fieldset: regs::CH_TCD_CSR
+  - name: TCD_BITER_ELINKNO
+    byte_offset: 62
+    bit_size: 16
+    fieldset: regs::CH_TCD_BITER_ELINKNO
+  - name: TCD_BITER_ELINKYES
+    byte_offset: 62
+    bit_size: 16
+    fieldset: regs::CH_TCD_BITER_ELINKYES
+block/DMA:
+  items:
+  - name: MP_CSR
+    byte_offset: 0
+    fieldset: regs::MP_CSR
+  - name: MP_ES
+    byte_offset: 4
+    fieldset: regs::MP_ES
+  - name: MP_INT
+    byte_offset: 8
+    fieldset: regs::MP_INT
+  - name: MP_HRS
+    byte_offset: 12
+  - name: CH_GRPRI
+    array:
+      len: 8
+      stride: 4
+    byte_offset: 256
+  - name: CH
+    array:
+      len: 8
+      stride: 4096
+    byte_offset: 4096
+    block: CH
+fieldset/regs::CH_CH_CSR:
+  description: Channel Control and Status
+  fields:
+  - name: ERQ
+    bit_offset: 0
+    bit_size: 1
+  - name: EARQ
+    bit_offset: 1
+    bit_size: 1
+  - name: EEI
+    bit_offset: 2
+    bit_size: 1
+  - name: EBW
+    bit_offset: 3
+    bit_size: 1
+  - name: DONE
+    bit_offset: 30
+    bit_size: 1
+  - name: ACTIVE
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CH_CH_ES:
+  description: Channel Error Status
+  fields:
+  - name: DBE
+    bit_offset: 0
+    bit_size: 1
+  - name: SBE
+    bit_offset: 1
+    bit_size: 1
+  - name: SGE
+    bit_offset: 2
+    bit_size: 1
+  - name: NCE
+    bit_offset: 3
+    bit_size: 1
+  - name: DOE
+    bit_offset: 4
+    bit_size: 1
+  - name: DAE
+    bit_offset: 5
+    bit_size: 1
+  - name: SOE
+    bit_offset: 6
+    bit_size: 1
+  - name: SAE
+    bit_offset: 7
+    bit_size: 1
+  - name: ERR
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CH_CH_INT:
+  description: Channel Interrupt Status
+  fields:
+  - name: INT
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::CH_CH_MUX:
+  description: Channel Multiplexor Configuration
+  fields:
+  - name: SRC
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CH_CH_PRI:
+  description: Channel Priority
+  fields:
+  - name: APL
+    bit_offset: 0
+    bit_size: 3
+  - name: DPA
+    bit_offset: 30
+    bit_size: 1
+  - name: ECP
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CH_CH_SBR:
+  description: Channel System Bus
+  fields:
+  - name: MID
+    bit_offset: 0
+    bit_size: 4
+  - name: PAL
+    bit_offset: 15
+    bit_size: 1
+  - name: EMI
+    bit_offset: 16
+    bit_size: 1
+fieldset/regs::CH_GRPRI:
+  description: Channel Arbitration Group
+  fields:
+  - name: GRPRI
+    bit_offset: 0
+    bit_size: 5
+fieldset/regs::CH_TCD_ATTR:
+  description: TCD Transfer Attributes
+  fields:
+  - name: DSIZE
+    bit_offset: 0
+    bit_size: 3
+  - name: DMOD
+    bit_offset: 3
+    bit_size: 5
+  - name: SSIZE
+    bit_offset: 8
+    bit_size: 3
+  - name: SMOD
+    bit_offset: 11
+    bit_size: 5
+fieldset/regs::CH_TCD_BITER_ELINKNO:
+  description: TCD Beginning Major Loop Count (Minor Loop Channel Linking Disabled)
+  fields:
+  - name: BITER
+    bit_offset: 0
+    bit_size: 15
+  - name: ELINK
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::CH_TCD_BITER_ELINKYES:
+  description: TCD Beginning Major Loop Count (Minor Loop Channel Linking Enabled)
+  fields:
+  - name: BITER
+    bit_offset: 0
+    bit_size: 9
+  - name: LINKCH
+    bit_offset: 9
+    bit_size: 3
+  - name: ELINK
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::CH_TCD_CITER_ELINKNO:
+  description: TCD Current Major Loop Count (Minor Loop Channel Linking Disabled)
+  fields:
+  - name: CITER
+    bit_offset: 0
+    bit_size: 15
+  - name: ELINK
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::CH_TCD_CITER_ELINKYES:
+  description: TCD Current Major Loop Count (Minor Loop Channel Linking Enabled)
+  fields:
+  - name: CITER
+    bit_offset: 0
+    bit_size: 9
+  - name: LINKCH
+    bit_offset: 9
+    bit_size: 3
+  - name: ELINK
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::CH_TCD_CSR:
+  description: TCD Control and Status
+  fields:
+  - name: START
+    bit_offset: 0
+    bit_size: 1
+  - name: INTMAJOR
+    bit_offset: 1
+    bit_size: 1
+  - name: INTHALF
+    bit_offset: 2
+    bit_size: 1
+  - name: DREQ
+    bit_offset: 3
+    bit_size: 1
+  - name: ESG
+    bit_offset: 4
+    bit_size: 1
+  - name: MAJORELINK
+    bit_offset: 5
+    bit_size: 1
+  - name: EEOP
+    bit_offset: 6
+    bit_size: 1
+  - name: ESDA
+    bit_offset: 7
+    bit_size: 1
+  - name: MAJORLINKCH
+    bit_offset: 8
+    bit_size: 3
+  - name: BWC
+    bit_offset: 14
+    bit_size: 2
+fieldset/regs::CH_TCD_DOFF:
+  description: TCD Signed Destination Address Offset
+  fields:
+  - name: DOFF
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::CH_TCD_NBYTES_MLOFFNO:
+  description: TCD Transfer Size Without Minor Loop Offsets
+  fields:
+  - name: NBYTES
+    bit_offset: 0
+    bit_size: 30
+  - name: DMLOE
+    bit_offset: 30
+    bit_size: 1
+  - name: SMLOE
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CH_TCD_NBYTES_MLOFFYES:
+  description: TCD Transfer Size with Minor Loop Offsets
+  fields:
+  - name: NBYTES
+    bit_offset: 0
+    bit_size: 10
+  - name: MLOFF
+    bit_offset: 10
+    bit_size: 20
+  - name: DMLOE
+    bit_offset: 30
+    bit_size: 1
+  - name: SMLOE
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CH_TCD_SOFF:
+  description: TCD Signed Source Address Offset
+  fields:
+  - name: SOFF
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::MP_CSR:
+  description: Management Page Control
+  fields:
+  - name: EDBG
+    bit_offset: 1
+    bit_size: 1
+  - name: ERCA
+    bit_offset: 2
+    bit_size: 1
+  - name: HAE
+    bit_offset: 4
+    bit_size: 1
+  - name: HALT
+    bit_offset: 5
+    bit_size: 1
+  - name: GCLC
+    bit_offset: 6
+    bit_size: 1
+  - name: GMRC
+    bit_offset: 7
+    bit_size: 1
+  - name: ECX
+    bit_offset: 8
+    bit_size: 1
+  - name: CX
+    bit_offset: 9
+    bit_size: 1
+  - name: ACTIVE_ID
+    bit_offset: 24
+    bit_size: 3
+  - name: ACTIVE
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MP_ES:
+  description: Management Page Error Status
+  fields:
+  - name: DBE
+    bit_offset: 0
+    bit_size: 1
+  - name: SBE
+    bit_offset: 1
+    bit_size: 1
+  - name: SGE
+    bit_offset: 2
+    bit_size: 1
+  - name: NCE
+    bit_offset: 3
+    bit_size: 1
+  - name: DOE
+    bit_offset: 4
+    bit_size: 1
+  - name: DAE
+    bit_offset: 5
+    bit_size: 1
+  - name: SOE
+    bit_offset: 6
+    bit_size: 1
+  - name: SAE
+    bit_offset: 7
+    bit_size: 1
+  - name: ECX
+    bit_offset: 8
+    bit_size: 1
+  - name: ERRCHN
+    bit_offset: 24
+    bit_size: 3
+  - name: VLD
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MP_INT:
+  description: Management Page Interrupt Request Status
+  fields:
+  - name: INT
+    bit_offset: 0
+    bit_size: 8

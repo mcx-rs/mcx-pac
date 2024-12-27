@@ -1,0 +1,62 @@
+block/PMCR:
+  items:
+  - name: PMCR
+    byte_offset: 0
+    fieldset: regs::PMCR_PMCR
+  - name: PMECTR
+    array:
+      len: 3
+      stride: 8
+    byte_offset: 24
+    block: PMECTR
+block/PMECTR:
+  items:
+  - name: HI
+    byte_offset: 0
+    bit_size: 8
+  - name: LO
+    byte_offset: 4
+block/SYSPM:
+  items:
+  - name: PMCR
+    array:
+      len: 1
+      stride: 48
+    byte_offset: 0
+    block: PMCR
+fieldset/regs::PMCR_PMCR:
+  description: Performance Monitor Control
+  fields:
+  - name: MENB
+    bit_offset: 0
+    bit_size: 1
+  - name: SSC
+    bit_offset: 1
+    bit_size: 3
+  - name: CMODE
+    bit_offset: 4
+    bit_size: 2
+  - name: RECTR1
+    bit_offset: 8
+    bit_size: 1
+  - name: RECTR2
+    bit_offset: 9
+    bit_size: 1
+  - name: RECTR3
+    bit_offset: 10
+    bit_size: 1
+  - name: SELEVT1
+    bit_offset: 11
+    bit_size: 7
+  - name: SELEVT2
+    bit_offset: 18
+    bit_size: 7
+  - name: SELEVT3
+    bit_offset: 25
+    bit_size: 7
+fieldset/regs::PMCR_PMECTR_HI:
+  description: Performance Monitor Event Counter
+  fields:
+  - name: ECTR
+    bit_offset: 0
+    bit_size: 8

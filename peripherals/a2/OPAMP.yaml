@@ -1,0 +1,34 @@
+block/OPAMP:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: PARAM
+    byte_offset: 4
+  - name: OPAMP_CTRL
+    byte_offset: 8
+    fieldset: regs::OPAMP_CTRL
+fieldset/regs::OPAMP_CTRL:
+  description: OPAMP Control
+  fields:
+  - name: OPA_EN
+    bit_offset: 0
+    bit_size: 1
+  - name: OPA_CC_SEL
+    bit_offset: 4
+    bit_size: 2
+  - name: OPA_BC_SEL
+    bit_offset: 6
+    bit_size: 2
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

@@ -1,0 +1,7 @@
+transforms:
+- !DeleteFieldsets
+  from: regs::CAL_G(A|B)R\d*
+- !MakeRegisterArray
+  blocks: ADC
+  from: CAL_G(A|B)R\d+
+  to: regs::CAL_G${1}R

@@ -1,0 +1,47 @@
+block/LP_FLEXCOMM:
+  items:
+  - name: ISTAT
+    byte_offset: 4084
+    fieldset: regs::ISTAT
+  - name: PSELID
+    byte_offset: 4088
+    fieldset: regs::PSELID
+fieldset/regs::ISTAT:
+  description: Interrupt Status
+  fields:
+  - name: UARTTX
+    bit_offset: 0
+    bit_size: 1
+  - name: UARTRX
+    bit_offset: 1
+    bit_size: 1
+  - name: SPI
+    bit_offset: 2
+    bit_size: 1
+  - name: I2CM
+    bit_offset: 4
+    bit_size: 1
+  - name: I2CS
+    bit_offset: 5
+    bit_size: 1
+fieldset/regs::PSELID:
+  description: Peripheral Select and ID
+  fields:
+  - name: PERSEL
+    bit_offset: 0
+    bit_size: 3
+  - name: LOCK
+    bit_offset: 3
+    bit_size: 1
+  - name: UARTPRESENT
+    bit_offset: 4
+    bit_size: 1
+  - name: SPIPRESENT
+    bit_offset: 5
+    bit_size: 1
+  - name: I2CPRESENT
+    bit_offset: 6
+    bit_size: 1
+  - name: ID
+    bit_offset: 12
+    bit_size: 20

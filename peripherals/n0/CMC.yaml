@@ -1,0 +1,595 @@
+block/CMC:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: CKCTRL
+    byte_offset: 16
+    fieldset: regs::CKCTRL
+  - name: CKSTAT
+    byte_offset: 20
+    fieldset: regs::CKSTAT
+  - name: PMPROT
+    byte_offset: 24
+    fieldset: regs::PMPROT
+  - name: GPMCTRL
+    byte_offset: 28
+    fieldset: regs::GPMCTRL
+  - name: PMCTRL
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 32
+    fieldset: regs::PMCTRL
+  - name: SRS
+    byte_offset: 128
+    fieldset: regs::SRS
+  - name: RPC
+    byte_offset: 132
+    fieldset: regs::RPC
+  - name: SSRS
+    byte_offset: 136
+    fieldset: regs::SSRS
+  - name: SRIE
+    byte_offset: 140
+    fieldset: regs::SRIE
+  - name: SRIF
+    byte_offset: 144
+    fieldset: regs::SRIF
+  - name: RSTCNT
+    byte_offset: 156
+    fieldset: regs::RSTCNT
+  - name: MR
+    array:
+      len: 1
+      stride: 4
+    byte_offset: 160
+    fieldset: regs::MR
+  - name: FM
+    array:
+      len: 1
+      stride: 4
+    byte_offset: 176
+    fieldset: regs::FM
+  - name: SRAMDIS
+    array:
+      len: 1
+      stride: 4
+    byte_offset: 192
+    fieldset: regs::SRAMDIS
+  - name: SRAMRET
+    array:
+      len: 1
+      stride: 4
+    byte_offset: 208
+    fieldset: regs::SRAMRET
+  - name: FLASHCR
+    byte_offset: 224
+    fieldset: regs::FLASHCR
+  - name: BSR
+    byte_offset: 256
+  - name: BLR
+    byte_offset: 268
+    fieldset: regs::BLR
+  - name: CORECTL
+    byte_offset: 272
+    fieldset: regs::CORECTL
+  - name: DBGCTL
+    byte_offset: 288
+    fieldset: regs::DBGCTL
+fieldset/regs::BLR:
+  description: BootROM Lock Register
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::CKCTRL:
+  description: Clock Control
+  fields:
+  - name: CKMODE
+    bit_offset: 0
+    bit_size: 4
+  - name: LOCK
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CKSTAT:
+  description: Clock Status
+  fields:
+  - name: CKMODE
+    bit_offset: 0
+    bit_size: 4
+  - name: WAKEUP
+    bit_offset: 8
+    bit_size: 8
+  - name: VALID
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CORECTL:
+  description: Core Control
+  fields:
+  - name: NPIE
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::DBGCTL:
+  description: Debug Control
+  fields:
+  - name: SOD
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::FLASHCR:
+  description: Flash Control
+  fields:
+  - name: FLASHDIS
+    bit_offset: 0
+    bit_size: 1
+  - name: FLASHDOZE
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::FM:
+  description: Force Mode
+  fields:
+  - name: FORCECFG
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::GPMCTRL:
+  description: Global Power Mode Control
+  fields:
+  - name: LPMODE
+    bit_offset: 0
+    bit_size: 4
+fieldset/regs::MR:
+  description: Mode
+  fields:
+  - name: ISPMODE_n
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::PMCTRL:
+  description: Power Mode Control
+  fields:
+  - name: LPMODE
+    bit_offset: 0
+    bit_size: 4
+fieldset/regs::PMPROT:
+  description: Power Mode Protection
+  fields:
+  - name: LPMODE
+    bit_offset: 0
+    bit_size: 4
+  - name: LOCK
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::RPC:
+  description: Reset Pin Control
+  fields:
+  - name: FILTCFG
+    bit_offset: 0
+    bit_size: 5
+  - name: FILTEN
+    bit_offset: 8
+    bit_size: 1
+  - name: LPFEN
+    bit_offset: 9
+    bit_size: 1
+fieldset/regs::RSTCNT:
+  description: Reset Count Register
+  fields:
+  - name: COUNT
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::SRAMDIS:
+  description: SRAM Disable
+  fields:
+  - name: DIS0
+    bit_offset: 0
+    bit_size: 1
+  - name: DIS1
+    bit_offset: 1
+    bit_size: 1
+  - name: DIS2
+    bit_offset: 2
+    bit_size: 1
+  - name: DIS3
+    bit_offset: 3
+    bit_size: 1
+  - name: DIS4
+    bit_offset: 4
+    bit_size: 1
+  - name: DIS5
+    bit_offset: 5
+    bit_size: 1
+  - name: DIS6
+    bit_offset: 6
+    bit_size: 1
+  - name: DIS7
+    bit_offset: 7
+    bit_size: 1
+  - name: DIS8
+    bit_offset: 8
+    bit_size: 1
+  - name: DIS9
+    bit_offset: 9
+    bit_size: 1
+  - name: DIS10
+    bit_offset: 10
+    bit_size: 1
+  - name: DIS11
+    bit_offset: 11
+    bit_size: 1
+  - name: DIS12
+    bit_offset: 12
+    bit_size: 1
+  - name: DIS13
+    bit_offset: 13
+    bit_size: 1
+  - name: DIS14
+    bit_offset: 14
+    bit_size: 1
+  - name: DIS15
+    bit_offset: 15
+    bit_size: 1
+  - name: DIS16
+    bit_offset: 16
+    bit_size: 1
+  - name: DIS17
+    bit_offset: 17
+    bit_size: 1
+  - name: DIS18
+    bit_offset: 18
+    bit_size: 1
+  - name: DIS19
+    bit_offset: 19
+    bit_size: 1
+  - name: DIS20
+    bit_offset: 20
+    bit_size: 1
+  - name: DIS21
+    bit_offset: 21
+    bit_size: 1
+  - name: DIS22
+    bit_offset: 22
+    bit_size: 1
+  - name: DIS23
+    bit_offset: 23
+    bit_size: 1
+  - name: DIS24
+    bit_offset: 24
+    bit_size: 1
+  - name: DIS25
+    bit_offset: 25
+    bit_size: 1
+  - name: DIS26
+    bit_offset: 26
+    bit_size: 1
+  - name: DIS27
+    bit_offset: 27
+    bit_size: 1
+  - name: DIS28
+    bit_offset: 28
+    bit_size: 1
+  - name: DIS29
+    bit_offset: 29
+    bit_size: 1
+  - name: DIS30
+    bit_offset: 30
+    bit_size: 1
+  - name: DIS31
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::SRAMRET:
+  description: SRAM Retention
+  fields:
+  - name: RET0
+    bit_offset: 0
+    bit_size: 1
+  - name: RET1
+    bit_offset: 1
+    bit_size: 1
+  - name: RET2
+    bit_offset: 2
+    bit_size: 1
+  - name: RET3
+    bit_offset: 3
+    bit_size: 1
+  - name: RET4
+    bit_offset: 4
+    bit_size: 1
+  - name: RET5
+    bit_offset: 5
+    bit_size: 1
+  - name: RET6
+    bit_offset: 6
+    bit_size: 1
+  - name: RET7
+    bit_offset: 7
+    bit_size: 1
+  - name: RET8
+    bit_offset: 8
+    bit_size: 1
+  - name: RET9
+    bit_offset: 9
+    bit_size: 1
+  - name: RET10
+    bit_offset: 10
+    bit_size: 1
+  - name: RET11
+    bit_offset: 11
+    bit_size: 1
+  - name: RET12
+    bit_offset: 12
+    bit_size: 1
+  - name: RET13
+    bit_offset: 13
+    bit_size: 1
+  - name: RET14
+    bit_offset: 14
+    bit_size: 1
+  - name: RET15
+    bit_offset: 15
+    bit_size: 1
+  - name: RET16
+    bit_offset: 16
+    bit_size: 1
+  - name: RET17
+    bit_offset: 17
+    bit_size: 1
+  - name: RET18
+    bit_offset: 18
+    bit_size: 1
+  - name: RET19
+    bit_offset: 19
+    bit_size: 1
+  - name: RET20
+    bit_offset: 20
+    bit_size: 1
+  - name: RET21
+    bit_offset: 21
+    bit_size: 1
+  - name: RET22
+    bit_offset: 22
+    bit_size: 1
+  - name: RET23
+    bit_offset: 23
+    bit_size: 1
+  - name: RET24
+    bit_offset: 24
+    bit_size: 1
+  - name: RET25
+    bit_offset: 25
+    bit_size: 1
+  - name: RET26
+    bit_offset: 26
+    bit_size: 1
+  - name: RET27
+    bit_offset: 27
+    bit_size: 1
+  - name: RET28
+    bit_offset: 28
+    bit_size: 1
+  - name: RET29
+    bit_offset: 29
+    bit_size: 1
+  - name: RET30
+    bit_offset: 30
+    bit_size: 1
+  - name: RET31
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::SRIE:
+  description: System Reset Interrupt Enable
+  fields:
+  - name: PIN
+    bit_offset: 8
+    bit_size: 1
+  - name: DAP
+    bit_offset: 9
+    bit_size: 1
+  - name: LPACK
+    bit_offset: 11
+    bit_size: 1
+  - name: SCG
+    bit_offset: 12
+    bit_size: 1
+  - name: WWDT0
+    bit_offset: 13
+    bit_size: 1
+  - name: SW
+    bit_offset: 14
+    bit_size: 1
+  - name: LOCKUP
+    bit_offset: 15
+    bit_size: 1
+  - name: CPU1
+    bit_offset: 16
+    bit_size: 1
+  - name: VBAT
+    bit_offset: 24
+    bit_size: 1
+  - name: WWDT1
+    bit_offset: 25
+    bit_size: 1
+  - name: CDOG0
+    bit_offset: 26
+    bit_size: 1
+  - name: CDOG1
+    bit_offset: 27
+    bit_size: 1
+fieldset/regs::SRIF:
+  description: System Reset Interrupt Flag
+  fields:
+  - name: PIN
+    bit_offset: 8
+    bit_size: 1
+  - name: DAP
+    bit_offset: 9
+    bit_size: 1
+  - name: LPACK
+    bit_offset: 11
+    bit_size: 1
+  - name: WWDT0
+    bit_offset: 13
+    bit_size: 1
+  - name: SW
+    bit_offset: 14
+    bit_size: 1
+  - name: LOCKUP
+    bit_offset: 15
+    bit_size: 1
+  - name: CPU1
+    bit_offset: 16
+    bit_size: 1
+  - name: VBAT
+    bit_offset: 24
+    bit_size: 1
+  - name: WWDT1
+    bit_offset: 25
+    bit_size: 1
+  - name: CDOG0
+    bit_offset: 26
+    bit_size: 1
+  - name: CDOG1
+    bit_offset: 27
+    bit_size: 1
+fieldset/regs::SRS:
+  description: System Reset Status
+  fields:
+  - name: WAKEUP
+    bit_offset: 0
+    bit_size: 1
+  - name: POR
+    bit_offset: 1
+    bit_size: 1
+  - name: VD
+    bit_offset: 2
+    bit_size: 1
+  - name: WARM
+    bit_offset: 4
+    bit_size: 1
+  - name: FATAL
+    bit_offset: 5
+    bit_size: 1
+  - name: PIN
+    bit_offset: 8
+    bit_size: 1
+  - name: DAP
+    bit_offset: 9
+    bit_size: 1
+  - name: RSTACK
+    bit_offset: 10
+    bit_size: 1
+  - name: LPACK
+    bit_offset: 11
+    bit_size: 1
+  - name: SCG
+    bit_offset: 12
+    bit_size: 1
+  - name: WWDT0
+    bit_offset: 13
+    bit_size: 1
+  - name: SW
+    bit_offset: 14
+    bit_size: 1
+  - name: LOCKUP
+    bit_offset: 15
+    bit_size: 1
+  - name: CPU1
+    bit_offset: 16
+    bit_size: 1
+  - name: VBAT
+    bit_offset: 24
+    bit_size: 1
+  - name: WWDT1
+    bit_offset: 25
+    bit_size: 1
+  - name: CDOG0
+    bit_offset: 26
+    bit_size: 1
+  - name: CDOG1
+    bit_offset: 27
+    bit_size: 1
+  - name: JTAG
+    bit_offset: 28
+    bit_size: 1
+  - name: SECVIO
+    bit_offset: 30
+    bit_size: 1
+  - name: TAMPER
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::SSRS:
+  description: Sticky System Reset Status
+  fields:
+  - name: WAKEUP
+    bit_offset: 0
+    bit_size: 1
+  - name: POR
+    bit_offset: 1
+    bit_size: 1
+  - name: VD
+    bit_offset: 2
+    bit_size: 1
+  - name: WARM
+    bit_offset: 4
+    bit_size: 1
+  - name: FATAL
+    bit_offset: 5
+    bit_size: 1
+  - name: PIN
+    bit_offset: 8
+    bit_size: 1
+  - name: DAP
+    bit_offset: 9
+    bit_size: 1
+  - name: RSTACK
+    bit_offset: 10
+    bit_size: 1
+  - name: LPACK
+    bit_offset: 11
+    bit_size: 1
+  - name: SCG
+    bit_offset: 12
+    bit_size: 1
+  - name: WWDT0
+    bit_offset: 13
+    bit_size: 1
+  - name: SW
+    bit_offset: 14
+    bit_size: 1
+  - name: LOCKUP
+    bit_offset: 15
+    bit_size: 1
+  - name: CPU1
+    bit_offset: 16
+    bit_size: 1
+  - name: VBAT
+    bit_offset: 24
+    bit_size: 1
+  - name: WWDT1
+    bit_offset: 25
+    bit_size: 1
+  - name: CDOG0
+    bit_offset: 26
+    bit_size: 1
+  - name: CDOG1
+    bit_offset: 27
+    bit_size: 1
+  - name: JTAG
+    bit_offset: 28
+    bit_size: 1
+  - name: SECVIO
+    bit_offset: 30
+    bit_size: 1
+  - name: TAMPER
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

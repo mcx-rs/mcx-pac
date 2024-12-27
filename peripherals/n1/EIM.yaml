@@ -1,0 +1,143 @@
+block/EIM:
+  items:
+  - name: EIMCR
+    byte_offset: 0
+    fieldset: regs::EIMCR
+  - name: EICHEN
+    byte_offset: 4
+    fieldset: regs::EICHEN
+  - name: EICHD0_WORD0
+    byte_offset: 256
+    fieldset: regs::EICHD0_WORD0
+  - name: EICHD0_WORD1
+    byte_offset: 260
+  - name: EICHD1_WORD0
+    byte_offset: 320
+    fieldset: regs::EICHD1_WORD0
+  - name: EICHD1_WORD1
+    byte_offset: 324
+  - name: EICHD2_WORD0
+    byte_offset: 384
+    fieldset: regs::EICHD2_WORD0
+  - name: EICHD2_WORD1
+    byte_offset: 388
+  - name: EICHD3_WORD0
+    byte_offset: 448
+    fieldset: regs::EICHD3_WORD0
+  - name: EICHD3_WORD1
+    byte_offset: 452
+  - name: EICHD4_WORD0
+    byte_offset: 512
+    fieldset: regs::EICHD4_WORD0
+  - name: EICHD4_WORD1
+    byte_offset: 516
+  - name: EICHD5_WORD0
+    byte_offset: 576
+    fieldset: regs::EICHD5_WORD0
+  - name: EICHD5_WORD1
+    byte_offset: 580
+  - name: EICHD6_WORD0
+    byte_offset: 640
+    fieldset: regs::EICHD6_WORD0
+  - name: EICHD6_WORD1
+    byte_offset: 644
+  - name: EICHD7_WORD0
+    byte_offset: 704
+    fieldset: regs::EICHD7_WORD0
+  - name: EICHD7_WORD1
+    byte_offset: 708
+  - name: EICHD8_WORD0
+    byte_offset: 768
+    fieldset: regs::EICHD8_WORD0
+  - name: EICHD8_WORD1
+    byte_offset: 772
+fieldset/regs::EICHD0_WORD0:
+  description: Error Injection Channel Descriptor 0, Word0
+  fields:
+  - name: CHKBIT_MASK
+    bit_offset: 25
+    bit_size: 7
+fieldset/regs::EICHD1_WORD0:
+  description: Error Injection Channel Descriptor 1, Word0
+  fields:
+  - name: CHKBIT_MASK
+    bit_offset: 25
+    bit_size: 7
+fieldset/regs::EICHD2_WORD0:
+  description: Error Injection Channel Descriptor 2, Word0
+  fields:
+  - name: CHKBIT_MASK
+    bit_offset: 25
+    bit_size: 7
+fieldset/regs::EICHD3_WORD0:
+  description: Error Injection Channel Descriptor 3, Word0
+  fields:
+  - name: CHKBIT_MASK
+    bit_offset: 25
+    bit_size: 7
+fieldset/regs::EICHD4_WORD0:
+  description: Error Injection Channel Descriptor 4, Word0
+  fields:
+  - name: CHKBIT_MASK
+    bit_offset: 25
+    bit_size: 7
+fieldset/regs::EICHD5_WORD0:
+  description: Error Injection Channel Descriptor 5, Word0
+  fields:
+  - name: CHKBIT_MASK
+    bit_offset: 25
+    bit_size: 7
+fieldset/regs::EICHD6_WORD0:
+  description: Error Injection Channel Descriptor 6, Word0
+  fields:
+  - name: CHKBIT_MASK
+    bit_offset: 25
+    bit_size: 7
+fieldset/regs::EICHD7_WORD0:
+  description: Error Injection Channel Descriptor 7, Word0
+  fields:
+  - name: CHKBIT_MASK
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::EICHD8_WORD0:
+  description: Error Injection Channel Descriptor 8, Word0
+  fields:
+  - name: CHKBIT_MASK
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::EICHEN:
+  description: Error Injection Channel Enable register
+  fields:
+  - name: EICH8EN
+    bit_offset: 23
+    bit_size: 1
+  - name: EICH7EN
+    bit_offset: 24
+    bit_size: 1
+  - name: EICH6EN
+    bit_offset: 25
+    bit_size: 1
+  - name: EICH5EN
+    bit_offset: 26
+    bit_size: 1
+  - name: EICH4EN
+    bit_offset: 27
+    bit_size: 1
+  - name: EICH3EN
+    bit_offset: 28
+    bit_size: 1
+  - name: EICH2EN
+    bit_offset: 29
+    bit_size: 1
+  - name: EICH1EN
+    bit_offset: 30
+    bit_size: 1
+  - name: EICH0EN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::EIMCR:
+  description: Error Injection Module Configuration Register
+  fields:
+  - name: GEIEN
+    bit_offset: 0
+    bit_size: 1

@@ -1,0 +1,185 @@
+block/EVTG:
+  items:
+  - name: EVTG_INST
+    array:
+      len: 4
+      stride: 16
+    byte_offset: 0
+    block: EVTG_INST
+block/EVTG_INST:
+  items:
+  - name: EVTG_AOI0_BFT01
+    byte_offset: 0
+    bit_size: 16
+    fieldset: regs::EVTG_INST_EVTG_AOI0_BFT01
+  - name: EVTG_AOI0_BFT23
+    byte_offset: 2
+    bit_size: 16
+    fieldset: regs::EVTG_INST_EVTG_AOI0_BFT23
+  - name: EVTG_AOI1_BFT01
+    byte_offset: 4
+    bit_size: 16
+    fieldset: regs::EVTG_INST_EVTG_AOI1_BFT01
+  - name: EVTG_AOI1_BFT23
+    byte_offset: 6
+    bit_size: 16
+    fieldset: regs::EVTG_INST_EVTG_AOI1_BFT23
+  - name: EVTG_CTRL
+    byte_offset: 10
+    bit_size: 16
+    fieldset: regs::EVTG_INST_EVTG_CTRL
+  - name: EVTG_AOI0_FILT
+    byte_offset: 12
+    bit_size: 16
+    fieldset: regs::EVTG_INST_EVTG_AOI0_FILT
+  - name: EVTG_AOI1_FILT
+    byte_offset: 14
+    bit_size: 16
+    fieldset: regs::EVTG_INST_EVTG_AOI1_FILT
+fieldset/regs::EVTG_INST_EVTG_AOI0_BFT01:
+  description: AOI0 Boolean Function Term 0 and 1 Configuration
+  fields:
+  - name: PT1_DC
+    bit_offset: 0
+    bit_size: 2
+  - name: PT1_CC
+    bit_offset: 2
+    bit_size: 2
+  - name: PT1_BC
+    bit_offset: 4
+    bit_size: 2
+  - name: PT1_AC
+    bit_offset: 6
+    bit_size: 2
+  - name: PT0_DC
+    bit_offset: 8
+    bit_size: 2
+  - name: PT0_CC
+    bit_offset: 10
+    bit_size: 2
+  - name: PT0_BC
+    bit_offset: 12
+    bit_size: 2
+  - name: PT0_AC
+    bit_offset: 14
+    bit_size: 2
+fieldset/regs::EVTG_INST_EVTG_AOI0_BFT23:
+  description: AOI0 Boolean Function Term 2 and 3 Configuration
+  fields:
+  - name: PT3_DC
+    bit_offset: 0
+    bit_size: 2
+  - name: PT3_CC
+    bit_offset: 2
+    bit_size: 2
+  - name: PT3_BC
+    bit_offset: 4
+    bit_size: 2
+  - name: PT3_AC
+    bit_offset: 6
+    bit_size: 2
+  - name: PT2_DC
+    bit_offset: 8
+    bit_size: 2
+  - name: PT2_CC
+    bit_offset: 10
+    bit_size: 2
+  - name: PT2_BC
+    bit_offset: 12
+    bit_size: 2
+  - name: PT2_AC
+    bit_offset: 14
+    bit_size: 2
+fieldset/regs::EVTG_INST_EVTG_AOI0_FILT:
+  description: AOI0 Output Filter
+  fields:
+  - name: FILT_PER
+    bit_offset: 0
+    bit_size: 8
+  - name: FILT_CNT
+    bit_offset: 8
+    bit_size: 3
+fieldset/regs::EVTG_INST_EVTG_AOI1_BFT01:
+  description: AOI1 Boolean Function Term 0 and 1 Configuration
+  fields:
+  - name: PT1_DC
+    bit_offset: 0
+    bit_size: 2
+  - name: PT1_CC
+    bit_offset: 2
+    bit_size: 2
+  - name: PT1_BC
+    bit_offset: 4
+    bit_size: 2
+  - name: PT1_AC
+    bit_offset: 6
+    bit_size: 2
+  - name: PT0_DC
+    bit_offset: 8
+    bit_size: 2
+  - name: PT0_CC
+    bit_offset: 10
+    bit_size: 2
+  - name: PT0_BC
+    bit_offset: 12
+    bit_size: 2
+  - name: PT0_AC
+    bit_offset: 14
+    bit_size: 2
+fieldset/regs::EVTG_INST_EVTG_AOI1_BFT23:
+  description: AOI1 Boolean Function Term 2 and 3 Configuration
+  fields:
+  - name: PT3_DC
+    bit_offset: 0
+    bit_size: 2
+  - name: PT3_CC
+    bit_offset: 2
+    bit_size: 2
+  - name: PT3_BC
+    bit_offset: 4
+    bit_size: 2
+  - name: PT3_AC
+    bit_offset: 6
+    bit_size: 2
+  - name: PT2_DC
+    bit_offset: 8
+    bit_size: 2
+  - name: PT2_CC
+    bit_offset: 10
+    bit_size: 2
+  - name: PT2_BC
+    bit_offset: 12
+    bit_size: 2
+  - name: PT2_AC
+    bit_offset: 14
+    bit_size: 2
+fieldset/regs::EVTG_INST_EVTG_AOI1_FILT:
+  description: AOI1 Output Filter
+  fields:
+  - name: FILT_PER
+    bit_offset: 0
+    bit_size: 8
+  - name: FILT_CNT
+    bit_offset: 8
+    bit_size: 3
+fieldset/regs::EVTG_INST_EVTG_CTRL:
+  description: Control and Status
+  fields:
+  - name: FF_INIT
+    bit_offset: 0
+    bit_size: 1
+  - name: INIT_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: MODE_SEL
+    bit_offset: 2
+    bit_size: 3
+  - name: FB_OVRD
+    bit_offset: 6
+    bit_size: 2
+  - name: SYNC_CTRL
+    bit_offset: 8
+    bit_size: 4
+  - name: FORCE_BYPASS
+    bit_offset: 12
+    bit_size: 2

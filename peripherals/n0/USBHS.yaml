@@ -1,0 +1,800 @@
+block/USBHS:
+  items:
+  - name: ID
+    byte_offset: 0
+    fieldset: regs::ID
+  - name: HWGENERAL
+    byte_offset: 4
+    fieldset: regs::HWGENERAL
+  - name: HWHOST
+    byte_offset: 8
+    fieldset: regs::HWHOST
+  - name: HWDEVICE
+    byte_offset: 12
+    fieldset: regs::HWDEVICE
+  - name: HWTXBUF
+    byte_offset: 16
+    fieldset: regs::HWTXBUF
+  - name: HWRXBUF
+    byte_offset: 20
+    fieldset: regs::HWRXBUF
+  - name: GPTIMER0LD
+    byte_offset: 128
+    fieldset: regs::GPTIMER0LD
+  - name: GPTIMER0CTRL
+    byte_offset: 132
+    fieldset: regs::GPTIMER0CTRL
+  - name: GPTIMER1LD
+    byte_offset: 136
+    fieldset: regs::GPTIMER1LD
+  - name: GPTIMER1CTRL
+    byte_offset: 140
+    fieldset: regs::GPTIMER1CTRL
+  - name: SBUSCFG
+    byte_offset: 144
+    fieldset: regs::SBUSCFG
+  - name: CAPLENGTH
+    byte_offset: 256
+    bit_size: 8
+    fieldset: regs::CAPLENGTH
+  - name: HCIVERSION
+    byte_offset: 258
+    bit_size: 16
+    fieldset: regs::HCIVERSION
+  - name: HCSPARAMS
+    byte_offset: 260
+    fieldset: regs::HCSPARAMS
+  - name: HCCPARAMS
+    byte_offset: 264
+    fieldset: regs::HCCPARAMS
+  - name: DCIVERSION
+    byte_offset: 288
+    bit_size: 16
+    fieldset: regs::DCIVERSION
+  - name: DCCPARAMS
+    byte_offset: 292
+    fieldset: regs::DCCPARAMS
+  - name: USBCMD
+    byte_offset: 320
+    fieldset: regs::USBCMD
+  - name: USBSTS
+    byte_offset: 324
+    fieldset: regs::USBSTS
+  - name: USBINTR
+    byte_offset: 328
+    fieldset: regs::USBINTR
+  - name: FRINDEX
+    byte_offset: 332
+    fieldset: regs::FRINDEX
+  - name: DEVICEADDR
+    byte_offset: 340
+    fieldset: regs::DEVICEADDR
+  - name: PERIODICLISTBASE
+    byte_offset: 340
+    fieldset: regs::PERIODICLISTBASE
+  - name: ASYNCLISTADDR
+    byte_offset: 344
+    fieldset: regs::ASYNCLISTADDR
+  - name: ENDPTLISTADDR
+    byte_offset: 344
+    fieldset: regs::ENDPTLISTADDR
+  - name: BURSTSIZE
+    byte_offset: 352
+    fieldset: regs::BURSTSIZE
+  - name: TXFILLTUNING
+    byte_offset: 356
+    fieldset: regs::TXFILLTUNING
+  - name: ENDPTNAK
+    byte_offset: 376
+    fieldset: regs::ENDPTNAK
+  - name: ENDPTNAKEN
+    byte_offset: 380
+    fieldset: regs::ENDPTNAKEN
+  - name: CONFIGFLAG
+    byte_offset: 384
+    fieldset: regs::CONFIGFLAG
+  - name: PORTSC1
+    byte_offset: 388
+    fieldset: regs::PORTSC1
+  - name: OTGSC
+    byte_offset: 420
+    fieldset: regs::OTGSC
+  - name: USBMODE
+    byte_offset: 424
+    fieldset: regs::USBMODE
+  - name: ENDPTSETUPSTAT
+    byte_offset: 428
+    fieldset: regs::ENDPTSETUPSTAT
+  - name: ENDPTPRIME
+    byte_offset: 432
+    fieldset: regs::ENDPTPRIME
+  - name: ENDPTFLUSH
+    byte_offset: 436
+    fieldset: regs::ENDPTFLUSH
+  - name: ENDPTSTAT
+    byte_offset: 440
+    fieldset: regs::ENDPTSTAT
+  - name: ENDPTCOMPLETE
+    byte_offset: 444
+    fieldset: regs::ENDPTCOMPLETE
+  - name: ENDPTCTRL0
+    byte_offset: 448
+    fieldset: regs::ENDPTCTRL0
+  - name: ENDPTCTRL
+    array:
+      len: 7
+      stride: 4
+    byte_offset: 452
+    fieldset: regs::ENDPTCTRL
+fieldset/regs::ASYNCLISTADDR:
+  description: Next Asynch. Address
+  fields:
+  - name: ASYBASE
+    bit_offset: 5
+    bit_size: 27
+fieldset/regs::BURSTSIZE:
+  description: Programmable Burst Size
+  fields:
+  - name: RXPBURST
+    bit_offset: 0
+    bit_size: 8
+  - name: TXPBURST
+    bit_offset: 8
+    bit_size: 8
+fieldset/regs::CAPLENGTH:
+  description: Capability Registers Length
+  fields:
+  - name: CAPLENGTH
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::CONFIGFLAG:
+  description: Configure Flag
+  fields:
+  - name: CF
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::DCCPARAMS:
+  description: Device Controller Capability Parameters
+  fields:
+  - name: DEN
+    bit_offset: 0
+    bit_size: 5
+  - name: DC
+    bit_offset: 7
+    bit_size: 1
+  - name: HC
+    bit_offset: 8
+    bit_size: 1
+fieldset/regs::DCIVERSION:
+  description: Device Controller Interface Version
+  fields:
+  - name: DCIVERSION
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::DEVICEADDR:
+  description: Device Address
+  fields:
+  - name: USBADRA
+    bit_offset: 24
+    bit_size: 1
+  - name: USBADR
+    bit_offset: 25
+    bit_size: 7
+fieldset/regs::ENDPTCOMPLETE:
+  description: Endpoint Complete
+  fields:
+  - name: ERCE
+    bit_offset: 0
+    bit_size: 8
+  - name: ETCE
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::ENDPTCTRL:
+  description: Endpoint Control 1..Endpoint Control 7
+  fields:
+  - name: RXS
+    bit_offset: 0
+    bit_size: 1
+  - name: RXD
+    bit_offset: 1
+    bit_size: 1
+  - name: RXT
+    bit_offset: 2
+    bit_size: 2
+  - name: RXI
+    bit_offset: 5
+    bit_size: 1
+  - name: RXR
+    bit_offset: 6
+    bit_size: 1
+  - name: RXE
+    bit_offset: 7
+    bit_size: 1
+  - name: TXS
+    bit_offset: 16
+    bit_size: 1
+  - name: TXD
+    bit_offset: 17
+    bit_size: 1
+  - name: TXT
+    bit_offset: 18
+    bit_size: 2
+  - name: TXI
+    bit_offset: 21
+    bit_size: 1
+  - name: TXR
+    bit_offset: 22
+    bit_size: 1
+  - name: TXE
+    bit_offset: 23
+    bit_size: 1
+fieldset/regs::ENDPTCTRL0:
+  description: Endpoint Control 0
+  fields:
+  - name: RXS
+    bit_offset: 0
+    bit_size: 1
+  - name: RXT
+    bit_offset: 2
+    bit_size: 2
+  - name: RXE
+    bit_offset: 7
+    bit_size: 1
+  - name: TXS
+    bit_offset: 16
+    bit_size: 1
+  - name: TXT
+    bit_offset: 18
+    bit_size: 2
+  - name: TXE
+    bit_offset: 23
+    bit_size: 1
+fieldset/regs::ENDPTFLUSH:
+  description: Endpoint Flush
+  fields:
+  - name: FERB
+    bit_offset: 0
+    bit_size: 8
+  - name: FETB
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::ENDPTLISTADDR:
+  description: Endpoint List Address
+  fields:
+  - name: EPBASE
+    bit_offset: 11
+    bit_size: 21
+fieldset/regs::ENDPTNAK:
+  description: Endpoint NAK
+  fields:
+  - name: EPRN
+    bit_offset: 0
+    bit_size: 8
+  - name: EPTN
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::ENDPTNAKEN:
+  description: Endpoint NAK Enable
+  fields:
+  - name: EPRNE
+    bit_offset: 0
+    bit_size: 8
+  - name: EPTNE
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::ENDPTPRIME:
+  description: Endpoint Prime
+  fields:
+  - name: PERB
+    bit_offset: 0
+    bit_size: 8
+  - name: PETB
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::ENDPTSETUPSTAT:
+  description: Endpoint Setup Status
+  fields:
+  - name: ENDPTSETUPSTAT
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::ENDPTSTAT:
+  description: Endpoint Status
+  fields:
+  - name: ERBR
+    bit_offset: 0
+    bit_size: 8
+  - name: ETBR
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::FRINDEX:
+  description: USB Frame Index
+  fields:
+  - name: FRINDEX
+    bit_offset: 0
+    bit_size: 14
+fieldset/regs::GPTIMER0CTRL:
+  description: 'General Purpose Timer #0 Controller'
+  fields:
+  - name: GPTCNT
+    bit_offset: 0
+    bit_size: 24
+  - name: GPTMODE
+    bit_offset: 24
+    bit_size: 1
+  - name: GPTRST
+    bit_offset: 30
+    bit_size: 1
+  - name: GPTRUN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::GPTIMER0LD:
+  description: 'General Purpose Timer #0 Load'
+  fields:
+  - name: GPTLD
+    bit_offset: 0
+    bit_size: 24
+fieldset/regs::GPTIMER1CTRL:
+  description: 'General Purpose Timer #1 Controller'
+  fields:
+  - name: GPTCNT
+    bit_offset: 0
+    bit_size: 24
+  - name: GPTMODE
+    bit_offset: 24
+    bit_size: 1
+  - name: GPTRST
+    bit_offset: 30
+    bit_size: 1
+  - name: GPTRUN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::GPTIMER1LD:
+  description: 'General Purpose Timer #1 Load'
+  fields:
+  - name: GPTLD
+    bit_offset: 0
+    bit_size: 24
+fieldset/regs::HCCPARAMS:
+  description: Host Controller Capability Parameters
+  fields:
+  - name: ADC
+    bit_offset: 0
+    bit_size: 1
+  - name: PFL
+    bit_offset: 1
+    bit_size: 1
+  - name: ASP
+    bit_offset: 2
+    bit_size: 1
+  - name: IST
+    bit_offset: 4
+    bit_size: 4
+  - name: EECP
+    bit_offset: 8
+    bit_size: 8
+fieldset/regs::HCIVERSION:
+  description: Host Controller Interface Version
+  fields:
+  - name: HCIVERSION
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::HCSPARAMS:
+  description: Host Controller Structural Parameters
+  fields:
+  - name: N_PORTS
+    bit_offset: 0
+    bit_size: 4
+  - name: PPC
+    bit_offset: 4
+    bit_size: 1
+  - name: N_PCC
+    bit_offset: 8
+    bit_size: 4
+  - name: N_CC
+    bit_offset: 12
+    bit_size: 4
+  - name: PI
+    bit_offset: 16
+    bit_size: 1
+  - name: N_PTT
+    bit_offset: 20
+    bit_size: 4
+  - name: N_TT
+    bit_offset: 24
+    bit_size: 4
+fieldset/regs::HWDEVICE:
+  description: Device Hardware Parameters
+  fields:
+  - name: DC
+    bit_offset: 0
+    bit_size: 1
+  - name: DEVEP
+    bit_offset: 1
+    bit_size: 5
+fieldset/regs::HWGENERAL:
+  description: Hardware General
+  fields:
+  - name: PHYW
+    bit_offset: 4
+    bit_size: 2
+  - name: PHYM
+    bit_offset: 6
+    bit_size: 3
+  - name: SM
+    bit_offset: 9
+    bit_size: 2
+fieldset/regs::HWHOST:
+  description: Host Hardware Parameters
+  fields:
+  - name: HC
+    bit_offset: 0
+    bit_size: 1
+  - name: NPORT
+    bit_offset: 1
+    bit_size: 3
+fieldset/regs::HWRXBUF:
+  description: RX Buffer Hardware Parameters
+  fields:
+  - name: RXBURST
+    bit_offset: 0
+    bit_size: 8
+  - name: RXADD
+    bit_offset: 8
+    bit_size: 8
+fieldset/regs::HWTXBUF:
+  description: TX Buffer Hardware Parameters
+  fields:
+  - name: TXBURST
+    bit_offset: 0
+    bit_size: 8
+  - name: TXCHANADD
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::ID:
+  description: Identification
+  fields:
+  - name: ID
+    bit_offset: 0
+    bit_size: 6
+  - name: NID
+    bit_offset: 8
+    bit_size: 6
+  - name: REVISION
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::OTGSC:
+  description: On-The-Go Status & Control
+  fields:
+  - name: VD
+    bit_offset: 0
+    bit_size: 1
+  - name: VC
+    bit_offset: 1
+    bit_size: 1
+  - name: OT
+    bit_offset: 3
+    bit_size: 1
+  - name: DP
+    bit_offset: 4
+    bit_size: 1
+  - name: IDPU
+    bit_offset: 5
+    bit_size: 1
+  - name: ID
+    bit_offset: 8
+    bit_size: 1
+  - name: AVV
+    bit_offset: 9
+    bit_size: 1
+  - name: ASV
+    bit_offset: 10
+    bit_size: 1
+  - name: BSV
+    bit_offset: 11
+    bit_size: 1
+  - name: BSE
+    bit_offset: 12
+    bit_size: 1
+  - name: TOG_1MS
+    bit_offset: 13
+    bit_size: 1
+  - name: DPS
+    bit_offset: 14
+    bit_size: 1
+  - name: IDIS
+    bit_offset: 16
+    bit_size: 1
+  - name: AVVIS
+    bit_offset: 17
+    bit_size: 1
+  - name: ASVIS
+    bit_offset: 18
+    bit_size: 1
+  - name: BSVIS
+    bit_offset: 19
+    bit_size: 1
+  - name: BSEIS
+    bit_offset: 20
+    bit_size: 1
+  - name: STATUS_1MS
+    bit_offset: 21
+    bit_size: 1
+  - name: DPIS
+    bit_offset: 22
+    bit_size: 1
+  - name: IDIE
+    bit_offset: 24
+    bit_size: 1
+  - name: AVVIE
+    bit_offset: 25
+    bit_size: 1
+  - name: ASVIE
+    bit_offset: 26
+    bit_size: 1
+  - name: BSVIE
+    bit_offset: 27
+    bit_size: 1
+  - name: BSEIE
+    bit_offset: 28
+    bit_size: 1
+  - name: EN_1MS
+    bit_offset: 29
+    bit_size: 1
+  - name: DPIE
+    bit_offset: 30
+    bit_size: 1
+fieldset/regs::PERIODICLISTBASE:
+  description: Frame List Base Address
+  fields:
+  - name: BASEADR
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::PORTSC1:
+  description: Port Status & Control
+  fields:
+  - name: CCS
+    bit_offset: 0
+    bit_size: 1
+  - name: CSC
+    bit_offset: 1
+    bit_size: 1
+  - name: PE
+    bit_offset: 2
+    bit_size: 1
+  - name: PEC
+    bit_offset: 3
+    bit_size: 1
+  - name: OCA
+    bit_offset: 4
+    bit_size: 1
+  - name: OCC
+    bit_offset: 5
+    bit_size: 1
+  - name: FPR
+    bit_offset: 6
+    bit_size: 1
+  - name: SUSP
+    bit_offset: 7
+    bit_size: 1
+  - name: PR
+    bit_offset: 8
+    bit_size: 1
+  - name: HSP
+    bit_offset: 9
+    bit_size: 1
+  - name: LS
+    bit_offset: 10
+    bit_size: 2
+  - name: PP
+    bit_offset: 12
+    bit_size: 1
+  - name: PO
+    bit_offset: 13
+    bit_size: 1
+  - name: PIC
+    bit_offset: 14
+    bit_size: 2
+  - name: PTC
+    bit_offset: 16
+    bit_size: 4
+  - name: WKCN
+    bit_offset: 20
+    bit_size: 1
+  - name: WKDC
+    bit_offset: 21
+    bit_size: 1
+  - name: WKOC
+    bit_offset: 22
+    bit_size: 1
+  - name: PHCD
+    bit_offset: 23
+    bit_size: 1
+  - name: PFSC
+    bit_offset: 24
+    bit_size: 1
+  - name: PTS_2
+    bit_offset: 25
+    bit_size: 1
+  - name: PSPD
+    bit_offset: 26
+    bit_size: 2
+  - name: PTW
+    bit_offset: 28
+    bit_size: 1
+  - name: STS
+    bit_offset: 29
+    bit_size: 1
+  - name: PTS_1
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::SBUSCFG:
+  description: System Bus Config
+  fields:
+  - name: AHBBRST
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::TXFILLTUNING:
+  description: TX FIFO Fill Tuning
+  fields:
+  - name: TXSCHOH
+    bit_offset: 0
+    bit_size: 7
+  - name: TXSCHHEALTH
+    bit_offset: 8
+    bit_size: 5
+  - name: TXFIFOTHRES
+    bit_offset: 16
+    bit_size: 6
+fieldset/regs::USBCMD:
+  description: USB Command
+  fields:
+  - name: RS
+    bit_offset: 0
+    bit_size: 1
+  - name: RST
+    bit_offset: 1
+    bit_size: 1
+  - name: FS_1
+    bit_offset: 2
+    bit_size: 2
+  - name: PSE
+    bit_offset: 4
+    bit_size: 1
+  - name: ASE
+    bit_offset: 5
+    bit_size: 1
+  - name: IAA
+    bit_offset: 6
+    bit_size: 1
+  - name: ASP
+    bit_offset: 8
+    bit_size: 2
+  - name: ASPE
+    bit_offset: 11
+    bit_size: 1
+  - name: SUTW
+    bit_offset: 13
+    bit_size: 1
+  - name: ATDTW
+    bit_offset: 14
+    bit_size: 1
+  - name: FS_2
+    bit_offset: 15
+    bit_size: 1
+  - name: ITC
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::USBINTR:
+  description: Interrupt Enable
+  fields:
+  - name: UE
+    bit_offset: 0
+    bit_size: 1
+  - name: UEE
+    bit_offset: 1
+    bit_size: 1
+  - name: PCE
+    bit_offset: 2
+    bit_size: 1
+  - name: FRE
+    bit_offset: 3
+    bit_size: 1
+  - name: SEE
+    bit_offset: 4
+    bit_size: 1
+  - name: AAE
+    bit_offset: 5
+    bit_size: 1
+  - name: URE
+    bit_offset: 6
+    bit_size: 1
+  - name: SRE
+    bit_offset: 7
+    bit_size: 1
+  - name: SLE
+    bit_offset: 8
+    bit_size: 1
+  - name: NAKE
+    bit_offset: 16
+    bit_size: 1
+  - name: UAIE
+    bit_offset: 18
+    bit_size: 1
+  - name: UPIE
+    bit_offset: 19
+    bit_size: 1
+  - name: TIE0
+    bit_offset: 24
+    bit_size: 1
+  - name: TIE1
+    bit_offset: 25
+    bit_size: 1
+fieldset/regs::USBMODE:
+  description: USB Device Mode
+  fields:
+  - name: CM
+    bit_offset: 0
+    bit_size: 2
+  - name: ES
+    bit_offset: 2
+    bit_size: 1
+  - name: SLOM
+    bit_offset: 3
+    bit_size: 1
+  - name: SDIS
+    bit_offset: 4
+    bit_size: 1
+fieldset/regs::USBSTS:
+  description: USB Status
+  fields:
+  - name: UI
+    bit_offset: 0
+    bit_size: 1
+  - name: UEI
+    bit_offset: 1
+    bit_size: 1
+  - name: PCI
+    bit_offset: 2
+    bit_size: 1
+  - name: FRI
+    bit_offset: 3
+    bit_size: 1
+  - name: SEI
+    bit_offset: 4
+    bit_size: 1
+  - name: AAI
+    bit_offset: 5
+    bit_size: 1
+  - name: URI
+    bit_offset: 6
+    bit_size: 1
+  - name: SRI
+    bit_offset: 7
+    bit_size: 1
+  - name: SLI
+    bit_offset: 8
+    bit_size: 1
+  - name: ULPII
+    bit_offset: 10
+    bit_size: 1
+  - name: HCH
+    bit_offset: 12
+    bit_size: 1
+  - name: RCL
+    bit_offset: 13
+    bit_size: 1
+  - name: PS
+    bit_offset: 14
+    bit_size: 1
+  - name: AS
+    bit_offset: 15
+    bit_size: 1
+  - name: NAKI
+    bit_offset: 16
+    bit_size: 1
+  - name: TI0
+    bit_offset: 24
+    bit_size: 1
+  - name: TI1
+    bit_offset: 25
+    bit_size: 1

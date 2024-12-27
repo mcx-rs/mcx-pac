@@ -1,0 +1,194 @@
+block/LPDAC:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: PARAM
+    byte_offset: 4
+    fieldset: regs::PARAM
+  - name: DATA
+    byte_offset: 8
+    fieldset: regs::DATA
+  - name: GCR
+    byte_offset: 12
+    fieldset: regs::GCR
+  - name: FCR
+    byte_offset: 16
+    fieldset: regs::FCR
+  - name: FPR
+    byte_offset: 20
+    fieldset: regs::FPR
+  - name: FSR
+    byte_offset: 24
+    fieldset: regs::FSR
+  - name: IER
+    byte_offset: 28
+    fieldset: regs::IER
+  - name: DER
+    byte_offset: 32
+    fieldset: regs::DER
+  - name: RCR
+    byte_offset: 36
+    fieldset: regs::RCR
+  - name: TCR
+    byte_offset: 40
+    fieldset: regs::TCR
+  - name: PCR
+    byte_offset: 44
+    fieldset: regs::PCR
+fieldset/regs::DATA:
+  description: Data
+  fields:
+  - name: DATA
+    bit_offset: 0
+    bit_size: 12
+fieldset/regs::DER:
+  description: DMA Enable
+  fields:
+  - name: EMPTY_DMAEN
+    bit_offset: 1
+    bit_size: 1
+  - name: WM_DMAEN
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::FCR:
+  description: DAC FIFO Control
+  fields:
+  - name: WML
+    bit_offset: 0
+    bit_size: 4
+fieldset/regs::FPR:
+  description: DAC FIFO Pointer
+  fields:
+  - name: FIFO_RPT
+    bit_offset: 0
+    bit_size: 4
+  - name: FIFO_WPT
+    bit_offset: 16
+    bit_size: 4
+fieldset/regs::FSR:
+  description: FIFO Status
+  fields:
+  - name: FULL
+    bit_offset: 0
+    bit_size: 1
+  - name: EMPTY
+    bit_offset: 1
+    bit_size: 1
+  - name: WM
+    bit_offset: 2
+    bit_size: 1
+  - name: SWBK
+    bit_offset: 3
+    bit_size: 1
+  - name: OF
+    bit_offset: 6
+    bit_size: 1
+  - name: UF
+    bit_offset: 7
+    bit_size: 1
+  - name: PTGCOCO
+    bit_offset: 8
+    bit_size: 1
+fieldset/regs::GCR:
+  description: Global Control
+  fields:
+  - name: DACEN
+    bit_offset: 0
+    bit_size: 1
+  - name: DACRFS
+    bit_offset: 1
+    bit_size: 2
+  - name: FIFOEN
+    bit_offset: 3
+    bit_size: 1
+  - name: SWMD
+    bit_offset: 4
+    bit_size: 1
+  - name: TRGSEL
+    bit_offset: 5
+    bit_size: 1
+  - name: PTGEN
+    bit_offset: 6
+    bit_size: 1
+  - name: LATCH_CYC
+    bit_offset: 8
+    bit_size: 4
+  - name: BUF_EN
+    bit_offset: 17
+    bit_size: 1
+  - name: IREF_PTAT_EXT_SEL
+    bit_offset: 20
+    bit_size: 1
+  - name: IREF_ZTC_EXT_SEL
+    bit_offset: 21
+    bit_size: 1
+  - name: BUF_SPD_CTRL
+    bit_offset: 23
+    bit_size: 1
+fieldset/regs::IER:
+  description: Interrupt Enable
+  fields:
+  - name: FULL_IE
+    bit_offset: 0
+    bit_size: 1
+  - name: EMPTY_IE
+    bit_offset: 1
+    bit_size: 1
+  - name: WM_IE
+    bit_offset: 2
+    bit_size: 1
+  - name: SWBK_IE
+    bit_offset: 3
+    bit_size: 1
+  - name: OF_IE
+    bit_offset: 6
+    bit_size: 1
+  - name: UF_IE
+    bit_offset: 7
+    bit_size: 1
+  - name: PTGCOCO_IE
+    bit_offset: 8
+    bit_size: 1
+fieldset/regs::PARAM:
+  description: Parameter
+  fields:
+  - name: FIFOSZ
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::PCR:
+  description: Periodic Trigger Control
+  fields:
+  - name: PTG_NUM
+    bit_offset: 0
+    bit_size: 16
+  - name: PTG_PERIOD
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::RCR:
+  description: Reset Control
+  fields:
+  - name: SWRST
+    bit_offset: 0
+    bit_size: 1
+  - name: FIFORST
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::TCR:
+  description: Trigger Control
+  fields:
+  - name: SWTRG
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::VERID:
+  description: Version Identifier
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

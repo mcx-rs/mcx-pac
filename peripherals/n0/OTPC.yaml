@@ -1,0 +1,206 @@
+block/OTPC:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: PARAM
+    byte_offset: 4
+    fieldset: regs::PARAM
+  - name: SR
+    byte_offset: 8
+    fieldset: regs::SR
+  - name: RWC
+    byte_offset: 16
+    fieldset: regs::RWC
+  - name: RLC
+    byte_offset: 20
+    fieldset: regs::RLC
+  - name: PCR
+    byte_offset: 24
+    fieldset: regs::PCR
+  - name: WDATA
+    byte_offset: 32
+  - name: RDATA
+    byte_offset: 36
+  - name: TIMING1
+    byte_offset: 48
+    fieldset: regs::TIMING1
+  - name: TIMING2
+    byte_offset: 52
+    fieldset: regs::TIMING2
+  - name: LOCK
+    byte_offset: 512
+    fieldset: regs::LOCK
+  - name: SECURE
+    byte_offset: 516
+  - name: SECURE_INV
+    byte_offset: 520
+  - name: DBG_KEY
+    byte_offset: 524
+  - name: MISC_CFG
+    byte_offset: 528
+  - name: PHANTOM_CFG
+    byte_offset: 532
+  - name: FLEX_CFG0
+    byte_offset: 536
+  - name: FLEX_CFG1
+    byte_offset: 540
+fieldset/regs::LOCK:
+  description: Lock
+  fields:
+  - name: NXP_PART_CFG_LOCK
+    bit_offset: 0
+    bit_size: 3
+  - name: NXP_EXT_LOCK
+    bit_offset: 3
+    bit_size: 3
+  - name: BOOT_CFG_LOCK
+    bit_offset: 9
+    bit_size: 3
+  - name: PRINCE_CFG_LOCK
+    bit_offset: 12
+    bit_size: 3
+  - name: OSCAA_KEY_LOCK
+    bit_offset: 15
+    bit_size: 3
+  - name: CUST_LOCK0
+    bit_offset: 18
+    bit_size: 3
+  - name: CUST_LOCK1
+    bit_offset: 21
+    bit_size: 3
+  - name: CUST_LOCK2
+    bit_offset: 24
+    bit_size: 3
+  - name: CUST_LOCK3
+    bit_offset: 27
+    bit_size: 3
+fieldset/regs::PARAM:
+  description: Parameters
+  fields:
+  - name: NUM_FUSE
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::PCR:
+  description: Power Control
+  fields:
+  - name: HVREQ
+    bit_offset: 0
+    bit_size: 1
+  - name: LVREQ
+    bit_offset: 1
+    bit_size: 1
+  - name: PDREQ
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::RLC:
+  description: Reload Control
+  fields:
+  - name: RELOAD_SHADOWS
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::RWC:
+  description: Read and Write Control
+  fields:
+  - name: ADDR
+    bit_offset: 0
+    bit_size: 7
+  - name: WR_ALL1S
+    bit_offset: 12
+    bit_size: 1
+  - name: READ_EFUSE
+    bit_offset: 13
+    bit_size: 1
+  - name: READ_UPDATE
+    bit_offset: 14
+    bit_size: 1
+  - name: WR_UNLOCK
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::SR:
+  description: Status
+  fields:
+  - name: BUSY
+    bit_offset: 0
+    bit_size: 1
+  - name: ERROR
+    bit_offset: 1
+    bit_size: 1
+  - name: ECC_SF
+    bit_offset: 2
+    bit_size: 1
+  - name: ECC_DF
+    bit_offset: 3
+    bit_size: 1
+  - name: TRI_F
+    bit_offset: 4
+    bit_size: 1
+  - name: RD_FUSE_LOCK
+    bit_offset: 8
+    bit_size: 1
+  - name: WR_FUSE_LOCK
+    bit_offset: 9
+    bit_size: 1
+  - name: RD_REG_LOCK
+    bit_offset: 10
+    bit_size: 1
+  - name: WR_REG_LOCK
+    bit_offset: 11
+    bit_size: 1
+  - name: WR_REG_BUSY
+    bit_offset: 12
+    bit_size: 1
+  - name: WR_POWER_OFF
+    bit_offset: 13
+    bit_size: 1
+  - name: FSM
+    bit_offset: 16
+    bit_size: 1
+  - name: FLC
+    bit_offset: 17
+    bit_size: 1
+  - name: ADC
+    bit_offset: 18
+    bit_size: 1
+  - name: IRC
+    bit_offset: 19
+    bit_size: 1
+  - name: FSC
+    bit_offset: 20
+    bit_size: 1
+fieldset/regs::TIMING1:
+  description: Timing1
+  fields:
+  - name: TADDR
+    bit_offset: 0
+    bit_size: 4
+  - name: TRELAX
+    bit_offset: 4
+    bit_size: 4
+  - name: TRD
+    bit_offset: 8
+    bit_size: 6
+  - name: TPS
+    bit_offset: 16
+    bit_size: 6
+  - name: TPD
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::TIMING2:
+  description: Timing2
+  fields:
+  - name: TPGM
+    bit_offset: 0
+    bit_size: 12
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

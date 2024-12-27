@@ -1,0 +1,276 @@
+block/ITRC:
+  items:
+  - name: STATUS
+    byte_offset: 0
+    fieldset: regs::STATUS
+  - name: STATUS1
+    byte_offset: 4
+    fieldset: regs::STATUS1
+  - name: OUTX_SELY
+    array:
+      len: 7
+      stride: 8
+    byte_offset: 8
+    bit_size: 64
+  - name: OUTX_SELY
+    array:
+      len: 7
+      stride: 8
+    byte_offset: 72
+    bit_size: 64
+  - name: OUTX_SELY
+    array:
+      len: 7
+      stride: 8
+    byte_offset: 136
+    bit_size: 64
+  - name: SW_EVENT0
+    byte_offset: 240
+  - name: SW_EVENT1
+    byte_offset: 244
+fieldset/regs::OUT_SEL:
+  description: Trigger Source IN0 to IN15 selector
+  fields:
+  - name: IN0_SELn
+    bit_offset: 0
+    bit_size: 2
+  - name: IN1_SELn
+    bit_offset: 2
+    bit_size: 2
+  - name: IN2_SELn
+    bit_offset: 4
+    bit_size: 2
+  - name: IN3_SELn
+    bit_offset: 6
+    bit_size: 2
+  - name: IN4_SELn
+    bit_offset: 8
+    bit_size: 2
+  - name: IN5_SELn
+    bit_offset: 10
+    bit_size: 2
+  - name: IN6_SELn
+    bit_offset: 12
+    bit_size: 2
+  - name: IN7_SELn
+    bit_offset: 14
+    bit_size: 2
+  - name: IN8_SELn
+    bit_offset: 16
+    bit_size: 2
+  - name: IN9_SELn
+    bit_offset: 18
+    bit_size: 2
+  - name: IN10_SELn
+    bit_offset: 20
+    bit_size: 2
+  - name: IN11_SELn
+    bit_offset: 22
+    bit_size: 2
+  - name: IN12_SELn
+    bit_offset: 24
+    bit_size: 2
+  - name: IN13_SELn
+    bit_offset: 26
+    bit_size: 2
+  - name: IN14_SELn
+    bit_offset: 28
+    bit_size: 2
+  - name: IN15_SELn
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::OUT_SEL_1:
+  description: Trigger Source IN16 to IN31 selector
+  fields:
+  - name: IN16_SELn
+    bit_offset: 0
+    bit_size: 2
+  - name: IN17_SELn
+    bit_offset: 2
+    bit_size: 2
+  - name: IN18_SELn
+    bit_offset: 4
+    bit_size: 2
+  - name: IN19_SELn
+    bit_offset: 6
+    bit_size: 2
+  - name: IN20_SELn
+    bit_offset: 8
+    bit_size: 2
+  - name: IN21_SELn
+    bit_offset: 10
+    bit_size: 2
+  - name: IN22_SELn
+    bit_offset: 12
+    bit_size: 2
+  - name: IN23_SELn
+    bit_offset: 14
+    bit_size: 2
+  - name: IN24_SELn
+    bit_offset: 16
+    bit_size: 2
+  - name: IN25_SELn
+    bit_offset: 18
+    bit_size: 2
+  - name: IN26_SELn
+    bit_offset: 20
+    bit_size: 2
+  - name: IN27_SELn
+    bit_offset: 22
+    bit_size: 2
+  - name: IN28_SELn
+    bit_offset: 24
+    bit_size: 2
+  - name: IN29_SELn
+    bit_offset: 26
+    bit_size: 2
+  - name: IN30_SELn
+    bit_offset: 28
+    bit_size: 2
+  - name: IN31_SELn
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::OUT_SEL_2:
+  description: Trigger source IN32 to IN47 selector
+  fields:
+  - name: IN32_SELn
+    bit_offset: 0
+    bit_size: 2
+  - name: IN33_SELn
+    bit_offset: 2
+    bit_size: 2
+  - name: IN34_SELn
+    bit_offset: 4
+    bit_size: 2
+  - name: IN35_SELn
+    bit_offset: 6
+    bit_size: 2
+  - name: IN36_SELn
+    bit_offset: 8
+    bit_size: 2
+  - name: IN37_SELn
+    bit_offset: 10
+    bit_size: 2
+  - name: IN46_SELn
+    bit_offset: 28
+    bit_size: 2
+  - name: IN47_SELn
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::STATUS:
+  description: ITRC outputs and IN0 to IN15 Status
+  fields:
+  - name: IN0_STATUS
+    bit_offset: 0
+    bit_size: 1
+  - name: IN1_STATUS
+    bit_offset: 1
+    bit_size: 1
+  - name: IN2_STATUS
+    bit_offset: 2
+    bit_size: 1
+  - name: IN3_STATUS
+    bit_offset: 3
+    bit_size: 1
+  - name: IN4_STATUS
+    bit_offset: 4
+    bit_size: 1
+  - name: IN5_STATUS
+    bit_offset: 5
+    bit_size: 1
+  - name: IN6_STATUS
+    bit_offset: 6
+    bit_size: 1
+  - name: IN7_STATUS
+    bit_offset: 7
+    bit_size: 1
+  - name: IN8_STATUS
+    bit_offset: 8
+    bit_size: 1
+  - name: IN9_STATUS
+    bit_offset: 9
+    bit_size: 1
+  - name: IN10_STATUS
+    bit_offset: 10
+    bit_size: 1
+  - name: IN11_STATUS
+    bit_offset: 11
+    bit_size: 1
+  - name: IN112_STATUS
+    bit_offset: 12
+    bit_size: 1
+  - name: IN113_STATUS
+    bit_offset: 13
+    bit_size: 1
+  - name: IN14_STATUS
+    bit_offset: 14
+    bit_size: 1
+  - name: IN15_STATUS
+    bit_offset: 15
+    bit_size: 1
+  - name: OUT0_STATUS
+    bit_offset: 16
+    bit_size: 1
+  - name: OUT1_STATUS
+    bit_offset: 17
+    bit_size: 1
+  - name: OUT2_STATUS
+    bit_offset: 18
+    bit_size: 1
+  - name: OUT3_STATUS
+    bit_offset: 19
+    bit_size: 1
+  - name: OUT4_STATUS
+    bit_offset: 20
+    bit_size: 1
+  - name: OUT5_STATUS
+    bit_offset: 21
+    bit_size: 1
+  - name: OUT6_STATUS
+    bit_offset: 22
+    bit_size: 1
+fieldset/regs::STATUS1:
+  description: ITRC IN16 to IN47 Status
+  fields:
+  - name: IN16_STATUS
+    bit_offset: 0
+    bit_size: 1
+  - name: IN17_STATUS
+    bit_offset: 1
+    bit_size: 1
+  - name: IN18_STATUS
+    bit_offset: 2
+    bit_size: 1
+  - name: IN19_STATUS
+    bit_offset: 3
+    bit_size: 1
+  - name: IN20_STATUS
+    bit_offset: 4
+    bit_size: 1
+  - name: IN24_21_STATUS
+    bit_offset: 5
+    bit_size: 4
+  - name: IN32_25_STATUS
+    bit_offset: 9
+    bit_size: 8
+  - name: IN33_STATUS
+    bit_offset: 17
+    bit_size: 1
+  - name: IN34_STATUS
+    bit_offset: 18
+    bit_size: 1
+  - name: IN35_STATUS
+    bit_offset: 19
+    bit_size: 1
+  - name: IN36_STATUS
+    bit_offset: 20
+    bit_size: 1
+  - name: IN37_STATUS
+    bit_offset: 21
+    bit_size: 1
+  - name: IN46_STATUS
+    bit_offset: 30
+    bit_size: 1
+  - name: IN47_STATUS
+    bit_offset: 31
+    bit_size: 1

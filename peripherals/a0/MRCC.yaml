@@ -1,0 +1,915 @@
+block/MRCC:
+  items:
+  - name: MRCC_GLB_RST0
+    byte_offset: 0
+    fieldset: regs::MRCC_GLB_RST0
+  - name: MRCC_GLB_RST0_SET
+    byte_offset: 4
+  - name: MRCC_GLB_RST0_CLR
+    byte_offset: 8
+  - name: MRCC_GLB_RST1
+    byte_offset: 16
+    fieldset: regs::MRCC_GLB_RST1
+  - name: MRCC_GLB_RST1_SET
+    byte_offset: 20
+  - name: MRCC_GLB_RST1_CLR
+    byte_offset: 24
+  - name: MRCC_GLB_CC0
+    byte_offset: 64
+    fieldset: regs::MRCC_GLB_CC0
+  - name: MRCC_GLB_CC0_SET
+    byte_offset: 68
+  - name: MRCC_GLB_CC0_CLR
+    byte_offset: 72
+  - name: MRCC_GLB_CC1
+    byte_offset: 80
+    fieldset: regs::MRCC_GLB_CC1
+  - name: MRCC_GLB_CC1_SET
+    byte_offset: 84
+  - name: MRCC_GLB_CC1_CLR
+    byte_offset: 88
+  - name: MRCC_GLB_ACC0
+    byte_offset: 128
+    fieldset: regs::MRCC_GLB_ACC0
+  - name: MRCC_GLB_ACC1
+    byte_offset: 132
+    fieldset: regs::MRCC_GLB_ACC1
+  - name: MRCC_I3C0_FCLK_CLKSEL
+    byte_offset: 160
+    fieldset: regs::MRCC_I3C0_FCLK_CLKSEL
+  - name: MRCC_I3C0_FCLK_CLKDIV
+    byte_offset: 164
+    fieldset: regs::MRCC_I3C0_FCLK_CLKDIV
+  - name: MRCC_CTIMER0_CLKSEL
+    byte_offset: 168
+    fieldset: regs::MRCC_CTIMER0_CLKSEL
+  - name: MRCC_CTIMER0_CLKDIV
+    byte_offset: 172
+    fieldset: regs::MRCC_CTIMER0_CLKDIV
+  - name: MRCC_CTIMER1_CLKSEL
+    byte_offset: 176
+    fieldset: regs::MRCC_CTIMER1_CLKSEL
+  - name: MRCC_CTIMER1_CLKDIV
+    byte_offset: 180
+    fieldset: regs::MRCC_CTIMER1_CLKDIV
+  - name: MRCC_CTIMER2_CLKSEL
+    byte_offset: 184
+    fieldset: regs::MRCC_CTIMER2_CLKSEL
+  - name: MRCC_CTIMER2_CLKDIV
+    byte_offset: 188
+    fieldset: regs::MRCC_CTIMER2_CLKDIV
+  - name: MRCC_WWDT0_CLKDIV
+    byte_offset: 196
+    fieldset: regs::MRCC_WWDT0_CLKDIV
+  - name: MRCC_LPI2C0_CLKSEL
+    byte_offset: 200
+    fieldset: regs::MRCC_LPI2C0_CLKSEL
+  - name: MRCC_LPI2C0_CLKDIV
+    byte_offset: 204
+    fieldset: regs::MRCC_LPI2C0_CLKDIV
+  - name: MRCC_LPSPI0_CLKSEL
+    byte_offset: 208
+    fieldset: regs::MRCC_LPSPI0_CLKSEL
+  - name: MRCC_LPSPI0_CLKDIV
+    byte_offset: 212
+    fieldset: regs::MRCC_LPSPI0_CLKDIV
+  - name: MRCC_LPSPI1_CLKSEL
+    byte_offset: 216
+    fieldset: regs::MRCC_LPSPI1_CLKSEL
+  - name: MRCC_LPSPI1_CLKDIV
+    byte_offset: 220
+    fieldset: regs::MRCC_LPSPI1_CLKDIV
+  - name: MRCC_LPUART0_CLKSEL
+    byte_offset: 224
+    fieldset: regs::MRCC_LPUART0_CLKSEL
+  - name: MRCC_LPUART0_CLKDIV
+    byte_offset: 228
+    fieldset: regs::MRCC_LPUART0_CLKDIV
+  - name: MRCC_LPUART1_CLKSEL
+    byte_offset: 232
+    fieldset: regs::MRCC_LPUART1_CLKSEL
+  - name: MRCC_LPUART1_CLKDIV
+    byte_offset: 236
+    fieldset: regs::MRCC_LPUART1_CLKDIV
+  - name: MRCC_LPUART2_CLKSEL
+    byte_offset: 240
+    fieldset: regs::MRCC_LPUART2_CLKSEL
+  - name: MRCC_LPUART2_CLKDIV
+    byte_offset: 244
+    fieldset: regs::MRCC_LPUART2_CLKDIV
+  - name: MRCC_USB0_CLKSEL
+    byte_offset: 248
+    fieldset: regs::MRCC_USB0_CLKSEL
+  - name: MRCC_LPTMR0_CLKSEL
+    byte_offset: 256
+    fieldset: regs::MRCC_LPTMR0_CLKSEL
+  - name: MRCC_LPTMR0_CLKDIV
+    byte_offset: 260
+    fieldset: regs::MRCC_LPTMR0_CLKDIV
+  - name: MRCC_OSTIMER0_CLKSEL
+    byte_offset: 264
+    fieldset: regs::MRCC_OSTIMER0_CLKSEL
+  - name: MRCC_ADC0_CLKSEL
+    byte_offset: 272
+    fieldset: regs::MRCC_ADC0_CLKSEL
+  - name: MRCC_ADC0_CLKDIV
+    byte_offset: 276
+    fieldset: regs::MRCC_ADC0_CLKDIV
+  - name: MRCC_CMP0_FUNC_CLKDIV
+    byte_offset: 284
+    fieldset: regs::MRCC_CMP0_FUNC_CLKDIV
+  - name: MRCC_CMP0_RR_CLKSEL
+    byte_offset: 288
+    fieldset: regs::MRCC_CMP0_RR_CLKSEL
+  - name: MRCC_CMP0_RR_CLKDIV
+    byte_offset: 292
+    fieldset: regs::MRCC_CMP0_RR_CLKDIV
+  - name: MRCC_CMP1_FUNC_CLKDIV
+    byte_offset: 300
+    fieldset: regs::MRCC_CMP1_FUNC_CLKDIV
+  - name: MRCC_CMP1_RR_CLKSEL
+    byte_offset: 304
+    fieldset: regs::MRCC_CMP1_RR_CLKSEL
+  - name: MRCC_CMP1_RR_CLKDIV
+    byte_offset: 308
+    fieldset: regs::MRCC_CMP1_RR_CLKDIV
+  - name: MRCC_DBG_TRACE_CLKSEL
+    byte_offset: 312
+    fieldset: regs::MRCC_DBG_TRACE_CLKSEL
+  - name: MRCC_DBG_TRACE_CLKDIV
+    byte_offset: 316
+    fieldset: regs::MRCC_DBG_TRACE_CLKDIV
+  - name: MRCC_CLKOUT_CLKSEL
+    byte_offset: 320
+    fieldset: regs::MRCC_CLKOUT_CLKSEL
+  - name: MRCC_CLKOUT_CLKDIV
+    byte_offset: 324
+    fieldset: regs::MRCC_CLKOUT_CLKDIV
+  - name: MRCC_SYSTICK_CLKSEL
+    byte_offset: 328
+    fieldset: regs::MRCC_SYSTICK_CLKSEL
+  - name: MRCC_SYSTICK_CLKDIV
+    byte_offset: 332
+    fieldset: regs::MRCC_SYSTICK_CLKDIV
+  - name: MRCC_FRO_HF_DIV_CLKDIV
+    byte_offset: 340
+    fieldset: regs::MRCC_FRO_HF_DIV_CLKDIV
+fieldset/regs::MRCC_ADC0_CLKDIV:
+  description: ADC0 clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_ADC0_CLKSEL:
+  description: ADC0 clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::MRCC_CLKOUT_CLKDIV:
+  description: CLKOUT clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_CLKOUT_CLKSEL:
+  description: CLKOUT clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::MRCC_CMP0_FUNC_CLKDIV:
+  description: CMP0_FUNC clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_CMP0_RR_CLKDIV:
+  description: CMP0_RR clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 2
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_CMP0_RR_CLKSEL:
+  description: CMP0_RR clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::MRCC_CMP1_FUNC_CLKDIV:
+  description: CMP1_FUNC clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_CMP1_RR_CLKDIV:
+  description: CMP1_RR clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 2
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_CMP1_RR_CLKSEL:
+  description: CMP1_RR clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::MRCC_CTIMER0_CLKDIV:
+  description: CTIMER0 clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_CTIMER0_CLKSEL:
+  description: CTIMER0 clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::MRCC_CTIMER1_CLKDIV:
+  description: CTIMER1 clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_CTIMER1_CLKSEL:
+  description: CTIMER1 clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::MRCC_CTIMER2_CLKDIV:
+  description: CTIMER2 clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_CTIMER2_CLKSEL:
+  description: CTIMER2 clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::MRCC_DBG_TRACE_CLKDIV:
+  description: DBG_TRACE clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_DBG_TRACE_CLKSEL:
+  description: DBG_TRACE clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 2
+fieldset/regs::MRCC_FRO_HF_DIV_CLKDIV:
+  description: FRO_HF_DIV clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_GLB_ACC0:
+  description: Control Automatic Clock Gating 0
+  fields:
+  - name: INPUTMUX0
+    bit_offset: 0
+    bit_size: 1
+  - name: I3C0
+    bit_offset: 1
+    bit_size: 1
+  - name: CTIMER0
+    bit_offset: 2
+    bit_size: 1
+  - name: CTIMER1
+    bit_offset: 3
+    bit_size: 1
+  - name: CTIMER2
+    bit_offset: 4
+    bit_size: 1
+  - name: FREQME
+    bit_offset: 5
+    bit_size: 1
+  - name: UTICK0
+    bit_offset: 6
+    bit_size: 1
+  - name: WWDT0
+    bit_offset: 7
+    bit_size: 1
+  - name: DMA
+    bit_offset: 8
+    bit_size: 1
+  - name: AOI0
+    bit_offset: 9
+    bit_size: 1
+  - name: CRC
+    bit_offset: 10
+    bit_size: 1
+  - name: EIM
+    bit_offset: 11
+    bit_size: 1
+  - name: ERM
+    bit_offset: 12
+    bit_size: 1
+  - name: LPI2C0
+    bit_offset: 16
+    bit_size: 1
+  - name: LPSPI0
+    bit_offset: 17
+    bit_size: 1
+  - name: LPSPI1
+    bit_offset: 18
+    bit_size: 1
+  - name: LPUART0
+    bit_offset: 19
+    bit_size: 1
+  - name: LPUART1
+    bit_offset: 20
+    bit_size: 1
+  - name: LPUART2
+    bit_offset: 21
+    bit_size: 1
+  - name: USB0
+    bit_offset: 22
+    bit_size: 1
+  - name: QDC0
+    bit_offset: 23
+    bit_size: 1
+  - name: FLEXPWM0
+    bit_offset: 24
+    bit_size: 1
+  - name: OSTIMER0
+    bit_offset: 25
+    bit_size: 1
+  - name: ADC0
+    bit_offset: 26
+    bit_size: 1
+  - name: CMP0
+    bit_offset: 27
+    bit_size: 1
+  - name: CMP1
+    bit_offset: 28
+    bit_size: 1
+  - name: PORT0
+    bit_offset: 29
+    bit_size: 1
+  - name: PORT1
+    bit_offset: 30
+    bit_size: 1
+  - name: PORT2
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_GLB_ACC1:
+  description: Control Automatic Clock Gating 1
+  fields:
+  - name: PORT3
+    bit_offset: 0
+    bit_size: 1
+  - name: EZRAMC_RAMA
+    bit_offset: 4
+    bit_size: 1
+  - name: GPIO0
+    bit_offset: 5
+    bit_size: 1
+  - name: GPIO1
+    bit_offset: 6
+    bit_size: 1
+  - name: GPIO2
+    bit_offset: 7
+    bit_size: 1
+  - name: GPIO3
+    bit_offset: 8
+    bit_size: 1
+  - name: ROMCP
+    bit_offset: 9
+    bit_size: 1
+fieldset/regs::MRCC_GLB_CC0:
+  description: AHB Clock Control 0
+  fields:
+  - name: INPUTMUX0
+    bit_offset: 0
+    bit_size: 1
+  - name: I3C0
+    bit_offset: 1
+    bit_size: 1
+  - name: CTIMER0
+    bit_offset: 2
+    bit_size: 1
+  - name: CTIMER1
+    bit_offset: 3
+    bit_size: 1
+  - name: CTIMER2
+    bit_offset: 4
+    bit_size: 1
+  - name: FREQME
+    bit_offset: 5
+    bit_size: 1
+  - name: UTICK0
+    bit_offset: 6
+    bit_size: 1
+  - name: WWDT0
+    bit_offset: 7
+    bit_size: 1
+  - name: DMA
+    bit_offset: 8
+    bit_size: 1
+  - name: AOI0
+    bit_offset: 9
+    bit_size: 1
+  - name: CRC
+    bit_offset: 10
+    bit_size: 1
+  - name: EIM
+    bit_offset: 11
+    bit_size: 1
+  - name: ERM
+    bit_offset: 12
+    bit_size: 1
+  - name: LPI2C0
+    bit_offset: 16
+    bit_size: 1
+  - name: LPSPI0
+    bit_offset: 17
+    bit_size: 1
+  - name: LPSPI1
+    bit_offset: 18
+    bit_size: 1
+  - name: LPUART0
+    bit_offset: 19
+    bit_size: 1
+  - name: LPUART1
+    bit_offset: 20
+    bit_size: 1
+  - name: LPUART2
+    bit_offset: 21
+    bit_size: 1
+  - name: USB0
+    bit_offset: 22
+    bit_size: 1
+  - name: QDC0
+    bit_offset: 23
+    bit_size: 1
+  - name: FLEXPWM0
+    bit_offset: 24
+    bit_size: 1
+  - name: OSTIMER0
+    bit_offset: 25
+    bit_size: 1
+  - name: ADC0
+    bit_offset: 26
+    bit_size: 1
+  - name: CMP0
+    bit_offset: 27
+    bit_size: 1
+  - name: CMP1
+    bit_offset: 28
+    bit_size: 1
+  - name: PORT0
+    bit_offset: 29
+    bit_size: 1
+  - name: PORT1
+    bit_offset: 30
+    bit_size: 1
+  - name: PORT2
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_GLB_CC1:
+  description: AHB Clock Control 1
+  fields:
+  - name: PORT3
+    bit_offset: 0
+    bit_size: 1
+  - name: MTR
+    bit_offset: 2
+    bit_size: 1
+  - name: TCU
+    bit_offset: 3
+    bit_size: 1
+  - name: EZRAMC_RAMA
+    bit_offset: 4
+    bit_size: 1
+  - name: GPIO0
+    bit_offset: 5
+    bit_size: 1
+  - name: GPIO1
+    bit_offset: 6
+    bit_size: 1
+  - name: GPIO2
+    bit_offset: 7
+    bit_size: 1
+  - name: GPIO3
+    bit_offset: 8
+    bit_size: 1
+  - name: ROMCP
+    bit_offset: 9
+    bit_size: 1
+fieldset/regs::MRCC_GLB_RST0:
+  description: Peripheral Reset Control 0
+  fields:
+  - name: INPUTMUX0
+    bit_offset: 0
+    bit_size: 1
+  - name: I3C0
+    bit_offset: 1
+    bit_size: 1
+  - name: CTIMER0
+    bit_offset: 2
+    bit_size: 1
+  - name: CTIMER1
+    bit_offset: 3
+    bit_size: 1
+  - name: CTIMER2
+    bit_offset: 4
+    bit_size: 1
+  - name: FREQME
+    bit_offset: 5
+    bit_size: 1
+  - name: UTICK0
+    bit_offset: 6
+    bit_size: 1
+  - name: DMA
+    bit_offset: 8
+    bit_size: 1
+  - name: AOI0
+    bit_offset: 9
+    bit_size: 1
+  - name: CRC
+    bit_offset: 10
+    bit_size: 1
+  - name: EIM
+    bit_offset: 11
+    bit_size: 1
+  - name: ERM
+    bit_offset: 12
+    bit_size: 1
+  - name: LPI2C0
+    bit_offset: 16
+    bit_size: 1
+  - name: LPSPI0
+    bit_offset: 17
+    bit_size: 1
+  - name: LPSPI1
+    bit_offset: 18
+    bit_size: 1
+  - name: LPUART0
+    bit_offset: 19
+    bit_size: 1
+  - name: LPUART1
+    bit_offset: 20
+    bit_size: 1
+  - name: LPUART2
+    bit_offset: 21
+    bit_size: 1
+  - name: USB0
+    bit_offset: 22
+    bit_size: 1
+  - name: QDC0
+    bit_offset: 23
+    bit_size: 1
+  - name: FLEXPWM0
+    bit_offset: 24
+    bit_size: 1
+  - name: OSTIMER0
+    bit_offset: 25
+    bit_size: 1
+  - name: ADC0
+    bit_offset: 26
+    bit_size: 1
+  - name: CMP1
+    bit_offset: 28
+    bit_size: 1
+  - name: PORT0
+    bit_offset: 29
+    bit_size: 1
+  - name: PORT1
+    bit_offset: 30
+    bit_size: 1
+  - name: PORT2
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_GLB_RST1:
+  description: Peripheral Reset Control 1
+  fields:
+  - name: PORT3
+    bit_offset: 0
+    bit_size: 1
+  - name: GPIO0
+    bit_offset: 5
+    bit_size: 1
+  - name: GPIO1
+    bit_offset: 6
+    bit_size: 1
+  - name: GPIO2
+    bit_offset: 7
+    bit_size: 1
+  - name: GPIO3
+    bit_offset: 8
+    bit_size: 1
+fieldset/regs::MRCC_I3C0_FCLK_CLKDIV:
+  description: I3C0_FCLK clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_I3C0_FCLK_CLKSEL:
+  description: I3C0_FCLK clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::MRCC_LPI2C0_CLKDIV:
+  description: LPI2C0 clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_LPI2C0_CLKSEL:
+  description: LPI2C0 clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::MRCC_LPSPI0_CLKDIV:
+  description: LPSPI0 clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_LPSPI0_CLKSEL:
+  description: LPSPI0 clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::MRCC_LPSPI1_CLKDIV:
+  description: LPSPI1 clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_LPSPI1_CLKSEL:
+  description: LPSPI1 clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::MRCC_LPTMR0_CLKDIV:
+  description: LPTMR0 clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_LPTMR0_CLKSEL:
+  description: LPTMR0 clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::MRCC_LPUART0_CLKDIV:
+  description: LPUART0 clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_LPUART0_CLKSEL:
+  description: LPUART0 clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::MRCC_LPUART1_CLKDIV:
+  description: LPUART1 clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_LPUART1_CLKSEL:
+  description: LPUART1 clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::MRCC_LPUART2_CLKDIV:
+  description: LPUART2 clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_LPUART2_CLKSEL:
+  description: LPUART2 clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::MRCC_OSTIMER0_CLKSEL:
+  description: OSTIMER0 clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 2
+fieldset/regs::MRCC_SYSTICK_CLKDIV:
+  description: SYSTICK clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MRCC_SYSTICK_CLKSEL:
+  description: SYSTICK clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 2
+fieldset/regs::MRCC_USB0_CLKSEL:
+  description: USB0 clock selection control
+  fields:
+  - name: MUX
+    bit_offset: 0
+    bit_size: 2
+fieldset/regs::MRCC_WWDT0_CLKDIV:
+  description: WWDT0 clock divider control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 4
+  - name: RESET
+    bit_offset: 29
+    bit_size: 1
+  - name: HALT
+    bit_offset: 30
+    bit_size: 1
+  - name: UNSTAB
+    bit_offset: 31
+    bit_size: 1

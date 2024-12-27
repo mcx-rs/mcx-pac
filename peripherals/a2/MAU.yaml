@@ -1,0 +1,187 @@
+block/MAU:
+  items:
+  - name: SYS_CTLR
+    byte_offset: 16
+    fieldset: regs::SYS_CTLR
+  - name: GEXP_STATUS_IE
+    byte_offset: 20
+    fieldset: regs::GEXP_STATUS_IE
+  - name: GEXP_STATUS
+    byte_offset: 24
+    fieldset: regs::GEXP_STATUS
+  - name: OP_CTRL
+    byte_offset: 48
+    fieldset: regs::OP_CTRL
+  - name: RES_STATUS_IE
+    byte_offset: 56
+    fieldset: regs::RES_STATUS_IE
+  - name: RES_STATUS
+    byte_offset: 60
+    fieldset: regs::RES_STATUS
+  - name: RES0
+    byte_offset: 64
+  - name: RES1
+    byte_offset: 68
+  - name: RES2
+    byte_offset: 72
+  - name: RES3
+    byte_offset: 76
+fieldset/regs::GEXP_STATUS:
+  description: General Exception Status
+  fields:
+  - name: ERROR
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::GEXP_STATUS_IE:
+  description: General Exception Status Interrupt Enable
+  fields:
+  - name: ERROR_IE
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::OP_CTRL:
+  description: Operation Control
+  fields:
+  - name: OVDT_EN_RES0
+    bit_offset: 0
+    bit_size: 1
+  - name: OVDT_RES0
+    bit_offset: 1
+    bit_size: 2
+  - name: OVDT_EN_RES1
+    bit_offset: 8
+    bit_size: 1
+  - name: OVDT_RES1
+    bit_offset: 9
+    bit_size: 2
+  - name: OVDT_EN_RES2
+    bit_offset: 16
+    bit_size: 1
+  - name: OVDT_RES2
+    bit_offset: 17
+    bit_size: 2
+  - name: OVDT_EN_RES3
+    bit_offset: 24
+    bit_size: 1
+  - name: OVDT_RES3
+    bit_offset: 25
+    bit_size: 2
+fieldset/regs::RES_STATUS:
+  description: Result Status
+  fields:
+  - name: RES0_NX
+    bit_offset: 0
+    bit_size: 1
+  - name: RES0_UF
+    bit_offset: 1
+    bit_size: 1
+  - name: RES0_OF
+    bit_offset: 2
+    bit_size: 1
+  - name: RES0_DZ
+    bit_offset: 3
+    bit_size: 1
+  - name: RES0_NV
+    bit_offset: 4
+    bit_size: 1
+  - name: RES0_ERR
+    bit_offset: 5
+    bit_size: 1
+  - name: RES0_OVWR
+    bit_offset: 6
+    bit_size: 1
+  - name: RES0_FULL
+    bit_offset: 7
+    bit_size: 1
+  - name: RES1_NX
+    bit_offset: 8
+    bit_size: 1
+  - name: RES1_UF
+    bit_offset: 9
+    bit_size: 1
+  - name: RES1_OF
+    bit_offset: 10
+    bit_size: 1
+  - name: RES1_DZ
+    bit_offset: 11
+    bit_size: 1
+  - name: RES1_NV
+    bit_offset: 12
+    bit_size: 1
+  - name: RES1_ERR
+    bit_offset: 13
+    bit_size: 1
+  - name: RES1_OVWR
+    bit_offset: 14
+    bit_size: 1
+  - name: RES1_FULL
+    bit_offset: 15
+    bit_size: 1
+  - name: RES2_NX
+    bit_offset: 16
+    bit_size: 1
+  - name: RES2_UF
+    bit_offset: 17
+    bit_size: 1
+  - name: RES2_OF
+    bit_offset: 18
+    bit_size: 1
+  - name: RES2_DZ
+    bit_offset: 19
+    bit_size: 1
+  - name: RES2_NV
+    bit_offset: 20
+    bit_size: 1
+  - name: RES2_ERR
+    bit_offset: 21
+    bit_size: 1
+  - name: RES2_OVWR
+    bit_offset: 22
+    bit_size: 1
+  - name: RES2_FULL
+    bit_offset: 23
+    bit_size: 1
+  - name: RES3_NX
+    bit_offset: 24
+    bit_size: 1
+  - name: RES3_UF
+    bit_offset: 25
+    bit_size: 1
+  - name: RES3_OF
+    bit_offset: 26
+    bit_size: 1
+  - name: RES3_DZ
+    bit_offset: 27
+    bit_size: 1
+  - name: RES3_NV
+    bit_offset: 28
+    bit_size: 1
+  - name: RES3_ERR
+    bit_offset: 29
+    bit_size: 1
+  - name: RES3_OVWR
+    bit_offset: 30
+    bit_size: 1
+  - name: RES3_FULL
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::RES_STATUS_IE:
+  description: Result Status Interrupt Enable
+  fields:
+  - name: RES0_IE
+    bit_offset: 0
+    bit_size: 1
+  - name: RES1_IE
+    bit_offset: 1
+    bit_size: 1
+  - name: RES2_IE
+    bit_offset: 2
+    bit_size: 1
+  - name: RES3_IE
+    bit_offset: 3
+    bit_size: 1
+fieldset/regs::SYS_CTLR:
+  description: System Control
+  fields:
+  - name: ACG_EN
+    bit_offset: 0
+    bit_size: 1

@@ -1,0 +1,725 @@
+block/CHANNEL:
+  items:
+  - name: CCR
+    byte_offset: 0
+    fieldset: regs::CHANNEL_CCR
+  - name: CDR
+    byte_offset: 4
+    fieldset: regs::CHANNEL_CDR
+  - name: CCFR
+    byte_offset: 8
+    fieldset: regs::CHANNEL_CCFR
+  - name: CPROT
+    byte_offset: 12
+    fieldset: regs::CHANNEL_CPROT
+  - name: CBIAS
+    byte_offset: 16
+    fieldset: regs::CHANNEL_CBIAS
+  - name: CLOLMT
+    byte_offset: 20
+    fieldset: regs::CHANNEL_CLOLMT
+  - name: CHILMT
+    byte_offset: 24
+    fieldset: regs::CHANNEL_CHILMT
+  - name: CRDATA
+    byte_offset: 28
+    fieldset: regs::CHANNEL_CRDATA
+  - name: CMPDATA
+    byte_offset: 32
+  - name: CACFR
+    byte_offset: 36
+    fieldset: regs::CHANNEL_CACFR
+  - name: CSR
+    byte_offset: 40
+    fieldset: regs::CHANNEL_CSR
+  - name: CDBGR
+    byte_offset: 44
+block/SINC:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: PARAMETER
+    byte_offset: 4
+    fieldset: regs::PARAMETER
+  - name: MCR
+    byte_offset: 8
+    fieldset: regs::MCR
+  - name: NIE
+    byte_offset: 12
+    fieldset: regs::NIE
+  - name: EIE
+    byte_offset: 16
+    fieldset: regs::EIE
+  - name: FIFOIE
+    byte_offset: 20
+    fieldset: regs::FIFOIE
+  - name: NIS
+    byte_offset: 24
+    fieldset: regs::NIS
+  - name: EIS
+    byte_offset: 28
+    fieldset: regs::EIS
+  - name: FIFOIS
+    byte_offset: 32
+    fieldset: regs::FIFOIS
+  - name: SR
+    byte_offset: 36
+    fieldset: regs::SR
+  - name: CHANNEL
+    array:
+      len: 5
+      stride: 48
+    byte_offset: 56
+    block: CHANNEL
+fieldset/regs::CHANNEL_CACFR:
+  description: Channel 0 Advanced Configuration..Channel 4 Advanced Configuration
+  fields:
+  - name: ADMASEL
+    bit_offset: 12
+    bit_size: 4
+  - name: HPFA
+    bit_offset: 16
+    bit_size: 4
+  - name: IBDLY
+    bit_offset: 20
+    bit_size: 4
+fieldset/regs::CHANNEL_CBIAS:
+  description: Channel 0 Bias..Channel 4 Bias
+  fields:
+  - name: BIAS
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::CHANNEL_CCFR:
+  description: Channel 0 Configuration..Channel 4 Configuration
+  fields:
+  - name: PFSFT
+    bit_offset: 0
+    bit_size: 5
+  - name: RDFMT
+    bit_offset: 6
+    bit_size: 1
+  - name: FIFOWMK
+    bit_offset: 10
+    bit_size: 3
+  - name: IBFMT
+    bit_offset: 16
+    bit_size: 2
+  - name: ICSEL
+    bit_offset: 18
+    bit_size: 3
+  - name: ICESEL
+    bit_offset: 21
+    bit_size: 3
+  - name: ITSEL
+    bit_offset: 24
+    bit_size: 2
+  - name: IBSEL
+    bit_offset: 26
+    bit_size: 2
+  - name: ITLVL
+    bit_offset: 28
+    bit_size: 1
+  - name: ZCOP
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::CHANNEL_CCR:
+  description: Channel 0 Control..Channel 4 Control
+  fields:
+  - name: CHEN
+    bit_offset: 0
+    bit_size: 1
+  - name: PFEN
+    bit_offset: 1
+    bit_size: 1
+  - name: DMAEN
+    bit_offset: 3
+    bit_size: 1
+  - name: SCDEN
+    bit_offset: 8
+    bit_size: 1
+  - name: CADEN
+    bit_offset: 9
+    bit_size: 1
+  - name: ZCDEN
+    bit_offset: 12
+    bit_size: 1
+  - name: LMTEN
+    bit_offset: 13
+    bit_size: 1
+  - name: FIFOEN
+    bit_offset: 14
+    bit_size: 1
+  - name: DBGSEL
+    bit_offset: 20
+    bit_size: 4
+fieldset/regs::CHANNEL_CDR:
+  description: Channel 0 Data Rate..Channel 4 Data Rate
+  fields:
+  - name: PFOSR
+    bit_offset: 0
+    bit_size: 11
+  - name: PFORD
+    bit_offset: 11
+    bit_size: 2
+  - name: PFCM
+    bit_offset: 14
+    bit_size: 2
+fieldset/regs::CHANNEL_CHILMT:
+  description: Channel 0 High Limit..Channel 4 High Limit
+  fields:
+  - name: HILMT
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::CHANNEL_CLOLMT:
+  description: Channel 0 Low Limit..Channel 4 Low Limit
+  fields:
+  - name: LOLMT
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::CHANNEL_CPROT:
+  description: Channel 0 Protection..Channel 4 Protection
+  fields:
+  - name: SCDLMT
+    bit_offset: 0
+    bit_size: 8
+  - name: SCDCM
+    bit_offset: 11
+    bit_size: 1
+  - name: SCDOP
+    bit_offset: 12
+    bit_size: 2
+  - name: LMTOP
+    bit_offset: 14
+    bit_size: 2
+  - name: CADLMT
+    bit_offset: 16
+    bit_size: 4
+  - name: CADBK
+    bit_offset: 26
+    bit_size: 1
+  - name: SCDBK
+    bit_offset: 27
+    bit_size: 1
+  - name: LLMTBK
+    bit_offset: 29
+    bit_size: 1
+  - name: WLMTBK
+    bit_offset: 30
+    bit_size: 1
+  - name: HLMTBK
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CHANNEL_CRDATA:
+  description: Channel 0 Result Data..Channel 4 Result Data
+  fields:
+  - name: RDATA
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::CHANNEL_CSR:
+  description: Channel 0 Status..Channel 4 Status
+  fields:
+  - name: FIFOAVIL
+    bit_offset: 0
+    bit_size: 5
+  - name: PSRDY
+    bit_offset: 7
+    bit_size: 1
+  - name: PFSAT
+    bit_offset: 8
+    bit_size: 1
+  - name: HPFSAT
+    bit_offset: 9
+    bit_size: 1
+  - name: SFTSAT
+    bit_offset: 10
+    bit_size: 1
+  - name: BIASSAT
+    bit_offset: 11
+    bit_size: 1
+  - name: RDRS
+    bit_offset: 12
+    bit_size: 1
+  - name: SRDS
+    bit_offset: 13
+    bit_size: 1
+  - name: DBGRS
+    bit_offset: 14
+    bit_size: 2
+  - name: CNUM
+    bit_offset: 16
+    bit_size: 7
+  - name: CNUM_OV
+    bit_offset: 23
+    bit_size: 1
+fieldset/regs::EIE:
+  description: Error Interrupt Enable
+  fields:
+  - name: SCDIE0
+    bit_offset: 0
+    bit_size: 1
+  - name: SCDIE1
+    bit_offset: 1
+    bit_size: 1
+  - name: SCDIE2
+    bit_offset: 2
+    bit_size: 1
+  - name: SCDIE3
+    bit_offset: 3
+    bit_size: 1
+  - name: SCDIE4
+    bit_offset: 4
+    bit_size: 1
+  - name: WLMTIE0
+    bit_offset: 8
+    bit_size: 1
+  - name: WLMTIE1
+    bit_offset: 9
+    bit_size: 1
+  - name: WLMTIE2
+    bit_offset: 10
+    bit_size: 1
+  - name: WLMTIE3
+    bit_offset: 11
+    bit_size: 1
+  - name: WLMTIE4
+    bit_offset: 12
+    bit_size: 1
+  - name: LLMTIE0
+    bit_offset: 16
+    bit_size: 1
+  - name: LLMTIE1
+    bit_offset: 17
+    bit_size: 1
+  - name: LLMTIE2
+    bit_offset: 18
+    bit_size: 1
+  - name: LLMTIE3
+    bit_offset: 19
+    bit_size: 1
+  - name: LLMTIE4
+    bit_offset: 20
+    bit_size: 1
+  - name: HLMTIE0
+    bit_offset: 24
+    bit_size: 1
+  - name: HLMTIE1
+    bit_offset: 25
+    bit_size: 1
+  - name: HLMTIE2
+    bit_offset: 26
+    bit_size: 1
+  - name: HLMTIE3
+    bit_offset: 27
+    bit_size: 1
+  - name: HLMTIE4
+    bit_offset: 28
+    bit_size: 1
+fieldset/regs::EIS:
+  description: Error Interrupt Status
+  fields:
+  - name: SCD0
+    bit_offset: 0
+    bit_size: 1
+  - name: SCD1
+    bit_offset: 1
+    bit_size: 1
+  - name: SCD2
+    bit_offset: 2
+    bit_size: 1
+  - name: SCD3
+    bit_offset: 3
+    bit_size: 1
+  - name: SCD4
+    bit_offset: 4
+    bit_size: 1
+  - name: WLMT0
+    bit_offset: 8
+    bit_size: 1
+  - name: WLMT1
+    bit_offset: 9
+    bit_size: 1
+  - name: WLMT2
+    bit_offset: 10
+    bit_size: 1
+  - name: WLMT3
+    bit_offset: 11
+    bit_size: 1
+  - name: WLMT4
+    bit_offset: 12
+    bit_size: 1
+  - name: LLMT0
+    bit_offset: 16
+    bit_size: 1
+  - name: LLMT1
+    bit_offset: 17
+    bit_size: 1
+  - name: LLMT2
+    bit_offset: 18
+    bit_size: 1
+  - name: LLMT3
+    bit_offset: 19
+    bit_size: 1
+  - name: LLMT4
+    bit_offset: 20
+    bit_size: 1
+  - name: HLMT0
+    bit_offset: 24
+    bit_size: 1
+  - name: HLMT1
+    bit_offset: 25
+    bit_size: 1
+  - name: HLMT2
+    bit_offset: 26
+    bit_size: 1
+  - name: HLMT3
+    bit_offset: 27
+    bit_size: 1
+  - name: HLMT4
+    bit_offset: 28
+    bit_size: 1
+fieldset/regs::FIFOIE:
+  description: FIFO And CAD Error Interrupt Enable
+  fields:
+  - name: FUNFIE0
+    bit_offset: 0
+    bit_size: 1
+  - name: FUNFIE1
+    bit_offset: 1
+    bit_size: 1
+  - name: FUNFIE2
+    bit_offset: 2
+    bit_size: 1
+  - name: FUNFIE3
+    bit_offset: 3
+    bit_size: 1
+  - name: FUNFIE4
+    bit_offset: 4
+    bit_size: 1
+  - name: FOVFIE0
+    bit_offset: 8
+    bit_size: 1
+  - name: FOVFIE1
+    bit_offset: 9
+    bit_size: 1
+  - name: FOVFIE2
+    bit_offset: 10
+    bit_size: 1
+  - name: FOVFIE3
+    bit_offset: 11
+    bit_size: 1
+  - name: FOVFIE4
+    bit_offset: 12
+    bit_size: 1
+  - name: CADIE0
+    bit_offset: 16
+    bit_size: 1
+  - name: CADIE1
+    bit_offset: 17
+    bit_size: 1
+  - name: CADIE2
+    bit_offset: 18
+    bit_size: 1
+  - name: CADIE3
+    bit_offset: 19
+    bit_size: 1
+  - name: CADIE4
+    bit_offset: 20
+    bit_size: 1
+  - name: SATIE0
+    bit_offset: 24
+    bit_size: 1
+  - name: SATIE1
+    bit_offset: 25
+    bit_size: 1
+  - name: SATIE2
+    bit_offset: 26
+    bit_size: 1
+  - name: SATIE3
+    bit_offset: 27
+    bit_size: 1
+  - name: SATIE4
+    bit_offset: 28
+    bit_size: 1
+fieldset/regs::FIFOIS:
+  description: FIFO And CAD Error Interrupt Status
+  fields:
+  - name: FUNF0
+    bit_offset: 0
+    bit_size: 1
+  - name: FUNF1
+    bit_offset: 1
+    bit_size: 1
+  - name: FUNF2
+    bit_offset: 2
+    bit_size: 1
+  - name: FUNF3
+    bit_offset: 3
+    bit_size: 1
+  - name: FUNF4
+    bit_offset: 4
+    bit_size: 1
+  - name: FOVF0
+    bit_offset: 8
+    bit_size: 1
+  - name: FOVF1
+    bit_offset: 9
+    bit_size: 1
+  - name: FOVF2
+    bit_offset: 10
+    bit_size: 1
+  - name: FOVF3
+    bit_offset: 11
+    bit_size: 1
+  - name: FOVF4
+    bit_offset: 12
+    bit_size: 1
+  - name: CAD0
+    bit_offset: 16
+    bit_size: 1
+  - name: CAD1
+    bit_offset: 17
+    bit_size: 1
+  - name: CAD2
+    bit_offset: 18
+    bit_size: 1
+  - name: CAD3
+    bit_offset: 19
+    bit_size: 1
+  - name: CAD4
+    bit_offset: 20
+    bit_size: 1
+  - name: SAT0
+    bit_offset: 24
+    bit_size: 1
+  - name: SAT1
+    bit_offset: 25
+    bit_size: 1
+  - name: SAT2
+    bit_offset: 26
+    bit_size: 1
+  - name: SAT3
+    bit_offset: 27
+    bit_size: 1
+  - name: SAT4
+    bit_offset: 28
+    bit_size: 1
+fieldset/regs::MCR:
+  description: Main Control
+  fields:
+  - name: STRIG0
+    bit_offset: 0
+    bit_size: 1
+  - name: STRIG1
+    bit_offset: 1
+    bit_size: 1
+  - name: STRIG2
+    bit_offset: 2
+    bit_size: 1
+  - name: STRIG3
+    bit_offset: 3
+    bit_size: 1
+  - name: STRIG4
+    bit_offset: 4
+    bit_size: 1
+  - name: DOZEN
+    bit_offset: 10
+    bit_size: 1
+  - name: RST
+    bit_offset: 13
+    bit_size: 1
+  - name: MEN
+    bit_offset: 15
+    bit_size: 1
+  - name: MCLKDIV
+    bit_offset: 16
+    bit_size: 8
+  - name: PRESCALE
+    bit_offset: 25
+    bit_size: 2
+  - name: MCLK0DIS
+    bit_offset: 27
+    bit_size: 1
+  - name: MCLK1DIS
+    bit_offset: 28
+    bit_size: 1
+  - name: MCLK2DIS
+    bit_offset: 29
+    bit_size: 1
+fieldset/regs::NIE:
+  description: Normal Interrupt Enable
+  fields:
+  - name: COCIE0
+    bit_offset: 0
+    bit_size: 1
+  - name: COCIE1
+    bit_offset: 1
+    bit_size: 1
+  - name: COCIE2
+    bit_offset: 2
+    bit_size: 1
+  - name: COCIE3
+    bit_offset: 3
+    bit_size: 1
+  - name: COCIE4
+    bit_offset: 4
+    bit_size: 1
+  - name: CHFIE0
+    bit_offset: 8
+    bit_size: 1
+  - name: CHFIE1
+    bit_offset: 9
+    bit_size: 1
+  - name: CHFIE2
+    bit_offset: 10
+    bit_size: 1
+  - name: CHFIE3
+    bit_offset: 11
+    bit_size: 1
+  - name: CHFIE4
+    bit_offset: 12
+    bit_size: 1
+  - name: ZCDIE0
+    bit_offset: 16
+    bit_size: 1
+  - name: ZCDIE1
+    bit_offset: 17
+    bit_size: 1
+  - name: ZCDIE2
+    bit_offset: 18
+    bit_size: 1
+  - name: ZCDIE3
+    bit_offset: 19
+    bit_size: 1
+  - name: ZCDIE4
+    bit_offset: 20
+    bit_size: 1
+fieldset/regs::NIS:
+  description: Normal Interrupt Status
+  fields:
+  - name: COC0
+    bit_offset: 0
+    bit_size: 1
+  - name: COC1
+    bit_offset: 1
+    bit_size: 1
+  - name: COC2
+    bit_offset: 2
+    bit_size: 1
+  - name: COC3
+    bit_offset: 3
+    bit_size: 1
+  - name: COC4
+    bit_offset: 4
+    bit_size: 1
+  - name: CHF0
+    bit_offset: 8
+    bit_size: 1
+  - name: CHF1
+    bit_offset: 9
+    bit_size: 1
+  - name: CHF2
+    bit_offset: 10
+    bit_size: 1
+  - name: CHF3
+    bit_offset: 11
+    bit_size: 1
+  - name: CHF4
+    bit_offset: 12
+    bit_size: 1
+  - name: ZCD0
+    bit_offset: 16
+    bit_size: 1
+  - name: ZCD1
+    bit_offset: 17
+    bit_size: 1
+  - name: ZCD2
+    bit_offset: 18
+    bit_size: 1
+  - name: ZCD3
+    bit_offset: 19
+    bit_size: 1
+  - name: ZCD4
+    bit_offset: 20
+    bit_size: 1
+fieldset/regs::PARAMETER:
+  description: Parameters
+  fields:
+  - name: FIFO_DEPTH
+    bit_offset: 0
+    bit_size: 5
+  - name: FLT_NUM
+    bit_offset: 8
+    bit_size: 4
+  - name: PF_ORD_SEL
+    bit_offset: 19
+    bit_size: 2
+fieldset/regs::SR:
+  description: Status
+  fields:
+  - name: CIP0
+    bit_offset: 0
+    bit_size: 1
+  - name: CIP1
+    bit_offset: 1
+    bit_size: 1
+  - name: CIP2
+    bit_offset: 2
+    bit_size: 1
+  - name: CIP3
+    bit_offset: 3
+    bit_size: 1
+  - name: CIP4
+    bit_offset: 4
+    bit_size: 1
+  - name: CHRDY0
+    bit_offset: 8
+    bit_size: 1
+  - name: CHRDY1
+    bit_offset: 9
+    bit_size: 1
+  - name: CHRDY2
+    bit_offset: 10
+    bit_size: 1
+  - name: CHRDY3
+    bit_offset: 11
+    bit_size: 1
+  - name: CHRDY4
+    bit_offset: 12
+    bit_size: 1
+  - name: FIFOEMPTY0
+    bit_offset: 16
+    bit_size: 1
+  - name: FIFOEMPTY1
+    bit_offset: 17
+    bit_size: 1
+  - name: FIFOEMPTY2
+    bit_offset: 18
+    bit_size: 1
+  - name: FIFOEMPTY3
+    bit_offset: 19
+    bit_size: 1
+  - name: FIFOEMPTY4
+    bit_offset: 20
+    bit_size: 1
+  - name: MCLKRDY0
+    bit_offset: 24
+    bit_size: 1
+  - name: MCLKRDY1
+    bit_offset: 25
+    bit_size: 1
+  - name: MCLKRDY2
+    bit_offset: 26
+    bit_size: 1
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

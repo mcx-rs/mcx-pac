@@ -1,0 +1,51 @@
+block/LPTMR:
+  items:
+  - name: CSR
+    byte_offset: 0
+    fieldset: regs::CSR
+  - name: PSR
+    byte_offset: 4
+    fieldset: regs::PSR
+  - name: CMR
+    byte_offset: 8
+  - name: CNR
+    byte_offset: 12
+fieldset/regs::CSR:
+  description: Control Status
+  fields:
+  - name: TEN
+    bit_offset: 0
+    bit_size: 1
+  - name: TMS
+    bit_offset: 1
+    bit_size: 1
+  - name: TFC
+    bit_offset: 2
+    bit_size: 1
+  - name: TPP
+    bit_offset: 3
+    bit_size: 1
+  - name: TPS
+    bit_offset: 4
+    bit_size: 2
+  - name: TIE
+    bit_offset: 6
+    bit_size: 1
+  - name: TCF
+    bit_offset: 7
+    bit_size: 1
+  - name: TDRE
+    bit_offset: 8
+    bit_size: 1
+fieldset/regs::PSR:
+  description: Prescaler and Glitch Filter
+  fields:
+  - name: PCS
+    bit_offset: 0
+    bit_size: 2
+  - name: PBYP
+    bit_offset: 2
+    bit_size: 1
+  - name: PRESCALE
+    bit_offset: 3
+    bit_size: 4

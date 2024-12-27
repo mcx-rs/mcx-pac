@@ -1,0 +1,438 @@
+block/PUF:
+  items:
+  - name: CR
+    byte_offset: 0
+    fieldset: regs::CR
+  - name: ORR
+    byte_offset: 4
+    fieldset: regs::ORR
+  - name: SR
+    byte_offset: 8
+    fieldset: regs::SR
+  - name: AR
+    byte_offset: 12
+    fieldset: regs::AR
+  - name: IER
+    byte_offset: 16
+    fieldset: regs::IER
+  - name: IMR
+    byte_offset: 20
+    fieldset: regs::IMR
+  - name: ISR
+    byte_offset: 24
+    fieldset: regs::ISR
+  - name: DATA_DEST
+    byte_offset: 32
+    fieldset: regs::DATA_DEST
+  - name: DATA_SRC
+    byte_offset: 36
+    fieldset: regs::DATA_SRC
+  - name: DIR
+    byte_offset: 160
+  - name: DOR
+    byte_offset: 168
+  - name: MISC
+    byte_offset: 192
+    fieldset: regs::MISC
+  - name: IF_SR
+    byte_offset: 208
+    fieldset: regs::IF_SR
+  - name: PSR
+    byte_offset: 220
+    fieldset: regs::PSR
+  - name: HW_RUC0
+    byte_offset: 224
+    fieldset: regs::HW_RUC0
+  - name: HW_RUC1
+    byte_offset: 228
+  - name: HW_INFO
+    byte_offset: 244
+    fieldset: regs::HW_INFO
+  - name: HW_ID
+    byte_offset: 248
+  - name: HW_VER
+    byte_offset: 252
+    fieldset: regs::HW_VER
+  - name: CONFIG
+    byte_offset: 256
+    fieldset: regs::CONFIG
+  - name: SEC_LOCK
+    byte_offset: 260
+    fieldset: regs::SEC_LOCK
+  - name: APP_CTX_MASK
+    byte_offset: 264
+  - name: SRAM_CFG
+    byte_offset: 768
+    fieldset: regs::SRAM_CFG
+  - name: SRAM_STATUS
+    byte_offset: 772
+    fieldset: regs::SRAM_STATUS
+  - name: SRAM_INT_CLR_ENABLE
+    byte_offset: 984
+    fieldset: regs::SRAM_INT_CLR_ENABLE
+  - name: SRAM_INT_SET_ENABLE
+    byte_offset: 988
+    fieldset: regs::SRAM_INT_SET_ENABLE
+  - name: SRAM_INT_STATUS
+    byte_offset: 992
+    fieldset: regs::SRAM_INT_STATUS
+  - name: SRAM_INT_ENABLE
+    byte_offset: 996
+    fieldset: regs::SRAM_INT_ENABLE
+  - name: SRAM_INT_CLR_STATUS
+    byte_offset: 1000
+    fieldset: regs::SRAM_INT_CLR_STATUS
+  - name: SRAM_INT_SET_STATUS
+    byte_offset: 1004
+    fieldset: regs::SRAM_INT_SET_STATUS
+fieldset/regs::AR:
+  description: Allow
+  fields:
+  - name: ALLOW_ENROLL
+    bit_offset: 1
+    bit_size: 1
+  - name: ALLOW_START
+    bit_offset: 2
+    bit_size: 1
+  - name: ALLOW_RECONSTRUCT
+    bit_offset: 3
+    bit_size: 1
+  - name: ALLOW_STOP
+    bit_offset: 5
+    bit_size: 1
+  - name: ALLOW_GET_KEY
+    bit_offset: 6
+    bit_size: 1
+  - name: ALLOW_UNWRAP
+    bit_offset: 7
+    bit_size: 1
+  - name: ALLOW_WRAP_GENERATED_RANDOM
+    bit_offset: 8
+    bit_size: 1
+  - name: ALLOW_WRAP
+    bit_offset: 9
+    bit_size: 1
+  - name: ALLOW_GENERATE_RANDOM
+    bit_offset: 15
+    bit_size: 1
+  - name: ALLOW_TEST_MEMORY
+    bit_offset: 30
+    bit_size: 1
+  - name: ALLOW_TEST_PUF
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CONFIG:
+  description: PUF command blocking configuration
+  fields:
+  - name: DIS_PUF_ENROLL
+    bit_offset: 1
+    bit_size: 1
+  - name: DIS_PUF_START
+    bit_offset: 2
+    bit_size: 1
+  - name: DIS_PUF_STOP
+    bit_offset: 5
+    bit_size: 1
+  - name: DIS_PUF_GET_KEY
+    bit_offset: 6
+    bit_size: 1
+  - name: DIS_PUF_UNWRAP_KEY
+    bit_offset: 7
+    bit_size: 1
+  - name: DIS_PUF_GEN_WRAP_KEY
+    bit_offset: 8
+    bit_size: 1
+  - name: DIS_PUF_WRAP_KEY
+    bit_offset: 9
+    bit_size: 1
+  - name: DIS_PUF_GEN_RANDOM_NUMBER
+    bit_offset: 15
+    bit_size: 1
+  - name: DIS_PUF_TEST
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CR:
+  description: Control
+  fields:
+  - name: ZEROIZE
+    bit_offset: 0
+    bit_size: 1
+  - name: ENROLL
+    bit_offset: 1
+    bit_size: 1
+  - name: START
+    bit_offset: 2
+    bit_size: 1
+  - name: RECONSTRUCT
+    bit_offset: 3
+    bit_size: 1
+  - name: STOP
+    bit_offset: 5
+    bit_size: 1
+  - name: GET_KEY
+    bit_offset: 6
+    bit_size: 1
+  - name: UNWRAP
+    bit_offset: 7
+    bit_size: 1
+  - name: WRAP_GENERATED_RANDOM
+    bit_offset: 8
+    bit_size: 1
+  - name: WRAP
+    bit_offset: 9
+    bit_size: 1
+  - name: GENERATE_RANDOM
+    bit_offset: 15
+    bit_size: 1
+  - name: TEST_MEMORY
+    bit_offset: 30
+    bit_size: 1
+  - name: TEST_PUF
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DATA_DEST:
+  description: Data Destination
+  fields:
+  - name: DEST_DOR
+    bit_offset: 0
+    bit_size: 1
+  - name: DEST_SO
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::DATA_SRC:
+  description: Data Source
+  fields:
+  - name: SRC_DIR
+    bit_offset: 0
+    bit_size: 1
+  - name: SRC_SI
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::HW_INFO:
+  description: Hardware Information
+  fields:
+  - name: CONFIG_WRAP
+    bit_offset: 24
+    bit_size: 1
+  - name: CONFIG_TYPE
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::HW_RUC0:
+  description: Hardware Restrict User Context 0
+  fields:
+  - name: LC_STATE
+    bit_offset: 0
+    bit_size: 8
+  - name: BOOT_STATE
+    bit_offset: 8
+    bit_size: 16
+  - name: CPU0_DEBUG
+    bit_offset: 24
+    bit_size: 1
+  - name: COOLFLUX_DEBUG
+    bit_offset: 25
+    bit_size: 1
+  - name: dsp_debug
+    bit_offset: 26
+    bit_size: 1
+  - name: ACCESS_LEVEL
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::HW_VER:
+  description: Hardware Version
+  fields:
+  - name: HW_REV
+    bit_offset: 0
+    bit_size: 8
+  - name: HW_VERSION_MINOR
+    bit_offset: 8
+    bit_size: 8
+  - name: HW_VERSION_MAJOR
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::IER:
+  description: Interrupt Enable
+  fields:
+  - name: INT_EN
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::IF_SR:
+  description: Interface Status
+  fields:
+  - name: APB_ERROR
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::IMR:
+  description: Interrupt Mask
+  fields:
+  - name: INT_EN_BUSY
+    bit_offset: 0
+    bit_size: 1
+  - name: INT_EN_OK
+    bit_offset: 1
+    bit_size: 1
+  - name: INT_EN_ERROR
+    bit_offset: 2
+    bit_size: 1
+  - name: INT_EN_ZEROIZED
+    bit_offset: 3
+    bit_size: 1
+  - name: INT_EN_REJECTED
+    bit_offset: 4
+    bit_size: 1
+  - name: INT_EN_DI_REQUEST
+    bit_offset: 5
+    bit_size: 1
+  - name: INT_EN_DO_REQUEST
+    bit_offset: 6
+    bit_size: 1
+fieldset/regs::ISR:
+  description: Interrupt Status
+  fields:
+  - name: INT_BUSY
+    bit_offset: 0
+    bit_size: 1
+  - name: INT_OK
+    bit_offset: 1
+    bit_size: 1
+  - name: INT_ERROR
+    bit_offset: 2
+    bit_size: 1
+  - name: INT_ZEROIZED
+    bit_offset: 3
+    bit_size: 1
+  - name: INT_REJECTED
+    bit_offset: 4
+    bit_size: 1
+  - name: INT_DI_REQUEST
+    bit_offset: 5
+    bit_size: 1
+  - name: INT_DO_REQUEST
+    bit_offset: 6
+    bit_size: 1
+fieldset/regs::MISC:
+  description: Miscellaneous
+  fields:
+  - name: DATA_ENDIANNESS
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::ORR:
+  description: Operation Result
+  fields:
+  - name: RESULT_CODE
+    bit_offset: 0
+    bit_size: 8
+  - name: LAST_OPERATION
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::PSR:
+  description: PUF Score
+  fields:
+  - name: PUF_SCORE
+    bit_offset: 0
+    bit_size: 4
+fieldset/regs::SEC_LOCK:
+  description: Security level lock
+  fields:
+  - name: SEC_LEVEL
+    bit_offset: 0
+    bit_size: 2
+  - name: ANTI_POLE_SEC_LEVEL
+    bit_offset: 2
+    bit_size: 2
+  - name: PATTERN
+    bit_offset: 4
+    bit_size: 12
+fieldset/regs::SR:
+  description: Status
+  fields:
+  - name: BUSY
+    bit_offset: 0
+    bit_size: 1
+  - name: OK
+    bit_offset: 1
+    bit_size: 1
+  - name: ERROR
+    bit_offset: 2
+    bit_size: 1
+  - name: ZEROIZED
+    bit_offset: 3
+    bit_size: 1
+  - name: REJECTED
+    bit_offset: 4
+    bit_size: 1
+  - name: DI_REQUEST
+    bit_offset: 5
+    bit_size: 1
+  - name: DO_REQUEST
+    bit_offset: 6
+    bit_size: 1
+fieldset/regs::SRAM_CFG:
+  description: SRAM Configuration
+  fields:
+  - name: ENABLE
+    bit_offset: 0
+    bit_size: 1
+  - name: CKGATING
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::SRAM_INT_CLR_ENABLE:
+  description: Interrupt Enable Clear
+  fields:
+  - name: READY
+    bit_offset: 0
+    bit_size: 1
+  - name: APB_ERR
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::SRAM_INT_CLR_STATUS:
+  description: Interrupt Status Clear
+  fields:
+  - name: READY
+    bit_offset: 0
+    bit_size: 1
+  - name: APB_ERR
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::SRAM_INT_ENABLE:
+  description: Interrupt Enable
+  fields:
+  - name: READY
+    bit_offset: 0
+    bit_size: 1
+  - name: SRAM_APB_ERR
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::SRAM_INT_SET_ENABLE:
+  description: Interrupt Enable Set
+  fields:
+  - name: READY
+    bit_offset: 0
+    bit_size: 1
+  - name: APB_ERR
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::SRAM_INT_SET_STATUS:
+  description: Interrupt Status set
+  fields:
+  - name: READY
+    bit_offset: 0
+    bit_size: 1
+  - name: APB_ERR
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::SRAM_INT_STATUS:
+  description: Interrupt Status
+  fields:
+  - name: READY
+    bit_offset: 0
+    bit_size: 1
+  - name: APB_ERR
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::SRAM_STATUS:
+  description: Status
+  fields:
+  - name: READY
+    bit_offset: 0
+    bit_size: 1

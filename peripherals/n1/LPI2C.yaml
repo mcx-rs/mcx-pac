@@ -1,0 +1,665 @@
+block/LPI2C:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: PARAM
+    byte_offset: 4
+    fieldset: regs::PARAM
+  - name: MCR
+    byte_offset: 16
+    fieldset: regs::MCR
+  - name: MSR
+    byte_offset: 20
+    fieldset: regs::MSR
+  - name: MIER
+    byte_offset: 24
+    fieldset: regs::MIER
+  - name: MDER
+    byte_offset: 28
+    fieldset: regs::MDER
+  - name: MCFGR0
+    byte_offset: 32
+    fieldset: regs::MCFGR0
+  - name: MCFGR1
+    byte_offset: 36
+    fieldset: regs::MCFGR1
+  - name: MCFGR2
+    byte_offset: 40
+    fieldset: regs::MCFGR2
+  - name: MCFGR3
+    byte_offset: 44
+    fieldset: regs::MCFGR3
+  - name: MDMR
+    byte_offset: 64
+    fieldset: regs::MDMR
+  - name: MCCR0
+    byte_offset: 72
+    fieldset: regs::MCCR0
+  - name: MCCR1
+    byte_offset: 80
+    fieldset: regs::MCCR1
+  - name: MFCR
+    byte_offset: 88
+    fieldset: regs::MFCR
+  - name: MFSR
+    byte_offset: 92
+    fieldset: regs::MFSR
+  - name: MTDR
+    byte_offset: 96
+    fieldset: regs::MTDR
+  - name: MRDR
+    byte_offset: 112
+    fieldset: regs::MRDR
+  - name: MRDROR
+    byte_offset: 120
+    fieldset: regs::MRDROR
+  - name: SCR
+    byte_offset: 272
+    fieldset: regs::SCR
+  - name: SSR
+    byte_offset: 276
+    fieldset: regs::SSR
+  - name: SIER
+    byte_offset: 280
+    fieldset: regs::SIER
+  - name: SDER
+    byte_offset: 284
+    fieldset: regs::SDER
+  - name: SCFGR0
+    byte_offset: 288
+    fieldset: regs::SCFGR0
+  - name: SCFGR1
+    byte_offset: 292
+    fieldset: regs::SCFGR1
+  - name: SCFGR2
+    byte_offset: 296
+    fieldset: regs::SCFGR2
+  - name: SAMR
+    byte_offset: 320
+    fieldset: regs::SAMR
+  - name: SASR
+    byte_offset: 336
+    fieldset: regs::SASR
+  - name: STAR
+    byte_offset: 340
+    fieldset: regs::STAR
+  - name: STDR
+    byte_offset: 352
+    fieldset: regs::STDR
+  - name: SRDR
+    byte_offset: 368
+    fieldset: regs::SRDR
+  - name: SRDROR
+    byte_offset: 376
+    fieldset: regs::SRDROR
+  - name: MTCBR
+    array:
+      len: 128
+      stride: 4
+    byte_offset: 512
+    fieldset: regs::MTCBR
+  - name: MTDBR
+    array:
+      len: 253
+      stride: 4
+    byte_offset: 1024
+    fieldset: regs::MTDBR
+fieldset/regs::MCCR0:
+  description: Controller Clock Configuration 0
+  fields:
+  - name: CLKLO
+    bit_offset: 0
+    bit_size: 6
+  - name: CLKHI
+    bit_offset: 8
+    bit_size: 6
+  - name: SETHOLD
+    bit_offset: 16
+    bit_size: 6
+  - name: DATAVD
+    bit_offset: 24
+    bit_size: 6
+fieldset/regs::MCCR1:
+  description: Controller Clock Configuration 1
+  fields:
+  - name: CLKLO
+    bit_offset: 0
+    bit_size: 6
+  - name: CLKHI
+    bit_offset: 8
+    bit_size: 6
+  - name: SETHOLD
+    bit_offset: 16
+    bit_size: 6
+  - name: DATAVD
+    bit_offset: 24
+    bit_size: 6
+fieldset/regs::MCFGR0:
+  description: Controller Configuration 0
+  fields:
+  - name: HREN
+    bit_offset: 0
+    bit_size: 1
+  - name: HRPOL
+    bit_offset: 1
+    bit_size: 1
+  - name: HRSEL
+    bit_offset: 2
+    bit_size: 1
+  - name: HRDIR
+    bit_offset: 3
+    bit_size: 1
+  - name: CIRFIFO
+    bit_offset: 8
+    bit_size: 1
+  - name: RDMO
+    bit_offset: 9
+    bit_size: 1
+  - name: RELAX
+    bit_offset: 16
+    bit_size: 1
+  - name: ABORT
+    bit_offset: 17
+    bit_size: 1
+fieldset/regs::MCFGR1:
+  description: Controller Configuration 1
+  fields:
+  - name: PRESCALE
+    bit_offset: 0
+    bit_size: 3
+  - name: AUTOSTOP
+    bit_offset: 8
+    bit_size: 1
+  - name: IGNACK
+    bit_offset: 9
+    bit_size: 1
+  - name: TIMECFG
+    bit_offset: 10
+    bit_size: 1
+  - name: STOPCFG
+    bit_offset: 11
+    bit_size: 1
+  - name: STARTCFG
+    bit_offset: 12
+    bit_size: 1
+  - name: MATCFG
+    bit_offset: 16
+    bit_size: 3
+  - name: PINCFG
+    bit_offset: 24
+    bit_size: 3
+fieldset/regs::MCFGR2:
+  description: Controller Configuration 2
+  fields:
+  - name: BUSIDLE
+    bit_offset: 0
+    bit_size: 12
+  - name: FILTSCL
+    bit_offset: 16
+    bit_size: 4
+  - name: FILTSDA
+    bit_offset: 24
+    bit_size: 4
+fieldset/regs::MCFGR3:
+  description: Controller Configuration 3
+  fields:
+  - name: PINLOW
+    bit_offset: 8
+    bit_size: 12
+fieldset/regs::MCR:
+  description: Controller Control
+  fields:
+  - name: MEN
+    bit_offset: 0
+    bit_size: 1
+  - name: RST
+    bit_offset: 1
+    bit_size: 1
+  - name: DOZEN
+    bit_offset: 2
+    bit_size: 1
+  - name: DBGEN
+    bit_offset: 3
+    bit_size: 1
+  - name: RTF
+    bit_offset: 8
+    bit_size: 1
+  - name: RRF
+    bit_offset: 9
+    bit_size: 1
+fieldset/regs::MDER:
+  description: Controller DMA Enable
+  fields:
+  - name: TDDE
+    bit_offset: 0
+    bit_size: 1
+  - name: RDDE
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::MDMR:
+  description: Controller Data Match
+  fields:
+  - name: MATCH0
+    bit_offset: 0
+    bit_size: 8
+  - name: MATCH1
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::MFCR:
+  description: Controller FIFO Control
+  fields:
+  - name: TXWATER
+    bit_offset: 0
+    bit_size: 3
+  - name: RXWATER
+    bit_offset: 16
+    bit_size: 3
+fieldset/regs::MFSR:
+  description: Controller FIFO Status
+  fields:
+  - name: TXCOUNT
+    bit_offset: 0
+    bit_size: 4
+  - name: RXCOUNT
+    bit_offset: 16
+    bit_size: 4
+fieldset/regs::MIER:
+  description: Controller Interrupt Enable
+  fields:
+  - name: TDIE
+    bit_offset: 0
+    bit_size: 1
+  - name: RDIE
+    bit_offset: 1
+    bit_size: 1
+  - name: EPIE
+    bit_offset: 8
+    bit_size: 1
+  - name: SDIE
+    bit_offset: 9
+    bit_size: 1
+  - name: NDIE
+    bit_offset: 10
+    bit_size: 1
+  - name: ALIE
+    bit_offset: 11
+    bit_size: 1
+  - name: FEIE
+    bit_offset: 12
+    bit_size: 1
+  - name: PLTIE
+    bit_offset: 13
+    bit_size: 1
+  - name: DMIE
+    bit_offset: 14
+    bit_size: 1
+  - name: STIE
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::MRDR:
+  description: Controller Receive Data
+  fields:
+  - name: DATA
+    bit_offset: 0
+    bit_size: 8
+  - name: RXEMPTY
+    bit_offset: 14
+    bit_size: 1
+fieldset/regs::MRDROR:
+  description: Controller Receive Data Read Only
+  fields:
+  - name: DATA
+    bit_offset: 0
+    bit_size: 8
+  - name: RXEMPTY
+    bit_offset: 14
+    bit_size: 1
+fieldset/regs::MSR:
+  description: Controller Status
+  fields:
+  - name: TDF
+    bit_offset: 0
+    bit_size: 1
+  - name: RDF
+    bit_offset: 1
+    bit_size: 1
+  - name: EPF
+    bit_offset: 8
+    bit_size: 1
+  - name: SDF
+    bit_offset: 9
+    bit_size: 1
+  - name: NDF
+    bit_offset: 10
+    bit_size: 1
+  - name: ALF
+    bit_offset: 11
+    bit_size: 1
+  - name: FEF
+    bit_offset: 12
+    bit_size: 1
+  - name: PLTF
+    bit_offset: 13
+    bit_size: 1
+  - name: DMF
+    bit_offset: 14
+    bit_size: 1
+  - name: STF
+    bit_offset: 15
+    bit_size: 1
+  - name: MBF
+    bit_offset: 24
+    bit_size: 1
+  - name: BBF
+    bit_offset: 25
+    bit_size: 1
+fieldset/regs::MTCBR:
+  description: Controller Transmit Command Burst
+  fields:
+  - name: DATA
+    bit_offset: 0
+    bit_size: 8
+  - name: CMD
+    bit_offset: 8
+    bit_size: 3
+fieldset/regs::MTDBR:
+  description: Transmit Data Burst
+  fields:
+  - name: DATA0
+    bit_offset: 0
+    bit_size: 8
+  - name: DATA1
+    bit_offset: 8
+    bit_size: 8
+  - name: DATA2
+    bit_offset: 16
+    bit_size: 8
+  - name: DATA3
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::MTDR:
+  description: Controller Transmit Data
+  fields:
+  - name: DATA
+    bit_offset: 0
+    bit_size: 8
+  - name: CMD
+    bit_offset: 8
+    bit_size: 3
+fieldset/regs::PARAM:
+  description: Parameter
+  fields:
+  - name: MTXFIFO
+    bit_offset: 0
+    bit_size: 4
+  - name: MRXFIFO
+    bit_offset: 8
+    bit_size: 4
+fieldset/regs::SAMR:
+  description: Target Address Match
+  fields:
+  - name: ADDR0
+    bit_offset: 1
+    bit_size: 10
+  - name: ADDR1
+    bit_offset: 17
+    bit_size: 10
+fieldset/regs::SASR:
+  description: Target Address Status
+  fields:
+  - name: RADDR
+    bit_offset: 0
+    bit_size: 11
+  - name: ANV
+    bit_offset: 14
+    bit_size: 1
+fieldset/regs::SCFGR0:
+  description: Target Configuration 0
+  fields:
+  - name: RDREQ
+    bit_offset: 0
+    bit_size: 1
+  - name: RDACK
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::SCFGR1:
+  description: Target Configuration 1
+  fields:
+  - name: ADRSTALL
+    bit_offset: 0
+    bit_size: 1
+  - name: RXSTALL
+    bit_offset: 1
+    bit_size: 1
+  - name: TXDSTALL
+    bit_offset: 2
+    bit_size: 1
+  - name: ACKSTALL
+    bit_offset: 3
+    bit_size: 1
+  - name: RXNACK
+    bit_offset: 4
+    bit_size: 1
+  - name: GCEN
+    bit_offset: 8
+    bit_size: 1
+  - name: SAEN
+    bit_offset: 9
+    bit_size: 1
+  - name: TXCFG
+    bit_offset: 10
+    bit_size: 1
+  - name: RXCFG
+    bit_offset: 11
+    bit_size: 1
+  - name: IGNACK
+    bit_offset: 12
+    bit_size: 1
+  - name: HSMEN
+    bit_offset: 13
+    bit_size: 1
+  - name: ADDRCFG
+    bit_offset: 16
+    bit_size: 3
+  - name: RXALL
+    bit_offset: 24
+    bit_size: 1
+  - name: RSCFG
+    bit_offset: 25
+    bit_size: 1
+  - name: SDCFG
+    bit_offset: 26
+    bit_size: 1
+fieldset/regs::SCFGR2:
+  description: Target Configuration 2
+  fields:
+  - name: CLKHOLD
+    bit_offset: 0
+    bit_size: 4
+  - name: DATAVD
+    bit_offset: 8
+    bit_size: 6
+  - name: FILTSCL
+    bit_offset: 16
+    bit_size: 4
+  - name: FILTSDA
+    bit_offset: 24
+    bit_size: 4
+fieldset/regs::SCR:
+  description: Target Control
+  fields:
+  - name: SEN
+    bit_offset: 0
+    bit_size: 1
+  - name: RST
+    bit_offset: 1
+    bit_size: 1
+  - name: FILTEN
+    bit_offset: 4
+    bit_size: 1
+  - name: FILTDZ
+    bit_offset: 5
+    bit_size: 1
+  - name: RTF
+    bit_offset: 8
+    bit_size: 1
+  - name: RRF
+    bit_offset: 9
+    bit_size: 1
+fieldset/regs::SDER:
+  description: Target DMA Enable
+  fields:
+  - name: TDDE
+    bit_offset: 0
+    bit_size: 1
+  - name: RDDE
+    bit_offset: 1
+    bit_size: 1
+  - name: AVDE
+    bit_offset: 2
+    bit_size: 1
+  - name: RSDE
+    bit_offset: 8
+    bit_size: 1
+  - name: SDDE
+    bit_offset: 9
+    bit_size: 1
+fieldset/regs::SIER:
+  description: Target Interrupt Enable
+  fields:
+  - name: TDIE
+    bit_offset: 0
+    bit_size: 1
+  - name: RDIE
+    bit_offset: 1
+    bit_size: 1
+  - name: AVIE
+    bit_offset: 2
+    bit_size: 1
+  - name: TAIE
+    bit_offset: 3
+    bit_size: 1
+  - name: RSIE
+    bit_offset: 8
+    bit_size: 1
+  - name: SDIE
+    bit_offset: 9
+    bit_size: 1
+  - name: BEIE
+    bit_offset: 10
+    bit_size: 1
+  - name: FEIE
+    bit_offset: 11
+    bit_size: 1
+  - name: AM0IE
+    bit_offset: 12
+    bit_size: 1
+  - name: AM1IE
+    bit_offset: 13
+    bit_size: 1
+  - name: GCIE
+    bit_offset: 14
+    bit_size: 1
+  - name: SARIE
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::SRDR:
+  description: Target Receive Data
+  fields:
+  - name: DATA
+    bit_offset: 0
+    bit_size: 8
+  - name: RADDR
+    bit_offset: 8
+    bit_size: 3
+  - name: RXEMPTY
+    bit_offset: 14
+    bit_size: 1
+  - name: SOF
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::SRDROR:
+  description: Target Receive Data Read Only
+  fields:
+  - name: DATA
+    bit_offset: 0
+    bit_size: 8
+  - name: RADDR
+    bit_offset: 8
+    bit_size: 3
+  - name: RXEMPTY
+    bit_offset: 14
+    bit_size: 1
+  - name: SOF
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::SSR:
+  description: Target Status
+  fields:
+  - name: TDF
+    bit_offset: 0
+    bit_size: 1
+  - name: RDF
+    bit_offset: 1
+    bit_size: 1
+  - name: AVF
+    bit_offset: 2
+    bit_size: 1
+  - name: TAF
+    bit_offset: 3
+    bit_size: 1
+  - name: RSF
+    bit_offset: 8
+    bit_size: 1
+  - name: SDF
+    bit_offset: 9
+    bit_size: 1
+  - name: BEF
+    bit_offset: 10
+    bit_size: 1
+  - name: FEF
+    bit_offset: 11
+    bit_size: 1
+  - name: AM0F
+    bit_offset: 12
+    bit_size: 1
+  - name: AM1F
+    bit_offset: 13
+    bit_size: 1
+  - name: GCF
+    bit_offset: 14
+    bit_size: 1
+  - name: SARF
+    bit_offset: 15
+    bit_size: 1
+  - name: SBF
+    bit_offset: 24
+    bit_size: 1
+  - name: BBF
+    bit_offset: 25
+    bit_size: 1
+fieldset/regs::STAR:
+  description: Target Transmit ACK
+  fields:
+  - name: TXNACK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::STDR:
+  description: Target Transmit Data
+  fields:
+  - name: DATA
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

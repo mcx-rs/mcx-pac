@@ -1,0 +1,3022 @@
+block/INPUTMUX:
+  items:
+  - name: CTIMER0CAP0
+    byte_offset: 32
+    fieldset: regs::CTIMER0CAP0
+  - name: CTIMER0CAP1
+    byte_offset: 36
+    fieldset: regs::CTIMER0CAP1
+  - name: CTIMER0CAP2
+    byte_offset: 40
+    fieldset: regs::CTIMER0CAP2
+  - name: CTIMER0CAP3
+    byte_offset: 44
+    fieldset: regs::CTIMER0CAP3
+  - name: TIMER0TRIG
+    byte_offset: 48
+    fieldset: regs::TIMER0TRIG
+  - name: CTIMER1CAP0
+    byte_offset: 64
+    fieldset: regs::CTIMER1CAP0
+  - name: CTIMER1CAP1
+    byte_offset: 68
+    fieldset: regs::CTIMER1CAP1
+  - name: CTIMER1CAP2
+    byte_offset: 72
+    fieldset: regs::CTIMER1CAP2
+  - name: CTIMER1CAP3
+    byte_offset: 76
+    fieldset: regs::CTIMER1CAP3
+  - name: TIMER1TRIG
+    byte_offset: 80
+    fieldset: regs::TIMER1TRIG
+  - name: CTIMER2CAP0
+    byte_offset: 96
+    fieldset: regs::CTIMER2CAP0
+  - name: CTIMER2CAP1
+    byte_offset: 100
+    fieldset: regs::CTIMER2CAP1
+  - name: CTIMER2CAP2
+    byte_offset: 104
+    fieldset: regs::CTIMER2CAP2
+  - name: CTIMER2CAP3
+    byte_offset: 108
+    fieldset: regs::CTIMER2CAP3
+  - name: TIMER2TRIG
+    byte_offset: 112
+    fieldset: regs::TIMER2TRIG
+  - name: SMARTDMAARCHB_INMUX
+    array:
+      len: 8
+      stride: 4
+    byte_offset: 160
+  - name: PINTSEL
+    array:
+      len: 8
+      stride: 4
+    byte_offset: 192
+  - name: FREQMEAS_REF
+    byte_offset: 384
+    fieldset: regs::FREQMEAS_REF
+  - name: FREQMEAS_TAR
+    byte_offset: 388
+    fieldset: regs::FREQMEAS_TAR
+  - name: CTIMER3CAP0
+    byte_offset: 416
+    fieldset: regs::CTIMER3CAP0
+  - name: CTIMER3CAP1
+    byte_offset: 420
+    fieldset: regs::CTIMER3CAP1
+  - name: CTIMER3CAP2
+    byte_offset: 424
+    fieldset: regs::CTIMER3CAP2
+  - name: CTIMER3CAP3
+    byte_offset: 428
+    fieldset: regs::CTIMER3CAP3
+  - name: TIMER3TRIG
+    byte_offset: 432
+    fieldset: regs::TIMER3TRIG
+  - name: CTIMER4CAP0
+    byte_offset: 448
+    fieldset: regs::CTIMER4CAP0
+  - name: CTIMER4CAP1
+    byte_offset: 452
+    fieldset: regs::CTIMER4CAP1
+  - name: CTIMER4CAP2
+    byte_offset: 456
+    fieldset: regs::CTIMER4CAP2
+  - name: CTIMER4CAP3
+    byte_offset: 460
+    fieldset: regs::CTIMER4CAP3
+  - name: TIMER4TRIG
+    byte_offset: 464
+    fieldset: regs::TIMER4TRIG
+  - name: CMP0_TRIG
+    byte_offset: 608
+    fieldset: regs::CMP0_TRIG
+  - name: ADC0_TRIG
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 640
+  - name: ADC1_TRIG
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 704
+  - name: QDCN
+    array:
+      len: 2
+      stride: 32
+    byte_offset: 864
+    block: QDCN
+  - name: FLEXPWM0_SM_EXTSYNC
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 928
+  - name: FLEXPWM0_SM_EXTA
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 944
+  - name: FLEXPWM0_EXTFORCE
+    byte_offset: 960
+    fieldset: regs::FLEXPWM0_EXTFORCE
+  - name: FLEXPWM0_FAULT
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 964
+  - name: FLEXPWM1_SM_EXTSYNC
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 992
+  - name: FLEXPWM1_SM_EXTA
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 1008
+  - name: FLEXPWM1_EXTFORCE
+    byte_offset: 1024
+    fieldset: regs::FLEXPWM1_EXTFORCE
+  - name: FLEXPWM1_FAULT
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 1028
+    fieldset: regs::FLEXPWM1_FAULT
+  - name: PWM0_EXT_CLK
+    byte_offset: 1056
+    fieldset: regs::PWM0_EXT_CLK
+  - name: PWM1_EXT_CLK
+    byte_offset: 1060
+    fieldset: regs::PWM1_EXT_CLK
+  - name: EVTG_TRIG
+    array:
+      len: 16
+      stride: 4
+    byte_offset: 1088
+  - name: EXT_TRIG
+    array:
+      len: 8
+      stride: 4
+    byte_offset: 1216
+  - name: CMP1_TRIG
+    byte_offset: 1248
+    fieldset: regs::CMP1_TRIG
+  - name: FLEXCOMM0_TRIG
+    byte_offset: 1440
+    fieldset: regs::FLEXCOMM0_TRIG
+  - name: FLEXCOMM1_TRIG
+    byte_offset: 1472
+    fieldset: regs::FLEXCOMM1_TRIG
+  - name: FLEXCOMM2_TRIG
+    byte_offset: 1504
+    fieldset: regs::FLEXCOMM2_TRIG
+  - name: FLEXCOMM3_TRIG
+    byte_offset: 1536
+    fieldset: regs::FLEXCOMM3_TRIG
+  - name: FLEXCOMM4_TRIG
+    byte_offset: 1568
+    fieldset: regs::FLEXCOMM4_TRIG
+  - name: FLEXCOMM5_TRIG
+    byte_offset: 1600
+    fieldset: regs::FLEXCOMM5_TRIG
+  - name: FLEXCOMM6_TRIG
+    byte_offset: 1632
+    fieldset: regs::FLEXCOMM6_TRIG
+  - name: FLEXCOMM7_TRIG
+    byte_offset: 1664
+    fieldset: regs::FLEXCOMM7_TRIG
+  - name: FLEXIO_TRIG
+    array:
+      len: 8
+      stride: 4
+    byte_offset: 1760
+  - name: DMA0_REQ_ENABLE0
+    byte_offset: 1792
+    fieldset: regs::DMA0_REQ_ENABLE0
+  - name: DMA0_REQ_ENABLE0_SET
+    byte_offset: 1796
+    fieldset: regs::DMA0_REQ_ENABLE0_SET
+  - name: DMA0_REQ_ENABLE0_CLR
+    byte_offset: 1800
+    fieldset: regs::DMA0_REQ_ENABLE0_CLR
+  - name: DMA0_REQ_ENABLE0_TOG
+    byte_offset: 1804
+    fieldset: regs::DMA0_REQ_ENABLE0_TOG
+  - name: DMA0_REQ_ENABLE1
+    byte_offset: 1808
+    fieldset: regs::DMA0_REQ_ENABLE1
+  - name: DMA0_REQ_ENABLE1_SET
+    byte_offset: 1812
+    fieldset: regs::DMA0_REQ_ENABLE1_SET
+  - name: DMA0_REQ_ENABLE1_CLR
+    byte_offset: 1816
+    fieldset: regs::DMA0_REQ_ENABLE1_CLR
+  - name: DMA0_REQ_ENABLE1_TOG
+    byte_offset: 1820
+    fieldset: regs::DMA0_REQ_ENABLE1_TOG
+  - name: DMA0_REQ_ENABLE2
+    byte_offset: 1824
+    fieldset: regs::DMA0_REQ_ENABLE2
+  - name: DMA0_REQ_ENABLE2_SET
+    byte_offset: 1828
+    fieldset: regs::DMA0_REQ_ENABLE2_SET
+  - name: DMA0_REQ_ENABLE2_CLR
+    byte_offset: 1832
+    fieldset: regs::DMA0_REQ_ENABLE2_CLR
+  - name: DMA0_REQ_ENABLE2_TOG
+    byte_offset: 1836
+    fieldset: regs::DMA0_REQ_ENABLE2_TOG
+  - name: DMA0_REQ_ENABLE3
+    byte_offset: 1840
+    fieldset: regs::DMA0_REQ_ENABLE3
+  - name: DMA0_REQ_ENABLE3_SET
+    byte_offset: 1844
+    fieldset: regs::DMA0_REQ_ENABLE3_SET
+  - name: DMA0_REQ_ENABLE3_CLR
+    byte_offset: 1848
+    fieldset: regs::DMA0_REQ_ENABLE3_CLR
+  - name: DMA1_REQ_ENABLE0
+    byte_offset: 1920
+    fieldset: regs::DMA1_REQ_ENABLE0
+  - name: DMA1_REQ_ENABLE0_SET
+    byte_offset: 1924
+    fieldset: regs::DMA1_REQ_ENABLE0_SET
+  - name: DMA1_REQ_ENABLE0_CLR
+    byte_offset: 1928
+    fieldset: regs::DMA1_REQ_ENABLE0_CLR
+  - name: DMA1_REQ_ENABLE0_TOG
+    byte_offset: 1932
+    fieldset: regs::DMA1_REQ_ENABLE0_TOG
+  - name: DMA1_REQ_ENABLE1
+    byte_offset: 1936
+    fieldset: regs::DMA1_REQ_ENABLE1
+  - name: DMA1_REQ_ENABLE1_SET
+    byte_offset: 1940
+    fieldset: regs::DMA1_REQ_ENABLE1_SET
+  - name: DMA1_REQ_ENABLE1_CLR
+    byte_offset: 1944
+    fieldset: regs::DMA1_REQ_ENABLE1_CLR
+  - name: DMA1_REQ_ENABLE1_TOG
+    byte_offset: 1948
+    fieldset: regs::DMA1_REQ_ENABLE1_TOG
+  - name: DMA1_REQ_ENABLE2
+    byte_offset: 1952
+    fieldset: regs::DMA1_REQ_ENABLE2
+  - name: DMA1_REQ_ENABLE2_SET
+    byte_offset: 1956
+    fieldset: regs::DMA1_REQ_ENABLE2_SET
+  - name: DMA1_REQ_ENABLE2_CLR
+    byte_offset: 1960
+    fieldset: regs::DMA1_REQ_ENABLE2_CLR
+  - name: DMA1_REQ_ENABLE2_TOG
+    byte_offset: 1964
+    fieldset: regs::DMA1_REQ_ENABLE2_TOG
+  - name: DMA1_REQ_ENABLE3
+    byte_offset: 1968
+    fieldset: regs::DMA1_REQ_ENABLE3
+  - name: DMA1_REQ_ENABLE3_SET
+    byte_offset: 1972
+    fieldset: regs::DMA1_REQ_ENABLE3_SET
+  - name: DMA1_REQ_ENABLE3_CLR
+    byte_offset: 1976
+    fieldset: regs::DMA1_REQ_ENABLE3_CLR
+block/QDCN:
+  items:
+  - name: QDC_TRIG
+    byte_offset: 0
+    fieldset: regs::QDCN_QDC_TRIG
+  - name: QDC_HOME
+    byte_offset: 4
+    fieldset: regs::QDCN_QDC_HOME
+  - name: QDC_INDEX
+    byte_offset: 8
+    fieldset: regs::QDCN_QDC_INDEX
+  - name: QDC_PHASEB
+    byte_offset: 12
+    fieldset: regs::QDCN_QDC_PHASEB
+  - name: QDC_PHASEA
+    byte_offset: 16
+    fieldset: regs::QDCN_QDC_PHASEA
+fieldset/regs::ADC0_TRIG:
+  description: ADC Trigger Input Connections
+  fields:
+  - name: TRIGIN
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::ADC1_TRIG:
+  description: ADC Trigger Input Connections
+  fields:
+  - name: TRIGIN
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::CMP0_TRIG:
+  description: CMP0 Input Connections
+  fields:
+  - name: TRIGIN
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::CMP1_TRIG:
+  description: CMP1 Input Connections
+  fields:
+  - name: TRIGIN
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::CTIMER0CAP0:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER0CAP1:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER0CAP2:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER0CAP3:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER1CAP0:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER1CAP1:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER1CAP2:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER1CAP3:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER2CAP0:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER2CAP1:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER2CAP2:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER2CAP3:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER3CAP0:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER3CAP1:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER3CAP2:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER3CAP3:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER4CAP0:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER4CAP1:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER4CAP2:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::CTIMER4CAP3:
+  description: Capture Select Register for CTIMER Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::DMA0_REQ_ENABLE0:
+  description: DMA0 Request Enable0
+  fields:
+  - name: REQ3_EN0
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ4_EN0
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ5_EN0
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ6_EN0
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ7_EN0
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ8_EN0
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ9_EN0
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ10_EN0
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ11_EN0
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ12_EN0
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ13_EN0
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ14_EN0
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ15_EN0
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ16_EN0
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ17_EN0
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ18_EN0
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ21_EN0
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ22_EN0
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ23_EN0
+    bit_offset: 23
+    bit_size: 1
+  - name: REQ24_EN0
+    bit_offset: 24
+    bit_size: 1
+  - name: REQ28_EN0
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ29_EN0
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ31_EN0
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA0_REQ_ENABLE0_CLR:
+  description: DMA0 Request Enable0
+  fields:
+  - name: REQ3_EN0
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ4_EN0
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ5_EN0
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ6_EN0
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ7_EN0
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ8_EN0
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ9_EN0
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ10_EN0
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ11_EN0
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ12_EN0
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ13_EN0
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ14_EN0
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ15_EN0
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ16_EN0
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ17_EN0
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ18_EN0
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ21_EN0
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ22_EN0
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ23_EN0
+    bit_offset: 23
+    bit_size: 1
+  - name: REQ24_EN0
+    bit_offset: 24
+    bit_size: 1
+  - name: REQ28_EN0
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ29_EN0
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ31_EN0
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA0_REQ_ENABLE0_SET:
+  description: DMA0 Request Enable0
+  fields:
+  - name: REQ3_EN0
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ4_EN0
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ5_EN0
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ6_EN0
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ7_EN0
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ8_EN0
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ9_EN0
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ10_EN0
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ11_EN0
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ12_EN0
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ13_EN0
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ14_EN0
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ15_EN0
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ16_EN0
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ17_EN0
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ18_EN0
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ21_EN0
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ22_EN0
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ23_EN0
+    bit_offset: 23
+    bit_size: 1
+  - name: REQ24_EN0
+    bit_offset: 24
+    bit_size: 1
+  - name: REQ28_EN0
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ29_EN0
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ31_EN0
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA0_REQ_ENABLE0_TOG:
+  description: DMA0 Request Enable0
+  fields:
+  - name: REQ3_EN0
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ4_EN0
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ5_EN0
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ6_EN0
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ7_EN0
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ8_EN0
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ9_EN0
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ10_EN0
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ11_EN0
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ12_EN0
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ13_EN0
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ14_EN0
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ15_EN0
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ16_EN0
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ17_EN0
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ18_EN0
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ21_EN0
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ22_EN0
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ23_EN0
+    bit_offset: 23
+    bit_size: 1
+  - name: REQ24_EN0
+    bit_offset: 24
+    bit_size: 1
+  - name: REQ28_EN0
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ29_EN0
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ31_EN0
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA0_REQ_ENABLE1:
+  description: DMA0 Request Enable1
+  fields:
+  - name: REQ32_EN0
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ33_EN0
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ34_EN0
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ35_EN0
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ36_EN0
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ37_EN0
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ38_EN0
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ39_EN0
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ40_EN0
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ41_EN0
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ42_EN0
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ43_EN0
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ44_EN0
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ45_EN0
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ46_EN0
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ47_EN0
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ48_EN0
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ49_EN0
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ50_EN0
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ51_EN0
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ52_EN0
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ53_EN0
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ54_EN0
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ57_EN0
+    bit_offset: 25
+    bit_size: 1
+  - name: REQ58_EN0
+    bit_offset: 26
+    bit_size: 1
+  - name: REQ59_EN0
+    bit_offset: 27
+    bit_size: 1
+  - name: REQ60_EN0
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ61_EN0
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ62_EN0
+    bit_offset: 30
+    bit_size: 1
+  - name: REQ63_EN0
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA0_REQ_ENABLE1_CLR:
+  description: DMA0 Request Enable1
+  fields:
+  - name: REQ32_EN0
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ33_EN0
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ34_EN0
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ35_EN0
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ36_EN0
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ37_EN0
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ38_EN0
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ39_EN0
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ40_EN0
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ41_EN0
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ42_EN0
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ43_EN0
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ44_EN0
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ45_EN0
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ46_EN0
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ47_EN0
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ48_EN0
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ49_EN0
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ50_EN0
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ51_EN0
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ52_EN0
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ53_EN0
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ54_EN0
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ57_EN0
+    bit_offset: 25
+    bit_size: 1
+  - name: REQ58_EN0
+    bit_offset: 26
+    bit_size: 1
+  - name: REQ59_EN0
+    bit_offset: 27
+    bit_size: 1
+  - name: REQ60_EN0
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ61_EN0
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ62_EN0
+    bit_offset: 30
+    bit_size: 1
+  - name: REQ63_EN0
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA0_REQ_ENABLE1_SET:
+  description: DMA0 Request Enable1
+  fields:
+  - name: REQ32_EN0
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ33_EN0
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ34_EN0
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ35_EN0
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ36_EN0
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ37_EN0
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ38_EN0
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ39_EN0
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ40_EN0
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ41_EN0
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ42_EN0
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ43_EN0
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ44_EN0
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ45_EN0
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ46_EN0
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ47_EN0
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ48_EN0
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ49_EN0
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ50_EN0
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ51_EN0
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ52_EN0
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ53_EN0
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ54_EN0
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ57_EN0
+    bit_offset: 25
+    bit_size: 1
+  - name: REQ58_EN0
+    bit_offset: 26
+    bit_size: 1
+  - name: REQ59_EN0
+    bit_offset: 27
+    bit_size: 1
+  - name: REQ60_EN0
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ61_EN0
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ62_EN0
+    bit_offset: 30
+    bit_size: 1
+  - name: REQ63_EN0
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA0_REQ_ENABLE1_TOG:
+  description: DMA0 Request Enable1
+  fields:
+  - name: REQ32_EN0
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ33_EN0
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ34_EN0
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ35_EN0
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ36_EN0
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ37_EN0
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ38_EN0
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ39_EN0
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ40_EN0
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ41_EN0
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ42_EN0
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ43_EN0
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ44_EN0
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ45_EN0
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ46_EN0
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ47_EN0
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ48_EN0
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ49_EN0
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ50_EN0
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ51_EN0
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ52_EN0
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ53_EN0
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ54_EN0
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ57_EN0
+    bit_offset: 25
+    bit_size: 1
+  - name: REQ58_EN0
+    bit_offset: 26
+    bit_size: 1
+  - name: REQ59_EN0
+    bit_offset: 27
+    bit_size: 1
+  - name: REQ60_EN0
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ61_EN0
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ62_EN0
+    bit_offset: 30
+    bit_size: 1
+  - name: REQ63_EN0
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA0_REQ_ENABLE2:
+  description: DMA0 Request Enable2
+  fields:
+  - name: REQ64_EN0
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ65_EN0
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ66_EN0
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ67_EN0
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ68_EN0
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ69_EN0
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ70_EN0
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ71_EN0
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ72_EN0
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ73_EN0
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ74_EN0
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ75_EN0
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ76_EN0
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ77_EN0
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ78_EN0
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ79_EN0
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ80_EN0
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ81_EN0
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ82_EN0
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ83_EN0
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ84_EN0
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ95_EN0
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA0_REQ_ENABLE2_CLR:
+  description: DMA0 Request Enable2
+  fields:
+  - name: REQ64_EN0
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ65_EN0
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ66_EN0
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ67_EN0
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ68_EN0
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ69_EN0
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ70_EN0
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ71_EN0
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ72_EN0
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ73_EN0
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ74_EN0
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ75_EN0
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ76_EN0
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ77_EN0
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ78_EN0
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ79_EN0
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ80_EN0
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ81_EN0
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ82_EN0
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ83_EN0
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ84_EN0
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ95_EN0
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA0_REQ_ENABLE2_SET:
+  description: DMA0 Request Enable2
+  fields:
+  - name: REQ64_EN0
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ65_EN0
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ66_EN0
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ67_EN0
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ68_EN0
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ69_EN0
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ70_EN0
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ71_EN0
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ72_EN0
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ73_EN0
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ74_EN0
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ75_EN0
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ76_EN0
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ77_EN0
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ78_EN0
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ79_EN0
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ80_EN0
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ81_EN0
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ82_EN0
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ83_EN0
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ84_EN0
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ95_EN0
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA0_REQ_ENABLE2_TOG:
+  description: DMA0 Request Enable2
+  fields:
+  - name: REQ64_EN0
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ65_EN0
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ66_EN0
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ67_EN0
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ68_EN0
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ69_EN0
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ70_EN0
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ71_EN0
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ72_EN0
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ73_EN0
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ74_EN0
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ75_EN0
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ76_EN0
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ77_EN0
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ78_EN0
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ79_EN0
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ80_EN0
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ81_EN0
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ82_EN0
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ83_EN0
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ84_EN0
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ95_EN0
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA0_REQ_ENABLE3:
+  description: DMA0 Request Enable3
+  fields:
+  - name: REQ96_EN0
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ97_EN0
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ98_EN0
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ99_EN0
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ100_EN0
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ101_EN0
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ102_EN0
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ108_EN0
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ109_EN0
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ110_EN0
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ111_EN0
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ112_EN0
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ113_EN0
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ114_EN0
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ115_EN0
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ116_EN0
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ117_EN0
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ118_EN0
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ119_EN0
+    bit_offset: 23
+    bit_size: 1
+fieldset/regs::DMA0_REQ_ENABLE3_CLR:
+  description: DMA0 Request Enable3
+  fields:
+  - name: REQ96_EN0
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ97_EN0
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ98_EN0
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ99_EN0
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ100_EN0
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ101_EN0
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ102_EN0
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ108_EN0
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ109_EN0
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ110_EN0
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ111_EN0
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ112_EN0
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ113_EN0
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ114_EN0
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ115_EN0
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ116_EN0
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ117_EN0
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ118_EN0
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ119_EN0
+    bit_offset: 23
+    bit_size: 1
+fieldset/regs::DMA0_REQ_ENABLE3_SET:
+  description: DMA0 Request Enable3
+  fields:
+  - name: REQ96_EN0
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ97_EN0
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ98_EN0
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ99_EN0
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ100_EN0
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ101_EN0
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ102_EN0
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ108_EN0
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ109_EN0
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ110_EN0
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ111_EN0
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ112_EN0
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ113_EN0
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ114_EN0
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ115_EN0
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ116_EN0
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ117_EN0
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ118_EN0
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ119_EN0
+    bit_offset: 23
+    bit_size: 1
+fieldset/regs::DMA1_REQ_ENABLE0:
+  description: DMA1 Request Enable0
+  fields:
+  - name: REQ3_EN1
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ4_EN1
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ5_EN1
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ6_EN1
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ7_EN1
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ8_EN1
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ9_EN1
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ10_EN1
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ11_EN1
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ12_EN1
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ13_EN1
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ14_EN1
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ15_EN1
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ16_EN1
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ17_EN1
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ18_EN1
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ21_EN1
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ22_EN1
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ23_EN1
+    bit_offset: 23
+    bit_size: 1
+  - name: REQ24_EN1
+    bit_offset: 24
+    bit_size: 1
+  - name: REQ28_EN1
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ29_EN1
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ31_EN1
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA1_REQ_ENABLE0_CLR:
+  description: DMA1 Request Enable0
+  fields:
+  - name: REQ3_EN1
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ4_EN1
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ5_EN1
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ6_EN1
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ7_EN1
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ8_EN1
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ9_EN1
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ10_EN1
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ11_EN1
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ12_EN1
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ13_EN1
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ14_EN1
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ15_EN1
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ16_EN1
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ17_EN1
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ18_EN1
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ21_EN1
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ22_EN1
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ23_EN1
+    bit_offset: 23
+    bit_size: 1
+  - name: REQ24_EN1
+    bit_offset: 24
+    bit_size: 1
+  - name: REQ28_EN1
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ29_EN1
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ31_EN1
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA1_REQ_ENABLE0_SET:
+  description: DMA1 Request Enable0
+  fields:
+  - name: REQ3_EN1
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ4_EN1
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ5_EN1
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ6_EN1
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ7_EN1
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ8_EN1
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ9_EN1
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ10_EN1
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ11_EN1
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ12_EN1
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ13_EN1
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ14_EN1
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ15_EN1
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ16_EN1
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ17_EN1
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ18_EN1
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ21_EN1
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ22_EN1
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ23_EN1
+    bit_offset: 23
+    bit_size: 1
+  - name: REQ24_EN1
+    bit_offset: 24
+    bit_size: 1
+  - name: REQ28_EN1
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ29_EN1
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ31_EN1
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA1_REQ_ENABLE0_TOG:
+  description: DMA1 Request Enable0
+  fields:
+  - name: REQ3_EN1
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ4_EN1
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ5_EN1
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ6_EN1
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ7_EN1
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ8_EN1
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ9_EN1
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ10_EN1
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ11_EN1
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ12_EN1
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ13_EN1
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ14_EN1
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ15_EN1
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ16_EN1
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ17_EN1
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ18_EN1
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ21_EN1
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ22_EN1
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ23_EN1
+    bit_offset: 23
+    bit_size: 1
+  - name: REQ24_EN1
+    bit_offset: 24
+    bit_size: 1
+  - name: REQ28_EN1
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ29_EN1
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ31_EN1
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA1_REQ_ENABLE1:
+  description: DMA1 Request Enable1
+  fields:
+  - name: REQ32_EN1
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ33_EN1
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ34_EN1
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ35_EN1
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ36_EN1
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ37_EN1
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ38_EN1
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ39_EN1
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ40_EN1
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ41_EN1
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ42_EN1
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ43_EN1
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ44_EN1
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ45_EN1
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ46_EN1
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ47_EN1
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ48_EN1
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ49_EN1
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ50_EN1
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ51_EN1
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ52_EN1
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ53_EN1
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ54_EN1
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ57_EN1
+    bit_offset: 25
+    bit_size: 1
+  - name: REQ58_EN1
+    bit_offset: 26
+    bit_size: 1
+  - name: REQ59_EN1
+    bit_offset: 27
+    bit_size: 1
+  - name: REQ60_EN1
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ61_EN1
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ62_EN1
+    bit_offset: 30
+    bit_size: 1
+  - name: REQ63_EN1
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA1_REQ_ENABLE1_CLR:
+  description: DMA1 Request Enable1
+  fields:
+  - name: REQ32_EN1
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ33_EN1
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ34_EN1
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ35_EN1
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ36_EN1
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ37_EN1
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ38_EN1
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ39_EN1
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ40_EN1
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ41_EN1
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ42_EN1
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ43_EN1
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ44_EN1
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ45_EN1
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ46_EN1
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ47_EN1
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ48_EN1
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ49_EN1
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ50_EN1
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ51_EN1
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ52_EN1
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ53_EN1
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ54_EN1
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ57_EN1
+    bit_offset: 25
+    bit_size: 1
+  - name: REQ58_EN1
+    bit_offset: 26
+    bit_size: 1
+  - name: REQ59_EN1
+    bit_offset: 27
+    bit_size: 1
+  - name: REQ60_EN1
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ61_EN1
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ62_EN1
+    bit_offset: 30
+    bit_size: 1
+  - name: REQ63_EN1
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA1_REQ_ENABLE1_SET:
+  description: DMA1 Request Enable1
+  fields:
+  - name: REQ32_EN1
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ33_EN1
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ34_EN1
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ35_EN1
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ36_EN1
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ37_EN1
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ38_EN1
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ39_EN1
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ40_EN1
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ41_EN1
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ42_EN1
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ43_EN1
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ44_EN1
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ45_EN1
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ46_EN1
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ47_EN1
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ48_EN1
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ49_EN1
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ50_EN1
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ51_EN1
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ52_EN1
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ53_EN1
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ54_EN1
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ57_EN1
+    bit_offset: 25
+    bit_size: 1
+  - name: REQ58_EN1
+    bit_offset: 26
+    bit_size: 1
+  - name: REQ59_EN1
+    bit_offset: 27
+    bit_size: 1
+  - name: REQ60_EN1
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ61_EN1
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ62_EN1
+    bit_offset: 30
+    bit_size: 1
+  - name: REQ63_EN1
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA1_REQ_ENABLE1_TOG:
+  description: DMA1 Request Enable1
+  fields:
+  - name: REQ32_EN1
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ33_EN1
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ34_EN1
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ35_EN1
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ36_EN1
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ37_EN1
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ38_EN1
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ39_EN1
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ40_EN1
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ41_EN1
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ42_EN1
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ43_EN1
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ44_EN1
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ45_EN1
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ46_EN1
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ47_EN1
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ48_EN1
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ49_EN1
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ50_EN1
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ51_EN1
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ52_EN1
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ53_EN1
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ54_EN1
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ57_EN1
+    bit_offset: 25
+    bit_size: 1
+  - name: REQ58_EN1
+    bit_offset: 26
+    bit_size: 1
+  - name: REQ59_EN1
+    bit_offset: 27
+    bit_size: 1
+  - name: REQ60_EN1
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ61_EN1
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ62_EN1
+    bit_offset: 30
+    bit_size: 1
+  - name: REQ63_EN1
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA1_REQ_ENABLE2:
+  description: DMA1 Request Enable2
+  fields:
+  - name: REQ64_EN1
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ65_EN1
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ66_EN1
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ67_EN1
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ68_EN1
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ69_EN1
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ70_EN1
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ71_EN1
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ72_EN1
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ73_EN1
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ74_EN1
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ75_EN1
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ76_EN1
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ77_EN1
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ78_EN1
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ79_EN1
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ80_EN1
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ81_EN1
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ82_EN1
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ83_EN1
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ84_EN1
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ95_EN1
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA1_REQ_ENABLE2_CLR:
+  description: DMA1 Request Enable2
+  fields:
+  - name: REQ64_EN1
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ65_EN1
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ66_EN1
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ67_EN1
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ68_EN1
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ69_EN1
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ70_EN1
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ71_EN1
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ72_EN1
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ73_EN1
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ74_EN1
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ75_EN1
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ76_EN1
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ77_EN1
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ78_EN1
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ79_EN1
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ80_EN1
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ81_EN1
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ82_EN1
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ83_EN1
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ84_EN1
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ85_EN1
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ86_EN1
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ87_EN1
+    bit_offset: 23
+    bit_size: 1
+  - name: REQ88_EN1
+    bit_offset: 24
+    bit_size: 1
+  - name: REQ89_EN1
+    bit_offset: 25
+    bit_size: 1
+  - name: REQ90_EN1
+    bit_offset: 26
+    bit_size: 1
+  - name: REQ91_EN1
+    bit_offset: 27
+    bit_size: 1
+  - name: REQ92_EN1
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ93_EN1
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ94_EN1
+    bit_offset: 30
+    bit_size: 1
+  - name: REQ95_EN1
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA1_REQ_ENABLE2_SET:
+  description: DMA1 Request Enable2
+  fields:
+  - name: REQ64_EN1
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ65_EN1
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ66_EN1
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ67_EN1
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ68_EN1
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ69_EN1
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ70_EN1
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ71_EN1
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ72_EN1
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ73_EN1
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ74_EN1
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ75_EN1
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ76_EN1
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ77_EN1
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ78_EN1
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ79_EN1
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ80_EN1
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ81_EN1
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ82_EN1
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ83_EN1
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ84_EN1
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ85_EN1
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ86_EN1
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ87_EN1
+    bit_offset: 23
+    bit_size: 1
+  - name: REQ88_EN1
+    bit_offset: 24
+    bit_size: 1
+  - name: REQ89_EN1
+    bit_offset: 25
+    bit_size: 1
+  - name: REQ90_EN1
+    bit_offset: 26
+    bit_size: 1
+  - name: REQ91_EN1
+    bit_offset: 27
+    bit_size: 1
+  - name: REQ92_EN1
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ93_EN1
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ94_EN1
+    bit_offset: 30
+    bit_size: 1
+  - name: REQ95_EN1
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA1_REQ_ENABLE2_TOG:
+  description: DMA1 Request Enable2
+  fields:
+  - name: REQ64_EN1
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ65_EN1
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ66_EN1
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ67_EN1
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ68_EN1
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ69_EN1
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ70_EN1
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ71_EN1
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ72_EN1
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ73_EN1
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ74_EN1
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ75_EN1
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ76_EN1
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ77_EN1
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ78_EN1
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ79_EN1
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ80_EN1
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ81_EN1
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ82_EN1
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ83_EN1
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ84_EN1
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ85_EN1
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ86_EN1
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ87_EN1
+    bit_offset: 23
+    bit_size: 1
+  - name: REQ88_EN1
+    bit_offset: 24
+    bit_size: 1
+  - name: REQ89_EN1
+    bit_offset: 25
+    bit_size: 1
+  - name: REQ90_EN1
+    bit_offset: 26
+    bit_size: 1
+  - name: REQ91_EN1
+    bit_offset: 27
+    bit_size: 1
+  - name: REQ92_EN1
+    bit_offset: 28
+    bit_size: 1
+  - name: REQ93_EN1
+    bit_offset: 29
+    bit_size: 1
+  - name: REQ94_EN1
+    bit_offset: 30
+    bit_size: 1
+  - name: REQ95_EN1
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA1_REQ_ENABLE3:
+  description: DMA1 Request Enable3
+  fields:
+  - name: REQ96_EN1
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ97_EN1
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ98_EN1
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ99_EN1
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ100_EN1
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ101_EN1
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ102_EN1
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ108_EN1
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ109_EN1
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ110_EN1
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ111_EN1
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ112_EN1
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ113_EN1
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ114_EN1
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ115_EN1
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ116_EN1
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ117_EN1
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ118_EN1
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ119_EN1
+    bit_offset: 23
+    bit_size: 1
+fieldset/regs::DMA1_REQ_ENABLE3_CLR:
+  description: DMA1 Request Enable3
+  fields:
+  - name: REQ96_EN1
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ97_EN1
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ98_EN1
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ99_EN1
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ100_EN1
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ101_EN1
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ102_EN1
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ103_EN1
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ104_EN1
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ105_EN1
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ106_EN1
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ107_EN1
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ108_EN1
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ109_EN1
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ110_EN1
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ111_EN1
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ112_EN1
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ113_EN1
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ114_EN1
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ115_EN1
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ116_EN1
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ117_EN1
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ118_EN1
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ119_EN1
+    bit_offset: 23
+    bit_size: 1
+  - name: REQ120_EN1
+    bit_offset: 24
+    bit_size: 1
+  - name: REQ121_EN1
+    bit_offset: 25
+    bit_size: 1
+fieldset/regs::DMA1_REQ_ENABLE3_SET:
+  description: DMA1 Request Enable3
+  fields:
+  - name: REQ96_EN1
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ97_EN1
+    bit_offset: 1
+    bit_size: 1
+  - name: REQ98_EN1
+    bit_offset: 2
+    bit_size: 1
+  - name: REQ99_EN1
+    bit_offset: 3
+    bit_size: 1
+  - name: REQ100_EN1
+    bit_offset: 4
+    bit_size: 1
+  - name: REQ101_EN1
+    bit_offset: 5
+    bit_size: 1
+  - name: REQ102_EN1
+    bit_offset: 6
+    bit_size: 1
+  - name: REQ103_EN1
+    bit_offset: 7
+    bit_size: 1
+  - name: REQ104_EN1
+    bit_offset: 8
+    bit_size: 1
+  - name: REQ105_EN1
+    bit_offset: 9
+    bit_size: 1
+  - name: REQ106_EN1
+    bit_offset: 10
+    bit_size: 1
+  - name: REQ107_EN1
+    bit_offset: 11
+    bit_size: 1
+  - name: REQ108_EN1
+    bit_offset: 12
+    bit_size: 1
+  - name: REQ109_EN1
+    bit_offset: 13
+    bit_size: 1
+  - name: REQ110_EN1
+    bit_offset: 14
+    bit_size: 1
+  - name: REQ111_EN1
+    bit_offset: 15
+    bit_size: 1
+  - name: REQ112_EN1
+    bit_offset: 16
+    bit_size: 1
+  - name: REQ113_EN1
+    bit_offset: 17
+    bit_size: 1
+  - name: REQ114_EN1
+    bit_offset: 18
+    bit_size: 1
+  - name: REQ115_EN1
+    bit_offset: 19
+    bit_size: 1
+  - name: REQ116_EN1
+    bit_offset: 20
+    bit_size: 1
+  - name: REQ117_EN1
+    bit_offset: 21
+    bit_size: 1
+  - name: REQ118_EN1
+    bit_offset: 22
+    bit_size: 1
+  - name: REQ119_EN1
+    bit_offset: 23
+    bit_size: 1
+  - name: REQ120_EN1
+    bit_offset: 24
+    bit_size: 1
+  - name: REQ121_EN1
+    bit_offset: 25
+    bit_size: 1
+fieldset/regs::EVTG_TRIG:
+  description: EVTG Trigger Input Connections
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::EXT_TRIG:
+  description: EXT Trigger Connections
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FLEXCOMM0_TRIG:
+  description: LP_FLEXCOMM0 Trigger Input Connections
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FLEXCOMM1_TRIG:
+  description: LP_FLEXCOMM1 Trigger Input Connections
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FLEXCOMM2_TRIG:
+  description: LP_FLEXCOMM2 Trigger Input Connections
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FLEXCOMM3_TRIG:
+  description: LP_FLEXCOMM3 Trigger Input Connections
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FLEXCOMM4_TRIG:
+  description: LP_FLEXCOMM4 Trigger Input Connections
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FLEXCOMM5_TRIG:
+  description: LP_FLEXCOMM5 Trigger Input Connections
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FLEXCOMM6_TRIG:
+  description: LP_FLEXCOMM6 Trigger Input Connections
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FLEXCOMM7_TRIG:
+  description: LP_FLEXCOMM7 Trigger Input Connections
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FLEXIO_TRIG:
+  description: FlexIO Trigger Input Connections
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::FLEXPWM0_EXTFORCE:
+  description: PWM0 External Force Trigger Connections
+  fields:
+  - name: TRIGIN
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FLEXPWM0_FAULT:
+  description: PWM0 Fault Input Trigger Connections
+  fields:
+  - name: TRIGIN
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FLEXPWM0_SM_EXTA:
+  description: PWM0 Input Trigger Connections
+  fields:
+  - name: TRIGIN
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FLEXPWM0_SM_EXTSYNC:
+  description: PWM0 External Synchronization
+  fields:
+  - name: TRIGIN
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FLEXPWM1_EXTFORCE:
+  description: PWM1 External Force Trigger Connections
+  fields:
+  - name: TRIGIN
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FLEXPWM1_FAULT:
+  description: PWM1 Fault Input Trigger Connections
+  fields:
+  - name: TRIGIN
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FLEXPWM1_SM_EXTA:
+  description: PWM1 Input EXTA Connections
+  fields:
+  - name: TRIGIN
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FLEXPWM1_SM_EXTSYNC:
+  description: PWM1 External Synchronization
+  fields:
+  - name: TRIGIN
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FREQMEAS_REF:
+  description: Selection for Frequency Measurement Reference Clock
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::FREQMEAS_TAR:
+  description: Selection for Frequency Measurement Target Clock
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::PINTSEL:
+  description: Pin Interrupt Select
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::PWM0_EXT_CLK:
+  description: PWM0 External Clock Trigger
+  fields:
+  - name: TRIGIN
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::PWM1_EXT_CLK:
+  description: PWM1 External Clock Trigger
+  fields:
+  - name: TRIGIN
+    bit_offset: 0
+    bit_size: 4
+fieldset/regs::QDCN_QDC_HOME:
+  description: QDC0 Input Connections..QDC1 Input Connections
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::QDCN_QDC_INDEX:
+  description: QDC0 Input Connections..QDC1 Input Connections
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::QDCN_QDC_PHASEA:
+  description: QDC0 Input Connections..QDC1 Input Connections
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::QDCN_QDC_PHASEB:
+  description: QDC0 Input Connections..QDC1 Input Connections
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::QDCN_QDC_TRIG:
+  description: QDC0 Trigger Input Connections..QDC1 Trigger Input Connections
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::SMARTDMAARCHB_INMUX:
+  description: Inputmux Register for SMARTDMA Arch B Inputs
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::TIMER0TRIG:
+  description: Trigger Register for CTIMER
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::TIMER1TRIG:
+  description: Trigger Register for CTIMER
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::TIMER2TRIG:
+  description: Trigger Register for CTIMER
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::TIMER3TRIG:
+  description: Trigger Register for CTIMER
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7
+fieldset/regs::TIMER4TRIG:
+  description: Trigger Register for CTIMER
+  fields:
+  - name: INP
+    bit_offset: 0
+    bit_size: 7

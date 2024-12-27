@@ -1,0 +1,74 @@
+block/OPAMP:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: PARAM
+    byte_offset: 4
+    fieldset: regs::PARAM
+  - name: OPAMP_CTR
+    byte_offset: 8
+    fieldset: regs::OPAMP_CTR
+fieldset/regs::OPAMP_CTR:
+  description: OPAMP Control
+  fields:
+  - name: EN
+    bit_offset: 0
+    bit_size: 1
+  - name: MODE
+    bit_offset: 1
+    bit_size: 1
+  - name: BIASC
+    bit_offset: 2
+    bit_size: 2
+  - name: INTREF
+    bit_offset: 4
+    bit_size: 2
+  - name: TRIGMD
+    bit_offset: 8
+    bit_size: 1
+  - name: INPSEL
+    bit_offset: 9
+    bit_size: 1
+  - name: INPF
+    bit_offset: 12
+    bit_size: 1
+  - name: BUFEN
+    bit_offset: 16
+    bit_size: 1
+  - name: PREF
+    bit_offset: 17
+    bit_size: 2
+  - name: ADCSW1
+    bit_offset: 20
+    bit_size: 1
+  - name: ADCSW2
+    bit_offset: 21
+    bit_size: 1
+  - name: OUTSW
+    bit_offset: 22
+    bit_size: 1
+  - name: PGAIN
+    bit_offset: 24
+    bit_size: 3
+  - name: NGAIN
+    bit_offset: 28
+    bit_size: 3
+fieldset/regs::PARAM:
+  description: Parameter
+  fields:
+  - name: PGA_FUNCTION
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

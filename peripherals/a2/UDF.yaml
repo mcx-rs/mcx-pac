@@ -1,0 +1,51 @@
+block/UDF:
+  items:
+  - name: UDF_CTRL
+    byte_offset: 0
+    fieldset: regs::UDF_CTRL
+  - name: UDF_STATUS
+    byte_offset: 4
+    fieldset: regs::UDF_STATUS
+  - name: UDF_WR_DATA
+    byte_offset: 8
+  - name: UDF_RD_DATA
+    byte_offset: 12
+fieldset/regs::UDF_CTRL:
+  description: Control register
+  fields:
+  - name: salt
+    bit_offset: 0
+    bit_size: 16
+  - name: lock
+    bit_offset: 16
+    bit_size: 3
+  - name: reserved21
+    bit_offset: 19
+    bit_size: 3
+  - name: udf_en
+    bit_offset: 22
+    bit_size: 3
+  - name: reserved25
+    bit_offset: 25
+    bit_size: 1
+  - name: reserved27
+    bit_offset: 26
+    bit_size: 2
+  - name: flush
+    bit_offset: 28
+    bit_size: 3
+  - name: reserved31
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::UDF_STATUS:
+  description: Status register
+  fields:
+  - name: o_status
+    bit_offset: 0
+    bit_size: 5
+  - name: rsv
+    bit_offset: 5
+    bit_size: 26
+  - name: o_wait
+    bit_offset: 31
+    bit_size: 1

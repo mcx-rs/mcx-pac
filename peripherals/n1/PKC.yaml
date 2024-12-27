@@ -1,0 +1,359 @@
+block/PKC:
+  items:
+  - name: PKC_STATUS
+    byte_offset: 0
+    fieldset: regs::PKC_STATUS
+  - name: PKC_CTRL
+    byte_offset: 4
+    fieldset: regs::PKC_CTRL
+  - name: PKC_CFG
+    byte_offset: 8
+    fieldset: regs::PKC_CFG
+  - name: PKC_MODE1
+    byte_offset: 16
+    fieldset: regs::PKC_MODE1
+  - name: PKC_XYPTR1
+    byte_offset: 20
+    fieldset: regs::PKC_XYPTR1
+  - name: PKC_ZRPTR1
+    byte_offset: 24
+    fieldset: regs::PKC_ZRPTR1
+  - name: PKC_LEN1
+    byte_offset: 28
+    fieldset: regs::PKC_LEN1
+  - name: PKC_MODE2
+    byte_offset: 32
+    fieldset: regs::PKC_MODE2
+  - name: PKC_XYPTR2
+    byte_offset: 36
+    fieldset: regs::PKC_XYPTR2
+  - name: PKC_ZRPTR2
+    byte_offset: 40
+    fieldset: regs::PKC_ZRPTR2
+  - name: PKC_LEN2
+    byte_offset: 44
+    fieldset: regs::PKC_LEN2
+  - name: PKC_UPTR
+    byte_offset: 64
+  - name: PKC_UPTRT
+    byte_offset: 68
+  - name: PKC_ULEN
+    byte_offset: 72
+    fieldset: regs::PKC_ULEN
+  - name: PKC_MCDATA
+    byte_offset: 80
+  - name: PKC_VERSION
+    byte_offset: 96
+    fieldset: regs::PKC_VERSION
+  - name: PKC_SOFT_RST
+    byte_offset: 4016
+    fieldset: regs::PKC_SOFT_RST
+  - name: PKC_ACCESS_ERR
+    byte_offset: 4032
+    fieldset: regs::PKC_ACCESS_ERR
+  - name: PKC_ACCESS_ERR_CLR
+    byte_offset: 4036
+    fieldset: regs::PKC_ACCESS_ERR_CLR
+  - name: PKC_INT_CLR_ENABLE
+    byte_offset: 4056
+    fieldset: regs::PKC_INT_CLR_ENABLE
+  - name: PKC_INT_SET_ENABLE
+    byte_offset: 4060
+    fieldset: regs::PKC_INT_SET_ENABLE
+  - name: PKC_INT_STATUS
+    byte_offset: 4064
+    fieldset: regs::PKC_INT_STATUS
+  - name: PKC_INT_ENABLE
+    byte_offset: 4068
+    fieldset: regs::PKC_INT_ENABLE
+  - name: PKC_INT_CLR_STATUS
+    byte_offset: 4072
+    fieldset: regs::PKC_INT_CLR_STATUS
+  - name: PKC_INT_SET_STATUS
+    byte_offset: 4076
+    fieldset: regs::PKC_INT_SET_STATUS
+  - name: PKC_MODULE_ID
+    byte_offset: 4092
+    fieldset: regs::PKC_MODULE_ID
+fieldset/regs::PKC_ACCESS_ERR:
+  description: Access Error
+  fields:
+  - name: APB_NOTAV
+    bit_offset: 0
+    bit_size: 1
+  - name: APB_WRGMD
+    bit_offset: 1
+    bit_size: 1
+  - name: APB_MASTER
+    bit_offset: 4
+    bit_size: 4
+  - name: AHB
+    bit_offset: 10
+    bit_size: 1
+  - name: PKCC
+    bit_offset: 16
+    bit_size: 1
+  - name: FDET
+    bit_offset: 17
+    bit_size: 1
+  - name: CTRL
+    bit_offset: 18
+    bit_size: 1
+  - name: UCRC
+    bit_offset: 19
+    bit_size: 1
+fieldset/regs::PKC_ACCESS_ERR_CLR:
+  description: Clear Access Error
+  fields:
+  - name: ERR_CLR
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::PKC_CFG:
+  description: Configuration register
+  fields:
+  - name: IDLEOP
+    bit_offset: 0
+    bit_size: 1
+  - name: RFU1
+    bit_offset: 1
+    bit_size: 1
+  - name: RFU2
+    bit_offset: 2
+    bit_size: 1
+  - name: CLKRND
+    bit_offset: 3
+    bit_size: 1
+  - name: REDMULNOISE
+    bit_offset: 4
+    bit_size: 1
+  - name: RNDDLY
+    bit_offset: 5
+    bit_size: 3
+  - name: SBXNOISE
+    bit_offset: 8
+    bit_size: 1
+  - name: ALPNOISE
+    bit_offset: 9
+    bit_size: 1
+  - name: FMULNOISE
+    bit_offset: 10
+    bit_size: 1
+fieldset/regs::PKC_CTRL:
+  description: Control Register
+  fields:
+  - name: RESET
+    bit_offset: 0
+    bit_size: 1
+  - name: STOP
+    bit_offset: 1
+    bit_size: 1
+  - name: GOD1
+    bit_offset: 2
+    bit_size: 1
+  - name: GOD2
+    bit_offset: 3
+    bit_size: 1
+  - name: GOM1
+    bit_offset: 4
+    bit_size: 1
+  - name: GOM2
+    bit_offset: 5
+    bit_size: 1
+  - name: GOU
+    bit_offset: 6
+    bit_size: 1
+  - name: GF2CONV
+    bit_offset: 7
+    bit_size: 1
+  - name: CLRCACHE
+    bit_offset: 8
+    bit_size: 1
+  - name: CACHE_EN
+    bit_offset: 9
+    bit_size: 1
+  - name: REDMUL
+    bit_offset: 10
+    bit_size: 2
+fieldset/regs::PKC_INT_CLR_ENABLE:
+  description: Interrupt enable clear
+  fields:
+  - name: EN_PDONE
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::PKC_INT_CLR_STATUS:
+  description: Interrupt status clear
+  fields:
+  - name: INT_PDONE
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::PKC_INT_ENABLE:
+  description: Interrupt enable
+  fields:
+  - name: EN_PDONE
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::PKC_INT_SET_ENABLE:
+  description: Interrupt enable set
+  fields:
+  - name: EN_PDONE
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::PKC_INT_SET_STATUS:
+  description: Interrupt status set
+  fields:
+  - name: INT_PDONE
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::PKC_INT_STATUS:
+  description: Interrupt status
+  fields:
+  - name: INT_PDONE
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::PKC_LEN1:
+  description: Length register, parameter set 1
+  fields:
+  - name: LEN
+    bit_offset: 0
+    bit_size: 16
+  - name: MCLEN
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::PKC_LEN2:
+  description: Length register, parameter set 2
+  fields:
+  - name: LEN
+    bit_offset: 0
+    bit_size: 16
+  - name: MCLEN
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::PKC_MODE1:
+  description: Mode register, parameter set 1
+  fields:
+  - name: MODE
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::PKC_MODE2:
+  description: Mode register, parameter set 2
+  fields:
+  - name: MODE
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::PKC_MODULE_ID:
+  description: Module ID
+  fields:
+  - name: SIZE
+    bit_offset: 0
+    bit_size: 8
+  - name: MINOR_REV
+    bit_offset: 8
+    bit_size: 4
+  - name: MAJOR_REV
+    bit_offset: 12
+    bit_size: 4
+  - name: ID
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::PKC_SOFT_RST:
+  description: Software reset
+  fields:
+  - name: SOFT_RST
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::PKC_STATUS:
+  description: Status Register
+  fields:
+  - name: ACTIV
+    bit_offset: 0
+    bit_size: 1
+  - name: CARRY
+    bit_offset: 1
+    bit_size: 1
+  - name: ZERO
+    bit_offset: 2
+    bit_size: 1
+  - name: GOANY
+    bit_offset: 3
+    bit_size: 1
+  - name: LOCKED
+    bit_offset: 5
+    bit_size: 2
+fieldset/regs::PKC_ULEN:
+  description: Universal pointer length
+  fields:
+  - name: LEN
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::PKC_VERSION:
+  description: PKC version register
+  fields:
+  - name: MULSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: MCAVAIL
+    bit_offset: 2
+    bit_size: 1
+  - name: UPAVAIL
+    bit_offset: 3
+    bit_size: 1
+  - name: UPCACHEAVAIL
+    bit_offset: 4
+    bit_size: 1
+  - name: GF2AVAIL
+    bit_offset: 5
+    bit_size: 1
+  - name: PARAMNUM
+    bit_offset: 6
+    bit_size: 2
+  - name: SBX0AVAIL
+    bit_offset: 8
+    bit_size: 1
+  - name: SBX1AVAIL
+    bit_offset: 9
+    bit_size: 1
+  - name: SBX2AVAIL
+    bit_offset: 10
+    bit_size: 1
+  - name: SBX3AVAIL
+    bit_offset: 11
+    bit_size: 1
+  - name: MCRECONF_SIZE
+    bit_offset: 12
+    bit_size: 8
+fieldset/regs::PKC_XYPTR1:
+  description: X+Y pointer register, parameter set 1
+  fields:
+  - name: XPTR
+    bit_offset: 0
+    bit_size: 16
+  - name: YPTR
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::PKC_XYPTR2:
+  description: X+Y pointer register, parameter set 2
+  fields:
+  - name: XPTR
+    bit_offset: 0
+    bit_size: 16
+  - name: YPTR
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::PKC_ZRPTR1:
+  description: Z+R pointer register, parameter set 1
+  fields:
+  - name: ZPTR
+    bit_offset: 0
+    bit_size: 16
+  - name: RPTR
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::PKC_ZRPTR2:
+  description: Z+R pointer register, parameter set 2
+  fields:
+  - name: ZPT
+    bit_offset: 0
+    bit_size: 16
+  - name: RPTR
+    bit_offset: 16
+    bit_size: 16

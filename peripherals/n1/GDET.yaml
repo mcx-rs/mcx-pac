@@ -1,0 +1,170 @@
+block/GDET:
+  items:
+  - name: GDET_CONF_0
+    byte_offset: 0
+    fieldset: regs::GDET_CONF_0
+  - name: GDET_CONF_1
+    byte_offset: 4
+    fieldset: regs::GDET_CONF_1
+  - name: GDET_ENABLE1
+    byte_offset: 8
+    fieldset: regs::GDET_ENABLE1
+  - name: GDET_CONF_2
+    byte_offset: 12
+    fieldset: regs::GDET_CONF_2
+  - name: GDET_CONF_3
+    byte_offset: 16
+    fieldset: regs::GDET_CONF_3
+  - name: GDET_CONF_4
+    byte_offset: 20
+    fieldset: regs::GDET_CONF_4
+  - name: GDET_CONF_5
+    byte_offset: 24
+    fieldset: regs::GDET_CONF_5
+  - name: GDET_RESET
+    byte_offset: 4032
+    fieldset: regs::GDET_RESET
+  - name: GDET_TEST
+    byte_offset: 4036
+    fieldset: regs::GDET_TEST
+  - name: GDET_DLY_CTRL
+    byte_offset: 4044
+    fieldset: regs::GDET_DLY_CTRL
+fieldset/regs::GDET_CONF_0:
+  description: GDET Configuration 0 Register
+  fields:
+  - name: FIELD_3_0
+    bit_offset: 0
+    bit_size: 4
+  - name: SBZ
+    bit_offset: 4
+    bit_size: 1
+  - name: RFU
+    bit_offset: 5
+    bit_size: 27
+fieldset/regs::GDET_CONF_1:
+  description: GDET Configuration 1 Register
+  fields:
+  - name: FIELD_1_0
+    bit_offset: 0
+    bit_size: 2
+  - name: FIELD_3_2
+    bit_offset: 2
+    bit_size: 2
+  - name: SBZ1
+    bit_offset: 4
+    bit_size: 1
+  - name: SBZ2
+    bit_offset: 5
+    bit_size: 1
+  - name: SBZ3
+    bit_offset: 6
+    bit_size: 1
+  - name: FIELD_7
+    bit_offset: 7
+    bit_size: 1
+  - name: FIELD_8
+    bit_offset: 8
+    bit_size: 1
+  - name: SBZ4
+    bit_offset: 9
+    bit_size: 1
+  - name: SBZ5
+    bit_offset: 10
+    bit_size: 1
+  - name: RFU
+    bit_offset: 11
+    bit_size: 21
+fieldset/regs::GDET_CONF_2:
+  description: GDET Configuration 2 Register
+  fields:
+  - name: FIELD_6_0
+    bit_offset: 0
+    bit_size: 7
+  - name: RFU1
+    bit_offset: 7
+    bit_size: 9
+  - name: FIELD_21_16
+    bit_offset: 16
+    bit_size: 6
+  - name: RFU2
+    bit_offset: 22
+    bit_size: 2
+  - name: FIELD_29_24
+    bit_offset: 24
+    bit_size: 6
+  - name: RFU3
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::GDET_CONF_3:
+  description: GDET Configuration 3 Register
+  fields:
+  - name: FIELD_6_0
+    bit_offset: 0
+    bit_size: 7
+  - name: RFU1
+    bit_offset: 7
+    bit_size: 25
+fieldset/regs::GDET_CONF_4:
+  description: GDET Configuration 4 Register
+  fields:
+  - name: FIELD_6_0
+    bit_offset: 0
+    bit_size: 7
+  - name: RFU1
+    bit_offset: 7
+    bit_size: 25
+fieldset/regs::GDET_CONF_5:
+  description: GDET Configuration 5 Register
+  fields:
+  - name: FIELD_5_0
+    bit_offset: 0
+    bit_size: 6
+  - name: FIELD_11_6
+    bit_offset: 6
+    bit_size: 6
+  - name: RFU1
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::GDET_DLY_CTRL:
+  description: GDET Delay Control Register
+  fields:
+  - name: VOL_SEL
+    bit_offset: 0
+    bit_size: 2
+  - name: SW_VOL_CTRL
+    bit_offset: 2
+    bit_size: 1
+  - name: RFU
+    bit_offset: 3
+    bit_size: 29
+fieldset/regs::GDET_ENABLE1:
+  description: GDET Enable Register
+  fields:
+  - name: EN1
+    bit_offset: 0
+    bit_size: 1
+  - name: RFU
+    bit_offset: 1
+    bit_size: 31
+fieldset/regs::GDET_RESET:
+  description: GDET Reset Register
+  fields:
+  - name: RFU1
+    bit_offset: 0
+    bit_size: 3
+  - name: SFT_RST
+    bit_offset: 3
+    bit_size: 1
+  - name: RFU2
+    bit_offset: 4
+    bit_size: 28
+fieldset/regs::GDET_TEST:
+  description: GDET Test Register
+  fields:
+  - name: SBZ
+    bit_offset: 0
+    bit_size: 1
+  - name: RFU
+    bit_offset: 1
+    bit_size: 31

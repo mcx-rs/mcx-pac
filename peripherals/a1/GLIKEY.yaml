@@ -1,0 +1,113 @@
+block/GLIKEY:
+  items:
+  - name: CTRL_0
+    byte_offset: 0
+    fieldset: regs::CTRL_0
+  - name: CTRL_1
+    byte_offset: 4
+    fieldset: regs::CTRL_1
+  - name: INTR_CTRL
+    byte_offset: 8
+    fieldset: regs::INTR_CTRL
+  - name: STATUS
+    byte_offset: 12
+    fieldset: regs::STATUS
+  - name: VERSION
+    byte_offset: 252
+    fieldset: regs::VERSION
+fieldset/regs::CTRL_0:
+  description: Control Register 0 SFR
+  fields:
+  - name: WRITE_INDEX
+    bit_offset: 0
+    bit_size: 8
+  - name: RESERVED15
+    bit_offset: 8
+    bit_size: 8
+  - name: WR_EN_0
+    bit_offset: 16
+    bit_size: 2
+  - name: SFT_RST
+    bit_offset: 18
+    bit_size: 1
+  - name: RESERVED31
+    bit_offset: 19
+    bit_size: 13
+fieldset/regs::CTRL_1:
+  description: Control Register 1 SFR
+  fields:
+  - name: READ_INDEX
+    bit_offset: 0
+    bit_size: 8
+  - name: RESERVED15
+    bit_offset: 8
+    bit_size: 8
+  - name: WR_EN_1
+    bit_offset: 16
+    bit_size: 2
+  - name: SFR_LOCK
+    bit_offset: 18
+    bit_size: 4
+  - name: RESERVED31
+    bit_offset: 22
+    bit_size: 10
+fieldset/regs::INTR_CTRL:
+  description: Interrupt Control
+  fields:
+  - name: INT_EN
+    bit_offset: 0
+    bit_size: 1
+  - name: INT_CLR
+    bit_offset: 1
+    bit_size: 1
+  - name: INT_SET
+    bit_offset: 2
+    bit_size: 1
+  - name: RESERVED31
+    bit_offset: 3
+    bit_size: 29
+fieldset/regs::STATUS:
+  description: Status
+  fields:
+  - name: INT_STATUS
+    bit_offset: 0
+    bit_size: 1
+  - name: LOCK_STATUS
+    bit_offset: 1
+    bit_size: 1
+  - name: ERROR_STATUS
+    bit_offset: 2
+    bit_size: 3
+  - name: RESERVED18
+    bit_offset: 5
+    bit_size: 14
+  - name: FSM_STATE
+    bit_offset: 19
+    bit_size: 13
+fieldset/regs::VERSION:
+  description: IP Version
+  fields:
+  - name: Reserved3
+    bit_offset: 0
+    bit_size: 4
+  - name: Reserved7
+    bit_offset: 4
+    bit_size: 4
+  - name: Reserved11
+    bit_offset: 8
+    bit_size: 4
+  - name: Reserved15
+    bit_offset: 12
+    bit_size: 4
+  - name: MILESTONE
+    bit_offset: 16
+    bit_size: 2
+  - name: FSM_CONFIG
+    bit_offset: 18
+    bit_size: 1
+  - name: INDEX_CONFIG
+    bit_offset: 19
+    bit_size: 8
+  - name: Reserved31
+    bit_offset: 27
+    bit_size: 5

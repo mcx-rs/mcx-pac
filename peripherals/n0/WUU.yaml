@@ -1,0 +1,575 @@
+block/WUU:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: PARAM
+    byte_offset: 4
+    fieldset: regs::PARAM
+  - name: PE1
+    byte_offset: 8
+    fieldset: regs::PE1
+  - name: PE2
+    byte_offset: 12
+    fieldset: regs::PE2
+  - name: ME
+    byte_offset: 24
+    fieldset: regs::ME
+  - name: DE
+    byte_offset: 28
+    fieldset: regs::DE
+  - name: PF
+    byte_offset: 32
+    fieldset: regs::PF
+  - name: FILT
+    byte_offset: 48
+    fieldset: regs::FILT
+  - name: PDC1
+    byte_offset: 56
+    fieldset: regs::PDC1
+  - name: PDC2
+    byte_offset: 60
+    fieldset: regs::PDC2
+  - name: FDC
+    byte_offset: 72
+    fieldset: regs::FDC
+  - name: PMC
+    byte_offset: 80
+    fieldset: regs::PMC
+  - name: FMC
+    byte_offset: 88
+    fieldset: regs::FMC
+fieldset/regs::DE:
+  description: Module DMA/Trigger Enable
+  fields:
+  - name: WUDE0
+    bit_offset: 0
+    bit_size: 1
+  - name: WUDE1
+    bit_offset: 1
+    bit_size: 1
+  - name: WUDE2
+    bit_offset: 2
+    bit_size: 1
+  - name: WUDE3
+    bit_offset: 3
+    bit_size: 1
+  - name: WUDE4
+    bit_offset: 4
+    bit_size: 1
+  - name: WUDE5
+    bit_offset: 5
+    bit_size: 1
+  - name: WUDE6
+    bit_offset: 6
+    bit_size: 1
+  - name: WUDE7
+    bit_offset: 7
+    bit_size: 1
+  - name: WUDE8
+    bit_offset: 8
+    bit_size: 1
+  - name: WUDE9
+    bit_offset: 9
+    bit_size: 1
+fieldset/regs::FDC:
+  description: Pin Filter DMA/Trigger Configuration
+  fields:
+  - name: FILTC1
+    bit_offset: 0
+    bit_size: 2
+  - name: FILTC2
+    bit_offset: 2
+    bit_size: 2
+fieldset/regs::FILT:
+  description: Pin Filter
+  fields:
+  - name: FILTSEL1
+    bit_offset: 0
+    bit_size: 5
+  - name: FILTE1
+    bit_offset: 5
+    bit_size: 2
+  - name: FILTF1
+    bit_offset: 7
+    bit_size: 1
+  - name: FILTSEL2
+    bit_offset: 8
+    bit_size: 5
+  - name: FILTE2
+    bit_offset: 13
+    bit_size: 2
+  - name: FILTF2
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::FMC:
+  description: Pin Filter Mode Configuration
+  fields:
+  - name: FILTM1
+    bit_offset: 0
+    bit_size: 1
+  - name: FILTM2
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::ME:
+  description: Module Interrupt Enable
+  fields:
+  - name: WUME0
+    bit_offset: 0
+    bit_size: 1
+  - name: WUME1
+    bit_offset: 1
+    bit_size: 1
+  - name: WUME2
+    bit_offset: 2
+    bit_size: 1
+  - name: WUME3
+    bit_offset: 3
+    bit_size: 1
+  - name: WUME4
+    bit_offset: 4
+    bit_size: 1
+  - name: WUME5
+    bit_offset: 5
+    bit_size: 1
+  - name: WUME6
+    bit_offset: 6
+    bit_size: 1
+  - name: WUME7
+    bit_offset: 7
+    bit_size: 1
+  - name: WUME8
+    bit_offset: 8
+    bit_size: 1
+  - name: WUME9
+    bit_offset: 9
+    bit_size: 1
+fieldset/regs::PARAM:
+  description: Parameter
+  fields:
+  - name: FILTERS
+    bit_offset: 0
+    bit_size: 8
+  - name: DMAS
+    bit_offset: 8
+    bit_size: 8
+  - name: MODULES
+    bit_offset: 16
+    bit_size: 8
+  - name: PINS
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::PDC1:
+  description: Pin DMA/Trigger Configuration 1
+  fields:
+  - name: WUPDC0
+    bit_offset: 0
+    bit_size: 2
+  - name: WUPDC1
+    bit_offset: 2
+    bit_size: 2
+  - name: WUPDC2
+    bit_offset: 4
+    bit_size: 2
+  - name: WUPDC3
+    bit_offset: 6
+    bit_size: 2
+  - name: WUPDC4
+    bit_offset: 8
+    bit_size: 2
+  - name: WUPDC5
+    bit_offset: 10
+    bit_size: 2
+  - name: WUPDC6
+    bit_offset: 12
+    bit_size: 2
+  - name: WUPDC7
+    bit_offset: 14
+    bit_size: 2
+  - name: WUPDC8
+    bit_offset: 16
+    bit_size: 2
+  - name: WUPDC9
+    bit_offset: 18
+    bit_size: 2
+  - name: WUPDC10
+    bit_offset: 20
+    bit_size: 2
+  - name: WUPDC11
+    bit_offset: 22
+    bit_size: 2
+  - name: WUPDC12
+    bit_offset: 24
+    bit_size: 2
+  - name: WUPDC13
+    bit_offset: 26
+    bit_size: 2
+  - name: WUPDC14
+    bit_offset: 28
+    bit_size: 2
+  - name: WUPDC15
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::PDC2:
+  description: Pin DMA/Trigger Configuration 2
+  fields:
+  - name: WUPDC16
+    bit_offset: 0
+    bit_size: 2
+  - name: WUPDC17
+    bit_offset: 2
+    bit_size: 2
+  - name: WUPDC18
+    bit_offset: 4
+    bit_size: 2
+  - name: WUPDC19
+    bit_offset: 6
+    bit_size: 2
+  - name: WUPDC20
+    bit_offset: 8
+    bit_size: 2
+  - name: WUPDC21
+    bit_offset: 10
+    bit_size: 2
+  - name: WUPDC22
+    bit_offset: 12
+    bit_size: 2
+  - name: WUPDC23
+    bit_offset: 14
+    bit_size: 2
+  - name: WUPDC24
+    bit_offset: 16
+    bit_size: 2
+  - name: WUPDC25
+    bit_offset: 18
+    bit_size: 2
+  - name: WUPDC26
+    bit_offset: 20
+    bit_size: 2
+  - name: WUPDC27
+    bit_offset: 22
+    bit_size: 2
+  - name: WUPDC28
+    bit_offset: 24
+    bit_size: 2
+  - name: WUPDC29
+    bit_offset: 26
+    bit_size: 2
+  - name: WUPDC30
+    bit_offset: 28
+    bit_size: 2
+  - name: WUPDC31
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::PE1:
+  description: Pin Enable 1
+  fields:
+  - name: WUPE0
+    bit_offset: 0
+    bit_size: 2
+  - name: WUPE1
+    bit_offset: 2
+    bit_size: 2
+  - name: WUPE2
+    bit_offset: 4
+    bit_size: 2
+  - name: WUPE3
+    bit_offset: 6
+    bit_size: 2
+  - name: WUPE4
+    bit_offset: 8
+    bit_size: 2
+  - name: WUPE5
+    bit_offset: 10
+    bit_size: 2
+  - name: WUPE6
+    bit_offset: 12
+    bit_size: 2
+  - name: WUPE7
+    bit_offset: 14
+    bit_size: 2
+  - name: WUPE8
+    bit_offset: 16
+    bit_size: 2
+  - name: WUPE9
+    bit_offset: 18
+    bit_size: 2
+  - name: WUPE10
+    bit_offset: 20
+    bit_size: 2
+  - name: WUPE11
+    bit_offset: 22
+    bit_size: 2
+  - name: WUPE12
+    bit_offset: 24
+    bit_size: 2
+  - name: WUPE13
+    bit_offset: 26
+    bit_size: 2
+  - name: WUPE14
+    bit_offset: 28
+    bit_size: 2
+  - name: WUPE15
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::PE2:
+  description: Pin Enable 2
+  fields:
+  - name: WUPE16
+    bit_offset: 0
+    bit_size: 2
+  - name: WUPE17
+    bit_offset: 2
+    bit_size: 2
+  - name: WUPE18
+    bit_offset: 4
+    bit_size: 2
+  - name: WUPE19
+    bit_offset: 6
+    bit_size: 2
+  - name: WUPE20
+    bit_offset: 8
+    bit_size: 2
+  - name: WUPE21
+    bit_offset: 10
+    bit_size: 2
+  - name: WUPE22
+    bit_offset: 12
+    bit_size: 2
+  - name: WUPE23
+    bit_offset: 14
+    bit_size: 2
+  - name: WUPE24
+    bit_offset: 16
+    bit_size: 2
+  - name: WUPE25
+    bit_offset: 18
+    bit_size: 2
+  - name: WUPE26
+    bit_offset: 20
+    bit_size: 2
+  - name: WUPE27
+    bit_offset: 22
+    bit_size: 2
+  - name: WUPE28
+    bit_offset: 24
+    bit_size: 2
+  - name: WUPE29
+    bit_offset: 26
+    bit_size: 2
+  - name: WUPE30
+    bit_offset: 28
+    bit_size: 2
+  - name: WUPE31
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::PF:
+  description: Pin Flag
+  fields:
+  - name: WUF0
+    bit_offset: 0
+    bit_size: 1
+  - name: WUF1
+    bit_offset: 1
+    bit_size: 1
+  - name: WUF2
+    bit_offset: 2
+    bit_size: 1
+  - name: WUF3
+    bit_offset: 3
+    bit_size: 1
+  - name: WUF4
+    bit_offset: 4
+    bit_size: 1
+  - name: WUF5
+    bit_offset: 5
+    bit_size: 1
+  - name: WUF6
+    bit_offset: 6
+    bit_size: 1
+  - name: WUF7
+    bit_offset: 7
+    bit_size: 1
+  - name: WUF8
+    bit_offset: 8
+    bit_size: 1
+  - name: WUF9
+    bit_offset: 9
+    bit_size: 1
+  - name: WUF10
+    bit_offset: 10
+    bit_size: 1
+  - name: WUF11
+    bit_offset: 11
+    bit_size: 1
+  - name: WUF12
+    bit_offset: 12
+    bit_size: 1
+  - name: WUF13
+    bit_offset: 13
+    bit_size: 1
+  - name: WUF14
+    bit_offset: 14
+    bit_size: 1
+  - name: WUF15
+    bit_offset: 15
+    bit_size: 1
+  - name: WUF16
+    bit_offset: 16
+    bit_size: 1
+  - name: WUF17
+    bit_offset: 17
+    bit_size: 1
+  - name: WUF18
+    bit_offset: 18
+    bit_size: 1
+  - name: WUF19
+    bit_offset: 19
+    bit_size: 1
+  - name: WUF20
+    bit_offset: 20
+    bit_size: 1
+  - name: WUF21
+    bit_offset: 21
+    bit_size: 1
+  - name: WUF22
+    bit_offset: 22
+    bit_size: 1
+  - name: WUF23
+    bit_offset: 23
+    bit_size: 1
+  - name: WUF24
+    bit_offset: 24
+    bit_size: 1
+  - name: WUF25
+    bit_offset: 25
+    bit_size: 1
+  - name: WUF26
+    bit_offset: 26
+    bit_size: 1
+  - name: WUF27
+    bit_offset: 27
+    bit_size: 1
+  - name: WUF28
+    bit_offset: 28
+    bit_size: 1
+  - name: WUF29
+    bit_offset: 29
+    bit_size: 1
+  - name: WUF30
+    bit_offset: 30
+    bit_size: 1
+  - name: WUF31
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::PMC:
+  description: Pin Mode Configuration
+  fields:
+  - name: WUPMC0
+    bit_offset: 0
+    bit_size: 1
+  - name: WUPMC1
+    bit_offset: 1
+    bit_size: 1
+  - name: WUPMC2
+    bit_offset: 2
+    bit_size: 1
+  - name: WUPMC3
+    bit_offset: 3
+    bit_size: 1
+  - name: WUPMC4
+    bit_offset: 4
+    bit_size: 1
+  - name: WUPMC5
+    bit_offset: 5
+    bit_size: 1
+  - name: WUPMC6
+    bit_offset: 6
+    bit_size: 1
+  - name: WUPMC7
+    bit_offset: 7
+    bit_size: 1
+  - name: WUPMC8
+    bit_offset: 8
+    bit_size: 1
+  - name: WUPMC9
+    bit_offset: 9
+    bit_size: 1
+  - name: WUPMC10
+    bit_offset: 10
+    bit_size: 1
+  - name: WUPMC11
+    bit_offset: 11
+    bit_size: 1
+  - name: WUPMC12
+    bit_offset: 12
+    bit_size: 1
+  - name: WUPMC13
+    bit_offset: 13
+    bit_size: 1
+  - name: WUPMC14
+    bit_offset: 14
+    bit_size: 1
+  - name: WUPMC15
+    bit_offset: 15
+    bit_size: 1
+  - name: WUPMC16
+    bit_offset: 16
+    bit_size: 1
+  - name: WUPMC17
+    bit_offset: 17
+    bit_size: 1
+  - name: WUPMC18
+    bit_offset: 18
+    bit_size: 1
+  - name: WUPMC19
+    bit_offset: 19
+    bit_size: 1
+  - name: WUPMC20
+    bit_offset: 20
+    bit_size: 1
+  - name: WUPMC21
+    bit_offset: 21
+    bit_size: 1
+  - name: WUPMC22
+    bit_offset: 22
+    bit_size: 1
+  - name: WUPMC23
+    bit_offset: 23
+    bit_size: 1
+  - name: WUPMC24
+    bit_offset: 24
+    bit_size: 1
+  - name: WUPMC25
+    bit_offset: 25
+    bit_size: 1
+  - name: WUPMC26
+    bit_offset: 26
+    bit_size: 1
+  - name: WUPMC27
+    bit_offset: 27
+    bit_size: 1
+  - name: WUPMC28
+    bit_offset: 28
+    bit_size: 1
+  - name: WUPMC29
+    bit_offset: 29
+    bit_size: 1
+  - name: WUPMC30
+    bit_offset: 30
+    bit_size: 1
+  - name: WUPMC31
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

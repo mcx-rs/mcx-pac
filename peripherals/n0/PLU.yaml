@@ -1,0 +1,68 @@
+block/LUT:
+  items:
+  - name: INP_MUX
+    array:
+      len: 5
+      stride: 4
+    byte_offset: 0
+block/PLU:
+  items:
+  - name: LUT
+    array:
+      len: 26
+      stride: 32
+    byte_offset: 0
+    block: LUT
+  - name: LUT_TRUTH
+    array:
+      len: 26
+      stride: 4
+    byte_offset: 2048
+  - name: OUTPUTS
+    byte_offset: 2304
+    fieldset: regs::OUTPUTS
+  - name: WAKEINT_CTRL
+    byte_offset: 2308
+    fieldset: regs::WAKEINT_CTRL
+  - name: OUTPUT_MUX
+    array:
+      len: 8
+      stride: 4
+    byte_offset: 3072
+    fieldset: regs::OUTPUT_MUX
+fieldset/regs::LUT_INP_MUX:
+  description: Input select register for LUTn (0 to 25), Inputx (5 inputs)
+  fields:
+  - name: LUTn_INPx
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::OUTPUTS:
+  description: PLU outputs
+  fields:
+  - name: OUTPUT_STATE
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::OUTPUT_MUX:
+  description: PLU output multiplexer
+  fields:
+  - name: OUTPUT
+    bit_offset: 0
+    bit_size: 5
+fieldset/regs::WAKEINT_CTRL:
+  description: Wakeup interrupt control
+  fields:
+  - name: MASK
+    bit_offset: 0
+    bit_size: 8
+  - name: FILTER_MODE
+    bit_offset: 8
+    bit_size: 2
+  - name: FILTER_CLKSEL
+    bit_offset: 10
+    bit_size: 2
+  - name: LATCH_ENABLE
+    bit_offset: 12
+    bit_size: 1
+  - name: INTR_CLEAR
+    bit_offset: 13
+    bit_size: 1

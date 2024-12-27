@@ -1,0 +1,433 @@
+block/I2S:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: PARAM
+    byte_offset: 4
+    fieldset: regs::PARAM
+  - name: TCSR
+    byte_offset: 8
+    fieldset: regs::TCSR
+  - name: TCR1
+    byte_offset: 12
+    fieldset: regs::TCR1
+  - name: TCR2
+    byte_offset: 16
+    fieldset: regs::TCR2
+  - name: TCR3
+    byte_offset: 20
+    fieldset: regs::TCR3
+  - name: TCR4
+    byte_offset: 24
+    fieldset: regs::TCR4
+  - name: TCR5
+    byte_offset: 28
+    fieldset: regs::TCR5
+  - name: TDR
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 32
+  - name: TFR
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 64
+    fieldset: regs::TFR
+  - name: TMR
+    byte_offset: 96
+  - name: RCSR
+    byte_offset: 136
+    fieldset: regs::RCSR
+  - name: RCR1
+    byte_offset: 140
+    fieldset: regs::RCR1
+  - name: RCR2
+    byte_offset: 144
+    fieldset: regs::RCR2
+  - name: RCR3
+    byte_offset: 148
+    fieldset: regs::RCR3
+  - name: RCR4
+    byte_offset: 152
+    fieldset: regs::RCR4
+  - name: RCR5
+    byte_offset: 156
+    fieldset: regs::RCR5
+  - name: RDR
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 160
+  - name: RFR
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 192
+    fieldset: regs::RFR
+  - name: RMR
+    byte_offset: 224
+  - name: MCR
+    byte_offset: 256
+    fieldset: regs::MCR
+fieldset/regs::MCR:
+  description: MCLK Control
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 8
+  - name: DIVEN
+    bit_offset: 23
+    bit_size: 1
+  - name: MSEL
+    bit_offset: 24
+    bit_size: 2
+  - name: MOE
+    bit_offset: 30
+    bit_size: 1
+fieldset/regs::PARAM:
+  description: Parameter
+  fields:
+  - name: DATALINE
+    bit_offset: 0
+    bit_size: 4
+  - name: FIFO
+    bit_offset: 8
+    bit_size: 4
+  - name: FRAME
+    bit_offset: 16
+    bit_size: 4
+fieldset/regs::RCR1:
+  description: Receive Configuration 1
+  fields:
+  - name: RFW
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::RCR2:
+  description: Receive Configuration 2
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 8
+  - name: BYP
+    bit_offset: 23
+    bit_size: 1
+  - name: BCD
+    bit_offset: 24
+    bit_size: 1
+  - name: BCP
+    bit_offset: 25
+    bit_size: 1
+  - name: MSEL
+    bit_offset: 26
+    bit_size: 2
+  - name: BCI
+    bit_offset: 28
+    bit_size: 1
+  - name: BCS
+    bit_offset: 29
+    bit_size: 1
+  - name: SYNC
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::RCR3:
+  description: Receive Configuration 3
+  fields:
+  - name: WDFL
+    bit_offset: 0
+    bit_size: 5
+  - name: RCE
+    bit_offset: 16
+    bit_size: 2
+  - name: CFR
+    bit_offset: 24
+    bit_size: 2
+fieldset/regs::RCR4:
+  description: Receive Configuration 4
+  fields:
+  - name: FSD
+    bit_offset: 0
+    bit_size: 1
+  - name: FSP
+    bit_offset: 1
+    bit_size: 1
+  - name: ONDEM
+    bit_offset: 2
+    bit_size: 1
+  - name: FSE
+    bit_offset: 3
+    bit_size: 1
+  - name: MF
+    bit_offset: 4
+    bit_size: 1
+  - name: SYWD
+    bit_offset: 8
+    bit_size: 5
+  - name: FRSZ
+    bit_offset: 16
+    bit_size: 5
+  - name: FPACK
+    bit_offset: 24
+    bit_size: 2
+  - name: FCOMB
+    bit_offset: 26
+    bit_size: 2
+  - name: FCONT
+    bit_offset: 28
+    bit_size: 1
+fieldset/regs::RCR5:
+  description: Receive Configuration 5
+  fields:
+  - name: FBT
+    bit_offset: 8
+    bit_size: 5
+  - name: W0W
+    bit_offset: 16
+    bit_size: 5
+  - name: WNW
+    bit_offset: 24
+    bit_size: 5
+fieldset/regs::RCSR:
+  description: Receive Control
+  fields:
+  - name: FRDE
+    bit_offset: 0
+    bit_size: 1
+  - name: FWDE
+    bit_offset: 1
+    bit_size: 1
+  - name: FRIE
+    bit_offset: 8
+    bit_size: 1
+  - name: FWIE
+    bit_offset: 9
+    bit_size: 1
+  - name: FEIE
+    bit_offset: 10
+    bit_size: 1
+  - name: SEIE
+    bit_offset: 11
+    bit_size: 1
+  - name: WSIE
+    bit_offset: 12
+    bit_size: 1
+  - name: FRF
+    bit_offset: 16
+    bit_size: 1
+  - name: FWF
+    bit_offset: 17
+    bit_size: 1
+  - name: FEF
+    bit_offset: 18
+    bit_size: 1
+  - name: SEF
+    bit_offset: 19
+    bit_size: 1
+  - name: WSF
+    bit_offset: 20
+    bit_size: 1
+  - name: SR
+    bit_offset: 24
+    bit_size: 1
+  - name: FR
+    bit_offset: 25
+    bit_size: 1
+  - name: BCE
+    bit_offset: 28
+    bit_size: 1
+  - name: DBGE
+    bit_offset: 29
+    bit_size: 1
+  - name: STOPE
+    bit_offset: 30
+    bit_size: 1
+  - name: RE
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::RFR:
+  description: Receive FIFO
+  fields:
+  - name: RFP
+    bit_offset: 0
+    bit_size: 4
+  - name: RCP
+    bit_offset: 15
+    bit_size: 1
+  - name: WFP
+    bit_offset: 16
+    bit_size: 4
+fieldset/regs::TCR1:
+  description: Transmit Configuration 1
+  fields:
+  - name: TFW
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::TCR2:
+  description: Transmit Configuration 2
+  fields:
+  - name: DIV
+    bit_offset: 0
+    bit_size: 8
+  - name: BYP
+    bit_offset: 23
+    bit_size: 1
+  - name: BCD
+    bit_offset: 24
+    bit_size: 1
+  - name: BCP
+    bit_offset: 25
+    bit_size: 1
+  - name: MSEL
+    bit_offset: 26
+    bit_size: 2
+  - name: BCI
+    bit_offset: 28
+    bit_size: 1
+  - name: BCS
+    bit_offset: 29
+    bit_size: 1
+  - name: SYNC
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::TCR3:
+  description: Transmit Configuration 3
+  fields:
+  - name: WDFL
+    bit_offset: 0
+    bit_size: 5
+  - name: TCE
+    bit_offset: 16
+    bit_size: 2
+  - name: CFR
+    bit_offset: 24
+    bit_size: 2
+fieldset/regs::TCR4:
+  description: Transmit Configuration 4
+  fields:
+  - name: FSD
+    bit_offset: 0
+    bit_size: 1
+  - name: FSP
+    bit_offset: 1
+    bit_size: 1
+  - name: ONDEM
+    bit_offset: 2
+    bit_size: 1
+  - name: FSE
+    bit_offset: 3
+    bit_size: 1
+  - name: MF
+    bit_offset: 4
+    bit_size: 1
+  - name: CHMOD
+    bit_offset: 5
+    bit_size: 1
+  - name: SYWD
+    bit_offset: 8
+    bit_size: 5
+  - name: FRSZ
+    bit_offset: 16
+    bit_size: 5
+  - name: FPACK
+    bit_offset: 24
+    bit_size: 2
+  - name: FCOMB
+    bit_offset: 26
+    bit_size: 2
+  - name: FCONT
+    bit_offset: 28
+    bit_size: 1
+fieldset/regs::TCR5:
+  description: Transmit Configuration 5
+  fields:
+  - name: FBT
+    bit_offset: 8
+    bit_size: 5
+  - name: W0W
+    bit_offset: 16
+    bit_size: 5
+  - name: WNW
+    bit_offset: 24
+    bit_size: 5
+fieldset/regs::TCSR:
+  description: Transmit Control
+  fields:
+  - name: FRDE
+    bit_offset: 0
+    bit_size: 1
+  - name: FWDE
+    bit_offset: 1
+    bit_size: 1
+  - name: FRIE
+    bit_offset: 8
+    bit_size: 1
+  - name: FWIE
+    bit_offset: 9
+    bit_size: 1
+  - name: FEIE
+    bit_offset: 10
+    bit_size: 1
+  - name: SEIE
+    bit_offset: 11
+    bit_size: 1
+  - name: WSIE
+    bit_offset: 12
+    bit_size: 1
+  - name: FRF
+    bit_offset: 16
+    bit_size: 1
+  - name: FWF
+    bit_offset: 17
+    bit_size: 1
+  - name: FEF
+    bit_offset: 18
+    bit_size: 1
+  - name: SEF
+    bit_offset: 19
+    bit_size: 1
+  - name: WSF
+    bit_offset: 20
+    bit_size: 1
+  - name: SR
+    bit_offset: 24
+    bit_size: 1
+  - name: FR
+    bit_offset: 25
+    bit_size: 1
+  - name: BCE
+    bit_offset: 28
+    bit_size: 1
+  - name: DBGE
+    bit_offset: 29
+    bit_size: 1
+  - name: STOPE
+    bit_offset: 30
+    bit_size: 1
+  - name: TE
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::TFR:
+  description: Transmit FIFO
+  fields:
+  - name: RFP
+    bit_offset: 0
+    bit_size: 4
+  - name: WFP
+    bit_offset: 16
+    bit_size: 4
+  - name: WCP
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

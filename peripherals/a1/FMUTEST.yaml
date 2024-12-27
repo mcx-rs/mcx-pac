@@ -1,0 +1,1285 @@
+block/FMUTEST:
+  items:
+  - name: FSTAT
+    byte_offset: 0
+    fieldset: regs::FSTAT
+  - name: FCNFG
+    byte_offset: 4
+    fieldset: regs::FCNFG
+  - name: FCTRL
+    byte_offset: 8
+    fieldset: regs::FCTRL
+  - name: FTEST
+    byte_offset: 12
+    fieldset: regs::FTEST
+  - name: FCCOB0
+    byte_offset: 16
+    fieldset: regs::FCCOB0
+  - name: FCCOB1
+    byte_offset: 20
+    fieldset: regs::FCCOB1
+  - name: FCCOB2
+    byte_offset: 24
+  - name: FCCOB3
+    byte_offset: 28
+  - name: FCCOB4
+    byte_offset: 32
+  - name: FCCOB5
+    byte_offset: 36
+  - name: FCCOB6
+    byte_offset: 40
+  - name: FCCOB7
+    byte_offset: 44
+  - name: RESET_STATUS
+    byte_offset: 256
+    fieldset: regs::RESET_STATUS
+  - name: MCTL
+    byte_offset: 260
+    fieldset: regs::MCTL
+  - name: BSEL_GEN
+    byte_offset: 264
+    fieldset: regs::BSEL_GEN
+  - name: PWR_OPT
+    byte_offset: 268
+    fieldset: regs::PWR_OPT
+  - name: CMD_CHECK
+    byte_offset: 272
+    fieldset: regs::CMD_CHECK
+  - name: BSEL
+    byte_offset: 288
+    fieldset: regs::BSEL
+  - name: MSIZE
+    byte_offset: 292
+    fieldset: regs::MSIZE
+  - name: FLASH_RD_ADD
+    byte_offset: 296
+  - name: FLASH_STOP_ADD
+    byte_offset: 304
+  - name: FLASH_RD_CTRL
+    byte_offset: 308
+    fieldset: regs::FLASH_RD_CTRL
+  - name: MM_ADDR
+    byte_offset: 312
+  - name: MM_WDATA
+    byte_offset: 320
+  - name: MM_CTL
+    byte_offset: 324
+    fieldset: regs::MM_CTL
+  - name: UINT_CTL
+    byte_offset: 328
+    fieldset: regs::UINT_CTL
+  - name: RD_DATA0
+    byte_offset: 332
+  - name: RD_DATA1
+    byte_offset: 336
+  - name: RD_DATA2
+    byte_offset: 340
+  - name: RD_DATA3
+    byte_offset: 344
+  - name: PARITY
+    byte_offset: 348
+    fieldset: regs::PARITY
+  - name: RD_PATH_CTRL_STATUS
+    byte_offset: 352
+    fieldset: regs::RD_PATH_CTRL_STATUS
+  - name: SMW_DIN0
+    byte_offset: 356
+  - name: SMW_DIN1
+    byte_offset: 360
+  - name: SMW_DIN2
+    byte_offset: 364
+  - name: SMW_DIN3
+    byte_offset: 368
+  - name: SMW_ADDR
+    byte_offset: 372
+  - name: SMW_CMD_WAIT
+    byte_offset: 376
+    fieldset: regs::SMW_CMD_WAIT
+  - name: SMW_STATUS
+    byte_offset: 380
+    fieldset: regs::SMW_STATUS
+  - name: SOCTRIM0_0
+    byte_offset: 384
+  - name: SOCTRIM0_1
+    byte_offset: 388
+  - name: SOCTRIM0_2
+    byte_offset: 392
+  - name: SOCTRIM0_3
+    byte_offset: 396
+  - name: SOCTRIM1_0
+    byte_offset: 400
+  - name: SOCTRIM1_1
+    byte_offset: 404
+  - name: SOCTRIM1_2
+    byte_offset: 408
+  - name: SOCTRIM1_3
+    byte_offset: 412
+  - name: SOCTRIM2_0
+    byte_offset: 416
+  - name: SOCTRIM2_1
+    byte_offset: 420
+  - name: SOCTRIM2_2
+    byte_offset: 424
+  - name: SOCTRIM2_3
+    byte_offset: 428
+  - name: SOCTRIM3_0
+    byte_offset: 432
+  - name: SOCTRIM3_1
+    byte_offset: 436
+  - name: SOCTRIM3_2
+    byte_offset: 440
+  - name: SOCTRIM3_3
+    byte_offset: 444
+  - name: SOCTRIM4_0
+    byte_offset: 448
+  - name: SOCTRIM4_1
+    byte_offset: 452
+  - name: SOCTRIM4_2
+    byte_offset: 456
+  - name: SOCTRIM4_3
+    byte_offset: 460
+  - name: SOCTRIM5_0
+    byte_offset: 464
+  - name: SOCTRIM5_1
+    byte_offset: 468
+  - name: SOCTRIM5_2
+    byte_offset: 472
+  - name: SOCTRIM5_3
+    byte_offset: 476
+  - name: SOCTRIM6_0
+    byte_offset: 480
+  - name: SOCTRIM6_1
+    byte_offset: 484
+  - name: SOCTRIM6_2
+    byte_offset: 488
+  - name: SOCTRIM6_3
+    byte_offset: 492
+  - name: SOCTRIM7_0
+    byte_offset: 496
+  - name: SOCTRIM7_1
+    byte_offset: 500
+  - name: SOCTRIM7_2
+    byte_offset: 504
+  - name: SOCTRIM7_3
+    byte_offset: 508
+  - name: R_IP_CONFIG
+    byte_offset: 516
+    fieldset: regs::R_IP_CONFIG
+  - name: R_TESTCODE
+    byte_offset: 520
+    fieldset: regs::R_TESTCODE
+  - name: R_DFT_CTRL
+    byte_offset: 524
+    fieldset: regs::R_DFT_CTRL
+  - name: R_ADR_CTRL
+    byte_offset: 528
+    fieldset: regs::R_ADR_CTRL
+  - name: R_DATA_CTRL0
+    byte_offset: 532
+  - name: R_PIN_CTRL
+    byte_offset: 536
+    fieldset: regs::R_PIN_CTRL
+  - name: R_CNT_LOOP_CTRL
+    byte_offset: 540
+    fieldset: regs::R_CNT_LOOP_CTRL
+  - name: R_TIMER_CTRL
+    byte_offset: 544
+    fieldset: regs::R_TIMER_CTRL
+  - name: R_TEST_CTRL
+    byte_offset: 548
+    fieldset: regs::R_TEST_CTRL
+  - name: R_ABORT_LOOP
+    byte_offset: 552
+    fieldset: regs::R_ABORT_LOOP
+  - name: R_ADR_QUERY
+    byte_offset: 556
+    fieldset: regs::R_ADR_QUERY
+  - name: R_DOUT_QUERY0
+    byte_offset: 560
+  - name: R_SMW_QUERY
+    byte_offset: 572
+    fieldset: regs::R_SMW_QUERY
+  - name: R_SMW_SETTING0
+    byte_offset: 576
+    fieldset: regs::R_SMW_SETTING0
+  - name: R_SMW_SETTING1
+    byte_offset: 580
+    fieldset: regs::R_SMW_SETTING1
+  - name: R_SMP_WHV0
+    byte_offset: 584
+  - name: R_SMP_WHV1
+    byte_offset: 588
+  - name: R_SME_WHV0
+    byte_offset: 592
+  - name: R_SME_WHV1
+    byte_offset: 596
+  - name: R_SMW_SETTING2
+    byte_offset: 600
+    fieldset: regs::R_SMW_SETTING2
+  - name: R_D_MISR0
+    byte_offset: 604
+  - name: R_A_MISR0
+    byte_offset: 608
+  - name: R_C_MISR0
+    byte_offset: 612
+  - name: R_SMW_SETTING3
+    byte_offset: 616
+    fieldset: regs::R_SMW_SETTING3
+  - name: R_DATA_CTRL1
+    byte_offset: 620
+  - name: R_DATA_CTRL2
+    byte_offset: 624
+  - name: R_DATA_CTRL3
+    byte_offset: 628
+  - name: R_REPAIR0_0
+    byte_offset: 640
+    fieldset: regs::R_REPAIR0_0
+  - name: R_REPAIR0_1
+    byte_offset: 644
+    fieldset: regs::R_REPAIR0_1
+  - name: R_REPAIR1_0
+    byte_offset: 648
+    fieldset: regs::R_REPAIR1_0
+  - name: R_REPAIR1_1
+    byte_offset: 652
+    fieldset: regs::R_REPAIR1_1
+  - name: R_DATA_CTRL0_EX
+    byte_offset: 788
+    fieldset: regs::R_DATA_CTRL0_EX
+  - name: R_TIMER_CTRL_EX
+    byte_offset: 800
+    fieldset: regs::R_TIMER_CTRL_EX
+  - name: R_DOUT_QUERY1
+    byte_offset: 816
+    fieldset: regs::R_DOUT_QUERY1
+  - name: R_D_MISR1
+    byte_offset: 860
+    fieldset: regs::R_D_MISR1
+  - name: R_A_MISR1
+    byte_offset: 864
+    fieldset: regs::R_A_MISR1
+  - name: R_C_MISR1
+    byte_offset: 868
+    fieldset: regs::R_C_MISR1
+  - name: R_DATA_CTRL1_EX
+    byte_offset: 876
+    fieldset: regs::R_DATA_CTRL1_EX
+  - name: R_DATA_CTRL2_EX
+    byte_offset: 880
+    fieldset: regs::R_DATA_CTRL2_EX
+  - name: R_DATA_CTRL3_EX
+    byte_offset: 884
+    fieldset: regs::R_DATA_CTRL3_EX
+  - name: SMW_TIMER_OPTION
+    byte_offset: 1024
+    fieldset: regs::SMW_TIMER_OPTION
+  - name: SMW_SETTING_OPTION0
+    byte_offset: 1028
+    fieldset: regs::SMW_SETTING_OPTION0
+  - name: SMW_SETTING_OPTION2
+    byte_offset: 1032
+    fieldset: regs::SMW_SETTING_OPTION2
+  - name: SMW_SETTING_OPTION3
+    byte_offset: 1036
+    fieldset: regs::SMW_SETTING_OPTION3
+  - name: SMW_SMP_WHV_OPTION0
+    byte_offset: 1040
+  - name: SMW_SME_WHV_OPTION0
+    byte_offset: 1044
+  - name: SMW_SETTING_OPTION1
+    byte_offset: 1048
+    fieldset: regs::SMW_SETTING_OPTION1
+  - name: SMW_SMP_WHV_OPTION1
+    byte_offset: 1052
+  - name: SMW_SME_WHV_OPTION1
+    byte_offset: 1056
+  - name: REPAIR0_0
+    byte_offset: 1280
+    fieldset: regs::REPAIR0_0
+  - name: REPAIR0_1
+    byte_offset: 1284
+    fieldset: regs::REPAIR0_1
+  - name: REPAIR1_0
+    byte_offset: 1288
+    fieldset: regs::REPAIR1_0
+  - name: REPAIR1_1
+    byte_offset: 1292
+    fieldset: regs::REPAIR1_1
+  - name: SMW_HB_SIGNALS
+    byte_offset: 1536
+    fieldset: regs::SMW_HB_SIGNALS
+  - name: BIST_DUMP_CTRL
+    byte_offset: 1540
+    fieldset: regs::BIST_DUMP_CTRL
+  - name: ATX_PIN_CTRL
+    byte_offset: 1548
+    fieldset: regs::ATX_PIN_CTRL
+  - name: FAILCNT
+    byte_offset: 1552
+  - name: PGM_PULSE_CNT0
+    byte_offset: 1556
+  - name: PGM_PULSE_CNT1
+    byte_offset: 1560
+  - name: ERS_PULSE_CNT
+    byte_offset: 1564
+    fieldset: regs::ERS_PULSE_CNT
+  - name: MAX_PULSE_CNT
+    byte_offset: 1568
+    fieldset: regs::MAX_PULSE_CNT
+  - name: PORT_CTRL
+    byte_offset: 1572
+    fieldset: regs::PORT_CTRL
+fieldset/regs::ATX_PIN_CTRL:
+  description: ATX Pin Control Register
+  fields:
+  - name: TM_TO_ATX
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::BIST_DUMP_CTRL:
+  description: BIST Datadump Control Register
+  fields:
+  - name: BIST_DONE
+    bit_offset: 16
+    bit_size: 1
+  - name: BIST_FAIL
+    bit_offset: 17
+    bit_size: 1
+  - name: DATADUMP
+    bit_offset: 18
+    bit_size: 1
+  - name: DATADUMP_TRIG
+    bit_offset: 19
+    bit_size: 1
+  - name: DATADUMP_PATT
+    bit_offset: 20
+    bit_size: 2
+  - name: DATADUMP_MRGEN
+    bit_offset: 22
+    bit_size: 1
+  - name: DATADUMP_MRGTYPE
+    bit_offset: 23
+    bit_size: 1
+fieldset/regs::BSEL:
+  description: FMU Block Select Register
+  fields:
+  - name: SBSEL
+    bit_offset: 0
+    bit_size: 2
+  - name: MBSEL
+    bit_offset: 8
+    bit_size: 2
+fieldset/regs::BSEL_GEN:
+  description: FMU Block Select Generation Register
+  fields:
+  - name: SBSEL_GEN
+    bit_offset: 0
+    bit_size: 2
+  - name: MBSEL_GEN
+    bit_offset: 8
+    bit_size: 2
+fieldset/regs::CMD_CHECK:
+  description: FMU Command Check Register
+  fields:
+  - name: ALIGNFAIL_PHR
+    bit_offset: 0
+    bit_size: 1
+  - name: ALIGNFAIL_PG
+    bit_offset: 1
+    bit_size: 1
+  - name: ALIGNFAIL_SCR
+    bit_offset: 2
+    bit_size: 1
+  - name: ALIGNFAIL_BLK
+    bit_offset: 3
+    bit_size: 1
+  - name: ADDR_FAIL
+    bit_offset: 4
+    bit_size: 1
+  - name: IFR_CMD
+    bit_offset: 5
+    bit_size: 1
+  - name: ALL_CMD
+    bit_offset: 6
+    bit_size: 1
+  - name: RANGE_FAIL
+    bit_offset: 7
+    bit_size: 1
+  - name: SCR_ALIGN_CHK
+    bit_offset: 8
+    bit_size: 1
+  - name: OPTION_FAIL
+    bit_offset: 9
+    bit_size: 1
+  - name: ILLEGAL_CMD
+    bit_offset: 10
+    bit_size: 1
+fieldset/regs::ERS_PULSE_CNT:
+  description: Erase Pulse Count Register
+  fields:
+  - name: ERS_CNT0
+    bit_offset: 0
+    bit_size: 16
+  - name: ERS_CNT1
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::FCCOB0:
+  description: Flash Command Control 0 Register
+  fields:
+  - name: CMDCODE
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::FCCOB1:
+  description: Flash Command Control 1 Register
+  fields:
+  - name: CMDOPT
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::FCNFG:
+  description: Flash Configuration Register
+  fields:
+  - name: CCIE
+    bit_offset: 7
+    bit_size: 1
+  - name: ERSREQ
+    bit_offset: 8
+    bit_size: 1
+  - name: DFDIE
+    bit_offset: 16
+    bit_size: 1
+  - name: ERSIEN0
+    bit_offset: 24
+    bit_size: 4
+  - name: ERSIEN1
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::FCTRL:
+  description: Flash Control Register
+  fields:
+  - name: RWSC
+    bit_offset: 0
+    bit_size: 4
+  - name: LSACTIVE
+    bit_offset: 8
+    bit_size: 1
+  - name: FDFD
+    bit_offset: 16
+    bit_size: 1
+  - name: ABTREQ
+    bit_offset: 24
+    bit_size: 1
+fieldset/regs::FLASH_RD_CTRL:
+  description: Flash Read Control Register
+  fields:
+  - name: FLASH_RD
+    bit_offset: 0
+    bit_size: 1
+  - name: WIDE_LOAD
+    bit_offset: 1
+    bit_size: 1
+  - name: SINGLE_RD
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::FSTAT:
+  description: Flash Status Register
+  fields:
+  - name: FAIL
+    bit_offset: 0
+    bit_size: 1
+  - name: CMDABT
+    bit_offset: 2
+    bit_size: 1
+  - name: PVIOL
+    bit_offset: 4
+    bit_size: 1
+  - name: ACCERR
+    bit_offset: 5
+    bit_size: 1
+  - name: CWSABT
+    bit_offset: 6
+    bit_size: 1
+  - name: CCIF
+    bit_offset: 7
+    bit_size: 1
+  - name: CMDPRT
+    bit_offset: 8
+    bit_size: 2
+  - name: CMDP
+    bit_offset: 11
+    bit_size: 1
+  - name: CMDDID
+    bit_offset: 12
+    bit_size: 4
+  - name: DFDIF
+    bit_offset: 16
+    bit_size: 1
+  - name: SALV_USED
+    bit_offset: 17
+    bit_size: 1
+  - name: PEWEN
+    bit_offset: 24
+    bit_size: 2
+  - name: PERDY
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::FTEST:
+  description: Flash Test Register
+  fields:
+  - name: TMECTL
+    bit_offset: 0
+    bit_size: 1
+  - name: TMEWR
+    bit_offset: 1
+    bit_size: 1
+  - name: TME
+    bit_offset: 2
+    bit_size: 1
+  - name: TMODE
+    bit_offset: 3
+    bit_size: 1
+  - name: TMELOCK
+    bit_offset: 4
+    bit_size: 1
+fieldset/regs::MAX_PULSE_CNT:
+  description: Maximum Pulse Count Register
+  fields:
+  - name: LAST_PCNT
+    bit_offset: 0
+    bit_size: 9
+  - name: MAX_ERS_CNT
+    bit_offset: 16
+    bit_size: 9
+  - name: MAX_PGM_CNT
+    bit_offset: 27
+    bit_size: 5
+fieldset/regs::MCTL:
+  description: FMU Control Register
+  fields:
+  - name: COREHLD
+    bit_offset: 0
+    bit_size: 1
+  - name: LSACT_EN
+    bit_offset: 2
+    bit_size: 1
+  - name: LSACTWREN
+    bit_offset: 3
+    bit_size: 1
+  - name: MASTER_REPAIR_EN
+    bit_offset: 4
+    bit_size: 1
+  - name: RFCMDEN
+    bit_offset: 5
+    bit_size: 1
+  - name: CWSABTEN
+    bit_offset: 6
+    bit_size: 1
+  - name: MRGRDDIS
+    bit_offset: 7
+    bit_size: 1
+  - name: MRGRD0
+    bit_offset: 8
+    bit_size: 4
+  - name: MRGRD1
+    bit_offset: 12
+    bit_size: 4
+  - name: ERSAACK
+    bit_offset: 16
+    bit_size: 1
+  - name: SCAN_OBS
+    bit_offset: 19
+    bit_size: 1
+  - name: BIST_CTL
+    bit_offset: 20
+    bit_size: 1
+  - name: SMWR_CTL
+    bit_offset: 21
+    bit_size: 1
+  - name: SALV_DIS
+    bit_offset: 24
+    bit_size: 1
+  - name: SOC_ECC_CTL
+    bit_offset: 25
+    bit_size: 1
+  - name: FMU_ECC_CTL
+    bit_offset: 26
+    bit_size: 1
+  - name: BIST_PWR_DIS
+    bit_offset: 29
+    bit_size: 1
+  - name: OSC_H
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MM_CTL:
+  description: Memory Map Control Register
+  fields:
+  - name: MM_SEL
+    bit_offset: 0
+    bit_size: 1
+  - name: MM_RD
+    bit_offset: 1
+    bit_size: 1
+  - name: BIST_ON
+    bit_offset: 2
+    bit_size: 1
+  - name: FORCE_SW_CLK
+    bit_offset: 3
+    bit_size: 1
+fieldset/regs::MSIZE:
+  description: FMU Memory Size Register
+  fields:
+  - name: MAXADDR0
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::PARITY:
+  description: Parity Register
+  fields:
+  - name: PARITY
+    bit_offset: 0
+    bit_size: 9
+fieldset/regs::PORT_CTRL:
+  description: Port Control Register
+  fields:
+  - name: BDONE_SEL
+    bit_offset: 0
+    bit_size: 2
+  - name: BSDO_SEL
+    bit_offset: 2
+    bit_size: 2
+fieldset/regs::PWR_OPT:
+  description: Power Mode Options Register
+  fields:
+  - name: PD_CDIV
+    bit_offset: 0
+    bit_size: 8
+  - name: SLM_COUNT
+    bit_offset: 16
+    bit_size: 10
+  - name: PD_TIMER_EN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::RD_PATH_CTRL_STATUS:
+  description: Read Path Control and Status Register
+  fields:
+  - name: RD_CAPT
+    bit_offset: 0
+    bit_size: 8
+  - name: SE_SIZE
+    bit_offset: 8
+    bit_size: 8
+  - name: ECC_ENABLEB
+    bit_offset: 16
+    bit_size: 1
+  - name: MISR_EN
+    bit_offset: 17
+    bit_size: 1
+  - name: CPY_PAR_EN
+    bit_offset: 18
+    bit_size: 1
+  - name: BIST_MUX_TO_SMW
+    bit_offset: 19
+    bit_size: 1
+  - name: AD_SET
+    bit_offset: 20
+    bit_size: 4
+  - name: WR_PATH_EN
+    bit_offset: 24
+    bit_size: 1
+  - name: WR_PATH_ECC_EN
+    bit_offset: 25
+    bit_size: 1
+  - name: DBERR_REG
+    bit_offset: 26
+    bit_size: 1
+  - name: SBERR_REG
+    bit_offset: 27
+    bit_size: 1
+  - name: CPY_PHRASE_EN
+    bit_offset: 28
+    bit_size: 1
+  - name: SMW_ARRAY1_SMW0_SEL
+    bit_offset: 29
+    bit_size: 1
+  - name: BIST_ECC_EN
+    bit_offset: 30
+    bit_size: 1
+  - name: LAST_READ
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::REPAIR0_0:
+  description: FMU Repair 0 Block 0 Register
+  fields:
+  - name: RDIS0_0
+    bit_offset: 0
+    bit_size: 1
+  - name: RADR0_0
+    bit_offset: 1
+    bit_size: 8
+fieldset/regs::REPAIR0_1:
+  description: FMU Repair 1 Block 0 Register
+  fields:
+  - name: RDIS0_1
+    bit_offset: 0
+    bit_size: 1
+  - name: RADR0_1
+    bit_offset: 1
+    bit_size: 8
+fieldset/regs::REPAIR1_0:
+  description: FMU Repair 0 Block 1 Register
+  fields:
+  - name: RDIS1_0
+    bit_offset: 0
+    bit_size: 1
+  - name: RADR1_0
+    bit_offset: 1
+    bit_size: 8
+fieldset/regs::REPAIR1_1:
+  description: FMU Repair 1 Block 1 Register
+  fields:
+  - name: RDIS1_1
+    bit_offset: 0
+    bit_size: 1
+  - name: RADR1_1
+    bit_offset: 1
+    bit_size: 8
+fieldset/regs::RESET_STATUS:
+  description: FMU Initialization Tracking Register
+  fields:
+  - name: ARY_TRIM_DONE
+    bit_offset: 0
+    bit_size: 1
+  - name: FMU_PARM_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: FMU_PARM_DONE
+    bit_offset: 2
+    bit_size: 1
+  - name: SOC_TRIM_EN
+    bit_offset: 3
+    bit_size: 1
+  - name: SOC_TRIM_ECC
+    bit_offset: 4
+    bit_size: 1
+  - name: SOC_TRIM_DONE
+    bit_offset: 5
+    bit_size: 1
+  - name: RPR_DONE
+    bit_offset: 6
+    bit_size: 1
+  - name: INIT_DONE
+    bit_offset: 7
+    bit_size: 1
+  - name: RST_SF_ERR
+    bit_offset: 8
+    bit_size: 1
+  - name: RST_DF_ERR
+    bit_offset: 9
+    bit_size: 1
+  - name: SOC_TRIM_DF_ERR
+    bit_offset: 10
+    bit_size: 8
+  - name: RST_PATCH_LD
+    bit_offset: 18
+    bit_size: 1
+  - name: RECALL_DATA_MISMATCH
+    bit_offset: 19
+    bit_size: 1
+fieldset/regs::R_ABORT_LOOP:
+  description: BIST Abort Loop Register
+  fields:
+  - name: ABORT_LOOP
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::R_ADR_CTRL:
+  description: BIST Address Control Register
+  fields:
+  - name: GRPSEL
+    bit_offset: 0
+    bit_size: 4
+  - name: XADR
+    bit_offset: 4
+    bit_size: 12
+  - name: YADR
+    bit_offset: 16
+    bit_size: 5
+  - name: PROG_ATTR
+    bit_offset: 21
+    bit_size: 3
+fieldset/regs::R_ADR_QUERY:
+  description: BIST Address Query Register
+  fields:
+  - name: YADRFAIL
+    bit_offset: 0
+    bit_size: 5
+  - name: XADRFAIL
+    bit_offset: 5
+    bit_size: 12
+fieldset/regs::R_A_MISR1:
+  description: BIST Address MISR 1 Register
+  fields:
+  - name: ADRSIG1
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::R_CNT_LOOP_CTRL:
+  description: BIST Loop Count Control Register
+  fields:
+  - name: LOOPCNT
+    bit_offset: 0
+    bit_size: 12
+  - name: LOOPOPT
+    bit_offset: 12
+    bit_size: 3
+  - name: LOOPUNIT
+    bit_offset: 15
+    bit_size: 3
+  - name: LOOPDLY
+    bit_offset: 18
+    bit_size: 7
+fieldset/regs::R_C_MISR1:
+  description: BIST Control MISR 1 Register
+  fields:
+  - name: CTRLSIG1
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::R_DATA_CTRL0_EX:
+  description: BIST Data Control 0 Extension Register
+  fields:
+  - name: DATA0X
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::R_DATA_CTRL1_EX:
+  description: BIST Data Control 1 Extension Register
+  fields:
+  - name: DATA1X
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::R_DATA_CTRL2_EX:
+  description: BIST Data Control 2 Extension Register
+  fields:
+  - name: DATA2X
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::R_DATA_CTRL3_EX:
+  description: BIST Data Control 3 Extension Register
+  fields:
+  - name: DATA3X
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::R_DFT_CTRL:
+  description: BIST DFT Control Register
+  fields:
+  - name: DFT_XADR
+    bit_offset: 0
+    bit_size: 4
+  - name: DFT_YADR
+    bit_offset: 4
+    bit_size: 4
+  - name: DFT_DATA
+    bit_offset: 8
+    bit_size: 4
+  - name: CMP_MASK
+    bit_offset: 12
+    bit_size: 2
+  - name: DFT_DATA_SRC
+    bit_offset: 14
+    bit_size: 1
+fieldset/regs::R_DOUT_QUERY1:
+  description: BIST DOUT Query 1 Register
+  fields:
+  - name: DOUT
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::R_D_MISR1:
+  description: BIST DIN MISR 1 Register
+  fields:
+  - name: DATASIG1
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::R_IP_CONFIG:
+  description: BIST Configuration Register
+  fields:
+  - name: IPSEL0
+    bit_offset: 0
+    bit_size: 2
+  - name: IPSEL1
+    bit_offset: 2
+    bit_size: 2
+  - name: BIST_CDIVL
+    bit_offset: 4
+    bit_size: 8
+  - name: CDIVS
+    bit_offset: 12
+    bit_size: 3
+  - name: BIST_TVFY
+    bit_offset: 15
+    bit_size: 5
+  - name: TSTCTL
+    bit_offset: 20
+    bit_size: 2
+  - name: DBGCTL
+    bit_offset: 22
+    bit_size: 1
+  - name: BIST_CLK_SEL
+    bit_offset: 23
+    bit_size: 1
+  - name: SMWTST
+    bit_offset: 24
+    bit_size: 2
+  - name: ECCEN
+    bit_offset: 26
+    bit_size: 1
+fieldset/regs::R_PIN_CTRL:
+  description: BIST Pin Control Register
+  fields:
+  - name: MAS1
+    bit_offset: 0
+    bit_size: 1
+  - name: IFREN
+    bit_offset: 1
+    bit_size: 1
+  - name: IFREN1
+    bit_offset: 2
+    bit_size: 1
+  - name: REDEN
+    bit_offset: 3
+    bit_size: 1
+  - name: LVE
+    bit_offset: 4
+    bit_size: 1
+  - name: PV
+    bit_offset: 5
+    bit_size: 1
+  - name: EV
+    bit_offset: 6
+    bit_size: 1
+  - name: WIPGM
+    bit_offset: 7
+    bit_size: 2
+  - name: WHV
+    bit_offset: 9
+    bit_size: 4
+  - name: WMV
+    bit_offset: 13
+    bit_size: 3
+  - name: XE
+    bit_offset: 16
+    bit_size: 1
+  - name: YE
+    bit_offset: 17
+    bit_size: 1
+  - name: SE
+    bit_offset: 18
+    bit_size: 1
+  - name: ERASE
+    bit_offset: 19
+    bit_size: 1
+  - name: PROG
+    bit_offset: 20
+    bit_size: 1
+  - name: NVSTR
+    bit_offset: 21
+    bit_size: 1
+  - name: SLM
+    bit_offset: 22
+    bit_size: 1
+  - name: RECALL
+    bit_offset: 23
+    bit_size: 1
+  - name: HEM
+    bit_offset: 24
+    bit_size: 1
+fieldset/regs::R_REPAIR0_0:
+  description: BIST Repair 0 for Block 0 Register
+  fields:
+  - name: RDIS0_0
+    bit_offset: 0
+    bit_size: 1
+  - name: RADR0_0
+    bit_offset: 1
+    bit_size: 8
+fieldset/regs::R_REPAIR0_1:
+  description: BIST Repair 1 Block 0 Register
+  fields:
+  - name: RDIS0_1
+    bit_offset: 0
+    bit_size: 1
+  - name: RADR0_1
+    bit_offset: 1
+    bit_size: 8
+fieldset/regs::R_REPAIR1_0:
+  description: BIST Repair 0 Block 1 Register
+  fields:
+  - name: RDIS1_0
+    bit_offset: 0
+    bit_size: 1
+  - name: RADR1_0
+    bit_offset: 1
+    bit_size: 8
+fieldset/regs::R_REPAIR1_1:
+  description: BIST Repair 1 Block 1 Register
+  fields:
+  - name: RDIS1_1
+    bit_offset: 0
+    bit_size: 1
+  - name: RADR1_1
+    bit_offset: 1
+    bit_size: 8
+fieldset/regs::R_SMW_QUERY:
+  description: BIST SMW Query Register
+  fields:
+  - name: SMWLOOP
+    bit_offset: 0
+    bit_size: 10
+  - name: SMWLAST
+    bit_offset: 10
+    bit_size: 9
+fieldset/regs::R_SMW_SETTING0:
+  description: BIST SMW Setting 0 Register
+  fields:
+  - name: SMWPARM0
+    bit_offset: 0
+    bit_size: 31
+fieldset/regs::R_SMW_SETTING1:
+  description: BIST SMW Setting 1 Register
+  fields:
+  - name: SMWPARM1
+    bit_offset: 0
+    bit_size: 28
+fieldset/regs::R_SMW_SETTING2:
+  description: BIST SMW Setting 2 Register
+  fields:
+  - name: SMWPARM2
+    bit_offset: 0
+    bit_size: 29
+fieldset/regs::R_SMW_SETTING3:
+  description: BIST SMW Setting 3 Register
+  fields:
+  - name: SMWPARM3
+    bit_offset: 0
+    bit_size: 17
+fieldset/regs::R_TESTCODE:
+  description: BIST Test Code Register
+  fields:
+  - name: TESTCODE
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::R_TEST_CTRL:
+  description: BIST Test Control Register
+  fields:
+  - name: BUSY
+    bit_offset: 0
+    bit_size: 1
+  - name: DEBUG
+    bit_offset: 1
+    bit_size: 1
+  - name: STATUS0
+    bit_offset: 2
+    bit_size: 1
+  - name: STATUS1
+    bit_offset: 3
+    bit_size: 1
+  - name: DEBUGRUN
+    bit_offset: 4
+    bit_size: 1
+  - name: STARTRUN
+    bit_offset: 5
+    bit_size: 1
+  - name: CMDINDEX
+    bit_offset: 6
+    bit_size: 10
+  - name: DISABLE_IP1
+    bit_offset: 16
+    bit_size: 1
+fieldset/regs::R_TIMER_CTRL:
+  description: BIST Timer Control Register
+  fields:
+  - name: TNVSUNIT
+    bit_offset: 0
+    bit_size: 3
+  - name: TNVSDLY
+    bit_offset: 3
+    bit_size: 4
+  - name: TNVHUNIT
+    bit_offset: 7
+    bit_size: 3
+  - name: TNVHDLY
+    bit_offset: 10
+    bit_size: 4
+  - name: TPGSUNIT
+    bit_offset: 14
+    bit_size: 3
+  - name: TPGSDLY
+    bit_offset: 17
+    bit_size: 4
+  - name: TRCVUNIT
+    bit_offset: 21
+    bit_size: 3
+  - name: TRCVDLY
+    bit_offset: 24
+    bit_size: 4
+  - name: TLVSUNIT
+    bit_offset: 28
+    bit_size: 3
+  - name: TLVSDLY_L
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::R_TIMER_CTRL_EX:
+  description: BIST Timer Control Extension Register
+  fields:
+  - name: TLVSDLY_H
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::SMW_CMD_WAIT:
+  description: SMW Command and Wait Register
+  fields:
+  - name: CMD
+    bit_offset: 0
+    bit_size: 3
+  - name: WAIT_EN
+    bit_offset: 3
+    bit_size: 1
+  - name: WAIT_AUTO_SET
+    bit_offset: 4
+    bit_size: 1
+fieldset/regs::SMW_HB_SIGNALS:
+  description: SMW HB Signals Register
+  fields:
+  - name: SMW_ARRAY
+    bit_offset: 0
+    bit_size: 3
+  - name: USER_IFREN1
+    bit_offset: 3
+    bit_size: 1
+  - name: USER_PV
+    bit_offset: 4
+    bit_size: 1
+  - name: USER_EV
+    bit_offset: 5
+    bit_size: 1
+  - name: USER_IFREN
+    bit_offset: 6
+    bit_size: 1
+  - name: USER_REDEN
+    bit_offset: 7
+    bit_size: 1
+  - name: USER_HEM
+    bit_offset: 8
+    bit_size: 1
+fieldset/regs::SMW_SETTING_OPTION0:
+  description: SMW Setting Option 0 Register
+  fields:
+  - name: MV_INIT
+    bit_offset: 14
+    bit_size: 3
+  - name: MV_END
+    bit_offset: 17
+    bit_size: 3
+  - name: MV_MISC
+    bit_offset: 20
+    bit_size: 4
+  - name: IPGM_INIT
+    bit_offset: 24
+    bit_size: 2
+  - name: IPGM_END
+    bit_offset: 26
+    bit_size: 2
+  - name: IPGM_MISC
+    bit_offset: 28
+    bit_size: 3
+fieldset/regs::SMW_SETTING_OPTION1:
+  description: SMW Setting Option 1 Register
+  fields:
+  - name: TERS_CTRL0
+    bit_offset: 0
+    bit_size: 3
+  - name: TPGM_CTRL
+    bit_offset: 3
+    bit_size: 2
+  - name: TNVS_CTRL
+    bit_offset: 5
+    bit_size: 3
+  - name: TNVH_CTRL
+    bit_offset: 8
+    bit_size: 3
+  - name: TPGS_CTRL
+    bit_offset: 11
+    bit_size: 3
+  - name: MAX_ERASE
+    bit_offset: 14
+    bit_size: 9
+  - name: MAX_PROG
+    bit_offset: 23
+    bit_size: 5
+fieldset/regs::SMW_SETTING_OPTION2:
+  description: SMW Setting Option 2 Register
+  fields:
+  - name: THVS_CTRL
+    bit_offset: 0
+    bit_size: 3
+  - name: TRCV_CTRL
+    bit_offset: 3
+    bit_size: 3
+  - name: XTRA_ERS
+    bit_offset: 6
+    bit_size: 2
+  - name: XTRA_PGM
+    bit_offset: 8
+    bit_size: 2
+  - name: WHV_CNTR
+    bit_offset: 10
+    bit_size: 8
+  - name: POST_TERS
+    bit_offset: 18
+    bit_size: 3
+  - name: POST_TPGM
+    bit_offset: 21
+    bit_size: 2
+  - name: VFY_OPT
+    bit_offset: 23
+    bit_size: 2
+  - name: TPGM_OPT
+    bit_offset: 25
+    bit_size: 2
+  - name: MASK0_OPT
+    bit_offset: 27
+    bit_size: 1
+  - name: DIS_PRER
+    bit_offset: 28
+    bit_size: 1
+fieldset/regs::SMW_SETTING_OPTION3:
+  description: SMW Setting Option 3 Register
+  fields:
+  - name: HEM_WHV_CNTR
+    bit_offset: 0
+    bit_size: 8
+  - name: HEM_MAX_ERS
+    bit_offset: 8
+    bit_size: 9
+fieldset/regs::SMW_STATUS:
+  description: SMW Status Register
+  fields:
+  - name: SMW_ERR
+    bit_offset: 0
+    bit_size: 1
+  - name: SMW_BUSY
+    bit_offset: 1
+    bit_size: 1
+  - name: BIST_BUSY
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::SMW_TIMER_OPTION:
+  description: SMW Timer Option Register
+  fields:
+  - name: SMW_CDIVL
+    bit_offset: 0
+    bit_size: 8
+  - name: SMW_TVFY
+    bit_offset: 8
+    bit_size: 5
+fieldset/regs::UINT_CTL:
+  description: User Interface Control Register
+  fields:
+  - name: SET_FAIL
+    bit_offset: 0
+    bit_size: 1
+  - name: DBERR
+    bit_offset: 1
+    bit_size: 1

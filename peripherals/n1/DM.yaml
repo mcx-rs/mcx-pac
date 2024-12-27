@@ -1,0 +1,32 @@
+block/DM:
+  items:
+  - name: CSW
+    byte_offset: 0
+    fieldset: regs::CSW
+  - name: REQUEST
+    byte_offset: 4
+  - name: RETURN
+    byte_offset: 8
+  - name: ID
+    byte_offset: 252
+fieldset/regs::CSW:
+  description: Command and Status Word
+  fields:
+  - name: RESYNCH_REQ
+    bit_offset: 0
+    bit_size: 1
+  - name: REQ_PENDING
+    bit_offset: 1
+    bit_size: 1
+  - name: DBG_OR_ERR
+    bit_offset: 2
+    bit_size: 1
+  - name: AHB_OR_ERR
+    bit_offset: 3
+    bit_size: 1
+  - name: SOFT_RESET
+    bit_offset: 4
+    bit_size: 1
+  - name: CHIP_RESET_REQ
+    bit_offset: 5
+    bit_size: 1

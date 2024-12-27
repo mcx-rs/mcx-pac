@@ -1,0 +1,1051 @@
+block/FLEXSPI:
+  items:
+  - name: MCR0
+    byte_offset: 0
+    fieldset: regs::MCR0
+  - name: MCR1
+    byte_offset: 4
+    fieldset: regs::MCR1
+  - name: MCR2
+    byte_offset: 8
+    fieldset: regs::MCR2
+  - name: AHBCR
+    byte_offset: 12
+    fieldset: regs::AHBCR
+  - name: INTEN
+    byte_offset: 16
+    fieldset: regs::INTEN
+  - name: INTR
+    byte_offset: 20
+    fieldset: regs::INTR
+  - name: LUTKEY
+    byte_offset: 24
+  - name: LUTCR
+    byte_offset: 28
+    fieldset: regs::LUTCR
+  - name: AHBRXBUFCR0
+    array:
+      len: 8
+      stride: 4
+    byte_offset: 32
+    fieldset: regs::AHBRXBUFCR0
+  - name: FLSHCR0
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 96
+    fieldset: regs::FLSHCR0
+  - name: FLSHCR1
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 112
+    fieldset: regs::FLSHCR1
+  - name: FLSHCR2
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 128
+    fieldset: regs::FLSHCR2
+  - name: FLSHCR4
+    byte_offset: 148
+    fieldset: regs::FLSHCR4
+  - name: IPCR0
+    byte_offset: 160
+  - name: IPCR1
+    byte_offset: 164
+    fieldset: regs::IPCR1
+  - name: IPCR2
+    byte_offset: 168
+    fieldset: regs::IPCR2
+  - name: IPCMD
+    byte_offset: 176
+    fieldset: regs::IPCMD
+  - name: DLPR
+    byte_offset: 180
+  - name: IPRXFCR
+    byte_offset: 184
+    fieldset: regs::IPRXFCR
+  - name: IPTXFCR
+    byte_offset: 188
+    fieldset: regs::IPTXFCR
+  - name: DLLCR
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 192
+    fieldset: regs::DLLCR
+  - name: STS0
+    byte_offset: 224
+    fieldset: regs::STS0
+  - name: STS1
+    byte_offset: 228
+    fieldset: regs::STS1
+  - name: STS2
+    byte_offset: 232
+    fieldset: regs::STS2
+  - name: AHBSPNDSTS
+    byte_offset: 236
+    fieldset: regs::AHBSPNDSTS
+  - name: IPRXFSTS
+    byte_offset: 240
+    fieldset: regs::IPRXFSTS
+  - name: IPTXFSTS
+    byte_offset: 244
+    fieldset: regs::IPTXFSTS
+  - name: RFDR
+    array:
+      len: 32
+      stride: 4
+    byte_offset: 256
+  - name: TFDR
+    array:
+      len: 32
+      stride: 4
+    byte_offset: 384
+  - name: LUT
+    array:
+      len: 64
+      stride: 4
+    byte_offset: 512
+    fieldset: regs::LUT
+  - name: HADDRSTART
+    byte_offset: 1056
+    fieldset: regs::HADDRSTART
+  - name: HADDREND
+    byte_offset: 1060
+    fieldset: regs::HADDREND
+  - name: HADDROFFSET
+    byte_offset: 1064
+    fieldset: regs::HADDROFFSET
+  - name: IPEDCTRL
+    byte_offset: 1068
+    fieldset: regs::IPEDCTRL
+  - name: IPSNSZSTART0
+    byte_offset: 1072
+    fieldset: regs::IPSNSZSTART0
+  - name: IPSNSZEND0
+    byte_offset: 1076
+    fieldset: regs::IPSNSZEND0
+  - name: IPSNSZSTART1
+    byte_offset: 1080
+    fieldset: regs::IPSNSZSTART1
+  - name: IPSNSZEND1
+    byte_offset: 1084
+    fieldset: regs::IPSNSZEND1
+  - name: AHBBUFREGIONSTART0
+    byte_offset: 1088
+    fieldset: regs::AHBBUFREGIONSTART0
+  - name: AHBBUFREGIONEND0
+    byte_offset: 1092
+    fieldset: regs::AHBBUFREGIONEND0
+  - name: AHBBUFREGIONSTART1
+    byte_offset: 1096
+    fieldset: regs::AHBBUFREGIONSTART1
+  - name: AHBBUFREGIONEND1
+    byte_offset: 1100
+    fieldset: regs::AHBBUFREGIONEND1
+  - name: AHBBUFREGIONSTART2
+    byte_offset: 1104
+    fieldset: regs::AHBBUFREGIONSTART2
+  - name: AHBBUFREGIONEND2
+    byte_offset: 1108
+    fieldset: regs::AHBBUFREGIONEND2
+  - name: AHBBUFREGIONSTART3
+    byte_offset: 1112
+    fieldset: regs::AHBBUFREGIONSTART3
+  - name: AHBBUFREGIONEND3
+    byte_offset: 1116
+    fieldset: regs::AHBBUFREGIONEND3
+  - name: IPEDCTXCTRL
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 1280
+  - name: IPEDCTX0IV0
+    byte_offset: 1312
+  - name: IPEDCTX0IV1
+    byte_offset: 1316
+  - name: IPEDCTX0START
+    byte_offset: 1320
+    fieldset: regs::IPEDCTX0START
+  - name: IPEDCTX0END
+    byte_offset: 1324
+    fieldset: regs::IPEDCTX0END
+  - name: IPEDCTX0AAD0
+    byte_offset: 1328
+  - name: IPEDCTX0AAD1
+    byte_offset: 1332
+  - name: IPEDCTX1IV0
+    byte_offset: 1344
+  - name: IPEDCTX1IV1
+    byte_offset: 1348
+  - name: IPEDCTX1START
+    byte_offset: 1352
+    fieldset: regs::IPEDCTX1START
+  - name: IPEDCTX1END
+    byte_offset: 1356
+    fieldset: regs::IPEDCTX1END
+  - name: IPEDCTX1AAD0
+    byte_offset: 1360
+  - name: IPEDCTX1AAD1
+    byte_offset: 1364
+  - name: IPEDCTX2IV0
+    byte_offset: 1376
+  - name: IPEDCTX2IV1
+    byte_offset: 1380
+  - name: IPEDCTX2START
+    byte_offset: 1384
+    fieldset: regs::IPEDCTX2START
+  - name: IPEDCTX2END
+    byte_offset: 1388
+    fieldset: regs::IPEDCTX2END
+  - name: IPEDCTX2AAD0
+    byte_offset: 1392
+  - name: IPEDCTX2AAD1
+    byte_offset: 1396
+  - name: IPEDCTX3IV0
+    byte_offset: 1408
+  - name: IPEDCTX3IV1
+    byte_offset: 1412
+  - name: IPEDCTX3START
+    byte_offset: 1416
+    fieldset: regs::IPEDCTX3START
+  - name: IPEDCTX3END
+    byte_offset: 1420
+    fieldset: regs::IPEDCTX3END
+  - name: IPEDCTX3AAD0
+    byte_offset: 1424
+  - name: IPEDCTX3AAD1
+    byte_offset: 1428
+  - name: IPEDCTX4IV0
+    byte_offset: 1440
+  - name: IPEDCTX4IV1
+    byte_offset: 1444
+  - name: IPEDCTX4START
+    byte_offset: 1448
+    fieldset: regs::IPEDCTX4START
+  - name: IPEDCTX4END
+    byte_offset: 1452
+    fieldset: regs::IPEDCTX4END
+  - name: IPEDCTX4AAD0
+    byte_offset: 1456
+  - name: IPEDCTX4AAD1
+    byte_offset: 1460
+  - name: IPEDCTX5IV0
+    byte_offset: 1472
+  - name: IPEDCTX5IV1
+    byte_offset: 1476
+  - name: IPEDCTX5START
+    byte_offset: 1480
+    fieldset: regs::IPEDCTX5START
+  - name: IPEDCTX5END
+    byte_offset: 1484
+    fieldset: regs::IPEDCTX5END
+  - name: IPEDCTX5AAD0
+    byte_offset: 1488
+  - name: IPEDCTX5AAD1
+    byte_offset: 1492
+  - name: IPEDCTX6IV0
+    byte_offset: 1504
+  - name: IPEDCTX6IV1
+    byte_offset: 1508
+  - name: IPEDCTX6START
+    byte_offset: 1512
+    fieldset: regs::IPEDCTX6START
+  - name: IPEDCTX6END
+    byte_offset: 1516
+    fieldset: regs::IPEDCTX6END
+  - name: IPEDCTX6AAD0
+    byte_offset: 1520
+  - name: IPEDCTX6AAD1
+    byte_offset: 1524
+fieldset/regs::AHBBUFREGIONEND0:
+  description: Receive Buffer Region 0 End Address
+  fields:
+  - name: END_ADDRESS
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::AHBBUFREGIONEND1:
+  description: Receive Buffer Region 1 End Address
+  fields:
+  - name: END_ADDRESS
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::AHBBUFREGIONEND2:
+  description: Receive Buffer Region 2 End Address
+  fields:
+  - name: END_ADDRESS
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::AHBBUFREGIONEND3:
+  description: Receive Buffer Region 3 End Address
+  fields:
+  - name: END_ADDRESS
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::AHBBUFREGIONSTART0:
+  description: Receive Buffer Start Address of Region 0
+  fields:
+  - name: START_ADDRESS
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::AHBBUFREGIONSTART1:
+  description: Receive Buffer Start Address of Region 1
+  fields:
+  - name: START_ADDRESS
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::AHBBUFREGIONSTART2:
+  description: Receive Buffer Start Address of Region 2
+  fields:
+  - name: START_ADDRESS
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::AHBBUFREGIONSTART3:
+  description: Receive Buffer Start Address of Region 3
+  fields:
+  - name: START_ADDRESS
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::AHBCR:
+  description: AHB Bus Control
+  fields:
+  - name: APAREN
+    bit_offset: 0
+    bit_size: 1
+  - name: CLRAHBRXBUF
+    bit_offset: 1
+    bit_size: 1
+  - name: CLRAHBTXBUF
+    bit_offset: 2
+    bit_size: 1
+  - name: CACHABLEEN
+    bit_offset: 3
+    bit_size: 1
+  - name: BUFFERABLEEN
+    bit_offset: 4
+    bit_size: 1
+  - name: PREFETCHEN
+    bit_offset: 5
+    bit_size: 1
+  - name: READADDROPT
+    bit_offset: 6
+    bit_size: 1
+  - name: RESUMEDISABLE
+    bit_offset: 7
+    bit_size: 1
+  - name: READSZALIGN
+    bit_offset: 10
+    bit_size: 1
+  - name: ALIGNMENT
+    bit_offset: 20
+    bit_size: 2
+  - name: AFLASHBASE
+    bit_offset: 29
+    bit_size: 3
+fieldset/regs::AHBRXBUFCR0:
+  description: AHB Receive Buffer 0 Control 0..AHB Receive Buffer 7 Control 0
+  fields:
+  - name: BUFSZ
+    bit_offset: 0
+    bit_size: 8
+  - name: MSTRID
+    bit_offset: 16
+    bit_size: 5
+  - name: PRIORITY
+    bit_offset: 24
+    bit_size: 3
+  - name: REGIONEN
+    bit_offset: 30
+    bit_size: 1
+  - name: PREFETCHEN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::AHBSPNDSTS:
+  description: AHB Suspend Status
+  fields:
+  - name: ACTIVE
+    bit_offset: 0
+    bit_size: 1
+  - name: BUFID
+    bit_offset: 1
+    bit_size: 3
+  - name: DATLFT
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::DLLCR:
+  description: DLL Control 0
+  fields:
+  - name: DLLEN
+    bit_offset: 0
+    bit_size: 1
+  - name: DLLRESET
+    bit_offset: 1
+    bit_size: 1
+  - name: SLVDLYTARGET
+    bit_offset: 3
+    bit_size: 4
+  - name: OVRDEN
+    bit_offset: 8
+    bit_size: 1
+  - name: OVRDVAL
+    bit_offset: 9
+    bit_size: 6
+  - name: REFPHASEGAP
+    bit_offset: 15
+    bit_size: 2
+fieldset/regs::FLSHCR0:
+  description: Flash Control 0
+  fields:
+  - name: FLSHSZ
+    bit_offset: 0
+    bit_size: 23
+  - name: ADDRSHIFT
+    bit_offset: 29
+    bit_size: 1
+  - name: SPLITWREN
+    bit_offset: 30
+    bit_size: 1
+  - name: SPLITRDEN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::FLSHCR1:
+  description: Flash Control 1
+  fields:
+  - name: TCSS
+    bit_offset: 0
+    bit_size: 5
+  - name: TCSH
+    bit_offset: 5
+    bit_size: 5
+  - name: WA
+    bit_offset: 10
+    bit_size: 1
+  - name: CAS
+    bit_offset: 11
+    bit_size: 4
+  - name: CSINTERVALUNIT
+    bit_offset: 15
+    bit_size: 1
+  - name: CSINTERVAL
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::FLSHCR2:
+  description: Flash Control 2
+  fields:
+  - name: ARDSEQID
+    bit_offset: 0
+    bit_size: 4
+  - name: ARDSEQNUM
+    bit_offset: 5
+    bit_size: 3
+  - name: AWRSEQID
+    bit_offset: 8
+    bit_size: 4
+  - name: AWRSEQNUM
+    bit_offset: 13
+    bit_size: 3
+  - name: AWRWAIT
+    bit_offset: 16
+    bit_size: 12
+  - name: AWRWAITUNIT
+    bit_offset: 28
+    bit_size: 3
+  - name: CLRINSTRPTR
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::FLSHCR4:
+  description: Flash Control 4
+  fields:
+  - name: WMOPT1
+    bit_offset: 0
+    bit_size: 1
+  - name: WMENA
+    bit_offset: 2
+    bit_size: 1
+  - name: WMENB
+    bit_offset: 3
+    bit_size: 1
+fieldset/regs::HADDREND:
+  description: HADDR REMAP END ADDR
+  fields:
+  - name: ENDSTART
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::HADDROFFSET:
+  description: HADDR Remap Offset
+  fields:
+  - name: ADDROFFSET
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::HADDRSTART:
+  description: HADDR REMAP Start Address
+  fields:
+  - name: REMAPEN
+    bit_offset: 0
+    bit_size: 1
+  - name: ADDRSTART
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::INTEN:
+  description: Interrupt Enable
+  fields:
+  - name: IPCMDDONEEN
+    bit_offset: 0
+    bit_size: 1
+  - name: IPCMDGEEN
+    bit_offset: 1
+    bit_size: 1
+  - name: AHBCMDGEEN
+    bit_offset: 2
+    bit_size: 1
+  - name: IPCMDERREN
+    bit_offset: 3
+    bit_size: 1
+  - name: AHBCMDERREN
+    bit_offset: 4
+    bit_size: 1
+  - name: IPRXWAEN
+    bit_offset: 5
+    bit_size: 1
+  - name: IPTXWEEN
+    bit_offset: 6
+    bit_size: 1
+  - name: DATALEARNFAILEN
+    bit_offset: 7
+    bit_size: 1
+  - name: SCKSTOPBYRDEN
+    bit_offset: 8
+    bit_size: 1
+  - name: SCKSTOPBYWREN
+    bit_offset: 9
+    bit_size: 1
+  - name: AHBBUSTIMEOUTEN
+    bit_offset: 10
+    bit_size: 1
+  - name: SEQTIMEOUTEN
+    bit_offset: 11
+    bit_size: 1
+  - name: IPCMDSECUREVIOEN
+    bit_offset: 16
+    bit_size: 1
+  - name: AHBGCMERREN
+    bit_offset: 17
+    bit_size: 1
+fieldset/regs::INTR:
+  description: Interrupt
+  fields:
+  - name: IPCMDDONE
+    bit_offset: 0
+    bit_size: 1
+  - name: IPCMDGE
+    bit_offset: 1
+    bit_size: 1
+  - name: AHBCMDGE
+    bit_offset: 2
+    bit_size: 1
+  - name: IPCMDERR
+    bit_offset: 3
+    bit_size: 1
+  - name: AHBCMDERR
+    bit_offset: 4
+    bit_size: 1
+  - name: IPRXWA
+    bit_offset: 5
+    bit_size: 1
+  - name: IPTXWE
+    bit_offset: 6
+    bit_size: 1
+  - name: DATALEARNFAIL
+    bit_offset: 7
+    bit_size: 1
+  - name: SCKSTOPBYRD
+    bit_offset: 8
+    bit_size: 1
+  - name: SCKSTOPBYWR
+    bit_offset: 9
+    bit_size: 1
+  - name: AHBBUSTIMEOUT
+    bit_offset: 10
+    bit_size: 1
+  - name: SEQTIMEOUT
+    bit_offset: 11
+    bit_size: 1
+  - name: IPCMDSECUREVIO
+    bit_offset: 16
+    bit_size: 1
+  - name: AHBGCMERR
+    bit_offset: 17
+    bit_size: 1
+fieldset/regs::IPCMD:
+  description: IP Command
+  fields:
+  - name: TRG
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::IPCR1:
+  description: IP Control 1
+  fields:
+  - name: IDATSZ
+    bit_offset: 0
+    bit_size: 16
+  - name: ISEQID
+    bit_offset: 16
+    bit_size: 4
+  - name: ISEQNUM
+    bit_offset: 24
+    bit_size: 3
+  - name: IPAREN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::IPCR2:
+  description: IP Control 2
+  fields:
+  - name: IPBLKAHBREQ
+    bit_offset: 0
+    bit_size: 1
+  - name: IPBLKAHBACK
+    bit_offset: 1
+    bit_size: 1
+  - name: IPBLKALLAHB
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::IPEDCTRL:
+  description: IPED Function Control
+  fields:
+  - name: CONFIG
+    bit_offset: 0
+    bit_size: 1
+  - name: IPED_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: IPWR_EN
+    bit_offset: 2
+    bit_size: 1
+  - name: AHBWR_EN
+    bit_offset: 3
+    bit_size: 1
+  - name: AHBRD_EN
+    bit_offset: 4
+    bit_size: 1
+  - name: IPGCMWR
+    bit_offset: 6
+    bit_size: 1
+  - name: AHGCMWR
+    bit_offset: 7
+    bit_size: 1
+  - name: AHBGCMRD
+    bit_offset: 8
+    bit_size: 1
+  - name: IPED_PROTECT
+    bit_offset: 9
+    bit_size: 1
+  - name: IPED_SWRESET
+    bit_offset: 10
+    bit_size: 1
+fieldset/regs::IPEDCTX0END:
+  description: End Address of Region
+  fields:
+  - name: end_address
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::IPEDCTX0START:
+  description: Start Address of Region
+  fields:
+  - name: GCM
+    bit_offset: 0
+    bit_size: 1
+  - name: ahbbuserror_dis
+    bit_offset: 1
+    bit_size: 1
+  - name: start_address
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::IPEDCTX1END:
+  description: End Address of Region
+  fields:
+  - name: end_address
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::IPEDCTX1START:
+  description: Start Address of Region
+  fields:
+  - name: GCM
+    bit_offset: 0
+    bit_size: 1
+  - name: ahbbuserror_dis
+    bit_offset: 1
+    bit_size: 1
+  - name: start_address
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::IPEDCTX2END:
+  description: End Address of Region
+  fields:
+  - name: end_address
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::IPEDCTX2START:
+  description: Start Address of Region
+  fields:
+  - name: GCM
+    bit_offset: 0
+    bit_size: 1
+  - name: ahbbuserror_dis
+    bit_offset: 1
+    bit_size: 1
+  - name: start_address
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::IPEDCTX3END:
+  description: End Address of Region
+  fields:
+  - name: end_address
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::IPEDCTX3START:
+  description: Start Address of Region
+  fields:
+  - name: GCM
+    bit_offset: 0
+    bit_size: 1
+  - name: ahbbuserror_dis
+    bit_offset: 1
+    bit_size: 1
+  - name: start_address
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::IPEDCTX4END:
+  description: End Address of Region
+  fields:
+  - name: end_address
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::IPEDCTX4START:
+  description: Start Address of Region
+  fields:
+  - name: GCM
+    bit_offset: 0
+    bit_size: 1
+  - name: ahbbuserror_dis
+    bit_offset: 1
+    bit_size: 1
+  - name: start_address
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::IPEDCTX5END:
+  description: End Address of Region
+  fields:
+  - name: end_address
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::IPEDCTX5START:
+  description: Start Address of Region
+  fields:
+  - name: GCM
+    bit_offset: 0
+    bit_size: 1
+  - name: ahbbuserror_dis
+    bit_offset: 1
+    bit_size: 1
+  - name: start_address
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::IPEDCTX6END:
+  description: End Address of Region
+  fields:
+  - name: end_address
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::IPEDCTX6START:
+  description: Start Address of Region
+  fields:
+  - name: GCM
+    bit_offset: 0
+    bit_size: 1
+  - name: ahbbuserror_dis
+    bit_offset: 1
+    bit_size: 1
+  - name: start_address
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::IPEDCTXCTRL:
+  description: IPED context control 0..IPED context control 1
+  fields:
+  - name: CTX0_FREEZE0
+    bit_offset: 0
+    bit_size: 2
+  - name: CTX0_FREEZE1
+    bit_offset: 0
+    bit_size: 2
+  - name: CTX1_FREEZE0
+    bit_offset: 2
+    bit_size: 2
+  - name: CTX1_FREEZE1
+    bit_offset: 2
+    bit_size: 2
+  - name: CTX2_FREEZE0
+    bit_offset: 4
+    bit_size: 2
+  - name: CTX2_FREEZE1
+    bit_offset: 4
+    bit_size: 2
+  - name: CTX3_FREEZE0
+    bit_offset: 6
+    bit_size: 2
+  - name: CTX3_FREEZE1
+    bit_offset: 6
+    bit_size: 2
+  - name: CTX4_FREEZE0
+    bit_offset: 8
+    bit_size: 2
+  - name: CTX4_FREEZE1
+    bit_offset: 8
+    bit_size: 2
+  - name: CTX5_FREEZE0
+    bit_offset: 10
+    bit_size: 2
+  - name: CTX5_FREEZE1
+    bit_offset: 10
+    bit_size: 2
+  - name: CTX6_FREEZE0
+    bit_offset: 12
+    bit_size: 2
+  - name: CTX6_FREEZE1
+    bit_offset: 12
+    bit_size: 2
+fieldset/regs::IPRXFCR:
+  description: IP Receive FIFO Control
+  fields:
+  - name: CLRIPRXF
+    bit_offset: 0
+    bit_size: 1
+  - name: RXDMAEN
+    bit_offset: 1
+    bit_size: 1
+  - name: RXWMRK
+    bit_offset: 2
+    bit_size: 7
+fieldset/regs::IPRXFSTS:
+  description: IP Receive FIFO Status
+  fields:
+  - name: FILL
+    bit_offset: 0
+    bit_size: 8
+  - name: RDCNTR
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::IPSNSZEND0:
+  description: IPS Nonsecure Region 0 End Address
+  fields:
+  - name: end_address
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::IPSNSZEND1:
+  description: IPS Nonsecure Region 1 End Address
+  fields:
+  - name: end_address
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::IPSNSZSTART0:
+  description: IPS Nonsecure Region 0 Start Address
+  fields:
+  - name: start_address
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::IPSNSZSTART1:
+  description: IPS Nonsecure Region 1 Start Address
+  fields:
+  - name: start_address
+    bit_offset: 12
+    bit_size: 20
+fieldset/regs::IPTXFCR:
+  description: IP Transmit FIFO Control
+  fields:
+  - name: CLRIPTXF
+    bit_offset: 0
+    bit_size: 1
+  - name: TXDMAEN
+    bit_offset: 1
+    bit_size: 1
+  - name: TXWMRK
+    bit_offset: 2
+    bit_size: 7
+fieldset/regs::IPTXFSTS:
+  description: IP Transmit FIFO Status
+  fields:
+  - name: FILL
+    bit_offset: 0
+    bit_size: 8
+  - name: WRCNTR
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::LUT:
+  description: Lookup Table 0..Lookup Table 63
+  fields:
+  - name: OPERAND0
+    bit_offset: 0
+    bit_size: 8
+  - name: NUM_PADS0
+    bit_offset: 8
+    bit_size: 2
+  - name: OPCODE0
+    bit_offset: 10
+    bit_size: 6
+  - name: OPERAND1
+    bit_offset: 16
+    bit_size: 8
+  - name: NUM_PADS1
+    bit_offset: 24
+    bit_size: 2
+  - name: OPCODE1
+    bit_offset: 26
+    bit_size: 6
+fieldset/regs::LUTCR:
+  description: LUT Control
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1
+  - name: UNLOCK
+    bit_offset: 1
+    bit_size: 1
+  - name: PROTECT
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::MCR0:
+  description: Module Control 0
+  fields:
+  - name: SWRESET
+    bit_offset: 0
+    bit_size: 1
+  - name: MDIS
+    bit_offset: 1
+    bit_size: 1
+  - name: RXCLKSRC
+    bit_offset: 4
+    bit_size: 2
+  - name: ARDFEN
+    bit_offset: 6
+    bit_size: 1
+  - name: ATDFEN
+    bit_offset: 7
+    bit_size: 1
+  - name: SERCLKDIV
+    bit_offset: 8
+    bit_size: 3
+  - name: HSEN
+    bit_offset: 11
+    bit_size: 1
+  - name: DOZEEN
+    bit_offset: 12
+    bit_size: 1
+  - name: COMBINATIONEN
+    bit_offset: 13
+    bit_size: 1
+  - name: SCKFREERUNEN
+    bit_offset: 14
+    bit_size: 1
+  - name: LEARNEN
+    bit_offset: 15
+    bit_size: 1
+  - name: IPGRANTWAIT
+    bit_offset: 16
+    bit_size: 8
+  - name: AHBGRANTWAIT
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::MCR1:
+  description: Module Control 1
+  fields:
+  - name: AHBBUSWAIT
+    bit_offset: 0
+    bit_size: 16
+  - name: SEQWAIT
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::MCR2:
+  description: Module Control 2
+  fields:
+  - name: CLRAHBBUFOPT
+    bit_offset: 11
+    bit_size: 1
+  - name: CLRLEARNPHASE
+    bit_offset: 14
+    bit_size: 1
+  - name: SAMEDEVICEEN
+    bit_offset: 15
+    bit_size: 1
+  - name: SCKBDIFFOPT
+    bit_offset: 19
+    bit_size: 1
+  - name: RXCLKSRC_B
+    bit_offset: 21
+    bit_size: 2
+  - name: RX_CLK_SRC_DIFF
+    bit_offset: 23
+    bit_size: 1
+  - name: RESUMEWAIT
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::STS0:
+  description: Status 0
+  fields:
+  - name: SEQIDLE
+    bit_offset: 0
+    bit_size: 1
+  - name: ARBIDLE
+    bit_offset: 1
+    bit_size: 1
+  - name: ARBCMDSRC
+    bit_offset: 2
+    bit_size: 2
+  - name: DATALEARNPHASEA
+    bit_offset: 4
+    bit_size: 4
+  - name: DATALEARNPHASEB
+    bit_offset: 8
+    bit_size: 4
+fieldset/regs::STS1:
+  description: Status 1
+  fields:
+  - name: AHBCMDERRID
+    bit_offset: 0
+    bit_size: 4
+  - name: AHBCMDERRCODE
+    bit_offset: 8
+    bit_size: 4
+  - name: IPCMDERRID
+    bit_offset: 16
+    bit_size: 4
+  - name: IPCMDERRCODE
+    bit_offset: 24
+    bit_size: 4
+fieldset/regs::STS2:
+  description: Status 2
+  fields:
+  - name: ASLVLOCK
+    bit_offset: 0
+    bit_size: 1
+  - name: AREFLOCK
+    bit_offset: 1
+    bit_size: 1
+  - name: ASLVSEL
+    bit_offset: 2
+    bit_size: 6
+  - name: AREFSEL
+    bit_offset: 8
+    bit_size: 6
+  - name: BSLVLOCK
+    bit_offset: 16
+    bit_size: 1
+  - name: BREFLOCK
+    bit_offset: 17
+    bit_size: 1
+  - name: BSLVSEL
+    bit_offset: 18
+    bit_size: 6
+  - name: BREFSEL
+    bit_offset: 24
+    bit_size: 6

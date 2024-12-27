@@ -1,0 +1,802 @@
+block/USDHC:
+  items:
+  - name: DS_ADDR
+    byte_offset: 0
+  - name: BLK_ATT
+    byte_offset: 4
+    fieldset: regs::BLK_ATT
+  - name: CMD_ARG
+    byte_offset: 8
+  - name: CMD_XFR_TYP
+    byte_offset: 12
+    fieldset: regs::CMD_XFR_TYP
+  - name: CMD_RSP0
+    byte_offset: 16
+  - name: CMD_RSP1
+    byte_offset: 20
+  - name: CMD_RSP2
+    byte_offset: 24
+  - name: CMD_RSP3
+    byte_offset: 28
+  - name: DATA_BUFF_ACC_PORT
+    byte_offset: 32
+  - name: PRES_STATE
+    byte_offset: 36
+    fieldset: regs::PRES_STATE
+  - name: PROT_CTRL
+    byte_offset: 40
+    fieldset: regs::PROT_CTRL
+  - name: SYS_CTRL
+    byte_offset: 44
+    fieldset: regs::SYS_CTRL
+  - name: INT_STATUS
+    byte_offset: 48
+    fieldset: regs::INT_STATUS
+  - name: INT_STATUS_EN
+    byte_offset: 52
+    fieldset: regs::INT_STATUS_EN
+  - name: INT_SIGNAL_EN
+    byte_offset: 56
+    fieldset: regs::INT_SIGNAL_EN
+  - name: AUTOCMD12_ERR_STATUS
+    byte_offset: 60
+    fieldset: regs::AUTOCMD12_ERR_STATUS
+  - name: HOST_CTRL_CAP
+    byte_offset: 64
+    fieldset: regs::HOST_CTRL_CAP
+  - name: WTMK_LVL
+    byte_offset: 68
+    fieldset: regs::WTMK_LVL
+  - name: MIX_CTRL
+    byte_offset: 72
+    fieldset: regs::MIX_CTRL
+  - name: FORCE_EVENT
+    byte_offset: 80
+    fieldset: regs::FORCE_EVENT
+  - name: ADMA_ERR_STATUS
+    byte_offset: 84
+    fieldset: regs::ADMA_ERR_STATUS
+  - name: ADMA_SYS_ADDR
+    byte_offset: 88
+    fieldset: regs::ADMA_SYS_ADDR
+  - name: DLL_CTRL
+    byte_offset: 96
+    fieldset: regs::DLL_CTRL
+  - name: DLL_STATUS
+    byte_offset: 100
+    fieldset: regs::DLL_STATUS
+  - name: CLK_TUNE_CTRL_STATUS
+    byte_offset: 104
+    fieldset: regs::CLK_TUNE_CTRL_STATUS
+  - name: VEND_SPEC
+    byte_offset: 192
+    fieldset: regs::VEND_SPEC
+  - name: MMC_BOOT
+    byte_offset: 196
+    fieldset: regs::MMC_BOOT
+  - name: VEND_SPEC2
+    byte_offset: 200
+    fieldset: regs::VEND_SPEC2
+  - name: TUNING_CTRL
+    byte_offset: 204
+    fieldset: regs::TUNING_CTRL
+fieldset/regs::ADMA_ERR_STATUS:
+  description: ADMA Error Status
+  fields:
+  - name: ADMAES
+    bit_offset: 0
+    bit_size: 2
+  - name: ADMALME
+    bit_offset: 2
+    bit_size: 1
+  - name: ADMADCE
+    bit_offset: 3
+    bit_size: 1
+fieldset/regs::ADMA_SYS_ADDR:
+  description: ADMA System Address
+  fields:
+  - name: ADS_ADDR
+    bit_offset: 2
+    bit_size: 30
+fieldset/regs::AUTOCMD12_ERR_STATUS:
+  description: Auto CMD12 Error Status
+  fields:
+  - name: AC12NE
+    bit_offset: 0
+    bit_size: 1
+  - name: AC12TOE
+    bit_offset: 1
+    bit_size: 1
+  - name: AC12CE
+    bit_offset: 2
+    bit_size: 1
+  - name: AC12EBE
+    bit_offset: 3
+    bit_size: 1
+  - name: AC12IE
+    bit_offset: 4
+    bit_size: 1
+  - name: CNIBAC12E
+    bit_offset: 7
+    bit_size: 1
+  - name: EXECUTE_TUNING
+    bit_offset: 22
+    bit_size: 1
+  - name: SMP_CLK_SEL
+    bit_offset: 23
+    bit_size: 1
+fieldset/regs::BLK_ATT:
+  description: Block Attributes
+  fields:
+  - name: BLKSIZE
+    bit_offset: 0
+    bit_size: 13
+  - name: BLKCNT
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::CLK_TUNE_CTRL_STATUS:
+  description: CLK Tuning Control and Status
+  fields:
+  - name: DLY_CELL_SET_POST
+    bit_offset: 0
+    bit_size: 4
+  - name: DLY_CELL_SET_OUT
+    bit_offset: 4
+    bit_size: 4
+  - name: DLY_CELL_SET_PRE
+    bit_offset: 8
+    bit_size: 7
+  - name: NXT_ERR
+    bit_offset: 15
+    bit_size: 1
+  - name: TAP_SEL_POST
+    bit_offset: 16
+    bit_size: 4
+  - name: TAP_SEL_OUT
+    bit_offset: 20
+    bit_size: 4
+  - name: TAP_SEL_PRE
+    bit_offset: 24
+    bit_size: 7
+  - name: PRE_ERR
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CMD_XFR_TYP:
+  description: Command Transfer Type
+  fields:
+  - name: DMAEN
+    bit_offset: 0
+    bit_size: 1
+  - name: BCEN
+    bit_offset: 1
+    bit_size: 1
+  - name: AC12EN
+    bit_offset: 2
+    bit_size: 1
+  - name: DDR_EN
+    bit_offset: 3
+    bit_size: 1
+  - name: DTDSEL
+    bit_offset: 4
+    bit_size: 1
+  - name: MSBSEL
+    bit_offset: 5
+    bit_size: 1
+  - name: NIBBLE_POS
+    bit_offset: 6
+    bit_size: 1
+  - name: AC23EN
+    bit_offset: 7
+    bit_size: 1
+  - name: RSPTYP
+    bit_offset: 16
+    bit_size: 2
+  - name: CCCEN
+    bit_offset: 19
+    bit_size: 1
+  - name: CICEN
+    bit_offset: 20
+    bit_size: 1
+  - name: DPSEL
+    bit_offset: 21
+    bit_size: 1
+  - name: CMDTYP
+    bit_offset: 22
+    bit_size: 2
+  - name: CMDINX
+    bit_offset: 24
+    bit_size: 6
+fieldset/regs::DLL_CTRL:
+  description: DLL (Delay Line) Control
+  fields:
+  - name: DLL_CTRL_ENABLE
+    bit_offset: 0
+    bit_size: 1
+  - name: DLL_CTRL_RESET
+    bit_offset: 1
+    bit_size: 1
+  - name: DLL_CTRL_SLV_FORCE_UPD
+    bit_offset: 2
+    bit_size: 1
+  - name: DLL_CTRL_SLV_DLY_TARGET0
+    bit_offset: 3
+    bit_size: 4
+  - name: DLL_CTRL_GATE_UPDATE
+    bit_offset: 7
+    bit_size: 1
+  - name: DLL_CTRL_SLV_OVERRIDE
+    bit_offset: 8
+    bit_size: 1
+  - name: DLL_CTRL_SLV_OVERRIDE_VAL
+    bit_offset: 9
+    bit_size: 7
+  - name: DLL_CTRL_SLV_DLY_TARGET1
+    bit_offset: 16
+    bit_size: 3
+  - name: DLL_CTRL_SLV_UPDATE_INT
+    bit_offset: 20
+    bit_size: 8
+  - name: DLL_CTRL_REF_UPDATE_INT
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::DLL_STATUS:
+  description: DLL Status
+  fields:
+  - name: DLL_STS_SLV_LOCK
+    bit_offset: 0
+    bit_size: 1
+  - name: DLL_STS_REF_LOCK
+    bit_offset: 1
+    bit_size: 1
+  - name: DLL_STS_SLV_SEL
+    bit_offset: 2
+    bit_size: 7
+  - name: DLL_STS_REF_SEL
+    bit_offset: 9
+    bit_size: 7
+fieldset/regs::FORCE_EVENT:
+  description: Force Event
+  fields:
+  - name: FEVTAC12NE
+    bit_offset: 0
+    bit_size: 1
+  - name: FEVTAC12TOE
+    bit_offset: 1
+    bit_size: 1
+  - name: FEVTAC12CE
+    bit_offset: 2
+    bit_size: 1
+  - name: FEVTAC12EBE
+    bit_offset: 3
+    bit_size: 1
+  - name: FEVTAC12IE
+    bit_offset: 4
+    bit_size: 1
+  - name: FEVTCNIBAC12E
+    bit_offset: 7
+    bit_size: 1
+  - name: FEVTCTOE
+    bit_offset: 16
+    bit_size: 1
+  - name: FEVTCCE
+    bit_offset: 17
+    bit_size: 1
+  - name: FEVTCEBE
+    bit_offset: 18
+    bit_size: 1
+  - name: FEVTCIE
+    bit_offset: 19
+    bit_size: 1
+  - name: FEVTDTOE
+    bit_offset: 20
+    bit_size: 1
+  - name: FEVTDCE
+    bit_offset: 21
+    bit_size: 1
+  - name: FEVTDEBE
+    bit_offset: 22
+    bit_size: 1
+  - name: FEVTAC12E
+    bit_offset: 24
+    bit_size: 1
+  - name: FEVTTNE
+    bit_offset: 26
+    bit_size: 1
+  - name: FEVTDMAE
+    bit_offset: 28
+    bit_size: 1
+  - name: FEVTCINT
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::HOST_CTRL_CAP:
+  description: Host Controller Capabilities
+  fields:
+  - name: SDR50_SUPPORT
+    bit_offset: 0
+    bit_size: 1
+  - name: SDR104_SUPPORT
+    bit_offset: 1
+    bit_size: 1
+  - name: DDR50_SUPPORT
+    bit_offset: 2
+    bit_size: 1
+  - name: USE_TUNING_SDR50
+    bit_offset: 13
+    bit_size: 1
+  - name: MBL
+    bit_offset: 16
+    bit_size: 3
+  - name: ADMAS
+    bit_offset: 20
+    bit_size: 1
+  - name: HSS
+    bit_offset: 21
+    bit_size: 1
+  - name: DMAS
+    bit_offset: 22
+    bit_size: 1
+  - name: SRS
+    bit_offset: 23
+    bit_size: 1
+  - name: VS33
+    bit_offset: 24
+    bit_size: 1
+  - name: VS30
+    bit_offset: 25
+    bit_size: 1
+  - name: VS18
+    bit_offset: 26
+    bit_size: 1
+fieldset/regs::INT_SIGNAL_EN:
+  description: Interrupt Signal Enable
+  fields:
+  - name: CCIEN
+    bit_offset: 0
+    bit_size: 1
+  - name: TCIEN
+    bit_offset: 1
+    bit_size: 1
+  - name: BGEIEN
+    bit_offset: 2
+    bit_size: 1
+  - name: DINTIEN
+    bit_offset: 3
+    bit_size: 1
+  - name: BWRIEN
+    bit_offset: 4
+    bit_size: 1
+  - name: BRRIEN
+    bit_offset: 5
+    bit_size: 1
+  - name: CINSIEN
+    bit_offset: 6
+    bit_size: 1
+  - name: CRMIEN
+    bit_offset: 7
+    bit_size: 1
+  - name: CINTIEN
+    bit_offset: 8
+    bit_size: 1
+  - name: RTEIEN
+    bit_offset: 12
+    bit_size: 1
+  - name: TPIEN
+    bit_offset: 14
+    bit_size: 1
+  - name: CTOEIEN
+    bit_offset: 16
+    bit_size: 1
+  - name: CCEIEN
+    bit_offset: 17
+    bit_size: 1
+  - name: CEBEIEN
+    bit_offset: 18
+    bit_size: 1
+  - name: CIEIEN
+    bit_offset: 19
+    bit_size: 1
+  - name: DTOEIEN
+    bit_offset: 20
+    bit_size: 1
+  - name: DCEIEN
+    bit_offset: 21
+    bit_size: 1
+  - name: DEBEIEN
+    bit_offset: 22
+    bit_size: 1
+  - name: AC12EIEN
+    bit_offset: 24
+    bit_size: 1
+  - name: TNEIEN
+    bit_offset: 26
+    bit_size: 1
+  - name: DMAEIEN
+    bit_offset: 28
+    bit_size: 1
+fieldset/regs::INT_STATUS:
+  description: Interrupt Status
+  fields:
+  - name: CC
+    bit_offset: 0
+    bit_size: 1
+  - name: TC
+    bit_offset: 1
+    bit_size: 1
+  - name: BGE
+    bit_offset: 2
+    bit_size: 1
+  - name: DINT
+    bit_offset: 3
+    bit_size: 1
+  - name: BWR
+    bit_offset: 4
+    bit_size: 1
+  - name: BRR
+    bit_offset: 5
+    bit_size: 1
+  - name: CINS
+    bit_offset: 6
+    bit_size: 1
+  - name: CRM
+    bit_offset: 7
+    bit_size: 1
+  - name: CINT
+    bit_offset: 8
+    bit_size: 1
+  - name: RTE
+    bit_offset: 12
+    bit_size: 1
+  - name: TP
+    bit_offset: 14
+    bit_size: 1
+  - name: ERR_INT_STATUS
+    bit_offset: 15
+    bit_size: 1
+  - name: CTOE
+    bit_offset: 16
+    bit_size: 1
+  - name: CCE
+    bit_offset: 17
+    bit_size: 1
+  - name: CEBE
+    bit_offset: 18
+    bit_size: 1
+  - name: CIE
+    bit_offset: 19
+    bit_size: 1
+  - name: DTOE
+    bit_offset: 20
+    bit_size: 1
+  - name: DCE
+    bit_offset: 21
+    bit_size: 1
+  - name: DEBE
+    bit_offset: 22
+    bit_size: 1
+  - name: AC12E
+    bit_offset: 24
+    bit_size: 1
+  - name: TNE
+    bit_offset: 26
+    bit_size: 1
+  - name: DMAE
+    bit_offset: 28
+    bit_size: 1
+fieldset/regs::INT_STATUS_EN:
+  description: Interrupt Status Enable
+  fields:
+  - name: CCSEN
+    bit_offset: 0
+    bit_size: 1
+  - name: TCSEN
+    bit_offset: 1
+    bit_size: 1
+  - name: BGESEN
+    bit_offset: 2
+    bit_size: 1
+  - name: DINTSEN
+    bit_offset: 3
+    bit_size: 1
+  - name: BWRSEN
+    bit_offset: 4
+    bit_size: 1
+  - name: BRRSEN
+    bit_offset: 5
+    bit_size: 1
+  - name: CINSSEN
+    bit_offset: 6
+    bit_size: 1
+  - name: CRMSEN
+    bit_offset: 7
+    bit_size: 1
+  - name: CINTSEN
+    bit_offset: 8
+    bit_size: 1
+  - name: RTESEN
+    bit_offset: 12
+    bit_size: 1
+  - name: TPSEN
+    bit_offset: 14
+    bit_size: 1
+  - name: CTOESEN
+    bit_offset: 16
+    bit_size: 1
+  - name: CCESEN
+    bit_offset: 17
+    bit_size: 1
+  - name: CEBESEN
+    bit_offset: 18
+    bit_size: 1
+  - name: CIESEN
+    bit_offset: 19
+    bit_size: 1
+  - name: DTOESEN
+    bit_offset: 20
+    bit_size: 1
+  - name: DCESEN
+    bit_offset: 21
+    bit_size: 1
+  - name: DEBESEN
+    bit_offset: 22
+    bit_size: 1
+  - name: AC12ESEN
+    bit_offset: 24
+    bit_size: 1
+  - name: TNESEN
+    bit_offset: 26
+    bit_size: 1
+  - name: DMAESEN
+    bit_offset: 28
+    bit_size: 1
+fieldset/regs::MIX_CTRL:
+  description: Mixer Control
+  fields:
+  - name: DMAEN
+    bit_offset: 0
+    bit_size: 1
+  - name: BCEN
+    bit_offset: 1
+    bit_size: 1
+  - name: AC12EN
+    bit_offset: 2
+    bit_size: 1
+  - name: DDR_EN
+    bit_offset: 3
+    bit_size: 1
+  - name: DTDSEL
+    bit_offset: 4
+    bit_size: 1
+  - name: MSBSEL
+    bit_offset: 5
+    bit_size: 1
+  - name: NIBBLE_POS
+    bit_offset: 6
+    bit_size: 1
+  - name: AC23EN
+    bit_offset: 7
+    bit_size: 1
+  - name: EXE_TUNE
+    bit_offset: 22
+    bit_size: 1
+  - name: SMP_CLK_SEL
+    bit_offset: 23
+    bit_size: 1
+  - name: AUTO_TUNE_EN
+    bit_offset: 24
+    bit_size: 1
+  - name: FBCLK_SEL
+    bit_offset: 25
+    bit_size: 1
+fieldset/regs::MMC_BOOT:
+  description: eMMC Boot
+  fields:
+  - name: DTOCV_ACK
+    bit_offset: 0
+    bit_size: 4
+  - name: BOOT_ACK
+    bit_offset: 4
+    bit_size: 1
+  - name: BOOT_MODE
+    bit_offset: 5
+    bit_size: 1
+  - name: BOOT_EN
+    bit_offset: 6
+    bit_size: 1
+  - name: AUTO_SABG_EN
+    bit_offset: 7
+    bit_size: 1
+  - name: DISABLE_TIME_OUT
+    bit_offset: 8
+    bit_size: 1
+  - name: BOOT_BLK_CNT
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::PRES_STATE:
+  description: Present State
+  fields:
+  - name: CIHB
+    bit_offset: 0
+    bit_size: 1
+  - name: CDIHB
+    bit_offset: 1
+    bit_size: 1
+  - name: DLA
+    bit_offset: 2
+    bit_size: 1
+  - name: SDSTB
+    bit_offset: 3
+    bit_size: 1
+  - name: WTA
+    bit_offset: 8
+    bit_size: 1
+  - name: RTA
+    bit_offset: 9
+    bit_size: 1
+  - name: BWEN
+    bit_offset: 10
+    bit_size: 1
+  - name: BREN
+    bit_offset: 11
+    bit_size: 1
+  - name: RTR
+    bit_offset: 12
+    bit_size: 1
+  - name: TSCD
+    bit_offset: 15
+    bit_size: 1
+  - name: CINST
+    bit_offset: 16
+    bit_size: 1
+  - name: CLSL
+    bit_offset: 23
+    bit_size: 1
+  - name: DLSL
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::PROT_CTRL:
+  description: Protocol Control
+  fields:
+  - name: DTW
+    bit_offset: 1
+    bit_size: 2
+  - name: D3CD
+    bit_offset: 3
+    bit_size: 1
+  - name: EMODE
+    bit_offset: 4
+    bit_size: 2
+  - name: DMASEL
+    bit_offset: 8
+    bit_size: 2
+  - name: SABGREQ
+    bit_offset: 16
+    bit_size: 1
+  - name: CREQ
+    bit_offset: 17
+    bit_size: 1
+  - name: RWCTL
+    bit_offset: 18
+    bit_size: 1
+  - name: IABG
+    bit_offset: 19
+    bit_size: 1
+  - name: RD_DONE_NO_8CLK
+    bit_offset: 20
+    bit_size: 1
+  - name: WECINT
+    bit_offset: 24
+    bit_size: 1
+  - name: WECINS
+    bit_offset: 25
+    bit_size: 1
+  - name: WECRM
+    bit_offset: 26
+    bit_size: 1
+  - name: BURST_LEN_EN
+    bit_offset: 27
+    bit_size: 3
+  - name: NON_EXACT_BLK_RD
+    bit_offset: 30
+    bit_size: 1
+fieldset/regs::SYS_CTRL:
+  description: System Control
+  fields:
+  - name: DVS
+    bit_offset: 4
+    bit_size: 4
+  - name: SDCLKFS
+    bit_offset: 8
+    bit_size: 8
+  - name: DTOCV
+    bit_offset: 16
+    bit_size: 4
+  - name: RST_FIFO
+    bit_offset: 22
+    bit_size: 1
+  - name: IPP_RST_N
+    bit_offset: 23
+    bit_size: 1
+  - name: RSTA
+    bit_offset: 24
+    bit_size: 1
+  - name: RSTC
+    bit_offset: 25
+    bit_size: 1
+  - name: RSTD
+    bit_offset: 26
+    bit_size: 1
+  - name: INITA
+    bit_offset: 27
+    bit_size: 1
+  - name: RSTT
+    bit_offset: 28
+    bit_size: 1
+fieldset/regs::TUNING_CTRL:
+  description: Tuning Control
+  fields:
+  - name: TUNING_START_TAP
+    bit_offset: 0
+    bit_size: 7
+  - name: DIS_CMD_CHK_FOR_STD_TUNING
+    bit_offset: 7
+    bit_size: 1
+  - name: TUNING_COUNTER
+    bit_offset: 8
+    bit_size: 8
+  - name: TUNING_STEP
+    bit_offset: 16
+    bit_size: 3
+  - name: TUNING_WINDOW
+    bit_offset: 20
+    bit_size: 3
+  - name: STD_TUNING_EN
+    bit_offset: 24
+    bit_size: 1
+fieldset/regs::VEND_SPEC:
+  description: Vendor Specific Register
+  fields:
+  - name: AC12_WR_CHKBUSY_EN
+    bit_offset: 3
+    bit_size: 1
+  - name: FRC_SDCLK_ON
+    bit_offset: 8
+    bit_size: 1
+  - name: CRC_CHK_DIS
+    bit_offset: 15
+    bit_size: 1
+  - name: CMD_BYTE_EN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::VEND_SPEC2:
+  description: Vendor Specific 2 Register
+  fields:
+  - name: CARD_INT_D3_TEST
+    bit_offset: 3
+    bit_size: 1
+  - name: TUNING_BIT_EN
+    bit_offset: 4
+    bit_size: 2
+  - name: TUNING_CMD_EN
+    bit_offset: 6
+    bit_size: 1
+  - name: ACMD23_ARGU2_EN
+    bit_offset: 12
+    bit_size: 1
+  - name: EN_32K_CLK
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::WTMK_LVL:
+  description: Watermark Level
+  fields:
+  - name: RD_WML
+    bit_offset: 0
+    bit_size: 8
+  - name: RD_BRST_LEN
+    bit_offset: 8
+    bit_size: 5
+  - name: WR_WML
+    bit_offset: 16
+    bit_size: 8
+  - name: WR_BRST_LEN
+    bit_offset: 24
+    bit_size: 5

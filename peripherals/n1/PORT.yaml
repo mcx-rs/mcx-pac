@@ -1,0 +1,422 @@
+block/PORT:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: GPCLR
+    byte_offset: 16
+    fieldset: regs::GPCLR
+  - name: GPCHR
+    byte_offset: 20
+    fieldset: regs::GPCHR
+  - name: CONFIG
+    byte_offset: 32
+    fieldset: regs::CONFIG
+  - name: EDFR
+    byte_offset: 64
+    fieldset: regs::EDFR
+  - name: EDIER
+    byte_offset: 68
+    fieldset: regs::EDIER
+  - name: EDCR
+    byte_offset: 72
+    fieldset: regs::EDCR
+  - name: CALIB0
+    byte_offset: 96
+    fieldset: regs::CALIB0
+  - name: CALIB1
+    byte_offset: 100
+    fieldset: regs::CALIB1
+  - name: PCR
+    array:
+      len: 32
+      stride: 4
+    byte_offset: 128
+    fieldset: regs::PCR
+fieldset/regs::CALIB0:
+  description: Calibration 0
+  fields:
+  - name: NCAL
+    bit_offset: 0
+    bit_size: 6
+  - name: PCAL
+    bit_offset: 16
+    bit_size: 6
+fieldset/regs::CALIB1:
+  description: Calibration 1
+  fields:
+  - name: NCAL
+    bit_offset: 0
+    bit_size: 6
+  - name: PCAL
+    bit_offset: 16
+    bit_size: 6
+fieldset/regs::CONFIG:
+  description: Configuration
+  fields:
+  - name: RANGE
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::EDCR:
+  description: EFT Detect Clear
+  fields:
+  - name: EDHC
+    bit_offset: 0
+    bit_size: 1
+  - name: EDLC
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::EDFR:
+  description: EFT Detect Flag
+  fields:
+  - name: EDF0
+    bit_offset: 0
+    bit_size: 1
+  - name: EDF1
+    bit_offset: 1
+    bit_size: 1
+  - name: EDF2
+    bit_offset: 2
+    bit_size: 1
+  - name: EDF3
+    bit_offset: 3
+    bit_size: 1
+  - name: EDF4
+    bit_offset: 4
+    bit_size: 1
+  - name: EDF5
+    bit_offset: 5
+    bit_size: 1
+  - name: EDF6
+    bit_offset: 6
+    bit_size: 1
+  - name: EDF7
+    bit_offset: 7
+    bit_size: 1
+  - name: EDF8
+    bit_offset: 8
+    bit_size: 1
+  - name: EDF9
+    bit_offset: 9
+    bit_size: 1
+  - name: EDF10
+    bit_offset: 10
+    bit_size: 1
+  - name: EDF11
+    bit_offset: 11
+    bit_size: 1
+  - name: EDF12
+    bit_offset: 12
+    bit_size: 1
+  - name: EDF13
+    bit_offset: 13
+    bit_size: 1
+  - name: EDF14
+    bit_offset: 14
+    bit_size: 1
+  - name: EDF15
+    bit_offset: 15
+    bit_size: 1
+  - name: EDF16
+    bit_offset: 16
+    bit_size: 1
+  - name: EDF17
+    bit_offset: 17
+    bit_size: 1
+  - name: EDF18
+    bit_offset: 18
+    bit_size: 1
+  - name: EDF19
+    bit_offset: 19
+    bit_size: 1
+  - name: EDF20
+    bit_offset: 20
+    bit_size: 1
+  - name: EDF21
+    bit_offset: 21
+    bit_size: 1
+  - name: EDF22
+    bit_offset: 22
+    bit_size: 1
+  - name: EDF23
+    bit_offset: 23
+    bit_size: 1
+  - name: EDF24
+    bit_offset: 24
+    bit_size: 1
+  - name: EDF25
+    bit_offset: 25
+    bit_size: 1
+  - name: EDF26
+    bit_offset: 26
+    bit_size: 1
+  - name: EDF27
+    bit_offset: 27
+    bit_size: 1
+  - name: EDF28
+    bit_offset: 28
+    bit_size: 1
+  - name: EDF29
+    bit_offset: 29
+    bit_size: 1
+  - name: EDF30
+    bit_offset: 30
+    bit_size: 1
+  - name: EDF31
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::EDIER:
+  description: EFT Detect Interrupt Enable
+  fields:
+  - name: EDIE0
+    bit_offset: 0
+    bit_size: 1
+  - name: EDIE1
+    bit_offset: 1
+    bit_size: 1
+  - name: EDIE2
+    bit_offset: 2
+    bit_size: 1
+  - name: EDIE3
+    bit_offset: 3
+    bit_size: 1
+  - name: EDIE4
+    bit_offset: 4
+    bit_size: 1
+  - name: EDIE5
+    bit_offset: 5
+    bit_size: 1
+  - name: EDIE6
+    bit_offset: 6
+    bit_size: 1
+  - name: EDIE7
+    bit_offset: 7
+    bit_size: 1
+  - name: EDIE8
+    bit_offset: 8
+    bit_size: 1
+  - name: EDIE9
+    bit_offset: 9
+    bit_size: 1
+  - name: EDIE10
+    bit_offset: 10
+    bit_size: 1
+  - name: EDIE11
+    bit_offset: 11
+    bit_size: 1
+  - name: EDIE12
+    bit_offset: 12
+    bit_size: 1
+  - name: EDIE13
+    bit_offset: 13
+    bit_size: 1
+  - name: EDIE14
+    bit_offset: 14
+    bit_size: 1
+  - name: EDIE15
+    bit_offset: 15
+    bit_size: 1
+  - name: EDIE16
+    bit_offset: 16
+    bit_size: 1
+  - name: EDIE17
+    bit_offset: 17
+    bit_size: 1
+  - name: EDIE18
+    bit_offset: 18
+    bit_size: 1
+  - name: EDIE19
+    bit_offset: 19
+    bit_size: 1
+  - name: EDIE20
+    bit_offset: 20
+    bit_size: 1
+  - name: EDIE21
+    bit_offset: 21
+    bit_size: 1
+  - name: EDIE22
+    bit_offset: 22
+    bit_size: 1
+  - name: EDIE23
+    bit_offset: 23
+    bit_size: 1
+  - name: EDIE24
+    bit_offset: 24
+    bit_size: 1
+  - name: EDIE25
+    bit_offset: 25
+    bit_size: 1
+  - name: EDIE26
+    bit_offset: 26
+    bit_size: 1
+  - name: EDIE27
+    bit_offset: 27
+    bit_size: 1
+  - name: EDIE28
+    bit_offset: 28
+    bit_size: 1
+  - name: EDIE29
+    bit_offset: 29
+    bit_size: 1
+  - name: EDIE30
+    bit_offset: 30
+    bit_size: 1
+  - name: EDIE31
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::GPCHR:
+  description: Global Pin Control High
+  fields:
+  - name: GPWD
+    bit_offset: 0
+    bit_size: 16
+  - name: GPWE16
+    bit_offset: 16
+    bit_size: 1
+  - name: GPWE17
+    bit_offset: 17
+    bit_size: 1
+  - name: GPWE18
+    bit_offset: 18
+    bit_size: 1
+  - name: GPWE19
+    bit_offset: 19
+    bit_size: 1
+  - name: GPWE20
+    bit_offset: 20
+    bit_size: 1
+  - name: GPWE21
+    bit_offset: 21
+    bit_size: 1
+  - name: GPWE22
+    bit_offset: 22
+    bit_size: 1
+  - name: GPWE23
+    bit_offset: 23
+    bit_size: 1
+  - name: GPWE24
+    bit_offset: 24
+    bit_size: 1
+  - name: GPWE25
+    bit_offset: 25
+    bit_size: 1
+  - name: GPWE26
+    bit_offset: 26
+    bit_size: 1
+  - name: GPWE27
+    bit_offset: 27
+    bit_size: 1
+  - name: GPWE28
+    bit_offset: 28
+    bit_size: 1
+  - name: GPWE29
+    bit_offset: 29
+    bit_size: 1
+  - name: GPWE30
+    bit_offset: 30
+    bit_size: 1
+  - name: GPWE31
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::GPCLR:
+  description: Global Pin Control Low
+  fields:
+  - name: GPWD
+    bit_offset: 0
+    bit_size: 16
+  - name: GPWE0
+    bit_offset: 16
+    bit_size: 1
+  - name: GPWE1
+    bit_offset: 17
+    bit_size: 1
+  - name: GPWE2
+    bit_offset: 18
+    bit_size: 1
+  - name: GPWE3
+    bit_offset: 19
+    bit_size: 1
+  - name: GPWE4
+    bit_offset: 20
+    bit_size: 1
+  - name: GPWE5
+    bit_offset: 21
+    bit_size: 1
+  - name: GPWE6
+    bit_offset: 22
+    bit_size: 1
+  - name: GPWE7
+    bit_offset: 23
+    bit_size: 1
+  - name: GPWE8
+    bit_offset: 24
+    bit_size: 1
+  - name: GPWE9
+    bit_offset: 25
+    bit_size: 1
+  - name: GPWE10
+    bit_offset: 26
+    bit_size: 1
+  - name: GPWE11
+    bit_offset: 27
+    bit_size: 1
+  - name: GPWE12
+    bit_offset: 28
+    bit_size: 1
+  - name: GPWE13
+    bit_offset: 29
+    bit_size: 1
+  - name: GPWE14
+    bit_offset: 30
+    bit_size: 1
+  - name: GPWE15
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::PCR:
+  description: Pin Control 0..Pin Control 31
+  fields:
+  - name: PS
+    bit_offset: 0
+    bit_size: 1
+  - name: PE
+    bit_offset: 1
+    bit_size: 1
+  - name: PV
+    bit_offset: 2
+    bit_size: 1
+  - name: SRE
+    bit_offset: 3
+    bit_size: 1
+  - name: PFE
+    bit_offset: 4
+    bit_size: 1
+  - name: ODE
+    bit_offset: 5
+    bit_size: 1
+  - name: DSE
+    bit_offset: 6
+    bit_size: 1
+  - name: MUX
+    bit_offset: 8
+    bit_size: 4
+  - name: IBE
+    bit_offset: 12
+    bit_size: 1
+  - name: INV
+    bit_offset: 13
+    bit_size: 1
+  - name: LK
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

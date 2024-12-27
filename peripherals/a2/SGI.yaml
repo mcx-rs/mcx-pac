@@ -1,0 +1,605 @@
+block/SGI:
+  items:
+  - name: SGI_DATIN0A
+    byte_offset: 512
+  - name: SGI_DATIN0B
+    byte_offset: 516
+  - name: SGI_DATIN0C
+    byte_offset: 520
+  - name: SGI_DATIN0D
+    byte_offset: 524
+  - name: SGI_DATIN1A
+    byte_offset: 528
+  - name: SGI_DATIN1B
+    byte_offset: 532
+  - name: SGI_DATIN1C
+    byte_offset: 536
+  - name: SGI_DATIN1D
+    byte_offset: 540
+  - name: SGI_DATIN2A
+    byte_offset: 544
+  - name: SGI_DATIN2B
+    byte_offset: 548
+  - name: SGI_DATIN2C
+    byte_offset: 552
+  - name: SGI_DATIN2D
+    byte_offset: 556
+  - name: SGI_DATIN3A
+    byte_offset: 560
+  - name: SGI_DATIN3B
+    byte_offset: 564
+  - name: SGI_DATIN3C
+    byte_offset: 568
+  - name: SGI_DATIN3D
+    byte_offset: 572
+  - name: SGI_KEY0A
+    byte_offset: 576
+  - name: SGI_KEY0B
+    byte_offset: 580
+  - name: SGI_KEY0C
+    byte_offset: 584
+  - name: SGI_KEY0D
+    byte_offset: 588
+  - name: SGI_KEY1A
+    byte_offset: 592
+  - name: SGI_KEY1B
+    byte_offset: 596
+  - name: SGI_KEY1C
+    byte_offset: 600
+  - name: SGI_KEY1D
+    byte_offset: 604
+  - name: SGI_KEY2A
+    byte_offset: 608
+  - name: SGI_KEY2B
+    byte_offset: 612
+  - name: SGI_KEY2C
+    byte_offset: 616
+  - name: SGI_KEY2D
+    byte_offset: 620
+  - name: SGI_KEY3A
+    byte_offset: 624
+  - name: SGI_KEY3B
+    byte_offset: 628
+  - name: SGI_KEY3C
+    byte_offset: 632
+  - name: SGI_KEY3D
+    byte_offset: 636
+  - name: SGI_KEY4A
+    byte_offset: 640
+  - name: SGI_KEY4B
+    byte_offset: 644
+  - name: SGI_KEY4C
+    byte_offset: 648
+  - name: SGI_KEY4D
+    byte_offset: 652
+  - name: SGI_KEY5A
+    byte_offset: 656
+  - name: SGI_KEY5B
+    byte_offset: 660
+  - name: SGI_KEY5C
+    byte_offset: 664
+  - name: SGI_KEY5D
+    byte_offset: 668
+  - name: SGI_KEY6A
+    byte_offset: 672
+  - name: SGI_KEY6B
+    byte_offset: 676
+  - name: SGI_KEY6C
+    byte_offset: 680
+  - name: SGI_KEY6D
+    byte_offset: 684
+  - name: SGI_KEY7A
+    byte_offset: 688
+  - name: SGI_KEY7B
+    byte_offset: 692
+  - name: SGI_KEY7C
+    byte_offset: 696
+  - name: SGI_KEY7D
+    byte_offset: 700
+  - name: SGI_DATOUTA
+    byte_offset: 704
+  - name: SGI_DATOUTB
+    byte_offset: 708
+  - name: SGI_DATOUTC
+    byte_offset: 712
+  - name: SGI_DATOUTD
+    byte_offset: 716
+  - name: SGI_STATUS
+    byte_offset: 3072
+    fieldset: regs::SGI_STATUS
+  - name: SGI_COUNT
+    byte_offset: 3076
+    fieldset: regs::SGI_COUNT
+  - name: SGI_KEYCHK
+    byte_offset: 3080
+  - name: SGI_CTRL
+    byte_offset: 3328
+    fieldset: regs::SGI_CTRL
+  - name: SGI_CTRL2
+    byte_offset: 3332
+    fieldset: regs::SGI_CTRL2
+  - name: SGI_DUMMY_CTRL
+    byte_offset: 3336
+    fieldset: regs::SGI_DUMMY_CTRL
+  - name: SGI_SFR_SW_MASK
+    byte_offset: 3340
+  - name: SGI_SFRSEED
+    byte_offset: 3344
+  - name: SGI_SHA2_CTRL
+    byte_offset: 3348
+    fieldset: regs::SGI_SHA2_CTRL
+  - name: SGI_SHA_FIFO
+    byte_offset: 3352
+  - name: SGI_CONFIG
+    byte_offset: 3356
+    fieldset: regs::SGI_CONFIG
+  - name: SGI_CONFIG2
+    byte_offset: 3360
+    fieldset: regs::SGI_CONFIG2
+  - name: SGI_AUTO_MODE
+    byte_offset: 3364
+    fieldset: regs::SGI_AUTO_MODE
+  - name: SGI_AUTO_DMA_CTRL
+    byte_offset: 3368
+    fieldset: regs::SGI_AUTO_DMA_CTRL
+  - name: SGI_PRNG_SW_SEED
+    byte_offset: 3376
+  - name: SGI_KEY_CTRL
+    byte_offset: 3392
+  - name: SGI_KEY_WRAP
+    byte_offset: 3408
+  - name: SGI_VERSION
+    byte_offset: 3848
+    fieldset: regs::SGI_VERSION
+  - name: SGI_ACCESS_ERR
+    byte_offset: 4032
+    fieldset: regs::SGI_ACCESS_ERR
+  - name: SGI_ACCESS_ERR_CLR
+    byte_offset: 4036
+    fieldset: regs::SGI_ACCESS_ERR_CLR
+  - name: SGI_INT_STATUS
+    byte_offset: 4064
+    fieldset: regs::SGI_INT_STATUS
+  - name: SGI_INT_ENABLE
+    byte_offset: 4068
+    fieldset: regs::SGI_INT_ENABLE
+  - name: SGI_INT_STATUS_CLR
+    byte_offset: 4072
+    fieldset: regs::SGI_INT_STATUS_CLR
+  - name: SGI_INT_STATUS_SET
+    byte_offset: 4076
+    fieldset: regs::SGI_INT_STATUS_SET
+  - name: SGI_MODULE_ID
+    byte_offset: 4092
+fieldset/regs::SGI_ACCESS_ERR:
+  description: Access Error
+  fields:
+  - name: apb_notav
+    bit_offset: 0
+    bit_size: 1
+  - name: apb_wrgmd
+    bit_offset: 1
+    bit_size: 1
+  - name: accerr_rsvd1
+    bit_offset: 2
+    bit_size: 2
+  - name: apb_master
+    bit_offset: 4
+    bit_size: 4
+  - name: accerr_rsvd2
+    bit_offset: 8
+    bit_size: 24
+fieldset/regs::SGI_ACCESS_ERR_CLR:
+  description: Clear Access Error
+  fields:
+  - name: err_clr
+    bit_offset: 0
+    bit_size: 1
+  - name: accerrc_rsvd
+    bit_offset: 1
+    bit_size: 31
+fieldset/regs::SGI_AUTO_DMA_CTRL:
+  description: SGI Auto Mode Control register
+  fields:
+  - name: ife
+    bit_offset: 0
+    bit_size: 1
+  - name: auto_dma_rsvd1
+    bit_offset: 1
+    bit_size: 7
+  - name: ofe
+    bit_offset: 8
+    bit_size: 1
+  - name: auto_dma_rsvd2
+    bit_offset: 9
+    bit_size: 23
+fieldset/regs::SGI_AUTO_MODE:
+  description: SGI Auto Mode Control register
+  fields:
+  - name: auto_mode_en
+    bit_offset: 0
+    bit_size: 1
+  - name: auto_mode_stop
+    bit_offset: 1
+    bit_size: 1
+  - name: auto_mode_rsvd1
+    bit_offset: 2
+    bit_size: 2
+  - name: incr_mode
+    bit_offset: 4
+    bit_size: 2
+  - name: auto_mode_rsvd2
+    bit_offset: 6
+    bit_size: 2
+  - name: cmd
+    bit_offset: 8
+    bit_size: 8
+  - name: auto_mode_rsvd3
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::SGI_CONFIG:
+  description: SHA Configuration Reg
+  fields:
+  - name: row
+    bit_offset: 0
+    bit_size: 1
+  - name: china
+    bit_offset: 1
+    bit_size: 1
+  - name: cc
+    bit_offset: 2
+    bit_size: 1
+  - name: has_aes
+    bit_offset: 3
+    bit_size: 1
+  - name: has_des
+    bit_offset: 4
+    bit_size: 1
+  - name: has_sha
+    bit_offset: 5
+    bit_size: 1
+  - name: has_movem
+    bit_offset: 6
+    bit_size: 1
+  - name: has_cmac
+    bit_offset: 7
+    bit_size: 1
+  - name: has_gfmul
+    bit_offset: 8
+    bit_size: 1
+  - name: internal_prng
+    bit_offset: 9
+    bit_size: 1
+  - name: key_digest
+    bit_offset: 10
+    bit_size: 1
+  - name: count_size
+    bit_offset: 11
+    bit_size: 1
+  - name: configc_rsvd
+    bit_offset: 12
+    bit_size: 1
+  - name: fa
+    bit_offset: 13
+    bit_size: 1
+  - name: configb2_rsvd
+    bit_offset: 14
+    bit_size: 1
+  - name: bus_width
+    bit_offset: 15
+    bit_size: 1
+  - name: num_datin
+    bit_offset: 16
+    bit_size: 2
+  - name: num_key
+    bit_offset: 18
+    bit_size: 3
+  - name: edc
+    bit_offset: 21
+    bit_size: 1
+  - name: configb_rsvd
+    bit_offset: 22
+    bit_size: 2
+  - name: sha_256_only
+    bit_offset: 24
+    bit_size: 1
+  - name: spb_support
+    bit_offset: 25
+    bit_size: 1
+  - name: spb_masking
+    bit_offset: 26
+    bit_size: 1
+  - name: sfr_sw_mask
+    bit_offset: 27
+    bit_size: 1
+  - name: configa_rsvd
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::SGI_CONFIG2:
+  description: SHA Configuration 2 Reg
+  fields:
+  - name: aes_used
+    bit_offset: 0
+    bit_size: 4
+  - name: aes_num_sboxes
+    bit_offset: 4
+    bit_size: 5
+  - name: aes_keysize
+    bit_offset: 9
+    bit_size: 2
+  - name: config2b_rsvd
+    bit_offset: 11
+    bit_size: 5
+  - name: des_used
+    bit_offset: 16
+    bit_size: 4
+  - name: des_num_sboxes
+    bit_offset: 20
+    bit_size: 5
+  - name: config2a_rsvd
+    bit_offset: 25
+    bit_size: 7
+fieldset/regs::SGI_COUNT:
+  description: Calculation counter
+  fields:
+  - name: count
+    bit_offset: 0
+    bit_size: 16
+  - name: count_rsvd
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::SGI_CTRL:
+  description: SGI Control register
+  fields:
+  - name: start
+    bit_offset: 0
+    bit_size: 1
+  - name: decrypt
+    bit_offset: 1
+    bit_size: 1
+  - name: aeskeysz
+    bit_offset: 2
+    bit_size: 2
+  - name: crypto_op
+    bit_offset: 4
+    bit_size: 3
+  - name: insel
+    bit_offset: 7
+    bit_size: 4
+  - name: outsel
+    bit_offset: 11
+    bit_size: 3
+  - name: datout_res
+    bit_offset: 14
+    bit_size: 2
+  - name: aes_en
+    bit_offset: 16
+    bit_size: 1
+  - name: des_en
+    bit_offset: 17
+    bit_size: 1
+  - name: gcm_en
+    bit_offset: 18
+    bit_size: 1
+  - name: prng_en
+    bit_offset: 19
+    bit_size: 1
+  - name: inkeysel
+    bit_offset: 20
+    bit_size: 5
+  - name: tdeskey
+    bit_offset: 25
+    bit_size: 1
+  - name: aes_no_kl
+    bit_offset: 26
+    bit_size: 1
+  - name: aes_sel
+    bit_offset: 27
+    bit_size: 1
+  - name: ctrl_rsvd
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::SGI_CTRL2:
+  description: SGI Control register 2
+  fields:
+  - name: flush
+    bit_offset: 0
+    bit_size: 1
+  - name: key_flush
+    bit_offset: 1
+    bit_size: 1
+  - name: datin_flush
+    bit_offset: 2
+    bit_size: 1
+  - name: incr
+    bit_offset: 3
+    bit_size: 1
+  - name: xorwr
+    bit_offset: 4
+    bit_size: 1
+  - name: flushwr
+    bit_offset: 5
+    bit_size: 1
+  - name: incr_cin
+    bit_offset: 6
+    bit_size: 1
+  - name: ctrl2_rsvd3
+    bit_offset: 7
+    bit_size: 1
+  - name: smasken
+    bit_offset: 8
+    bit_size: 1
+  - name: smaskstep
+    bit_offset: 9
+    bit_size: 1
+  - name: smasksw
+    bit_offset: 10
+    bit_size: 1
+  - name: ctrl2_rsvd2
+    bit_offset: 11
+    bit_size: 1
+  - name: movem
+    bit_offset: 12
+    bit_size: 4
+  - name: keyres
+    bit_offset: 16
+    bit_size: 5
+  - name: rkey
+    bit_offset: 21
+    bit_size: 1
+  - name: bytes_order
+    bit_offset: 22
+    bit_size: 1
+  - name: gcm_inxor
+    bit_offset: 23
+    bit_size: 1
+  - name: ctrl2_rsvd1
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::SGI_DUMMY_CTRL:
+  description: Configuration of dummy controls
+  fields:
+  - name: ddctrl
+    bit_offset: 0
+    bit_size: 10
+  - name: dmyctl_rsvd2
+    bit_offset: 10
+    bit_size: 6
+  - name: adctrl
+    bit_offset: 16
+    bit_size: 10
+  - name: dmyctl_rsvd1
+    bit_offset: 26
+    bit_size: 6
+fieldset/regs::SGI_INT_ENABLE:
+  description: Interrupt enable
+  fields:
+  - name: int_en
+    bit_offset: 0
+    bit_size: 1
+  - name: int_ena_rsvd
+    bit_offset: 1
+    bit_size: 31
+fieldset/regs::SGI_INT_STATUS:
+  description: Interrupt status
+  fields:
+  - name: int_pdone
+    bit_offset: 0
+    bit_size: 1
+  - name: intst_rsvd
+    bit_offset: 1
+    bit_size: 31
+fieldset/regs::SGI_INT_STATUS_CLR:
+  description: Interrupt status clear
+  fields:
+  - name: int_clr
+    bit_offset: 0
+    bit_size: 1
+  - name: int_stsc_rsvd
+    bit_offset: 1
+    bit_size: 31
+fieldset/regs::SGI_INT_STATUS_SET:
+  description: Interrupt status set
+  fields:
+  - name: int_set
+    bit_offset: 0
+    bit_size: 1
+  - name: int_stss_rsvd
+    bit_offset: 1
+    bit_size: 31
+fieldset/regs::SGI_SHA2_CTRL:
+  description: SHA Control Register
+  fields:
+  - name: sha2_en
+    bit_offset: 0
+    bit_size: 1
+  - name: sha2_mode
+    bit_offset: 1
+    bit_size: 1
+  - name: sha2_size
+    bit_offset: 2
+    bit_size: 2
+  - name: sha2_low_lim
+    bit_offset: 4
+    bit_size: 4
+  - name: sha2_high_lim
+    bit_offset: 8
+    bit_size: 4
+  - name: sha2_count_en
+    bit_offset: 12
+    bit_size: 1
+  - name: hash_reload
+    bit_offset: 13
+    bit_size: 1
+  - name: sha2_stop
+    bit_offset: 14
+    bit_size: 1
+  - name: no_auto_init
+    bit_offset: 15
+    bit_size: 1
+  - name: sha2ctl_rsvd
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::SGI_STATUS:
+  description: Status register
+  fields:
+  - name: busy
+    bit_offset: 0
+    bit_size: 1
+  - name: oflow
+    bit_offset: 1
+    bit_size: 1
+  - name: prng_rdy
+    bit_offset: 2
+    bit_size: 1
+  - name: error
+    bit_offset: 3
+    bit_size: 3
+  - name: sha2_busy
+    bit_offset: 6
+    bit_size: 1
+  - name: irq
+    bit_offset: 7
+    bit_size: 1
+  - name: sha_fifo_full
+    bit_offset: 8
+    bit_size: 1
+  - name: sha_fifo_level
+    bit_offset: 9
+    bit_size: 6
+  - name: sha_error
+    bit_offset: 15
+    bit_size: 1
+  - name: key_read_err
+    bit_offset: 16
+    bit_size: 1
+  - name: key_unwrap_err
+    bit_offset: 17
+    bit_size: 1
+  - name: status_rsvd3
+    bit_offset: 18
+    bit_size: 1
+  - name: status_rsvd
+    bit_offset: 19
+    bit_size: 13
+fieldset/regs::SGI_VERSION:
+  description: SGI Version
+  fields:
+  - name: z
+    bit_offset: 0
+    bit_size: 4
+  - name: y2
+    bit_offset: 4
+    bit_size: 4
+  - name: y1
+    bit_offset: 8
+    bit_size: 4
+  - name: x
+    bit_offset: 12
+    bit_size: 4
+  - name: milestone
+    bit_offset: 16
+    bit_size: 2
+  - name: version_rsvd_1
+    bit_offset: 18
+    bit_size: 14

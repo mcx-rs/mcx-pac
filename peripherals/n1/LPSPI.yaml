@@ -1,0 +1,327 @@
+block/LPSPI:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: PARAM
+    byte_offset: 4
+    fieldset: regs::PARAM
+  - name: CR
+    byte_offset: 16
+    fieldset: regs::CR
+  - name: SR
+    byte_offset: 20
+    fieldset: regs::SR
+  - name: IER
+    byte_offset: 24
+    fieldset: regs::IER
+  - name: DER
+    byte_offset: 28
+    fieldset: regs::DER
+  - name: CFGR0
+    byte_offset: 32
+    fieldset: regs::CFGR0
+  - name: CFGR1
+    byte_offset: 36
+    fieldset: regs::CFGR1
+  - name: DMR0
+    byte_offset: 48
+  - name: DMR1
+    byte_offset: 52
+  - name: CCR
+    byte_offset: 64
+    fieldset: regs::CCR
+  - name: CCR1
+    byte_offset: 68
+    fieldset: regs::CCR1
+  - name: FCR
+    byte_offset: 88
+    fieldset: regs::FCR
+  - name: FSR
+    byte_offset: 92
+    fieldset: regs::FSR
+  - name: TCR
+    byte_offset: 96
+    fieldset: regs::TCR
+  - name: TDR
+    byte_offset: 100
+  - name: RSR
+    byte_offset: 112
+    fieldset: regs::RSR
+  - name: RDR
+    byte_offset: 116
+  - name: RDROR
+    byte_offset: 120
+  - name: TCBR
+    byte_offset: 1020
+  - name: TDBR
+    array:
+      len: 128
+      stride: 4
+    byte_offset: 1024
+  - name: RDBR
+    array:
+      len: 128
+      stride: 4
+    byte_offset: 1536
+fieldset/regs::CCR:
+  description: Clock Configuration
+  fields:
+  - name: SCKDIV
+    bit_offset: 0
+    bit_size: 8
+  - name: DBT
+    bit_offset: 8
+    bit_size: 8
+  - name: PCSSCK
+    bit_offset: 16
+    bit_size: 8
+  - name: SCKPCS
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::CCR1:
+  description: Clock Configuration 1
+  fields:
+  - name: SCKSET
+    bit_offset: 0
+    bit_size: 8
+  - name: SCKHLD
+    bit_offset: 8
+    bit_size: 8
+  - name: PCSPCS
+    bit_offset: 16
+    bit_size: 8
+  - name: SCKSCK
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::CFGR0:
+  description: Configuration 0
+  fields:
+  - name: HREN
+    bit_offset: 0
+    bit_size: 1
+  - name: HRPOL
+    bit_offset: 1
+    bit_size: 1
+  - name: HRSEL
+    bit_offset: 2
+    bit_size: 1
+  - name: HRDIR
+    bit_offset: 3
+    bit_size: 1
+  - name: CIRFIFO
+    bit_offset: 8
+    bit_size: 1
+  - name: RDMO
+    bit_offset: 9
+    bit_size: 1
+fieldset/regs::CFGR1:
+  description: Configuration 1
+  fields:
+  - name: MASTER
+    bit_offset: 0
+    bit_size: 1
+  - name: SAMPLE
+    bit_offset: 1
+    bit_size: 1
+  - name: AUTOPCS
+    bit_offset: 2
+    bit_size: 1
+  - name: NOSTALL
+    bit_offset: 3
+    bit_size: 1
+  - name: PARTIAL
+    bit_offset: 4
+    bit_size: 1
+  - name: PCSPOL
+    bit_offset: 8
+    bit_size: 4
+  - name: MATCFG
+    bit_offset: 16
+    bit_size: 3
+  - name: PINCFG
+    bit_offset: 24
+    bit_size: 2
+  - name: OUTCFG
+    bit_offset: 26
+    bit_size: 1
+  - name: PCSCFG
+    bit_offset: 27
+    bit_size: 1
+fieldset/regs::CR:
+  description: Control
+  fields:
+  - name: MEN
+    bit_offset: 0
+    bit_size: 1
+  - name: RST
+    bit_offset: 1
+    bit_size: 1
+  - name: DBGEN
+    bit_offset: 3
+    bit_size: 1
+  - name: RTF
+    bit_offset: 8
+    bit_size: 1
+  - name: RRF
+    bit_offset: 9
+    bit_size: 1
+fieldset/regs::DER:
+  description: DMA Enable
+  fields:
+  - name: TDDE
+    bit_offset: 0
+    bit_size: 1
+  - name: RDDE
+    bit_offset: 1
+    bit_size: 1
+  - name: FCDE
+    bit_offset: 9
+    bit_size: 1
+fieldset/regs::FCR:
+  description: FIFO Control
+  fields:
+  - name: TXWATER
+    bit_offset: 0
+    bit_size: 3
+  - name: RXWATER
+    bit_offset: 16
+    bit_size: 3
+fieldset/regs::FSR:
+  description: FIFO Status
+  fields:
+  - name: TXCOUNT
+    bit_offset: 0
+    bit_size: 4
+  - name: RXCOUNT
+    bit_offset: 16
+    bit_size: 4
+fieldset/regs::IER:
+  description: Interrupt Enable
+  fields:
+  - name: TDIE
+    bit_offset: 0
+    bit_size: 1
+  - name: RDIE
+    bit_offset: 1
+    bit_size: 1
+  - name: WCIE
+    bit_offset: 8
+    bit_size: 1
+  - name: FCIE
+    bit_offset: 9
+    bit_size: 1
+  - name: TCIE
+    bit_offset: 10
+    bit_size: 1
+  - name: TEIE
+    bit_offset: 11
+    bit_size: 1
+  - name: REIE
+    bit_offset: 12
+    bit_size: 1
+  - name: DMIE
+    bit_offset: 13
+    bit_size: 1
+fieldset/regs::PARAM:
+  description: Parameter
+  fields:
+  - name: TXFIFO
+    bit_offset: 0
+    bit_size: 8
+  - name: RXFIFO
+    bit_offset: 8
+    bit_size: 8
+  - name: PCSNUM
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::RSR:
+  description: Receive Status
+  fields:
+  - name: SOF
+    bit_offset: 0
+    bit_size: 1
+  - name: RXEMPTY
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::SR:
+  description: Status
+  fields:
+  - name: TDF
+    bit_offset: 0
+    bit_size: 1
+  - name: RDF
+    bit_offset: 1
+    bit_size: 1
+  - name: WCF
+    bit_offset: 8
+    bit_size: 1
+  - name: FCF
+    bit_offset: 9
+    bit_size: 1
+  - name: TCF
+    bit_offset: 10
+    bit_size: 1
+  - name: TEF
+    bit_offset: 11
+    bit_size: 1
+  - name: REF
+    bit_offset: 12
+    bit_size: 1
+  - name: DMF
+    bit_offset: 13
+    bit_size: 1
+  - name: MBF
+    bit_offset: 24
+    bit_size: 1
+fieldset/regs::TCR:
+  description: Transmit Command
+  fields:
+  - name: FRAMESZ
+    bit_offset: 0
+    bit_size: 12
+  - name: WIDTH
+    bit_offset: 16
+    bit_size: 2
+  - name: TXMSK
+    bit_offset: 18
+    bit_size: 1
+  - name: RXMSK
+    bit_offset: 19
+    bit_size: 1
+  - name: CONTC
+    bit_offset: 20
+    bit_size: 1
+  - name: CONT
+    bit_offset: 21
+    bit_size: 1
+  - name: BYSW
+    bit_offset: 22
+    bit_size: 1
+  - name: LSBF
+    bit_offset: 23
+    bit_size: 1
+  - name: PCS
+    bit_offset: 24
+    bit_size: 2
+  - name: PRESCALE
+    bit_offset: 27
+    bit_size: 3
+  - name: CPHA
+    bit_offset: 30
+    bit_size: 1
+  - name: CPOL
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

@@ -1,0 +1,116 @@
+block/USBDCD:
+  items:
+  - name: CONTROL
+    byte_offset: 0
+    fieldset: regs::CONTROL
+  - name: CLOCK
+    byte_offset: 4
+    fieldset: regs::CLOCK
+  - name: STATUS
+    byte_offset: 8
+    fieldset: regs::STATUS
+  - name: SIGNAL_OVERRIDE
+    byte_offset: 12
+    fieldset: regs::SIGNAL_OVERRIDE
+  - name: TIMER0
+    byte_offset: 16
+    fieldset: regs::TIMER0
+  - name: TIMER1
+    byte_offset: 20
+    fieldset: regs::TIMER1
+  - name: TIMER2_BC11
+    byte_offset: 24
+    fieldset: regs::TIMER2_BC11
+  - name: TIMER2_BC12
+    byte_offset: 24
+    fieldset: regs::TIMER2_BC12
+fieldset/regs::CLOCK:
+  description: Clock
+  fields:
+  - name: CLOCK_UNIT
+    bit_offset: 0
+    bit_size: 1
+  - name: CLOCK_SPEED
+    bit_offset: 2
+    bit_size: 10
+fieldset/regs::CONTROL:
+  description: Control
+  fields:
+  - name: IACK
+    bit_offset: 0
+    bit_size: 1
+  - name: IF
+    bit_offset: 8
+    bit_size: 1
+  - name: IE
+    bit_offset: 16
+    bit_size: 1
+  - name: BC12
+    bit_offset: 17
+    bit_size: 1
+  - name: START
+    bit_offset: 24
+    bit_size: 1
+  - name: SR
+    bit_offset: 25
+    bit_size: 1
+fieldset/regs::SIGNAL_OVERRIDE:
+  description: Signal Override
+  fields:
+  - name: PS
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::STATUS:
+  description: Status
+  fields:
+  - name: SEQ_RES
+    bit_offset: 16
+    bit_size: 2
+  - name: SEQ_STAT
+    bit_offset: 18
+    bit_size: 2
+  - name: ERR
+    bit_offset: 20
+    bit_size: 1
+  - name: TO
+    bit_offset: 21
+    bit_size: 1
+  - name: ACTIVE
+    bit_offset: 22
+    bit_size: 1
+fieldset/regs::TIMER0:
+  description: TIMER0
+  fields:
+  - name: TUNITCON
+    bit_offset: 0
+    bit_size: 12
+  - name: TSEQ_INIT
+    bit_offset: 16
+    bit_size: 10
+fieldset/regs::TIMER1:
+  description: TIMER1
+  fields:
+  - name: TVDPSRC_ON
+    bit_offset: 0
+    bit_size: 10
+  - name: TDCD_DBNC
+    bit_offset: 16
+    bit_size: 10
+fieldset/regs::TIMER2_BC11:
+  description: TIMER2_BC11
+  fields:
+  - name: CHECK_DM
+    bit_offset: 0
+    bit_size: 4
+  - name: TVDPSRC_CON
+    bit_offset: 16
+    bit_size: 10
+fieldset/regs::TIMER2_BC12:
+  description: TIMER2_BC12
+  fields:
+  - name: TVDMSRC_ON
+    bit_offset: 0
+    bit_size: 10
+  - name: TWAIT_AFTER_PRD
+    bit_offset: 16
+    bit_size: 10

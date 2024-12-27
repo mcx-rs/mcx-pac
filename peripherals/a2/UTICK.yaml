@@ -1,0 +1,89 @@
+block/UTICK:
+  items:
+  - name: CTRL
+    byte_offset: 0
+    fieldset: regs::CTRL
+  - name: STAT
+    byte_offset: 4
+    fieldset: regs::STAT
+  - name: CFG
+    byte_offset: 8
+    fieldset: regs::CFG
+  - name: CAPCLR
+    byte_offset: 12
+    fieldset: regs::CAPCLR
+  - name: CAP
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 16
+    fieldset: regs::CAP
+fieldset/regs::CAP:
+  description: Capture
+  fields:
+  - name: CAP_VALUE
+    bit_offset: 0
+    bit_size: 31
+  - name: VALID
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CAPCLR:
+  description: Capture Clear
+  fields:
+  - name: CAPCLR0
+    bit_offset: 0
+    bit_size: 1
+  - name: CAPCLR1
+    bit_offset: 1
+    bit_size: 1
+  - name: CAPCLR2
+    bit_offset: 2
+    bit_size: 1
+  - name: CAPCLR3
+    bit_offset: 3
+    bit_size: 1
+fieldset/regs::CFG:
+  description: Capture Configuration
+  fields:
+  - name: CAPEN0
+    bit_offset: 0
+    bit_size: 1
+  - name: CAPEN1
+    bit_offset: 1
+    bit_size: 1
+  - name: CAPEN2
+    bit_offset: 2
+    bit_size: 1
+  - name: CAPEN3
+    bit_offset: 3
+    bit_size: 1
+  - name: CAPPOL0
+    bit_offset: 8
+    bit_size: 1
+  - name: CAPPOL1
+    bit_offset: 9
+    bit_size: 1
+  - name: CAPPOL2
+    bit_offset: 10
+    bit_size: 1
+  - name: CAPPOL3
+    bit_offset: 11
+    bit_size: 1
+fieldset/regs::CTRL:
+  description: Control
+  fields:
+  - name: DELAYVAL
+    bit_offset: 0
+    bit_size: 31
+  - name: REPEAT
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::STAT:
+  description: Status
+  fields:
+  - name: INTR
+    bit_offset: 0
+    bit_size: 1
+  - name: ACTIVE
+    bit_offset: 1
+    bit_size: 1

@@ -1,0 +1,671 @@
+block/VBAT:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: STATUSA
+    byte_offset: 16
+    fieldset: regs::STATUSA
+  - name: STATUSB
+    byte_offset: 20
+    fieldset: regs::STATUSB
+  - name: IRQENA
+    byte_offset: 24
+    fieldset: regs::IRQENA
+  - name: IRQENB
+    byte_offset: 28
+    fieldset: regs::IRQENB
+  - name: WAKENA
+    byte_offset: 32
+    fieldset: regs::WAKENA
+  - name: WAKENB
+    byte_offset: 36
+    fieldset: regs::WAKENB
+  - name: TAMPERA
+    byte_offset: 40
+    fieldset: regs::TAMPERA
+  - name: TAMPERB
+    byte_offset: 44
+    fieldset: regs::TAMPERB
+  - name: LOCKA
+    byte_offset: 48
+    fieldset: regs::LOCKA
+  - name: LOCKB
+    byte_offset: 52
+    fieldset: regs::LOCKB
+  - name: WAKECFG
+    byte_offset: 56
+    fieldset: regs::WAKECFG
+  - name: OSCCTLA
+    byte_offset: 256
+    fieldset: regs::OSCCTLA
+  - name: OSCCTLB
+    byte_offset: 260
+    fieldset: regs::OSCCTLB
+  - name: OSCCFGA
+    byte_offset: 264
+    fieldset: regs::OSCCFGA
+  - name: OSCCFGB
+    byte_offset: 268
+    fieldset: regs::OSCCFGB
+  - name: OSCLCKA
+    byte_offset: 280
+    fieldset: regs::OSCLCKA
+  - name: OSCLCKB
+    byte_offset: 284
+    fieldset: regs::OSCLCKB
+  - name: OSCCLKE
+    byte_offset: 288
+    fieldset: regs::OSCCLKE
+  - name: FROCTLA
+    byte_offset: 512
+    fieldset: regs::FROCTLA
+  - name: FROCTLB
+    byte_offset: 516
+    fieldset: regs::FROCTLB
+  - name: FROLCKA
+    byte_offset: 536
+    fieldset: regs::FROLCKA
+  - name: FROLCKB
+    byte_offset: 540
+    fieldset: regs::FROLCKB
+  - name: FROCLKE
+    byte_offset: 544
+    fieldset: regs::FROCLKE
+  - name: LDOCTLA
+    byte_offset: 768
+    fieldset: regs::LDOCTLA
+  - name: LDOCTLB
+    byte_offset: 772
+    fieldset: regs::LDOCTLB
+  - name: LDOLCKA
+    byte_offset: 792
+    fieldset: regs::LDOLCKA
+  - name: LDOLCKB
+    byte_offset: 796
+    fieldset: regs::LDOLCKB
+  - name: LDORAMC
+    byte_offset: 800
+    fieldset: regs::LDORAMC
+  - name: LDOTIMER0
+    byte_offset: 816
+    fieldset: regs::LDOTIMER0
+  - name: LDOTIMER1
+    byte_offset: 824
+    fieldset: regs::LDOTIMER1
+  - name: MONCTLA
+    byte_offset: 1024
+    fieldset: regs::MONCTLA
+  - name: MONCTLB
+    byte_offset: 1028
+    fieldset: regs::MONCTLB
+  - name: MONCFGA
+    byte_offset: 1032
+    fieldset: regs::MONCFGA
+  - name: MONCFGB
+    byte_offset: 1036
+    fieldset: regs::MONCFGB
+  - name: MONLCKA
+    byte_offset: 1048
+    fieldset: regs::MONLCKA
+  - name: MONLCKB
+    byte_offset: 1052
+    fieldset: regs::MONLCKB
+  - name: TAMCTLA
+    byte_offset: 1280
+    fieldset: regs::TAMCTLA
+  - name: TAMCTLB
+    byte_offset: 1284
+    fieldset: regs::TAMCTLB
+  - name: TAMLCKA
+    byte_offset: 1304
+    fieldset: regs::TAMLCKA
+  - name: TAMLCKB
+    byte_offset: 1308
+    fieldset: regs::TAMLCKB
+  - name: SWICTLA
+    byte_offset: 1536
+    fieldset: regs::SWICTLA
+  - name: SWICTLB
+    byte_offset: 1540
+    fieldset: regs::SWICTLB
+  - name: SWILCKA
+    byte_offset: 1560
+    fieldset: regs::SWILCKA
+  - name: SWILCKB
+    byte_offset: 1564
+    fieldset: regs::SWILCKB
+  - name: WAKEUP
+    array:
+      len: 2
+      stride: 8
+    byte_offset: 1792
+    block: WAKEUP
+  - name: WAKLCKA
+    byte_offset: 2040
+    fieldset: regs::WAKLCKA
+  - name: WAKLCKB
+    byte_offset: 2044
+    fieldset: regs::WAKLCKB
+block/WAKEUP:
+  items:
+  - name: WAKEUPA
+    byte_offset: 0
+  - name: WAKEUPB
+    byte_offset: 4
+fieldset/regs::FROCLKE:
+  description: FRO16K Clock Enable
+  fields:
+  - name: CLKE
+    bit_offset: 0
+    bit_size: 4
+fieldset/regs::FROCTLA:
+  description: FRO16K Control A
+  fields:
+  - name: FRO_EN
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::FROCTLB:
+  description: FRO16K Control B
+  fields:
+  - name: INVERSE
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::FROLCKA:
+  description: FRO16K Lock A
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::FROLCKB:
+  description: FRO16K Lock B
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::IRQENA:
+  description: Interrupt Enable A
+  fields:
+  - name: POR_DET
+    bit_offset: 0
+    bit_size: 1
+  - name: WAKEUP_FLAG
+    bit_offset: 1
+    bit_size: 1
+  - name: TIMER0_FLAG
+    bit_offset: 2
+    bit_size: 1
+  - name: TIMER1_FLAG
+    bit_offset: 3
+    bit_size: 1
+  - name: LDO_RDY
+    bit_offset: 4
+    bit_size: 1
+  - name: OSC_RDY
+    bit_offset: 5
+    bit_size: 1
+  - name: CLOCK_DET
+    bit_offset: 6
+    bit_size: 1
+  - name: CONFIG_DET
+    bit_offset: 7
+    bit_size: 1
+  - name: VOLT_DET
+    bit_offset: 8
+    bit_size: 1
+  - name: TEMP_DET
+    bit_offset: 9
+    bit_size: 1
+  - name: LIGHT_DET
+    bit_offset: 10
+    bit_size: 1
+  - name: SEC0_DET
+    bit_offset: 12
+    bit_size: 1
+  - name: IRQ0_DET
+    bit_offset: 16
+    bit_size: 1
+  - name: IRQ1_DET
+    bit_offset: 17
+    bit_size: 1
+  - name: IRQ2_DET
+    bit_offset: 18
+    bit_size: 1
+  - name: IRQ3_DET
+    bit_offset: 19
+    bit_size: 1
+fieldset/regs::IRQENB:
+  description: Interrupt Enable B
+  fields:
+  - name: INVERSE
+    bit_offset: 0
+    bit_size: 20
+fieldset/regs::LDOCTLA:
+  description: LDO_RAM Control A
+  fields:
+  - name: BG_EN
+    bit_offset: 0
+    bit_size: 1
+  - name: LDO_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: REFRESH_EN
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::LDOCTLB:
+  description: LDO_RAM Control B
+  fields:
+  - name: INVERSE
+    bit_offset: 0
+    bit_size: 3
+fieldset/regs::LDOLCKA:
+  description: LDO_RAM Lock A
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::LDOLCKB:
+  description: LDO_RAM Lock B
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::LDORAMC:
+  description: RAM Control
+  fields:
+  - name: ISO
+    bit_offset: 0
+    bit_size: 1
+  - name: SWI
+    bit_offset: 1
+    bit_size: 1
+  - name: RET0
+    bit_offset: 8
+    bit_size: 1
+  - name: RET1
+    bit_offset: 9
+    bit_size: 1
+  - name: RET2
+    bit_offset: 10
+    bit_size: 1
+  - name: RET3
+    bit_offset: 11
+    bit_size: 1
+fieldset/regs::LDOTIMER0:
+  description: Bandgap Timer 0
+  fields:
+  - name: TIMCFG
+    bit_offset: 0
+    bit_size: 3
+  - name: TIMEN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::LDOTIMER1:
+  description: Bandgap Timer 1
+  fields:
+  - name: TIMCFG
+    bit_offset: 0
+    bit_size: 24
+  - name: TIMEN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::LOCKA:
+  description: Lock A
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::LOCKB:
+  description: Lock B
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::MONCFGA:
+  description: CLKMON Configuration A
+  fields:
+  - name: FREQ_TRIM
+    bit_offset: 0
+    bit_size: 2
+  - name: DIVIDE_TRIM
+    bit_offset: 2
+    bit_size: 1
+  - name: RSVD_TRIM
+    bit_offset: 3
+    bit_size: 5
+fieldset/regs::MONCFGB:
+  description: CLKMON Configuration B
+  fields:
+  - name: INVERSE
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::MONCTLA:
+  description: CLKMON Control A
+  fields:
+  - name: MON_EN
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::MONCTLB:
+  description: CLKMON Control B
+  fields:
+  - name: INVERSE
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::MONLCKA:
+  description: CLKMON Lock A
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::MONLCKB:
+  description: CLKMON Lock B
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::OSCCFGA:
+  description: Oscillator Configuration A
+  fields:
+  - name: CMP_TRIM
+    bit_offset: 0
+    bit_size: 2
+  - name: CAP2_TRIM
+    bit_offset: 2
+    bit_size: 1
+  - name: DLY_TRIM
+    bit_offset: 3
+    bit_size: 4
+  - name: CAP_TRIM
+    bit_offset: 7
+    bit_size: 2
+  - name: INIT_TRIM
+    bit_offset: 9
+    bit_size: 3
+fieldset/regs::OSCCFGB:
+  description: Oscillator Configuration B
+  fields:
+  - name: INVERSE
+    bit_offset: 0
+    bit_size: 12
+fieldset/regs::OSCCLKE:
+  description: Oscillator Clock Enable
+  fields:
+  - name: CLKE
+    bit_offset: 0
+    bit_size: 4
+fieldset/regs::OSCCTLA:
+  description: Oscillator Control A
+  fields:
+  - name: OSC_EN
+    bit_offset: 0
+    bit_size: 1
+  - name: OSC_BYP_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: COARSE_AMP_GAIN
+    bit_offset: 2
+    bit_size: 2
+  - name: CAP_SEL_EN
+    bit_offset: 7
+    bit_size: 1
+  - name: EXTAL_CAP_SEL
+    bit_offset: 8
+    bit_size: 4
+  - name: XTAL_CAP_SEL
+    bit_offset: 12
+    bit_size: 4
+  - name: MODE_EN
+    bit_offset: 16
+    bit_size: 2
+  - name: SUPPLY_DET
+    bit_offset: 18
+    bit_size: 2
+fieldset/regs::OSCCTLB:
+  description: Oscillator Control B
+  fields:
+  - name: INVERSE
+    bit_offset: 0
+    bit_size: 20
+fieldset/regs::OSCLCKA:
+  description: Oscillator Lock A
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::OSCLCKB:
+  description: Oscillator Lock B
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::STATUSA:
+  description: Status A
+  fields:
+  - name: POR_DET
+    bit_offset: 0
+    bit_size: 1
+  - name: WAKEUP_FLAG
+    bit_offset: 1
+    bit_size: 1
+  - name: TIMER0_FLAG
+    bit_offset: 2
+    bit_size: 1
+  - name: TIMER1_FLAG
+    bit_offset: 3
+    bit_size: 1
+  - name: LDO_RDY
+    bit_offset: 4
+    bit_size: 1
+  - name: OSC_RDY
+    bit_offset: 5
+    bit_size: 1
+  - name: CLOCK_DET
+    bit_offset: 6
+    bit_size: 1
+  - name: CONFIG_DET
+    bit_offset: 7
+    bit_size: 1
+  - name: VOLT_DET
+    bit_offset: 8
+    bit_size: 1
+  - name: TEMP_DET
+    bit_offset: 9
+    bit_size: 1
+  - name: LIGHT_DET
+    bit_offset: 10
+    bit_size: 1
+  - name: SEC0_DET
+    bit_offset: 12
+    bit_size: 1
+  - name: IRQ0_DET
+    bit_offset: 16
+    bit_size: 1
+  - name: IRQ1_DET
+    bit_offset: 17
+    bit_size: 1
+  - name: IRQ2_DET
+    bit_offset: 18
+    bit_size: 1
+  - name: IRQ3_DET
+    bit_offset: 19
+    bit_size: 1
+fieldset/regs::STATUSB:
+  description: Status B
+  fields:
+  - name: INVERSE
+    bit_offset: 0
+    bit_size: 20
+fieldset/regs::SWICTLA:
+  description: Switch Control A
+  fields:
+  - name: SWI_EN
+    bit_offset: 0
+    bit_size: 1
+  - name: LP_EN
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::SWICTLB:
+  description: Switch Control B
+  fields:
+  - name: INVERSE
+    bit_offset: 0
+    bit_size: 2
+fieldset/regs::SWILCKA:
+  description: Switch Lock A
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::SWILCKB:
+  description: Switch Lock B
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::TAMCTLA:
+  description: TAMPER Control A
+  fields:
+  - name: VOLT_EN
+    bit_offset: 0
+    bit_size: 1
+  - name: TEMP_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: LIGHT_EN
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::TAMCTLB:
+  description: TAMPER Control B
+  fields:
+  - name: INVERSE
+    bit_offset: 0
+    bit_size: 4
+fieldset/regs::TAMLCKA:
+  description: TAMPER Lock A
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::TAMLCKB:
+  description: TAMPER Lock B
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::TAMPERA:
+  description: Tamper Enable A
+  fields:
+  - name: POR_DET
+    bit_offset: 0
+    bit_size: 1
+  - name: CLOCK_DET
+    bit_offset: 6
+    bit_size: 1
+  - name: CONFIG_DET
+    bit_offset: 7
+    bit_size: 1
+  - name: VOLT_DET
+    bit_offset: 8
+    bit_size: 1
+  - name: TEMP_DET
+    bit_offset: 9
+    bit_size: 1
+  - name: LIGHT_DET
+    bit_offset: 10
+    bit_size: 1
+  - name: SEC0_DET
+    bit_offset: 12
+    bit_size: 1
+fieldset/regs::TAMPERB:
+  description: Tamper Enable B
+  fields:
+  - name: INVERSE
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::WAKECFG:
+  description: Wake-up Configuration
+  fields:
+  - name: OUT
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::WAKENA:
+  description: Wake-up Enable A
+  fields:
+  - name: POR_DET
+    bit_offset: 0
+    bit_size: 1
+  - name: WAKEUP_FLAG
+    bit_offset: 1
+    bit_size: 1
+  - name: TIMER0_FLAG
+    bit_offset: 2
+    bit_size: 1
+  - name: TIMER1_FLAG
+    bit_offset: 3
+    bit_size: 1
+  - name: LDO_RDY
+    bit_offset: 4
+    bit_size: 1
+  - name: OSC_RDY
+    bit_offset: 5
+    bit_size: 1
+  - name: CLOCK_DET
+    bit_offset: 6
+    bit_size: 1
+  - name: CONFIG_DET
+    bit_offset: 7
+    bit_size: 1
+  - name: VOLT_DET
+    bit_offset: 8
+    bit_size: 1
+  - name: TEMP_DET
+    bit_offset: 9
+    bit_size: 1
+  - name: LIGHT_DET
+    bit_offset: 10
+    bit_size: 1
+  - name: SEC0_DET
+    bit_offset: 12
+    bit_size: 1
+  - name: IRQ0_DET
+    bit_offset: 16
+    bit_size: 1
+  - name: IRQ1_DET
+    bit_offset: 17
+    bit_size: 1
+  - name: IRQ2_DET
+    bit_offset: 18
+    bit_size: 1
+  - name: IRQ3_DET
+    bit_offset: 19
+    bit_size: 1
+fieldset/regs::WAKENB:
+  description: Wake-up Enable B
+  fields:
+  - name: INVERSE
+    bit_offset: 0
+    bit_size: 20
+fieldset/regs::WAKLCKA:
+  description: Wakeup Lock A
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::WAKLCKB:
+  description: Wakeup Lock B
+  fields:
+  - name: LOCK
+    bit_offset: 0
+    bit_size: 1

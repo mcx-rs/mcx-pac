@@ -1,0 +1,378 @@
+block/EMVSIM:
+  items:
+  - name: VER_ID
+    byte_offset: 0
+  - name: PARAM
+    byte_offset: 4
+    fieldset: regs::PARAM
+  - name: CLKCFG
+    byte_offset: 8
+    fieldset: regs::CLKCFG
+  - name: DIVISOR
+    byte_offset: 12
+    fieldset: regs::DIVISOR
+  - name: CTRL
+    byte_offset: 16
+    fieldset: regs::CTRL
+  - name: INT_MASK
+    byte_offset: 20
+    fieldset: regs::INT_MASK
+  - name: RX_THD
+    byte_offset: 24
+    fieldset: regs::RX_THD
+  - name: TX_THD
+    byte_offset: 28
+    fieldset: regs::TX_THD
+  - name: RX_STATUS
+    byte_offset: 32
+    fieldset: regs::RX_STATUS
+  - name: TX_STATUS
+    byte_offset: 36
+    fieldset: regs::TX_STATUS
+  - name: PCSR
+    byte_offset: 40
+    fieldset: regs::PCSR
+  - name: RX_BUF
+    byte_offset: 44
+    fieldset: regs::RX_BUF
+  - name: TX_BUF
+    byte_offset: 48
+    fieldset: regs::TX_BUF
+  - name: TX_GETU
+    byte_offset: 52
+    fieldset: regs::TX_GETU
+  - name: CWT_VAL
+    byte_offset: 56
+    fieldset: regs::CWT_VAL
+  - name: BWT_VAL
+    byte_offset: 60
+  - name: BGT_VAL
+    byte_offset: 64
+    fieldset: regs::BGT_VAL
+  - name: GPCNT0_VAL
+    byte_offset: 68
+    fieldset: regs::GPCNT0_VAL
+  - name: GPCNT1_VAL
+    byte_offset: 72
+    fieldset: regs::GPCNT1_VAL
+fieldset/regs::BGT_VAL:
+  description: Block Guard Time Value
+  fields:
+  - name: BGT
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::CLKCFG:
+  description: Clock Configuration
+  fields:
+  - name: CLK_PRSC
+    bit_offset: 0
+    bit_size: 8
+  - name: GPCNT1_CLK_SEL
+    bit_offset: 8
+    bit_size: 2
+  - name: GPCNT0_CLK_SEL
+    bit_offset: 10
+    bit_size: 2
+fieldset/regs::CTRL:
+  description: Control
+  fields:
+  - name: IC
+    bit_offset: 0
+    bit_size: 1
+  - name: ICM
+    bit_offset: 1
+    bit_size: 1
+  - name: ANACK
+    bit_offset: 2
+    bit_size: 1
+  - name: ONACK
+    bit_offset: 3
+    bit_size: 1
+  - name: FLSH_RX
+    bit_offset: 8
+    bit_size: 1
+  - name: FLSH_TX
+    bit_offset: 9
+    bit_size: 1
+  - name: SW_RST
+    bit_offset: 10
+    bit_size: 1
+  - name: KILL_CLOCKS
+    bit_offset: 11
+    bit_size: 1
+  - name: DOZE_EN
+    bit_offset: 12
+    bit_size: 1
+  - name: STOP_EN
+    bit_offset: 13
+    bit_size: 1
+  - name: RCV_EN
+    bit_offset: 16
+    bit_size: 1
+  - name: XMT_EN
+    bit_offset: 17
+    bit_size: 1
+  - name: RCVR_11
+    bit_offset: 18
+    bit_size: 1
+  - name: RX_DMA_EN
+    bit_offset: 19
+    bit_size: 1
+  - name: TX_DMA_EN
+    bit_offset: 20
+    bit_size: 1
+  - name: INV_CRC_VAL
+    bit_offset: 24
+    bit_size: 1
+  - name: CRC_OUT_FLIP
+    bit_offset: 25
+    bit_size: 1
+  - name: CRC_IN_FLIP
+    bit_offset: 26
+    bit_size: 1
+  - name: CWT_EN
+    bit_offset: 27
+    bit_size: 1
+  - name: LRC_EN
+    bit_offset: 28
+    bit_size: 1
+  - name: CRC_EN
+    bit_offset: 29
+    bit_size: 1
+  - name: XMT_CRC_LRC
+    bit_offset: 30
+    bit_size: 1
+  - name: BWT_EN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CWT_VAL:
+  description: Character Wait Time Value
+  fields:
+  - name: CWT
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::DIVISOR:
+  description: Baud Rate Divisor
+  fields:
+  - name: DIVISOR_VALUE
+    bit_offset: 0
+    bit_size: 9
+fieldset/regs::GPCNT0_VAL:
+  description: General Purpose Counter 0 Timeout Value
+  fields:
+  - name: GPCNT0
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::GPCNT1_VAL:
+  description: General Purpose Counter 1 Timeout Value
+  fields:
+  - name: GPCNT1
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::INT_MASK:
+  description: Interrupt Mask
+  fields:
+  - name: RDT_IM
+    bit_offset: 0
+    bit_size: 1
+  - name: TC_IM
+    bit_offset: 1
+    bit_size: 1
+  - name: RFO_IM
+    bit_offset: 2
+    bit_size: 1
+  - name: ETC_IM
+    bit_offset: 3
+    bit_size: 1
+  - name: TFE_IM
+    bit_offset: 4
+    bit_size: 1
+  - name: TNACK_IM
+    bit_offset: 5
+    bit_size: 1
+  - name: TFF_IM
+    bit_offset: 6
+    bit_size: 1
+  - name: TDT_IM
+    bit_offset: 7
+    bit_size: 1
+  - name: GPCNT0_IM
+    bit_offset: 8
+    bit_size: 1
+  - name: CWT_ERR_IM
+    bit_offset: 9
+    bit_size: 1
+  - name: RNACK_IM
+    bit_offset: 10
+    bit_size: 1
+  - name: BWT_ERR_IM
+    bit_offset: 11
+    bit_size: 1
+  - name: BGT_ERR_IM
+    bit_offset: 12
+    bit_size: 1
+  - name: GPCNT1_IM
+    bit_offset: 13
+    bit_size: 1
+  - name: RX_DATA_IM
+    bit_offset: 14
+    bit_size: 1
+  - name: PEF_IM
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::PARAM:
+  description: Parameters
+  fields:
+  - name: RX_FIFO_DEPTH
+    bit_offset: 0
+    bit_size: 8
+  - name: TX_FIFO_DEPTH
+    bit_offset: 8
+    bit_size: 8
+fieldset/regs::PCSR:
+  description: Port Control and Status
+  fields:
+  - name: SAPD
+    bit_offset: 0
+    bit_size: 1
+  - name: SVCC_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: VCCENP
+    bit_offset: 2
+    bit_size: 1
+  - name: SRST
+    bit_offset: 3
+    bit_size: 1
+  - name: SCEN
+    bit_offset: 4
+    bit_size: 1
+  - name: SCSP
+    bit_offset: 5
+    bit_size: 1
+  - name: SPD
+    bit_offset: 7
+    bit_size: 1
+  - name: SPDIM
+    bit_offset: 24
+    bit_size: 1
+  - name: SPDIF
+    bit_offset: 25
+    bit_size: 1
+  - name: SPDP
+    bit_offset: 26
+    bit_size: 1
+  - name: SPDES
+    bit_offset: 27
+    bit_size: 1
+fieldset/regs::RX_BUF:
+  description: Receive Data Read Buffer
+  fields:
+  - name: RX_BYTE
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::RX_STATUS:
+  description: Receive Status
+  fields:
+  - name: RFO
+    bit_offset: 0
+    bit_size: 1
+  - name: RX_DATA
+    bit_offset: 4
+    bit_size: 1
+  - name: RDTF
+    bit_offset: 5
+    bit_size: 1
+  - name: LRC_OK
+    bit_offset: 6
+    bit_size: 1
+  - name: CRC_OK
+    bit_offset: 7
+    bit_size: 1
+  - name: CWT_ERR
+    bit_offset: 8
+    bit_size: 1
+  - name: RTE
+    bit_offset: 9
+    bit_size: 1
+  - name: BWT_ERR
+    bit_offset: 10
+    bit_size: 1
+  - name: BGT_ERR
+    bit_offset: 11
+    bit_size: 1
+  - name: PEF
+    bit_offset: 12
+    bit_size: 1
+  - name: FEF
+    bit_offset: 13
+    bit_size: 1
+  - name: RX_WPTR
+    bit_offset: 16
+    bit_size: 4
+  - name: RX_CNT
+    bit_offset: 24
+    bit_size: 4
+fieldset/regs::RX_THD:
+  description: Receiver Threshold
+  fields:
+  - name: RDT
+    bit_offset: 0
+    bit_size: 4
+  - name: RNCK_THD
+    bit_offset: 8
+    bit_size: 4
+fieldset/regs::TX_BUF:
+  description: Transmit Data Buffer
+  fields:
+  - name: TX_BYTE
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::TX_GETU:
+  description: Transmitter Guard ETU Value
+  fields:
+  - name: GETU
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::TX_STATUS:
+  description: Transmitter Status
+  fields:
+  - name: TNTE
+    bit_offset: 0
+    bit_size: 1
+  - name: TFE
+    bit_offset: 3
+    bit_size: 1
+  - name: ETCF
+    bit_offset: 4
+    bit_size: 1
+  - name: TCF
+    bit_offset: 5
+    bit_size: 1
+  - name: TFF
+    bit_offset: 6
+    bit_size: 1
+  - name: TDTF
+    bit_offset: 7
+    bit_size: 1
+  - name: GPCNT0_TO
+    bit_offset: 8
+    bit_size: 1
+  - name: GPCNT1_TO
+    bit_offset: 9
+    bit_size: 1
+  - name: TX_RPTR
+    bit_offset: 16
+    bit_size: 4
+  - name: TX_CNT
+    bit_offset: 24
+    bit_size: 4
+fieldset/regs::TX_THD:
+  description: Transmitter Threshold
+  fields:
+  - name: TDT
+    bit_offset: 0
+    bit_size: 4
+  - name: TNCK_THD
+    bit_offset: 8
+    bit_size: 4

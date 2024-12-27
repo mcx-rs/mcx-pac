@@ -1,0 +1,71 @@
+block/EWM:
+  items:
+  - name: CTRL
+    byte_offset: 0
+    bit_size: 8
+    fieldset: regs::CTRL
+  - name: SERV
+    byte_offset: 1
+    bit_size: 8
+    fieldset: regs::SERV
+  - name: CMPL
+    byte_offset: 2
+    bit_size: 8
+    fieldset: regs::CMPL
+  - name: CMPH
+    byte_offset: 3
+    bit_size: 8
+    fieldset: regs::CMPH
+  - name: CLKCTRL
+    byte_offset: 4
+    bit_size: 8
+    fieldset: regs::CLKCTRL
+  - name: CLKPRESCALER
+    byte_offset: 5
+    bit_size: 8
+    fieldset: regs::CLKPRESCALER
+fieldset/regs::CLKCTRL:
+  description: Clock Control
+  fields:
+  - name: CLKSEL
+    bit_offset: 0
+    bit_size: 2
+fieldset/regs::CLKPRESCALER:
+  description: Clock Prescaler
+  fields:
+  - name: CLK_DIV
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::CMPH:
+  description: Compare High
+  fields:
+  - name: COMPAREH
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::CMPL:
+  description: Compare Low
+  fields:
+  - name: COMPAREL
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::CTRL:
+  description: Control
+  fields:
+  - name: EWMEN
+    bit_offset: 0
+    bit_size: 1
+  - name: ASSIN
+    bit_offset: 1
+    bit_size: 1
+  - name: INEN
+    bit_offset: 2
+    bit_size: 1
+  - name: INTEN
+    bit_offset: 3
+    bit_size: 1
+fieldset/regs::SERV:
+  description: Service
+  fields:
+  - name: SERVICE
+    bit_offset: 0
+    bit_size: 8

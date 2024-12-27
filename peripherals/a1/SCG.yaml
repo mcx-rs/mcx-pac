@@ -1,0 +1,433 @@
+block/SCG:
+  items:
+  - name: VERID
+    byte_offset: 0
+  - name: PARAM
+    byte_offset: 4
+    fieldset: regs::PARAM
+  - name: TRIM_LOCK
+    byte_offset: 8
+    fieldset: regs::TRIM_LOCK
+  - name: CSR
+    byte_offset: 16
+    fieldset: regs::CSR
+  - name: RCCR
+    byte_offset: 20
+    fieldset: regs::RCCR
+  - name: SOSCCSR
+    byte_offset: 256
+    fieldset: regs::SOSCCSR
+  - name: SOSCCFG
+    byte_offset: 264
+    fieldset: regs::SOSCCFG
+  - name: SIRCCSR
+    byte_offset: 512
+    fieldset: regs::SIRCCSR
+  - name: SIRCTCFG
+    byte_offset: 524
+    fieldset: regs::SIRCTCFG
+  - name: SIRCTRIM
+    byte_offset: 528
+    fieldset: regs::SIRCTRIM
+  - name: SIRCSTAT
+    byte_offset: 536
+    fieldset: regs::SIRCSTAT
+  - name: FIRCCSR
+    byte_offset: 768
+    fieldset: regs::FIRCCSR
+  - name: FIRCCFG
+    byte_offset: 776
+    fieldset: regs::FIRCCFG
+  - name: FIRCTCFG
+    byte_offset: 780
+    fieldset: regs::FIRCTCFG
+  - name: FIRCTRIM
+    byte_offset: 784
+    fieldset: regs::FIRCTRIM
+  - name: FIRCSTAT
+    byte_offset: 792
+    fieldset: regs::FIRCSTAT
+  - name: FIRCATC1
+    byte_offset: 796
+    fieldset: regs::FIRCATC1
+  - name: FIRCATC2
+    byte_offset: 800
+    fieldset: regs::FIRCATC2
+  - name: FIRCATC3
+    byte_offset: 804
+    fieldset: regs::FIRCATC3
+  - name: FIRCATC4
+    byte_offset: 808
+    fieldset: regs::FIRCATC4
+  - name: FIRCATC5
+    byte_offset: 812
+    fieldset: regs::FIRCATC5
+  - name: FIRCATC6
+    byte_offset: 816
+    fieldset: regs::FIRCATC6
+  - name: FIRCATC7
+    byte_offset: 820
+    fieldset: regs::FIRCATC7
+  - name: FIRCATC8
+    byte_offset: 824
+    fieldset: regs::FIRCATC8
+  - name: FIRCATC9
+    byte_offset: 828
+    fieldset: regs::FIRCATC9
+  - name: FIRCATC10
+    byte_offset: 832
+    fieldset: regs::FIRCATC10
+  - name: FIRCATC11
+    byte_offset: 836
+    fieldset: regs::FIRCATC11
+  - name: ROSCCSR
+    byte_offset: 1024
+    fieldset: regs::ROSCCSR
+fieldset/regs::CSR:
+  description: Clock Status Register
+  fields:
+  - name: SCS
+    bit_offset: 24
+    bit_size: 3
+fieldset/regs::FIRCATC1:
+  description: FIRC Auto-trimming Counter 1
+  fields:
+  - name: IDEALC_SOSC
+    bit_offset: 0
+    bit_size: 16
+  - name: SAMCYC_SOSC
+    bit_offset: 16
+    bit_size: 8
+  - name: SETCYC_SOSC
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::FIRCATC10:
+  description: FIRC Auto-trimming Counter 10
+  fields:
+  - name: FINEMAXC_SOF
+    bit_offset: 0
+    bit_size: 20
+fieldset/regs::FIRCATC11:
+  description: FIRC Auto-trimming Counter 11
+  fields:
+  - name: FINEMINC_SOF
+    bit_offset: 0
+    bit_size: 20
+fieldset/regs::FIRCATC2:
+  description: FIRC Auto-trimming Counter 2
+  fields:
+  - name: COARMINC_SOSC
+    bit_offset: 0
+    bit_size: 16
+  - name: COARMAXC_SOSC
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::FIRCATC3:
+  description: FIRC Auto-trimming Counter 3
+  fields:
+  - name: FINEMINC_SOSC
+    bit_offset: 0
+    bit_size: 16
+  - name: FINEMAXC_SOSC
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::FIRCATC4:
+  description: FIRC Auto-trimming Counter 4
+  fields:
+  - name: IDEALC_ROSC
+    bit_offset: 0
+    bit_size: 16
+  - name: SETCYC_ROSC
+    bit_offset: 16
+    bit_size: 8
+  - name: SAMCYC_ROSC
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::FIRCATC5:
+  description: FIRC Auto-trimming Counter 5
+  fields:
+  - name: COARMINC_ROSC
+    bit_offset: 0
+    bit_size: 16
+  - name: COARMAXC_ROSC
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::FIRCATC6:
+  description: FIRC Auto-trimming Counter 6
+  fields:
+  - name: FINEMINC_ROSC
+    bit_offset: 0
+    bit_size: 16
+  - name: FINEMAXC_ROSC
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::FIRCATC7:
+  description: FIRC Auto-trimming Counter 7
+  fields:
+  - name: IDEALC_SOF
+    bit_offset: 0
+    bit_size: 20
+  - name: SETCYC_SOF
+    bit_offset: 24
+    bit_size: 4
+  - name: SAMCYC_SOF
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::FIRCATC8:
+  description: FIRC Auto-trimming Counter 8
+  fields:
+  - name: COARMAXC_SOF
+    bit_offset: 0
+    bit_size: 20
+fieldset/regs::FIRCATC9:
+  description: FIRC Auto-trimming Counter 9
+  fields:
+  - name: COARMINC_SOF
+    bit_offset: 0
+    bit_size: 20
+fieldset/regs::FIRCCFG:
+  description: FIRC Configuration Register
+  fields:
+  - name: FREQ_SEL
+    bit_offset: 1
+    bit_size: 3
+fieldset/regs::FIRCCSR:
+  description: FIRC Control Status Register
+  fields:
+  - name: FIRCEN
+    bit_offset: 0
+    bit_size: 1
+  - name: FIRCSTEN
+    bit_offset: 1
+    bit_size: 1
+  - name: FIRC_SCLK_PERIPH_EN
+    bit_offset: 4
+    bit_size: 1
+  - name: FIRC_FCLK_PERIPH_EN
+    bit_offset: 5
+    bit_size: 1
+  - name: FIRCTREN
+    bit_offset: 8
+    bit_size: 1
+  - name: FIRCTRUP
+    bit_offset: 9
+    bit_size: 1
+  - name: TRIM_LOCK
+    bit_offset: 10
+    bit_size: 1
+  - name: COARSE_TRIM_BYPASS
+    bit_offset: 11
+    bit_size: 1
+  - name: LK
+    bit_offset: 23
+    bit_size: 1
+  - name: FIRCVLD
+    bit_offset: 24
+    bit_size: 1
+  - name: FIRCSEL
+    bit_offset: 25
+    bit_size: 1
+  - name: FIRCERR
+    bit_offset: 26
+    bit_size: 1
+  - name: FIRCERR_IE
+    bit_offset: 27
+    bit_size: 1
+  - name: FIRCACC_IE
+    bit_offset: 30
+    bit_size: 1
+  - name: FIRCACC
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::FIRCSTAT:
+  description: FIRC Auto-trimming Status Register
+  fields:
+  - name: TRIMFINE
+    bit_offset: 0
+    bit_size: 8
+  - name: TRIMCOAR
+    bit_offset: 8
+    bit_size: 6
+fieldset/regs::FIRCTCFG:
+  description: FIRC Trim Configuration Register
+  fields:
+  - name: TRIMSRC
+    bit_offset: 0
+    bit_size: 2
+  - name: TRIMDIV
+    bit_offset: 16
+    bit_size: 7
+fieldset/regs::FIRCTRIM:
+  description: FIRC Trim Register
+  fields:
+  - name: TRIMFINE
+    bit_offset: 0
+    bit_size: 8
+  - name: TRIMCOAR
+    bit_offset: 8
+    bit_size: 6
+  - name: TRIMTEMP
+    bit_offset: 16
+    bit_size: 4
+  - name: TRIMSTART
+    bit_offset: 24
+    bit_size: 6
+fieldset/regs::PARAM:
+  description: Parameter Register
+  fields:
+  - name: SOSCCLKPRES
+    bit_offset: 1
+    bit_size: 1
+  - name: SIRCCLKPRES
+    bit_offset: 2
+    bit_size: 1
+  - name: FIRCCLKPRES
+    bit_offset: 3
+    bit_size: 1
+  - name: ROSCCLKPRES
+    bit_offset: 4
+    bit_size: 1
+fieldset/regs::RCCR:
+  description: Run Clock Control Register
+  fields:
+  - name: SCS
+    bit_offset: 24
+    bit_size: 3
+fieldset/regs::ROSCCSR:
+  description: ROSC Control Status Register
+  fields:
+  - name: LK
+    bit_offset: 23
+    bit_size: 1
+  - name: ROSCVLD
+    bit_offset: 24
+    bit_size: 1
+  - name: ROSCSEL
+    bit_offset: 25
+    bit_size: 1
+  - name: ROSCERR
+    bit_offset: 26
+    bit_size: 1
+fieldset/regs::SIRCCSR:
+  description: SIRC Control Status Register
+  fields:
+  - name: SIRCSTEN
+    bit_offset: 1
+    bit_size: 1
+  - name: SIRC_CLK_PERIPH_EN
+    bit_offset: 5
+    bit_size: 1
+  - name: SIRCTREN
+    bit_offset: 8
+    bit_size: 1
+  - name: SIRCTRUP
+    bit_offset: 9
+    bit_size: 1
+  - name: TRIM_LOCK
+    bit_offset: 10
+    bit_size: 1
+  - name: COARSE_TRIM_BYPASS
+    bit_offset: 11
+    bit_size: 1
+  - name: LK
+    bit_offset: 23
+    bit_size: 1
+  - name: SIRCVLD
+    bit_offset: 24
+    bit_size: 1
+  - name: SIRCSEL
+    bit_offset: 25
+    bit_size: 1
+  - name: SIRCERR
+    bit_offset: 26
+    bit_size: 1
+  - name: SIRCERR_IE
+    bit_offset: 27
+    bit_size: 1
+fieldset/regs::SIRCSTAT:
+  description: SIRC Auto-trimming Status Register
+  fields:
+  - name: CCOTRIM
+    bit_offset: 0
+    bit_size: 6
+  - name: CLTRIM
+    bit_offset: 8
+    bit_size: 6
+fieldset/regs::SIRCTCFG:
+  description: SIRC Trim Configuration Register
+  fields:
+  - name: TRIMSRC
+    bit_offset: 0
+    bit_size: 2
+  - name: TRIMDIV
+    bit_offset: 16
+    bit_size: 7
+fieldset/regs::SIRCTRIM:
+  description: SIRC Trim Register
+  fields:
+  - name: CCOTRIM
+    bit_offset: 0
+    bit_size: 6
+  - name: CLTRIM
+    bit_offset: 8
+    bit_size: 6
+  - name: TCTRIM
+    bit_offset: 16
+    bit_size: 5
+  - name: FVCHTRIM
+    bit_offset: 24
+    bit_size: 5
+fieldset/regs::SOSCCFG:
+  description: SOSC Configuration Register
+  fields:
+  - name: EREFS
+    bit_offset: 2
+    bit_size: 1
+  - name: RANGE
+    bit_offset: 4
+    bit_size: 2
+fieldset/regs::SOSCCSR:
+  description: SOSC Control Status Register
+  fields:
+  - name: SOSCEN
+    bit_offset: 0
+    bit_size: 1
+  - name: SOSCSTEN
+    bit_offset: 1
+    bit_size: 1
+  - name: SOSCCM
+    bit_offset: 16
+    bit_size: 1
+  - name: SOSCCMRE
+    bit_offset: 17
+    bit_size: 1
+  - name: LK
+    bit_offset: 23
+    bit_size: 1
+  - name: SOSCVLD
+    bit_offset: 24
+    bit_size: 1
+  - name: SOSCSEL
+    bit_offset: 25
+    bit_size: 1
+  - name: SOSCERR
+    bit_offset: 26
+    bit_size: 1
+  - name: SOSCVLD_IE
+    bit_offset: 30
+    bit_size: 1
+  - name: SOSC_SAFE_EN
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::TRIM_LOCK:
+  description: Trim Lock register
+  fields:
+  - name: TRIM_UNLOCK
+    bit_offset: 0
+    bit_size: 1
+  - name: IFR_DISABLE
+    bit_offset: 1
+    bit_size: 1
+  - name: TRIM_LOCK_KEY
+    bit_offset: 16
+    bit_size: 16

@@ -1,0 +1,22 @@
+block/WAKETIMER:
+  items:
+  - name: WAKE_TIMER_CTRL
+    byte_offset: 0
+    fieldset: regs::WAKE_TIMER_CTRL
+  - name: WAKE_TIMER_CNT
+    byte_offset: 12
+fieldset/regs::WAKE_TIMER_CTRL:
+  description: Wake Timer Control
+  fields:
+  - name: WAKE_FLAG
+    bit_offset: 1
+    bit_size: 1
+  - name: CLR_WAKE_TIMER
+    bit_offset: 2
+    bit_size: 1
+  - name: OSC_DIV_ENA
+    bit_offset: 4
+    bit_size: 1
+  - name: INTR_EN
+    bit_offset: 5
+    bit_size: 1

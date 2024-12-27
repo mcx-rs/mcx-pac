@@ -1,0 +1,121 @@
+block/BSP32:
+  items:
+  - name: OFFSET_PMEM
+    byte_offset: 0
+    fieldset: regs::OFFSET_PMEM
+  - name: OFFSET_XMEM
+    byte_offset: 4
+    fieldset: regs::OFFSET_XMEM
+  - name: OFFSET_YMEM
+    byte_offset: 8
+    fieldset: regs::OFFSET_YMEM
+  - name: OFFSET_MAILBOX
+    byte_offset: 12
+    fieldset: regs::OFFSET_MAILBOX
+  - name: INTERRUPTS_EXTERNAL
+    byte_offset: 16
+  - name: INTERRUPTS_STATUS
+    byte_offset: 20
+    fieldset: regs::INTERRUPTS_STATUS
+  - name: CF_GATING_OVERRIDE
+    byte_offset: 24
+    fieldset: regs::CF_GATING_OVERRIDE
+  - name: IVT_OFFSET
+    byte_offset: 28
+    fieldset: regs::IVT_OFFSET
+  - name: SLEEP_MODE
+    byte_offset: 32
+    fieldset: regs::SLEEP_MODE
+  - name: IVT0
+    byte_offset: 36
+    fieldset: regs::IVT0
+  - name: IVT1
+    byte_offset: 40
+    fieldset: regs::IVT1
+  - name: IVT2
+    byte_offset: 44
+    fieldset: regs::IVT2
+  - name: IVT3
+    byte_offset: 48
+    fieldset: regs::IVT3
+  - name: IVT_DISABLE
+    byte_offset: 52
+    fieldset: regs::IVT_DISABLE
+fieldset/regs::CF_GATING_OVERRIDE:
+  description: CoolFlux BSP32 gating override
+  fields:
+  - name: val
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::INTERRUPTS_STATUS:
+  description: Interrupt status register
+  fields:
+  - name: val
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::IVT0:
+  description: CoolFlux BSP32 IVT register 0 content
+  fields:
+  - name: val
+    bit_offset: 0
+    bit_size: 24
+fieldset/regs::IVT1:
+  description: CoolFlux BSP32 IVT register 1 content
+  fields:
+  - name: val
+    bit_offset: 0
+    bit_size: 24
+fieldset/regs::IVT2:
+  description: CoolFlux BSP32 IVT register 2 content
+  fields:
+  - name: val
+    bit_offset: 0
+    bit_size: 24
+fieldset/regs::IVT3:
+  description: CoolFlux BSP32 IVT register 3 content
+  fields:
+  - name: val
+    bit_offset: 0
+    bit_size: 24
+fieldset/regs::IVT_DISABLE:
+  description: CoolFlux BSP32 IVT disable register
+  fields:
+  - name: val
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::IVT_OFFSET:
+  description: CoolFlux BSP32 IVT offset register
+  fields:
+  - name: val
+    bit_offset: 0
+    bit_size: 24
+fieldset/regs::OFFSET_MAILBOX:
+  description: Offset address register for mailbox peripheral
+  fields:
+  - name: val
+    bit_offset: 0
+    bit_size: 24
+fieldset/regs::OFFSET_PMEM:
+  description: Offset address register for program memory
+  fields:
+  - name: val
+    bit_offset: 0
+    bit_size: 6
+fieldset/regs::OFFSET_XMEM:
+  description: Offset address register for X-data memory
+  fields:
+  - name: val
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::OFFSET_YMEM:
+  description: Offset address register for Y-data memory
+  fields:
+  - name: val
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::SLEEP_MODE:
+  description: CoolFlux BSP32 sleep mode register
+  fields:
+  - name: val
+    bit_offset: 0
+    bit_size: 1

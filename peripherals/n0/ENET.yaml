@@ -1,0 +1,1651 @@
+block/DMA_CH:
+  items:
+  - name: DMA_CHX_CTRL
+    byte_offset: 0
+    fieldset: regs::DMA_CH_DMA_CHX_CTRL
+  - name: DMA_CHX_TX_CTRL
+    byte_offset: 4
+    fieldset: regs::DMA_CH_DMA_CHX_TX_CTRL
+  - name: DMA_CHX_RX_CTRL
+    byte_offset: 8
+    fieldset: regs::DMA_CH_DMA_CHX_RX_CTRL
+  - name: DMA_CHX_TXDESC_LIST_ADDR
+    byte_offset: 20
+    fieldset: regs::DMA_CH_DMA_CHX_TXDESC_LIST_ADDR
+  - name: DMA_CHX_RXDESC_LIST_ADDR
+    byte_offset: 28
+    fieldset: regs::DMA_CH_DMA_CHX_RXDESC_LIST_ADDR
+  - name: DMA_CHX_TXDESC_TAIL_PTR
+    byte_offset: 32
+    fieldset: regs::DMA_CH_DMA_CHX_TXDESC_TAIL_PTR
+  - name: DMA_CHX_RXDESC_TAIL_PTR
+    byte_offset: 40
+    fieldset: regs::DMA_CH_DMA_CHX_RXDESC_TAIL_PTR
+  - name: DMA_CHX_TXDESC_RING_LENGTH
+    byte_offset: 44
+    fieldset: regs::DMA_CH_DMA_CHX_TXDESC_RING_LENGTH
+  - name: DMA_CHX_RX_CONTROL2
+    byte_offset: 48
+    fieldset: regs::DMA_CH_DMA_CHX_RX_CONTROL2
+  - name: DMA_CHX_INT_EN
+    byte_offset: 52
+    fieldset: regs::DMA_CH_DMA_CHX_INT_EN
+  - name: DMA_CHX_RX_INT_WDTIMER
+    byte_offset: 56
+    fieldset: regs::DMA_CH_DMA_CHX_RX_INT_WDTIMER
+  - name: DMA_CHX_SLOT_FUNC_CTRL_STAT
+    byte_offset: 60
+    fieldset: regs::DMA_CH_DMA_CHX_SLOT_FUNC_CTRL_STAT
+  - name: DMA_CHX_CUR_HST_TXDESC
+    byte_offset: 68
+  - name: DMA_CHX_CUR_HST_RXDESC
+    byte_offset: 76
+  - name: DMA_CHX_CUR_HST_TXBUF
+    byte_offset: 84
+  - name: DMA_CHX_CUR_HST_RXBUF
+    byte_offset: 92
+  - name: DMA_CHX_STAT
+    byte_offset: 96
+    fieldset: regs::DMA_CH_DMA_CHX_STAT
+  - name: DMA_CHX_MISS_FRAME_CNT
+    byte_offset: 100
+    fieldset: regs::DMA_CH_DMA_CHX_MISS_FRAME_CNT
+  - name: DMA_CHX_RX_ERI_CNT
+    byte_offset: 108
+    fieldset: regs::DMA_CH_DMA_CHX_RX_ERI_CNT
+block/ENET:
+  items:
+  - name: MAC_CONFIGURATION
+    byte_offset: 0
+    fieldset: regs::MAC_CONFIGURATION
+  - name: MAC_EXT_CONFIGURATION
+    byte_offset: 4
+    fieldset: regs::MAC_EXT_CONFIGURATION
+  - name: MAC_PACKET_FILTER
+    byte_offset: 8
+    fieldset: regs::MAC_PACKET_FILTER
+  - name: MAC_WATCHDOG_TIMEOUT
+    byte_offset: 12
+    fieldset: regs::MAC_WATCHDOG_TIMEOUT
+  - name: MAC_VLAN_TAG_CTRL
+    byte_offset: 80
+    fieldset: regs::MAC_VLAN_TAG_CTRL
+  - name: MAC_VLAN_INCL
+    byte_offset: 96
+    fieldset: regs::MAC_VLAN_INCL
+  - name: MAC_INNER_VLAN_INCL
+    byte_offset: 100
+    fieldset: regs::MAC_INNER_VLAN_INCL
+  - name: MAC_TX_FLOW_CTRL_Q
+    array:
+      len: 1
+      stride: 4
+    byte_offset: 112
+    fieldset: regs::MAC_TX_FLOW_CTRL_Q
+  - name: MAC_RX_FLOW_CTRL
+    byte_offset: 144
+    fieldset: regs::MAC_RX_FLOW_CTRL
+  - name: MAC_RXQ_CTRL4
+    byte_offset: 148
+    fieldset: regs::MAC_RXQ_CTRL4
+  - name: MAC_RXQ_CTRL
+    array:
+      len: 3
+      stride: 4
+    byte_offset: 160
+    fieldset: regs::MAC_RXQ_CTRL
+  - name: MAC_INTERRUPT_STATUS
+    byte_offset: 176
+    fieldset: regs::MAC_INTERRUPT_STATUS
+  - name: MAC_INTERRUPT_ENABLE
+    byte_offset: 180
+    fieldset: regs::MAC_INTERRUPT_ENABLE
+  - name: MAC_RX_TX_STATUS
+    byte_offset: 184
+    fieldset: regs::MAC_RX_TX_STATUS
+  - name: MAC_PMT_CONTROL_STATUS
+    byte_offset: 192
+    fieldset: regs::MAC_PMT_CONTROL_STATUS
+  - name: MAC_RWK_PACKET_FILTER
+    byte_offset: 196
+  - name: MAC_LPI_CONTROL_STATUS
+    byte_offset: 208
+    fieldset: regs::MAC_LPI_CONTROL_STATUS
+  - name: MAC_LPI_TIMERS_CONTROL
+    byte_offset: 212
+    fieldset: regs::MAC_LPI_TIMERS_CONTROL
+  - name: MAC_LPI_ENTRY_TIMER
+    byte_offset: 216
+    fieldset: regs::MAC_LPI_ENTRY_TIMER
+  - name: MAC_ONEUS_TIC_COUNTER
+    byte_offset: 220
+    fieldset: regs::MAC_ONEUS_TIC_COUNTER
+  - name: MAC_VERSION
+    byte_offset: 272
+    fieldset: regs::MAC_VERSION
+  - name: MAC_DEBUG
+    byte_offset: 276
+    fieldset: regs::MAC_DEBUG
+  - name: MAC_HW_FEAT
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 284
+    fieldset: regs::MAC_HW_FEAT
+  - name: MAC_MDIO_ADDRESS
+    byte_offset: 512
+    fieldset: regs::MAC_MDIO_ADDRESS
+  - name: MAC_MDIO_DATA
+    byte_offset: 516
+    fieldset: regs::MAC_MDIO_DATA
+  - name: MAC_CSR_SW_CTRL
+    byte_offset: 560
+    fieldset: regs::MAC_CSR_SW_CTRL
+  - name: MAC_ADDRESS0_HIGH
+    byte_offset: 768
+    fieldset: regs::MAC_ADDRESS0_HIGH
+  - name: MAC_ADDRESS0_LOW
+    byte_offset: 772
+  - name: INDIR_ACCESS_CTRL
+    byte_offset: 2672
+    fieldset: regs::INDIR_ACCESS_CTRL
+  - name: INDIR_ACCESS_DATA
+    byte_offset: 2676
+  - name: MAC_TIMESTAMP_CONTROL
+    byte_offset: 2816
+    fieldset: regs::MAC_TIMESTAMP_CONTROL
+  - name: MAC_SUB_SECOND_INCREMENT
+    byte_offset: 2820
+    fieldset: regs::MAC_SUB_SECOND_INCREMENT
+  - name: MAC_SYSTEM_TIME_SECONDS
+    byte_offset: 2824
+  - name: MAC_SYSTEM_TIME_NANOSECONDS
+    byte_offset: 2828
+    fieldset: regs::MAC_SYSTEM_TIME_NANOSECONDS
+  - name: MAC_SYSTEM_TIME_SECONDS_UPDATE
+    byte_offset: 2832
+  - name: MAC_SYSTEM_TIME_NANOSECONDS_UPDATE
+    byte_offset: 2836
+    fieldset: regs::MAC_SYSTEM_TIME_NANOSECONDS_UPDATE
+  - name: MAC_TIMESTAMP_ADDEND
+    byte_offset: 2840
+  - name: MAC_TIMESTAMP_STATUS
+    byte_offset: 2848
+    fieldset: regs::MAC_TIMESTAMP_STATUS
+  - name: MAC_TX_TIMESTAMP_STATUS_NANOSECONDS
+    byte_offset: 2864
+    fieldset: regs::MAC_TX_TIMESTAMP_STATUS_NANOSECONDS
+  - name: MAC_TX_TIMESTAMP_STATUS_SECONDS
+    byte_offset: 2868
+  - name: MAC_TIMESTAMP_INGRESS_CORR_NANOSECOND
+    byte_offset: 2904
+  - name: MAC_TIMESTAMP_EGRESS_CORR_NANOSECOND
+    byte_offset: 2908
+  - name: MAC_TIMESTAMP_INGRESS_LATENCY
+    byte_offset: 2920
+    fieldset: regs::MAC_TIMESTAMP_INGRESS_LATENCY
+  - name: MAC_TIMESTAMP_EGRESS_LATENCY
+    byte_offset: 2924
+    fieldset: regs::MAC_TIMESTAMP_EGRESS_LATENCY
+  - name: MAC_PPS_CONTROL
+    byte_offset: 2928
+    fieldset: regs::MAC_PPS_CONTROL
+  - name: PPS0_TARGET_TIME_SECONDS
+    byte_offset: 2944
+  - name: PPS0_TARGET_TIME_NANOSECONDS
+    byte_offset: 2948
+    fieldset: regs::PPS0_TARGET_TIME_NANOSECONDS
+  - name: MTL_OPERATION_MODE
+    byte_offset: 3072
+    fieldset: regs::MTL_OPERATION_MODE
+  - name: MTL_INTERRUPT_STATUS
+    byte_offset: 3104
+    fieldset: regs::MTL_INTERRUPT_STATUS
+  - name: MTL_RXQ_DMA_MAP0
+    byte_offset: 3120
+    fieldset: regs::MTL_RXQ_DMA_MAP0
+  - name: MTL_QUEUE
+    array:
+      len: 2
+      stride: 64
+    byte_offset: 3328
+    block: MTL_QUEUE
+  - name: DMA_MODE
+    byte_offset: 4096
+    fieldset: regs::DMA_MODE
+  - name: DMA_SYSBUS_MODE
+    byte_offset: 4100
+    fieldset: regs::DMA_SYSBUS_MODE
+  - name: DMA_INTERRUPT_STATUS
+    byte_offset: 4104
+    fieldset: regs::DMA_INTERRUPT_STATUS
+  - name: DMA_DEBUG_STATUS0
+    byte_offset: 4108
+    fieldset: regs::DMA_DEBUG_STATUS0
+  - name: DMA_CH
+    array:
+      len: 2
+      stride: 128
+    byte_offset: 4352
+    block: DMA_CH
+block/MTL_QUEUE:
+  items:
+  - name: MTL_TXQX_OP_MODE
+    byte_offset: 0
+    fieldset: regs::MTL_QUEUE_MTL_TXQX_OP_MODE
+  - name: MTL_TXQX_UNDRFLW
+    byte_offset: 4
+    fieldset: regs::MTL_QUEUE_MTL_TXQX_UNDRFLW
+  - name: MTL_TXQX_DBG
+    byte_offset: 8
+    fieldset: regs::MTL_QUEUE_MTL_TXQX_DBG
+  - name: MTL_TXQX_ETS_CTRL
+    byte_offset: 16
+    fieldset: regs::MTL_QUEUE_MTL_TXQX_ETS_CTRL
+  - name: MTL_TXQX_ETS_STAT
+    byte_offset: 20
+    fieldset: regs::MTL_QUEUE_MTL_TXQX_ETS_STAT
+  - name: MTL_TXQX_QNTM_WGHT
+    byte_offset: 24
+    fieldset: regs::MTL_QUEUE_MTL_TXQX_QNTM_WGHT
+  - name: MTL_TXQX_SNDSLP_CRDT
+    byte_offset: 28
+    fieldset: regs::MTL_QUEUE_MTL_TXQX_SNDSLP_CRDT
+  - name: MTL_TXQX_HI_CRDT
+    byte_offset: 32
+    fieldset: regs::MTL_QUEUE_MTL_TXQX_HI_CRDT
+  - name: MTL_TXQX_LO_CRDT
+    byte_offset: 36
+    fieldset: regs::MTL_QUEUE_MTL_TXQX_LO_CRDT
+  - name: MTL_QX_INTCTRL_STAT
+    byte_offset: 44
+    fieldset: regs::MTL_QUEUE_MTL_QX_INTCTRL_STAT
+  - name: MTL_RXQX_OP_MODE
+    byte_offset: 48
+    fieldset: regs::MTL_QUEUE_MTL_RXQX_OP_MODE
+  - name: MTL_RXQX_MISSPKT_OVRFLW_CNT
+    byte_offset: 52
+    fieldset: regs::MTL_QUEUE_MTL_RXQX_MISSPKT_OVRFLW_CNT
+  - name: MTL_RXQX_DBG
+    byte_offset: 56
+    fieldset: regs::MTL_QUEUE_MTL_RXQX_DBG
+  - name: MTL_RXQX_CTRL
+    byte_offset: 60
+    fieldset: regs::MTL_QUEUE_MTL_RXQX_CTRL
+fieldset/regs::DMA_CH_DMA_CHX_CTRL:
+  description: DMA Channel 0 Control..DMA Channel 1 Control
+  fields:
+  - name: PBLx8
+    bit_offset: 16
+    bit_size: 1
+  - name: DSL
+    bit_offset: 18
+    bit_size: 3
+fieldset/regs::DMA_CH_DMA_CHX_INT_EN:
+  description: Channeli Interrupt Enable..Channel 1 Interrupt Enable
+  fields:
+  - name: TIE
+    bit_offset: 0
+    bit_size: 1
+  - name: TXSE
+    bit_offset: 1
+    bit_size: 1
+  - name: TBUE
+    bit_offset: 2
+    bit_size: 1
+  - name: RIE
+    bit_offset: 6
+    bit_size: 1
+  - name: RBUE
+    bit_offset: 7
+    bit_size: 1
+  - name: RSE
+    bit_offset: 8
+    bit_size: 1
+  - name: RWTE
+    bit_offset: 9
+    bit_size: 1
+  - name: ETIE
+    bit_offset: 10
+    bit_size: 1
+  - name: ERIE
+    bit_offset: 11
+    bit_size: 1
+  - name: FBEE
+    bit_offset: 12
+    bit_size: 1
+  - name: CDEE
+    bit_offset: 13
+    bit_size: 1
+  - name: AIE
+    bit_offset: 14
+    bit_size: 1
+  - name: NIE
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::DMA_CH_DMA_CHX_MISS_FRAME_CNT:
+  description: Channel 0 Missed Frame Counter..Channel 1 Missed Frame Counter
+  fields:
+  - name: MFC
+    bit_offset: 0
+    bit_size: 11
+  - name: MFCO
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::DMA_CH_DMA_CHX_RXDESC_LIST_ADDR:
+  description: Channel 0 Rx Descriptor List Address register..Channel 1 Rx Descriptor List Address
+  fields:
+  - name: RDESLA
+    bit_offset: 2
+    bit_size: 30
+fieldset/regs::DMA_CH_DMA_CHX_RXDESC_TAIL_PTR:
+  description: Channel 0 Rx Descriptor Tail Pointer..Channel 1 Rx Descriptor Tail Pointer
+  fields:
+  - name: RDTP
+    bit_offset: 2
+    bit_size: 30
+fieldset/regs::DMA_CH_DMA_CHX_RX_CONTROL2:
+  description: Channeli Receive Control..DMA Channel 1 Receive Control
+  fields:
+  - name: RDRL
+    bit_offset: 0
+    bit_size: 10
+  - name: ARBS
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::DMA_CH_DMA_CHX_RX_CTRL:
+  description: DMA Channel 0 Receive Control..DMA Channel 1 Receive Control
+  fields:
+  - name: SR
+    bit_offset: 0
+    bit_size: 1
+  - name: RBSZ_X_0
+    bit_offset: 1
+    bit_size: 2
+  - name: RBSZ_13_Y
+    bit_offset: 3
+    bit_size: 12
+  - name: RxPBL
+    bit_offset: 16
+    bit_size: 6
+  - name: ERIC
+    bit_offset: 22
+    bit_size: 1
+  - name: RPF
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DMA_CH_DMA_CHX_RX_ERI_CNT:
+  description: Channel 0 Receive ERI Counter..Channel 1 Receive ERI Counter
+  fields:
+  - name: ECNT
+    bit_offset: 0
+    bit_size: 12
+fieldset/regs::DMA_CH_DMA_CHX_RX_INT_WDTIMER:
+  description: Channel 0 Receive Interrupt Watchdog Timer..Channel 1 Receive Interrupt Watchdog Timer
+  fields:
+  - name: RWT
+    bit_offset: 0
+    bit_size: 8
+  - name: RWTU
+    bit_offset: 16
+    bit_size: 2
+fieldset/regs::DMA_CH_DMA_CHX_SLOT_FUNC_CTRL_STAT:
+  description: Channel 0 Slot Function Control and Status..Channel 1 Slot Function Control and Status
+  fields:
+  - name: ESC
+    bit_offset: 0
+    bit_size: 1
+  - name: ASC
+    bit_offset: 1
+    bit_size: 1
+  - name: SIV
+    bit_offset: 4
+    bit_size: 12
+  - name: RSN
+    bit_offset: 16
+    bit_size: 4
+fieldset/regs::DMA_CH_DMA_CHX_STAT:
+  description: DMA Channel 0 Status..DMA Channel 1 Status
+  fields:
+  - name: TI
+    bit_offset: 0
+    bit_size: 1
+  - name: TPS
+    bit_offset: 1
+    bit_size: 1
+  - name: TBU
+    bit_offset: 2
+    bit_size: 1
+  - name: RI
+    bit_offset: 6
+    bit_size: 1
+  - name: RBU
+    bit_offset: 7
+    bit_size: 1
+  - name: RPS
+    bit_offset: 8
+    bit_size: 1
+  - name: RWT
+    bit_offset: 9
+    bit_size: 1
+  - name: ETI
+    bit_offset: 10
+    bit_size: 1
+  - name: ERI
+    bit_offset: 11
+    bit_size: 1
+  - name: FBE
+    bit_offset: 12
+    bit_size: 1
+  - name: CDE
+    bit_offset: 13
+    bit_size: 1
+  - name: AIS
+    bit_offset: 14
+    bit_size: 1
+  - name: NIS
+    bit_offset: 15
+    bit_size: 1
+  - name: TEB
+    bit_offset: 16
+    bit_size: 3
+  - name: REB
+    bit_offset: 19
+    bit_size: 3
+fieldset/regs::DMA_CH_DMA_CHX_TXDESC_LIST_ADDR:
+  description: Channel 0 Tx Descriptor List Address register..Channel 1 Tx Descriptor List Address
+  fields:
+  - name: TDESLA
+    bit_offset: 2
+    bit_size: 30
+fieldset/regs::DMA_CH_DMA_CHX_TXDESC_RING_LENGTH:
+  description: Channel 0 Tx Descriptor Ring Length..Channel 1 Tx Descriptor Ring Length
+  fields:
+  - name: TDRL
+    bit_offset: 0
+    bit_size: 10
+fieldset/regs::DMA_CH_DMA_CHX_TXDESC_TAIL_PTR:
+  description: Channel 0 Tx Descriptor Tail Pointer..Channel 1 Tx Descriptor Tail Pointer
+  fields:
+  - name: TDTP
+    bit_offset: 2
+    bit_size: 30
+fieldset/regs::DMA_CH_DMA_CHX_TX_CTRL:
+  description: DMA Channel 0 Transmit Control..DMA Channel 1 Transmit Control
+  fields:
+  - name: ST
+    bit_offset: 0
+    bit_size: 1
+  - name: TCW
+    bit_offset: 1
+    bit_size: 3
+  - name: OSF
+    bit_offset: 4
+    bit_size: 1
+  - name: TxPBL
+    bit_offset: 16
+    bit_size: 6
+  - name: ETIC
+    bit_offset: 22
+    bit_size: 1
+fieldset/regs::DMA_DEBUG_STATUS0:
+  description: DMA Debug Status 0
+  fields:
+  - name: AXWHSTS
+    bit_offset: 0
+    bit_size: 1
+  - name: RPS0
+    bit_offset: 8
+    bit_size: 4
+  - name: TPS0
+    bit_offset: 12
+    bit_size: 4
+  - name: RPS1
+    bit_offset: 16
+    bit_size: 4
+  - name: TPS1
+    bit_offset: 20
+    bit_size: 4
+fieldset/regs::DMA_INTERRUPT_STATUS:
+  description: DMA Interrupt Status
+  fields:
+  - name: DC0IS
+    bit_offset: 0
+    bit_size: 1
+  - name: DC1IS
+    bit_offset: 1
+    bit_size: 1
+  - name: MTLIS
+    bit_offset: 16
+    bit_size: 1
+  - name: MACIS
+    bit_offset: 17
+    bit_size: 1
+fieldset/regs::DMA_MODE:
+  description: DMA Bus Mode
+  fields:
+  - name: SWR
+    bit_offset: 0
+    bit_size: 1
+  - name: DA
+    bit_offset: 1
+    bit_size: 1
+  - name: TAA
+    bit_offset: 2
+    bit_size: 3
+  - name: TXPR
+    bit_offset: 11
+    bit_size: 1
+  - name: PR
+    bit_offset: 12
+    bit_size: 3
+fieldset/regs::DMA_SYSBUS_MODE:
+  description: DMA System Bus Mode
+  fields:
+  - name: FB
+    bit_offset: 0
+    bit_size: 1
+  - name: AAL
+    bit_offset: 12
+    bit_size: 1
+  - name: MB
+    bit_offset: 14
+    bit_size: 1
+  - name: RB
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::INDIR_ACCESS_CTRL:
+  description: Indirect Access Control
+  fields:
+  - name: OB
+    bit_offset: 0
+    bit_size: 1
+  - name: COM
+    bit_offset: 1
+    bit_size: 1
+  - name: AUTO
+    bit_offset: 5
+    bit_size: 1
+  - name: AOFF
+    bit_offset: 8
+    bit_size: 8
+  - name: MSEL
+    bit_offset: 16
+    bit_size: 4
+fieldset/regs::MAC_ADDRESS0_HIGH:
+  description: MAC Address0 High
+  fields:
+  - name: ADDRHI
+    bit_offset: 0
+    bit_size: 16
+  - name: DCS
+    bit_offset: 16
+    bit_size: 2
+  - name: AE
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MAC_CONFIGURATION:
+  description: MAC Configuration
+  fields:
+  - name: RE
+    bit_offset: 0
+    bit_size: 1
+  - name: TE
+    bit_offset: 1
+    bit_size: 1
+  - name: PRELEN
+    bit_offset: 2
+    bit_size: 2
+  - name: DC
+    bit_offset: 4
+    bit_size: 1
+  - name: BL
+    bit_offset: 5
+    bit_size: 2
+  - name: DR
+    bit_offset: 8
+    bit_size: 1
+  - name: DCRS
+    bit_offset: 9
+    bit_size: 1
+  - name: DO
+    bit_offset: 10
+    bit_size: 1
+  - name: ECRSFD
+    bit_offset: 11
+    bit_size: 1
+  - name: LM
+    bit_offset: 12
+    bit_size: 1
+  - name: DM
+    bit_offset: 13
+    bit_size: 1
+  - name: FES
+    bit_offset: 14
+    bit_size: 1
+  - name: PS
+    bit_offset: 15
+    bit_size: 1
+  - name: JE
+    bit_offset: 16
+    bit_size: 1
+  - name: JD
+    bit_offset: 17
+    bit_size: 1
+  - name: WD
+    bit_offset: 19
+    bit_size: 1
+  - name: ACS
+    bit_offset: 20
+    bit_size: 1
+  - name: CST
+    bit_offset: 21
+    bit_size: 1
+  - name: S2KP
+    bit_offset: 22
+    bit_size: 1
+  - name: GPSLCE
+    bit_offset: 23
+    bit_size: 1
+  - name: IPG
+    bit_offset: 24
+    bit_size: 3
+  - name: IPC
+    bit_offset: 27
+    bit_size: 1
+  - name: SARC
+    bit_offset: 28
+    bit_size: 3
+fieldset/regs::MAC_CSR_SW_CTRL:
+  description: CSR Software Control
+  fields:
+  - name: RCWE
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::MAC_DEBUG:
+  description: MAC Debug
+  fields:
+  - name: RPESTS
+    bit_offset: 0
+    bit_size: 1
+  - name: RFCFCSTS
+    bit_offset: 1
+    bit_size: 2
+  - name: TPESTS
+    bit_offset: 16
+    bit_size: 1
+  - name: TFCSTS
+    bit_offset: 17
+    bit_size: 2
+fieldset/regs::MAC_EXT_CONFIGURATION:
+  description: MAC Extended Configuration Register
+  fields:
+  - name: GPSL
+    bit_offset: 0
+    bit_size: 14
+  - name: DCRCC
+    bit_offset: 16
+    bit_size: 1
+  - name: SPEN
+    bit_offset: 17
+    bit_size: 1
+  - name: USP
+    bit_offset: 18
+    bit_size: 1
+  - name: PDC
+    bit_offset: 19
+    bit_size: 1
+  - name: EIPGEN
+    bit_offset: 24
+    bit_size: 1
+  - name: EIPG
+    bit_offset: 25
+    bit_size: 5
+fieldset/regs::MAC_HW_FEAT:
+  description: Hardware Features 0..Hardware Features 3
+  fields:
+  - name: MIISEL
+    bit_offset: 0
+    bit_size: 1
+  - name: NRVF
+    bit_offset: 0
+    bit_size: 3
+  - name: RXFIFOSIZE
+    bit_offset: 0
+    bit_size: 5
+  - name: RXQCNT
+    bit_offset: 0
+    bit_size: 4
+  - name: GMIISEL
+    bit_offset: 1
+    bit_size: 1
+  - name: HDSEL
+    bit_offset: 2
+    bit_size: 1
+  - name: PCSSEL
+    bit_offset: 3
+    bit_size: 1
+  - name: CBTISEL
+    bit_offset: 4
+    bit_size: 1
+  - name: VLHASH
+    bit_offset: 4
+    bit_size: 1
+  - name: DVLAN
+    bit_offset: 5
+    bit_size: 1
+  - name: SMASEL
+    bit_offset: 5
+    bit_size: 1
+  - name: SPRAM
+    bit_offset: 5
+    bit_size: 1
+  - name: RWKSEL
+    bit_offset: 6
+    bit_size: 1
+  - name: TXFIFOSIZE
+    bit_offset: 6
+    bit_size: 5
+  - name: TXQCNT
+    bit_offset: 6
+    bit_size: 4
+  - name: MGKSEL
+    bit_offset: 7
+    bit_size: 1
+  - name: MMCSEL
+    bit_offset: 8
+    bit_size: 1
+  - name: ARPOFFSEL
+    bit_offset: 9
+    bit_size: 1
+  - name: PDUPSEL
+    bit_offset: 9
+    bit_size: 1
+  - name: FRPSEL
+    bit_offset: 10
+    bit_size: 1
+  - name: FRPBS
+    bit_offset: 11
+    bit_size: 2
+  - name: OSTEN
+    bit_offset: 11
+    bit_size: 1
+  - name: PTOEN
+    bit_offset: 12
+    bit_size: 1
+  - name: RXCHCNT
+    bit_offset: 12
+    bit_size: 4
+  - name: TSSEL
+    bit_offset: 12
+    bit_size: 1
+  - name: ADVTHWORD
+    bit_offset: 13
+    bit_size: 1
+  - name: EEESEL
+    bit_offset: 13
+    bit_size: 1
+  - name: FRPES
+    bit_offset: 13
+    bit_size: 2
+  - name: ADDR64
+    bit_offset: 14
+    bit_size: 2
+  - name: TXCOESEL
+    bit_offset: 14
+    bit_size: 1
+  - name: DCBEN
+    bit_offset: 16
+    bit_size: 1
+  - name: ESTSEL
+    bit_offset: 16
+    bit_size: 1
+  - name: RDCSZ
+    bit_offset: 16
+    bit_size: 2
+  - name: RXCOESEL
+    bit_offset: 16
+    bit_size: 1
+  - name: ESTDEP
+    bit_offset: 17
+    bit_size: 3
+  - name: SPHEN
+    bit_offset: 17
+    bit_size: 1
+  - name: ADDMACADRSEL
+    bit_offset: 18
+    bit_size: 5
+  - name: TSOEN
+    bit_offset: 18
+    bit_size: 1
+  - name: TXCHCNT
+    bit_offset: 18
+    bit_size: 4
+  - name: DBGMEMA
+    bit_offset: 19
+    bit_size: 1
+  - name: AVSEL
+    bit_offset: 20
+    bit_size: 1
+  - name: ESTWID
+    bit_offset: 20
+    bit_size: 2
+  - name: RAVSEL
+    bit_offset: 21
+    bit_size: 1
+  - name: TDCSZ
+    bit_offset: 22
+    bit_size: 2
+  - name: MACADR32SEL
+    bit_offset: 23
+    bit_size: 1
+  - name: POUOST
+    bit_offset: 23
+    bit_size: 1
+  - name: HASHTBLSZ
+    bit_offset: 24
+    bit_size: 2
+  - name: MACADR64SEL
+    bit_offset: 24
+    bit_size: 1
+  - name: PPSOUTNUM
+    bit_offset: 24
+    bit_size: 3
+  - name: TSSTSSEL
+    bit_offset: 25
+    bit_size: 2
+  - name: FPESEL
+    bit_offset: 26
+    bit_size: 1
+  - name: L3L4FNUM
+    bit_offset: 27
+    bit_size: 4
+  - name: SAVLANINS
+    bit_offset: 27
+    bit_size: 1
+  - name: TBSSEL
+    bit_offset: 27
+    bit_size: 1
+  - name: ACTPHYSEL
+    bit_offset: 28
+    bit_size: 3
+  - name: ASP
+    bit_offset: 28
+    bit_size: 2
+  - name: AUXSNAPNUM
+    bit_offset: 28
+    bit_size: 3
+fieldset/regs::MAC_INNER_VLAN_INCL:
+  description: MAC Inner VLAN Tag Inclusion or Replacement
+  fields:
+  - name: VLT
+    bit_offset: 0
+    bit_size: 16
+  - name: VLC
+    bit_offset: 16
+    bit_size: 2
+  - name: VLP
+    bit_offset: 18
+    bit_size: 1
+  - name: CSVL
+    bit_offset: 19
+    bit_size: 1
+  - name: VLTI
+    bit_offset: 20
+    bit_size: 1
+fieldset/regs::MAC_INTERRUPT_ENABLE:
+  description: Interrupt Enable
+  fields:
+  - name: PHYIE
+    bit_offset: 3
+    bit_size: 1
+  - name: PMTIE
+    bit_offset: 4
+    bit_size: 1
+  - name: LPIIE
+    bit_offset: 5
+    bit_size: 1
+  - name: TSIE
+    bit_offset: 12
+    bit_size: 1
+  - name: TXSTSIE
+    bit_offset: 13
+    bit_size: 1
+  - name: RXSTSIE
+    bit_offset: 14
+    bit_size: 1
+  - name: MDIOIE
+    bit_offset: 18
+    bit_size: 1
+fieldset/regs::MAC_INTERRUPT_STATUS:
+  description: Interrupt Status
+  fields:
+  - name: PHYIS
+    bit_offset: 3
+    bit_size: 1
+  - name: PMTIS
+    bit_offset: 4
+    bit_size: 1
+  - name: LPIIS
+    bit_offset: 5
+    bit_size: 1
+  - name: TSIS
+    bit_offset: 12
+    bit_size: 1
+  - name: TXSTSIS
+    bit_offset: 13
+    bit_size: 1
+  - name: RXSTSIS
+    bit_offset: 14
+    bit_size: 1
+  - name: MDIOIS
+    bit_offset: 18
+    bit_size: 1
+fieldset/regs::MAC_LPI_CONTROL_STATUS:
+  description: LPI Control and Status
+  fields:
+  - name: TLPIEN
+    bit_offset: 0
+    bit_size: 1
+  - name: TLPIEX
+    bit_offset: 1
+    bit_size: 1
+  - name: RLPIEN
+    bit_offset: 2
+    bit_size: 1
+  - name: RLPIEX
+    bit_offset: 3
+    bit_size: 1
+  - name: TLPIST
+    bit_offset: 8
+    bit_size: 1
+  - name: RLPIST
+    bit_offset: 9
+    bit_size: 1
+  - name: LPIEN
+    bit_offset: 16
+    bit_size: 1
+  - name: PLS
+    bit_offset: 17
+    bit_size: 1
+  - name: LPITXA
+    bit_offset: 19
+    bit_size: 1
+  - name: LPIATE
+    bit_offset: 20
+    bit_size: 1
+  - name: LPITCSE
+    bit_offset: 21
+    bit_size: 1
+fieldset/regs::MAC_LPI_ENTRY_TIMER:
+  description: Tx LPI Entry Timer Control
+  fields:
+  - name: LPIET
+    bit_offset: 3
+    bit_size: 17
+fieldset/regs::MAC_LPI_TIMERS_CONTROL:
+  description: LPI Timers Control
+  fields:
+  - name: TWT
+    bit_offset: 0
+    bit_size: 16
+  - name: LST
+    bit_offset: 16
+    bit_size: 10
+fieldset/regs::MAC_MDIO_ADDRESS:
+  description: MDIO Address
+  fields:
+  - name: GB
+    bit_offset: 0
+    bit_size: 1
+  - name: C45E
+    bit_offset: 1
+    bit_size: 1
+  - name: GOC_0
+    bit_offset: 2
+    bit_size: 1
+  - name: GOC_1
+    bit_offset: 3
+    bit_size: 1
+  - name: SKAP
+    bit_offset: 4
+    bit_size: 1
+  - name: CR
+    bit_offset: 8
+    bit_size: 4
+  - name: NTC
+    bit_offset: 12
+    bit_size: 3
+  - name: RDA
+    bit_offset: 16
+    bit_size: 5
+  - name: PA
+    bit_offset: 21
+    bit_size: 5
+  - name: BTB
+    bit_offset: 26
+    bit_size: 1
+  - name: PSE
+    bit_offset: 27
+    bit_size: 1
+fieldset/regs::MAC_MDIO_DATA:
+  description: MAC MDIO Data
+  fields:
+  - name: GD
+    bit_offset: 0
+    bit_size: 16
+  - name: RA
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::MAC_ONEUS_TIC_COUNTER:
+  description: One-microsecond Reference Timer
+  fields:
+  - name: TIC_1US_CNTR
+    bit_offset: 0
+    bit_size: 12
+fieldset/regs::MAC_PACKET_FILTER:
+  description: MAC Packet Filter
+  fields:
+  - name: PR
+    bit_offset: 0
+    bit_size: 1
+  - name: DAIF
+    bit_offset: 3
+    bit_size: 1
+  - name: PM
+    bit_offset: 4
+    bit_size: 1
+  - name: DBF
+    bit_offset: 5
+    bit_size: 1
+  - name: PCF
+    bit_offset: 6
+    bit_size: 2
+  - name: VTFE
+    bit_offset: 16
+    bit_size: 1
+  - name: RA
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MAC_PMT_CONTROL_STATUS:
+  description: PMT Control and Status
+  fields:
+  - name: PWRDWN
+    bit_offset: 0
+    bit_size: 1
+  - name: MGKPKTEN
+    bit_offset: 1
+    bit_size: 1
+  - name: RWKPKTEN
+    bit_offset: 2
+    bit_size: 1
+  - name: MGKPRCVD
+    bit_offset: 5
+    bit_size: 1
+  - name: RWKPRCVD
+    bit_offset: 6
+    bit_size: 1
+  - name: GLBLUCAST
+    bit_offset: 9
+    bit_size: 1
+  - name: RWKPFE
+    bit_offset: 10
+    bit_size: 1
+  - name: RWKPTR
+    bit_offset: 24
+    bit_size: 5
+  - name: RWKFILTRST
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MAC_PPS_CONTROL:
+  description: PPS Control
+  fields:
+  - name: PPSCTRL_PPSCMD
+    bit_offset: 0
+    bit_size: 4
+fieldset/regs::MAC_RXQ_CTRL:
+  description: Receive Queue Control 0..Receive Queue Control 2
+  fields:
+  - name: AVCPQ
+    bit_offset: 0
+    bit_size: 3
+  - name: PSRQ0
+    bit_offset: 0
+    bit_size: 8
+  - name: RXQ0EN
+    bit_offset: 0
+    bit_size: 2
+  - name: RXQ1EN
+    bit_offset: 2
+    bit_size: 2
+  - name: PTPQ
+    bit_offset: 4
+    bit_size: 3
+  - name: PSRQ1
+    bit_offset: 8
+    bit_size: 8
+  - name: UPQ
+    bit_offset: 12
+    bit_size: 3
+  - name: MCBCQ
+    bit_offset: 16
+    bit_size: 3
+  - name: MCBCQEN
+    bit_offset: 20
+    bit_size: 1
+  - name: TACPQE
+    bit_offset: 21
+    bit_size: 1
+  - name: TPQC
+    bit_offset: 22
+    bit_size: 2
+  - name: OMCBCQ
+    bit_offset: 28
+    bit_size: 1
+  - name: TBRQE
+    bit_offset: 29
+    bit_size: 1
+fieldset/regs::MAC_RXQ_CTRL4:
+  description: Receive Queue Control 4
+  fields:
+  - name: UFFQE
+    bit_offset: 0
+    bit_size: 1
+  - name: UFFQ
+    bit_offset: 1
+    bit_size: 1
+  - name: MFFQE
+    bit_offset: 8
+    bit_size: 1
+  - name: MFFQ
+    bit_offset: 9
+    bit_size: 1
+  - name: VFFQE
+    bit_offset: 16
+    bit_size: 1
+  - name: VFFQ
+    bit_offset: 17
+    bit_size: 1
+fieldset/regs::MAC_RX_FLOW_CTRL:
+  description: MAC Rx Flow Control
+  fields:
+  - name: RFE
+    bit_offset: 0
+    bit_size: 1
+  - name: UP
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::MAC_RX_TX_STATUS:
+  description: Receive Transmit Status
+  fields:
+  - name: TJT
+    bit_offset: 0
+    bit_size: 1
+  - name: NCARR
+    bit_offset: 1
+    bit_size: 1
+  - name: LCARR
+    bit_offset: 2
+    bit_size: 1
+  - name: EXDEF
+    bit_offset: 3
+    bit_size: 1
+  - name: LCOL
+    bit_offset: 4
+    bit_size: 1
+  - name: EXCOL
+    bit_offset: 5
+    bit_size: 1
+  - name: RWT
+    bit_offset: 8
+    bit_size: 1
+fieldset/regs::MAC_SUB_SECOND_INCREMENT:
+  description: Subsecond Increment
+  fields:
+  - name: SNSINC
+    bit_offset: 16
+    bit_size: 8
+fieldset/regs::MAC_SYSTEM_TIME_NANOSECONDS:
+  description: System Time Nanoseconds
+  fields:
+  - name: TSSS
+    bit_offset: 0
+    bit_size: 31
+fieldset/regs::MAC_SYSTEM_TIME_NANOSECONDS_UPDATE:
+  description: System Time Nanoseconds Update
+  fields:
+  - name: TSSS
+    bit_offset: 0
+    bit_size: 31
+  - name: ADDSUB
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MAC_TIMESTAMP_CONTROL:
+  description: Timestamp Control
+  fields:
+  - name: TSENA
+    bit_offset: 0
+    bit_size: 1
+  - name: TSCFUPDT
+    bit_offset: 1
+    bit_size: 1
+  - name: TSINIT
+    bit_offset: 2
+    bit_size: 1
+  - name: TSUPDT
+    bit_offset: 3
+    bit_size: 1
+  - name: TSTRIG
+    bit_offset: 4
+    bit_size: 1
+  - name: TSADDREG
+    bit_offset: 5
+    bit_size: 1
+  - name: TSENALL
+    bit_offset: 8
+    bit_size: 1
+  - name: TSCTRLSSR
+    bit_offset: 9
+    bit_size: 1
+  - name: TSVER2ENA
+    bit_offset: 10
+    bit_size: 1
+  - name: TSIPENA
+    bit_offset: 11
+    bit_size: 1
+  - name: TSIPV6ENA
+    bit_offset: 12
+    bit_size: 1
+  - name: TSIPV4ENA
+    bit_offset: 13
+    bit_size: 1
+  - name: TSEVNTENA
+    bit_offset: 14
+    bit_size: 1
+  - name: TSMSTRENA
+    bit_offset: 15
+    bit_size: 1
+  - name: SNAPTYPSEL
+    bit_offset: 16
+    bit_size: 2
+  - name: TSENMACADDR
+    bit_offset: 18
+    bit_size: 1
+  - name: ESTI
+    bit_offset: 20
+    bit_size: 1
+  - name: TXTSSTSM
+    bit_offset: 24
+    bit_size: 1
+  - name: AV8021ASMEN
+    bit_offset: 28
+    bit_size: 1
+fieldset/regs::MAC_TIMESTAMP_EGRESS_LATENCY:
+  description: Timestamp Egress Latency
+  fields:
+  - name: ETLSNS
+    bit_offset: 8
+    bit_size: 8
+  - name: ETLNS
+    bit_offset: 16
+    bit_size: 12
+fieldset/regs::MAC_TIMESTAMP_INGRESS_LATENCY:
+  description: Timestamp Ingress Latency
+  fields:
+  - name: ITLSNS
+    bit_offset: 8
+    bit_size: 8
+  - name: ITLNS
+    bit_offset: 16
+    bit_size: 12
+fieldset/regs::MAC_TIMESTAMP_STATUS:
+  description: Timestamp Status
+  fields:
+  - name: TSSOVF
+    bit_offset: 0
+    bit_size: 1
+  - name: TSTARGT0
+    bit_offset: 1
+    bit_size: 1
+  - name: TSTRGTERR0
+    bit_offset: 3
+    bit_size: 1
+  - name: TXTSSIS
+    bit_offset: 15
+    bit_size: 1
+fieldset/regs::MAC_TX_FLOW_CTRL_Q:
+  description: MAC Q0 Tx Flow Control
+  fields:
+  - name: FCB_BPA
+    bit_offset: 0
+    bit_size: 1
+  - name: TFE
+    bit_offset: 1
+    bit_size: 1
+  - name: PLT
+    bit_offset: 4
+    bit_size: 3
+  - name: DZPQ
+    bit_offset: 7
+    bit_size: 1
+  - name: PT
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::MAC_TX_TIMESTAMP_STATUS_NANOSECONDS:
+  description: Transmit Timestamp Status Nanoseconds
+  fields:
+  - name: TXTSSLO
+    bit_offset: 0
+    bit_size: 31
+  - name: TXTSSMIS
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MAC_VERSION:
+  description: MAC Version
+  fields:
+  - name: SNPSVER
+    bit_offset: 0
+    bit_size: 8
+  - name: USERVER
+    bit_offset: 8
+    bit_size: 8
+fieldset/regs::MAC_VLAN_INCL:
+  description: VLAN Tag Inclusion or Replacement
+  fields:
+  - name: VLT
+    bit_offset: 0
+    bit_size: 16
+  - name: VLC
+    bit_offset: 16
+    bit_size: 2
+  - name: VLP
+    bit_offset: 18
+    bit_size: 1
+  - name: CSVL
+    bit_offset: 19
+    bit_size: 1
+  - name: VLTI
+    bit_offset: 20
+    bit_size: 1
+  - name: CBTI
+    bit_offset: 21
+    bit_size: 1
+  - name: ADDR
+    bit_offset: 24
+    bit_size: 1
+  - name: RDWR
+    bit_offset: 30
+    bit_size: 1
+  - name: BUSY
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MAC_VLAN_TAG_CTRL:
+  description: MAC VLAN Tag Control
+  fields:
+  - name: VL
+    bit_offset: 0
+    bit_size: 16
+  - name: ETV
+    bit_offset: 16
+    bit_size: 1
+  - name: VTIM
+    bit_offset: 17
+    bit_size: 1
+  - name: ESVL
+    bit_offset: 18
+    bit_size: 1
+  - name: ERSVLM
+    bit_offset: 19
+    bit_size: 1
+  - name: DOVLTC
+    bit_offset: 20
+    bit_size: 1
+  - name: EVLS
+    bit_offset: 21
+    bit_size: 2
+  - name: EVLRXS
+    bit_offset: 24
+    bit_size: 1
+  - name: EDVLP
+    bit_offset: 26
+    bit_size: 1
+  - name: ERIVLT
+    bit_offset: 27
+    bit_size: 1
+  - name: EIVLS
+    bit_offset: 28
+    bit_size: 2
+  - name: EIVLRXS
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MAC_WATCHDOG_TIMEOUT:
+  description: Watchdog Timeout
+  fields:
+  - name: WTO
+    bit_offset: 0
+    bit_size: 4
+  - name: PWE
+    bit_offset: 8
+    bit_size: 1
+fieldset/regs::MTL_INTERRUPT_STATUS:
+  description: MTL Interrupt Status
+  fields:
+  - name: Q0IS
+    bit_offset: 0
+    bit_size: 1
+  - name: Q1IS
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::MTL_OPERATION_MODE:
+  description: MTL Operation Mode
+  fields:
+  - name: DTXSTS
+    bit_offset: 1
+    bit_size: 1
+  - name: RAA
+    bit_offset: 2
+    bit_size: 1
+  - name: SCHALG
+    bit_offset: 5
+    bit_size: 2
+  - name: CNTPRST
+    bit_offset: 8
+    bit_size: 1
+  - name: CNTCLR
+    bit_offset: 9
+    bit_size: 1
+fieldset/regs::MTL_QUEUE_MTL_QX_INTCTRL_STAT:
+  description: Queue 0 Interrupt Control Status..Queue 1 Interrupt Control Status
+  fields:
+  - name: TXUNFIS
+    bit_offset: 0
+    bit_size: 1
+  - name: ABPSIS
+    bit_offset: 1
+    bit_size: 1
+  - name: TXUIE
+    bit_offset: 8
+    bit_size: 1
+  - name: ABPSIE
+    bit_offset: 9
+    bit_size: 1
+  - name: RXOVFIS
+    bit_offset: 16
+    bit_size: 1
+  - name: RXOIE
+    bit_offset: 24
+    bit_size: 1
+fieldset/regs::MTL_QUEUE_MTL_RXQX_CTRL:
+  description: Queue 0 Receive Control..Queue 1 Receive Control
+  fields:
+  - name: RXQ_WEGT
+    bit_offset: 0
+    bit_size: 3
+  - name: RXQ_FRM_ARBIT
+    bit_offset: 3
+    bit_size: 1
+fieldset/regs::MTL_QUEUE_MTL_RXQX_DBG:
+  description: Queue 0 Receive Debug..Queue 1 Receive Debug
+  fields:
+  - name: RWCSTS
+    bit_offset: 0
+    bit_size: 1
+  - name: RRCSTS
+    bit_offset: 1
+    bit_size: 2
+  - name: RXQSTS
+    bit_offset: 4
+    bit_size: 2
+  - name: PRXQ
+    bit_offset: 16
+    bit_size: 14
+fieldset/regs::MTL_QUEUE_MTL_RXQX_MISSPKT_OVRFLW_CNT:
+  description: Queue 0 Missed Packet and Overflow Counter..Queue 1 Missed Packet and Overflow Counter
+  fields:
+  - name: OVFPKTCNT
+    bit_offset: 0
+    bit_size: 11
+  - name: OVFCNTOVF
+    bit_offset: 11
+    bit_size: 1
+  - name: MISPKTCNT
+    bit_offset: 16
+    bit_size: 11
+  - name: MISCNTOVF
+    bit_offset: 27
+    bit_size: 1
+fieldset/regs::MTL_QUEUE_MTL_RXQX_OP_MODE:
+  description: Queue 0 Receive Operation Mode..Queue 1 Receive Operation Mode
+  fields:
+  - name: RTC
+    bit_offset: 0
+    bit_size: 2
+  - name: FUP
+    bit_offset: 3
+    bit_size: 1
+  - name: FEP
+    bit_offset: 4
+    bit_size: 1
+  - name: RSF
+    bit_offset: 5
+    bit_size: 1
+  - name: DIS_TCP_EF
+    bit_offset: 6
+    bit_size: 1
+  - name: RQS
+    bit_offset: 20
+    bit_size: 3
+fieldset/regs::MTL_QUEUE_MTL_TXQX_DBG:
+  description: Queue 0 Transmit Debug..Queue 1 Transmit Debug
+  fields:
+  - name: TXQPAUSED
+    bit_offset: 0
+    bit_size: 1
+  - name: TRCSTS
+    bit_offset: 1
+    bit_size: 2
+  - name: TWCSTS
+    bit_offset: 3
+    bit_size: 1
+  - name: TXQSTS
+    bit_offset: 4
+    bit_size: 1
+  - name: TXSTSFSTS
+    bit_offset: 5
+    bit_size: 1
+  - name: PTXQ
+    bit_offset: 16
+    bit_size: 3
+  - name: STXSTSF
+    bit_offset: 20
+    bit_size: 3
+fieldset/regs::MTL_QUEUE_MTL_TXQX_ETS_CTRL:
+  description: Queue 1 ETS Control
+  fields:
+  - name: AVALG
+    bit_offset: 2
+    bit_size: 1
+  - name: CC
+    bit_offset: 3
+    bit_size: 1
+  - name: SLC
+    bit_offset: 4
+    bit_size: 3
+fieldset/regs::MTL_QUEUE_MTL_TXQX_ETS_STAT:
+  description: Queue 0 ETS Status..Queue 1 ETS Status
+  fields:
+  - name: ABS
+    bit_offset: 0
+    bit_size: 24
+fieldset/regs::MTL_QUEUE_MTL_TXQX_HI_CRDT:
+  description: Queue 1 hiCredit
+  fields:
+  - name: HC
+    bit_offset: 0
+    bit_size: 29
+fieldset/regs::MTL_QUEUE_MTL_TXQX_LO_CRDT:
+  description: Queue 1 loCredit
+  fields:
+  - name: LC
+    bit_offset: 0
+    bit_size: 29
+fieldset/regs::MTL_QUEUE_MTL_TXQX_OP_MODE:
+  description: Queue 0 Transmit Operation Mode..Queue 1 Transmit Operation Mode
+  fields:
+  - name: FTQ
+    bit_offset: 0
+    bit_size: 1
+  - name: TSF
+    bit_offset: 1
+    bit_size: 1
+  - name: TXQEN
+    bit_offset: 2
+    bit_size: 2
+  - name: TTC
+    bit_offset: 4
+    bit_size: 3
+  - name: TQS
+    bit_offset: 16
+    bit_size: 3
+fieldset/regs::MTL_QUEUE_MTL_TXQX_QNTM_WGHT:
+  description: Queue 0 Quantum or Weights..Queue 1 idleSlopeCredit, Quantum or Weights
+  fields:
+  - name: ISCQW
+    bit_offset: 0
+    bit_size: 21
+fieldset/regs::MTL_QUEUE_MTL_TXQX_SNDSLP_CRDT:
+  description: Queue 1 sendSlopeCredit
+  fields:
+  - name: SSC
+    bit_offset: 0
+    bit_size: 14
+fieldset/regs::MTL_QUEUE_MTL_TXQX_UNDRFLW:
+  description: Queue 0 Underflow Counter..Queue 1 Underflow Counter
+  fields:
+  - name: UFFRMCNT
+    bit_offset: 0
+    bit_size: 11
+  - name: UFCNTOVF
+    bit_offset: 11
+    bit_size: 1
+fieldset/regs::MTL_RXQ_DMA_MAP0:
+  description: Receive Queue and DMA Channel Mapping 0
+  fields:
+  - name: Q0MDMACH
+    bit_offset: 0
+    bit_size: 1
+  - name: Q0DDMACH
+    bit_offset: 4
+    bit_size: 1
+  - name: Q1MDMACH
+    bit_offset: 8
+    bit_size: 1
+  - name: Q1DDMACH
+    bit_offset: 12
+    bit_size: 1
+fieldset/regs::PPS0_TARGET_TIME_NANOSECONDS:
+  description: PPS0 Target Time Nanoseconds
+  fields:
+  - name: TTSL0
+    bit_offset: 0
+    bit_size: 31

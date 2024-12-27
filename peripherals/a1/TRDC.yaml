@@ -1,0 +1,244 @@
+block/MBC_INDEX:
+  items:
+  - name: MBC_MEM_GLBCFG
+    array:
+      len: 4
+      stride: 4
+    byte_offset: 0
+    fieldset: regs::MBC_INDEX_MBC_MEM_GLBCFG
+  - name: MBC_MEMN_GLBAC
+    array:
+      len: 8
+      stride: 4
+    byte_offset: 32
+    fieldset: regs::MBC_INDEX_MBC_MEMN_GLBAC
+  - name: MBC_DOM0_MEM0_BLK_CFG_W
+    array:
+      len: 8
+      stride: 4
+    byte_offset: 64
+  - name: MBC_DOM0_MEM1_BLK_CFG_W
+    array:
+      len: 1
+      stride: 4
+    byte_offset: 384
+  - name: MBC_DOM0_MEM2_BLK_CFG_W
+    array:
+      len: 1
+      stride: 4
+    byte_offset: 424
+block/TRDC:
+  items:
+  - name: MBC_INDEX
+    array:
+      len: 1
+      stride: 428
+    byte_offset: 0
+    block: MBC_INDEX
+fieldset/regs::MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W:
+  description: MBC Memory Block Configuration Word
+  fields:
+  - name: MBACSEL0
+    bit_offset: 0
+    bit_size: 3
+  - name: NSE0
+    bit_offset: 3
+    bit_size: 1
+  - name: MBACSEL1
+    bit_offset: 4
+    bit_size: 3
+  - name: NSE1
+    bit_offset: 7
+    bit_size: 1
+  - name: MBACSEL2
+    bit_offset: 8
+    bit_size: 3
+  - name: NSE2
+    bit_offset: 11
+    bit_size: 1
+  - name: MBACSEL3
+    bit_offset: 12
+    bit_size: 3
+  - name: NSE3
+    bit_offset: 15
+    bit_size: 1
+  - name: MBACSEL4
+    bit_offset: 16
+    bit_size: 3
+  - name: NSE4
+    bit_offset: 19
+    bit_size: 1
+  - name: MBACSEL5
+    bit_offset: 20
+    bit_size: 3
+  - name: NSE5
+    bit_offset: 23
+    bit_size: 1
+  - name: MBACSEL6
+    bit_offset: 24
+    bit_size: 3
+  - name: NSE6
+    bit_offset: 27
+    bit_size: 1
+  - name: MBACSEL7
+    bit_offset: 28
+    bit_size: 3
+  - name: NSE7
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W:
+  description: MBC Memory Block Configuration Word
+  fields:
+  - name: MBACSEL0
+    bit_offset: 0
+    bit_size: 3
+  - name: NSE0
+    bit_offset: 3
+    bit_size: 1
+  - name: MBACSEL1
+    bit_offset: 4
+    bit_size: 3
+  - name: NSE1
+    bit_offset: 7
+    bit_size: 1
+  - name: MBACSEL2
+    bit_offset: 8
+    bit_size: 3
+  - name: NSE2
+    bit_offset: 11
+    bit_size: 1
+  - name: MBACSEL3
+    bit_offset: 12
+    bit_size: 3
+  - name: NSE3
+    bit_offset: 15
+    bit_size: 1
+  - name: MBACSEL4
+    bit_offset: 16
+    bit_size: 3
+  - name: NSE4
+    bit_offset: 19
+    bit_size: 1
+  - name: MBACSEL5
+    bit_offset: 20
+    bit_size: 3
+  - name: NSE5
+    bit_offset: 23
+    bit_size: 1
+  - name: MBACSEL6
+    bit_offset: 24
+    bit_size: 3
+  - name: NSE6
+    bit_offset: 27
+    bit_size: 1
+  - name: MBACSEL7
+    bit_offset: 28
+    bit_size: 3
+  - name: NSE7
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W:
+  description: MBC Memory Block Configuration Word
+  fields:
+  - name: MBACSEL0
+    bit_offset: 0
+    bit_size: 3
+  - name: NSE0
+    bit_offset: 3
+    bit_size: 1
+  - name: MBACSEL1
+    bit_offset: 4
+    bit_size: 3
+  - name: NSE1
+    bit_offset: 7
+    bit_size: 1
+  - name: MBACSEL2
+    bit_offset: 8
+    bit_size: 3
+  - name: NSE2
+    bit_offset: 11
+    bit_size: 1
+  - name: MBACSEL3
+    bit_offset: 12
+    bit_size: 3
+  - name: NSE3
+    bit_offset: 15
+    bit_size: 1
+  - name: MBACSEL4
+    bit_offset: 16
+    bit_size: 3
+  - name: NSE4
+    bit_offset: 19
+    bit_size: 1
+  - name: MBACSEL5
+    bit_offset: 20
+    bit_size: 3
+  - name: NSE5
+    bit_offset: 23
+    bit_size: 1
+  - name: MBACSEL6
+    bit_offset: 24
+    bit_size: 3
+  - name: NSE6
+    bit_offset: 27
+    bit_size: 1
+  - name: MBACSEL7
+    bit_offset: 28
+    bit_size: 3
+  - name: NSE7
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MBC_INDEX_MBC_MEMN_GLBAC:
+  description: MBC Global Access Control
+  fields:
+  - name: NUX
+    bit_offset: 0
+    bit_size: 1
+  - name: NUW
+    bit_offset: 1
+    bit_size: 1
+  - name: NUR
+    bit_offset: 2
+    bit_size: 1
+  - name: NPX
+    bit_offset: 4
+    bit_size: 1
+  - name: NPW
+    bit_offset: 5
+    bit_size: 1
+  - name: NPR
+    bit_offset: 6
+    bit_size: 1
+  - name: SUX
+    bit_offset: 8
+    bit_size: 1
+  - name: SUW
+    bit_offset: 9
+    bit_size: 1
+  - name: SUR
+    bit_offset: 10
+    bit_size: 1
+  - name: SPX
+    bit_offset: 12
+    bit_size: 1
+  - name: SPW
+    bit_offset: 13
+    bit_size: 1
+  - name: SPR
+    bit_offset: 14
+    bit_size: 1
+  - name: LK
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MBC_INDEX_MBC_MEM_GLBCFG:
+  description: MBC Global Configuration Register
+  fields:
+  - name: NBLKS
+    bit_offset: 0
+    bit_size: 10
+  - name: SIZE_LOG2
+    bit_offset: 16
+    bit_size: 5
+  - name: CLRE
+    bit_offset: 30
+    bit_size: 2

@@ -1,0 +1,300 @@
+block/ERM:
+  items:
+  - name: CR0
+    byte_offset: 0
+    fieldset: regs::CR0
+  - name: CR1
+    byte_offset: 4
+    fieldset: regs::CR1
+  - name: SR0
+    byte_offset: 16
+    fieldset: regs::SR0
+  - name: SR1
+    byte_offset: 20
+    fieldset: regs::SR1
+  - name: EAR0
+    byte_offset: 256
+  - name: SYN0
+    byte_offset: 260
+    fieldset: regs::SYN0
+  - name: CORR_ERR_CNT0
+    byte_offset: 264
+    fieldset: regs::CORR_ERR_CNT0
+  - name: EAR1
+    byte_offset: 272
+  - name: SYN1
+    byte_offset: 276
+    fieldset: regs::SYN1
+  - name: CORR_ERR_CNT1
+    byte_offset: 280
+    fieldset: regs::CORR_ERR_CNT1
+  - name: EAR2
+    byte_offset: 288
+  - name: SYN2
+    byte_offset: 292
+    fieldset: regs::SYN2
+  - name: CORR_ERR_CNT2
+    byte_offset: 296
+    fieldset: regs::CORR_ERR_CNT2
+  - name: EAR3
+    byte_offset: 304
+  - name: SYN3
+    byte_offset: 308
+    fieldset: regs::SYN3
+  - name: CORR_ERR_CNT3
+    byte_offset: 312
+    fieldset: regs::CORR_ERR_CNT3
+  - name: EAR4
+    byte_offset: 320
+  - name: SYN4
+    byte_offset: 324
+    fieldset: regs::SYN4
+  - name: CORR_ERR_CNT4
+    byte_offset: 328
+    fieldset: regs::CORR_ERR_CNT4
+  - name: CORR_ERR_CNT5
+    byte_offset: 344
+    fieldset: regs::CORR_ERR_CNT5
+  - name: CORR_ERR_CNT6
+    byte_offset: 360
+    fieldset: regs::CORR_ERR_CNT6
+  - name: CORR_ERR_CNT7
+    byte_offset: 376
+    fieldset: regs::CORR_ERR_CNT7
+  - name: SYN8
+    byte_offset: 388
+    fieldset: regs::SYN8
+  - name: CORR_ERR_CNT8
+    byte_offset: 392
+    fieldset: regs::CORR_ERR_CNT8
+  - name: CORR_ERR_CNT9
+    byte_offset: 408
+    fieldset: regs::CORR_ERR_CNT9
+fieldset/regs::CORR_ERR_CNT0:
+  description: ERM Memory 0 Correctable Error Count Register
+  fields:
+  - name: COUNT
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::CORR_ERR_CNT1:
+  description: ERM Memory 1 Correctable Error Count Register
+  fields:
+  - name: COUNT
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::CORR_ERR_CNT2:
+  description: ERM Memory 2 Correctable Error Count Register
+  fields:
+  - name: COUNT
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::CORR_ERR_CNT3:
+  description: ERM Memory 3 Correctable Error Count Register
+  fields:
+  - name: COUNT
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::CORR_ERR_CNT4:
+  description: ERM Memory 4 Correctable Error Count Register
+  fields:
+  - name: COUNT
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::CORR_ERR_CNT5:
+  description: ERM Memory 5 Correctable Error Count Register
+  fields:
+  - name: COUNT
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::CORR_ERR_CNT6:
+  description: ERM Memory 6 Correctable Error Count Register
+  fields:
+  - name: COUNT
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::CORR_ERR_CNT7:
+  description: ERM Memory 7 Correctable Error Count Register
+  fields:
+  - name: COUNT
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::CORR_ERR_CNT8:
+  description: ERM Memory 8 Correctable Error Count Register
+  fields:
+  - name: COUNT
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::CORR_ERR_CNT9:
+  description: ERM Memory 9 Correctable Error Count Register
+  fields:
+  - name: COUNT
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::CR0:
+  description: ERM Configuration Register 0
+  fields:
+  - name: ENCIE7
+    bit_offset: 2
+    bit_size: 1
+  - name: ESCIE7
+    bit_offset: 3
+    bit_size: 1
+  - name: ENCIE6
+    bit_offset: 6
+    bit_size: 1
+  - name: ESCIE6
+    bit_offset: 7
+    bit_size: 1
+  - name: ENCIE5
+    bit_offset: 10
+    bit_size: 1
+  - name: ESCIE5
+    bit_offset: 11
+    bit_size: 1
+  - name: ENCIE4
+    bit_offset: 14
+    bit_size: 1
+  - name: ESCIE4
+    bit_offset: 15
+    bit_size: 1
+  - name: ENCIE3
+    bit_offset: 18
+    bit_size: 1
+  - name: ESCIE3
+    bit_offset: 19
+    bit_size: 1
+  - name: ENCIE2
+    bit_offset: 22
+    bit_size: 1
+  - name: ESCIE2
+    bit_offset: 23
+    bit_size: 1
+  - name: ENCIE1
+    bit_offset: 26
+    bit_size: 1
+  - name: ESCIE1
+    bit_offset: 27
+    bit_size: 1
+  - name: ENCIE0
+    bit_offset: 30
+    bit_size: 1
+  - name: ESCIE0
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CR1:
+  description: ERM Configuration Register 1
+  fields:
+  - name: ENCIE9
+    bit_offset: 26
+    bit_size: 1
+  - name: ESCIE9
+    bit_offset: 27
+    bit_size: 1
+  - name: ENCIE8
+    bit_offset: 30
+    bit_size: 1
+  - name: ESCIE8
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::SR0:
+  description: ERM Status Register 0
+  fields:
+  - name: NCE7
+    bit_offset: 2
+    bit_size: 1
+  - name: SBC7
+    bit_offset: 3
+    bit_size: 1
+  - name: NCE6
+    bit_offset: 6
+    bit_size: 1
+  - name: SBC6
+    bit_offset: 7
+    bit_size: 1
+  - name: NCE5
+    bit_offset: 10
+    bit_size: 1
+  - name: SBC5
+    bit_offset: 11
+    bit_size: 1
+  - name: NCE4
+    bit_offset: 14
+    bit_size: 1
+  - name: SBC4
+    bit_offset: 15
+    bit_size: 1
+  - name: NCE3
+    bit_offset: 18
+    bit_size: 1
+  - name: SBC3
+    bit_offset: 19
+    bit_size: 1
+  - name: NCE2
+    bit_offset: 22
+    bit_size: 1
+  - name: SBC2
+    bit_offset: 23
+    bit_size: 1
+  - name: NCE1
+    bit_offset: 26
+    bit_size: 1
+  - name: SBC1
+    bit_offset: 27
+    bit_size: 1
+  - name: NCE0
+    bit_offset: 30
+    bit_size: 1
+  - name: SBC0
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::SR1:
+  description: ERM Status Register 1
+  fields:
+  - name: NCE9
+    bit_offset: 26
+    bit_size: 1
+  - name: SBC9
+    bit_offset: 27
+    bit_size: 1
+  - name: NCE8
+    bit_offset: 30
+    bit_size: 1
+  - name: SBC8
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::SYN0:
+  description: ERM Memory 0 Syndrome Register
+  fields:
+  - name: SYNDROME
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::SYN1:
+  description: ERM Memory 1 Syndrome Register
+  fields:
+  - name: SYNDROME
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::SYN2:
+  description: ERM Memory 2 Syndrome Register
+  fields:
+  - name: SYNDROME
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::SYN3:
+  description: ERM Memory 3 Syndrome Register
+  fields:
+  - name: SYNDROME
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::SYN4:
+  description: ERM Memory 4 Syndrome Register
+  fields:
+  - name: SYNDROME
+    bit_offset: 24
+    bit_size: 8
+fieldset/regs::SYN8:
+  description: ERM Memory 8 Syndrome Register
+  fields:
+  - name: SYNDROME
+    bit_offset: 24
+    bit_size: 8

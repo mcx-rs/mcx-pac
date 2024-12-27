@@ -1,0 +1,122 @@
+block/CDOG:
+  items:
+  - name: CONTROL
+    byte_offset: 0
+    fieldset: regs::CONTROL
+  - name: RELOAD
+    byte_offset: 4
+  - name: INSTRUCTION_TIMER
+    byte_offset: 8
+  - name: STATUS
+    byte_offset: 16
+    fieldset: regs::STATUS
+  - name: STATUS2
+    byte_offset: 20
+    fieldset: regs::STATUS2
+  - name: FLAGS
+    byte_offset: 24
+    fieldset: regs::FLAGS
+  - name: PERSISTENT
+    byte_offset: 28
+  - name: START
+    byte_offset: 32
+  - name: STOP
+    byte_offset: 36
+  - name: RESTART
+    byte_offset: 40
+  - name: ADD
+    byte_offset: 44
+  - name: ADD1
+    byte_offset: 48
+  - name: ADD16
+    byte_offset: 52
+  - name: ADD256
+    byte_offset: 56
+  - name: SUB
+    byte_offset: 60
+  - name: SUB1
+    byte_offset: 64
+  - name: SUB16
+    byte_offset: 68
+  - name: SUB256
+    byte_offset: 72
+  - name: ASSERT16
+    byte_offset: 76
+fieldset/regs::CONTROL:
+  description: Control Register
+  fields:
+  - name: LOCK_CTRL
+    bit_offset: 0
+    bit_size: 2
+  - name: TIMEOUT_CTRL
+    bit_offset: 2
+    bit_size: 3
+  - name: MISCOMPARE_CTRL
+    bit_offset: 5
+    bit_size: 3
+  - name: SEQUENCE_CTRL
+    bit_offset: 8
+    bit_size: 3
+  - name: STATE_CTRL
+    bit_offset: 14
+    bit_size: 3
+  - name: ADDRESS_CTRL
+    bit_offset: 17
+    bit_size: 3
+  - name: IRQ_PAUSE
+    bit_offset: 28
+    bit_size: 2
+  - name: DEBUG_HALT_CTRL
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::FLAGS:
+  description: Flags Register
+  fields:
+  - name: TO_FLAG
+    bit_offset: 0
+    bit_size: 1
+  - name: MISCOM_FLAG
+    bit_offset: 1
+    bit_size: 1
+  - name: SEQ_FLAG
+    bit_offset: 2
+    bit_size: 1
+  - name: CNT_FLAG
+    bit_offset: 3
+    bit_size: 1
+  - name: STATE_FLAG
+    bit_offset: 4
+    bit_size: 1
+  - name: ADDR_FLAG
+    bit_offset: 5
+    bit_size: 1
+  - name: POR_FLAG
+    bit_offset: 16
+    bit_size: 1
+fieldset/regs::STATUS:
+  description: Status 1 Register
+  fields:
+  - name: NUMTOF
+    bit_offset: 0
+    bit_size: 8
+  - name: NUMMISCOMPF
+    bit_offset: 8
+    bit_size: 8
+  - name: NUMILSEQF
+    bit_offset: 16
+    bit_size: 8
+  - name: CURST
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::STATUS2:
+  description: Status 2 Register
+  fields:
+  - name: NUMCNTF
+    bit_offset: 0
+    bit_size: 8
+  - name: NUMILLSTF
+    bit_offset: 8
+    bit_size: 8
+  - name: NUMILLA
+    bit_offset: 16
+    bit_size: 8

@@ -1,0 +1,62 @@
+block/VREF:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: CSR
+    byte_offset: 8
+    fieldset: regs::CSR
+  - name: UTRIM
+    byte_offset: 16
+    fieldset: regs::UTRIM
+fieldset/regs::CSR:
+  description: Control and Status
+  fields:
+  - name: HCBGEN
+    bit_offset: 0
+    bit_size: 1
+  - name: LPBGEN
+    bit_offset: 1
+    bit_size: 1
+  - name: LPBG_BUF_EN
+    bit_offset: 2
+    bit_size: 1
+  - name: CHOPEN
+    bit_offset: 3
+    bit_size: 1
+  - name: ICOMPEN
+    bit_offset: 4
+    bit_size: 1
+  - name: REGEN
+    bit_offset: 5
+    bit_size: 1
+  - name: HI_PWR_LV
+    bit_offset: 11
+    bit_size: 1
+  - name: BUF21EN
+    bit_offset: 16
+    bit_size: 1
+  - name: VREFST
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::UTRIM:
+  description: User Trim
+  fields:
+  - name: TRIM2V1
+    bit_offset: 0
+    bit_size: 4
+  - name: VREFTRIM
+    bit_offset: 8
+    bit_size: 6
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

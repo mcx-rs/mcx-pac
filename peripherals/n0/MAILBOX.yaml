@@ -1,0 +1,25 @@
+block/MAILBOX:
+  items:
+  - name: MBOXIRQ
+    array:
+      len: 2
+      stride: 16
+    byte_offset: 0
+    block: MBOXIRQ
+  - name: MUTEX
+    byte_offset: 248
+    fieldset: regs::MUTEX
+block/MBOXIRQ:
+  items:
+  - name: IRQ
+    byte_offset: 0
+  - name: IRQSET
+    byte_offset: 4
+  - name: IRQCLR
+    byte_offset: 8
+fieldset/regs::MUTEX:
+  description: Mutual Exclusion
+  fields:
+  - name: EX
+    bit_offset: 0
+    bit_size: 1

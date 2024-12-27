@@ -1,0 +1,1915 @@
+block/S50:
+  items:
+  - name: ELS_STATUS
+    byte_offset: 0
+    fieldset: regs::ELS_STATUS
+  - name: ELS_CTRL
+    byte_offset: 4
+    fieldset: regs::ELS_CTRL
+  - name: ELS_CMDCFG0
+    byte_offset: 8
+  - name: ELS_CFG
+    byte_offset: 12
+    fieldset: regs::ELS_CFG
+  - name: ELS_KIDX0
+    byte_offset: 16
+    fieldset: regs::ELS_KIDX0
+  - name: ELS_KIDX1
+    byte_offset: 20
+    fieldset: regs::ELS_KIDX1
+  - name: ELS_KPROPIN
+    byte_offset: 24
+  - name: ELS_DMA_SRC0
+    byte_offset: 32
+  - name: ELS_DMA_SRC0_LEN
+    byte_offset: 36
+  - name: ELS_DMA_SRC1
+    byte_offset: 40
+  - name: ELS_DMA_SRC2
+    byte_offset: 48
+  - name: ELS_DMA_SRC2_LEN
+    byte_offset: 52
+  - name: ELS_DMA_RES0
+    byte_offset: 56
+  - name: ELS_DMA_RES0_LEN
+    byte_offset: 60
+  - name: ELS_INT_ENABLE
+    byte_offset: 64
+    fieldset: regs::ELS_INT_ENABLE
+  - name: ELS_INT_STATUS_CLR
+    byte_offset: 68
+    fieldset: regs::ELS_INT_STATUS_CLR
+  - name: ELS_INT_STATUS_SET
+    byte_offset: 72
+    fieldset: regs::ELS_INT_STATUS_SET
+  - name: ELS_ERR_STATUS
+    byte_offset: 76
+    fieldset: regs::ELS_ERR_STATUS
+  - name: ELS_ERR_STATUS_CLR
+    byte_offset: 80
+    fieldset: regs::ELS_ERR_STATUS_CLR
+  - name: ELS_VERSION
+    byte_offset: 84
+    fieldset: regs::ELS_VERSION
+  - name: ELS_PRNG_DATOUT
+    byte_offset: 92
+  - name: ELS_CMDCRC_CTRL
+    byte_offset: 96
+    fieldset: regs::ELS_CMDCRC_CTRL
+  - name: ELS_CMDCRC
+    byte_offset: 100
+  - name: ELS_SESSION_ID
+    byte_offset: 104
+  - name: ELS_DMA_FIN_ADDR
+    byte_offset: 112
+  - name: ELS_MASTER_ID
+    byte_offset: 116
+    fieldset: regs::ELS_MASTER_ID
+  - name: ELS_KIDX2
+    byte_offset: 120
+    fieldset: regs::ELS_KIDX2
+  - name: ELS_KS0
+    byte_offset: 336
+    fieldset: regs::ELS_KS0
+  - name: ELS_KS1
+    byte_offset: 340
+    fieldset: regs::ELS_KS1
+  - name: ELS_KS2
+    byte_offset: 344
+    fieldset: regs::ELS_KS2
+  - name: ELS_KS3
+    byte_offset: 348
+    fieldset: regs::ELS_KS3
+  - name: ELS_KS4
+    byte_offset: 352
+    fieldset: regs::ELS_KS4
+  - name: ELS_KS5
+    byte_offset: 356
+    fieldset: regs::ELS_KS5
+  - name: ELS_KS6
+    byte_offset: 360
+    fieldset: regs::ELS_KS6
+  - name: ELS_KS7
+    byte_offset: 364
+    fieldset: regs::ELS_KS7
+  - name: ELS_KS8
+    byte_offset: 368
+    fieldset: regs::ELS_KS8
+  - name: ELS_KS9
+    byte_offset: 372
+    fieldset: regs::ELS_KS9
+  - name: ELS_KS10
+    byte_offset: 376
+    fieldset: regs::ELS_KS10
+  - name: ELS_KS11
+    byte_offset: 380
+    fieldset: regs::ELS_KS11
+  - name: ELS_KS12
+    byte_offset: 384
+    fieldset: regs::ELS_KS12
+  - name: ELS_KS13
+    byte_offset: 388
+    fieldset: regs::ELS_KS13
+  - name: ELS_KS14
+    byte_offset: 392
+    fieldset: regs::ELS_KS14
+  - name: ELS_KS15
+    byte_offset: 396
+    fieldset: regs::ELS_KS15
+  - name: ELS_KS16
+    byte_offset: 400
+    fieldset: regs::ELS_KS16
+  - name: ELS_KS17
+    byte_offset: 404
+    fieldset: regs::ELS_KS17
+  - name: ELS_KS18
+    byte_offset: 408
+    fieldset: regs::ELS_KS18
+  - name: ELS_KS19
+    byte_offset: 412
+    fieldset: regs::ELS_KS19
+fieldset/regs::ELS_CFG:
+  description: Configuration Register
+  fields:
+  - name: ADCTRL
+    bit_offset: 16
+    bit_size: 10
+fieldset/regs::ELS_CMDCRC_CTRL:
+  description: CRC Configuration
+  fields:
+  - name: CMDCRC_RST
+    bit_offset: 0
+    bit_size: 1
+  - name: CMDCRC_EN
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::ELS_CTRL:
+  description: Control Register
+  fields:
+  - name: ELS_EN
+    bit_offset: 0
+    bit_size: 1
+  - name: ELS_START
+    bit_offset: 1
+    bit_size: 1
+  - name: ELS_RESET
+    bit_offset: 2
+    bit_size: 1
+  - name: ELS_CMD
+    bit_offset: 3
+    bit_size: 5
+  - name: BYTE_ORDER
+    bit_offset: 8
+    bit_size: 1
+fieldset/regs::ELS_ERR_STATUS:
+  description: Error Status
+  fields:
+  - name: BUS_ERR
+    bit_offset: 0
+    bit_size: 1
+  - name: OPN_ERR
+    bit_offset: 1
+    bit_size: 1
+  - name: ALG_ERR
+    bit_offset: 2
+    bit_size: 1
+  - name: ITG_ERR
+    bit_offset: 3
+    bit_size: 1
+  - name: FLT_ERR
+    bit_offset: 4
+    bit_size: 1
+  - name: PRNG_ERR
+    bit_offset: 5
+    bit_size: 1
+  - name: ERR_LVL
+    bit_offset: 6
+    bit_size: 2
+  - name: DTRNG_ERR
+    bit_offset: 8
+    bit_size: 1
+fieldset/regs::ELS_ERR_STATUS_CLR:
+  description: Error Status Clear
+  fields:
+  - name: ERR_CLR
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::ELS_INT_ENABLE:
+  description: Interrupt Enable
+  fields:
+  - name: INT_EN
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::ELS_INT_STATUS_CLR:
+  description: Interrupt Status Clear
+  fields:
+  - name: INT_CLR
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::ELS_INT_STATUS_SET:
+  description: Interrupt Status Set
+  fields:
+  - name: INT_SET
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::ELS_KIDX0:
+  description: Keystore Index 0
+  fields:
+  - name: KIDX0
+    bit_offset: 0
+    bit_size: 5
+fieldset/regs::ELS_KIDX1:
+  description: Keystore Index 1
+  fields:
+  - name: KIDX1
+    bit_offset: 0
+    bit_size: 5
+fieldset/regs::ELS_KIDX2:
+  description: Keystore Index 2
+  fields:
+  - name: KIDX2
+    bit_offset: 0
+    bit_size: 5
+fieldset/regs::ELS_KS0:
+  description: Status Register
+  fields:
+  - name: KS0_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS0_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS0_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS0_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS0_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS0_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS0_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS0_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS0_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS0_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS0_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS0_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS0_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS0_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS0_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS0_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS0_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS0_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS0_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS0_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS0_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS0_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS0_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS0_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS0_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS0_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS1:
+  description: Status Register
+  fields:
+  - name: KS1_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS1_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS1_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS1_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS1_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS1_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS1_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS1_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS1_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS1_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS1_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS1_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS1_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS1_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS1_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS1_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS1_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS1_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS1_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS1_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS1_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS1_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS1_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS1_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS1_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS1_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS10:
+  description: Status Register
+  fields:
+  - name: KS10_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS10_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS10_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS10_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS10_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS10_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS10_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS10_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS10_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS10_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS10_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS10_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS10_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS10_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS10_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS10_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS10_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS10_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS10_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS10_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS10_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS10_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS10_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS10_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS10_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS10_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS11:
+  description: Status Register
+  fields:
+  - name: KS11_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS11_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS11_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS11_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS11_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS11_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS11_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS11_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS11_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS11_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS11_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS11_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS11_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS11_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS11_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS11_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS11_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS11_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS11_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS11_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS11_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS11_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS11_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS11_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS11_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS11_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS12:
+  description: Status Register
+  fields:
+  - name: KS12_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS12_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS12_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS12_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS12_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS12_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS12_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS12_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS12_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS12_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS12_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS12_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS12_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS12_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS12_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS12_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS12_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS12_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS12_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS12_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS12_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS12_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS12_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS12_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS12_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS12_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS13:
+  description: Status Register
+  fields:
+  - name: KS13_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS13_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS13_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS13_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS13_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS13_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS13_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS13_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS13_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS13_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS13_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS13_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS13_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS13_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS13_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS13_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS13_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS13_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS13_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS13_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS13_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS13_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS13_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS13_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS13_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS13_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS14:
+  description: Status Register
+  fields:
+  - name: KS14_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS14_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS14_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS14_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS14_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS14_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS14_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS14_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS14_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS14_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS14_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS14_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS14_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS14_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS14_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS14_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS14_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS14_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS14_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS14_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS14_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS14_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS14_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS14_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS14_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS14_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS15:
+  description: Status Register
+  fields:
+  - name: KS15_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS15_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS15_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS15_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS15_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS15_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS15_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS15_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS15_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS15_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS15_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS15_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS15_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS15_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS15_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS15_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS15_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS15_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS15_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS15_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS15_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS15_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS15_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS15_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS15_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS15_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS16:
+  description: Status Register
+  fields:
+  - name: KS16_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS16_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS16_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS16_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS16_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS16_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS16_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS16_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS16_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS16_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS16_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS16_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS16_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS16_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS16_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS16_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS16_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS16_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS16_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS16_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS16_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS16_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS16_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS16_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS16_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS16_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS17:
+  description: Status Register
+  fields:
+  - name: KS17_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS17_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS17_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS17_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS17_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS17_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS17_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS17_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS17_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS17_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS17_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS17_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS17_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS17_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS17_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS17_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS17_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS17_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS17_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS17_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS17_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS17_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS17_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS17_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS17_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS17_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS18:
+  description: Status Register
+  fields:
+  - name: KS18_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS18_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS18_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS18_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS18_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS18_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS18_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS18_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS18_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS18_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS18_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS18_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS18_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS18_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS18_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS18_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS18_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS18_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS18_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS18_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS18_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS18_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS18_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS18_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS18_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS18_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS19:
+  description: Status Register
+  fields:
+  - name: KS19_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS19_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS19_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS19_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS19_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS19_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS19_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS19_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS19_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS19_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS19_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS19_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS19_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS19_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS19_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS19_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS19_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS19_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS19_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS19_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS19_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS19_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS19_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS19_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS19_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS19_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS2:
+  description: Status Register
+  fields:
+  - name: KS2_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS2_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS2_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS2_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS2_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS2_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS2_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS2_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS2_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS2_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS2_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS2_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS2_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS2_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS2_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS2_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS2_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS2_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS2_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS2_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS2_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS2_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS2_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS2_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS2_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS2_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS3:
+  description: Status Register
+  fields:
+  - name: KS3_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS3_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS3_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS3_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS3_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS3_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS3_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS3_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS3_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS3_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS3_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS3_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS3_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS3_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS3_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS3_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS3_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS3_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS3_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS3_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS3_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS3_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS3_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS3_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS3_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS3_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS4:
+  description: Status Register
+  fields:
+  - name: KS4_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS4_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS4_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS4_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS4_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS4_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS4_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS4_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS4_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS4_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS4_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS4_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS4_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS4_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS4_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS4_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS4_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS4_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS4_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS4_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS4_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS4_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS4_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS4_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS4_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS4_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS5:
+  description: Status Register
+  fields:
+  - name: KS5_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS5_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS5_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS5_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS5_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS5_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS5_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS5_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS5_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS5_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS5_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS5_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS5_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS5_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS5_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS5_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS5_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS5_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS5_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS5_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS5_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS5_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS5_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS5_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS5_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS5_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS6:
+  description: Status Register
+  fields:
+  - name: KS6_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS6_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS6_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS6_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS6_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS6_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS6_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS6_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS6_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS6_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS6_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS6_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS6_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS6_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS6_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS6_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS6_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS6_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS6_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS6_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS6_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS6_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS6_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS6_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS6_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS6_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS7:
+  description: Status Register
+  fields:
+  - name: KS7_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS7_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS7_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS7_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS7_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS7_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS7_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS7_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS7_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS7_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS7_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS7_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS7_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS7_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS7_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS7_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS7_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS7_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS7_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS7_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS7_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS7_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS7_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS7_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS7_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS7_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS8:
+  description: Status Register
+  fields:
+  - name: KS8_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS8_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS8_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS8_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS8_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS8_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS8_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS8_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS8_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS8_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS8_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS8_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS8_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS8_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS8_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS8_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS8_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS8_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS8_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS8_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS8_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS8_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS8_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS8_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS8_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS8_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_KS9:
+  description: Status Register
+  fields:
+  - name: KS9_KSIZE
+    bit_offset: 0
+    bit_size: 2
+  - name: KS9_KACT
+    bit_offset: 5
+    bit_size: 1
+  - name: KS9_KBASE
+    bit_offset: 6
+    bit_size: 1
+  - name: KS9_FGP
+    bit_offset: 7
+    bit_size: 1
+  - name: KS9_FRTN
+    bit_offset: 8
+    bit_size: 1
+  - name: KS9_FHWO
+    bit_offset: 9
+    bit_size: 1
+  - name: KS9_UKPUK
+    bit_offset: 11
+    bit_size: 1
+  - name: KS9_UTECDH
+    bit_offset: 12
+    bit_size: 1
+  - name: KS9_UCMAC
+    bit_offset: 13
+    bit_size: 1
+  - name: KS9_UKSK
+    bit_offset: 14
+    bit_size: 1
+  - name: KS9_URTF
+    bit_offset: 15
+    bit_size: 1
+  - name: KS9_UCKDF
+    bit_offset: 16
+    bit_size: 1
+  - name: KS9_UHKDF
+    bit_offset: 17
+    bit_size: 1
+  - name: KS9_UECSG
+    bit_offset: 18
+    bit_size: 1
+  - name: KS9_UECDH
+    bit_offset: 19
+    bit_size: 1
+  - name: KS9_UAES
+    bit_offset: 20
+    bit_size: 1
+  - name: KS9_UHMAC
+    bit_offset: 21
+    bit_size: 1
+  - name: KS9_UKWK
+    bit_offset: 22
+    bit_size: 1
+  - name: KS9_UKUOK
+    bit_offset: 23
+    bit_size: 1
+  - name: KS9_UTLSPMS
+    bit_offset: 24
+    bit_size: 1
+  - name: KS9_UTLSMS
+    bit_offset: 25
+    bit_size: 1
+  - name: KS9_UKGSRC
+    bit_offset: 26
+    bit_size: 1
+  - name: KS9_UHWO
+    bit_offset: 27
+    bit_size: 1
+  - name: KS9_UWRPOK
+    bit_offset: 28
+    bit_size: 1
+  - name: KS9_UDUK
+    bit_offset: 29
+    bit_size: 1
+  - name: KS9_UPPROT
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::ELS_MASTER_ID:
+  description: Master ID
+  fields:
+  - name: MASTER_ID
+    bit_offset: 0
+    bit_size: 5
+fieldset/regs::ELS_STATUS:
+  description: Status Register
+  fields:
+  - name: ELS_BUSY
+    bit_offset: 0
+    bit_size: 1
+  - name: ELS_IRQ
+    bit_offset: 1
+    bit_size: 1
+  - name: ELS_ERR
+    bit_offset: 2
+    bit_size: 1
+  - name: PRNG_RDY
+    bit_offset: 3
+    bit_size: 1
+  - name: ECDSA_VFY_STATUS
+    bit_offset: 4
+    bit_size: 2
+  - name: PPROT
+    bit_offset: 6
+    bit_size: 2
+  - name: DRBG_ENT_LVL
+    bit_offset: 8
+    bit_size: 2
+  - name: DTRNG_BUSY
+    bit_offset: 10
+    bit_size: 1
+  - name: ELS_LOCKED
+    bit_offset: 16
+    bit_size: 1
+fieldset/regs::ELS_VERSION:
+  description: Version Register
+  fields:
+  - name: Z
+    bit_offset: 0
+    bit_size: 4
+  - name: Y2
+    bit_offset: 4
+    bit_size: 4
+  - name: Y1
+    bit_offset: 8
+    bit_size: 4
+  - name: X
+    bit_offset: 12
+    bit_size: 4
+  - name: SW_Z
+    bit_offset: 16
+    bit_size: 4
+  - name: SW_Y2
+    bit_offset: 20
+    bit_size: 4
+  - name: SW_Y1
+    bit_offset: 24
+    bit_size: 4
+  - name: SW_X
+    bit_offset: 28
+    bit_size: 4

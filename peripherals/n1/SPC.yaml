@@ -1,0 +1,411 @@
+block/SPC:
+  items:
+  - name: VERID
+    byte_offset: 0
+    fieldset: regs::VERID
+  - name: SC
+    byte_offset: 16
+    fieldset: regs::SC
+  - name: CNTRL
+    byte_offset: 20
+    fieldset: regs::CNTRL
+  - name: LPREQ_CFG
+    byte_offset: 28
+    fieldset: regs::LPREQ_CFG
+  - name: PD_STATUS
+    array:
+      len: 2
+      stride: 4
+    byte_offset: 48
+    fieldset: regs::PD_STATUS
+  - name: SRAMCTL
+    byte_offset: 64
+    fieldset: regs::SRAMCTL
+  - name: ACTIVE_CFG
+    byte_offset: 256
+    fieldset: regs::ACTIVE_CFG
+  - name: ACTIVE_CFG1
+    byte_offset: 260
+  - name: LP_CFG
+    byte_offset: 264
+    fieldset: regs::LP_CFG
+  - name: LP_CFG1
+    byte_offset: 268
+  - name: LPWKUP_DELAY
+    byte_offset: 288
+    fieldset: regs::LPWKUP_DELAY
+  - name: ACTIVE_VDELAY
+    byte_offset: 292
+    fieldset: regs::ACTIVE_VDELAY
+  - name: VD_STAT
+    byte_offset: 304
+    fieldset: regs::VD_STAT
+  - name: VD_CORE_CFG
+    byte_offset: 308
+    fieldset: regs::VD_CORE_CFG
+  - name: VD_SYS_CFG
+    byte_offset: 312
+    fieldset: regs::VD_SYS_CFG
+  - name: VD_IO_CFG
+    byte_offset: 316
+    fieldset: regs::VD_IO_CFG
+  - name: EVD_CFG
+    byte_offset: 320
+    fieldset: regs::EVD_CFG
+  - name: GLITCH_DETECT_SC
+    byte_offset: 324
+    fieldset: regs::GLITCH_DETECT_SC
+  - name: CORELDO_CFG
+    byte_offset: 768
+    fieldset: regs::CORELDO_CFG
+  - name: SYSLDO_CFG
+    byte_offset: 1024
+    fieldset: regs::SYSLDO_CFG
+  - name: DCDC_CFG
+    byte_offset: 1280
+    fieldset: regs::DCDC_CFG
+  - name: DCDC_BURST_CFG
+    byte_offset: 1284
+    fieldset: regs::DCDC_BURST_CFG
+fieldset/regs::ACTIVE_CFG:
+  description: Active Power Mode Configuration
+  fields:
+  - name: CORELDO_VDD_DS
+    bit_offset: 0
+    bit_size: 1
+  - name: CORELDO_VDD_LVL
+    bit_offset: 2
+    bit_size: 2
+  - name: SYSLDO_VDD_DS
+    bit_offset: 4
+    bit_size: 1
+  - name: SYSLDO_VDD_LVL
+    bit_offset: 6
+    bit_size: 1
+  - name: DCDC_VDD_DS
+    bit_offset: 8
+    bit_size: 2
+  - name: DCDC_VDD_LVL
+    bit_offset: 10
+    bit_size: 2
+  - name: GLITCH_DETECT_DISABLE
+    bit_offset: 12
+    bit_size: 1
+  - name: LPBUFF_EN
+    bit_offset: 18
+    bit_size: 1
+  - name: BGMODE
+    bit_offset: 20
+    bit_size: 2
+  - name: VDD_VD_DISABLE
+    bit_offset: 23
+    bit_size: 1
+  - name: CORE_LVDE
+    bit_offset: 24
+    bit_size: 1
+  - name: SYS_LVDE
+    bit_offset: 25
+    bit_size: 1
+  - name: IO_LVDE
+    bit_offset: 26
+    bit_size: 1
+  - name: CORE_HVDE
+    bit_offset: 27
+    bit_size: 1
+  - name: SYS_HVDE
+    bit_offset: 28
+    bit_size: 1
+  - name: IO_HVDE
+    bit_offset: 29
+    bit_size: 1
+fieldset/regs::ACTIVE_VDELAY:
+  description: Active Voltage Trim Delay
+  fields:
+  - name: ACTIVE_VDELAY
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::CNTRL:
+  description: SPC Regulator Control
+  fields:
+  - name: CORELDO_EN
+    bit_offset: 0
+    bit_size: 1
+  - name: SYSLDO_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: DCDC_EN
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::CORELDO_CFG:
+  description: LDO_CORE Configuration
+  fields:
+  - name: DPDOWN_PULLDOWN_DISABLE
+    bit_offset: 16
+    bit_size: 1
+fieldset/regs::DCDC_BURST_CFG:
+  description: DCDC Burst Configuration
+  fields:
+  - name: BURST_REQ
+    bit_offset: 0
+    bit_size: 1
+  - name: EXT_BURST_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: BURST_ACK
+    bit_offset: 3
+    bit_size: 1
+  - name: PULSE_REFRESH_CNT
+    bit_offset: 16
+    bit_size: 16
+fieldset/regs::DCDC_CFG:
+  description: DCDC Configuration
+  fields:
+  - name: FREQ_CNTRL_ON
+    bit_offset: 0
+    bit_size: 1
+  - name: FREQ_CNTRL
+    bit_offset: 8
+    bit_size: 6
+  - name: BLEED_EN
+    bit_offset: 19
+    bit_size: 1
+fieldset/regs::EVD_CFG:
+  description: External Voltage Domain Configuration
+  fields:
+  - name: EVDISO
+    bit_offset: 0
+    bit_size: 6
+  - name: EVDLPISO
+    bit_offset: 8
+    bit_size: 6
+  - name: EVDSTAT
+    bit_offset: 16
+    bit_size: 6
+fieldset/regs::GLITCH_DETECT_SC:
+  description: Glitch Detect Status Control
+  fields:
+  - name: CNT_SELECT
+    bit_offset: 0
+    bit_size: 2
+  - name: TIMEOUT
+    bit_offset: 2
+    bit_size: 4
+  - name: RE
+    bit_offset: 6
+    bit_size: 1
+  - name: IE
+    bit_offset: 7
+    bit_size: 1
+  - name: GLITCH_DETECT_FLAG
+    bit_offset: 8
+    bit_size: 4
+  - name: LOCK
+    bit_offset: 16
+    bit_size: 1
+fieldset/regs::LPREQ_CFG:
+  description: Low-Power Request Configuration
+  fields:
+  - name: LPREQOE
+    bit_offset: 0
+    bit_size: 1
+  - name: LPREQPOL
+    bit_offset: 1
+    bit_size: 1
+  - name: LPREQOV
+    bit_offset: 2
+    bit_size: 2
+fieldset/regs::LPWKUP_DELAY:
+  description: Low Power Wake-Up Delay
+  fields:
+  - name: LPWKUP_DELAY
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::LP_CFG:
+  description: Low-Power Mode Configuration
+  fields:
+  - name: CORELDO_VDD_DS
+    bit_offset: 0
+    bit_size: 1
+  - name: CORELDO_VDD_LVL
+    bit_offset: 2
+    bit_size: 2
+  - name: SYSLDO_VDD_DS
+    bit_offset: 4
+    bit_size: 1
+  - name: DCDC_VDD_DS
+    bit_offset: 8
+    bit_size: 2
+  - name: DCDC_VDD_LVL
+    bit_offset: 10
+    bit_size: 2
+  - name: GLITCH_DETECT_DISABLE
+    bit_offset: 12
+    bit_size: 1
+  - name: COREVDD_IVS_EN
+    bit_offset: 17
+    bit_size: 1
+  - name: LPBUFF_EN
+    bit_offset: 18
+    bit_size: 1
+  - name: BGMODE
+    bit_offset: 20
+    bit_size: 2
+  - name: LP_IREFEN
+    bit_offset: 23
+    bit_size: 1
+  - name: CORE_LVDE
+    bit_offset: 24
+    bit_size: 1
+  - name: SYS_LVDE
+    bit_offset: 25
+    bit_size: 1
+  - name: IO_LVDE
+    bit_offset: 26
+    bit_size: 1
+  - name: CORE_HVDE
+    bit_offset: 27
+    bit_size: 1
+  - name: SYS_HVDE
+    bit_offset: 28
+    bit_size: 1
+  - name: IO_HVDE
+    bit_offset: 29
+    bit_size: 1
+fieldset/regs::PD_STATUS:
+  description: SPC Power Domain Mode Status
+  fields:
+  - name: PWR_REQ_STATUS
+    bit_offset: 0
+    bit_size: 1
+  - name: PD_LP_REQ
+    bit_offset: 4
+    bit_size: 1
+  - name: LP_MODE
+    bit_offset: 8
+    bit_size: 4
+fieldset/regs::SC:
+  description: Status Control
+  fields:
+  - name: BUSY
+    bit_offset: 0
+    bit_size: 1
+  - name: SPC_LP_REQ
+    bit_offset: 1
+    bit_size: 1
+  - name: SPC_LP_MODE
+    bit_offset: 4
+    bit_size: 4
+  - name: ISO_CLR
+    bit_offset: 16
+    bit_size: 2
+fieldset/regs::SRAMCTL:
+  description: SRAM Control
+  fields:
+  - name: VSM
+    bit_offset: 0
+    bit_size: 2
+  - name: REQ
+    bit_offset: 30
+    bit_size: 1
+  - name: ACK
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::SYSLDO_CFG:
+  description: LDO_SYS Configuration
+  fields:
+  - name: ISINKEN
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::VD_CORE_CFG:
+  description: Core Voltage Detect Configuration
+  fields:
+  - name: LVDRE
+    bit_offset: 0
+    bit_size: 1
+  - name: LVDIE
+    bit_offset: 1
+    bit_size: 1
+  - name: HVDRE
+    bit_offset: 2
+    bit_size: 1
+  - name: HVDIE
+    bit_offset: 3
+    bit_size: 1
+  - name: LOCK
+    bit_offset: 16
+    bit_size: 1
+fieldset/regs::VD_IO_CFG:
+  description: IO Voltage Detect Configuration
+  fields:
+  - name: LVDRE
+    bit_offset: 0
+    bit_size: 1
+  - name: LVDIE
+    bit_offset: 1
+    bit_size: 1
+  - name: HVDRE
+    bit_offset: 2
+    bit_size: 1
+  - name: HVDIE
+    bit_offset: 3
+    bit_size: 1
+  - name: LVSEL
+    bit_offset: 8
+    bit_size: 1
+  - name: LOCK
+    bit_offset: 16
+    bit_size: 1
+fieldset/regs::VD_STAT:
+  description: Voltage Detect Status
+  fields:
+  - name: COREVDD_LVDF
+    bit_offset: 0
+    bit_size: 1
+  - name: SYSVDD_LVDF
+    bit_offset: 1
+    bit_size: 1
+  - name: IOVDD_LVDF
+    bit_offset: 2
+    bit_size: 1
+  - name: COREVDD_HVDF
+    bit_offset: 4
+    bit_size: 1
+  - name: SYSVDD_HVDF
+    bit_offset: 5
+    bit_size: 1
+  - name: IOVDD_HVDF
+    bit_offset: 6
+    bit_size: 1
+fieldset/regs::VD_SYS_CFG:
+  description: System Voltage Detect Configuration
+  fields:
+  - name: LVDRE
+    bit_offset: 0
+    bit_size: 1
+  - name: LVDIE
+    bit_offset: 1
+    bit_size: 1
+  - name: HVDRE
+    bit_offset: 2
+    bit_size: 1
+  - name: HVDIE
+    bit_offset: 3
+    bit_size: 1
+  - name: LVSEL
+    bit_offset: 8
+    bit_size: 1
+  - name: LOCK
+    bit_offset: 16
+    bit_size: 1
+fieldset/regs::VERID:
+  description: Version ID
+  fields:
+  - name: FEATURE
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

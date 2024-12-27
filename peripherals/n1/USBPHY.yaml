@@ -1,0 +1,1550 @@
+block/USBPHY:
+  items:
+  - name: PWD
+    byte_offset: 0
+    fieldset: regs::PWD
+  - name: PWD_SET
+    byte_offset: 4
+    fieldset: regs::PWD_SET
+  - name: PWD_CLR
+    byte_offset: 8
+    fieldset: regs::PWD_CLR
+  - name: PWD_TOG
+    byte_offset: 12
+    fieldset: regs::PWD_TOG
+  - name: TX
+    byte_offset: 16
+    fieldset: regs::TX
+  - name: TX_SET
+    byte_offset: 20
+    fieldset: regs::TX_SET
+  - name: TX_CLR
+    byte_offset: 24
+    fieldset: regs::TX_CLR
+  - name: TX_TOG
+    byte_offset: 28
+    fieldset: regs::TX_TOG
+  - name: RX
+    byte_offset: 32
+    fieldset: regs::RX
+  - name: RX_SET
+    byte_offset: 36
+    fieldset: regs::RX_SET
+  - name: RX_CLR
+    byte_offset: 40
+    fieldset: regs::RX_CLR
+  - name: RX_TOG
+    byte_offset: 44
+    fieldset: regs::RX_TOG
+  - name: CTRL
+    byte_offset: 48
+    fieldset: regs::CTRL
+  - name: CTRL_SET
+    byte_offset: 52
+    fieldset: regs::CTRL_SET
+  - name: CTRL_CLR
+    byte_offset: 56
+    fieldset: regs::CTRL_CLR
+  - name: CTRL_TOG
+    byte_offset: 60
+    fieldset: regs::CTRL_TOG
+  - name: STATUS
+    byte_offset: 64
+    fieldset: regs::STATUS
+  - name: DEBUG0
+    byte_offset: 80
+    fieldset: regs::DEBUG0
+  - name: DEBUG0_SET
+    byte_offset: 84
+    fieldset: regs::DEBUG0_SET
+  - name: DEBUG0_CLR
+    byte_offset: 88
+    fieldset: regs::DEBUG0_CLR
+  - name: DEBUG0_TOG
+    byte_offset: 92
+    fieldset: regs::DEBUG0_TOG
+  - name: VERSION
+    byte_offset: 128
+    fieldset: regs::VERSION
+  - name: IP
+    byte_offset: 144
+    fieldset: regs::IP
+  - name: IP_SET
+    byte_offset: 148
+    fieldset: regs::IP_SET
+  - name: IP_CLR
+    byte_offset: 152
+    fieldset: regs::IP_CLR
+  - name: IP_TOG
+    byte_offset: 156
+    fieldset: regs::IP_TOG
+  - name: PLL_SIC
+    byte_offset: 160
+    fieldset: regs::PLL_SIC
+  - name: PLL_SIC_SET
+    byte_offset: 164
+    fieldset: regs::PLL_SIC_SET
+  - name: PLL_SIC_CLR
+    byte_offset: 168
+    fieldset: regs::PLL_SIC_CLR
+  - name: PLL_SIC_TOG
+    byte_offset: 172
+    fieldset: regs::PLL_SIC_TOG
+  - name: USB1_VBUS_DETECT
+    byte_offset: 192
+    fieldset: regs::USB1_VBUS_DETECT
+  - name: USB1_VBUS_DETECT_SET
+    byte_offset: 196
+    fieldset: regs::USB1_VBUS_DETECT_SET
+  - name: USB1_VBUS_DETECT_CLR
+    byte_offset: 200
+    fieldset: regs::USB1_VBUS_DETECT_CLR
+  - name: USB1_VBUS_DETECT_TOG
+    byte_offset: 204
+    fieldset: regs::USB1_VBUS_DETECT_TOG
+  - name: USB1_VBUS_DET_STAT
+    byte_offset: 208
+    fieldset: regs::USB1_VBUS_DET_STAT
+  - name: USB1_VBUS_DET_STAT_SET
+    byte_offset: 212
+    fieldset: regs::USB1_VBUS_DET_STAT_SET
+  - name: USB1_VBUS_DET_STAT_CLR
+    byte_offset: 216
+    fieldset: regs::USB1_VBUS_DET_STAT_CLR
+  - name: USB1_VBUS_DET_STAT_TOG
+    byte_offset: 220
+    fieldset: regs::USB1_VBUS_DET_STAT_TOG
+  - name: USB1_CHRG_DETECT
+    byte_offset: 224
+    fieldset: regs::USB1_CHRG_DETECT
+  - name: USB1_CHRG_DETECT_SET
+    byte_offset: 228
+    fieldset: regs::USB1_CHRG_DETECT_SET
+  - name: USB1_CHRG_DETECT_CLR
+    byte_offset: 232
+    fieldset: regs::USB1_CHRG_DETECT_CLR
+  - name: USB1_CHRG_DETECT_TOG
+    byte_offset: 236
+    fieldset: regs::USB1_CHRG_DETECT_TOG
+  - name: USB1_CHRG_DET_STAT
+    byte_offset: 240
+    fieldset: regs::USB1_CHRG_DET_STAT
+  - name: USB1_CHRG_DET_STAT_SET
+    byte_offset: 244
+    fieldset: regs::USB1_CHRG_DET_STAT_SET
+  - name: USB1_CHRG_DET_STAT_CLR
+    byte_offset: 248
+    fieldset: regs::USB1_CHRG_DET_STAT_CLR
+  - name: USB1_CHRG_DET_STAT_TOG
+    byte_offset: 252
+    fieldset: regs::USB1_CHRG_DET_STAT_TOG
+  - name: ANACTRL
+    byte_offset: 256
+    fieldset: regs::ANACTRL
+  - name: ANACTRL_SET
+    byte_offset: 260
+    fieldset: regs::ANACTRL_SET
+  - name: ANACTRL_CLR
+    byte_offset: 264
+    fieldset: regs::ANACTRL_CLR
+  - name: ANACTRL_TOG
+    byte_offset: 268
+    fieldset: regs::ANACTRL_TOG
+  - name: TRIM_OVERRIDE_EN
+    byte_offset: 304
+    fieldset: regs::TRIM_OVERRIDE_EN
+  - name: TRIM_OVERRIDE_EN_SET
+    byte_offset: 308
+    fieldset: regs::TRIM_OVERRIDE_EN_SET
+  - name: TRIM_OVERRIDE_EN_CLR
+    byte_offset: 312
+    fieldset: regs::TRIM_OVERRIDE_EN_CLR
+  - name: TRIM_OVERRIDE_EN_TOG
+    byte_offset: 316
+    fieldset: regs::TRIM_OVERRIDE_EN_TOG
+  - name: PFDA
+    byte_offset: 320
+    fieldset: regs::PFDA
+  - name: PFDA_SET
+    byte_offset: 324
+    fieldset: regs::PFDA_SET
+  - name: PFDA_CLR
+    byte_offset: 328
+    fieldset: regs::PFDA_CLR
+  - name: PFDA_TOG
+    byte_offset: 332
+    fieldset: regs::PFDA_TOG
+fieldset/regs::ANACTRL:
+  description: Analog Control
+  fields:
+  - name: LVI_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: PFD_CLK_SEL
+    bit_offset: 2
+    bit_size: 2
+  - name: DEV_PULLDOWN
+    bit_offset: 10
+    bit_size: 1
+fieldset/regs::ANACTRL_CLR:
+  description: Analog Control
+  fields:
+  - name: LVI_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: PFD_CLK_SEL
+    bit_offset: 2
+    bit_size: 2
+  - name: DEV_PULLDOWN
+    bit_offset: 10
+    bit_size: 1
+fieldset/regs::ANACTRL_SET:
+  description: Analog Control
+  fields:
+  - name: LVI_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: PFD_CLK_SEL
+    bit_offset: 2
+    bit_size: 2
+  - name: DEV_PULLDOWN
+    bit_offset: 10
+    bit_size: 1
+fieldset/regs::ANACTRL_TOG:
+  description: Analog Control
+  fields:
+  - name: LVI_EN
+    bit_offset: 1
+    bit_size: 1
+  - name: PFD_CLK_SEL
+    bit_offset: 2
+    bit_size: 2
+  - name: DEV_PULLDOWN
+    bit_offset: 10
+    bit_size: 1
+fieldset/regs::CTRL:
+  description: General Purpose Control
+  fields:
+  - name: ENOTG_ID_CHG_IRQ
+    bit_offset: 0
+    bit_size: 1
+  - name: ENHOSTDISCONDETECT
+    bit_offset: 1
+    bit_size: 1
+  - name: ENIRQHOSTDISCON
+    bit_offset: 2
+    bit_size: 1
+  - name: HOSTDISCONDETECT_IRQ
+    bit_offset: 3
+    bit_size: 1
+  - name: ENDEVPLUGINDETECT
+    bit_offset: 4
+    bit_size: 1
+  - name: DEVPLUGIN_POLARITY
+    bit_offset: 5
+    bit_size: 1
+  - name: OTG_ID_CHG_IRQ
+    bit_offset: 6
+    bit_size: 1
+  - name: ENOTGIDDETECT
+    bit_offset: 7
+    bit_size: 1
+  - name: RESUMEIRQSTICKY
+    bit_offset: 8
+    bit_size: 1
+  - name: ENIRQRESUMEDETECT
+    bit_offset: 9
+    bit_size: 1
+  - name: RESUME_IRQ
+    bit_offset: 10
+    bit_size: 1
+  - name: ENIRQDEVPLUGIN
+    bit_offset: 11
+    bit_size: 1
+  - name: DEVPLUGIN_IRQ
+    bit_offset: 12
+    bit_size: 1
+  - name: DATA_ON_LRADC
+    bit_offset: 13
+    bit_size: 1
+  - name: ENUTMILEVEL2
+    bit_offset: 14
+    bit_size: 1
+  - name: ENUTMILEVEL3
+    bit_offset: 15
+    bit_size: 1
+  - name: ENIRQWAKEUP
+    bit_offset: 16
+    bit_size: 1
+  - name: WAKEUP_IRQ
+    bit_offset: 17
+    bit_size: 1
+  - name: AUTORESUME_EN
+    bit_offset: 18
+    bit_size: 1
+  - name: ENAUTOCLR_CLKGATE
+    bit_offset: 19
+    bit_size: 1
+  - name: ENAUTOCLR_PHY_PWD
+    bit_offset: 20
+    bit_size: 1
+  - name: OTG_ID_VALUE
+    bit_offset: 27
+    bit_size: 1
+  - name: UTMI_SUSPENDM
+    bit_offset: 29
+    bit_size: 1
+  - name: CLKGATE
+    bit_offset: 30
+    bit_size: 1
+  - name: SFTRST
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CTRL_CLR:
+  description: General Purpose Control
+  fields:
+  - name: ENOTG_ID_CHG_IRQ
+    bit_offset: 0
+    bit_size: 1
+  - name: ENHOSTDISCONDETECT
+    bit_offset: 1
+    bit_size: 1
+  - name: ENIRQHOSTDISCON
+    bit_offset: 2
+    bit_size: 1
+  - name: HOSTDISCONDETECT_IRQ
+    bit_offset: 3
+    bit_size: 1
+  - name: ENDEVPLUGINDETECT
+    bit_offset: 4
+    bit_size: 1
+  - name: DEVPLUGIN_POLARITY
+    bit_offset: 5
+    bit_size: 1
+  - name: OTG_ID_CHG_IRQ
+    bit_offset: 6
+    bit_size: 1
+  - name: ENOTGIDDETECT
+    bit_offset: 7
+    bit_size: 1
+  - name: RESUMEIRQSTICKY
+    bit_offset: 8
+    bit_size: 1
+  - name: ENIRQRESUMEDETECT
+    bit_offset: 9
+    bit_size: 1
+  - name: RESUME_IRQ
+    bit_offset: 10
+    bit_size: 1
+  - name: ENIRQDEVPLUGIN
+    bit_offset: 11
+    bit_size: 1
+  - name: DEVPLUGIN_IRQ
+    bit_offset: 12
+    bit_size: 1
+  - name: DATA_ON_LRADC
+    bit_offset: 13
+    bit_size: 1
+  - name: ENUTMILEVEL2
+    bit_offset: 14
+    bit_size: 1
+  - name: ENUTMILEVEL3
+    bit_offset: 15
+    bit_size: 1
+  - name: ENIRQWAKEUP
+    bit_offset: 16
+    bit_size: 1
+  - name: WAKEUP_IRQ
+    bit_offset: 17
+    bit_size: 1
+  - name: AUTORESUME_EN
+    bit_offset: 18
+    bit_size: 1
+  - name: ENAUTOCLR_CLKGATE
+    bit_offset: 19
+    bit_size: 1
+  - name: ENAUTOCLR_PHY_PWD
+    bit_offset: 20
+    bit_size: 1
+  - name: OTG_ID_VALUE
+    bit_offset: 27
+    bit_size: 1
+  - name: UTMI_SUSPENDM
+    bit_offset: 29
+    bit_size: 1
+  - name: CLKGATE
+    bit_offset: 30
+    bit_size: 1
+  - name: SFTRST
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CTRL_SET:
+  description: General Purpose Control
+  fields:
+  - name: ENOTG_ID_CHG_IRQ
+    bit_offset: 0
+    bit_size: 1
+  - name: ENHOSTDISCONDETECT
+    bit_offset: 1
+    bit_size: 1
+  - name: ENIRQHOSTDISCON
+    bit_offset: 2
+    bit_size: 1
+  - name: HOSTDISCONDETECT_IRQ
+    bit_offset: 3
+    bit_size: 1
+  - name: ENDEVPLUGINDETECT
+    bit_offset: 4
+    bit_size: 1
+  - name: DEVPLUGIN_POLARITY
+    bit_offset: 5
+    bit_size: 1
+  - name: OTG_ID_CHG_IRQ
+    bit_offset: 6
+    bit_size: 1
+  - name: ENOTGIDDETECT
+    bit_offset: 7
+    bit_size: 1
+  - name: RESUMEIRQSTICKY
+    bit_offset: 8
+    bit_size: 1
+  - name: ENIRQRESUMEDETECT
+    bit_offset: 9
+    bit_size: 1
+  - name: RESUME_IRQ
+    bit_offset: 10
+    bit_size: 1
+  - name: ENIRQDEVPLUGIN
+    bit_offset: 11
+    bit_size: 1
+  - name: DEVPLUGIN_IRQ
+    bit_offset: 12
+    bit_size: 1
+  - name: DATA_ON_LRADC
+    bit_offset: 13
+    bit_size: 1
+  - name: ENUTMILEVEL2
+    bit_offset: 14
+    bit_size: 1
+  - name: ENUTMILEVEL3
+    bit_offset: 15
+    bit_size: 1
+  - name: ENIRQWAKEUP
+    bit_offset: 16
+    bit_size: 1
+  - name: WAKEUP_IRQ
+    bit_offset: 17
+    bit_size: 1
+  - name: AUTORESUME_EN
+    bit_offset: 18
+    bit_size: 1
+  - name: ENAUTOCLR_CLKGATE
+    bit_offset: 19
+    bit_size: 1
+  - name: ENAUTOCLR_PHY_PWD
+    bit_offset: 20
+    bit_size: 1
+  - name: OTG_ID_VALUE
+    bit_offset: 27
+    bit_size: 1
+  - name: UTMI_SUSPENDM
+    bit_offset: 29
+    bit_size: 1
+  - name: CLKGATE
+    bit_offset: 30
+    bit_size: 1
+  - name: SFTRST
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CTRL_TOG:
+  description: General Purpose Control
+  fields:
+  - name: ENOTG_ID_CHG_IRQ
+    bit_offset: 0
+    bit_size: 1
+  - name: ENHOSTDISCONDETECT
+    bit_offset: 1
+    bit_size: 1
+  - name: ENIRQHOSTDISCON
+    bit_offset: 2
+    bit_size: 1
+  - name: HOSTDISCONDETECT_IRQ
+    bit_offset: 3
+    bit_size: 1
+  - name: ENDEVPLUGINDETECT
+    bit_offset: 4
+    bit_size: 1
+  - name: DEVPLUGIN_POLARITY
+    bit_offset: 5
+    bit_size: 1
+  - name: OTG_ID_CHG_IRQ
+    bit_offset: 6
+    bit_size: 1
+  - name: ENOTGIDDETECT
+    bit_offset: 7
+    bit_size: 1
+  - name: RESUMEIRQSTICKY
+    bit_offset: 8
+    bit_size: 1
+  - name: ENIRQRESUMEDETECT
+    bit_offset: 9
+    bit_size: 1
+  - name: RESUME_IRQ
+    bit_offset: 10
+    bit_size: 1
+  - name: ENIRQDEVPLUGIN
+    bit_offset: 11
+    bit_size: 1
+  - name: DEVPLUGIN_IRQ
+    bit_offset: 12
+    bit_size: 1
+  - name: DATA_ON_LRADC
+    bit_offset: 13
+    bit_size: 1
+  - name: ENUTMILEVEL2
+    bit_offset: 14
+    bit_size: 1
+  - name: ENUTMILEVEL3
+    bit_offset: 15
+    bit_size: 1
+  - name: ENIRQWAKEUP
+    bit_offset: 16
+    bit_size: 1
+  - name: WAKEUP_IRQ
+    bit_offset: 17
+    bit_size: 1
+  - name: AUTORESUME_EN
+    bit_offset: 18
+    bit_size: 1
+  - name: ENAUTOCLR_CLKGATE
+    bit_offset: 19
+    bit_size: 1
+  - name: ENAUTOCLR_PHY_PWD
+    bit_offset: 20
+    bit_size: 1
+  - name: OTG_ID_VALUE
+    bit_offset: 27
+    bit_size: 1
+  - name: UTMI_SUSPENDM
+    bit_offset: 29
+    bit_size: 1
+  - name: CLKGATE
+    bit_offset: 30
+    bit_size: 1
+  - name: SFTRST
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::DEBUG0:
+  description: Debug 0
+  fields:
+  - name: OTGIDPIOLOCK
+    bit_offset: 0
+    bit_size: 1
+  - name: HSTPULLDOWN
+    bit_offset: 2
+    bit_size: 2
+  - name: ENHSTPULLDOWN
+    bit_offset: 4
+    bit_size: 2
+fieldset/regs::DEBUG0_CLR:
+  description: Debug 0
+  fields:
+  - name: OTGIDPIOLOCK
+    bit_offset: 0
+    bit_size: 1
+  - name: HSTPULLDOWN
+    bit_offset: 2
+    bit_size: 2
+  - name: ENHSTPULLDOWN
+    bit_offset: 4
+    bit_size: 2
+fieldset/regs::DEBUG0_SET:
+  description: Debug 0
+  fields:
+  - name: OTGIDPIOLOCK
+    bit_offset: 0
+    bit_size: 1
+  - name: HSTPULLDOWN
+    bit_offset: 2
+    bit_size: 2
+  - name: ENHSTPULLDOWN
+    bit_offset: 4
+    bit_size: 2
+fieldset/regs::DEBUG0_TOG:
+  description: Debug 0
+  fields:
+  - name: OTGIDPIOLOCK
+    bit_offset: 0
+    bit_size: 1
+  - name: HSTPULLDOWN
+    bit_offset: 2
+    bit_size: 2
+  - name: ENHSTPULLDOWN
+    bit_offset: 4
+    bit_size: 2
+fieldset/regs::IP:
+  description: IP Block
+  fields:
+  - name: POWER_CONTROL_SUSPEND_OPTION
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::IP_CLR:
+  description: IP Block
+  fields:
+  - name: POWER_CONTROL_SUSPEND_OPTION
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::IP_SET:
+  description: IP Block
+  fields:
+  - name: POWER_CONTROL_SUSPEND_OPTION
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::IP_TOG:
+  description: IP Block
+  fields:
+  - name: POWER_CONTROL_SUSPEND_OPTION
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::PFDA:
+  description: PFD A
+  fields:
+  - name: PFD0_CLKGATE
+    bit_offset: 0
+    bit_size: 1
+  - name: PFD0_FRAC
+    bit_offset: 1
+    bit_size: 6
+  - name: PFD0_STABLE
+    bit_offset: 7
+    bit_size: 1
+fieldset/regs::PFDA_CLR:
+  description: PFD A
+  fields:
+  - name: PFD0_CLKGATE
+    bit_offset: 0
+    bit_size: 1
+  - name: PFD0_FRAC
+    bit_offset: 1
+    bit_size: 6
+  - name: PFD0_STABLE
+    bit_offset: 7
+    bit_size: 1
+fieldset/regs::PFDA_SET:
+  description: PFD A
+  fields:
+  - name: PFD0_CLKGATE
+    bit_offset: 0
+    bit_size: 1
+  - name: PFD0_FRAC
+    bit_offset: 1
+    bit_size: 6
+  - name: PFD0_STABLE
+    bit_offset: 7
+    bit_size: 1
+fieldset/regs::PFDA_TOG:
+  description: PFD A
+  fields:
+  - name: PFD0_CLKGATE
+    bit_offset: 0
+    bit_size: 1
+  - name: PFD0_FRAC
+    bit_offset: 1
+    bit_size: 6
+  - name: PFD0_STABLE
+    bit_offset: 7
+    bit_size: 1
+fieldset/regs::PLL_SIC:
+  description: PLL SIC
+  fields:
+  - name: MISC2_CONTROL0
+    bit_offset: 5
+    bit_size: 1
+  - name: PLL_EN_USB_CLKS
+    bit_offset: 6
+    bit_size: 1
+  - name: PLL_POWER
+    bit_offset: 12
+    bit_size: 1
+  - name: PLL_ENABLE
+    bit_offset: 13
+    bit_size: 1
+  - name: PLL_BYPASS
+    bit_offset: 16
+    bit_size: 1
+  - name: REFBIAS_PWD_SEL
+    bit_offset: 19
+    bit_size: 1
+  - name: REFBIAS_PWD
+    bit_offset: 20
+    bit_size: 1
+  - name: PLL_REG_ENABLE
+    bit_offset: 21
+    bit_size: 1
+  - name: PLL_DIV_SEL
+    bit_offset: 22
+    bit_size: 3
+  - name: PLL_LOCK
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::PLL_SIC_CLR:
+  description: PLL SIC
+  fields:
+  - name: MISC2_CONTROL0
+    bit_offset: 5
+    bit_size: 1
+  - name: PLL_EN_USB_CLKS
+    bit_offset: 6
+    bit_size: 1
+  - name: PLL_POWER
+    bit_offset: 12
+    bit_size: 1
+  - name: PLL_ENABLE
+    bit_offset: 13
+    bit_size: 1
+  - name: PLL_BYPASS
+    bit_offset: 16
+    bit_size: 1
+  - name: REFBIAS_PWD_SEL
+    bit_offset: 19
+    bit_size: 1
+  - name: REFBIAS_PWD
+    bit_offset: 20
+    bit_size: 1
+  - name: PLL_REG_ENABLE
+    bit_offset: 21
+    bit_size: 1
+  - name: PLL_DIV_SEL
+    bit_offset: 22
+    bit_size: 3
+  - name: PLL_LOCK
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::PLL_SIC_SET:
+  description: PLL SIC
+  fields:
+  - name: MISC2_CONTROL0
+    bit_offset: 5
+    bit_size: 1
+  - name: PLL_EN_USB_CLKS
+    bit_offset: 6
+    bit_size: 1
+  - name: PLL_POWER
+    bit_offset: 12
+    bit_size: 1
+  - name: PLL_ENABLE
+    bit_offset: 13
+    bit_size: 1
+  - name: PLL_BYPASS
+    bit_offset: 16
+    bit_size: 1
+  - name: REFBIAS_PWD_SEL
+    bit_offset: 19
+    bit_size: 1
+  - name: REFBIAS_PWD
+    bit_offset: 20
+    bit_size: 1
+  - name: PLL_REG_ENABLE
+    bit_offset: 21
+    bit_size: 1
+  - name: PLL_DIV_SEL
+    bit_offset: 22
+    bit_size: 3
+  - name: PLL_LOCK
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::PLL_SIC_TOG:
+  description: PLL SIC
+  fields:
+  - name: MISC2_CONTROL0
+    bit_offset: 5
+    bit_size: 1
+  - name: PLL_EN_USB_CLKS
+    bit_offset: 6
+    bit_size: 1
+  - name: PLL_POWER
+    bit_offset: 12
+    bit_size: 1
+  - name: PLL_ENABLE
+    bit_offset: 13
+    bit_size: 1
+  - name: PLL_BYPASS
+    bit_offset: 16
+    bit_size: 1
+  - name: REFBIAS_PWD_SEL
+    bit_offset: 19
+    bit_size: 1
+  - name: REFBIAS_PWD
+    bit_offset: 20
+    bit_size: 1
+  - name: PLL_REG_ENABLE
+    bit_offset: 21
+    bit_size: 1
+  - name: PLL_DIV_SEL
+    bit_offset: 22
+    bit_size: 3
+  - name: PLL_LOCK
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::PWD:
+  description: Power Down
+  fields:
+  - name: TXPWDFS
+    bit_offset: 10
+    bit_size: 1
+  - name: TXPWDIBIAS
+    bit_offset: 11
+    bit_size: 1
+  - name: TXPWDV2I
+    bit_offset: 12
+    bit_size: 1
+  - name: RXPWDENV
+    bit_offset: 17
+    bit_size: 1
+  - name: RXPWD1PT1
+    bit_offset: 18
+    bit_size: 1
+  - name: RXPWDDIFF
+    bit_offset: 19
+    bit_size: 1
+  - name: RXPWDRX
+    bit_offset: 20
+    bit_size: 1
+fieldset/regs::PWD_CLR:
+  description: Power Down
+  fields:
+  - name: TXPWDFS
+    bit_offset: 10
+    bit_size: 1
+  - name: TXPWDIBIAS
+    bit_offset: 11
+    bit_size: 1
+  - name: TXPWDV2I
+    bit_offset: 12
+    bit_size: 1
+  - name: RXPWDENV
+    bit_offset: 17
+    bit_size: 1
+  - name: RXPWD1PT1
+    bit_offset: 18
+    bit_size: 1
+  - name: RXPWDDIFF
+    bit_offset: 19
+    bit_size: 1
+  - name: RXPWDRX
+    bit_offset: 20
+    bit_size: 1
+fieldset/regs::PWD_SET:
+  description: Power Down
+  fields:
+  - name: TXPWDFS
+    bit_offset: 10
+    bit_size: 1
+  - name: TXPWDIBIAS
+    bit_offset: 11
+    bit_size: 1
+  - name: TXPWDV2I
+    bit_offset: 12
+    bit_size: 1
+  - name: RXPWDENV
+    bit_offset: 17
+    bit_size: 1
+  - name: RXPWD1PT1
+    bit_offset: 18
+    bit_size: 1
+  - name: RXPWDDIFF
+    bit_offset: 19
+    bit_size: 1
+  - name: RXPWDRX
+    bit_offset: 20
+    bit_size: 1
+fieldset/regs::PWD_TOG:
+  description: Power Down
+  fields:
+  - name: TXPWDFS
+    bit_offset: 10
+    bit_size: 1
+  - name: TXPWDIBIAS
+    bit_offset: 11
+    bit_size: 1
+  - name: TXPWDV2I
+    bit_offset: 12
+    bit_size: 1
+  - name: RXPWDENV
+    bit_offset: 17
+    bit_size: 1
+  - name: RXPWD1PT1
+    bit_offset: 18
+    bit_size: 1
+  - name: RXPWDDIFF
+    bit_offset: 19
+    bit_size: 1
+  - name: RXPWDRX
+    bit_offset: 20
+    bit_size: 1
+fieldset/regs::RX:
+  description: RX Control
+  fields:
+  - name: ENVADJ
+    bit_offset: 0
+    bit_size: 3
+  - name: DISCONADJ
+    bit_offset: 4
+    bit_size: 3
+fieldset/regs::RX_CLR:
+  description: RX Control
+  fields:
+  - name: ENVADJ
+    bit_offset: 0
+    bit_size: 3
+  - name: DISCONADJ
+    bit_offset: 4
+    bit_size: 3
+fieldset/regs::RX_SET:
+  description: RX Control
+  fields:
+  - name: ENVADJ
+    bit_offset: 0
+    bit_size: 3
+  - name: DISCONADJ
+    bit_offset: 4
+    bit_size: 3
+fieldset/regs::RX_TOG:
+  description: RX Control
+  fields:
+  - name: ENVADJ
+    bit_offset: 0
+    bit_size: 3
+  - name: DISCONADJ
+    bit_offset: 4
+    bit_size: 3
+fieldset/regs::STATUS:
+  description: Status
+  fields:
+  - name: OK_STATUS_3V
+    bit_offset: 0
+    bit_size: 1
+  - name: HOSTDISCONDETECT_STATUS
+    bit_offset: 3
+    bit_size: 1
+  - name: DEVPLUGIN_STATUS
+    bit_offset: 6
+    bit_size: 1
+  - name: OTGID_STATUS
+    bit_offset: 8
+    bit_size: 1
+  - name: RESUME_STATUS
+    bit_offset: 10
+    bit_size: 1
+fieldset/regs::TRIM_OVERRIDE_EN:
+  description: Trim
+  fields:
+  - name: DIV_SEL_OVERRIDE
+    bit_offset: 0
+    bit_size: 1
+  - name: TX_D_CAL_OVERRIDE
+    bit_offset: 2
+    bit_size: 1
+  - name: TX_CAL45DP_OVERRIDE
+    bit_offset: 3
+    bit_size: 1
+  - name: TX_CAL45DM_OVERRIDE
+    bit_offset: 4
+    bit_size: 1
+  - name: PLL_CTRL0_DIV_SEL
+    bit_offset: 15
+    bit_size: 3
+  - name: USBPHY_TX_D_CAL
+    bit_offset: 20
+    bit_size: 4
+  - name: USBPHY_TX_CAL45DP
+    bit_offset: 24
+    bit_size: 4
+  - name: USBPHY_TX_CAL45DN
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::TRIM_OVERRIDE_EN_CLR:
+  description: Trim
+  fields:
+  - name: DIV_SEL_OVERRIDE
+    bit_offset: 0
+    bit_size: 1
+  - name: TX_D_CAL_OVERRIDE
+    bit_offset: 2
+    bit_size: 1
+  - name: TX_CAL45DP_OVERRIDE
+    bit_offset: 3
+    bit_size: 1
+  - name: TX_CAL45DM_OVERRIDE
+    bit_offset: 4
+    bit_size: 1
+  - name: PLL_CTRL0_DIV_SEL
+    bit_offset: 15
+    bit_size: 3
+  - name: USBPHY_TX_D_CAL
+    bit_offset: 20
+    bit_size: 4
+  - name: USBPHY_TX_CAL45DP
+    bit_offset: 24
+    bit_size: 4
+  - name: USBPHY_TX_CAL45DN
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::TRIM_OVERRIDE_EN_SET:
+  description: Trim
+  fields:
+  - name: DIV_SEL_OVERRIDE
+    bit_offset: 0
+    bit_size: 1
+  - name: TX_D_CAL_OVERRIDE
+    bit_offset: 2
+    bit_size: 1
+  - name: TX_CAL45DP_OVERRIDE
+    bit_offset: 3
+    bit_size: 1
+  - name: TX_CAL45DM_OVERRIDE
+    bit_offset: 4
+    bit_size: 1
+  - name: PLL_CTRL0_DIV_SEL
+    bit_offset: 15
+    bit_size: 3
+  - name: USBPHY_TX_D_CAL
+    bit_offset: 20
+    bit_size: 4
+  - name: USBPHY_TX_CAL45DP
+    bit_offset: 24
+    bit_size: 4
+  - name: USBPHY_TX_CAL45DN
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::TRIM_OVERRIDE_EN_TOG:
+  description: Trim
+  fields:
+  - name: DIV_SEL_OVERRIDE
+    bit_offset: 0
+    bit_size: 1
+  - name: TX_D_CAL_OVERRIDE
+    bit_offset: 2
+    bit_size: 1
+  - name: TX_CAL45DP_OVERRIDE
+    bit_offset: 3
+    bit_size: 1
+  - name: TX_CAL45DM_OVERRIDE
+    bit_offset: 4
+    bit_size: 1
+  - name: PLL_CTRL0_DIV_SEL
+    bit_offset: 15
+    bit_size: 3
+  - name: USBPHY_TX_D_CAL
+    bit_offset: 20
+    bit_size: 4
+  - name: USBPHY_TX_CAL45DP
+    bit_offset: 24
+    bit_size: 4
+  - name: USBPHY_TX_CAL45DN
+    bit_offset: 28
+    bit_size: 4
+fieldset/regs::TX:
+  description: TX Control
+  fields:
+  - name: D_CAL
+    bit_offset: 0
+    bit_size: 4
+  - name: TXCAL45DN
+    bit_offset: 8
+    bit_size: 4
+  - name: TXCAL45DP
+    bit_offset: 16
+    bit_size: 4
+fieldset/regs::TX_CLR:
+  description: TX Control
+  fields:
+  - name: D_CAL
+    bit_offset: 0
+    bit_size: 4
+  - name: TXCAL45DN
+    bit_offset: 8
+    bit_size: 4
+  - name: TXCAL45DP
+    bit_offset: 16
+    bit_size: 4
+fieldset/regs::TX_SET:
+  description: TX Control
+  fields:
+  - name: D_CAL
+    bit_offset: 0
+    bit_size: 4
+  - name: TXCAL45DN
+    bit_offset: 8
+    bit_size: 4
+  - name: TXCAL45DP
+    bit_offset: 16
+    bit_size: 4
+fieldset/regs::TX_TOG:
+  description: TX Control
+  fields:
+  - name: D_CAL
+    bit_offset: 0
+    bit_size: 4
+  - name: TXCAL45DN
+    bit_offset: 8
+    bit_size: 4
+  - name: TXCAL45DP
+    bit_offset: 16
+    bit_size: 4
+fieldset/regs::USB1_CHRG_DETECT:
+  description: Charger Detect
+  fields:
+  - name: DETECT_SEC
+    bit_offset: 1
+    bit_size: 1
+  - name: PULLUP_DP
+    bit_offset: 2
+    bit_size: 1
+  - name: VDM_SRC_ENABLE
+    bit_offset: 4
+    bit_size: 1
+  - name: CHK_CONTACT
+    bit_offset: 18
+    bit_size: 1
+  - name: CHK_CHRG_B
+    bit_offset: 19
+    bit_size: 1
+  - name: EN_B
+    bit_offset: 20
+    bit_size: 1
+  - name: DCDSEL
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::USB1_CHRG_DETECT_CLR:
+  description: Charger Detect
+  fields:
+  - name: DETECT_SEC
+    bit_offset: 1
+    bit_size: 1
+  - name: PULLUP_DP
+    bit_offset: 2
+    bit_size: 1
+  - name: VDM_SRC_ENABLE
+    bit_offset: 4
+    bit_size: 1
+  - name: CHK_CONTACT
+    bit_offset: 18
+    bit_size: 1
+  - name: CHK_CHRG_B
+    bit_offset: 19
+    bit_size: 1
+  - name: EN_B
+    bit_offset: 20
+    bit_size: 1
+  - name: DCDSEL
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::USB1_CHRG_DETECT_SET:
+  description: Charger Detect
+  fields:
+  - name: DETECT_SEC
+    bit_offset: 1
+    bit_size: 1
+  - name: PULLUP_DP
+    bit_offset: 2
+    bit_size: 1
+  - name: VDM_SRC_ENABLE
+    bit_offset: 4
+    bit_size: 1
+  - name: CHK_CONTACT
+    bit_offset: 18
+    bit_size: 1
+  - name: CHK_CHRG_B
+    bit_offset: 19
+    bit_size: 1
+  - name: EN_B
+    bit_offset: 20
+    bit_size: 1
+  - name: DCDSEL
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::USB1_CHRG_DETECT_TOG:
+  description: Charger Detect
+  fields:
+  - name: DETECT_SEC
+    bit_offset: 1
+    bit_size: 1
+  - name: PULLUP_DP
+    bit_offset: 2
+    bit_size: 1
+  - name: VDM_SRC_ENABLE
+    bit_offset: 4
+    bit_size: 1
+  - name: CHK_CONTACT
+    bit_offset: 18
+    bit_size: 1
+  - name: CHK_CHRG_B
+    bit_offset: 19
+    bit_size: 1
+  - name: EN_B
+    bit_offset: 20
+    bit_size: 1
+  - name: DCDSEL
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::USB1_CHRG_DET_STAT:
+  description: Charger Detect Status
+  fields:
+  - name: PLUG_CONTACT
+    bit_offset: 0
+    bit_size: 1
+  - name: CHRG_DETECTED
+    bit_offset: 1
+    bit_size: 1
+  - name: DM_STATE
+    bit_offset: 2
+    bit_size: 1
+  - name: DP_STATE
+    bit_offset: 3
+    bit_size: 1
+  - name: SECDET_DCP
+    bit_offset: 4
+    bit_size: 1
+fieldset/regs::USB1_CHRG_DET_STAT_CLR:
+  description: Charger Detect Status
+  fields:
+  - name: PLUG_CONTACT
+    bit_offset: 0
+    bit_size: 1
+  - name: CHRG_DETECTED
+    bit_offset: 1
+    bit_size: 1
+  - name: DM_STATE
+    bit_offset: 2
+    bit_size: 1
+  - name: DP_STATE
+    bit_offset: 3
+    bit_size: 1
+  - name: SECDET_DCP
+    bit_offset: 4
+    bit_size: 1
+fieldset/regs::USB1_CHRG_DET_STAT_SET:
+  description: Charger Detect Status
+  fields:
+  - name: PLUG_CONTACT
+    bit_offset: 0
+    bit_size: 1
+  - name: CHRG_DETECTED
+    bit_offset: 1
+    bit_size: 1
+  - name: DM_STATE
+    bit_offset: 2
+    bit_size: 1
+  - name: DP_STATE
+    bit_offset: 3
+    bit_size: 1
+  - name: SECDET_DCP
+    bit_offset: 4
+    bit_size: 1
+fieldset/regs::USB1_CHRG_DET_STAT_TOG:
+  description: Charger Detect Status
+  fields:
+  - name: PLUG_CONTACT
+    bit_offset: 0
+    bit_size: 1
+  - name: CHRG_DETECTED
+    bit_offset: 1
+    bit_size: 1
+  - name: DM_STATE
+    bit_offset: 2
+    bit_size: 1
+  - name: DP_STATE
+    bit_offset: 3
+    bit_size: 1
+  - name: SECDET_DCP
+    bit_offset: 4
+    bit_size: 1
+fieldset/regs::USB1_VBUS_DETECT:
+  description: VBUS Detect
+  fields:
+  - name: VBUSVALID_THRESH
+    bit_offset: 0
+    bit_size: 3
+  - name: VBUS_OVERRIDE_EN
+    bit_offset: 3
+    bit_size: 1
+  - name: SESSEND_OVERRIDE
+    bit_offset: 4
+    bit_size: 1
+  - name: BVALID_OVERRIDE
+    bit_offset: 5
+    bit_size: 1
+  - name: AVALID_OVERRIDE
+    bit_offset: 6
+    bit_size: 1
+  - name: VBUSVALID_OVERRIDE
+    bit_offset: 7
+    bit_size: 1
+  - name: VBUSVALID_SEL
+    bit_offset: 8
+    bit_size: 1
+  - name: VBUS_SOURCE_SEL
+    bit_offset: 9
+    bit_size: 2
+  - name: ID_OVERRIDE_EN
+    bit_offset: 11
+    bit_size: 1
+  - name: ID_OVERRIDE
+    bit_offset: 12
+    bit_size: 1
+  - name: EXT_ID_OVERRIDE_EN
+    bit_offset: 13
+    bit_size: 1
+  - name: EXT_VBUS_OVERRIDE_EN
+    bit_offset: 14
+    bit_size: 1
+  - name: VBUSVALID_TO_B
+    bit_offset: 18
+    bit_size: 1
+  - name: VBUSVALID_PWRUP_CMPS
+    bit_offset: 20
+    bit_size: 3
+  - name: DISCHARGE_VBUS
+    bit_offset: 26
+    bit_size: 1
+fieldset/regs::USB1_VBUS_DETECT_CLR:
+  description: VBUS Detect
+  fields:
+  - name: VBUSVALID_THRESH
+    bit_offset: 0
+    bit_size: 3
+  - name: VBUS_OVERRIDE_EN
+    bit_offset: 3
+    bit_size: 1
+  - name: SESSEND_OVERRIDE
+    bit_offset: 4
+    bit_size: 1
+  - name: BVALID_OVERRIDE
+    bit_offset: 5
+    bit_size: 1
+  - name: AVALID_OVERRIDE
+    bit_offset: 6
+    bit_size: 1
+  - name: VBUSVALID_OVERRIDE
+    bit_offset: 7
+    bit_size: 1
+  - name: VBUSVALID_SEL
+    bit_offset: 8
+    bit_size: 1
+  - name: VBUS_SOURCE_SEL
+    bit_offset: 9
+    bit_size: 2
+  - name: ID_OVERRIDE_EN
+    bit_offset: 11
+    bit_size: 1
+  - name: ID_OVERRIDE
+    bit_offset: 12
+    bit_size: 1
+  - name: EXT_ID_OVERRIDE_EN
+    bit_offset: 13
+    bit_size: 1
+  - name: EXT_VBUS_OVERRIDE_EN
+    bit_offset: 14
+    bit_size: 1
+  - name: VBUSVALID_TO_B
+    bit_offset: 18
+    bit_size: 1
+  - name: VBUSVALID_PWRUP_CMPS
+    bit_offset: 20
+    bit_size: 3
+  - name: DISCHARGE_VBUS
+    bit_offset: 26
+    bit_size: 1
+fieldset/regs::USB1_VBUS_DETECT_SET:
+  description: VBUS Detect
+  fields:
+  - name: VBUSVALID_THRESH
+    bit_offset: 0
+    bit_size: 3
+  - name: VBUS_OVERRIDE_EN
+    bit_offset: 3
+    bit_size: 1
+  - name: SESSEND_OVERRIDE
+    bit_offset: 4
+    bit_size: 1
+  - name: BVALID_OVERRIDE
+    bit_offset: 5
+    bit_size: 1
+  - name: AVALID_OVERRIDE
+    bit_offset: 6
+    bit_size: 1
+  - name: VBUSVALID_OVERRIDE
+    bit_offset: 7
+    bit_size: 1
+  - name: VBUSVALID_SEL
+    bit_offset: 8
+    bit_size: 1
+  - name: VBUS_SOURCE_SEL
+    bit_offset: 9
+    bit_size: 2
+  - name: ID_OVERRIDE_EN
+    bit_offset: 11
+    bit_size: 1
+  - name: ID_OVERRIDE
+    bit_offset: 12
+    bit_size: 1
+  - name: EXT_ID_OVERRIDE_EN
+    bit_offset: 13
+    bit_size: 1
+  - name: EXT_VBUS_OVERRIDE_EN
+    bit_offset: 14
+    bit_size: 1
+  - name: VBUSVALID_TO_B
+    bit_offset: 18
+    bit_size: 1
+  - name: VBUSVALID_PWRUP_CMPS
+    bit_offset: 20
+    bit_size: 3
+  - name: DISCHARGE_VBUS
+    bit_offset: 26
+    bit_size: 1
+fieldset/regs::USB1_VBUS_DETECT_TOG:
+  description: VBUS Detect
+  fields:
+  - name: VBUSVALID_THRESH
+    bit_offset: 0
+    bit_size: 3
+  - name: VBUS_OVERRIDE_EN
+    bit_offset: 3
+    bit_size: 1
+  - name: SESSEND_OVERRIDE
+    bit_offset: 4
+    bit_size: 1
+  - name: BVALID_OVERRIDE
+    bit_offset: 5
+    bit_size: 1
+  - name: AVALID_OVERRIDE
+    bit_offset: 6
+    bit_size: 1
+  - name: VBUSVALID_OVERRIDE
+    bit_offset: 7
+    bit_size: 1
+  - name: VBUSVALID_SEL
+    bit_offset: 8
+    bit_size: 1
+  - name: VBUS_SOURCE_SEL
+    bit_offset: 9
+    bit_size: 2
+  - name: ID_OVERRIDE_EN
+    bit_offset: 11
+    bit_size: 1
+  - name: ID_OVERRIDE
+    bit_offset: 12
+    bit_size: 1
+  - name: EXT_ID_OVERRIDE_EN
+    bit_offset: 13
+    bit_size: 1
+  - name: EXT_VBUS_OVERRIDE_EN
+    bit_offset: 14
+    bit_size: 1
+  - name: VBUSVALID_TO_B
+    bit_offset: 18
+    bit_size: 1
+  - name: VBUSVALID_PWRUP_CMPS
+    bit_offset: 20
+    bit_size: 3
+  - name: DISCHARGE_VBUS
+    bit_offset: 26
+    bit_size: 1
+fieldset/regs::USB1_VBUS_DET_STAT:
+  description: VBUS Detect Status
+  fields:
+  - name: SESSEND
+    bit_offset: 0
+    bit_size: 1
+  - name: BVALID
+    bit_offset: 1
+    bit_size: 1
+  - name: AVALID
+    bit_offset: 2
+    bit_size: 1
+  - name: VBUS_VALID
+    bit_offset: 3
+    bit_size: 1
+  - name: VBUS_VALID_3V
+    bit_offset: 4
+    bit_size: 1
+  - name: EXT_ID
+    bit_offset: 5
+    bit_size: 1
+fieldset/regs::USB1_VBUS_DET_STAT_CLR:
+  description: VBUS Detect Status
+  fields:
+  - name: SESSEND
+    bit_offset: 0
+    bit_size: 1
+  - name: BVALID
+    bit_offset: 1
+    bit_size: 1
+  - name: AVALID
+    bit_offset: 2
+    bit_size: 1
+  - name: VBUS_VALID
+    bit_offset: 3
+    bit_size: 1
+  - name: VBUS_VALID_3V
+    bit_offset: 4
+    bit_size: 1
+  - name: EXT_ID
+    bit_offset: 5
+    bit_size: 1
+fieldset/regs::USB1_VBUS_DET_STAT_SET:
+  description: VBUS Detect Status
+  fields:
+  - name: SESSEND
+    bit_offset: 0
+    bit_size: 1
+  - name: BVALID
+    bit_offset: 1
+    bit_size: 1
+  - name: AVALID
+    bit_offset: 2
+    bit_size: 1
+  - name: VBUS_VALID
+    bit_offset: 3
+    bit_size: 1
+  - name: VBUS_VALID_3V
+    bit_offset: 4
+    bit_size: 1
+  - name: EXT_ID
+    bit_offset: 5
+    bit_size: 1
+fieldset/regs::USB1_VBUS_DET_STAT_TOG:
+  description: VBUS Detect Status
+  fields:
+  - name: SESSEND
+    bit_offset: 0
+    bit_size: 1
+  - name: BVALID
+    bit_offset: 1
+    bit_size: 1
+  - name: AVALID
+    bit_offset: 2
+    bit_size: 1
+  - name: VBUS_VALID
+    bit_offset: 3
+    bit_size: 1
+  - name: VBUS_VALID_3V
+    bit_offset: 4
+    bit_size: 1
+  - name: EXT_ID
+    bit_offset: 5
+    bit_size: 1
+fieldset/regs::VERSION:
+  description: Version
+  fields:
+  - name: STEP
+    bit_offset: 0
+    bit_size: 16
+  - name: MINOR
+    bit_offset: 16
+    bit_size: 8
+  - name: MAJOR
+    bit_offset: 24
+    bit_size: 8

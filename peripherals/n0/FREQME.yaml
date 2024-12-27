@@ -1,0 +1,101 @@
+block/FREQME:
+  items:
+  - name: CTRL_R
+    byte_offset: 0
+    fieldset: regs::CTRL_R
+  - name: CTRL_W
+    byte_offset: 0
+    fieldset: regs::CTRL_W
+  - name: CTRLSTAT
+    byte_offset: 4
+    fieldset: regs::CTRLSTAT
+  - name: MIN
+    byte_offset: 8
+    fieldset: regs::MIN
+  - name: MAX
+    byte_offset: 12
+    fieldset: regs::MAX
+fieldset/regs::CTRLSTAT:
+  description: Control Status
+  fields:
+  - name: REF_SCALE
+    bit_offset: 0
+    bit_size: 5
+  - name: PULSE_MODE
+    bit_offset: 8
+    bit_size: 1
+  - name: PULSE_POL
+    bit_offset: 9
+    bit_size: 1
+  - name: LT_MIN_INT_EN
+    bit_offset: 12
+    bit_size: 1
+  - name: GT_MAX_INT_EN
+    bit_offset: 13
+    bit_size: 1
+  - name: RESULT_READY_INT_EN
+    bit_offset: 14
+    bit_size: 1
+  - name: LT_MIN_STAT
+    bit_offset: 24
+    bit_size: 1
+  - name: GT_MAX_STAT
+    bit_offset: 25
+    bit_size: 1
+  - name: RESULT_READY_STAT
+    bit_offset: 26
+    bit_size: 1
+  - name: CONTINUOUS_MODE_EN
+    bit_offset: 30
+    bit_size: 1
+  - name: MEASURE_IN_PROGRESS
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CTRL_R:
+  description: Control (in Read mode)
+  fields:
+  - name: RESULT
+    bit_offset: 0
+    bit_size: 31
+  - name: MEASURE_IN_PROGRESS
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::CTRL_W:
+  description: Control (in Write mode)
+  fields:
+  - name: REF_SCALE
+    bit_offset: 0
+    bit_size: 5
+  - name: PULSE_MODE
+    bit_offset: 8
+    bit_size: 1
+  - name: PULSE_POL
+    bit_offset: 9
+    bit_size: 1
+  - name: LT_MIN_INT_EN
+    bit_offset: 12
+    bit_size: 1
+  - name: GT_MAX_INT_EN
+    bit_offset: 13
+    bit_size: 1
+  - name: RESULT_READY_INT_EN
+    bit_offset: 14
+    bit_size: 1
+  - name: CONTINUOUS_MODE_EN
+    bit_offset: 30
+    bit_size: 1
+  - name: MEASURE_IN_PROGRESS
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::MAX:
+  description: Maximum
+  fields:
+  - name: MAX_VALUE
+    bit_offset: 0
+    bit_size: 31
+fieldset/regs::MIN:
+  description: Minimum
+  fields:
+  - name: MIN_VALUE
+    bit_offset: 0
+    bit_size: 31
