@@ -18,7 +18,7 @@ impl AOI {
     #[inline(always)]
     pub const fn BFCRT(self, n: usize) -> BFCRT {
         assert!(n < 4usize);
-        unsafe { BFCRT::from_ptr(self.ptr.add(0x0usize + n * 16usize) as _) }
+        unsafe { BFCRT::from_ptr(self.ptr.add(0x0usize + n * 4usize) as _) }
     }
 }
 #[derive(Copy, Clone, Eq, PartialEq)]

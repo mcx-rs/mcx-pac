@@ -50,7 +50,7 @@ impl MRT {
     #[inline(always)]
     pub const fn CHANNEL(self, n: usize) -> CHANNEL {
         assert!(n < 4usize);
-        unsafe { CHANNEL::from_ptr(self.ptr.add(0x0usize + n * 64usize) as _) }
+        unsafe { CHANNEL::from_ptr(self.ptr.add(0x0usize + n * 16usize) as _) }
     }
     #[inline(always)]
     pub const fn MODCFG(self) -> crate::common::Reg<regs::MODCFG, crate::common::RW> {

@@ -20,15 +20,11 @@ impl MRCC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_RST0_SET(
-        self,
-    ) -> crate::common::Reg<regs::MRCC_GLB_RST0_SET, crate::common::RW> {
+    pub const fn MRCC_GLB_RST0_SET(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_RST0_CLR(
-        self,
-    ) -> crate::common::Reg<regs::MRCC_GLB_RST0_CLR, crate::common::RW> {
+    pub const fn MRCC_GLB_RST0_CLR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
@@ -36,15 +32,11 @@ impl MRCC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_RST1_SET(
-        self,
-    ) -> crate::common::Reg<regs::MRCC_GLB_RST1_SET, crate::common::RW> {
+    pub const fn MRCC_GLB_RST1_SET(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_RST1_CLR(
-        self,
-    ) -> crate::common::Reg<regs::MRCC_GLB_RST1_CLR, crate::common::RW> {
+    pub const fn MRCC_GLB_RST1_CLR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
@@ -52,15 +44,11 @@ impl MRCC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_CC0_SET(
-        self,
-    ) -> crate::common::Reg<regs::MRCC_GLB_CC0_SET, crate::common::RW> {
+    pub const fn MRCC_GLB_CC0_SET(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_CC0_CLR(
-        self,
-    ) -> crate::common::Reg<regs::MRCC_GLB_CC0_CLR, crate::common::RW> {
+    pub const fn MRCC_GLB_CC0_CLR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[inline(always)]
@@ -68,18 +56,12 @@ impl MRCC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_CC_SET(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::MRCC_GLB_CC_SET, crate::common::RW> {
+    pub const fn MRCC_GLB_CC_SET(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 1usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MRCC_GLB_CC_CLR(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::MRCC_GLB_CC_CLR, crate::common::RW> {
+    pub const fn MRCC_GLB_CC_CLR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 1usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize + n * 4usize) as _) }
     }
@@ -2376,48 +2358,6 @@ pub mod regs {
             MRCC_GLB_CC0(0)
         }
     }
-    #[doc = "AHB Clock Control Clear 0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MRCC_GLB_CC0_CLR(pub u32);
-    impl MRCC_GLB_CC0_CLR {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MRCC_GLB_CC0_CLR {
-        #[inline(always)]
-        fn default() -> MRCC_GLB_CC0_CLR {
-            MRCC_GLB_CC0_CLR(0)
-        }
-    }
-    #[doc = "AHB Clock Control Set 0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MRCC_GLB_CC0_SET(pub u32);
-    impl MRCC_GLB_CC0_SET {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MRCC_GLB_CC0_SET {
-        #[inline(always)]
-        fn default() -> MRCC_GLB_CC0_SET {
-            MRCC_GLB_CC0_SET(0)
-        }
-    }
     #[doc = "AHB Clock Control 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2635,48 +2575,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MRCC_GLB_CC1 {
             MRCC_GLB_CC1(0)
-        }
-    }
-    #[doc = "AHB Clock Control Clear 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MRCC_GLB_CC_CLR(pub u32);
-    impl MRCC_GLB_CC_CLR {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MRCC_GLB_CC_CLR {
-        #[inline(always)]
-        fn default() -> MRCC_GLB_CC_CLR {
-            MRCC_GLB_CC_CLR(0)
-        }
-    }
-    #[doc = "AHB Clock Control Set 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MRCC_GLB_CC_SET(pub u32);
-    impl MRCC_GLB_CC_SET {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MRCC_GLB_CC_SET {
-        #[inline(always)]
-        fn default() -> MRCC_GLB_CC_SET {
-            MRCC_GLB_CC_SET(0)
         }
     }
     #[doc = "Peripheral Reset Control 0"]
@@ -2961,48 +2859,6 @@ pub mod regs {
             MRCC_GLB_RST0(0)
         }
     }
-    #[doc = "Peripheral Reset Control Clear 0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MRCC_GLB_RST0_CLR(pub u32);
-    impl MRCC_GLB_RST0_CLR {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MRCC_GLB_RST0_CLR {
-        #[inline(always)]
-        fn default() -> MRCC_GLB_RST0_CLR {
-            MRCC_GLB_RST0_CLR(0)
-        }
-    }
-    #[doc = "Peripheral Reset Control Set 0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MRCC_GLB_RST0_SET(pub u32);
-    impl MRCC_GLB_RST0_SET {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MRCC_GLB_RST0_SET {
-        #[inline(always)]
-        fn default() -> MRCC_GLB_RST0_SET {
-            MRCC_GLB_RST0_SET(0)
-        }
-    }
     #[doc = "Peripheral Reset Control 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3184,48 +3040,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MRCC_GLB_RST1 {
             MRCC_GLB_RST1(0)
-        }
-    }
-    #[doc = "Peripheral Reset Control Clear 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MRCC_GLB_RST1_CLR(pub u32);
-    impl MRCC_GLB_RST1_CLR {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MRCC_GLB_RST1_CLR {
-        #[inline(always)]
-        fn default() -> MRCC_GLB_RST1_CLR {
-            MRCC_GLB_RST1_CLR(0)
-        }
-    }
-    #[doc = "Peripheral Reset Control Set 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MRCC_GLB_RST1_SET(pub u32);
-    impl MRCC_GLB_RST1_SET {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MRCC_GLB_RST1_SET {
-        #[inline(always)]
-        fn default() -> MRCC_GLB_RST1_SET {
-            MRCC_GLB_RST1_SET(0)
         }
     }
     #[doc = "I3C0_FCLK clock divider control"]

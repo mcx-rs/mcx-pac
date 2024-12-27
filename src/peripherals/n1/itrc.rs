@@ -39,11 +39,11 @@ impl ITRC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize + n * 8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SW_EVENT0(self) -> crate::common::Reg<regs::SW_EVENT0, crate::common::RW> {
+    pub const fn SW_EVENT0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SW_EVENT1(self) -> crate::common::Reg<regs::SW_EVENT1, crate::common::RW> {
+    pub const fn SW_EVENT1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf4usize) as _) }
     }
 }
@@ -799,48 +799,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> STATUS1 {
             STATUS1(0)
-        }
-    }
-    #[doc = "Software event 0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SW_EVENT0(pub u32);
-    impl SW_EVENT0 {
-        #[inline(always)]
-        pub const fn TRIGGER_SW_EVENT_0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIGGER_SW_EVENT_0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SW_EVENT0 {
-        #[inline(always)]
-        fn default() -> SW_EVENT0 {
-            SW_EVENT0(0)
-        }
-    }
-    #[doc = "Software event 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SW_EVENT1(pub u32);
-    impl SW_EVENT1 {
-        #[inline(always)]
-        pub const fn TRIGGER_SW_EVENT_1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIGGER_SW_EVENT_1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SW_EVENT1 {
-        #[inline(always)]
-        fn default() -> SW_EVENT1 {
-            SW_EVENT1(0)
         }
     }
 }

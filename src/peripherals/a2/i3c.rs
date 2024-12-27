@@ -106,7 +106,7 @@ impl I3C {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
     }
     #[inline(always)]
-    pub const fn SIDPARTNO(self) -> crate::common::Reg<regs::SIDPARTNO, crate::common::RW> {
+    pub const fn SIDPARTNO(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x6cusize) as _) }
     }
     #[inline(always)]
@@ -252,7 +252,7 @@ impl I3C {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0144usize) as _) }
     }
     #[inline(always)]
-    pub const fn SID(self) -> crate::common::Reg<regs::SID, crate::common::RW> {
+    pub const fn SID(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ffcusize) as _) }
     }
 }
@@ -2384,27 +2384,6 @@ pub mod regs {
             SERRWARN(0)
         }
     }
-    #[doc = "Target Module ID"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SID(pub u32);
-    impl SID {
-        #[inline(always)]
-        pub const fn ID(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_ID(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SID {
-        #[inline(always)]
-        fn default() -> SID {
-            SID(0)
-        }
-    }
     #[doc = "Target ID Extension"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2433,27 +2412,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SIDEXT {
             SIDEXT(0)
-        }
-    }
-    #[doc = "Target ID Part Number"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SIDPARTNO(pub u32);
-    impl SIDPARTNO {
-        #[inline(always)]
-        pub const fn PARTNO(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_PARTNO(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SIDPARTNO {
-        #[inline(always)]
-        fn default() -> SIDPARTNO {
-            SIDPARTNO(0)
         }
     }
     #[doc = "Target Interrupt Clear"]

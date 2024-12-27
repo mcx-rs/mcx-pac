@@ -28,33 +28,12 @@ impl FMU {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn FCCOB(self, n: usize) -> crate::common::Reg<regs::FCCOB, crate::common::RW> {
+    pub const fn FCCOB(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize + n * 4usize) as _) }
     }
 }
 pub mod regs {
-    #[doc = "Flash Common Command Object Registers"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct FCCOB(pub u32);
-    impl FCCOB {
-        #[inline(always)]
-        pub const fn CCOBn(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CCOBn(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for FCCOB {
-        #[inline(always)]
-        fn default() -> FCCOB {
-            FCCOB(0)
-        }
-    }
     #[doc = "Flash Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]

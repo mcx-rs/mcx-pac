@@ -42,19 +42,19 @@ impl MAU {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[inline(always)]
-    pub const fn RES0(self) -> crate::common::Reg<regs::RES0, crate::common::RW> {
+    pub const fn RES0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[inline(always)]
-    pub const fn RES1(self) -> crate::common::Reg<regs::RES1, crate::common::RW> {
+    pub const fn RES1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[inline(always)]
-    pub const fn RES2(self) -> crate::common::Reg<regs::RES2, crate::common::RW> {
+    pub const fn RES2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[inline(always)]
-    pub const fn RES3(self) -> crate::common::Reg<regs::RES3, crate::common::RW> {
+    pub const fn RES3(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
 }
@@ -183,90 +183,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> OP_CTRL {
             OP_CTRL(0)
-        }
-    }
-    #[doc = "Result Register 0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RES0(pub u32);
-    impl RES0 {
-        #[inline(always)]
-        pub const fn MAU_RES0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_MAU_RES0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RES0 {
-        #[inline(always)]
-        fn default() -> RES0 {
-            RES0(0)
-        }
-    }
-    #[doc = "Result Register 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RES1(pub u32);
-    impl RES1 {
-        #[inline(always)]
-        pub const fn MAU_RES1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_MAU_RES1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RES1 {
-        #[inline(always)]
-        fn default() -> RES1 {
-            RES1(0)
-        }
-    }
-    #[doc = "Result Register 2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RES2(pub u32);
-    impl RES2 {
-        #[inline(always)]
-        pub const fn MAU_RES2(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_MAU_RES2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RES2 {
-        #[inline(always)]
-        fn default() -> RES2 {
-            RES2(0)
-        }
-    }
-    #[doc = "Result Register 3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RES3(pub u32);
-    impl RES3 {
-        #[inline(always)]
-        pub const fn MAU_RES3(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_MAU_RES3(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RES3 {
-        #[inline(always)]
-        fn default() -> RES3 {
-            RES3(0)
         }
     }
     #[doc = "Result Status"]

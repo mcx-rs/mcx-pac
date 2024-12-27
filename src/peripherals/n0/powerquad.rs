@@ -16,7 +16,7 @@ impl POWERQUAD {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn OUTBASE(self) -> crate::common::Reg<regs::OUTBASE, crate::common::RW> {
+    pub const fn OUTBASE(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
@@ -24,7 +24,7 @@ impl POWERQUAD {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn TMPBASE(self) -> crate::common::Reg<regs::TMPBASE, crate::common::RW> {
+    pub const fn TMPBASE(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
@@ -32,7 +32,7 @@ impl POWERQUAD {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn INABASE(self) -> crate::common::Reg<regs::INABASE, crate::common::RW> {
+    pub const fn INABASE(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
@@ -40,7 +40,7 @@ impl POWERQUAD {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn INBBASE(self) -> crate::common::Reg<regs::INBBASE, crate::common::RW> {
+    pub const fn INBBASE(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
@@ -52,7 +52,7 @@ impl POWERQUAD {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[inline(always)]
-    pub const fn LENGTH(self) -> crate::common::Reg<regs::LENGTH, crate::common::RW> {
+    pub const fn LENGTH(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
     #[inline(always)]
@@ -60,7 +60,7 @@ impl POWERQUAD {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
     }
     #[inline(always)]
-    pub const fn MISC(self) -> crate::common::Reg<regs::MISC, crate::common::RW> {
+    pub const fn MISC(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x010cusize) as _) }
     }
     #[inline(always)]
@@ -68,15 +68,15 @@ impl POWERQUAD {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0110usize) as _) }
     }
     #[inline(always)]
-    pub const fn CORDIC_X(self) -> crate::common::Reg<regs::CORDIC_X, crate::common::RW> {
+    pub const fn CORDIC_X(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0180usize) as _) }
     }
     #[inline(always)]
-    pub const fn CORDIC_Y(self) -> crate::common::Reg<regs::CORDIC_Y, crate::common::RW> {
+    pub const fn CORDIC_Y(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0184usize) as _) }
     }
     #[inline(always)]
-    pub const fn CORDIC_Z(self) -> crate::common::Reg<regs::CORDIC_Z, crate::common::RW> {
+    pub const fn CORDIC_Z(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0188usize) as _) }
     }
     #[inline(always)]
@@ -96,7 +96,7 @@ impl POWERQUAD {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0198usize) as _) }
     }
     #[inline(always)]
-    pub const fn GPREG(self, n: usize) -> crate::common::Reg<regs::GPREG, crate::common::RW> {
+    pub const fn GPREG(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 16usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize + n * 4usize) as _) }
     }
@@ -107,27 +107,6 @@ impl POWERQUAD {
     }
 }
 pub mod regs {
-    #[doc = "Compute Register Bank n"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct COMPREG(pub u32);
-    impl COMPREG {
-        #[inline(always)]
-        pub const fn COMPREG(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_COMPREG(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for COMPREG {
-        #[inline(always)]
-        fn default() -> COMPREG {
-            COMPREG(0)
-        }
-    }
     #[doc = "Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -165,69 +144,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CONTROL {
             CONTROL(0)
-        }
-    }
-    #[doc = "CORDIC Input X"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CORDIC_X(pub u32);
-    impl CORDIC_X {
-        #[inline(always)]
-        pub const fn CORDIC_X(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CORDIC_X(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CORDIC_X {
-        #[inline(always)]
-        fn default() -> CORDIC_X {
-            CORDIC_X(0)
-        }
-    }
-    #[doc = "CORDIC Input Y"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CORDIC_Y(pub u32);
-    impl CORDIC_Y {
-        #[inline(always)]
-        pub const fn CORDIC_Y(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CORDIC_Y(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CORDIC_Y {
-        #[inline(always)]
-        fn default() -> CORDIC_Y {
-            CORDIC_Y(0)
-        }
-    }
-    #[doc = "CORDIC Input Z"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CORDIC_Z(pub u32);
-    impl CORDIC_Z {
-        #[inline(always)]
-        pub const fn CORDIC_Z(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CORDIC_Z(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CORDIC_Z {
-        #[inline(always)]
-        fn default() -> CORDIC_Z {
-            CORDIC_Z(0)
         }
     }
     #[doc = "Coprocessor Prescale"]
@@ -422,48 +338,6 @@ pub mod regs {
             EVENTEN(0)
         }
     }
-    #[doc = "General Purpose Register Bank n"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GPREG(pub u32);
-    impl GPREG {
-        #[inline(always)]
-        pub const fn GPREG(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_GPREG(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for GPREG {
-        #[inline(always)]
-        fn default() -> GPREG {
-            GPREG(0)
-        }
-    }
-    #[doc = "Input A Base"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct INABASE(pub u32);
-    impl INABASE {
-        #[inline(always)]
-        pub const fn INABASE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_INABASE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for INABASE {
-        #[inline(always)]
-        fn default() -> INABASE {
-            INABASE(0)
-        }
-    }
     #[doc = "Input A Format"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -501,27 +375,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> INAFORMAT {
             INAFORMAT(0)
-        }
-    }
-    #[doc = "Input B Base"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct INBBASE(pub u32);
-    impl INBBASE {
-        #[inline(always)]
-        pub const fn INBBASE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_INBBASE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for INBBASE {
-        #[inline(always)]
-        fn default() -> INBBASE {
-            INBBASE(0)
         }
     }
     #[doc = "Input B Format"]
@@ -650,69 +503,6 @@ pub mod regs {
             INTRSTAT(0)
         }
     }
-    #[doc = "Length"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct LENGTH(pub u32);
-    impl LENGTH {
-        #[inline(always)]
-        pub const fn INST_LENGTH(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_INST_LENGTH(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for LENGTH {
-        #[inline(always)]
-        fn default() -> LENGTH {
-            LENGTH(0)
-        }
-    }
-    #[doc = "Miscellaneous"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MISC(pub u32);
-    impl MISC {
-        #[inline(always)]
-        pub const fn INST_MISC(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_INST_MISC(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MISC {
-        #[inline(always)]
-        fn default() -> MISC {
-            MISC(0)
-        }
-    }
-    #[doc = "Output Base"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct OUTBASE(pub u32);
-    impl OUTBASE {
-        #[inline(always)]
-        pub const fn OUTBASE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_OUTBASE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for OUTBASE {
-        #[inline(always)]
-        fn default() -> OUTBASE {
-            OUTBASE(0)
-        }
-    }
     #[doc = "Output Format"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -750,27 +540,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> OUTFORMAT {
             OUTFORMAT(0)
-        }
-    }
-    #[doc = "Temporary Base"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct TMPBASE(pub u32);
-    impl TMPBASE {
-        #[inline(always)]
-        pub const fn TMPBASE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TMPBASE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for TMPBASE {
-        #[inline(always)]
-        fn default() -> TMPBASE {
-            TMPBASE(0)
         }
     }
     #[doc = "Temporary Format"]

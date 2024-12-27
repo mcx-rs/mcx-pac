@@ -16,7 +16,7 @@ impl EMVSIM {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn VER_ID(self) -> crate::common::Reg<regs::VER_ID, crate::common::RW> {
+    pub const fn VER_ID(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
@@ -76,7 +76,7 @@ impl EMVSIM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[inline(always)]
-    pub const fn BWT_VAL(self) -> crate::common::Reg<regs::BWT_VAL, crate::common::RW> {
+    pub const fn BWT_VAL(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[inline(always)]
@@ -112,27 +112,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> BGT_VAL {
             BGT_VAL(0)
-        }
-    }
-    #[doc = "Block Wait Time Value"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct BWT_VAL(pub u32);
-    impl BWT_VAL {
-        #[inline(always)]
-        pub const fn BWT(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_BWT(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for BWT_VAL {
-        #[inline(always)]
-        fn default() -> BWT_VAL {
-            BWT_VAL(0)
         }
     }
     #[doc = "Clock Configuration"]
@@ -1126,27 +1105,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TX_THD {
             TX_THD(0)
-        }
-    }
-    #[doc = "Version ID"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct VER_ID(pub u32);
-    impl VER_ID {
-        #[inline(always)]
-        pub const fn VER(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_VER(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for VER_ID {
-        #[inline(always)]
-        fn default() -> VER_ID {
-            VER_ID(0)
         }
     }
 }

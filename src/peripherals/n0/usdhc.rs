@@ -16,7 +16,7 @@ impl USDHC {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn DS_ADDR(self) -> crate::common::Reg<regs::DS_ADDR, crate::common::RW> {
+    pub const fn DS_ADDR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
@@ -24,7 +24,7 @@ impl USDHC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn CMD_ARG(self) -> crate::common::Reg<regs::CMD_ARG, crate::common::RW> {
+    pub const fn CMD_ARG(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
@@ -32,25 +32,23 @@ impl USDHC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CMD_RSP0(self) -> crate::common::Reg<regs::CMD_RSP0, crate::common::RW> {
+    pub const fn CMD_RSP0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn CMD_RSP1(self) -> crate::common::Reg<regs::CMD_RSP1, crate::common::RW> {
+    pub const fn CMD_RSP1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn CMD_RSP2(self) -> crate::common::Reg<regs::CMD_RSP2, crate::common::RW> {
+    pub const fn CMD_RSP2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
-    pub const fn CMD_RSP3(self) -> crate::common::Reg<regs::CMD_RSP3, crate::common::RW> {
+    pub const fn CMD_RSP3(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[inline(always)]
-    pub const fn DATA_BUFF_ACC_PORT(
-        self,
-    ) -> crate::common::Reg<regs::DATA_BUFF_ACC_PORT, crate::common::RW> {
+    pub const fn DATA_BUFF_ACC_PORT(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]
@@ -399,111 +397,6 @@ pub mod regs {
             CLK_TUNE_CTRL_STATUS(0)
         }
     }
-    #[doc = "Command Argument"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CMD_ARG(pub u32);
-    impl CMD_ARG {
-        #[inline(always)]
-        pub const fn CMDARG(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CMDARG(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CMD_ARG {
-        #[inline(always)]
-        fn default() -> CMD_ARG {
-            CMD_ARG(0)
-        }
-    }
-    #[doc = "Command Response0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CMD_RSP0(pub u32);
-    impl CMD_RSP0 {
-        #[inline(always)]
-        pub const fn CMDRSP0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CMDRSP0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CMD_RSP0 {
-        #[inline(always)]
-        fn default() -> CMD_RSP0 {
-            CMD_RSP0(0)
-        }
-    }
-    #[doc = "Command Response1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CMD_RSP1(pub u32);
-    impl CMD_RSP1 {
-        #[inline(always)]
-        pub const fn CMDRSP1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CMDRSP1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CMD_RSP1 {
-        #[inline(always)]
-        fn default() -> CMD_RSP1 {
-            CMD_RSP1(0)
-        }
-    }
-    #[doc = "Command Response2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CMD_RSP2(pub u32);
-    impl CMD_RSP2 {
-        #[inline(always)]
-        pub const fn CMDRSP2(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CMDRSP2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CMD_RSP2 {
-        #[inline(always)]
-        fn default() -> CMD_RSP2 {
-            CMD_RSP2(0)
-        }
-    }
-    #[doc = "Command Response3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CMD_RSP3(pub u32);
-    impl CMD_RSP3 {
-        #[inline(always)]
-        pub const fn CMDRSP3(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CMDRSP3(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CMD_RSP3 {
-        #[inline(always)]
-        fn default() -> CMD_RSP3 {
-            CMD_RSP3(0)
-        }
-    }
     #[doc = "Command Transfer Type"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -640,27 +533,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CMD_XFR_TYP {
             CMD_XFR_TYP(0)
-        }
-    }
-    #[doc = "Data Buffer Access Port"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DATA_BUFF_ACC_PORT(pub u32);
-    impl DATA_BUFF_ACC_PORT {
-        #[inline(always)]
-        pub const fn DATCONT(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATCONT(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DATA_BUFF_ACC_PORT {
-        #[inline(always)]
-        fn default() -> DATA_BUFF_ACC_PORT {
-            DATA_BUFF_ACC_PORT(0)
         }
     }
     #[doc = "DLL (Delay Line) Control"]
@@ -811,27 +683,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DLL_STATUS {
             DLL_STATUS(0)
-        }
-    }
-    #[doc = "DMA System Address"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DS_ADDR(pub u32);
-    impl DS_ADDR {
-        #[inline(always)]
-        pub const fn DS_ADDR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DS_ADDR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DS_ADDR {
-        #[inline(always)]
-        fn default() -> DS_ADDR {
-            DS_ADDR(0)
         }
     }
     #[doc = "Force Event"]

@@ -28,7 +28,7 @@ impl CACHE64_CTRL {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0808usize) as _) }
     }
     #[inline(always)]
-    pub const fn CCVR(self) -> crate::common::Reg<regs::CCVR, crate::common::RW> {
+    pub const fn CCVR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x080cusize) as _) }
     }
 }
@@ -124,27 +124,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CCR {
             CCR(0)
-        }
-    }
-    #[doc = "Cache Read/Write Value"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CCVR(pub u32);
-    impl CCVR {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CCVR {
-        #[inline(always)]
-        fn default() -> CCVR {
-            CCVR(0)
         }
     }
     #[doc = "Cache Line Control"]

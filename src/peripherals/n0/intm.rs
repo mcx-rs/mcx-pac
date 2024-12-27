@@ -26,7 +26,7 @@ impl INTM {
     #[inline(always)]
     pub const fn MON(self, n: usize) -> MON {
         assert!(n < 4usize);
-        unsafe { MON::from_ptr(self.ptr.add(0x08usize + n * 64usize) as _) }
+        unsafe { MON::from_ptr(self.ptr.add(0x08usize + n * 16usize) as _) }
     }
 }
 #[derive(Copy, Clone, Eq, PartialEq)]

@@ -16,7 +16,7 @@ impl SCG {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn VERID(self) -> crate::common::Reg<regs::VERID, crate::common::RW> {
+    pub const fn VERID(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
@@ -835,27 +835,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TRIM_LOCK {
             TRIM_LOCK(0)
-        }
-    }
-    #[doc = "Version ID Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct VERID(pub u32);
-    impl VERID {
-        #[inline(always)]
-        pub const fn VERSION(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_VERSION(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for VERID {
-        #[inline(always)]
-        fn default() -> VERID {
-            VERID(0)
         }
     }
 }

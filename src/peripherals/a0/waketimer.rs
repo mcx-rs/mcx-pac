@@ -22,34 +22,11 @@ impl WAKETIMER {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn WAKE_TIMER_CNT(
-        self,
-    ) -> crate::common::Reg<regs::WAKE_TIMER_CNT, crate::common::RW> {
+    pub const fn WAKE_TIMER_CNT(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
 }
 pub mod regs {
-    #[doc = "Wake Timer Counter"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct WAKE_TIMER_CNT(pub u32);
-    impl WAKE_TIMER_CNT {
-        #[inline(always)]
-        pub const fn WAKE_CNT(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_WAKE_CNT(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for WAKE_TIMER_CNT {
-        #[inline(always)]
-        fn default() -> WAKE_TIMER_CNT {
-            WAKE_TIMER_CNT(0)
-        }
-    }
     #[doc = "Wake Timer Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]

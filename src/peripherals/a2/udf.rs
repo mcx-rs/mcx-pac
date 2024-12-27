@@ -24,11 +24,11 @@ impl UDF {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn UDF_WR_DATA(self) -> crate::common::Reg<regs::UDF_WR_DATA, crate::common::RW> {
+    pub const fn UDF_WR_DATA(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn UDF_RD_DATA(self) -> crate::common::Reg<regs::UDF_RD_DATA, crate::common::RW> {
+    pub const fn UDF_RD_DATA(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
 }
@@ -117,27 +117,6 @@ pub mod regs {
             UDF_CTRL(0)
         }
     }
-    #[doc = "Data Out Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct UDF_RD_DATA(pub u32);
-    impl UDF_RD_DATA {
-        #[inline(always)]
-        pub const fn o_dat(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_o_dat(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for UDF_RD_DATA {
-        #[inline(always)]
-        fn default() -> UDF_RD_DATA {
-            UDF_RD_DATA(0)
-        }
-    }
     #[doc = "Status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -175,27 +154,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> UDF_STATUS {
             UDF_STATUS(0)
-        }
-    }
-    #[doc = "Data In Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct UDF_WR_DATA(pub u32);
-    impl UDF_WR_DATA {
-        #[inline(always)]
-        pub const fn i_dat(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_i_dat(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for UDF_WR_DATA {
-        #[inline(always)]
-        fn default() -> UDF_WR_DATA {
-            UDF_WR_DATA(0)
         }
     }
 }

@@ -74,7 +74,7 @@ impl SYSCON {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0944usize) as _) }
     }
     #[inline(always)]
-    pub const fn GRAY_CODE_LSB(self) -> crate::common::Reg<regs::GRAY_CODE_LSB, crate::common::RW> {
+    pub const fn GRAY_CODE_LSB(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b60usize) as _) }
     }
     #[inline(always)]
@@ -82,9 +82,7 @@ impl SYSCON {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b64usize) as _) }
     }
     #[inline(always)]
-    pub const fn BINARY_CODE_LSB(
-        self,
-    ) -> crate::common::Reg<regs::BINARY_CODE_LSB, crate::common::RW> {
+    pub const fn BINARY_CODE_LSB(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b68usize) as _) }
     }
     #[inline(always)]
@@ -94,19 +92,19 @@ impl SYSCON {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b6cusize) as _) }
     }
     #[inline(always)]
-    pub const fn OVP_PAD_STATE(self) -> crate::common::Reg<regs::OVP_PAD_STATE, crate::common::RW> {
+    pub const fn OVP_PAD_STATE(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e40usize) as _) }
     }
     #[inline(always)]
-    pub const fn PROBE_STATE(self) -> crate::common::Reg<regs::PROBE_STATE, crate::common::RW> {
+    pub const fn PROBE_STATE(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e44usize) as _) }
     }
     #[inline(always)]
-    pub const fn FT_STATE_A(self) -> crate::common::Reg<regs::FT_STATE_A, crate::common::RW> {
+    pub const fn FT_STATE_A(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e48usize) as _) }
     }
     #[inline(always)]
-    pub const fn ROP_STATE(self) -> crate::common::Reg<regs::ROP_STATE, crate::common::RW> {
+    pub const fn ROP_STATE(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e4cusize) as _) }
     }
     #[inline(always)]
@@ -146,23 +144,19 @@ impl SYSCON {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fa8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SWD_ACCESS_CPU0(
-        self,
-    ) -> crate::common::Reg<regs::SWD_ACCESS_CPU0, crate::common::RW> {
+    pub const fn SWD_ACCESS_CPU0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fb4usize) as _) }
     }
     #[inline(always)]
-    pub const fn DEBUG_AUTH_BEACON(
-        self,
-    ) -> crate::common::Reg<regs::DEBUG_AUTH_BEACON, crate::common::RW> {
+    pub const fn DEBUG_AUTH_BEACON(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fc0usize) as _) }
     }
     #[inline(always)]
-    pub const fn JTAG_ID(self) -> crate::common::Reg<regs::JTAG_ID, crate::common::RW> {
+    pub const fn JTAG_ID(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ff0usize) as _) }
     }
     #[inline(always)]
-    pub const fn DEVICE_TYPE(self) -> crate::common::Reg<regs::DEVICE_TYPE, crate::common::RW> {
+    pub const fn DEVICE_TYPE(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ff4usize) as _) }
     }
     #[inline(always)]
@@ -251,27 +245,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AHBMATPRIO {
             AHBMATPRIO(0)
-        }
-    }
-    #[doc = "Gray to Binary Converter Binary Code \\[31:0\\]"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct BINARY_CODE_LSB(pub u32);
-    impl BINARY_CODE_LSB {
-        #[inline(always)]
-        pub const fn code_bin_31_0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_code_bin_31_0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for BINARY_CODE_LSB {
-        #[inline(always)]
-        fn default() -> BINARY_CODE_LSB {
-            BINARY_CODE_LSB(0)
         }
     }
     #[doc = "Gray to Binary Converter Binary Code \\[41:32\\]"]
@@ -424,27 +397,6 @@ pub mod regs {
             CTIMERGLOBALSTARTEN(0)
         }
     }
-    #[doc = "Debug Authentication BEACON"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DEBUG_AUTH_BEACON(pub u32);
-    impl DEBUG_AUTH_BEACON {
-        #[inline(always)]
-        pub const fn BEACON(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_BEACON(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DEBUG_AUTH_BEACON {
-        #[inline(always)]
-        fn default() -> DEBUG_AUTH_BEACON {
-            DEBUG_AUTH_BEACON(0)
-        }
-    }
     #[doc = "Cortex Debug Features Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -547,27 +499,6 @@ pub mod regs {
             DEVICE_ID0(0)
         }
     }
-    #[doc = "Device Type"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DEVICE_TYPE(pub u32);
-    impl DEVICE_TYPE {
-        #[inline(always)]
-        pub const fn DEVICE_TYPE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DEVICE_TYPE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DEVICE_TYPE {
-        #[inline(always)]
-        fn default() -> DEVICE_TYPE {
-            DEVICE_TYPE(0)
-        }
-    }
     #[doc = "Chip Revision ID and Number"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -649,48 +580,6 @@ pub mod regs {
             ELS_OTP_LC_STATE_DP(0)
         }
     }
-    #[doc = "FT_STATE_A"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct FT_STATE_A(pub u32);
-    impl FT_STATE_A {
-        #[inline(always)]
-        pub const fn FT_STATE_A(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_FT_STATE_A(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for FT_STATE_A {
-        #[inline(always)]
-        fn default() -> FT_STATE_A {
-            FT_STATE_A(0)
-        }
-    }
-    #[doc = "Gray to Binary Converter Gray Code \\[31:0\\]"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GRAY_CODE_LSB(pub u32);
-    impl GRAY_CODE_LSB {
-        #[inline(always)]
-        pub const fn code_gray_31_0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_code_gray_31_0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for GRAY_CODE_LSB {
-        #[inline(always)]
-        fn default() -> GRAY_CODE_LSB {
-            GRAY_CODE_LSB(0)
-        }
-    }
     #[doc = "Gray to Binary Converter Gray Code \\[41:32\\]"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -710,27 +599,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> GRAY_CODE_MSB {
             GRAY_CODE_MSB(0)
-        }
-    }
-    #[doc = "JTAG Chip ID"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct JTAG_ID(pub u32);
-    impl JTAG_ID {
-        #[inline(always)]
-        pub const fn JTAG_ID(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_JTAG_ID(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for JTAG_ID {
-        #[inline(always)]
-        fn default() -> JTAG_ID {
-            JTAG_ID(0)
         }
     }
     #[doc = "LPCAC Control"]
@@ -895,48 +763,6 @@ pub mod regs {
             NVM_CTRL(0)
         }
     }
-    #[doc = "OVP_PAD_STATE"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct OVP_PAD_STATE(pub u32);
-    impl OVP_PAD_STATE {
-        #[inline(always)]
-        pub const fn OVP_PAD_STATE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_OVP_PAD_STATE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for OVP_PAD_STATE {
-        #[inline(always)]
-        fn default() -> OVP_PAD_STATE {
-            OVP_PAD_STATE(0)
-        }
-    }
-    #[doc = "PROBE_STATE"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PROBE_STATE(pub u32);
-    impl PROBE_STATE {
-        #[inline(always)]
-        pub const fn PROBE_STATE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_PROBE_STATE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PROBE_STATE {
-        #[inline(always)]
-        fn default() -> PROBE_STATE {
-            PROBE_STATE(0)
-        }
-    }
     #[doc = "PWM0 Submodule Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1070,27 +896,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> REMAP {
             REMAP(0)
-        }
-    }
-    #[doc = "ROP State Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ROP_STATE(pub u32);
-    impl ROP_STATE {
-        #[inline(always)]
-        pub const fn ROP_STATE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_ROP_STATE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ROP_STATE {
-        #[inline(always)]
-        fn default() -> ROP_STATE {
-            ROP_STATE(0)
         }
     }
     #[doc = "SLOW_CLK Clock Divider"]
@@ -1235,27 +1040,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SRAM_XEN_DP {
             SRAM_XEN_DP(0)
-        }
-    }
-    #[doc = "CPU0 Software Debug Access"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SWD_ACCESS_CPU0(pub u32);
-    impl SWD_ACCESS_CPU0 {
-        #[inline(always)]
-        pub const fn SEC_CODE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SEC_CODE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SWD_ACCESS_CPU0 {
-        #[inline(always)]
-        fn default() -> SWD_ACCESS_CPU0 {
-            SWD_ACCESS_CPU0(0)
         }
     }
 }

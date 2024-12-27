@@ -306,7 +306,7 @@ impl AHBSC {
     pub const fn FLEXSPI0_REGION1_6_MEM_RULE(self, n: usize) -> FLEXSPI0_REGION1_6_MEM_RULE {
         assert!(n < 6usize);
         unsafe {
-            FLEXSPI0_REGION1_6_MEM_RULE::from_ptr(self.ptr.add(0x0280usize + n * 96usize) as _)
+            FLEXSPI0_REGION1_6_MEM_RULE::from_ptr(self.ptr.add(0x0280usize + n * 16usize) as _)
         }
     }
     #[inline(always)]
@@ -321,7 +321,7 @@ impl AHBSC {
     pub const fn FLEXSPI0_REGION8_13_MEM_RULE(self, n: usize) -> FLEXSPI0_REGION8_13_MEM_RULE {
         assert!(n < 6usize);
         unsafe {
-            FLEXSPI0_REGION8_13_MEM_RULE::from_ptr(self.ptr.add(0x02f0usize + n * 96usize) as _)
+            FLEXSPI0_REGION8_13_MEM_RULE::from_ptr(self.ptr.add(0x02f0usize + n * 16usize) as _)
         }
     }
     #[inline(always)]
@@ -6485,27 +6485,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SEC_GP_REG_LOCK {
             SEC_GP_REG_LOCK(0)
-        }
-    }
-    #[doc = "Security Violation Address"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SEC_VIO_ADDR(pub u32);
-    impl SEC_VIO_ADDR {
-        #[inline(always)]
-        pub const fn SEC_VIO_ADDR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SEC_VIO_ADDR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SEC_VIO_ADDR {
-        #[inline(always)]
-        fn default() -> SEC_VIO_ADDR {
-            SEC_VIO_ADDR(0)
         }
     }
     #[doc = "Security Violation Info Validity for Address"]

@@ -52,11 +52,11 @@ impl PUF {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[inline(always)]
-    pub const fn DIR(self) -> crate::common::Reg<regs::DIR, crate::common::RW> {
+    pub const fn DIR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa0usize) as _) }
     }
     #[inline(always)]
-    pub const fn DOR(self) -> crate::common::Reg<regs::DOR, crate::common::RW> {
+    pub const fn DOR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa8usize) as _) }
     }
     #[inline(always)]
@@ -76,7 +76,7 @@ impl PUF {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe0usize) as _) }
     }
     #[inline(always)]
-    pub const fn HW_RUC1(self) -> crate::common::Reg<regs::HW_RUC1, crate::common::RW> {
+    pub const fn HW_RUC1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe4usize) as _) }
     }
     #[inline(always)]
@@ -84,7 +84,7 @@ impl PUF {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf4usize) as _) }
     }
     #[inline(always)]
-    pub const fn HW_ID(self) -> crate::common::Reg<regs::HW_ID, crate::common::RW> {
+    pub const fn HW_ID(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf8usize) as _) }
     }
     #[inline(always)]
@@ -100,7 +100,7 @@ impl PUF {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
     #[inline(always)]
-    pub const fn APP_CTX_MASK(self) -> crate::common::Reg<regs::APP_CTX_MASK, crate::common::RW> {
+    pub const fn APP_CTX_MASK(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
     }
     #[inline(always)]
@@ -149,27 +149,6 @@ impl PUF {
     }
 }
 pub mod regs {
-    #[doc = "Application defined context mask"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct APP_CTX_MASK(pub u32);
-    impl APP_CTX_MASK {
-        #[inline(always)]
-        pub const fn APP_CTX_MASK(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_APP_CTX_MASK(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for APP_CTX_MASK {
-        #[inline(always)]
-        fn default() -> APP_CTX_MASK {
-            APP_CTX_MASK(0)
-        }
-    }
     #[doc = "Allow"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -554,69 +533,6 @@ pub mod regs {
             DATA_SRC(0)
         }
     }
-    #[doc = "Data Input"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DIR(pub u32);
-    impl DIR {
-        #[inline(always)]
-        pub const fn DI(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DI(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DIR {
-        #[inline(always)]
-        fn default() -> DIR {
-            DIR(0)
-        }
-    }
-    #[doc = "Data Output"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DOR(pub u32);
-    impl DOR {
-        #[inline(always)]
-        pub const fn DO(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DO(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DOR {
-        #[inline(always)]
-        fn default() -> DOR {
-            DOR(0)
-        }
-    }
-    #[doc = "Hardware Identifier"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct HW_ID(pub u32);
-    impl HW_ID {
-        #[inline(always)]
-        pub const fn HW_ID(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_HW_ID(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for HW_ID {
-        #[inline(always)]
-        fn default() -> HW_ID {
-            HW_ID(0)
-        }
-    }
     #[doc = "Hardware Information"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -711,27 +627,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> HW_RUC0 {
             HW_RUC0(0)
-        }
-    }
-    #[doc = "Hardware Restrict User Context 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct HW_RUC1(pub u32);
-    impl HW_RUC1 {
-        #[inline(always)]
-        pub const fn APP_CTX(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_APP_CTX(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for HW_RUC1 {
-        #[inline(always)]
-        fn default() -> HW_RUC1 {
-            HW_RUC1(0)
         }
     }
     #[doc = "Hardware Version"]

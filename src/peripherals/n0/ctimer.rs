@@ -24,15 +24,15 @@ impl CTIMER {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn TC(self) -> crate::common::Reg<regs::TC, crate::common::RW> {
+    pub const fn TC(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn PR(self) -> crate::common::Reg<regs::PR, crate::common::RW> {
+    pub const fn PR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn PC(self) -> crate::common::Reg<regs::PC, crate::common::RW> {
+    pub const fn PC(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
@@ -40,7 +40,7 @@ impl CTIMER {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn MR(self, n: usize) -> crate::common::Reg<regs::MR, crate::common::RW> {
+    pub const fn MR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
     }
@@ -49,7 +49,7 @@ impl CTIMER {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
-    pub const fn CR(self, n: usize) -> crate::common::Reg<regs::CR, crate::common::RW> {
+    pub const fn CR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize + n * 4usize) as _) }
     }
@@ -66,7 +66,7 @@ impl CTIMER {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x74usize) as _) }
     }
     #[inline(always)]
-    pub const fn MSR(self, n: usize) -> crate::common::Reg<regs::MSR, crate::common::RW> {
+    pub const fn MSR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x78usize + n * 4usize) as _) }
     }
@@ -190,27 +190,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CCR {
             CCR(0)
-        }
-    }
-    #[doc = "Capture"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CR(pub u32);
-    impl CR {
-        #[inline(always)]
-        pub const fn CAP(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CAP(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CR {
-        #[inline(always)]
-        fn default() -> CR {
-            CR(0)
         }
     }
     #[doc = "Count Control"]
@@ -585,90 +564,6 @@ pub mod regs {
             MCR(0)
         }
     }
-    #[doc = "Match"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MR(pub u32);
-    impl MR {
-        #[inline(always)]
-        pub const fn MATCH(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_MATCH(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MR {
-        #[inline(always)]
-        fn default() -> MR {
-            MR(0)
-        }
-    }
-    #[doc = "Match Shadow"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MSR(pub u32);
-    impl MSR {
-        #[inline(always)]
-        pub const fn MATCH_SHADOW(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_MATCH_SHADOW(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MSR {
-        #[inline(always)]
-        fn default() -> MSR {
-            MSR(0)
-        }
-    }
-    #[doc = "Prescale Counter"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PC(pub u32);
-    impl PC {
-        #[inline(always)]
-        pub const fn PCVAL(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_PCVAL(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PC {
-        #[inline(always)]
-        fn default() -> PC {
-            PC(0)
-        }
-    }
-    #[doc = "Prescale"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PR(pub u32);
-    impl PR {
-        #[inline(always)]
-        pub const fn PRVAL(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_PRVAL(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PR {
-        #[inline(always)]
-        fn default() -> PR {
-            PR(0)
-        }
-    }
     #[doc = "PWM Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -715,27 +610,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PWMC {
             PWMC(0)
-        }
-    }
-    #[doc = "Timer Counter"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct TC(pub u32);
-    impl TC {
-        #[inline(always)]
-        pub const fn TCVAL(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TCVAL(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for TC {
-        #[inline(always)]
-        fn default() -> TC {
-            TC(0)
         }
     }
     #[doc = "Timer Control"]

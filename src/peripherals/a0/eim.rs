@@ -28,7 +28,7 @@ impl EIM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD0_WORD1(self) -> crate::common::Reg<regs::EICHD0_WORD1, crate::common::RW> {
+    pub const fn EICHD0_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
 }
@@ -52,27 +52,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EICHD0_WORD0 {
             EICHD0_WORD0(0)
-        }
-    }
-    #[doc = "Error Injection Channel Descriptor 0, Word1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EICHD0_WORD1(pub u32);
-    impl EICHD0_WORD1 {
-        #[inline(always)]
-        pub const fn B0_3DATA_MASK(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_B0_3DATA_MASK(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EICHD0_WORD1 {
-        #[inline(always)]
-        fn default() -> EICHD0_WORD1 {
-            EICHD0_WORD1(0)
         }
     }
     #[doc = "Error Injection Channel Enable register"]

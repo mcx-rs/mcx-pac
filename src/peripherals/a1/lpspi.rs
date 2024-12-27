@@ -48,11 +48,11 @@ impl LPSPI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[inline(always)]
-    pub const fn DMR0(self) -> crate::common::Reg<regs::DMR0, crate::common::RW> {
+    pub const fn DMR0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[inline(always)]
-    pub const fn DMR1(self) -> crate::common::Reg<regs::DMR1, crate::common::RW> {
+    pub const fn DMR1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[inline(always)]
@@ -76,7 +76,7 @@ impl LPSPI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
     #[inline(always)]
-    pub const fn TDR(self) -> crate::common::Reg<regs::TDR, crate::common::RW> {
+    pub const fn TDR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
     }
     #[inline(always)]
@@ -84,24 +84,24 @@ impl LPSPI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x70usize) as _) }
     }
     #[inline(always)]
-    pub const fn RDR(self) -> crate::common::Reg<regs::RDR, crate::common::RW> {
+    pub const fn RDR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x74usize) as _) }
     }
     #[inline(always)]
-    pub const fn RDROR(self) -> crate::common::Reg<regs::RDROR, crate::common::RW> {
+    pub const fn RDROR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x78usize) as _) }
     }
     #[inline(always)]
-    pub const fn TCBR(self) -> crate::common::Reg<regs::TCBR, crate::common::RW> {
+    pub const fn TCBR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03fcusize) as _) }
     }
     #[inline(always)]
-    pub const fn TDBR(self, n: usize) -> crate::common::Reg<regs::TDBR, crate::common::RW> {
+    pub const fn TDBR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 128usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0400usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn RDBR(self, n: usize) -> crate::common::Reg<regs::RDBR, crate::common::RW> {
+    pub const fn RDBR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 128usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0600usize + n * 4usize) as _) }
     }
@@ -467,48 +467,6 @@ pub mod regs {
             DER(0)
         }
     }
-    #[doc = "Data Match 0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DMR0(pub u32);
-    impl DMR0 {
-        #[inline(always)]
-        pub const fn MATCH0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_MATCH0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DMR0 {
-        #[inline(always)]
-        fn default() -> DMR0 {
-            DMR0(0)
-        }
-    }
-    #[doc = "Data Match 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DMR1(pub u32);
-    impl DMR1 {
-        #[inline(always)]
-        pub const fn MATCH1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_MATCH1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DMR1 {
-        #[inline(always)]
-        fn default() -> DMR1 {
-            DMR1(0)
-        }
-    }
     #[doc = "FIFO Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -692,69 +650,6 @@ pub mod regs {
             PARAM(0)
         }
     }
-    #[doc = "Receive Data Burst"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RDBR(pub u32);
-    impl RDBR {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RDBR {
-        #[inline(always)]
-        fn default() -> RDBR {
-            RDBR(0)
-        }
-    }
-    #[doc = "Receive Data"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RDR(pub u32);
-    impl RDR {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RDR {
-        #[inline(always)]
-        fn default() -> RDR {
-            RDR(0)
-        }
-    }
-    #[doc = "Receive Data Read Only"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RDROR(pub u32);
-    impl RDROR {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RDROR {
-        #[inline(always)]
-        fn default() -> RDROR {
-            RDROR(0)
-        }
-    }
     #[doc = "Receive Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -878,27 +773,6 @@ pub mod regs {
             SR(0)
         }
     }
-    #[doc = "Transmit Command Burst"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct TCBR(pub u32);
-    impl TCBR {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for TCBR {
-        #[inline(always)]
-        fn default() -> TCBR {
-            TCBR(0)
-        }
-    }
     #[doc = "Transmit Command"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1017,48 +891,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TCR {
             TCR(0)
-        }
-    }
-    #[doc = "Transmit Data Burst"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct TDBR(pub u32);
-    impl TDBR {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for TDBR {
-        #[inline(always)]
-        fn default() -> TDBR {
-            TDBR(0)
-        }
-    }
-    #[doc = "Transmit Data"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct TDR(pub u32);
-    impl TDR {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for TDR {
-        #[inline(always)]
-        fn default() -> TDR {
-            TDR(0)
         }
     }
     #[doc = "Version ID"]

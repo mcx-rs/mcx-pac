@@ -28,7 +28,7 @@ impl EIM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD0_WORD1(self) -> crate::common::Reg<regs::EICHD0_WORD1, crate::common::RW> {
+    pub const fn EICHD0_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
     #[inline(always)]
@@ -36,7 +36,7 @@ impl EIM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0140usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD1_WORD1(self) -> crate::common::Reg<regs::EICHD1_WORD1, crate::common::RW> {
+    pub const fn EICHD1_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0144usize) as _) }
     }
     #[inline(always)]
@@ -44,7 +44,7 @@ impl EIM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0180usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD2_WORD1(self) -> crate::common::Reg<regs::EICHD2_WORD1, crate::common::RW> {
+    pub const fn EICHD2_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0184usize) as _) }
     }
     #[inline(always)]
@@ -52,7 +52,7 @@ impl EIM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c0usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD3_WORD1(self) -> crate::common::Reg<regs::EICHD3_WORD1, crate::common::RW> {
+    pub const fn EICHD3_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c4usize) as _) }
     }
     #[inline(always)]
@@ -60,7 +60,7 @@ impl EIM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD4_WORD1(self) -> crate::common::Reg<regs::EICHD4_WORD1, crate::common::RW> {
+    pub const fn EICHD4_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0204usize) as _) }
     }
     #[inline(always)]
@@ -68,7 +68,7 @@ impl EIM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0240usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD5_WORD1(self) -> crate::common::Reg<regs::EICHD5_WORD1, crate::common::RW> {
+    pub const fn EICHD5_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0244usize) as _) }
     }
     #[inline(always)]
@@ -76,7 +76,7 @@ impl EIM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0280usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD6_WORD1(self) -> crate::common::Reg<regs::EICHD6_WORD1, crate::common::RW> {
+    pub const fn EICHD6_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0284usize) as _) }
     }
     #[inline(always)]
@@ -84,7 +84,7 @@ impl EIM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02c0usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD7_WORD1(self) -> crate::common::Reg<regs::EICHD7_WORD1, crate::common::RW> {
+    pub const fn EICHD7_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02c4usize) as _) }
     }
     #[inline(always)]
@@ -92,7 +92,7 @@ impl EIM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0300usize) as _) }
     }
     #[inline(always)]
-    pub const fn EICHD8_WORD1(self) -> crate::common::Reg<regs::EICHD8_WORD1, crate::common::RW> {
+    pub const fn EICHD8_WORD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0304usize) as _) }
     }
 }
@@ -118,27 +118,6 @@ pub mod regs {
             EICHD0_WORD0(0)
         }
     }
-    #[doc = "Error Injection Channel Descriptor 0, Word1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EICHD0_WORD1(pub u32);
-    impl EICHD0_WORD1 {
-        #[inline(always)]
-        pub const fn B0_3DATA_MASK(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_B0_3DATA_MASK(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EICHD0_WORD1 {
-        #[inline(always)]
-        fn default() -> EICHD0_WORD1 {
-            EICHD0_WORD1(0)
-        }
-    }
     #[doc = "Error Injection Channel Descriptor 1, Word0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -158,27 +137,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EICHD1_WORD0 {
             EICHD1_WORD0(0)
-        }
-    }
-    #[doc = "Error Injection Channel Descriptor 1, Word1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EICHD1_WORD1(pub u32);
-    impl EICHD1_WORD1 {
-        #[inline(always)]
-        pub const fn B0_3DATA_MASK(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_B0_3DATA_MASK(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EICHD1_WORD1 {
-        #[inline(always)]
-        fn default() -> EICHD1_WORD1 {
-            EICHD1_WORD1(0)
         }
     }
     #[doc = "Error Injection Channel Descriptor 2, Word0"]
@@ -202,27 +160,6 @@ pub mod regs {
             EICHD2_WORD0(0)
         }
     }
-    #[doc = "Error Injection Channel Descriptor 2, Word1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EICHD2_WORD1(pub u32);
-    impl EICHD2_WORD1 {
-        #[inline(always)]
-        pub const fn B0_3DATA_MASK(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_B0_3DATA_MASK(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EICHD2_WORD1 {
-        #[inline(always)]
-        fn default() -> EICHD2_WORD1 {
-            EICHD2_WORD1(0)
-        }
-    }
     #[doc = "Error Injection Channel Descriptor 3, Word0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -242,27 +179,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EICHD3_WORD0 {
             EICHD3_WORD0(0)
-        }
-    }
-    #[doc = "Error Injection Channel Descriptor 3, Word1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EICHD3_WORD1(pub u32);
-    impl EICHD3_WORD1 {
-        #[inline(always)]
-        pub const fn B0_3DATA_MASK(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_B0_3DATA_MASK(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EICHD3_WORD1 {
-        #[inline(always)]
-        fn default() -> EICHD3_WORD1 {
-            EICHD3_WORD1(0)
         }
     }
     #[doc = "Error Injection Channel Descriptor 4, Word0"]
@@ -286,27 +202,6 @@ pub mod regs {
             EICHD4_WORD0(0)
         }
     }
-    #[doc = "Error Injection Channel Descriptor 4, Word1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EICHD4_WORD1(pub u32);
-    impl EICHD4_WORD1 {
-        #[inline(always)]
-        pub const fn B0_3DATA_MASK(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_B0_3DATA_MASK(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EICHD4_WORD1 {
-        #[inline(always)]
-        fn default() -> EICHD4_WORD1 {
-            EICHD4_WORD1(0)
-        }
-    }
     #[doc = "Error Injection Channel Descriptor 5, Word0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -326,27 +221,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EICHD5_WORD0 {
             EICHD5_WORD0(0)
-        }
-    }
-    #[doc = "Error Injection Channel Descriptor 5, Word1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EICHD5_WORD1(pub u32);
-    impl EICHD5_WORD1 {
-        #[inline(always)]
-        pub const fn B0_3DATA_MASK(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_B0_3DATA_MASK(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EICHD5_WORD1 {
-        #[inline(always)]
-        fn default() -> EICHD5_WORD1 {
-            EICHD5_WORD1(0)
         }
     }
     #[doc = "Error Injection Channel Descriptor 6, Word0"]
@@ -370,27 +244,6 @@ pub mod regs {
             EICHD6_WORD0(0)
         }
     }
-    #[doc = "Error Injection Channel Descriptor 6, Word1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EICHD6_WORD1(pub u32);
-    impl EICHD6_WORD1 {
-        #[inline(always)]
-        pub const fn B0_3DATA_MASK(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_B0_3DATA_MASK(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EICHD6_WORD1 {
-        #[inline(always)]
-        fn default() -> EICHD6_WORD1 {
-            EICHD6_WORD1(0)
-        }
-    }
     #[doc = "Error Injection Channel Descriptor 7, Word0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -412,27 +265,6 @@ pub mod regs {
             EICHD7_WORD0(0)
         }
     }
-    #[doc = "Error Injection Channel Descriptor 7, Word1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EICHD7_WORD1(pub u32);
-    impl EICHD7_WORD1 {
-        #[inline(always)]
-        pub const fn B0_3DATA_MASK(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_B0_3DATA_MASK(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EICHD7_WORD1 {
-        #[inline(always)]
-        fn default() -> EICHD7_WORD1 {
-            EICHD7_WORD1(0)
-        }
-    }
     #[doc = "Error Injection Channel Descriptor 8, Word0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -452,27 +284,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EICHD8_WORD0 {
             EICHD8_WORD0(0)
-        }
-    }
-    #[doc = "Error Injection Channel Descriptor 8, Word1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EICHD8_WORD1(pub u32);
-    impl EICHD8_WORD1 {
-        #[inline(always)]
-        pub const fn B0_3DATA_MASK(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_B0_3DATA_MASK(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EICHD8_WORD1 {
-        #[inline(always)]
-        fn default() -> EICHD8_WORD1 {
-            EICHD8_WORD1(0)
         }
     }
     #[doc = "Error Injection Channel Enable register"]

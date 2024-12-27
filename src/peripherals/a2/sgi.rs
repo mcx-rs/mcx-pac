@@ -16,211 +16,211 @@ impl SGI {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn SGI_DATIN0A(self) -> crate::common::Reg<regs::SGI_DATIN0A, crate::common::RW> {
+    pub const fn SGI_DATIN0A(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN0B(self) -> crate::common::Reg<regs::SGI_DATIN0B, crate::common::RW> {
+    pub const fn SGI_DATIN0B(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0204usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN0C(self) -> crate::common::Reg<regs::SGI_DATIN0C, crate::common::RW> {
+    pub const fn SGI_DATIN0C(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0208usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN0D(self) -> crate::common::Reg<regs::SGI_DATIN0D, crate::common::RW> {
+    pub const fn SGI_DATIN0D(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x020cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN1A(self) -> crate::common::Reg<regs::SGI_DATIN1A, crate::common::RW> {
+    pub const fn SGI_DATIN1A(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0210usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN1B(self) -> crate::common::Reg<regs::SGI_DATIN1B, crate::common::RW> {
+    pub const fn SGI_DATIN1B(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0214usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN1C(self) -> crate::common::Reg<regs::SGI_DATIN1C, crate::common::RW> {
+    pub const fn SGI_DATIN1C(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0218usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN1D(self) -> crate::common::Reg<regs::SGI_DATIN1D, crate::common::RW> {
+    pub const fn SGI_DATIN1D(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x021cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN2A(self) -> crate::common::Reg<regs::SGI_DATIN2A, crate::common::RW> {
+    pub const fn SGI_DATIN2A(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0220usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN2B(self) -> crate::common::Reg<regs::SGI_DATIN2B, crate::common::RW> {
+    pub const fn SGI_DATIN2B(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0224usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN2C(self) -> crate::common::Reg<regs::SGI_DATIN2C, crate::common::RW> {
+    pub const fn SGI_DATIN2C(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0228usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN2D(self) -> crate::common::Reg<regs::SGI_DATIN2D, crate::common::RW> {
+    pub const fn SGI_DATIN2D(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x022cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN3A(self) -> crate::common::Reg<regs::SGI_DATIN3A, crate::common::RW> {
+    pub const fn SGI_DATIN3A(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0230usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN3B(self) -> crate::common::Reg<regs::SGI_DATIN3B, crate::common::RW> {
+    pub const fn SGI_DATIN3B(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0234usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN3C(self) -> crate::common::Reg<regs::SGI_DATIN3C, crate::common::RW> {
+    pub const fn SGI_DATIN3C(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0238usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATIN3D(self) -> crate::common::Reg<regs::SGI_DATIN3D, crate::common::RW> {
+    pub const fn SGI_DATIN3D(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x023cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY0A(self) -> crate::common::Reg<regs::SGI_KEY0A, crate::common::RW> {
+    pub const fn SGI_KEY0A(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0240usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY0B(self) -> crate::common::Reg<regs::SGI_KEY0B, crate::common::RW> {
+    pub const fn SGI_KEY0B(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0244usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY0C(self) -> crate::common::Reg<regs::SGI_KEY0C, crate::common::RW> {
+    pub const fn SGI_KEY0C(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0248usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY0D(self) -> crate::common::Reg<regs::SGI_KEY0D, crate::common::RW> {
+    pub const fn SGI_KEY0D(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x024cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY1A(self) -> crate::common::Reg<regs::SGI_KEY1A, crate::common::RW> {
+    pub const fn SGI_KEY1A(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0250usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY1B(self) -> crate::common::Reg<regs::SGI_KEY1B, crate::common::RW> {
+    pub const fn SGI_KEY1B(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0254usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY1C(self) -> crate::common::Reg<regs::SGI_KEY1C, crate::common::RW> {
+    pub const fn SGI_KEY1C(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0258usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY1D(self) -> crate::common::Reg<regs::SGI_KEY1D, crate::common::RW> {
+    pub const fn SGI_KEY1D(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x025cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY2A(self) -> crate::common::Reg<regs::SGI_KEY2A, crate::common::RW> {
+    pub const fn SGI_KEY2A(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0260usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY2B(self) -> crate::common::Reg<regs::SGI_KEY2B, crate::common::RW> {
+    pub const fn SGI_KEY2B(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0264usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY2C(self) -> crate::common::Reg<regs::SGI_KEY2C, crate::common::RW> {
+    pub const fn SGI_KEY2C(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0268usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY2D(self) -> crate::common::Reg<regs::SGI_KEY2D, crate::common::RW> {
+    pub const fn SGI_KEY2D(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x026cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY3A(self) -> crate::common::Reg<regs::SGI_KEY3A, crate::common::RW> {
+    pub const fn SGI_KEY3A(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0270usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY3B(self) -> crate::common::Reg<regs::SGI_KEY3B, crate::common::RW> {
+    pub const fn SGI_KEY3B(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0274usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY3C(self) -> crate::common::Reg<regs::SGI_KEY3C, crate::common::RW> {
+    pub const fn SGI_KEY3C(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0278usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY3D(self) -> crate::common::Reg<regs::SGI_KEY3D, crate::common::RW> {
+    pub const fn SGI_KEY3D(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x027cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY4A(self) -> crate::common::Reg<regs::SGI_KEY4A, crate::common::RW> {
+    pub const fn SGI_KEY4A(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0280usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY4B(self) -> crate::common::Reg<regs::SGI_KEY4B, crate::common::RW> {
+    pub const fn SGI_KEY4B(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0284usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY4C(self) -> crate::common::Reg<regs::SGI_KEY4C, crate::common::RW> {
+    pub const fn SGI_KEY4C(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0288usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY4D(self) -> crate::common::Reg<regs::SGI_KEY4D, crate::common::RW> {
+    pub const fn SGI_KEY4D(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x028cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY5A(self) -> crate::common::Reg<regs::SGI_KEY5A, crate::common::RW> {
+    pub const fn SGI_KEY5A(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0290usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY5B(self) -> crate::common::Reg<regs::SGI_KEY5B, crate::common::RW> {
+    pub const fn SGI_KEY5B(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0294usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY5C(self) -> crate::common::Reg<regs::SGI_KEY5C, crate::common::RW> {
+    pub const fn SGI_KEY5C(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0298usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY5D(self) -> crate::common::Reg<regs::SGI_KEY5D, crate::common::RW> {
+    pub const fn SGI_KEY5D(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x029cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY6A(self) -> crate::common::Reg<regs::SGI_KEY6A, crate::common::RW> {
+    pub const fn SGI_KEY6A(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02a0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY6B(self) -> crate::common::Reg<regs::SGI_KEY6B, crate::common::RW> {
+    pub const fn SGI_KEY6B(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02a4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY6C(self) -> crate::common::Reg<regs::SGI_KEY6C, crate::common::RW> {
+    pub const fn SGI_KEY6C(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02a8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY6D(self) -> crate::common::Reg<regs::SGI_KEY6D, crate::common::RW> {
+    pub const fn SGI_KEY6D(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02acusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY7A(self) -> crate::common::Reg<regs::SGI_KEY7A, crate::common::RW> {
+    pub const fn SGI_KEY7A(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02b0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY7B(self) -> crate::common::Reg<regs::SGI_KEY7B, crate::common::RW> {
+    pub const fn SGI_KEY7B(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02b4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY7C(self) -> crate::common::Reg<regs::SGI_KEY7C, crate::common::RW> {
+    pub const fn SGI_KEY7C(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02b8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY7D(self) -> crate::common::Reg<regs::SGI_KEY7D, crate::common::RW> {
+    pub const fn SGI_KEY7D(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02bcusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATOUTA(self) -> crate::common::Reg<regs::SGI_DATOUTA, crate::common::RW> {
+    pub const fn SGI_DATOUTA(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02c0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATOUTB(self) -> crate::common::Reg<regs::SGI_DATOUTB, crate::common::RW> {
+    pub const fn SGI_DATOUTB(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02c4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATOUTC(self) -> crate::common::Reg<regs::SGI_DATOUTC, crate::common::RW> {
+    pub const fn SGI_DATOUTC(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02c8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_DATOUTD(self) -> crate::common::Reg<regs::SGI_DATOUTD, crate::common::RW> {
+    pub const fn SGI_DATOUTD(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02ccusize) as _) }
     }
     #[inline(always)]
@@ -232,7 +232,7 @@ impl SGI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0c04usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEYCHK(self) -> crate::common::Reg<regs::SGI_KEYCHK, crate::common::RW> {
+    pub const fn SGI_KEYCHK(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0c08usize) as _) }
     }
     #[inline(always)]
@@ -250,13 +250,11 @@ impl SGI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d08usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_SFR_SW_MASK(
-        self,
-    ) -> crate::common::Reg<regs::SGI_SFR_SW_MASK, crate::common::RW> {
+    pub const fn SGI_SFR_SW_MASK(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_SFRSEED(self) -> crate::common::Reg<regs::SGI_SFRSEED, crate::common::RW> {
+    pub const fn SGI_SFRSEED(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d10usize) as _) }
     }
     #[inline(always)]
@@ -264,7 +262,7 @@ impl SGI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d14usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_SHA_FIFO(self) -> crate::common::Reg<regs::SGI_SHA_FIFO, crate::common::RW> {
+    pub const fn SGI_SHA_FIFO(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d18usize) as _) }
     }
     #[inline(always)]
@@ -286,17 +284,15 @@ impl SGI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d28usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_PRNG_SW_SEED(
-        self,
-    ) -> crate::common::Reg<regs::SGI_PRNG_SW_SEED, crate::common::RW> {
+    pub const fn SGI_PRNG_SW_SEED(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d30usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY_CTRL(self) -> crate::common::Reg<regs::SGI_KEY_CTRL, crate::common::RW> {
+    pub const fn SGI_KEY_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d40usize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_KEY_WRAP(self) -> crate::common::Reg<regs::SGI_KEY_WRAP, crate::common::RW> {
+    pub const fn SGI_KEY_WRAP(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0d50usize) as _) }
     }
     #[inline(always)]
@@ -340,7 +336,7 @@ impl SGI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fecusize) as _) }
     }
     #[inline(always)]
-    pub const fn SGI_MODULE_ID(self) -> crate::common::Reg<regs::SGI_MODULE_ID, crate::common::RW> {
+    pub const fn SGI_MODULE_ID(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ffcusize) as _) }
     }
 }
@@ -1227,426 +1223,6 @@ pub mod regs {
             SGI_CTRL2(0)
         }
     }
-    #[doc = "Input Data register 0 - Word-3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATIN0A(pub u32);
-    impl SGI_DATIN0A {
-        #[inline(always)]
-        pub const fn datin0a(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datin0a(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATIN0A {
-        #[inline(always)]
-        fn default() -> SGI_DATIN0A {
-            SGI_DATIN0A(0)
-        }
-    }
-    #[doc = "Input Data register 0 - Word-2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATIN0B(pub u32);
-    impl SGI_DATIN0B {
-        #[inline(always)]
-        pub const fn datin0b(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datin0b(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATIN0B {
-        #[inline(always)]
-        fn default() -> SGI_DATIN0B {
-            SGI_DATIN0B(0)
-        }
-    }
-    #[doc = "Input Data register 0 - Word-1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATIN0C(pub u32);
-    impl SGI_DATIN0C {
-        #[inline(always)]
-        pub const fn datin0c(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datin0c(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATIN0C {
-        #[inline(always)]
-        fn default() -> SGI_DATIN0C {
-            SGI_DATIN0C(0)
-        }
-    }
-    #[doc = "Input Data register 0 - Word-0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATIN0D(pub u32);
-    impl SGI_DATIN0D {
-        #[inline(always)]
-        pub const fn datin0d(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datin0d(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATIN0D {
-        #[inline(always)]
-        fn default() -> SGI_DATIN0D {
-            SGI_DATIN0D(0)
-        }
-    }
-    #[doc = "Input Data register 1 - Word-3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATIN1A(pub u32);
-    impl SGI_DATIN1A {
-        #[inline(always)]
-        pub const fn datin1a(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datin1a(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATIN1A {
-        #[inline(always)]
-        fn default() -> SGI_DATIN1A {
-            SGI_DATIN1A(0)
-        }
-    }
-    #[doc = "Input Data register 1 - Word-2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATIN1B(pub u32);
-    impl SGI_DATIN1B {
-        #[inline(always)]
-        pub const fn datin1b(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datin1b(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATIN1B {
-        #[inline(always)]
-        fn default() -> SGI_DATIN1B {
-            SGI_DATIN1B(0)
-        }
-    }
-    #[doc = "Input Data register 1 - Word-1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATIN1C(pub u32);
-    impl SGI_DATIN1C {
-        #[inline(always)]
-        pub const fn datin1c(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datin1c(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATIN1C {
-        #[inline(always)]
-        fn default() -> SGI_DATIN1C {
-            SGI_DATIN1C(0)
-        }
-    }
-    #[doc = "Input Data register 1 - Word-0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATIN1D(pub u32);
-    impl SGI_DATIN1D {
-        #[inline(always)]
-        pub const fn datin1d(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datin1d(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATIN1D {
-        #[inline(always)]
-        fn default() -> SGI_DATIN1D {
-            SGI_DATIN1D(0)
-        }
-    }
-    #[doc = "Input Data register 2 - Word-3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATIN2A(pub u32);
-    impl SGI_DATIN2A {
-        #[inline(always)]
-        pub const fn datin2a(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datin2a(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATIN2A {
-        #[inline(always)]
-        fn default() -> SGI_DATIN2A {
-            SGI_DATIN2A(0)
-        }
-    }
-    #[doc = "Input Data register 2 - Word-2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATIN2B(pub u32);
-    impl SGI_DATIN2B {
-        #[inline(always)]
-        pub const fn datin2b(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datin2b(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATIN2B {
-        #[inline(always)]
-        fn default() -> SGI_DATIN2B {
-            SGI_DATIN2B(0)
-        }
-    }
-    #[doc = "Input Data register 2 - Word-1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATIN2C(pub u32);
-    impl SGI_DATIN2C {
-        #[inline(always)]
-        pub const fn datin2c(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datin2c(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATIN2C {
-        #[inline(always)]
-        fn default() -> SGI_DATIN2C {
-            SGI_DATIN2C(0)
-        }
-    }
-    #[doc = "Input Data register 2 - Word-0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATIN2D(pub u32);
-    impl SGI_DATIN2D {
-        #[inline(always)]
-        pub const fn datin2d(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datin2d(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATIN2D {
-        #[inline(always)]
-        fn default() -> SGI_DATIN2D {
-            SGI_DATIN2D(0)
-        }
-    }
-    #[doc = "Input Data register 3 - Word-3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATIN3A(pub u32);
-    impl SGI_DATIN3A {
-        #[inline(always)]
-        pub const fn datin3a(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datin3a(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATIN3A {
-        #[inline(always)]
-        fn default() -> SGI_DATIN3A {
-            SGI_DATIN3A(0)
-        }
-    }
-    #[doc = "Input Data register 3 - Word-2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATIN3B(pub u32);
-    impl SGI_DATIN3B {
-        #[inline(always)]
-        pub const fn datin3b(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datin3b(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATIN3B {
-        #[inline(always)]
-        fn default() -> SGI_DATIN3B {
-            SGI_DATIN3B(0)
-        }
-    }
-    #[doc = "Input Data register 3 - Word-1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATIN3C(pub u32);
-    impl SGI_DATIN3C {
-        #[inline(always)]
-        pub const fn datin3c(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datin3c(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATIN3C {
-        #[inline(always)]
-        fn default() -> SGI_DATIN3C {
-            SGI_DATIN3C(0)
-        }
-    }
-    #[doc = "Input Data register 3 - Word-0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATIN3D(pub u32);
-    impl SGI_DATIN3D {
-        #[inline(always)]
-        pub const fn datin3d(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datin3d(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATIN3D {
-        #[inline(always)]
-        fn default() -> SGI_DATIN3D {
-            SGI_DATIN3D(0)
-        }
-    }
-    #[doc = "Output Data register - Word-3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATOUTA(pub u32);
-    impl SGI_DATOUTA {
-        #[inline(always)]
-        pub const fn datouta(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datouta(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATOUTA {
-        #[inline(always)]
-        fn default() -> SGI_DATOUTA {
-            SGI_DATOUTA(0)
-        }
-    }
-    #[doc = "Output Data register - Word-2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATOUTB(pub u32);
-    impl SGI_DATOUTB {
-        #[inline(always)]
-        pub const fn datoutb(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datoutb(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATOUTB {
-        #[inline(always)]
-        fn default() -> SGI_DATOUTB {
-            SGI_DATOUTB(0)
-        }
-    }
-    #[doc = "Output Data register - Word-1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATOUTC(pub u32);
-    impl SGI_DATOUTC {
-        #[inline(always)]
-        pub const fn datoutc(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datoutc(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATOUTC {
-        #[inline(always)]
-        fn default() -> SGI_DATOUTC {
-            SGI_DATOUTC(0)
-        }
-    }
-    #[doc = "Output Data register - Word-0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_DATOUTD(pub u32);
-    impl SGI_DATOUTD {
-        #[inline(always)]
-        pub const fn datoutd(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_datoutd(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_DATOUTD {
-        #[inline(always)]
-        fn default() -> SGI_DATOUTD {
-            SGI_DATOUTD(0)
-        }
-    }
     #[doc = "Configuration of dummy controls"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1815,825 +1391,6 @@ pub mod regs {
             SGI_INT_STATUS_SET(0)
         }
     }
-    #[doc = "Input Key register 0 - Word-3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY0A(pub u32);
-    impl SGI_KEY0A {
-        #[inline(always)]
-        pub const fn key0a(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key0a(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY0A {
-        #[inline(always)]
-        fn default() -> SGI_KEY0A {
-            SGI_KEY0A(0)
-        }
-    }
-    #[doc = "Input Key register 0 - Word-2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY0B(pub u32);
-    impl SGI_KEY0B {
-        #[inline(always)]
-        pub const fn key0b(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key0b(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY0B {
-        #[inline(always)]
-        fn default() -> SGI_KEY0B {
-            SGI_KEY0B(0)
-        }
-    }
-    #[doc = "Input Key register 0 - Word-1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY0C(pub u32);
-    impl SGI_KEY0C {
-        #[inline(always)]
-        pub const fn key0c(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key0c(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY0C {
-        #[inline(always)]
-        fn default() -> SGI_KEY0C {
-            SGI_KEY0C(0)
-        }
-    }
-    #[doc = "Input Key register 0 - Word-0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY0D(pub u32);
-    impl SGI_KEY0D {
-        #[inline(always)]
-        pub const fn key0d(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key0d(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY0D {
-        #[inline(always)]
-        fn default() -> SGI_KEY0D {
-            SGI_KEY0D(0)
-        }
-    }
-    #[doc = "Input Key register 1 - Word-3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY1A(pub u32);
-    impl SGI_KEY1A {
-        #[inline(always)]
-        pub const fn key1a(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key1a(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY1A {
-        #[inline(always)]
-        fn default() -> SGI_KEY1A {
-            SGI_KEY1A(0)
-        }
-    }
-    #[doc = "Input Key register 1 - Word-2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY1B(pub u32);
-    impl SGI_KEY1B {
-        #[inline(always)]
-        pub const fn key1b(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key1b(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY1B {
-        #[inline(always)]
-        fn default() -> SGI_KEY1B {
-            SGI_KEY1B(0)
-        }
-    }
-    #[doc = "Input Key register 1 - Word-1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY1C(pub u32);
-    impl SGI_KEY1C {
-        #[inline(always)]
-        pub const fn key1c(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key1c(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY1C {
-        #[inline(always)]
-        fn default() -> SGI_KEY1C {
-            SGI_KEY1C(0)
-        }
-    }
-    #[doc = "Input Key register 1 - Word-0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY1D(pub u32);
-    impl SGI_KEY1D {
-        #[inline(always)]
-        pub const fn key1d(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key1d(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY1D {
-        #[inline(always)]
-        fn default() -> SGI_KEY1D {
-            SGI_KEY1D(0)
-        }
-    }
-    #[doc = "Input Key register 2 - Word-3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY2A(pub u32);
-    impl SGI_KEY2A {
-        #[inline(always)]
-        pub const fn key2a(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key2a(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY2A {
-        #[inline(always)]
-        fn default() -> SGI_KEY2A {
-            SGI_KEY2A(0)
-        }
-    }
-    #[doc = "Input Key register 2 - Word-2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY2B(pub u32);
-    impl SGI_KEY2B {
-        #[inline(always)]
-        pub const fn key2b(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key2b(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY2B {
-        #[inline(always)]
-        fn default() -> SGI_KEY2B {
-            SGI_KEY2B(0)
-        }
-    }
-    #[doc = "Input Key register 2 - Word-1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY2C(pub u32);
-    impl SGI_KEY2C {
-        #[inline(always)]
-        pub const fn key2c(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key2c(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY2C {
-        #[inline(always)]
-        fn default() -> SGI_KEY2C {
-            SGI_KEY2C(0)
-        }
-    }
-    #[doc = "Input Key register 2 - Word-0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY2D(pub u32);
-    impl SGI_KEY2D {
-        #[inline(always)]
-        pub const fn key2d(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key2d(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY2D {
-        #[inline(always)]
-        fn default() -> SGI_KEY2D {
-            SGI_KEY2D(0)
-        }
-    }
-    #[doc = "Input Key register 3 - Word-3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY3A(pub u32);
-    impl SGI_KEY3A {
-        #[inline(always)]
-        pub const fn key3a(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key3a(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY3A {
-        #[inline(always)]
-        fn default() -> SGI_KEY3A {
-            SGI_KEY3A(0)
-        }
-    }
-    #[doc = "Input Key register 3 - Word-2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY3B(pub u32);
-    impl SGI_KEY3B {
-        #[inline(always)]
-        pub const fn key3b(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key3b(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY3B {
-        #[inline(always)]
-        fn default() -> SGI_KEY3B {
-            SGI_KEY3B(0)
-        }
-    }
-    #[doc = "Input Key register 3 - Word-1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY3C(pub u32);
-    impl SGI_KEY3C {
-        #[inline(always)]
-        pub const fn key3c(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key3c(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY3C {
-        #[inline(always)]
-        fn default() -> SGI_KEY3C {
-            SGI_KEY3C(0)
-        }
-    }
-    #[doc = "Input Key register 3 - Word-0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY3D(pub u32);
-    impl SGI_KEY3D {
-        #[inline(always)]
-        pub const fn key3d(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key3d(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY3D {
-        #[inline(always)]
-        fn default() -> SGI_KEY3D {
-            SGI_KEY3D(0)
-        }
-    }
-    #[doc = "Input Key register 4 - Word-3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY4A(pub u32);
-    impl SGI_KEY4A {
-        #[inline(always)]
-        pub const fn key4a(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key4a(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY4A {
-        #[inline(always)]
-        fn default() -> SGI_KEY4A {
-            SGI_KEY4A(0)
-        }
-    }
-    #[doc = "Input Key register 4 - Word-2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY4B(pub u32);
-    impl SGI_KEY4B {
-        #[inline(always)]
-        pub const fn key4b(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key4b(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY4B {
-        #[inline(always)]
-        fn default() -> SGI_KEY4B {
-            SGI_KEY4B(0)
-        }
-    }
-    #[doc = "Input Key register 4 - Word-1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY4C(pub u32);
-    impl SGI_KEY4C {
-        #[inline(always)]
-        pub const fn key4c(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key4c(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY4C {
-        #[inline(always)]
-        fn default() -> SGI_KEY4C {
-            SGI_KEY4C(0)
-        }
-    }
-    #[doc = "Input Key register 4 - Word-0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY4D(pub u32);
-    impl SGI_KEY4D {
-        #[inline(always)]
-        pub const fn key4d(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key4d(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY4D {
-        #[inline(always)]
-        fn default() -> SGI_KEY4D {
-            SGI_KEY4D(0)
-        }
-    }
-    #[doc = "Input Key register 5 - Word-3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY5A(pub u32);
-    impl SGI_KEY5A {
-        #[inline(always)]
-        pub const fn key5a(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key5a(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY5A {
-        #[inline(always)]
-        fn default() -> SGI_KEY5A {
-            SGI_KEY5A(0)
-        }
-    }
-    #[doc = "Input Key register 5 - Word-2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY5B(pub u32);
-    impl SGI_KEY5B {
-        #[inline(always)]
-        pub const fn key5b(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key5b(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY5B {
-        #[inline(always)]
-        fn default() -> SGI_KEY5B {
-            SGI_KEY5B(0)
-        }
-    }
-    #[doc = "Input Key register 5 - Word-1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY5C(pub u32);
-    impl SGI_KEY5C {
-        #[inline(always)]
-        pub const fn key5c(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key5c(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY5C {
-        #[inline(always)]
-        fn default() -> SGI_KEY5C {
-            SGI_KEY5C(0)
-        }
-    }
-    #[doc = "Input Key register 5 - Word-0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY5D(pub u32);
-    impl SGI_KEY5D {
-        #[inline(always)]
-        pub const fn key5d(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key5d(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY5D {
-        #[inline(always)]
-        fn default() -> SGI_KEY5D {
-            SGI_KEY5D(0)
-        }
-    }
-    #[doc = "Input Key register 6 - Word-3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY6A(pub u32);
-    impl SGI_KEY6A {
-        #[inline(always)]
-        pub const fn key6a(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key6a(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY6A {
-        #[inline(always)]
-        fn default() -> SGI_KEY6A {
-            SGI_KEY6A(0)
-        }
-    }
-    #[doc = "Input Key register 6 - Word-2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY6B(pub u32);
-    impl SGI_KEY6B {
-        #[inline(always)]
-        pub const fn key6b(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key6b(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY6B {
-        #[inline(always)]
-        fn default() -> SGI_KEY6B {
-            SGI_KEY6B(0)
-        }
-    }
-    #[doc = "Input Key register 6 - Word-1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY6C(pub u32);
-    impl SGI_KEY6C {
-        #[inline(always)]
-        pub const fn key6c(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key6c(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY6C {
-        #[inline(always)]
-        fn default() -> SGI_KEY6C {
-            SGI_KEY6C(0)
-        }
-    }
-    #[doc = "Input Key register 6 - Word-0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY6D(pub u32);
-    impl SGI_KEY6D {
-        #[inline(always)]
-        pub const fn key6d(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key6d(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY6D {
-        #[inline(always)]
-        fn default() -> SGI_KEY6D {
-            SGI_KEY6D(0)
-        }
-    }
-    #[doc = "Input Key register 7 - Word-3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY7A(pub u32);
-    impl SGI_KEY7A {
-        #[inline(always)]
-        pub const fn key7a(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key7a(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY7A {
-        #[inline(always)]
-        fn default() -> SGI_KEY7A {
-            SGI_KEY7A(0)
-        }
-    }
-    #[doc = "Input Key register 7 - Word-2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY7B(pub u32);
-    impl SGI_KEY7B {
-        #[inline(always)]
-        pub const fn key7b(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key7b(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY7B {
-        #[inline(always)]
-        fn default() -> SGI_KEY7B {
-            SGI_KEY7B(0)
-        }
-    }
-    #[doc = "Input Key register 7 - Word-1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY7C(pub u32);
-    impl SGI_KEY7C {
-        #[inline(always)]
-        pub const fn key7c(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key7c(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY7C {
-        #[inline(always)]
-        fn default() -> SGI_KEY7C {
-            SGI_KEY7C(0)
-        }
-    }
-    #[doc = "Input Key register 7 - Word-0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY7D(pub u32);
-    impl SGI_KEY7D {
-        #[inline(always)]
-        pub const fn key7d(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key7d(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY7D {
-        #[inline(always)]
-        fn default() -> SGI_KEY7D {
-            SGI_KEY7D(0)
-        }
-    }
-    #[doc = "Key checksum register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEYCHK(pub u32);
-    impl SGI_KEYCHK {
-        #[inline(always)]
-        pub const fn keychksum(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_keychksum(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEYCHK {
-        #[inline(always)]
-        fn default() -> SGI_KEYCHK {
-            SGI_KEYCHK(0)
-        }
-    }
-    #[doc = "SGI Key Control SFR"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY_CTRL(pub u32);
-    impl SGI_KEY_CTRL {
-        #[inline(always)]
-        pub const fn key_wo(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_key_wo(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY_CTRL {
-        #[inline(always)]
-        fn default() -> SGI_KEY_CTRL {
-            SGI_KEY_CTRL(0)
-        }
-    }
-    #[doc = "Wrapped key read SFR"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_KEY_WRAP(pub u32);
-    impl SGI_KEY_WRAP {
-        #[inline(always)]
-        pub const fn kw_data(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_kw_data(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_KEY_WRAP {
-        #[inline(always)]
-        fn default() -> SGI_KEY_WRAP {
-            SGI_KEY_WRAP(0)
-        }
-    }
-    #[doc = "Module ID"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_MODULE_ID(pub u32);
-    impl SGI_MODULE_ID {
-        #[inline(always)]
-        pub const fn placeholder(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_placeholder(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_MODULE_ID {
-        #[inline(always)]
-        fn default() -> SGI_MODULE_ID {
-            SGI_MODULE_ID(0)
-        }
-    }
-    #[doc = "SGI internal PRNG SW seeding register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_PRNG_SW_SEED(pub u32);
-    impl SGI_PRNG_SW_SEED {
-        #[inline(always)]
-        pub const fn seed(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_seed(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_PRNG_SW_SEED {
-        #[inline(always)]
-        fn default() -> SGI_PRNG_SW_SEED {
-            SGI_PRNG_SW_SEED(0)
-        }
-    }
-    #[doc = "SFRSEED register for SFRMASK feature."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_SFRSEED(pub u32);
-    impl SGI_SFRSEED {
-        #[inline(always)]
-        pub const fn sfrseed(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_sfrseed(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_SFRSEED {
-        #[inline(always)]
-        fn default() -> SGI_SFRSEED {
-            SGI_SFRSEED(0)
-        }
-    }
-    #[doc = "Sofware Assisted Masking register ."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_SFR_SW_MASK(pub u32);
-    impl SGI_SFR_SW_MASK {
-        #[inline(always)]
-        pub const fn sfr_mask_val(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_sfr_mask_val(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_SFR_SW_MASK {
-        #[inline(always)]
-        fn default() -> SGI_SFR_SW_MASK {
-            SGI_SFR_SW_MASK(0)
-        }
-    }
     #[doc = "SHA Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2734,27 +1491,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SGI_SHA2_CTRL {
             SGI_SHA2_CTRL(0)
-        }
-    }
-    #[doc = "SHA FIFO lower-bank low"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SGI_SHA_FIFO(pub u32);
-    impl SGI_SHA_FIFO {
-        #[inline(always)]
-        pub const fn fifo(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_fifo(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SGI_SHA_FIFO {
-        #[inline(always)]
-        fn default() -> SGI_SHA_FIFO {
-            SGI_SHA_FIFO(0)
         }
     }
     #[doc = "Status register"]

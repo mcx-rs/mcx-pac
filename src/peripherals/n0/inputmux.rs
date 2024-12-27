@@ -167,7 +167,7 @@ impl INPUTMUX {
     #[inline(always)]
     pub const fn QDCN(self, n: usize) -> QDCN {
         assert!(n < 2usize);
-        unsafe { QDCN::from_ptr(self.ptr.add(0x0360usize + n * 64usize) as _) }
+        unsafe { QDCN::from_ptr(self.ptr.add(0x0360usize + n * 32usize) as _) }
     }
     #[inline(always)]
     pub const fn FLEXPWM0_SM_EXTSYNC(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {

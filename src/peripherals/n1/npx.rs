@@ -50,7 +50,7 @@ impl NPX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn CACMSK(self) -> crate::common::Reg<regs::CACMSK, crate::common::RW> {
+    pub const fn CACMSK(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
@@ -60,31 +60,10 @@ impl NPX {
     #[inline(always)]
     pub const fn CTX_VALID_IV_ARRAY(self, n: usize) -> CTX_VALID_IV_ARRAY {
         assert!(n < 4usize);
-        unsafe { CTX_VALID_IV_ARRAY::from_ptr(self.ptr.add(0x40usize + n * 64usize) as _) }
+        unsafe { CTX_VALID_IV_ARRAY::from_ptr(self.ptr.add(0x40usize + n * 16usize) as _) }
     }
 }
 pub mod regs {
-    #[doc = "Flash Cache Obfuscation Mask"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CACMSK(pub u32);
-    impl CACMSK {
-        #[inline(always)]
-        pub const fn OBMASK(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_OBMASK(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CACMSK {
-        #[inline(always)]
-        fn default() -> CACMSK {
-            CACMSK(0)
-        }
-    }
     #[doc = "Block Initial Vector for Memory Context 0..Block Initial Vector for Memory Context 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]

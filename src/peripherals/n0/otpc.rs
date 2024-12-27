@@ -40,11 +40,11 @@ impl OTPC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
-    pub const fn WDATA(self) -> crate::common::Reg<regs::WDATA, crate::common::RW> {
+    pub const fn WDATA(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]
-    pub const fn RDATA(self) -> crate::common::Reg<regs::RDATA, crate::common::RW> {
+    pub const fn RDATA(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[inline(always)]
@@ -60,98 +60,35 @@ impl OTPC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize) as _) }
     }
     #[inline(always)]
-    pub const fn SECURE(self) -> crate::common::Reg<regs::SECURE, crate::common::RW> {
+    pub const fn SECURE(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0204usize) as _) }
     }
     #[inline(always)]
-    pub const fn SECURE_INV(self) -> crate::common::Reg<regs::SECURE_INV, crate::common::RW> {
+    pub const fn SECURE_INV(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0208usize) as _) }
     }
     #[inline(always)]
-    pub const fn DBG_KEY(self) -> crate::common::Reg<regs::DBG_KEY, crate::common::RW> {
+    pub const fn DBG_KEY(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x020cusize) as _) }
     }
     #[inline(always)]
-    pub const fn MISC_CFG(self) -> crate::common::Reg<regs::MISC_CFG, crate::common::RW> {
+    pub const fn MISC_CFG(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0210usize) as _) }
     }
     #[inline(always)]
-    pub const fn PHANTOM_CFG(self) -> crate::common::Reg<regs::PHANTOM_CFG, crate::common::RW> {
+    pub const fn PHANTOM_CFG(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0214usize) as _) }
     }
     #[inline(always)]
-    pub const fn FLEX_CFG0(self) -> crate::common::Reg<regs::FLEX_CFG0, crate::common::RW> {
+    pub const fn FLEX_CFG0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0218usize) as _) }
     }
     #[inline(always)]
-    pub const fn FLEX_CFG1(self) -> crate::common::Reg<regs::FLEX_CFG1, crate::common::RW> {
+    pub const fn FLEX_CFG1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x021cusize) as _) }
     }
 }
 pub mod regs {
-    #[doc = "Debug and Key"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DBG_KEY(pub u32);
-    impl DBG_KEY {
-        #[inline(always)]
-        pub const fn DAT(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DAT(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DBG_KEY {
-        #[inline(always)]
-        fn default() -> DBG_KEY {
-            DBG_KEY(0)
-        }
-    }
-    #[doc = "Flexible Config 0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct FLEX_CFG0(pub u32);
-    impl FLEX_CFG0 {
-        #[inline(always)]
-        pub const fn DAT(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DAT(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for FLEX_CFG0 {
-        #[inline(always)]
-        fn default() -> FLEX_CFG0 {
-            FLEX_CFG0(0)
-        }
-    }
-    #[doc = "Flexible Config 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct FLEX_CFG1(pub u32);
-    impl FLEX_CFG1 {
-        #[inline(always)]
-        pub const fn DAT(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DAT(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for FLEX_CFG1 {
-        #[inline(always)]
-        fn default() -> FLEX_CFG1 {
-            FLEX_CFG1(0)
-        }
-    }
     #[doc = "Lock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -245,27 +182,6 @@ pub mod regs {
             LOCK(0)
         }
     }
-    #[doc = "MISC Config"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MISC_CFG(pub u32);
-    impl MISC_CFG {
-        #[inline(always)]
-        pub const fn DAT(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DAT(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MISC_CFG {
-        #[inline(always)]
-        fn default() -> MISC_CFG {
-            MISC_CFG(0)
-        }
-    }
     #[doc = "Parameters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -324,48 +240,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PCR {
             PCR(0)
-        }
-    }
-    #[doc = "PHANTOM Config"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PHANTOM_CFG(pub u32);
-    impl PHANTOM_CFG {
-        #[inline(always)]
-        pub const fn DAT(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DAT(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PHANTOM_CFG {
-        #[inline(always)]
-        fn default() -> PHANTOM_CFG {
-            PHANTOM_CFG(0)
-        }
-    }
-    #[doc = "Read Data"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RDATA(pub u32);
-    impl RDATA {
-        #[inline(always)]
-        pub const fn DAT(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DAT(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RDATA {
-        #[inline(always)]
-        fn default() -> RDATA {
-            RDATA(0)
         }
     }
     #[doc = "Reload Control"]
@@ -444,48 +318,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> RWC {
             RWC(0)
-        }
-    }
-    #[doc = "Secure"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SECURE(pub u32);
-    impl SECURE {
-        #[inline(always)]
-        pub const fn DAT(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DAT(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SECURE {
-        #[inline(always)]
-        fn default() -> SECURE {
-            SECURE(0)
-        }
-    }
-    #[doc = "Inverted Secure"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SECURE_INV(pub u32);
-    impl SECURE_INV {
-        #[inline(always)]
-        pub const fn DAT(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DAT(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SECURE_INV {
-        #[inline(always)]
-        fn default() -> SECURE_INV {
-            SECURE_INV(0)
         }
     }
     #[doc = "Status"]
@@ -759,27 +591,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> VERID {
             VERID(0)
-        }
-    }
-    #[doc = "Write Data"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct WDATA(pub u32);
-    impl WDATA {
-        #[inline(always)]
-        pub const fn DAT(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DAT(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for WDATA {
-        #[inline(always)]
-        fn default() -> WDATA {
-            WDATA(0)
         }
     }
 }

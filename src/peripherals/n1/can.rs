@@ -28,15 +28,15 @@ impl CAN {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn RXMGMASK(self) -> crate::common::Reg<regs::RXMGMASK, crate::common::RW> {
+    pub const fn RXMGMASK(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn RX14MASK(self) -> crate::common::Reg<regs::RX14MASK, crate::common::RW> {
+    pub const fn RX14MASK(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn RX15MASK(self) -> crate::common::Reg<regs::RX15MASK, crate::common::RW> {
+    pub const fn RX15MASK(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
@@ -48,7 +48,7 @@ impl CAN {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]
-    pub const fn IMASK1(self) -> crate::common::Reg<regs::IMASK1, crate::common::RW> {
+    pub const fn IMASK1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
@@ -68,7 +68,7 @@ impl CAN {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[inline(always)]
-    pub const fn RXFGMASK(self) -> crate::common::Reg<regs::RXFGMASK, crate::common::RW> {
+    pub const fn RXFGMASK(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[inline(always)]
@@ -82,30 +82,30 @@ impl CAN {
     #[inline(always)]
     pub const fn MB(self, n: usize) -> MB {
         assert!(n < 32usize);
-        unsafe { MB::from_ptr(self.ptr.add(0x80usize + n * 512usize) as _) }
+        unsafe { MB::from_ptr(self.ptr.add(0x80usize + n * 16usize) as _) }
     }
     #[inline(always)]
     pub const fn MB_16B(self, n: usize) -> MB_16B {
         assert!(n < 21usize);
-        unsafe { MB_16B::from_ptr(self.ptr.add(0x80usize + n * 504usize) as _) }
+        unsafe { MB_16B::from_ptr(self.ptr.add(0x80usize + n * 24usize) as _) }
     }
     #[inline(always)]
     pub const fn MB_32B(self, n: usize) -> MB_32B {
         assert!(n < 12usize);
-        unsafe { MB_32B::from_ptr(self.ptr.add(0x80usize + n * 480usize) as _) }
+        unsafe { MB_32B::from_ptr(self.ptr.add(0x80usize + n * 40usize) as _) }
     }
     #[inline(always)]
     pub const fn MB_64B(self, n: usize) -> MB_64B {
         assert!(n < 7usize);
-        unsafe { MB_64B::from_ptr(self.ptr.add(0x80usize + n * 504usize) as _) }
+        unsafe { MB_64B::from_ptr(self.ptr.add(0x80usize + n * 72usize) as _) }
     }
     #[inline(always)]
     pub const fn MB_8B(self, n: usize) -> MB_8B {
         assert!(n < 32usize);
-        unsafe { MB_8B::from_ptr(self.ptr.add(0x80usize + n * 512usize) as _) }
+        unsafe { MB_8B::from_ptr(self.ptr.add(0x80usize + n * 16usize) as _) }
     }
     #[inline(always)]
-    pub const fn RXIMR(self, n: usize) -> crate::common::Reg<regs::RXIMR, crate::common::RW> {
+    pub const fn RXIMR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 32usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0880usize + n * 4usize) as _) }
     }
@@ -154,7 +154,7 @@ impl CAN {
     #[inline(always)]
     pub const fn WMB(self, n: usize) -> WMB {
         assert!(n < 4usize);
-        unsafe { WMB::from_ptr(self.ptr.add(0x0b40usize + n * 64usize) as _) }
+        unsafe { WMB::from_ptr(self.ptr.add(0x0b40usize + n * 16usize) as _) }
     }
     #[inline(always)]
     pub const fn EPRS(self) -> crate::common::Reg<regs::EPRS, crate::common::RW> {
@@ -197,7 +197,7 @@ impl CAN {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0c14usize) as _) }
     }
     #[inline(always)]
-    pub const fn ERFFEL(self, n: usize) -> crate::common::Reg<regs::ERFFEL, crate::common::RW> {
+    pub const fn ERFFEL(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 32usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3000usize + n * 4usize) as _) }
     }
@@ -1037,27 +1037,6 @@ pub mod regs {
             ERFCR(0)
         }
     }
-    #[doc = "Enhanced RX FIFO Filter Element"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ERFFEL(pub u32);
-    impl ERFFEL {
-        #[inline(always)]
-        pub const fn FEL(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_FEL(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ERFFEL {
-        #[inline(always)]
-        fn default() -> ERFFEL {
-            ERFFEL(0)
-        }
-    }
     #[doc = "Enhanced RX FIFO Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1857,27 +1836,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IFLAG1 {
             IFLAG1(0)
-        }
-    }
-    #[doc = "Interrupt Masks 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IMASK1(pub u32);
-    impl IMASK1 {
-        #[inline(always)]
-        pub const fn BUF31TO0M(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_BUF31TO0M(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IMASK1 {
-        #[inline(always)]
-        fn default() -> IMASK1 {
-            IMASK1(0)
         }
     }
     #[doc = "Message Buffer 0 CS Register..Message Buffer 20 CS Register"]
@@ -4157,69 +4115,6 @@ pub mod regs {
             PL2_PLMASK_LO(0)
         }
     }
-    #[doc = "Receive 14 Mask"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RX14MASK(pub u32);
-    impl RX14MASK {
-        #[inline(always)]
-        pub const fn RX14M(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_RX14M(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RX14MASK {
-        #[inline(always)]
-        fn default() -> RX14MASK {
-            RX14MASK(0)
-        }
-    }
-    #[doc = "Receive 15 Mask"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RX15MASK(pub u32);
-    impl RX15MASK {
-        #[inline(always)]
-        pub const fn RX15M(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_RX15M(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RX15MASK {
-        #[inline(always)]
-        fn default() -> RX15MASK {
-            RX15MASK(0)
-        }
-    }
-    #[doc = "Legacy RX FIFO Global Mask"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RXFGMASK(pub u32);
-    impl RXFGMASK {
-        #[inline(always)]
-        pub const fn FGM(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_FGM(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RXFGMASK {
-        #[inline(always)]
-        fn default() -> RXFGMASK {
-            RXFGMASK(0)
-        }
-    }
     #[doc = "Legacy RX FIFO Information"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4239,48 +4134,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> RXFIR {
             RXFIR(0)
-        }
-    }
-    #[doc = "Receive Individual Mask"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RXIMR(pub u32);
-    impl RXIMR {
-        #[inline(always)]
-        pub const fn MI(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_MI(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RXIMR {
-        #[inline(always)]
-        fn default() -> RXIMR {
-            RXIMR(0)
-        }
-    }
-    #[doc = "RX Message Buffers Global Mask"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RXMGMASK(pub u32);
-    impl RXMGMASK {
-        #[inline(always)]
-        pub const fn MG(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_MG(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RXMGMASK {
-        #[inline(always)]
-        fn default() -> RXMGMASK {
-            RXMGMASK(0)
         }
     }
     #[doc = "Free-Running Timer"]

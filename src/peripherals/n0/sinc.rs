@@ -48,7 +48,7 @@ impl CHANNEL {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CMPDATA(self) -> crate::common::Reg<regs::CHANNEL_CMPDATA, crate::common::RW> {
+    pub const fn CMPDATA(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]
@@ -60,7 +60,7 @@ impl CHANNEL {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
-    pub const fn CDBGR(self) -> crate::common::Reg<regs::CHANNEL_CDBGR, crate::common::RW> {
+    pub const fn CDBGR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
 }
@@ -122,7 +122,7 @@ impl SINC {
     #[inline(always)]
     pub const fn CHANNEL(self, n: usize) -> CHANNEL {
         assert!(n < 5usize);
-        unsafe { CHANNEL::from_ptr(self.ptr.add(0x38usize + n * 240usize) as _) }
+        unsafe { CHANNEL::from_ptr(self.ptr.add(0x38usize + n * 48usize) as _) }
     }
 }
 pub mod regs {
@@ -381,27 +381,6 @@ pub mod regs {
             CHANNEL_CCR(0)
         }
     }
-    #[doc = "Channel 0 Debug..Channel 4 Debug"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CHANNEL_CDBGR(pub u32);
-    impl CHANNEL_CDBGR {
-        #[inline(always)]
-        pub const fn DBGDATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DBGDATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CHANNEL_CDBGR {
-        #[inline(always)]
-        fn default() -> CHANNEL_CDBGR {
-            CHANNEL_CDBGR(0)
-        }
-    }
     #[doc = "Channel 0 Data Rate..Channel 4 Data Rate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -481,27 +460,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CHANNEL_CLOLMT {
             CHANNEL_CLOLMT(0)
-        }
-    }
-    #[doc = "Channel 0 Multipurpose Data..Channel 4 Multipurpose Data"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CHANNEL_CMPDATA(pub u32);
-    impl CHANNEL_CMPDATA {
-        #[inline(always)]
-        pub const fn MPDATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_MPDATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CHANNEL_CMPDATA {
-        #[inline(always)]
-        fn default() -> CHANNEL_CMPDATA {
-            CHANNEL_CMPDATA(0)
         }
     }
     #[doc = "Channel 0 Protection..Channel 4 Protection"]

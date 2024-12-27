@@ -24,11 +24,11 @@ impl SMARTDMA {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[inline(always)]
-    pub const fn PC(self) -> crate::common::Reg<regs::PC, crate::common::RW> {
+    pub const fn PC(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
-    pub const fn SP(self) -> crate::common::Reg<regs::SP, crate::common::RW> {
+    pub const fn SP(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[inline(always)]
@@ -52,7 +52,7 @@ impl SMARTDMA {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[inline(always)]
-    pub const fn EZH2ARM(self) -> crate::common::Reg<regs::EZH2ARM, crate::common::RW> {
+    pub const fn EZH2ARM(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[inline(always)]
@@ -271,48 +271,6 @@ pub mod regs {
             EMER_VECT(0)
         }
     }
-    #[doc = "EZH to ARM Trigger"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EZH2ARM(pub u32);
-    impl EZH2ARM {
-        #[inline(always)]
-        pub const fn GP(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_GP(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EZH2ARM {
-        #[inline(always)]
-        fn default() -> EZH2ARM {
-            EZH2ARM(0)
-        }
-    }
-    #[doc = "Program Counter"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PC(pub u32);
-    impl PC {
-        #[inline(always)]
-        pub const fn PC(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_PC(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PC {
-        #[inline(always)]
-        fn default() -> PC {
-            PC(0)
-        }
-    }
     #[doc = "Pending Trap Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -350,27 +308,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PENDTRAP {
             PENDTRAP(0)
-        }
-    }
-    #[doc = "Stack Pointer"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SP(pub u32);
-    impl SP {
-        #[inline(always)]
-        pub const fn SP(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SP(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SP {
-        #[inline(always)]
-        fn default() -> SP {
-            SP(0)
         }
     }
 }

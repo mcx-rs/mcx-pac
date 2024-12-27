@@ -32,7 +32,7 @@ impl ERM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn EAR0(self) -> crate::common::Reg<regs::EAR0, crate::common::RW> {
+    pub const fn EAR0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[inline(always)]
@@ -44,7 +44,7 @@ impl ERM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
     }
     #[inline(always)]
-    pub const fn EAR1(self) -> crate::common::Reg<regs::EAR1, crate::common::RW> {
+    pub const fn EAR1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0110usize) as _) }
     }
     #[inline(always)]
@@ -56,7 +56,7 @@ impl ERM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0118usize) as _) }
     }
     #[inline(always)]
-    pub const fn EAR2(self) -> crate::common::Reg<regs::EAR2, crate::common::RW> {
+    pub const fn EAR2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0120usize) as _) }
     }
     #[inline(always)]
@@ -68,7 +68,7 @@ impl ERM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0128usize) as _) }
     }
     #[inline(always)]
-    pub const fn EAR3(self) -> crate::common::Reg<regs::EAR3, crate::common::RW> {
+    pub const fn EAR3(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0130usize) as _) }
     }
     #[inline(always)]
@@ -80,7 +80,7 @@ impl ERM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0138usize) as _) }
     }
     #[inline(always)]
-    pub const fn EAR4(self) -> crate::common::Reg<regs::EAR4, crate::common::RW> {
+    pub const fn EAR4(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0140usize) as _) }
     }
     #[inline(always)]
@@ -529,111 +529,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CR1 {
             CR1(0)
-        }
-    }
-    #[doc = "ERM Memory 0 Error Address Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EAR0(pub u32);
-    impl EAR0 {
-        #[inline(always)]
-        pub const fn EAR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_EAR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EAR0 {
-        #[inline(always)]
-        fn default() -> EAR0 {
-            EAR0(0)
-        }
-    }
-    #[doc = "ERM Memory 1 Error Address Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EAR1(pub u32);
-    impl EAR1 {
-        #[inline(always)]
-        pub const fn EAR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_EAR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EAR1 {
-        #[inline(always)]
-        fn default() -> EAR1 {
-            EAR1(0)
-        }
-    }
-    #[doc = "ERM Memory 2 Error Address Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EAR2(pub u32);
-    impl EAR2 {
-        #[inline(always)]
-        pub const fn EAR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_EAR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EAR2 {
-        #[inline(always)]
-        fn default() -> EAR2 {
-            EAR2(0)
-        }
-    }
-    #[doc = "ERM Memory 3 Error Address Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EAR3(pub u32);
-    impl EAR3 {
-        #[inline(always)]
-        pub const fn EAR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_EAR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EAR3 {
-        #[inline(always)]
-        fn default() -> EAR3 {
-            EAR3(0)
-        }
-    }
-    #[doc = "ERM Memory 4 Error Address Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EAR4(pub u32);
-    impl EAR4 {
-        #[inline(always)]
-        pub const fn EAR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_EAR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EAR4 {
-        #[inline(always)]
-        fn default() -> EAR4 {
-            EAR4(0)
         }
     }
     #[doc = "ERM Status Register 0"]

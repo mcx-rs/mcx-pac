@@ -60,7 +60,7 @@ impl SPC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[inline(always)]
-    pub const fn ACTIVE_CFG1(self) -> crate::common::Reg<regs::ACTIVE_CFG1, crate::common::RW> {
+    pub const fn ACTIVE_CFG1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
     }
     #[inline(always)]
@@ -68,7 +68,7 @@ impl SPC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
     }
     #[inline(always)]
-    pub const fn LP_CFG1(self) -> crate::common::Reg<regs::LP_CFG1, crate::common::RW> {
+    pub const fn LP_CFG1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x010cusize) as _) }
     }
     #[inline(always)]
@@ -174,27 +174,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ACTIVE_CFG {
             ACTIVE_CFG(0)
-        }
-    }
-    #[doc = "Active Power Mode Configuration 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ACTIVE_CFG1(pub u32);
-    impl ACTIVE_CFG1 {
-        #[inline(always)]
-        pub const fn SOC_CNTRL(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SOC_CNTRL(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ACTIVE_CFG1 {
-        #[inline(always)]
-        fn default() -> ACTIVE_CFG1 {
-            ACTIVE_CFG1(0)
         }
     }
     #[doc = "Active Voltage Trim Delay"]
@@ -447,27 +426,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> LP_CFG {
             LP_CFG(0)
-        }
-    }
-    #[doc = "Low Power Mode Configuration 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct LP_CFG1(pub u32);
-    impl LP_CFG1 {
-        #[inline(always)]
-        pub const fn SOC_CNTRL(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SOC_CNTRL(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for LP_CFG1 {
-        #[inline(always)]
-        fn default() -> LP_CFG1 {
-            LP_CFG1(0)
         }
     }
     #[doc = "SPC Power Domain Mode Status"]

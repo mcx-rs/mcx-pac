@@ -30,15 +30,11 @@ impl MBC_INDEX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
-    pub const fn MBC_NSE_BLK_SET(
-        self,
-    ) -> crate::common::Reg<regs::MBC_INDEX_MBC_NSE_BLK_SET, crate::common::RW> {
+    pub const fn MBC_NSE_BLK_SET(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn MBC_NSE_BLK_CLR(
-        self,
-    ) -> crate::common::Reg<regs::MBC_INDEX_MBC_NSE_BLK_CLR, crate::common::RW> {
+    pub const fn MBC_NSE_BLK_CLR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
@@ -1662,27 +1658,6 @@ pub mod regs {
             MBC_INDEX_MBC_MEM_GLBCFG(0)
         }
     }
-    #[doc = "MBC NonSecure Enable Block Clear"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MBC_INDEX_MBC_NSE_BLK_CLR(pub u32);
-    impl MBC_INDEX_MBC_NSE_BLK_CLR {
-        #[inline(always)]
-        pub const fn W1CLR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_W1CLR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MBC_INDEX_MBC_NSE_BLK_CLR {
-        #[inline(always)]
-        fn default() -> MBC_INDEX_MBC_NSE_BLK_CLR {
-            MBC_INDEX_MBC_NSE_BLK_CLR(0)
-        }
-    }
     #[doc = "MBC NonSecure Enable Block Clear All"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1759,27 +1734,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MBC_INDEX_MBC_NSE_BLK_INDEX {
             MBC_INDEX_MBC_NSE_BLK_INDEX(0)
-        }
-    }
-    #[doc = "MBC NonSecure Enable Block Set"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MBC_INDEX_MBC_NSE_BLK_SET(pub u32);
-    impl MBC_INDEX_MBC_NSE_BLK_SET {
-        #[inline(always)]
-        pub const fn W1SET(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_W1SET(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MBC_INDEX_MBC_NSE_BLK_SET {
-        #[inline(always)]
-        fn default() -> MBC_INDEX_MBC_NSE_BLK_SET {
-            MBC_INDEX_MBC_NSE_BLK_SET(0)
         }
     }
 }

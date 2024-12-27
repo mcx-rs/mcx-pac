@@ -88,27 +88,19 @@ impl DMA_CH {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[inline(always)]
-    pub const fn DMA_CHX_CUR_HST_TXDESC(
-        self,
-    ) -> crate::common::Reg<regs::DMA_CH_DMA_CHX_CUR_HST_TXDESC, crate::common::RW> {
+    pub const fn DMA_CHX_CUR_HST_TXDESC(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[inline(always)]
-    pub const fn DMA_CHX_CUR_HST_RXDESC(
-        self,
-    ) -> crate::common::Reg<regs::DMA_CH_DMA_CHX_CUR_HST_RXDESC, crate::common::RW> {
+    pub const fn DMA_CHX_CUR_HST_RXDESC(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[inline(always)]
-    pub const fn DMA_CHX_CUR_HST_TXBUF(
-        self,
-    ) -> crate::common::Reg<regs::DMA_CH_DMA_CHX_CUR_HST_TXBUF, crate::common::RW> {
+    pub const fn DMA_CHX_CUR_HST_TXBUF(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[inline(always)]
-    pub const fn DMA_CHX_CUR_HST_RXBUF(
-        self,
-    ) -> crate::common::Reg<regs::DMA_CH_DMA_CHX_CUR_HST_RXBUF, crate::common::RW> {
+    pub const fn DMA_CHX_CUR_HST_RXBUF(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[inline(always)]
@@ -236,9 +228,7 @@ impl ENET {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_RWK_PACKET_FILTER(
-        self,
-    ) -> crate::common::Reg<regs::MAC_RWK_PACKET_FILTER, crate::common::RW> {
+    pub const fn MAC_RWK_PACKET_FILTER(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc4usize) as _) }
     }
     #[inline(always)]
@@ -304,9 +294,7 @@ impl ENET {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0300usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_ADDRESS0_LOW(
-        self,
-    ) -> crate::common::Reg<regs::MAC_ADDRESS0_LOW, crate::common::RW> {
+    pub const fn MAC_ADDRESS0_LOW(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0304usize) as _) }
     }
     #[inline(always)]
@@ -316,9 +304,7 @@ impl ENET {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0a70usize) as _) }
     }
     #[inline(always)]
-    pub const fn INDIR_ACCESS_DATA(
-        self,
-    ) -> crate::common::Reg<regs::INDIR_ACCESS_DATA, crate::common::RW> {
+    pub const fn INDIR_ACCESS_DATA(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0a74usize) as _) }
     }
     #[inline(always)]
@@ -334,9 +320,7 @@ impl ENET {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b04usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_SYSTEM_TIME_SECONDS(
-        self,
-    ) -> crate::common::Reg<regs::MAC_SYSTEM_TIME_SECONDS, crate::common::RW> {
+    pub const fn MAC_SYSTEM_TIME_SECONDS(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b08usize) as _) }
     }
     #[inline(always)]
@@ -348,7 +332,7 @@ impl ENET {
     #[inline(always)]
     pub const fn MAC_SYSTEM_TIME_SECONDS_UPDATE(
         self,
-    ) -> crate::common::Reg<regs::MAC_SYSTEM_TIME_SECONDS_UPDATE, crate::common::RW> {
+    ) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b10usize) as _) }
     }
     #[inline(always)]
@@ -358,9 +342,7 @@ impl ENET {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b14usize) as _) }
     }
     #[inline(always)]
-    pub const fn MAC_TIMESTAMP_ADDEND(
-        self,
-    ) -> crate::common::Reg<regs::MAC_TIMESTAMP_ADDEND, crate::common::RW> {
+    pub const fn MAC_TIMESTAMP_ADDEND(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b18usize) as _) }
     }
     #[inline(always)]
@@ -378,19 +360,19 @@ impl ENET {
     #[inline(always)]
     pub const fn MAC_TX_TIMESTAMP_STATUS_SECONDS(
         self,
-    ) -> crate::common::Reg<regs::MAC_TX_TIMESTAMP_STATUS_SECONDS, crate::common::RW> {
+    ) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b34usize) as _) }
     }
     #[inline(always)]
     pub const fn MAC_TIMESTAMP_INGRESS_CORR_NANOSECOND(
         self,
-    ) -> crate::common::Reg<regs::MAC_TIMESTAMP_INGRESS_CORR_NANOSECOND, crate::common::RW> {
+    ) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b58usize) as _) }
     }
     #[inline(always)]
     pub const fn MAC_TIMESTAMP_EGRESS_CORR_NANOSECOND(
         self,
-    ) -> crate::common::Reg<regs::MAC_TIMESTAMP_EGRESS_CORR_NANOSECOND, crate::common::RW> {
+    ) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b5cusize) as _) }
     }
     #[inline(always)]
@@ -412,9 +394,7 @@ impl ENET {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b70usize) as _) }
     }
     #[inline(always)]
-    pub const fn PPS0_TARGET_TIME_SECONDS(
-        self,
-    ) -> crate::common::Reg<regs::PPS0_TARGET_TIME_SECONDS, crate::common::RW> {
+    pub const fn PPS0_TARGET_TIME_SECONDS(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b80usize) as _) }
     }
     #[inline(always)]
@@ -444,7 +424,7 @@ impl ENET {
     #[inline(always)]
     pub const fn MTL_QUEUE(self, n: usize) -> MTL_QUEUE {
         assert!(n < 2usize);
-        unsafe { MTL_QUEUE::from_ptr(self.ptr.add(0x0d00usize + n * 128usize) as _) }
+        unsafe { MTL_QUEUE::from_ptr(self.ptr.add(0x0d00usize + n * 64usize) as _) }
     }
     #[inline(always)]
     pub const fn DMA_MODE(self) -> crate::common::Reg<regs::DMA_MODE, crate::common::RW> {
@@ -471,7 +451,7 @@ impl ENET {
     #[inline(always)]
     pub const fn DMA_CH(self, n: usize) -> DMA_CH {
         assert!(n < 2usize);
-        unsafe { DMA_CH::from_ptr(self.ptr.add(0x1100usize + n * 256usize) as _) }
+        unsafe { DMA_CH::from_ptr(self.ptr.add(0x1100usize + n * 128usize) as _) }
     }
 }
 #[derive(Copy, Clone, Eq, PartialEq)]
@@ -603,90 +583,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA_CH_DMA_CHX_CTRL {
             DMA_CH_DMA_CHX_CTRL(0)
-        }
-    }
-    #[doc = "Channel 0 Current Application Receive Buffer Address..Channel 1 Current Application Receive Buffer Address"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DMA_CH_DMA_CHX_CUR_HST_RXBUF(pub u32);
-    impl DMA_CH_DMA_CHX_CUR_HST_RXBUF {
-        #[inline(always)]
-        pub const fn CURRBUFAPTR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CURRBUFAPTR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DMA_CH_DMA_CHX_CUR_HST_RXBUF {
-        #[inline(always)]
-        fn default() -> DMA_CH_DMA_CHX_CUR_HST_RXBUF {
-            DMA_CH_DMA_CHX_CUR_HST_RXBUF(0)
-        }
-    }
-    #[doc = "Channel 0 Current Application Receive Descriptor..Channel 1 Current Application Receive Descriptor"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DMA_CH_DMA_CHX_CUR_HST_RXDESC(pub u32);
-    impl DMA_CH_DMA_CHX_CUR_HST_RXDESC {
-        #[inline(always)]
-        pub const fn CURRDESAPTR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CURRDESAPTR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DMA_CH_DMA_CHX_CUR_HST_RXDESC {
-        #[inline(always)]
-        fn default() -> DMA_CH_DMA_CHX_CUR_HST_RXDESC {
-            DMA_CH_DMA_CHX_CUR_HST_RXDESC(0)
-        }
-    }
-    #[doc = "Channel 0 Current Application Transmit Buffer Address..Channel 1 Current Application Transmit Buffer Address"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DMA_CH_DMA_CHX_CUR_HST_TXBUF(pub u32);
-    impl DMA_CH_DMA_CHX_CUR_HST_TXBUF {
-        #[inline(always)]
-        pub const fn CURTBUFAPTR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CURTBUFAPTR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DMA_CH_DMA_CHX_CUR_HST_TXBUF {
-        #[inline(always)]
-        fn default() -> DMA_CH_DMA_CHX_CUR_HST_TXBUF {
-            DMA_CH_DMA_CHX_CUR_HST_TXBUF(0)
-        }
-    }
-    #[doc = "Channel 0 Current Application Transmit Descriptor..Channel 1 Current Application Transmit Descriptor"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DMA_CH_DMA_CHX_CUR_HST_TXDESC(pub u32);
-    impl DMA_CH_DMA_CHX_CUR_HST_TXDESC {
-        #[inline(always)]
-        pub const fn CURTDESAPTR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CURTDESAPTR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DMA_CH_DMA_CHX_CUR_HST_TXDESC {
-        #[inline(always)]
-        fn default() -> DMA_CH_DMA_CHX_CUR_HST_TXDESC {
-            DMA_CH_DMA_CHX_CUR_HST_TXDESC(0)
         }
     }
     #[doc = "Channeli Interrupt Enable..Channel 1 Interrupt Enable"]
@@ -1619,27 +1515,6 @@ pub mod regs {
             INDIR_ACCESS_CTRL(0)
         }
     }
-    #[doc = "Indirect Access Data"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct INDIR_ACCESS_DATA(pub u32);
-    impl INDIR_ACCESS_DATA {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for INDIR_ACCESS_DATA {
-        #[inline(always)]
-        fn default() -> INDIR_ACCESS_DATA {
-            INDIR_ACCESS_DATA(0)
-        }
-    }
     #[doc = "MAC Address0 High"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1677,27 +1552,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_ADDRESS0_HIGH {
             MAC_ADDRESS0_HIGH(0)
-        }
-    }
-    #[doc = "MAC Address0 Low"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MAC_ADDRESS0_LOW(pub u32);
-    impl MAC_ADDRESS0_LOW {
-        #[inline(always)]
-        pub const fn ADDRLO(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_ADDRLO(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MAC_ADDRESS0_LOW {
-        #[inline(always)]
-        fn default() -> MAC_ADDRESS0_LOW {
-            MAC_ADDRESS0_LOW(0)
         }
     }
     #[doc = "MAC Configuration"]
@@ -3308,27 +3162,6 @@ pub mod regs {
             MAC_PPS_CONTROL(0)
         }
     }
-    #[doc = "Remote Wakeup Filter"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MAC_RWK_PACKET_FILTER(pub u32);
-    impl MAC_RWK_PACKET_FILTER {
-        #[inline(always)]
-        pub const fn WKUPFRMFTR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_WKUPFRMFTR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MAC_RWK_PACKET_FILTER {
-        #[inline(always)]
-        fn default() -> MAC_RWK_PACKET_FILTER {
-            MAC_RWK_PACKET_FILTER(0)
-        }
-    }
     #[doc = "Receive Queue Control 0..Receive Queue Control 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3701,69 +3534,6 @@ pub mod regs {
             MAC_SYSTEM_TIME_NANOSECONDS_UPDATE(0)
         }
     }
-    #[doc = "System Time Seconds"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MAC_SYSTEM_TIME_SECONDS(pub u32);
-    impl MAC_SYSTEM_TIME_SECONDS {
-        #[inline(always)]
-        pub const fn TSS(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TSS(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MAC_SYSTEM_TIME_SECONDS {
-        #[inline(always)]
-        fn default() -> MAC_SYSTEM_TIME_SECONDS {
-            MAC_SYSTEM_TIME_SECONDS(0)
-        }
-    }
-    #[doc = "System Time Seconds Update"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MAC_SYSTEM_TIME_SECONDS_UPDATE(pub u32);
-    impl MAC_SYSTEM_TIME_SECONDS_UPDATE {
-        #[inline(always)]
-        pub const fn TSS(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TSS(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MAC_SYSTEM_TIME_SECONDS_UPDATE {
-        #[inline(always)]
-        fn default() -> MAC_SYSTEM_TIME_SECONDS_UPDATE {
-            MAC_SYSTEM_TIME_SECONDS_UPDATE(0)
-        }
-    }
-    #[doc = "Timestamp Addend"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MAC_TIMESTAMP_ADDEND(pub u32);
-    impl MAC_TIMESTAMP_ADDEND {
-        #[inline(always)]
-        pub const fn TSAR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TSAR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MAC_TIMESTAMP_ADDEND {
-        #[inline(always)]
-        fn default() -> MAC_TIMESTAMP_ADDEND {
-            MAC_TIMESTAMP_ADDEND(0)
-        }
-    }
     #[doc = "Timestamp Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3947,27 +3717,6 @@ pub mod regs {
             MAC_TIMESTAMP_CONTROL(0)
         }
     }
-    #[doc = "Timestamp Egress Correction Nanosecond"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MAC_TIMESTAMP_EGRESS_CORR_NANOSECOND(pub u32);
-    impl MAC_TIMESTAMP_EGRESS_CORR_NANOSECOND {
-        #[inline(always)]
-        pub const fn TSEC(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TSEC(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MAC_TIMESTAMP_EGRESS_CORR_NANOSECOND {
-        #[inline(always)]
-        fn default() -> MAC_TIMESTAMP_EGRESS_CORR_NANOSECOND {
-            MAC_TIMESTAMP_EGRESS_CORR_NANOSECOND(0)
-        }
-    }
     #[doc = "Timestamp Egress Latency"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3996,27 +3745,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_TIMESTAMP_EGRESS_LATENCY {
             MAC_TIMESTAMP_EGRESS_LATENCY(0)
-        }
-    }
-    #[doc = "Timestamp Ingress Correction Nanosecond"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MAC_TIMESTAMP_INGRESS_CORR_NANOSECOND(pub u32);
-    impl MAC_TIMESTAMP_INGRESS_CORR_NANOSECOND {
-        #[inline(always)]
-        pub const fn TSIC(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TSIC(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MAC_TIMESTAMP_INGRESS_CORR_NANOSECOND {
-        #[inline(always)]
-        fn default() -> MAC_TIMESTAMP_INGRESS_CORR_NANOSECOND {
-            MAC_TIMESTAMP_INGRESS_CORR_NANOSECOND(0)
         }
     }
     #[doc = "Timestamp Ingress Latency"]
@@ -4182,27 +3910,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_TX_TIMESTAMP_STATUS_NANOSECONDS {
             MAC_TX_TIMESTAMP_STATUS_NANOSECONDS(0)
-        }
-    }
-    #[doc = "Transmit Timestamp Status Seconds"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MAC_TX_TIMESTAMP_STATUS_SECONDS(pub u32);
-    impl MAC_TX_TIMESTAMP_STATUS_SECONDS {
-        #[inline(always)]
-        pub const fn TXTSSHI(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TXTSSHI(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MAC_TX_TIMESTAMP_STATUS_SECONDS {
-        #[inline(always)]
-        fn default() -> MAC_TX_TIMESTAMP_STATUS_SECONDS {
-            MAC_TX_TIMESTAMP_STATUS_SECONDS(0)
         }
     }
     #[doc = "MAC Version"]
@@ -5196,27 +4903,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PPS0_TARGET_TIME_NANOSECONDS {
             PPS0_TARGET_TIME_NANOSECONDS(0)
-        }
-    }
-    #[doc = "PPS0 Target Time Seconds"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PPS0_TARGET_TIME_SECONDS(pub u32);
-    impl PPS0_TARGET_TIME_SECONDS {
-        #[inline(always)]
-        pub const fn TSTRH0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TSTRH0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PPS0_TARGET_TIME_SECONDS {
-        #[inline(always)]
-        fn default() -> PPS0_TARGET_TIME_SECONDS {
-            PPS0_TARGET_TIME_SECONDS(0)
         }
     }
 }

@@ -18,7 +18,7 @@ impl MAILBOX {
     #[inline(always)]
     pub const fn MBOXIRQ(self, n: usize) -> MBOXIRQ {
         assert!(n < 2usize);
-        unsafe { MBOXIRQ::from_ptr(self.ptr.add(0x0usize + n * 32usize) as _) }
+        unsafe { MBOXIRQ::from_ptr(self.ptr.add(0x0usize + n * 16usize) as _) }
     }
     #[inline(always)]
     pub const fn MUTEX(self) -> crate::common::Reg<regs::MUTEX, crate::common::RW> {
@@ -41,82 +41,19 @@ impl MBOXIRQ {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn IRQ(self) -> crate::common::Reg<regs::MBOXIRQ_IRQ, crate::common::RW> {
+    pub const fn IRQ(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn IRQSET(self) -> crate::common::Reg<regs::MBOXIRQ_IRQSET, crate::common::RW> {
+    pub const fn IRQSET(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn IRQCLR(self) -> crate::common::Reg<regs::MBOXIRQ_IRQCLR, crate::common::RW> {
+    pub const fn IRQCLR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
 }
 pub mod regs {
-    #[doc = "Cortex-M33 (CPU0) Interrupt..CoolFlux (CPU1) Interrupt"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MBOXIRQ_IRQ(pub u32);
-    impl MBOXIRQ_IRQ {
-        #[inline(always)]
-        pub const fn INTREQ(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_INTREQ(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MBOXIRQ_IRQ {
-        #[inline(always)]
-        fn default() -> MBOXIRQ_IRQ {
-            MBOXIRQ_IRQ(0)
-        }
-    }
-    #[doc = "Cortex-M33 (CPU0) Interrupt Clear..CoolFlux (CPU1) Interrupt Clear"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MBOXIRQ_IRQCLR(pub u32);
-    impl MBOXIRQ_IRQCLR {
-        #[inline(always)]
-        pub const fn INTREQCLR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_INTREQCLR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MBOXIRQ_IRQCLR {
-        #[inline(always)]
-        fn default() -> MBOXIRQ_IRQCLR {
-            MBOXIRQ_IRQCLR(0)
-        }
-    }
-    #[doc = "Cortex-M33 (CPU0) Interrupt Set..CoolFlux (CPU1) Interrupt Set"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MBOXIRQ_IRQSET(pub u32);
-    impl MBOXIRQ_IRQSET {
-        #[inline(always)]
-        pub const fn INTREQSET(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_INTREQSET(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MBOXIRQ_IRQSET {
-        #[inline(always)]
-        fn default() -> MBOXIRQ_IRQSET {
-            MBOXIRQ_IRQSET(0)
-        }
-    }
     #[doc = "Mutual Exclusion"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]

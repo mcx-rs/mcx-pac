@@ -48,18 +48,12 @@ impl SYSCON {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x010cusize) as _) }
     }
     #[inline(always)]
-    pub const fn PRESETCTRLSET(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::PRESETCTRLSET, crate::common::RW> {
+    pub const fn PRESETCTRLSET(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0120usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn PRESETCTRLCLR(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::PRESETCTRLCLR, crate::common::RW> {
+    pub const fn PRESETCTRLCLR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0140usize + n * 4usize) as _) }
     }
@@ -80,18 +74,12 @@ impl SYSCON {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x020cusize) as _) }
     }
     #[inline(always)]
-    pub const fn AHBCLKCTRLSET(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::AHBCLKCTRLSET, crate::common::RW> {
+    pub const fn AHBCLKCTRLSET(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0220usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn AHBCLKCTRLCLR(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::AHBCLKCTRLCLR, crate::common::RW> {
+    pub const fn AHBCLKCTRLCLR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0240usize + n * 4usize) as _) }
     }
@@ -414,7 +402,7 @@ impl SYSCON {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0988usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KDF_MASK(self) -> crate::common::Reg<regs::ELS_KDF_MASK, crate::common::RW> {
+    pub const fn ELS_KDF_MASK(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x098cusize) as _) }
     }
     #[inline(always)]
@@ -426,11 +414,11 @@ impl SYSCON {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x09d4usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_AS_CFG2(self) -> crate::common::Reg<regs::ELS_AS_CFG2, crate::common::RW> {
+    pub const fn ELS_AS_CFG2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x09d8usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_AS_CFG3(self) -> crate::common::Reg<regs::ELS_AS_CFG3, crate::common::RW> {
+    pub const fn ELS_AS_CFG3(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x09dcusize) as _) }
     }
     #[inline(always)]
@@ -486,7 +474,7 @@ impl SYSCON {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b40usize) as _) }
     }
     #[inline(always)]
-    pub const fn GRAY_CODE_LSB(self) -> crate::common::Reg<regs::GRAY_CODE_LSB, crate::common::RW> {
+    pub const fn GRAY_CODE_LSB(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b60usize) as _) }
     }
     #[inline(always)]
@@ -494,9 +482,7 @@ impl SYSCON {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b64usize) as _) }
     }
     #[inline(always)]
-    pub const fn BINARY_CODE_LSB(
-        self,
-    ) -> crate::common::Reg<regs::BINARY_CODE_LSB, crate::common::RW> {
+    pub const fn BINARY_CODE_LSB(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b68usize) as _) }
     }
     #[inline(always)]
@@ -554,25 +540,20 @@ impl SYSCON {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fa8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SWD_ACCESS_CPU(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::SWD_ACCESS_CPU, crate::common::RW> {
+    pub const fn SWD_ACCESS_CPU(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 1usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fb4usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn DEBUG_AUTH_BEACON(
-        self,
-    ) -> crate::common::Reg<regs::DEBUG_AUTH_BEACON, crate::common::RW> {
+    pub const fn DEBUG_AUTH_BEACON(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fc0usize) as _) }
     }
     #[inline(always)]
-    pub const fn JTAG_ID(self) -> crate::common::Reg<regs::JTAG_ID, crate::common::RW> {
+    pub const fn JTAG_ID(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ff0usize) as _) }
     }
     #[inline(always)]
-    pub const fn DEVICE_TYPE(self) -> crate::common::Reg<regs::DEVICE_TYPE, crate::common::RW> {
+    pub const fn DEVICE_TYPE(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ff4usize) as _) }
     }
     #[inline(always)]
@@ -1419,48 +1400,6 @@ pub mod regs {
             AHBCLKCTRL3(0)
         }
     }
-    #[doc = "AHB Clock Control Clear"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct AHBCLKCTRLCLR(pub u32);
-    impl AHBCLKCTRLCLR {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for AHBCLKCTRLCLR {
-        #[inline(always)]
-        fn default() -> AHBCLKCTRLCLR {
-            AHBCLKCTRLCLR(0)
-        }
-    }
-    #[doc = "AHB Clock Control Set"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct AHBCLKCTRLSET(pub u32);
-    impl AHBCLKCTRLSET {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for AHBCLKCTRLSET {
-        #[inline(always)]
-        fn default() -> AHBCLKCTRLSET {
-            AHBCLKCTRLSET(0)
-        }
-    }
     #[doc = "System Clock Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1633,27 +1572,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AUTOCLKGATEOVERRIDEC {
             AUTOCLKGATEOVERRIDEC(0)
-        }
-    }
-    #[doc = "Gray to Binary Converter Binary Code \\[31:0\\]"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct BINARY_CODE_LSB(pub u32);
-    impl BINARY_CODE_LSB {
-        #[inline(always)]
-        pub const fn code_bin_31_0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_code_bin_31_0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for BINARY_CODE_LSB {
-        #[inline(always)]
-        fn default() -> BINARY_CODE_LSB {
-            BINARY_CODE_LSB(0)
         }
     }
     #[doc = "Gray to Binary Converter Binary Code \\[41:32\\]"]
@@ -2373,27 +2291,6 @@ pub mod regs {
             CTIMERGLOBALSTARTEN(0)
         }
     }
-    #[doc = "Debug Authentication BEACON"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DEBUG_AUTH_BEACON(pub u32);
-    impl DEBUG_AUTH_BEACON {
-        #[inline(always)]
-        pub const fn BEACON(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_BEACON(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DEBUG_AUTH_BEACON {
-        #[inline(always)]
-        fn default() -> DEBUG_AUTH_BEACON {
-            DEBUG_AUTH_BEACON(0)
-        }
-    }
     #[doc = "Cortex Debug Features Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2530,27 +2427,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DEVICE_ID0 {
             DEVICE_ID0(0)
-        }
-    }
-    #[doc = "Device Type"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DEVICE_TYPE(pub u32);
-    impl DEVICE_TYPE {
-        #[inline(always)]
-        pub const fn DEVICE_TYPE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DEVICE_TYPE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DEVICE_TYPE {
-        #[inline(always)]
-        fn default() -> DEVICE_TYPE {
-            DEVICE_TYPE(0)
         }
     }
     #[doc = "Chip Revision ID and Number"]
@@ -3309,48 +3185,6 @@ pub mod regs {
             ELS_AS_CFG1(0)
         }
     }
-    #[doc = "ELS AS Configuration2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_AS_CFG2(pub u32);
-    impl ELS_AS_CFG2 {
-        #[inline(always)]
-        pub const fn CFG_ELS_CMD_EN(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CFG_ELS_CMD_EN(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_AS_CFG2 {
-        #[inline(always)]
-        fn default() -> ELS_AS_CFG2 {
-            ELS_AS_CFG2(0)
-        }
-    }
-    #[doc = "ELS AS Configuration3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_AS_CFG3(pub u32);
-    impl ELS_AS_CFG3 {
-        #[inline(always)]
-        pub const fn DEVICE_TYPE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DEVICE_TYPE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_AS_CFG3 {
-        #[inline(always)]
-        fn default() -> ELS_AS_CFG3 {
-            ELS_AS_CFG3(0)
-        }
-    }
     #[doc = "ELS AS Flag0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3829,27 +3663,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ELS_AS_ST1 {
             ELS_AS_ST1(0)
-        }
-    }
-    #[doc = "Key Derivation Function Mask"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_KDF_MASK(pub u32);
-    impl ELS_KDF_MASK {
-        #[inline(always)]
-        pub const fn KDF_MASK(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_KDF_MASK(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_KDF_MASK {
-        #[inline(always)]
-        fn default() -> ELS_KDF_MASK {
-            ELS_KDF_MASK(0)
         }
     }
     #[doc = "ELS Lock Control"]
@@ -4368,27 +4181,6 @@ pub mod regs {
             GDET_CTRL(0)
         }
     }
-    #[doc = "Gray to Binary Converter Gray code_gray\\[31:0\\]"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GRAY_CODE_LSB(pub u32);
-    impl GRAY_CODE_LSB {
-        #[inline(always)]
-        pub const fn code_gray_31_0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_code_gray_31_0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for GRAY_CODE_LSB {
-        #[inline(always)]
-        fn default() -> GRAY_CODE_LSB {
-            GRAY_CODE_LSB(0)
-        }
-    }
     #[doc = "Gray to Binary Converter Gray code_gray\\[41:32\\]"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4546,27 +4338,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> I3C1FCLKSEL {
             I3C1FCLKSEL(0)
-        }
-    }
-    #[doc = "JTAG Chip ID"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct JTAG_ID(pub u32);
-    impl JTAG_ID {
-        #[inline(always)]
-        pub const fn JTAG_ID(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_JTAG_ID(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for JTAG_ID {
-        #[inline(always)]
-        fn default() -> JTAG_ID {
-            JTAG_ID(0)
         }
     }
     #[doc = "Key Retain Control"]
@@ -5649,48 +5420,6 @@ pub mod regs {
             PRESETCTRL3(0)
         }
     }
-    #[doc = "Peripheral Reset Control Clear"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PRESETCTRLCLR(pub u32);
-    impl PRESETCTRLCLR {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PRESETCTRLCLR {
-        #[inline(always)]
-        fn default() -> PRESETCTRLCLR {
-            PRESETCTRLCLR(0)
-        }
-    }
-    #[doc = "Peripheral Reset Control Set"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PRESETCTRLSET(pub u32);
-    impl PRESETCTRLSET {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PRESETCTRLSET {
-        #[inline(always)]
-        fn default() -> PRESETCTRLSET {
-            PRESETCTRLSET(0)
-        }
-    }
     #[doc = "PWM0 Submodule Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6394,27 +6123,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SMARTDMAINT {
             SMARTDMAINT(0)
-        }
-    }
-    #[doc = "CPU0 Software Debug Access"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SWD_ACCESS_CPU(pub u32);
-    impl SWD_ACCESS_CPU {
-        #[inline(always)]
-        pub const fn SEC_CODE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SEC_CODE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SWD_ACCESS_CPU {
-        #[inline(always)]
-        fn default() -> SWD_ACCESS_CPU {
-            SWD_ACCESS_CPU(0)
         }
     }
     #[doc = "CPU0 System Tick Timer Divider"]

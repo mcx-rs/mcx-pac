@@ -20,15 +20,15 @@ impl DM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn REQUEST(self) -> crate::common::Reg<regs::REQUEST, crate::common::RW> {
+    pub const fn REQUEST(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn RETURN(self) -> crate::common::Reg<regs::RETURN, crate::common::RW> {
+    pub const fn RETURN(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn ID(self) -> crate::common::Reg<regs::ID, crate::common::RW> {
+    pub const fn ID(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xfcusize) as _) }
     }
 }
@@ -97,69 +97,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CSW {
             CSW(0)
-        }
-    }
-    #[doc = "Identification"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ID(pub u32);
-    impl ID {
-        #[inline(always)]
-        pub const fn ID(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_ID(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ID {
-        #[inline(always)]
-        fn default() -> ID {
-            ID(0)
-        }
-    }
-    #[doc = "Request Value"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct REQUEST(pub u32);
-    impl REQUEST {
-        #[inline(always)]
-        pub const fn REQUEST(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_REQUEST(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for REQUEST {
-        #[inline(always)]
-        fn default() -> REQUEST {
-            REQUEST(0)
-        }
-    }
-    #[doc = "Return Value"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RETURN(pub u32);
-    impl RETURN {
-        #[inline(always)]
-        pub const fn RET(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_RET(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RETURN {
-        #[inline(always)]
-        fn default() -> RETURN {
-            RETURN(0)
         }
     }
 }

@@ -294,27 +294,6 @@ pub mod regs {
             CSER(0)
         }
     }
-    #[doc = "Entropy Read Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ENT(pub u32);
-    impl ENT {
-        #[inline(always)]
-        pub const fn ENT(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_ENT(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ENT {
-        #[inline(always)]
-        fn default() -> ENT {
-            ENT(0)
-        }
-    }
     #[doc = "Frequency Count Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]

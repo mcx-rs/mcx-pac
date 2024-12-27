@@ -24,7 +24,7 @@ impl S50 {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_CMDCFG0(self) -> crate::common::Reg<regs::ELS_CMDCFG0, crate::common::RW> {
+    pub const fn ELS_CMDCFG0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
@@ -40,41 +40,35 @@ impl S50 {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_KPROPIN(self) -> crate::common::Reg<regs::ELS_KPROPIN, crate::common::RW> {
+    pub const fn ELS_KPROPIN(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_DMA_SRC0(self) -> crate::common::Reg<regs::ELS_DMA_SRC0, crate::common::RW> {
+    pub const fn ELS_DMA_SRC0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_DMA_SRC0_LEN(
-        self,
-    ) -> crate::common::Reg<regs::ELS_DMA_SRC0_LEN, crate::common::RW> {
+    pub const fn ELS_DMA_SRC0_LEN(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_DMA_SRC1(self) -> crate::common::Reg<regs::ELS_DMA_SRC1, crate::common::RW> {
+    pub const fn ELS_DMA_SRC1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_DMA_SRC2(self) -> crate::common::Reg<regs::ELS_DMA_SRC2, crate::common::RW> {
+    pub const fn ELS_DMA_SRC2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_DMA_SRC2_LEN(
-        self,
-    ) -> crate::common::Reg<regs::ELS_DMA_SRC2_LEN, crate::common::RW> {
+    pub const fn ELS_DMA_SRC2_LEN(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_DMA_RES0(self) -> crate::common::Reg<regs::ELS_DMA_RES0, crate::common::RW> {
+    pub const fn ELS_DMA_RES0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_DMA_RES0_LEN(
-        self,
-    ) -> crate::common::Reg<regs::ELS_DMA_RES0_LEN, crate::common::RW> {
+    pub const fn ELS_DMA_RES0_LEN(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[inline(always)]
@@ -112,9 +106,7 @@ impl S50 {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_PRNG_DATOUT(
-        self,
-    ) -> crate::common::Reg<regs::ELS_PRNG_DATOUT, crate::common::RW> {
+    pub const fn ELS_PRNG_DATOUT(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[inline(always)]
@@ -124,19 +116,15 @@ impl S50 {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_CMDCRC(self) -> crate::common::Reg<regs::ELS_CMDCRC, crate::common::RW> {
+    pub const fn ELS_CMDCRC(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_SESSION_ID(
-        self,
-    ) -> crate::common::Reg<regs::ELS_SESSION_ID, crate::common::RW> {
+    pub const fn ELS_SESSION_ID(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_DMA_FIN_ADDR(
-        self,
-    ) -> crate::common::Reg<regs::ELS_DMA_FIN_ADDR, crate::common::RW> {
+    pub const fn ELS_DMA_FIN_ADDR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x70usize) as _) }
     }
     #[inline(always)]
@@ -250,48 +238,6 @@ pub mod regs {
             ELS_CFG(0)
         }
     }
-    #[doc = "Command Configuration"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_CMDCFG0(pub u32);
-    impl ELS_CMDCFG0 {
-        #[inline(always)]
-        pub const fn CMDCFG0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CMDCFG0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_CMDCFG0 {
-        #[inline(always)]
-        fn default() -> ELS_CMDCFG0 {
-            ELS_CMDCFG0(0)
-        }
-    }
-    #[doc = "Command CRC Value"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_CMDCRC(pub u32);
-    impl ELS_CMDCRC {
-        #[inline(always)]
-        pub const fn CMDCRC(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CMDCRC(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_CMDCRC {
-        #[inline(always)]
-        fn default() -> ELS_CMDCRC {
-            ELS_CMDCRC(0)
-        }
-    }
     #[doc = "CRC Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -377,174 +323,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ELS_CTRL {
             ELS_CTRL(0)
-        }
-    }
-    #[doc = "Final DMA Address"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_DMA_FIN_ADDR(pub u32);
-    impl ELS_DMA_FIN_ADDR {
-        #[inline(always)]
-        pub const fn DMA_FIN_ADDR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DMA_FIN_ADDR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_DMA_FIN_ADDR {
-        #[inline(always)]
-        fn default() -> ELS_DMA_FIN_ADDR {
-            ELS_DMA_FIN_ADDR(0)
-        }
-    }
-    #[doc = "DMA Result 0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_DMA_RES0(pub u32);
-    impl ELS_DMA_RES0 {
-        #[inline(always)]
-        pub const fn ADDR_RES0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_ADDR_RES0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_DMA_RES0 {
-        #[inline(always)]
-        fn default() -> ELS_DMA_RES0 {
-            ELS_DMA_RES0(0)
-        }
-    }
-    #[doc = "DMA Result 0 Length"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_DMA_RES0_LEN(pub u32);
-    impl ELS_DMA_RES0_LEN {
-        #[inline(always)]
-        pub const fn SIZE_RES0_LEN(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SIZE_RES0_LEN(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_DMA_RES0_LEN {
-        #[inline(always)]
-        fn default() -> ELS_DMA_RES0_LEN {
-            ELS_DMA_RES0_LEN(0)
-        }
-    }
-    #[doc = "DMA Source 0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_DMA_SRC0(pub u32);
-    impl ELS_DMA_SRC0 {
-        #[inline(always)]
-        pub const fn ADDR_SRC0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_ADDR_SRC0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_DMA_SRC0 {
-        #[inline(always)]
-        fn default() -> ELS_DMA_SRC0 {
-            ELS_DMA_SRC0(0)
-        }
-    }
-    #[doc = "DMA Source 0 Length"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_DMA_SRC0_LEN(pub u32);
-    impl ELS_DMA_SRC0_LEN {
-        #[inline(always)]
-        pub const fn SIZE_SRC0_LEN(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SIZE_SRC0_LEN(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_DMA_SRC0_LEN {
-        #[inline(always)]
-        fn default() -> ELS_DMA_SRC0_LEN {
-            ELS_DMA_SRC0_LEN(0)
-        }
-    }
-    #[doc = "DMA Source 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_DMA_SRC1(pub u32);
-    impl ELS_DMA_SRC1 {
-        #[inline(always)]
-        pub const fn ADDR_SRC1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_ADDR_SRC1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_DMA_SRC1 {
-        #[inline(always)]
-        fn default() -> ELS_DMA_SRC1 {
-            ELS_DMA_SRC1(0)
-        }
-    }
-    #[doc = "DMA Source 2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_DMA_SRC2(pub u32);
-    impl ELS_DMA_SRC2 {
-        #[inline(always)]
-        pub const fn ADDR_SRC2(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_ADDR_SRC2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_DMA_SRC2 {
-        #[inline(always)]
-        fn default() -> ELS_DMA_SRC2 {
-            ELS_DMA_SRC2(0)
-        }
-    }
-    #[doc = "DMA Source 2 Length"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_DMA_SRC2_LEN(pub u32);
-    impl ELS_DMA_SRC2_LEN {
-        #[inline(always)]
-        pub const fn SIZE_SRC2_LEN(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SIZE_SRC2_LEN(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_DMA_SRC2_LEN {
-        #[inline(always)]
-        fn default() -> ELS_DMA_SRC2_LEN {
-            ELS_DMA_SRC2_LEN(0)
         }
     }
     #[doc = "Error Status"]
@@ -776,27 +554,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ELS_KIDX2 {
             ELS_KIDX2(0)
-        }
-    }
-    #[doc = "Key Properties Request"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_KPROPIN(pub u32);
-    impl ELS_KPROPIN {
-        #[inline(always)]
-        pub const fn KPROPIN(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_KPROPIN(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_KPROPIN {
-        #[inline(always)]
-        fn default() -> ELS_KPROPIN {
-            ELS_KPROPIN(0)
         }
     }
     #[doc = "Status Register"]
@@ -5738,48 +5495,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ELS_MASTER_ID {
             ELS_MASTER_ID(0)
-        }
-    }
-    #[doc = "PRNG SW Read Out"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_PRNG_DATOUT(pub u32);
-    impl ELS_PRNG_DATOUT {
-        #[inline(always)]
-        pub const fn PRNG_DATOUT(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_PRNG_DATOUT(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_PRNG_DATOUT {
-        #[inline(always)]
-        fn default() -> ELS_PRNG_DATOUT {
-            ELS_PRNG_DATOUT(0)
-        }
-    }
-    #[doc = "Session ID"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_SESSION_ID(pub u32);
-    impl ELS_SESSION_ID {
-        #[inline(always)]
-        pub const fn SESSION_ID(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SESSION_ID(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_SESSION_ID {
-        #[inline(always)]
-        fn default() -> ELS_SESSION_ID {
-            ELS_SESSION_ID(0)
         }
     }
     #[doc = "Status Register"]

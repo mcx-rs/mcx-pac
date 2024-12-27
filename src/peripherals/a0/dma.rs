@@ -40,7 +40,7 @@ impl CH {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn TCD_SADDR(self) -> crate::common::Reg<regs::CH_TCD_SADDR, crate::common::RW> {
+    pub const fn TCD_SADDR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]
@@ -64,13 +64,11 @@ impl CH {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
-    pub const fn TCD_SLAST_SDA(
-        self,
-    ) -> crate::common::Reg<regs::CH_TCD_SLAST_SDA, crate::common::RW> {
+    pub const fn TCD_SLAST_SDA(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[inline(always)]
-    pub const fn TCD_DADDR(self) -> crate::common::Reg<regs::CH_TCD_DADDR, crate::common::RW> {
+    pub const fn TCD_DADDR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[inline(always)]
@@ -90,9 +88,7 @@ impl CH {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x36usize) as _) }
     }
     #[inline(always)]
-    pub const fn TCD_DLAST_SGA(
-        self,
-    ) -> crate::common::Reg<regs::CH_TCD_DLAST_SGA, crate::common::RW> {
+    pub const fn TCD_DLAST_SGA(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
     }
     #[inline(always)]
@@ -140,7 +136,7 @@ impl DMA {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn MP_HRS(self) -> crate::common::Reg<regs::MP_HRS, crate::common::RW> {
+    pub const fn MP_HRS(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
@@ -151,7 +147,7 @@ impl DMA {
     #[inline(always)]
     pub const fn CH(self, n: usize) -> CH {
         assert!(n < 4usize);
-        unsafe { CH::from_ptr(self.ptr.add(0x1000usize + n * 16384usize) as _) }
+        unsafe { CH::from_ptr(self.ptr.add(0x1000usize + n * 4096usize) as _) }
     }
 }
 pub mod regs {
@@ -743,48 +739,6 @@ pub mod regs {
             CH_TCD_CSR(0)
         }
     }
-    #[doc = "TCD Destination Address"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CH_TCD_DADDR(pub u32);
-    impl CH_TCD_DADDR {
-        #[inline(always)]
-        pub const fn DADDR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DADDR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CH_TCD_DADDR {
-        #[inline(always)]
-        fn default() -> CH_TCD_DADDR {
-            CH_TCD_DADDR(0)
-        }
-    }
-    #[doc = "TCD Last Destination Address Adjustment / Scatter Gather Address"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CH_TCD_DLAST_SGA(pub u32);
-    impl CH_TCD_DLAST_SGA {
-        #[inline(always)]
-        pub const fn DLAST_SGA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DLAST_SGA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CH_TCD_DLAST_SGA {
-        #[inline(always)]
-        fn default() -> CH_TCD_DLAST_SGA {
-            CH_TCD_DLAST_SGA(0)
-        }
-    }
     #[doc = "TCD Signed Destination Address Offset"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -892,48 +846,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CH_TCD_NBYTES_MLOFFYES {
             CH_TCD_NBYTES_MLOFFYES(0)
-        }
-    }
-    #[doc = "TCD Source Address"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CH_TCD_SADDR(pub u32);
-    impl CH_TCD_SADDR {
-        #[inline(always)]
-        pub const fn SADDR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SADDR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CH_TCD_SADDR {
-        #[inline(always)]
-        fn default() -> CH_TCD_SADDR {
-            CH_TCD_SADDR(0)
-        }
-    }
-    #[doc = "TCD Last Source Address Adjustment / Store DADDR Address"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CH_TCD_SLAST_SDA(pub u32);
-    impl CH_TCD_SLAST_SDA {
-        #[inline(always)]
-        pub const fn SLAST_SDA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SLAST_SDA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CH_TCD_SLAST_SDA {
-        #[inline(always)]
-        fn default() -> CH_TCD_SLAST_SDA {
-            CH_TCD_SLAST_SDA(0)
         }
     }
     #[doc = "TCD Signed Source Address Offset"]
@@ -1168,27 +1080,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MP_ES {
             MP_ES(0)
-        }
-    }
-    #[doc = "Management Page Hardware Request Status"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MP_HRS(pub u32);
-    impl MP_HRS {
-        #[inline(always)]
-        pub const fn HRS(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_HRS(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MP_HRS {
-        #[inline(always)]
-        fn default() -> MP_HRS {
-            MP_HRS(0)
         }
     }
     #[doc = "Management Page Interrupt Request Status"]

@@ -28,7 +28,7 @@ impl FLEXIO {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn PIN(self) -> crate::common::Reg<regs::PIN, crate::common::RW> {
+    pub const fn PIN(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
@@ -76,43 +76,43 @@ impl FLEXIO {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[inline(always)]
-    pub const fn PINSTAT(self) -> crate::common::Reg<regs::PINSTAT, crate::common::RW> {
+    pub const fn PINSTAT(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[inline(always)]
-    pub const fn PINIEN(self) -> crate::common::Reg<regs::PINIEN, crate::common::RW> {
+    pub const fn PINIEN(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[inline(always)]
-    pub const fn PINREN(self) -> crate::common::Reg<regs::PINREN, crate::common::RW> {
+    pub const fn PINREN(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
     #[inline(always)]
-    pub const fn PINFEN(self) -> crate::common::Reg<regs::PINFEN, crate::common::RW> {
+    pub const fn PINFEN(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
     }
     #[inline(always)]
-    pub const fn PINOUTD(self) -> crate::common::Reg<regs::PINOUTD, crate::common::RW> {
+    pub const fn PINOUTD(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
     #[inline(always)]
-    pub const fn PINOUTE(self) -> crate::common::Reg<regs::PINOUTE, crate::common::RW> {
+    pub const fn PINOUTE(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
     }
     #[inline(always)]
-    pub const fn PINOUTDIS(self) -> crate::common::Reg<regs::PINOUTDIS, crate::common::RW> {
+    pub const fn PINOUTDIS(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
     }
     #[inline(always)]
-    pub const fn PINOUTCLR(self) -> crate::common::Reg<regs::PINOUTCLR, crate::common::RW> {
+    pub const fn PINOUTCLR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x6cusize) as _) }
     }
     #[inline(always)]
-    pub const fn PINOUTSET(self) -> crate::common::Reg<regs::PINOUTSET, crate::common::RW> {
+    pub const fn PINOUTSET(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x70usize) as _) }
     }
     #[inline(always)]
-    pub const fn PINOUTTOG(self) -> crate::common::Reg<regs::PINOUTTOG, crate::common::RW> {
+    pub const fn PINOUTTOG(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x74usize) as _) }
     }
     #[inline(always)]
@@ -126,31 +126,22 @@ impl FLEXIO {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SHIFTBUF(self, n: usize) -> crate::common::Reg<regs::SHIFTBUF, crate::common::RW> {
+    pub const fn SHIFTBUF(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SHIFTBUFBIS(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::SHIFTBUFBIS, crate::common::RW> {
+    pub const fn SHIFTBUFBIS(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0280usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SHIFTBUFBYS(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::SHIFTBUFBYS, crate::common::RW> {
+    pub const fn SHIFTBUFBYS(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0300usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SHIFTBUFBBS(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::SHIFTBUFBBS, crate::common::RW> {
+    pub const fn SHIFTBUFBBS(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0380usize + n * 4usize) as _) }
     }
@@ -170,50 +161,32 @@ impl FLEXIO {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0500usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SHIFTBUFNBS(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::SHIFTBUFNBS, crate::common::RW> {
+    pub const fn SHIFTBUFNBS(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0680usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SHIFTBUFHWS(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::SHIFTBUFHWS, crate::common::RW> {
+    pub const fn SHIFTBUFHWS(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0700usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SHIFTBUFNIS(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::SHIFTBUFNIS, crate::common::RW> {
+    pub const fn SHIFTBUFNIS(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0780usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SHIFTBUFOES(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::SHIFTBUFOES, crate::common::RW> {
+    pub const fn SHIFTBUFOES(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0800usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SHIFTBUFEOS(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::SHIFTBUFEOS, crate::common::RW> {
+    pub const fn SHIFTBUFEOS(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0880usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SHIFTBUFHBS(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::SHIFTBUFHBS, crate::common::RW> {
+    pub const fn SHIFTBUFHBS(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0900usize + n * 4usize) as _) }
     }
@@ -322,447 +295,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PARAM {
             PARAM(0)
-        }
-    }
-    #[doc = "Pin State"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PIN(pub u32);
-    impl PIN {
-        #[inline(always)]
-        pub const fn PDI(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_PDI(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PIN {
-        #[inline(always)]
-        fn default() -> PIN {
-            PIN(0)
-        }
-    }
-    #[doc = "Pin Falling Edge Enable"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PINFEN(pub u32);
-    impl PINFEN {
-        #[inline(always)]
-        pub const fn PFE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_PFE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PINFEN {
-        #[inline(always)]
-        fn default() -> PINFEN {
-            PINFEN(0)
-        }
-    }
-    #[doc = "Pin Interrupt Enable"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PINIEN(pub u32);
-    impl PINIEN {
-        #[inline(always)]
-        pub const fn PSIE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_PSIE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PINIEN {
-        #[inline(always)]
-        fn default() -> PINIEN {
-            PINIEN(0)
-        }
-    }
-    #[doc = "Pin Output Clear"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PINOUTCLR(pub u32);
-    impl PINOUTCLR {
-        #[inline(always)]
-        pub const fn OUTCLR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_OUTCLR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PINOUTCLR {
-        #[inline(always)]
-        fn default() -> PINOUTCLR {
-            PINOUTCLR(0)
-        }
-    }
-    #[doc = "Pin Output Data"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PINOUTD(pub u32);
-    impl PINOUTD {
-        #[inline(always)]
-        pub const fn OUTD(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_OUTD(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PINOUTD {
-        #[inline(always)]
-        fn default() -> PINOUTD {
-            PINOUTD(0)
-        }
-    }
-    #[doc = "Pin Output Disable"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PINOUTDIS(pub u32);
-    impl PINOUTDIS {
-        #[inline(always)]
-        pub const fn OUTDIS(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_OUTDIS(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PINOUTDIS {
-        #[inline(always)]
-        fn default() -> PINOUTDIS {
-            PINOUTDIS(0)
-        }
-    }
-    #[doc = "Pin Output Enable"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PINOUTE(pub u32);
-    impl PINOUTE {
-        #[inline(always)]
-        pub const fn OUTE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_OUTE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PINOUTE {
-        #[inline(always)]
-        fn default() -> PINOUTE {
-            PINOUTE(0)
-        }
-    }
-    #[doc = "Pin Output Set"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PINOUTSET(pub u32);
-    impl PINOUTSET {
-        #[inline(always)]
-        pub const fn OUTSET(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_OUTSET(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PINOUTSET {
-        #[inline(always)]
-        fn default() -> PINOUTSET {
-            PINOUTSET(0)
-        }
-    }
-    #[doc = "Pin Output Toggle"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PINOUTTOG(pub u32);
-    impl PINOUTTOG {
-        #[inline(always)]
-        pub const fn OUTTOG(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_OUTTOG(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PINOUTTOG {
-        #[inline(always)]
-        fn default() -> PINOUTTOG {
-            PINOUTTOG(0)
-        }
-    }
-    #[doc = "Pin Rising Edge Enable"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PINREN(pub u32);
-    impl PINREN {
-        #[inline(always)]
-        pub const fn PRE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_PRE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PINREN {
-        #[inline(always)]
-        fn default() -> PINREN {
-            PINREN(0)
-        }
-    }
-    #[doc = "Pin Status"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PINSTAT(pub u32);
-    impl PINSTAT {
-        #[inline(always)]
-        pub const fn PSF(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_PSF(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PINSTAT {
-        #[inline(always)]
-        fn default() -> PINSTAT {
-            PINSTAT(0)
-        }
-    }
-    #[doc = "Shifter Buffer"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SHIFTBUF(pub u32);
-    impl SHIFTBUF {
-        #[inline(always)]
-        pub const fn SHIFTBUF(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SHIFTBUF(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SHIFTBUF {
-        #[inline(always)]
-        fn default() -> SHIFTBUF {
-            SHIFTBUF(0)
-        }
-    }
-    #[doc = "Shifter Buffer Bit Byte Swapped"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SHIFTBUFBBS(pub u32);
-    impl SHIFTBUFBBS {
-        #[inline(always)]
-        pub const fn SHIFTBUFBBS(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SHIFTBUFBBS(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SHIFTBUFBBS {
-        #[inline(always)]
-        fn default() -> SHIFTBUFBBS {
-            SHIFTBUFBBS(0)
-        }
-    }
-    #[doc = "Shifter Buffer Bit Swapped"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SHIFTBUFBIS(pub u32);
-    impl SHIFTBUFBIS {
-        #[inline(always)]
-        pub const fn SHIFTBUFBIS(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SHIFTBUFBIS(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SHIFTBUFBIS {
-        #[inline(always)]
-        fn default() -> SHIFTBUFBIS {
-            SHIFTBUFBIS(0)
-        }
-    }
-    #[doc = "Shifter Buffer Byte Swapped"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SHIFTBUFBYS(pub u32);
-    impl SHIFTBUFBYS {
-        #[inline(always)]
-        pub const fn SHIFTBUFBYS(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SHIFTBUFBYS(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SHIFTBUFBYS {
-        #[inline(always)]
-        fn default() -> SHIFTBUFBYS {
-            SHIFTBUFBYS(0)
-        }
-    }
-    #[doc = "Shifter Buffer Even Odd Swapped"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SHIFTBUFEOS(pub u32);
-    impl SHIFTBUFEOS {
-        #[inline(always)]
-        pub const fn SHIFTBUFEOS(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SHIFTBUFEOS(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SHIFTBUFEOS {
-        #[inline(always)]
-        fn default() -> SHIFTBUFEOS {
-            SHIFTBUFEOS(0)
-        }
-    }
-    #[doc = "Shifter Buffer Halfword Byte Swapped"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SHIFTBUFHBS(pub u32);
-    impl SHIFTBUFHBS {
-        #[inline(always)]
-        pub const fn SHIFTBUFHBS(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SHIFTBUFHBS(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SHIFTBUFHBS {
-        #[inline(always)]
-        fn default() -> SHIFTBUFHBS {
-            SHIFTBUFHBS(0)
-        }
-    }
-    #[doc = "Shifter Buffer Halfword Swapped"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SHIFTBUFHWS(pub u32);
-    impl SHIFTBUFHWS {
-        #[inline(always)]
-        pub const fn SHIFTBUFHWS(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SHIFTBUFHWS(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SHIFTBUFHWS {
-        #[inline(always)]
-        fn default() -> SHIFTBUFHWS {
-            SHIFTBUFHWS(0)
-        }
-    }
-    #[doc = "Shifter Buffer Nibble Byte Swapped"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SHIFTBUFNBS(pub u32);
-    impl SHIFTBUFNBS {
-        #[inline(always)]
-        pub const fn SHIFTBUFNBS(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SHIFTBUFNBS(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SHIFTBUFNBS {
-        #[inline(always)]
-        fn default() -> SHIFTBUFNBS {
-            SHIFTBUFNBS(0)
-        }
-    }
-    #[doc = "Shifter Buffer Nibble Swapped"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SHIFTBUFNIS(pub u32);
-    impl SHIFTBUFNIS {
-        #[inline(always)]
-        pub const fn SHIFTBUFNIS(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SHIFTBUFNIS(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SHIFTBUFNIS {
-        #[inline(always)]
-        fn default() -> SHIFTBUFNIS {
-            SHIFTBUFNIS(0)
-        }
-    }
-    #[doc = "Shifter Buffer Odd Even Swapped"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SHIFTBUFOES(pub u32);
-    impl SHIFTBUFOES {
-        #[inline(always)]
-        pub const fn SHIFTBUFOES(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SHIFTBUFOES(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SHIFTBUFOES {
-        #[inline(always)]
-        fn default() -> SHIFTBUFOES {
-            SHIFTBUFOES(0)
         }
     }
     #[doc = "Shifter Configuration"]

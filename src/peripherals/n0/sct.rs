@@ -16,7 +16,7 @@ impl EV {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn STATE(self) -> crate::common::Reg<regs::EV_STATE, crate::common::RW> {
+    pub const fn STATE(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
@@ -246,12 +246,12 @@ impl SCT {
     #[inline(always)]
     pub const fn EV(self, n: usize) -> EV {
         assert!(n < 16usize);
-        unsafe { EV::from_ptr(self.ptr.add(0x0300usize + n * 128usize) as _) }
+        unsafe { EV::from_ptr(self.ptr.add(0x0300usize + n * 8usize) as _) }
     }
     #[inline(always)]
     pub const fn OUT(self, n: usize) -> OUT {
         assert!(n < 10usize);
-        unsafe { OUT::from_ptr(self.ptr.add(0x0500usize + n * 80usize) as _) }
+        unsafe { OUT::from_ptr(self.ptr.add(0x0500usize + n * 8usize) as _) }
     }
 }
 pub mod regs {
@@ -1819,27 +1819,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EV_CTRL {
             EV_CTRL(0)
-        }
-    }
-    #[doc = "Event n State"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EV_STATE(pub u32);
-    impl EV_STATE {
-        #[inline(always)]
-        pub const fn STATEMSKn(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_STATEMSKn(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for EV_STATE {
-        #[inline(always)]
-        fn default() -> EV_STATE {
-            EV_STATE(0)
         }
     }
     #[doc = "Fractional Match"]

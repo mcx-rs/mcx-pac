@@ -57,7 +57,7 @@ impl PDM {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x7cusize) as _) }
     }
     #[inline(always)]
-    pub const fn FSYNC_CTRL(self) -> crate::common::Reg<regs::FSYNC_CTRL, crate::common::RW> {
+    pub const fn FSYNC_CTRL(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
     }
     #[inline(always)]
@@ -254,27 +254,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CTRL_2 {
             CTRL_2(0)
-        }
-    }
-    #[doc = "MICFIL Output Result"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DATACH(pub u32);
-    impl DATACH {
-        #[inline(always)]
-        pub const fn DATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DATACH {
-        #[inline(always)]
-        fn default() -> DATACH {
-            DATACH(0)
         }
     }
     #[doc = "MICFIL DC Remover Control"]
@@ -476,27 +455,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FIFO_STAT {
             FIFO_STAT(0)
-        }
-    }
-    #[doc = "Frame Synchronization Control"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct FSYNC_CTRL(pub u32);
-    impl FSYNC_CTRL {
-        #[inline(always)]
-        pub const fn FSYNCLEN(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_FSYNCLEN(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for FSYNC_CTRL {
-        #[inline(always)]
-        fn default() -> FSYNC_CTRL {
-            FSYNC_CTRL(0)
         }
     }
     #[doc = "Parameter"]

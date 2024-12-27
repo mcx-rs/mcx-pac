@@ -82,7 +82,7 @@ impl ADC {
     #[inline(always)]
     pub const fn CMD(self, n: usize) -> CMD {
         assert!(n < 15usize);
-        unsafe { CMD::from_ptr(self.ptr.add(0x0100usize + n * 120usize) as _) }
+        unsafe { CMD::from_ptr(self.ptr.add(0x0100usize + n * 8usize) as _) }
     }
     #[inline(always)]
     pub const fn CV(self, n: usize) -> crate::common::Reg<regs::CV, crate::common::RW> {
@@ -95,12 +95,12 @@ impl ADC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0300usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR(self, n: usize) -> crate::common::Reg<regs::CAL_GAR, crate::common::RW> {
+    pub const fn CAL_GAR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 33usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0400usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GBR(self, n: usize) -> crate::common::Reg<regs::CAL_GBR, crate::common::RW> {
+    pub const fn CAL_GBR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 33usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0500usize + n * 4usize) as _) }
     }
@@ -130,48 +130,6 @@ impl CMD {
     }
 }
 pub mod regs {
-    #[doc = "Calibration General A-Side Registers"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CAL_GAR(pub u32);
-    impl CAL_GAR {
-        #[inline(always)]
-        pub const fn CAL_GAR_VAL(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_CAL_GAR_VAL(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for CAL_GAR {
-        #[inline(always)]
-        fn default() -> CAL_GAR {
-            CAL_GAR(0)
-        }
-    }
-    #[doc = "Calibration General B-Side Registers"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CAL_GBR(pub u32);
-    impl CAL_GBR {
-        #[inline(always)]
-        pub const fn CAL_GBR_VAL(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_CAL_GBR_VAL(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for CAL_GBR {
-        #[inline(always)]
-        fn default() -> CAL_GBR {
-            CAL_GBR(0)
-        }
-    }
     #[doc = "Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]

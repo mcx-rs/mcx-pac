@@ -22,7 +22,7 @@ impl PMCR {
     #[inline(always)]
     pub const fn PMECTR(self, n: usize) -> PMECTR {
         assert!(n < 3usize);
-        unsafe { PMECTR::from_ptr(self.ptr.add(0x18usize + n * 24usize) as _) }
+        unsafe { PMECTR::from_ptr(self.ptr.add(0x18usize + n * 8usize) as _) }
     }
 }
 #[derive(Copy, Clone, Eq, PartialEq)]
@@ -183,27 +183,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PMCR_PMECTR_HI {
             PMCR_PMECTR_HI(0)
-        }
-    }
-    #[doc = "Performance Monitor Event Counter"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PMCR_PMECTR_LO(pub u32);
-    impl PMCR_PMECTR_LO {
-        #[inline(always)]
-        pub const fn ECTR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_ECTR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PMCR_PMECTR_LO {
-        #[inline(always)]
-        fn default() -> PMCR_PMECTR_LO {
-            PMCR_PMECTR_LO(0)
         }
     }
 }

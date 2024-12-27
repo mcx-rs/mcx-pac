@@ -40,27 +40,27 @@ impl FMUTEST {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn FCCOB2(self) -> crate::common::Reg<regs::FCCOB2, crate::common::RW> {
+    pub const fn FCCOB2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
-    pub const fn FCCOB3(self) -> crate::common::Reg<regs::FCCOB3, crate::common::RW> {
+    pub const fn FCCOB3(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[inline(always)]
-    pub const fn FCCOB4(self) -> crate::common::Reg<regs::FCCOB4, crate::common::RW> {
+    pub const fn FCCOB4(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]
-    pub const fn FCCOB5(self) -> crate::common::Reg<regs::FCCOB5, crate::common::RW> {
+    pub const fn FCCOB5(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[inline(always)]
-    pub const fn FCCOB6(self) -> crate::common::Reg<regs::FCCOB6, crate::common::RW> {
+    pub const fn FCCOB6(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
-    pub const fn FCCOB7(self) -> crate::common::Reg<regs::FCCOB7, crate::common::RW> {
+    pub const fn FCCOB7(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[inline(always)]
@@ -92,13 +92,11 @@ impl FMUTEST {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0124usize) as _) }
     }
     #[inline(always)]
-    pub const fn FLASH_RD_ADD(self) -> crate::common::Reg<regs::FLASH_RD_ADD, crate::common::RW> {
+    pub const fn FLASH_RD_ADD(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0128usize) as _) }
     }
     #[inline(always)]
-    pub const fn FLASH_STOP_ADD(
-        self,
-    ) -> crate::common::Reg<regs::FLASH_STOP_ADD, crate::common::RW> {
+    pub const fn FLASH_STOP_ADD(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0130usize) as _) }
     }
     #[inline(always)]
@@ -106,11 +104,11 @@ impl FMUTEST {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0134usize) as _) }
     }
     #[inline(always)]
-    pub const fn MM_ADDR(self) -> crate::common::Reg<regs::MM_ADDR, crate::common::RW> {
+    pub const fn MM_ADDR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0138usize) as _) }
     }
     #[inline(always)]
-    pub const fn MM_WDATA(self) -> crate::common::Reg<regs::MM_WDATA, crate::common::RW> {
+    pub const fn MM_WDATA(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0140usize) as _) }
     }
     #[inline(always)]
@@ -122,19 +120,19 @@ impl FMUTEST {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0148usize) as _) }
     }
     #[inline(always)]
-    pub const fn RD_DATA0(self) -> crate::common::Reg<regs::RD_DATA0, crate::common::RW> {
+    pub const fn RD_DATA0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x014cusize) as _) }
     }
     #[inline(always)]
-    pub const fn RD_DATA1(self) -> crate::common::Reg<regs::RD_DATA1, crate::common::RW> {
+    pub const fn RD_DATA1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0150usize) as _) }
     }
     #[inline(always)]
-    pub const fn RD_DATA2(self) -> crate::common::Reg<regs::RD_DATA2, crate::common::RW> {
+    pub const fn RD_DATA2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0154usize) as _) }
     }
     #[inline(always)]
-    pub const fn RD_DATA3(self) -> crate::common::Reg<regs::RD_DATA3, crate::common::RW> {
+    pub const fn RD_DATA3(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0158usize) as _) }
     }
     #[inline(always)]
@@ -148,23 +146,23 @@ impl FMUTEST {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0160usize) as _) }
     }
     #[inline(always)]
-    pub const fn SMW_DIN0(self) -> crate::common::Reg<regs::SMW_DIN0, crate::common::RW> {
+    pub const fn SMW_DIN0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0164usize) as _) }
     }
     #[inline(always)]
-    pub const fn SMW_DIN1(self) -> crate::common::Reg<regs::SMW_DIN1, crate::common::RW> {
+    pub const fn SMW_DIN1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0168usize) as _) }
     }
     #[inline(always)]
-    pub const fn SMW_DIN2(self) -> crate::common::Reg<regs::SMW_DIN2, crate::common::RW> {
+    pub const fn SMW_DIN2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x016cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SMW_DIN3(self) -> crate::common::Reg<regs::SMW_DIN3, crate::common::RW> {
+    pub const fn SMW_DIN3(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0170usize) as _) }
     }
     #[inline(always)]
-    pub const fn SMW_ADDR(self) -> crate::common::Reg<regs::SMW_ADDR, crate::common::RW> {
+    pub const fn SMW_ADDR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0174usize) as _) }
     }
     #[inline(always)]
@@ -176,131 +174,131 @@ impl FMUTEST {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x017cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM0_0(self) -> crate::common::Reg<regs::SOCTRIM0_0, crate::common::RW> {
+    pub const fn SOCTRIM0_0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0180usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM0_1(self) -> crate::common::Reg<regs::SOCTRIM0_1, crate::common::RW> {
+    pub const fn SOCTRIM0_1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0184usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM0_2(self) -> crate::common::Reg<regs::SOCTRIM0_2, crate::common::RW> {
+    pub const fn SOCTRIM0_2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0188usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM0_3(self) -> crate::common::Reg<regs::SOCTRIM0_3, crate::common::RW> {
+    pub const fn SOCTRIM0_3(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x018cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM1_0(self) -> crate::common::Reg<regs::SOCTRIM1_0, crate::common::RW> {
+    pub const fn SOCTRIM1_0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0190usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM1_1(self) -> crate::common::Reg<regs::SOCTRIM1_1, crate::common::RW> {
+    pub const fn SOCTRIM1_1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0194usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM1_2(self) -> crate::common::Reg<regs::SOCTRIM1_2, crate::common::RW> {
+    pub const fn SOCTRIM1_2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0198usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM1_3(self) -> crate::common::Reg<regs::SOCTRIM1_3, crate::common::RW> {
+    pub const fn SOCTRIM1_3(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x019cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM2_0(self) -> crate::common::Reg<regs::SOCTRIM2_0, crate::common::RW> {
+    pub const fn SOCTRIM2_0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01a0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM2_1(self) -> crate::common::Reg<regs::SOCTRIM2_1, crate::common::RW> {
+    pub const fn SOCTRIM2_1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01a4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM2_2(self) -> crate::common::Reg<regs::SOCTRIM2_2, crate::common::RW> {
+    pub const fn SOCTRIM2_2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01a8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM2_3(self) -> crate::common::Reg<regs::SOCTRIM2_3, crate::common::RW> {
+    pub const fn SOCTRIM2_3(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01acusize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM3_0(self) -> crate::common::Reg<regs::SOCTRIM3_0, crate::common::RW> {
+    pub const fn SOCTRIM3_0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01b0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM3_1(self) -> crate::common::Reg<regs::SOCTRIM3_1, crate::common::RW> {
+    pub const fn SOCTRIM3_1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01b4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM3_2(self) -> crate::common::Reg<regs::SOCTRIM3_2, crate::common::RW> {
+    pub const fn SOCTRIM3_2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01b8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM3_3(self) -> crate::common::Reg<regs::SOCTRIM3_3, crate::common::RW> {
+    pub const fn SOCTRIM3_3(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01bcusize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM4_0(self) -> crate::common::Reg<regs::SOCTRIM4_0, crate::common::RW> {
+    pub const fn SOCTRIM4_0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM4_1(self) -> crate::common::Reg<regs::SOCTRIM4_1, crate::common::RW> {
+    pub const fn SOCTRIM4_1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM4_2(self) -> crate::common::Reg<regs::SOCTRIM4_2, crate::common::RW> {
+    pub const fn SOCTRIM4_2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM4_3(self) -> crate::common::Reg<regs::SOCTRIM4_3, crate::common::RW> {
+    pub const fn SOCTRIM4_3(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01ccusize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM5_0(self) -> crate::common::Reg<regs::SOCTRIM5_0, crate::common::RW> {
+    pub const fn SOCTRIM5_0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01d0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM5_1(self) -> crate::common::Reg<regs::SOCTRIM5_1, crate::common::RW> {
+    pub const fn SOCTRIM5_1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01d4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM5_2(self) -> crate::common::Reg<regs::SOCTRIM5_2, crate::common::RW> {
+    pub const fn SOCTRIM5_2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01d8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM5_3(self) -> crate::common::Reg<regs::SOCTRIM5_3, crate::common::RW> {
+    pub const fn SOCTRIM5_3(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01dcusize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM6_0(self) -> crate::common::Reg<regs::SOCTRIM6_0, crate::common::RW> {
+    pub const fn SOCTRIM6_0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01e0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM6_1(self) -> crate::common::Reg<regs::SOCTRIM6_1, crate::common::RW> {
+    pub const fn SOCTRIM6_1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01e4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM6_2(self) -> crate::common::Reg<regs::SOCTRIM6_2, crate::common::RW> {
+    pub const fn SOCTRIM6_2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01e8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM6_3(self) -> crate::common::Reg<regs::SOCTRIM6_3, crate::common::RW> {
+    pub const fn SOCTRIM6_3(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01ecusize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM7_0(self) -> crate::common::Reg<regs::SOCTRIM7_0, crate::common::RW> {
+    pub const fn SOCTRIM7_0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01f0usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM7_1(self) -> crate::common::Reg<regs::SOCTRIM7_1, crate::common::RW> {
+    pub const fn SOCTRIM7_1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01f4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM7_2(self) -> crate::common::Reg<regs::SOCTRIM7_2, crate::common::RW> {
+    pub const fn SOCTRIM7_2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01f8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOCTRIM7_3(self) -> crate::common::Reg<regs::SOCTRIM7_3, crate::common::RW> {
+    pub const fn SOCTRIM7_3(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01fcusize) as _) }
     }
     #[inline(always)]
@@ -320,7 +318,7 @@ impl FMUTEST {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0210usize) as _) }
     }
     #[inline(always)]
-    pub const fn R_DATA_CTRL0(self) -> crate::common::Reg<regs::R_DATA_CTRL0, crate::common::RW> {
+    pub const fn R_DATA_CTRL0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0214usize) as _) }
     }
     #[inline(always)]
@@ -350,7 +348,7 @@ impl FMUTEST {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x022cusize) as _) }
     }
     #[inline(always)]
-    pub const fn R_DOUT_QUERY0(self) -> crate::common::Reg<regs::R_DOUT_QUERY0, crate::common::RW> {
+    pub const fn R_DOUT_QUERY0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0230usize) as _) }
     }
     #[inline(always)]
@@ -370,19 +368,19 @@ impl FMUTEST {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0244usize) as _) }
     }
     #[inline(always)]
-    pub const fn R_SMP_WHV0(self) -> crate::common::Reg<regs::R_SMP_WHV0, crate::common::RW> {
+    pub const fn R_SMP_WHV0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0248usize) as _) }
     }
     #[inline(always)]
-    pub const fn R_SMP_WHV1(self) -> crate::common::Reg<regs::R_SMP_WHV1, crate::common::RW> {
+    pub const fn R_SMP_WHV1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x024cusize) as _) }
     }
     #[inline(always)]
-    pub const fn R_SME_WHV0(self) -> crate::common::Reg<regs::R_SME_WHV0, crate::common::RW> {
+    pub const fn R_SME_WHV0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0250usize) as _) }
     }
     #[inline(always)]
-    pub const fn R_SME_WHV1(self) -> crate::common::Reg<regs::R_SME_WHV1, crate::common::RW> {
+    pub const fn R_SME_WHV1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0254usize) as _) }
     }
     #[inline(always)]
@@ -392,15 +390,15 @@ impl FMUTEST {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0258usize) as _) }
     }
     #[inline(always)]
-    pub const fn R_D_MISR0(self) -> crate::common::Reg<regs::R_D_MISR0, crate::common::RW> {
+    pub const fn R_D_MISR0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x025cusize) as _) }
     }
     #[inline(always)]
-    pub const fn R_A_MISR0(self) -> crate::common::Reg<regs::R_A_MISR0, crate::common::RW> {
+    pub const fn R_A_MISR0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0260usize) as _) }
     }
     #[inline(always)]
-    pub const fn R_C_MISR0(self) -> crate::common::Reg<regs::R_C_MISR0, crate::common::RW> {
+    pub const fn R_C_MISR0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0264usize) as _) }
     }
     #[inline(always)]
@@ -410,15 +408,15 @@ impl FMUTEST {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0268usize) as _) }
     }
     #[inline(always)]
-    pub const fn R_DATA_CTRL1(self) -> crate::common::Reg<regs::R_DATA_CTRL1, crate::common::RW> {
+    pub const fn R_DATA_CTRL1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x026cusize) as _) }
     }
     #[inline(always)]
-    pub const fn R_DATA_CTRL2(self) -> crate::common::Reg<regs::R_DATA_CTRL2, crate::common::RW> {
+    pub const fn R_DATA_CTRL2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0270usize) as _) }
     }
     #[inline(always)]
-    pub const fn R_DATA_CTRL3(self) -> crate::common::Reg<regs::R_DATA_CTRL3, crate::common::RW> {
+    pub const fn R_DATA_CTRL3(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0274usize) as _) }
     }
     #[inline(always)]
@@ -508,15 +506,11 @@ impl FMUTEST {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x040cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SMW_SMP_WHV_OPTION0(
-        self,
-    ) -> crate::common::Reg<regs::SMW_SMP_WHV_OPTION0, crate::common::RW> {
+    pub const fn SMW_SMP_WHV_OPTION0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0410usize) as _) }
     }
     #[inline(always)]
-    pub const fn SMW_SME_WHV_OPTION0(
-        self,
-    ) -> crate::common::Reg<regs::SMW_SME_WHV_OPTION0, crate::common::RW> {
+    pub const fn SMW_SME_WHV_OPTION0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0414usize) as _) }
     }
     #[inline(always)]
@@ -526,15 +520,11 @@ impl FMUTEST {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0418usize) as _) }
     }
     #[inline(always)]
-    pub const fn SMW_SMP_WHV_OPTION1(
-        self,
-    ) -> crate::common::Reg<regs::SMW_SMP_WHV_OPTION1, crate::common::RW> {
+    pub const fn SMW_SMP_WHV_OPTION1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x041cusize) as _) }
     }
     #[inline(always)]
-    pub const fn SMW_SME_WHV_OPTION1(
-        self,
-    ) -> crate::common::Reg<regs::SMW_SME_WHV_OPTION1, crate::common::RW> {
+    pub const fn SMW_SME_WHV_OPTION1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0420usize) as _) }
     }
     #[inline(always)]
@@ -570,19 +560,15 @@ impl FMUTEST {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x060cusize) as _) }
     }
     #[inline(always)]
-    pub const fn FAILCNT(self) -> crate::common::Reg<regs::FAILCNT, crate::common::RW> {
+    pub const fn FAILCNT(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0610usize) as _) }
     }
     #[inline(always)]
-    pub const fn PGM_PULSE_CNT0(
-        self,
-    ) -> crate::common::Reg<regs::PGM_PULSE_CNT0, crate::common::RW> {
+    pub const fn PGM_PULSE_CNT0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0614usize) as _) }
     }
     #[inline(always)]
-    pub const fn PGM_PULSE_CNT1(
-        self,
-    ) -> crate::common::Reg<regs::PGM_PULSE_CNT1, crate::common::RW> {
+    pub const fn PGM_PULSE_CNT1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0618usize) as _) }
     }
     #[inline(always)]
@@ -896,27 +882,6 @@ pub mod regs {
             ERS_PULSE_CNT(0)
         }
     }
-    #[doc = "Fail Count Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct FAILCNT(pub u32);
-    impl FAILCNT {
-        #[inline(always)]
-        pub const fn FAILCNT(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_FAILCNT(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for FAILCNT {
-        #[inline(always)]
-        fn default() -> FAILCNT {
-            FAILCNT(0)
-        }
-    }
     #[doc = "Flash Command Control 0 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -957,132 +922,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FCCOB1 {
             FCCOB1(0)
-        }
-    }
-    #[doc = "Flash Command Control 2 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct FCCOB2(pub u32);
-    impl FCCOB2 {
-        #[inline(always)]
-        pub const fn CMDADDR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CMDADDR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for FCCOB2 {
-        #[inline(always)]
-        fn default() -> FCCOB2 {
-            FCCOB2(0)
-        }
-    }
-    #[doc = "Flash Command Control 3 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct FCCOB3(pub u32);
-    impl FCCOB3 {
-        #[inline(always)]
-        pub const fn CMDADDRE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CMDADDRE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for FCCOB3 {
-        #[inline(always)]
-        fn default() -> FCCOB3 {
-            FCCOB3(0)
-        }
-    }
-    #[doc = "Flash Command Control 4 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct FCCOB4(pub u32);
-    impl FCCOB4 {
-        #[inline(always)]
-        pub const fn CMDDATA0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CMDDATA0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for FCCOB4 {
-        #[inline(always)]
-        fn default() -> FCCOB4 {
-            FCCOB4(0)
-        }
-    }
-    #[doc = "Flash Command Control 5 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct FCCOB5(pub u32);
-    impl FCCOB5 {
-        #[inline(always)]
-        pub const fn CMDDATA1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CMDDATA1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for FCCOB5 {
-        #[inline(always)]
-        fn default() -> FCCOB5 {
-            FCCOB5(0)
-        }
-    }
-    #[doc = "Flash Command Control 6 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct FCCOB6(pub u32);
-    impl FCCOB6 {
-        #[inline(always)]
-        pub const fn CMDDATA2(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CMDDATA2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for FCCOB6 {
-        #[inline(always)]
-        fn default() -> FCCOB6 {
-            FCCOB6(0)
-        }
-    }
-    #[doc = "Flash Command Control 7 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct FCCOB7(pub u32);
-    impl FCCOB7 {
-        #[inline(always)]
-        pub const fn CMDDATA3(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CMDDATA3(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for FCCOB7 {
-        #[inline(always)]
-        fn default() -> FCCOB7 {
-            FCCOB7(0)
         }
     }
     #[doc = "Flash Configuration Register"]
@@ -1190,27 +1029,6 @@ pub mod regs {
             FCTRL(0)
         }
     }
-    #[doc = "Flash Read Address Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct FLASH_RD_ADD(pub u32);
-    impl FLASH_RD_ADD {
-        #[inline(always)]
-        pub const fn FLASH_RD_ADD(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_FLASH_RD_ADD(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for FLASH_RD_ADD {
-        #[inline(always)]
-        fn default() -> FLASH_RD_ADD {
-            FLASH_RD_ADD(0)
-        }
-    }
     #[doc = "Flash Read Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1248,27 +1066,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FLASH_RD_CTRL {
             FLASH_RD_CTRL(0)
-        }
-    }
-    #[doc = "Flash Stop Address Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct FLASH_STOP_ADD(pub u32);
-    impl FLASH_STOP_ADD {
-        #[inline(always)]
-        pub const fn FLASH_STOP_ADD(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_FLASH_STOP_ADD(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for FLASH_STOP_ADD {
-        #[inline(always)]
-        fn default() -> FLASH_STOP_ADD {
-            FLASH_STOP_ADD(0)
         }
     }
     #[doc = "Flash Status Register"]
@@ -1670,27 +1467,6 @@ pub mod regs {
             MCTL(0)
         }
     }
-    #[doc = "Memory Map Address Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MM_ADDR(pub u32);
-    impl MM_ADDR {
-        #[inline(always)]
-        pub const fn MM_ADDR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_MM_ADDR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MM_ADDR {
-        #[inline(always)]
-        fn default() -> MM_ADDR {
-            MM_ADDR(0)
-        }
-    }
     #[doc = "Memory Map Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1737,27 +1513,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MM_CTL {
             MM_CTL(0)
-        }
-    }
-    #[doc = "Memory Map Write Data Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MM_WDATA(pub u32);
-    impl MM_WDATA {
-        #[inline(always)]
-        pub const fn MM_WDATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_MM_WDATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MM_WDATA {
-        #[inline(always)]
-        fn default() -> MM_WDATA {
-            MM_WDATA(0)
         }
     }
     #[doc = "FMU Memory Size Register"]
@@ -1809,48 +1564,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PARITY {
             PARITY(0)
-        }
-    }
-    #[doc = "Block 0 Program Pulse Count Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PGM_PULSE_CNT0(pub u32);
-    impl PGM_PULSE_CNT0 {
-        #[inline(always)]
-        pub const fn PGM_CNT0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_PGM_CNT0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PGM_PULSE_CNT0 {
-        #[inline(always)]
-        fn default() -> PGM_PULSE_CNT0 {
-            PGM_PULSE_CNT0(0)
-        }
-    }
-    #[doc = "Block 1 Program Pulse Count Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PGM_PULSE_CNT1(pub u32);
-    impl PGM_PULSE_CNT1 {
-        #[inline(always)]
-        pub const fn PGM_CNT1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_PGM_CNT1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PGM_PULSE_CNT1 {
-        #[inline(always)]
-        fn default() -> PGM_PULSE_CNT1 {
-            PGM_PULSE_CNT1(0)
         }
     }
     #[doc = "Port Control Register"]
@@ -1920,90 +1633,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PWR_OPT {
             PWR_OPT(0)
-        }
-    }
-    #[doc = "Read Data 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RD_DATA0(pub u32);
-    impl RD_DATA0 {
-        #[inline(always)]
-        pub const fn RD_DATA0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_RD_DATA0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RD_DATA0 {
-        #[inline(always)]
-        fn default() -> RD_DATA0 {
-            RD_DATA0(0)
-        }
-    }
-    #[doc = "Read Data 1 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RD_DATA1(pub u32);
-    impl RD_DATA1 {
-        #[inline(always)]
-        pub const fn RD_DATA1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_RD_DATA1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RD_DATA1 {
-        #[inline(always)]
-        fn default() -> RD_DATA1 {
-            RD_DATA1(0)
-        }
-    }
-    #[doc = "Read Data 2 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RD_DATA2(pub u32);
-    impl RD_DATA2 {
-        #[inline(always)]
-        pub const fn RD_DATA2(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_RD_DATA2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RD_DATA2 {
-        #[inline(always)]
-        fn default() -> RD_DATA2 {
-            RD_DATA2(0)
-        }
-    }
-    #[doc = "Read Data 3 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RD_DATA3(pub u32);
-    impl RD_DATA3 {
-        #[inline(always)]
-        pub const fn RD_DATA3(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_RD_DATA3(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RD_DATA3 {
-        #[inline(always)]
-        fn default() -> RD_DATA3 {
-            RD_DATA3(0)
         }
     }
     #[doc = "Read Path Control and Status Register"]
@@ -2501,27 +2130,6 @@ pub mod regs {
             R_ADR_QUERY(0)
         }
     }
-    #[doc = "BIST Address MISR 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct R_A_MISR0(pub u32);
-    impl R_A_MISR0 {
-        #[inline(always)]
-        pub const fn ADRSIG0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_ADRSIG0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for R_A_MISR0 {
-        #[inline(always)]
-        fn default() -> R_A_MISR0 {
-            R_A_MISR0(0)
-        }
-    }
     #[doc = "BIST Address MISR 1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2591,27 +2199,6 @@ pub mod regs {
             R_CNT_LOOP_CTRL(0)
         }
     }
-    #[doc = "BIST Control MISR 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct R_C_MISR0(pub u32);
-    impl R_C_MISR0 {
-        #[inline(always)]
-        pub const fn CTRLSIG0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTRLSIG0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for R_C_MISR0 {
-        #[inline(always)]
-        fn default() -> R_C_MISR0 {
-            R_C_MISR0(0)
-        }
-    }
     #[doc = "BIST Control MISR 1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2631,27 +2218,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> R_C_MISR1 {
             R_C_MISR1(0)
-        }
-    }
-    #[doc = "BIST Data Control 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct R_DATA_CTRL0(pub u32);
-    impl R_DATA_CTRL0 {
-        #[inline(always)]
-        pub const fn DATA0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for R_DATA_CTRL0 {
-        #[inline(always)]
-        fn default() -> R_DATA_CTRL0 {
-            R_DATA_CTRL0(0)
         }
     }
     #[doc = "BIST Data Control 0 Extension Register"]
@@ -2675,27 +2241,6 @@ pub mod regs {
             R_DATA_CTRL0_EX(0)
         }
     }
-    #[doc = "BIST Data Control 1 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct R_DATA_CTRL1(pub u32);
-    impl R_DATA_CTRL1 {
-        #[inline(always)]
-        pub const fn DATA1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for R_DATA_CTRL1 {
-        #[inline(always)]
-        fn default() -> R_DATA_CTRL1 {
-            R_DATA_CTRL1(0)
-        }
-    }
     #[doc = "BIST Data Control 1 Extension Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2717,27 +2262,6 @@ pub mod regs {
             R_DATA_CTRL1_EX(0)
         }
     }
-    #[doc = "BIST Data Control 2 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct R_DATA_CTRL2(pub u32);
-    impl R_DATA_CTRL2 {
-        #[inline(always)]
-        pub const fn DATA2(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for R_DATA_CTRL2 {
-        #[inline(always)]
-        fn default() -> R_DATA_CTRL2 {
-            R_DATA_CTRL2(0)
-        }
-    }
     #[doc = "BIST Data Control 2 Extension Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2757,27 +2281,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> R_DATA_CTRL2_EX {
             R_DATA_CTRL2_EX(0)
-        }
-    }
-    #[doc = "BIST Data Control 3 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct R_DATA_CTRL3(pub u32);
-    impl R_DATA_CTRL3 {
-        #[inline(always)]
-        pub const fn DATA3(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATA3(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for R_DATA_CTRL3 {
-        #[inline(always)]
-        fn default() -> R_DATA_CTRL3 {
-            R_DATA_CTRL3(0)
         }
     }
     #[doc = "BIST Data Control 3 Extension Register"]
@@ -2858,27 +2361,6 @@ pub mod regs {
             R_DFT_CTRL(0)
         }
     }
-    #[doc = "BIST DOUT Query 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct R_DOUT_QUERY0(pub u32);
-    impl R_DOUT_QUERY0 {
-        #[inline(always)]
-        pub const fn DOUTFAIL(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DOUTFAIL(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for R_DOUT_QUERY0 {
-        #[inline(always)]
-        fn default() -> R_DOUT_QUERY0 {
-            R_DOUT_QUERY0(0)
-        }
-    }
     #[doc = "BIST DOUT Query 1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2898,27 +2380,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> R_DOUT_QUERY1 {
             R_DOUT_QUERY1(0)
-        }
-    }
-    #[doc = "BIST DIN MISR 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct R_D_MISR0(pub u32);
-    impl R_D_MISR0 {
-        #[inline(always)]
-        pub const fn DATASIG0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DATASIG0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for R_D_MISR0 {
-        #[inline(always)]
-        fn default() -> R_D_MISR0 {
-            R_D_MISR0(0)
         }
     }
     #[doc = "BIST DIN MISR 1 Register"]
@@ -3347,90 +2808,6 @@ pub mod regs {
             R_REPAIR1_1(0)
         }
     }
-    #[doc = "BIST SME WHV Setting 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct R_SME_WHV0(pub u32);
-    impl R_SME_WHV0 {
-        #[inline(always)]
-        pub const fn SMEWHV0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SMEWHV0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for R_SME_WHV0 {
-        #[inline(always)]
-        fn default() -> R_SME_WHV0 {
-            R_SME_WHV0(0)
-        }
-    }
-    #[doc = "BIST SME WHV Setting 1 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct R_SME_WHV1(pub u32);
-    impl R_SME_WHV1 {
-        #[inline(always)]
-        pub const fn SMEWHV1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SMEWHV1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for R_SME_WHV1 {
-        #[inline(always)]
-        fn default() -> R_SME_WHV1 {
-            R_SME_WHV1(0)
-        }
-    }
-    #[doc = "BIST SMP WHV Setting 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct R_SMP_WHV0(pub u32);
-    impl R_SMP_WHV0 {
-        #[inline(always)]
-        pub const fn SMPWHV0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SMPWHV0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for R_SMP_WHV0 {
-        #[inline(always)]
-        fn default() -> R_SMP_WHV0 {
-            R_SMP_WHV0(0)
-        }
-    }
-    #[doc = "BIST SMP WHV Setting 1 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct R_SMP_WHV1(pub u32);
-    impl R_SMP_WHV1 {
-        #[inline(always)]
-        pub const fn SMPWHV1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SMPWHV1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for R_SMP_WHV1 {
-        #[inline(always)]
-        fn default() -> R_SMP_WHV1 {
-            R_SMP_WHV1(0)
-        }
-    }
     #[doc = "BIST SMW Query Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3773,27 +3150,6 @@ pub mod regs {
             R_TIMER_CTRL_EX(0)
         }
     }
-    #[doc = "SMW Address Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SMW_ADDR(pub u32);
-    impl SMW_ADDR {
-        #[inline(always)]
-        pub const fn SMW_ADDR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SMW_ADDR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SMW_ADDR {
-        #[inline(always)]
-        fn default() -> SMW_ADDR {
-            SMW_ADDR(0)
-        }
-    }
     #[doc = "SMW Command and Wait Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3831,90 +3187,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SMW_CMD_WAIT {
             SMW_CMD_WAIT(0)
-        }
-    }
-    #[doc = "SMW DIN 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SMW_DIN0(pub u32);
-    impl SMW_DIN0 {
-        #[inline(always)]
-        pub const fn SMW_DIN0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SMW_DIN0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SMW_DIN0 {
-        #[inline(always)]
-        fn default() -> SMW_DIN0 {
-            SMW_DIN0(0)
-        }
-    }
-    #[doc = "SMW DIN 1 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SMW_DIN1(pub u32);
-    impl SMW_DIN1 {
-        #[inline(always)]
-        pub const fn SMW_DIN1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SMW_DIN1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SMW_DIN1 {
-        #[inline(always)]
-        fn default() -> SMW_DIN1 {
-            SMW_DIN1(0)
-        }
-    }
-    #[doc = "SMW DIN 2 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SMW_DIN2(pub u32);
-    impl SMW_DIN2 {
-        #[inline(always)]
-        pub const fn SMW_DIN2(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SMW_DIN2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SMW_DIN2 {
-        #[inline(always)]
-        fn default() -> SMW_DIN2 {
-            SMW_DIN2(0)
-        }
-    }
-    #[doc = "SMW DIN 3 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SMW_DIN3(pub u32);
-    impl SMW_DIN3 {
-        #[inline(always)]
-        pub const fn SMW_DIN3(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SMW_DIN3(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SMW_DIN3 {
-        #[inline(always)]
-        fn default() -> SMW_DIN3 {
-            SMW_DIN3(0)
         }
     }
     #[doc = "SMW HB Signals Register"]
@@ -4274,90 +3546,6 @@ pub mod regs {
             SMW_SETTING_OPTION3(0)
         }
     }
-    #[doc = "SMW SME WHV Option 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SMW_SME_WHV_OPTION0(pub u32);
-    impl SMW_SME_WHV_OPTION0 {
-        #[inline(always)]
-        pub const fn SME_WHV_OPT0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SME_WHV_OPT0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SMW_SME_WHV_OPTION0 {
-        #[inline(always)]
-        fn default() -> SMW_SME_WHV_OPTION0 {
-            SMW_SME_WHV_OPTION0(0)
-        }
-    }
-    #[doc = "SMW SME WHV Option 1 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SMW_SME_WHV_OPTION1(pub u32);
-    impl SMW_SME_WHV_OPTION1 {
-        #[inline(always)]
-        pub const fn SME_WHV_OPT1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SME_WHV_OPT1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SMW_SME_WHV_OPTION1 {
-        #[inline(always)]
-        fn default() -> SMW_SME_WHV_OPTION1 {
-            SMW_SME_WHV_OPTION1(0)
-        }
-    }
-    #[doc = "SMW SMP WHV Option 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SMW_SMP_WHV_OPTION0(pub u32);
-    impl SMW_SMP_WHV_OPTION0 {
-        #[inline(always)]
-        pub const fn SMP_WHV_OPT0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SMP_WHV_OPT0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SMW_SMP_WHV_OPTION0 {
-        #[inline(always)]
-        fn default() -> SMW_SMP_WHV_OPTION0 {
-            SMW_SMP_WHV_OPTION0(0)
-        }
-    }
-    #[doc = "SMW SMP WHV Option 1 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SMW_SMP_WHV_OPTION1(pub u32);
-    impl SMW_SMP_WHV_OPTION1 {
-        #[inline(always)]
-        pub const fn SMP_WHV_OPT1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SMP_WHV_OPT1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SMW_SMP_WHV_OPTION1 {
-        #[inline(always)]
-        fn default() -> SMW_SMP_WHV_OPTION1 {
-            SMW_SMP_WHV_OPTION1(0)
-        }
-    }
     #[doc = "SMW Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4425,678 +3613,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SMW_TIMER_OPTION {
             SMW_TIMER_OPTION(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 0 Word 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM0_0(pub u32);
-    impl SOCTRIM0_0 {
-        #[inline(always)]
-        pub const fn TRIM0_0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM0_0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM0_0 {
-        #[inline(always)]
-        fn default() -> SOCTRIM0_0 {
-            SOCTRIM0_0(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 0 Word 1 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM0_1(pub u32);
-    impl SOCTRIM0_1 {
-        #[inline(always)]
-        pub const fn TRIM0_1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM0_1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM0_1 {
-        #[inline(always)]
-        fn default() -> SOCTRIM0_1 {
-            SOCTRIM0_1(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 0 Word 2 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM0_2(pub u32);
-    impl SOCTRIM0_2 {
-        #[inline(always)]
-        pub const fn TRIM0_2(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM0_2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM0_2 {
-        #[inline(always)]
-        fn default() -> SOCTRIM0_2 {
-            SOCTRIM0_2(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 0 Word 3 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM0_3(pub u32);
-    impl SOCTRIM0_3 {
-        #[inline(always)]
-        pub const fn TRIM0_3(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM0_3(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM0_3 {
-        #[inline(always)]
-        fn default() -> SOCTRIM0_3 {
-            SOCTRIM0_3(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 1 Word 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM1_0(pub u32);
-    impl SOCTRIM1_0 {
-        #[inline(always)]
-        pub const fn TRIM1_0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM1_0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM1_0 {
-        #[inline(always)]
-        fn default() -> SOCTRIM1_0 {
-            SOCTRIM1_0(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 1 Word 1 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM1_1(pub u32);
-    impl SOCTRIM1_1 {
-        #[inline(always)]
-        pub const fn TRIM1_1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM1_1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM1_1 {
-        #[inline(always)]
-        fn default() -> SOCTRIM1_1 {
-            SOCTRIM1_1(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 1 Word 2 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM1_2(pub u32);
-    impl SOCTRIM1_2 {
-        #[inline(always)]
-        pub const fn TRIM1_2(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM1_2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM1_2 {
-        #[inline(always)]
-        fn default() -> SOCTRIM1_2 {
-            SOCTRIM1_2(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 1 Word 3 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM1_3(pub u32);
-    impl SOCTRIM1_3 {
-        #[inline(always)]
-        pub const fn TRIM1_3(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM1_3(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM1_3 {
-        #[inline(always)]
-        fn default() -> SOCTRIM1_3 {
-            SOCTRIM1_3(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 2 Word 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM2_0(pub u32);
-    impl SOCTRIM2_0 {
-        #[inline(always)]
-        pub const fn TRIM2_0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM2_0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM2_0 {
-        #[inline(always)]
-        fn default() -> SOCTRIM2_0 {
-            SOCTRIM2_0(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 2 Word 1 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM2_1(pub u32);
-    impl SOCTRIM2_1 {
-        #[inline(always)]
-        pub const fn TRIM2_1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM2_1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM2_1 {
-        #[inline(always)]
-        fn default() -> SOCTRIM2_1 {
-            SOCTRIM2_1(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 2 Word 2 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM2_2(pub u32);
-    impl SOCTRIM2_2 {
-        #[inline(always)]
-        pub const fn TRIM2_2(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM2_2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM2_2 {
-        #[inline(always)]
-        fn default() -> SOCTRIM2_2 {
-            SOCTRIM2_2(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 2 Word 3 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM2_3(pub u32);
-    impl SOCTRIM2_3 {
-        #[inline(always)]
-        pub const fn TRIM2_3(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM2_3(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM2_3 {
-        #[inline(always)]
-        fn default() -> SOCTRIM2_3 {
-            SOCTRIM2_3(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 3 Word 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM3_0(pub u32);
-    impl SOCTRIM3_0 {
-        #[inline(always)]
-        pub const fn TRIM3_0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM3_0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM3_0 {
-        #[inline(always)]
-        fn default() -> SOCTRIM3_0 {
-            SOCTRIM3_0(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 3 Word 1 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM3_1(pub u32);
-    impl SOCTRIM3_1 {
-        #[inline(always)]
-        pub const fn TRIM3_1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM3_1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM3_1 {
-        #[inline(always)]
-        fn default() -> SOCTRIM3_1 {
-            SOCTRIM3_1(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 3 Word 2 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM3_2(pub u32);
-    impl SOCTRIM3_2 {
-        #[inline(always)]
-        pub const fn TRIM3_2(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM3_2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM3_2 {
-        #[inline(always)]
-        fn default() -> SOCTRIM3_2 {
-            SOCTRIM3_2(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 3 Word 3 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM3_3(pub u32);
-    impl SOCTRIM3_3 {
-        #[inline(always)]
-        pub const fn TRIM3_3(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM3_3(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM3_3 {
-        #[inline(always)]
-        fn default() -> SOCTRIM3_3 {
-            SOCTRIM3_3(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 4 Word 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM4_0(pub u32);
-    impl SOCTRIM4_0 {
-        #[inline(always)]
-        pub const fn TRIM4_0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM4_0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM4_0 {
-        #[inline(always)]
-        fn default() -> SOCTRIM4_0 {
-            SOCTRIM4_0(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 4 Word 1 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM4_1(pub u32);
-    impl SOCTRIM4_1 {
-        #[inline(always)]
-        pub const fn TRIM4_1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM4_1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM4_1 {
-        #[inline(always)]
-        fn default() -> SOCTRIM4_1 {
-            SOCTRIM4_1(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 4 Word 2 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM4_2(pub u32);
-    impl SOCTRIM4_2 {
-        #[inline(always)]
-        pub const fn TRIM4_2(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM4_2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM4_2 {
-        #[inline(always)]
-        fn default() -> SOCTRIM4_2 {
-            SOCTRIM4_2(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 4 Word 3 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM4_3(pub u32);
-    impl SOCTRIM4_3 {
-        #[inline(always)]
-        pub const fn TRIM4_3(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM4_3(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM4_3 {
-        #[inline(always)]
-        fn default() -> SOCTRIM4_3 {
-            SOCTRIM4_3(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 5 Word 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM5_0(pub u32);
-    impl SOCTRIM5_0 {
-        #[inline(always)]
-        pub const fn TRIM5_0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM5_0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM5_0 {
-        #[inline(always)]
-        fn default() -> SOCTRIM5_0 {
-            SOCTRIM5_0(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 5 Word 1 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM5_1(pub u32);
-    impl SOCTRIM5_1 {
-        #[inline(always)]
-        pub const fn TRIM5_1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM5_1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM5_1 {
-        #[inline(always)]
-        fn default() -> SOCTRIM5_1 {
-            SOCTRIM5_1(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 5 Word 2 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM5_2(pub u32);
-    impl SOCTRIM5_2 {
-        #[inline(always)]
-        pub const fn TRIM5_2(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM5_2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM5_2 {
-        #[inline(always)]
-        fn default() -> SOCTRIM5_2 {
-            SOCTRIM5_2(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 5 Word 3 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM5_3(pub u32);
-    impl SOCTRIM5_3 {
-        #[inline(always)]
-        pub const fn TRIM5_3(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM5_3(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM5_3 {
-        #[inline(always)]
-        fn default() -> SOCTRIM5_3 {
-            SOCTRIM5_3(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 6 Word 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM6_0(pub u32);
-    impl SOCTRIM6_0 {
-        #[inline(always)]
-        pub const fn TRIM6_0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM6_0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM6_0 {
-        #[inline(always)]
-        fn default() -> SOCTRIM6_0 {
-            SOCTRIM6_0(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 6 Word 1 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM6_1(pub u32);
-    impl SOCTRIM6_1 {
-        #[inline(always)]
-        pub const fn TRIM6_1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM6_1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM6_1 {
-        #[inline(always)]
-        fn default() -> SOCTRIM6_1 {
-            SOCTRIM6_1(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 6 Word 2 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM6_2(pub u32);
-    impl SOCTRIM6_2 {
-        #[inline(always)]
-        pub const fn TRIM6_2(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM6_2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM6_2 {
-        #[inline(always)]
-        fn default() -> SOCTRIM6_2 {
-            SOCTRIM6_2(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 6 Word 3 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM6_3(pub u32);
-    impl SOCTRIM6_3 {
-        #[inline(always)]
-        pub const fn TRIM6_3(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM6_3(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM6_3 {
-        #[inline(always)]
-        fn default() -> SOCTRIM6_3 {
-            SOCTRIM6_3(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 7 Word 0 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM7_0(pub u32);
-    impl SOCTRIM7_0 {
-        #[inline(always)]
-        pub const fn TRIM7_0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM7_0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM7_0 {
-        #[inline(always)]
-        fn default() -> SOCTRIM7_0 {
-            SOCTRIM7_0(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 7 Word 1 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM7_1(pub u32);
-    impl SOCTRIM7_1 {
-        #[inline(always)]
-        pub const fn TRIM7_1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM7_1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM7_1 {
-        #[inline(always)]
-        fn default() -> SOCTRIM7_1 {
-            SOCTRIM7_1(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 7 Word 2 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM7_2(pub u32);
-    impl SOCTRIM7_2 {
-        #[inline(always)]
-        pub const fn TRIM7_2(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM7_2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM7_2 {
-        #[inline(always)]
-        fn default() -> SOCTRIM7_2 {
-            SOCTRIM7_2(0)
-        }
-    }
-    #[doc = "SoC Trim Phrase 7 Word 3 Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOCTRIM7_3(pub u32);
-    impl SOCTRIM7_3 {
-        #[inline(always)]
-        pub const fn TRIM7_3(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TRIM7_3(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for SOCTRIM7_3 {
-        #[inline(always)]
-        fn default() -> SOCTRIM7_3 {
-            SOCTRIM7_3(0)
         }
     }
     #[doc = "User Interface Control Register"]

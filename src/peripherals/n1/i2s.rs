@@ -48,7 +48,7 @@ impl I2S {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[inline(always)]
-    pub const fn TDR(self, n: usize) -> crate::common::Reg<regs::TDR, crate::common::RW> {
+    pub const fn TDR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 2usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize + n * 4usize) as _) }
     }
@@ -58,7 +58,7 @@ impl I2S {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn TMR(self) -> crate::common::Reg<regs::TMR, crate::common::RW> {
+    pub const fn TMR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
     }
     #[inline(always)]
@@ -86,7 +86,7 @@ impl I2S {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x9cusize) as _) }
     }
     #[inline(always)]
-    pub const fn RDR(self, n: usize) -> crate::common::Reg<regs::RDR, crate::common::RW> {
+    pub const fn RDR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 2usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa0usize + n * 4usize) as _) }
     }
@@ -96,7 +96,7 @@ impl I2S {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn RMR(self) -> crate::common::Reg<regs::RMR, crate::common::RW> {
+    pub const fn RMR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe0usize) as _) }
     }
     #[inline(always)]
@@ -651,27 +651,6 @@ pub mod regs {
             RCSR(0)
         }
     }
-    #[doc = "Receive Data"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RDR(pub u32);
-    impl RDR {
-        #[inline(always)]
-        pub const fn RDR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_RDR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RDR {
-        #[inline(always)]
-        fn default() -> RDR {
-            RDR(0)
-        }
-    }
     #[doc = "Receive FIFO"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -709,27 +688,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> RFR {
             RFR(0)
-        }
-    }
-    #[doc = "Receive Mask"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RMR(pub u32);
-    impl RMR {
-        #[inline(always)]
-        pub const fn RWM(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_RWM(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RMR {
-        #[inline(always)]
-        fn default() -> RMR {
-            RMR(0)
         }
     }
     #[doc = "Transmit Configuration 1"]
@@ -1200,27 +1158,6 @@ pub mod regs {
             TCSR(0)
         }
     }
-    #[doc = "Transmit Data"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct TDR(pub u32);
-    impl TDR {
-        #[inline(always)]
-        pub const fn TDR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TDR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for TDR {
-        #[inline(always)]
-        fn default() -> TDR {
-            TDR(0)
-        }
-    }
     #[doc = "Transmit FIFO"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1258,27 +1195,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TFR {
             TFR(0)
-        }
-    }
-    #[doc = "Transmit Mask"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct TMR(pub u32);
-    impl TMR {
-        #[inline(always)]
-        pub const fn TWM(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TWM(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for TMR {
-        #[inline(always)]
-        fn default() -> TMR {
-            TMR(0)
         }
     }
     #[doc = "Version ID"]

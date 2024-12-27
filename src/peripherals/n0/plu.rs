@@ -39,7 +39,7 @@ impl PLU {
     #[inline(always)]
     pub const fn LUT(self, n: usize) -> LUT {
         assert!(n < 26usize);
-        unsafe { LUT::from_ptr(self.ptr.add(0x0usize + n * 832usize) as _) }
+        unsafe { LUT::from_ptr(self.ptr.add(0x0usize + n * 32usize) as _) }
     }
     #[inline(always)]
     pub const fn LUT_TRUTH(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
@@ -83,27 +83,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> LUT_INP_MUX {
             LUT_INP_MUX(0)
-        }
-    }
-    #[doc = "PLU LUT truth table"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct LUT_TRUTH(pub u32);
-    impl LUT_TRUTH {
-        #[inline(always)]
-        pub const fn LUT_TRUTH(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_LUT_TRUTH(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for LUT_TRUTH {
-        #[inline(always)]
-        fn default() -> LUT_TRUTH {
-            LUT_TRUTH(0)
         }
     }
     #[doc = "PLU outputs"]

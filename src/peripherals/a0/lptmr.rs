@@ -24,57 +24,15 @@ impl LPTMR {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn CMR(self) -> crate::common::Reg<regs::CMR, crate::common::RW> {
+    pub const fn CMR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn CNR(self) -> crate::common::Reg<regs::CNR, crate::common::RW> {
+    pub const fn CNR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
 }
 pub mod regs {
-    #[doc = "Compare"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CMR(pub u32);
-    impl CMR {
-        #[inline(always)]
-        pub const fn COMPARE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_COMPARE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CMR {
-        #[inline(always)]
-        fn default() -> CMR {
-            CMR(0)
-        }
-    }
-    #[doc = "Counter"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CNR(pub u32);
-    impl CNR {
-        #[inline(always)]
-        pub const fn COUNTER(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_COUNTER(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for CNR {
-        #[inline(always)]
-        fn default() -> CNR {
-            CNR(0)
-        }
-    }
     #[doc = "Control Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]

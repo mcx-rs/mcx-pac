@@ -18,7 +18,7 @@ impl PWM {
     #[inline(always)]
     pub const fn SM(self, n: usize) -> SM {
         assert!(n < 4usize);
-        unsafe { SM::from_ptr(self.ptr.add(0x0usize + n * 384usize) as _) }
+        unsafe { SM::from_ptr(self.ptr.add(0x0usize + n * 96usize) as _) }
     }
     #[inline(always)]
     pub const fn OUTEN(self) -> crate::common::Reg<regs::OUTEN, crate::common::RW> {

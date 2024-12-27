@@ -18,7 +18,7 @@ impl EVTG {
     #[inline(always)]
     pub const fn EVTG_INST(self, n: usize) -> EVTG_INST {
         assert!(n < 4usize);
-        unsafe { EVTG_INST::from_ptr(self.ptr.add(0x0usize + n * 64usize) as _) }
+        unsafe { EVTG_INST::from_ptr(self.ptr.add(0x0usize + n * 16usize) as _) }
     }
 }
 #[derive(Copy, Clone, Eq, PartialEq)]

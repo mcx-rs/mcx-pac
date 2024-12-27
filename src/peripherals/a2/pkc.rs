@@ -60,11 +60,11 @@ impl PKC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_UPTR(self) -> crate::common::Reg<regs::PKC_UPTR, crate::common::RW> {
+    pub const fn PKC_UPTR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_UPTRT(self) -> crate::common::Reg<regs::PKC_UPTRT, crate::common::RW> {
+    pub const fn PKC_UPTRT(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
     }
     #[inline(always)]
@@ -72,7 +72,7 @@ impl PKC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
     }
     #[inline(always)]
-    pub const fn PKC_MCDATA(self) -> crate::common::Reg<regs::PKC_MCDATA, crate::common::RW> {
+    pub const fn PKC_MCDATA(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[inline(always)]
@@ -632,27 +632,6 @@ pub mod regs {
             PKC_LEN2(0)
         }
     }
-    #[doc = "MC pattern data interface"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PKC_MCDATA(pub u32);
-    impl PKC_MCDATA {
-        #[inline(always)]
-        pub const fn MCDATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_MCDATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PKC_MCDATA {
-        #[inline(always)]
-        fn default() -> PKC_MCDATA {
-            PKC_MCDATA(0)
-        }
-    }
     #[doc = "Mode register, parameter set 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -840,48 +819,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PKC_ULEN {
             PKC_ULEN(0)
-        }
-    }
-    #[doc = "Universal pointer FUP program"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PKC_UPTR(pub u32);
-    impl PKC_UPTR {
-        #[inline(always)]
-        pub const fn PTR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_PTR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PKC_UPTR {
-        #[inline(always)]
-        fn default() -> PKC_UPTR {
-            PKC_UPTR(0)
-        }
-    }
-    #[doc = "Universal pointer FUP table"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PKC_UPTRT(pub u32);
-    impl PKC_UPTRT {
-        #[inline(always)]
-        pub const fn PTR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_PTR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for PKC_UPTRT {
-        #[inline(always)]
-        fn default() -> PKC_UPTRT {
-            PKC_UPTRT(0)
         }
     }
     #[doc = "PKC version register"]

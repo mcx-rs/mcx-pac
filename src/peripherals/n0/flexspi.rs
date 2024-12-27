@@ -40,7 +40,7 @@ impl FLEXSPI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
     #[inline(always)]
-    pub const fn LUTKEY(self) -> crate::common::Reg<regs::LUTKEY, crate::common::RW> {
+    pub const fn LUTKEY(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[inline(always)]
@@ -75,7 +75,7 @@ impl FLEXSPI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x94usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPCR0(self) -> crate::common::Reg<regs::IPCR0, crate::common::RW> {
+    pub const fn IPCR0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa0usize) as _) }
     }
     #[inline(always)]
@@ -91,7 +91,7 @@ impl FLEXSPI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb0usize) as _) }
     }
     #[inline(always)]
-    pub const fn DLPR(self) -> crate::common::Reg<regs::DLPR, crate::common::RW> {
+    pub const fn DLPR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb4usize) as _) }
     }
     #[inline(always)]
@@ -132,12 +132,12 @@ impl FLEXSPI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf4usize) as _) }
     }
     #[inline(always)]
-    pub const fn RFDR(self, n: usize) -> crate::common::Reg<regs::RFDR, crate::common::RW> {
+    pub const fn RFDR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 32usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn TFDR(self, n: usize) -> crate::common::Reg<regs::TFDR, crate::common::RW> {
+    pub const fn TFDR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 32usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0180usize + n * 4usize) as _) }
     }
@@ -232,11 +232,11 @@ impl FLEXSPI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0500usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX0IV0(self) -> crate::common::Reg<regs::IPEDCTX0IV0, crate::common::RW> {
+    pub const fn IPEDCTX0IV0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0520usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX0IV1(self) -> crate::common::Reg<regs::IPEDCTX0IV1, crate::common::RW> {
+    pub const fn IPEDCTX0IV1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0524usize) as _) }
     }
     #[inline(always)]
@@ -248,19 +248,19 @@ impl FLEXSPI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x052cusize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX0AAD0(self) -> crate::common::Reg<regs::IPEDCTX0AAD0, crate::common::RW> {
+    pub const fn IPEDCTX0AAD0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0530usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX0AAD1(self) -> crate::common::Reg<regs::IPEDCTX0AAD1, crate::common::RW> {
+    pub const fn IPEDCTX0AAD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0534usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX1IV0(self) -> crate::common::Reg<regs::IPEDCTX1IV0, crate::common::RW> {
+    pub const fn IPEDCTX1IV0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0540usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX1IV1(self) -> crate::common::Reg<regs::IPEDCTX1IV1, crate::common::RW> {
+    pub const fn IPEDCTX1IV1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0544usize) as _) }
     }
     #[inline(always)]
@@ -272,19 +272,19 @@ impl FLEXSPI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x054cusize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX1AAD0(self) -> crate::common::Reg<regs::IPEDCTX1AAD0, crate::common::RW> {
+    pub const fn IPEDCTX1AAD0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0550usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX1AAD1(self) -> crate::common::Reg<regs::IPEDCTX1AAD1, crate::common::RW> {
+    pub const fn IPEDCTX1AAD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0554usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX2IV0(self) -> crate::common::Reg<regs::IPEDCTX2IV0, crate::common::RW> {
+    pub const fn IPEDCTX2IV0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0560usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX2IV1(self) -> crate::common::Reg<regs::IPEDCTX2IV1, crate::common::RW> {
+    pub const fn IPEDCTX2IV1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0564usize) as _) }
     }
     #[inline(always)]
@@ -296,19 +296,19 @@ impl FLEXSPI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x056cusize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX2AAD0(self) -> crate::common::Reg<regs::IPEDCTX2AAD0, crate::common::RW> {
+    pub const fn IPEDCTX2AAD0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0570usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX2AAD1(self) -> crate::common::Reg<regs::IPEDCTX2AAD1, crate::common::RW> {
+    pub const fn IPEDCTX2AAD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0574usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX3IV0(self) -> crate::common::Reg<regs::IPEDCTX3IV0, crate::common::RW> {
+    pub const fn IPEDCTX3IV0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0580usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX3IV1(self) -> crate::common::Reg<regs::IPEDCTX3IV1, crate::common::RW> {
+    pub const fn IPEDCTX3IV1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0584usize) as _) }
     }
     #[inline(always)]
@@ -320,19 +320,19 @@ impl FLEXSPI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x058cusize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX3AAD0(self) -> crate::common::Reg<regs::IPEDCTX3AAD0, crate::common::RW> {
+    pub const fn IPEDCTX3AAD0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0590usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX3AAD1(self) -> crate::common::Reg<regs::IPEDCTX3AAD1, crate::common::RW> {
+    pub const fn IPEDCTX3AAD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0594usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX4IV0(self) -> crate::common::Reg<regs::IPEDCTX4IV0, crate::common::RW> {
+    pub const fn IPEDCTX4IV0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05a0usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX4IV1(self) -> crate::common::Reg<regs::IPEDCTX4IV1, crate::common::RW> {
+    pub const fn IPEDCTX4IV1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05a4usize) as _) }
     }
     #[inline(always)]
@@ -344,19 +344,19 @@ impl FLEXSPI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05acusize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX4AAD0(self) -> crate::common::Reg<regs::IPEDCTX4AAD0, crate::common::RW> {
+    pub const fn IPEDCTX4AAD0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05b0usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX4AAD1(self) -> crate::common::Reg<regs::IPEDCTX4AAD1, crate::common::RW> {
+    pub const fn IPEDCTX4AAD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05b4usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX5IV0(self) -> crate::common::Reg<regs::IPEDCTX5IV0, crate::common::RW> {
+    pub const fn IPEDCTX5IV0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05c0usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX5IV1(self) -> crate::common::Reg<regs::IPEDCTX5IV1, crate::common::RW> {
+    pub const fn IPEDCTX5IV1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05c4usize) as _) }
     }
     #[inline(always)]
@@ -368,19 +368,19 @@ impl FLEXSPI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05ccusize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX5AAD0(self) -> crate::common::Reg<regs::IPEDCTX5AAD0, crate::common::RW> {
+    pub const fn IPEDCTX5AAD0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05d0usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX5AAD1(self) -> crate::common::Reg<regs::IPEDCTX5AAD1, crate::common::RW> {
+    pub const fn IPEDCTX5AAD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05d4usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX6IV0(self) -> crate::common::Reg<regs::IPEDCTX6IV0, crate::common::RW> {
+    pub const fn IPEDCTX6IV0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05e0usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX6IV1(self) -> crate::common::Reg<regs::IPEDCTX6IV1, crate::common::RW> {
+    pub const fn IPEDCTX6IV1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05e4usize) as _) }
     }
     #[inline(always)]
@@ -392,11 +392,11 @@ impl FLEXSPI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05ecusize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX6AAD0(self) -> crate::common::Reg<regs::IPEDCTX6AAD0, crate::common::RW> {
+    pub const fn IPEDCTX6AAD0(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05f0usize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTX6AAD1(self) -> crate::common::Reg<regs::IPEDCTX6AAD1, crate::common::RW> {
+    pub const fn IPEDCTX6AAD1(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x05f4usize) as _) }
     }
 }
@@ -848,27 +848,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DLLCR {
             DLLCR(0)
-        }
-    }
-    #[doc = "Data Learning Pattern"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DLPR(pub u32);
-    impl DLPR {
-        #[inline(always)]
-        pub const fn DLP(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_DLP(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DLPR {
-        #[inline(always)]
-        fn default() -> DLPR {
-            DLPR(0)
         }
     }
     #[doc = "Flash Control 0"]
@@ -1471,27 +1450,6 @@ pub mod regs {
             IPCMD(0)
         }
     }
-    #[doc = "IP Control 0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPCR0(pub u32);
-    impl IPCR0 {
-        #[inline(always)]
-        pub const fn SFAR(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_SFAR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPCR0 {
-        #[inline(always)]
-        fn default() -> IPCR0 {
-            IPCR0(0)
-        }
-    }
     #[doc = "IP Control 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1681,48 +1639,6 @@ pub mod regs {
             IPEDCTRL(0)
         }
     }
-    #[doc = "IPED Context0 Additional Authenticated Data0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX0AAD0(pub u32);
-    impl IPEDCTX0AAD0 {
-        #[inline(always)]
-        pub const fn CTX0_AAD0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX0_AAD0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX0AAD0 {
-        #[inline(always)]
-        fn default() -> IPEDCTX0AAD0 {
-            IPEDCTX0AAD0(0)
-        }
-    }
-    #[doc = "IPED Context0 Additional Authenticated Data1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX0AAD1(pub u32);
-    impl IPEDCTX0AAD1 {
-        #[inline(always)]
-        pub const fn CTX0_AAD1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX0_AAD1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX0AAD1 {
-        #[inline(always)]
-        fn default() -> IPEDCTX0AAD1 {
-            IPEDCTX0AAD1(0)
-        }
-    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1742,48 +1658,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPEDCTX0END {
             IPEDCTX0END(0)
-        }
-    }
-    #[doc = "IPED Context0 IV0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX0IV0(pub u32);
-    impl IPEDCTX0IV0 {
-        #[inline(always)]
-        pub const fn CTX0_IV0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX0_IV0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX0IV0 {
-        #[inline(always)]
-        fn default() -> IPEDCTX0IV0 {
-            IPEDCTX0IV0(0)
-        }
-    }
-    #[doc = "IPED Context0 IV1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX0IV1(pub u32);
-    impl IPEDCTX0IV1 {
-        #[inline(always)]
-        pub const fn CTX0_IV1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX0_IV1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX0IV1 {
-        #[inline(always)]
-        fn default() -> IPEDCTX0IV1 {
-            IPEDCTX0IV1(0)
         }
     }
     #[doc = "Start Address of Region"]
@@ -1825,48 +1699,6 @@ pub mod regs {
             IPEDCTX0START(0)
         }
     }
-    #[doc = "IPED Context1 Additional Authenticated Data0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX1AAD0(pub u32);
-    impl IPEDCTX1AAD0 {
-        #[inline(always)]
-        pub const fn CTX1_AAD0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX1_AAD0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX1AAD0 {
-        #[inline(always)]
-        fn default() -> IPEDCTX1AAD0 {
-            IPEDCTX1AAD0(0)
-        }
-    }
-    #[doc = "IPED Context1 Additional Authenticated Data1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX1AAD1(pub u32);
-    impl IPEDCTX1AAD1 {
-        #[inline(always)]
-        pub const fn CTX1_AAD1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX1_AAD1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX1AAD1 {
-        #[inline(always)]
-        fn default() -> IPEDCTX1AAD1 {
-            IPEDCTX1AAD1(0)
-        }
-    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1886,48 +1718,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPEDCTX1END {
             IPEDCTX1END(0)
-        }
-    }
-    #[doc = "IPED Context1 IV0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX1IV0(pub u32);
-    impl IPEDCTX1IV0 {
-        #[inline(always)]
-        pub const fn CTX1_IV0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX1_IV0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX1IV0 {
-        #[inline(always)]
-        fn default() -> IPEDCTX1IV0 {
-            IPEDCTX1IV0(0)
-        }
-    }
-    #[doc = "IPED Context1 IV1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX1IV1(pub u32);
-    impl IPEDCTX1IV1 {
-        #[inline(always)]
-        pub const fn CTX1_IV1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX1_IV1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX1IV1 {
-        #[inline(always)]
-        fn default() -> IPEDCTX1IV1 {
-            IPEDCTX1IV1(0)
         }
     }
     #[doc = "Start Address of Region"]
@@ -1969,48 +1759,6 @@ pub mod regs {
             IPEDCTX1START(0)
         }
     }
-    #[doc = "IPED Context2 Additional Authenticated Data0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX2AAD0(pub u32);
-    impl IPEDCTX2AAD0 {
-        #[inline(always)]
-        pub const fn CTX2_AAD0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX2_AAD0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX2AAD0 {
-        #[inline(always)]
-        fn default() -> IPEDCTX2AAD0 {
-            IPEDCTX2AAD0(0)
-        }
-    }
-    #[doc = "IPED Context2 Additional Authenticated Data1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX2AAD1(pub u32);
-    impl IPEDCTX2AAD1 {
-        #[inline(always)]
-        pub const fn CTX2_AAD1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX2_AAD1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX2AAD1 {
-        #[inline(always)]
-        fn default() -> IPEDCTX2AAD1 {
-            IPEDCTX2AAD1(0)
-        }
-    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2030,48 +1778,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPEDCTX2END {
             IPEDCTX2END(0)
-        }
-    }
-    #[doc = "IPED Context2 IV0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX2IV0(pub u32);
-    impl IPEDCTX2IV0 {
-        #[inline(always)]
-        pub const fn CTX2_IV0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX2_IV0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX2IV0 {
-        #[inline(always)]
-        fn default() -> IPEDCTX2IV0 {
-            IPEDCTX2IV0(0)
-        }
-    }
-    #[doc = "IPED Context2 IV1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX2IV1(pub u32);
-    impl IPEDCTX2IV1 {
-        #[inline(always)]
-        pub const fn CTX2_IV1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX2_IV1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX2IV1 {
-        #[inline(always)]
-        fn default() -> IPEDCTX2IV1 {
-            IPEDCTX2IV1(0)
         }
     }
     #[doc = "Start Address of Region"]
@@ -2113,48 +1819,6 @@ pub mod regs {
             IPEDCTX2START(0)
         }
     }
-    #[doc = "IPED Context3 Additional Authenticated Data0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX3AAD0(pub u32);
-    impl IPEDCTX3AAD0 {
-        #[inline(always)]
-        pub const fn CTX3_AAD0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX3_AAD0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX3AAD0 {
-        #[inline(always)]
-        fn default() -> IPEDCTX3AAD0 {
-            IPEDCTX3AAD0(0)
-        }
-    }
-    #[doc = "IPED Context3 Additional Authenticated Data1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX3AAD1(pub u32);
-    impl IPEDCTX3AAD1 {
-        #[inline(always)]
-        pub const fn CTX3_AAD1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX3_AAD1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX3AAD1 {
-        #[inline(always)]
-        fn default() -> IPEDCTX3AAD1 {
-            IPEDCTX3AAD1(0)
-        }
-    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2174,48 +1838,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPEDCTX3END {
             IPEDCTX3END(0)
-        }
-    }
-    #[doc = "IPED Context3 IV0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX3IV0(pub u32);
-    impl IPEDCTX3IV0 {
-        #[inline(always)]
-        pub const fn CTX3_IV0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX3_IV0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX3IV0 {
-        #[inline(always)]
-        fn default() -> IPEDCTX3IV0 {
-            IPEDCTX3IV0(0)
-        }
-    }
-    #[doc = "IPED Context3 IV1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX3IV1(pub u32);
-    impl IPEDCTX3IV1 {
-        #[inline(always)]
-        pub const fn CTX3_IV1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX3_IV1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX3IV1 {
-        #[inline(always)]
-        fn default() -> IPEDCTX3IV1 {
-            IPEDCTX3IV1(0)
         }
     }
     #[doc = "Start Address of Region"]
@@ -2257,48 +1879,6 @@ pub mod regs {
             IPEDCTX3START(0)
         }
     }
-    #[doc = "IPED Context4 Additional Authenticated Data0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX4AAD0(pub u32);
-    impl IPEDCTX4AAD0 {
-        #[inline(always)]
-        pub const fn CTX4_AAD0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX4_AAD0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX4AAD0 {
-        #[inline(always)]
-        fn default() -> IPEDCTX4AAD0 {
-            IPEDCTX4AAD0(0)
-        }
-    }
-    #[doc = "IPED Context4 Additional Authenticated Data1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX4AAD1(pub u32);
-    impl IPEDCTX4AAD1 {
-        #[inline(always)]
-        pub const fn CTX4_AAD1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX4_AAD1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX4AAD1 {
-        #[inline(always)]
-        fn default() -> IPEDCTX4AAD1 {
-            IPEDCTX4AAD1(0)
-        }
-    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2318,48 +1898,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPEDCTX4END {
             IPEDCTX4END(0)
-        }
-    }
-    #[doc = "IPED Context4 IV0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX4IV0(pub u32);
-    impl IPEDCTX4IV0 {
-        #[inline(always)]
-        pub const fn CTX4_IV0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX4_IV0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX4IV0 {
-        #[inline(always)]
-        fn default() -> IPEDCTX4IV0 {
-            IPEDCTX4IV0(0)
-        }
-    }
-    #[doc = "IPED Context4 IV1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX4IV1(pub u32);
-    impl IPEDCTX4IV1 {
-        #[inline(always)]
-        pub const fn CTX4_IV1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX4_IV1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX4IV1 {
-        #[inline(always)]
-        fn default() -> IPEDCTX4IV1 {
-            IPEDCTX4IV1(0)
         }
     }
     #[doc = "Start Address of Region"]
@@ -2401,48 +1939,6 @@ pub mod regs {
             IPEDCTX4START(0)
         }
     }
-    #[doc = "IPED Context5 Additional Authenticated Data0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX5AAD0(pub u32);
-    impl IPEDCTX5AAD0 {
-        #[inline(always)]
-        pub const fn CTX5_AAD0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX5_AAD0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX5AAD0 {
-        #[inline(always)]
-        fn default() -> IPEDCTX5AAD0 {
-            IPEDCTX5AAD0(0)
-        }
-    }
-    #[doc = "IPED Context5 Additional Authenticated Data1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX5AAD1(pub u32);
-    impl IPEDCTX5AAD1 {
-        #[inline(always)]
-        pub const fn CTX5_AAD1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX5_AAD1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX5AAD1 {
-        #[inline(always)]
-        fn default() -> IPEDCTX5AAD1 {
-            IPEDCTX5AAD1(0)
-        }
-    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2462,48 +1958,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPEDCTX5END {
             IPEDCTX5END(0)
-        }
-    }
-    #[doc = "IPED Context5 IV0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX5IV0(pub u32);
-    impl IPEDCTX5IV0 {
-        #[inline(always)]
-        pub const fn CTX5_IV0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX5_IV0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX5IV0 {
-        #[inline(always)]
-        fn default() -> IPEDCTX5IV0 {
-            IPEDCTX5IV0(0)
-        }
-    }
-    #[doc = "IPED Context5 IV1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX5IV1(pub u32);
-    impl IPEDCTX5IV1 {
-        #[inline(always)]
-        pub const fn CTX5_IV1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX5_IV1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX5IV1 {
-        #[inline(always)]
-        fn default() -> IPEDCTX5IV1 {
-            IPEDCTX5IV1(0)
         }
     }
     #[doc = "Start Address of Region"]
@@ -2545,48 +1999,6 @@ pub mod regs {
             IPEDCTX5START(0)
         }
     }
-    #[doc = "IPED Context6 Additional Authenticated Data0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX6AAD0(pub u32);
-    impl IPEDCTX6AAD0 {
-        #[inline(always)]
-        pub const fn CTX6_AAD0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX6_AAD0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX6AAD0 {
-        #[inline(always)]
-        fn default() -> IPEDCTX6AAD0 {
-            IPEDCTX6AAD0(0)
-        }
-    }
-    #[doc = "IPED Context6 Additional Authenticated Data1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX6AAD1(pub u32);
-    impl IPEDCTX6AAD1 {
-        #[inline(always)]
-        pub const fn CTX6_AAD1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX6_AAD1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX6AAD1 {
-        #[inline(always)]
-        fn default() -> IPEDCTX6AAD1 {
-            IPEDCTX6AAD1(0)
-        }
-    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2606,48 +2018,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPEDCTX6END {
             IPEDCTX6END(0)
-        }
-    }
-    #[doc = "IPED Context6 IV0"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX6IV0(pub u32);
-    impl IPEDCTX6IV0 {
-        #[inline(always)]
-        pub const fn CTX6_IV0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX6_IV0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX6IV0 {
-        #[inline(always)]
-        fn default() -> IPEDCTX6IV0 {
-            IPEDCTX6IV0(0)
-        }
-    }
-    #[doc = "IPED Context6 IV1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IPEDCTX6IV1(pub u32);
-    impl IPEDCTX6IV1 {
-        #[inline(always)]
-        pub const fn CTX6_IV1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_CTX6_IV1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for IPEDCTX6IV1 {
-        #[inline(always)]
-        fn default() -> IPEDCTX6IV1 {
-            IPEDCTX6IV1(0)
         }
     }
     #[doc = "Start Address of Region"]
@@ -3158,27 +2528,6 @@ pub mod regs {
             LUTCR(0)
         }
     }
-    #[doc = "LUT Key"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct LUTKEY(pub u32);
-    impl LUTKEY {
-        #[inline(always)]
-        pub const fn KEY(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_KEY(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for LUTKEY {
-        #[inline(always)]
-        fn default() -> LUTKEY {
-            LUTKEY(0)
-        }
-    }
     #[doc = "Module Control 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3413,27 +2762,6 @@ pub mod regs {
             MCR2(0)
         }
     }
-    #[doc = "IP Receive FIFO Data 0..IP Receive FIFO Data 31"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RFDR(pub u32);
-    impl RFDR {
-        #[inline(always)]
-        pub const fn RXDATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_RXDATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RFDR {
-        #[inline(always)]
-        fn default() -> RFDR {
-            RFDR(0)
-        }
-    }
     #[doc = "Status 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3621,27 +2949,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> STS2 {
             STS2(0)
-        }
-    }
-    #[doc = "IP TX FIFO Data 0..IP TX FIFO Data 31"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct TFDR(pub u32);
-    impl TFDR {
-        #[inline(always)]
-        pub const fn TXDATA(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TXDATA(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for TFDR {
-        #[inline(always)]
-        fn default() -> TFDR {
-            TFDR(0)
         }
     }
 }

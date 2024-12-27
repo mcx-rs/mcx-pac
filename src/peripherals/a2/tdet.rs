@@ -32,7 +32,7 @@ impl TDET {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[inline(always)]
-    pub const fn TSR(self) -> crate::common::Reg<regs::TSR, crate::common::RW> {
+    pub const fn TSR(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]
@@ -987,27 +987,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TER {
             TER(0)
-        }
-    }
-    #[doc = "Tamper Seconds"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct TSR(pub u32);
-    impl TSR {
-        #[inline(always)]
-        pub const fn TTS(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_TTS(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for TSR {
-        #[inline(always)]
-        fn default() -> TSR {
-            TSR(0)
         }
     }
 }

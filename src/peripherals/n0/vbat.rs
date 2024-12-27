@@ -198,7 +198,7 @@ impl VBAT {
     #[inline(always)]
     pub const fn WAKEUP(self, n: usize) -> WAKEUP {
         assert!(n < 2usize);
-        unsafe { WAKEUP::from_ptr(self.ptr.add(0x0700usize + n * 16usize) as _) }
+        unsafe { WAKEUP::from_ptr(self.ptr.add(0x0700usize + n * 8usize) as _) }
     }
     #[inline(always)]
     pub const fn WAKLCKA(self) -> crate::common::Reg<regs::WAKLCKA, crate::common::RW> {
@@ -225,11 +225,11 @@ impl WAKEUP {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn WAKEUPA(self) -> crate::common::Reg<regs::WAKEUP_WAKEUPA, crate::common::RW> {
+    pub const fn WAKEUPA(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
     }
     #[inline(always)]
-    pub const fn WAKEUPB(self) -> crate::common::Reg<regs::WAKEUP_WAKEUPB, crate::common::RW> {
+    pub const fn WAKEUPB(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
 }
@@ -1879,48 +1879,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> WAKENB {
             WAKENB(0)
-        }
-    }
-    #[doc = "Wakeup 0 Register A"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct WAKEUP_WAKEUPA(pub u32);
-    impl WAKEUP_WAKEUPA {
-        #[inline(always)]
-        pub const fn REG(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_REG(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for WAKEUP_WAKEUPA {
-        #[inline(always)]
-        fn default() -> WAKEUP_WAKEUPA {
-            WAKEUP_WAKEUPA(0)
-        }
-    }
-    #[doc = "Wakeup 0 Register B"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct WAKEUP_WAKEUPB(pub u32);
-    impl WAKEUP_WAKEUPB {
-        #[inline(always)]
-        pub const fn INVERSE(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_INVERSE(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for WAKEUP_WAKEUPB {
-        #[inline(always)]
-        fn default() -> WAKEUP_WAKEUPB {
-            WAKEUP_WAKEUPB(0)
         }
     }
     #[doc = "Wakeup Lock A"]

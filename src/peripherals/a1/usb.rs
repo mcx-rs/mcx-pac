@@ -102,7 +102,7 @@ impl USB {
     #[inline(always)]
     pub const fn ENDPOINT(self, n: usize) -> ENDPOINT {
         assert!(n < 16usize);
-        unsafe { ENDPOINT::from_ptr(self.ptr.add(0xc0usize + n * 64usize) as _) }
+        unsafe { ENDPOINT::from_ptr(self.ptr.add(0xc0usize + n * 4usize) as _) }
     }
     #[inline(always)]
     pub const fn USBCTRL(self) -> crate::common::Reg<regs::USBCTRL, crate::common::RW> {

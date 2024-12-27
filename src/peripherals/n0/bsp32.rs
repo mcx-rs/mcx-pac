@@ -34,9 +34,7 @@ impl BSP32 {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn INTERRUPTS_EXTERNAL(
-        self,
-    ) -> crate::common::Reg<regs::INTERRUPTS_EXTERNAL, crate::common::RW> {
+    pub const fn INTERRUPTS_EXTERNAL(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
@@ -100,27 +98,6 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CF_GATING_OVERRIDE {
             CF_GATING_OVERRIDE(0)
-        }
-    }
-    #[doc = "External interrupt register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct INTERRUPTS_EXTERNAL(pub u32);
-    impl INTERRUPTS_EXTERNAL {
-        #[inline(always)]
-        pub const fn val(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_val(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for INTERRUPTS_EXTERNAL {
-        #[inline(always)]
-        fn default() -> INTERRUPTS_EXTERNAL {
-            INTERRUPTS_EXTERNAL(0)
         }
     }
     #[doc = "Interrupt status register"]
