@@ -322,193 +322,79 @@ pub const NVIC_PRIO_BITS: u8 = 3;
 pub use cortex_m_rt::interrupt;
 #[cfg(feature = "rt")]
 pub use Interrupt as interrupt;
-pub mod vbat {
-    #[path = "../../../peripherals/a0/vbat.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod eim {
-    #[path = "../../../peripherals/a0/eim.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod spc {
-    #[path = "../../../peripherals/a0/spc.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod crc {
-    #[path = "../../../peripherals/a0/crc.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod mrcc {
-    #[path = "../../../peripherals/a0/mrcc.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod ostimer {
-    #[path = "../../../peripherals/a0/ostimer.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod scg {
-    #[path = "../../../peripherals/a0/scg.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod erm {
-    #[path = "../../../peripherals/a0/erm.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod syscon {
-    #[path = "../../../peripherals/a0/syscon.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod utick {
-    #[path = "../../../peripherals/a0/utick.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod waketimer {
-    #[path = "../../../peripherals/a0/waketimer.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod dma {
-    #[path = "../../../peripherals/a0/dma.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod port {
-    #[path = "../../../peripherals/a0/port.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod fmutest {
-    #[path = "../../../peripherals/a0/fmutest.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod trdc {
-    #[path = "../../../peripherals/a0/trdc.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod fmu {
-    #[path = "../../../peripherals/a0/fmu.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod lpuart {
-    #[path = "../../../peripherals/a0/lpuart.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod inputmux {
-    #[path = "../../../peripherals/a0/inputmux.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod wwdt {
-    #[path = "../../../peripherals/a0/wwdt.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod freqme {
-    #[path = "../../../peripherals/a0/freqme.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod debugmailbox {
-    #[path = "../../../peripherals/a0/debugmailbox.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod pwm {
-    #[path = "../../../peripherals/a0/pwm.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod aoi {
-    #[path = "../../../peripherals/a0/aoi.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod adc {
-    #[path = "../../../peripherals/a0/adc.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod glikey {
-    #[path = "../../../peripherals/a0/glikey.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod gpio {
-    #[path = "../../../peripherals/a0/gpio.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod cmc {
-    #[path = "../../../peripherals/a0/cmc.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod i3c {
-    #[path = "../../../peripherals/a0/i3c.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod lpi2c {
-    #[path = "../../../peripherals/a0/lpi2c.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod fmc {
-    #[path = "../../../peripherals/a0/fmc.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod wuu {
-    #[path = "../../../peripherals/a0/wuu.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod ctimer {
-    #[path = "../../../peripherals/a0/ctimer.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod cdog {
-    #[path = "../../../peripherals/a0/cdog.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod lpcmp {
-    #[path = "../../../peripherals/a0/lpcmp.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod lptmr {
-    #[path = "../../../peripherals/a0/lptmr.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod eqdc {
-    #[path = "../../../peripherals/a0/eqdc.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod usb {
-    #[path = "../../../peripherals/a0/usb.rs"]
-    mod _block;
-    pub use _block::*;
-}
-pub mod lpspi {
-    #[path = "../../../peripherals/a0/lpspi.rs"]
-    mod _block;
-    pub use _block::*;
-}
+#[path = "../../peripherals/a0/adc.rs"]
+pub mod adc;
+#[path = "../../peripherals/a0/aoi.rs"]
+pub mod aoi;
+#[path = "../../peripherals/a0/cdog.rs"]
+pub mod cdog;
+#[path = "../../peripherals/a0/cmc.rs"]
+pub mod cmc;
+#[path = "../../peripherals/a0/crc.rs"]
+pub mod crc;
+#[path = "../../peripherals/a0/ctimer.rs"]
+pub mod ctimer;
+#[path = "../../peripherals/a0/debugmailbox.rs"]
+pub mod debugmailbox;
+#[path = "../../peripherals/a0/dma.rs"]
+pub mod dma;
+#[path = "../../peripherals/a0/eim.rs"]
+pub mod eim;
+#[path = "../../peripherals/a0/eqdc.rs"]
+pub mod eqdc;
+#[path = "../../peripherals/a0/erm.rs"]
+pub mod erm;
+#[path = "../../peripherals/a0/fmc.rs"]
+pub mod fmc;
+#[path = "../../peripherals/a0/fmu.rs"]
+pub mod fmu;
+#[path = "../../peripherals/a0/fmutest.rs"]
+pub mod fmutest;
+#[path = "../../peripherals/a0/freqme.rs"]
+pub mod freqme;
+#[path = "../../peripherals/a0/glikey.rs"]
+pub mod glikey;
+#[path = "../../peripherals/a0/gpio.rs"]
+pub mod gpio;
+#[path = "../../peripherals/a0/i3c.rs"]
+pub mod i3c;
+#[path = "../../peripherals/a0/inputmux.rs"]
+pub mod inputmux;
+#[path = "../../peripherals/a0/lpcmp.rs"]
+pub mod lpcmp;
+#[path = "../../peripherals/a0/lpi2c.rs"]
+pub mod lpi2c;
+#[path = "../../peripherals/a0/lpspi.rs"]
+pub mod lpspi;
+#[path = "../../peripherals/a0/lptmr.rs"]
+pub mod lptmr;
+#[path = "../../peripherals/a0/lpuart.rs"]
+pub mod lpuart;
+#[path = "../../peripherals/a0/mrcc.rs"]
+pub mod mrcc;
+#[path = "../../peripherals/a0/ostimer.rs"]
+pub mod ostimer;
+#[path = "../../peripherals/a0/port.rs"]
+pub mod port;
+#[path = "../../peripherals/a0/pwm.rs"]
+pub mod pwm;
+#[path = "../../peripherals/a0/scg.rs"]
+pub mod scg;
+#[path = "../../peripherals/a0/spc.rs"]
+pub mod spc;
+#[path = "../../peripherals/a0/syscon.rs"]
+pub mod syscon;
+#[path = "../../peripherals/a0/trdc.rs"]
+pub mod trdc;
+#[path = "../../peripherals/a0/usb.rs"]
+pub mod usb;
+#[path = "../../peripherals/a0/utick.rs"]
+pub mod utick;
+#[path = "../../peripherals/a0/vbat.rs"]
+pub mod vbat;
+#[path = "../../peripherals/a0/waketimer.rs"]
+pub mod waketimer;
+#[path = "../../peripherals/a0/wuu.rs"]
+pub mod wuu;
+#[path = "../../peripherals/a0/wwdt.rs"]
+pub mod wwdt;
