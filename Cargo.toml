@@ -1,3 +1,4 @@
+# This manifest is generated automatically, edit this in script/generate.py
 [package]
 name = "mcx-pac"
 description = "Peripheral Access Crate for NXP MCX Series MCUs"
@@ -9,6 +10,7 @@ categories = ["embedded", "no-std"]
 readme = "README.md"
 authors = ["Logiase Song <logiase.song@gmail.com>"]
 repository = "https://github.com/mcx-rs/mcx-pac"
+include = ["/src", "build.rs", "/examples", "LICENSE-MIT", "LICENSE-BSD"]
 
 [dependencies]
 cortex-m = "0.7"

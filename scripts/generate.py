@@ -35,6 +35,7 @@ categories = ["embedded", "no-std"]
 readme = "README.md"
 authors = ["Logiase Song <logiase.song@gmail.com>"]
 repository = "https://github.com/mcx-rs/mcx-pac"
+include = ["/src", "build.rs", "/examples", "LICENSE-MIT", "LICENSE-BSD"]
 
 [dependencies]
 cortex-m = "0.7"
