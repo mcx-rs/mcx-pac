@@ -1,7 +1,14 @@
 [package]
 name = "mcx-pac"
+description = "Peripheral Access Crate for NXP MCX Series MCUs"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+keywords = ["no-std", "arm", "cortex-m", "nxp", "mcx"]
+categories = ["embedded", "no-std"]
+readme = "README.md"
+authors = ["Logiase Song <logiase.song@gmail.com>"]
+repository = "https://github.com/mcx-rs/mcx-pac"
 
 [dependencies]
 cortex-m = "0.7"
@@ -14,16 +21,15 @@ panic-halt = "1"
 rt = ["cortex-m-rt/device"]
 
 _device_selected = []
-
 mcxa132 = ["_device_selected"]
 mcxa133 = ["_device_selected"]
 mcxa142 = ["_device_selected"]
 mcxa143 = ["_device_selected"]
-mcxa152 = ["_device_selected"]
-mcxa153 = ["_device_selected"]
 mcxa144 = ["_device_selected"]
 mcxa145 = ["_device_selected"]
 mcxa146 = ["_device_selected"]
+mcxa152 = ["_device_selected"]
+mcxa153 = ["_device_selected"]
 mcxa154 = ["_device_selected"]
 mcxa155 = ["_device_selected"]
 mcxa156 = ["_device_selected"]
@@ -35,6 +41,8 @@ mcxa255 = ["_device_selected"]
 mcxa256 = ["_device_selected"]
 mcxa275 = ["_device_selected"]
 mcxa276 = ["_device_selected"]
+mcxn235 = ["_device_selected"]
+mcxn236 = ["_device_selected"]
 mcxn546_cm33_core0 = ["_device_selected"]
 mcxn546_cm33_core1 = ["_device_selected"]
 mcxn547_cm33_core0 = ["_device_selected"]
@@ -43,5 +51,3 @@ mcxn946_cm33_core0 = ["_device_selected"]
 mcxn946_cm33_core1 = ["_device_selected"]
 mcxn947_cm33_core0 = ["_device_selected"]
 mcxn947_cm33_core1 = ["_device_selected"]
-mcxn235 = ["_device_selected"]
-mcxn236 = ["_device_selected"]
