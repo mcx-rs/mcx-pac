@@ -1,256 +1,256 @@
 nvic_priority_bits: 3
 peripherals:
 - name: ADC0
-  base_address: 1074458624
+  base_address: 0x400af000
   block: adc::ADC
 - name: ADC1
-  base_address: 1074462720
+  base_address: 0x400b0000
   block: adc::ADC
 - name: ADC2
-  base_address: 1074724864
+  base_address: 0x400f0000
   block: adc::ADC
 - name: ADC3
-  base_address: 1074728960
+  base_address: 0x400f1000
   block: adc::ADC
 - name: AOI0
-  base_address: 1074302976
+  base_address: 0x40089000
   block: aoi::AOI
 - name: AOI1
-  base_address: 1074360320
+  base_address: 0x40097000
   block: aoi::AOI
 - name: CAN0
-  base_address: 1074577408
+  base_address: 0x400cc000
   block: can::CAN
 - name: CAN1
-  base_address: 1074593792
+  base_address: 0x400d0000
   block: can::CAN
 - name: CDOG0
-  base_address: 1074790400
+  base_address: 0x40100000
   block: cdog::CDOG
 - name: CDOG1
-  base_address: 1074819072
+  base_address: 0x40107000
   block: cdog::CDOG
 - name: CMC
-  base_address: 1074311168
+  base_address: 0x4008b000
   block: cmc::CMC
 - name: CRC0
-  base_address: 1074307072
+  base_address: 0x4008a000
   block: crc::CRC
 - name: CTIMER0
-  base_address: 1073758208
+  base_address: 0x40004000
   block: ctimer::CTIMER
 - name: CTIMER1
-  base_address: 1073762304
+  base_address: 0x40005000
   block: ctimer::CTIMER
 - name: CTIMER2
-  base_address: 1073766400
+  base_address: 0x40006000
   block: ctimer::CTIMER
 - name: CTIMER3
-  base_address: 1073770496
+  base_address: 0x40007000
   block: ctimer::CTIMER
 - name: CTIMER4
-  base_address: 1073774592
+  base_address: 0x40008000
   block: ctimer::CTIMER
 - name: DBGMAILBOX
-  base_address: 1074794496
+  base_address: 0x40101000
   block: debugmailbox::DEBUGMAILBOX
 - name: DMA0
-  base_address: 1074266112
+  base_address: 0x40080000
   block: dma::DMA
 - name: EIM0
-  base_address: 1074315264
+  base_address: 0x4008c000
   block: eim::EIM
 - name: EQDC0
-  base_address: 1074425856
+  base_address: 0x400a7000
   block: eqdc::EQDC
 - name: EQDC1
-  base_address: 1074429952
+  base_address: 0x400a8000
   block: eqdc::EQDC
 - name: ERM0
-  base_address: 1074319360
+  base_address: 0x4008d000
   block: erm::ERM
 - name: FLEXIO0
-  base_address: 1074368512
+  base_address: 0x40099000
   block: flexio::FLEXIO
 - name: FMC0
-  base_address: 1074348032
+  base_address: 0x40094000
   block: fmc::FMC
 - name: FMU0
-  base_address: 1074352128
+  base_address: 0x40095000
   block: fmu::FMU
 - name: FREQME0
-  base_address: 1073778688
+  base_address: 0x40009000
   block: freqme::FREQME
 - name: GLIKEY0
-  base_address: 1074339072
+  base_address: 0x40091d00
   block: glikey::GLIKEY
 - name: GPIO0
-  base_address: 1074798592
+  base_address: 0x40102000
   block: gpio::GPIO
 - name: GPIO1
-  base_address: 1074802688
+  base_address: 0x40103000
   block: gpio::GPIO
 - name: GPIO2
-  base_address: 1074806784
+  base_address: 0x40104000
   block: gpio::GPIO
 - name: GPIO3
-  base_address: 1074810880
+  base_address: 0x40105000
   block: gpio::GPIO
 - name: GPIO4
-  base_address: 1074814976
+  base_address: 0x40106000
   block: gpio::GPIO
 - name: I3C0
-  base_address: 1073750016
+  base_address: 0x40002000
   block: i3c::I3C
 - name: INPUTMUX0
-  base_address: 1073745920
+  base_address: 0x40001000
   block: inputmux::INPUTMUX
 - name: CMP0
-  base_address: 1074466816
+  base_address: 0x400b1000
   block: lpcmp::LPCMP
 - name: CMP1
-  base_address: 1074470912
+  base_address: 0x400b2000
   block: lpcmp::LPCMP
 - name: CMP2
-  base_address: 1074475008
+  base_address: 0x400b3000
   block: lpcmp::LPCMP
 - name: DAC0
-  base_address: 1074479104
+  base_address: 0x400b4000
   block: lpdac::LPDAC
 - name: LPI2C0
-  base_address: 1074372608
+  base_address: 0x4009a000
   block: lpi2c::LPI2C
 - name: LPI2C1
-  base_address: 1074376704
+  base_address: 0x4009b000
   block: lpi2c::LPI2C
 - name: LPI2C2
-  base_address: 1074610176
+  base_address: 0x400d4000
   block: lpi2c::LPI2C
 - name: LPI2C3
-  base_address: 1074614272
+  base_address: 0x400d5000
   block: lpi2c::LPI2C
 - name: LPSPI0
-  base_address: 1074380800
+  base_address: 0x4009c000
   block: lpspi::LPSPI
 - name: LPSPI1
-  base_address: 1074384896
+  base_address: 0x4009d000
   block: lpspi::LPSPI
 - name: LPTMR0
-  base_address: 1074442240
+  base_address: 0x400ab000
   block: lptmr::LPTMR
 - name: LPUART0
-  base_address: 1074393088
+  base_address: 0x4009f000
   block: lpuart::LPUART
 - name: LPUART1
-  base_address: 1074397184
+  base_address: 0x400a0000
   block: lpuart::LPUART
 - name: LPUART2
-  base_address: 1074401280
+  base_address: 0x400a1000
   block: lpuart::LPUART
 - name: LPUART3
-  base_address: 1074405376
+  base_address: 0x400a2000
   block: lpuart::LPUART
 - name: LPUART4
-  base_address: 1074409472
+  base_address: 0x400a3000
   block: lpuart::LPUART
 - name: LPUART5
-  base_address: 1074634752
+  base_address: 0x400da000
   block: lpuart::LPUART
 - name: MAU0
-  base_address: 1074823168
+  base_address: 0x40108000
   block: mau::MAU
 - name: MRCC0
-  base_address: 1074335744
+  base_address: 0x40091000
   block: mrcc::MRCC
 - name: OPAMP0
-  base_address: 1074491392
+  base_address: 0x400b7000
   block: opamp::OPAMP
 - name: OPAMP1
-  base_address: 1074495488
+  base_address: 0x400b8000
   block: opamp::OPAMP
 - name: OPAMP2
-  base_address: 1074499584
+  base_address: 0x400b9000
   block: opamp::OPAMP
 - name: OPAMP3
-  base_address: 1074503680
+  base_address: 0x400ba000
   block: opamp::OPAMP
 - name: OSTIMER0
-  base_address: 1074450432
+  base_address: 0x400ad000
   block: ostimer::OSTIMER
 - name: PKC0
-  base_address: 1074700288
+  base_address: 0x400ea000
   block: pkc::PKC
 - name: PORT0
-  base_address: 1074511872
+  base_address: 0x400bc000
   block: port::PORT
 - name: PORT1
-  base_address: 1074515968
+  base_address: 0x400bd000
   block: port::PORT
 - name: PORT2
-  base_address: 1074520064
+  base_address: 0x400be000
   block: port::PORT
 - name: PORT3
-  base_address: 1074524160
+  base_address: 0x400bf000
   block: port::PORT
 - name: PORT4
-  base_address: 1074528256
+  base_address: 0x400c0000
   block: port::PORT
 - name: FLEXPWM0
-  base_address: 1074434048
+  base_address: 0x400a9000
   block: pwm::PWM
 - name: FLEXPWM1
-  base_address: 1074438144
+  base_address: 0x400aa000
   block: pwm::PWM
 - name: RTC0
-  base_address: 1074716672
+  base_address: 0x400ee000
   block: rtc::RTC
 - name: SCG0
-  base_address: 1074327552
+  base_address: 0x4008f000
   block: scg::SCG
 - name: SGI0
-  base_address: 1074704384
+  base_address: 0x400eb000
   block: sgi::SGI
 - name: SLCD0
-  base_address: 1074536448
+  base_address: 0x400c2000
   block: slcd::SLCD
 - name: SMARTDMA0
-  base_address: 1073799168
+  base_address: 0x4000e000
   block: smartdma::SMARTDMA
 - name: SPC0
-  base_address: 1074331648
+  base_address: 0x40090000
   block: spc::SPC
 - name: SYSCON
-  base_address: 1074335744
+  base_address: 0x40091000
   block: syscon::SYSCON
 - name: TDET0
-  base_address: 1074696192
+  base_address: 0x400e9000
   block: tdet::TDET
 - name: MBC0
-  base_address: 1074323456
+  base_address: 0x4008e000
   block: trdc::TRDC
 - name: TRNG0
-  base_address: 1074708480
+  base_address: 0x400ec000
   block: trng::TRNG
 - name: UDF0
-  base_address: 1074712576
+  base_address: 0x400ed000
   block: udf::UDF
 - name: USB0
-  base_address: 1074413568
+  base_address: 0x400a4000
   block: usb::USB
 - name: UTICK0
-  base_address: 1073786880
+  base_address: 0x4000b000
   block: utick::UTICK
 - name: VBAT0
-  base_address: 1074343936
+  base_address: 0x40093000
   block: vbat::VBAT
 - name: WAKETIMER0
-  base_address: 1074454528
+  base_address: 0x400ae000
   block: waketimer::WAKETIMER
 - name: WUU0
-  base_address: 1074339840
+  base_address: 0x40092000
   block: wuu::WUU
 - name: WWDT0
-  base_address: 1073790976
+  base_address: 0x4000c000
   block: wwdt::WWDT
 interrupts:
 - name: CMC
