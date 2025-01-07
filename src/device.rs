@@ -20,14 +20,38 @@
 #[cfg_attr(feature = "mcxa276", path = "devices/mcxa276/device.rs")]
 #[cfg_attr(feature = "mcxn235", path = "devices/mcxn235/device.rs")]
 #[cfg_attr(feature = "mcxn236", path = "devices/mcxn236/device.rs")]
-#[cfg_attr(feature = "mcxn546_cm33_core0", path = "devices/mcxn546_cm33_core0/device.rs")]
-#[cfg_attr(feature = "mcxn546_cm33_core1", path = "devices/mcxn546_cm33_core1/device.rs")]
-#[cfg_attr(feature = "mcxn547_cm33_core0", path = "devices/mcxn547_cm33_core0/device.rs")]
-#[cfg_attr(feature = "mcxn547_cm33_core1", path = "devices/mcxn547_cm33_core1/device.rs")]
-#[cfg_attr(feature = "mcxn946_cm33_core0", path = "devices/mcxn946_cm33_core0/device.rs")]
-#[cfg_attr(feature = "mcxn946_cm33_core1", path = "devices/mcxn946_cm33_core1/device.rs")]
-#[cfg_attr(feature = "mcxn947_cm33_core0", path = "devices/mcxn947_cm33_core0/device.rs")]
-#[cfg_attr(feature = "mcxn947_cm33_core1", path = "devices/mcxn947_cm33_core1/device.rs")]
+#[cfg_attr(
+    feature = "mcxn546_cm33_core0",
+    path = "devices/mcxn546_cm33_core0/device.rs"
+)]
+#[cfg_attr(
+    feature = "mcxn546_cm33_core1",
+    path = "devices/mcxn546_cm33_core1/device.rs"
+)]
+#[cfg_attr(
+    feature = "mcxn547_cm33_core0",
+    path = "devices/mcxn547_cm33_core0/device.rs"
+)]
+#[cfg_attr(
+    feature = "mcxn547_cm33_core1",
+    path = "devices/mcxn547_cm33_core1/device.rs"
+)]
+#[cfg_attr(
+    feature = "mcxn946_cm33_core0",
+    path = "devices/mcxn946_cm33_core0/device.rs"
+)]
+#[cfg_attr(
+    feature = "mcxn946_cm33_core1",
+    path = "devices/mcxn946_cm33_core1/device.rs"
+)]
+#[cfg_attr(
+    feature = "mcxn947_cm33_core0",
+    path = "devices/mcxn947_cm33_core0/device.rs"
+)]
+#[cfg_attr(
+    feature = "mcxn947_cm33_core1",
+    path = "devices/mcxn947_cm33_core1/device.rs"
+)]
 #[cfg(feature = "_device_selected")]
 mod _device;
 #[cfg(feature = "_device_selected")]

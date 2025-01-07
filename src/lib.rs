@@ -6,4 +6,15 @@
 mod common;
 
 mod device;
+use core::marker::PhantomData;
+
 pub use device::*;
+
+pub struct Instance<T, const N: u8> {
+    _t: PhantomData<T>,
+}
+impl<T, const N: u8> Instance<T, N> {
+    pub const fn number() -> u8 {
+        N
+    }
+}
