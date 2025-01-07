@@ -27,7 +27,7 @@ with open("Cargo.toml", "w") as f:
 [package]
 name = "mcx-pac"
 description = "Peripheral Access Crate for NXP MCX Series MCUs"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 license = "MIT"
 keywords = ["no-std", "arm", "cortex-m", "nxp", "mcx"]
