@@ -455,182 +455,672 @@ mod _vectors {
         Vector { _handler: SLCD },
     ];
 }
-pub mod udf {
-    #[path = "../../../peripherals/a2/udf.rs"]
+#[path = "../../peripherals/a2"]
+pub mod adc {
+    use core::marker::PhantomData;
+    #[path = "adc.rs"]
     mod _block;
     pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x400e_d000usize];
-    pub const unsafe fn instance(n: u8) -> Option<UDF> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(UDF::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<UDF, N>;
+    pub const LEN: usize = 4usize;
+    pub const ADDRESSES: [usize; LEN] = [
+        0x400a_f000usize,
+        0x400b_0000usize,
+        0x400f_0000usize,
+        0x400f_1000usize,
+    ];
+    pub type Instance<const N: u8> = crate::Instance<ADC, N>;
     impl<const N: u8> Instance<N> {
         const CHECK: () = assert!((N as usize) < LEN);
         #[inline(always)]
-        pub const unsafe fn regs() -> UDF {
-            let _ = Self::CHECK;
-            UDF::from_ptr(Self::address() as _)
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
         }
         #[inline(always)]
-        pub const fn address() -> usize {
+        pub const fn regs(&self) -> ADC {
+            unsafe { ADC::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
             let _ = Self::CHECK;
             ADDRESSES[N as usize]
         }
     }
-    pub type UDF0 = Instance<0u8>;
+    pub type ADC0 = Instance<0u8>;
+    pub type ADC1 = Instance<1u8>;
+    pub type ADC2 = Instance<2u8>;
+    pub type ADC3 = Instance<3u8>;
 }
+#[path = "../../peripherals/a2"]
+pub mod aoi {
+    use core::marker::PhantomData;
+    #[path = "aoi.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 2usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4008_9000usize, 0x4009_7000usize];
+    pub type Instance<const N: u8> = crate::Instance<AOI, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> AOI {
+            unsafe { AOI::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type AOI0 = Instance<0u8>;
+    pub type AOI1 = Instance<1u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod can {
+    use core::marker::PhantomData;
+    #[path = "can.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x400c_c000usize];
+    pub type Instance<const N: u8> = crate::Instance<CAN, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> CAN {
+            unsafe { CAN::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type CAN0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod cdog {
+    use core::marker::PhantomData;
+    #[path = "cdog.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4010_0000usize];
+    pub type Instance<const N: u8> = crate::Instance<CDOG, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> CDOG {
+            unsafe { CDOG::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type CDOG0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod cmc {
+    use core::marker::PhantomData;
+    #[path = "cmc.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4008_b000usize];
+    pub type Instance<const N: u8> = crate::Instance<CMC, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> CMC {
+            unsafe { CMC::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type CMC0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod crc {
+    use core::marker::PhantomData;
+    #[path = "crc.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4008_a000usize];
+    pub type Instance<const N: u8> = crate::Instance<CRC, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> CRC {
+            unsafe { CRC::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type CRC0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod ctimer {
+    use core::marker::PhantomData;
+    #[path = "ctimer.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 5usize;
+    pub const ADDRESSES: [usize; LEN] = [
+        0x4000_4000usize,
+        0x4000_5000usize,
+        0x4000_6000usize,
+        0x4000_7000usize,
+        0x4000_8000usize,
+    ];
+    pub type Instance<const N: u8> = crate::Instance<CTIMER, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> CTIMER {
+            unsafe { CTIMER::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type CTIMER0 = Instance<0u8>;
+    pub type CTIMER1 = Instance<1u8>;
+    pub type CTIMER2 = Instance<2u8>;
+    pub type CTIMER3 = Instance<3u8>;
+    pub type CTIMER4 = Instance<4u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod debugmailbox {
+    use core::marker::PhantomData;
+    #[path = "debugmailbox.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4010_1000usize];
+    pub type Instance<const N: u8> = crate::Instance<DEBUGMAILBOX, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> DEBUGMAILBOX {
+            unsafe { DEBUGMAILBOX::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type DBGMAILBOX = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
 pub mod dma {
-    #[path = "../../../peripherals/a2/dma.rs"]
+    use core::marker::PhantomData;
+    #[path = "dma.rs"]
     mod _block;
     pub use _block::*;
     pub const LEN: usize = 1usize;
     pub const ADDRESSES: [usize; LEN] = [0x4008_0000usize];
-    pub const unsafe fn instance(n: u8) -> Option<DMA> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(DMA::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
     pub type Instance<const N: u8> = crate::Instance<DMA, N>;
     impl<const N: u8> Instance<N> {
         const CHECK: () = assert!((N as usize) < LEN);
         #[inline(always)]
-        pub const unsafe fn regs() -> DMA {
-            let _ = Self::CHECK;
-            DMA::from_ptr(Self::address() as _)
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
         }
         #[inline(always)]
-        pub const fn address() -> usize {
+        pub const fn regs(&self) -> DMA {
+            unsafe { DMA::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
             let _ = Self::CHECK;
             ADDRESSES[N as usize]
         }
     }
     pub type DMA0 = Instance<0u8>;
 }
-pub mod smartdma {
-    #[path = "../../../peripherals/a2/smartdma.rs"]
+#[path = "../../peripherals/a2"]
+pub mod eim {
+    use core::marker::PhantomData;
+    #[path = "eim.rs"]
     mod _block;
     pub use _block::*;
     pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4000_e000usize];
-    pub const unsafe fn instance(n: u8) -> Option<SMARTDMA> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(SMARTDMA::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<SMARTDMA, N>;
+    pub const ADDRESSES: [usize; LEN] = [0x4008_c000usize];
+    pub type Instance<const N: u8> = crate::Instance<EIM, N>;
     impl<const N: u8> Instance<N> {
         const CHECK: () = assert!((N as usize) < LEN);
         #[inline(always)]
-        pub const unsafe fn regs() -> SMARTDMA {
-            let _ = Self::CHECK;
-            SMARTDMA::from_ptr(Self::address() as _)
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
         }
         #[inline(always)]
-        pub const fn address() -> usize {
+        pub const fn regs(&self) -> EIM {
+            unsafe { EIM::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
             let _ = Self::CHECK;
             ADDRESSES[N as usize]
         }
     }
-    pub type SMARTDMA0 = Instance<0u8>;
+    pub type EIM0 = Instance<0u8>;
 }
-pub mod utick {
-    #[path = "../../../peripherals/a2/utick.rs"]
+#[path = "../../peripherals/a2"]
+pub mod eqdc {
+    use core::marker::PhantomData;
+    #[path = "eqdc.rs"]
     mod _block;
     pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4000_b000usize];
-    pub const unsafe fn instance(n: u8) -> Option<UTICK> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(UTICK::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<UTICK, N>;
+    pub const LEN: usize = 2usize;
+    pub const ADDRESSES: [usize; LEN] = [0x400a_7000usize, 0x400a_8000usize];
+    pub type Instance<const N: u8> = crate::Instance<EQDC, N>;
     impl<const N: u8> Instance<N> {
         const CHECK: () = assert!((N as usize) < LEN);
         #[inline(always)]
-        pub const unsafe fn regs() -> UTICK {
-            let _ = Self::CHECK;
-            UTICK::from_ptr(Self::address() as _)
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
         }
         #[inline(always)]
-        pub const fn address() -> usize {
+        pub const fn regs(&self) -> EQDC {
+            unsafe { EQDC::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
             let _ = Self::CHECK;
             ADDRESSES[N as usize]
         }
     }
-    pub type UTICK0 = Instance<0u8>;
+    pub type EQDC0 = Instance<0u8>;
+    pub type EQDC1 = Instance<1u8>;
 }
-pub mod waketimer {
-    #[path = "../../../peripherals/a2/waketimer.rs"]
+#[path = "../../peripherals/a2"]
+pub mod erm {
+    use core::marker::PhantomData;
+    #[path = "erm.rs"]
     mod _block;
     pub use _block::*;
     pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x400a_e000usize];
-    pub const unsafe fn instance(n: u8) -> Option<WAKETIMER> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(WAKETIMER::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<WAKETIMER, N>;
+    pub const ADDRESSES: [usize; LEN] = [0x4008_d000usize];
+    pub type Instance<const N: u8> = crate::Instance<ERM, N>;
     impl<const N: u8> Instance<N> {
         const CHECK: () = assert!((N as usize) < LEN);
         #[inline(always)]
-        pub const unsafe fn regs() -> WAKETIMER {
-            let _ = Self::CHECK;
-            WAKETIMER::from_ptr(Self::address() as _)
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
         }
         #[inline(always)]
-        pub const fn address() -> usize {
+        pub const fn regs(&self) -> ERM {
+            unsafe { ERM::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
             let _ = Self::CHECK;
             ADDRESSES[N as usize]
         }
     }
-    pub type WAKETIMER0 = Instance<0u8>;
+    pub type ERM0 = Instance<0u8>;
 }
+#[path = "../../peripherals/a2"]
 pub mod fmc {
-    #[path = "../../../peripherals/a2/fmc.rs"]
+    use core::marker::PhantomData;
+    #[path = "fmc.rs"]
     mod _block;
     pub use _block::*;
     pub const LEN: usize = 1usize;
     pub const ADDRESSES: [usize; LEN] = [0x4009_4000usize];
-    pub const unsafe fn instance(n: u8) -> Option<FMC> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(FMC::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
     pub type Instance<const N: u8> = crate::Instance<FMC, N>;
     impl<const N: u8> Instance<N> {
         const CHECK: () = assert!((N as usize) < LEN);
         #[inline(always)]
-        pub const unsafe fn regs() -> FMC {
-            let _ = Self::CHECK;
-            FMC::from_ptr(Self::address() as _)
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
         }
         #[inline(always)]
-        pub const fn address() -> usize {
+        pub const fn regs(&self) -> FMC {
+            unsafe { FMC::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
             let _ = Self::CHECK;
             ADDRESSES[N as usize]
         }
     }
     pub type FMC0 = Instance<0u8>;
 }
+#[path = "../../peripherals/a2"]
+pub mod fmu {
+    use core::marker::PhantomData;
+    #[path = "fmu.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4009_5000usize];
+    pub type Instance<const N: u8> = crate::Instance<FMU, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> FMU {
+            unsafe { FMU::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type FMU0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod freqme {
+    use core::marker::PhantomData;
+    #[path = "freqme.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4000_9000usize];
+    pub type Instance<const N: u8> = crate::Instance<FREQME, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> FREQME {
+            unsafe { FREQME::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type FREQME0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod glikey {
+    use core::marker::PhantomData;
+    #[path = "glikey.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4009_1d00usize];
+    pub type Instance<const N: u8> = crate::Instance<GLIKEY, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> GLIKEY {
+            unsafe { GLIKEY::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type GLIKEY0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod gpio {
+    use core::marker::PhantomData;
+    #[path = "gpio.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 5usize;
+    pub const ADDRESSES: [usize; LEN] = [
+        0x4010_2000usize,
+        0x4010_3000usize,
+        0x4010_4000usize,
+        0x4010_5000usize,
+        0x4010_6000usize,
+    ];
+    pub type Instance<const N: u8> = crate::Instance<GPIO, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> GPIO {
+            unsafe { GPIO::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type GPIO0 = Instance<0u8>;
+    pub type GPIO1 = Instance<1u8>;
+    pub type GPIO2 = Instance<2u8>;
+    pub type GPIO3 = Instance<3u8>;
+    pub type GPIO4 = Instance<4u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod inputmux {
+    use core::marker::PhantomData;
+    #[path = "inputmux.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4000_1000usize];
+    pub type Instance<const N: u8> = crate::Instance<INPUTMUX, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> INPUTMUX {
+            unsafe { INPUTMUX::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type INPUTMUX0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod lpcmp {
+    use core::marker::PhantomData;
+    #[path = "lpcmp.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 3usize;
+    pub const ADDRESSES: [usize; LEN] = [0x400b_1000usize, 0x400b_2000usize, 0x400b_3000usize];
+    pub type Instance<const N: u8> = crate::Instance<LPCMP, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> LPCMP {
+            unsafe { LPCMP::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type CMP0 = Instance<0u8>;
+    pub type CMP1 = Instance<1u8>;
+    pub type CMP2 = Instance<2u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod lpdac {
+    use core::marker::PhantomData;
+    #[path = "lpdac.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x400b_4000usize];
+    pub type Instance<const N: u8> = crate::Instance<LPDAC, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> LPDAC {
+            unsafe { LPDAC::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type DAC0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod lpi2c {
+    use core::marker::PhantomData;
+    #[path = "lpi2c.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 4usize;
+    pub const ADDRESSES: [usize; LEN] = [
+        0x4009_a000usize,
+        0x4009_b000usize,
+        0x400d_4000usize,
+        0x400d_5000usize,
+    ];
+    pub type Instance<const N: u8> = crate::Instance<LPI2C, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> LPI2C {
+            unsafe { LPI2C::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type LPI2C0 = Instance<0u8>;
+    pub type LPI2C1 = Instance<1u8>;
+    pub type LPI2C2 = Instance<2u8>;
+    pub type LPI2C3 = Instance<3u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod lpspi {
+    use core::marker::PhantomData;
+    #[path = "lpspi.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 2usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4009_c000usize, 0x4009_d000usize];
+    pub type Instance<const N: u8> = crate::Instance<LPSPI, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> LPSPI {
+            unsafe { LPSPI::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type LPSPI0 = Instance<0u8>;
+    pub type LPSPI1 = Instance<1u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod lptmr {
+    use core::marker::PhantomData;
+    #[path = "lptmr.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x400a_b000usize];
+    pub type Instance<const N: u8> = crate::Instance<LPTMR, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> LPTMR {
+            unsafe { LPTMR::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type LPTMR0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
 pub mod lpuart {
-    #[path = "../../../peripherals/a2/lpuart.rs"]
+    use core::marker::PhantomData;
+    #[path = "lpuart.rs"]
     mod _block;
     pub use _block::*;
     pub const LEN: usize = 6usize;
@@ -642,23 +1132,19 @@ pub mod lpuart {
         0x400a_3000usize,
         0x400d_a000usize,
     ];
-    pub const unsafe fn instance(n: u8) -> Option<LPUART> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(LPUART::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
     pub type Instance<const N: u8> = crate::Instance<LPUART, N>;
     impl<const N: u8> Instance<N> {
         const CHECK: () = assert!((N as usize) < LEN);
         #[inline(always)]
-        pub const unsafe fn regs() -> LPUART {
-            let _ = Self::CHECK;
-            LPUART::from_ptr(Self::address() as _)
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
         }
         #[inline(always)]
-        pub const fn address() -> usize {
+        pub const fn regs(&self) -> LPUART {
+            unsafe { LPUART::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
             let _ = Self::CHECK;
             ADDRESSES[N as usize]
         }
@@ -670,8 +1156,64 @@ pub mod lpuart {
     pub type LPUART4 = Instance<4u8>;
     pub type LPUART5 = Instance<5u8>;
 }
+#[path = "../../peripherals/a2"]
+pub mod mau {
+    use core::marker::PhantomData;
+    #[path = "mau.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4010_8000usize];
+    pub type Instance<const N: u8> = crate::Instance<MAU, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> MAU {
+            unsafe { MAU::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type MAU0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod mrcc {
+    use core::marker::PhantomData;
+    #[path = "mrcc.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4009_1000usize];
+    pub type Instance<const N: u8> = crate::Instance<MRCC, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> MRCC {
+            unsafe { MRCC::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type MRCC0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
 pub mod opamp {
-    #[path = "../../../peripherals/a2/opamp.rs"]
+    use core::marker::PhantomData;
+    #[path = "opamp.rs"]
     mod _block;
     pub use _block::*;
     pub const LEN: usize = 4usize;
@@ -681,23 +1223,19 @@ pub mod opamp {
         0x400b_9000usize,
         0x400b_a000usize,
     ];
-    pub const unsafe fn instance(n: u8) -> Option<OPAMP> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(OPAMP::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
     pub type Instance<const N: u8> = crate::Instance<OPAMP, N>;
     impl<const N: u8> Instance<N> {
         const CHECK: () = assert!((N as usize) < LEN);
         #[inline(always)]
-        pub const unsafe fn regs() -> OPAMP {
-            let _ = Self::CHECK;
-            OPAMP::from_ptr(Self::address() as _)
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
         }
         #[inline(always)]
-        pub const fn address() -> usize {
+        pub const fn regs(&self) -> OPAMP {
+            unsafe { OPAMP::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
             let _ = Self::CHECK;
             ADDRESSES[N as usize]
         }
@@ -707,978 +1245,37 @@ pub mod opamp {
     pub type OPAMP2 = Instance<2u8>;
     pub type OPAMP3 = Instance<3u8>;
 }
-pub mod pwm {
-    #[path = "../../../peripherals/a2/pwm.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 2usize;
-    pub const ADDRESSES: [usize; LEN] = [0x400a_9000usize, 0x400a_a000usize];
-    pub const unsafe fn instance(n: u8) -> Option<PWM> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(PWM::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<PWM, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> PWM {
-            let _ = Self::CHECK;
-            PWM::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type FLEXPWM0 = Instance<0u8>;
-    pub type FLEXPWM1 = Instance<1u8>;
-}
-pub mod gpio {
-    #[path = "../../../peripherals/a2/gpio.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 5usize;
-    pub const ADDRESSES: [usize; LEN] = [
-        0x4010_2000usize,
-        0x4010_3000usize,
-        0x4010_4000usize,
-        0x4010_5000usize,
-        0x4010_6000usize,
-    ];
-    pub const unsafe fn instance(n: u8) -> Option<GPIO> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(GPIO::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<GPIO, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> GPIO {
-            let _ = Self::CHECK;
-            GPIO::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type GPIO0 = Instance<0u8>;
-    pub type GPIO1 = Instance<1u8>;
-    pub type GPIO2 = Instance<2u8>;
-    pub type GPIO3 = Instance<3u8>;
-    pub type GPIO4 = Instance<4u8>;
-}
-pub mod rtc {
-    #[path = "../../../peripherals/a2/rtc.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x400e_e000usize];
-    pub const unsafe fn instance(n: u8) -> Option<RTC> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(RTC::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<RTC, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> RTC {
-            let _ = Self::CHECK;
-            RTC::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type RTC0 = Instance<0u8>;
-}
-pub mod lptmr {
-    #[path = "../../../peripherals/a2/lptmr.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x400a_b000usize];
-    pub const unsafe fn instance(n: u8) -> Option<LPTMR> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(LPTMR::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<LPTMR, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> LPTMR {
-            let _ = Self::CHECK;
-            LPTMR::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type LPTMR0 = Instance<0u8>;
-}
-pub mod mrcc {
-    #[path = "../../../peripherals/a2/mrcc.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4009_1000usize];
-    pub const unsafe fn instance(n: u8) -> Option<MRCC> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(MRCC::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<MRCC, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> MRCC {
-            let _ = Self::CHECK;
-            MRCC::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type MRCC0 = Instance<0u8>;
-}
-pub mod ctimer {
-    #[path = "../../../peripherals/a2/ctimer.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 5usize;
-    pub const ADDRESSES: [usize; LEN] = [
-        0x4000_4000usize,
-        0x4000_5000usize,
-        0x4000_6000usize,
-        0x4000_7000usize,
-        0x4000_8000usize,
-    ];
-    pub const unsafe fn instance(n: u8) -> Option<CTIMER> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(CTIMER::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<CTIMER, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> CTIMER {
-            let _ = Self::CHECK;
-            CTIMER::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type CTIMER0 = Instance<0u8>;
-    pub type CTIMER1 = Instance<1u8>;
-    pub type CTIMER2 = Instance<2u8>;
-    pub type CTIMER3 = Instance<3u8>;
-    pub type CTIMER4 = Instance<4u8>;
-}
-pub mod eim {
-    #[path = "../../../peripherals/a2/eim.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4008_c000usize];
-    pub const unsafe fn instance(n: u8) -> Option<EIM> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(EIM::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<EIM, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> EIM {
-            let _ = Self::CHECK;
-            EIM::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type EIM0 = Instance<0u8>;
-}
-pub mod mau {
-    #[path = "../../../peripherals/a2/mau.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4010_8000usize];
-    pub const unsafe fn instance(n: u8) -> Option<MAU> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(MAU::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<MAU, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> MAU {
-            let _ = Self::CHECK;
-            MAU::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type MAU0 = Instance<0u8>;
-}
-pub mod wwdt {
-    #[path = "../../../peripherals/a2/wwdt.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4000_c000usize];
-    pub const unsafe fn instance(n: u8) -> Option<WWDT> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(WWDT::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<WWDT, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> WWDT {
-            let _ = Self::CHECK;
-            WWDT::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type WWDT0 = Instance<0u8>;
-}
-pub mod debugmailbox {
-    #[path = "../../../peripherals/a2/debugmailbox.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4010_1000usize];
-    pub const unsafe fn instance(n: u8) -> Option<DEBUGMAILBOX> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(DEBUGMAILBOX::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<DEBUGMAILBOX, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> DEBUGMAILBOX {
-            let _ = Self::CHECK;
-            DEBUGMAILBOX::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type DBGMAILBOX = Instance<0u8>;
-}
-pub mod lpdac {
-    #[path = "../../../peripherals/a2/lpdac.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x400b_4000usize];
-    pub const unsafe fn instance(n: u8) -> Option<LPDAC> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(LPDAC::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<LPDAC, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> LPDAC {
-            let _ = Self::CHECK;
-            LPDAC::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type DAC0 = Instance<0u8>;
-}
-pub mod crc {
-    #[path = "../../../peripherals/a2/crc.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4008_a000usize];
-    pub const unsafe fn instance(n: u8) -> Option<CRC> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(CRC::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<CRC, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> CRC {
-            let _ = Self::CHECK;
-            CRC::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type CRC0 = Instance<0u8>;
-}
-pub mod lpi2c {
-    #[path = "../../../peripherals/a2/lpi2c.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 4usize;
-    pub const ADDRESSES: [usize; LEN] = [
-        0x4009_a000usize,
-        0x4009_b000usize,
-        0x400d_4000usize,
-        0x400d_5000usize,
-    ];
-    pub const unsafe fn instance(n: u8) -> Option<LPI2C> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(LPI2C::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<LPI2C, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> LPI2C {
-            let _ = Self::CHECK;
-            LPI2C::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type LPI2C0 = Instance<0u8>;
-    pub type LPI2C1 = Instance<1u8>;
-    pub type LPI2C2 = Instance<2u8>;
-    pub type LPI2C3 = Instance<3u8>;
-}
-pub mod fmu {
-    #[path = "../../../peripherals/a2/fmu.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4009_5000usize];
-    pub const unsafe fn instance(n: u8) -> Option<FMU> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(FMU::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<FMU, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> FMU {
-            let _ = Self::CHECK;
-            FMU::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type FMU0 = Instance<0u8>;
-}
-pub mod trdc {
-    #[path = "../../../peripherals/a2/trdc.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4008_e000usize];
-    pub const unsafe fn instance(n: u8) -> Option<TRDC> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(TRDC::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<TRDC, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> TRDC {
-            let _ = Self::CHECK;
-            TRDC::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type MBC0 = Instance<0u8>;
-}
-pub mod wuu {
-    #[path = "../../../peripherals/a2/wuu.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4009_2000usize];
-    pub const unsafe fn instance(n: u8) -> Option<WUU> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(WUU::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<WUU, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> WUU {
-            let _ = Self::CHECK;
-            WUU::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type WUU0 = Instance<0u8>;
-}
-pub mod vbat {
-    #[path = "../../../peripherals/a2/vbat.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4009_3000usize];
-    pub const unsafe fn instance(n: u8) -> Option<VBAT> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(VBAT::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<VBAT, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> VBAT {
-            let _ = Self::CHECK;
-            VBAT::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type VBAT0 = Instance<0u8>;
-}
-pub mod lpcmp {
-    #[path = "../../../peripherals/a2/lpcmp.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 3usize;
-    pub const ADDRESSES: [usize; LEN] = [0x400b_1000usize, 0x400b_2000usize, 0x400b_3000usize];
-    pub const unsafe fn instance(n: u8) -> Option<LPCMP> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(LPCMP::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<LPCMP, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> LPCMP {
-            let _ = Self::CHECK;
-            LPCMP::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type CMP0 = Instance<0u8>;
-    pub type CMP1 = Instance<1u8>;
-    pub type CMP2 = Instance<2u8>;
-}
-pub mod glikey {
-    #[path = "../../../peripherals/a2/glikey.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4009_1d00usize];
-    pub const unsafe fn instance(n: u8) -> Option<GLIKEY> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(GLIKEY::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<GLIKEY, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> GLIKEY {
-            let _ = Self::CHECK;
-            GLIKEY::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type GLIKEY0 = Instance<0u8>;
-}
-pub mod cmc {
-    #[path = "../../../peripherals/a2/cmc.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4008_b000usize];
-    pub const unsafe fn instance(n: u8) -> Option<CMC> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(CMC::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<CMC, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> CMC {
-            let _ = Self::CHECK;
-            CMC::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type CMC0 = Instance<0u8>;
-}
-pub mod freqme {
-    #[path = "../../../peripherals/a2/freqme.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4000_9000usize];
-    pub const unsafe fn instance(n: u8) -> Option<FREQME> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(FREQME::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<FREQME, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> FREQME {
-            let _ = Self::CHECK;
-            FREQME::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type FREQME0 = Instance<0u8>;
-}
-pub mod syscon {
-    #[path = "../../../peripherals/a2/syscon.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4009_1000usize];
-    pub const unsafe fn instance(n: u8) -> Option<SYSCON> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(SYSCON::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<SYSCON, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> SYSCON {
-            let _ = Self::CHECK;
-            SYSCON::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type SYSCON0 = Instance<0u8>;
-}
-pub mod adc {
-    #[path = "../../../peripherals/a2/adc.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 4usize;
-    pub const ADDRESSES: [usize; LEN] = [
-        0x400a_f000usize,
-        0x400b_0000usize,
-        0x400f_0000usize,
-        0x400f_1000usize,
-    ];
-    pub const unsafe fn instance(n: u8) -> Option<ADC> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(ADC::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<ADC, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> ADC {
-            let _ = Self::CHECK;
-            ADC::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type ADC0 = Instance<0u8>;
-    pub type ADC1 = Instance<1u8>;
-    pub type ADC2 = Instance<2u8>;
-    pub type ADC3 = Instance<3u8>;
-}
-pub mod lpspi {
-    #[path = "../../../peripherals/a2/lpspi.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 2usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4009_c000usize, 0x4009_d000usize];
-    pub const unsafe fn instance(n: u8) -> Option<LPSPI> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(LPSPI::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<LPSPI, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> LPSPI {
-            let _ = Self::CHECK;
-            LPSPI::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type LPSPI0 = Instance<0u8>;
-    pub type LPSPI1 = Instance<1u8>;
-}
+#[path = "../../peripherals/a2"]
 pub mod ostimer {
-    #[path = "../../../peripherals/a2/ostimer.rs"]
+    use core::marker::PhantomData;
+    #[path = "ostimer.rs"]
     mod _block;
     pub use _block::*;
     pub const LEN: usize = 1usize;
     pub const ADDRESSES: [usize; LEN] = [0x400a_d000usize];
-    pub const unsafe fn instance(n: u8) -> Option<OSTIMER> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(OSTIMER::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
     pub type Instance<const N: u8> = crate::Instance<OSTIMER, N>;
     impl<const N: u8> Instance<N> {
         const CHECK: () = assert!((N as usize) < LEN);
         #[inline(always)]
-        pub const unsafe fn regs() -> OSTIMER {
-            let _ = Self::CHECK;
-            OSTIMER::from_ptr(Self::address() as _)
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
         }
         #[inline(always)]
-        pub const fn address() -> usize {
+        pub const fn regs(&self) -> OSTIMER {
+            unsafe { OSTIMER::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
             let _ = Self::CHECK;
             ADDRESSES[N as usize]
         }
     }
     pub type OSTIMER0 = Instance<0u8>;
 }
-pub mod spc {
-    #[path = "../../../peripherals/a2/spc.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4009_0000usize];
-    pub const unsafe fn instance(n: u8) -> Option<SPC> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(SPC::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<SPC, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> SPC {
-            let _ = Self::CHECK;
-            SPC::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type SPC0 = Instance<0u8>;
-}
-pub mod scg {
-    #[path = "../../../peripherals/a2/scg.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4008_f000usize];
-    pub const unsafe fn instance(n: u8) -> Option<SCG> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(SCG::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<SCG, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> SCG {
-            let _ = Self::CHECK;
-            SCG::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type SCG0 = Instance<0u8>;
-}
-pub mod aoi {
-    #[path = "../../../peripherals/a2/aoi.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 2usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4008_9000usize, 0x4009_7000usize];
-    pub const unsafe fn instance(n: u8) -> Option<AOI> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(AOI::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<AOI, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> AOI {
-            let _ = Self::CHECK;
-            AOI::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type AOI0 = Instance<0u8>;
-    pub type AOI1 = Instance<1u8>;
-}
-pub mod inputmux {
-    #[path = "../../../peripherals/a2/inputmux.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4000_1000usize];
-    pub const unsafe fn instance(n: u8) -> Option<INPUTMUX> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(INPUTMUX::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<INPUTMUX, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> INPUTMUX {
-            let _ = Self::CHECK;
-            INPUTMUX::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type INPUTMUX0 = Instance<0u8>;
-}
-pub mod eqdc {
-    #[path = "../../../peripherals/a2/eqdc.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 2usize;
-    pub const ADDRESSES: [usize; LEN] = [0x400a_7000usize, 0x400a_8000usize];
-    pub const unsafe fn instance(n: u8) -> Option<EQDC> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(EQDC::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<EQDC, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> EQDC {
-            let _ = Self::CHECK;
-            EQDC::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type EQDC0 = Instance<0u8>;
-    pub type EQDC1 = Instance<1u8>;
-}
-pub mod can {
-    #[path = "../../../peripherals/a2/can.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x400c_c000usize];
-    pub const unsafe fn instance(n: u8) -> Option<CAN> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(CAN::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<CAN, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> CAN {
-            let _ = Self::CHECK;
-            CAN::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type CAN0 = Instance<0u8>;
-}
-pub mod cdog {
-    #[path = "../../../peripherals/a2/cdog.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4010_0000usize];
-    pub const unsafe fn instance(n: u8) -> Option<CDOG> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(CDOG::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<CDOG, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn regs() -> CDOG {
-            let _ = Self::CHECK;
-            CDOG::from_ptr(Self::address() as _)
-        }
-        #[inline(always)]
-        pub const fn address() -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub type CDOG0 = Instance<0u8>;
-}
+#[path = "../../peripherals/a2"]
 pub mod port {
-    #[path = "../../../peripherals/a2/port.rs"]
+    use core::marker::PhantomData;
+    #[path = "port.rs"]
     mod _block;
     pub use _block::*;
     pub const LEN: usize = 5usize;
@@ -1689,23 +1286,19 @@ pub mod port {
         0x400b_f000usize,
         0x400c_0000usize,
     ];
-    pub const unsafe fn instance(n: u8) -> Option<PORT> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(PORT::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
     pub type Instance<const N: u8> = crate::Instance<PORT, N>;
     impl<const N: u8> Instance<N> {
         const CHECK: () = assert!((N as usize) < LEN);
         #[inline(always)]
-        pub const unsafe fn regs() -> PORT {
-            let _ = Self::CHECK;
-            PORT::from_ptr(Self::address() as _)
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
         }
         #[inline(always)]
-        pub const fn address() -> usize {
+        pub const fn regs(&self) -> PORT {
+            unsafe { PORT::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
             let _ = Self::CHECK;
             ADDRESSES[N as usize]
         }
@@ -1716,34 +1309,357 @@ pub mod port {
     pub type PORT3 = Instance<3u8>;
     pub type PORT4 = Instance<4u8>;
 }
-pub mod erm {
-    #[path = "../../../peripherals/a2/erm.rs"]
+#[path = "../../peripherals/a2"]
+pub mod pwm {
+    use core::marker::PhantomData;
+    #[path = "pwm.rs"]
     mod _block;
     pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4008_d000usize];
-    pub const unsafe fn instance(n: u8) -> Option<ERM> {
-        if n >= LEN as u8 {
-            None
-        } else {
-            Some(ERM::from_ptr(ADDRESSES[n as usize] as _))
-        }
-    }
-    pub type Instance<const N: u8> = crate::Instance<ERM, N>;
+    pub const LEN: usize = 2usize;
+    pub const ADDRESSES: [usize; LEN] = [0x400a_9000usize, 0x400a_a000usize];
+    pub type Instance<const N: u8> = crate::Instance<PWM, N>;
     impl<const N: u8> Instance<N> {
         const CHECK: () = assert!((N as usize) < LEN);
         #[inline(always)]
-        pub const unsafe fn regs() -> ERM {
-            let _ = Self::CHECK;
-            ERM::from_ptr(Self::address() as _)
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
         }
         #[inline(always)]
-        pub const fn address() -> usize {
+        pub const fn regs(&self) -> PWM {
+            unsafe { PWM::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
             let _ = Self::CHECK;
             ADDRESSES[N as usize]
         }
     }
-    pub type ERM0 = Instance<0u8>;
+    pub type FLEXPWM0 = Instance<0u8>;
+    pub type FLEXPWM1 = Instance<1u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod rtc {
+    use core::marker::PhantomData;
+    #[path = "rtc.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x400e_e000usize];
+    pub type Instance<const N: u8> = crate::Instance<RTC, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> RTC {
+            unsafe { RTC::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type RTC0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod scg {
+    use core::marker::PhantomData;
+    #[path = "scg.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4008_f000usize];
+    pub type Instance<const N: u8> = crate::Instance<SCG, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> SCG {
+            unsafe { SCG::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type SCG0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod smartdma {
+    use core::marker::PhantomData;
+    #[path = "smartdma.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4000_e000usize];
+    pub type Instance<const N: u8> = crate::Instance<SMARTDMA, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> SMARTDMA {
+            unsafe { SMARTDMA::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type SMARTDMA0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod spc {
+    use core::marker::PhantomData;
+    #[path = "spc.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4009_0000usize];
+    pub type Instance<const N: u8> = crate::Instance<SPC, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> SPC {
+            unsafe { SPC::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type SPC0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod syscon {
+    use core::marker::PhantomData;
+    #[path = "syscon.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4009_1000usize];
+    pub type Instance<const N: u8> = crate::Instance<SYSCON, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> SYSCON {
+            unsafe { SYSCON::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type SYSCON0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod trdc {
+    use core::marker::PhantomData;
+    #[path = "trdc.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4008_e000usize];
+    pub type Instance<const N: u8> = crate::Instance<TRDC, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> TRDC {
+            unsafe { TRDC::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type MBC0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod udf {
+    use core::marker::PhantomData;
+    #[path = "udf.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x400e_d000usize];
+    pub type Instance<const N: u8> = crate::Instance<UDF, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> UDF {
+            unsafe { UDF::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type UDF0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod utick {
+    use core::marker::PhantomData;
+    #[path = "utick.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4000_b000usize];
+    pub type Instance<const N: u8> = crate::Instance<UTICK, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> UTICK {
+            unsafe { UTICK::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type UTICK0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod vbat {
+    use core::marker::PhantomData;
+    #[path = "vbat.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4009_3000usize];
+    pub type Instance<const N: u8> = crate::Instance<VBAT, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> VBAT {
+            unsafe { VBAT::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type VBAT0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod waketimer {
+    use core::marker::PhantomData;
+    #[path = "waketimer.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x400a_e000usize];
+    pub type Instance<const N: u8> = crate::Instance<WAKETIMER, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> WAKETIMER {
+            unsafe { WAKETIMER::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type WAKETIMER0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod wuu {
+    use core::marker::PhantomData;
+    #[path = "wuu.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4009_2000usize];
+    pub type Instance<const N: u8> = crate::Instance<WUU, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> WUU {
+            unsafe { WUU::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type WUU0 = Instance<0u8>;
+}
+#[path = "../../peripherals/a2"]
+pub mod wwdt {
+    use core::marker::PhantomData;
+    #[path = "wwdt.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x4000_c000usize];
+    pub type Instance<const N: u8> = crate::Instance<WWDT, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> WWDT {
+            unsafe { WWDT::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub type WWDT0 = Instance<0u8>;
 }
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
