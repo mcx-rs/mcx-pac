@@ -164,6 +164,50 @@ pub mod regs {
             PMCR_PMCR(0)
         }
     }
+    impl core::fmt::Debug for PMCR_PMCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PMCR_PMCR")
+                .field("MENB", &self.MENB())
+                .field("SSC", &self.SSC())
+                .field("CMODE", &self.CMODE())
+                .field("RECTR1", &self.RECTR1())
+                .field("RECTR2", &self.RECTR2())
+                .field("RECTR3", &self.RECTR3())
+                .field("SELEVT1", &self.SELEVT1())
+                .field("SELEVT2", &self.SELEVT2())
+                .field("SELEVT3", &self.SELEVT3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PMCR_PMCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PMCR_PMCR {
+                MENB: bool,
+                SSC: u8,
+                CMODE: u8,
+                RECTR1: bool,
+                RECTR2: bool,
+                RECTR3: bool,
+                SELEVT1: u8,
+                SELEVT2: u8,
+                SELEVT3: u8,
+            }
+            let proxy = PMCR_PMCR {
+                MENB: self.MENB(),
+                SSC: self.SSC(),
+                CMODE: self.CMODE(),
+                RECTR1: self.RECTR1(),
+                RECTR2: self.RECTR2(),
+                RECTR3: self.RECTR3(),
+                SELEVT1: self.SELEVT1(),
+                SELEVT2: self.SELEVT2(),
+                SELEVT3: self.SELEVT3(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Performance Monitor Event Counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -183,6 +227,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PMCR_PMECTR_HI {
             PMCR_PMECTR_HI(0)
+        }
+    }
+    impl core::fmt::Debug for PMCR_PMECTR_HI {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PMCR_PMECTR_HI")
+                .field("ECTR", &self.ECTR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PMCR_PMECTR_HI {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PMCR_PMECTR_HI {
+                ECTR: u8,
+            }
+            let proxy = PMCR_PMECTR_HI { ECTR: self.ECTR() };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

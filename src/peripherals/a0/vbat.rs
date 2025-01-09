@@ -83,6 +83,24 @@ pub mod regs {
             FROCLKE(0)
         }
     }
+    impl core::fmt::Debug for FROCLKE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FROCLKE")
+                .field("CLKE", &self.CLKE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FROCLKE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FROCLKE {
+                CLKE: u8,
+            }
+            let proxy = FROCLKE { CLKE: self.CLKE() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FRO16K Control A"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -104,6 +122,26 @@ pub mod regs {
             FROCTLA(0)
         }
     }
+    impl core::fmt::Debug for FROCTLA {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FROCTLA")
+                .field("FRO_EN", &self.FRO_EN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FROCTLA {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FROCTLA {
+                FRO_EN: bool,
+            }
+            let proxy = FROCTLA {
+                FRO_EN: self.FRO_EN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FRO16K Lock A"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -123,6 +161,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FROLCKA {
             FROLCKA(0)
+        }
+    }
+    impl core::fmt::Debug for FROLCKA {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FROLCKA")
+                .field("LOCK", &self.LOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FROLCKA {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FROLCKA {
+                LOCK: bool,
+            }
+            let proxy = FROLCKA { LOCK: self.LOCK() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Version ID"]
@@ -164,6 +220,32 @@ pub mod regs {
             VERID(0)
         }
     }
+    impl core::fmt::Debug for VERID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VERID")
+                .field("FEATURE", &self.FEATURE())
+                .field("MINOR", &self.MINOR())
+                .field("MAJOR", &self.MAJOR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VERID {
+                FEATURE: u16,
+                MINOR: u8,
+                MAJOR: u8,
+            }
+            let proxy = VERID {
+                FEATURE: self.FEATURE(),
+                MINOR: self.MINOR(),
+                MAJOR: self.MAJOR(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Wakeup Lock A"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -183,6 +265,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> WAKLCKA {
             WAKLCKA(0)
+        }
+    }
+    impl core::fmt::Debug for WAKLCKA {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("WAKLCKA")
+                .field("LOCK", &self.LOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WAKLCKA {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct WAKLCKA {
+                LOCK: bool,
+            }
+            let proxy = WAKLCKA { LOCK: self.LOCK() };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

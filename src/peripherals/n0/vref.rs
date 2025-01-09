@@ -122,6 +122,50 @@ pub mod regs {
             CSR(0)
         }
     }
+    impl core::fmt::Debug for CSR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CSR")
+                .field("HCBGEN", &self.HCBGEN())
+                .field("LPBGEN", &self.LPBGEN())
+                .field("LPBG_BUF_EN", &self.LPBG_BUF_EN())
+                .field("CHOPEN", &self.CHOPEN())
+                .field("ICOMPEN", &self.ICOMPEN())
+                .field("REGEN", &self.REGEN())
+                .field("HI_PWR_LV", &self.HI_PWR_LV())
+                .field("BUF21EN", &self.BUF21EN())
+                .field("VREFST", &self.VREFST())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CSR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CSR {
+                HCBGEN: bool,
+                LPBGEN: bool,
+                LPBG_BUF_EN: bool,
+                CHOPEN: bool,
+                ICOMPEN: bool,
+                REGEN: bool,
+                HI_PWR_LV: bool,
+                BUF21EN: bool,
+                VREFST: bool,
+            }
+            let proxy = CSR {
+                HCBGEN: self.HCBGEN(),
+                LPBGEN: self.LPBGEN(),
+                LPBG_BUF_EN: self.LPBG_BUF_EN(),
+                CHOPEN: self.CHOPEN(),
+                ICOMPEN: self.ICOMPEN(),
+                REGEN: self.REGEN(),
+                HI_PWR_LV: self.HI_PWR_LV(),
+                BUF21EN: self.BUF21EN(),
+                VREFST: self.VREFST(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "User Trim"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -150,6 +194,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> UTRIM {
             UTRIM(0)
+        }
+    }
+    impl core::fmt::Debug for UTRIM {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("UTRIM")
+                .field("TRIM2V1", &self.TRIM2V1())
+                .field("VREFTRIM", &self.VREFTRIM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for UTRIM {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct UTRIM {
+                TRIM2V1: u8,
+                VREFTRIM: u8,
+            }
+            let proxy = UTRIM {
+                TRIM2V1: self.TRIM2V1(),
+                VREFTRIM: self.VREFTRIM(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Version ID"]
@@ -189,6 +256,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> VERID {
             VERID(0)
+        }
+    }
+    impl core::fmt::Debug for VERID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VERID")
+                .field("FEATURE", &self.FEATURE())
+                .field("MINOR", &self.MINOR())
+                .field("MAJOR", &self.MAJOR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VERID {
+                FEATURE: u16,
+                MINOR: u8,
+                MAJOR: u8,
+            }
+            let proxy = VERID {
+                FEATURE: self.FEATURE(),
+                MINOR: self.MINOR(),
+                MAJOR: self.MAJOR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

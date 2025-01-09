@@ -117,6 +117,47 @@ pub mod regs {
             UDF_CTRL(0)
         }
     }
+    impl core::fmt::Debug for UDF_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("UDF_CTRL")
+                .field("salt", &self.salt())
+                .field("lock", &self.lock())
+                .field("reserved21", &self.reserved21())
+                .field("udf_en", &self.udf_en())
+                .field("reserved25", &self.reserved25())
+                .field("reserved27", &self.reserved27())
+                .field("flush", &self.flush())
+                .field("reserved31", &self.reserved31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for UDF_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct UDF_CTRL {
+                salt: u16,
+                lock: u8,
+                reserved21: u8,
+                udf_en: u8,
+                reserved25: bool,
+                reserved27: u8,
+                flush: u8,
+                reserved31: bool,
+            }
+            let proxy = UDF_CTRL {
+                salt: self.salt(),
+                lock: self.lock(),
+                reserved21: self.reserved21(),
+                udf_en: self.udf_en(),
+                reserved25: self.reserved25(),
+                reserved27: self.reserved27(),
+                flush: self.flush(),
+                reserved31: self.reserved31(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -154,6 +195,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> UDF_STATUS {
             UDF_STATUS(0)
+        }
+    }
+    impl core::fmt::Debug for UDF_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("UDF_STATUS")
+                .field("o_status", &self.o_status())
+                .field("rsv", &self.rsv())
+                .field("o_wait", &self.o_wait())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for UDF_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct UDF_STATUS {
+                o_status: u8,
+                rsv: u32,
+                o_wait: bool,
+            }
+            let proxy = UDF_STATUS {
+                o_status: self.o_status(),
+                rsv: self.rsv(),
+                o_wait: self.o_wait(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

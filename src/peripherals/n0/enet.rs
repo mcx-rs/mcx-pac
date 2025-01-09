@@ -585,6 +585,29 @@ pub mod regs {
             DMA_CH_DMA_CHX_CTRL(0)
         }
     }
+    impl core::fmt::Debug for DMA_CH_DMA_CHX_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_CH_DMA_CHX_CTRL")
+                .field("PBLx8", &self.PBLx8())
+                .field("DSL", &self.DSL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_CH_DMA_CHX_CTRL {
+                PBLx8: bool,
+                DSL: u8,
+            }
+            let proxy = DMA_CH_DMA_CHX_CTRL {
+                PBLx8: self.PBLx8(),
+                DSL: self.DSL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Channeli Interrupt Enable..Channel 1 Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -714,6 +737,62 @@ pub mod regs {
             DMA_CH_DMA_CHX_INT_EN(0)
         }
     }
+    impl core::fmt::Debug for DMA_CH_DMA_CHX_INT_EN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_CH_DMA_CHX_INT_EN")
+                .field("TIE", &self.TIE())
+                .field("TXSE", &self.TXSE())
+                .field("TBUE", &self.TBUE())
+                .field("RIE", &self.RIE())
+                .field("RBUE", &self.RBUE())
+                .field("RSE", &self.RSE())
+                .field("RWTE", &self.RWTE())
+                .field("ETIE", &self.ETIE())
+                .field("ERIE", &self.ERIE())
+                .field("FBEE", &self.FBEE())
+                .field("CDEE", &self.CDEE())
+                .field("AIE", &self.AIE())
+                .field("NIE", &self.NIE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_INT_EN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_CH_DMA_CHX_INT_EN {
+                TIE: bool,
+                TXSE: bool,
+                TBUE: bool,
+                RIE: bool,
+                RBUE: bool,
+                RSE: bool,
+                RWTE: bool,
+                ETIE: bool,
+                ERIE: bool,
+                FBEE: bool,
+                CDEE: bool,
+                AIE: bool,
+                NIE: bool,
+            }
+            let proxy = DMA_CH_DMA_CHX_INT_EN {
+                TIE: self.TIE(),
+                TXSE: self.TXSE(),
+                TBUE: self.TBUE(),
+                RIE: self.RIE(),
+                RBUE: self.RBUE(),
+                RSE: self.RSE(),
+                RWTE: self.RWTE(),
+                ETIE: self.ETIE(),
+                ERIE: self.ERIE(),
+                FBEE: self.FBEE(),
+                CDEE: self.CDEE(),
+                AIE: self.AIE(),
+                NIE: self.NIE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Channel 0 Missed Frame Counter..Channel 1 Missed Frame Counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -744,6 +823,29 @@ pub mod regs {
             DMA_CH_DMA_CHX_MISS_FRAME_CNT(0)
         }
     }
+    impl core::fmt::Debug for DMA_CH_DMA_CHX_MISS_FRAME_CNT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_CH_DMA_CHX_MISS_FRAME_CNT")
+                .field("MFC", &self.MFC())
+                .field("MFCO", &self.MFCO())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_MISS_FRAME_CNT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_CH_DMA_CHX_MISS_FRAME_CNT {
+                MFC: u16,
+                MFCO: bool,
+            }
+            let proxy = DMA_CH_DMA_CHX_MISS_FRAME_CNT {
+                MFC: self.MFC(),
+                MFCO: self.MFCO(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Channel 0 Rx Descriptor List Address register..Channel 1 Rx Descriptor List Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -765,6 +867,26 @@ pub mod regs {
             DMA_CH_DMA_CHX_RXDESC_LIST_ADDR(0)
         }
     }
+    impl core::fmt::Debug for DMA_CH_DMA_CHX_RXDESC_LIST_ADDR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_CH_DMA_CHX_RXDESC_LIST_ADDR")
+                .field("RDESLA", &self.RDESLA())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_RXDESC_LIST_ADDR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_CH_DMA_CHX_RXDESC_LIST_ADDR {
+                RDESLA: u32,
+            }
+            let proxy = DMA_CH_DMA_CHX_RXDESC_LIST_ADDR {
+                RDESLA: self.RDESLA(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Channel 0 Rx Descriptor Tail Pointer..Channel 1 Rx Descriptor Tail Pointer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -784,6 +906,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA_CH_DMA_CHX_RXDESC_TAIL_PTR {
             DMA_CH_DMA_CHX_RXDESC_TAIL_PTR(0)
+        }
+    }
+    impl core::fmt::Debug for DMA_CH_DMA_CHX_RXDESC_TAIL_PTR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_CH_DMA_CHX_RXDESC_TAIL_PTR")
+                .field("RDTP", &self.RDTP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_RXDESC_TAIL_PTR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_CH_DMA_CHX_RXDESC_TAIL_PTR {
+                RDTP: u32,
+            }
+            let proxy = DMA_CH_DMA_CHX_RXDESC_TAIL_PTR { RDTP: self.RDTP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Channeli Receive Control..DMA Channel 1 Receive Control"]
@@ -814,6 +954,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA_CH_DMA_CHX_RX_CONTROL2 {
             DMA_CH_DMA_CHX_RX_CONTROL2(0)
+        }
+    }
+    impl core::fmt::Debug for DMA_CH_DMA_CHX_RX_CONTROL2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_CH_DMA_CHX_RX_CONTROL2")
+                .field("RDRL", &self.RDRL())
+                .field("ARBS", &self.ARBS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_RX_CONTROL2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_CH_DMA_CHX_RX_CONTROL2 {
+                RDRL: u16,
+                ARBS: u8,
+            }
+            let proxy = DMA_CH_DMA_CHX_RX_CONTROL2 {
+                RDRL: self.RDRL(),
+                ARBS: self.ARBS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA Channel 0 Receive Control..DMA Channel 1 Receive Control"]
@@ -882,6 +1045,41 @@ pub mod regs {
             DMA_CH_DMA_CHX_RX_CTRL(0)
         }
     }
+    impl core::fmt::Debug for DMA_CH_DMA_CHX_RX_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_CH_DMA_CHX_RX_CTRL")
+                .field("SR", &self.SR())
+                .field("RBSZ_X_0", &self.RBSZ_X_0())
+                .field("RBSZ_13_Y", &self.RBSZ_13_Y())
+                .field("RxPBL", &self.RxPBL())
+                .field("ERIC", &self.ERIC())
+                .field("RPF", &self.RPF())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_RX_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_CH_DMA_CHX_RX_CTRL {
+                SR: bool,
+                RBSZ_X_0: u8,
+                RBSZ_13_Y: u16,
+                RxPBL: u8,
+                ERIC: bool,
+                RPF: bool,
+            }
+            let proxy = DMA_CH_DMA_CHX_RX_CTRL {
+                SR: self.SR(),
+                RBSZ_X_0: self.RBSZ_X_0(),
+                RBSZ_13_Y: self.RBSZ_13_Y(),
+                RxPBL: self.RxPBL(),
+                ERIC: self.ERIC(),
+                RPF: self.RPF(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Channel 0 Receive ERI Counter..Channel 1 Receive ERI Counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -901,6 +1099,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA_CH_DMA_CHX_RX_ERI_CNT {
             DMA_CH_DMA_CHX_RX_ERI_CNT(0)
+        }
+    }
+    impl core::fmt::Debug for DMA_CH_DMA_CHX_RX_ERI_CNT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_CH_DMA_CHX_RX_ERI_CNT")
+                .field("ECNT", &self.ECNT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_RX_ERI_CNT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_CH_DMA_CHX_RX_ERI_CNT {
+                ECNT: u16,
+            }
+            let proxy = DMA_CH_DMA_CHX_RX_ERI_CNT { ECNT: self.ECNT() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Channel 0 Receive Interrupt Watchdog Timer..Channel 1 Receive Interrupt Watchdog Timer"]
@@ -931,6 +1147,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA_CH_DMA_CHX_RX_INT_WDTIMER {
             DMA_CH_DMA_CHX_RX_INT_WDTIMER(0)
+        }
+    }
+    impl core::fmt::Debug for DMA_CH_DMA_CHX_RX_INT_WDTIMER {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_CH_DMA_CHX_RX_INT_WDTIMER")
+                .field("RWT", &self.RWT())
+                .field("RWTU", &self.RWTU())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_RX_INT_WDTIMER {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_CH_DMA_CHX_RX_INT_WDTIMER {
+                RWT: u8,
+                RWTU: u8,
+            }
+            let proxy = DMA_CH_DMA_CHX_RX_INT_WDTIMER {
+                RWT: self.RWT(),
+                RWTU: self.RWTU(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Channel 0 Slot Function Control and Status..Channel 1 Slot Function Control and Status"]
@@ -979,6 +1218,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA_CH_DMA_CHX_SLOT_FUNC_CTRL_STAT {
             DMA_CH_DMA_CHX_SLOT_FUNC_CTRL_STAT(0)
+        }
+    }
+    impl core::fmt::Debug for DMA_CH_DMA_CHX_SLOT_FUNC_CTRL_STAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_CH_DMA_CHX_SLOT_FUNC_CTRL_STAT")
+                .field("ESC", &self.ESC())
+                .field("ASC", &self.ASC())
+                .field("SIV", &self.SIV())
+                .field("RSN", &self.RSN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_SLOT_FUNC_CTRL_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_CH_DMA_CHX_SLOT_FUNC_CTRL_STAT {
+                ESC: bool,
+                ASC: bool,
+                SIV: u16,
+                RSN: u8,
+            }
+            let proxy = DMA_CH_DMA_CHX_SLOT_FUNC_CTRL_STAT {
+                ESC: self.ESC(),
+                ASC: self.ASC(),
+                SIV: self.SIV(),
+                RSN: self.RSN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA Channel 0 Status..DMA Channel 1 Status"]
@@ -1128,6 +1396,68 @@ pub mod regs {
             DMA_CH_DMA_CHX_STAT(0)
         }
     }
+    impl core::fmt::Debug for DMA_CH_DMA_CHX_STAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_CH_DMA_CHX_STAT")
+                .field("TI", &self.TI())
+                .field("TPS", &self.TPS())
+                .field("TBU", &self.TBU())
+                .field("RI", &self.RI())
+                .field("RBU", &self.RBU())
+                .field("RPS", &self.RPS())
+                .field("RWT", &self.RWT())
+                .field("ETI", &self.ETI())
+                .field("ERI", &self.ERI())
+                .field("FBE", &self.FBE())
+                .field("CDE", &self.CDE())
+                .field("AIS", &self.AIS())
+                .field("NIS", &self.NIS())
+                .field("TEB", &self.TEB())
+                .field("REB", &self.REB())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_CH_DMA_CHX_STAT {
+                TI: bool,
+                TPS: bool,
+                TBU: bool,
+                RI: bool,
+                RBU: bool,
+                RPS: bool,
+                RWT: bool,
+                ETI: bool,
+                ERI: bool,
+                FBE: bool,
+                CDE: bool,
+                AIS: bool,
+                NIS: bool,
+                TEB: u8,
+                REB: u8,
+            }
+            let proxy = DMA_CH_DMA_CHX_STAT {
+                TI: self.TI(),
+                TPS: self.TPS(),
+                TBU: self.TBU(),
+                RI: self.RI(),
+                RBU: self.RBU(),
+                RPS: self.RPS(),
+                RWT: self.RWT(),
+                ETI: self.ETI(),
+                ERI: self.ERI(),
+                FBE: self.FBE(),
+                CDE: self.CDE(),
+                AIS: self.AIS(),
+                NIS: self.NIS(),
+                TEB: self.TEB(),
+                REB: self.REB(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Channel 0 Tx Descriptor List Address register..Channel 1 Tx Descriptor List Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1147,6 +1477,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA_CH_DMA_CHX_TXDESC_LIST_ADDR {
             DMA_CH_DMA_CHX_TXDESC_LIST_ADDR(0)
+        }
+    }
+    impl core::fmt::Debug for DMA_CH_DMA_CHX_TXDESC_LIST_ADDR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_CH_DMA_CHX_TXDESC_LIST_ADDR")
+                .field("TDESLA", &self.TDESLA())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_TXDESC_LIST_ADDR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_CH_DMA_CHX_TXDESC_LIST_ADDR {
+                TDESLA: u32,
+            }
+            let proxy = DMA_CH_DMA_CHX_TXDESC_LIST_ADDR {
+                TDESLA: self.TDESLA(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Channel 0 Tx Descriptor Ring Length..Channel 1 Tx Descriptor Ring Length"]
@@ -1170,6 +1520,24 @@ pub mod regs {
             DMA_CH_DMA_CHX_TXDESC_RING_LENGTH(0)
         }
     }
+    impl core::fmt::Debug for DMA_CH_DMA_CHX_TXDESC_RING_LENGTH {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_CH_DMA_CHX_TXDESC_RING_LENGTH")
+                .field("TDRL", &self.TDRL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_TXDESC_RING_LENGTH {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_CH_DMA_CHX_TXDESC_RING_LENGTH {
+                TDRL: u16,
+            }
+            let proxy = DMA_CH_DMA_CHX_TXDESC_RING_LENGTH { TDRL: self.TDRL() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Channel 0 Tx Descriptor Tail Pointer..Channel 1 Tx Descriptor Tail Pointer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1189,6 +1557,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA_CH_DMA_CHX_TXDESC_TAIL_PTR {
             DMA_CH_DMA_CHX_TXDESC_TAIL_PTR(0)
+        }
+    }
+    impl core::fmt::Debug for DMA_CH_DMA_CHX_TXDESC_TAIL_PTR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_CH_DMA_CHX_TXDESC_TAIL_PTR")
+                .field("TDTP", &self.TDTP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_TXDESC_TAIL_PTR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_CH_DMA_CHX_TXDESC_TAIL_PTR {
+                TDTP: u32,
+            }
+            let proxy = DMA_CH_DMA_CHX_TXDESC_TAIL_PTR { TDTP: self.TDTP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA Channel 0 Transmit Control..DMA Channel 1 Transmit Control"]
@@ -1248,6 +1634,38 @@ pub mod regs {
             DMA_CH_DMA_CHX_TX_CTRL(0)
         }
     }
+    impl core::fmt::Debug for DMA_CH_DMA_CHX_TX_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_CH_DMA_CHX_TX_CTRL")
+                .field("ST", &self.ST())
+                .field("TCW", &self.TCW())
+                .field("OSF", &self.OSF())
+                .field("TxPBL", &self.TxPBL())
+                .field("ETIC", &self.ETIC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_TX_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_CH_DMA_CHX_TX_CTRL {
+                ST: bool,
+                TCW: u8,
+                OSF: bool,
+                TxPBL: u8,
+                ETIC: bool,
+            }
+            let proxy = DMA_CH_DMA_CHX_TX_CTRL {
+                ST: self.ST(),
+                TCW: self.TCW(),
+                OSF: self.OSF(),
+                TxPBL: self.TxPBL(),
+                ETIC: self.ETIC(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA Debug Status 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1305,6 +1723,38 @@ pub mod regs {
             DMA_DEBUG_STATUS0(0)
         }
     }
+    impl core::fmt::Debug for DMA_DEBUG_STATUS0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_DEBUG_STATUS0")
+                .field("AXWHSTS", &self.AXWHSTS())
+                .field("RPS0", &self.RPS0())
+                .field("TPS0", &self.TPS0())
+                .field("RPS1", &self.RPS1())
+                .field("TPS1", &self.TPS1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_DEBUG_STATUS0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_DEBUG_STATUS0 {
+                AXWHSTS: bool,
+                RPS0: u8,
+                TPS0: u8,
+                RPS1: u8,
+                TPS1: u8,
+            }
+            let proxy = DMA_DEBUG_STATUS0 {
+                AXWHSTS: self.AXWHSTS(),
+                RPS0: self.RPS0(),
+                TPS0: self.TPS0(),
+                RPS1: self.RPS1(),
+                TPS1: self.TPS1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1351,6 +1801,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA_INTERRUPT_STATUS {
             DMA_INTERRUPT_STATUS(0)
+        }
+    }
+    impl core::fmt::Debug for DMA_INTERRUPT_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_INTERRUPT_STATUS")
+                .field("DC0IS", &self.DC0IS())
+                .field("DC1IS", &self.DC1IS())
+                .field("MTLIS", &self.MTLIS())
+                .field("MACIS", &self.MACIS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_INTERRUPT_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_INTERRUPT_STATUS {
+                DC0IS: bool,
+                DC1IS: bool,
+                MTLIS: bool,
+                MACIS: bool,
+            }
+            let proxy = DMA_INTERRUPT_STATUS {
+                DC0IS: self.DC0IS(),
+                DC1IS: self.DC1IS(),
+                MTLIS: self.MTLIS(),
+                MACIS: self.MACIS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA Bus Mode"]
@@ -1410,6 +1889,38 @@ pub mod regs {
             DMA_MODE(0)
         }
     }
+    impl core::fmt::Debug for DMA_MODE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_MODE")
+                .field("SWR", &self.SWR())
+                .field("DA", &self.DA())
+                .field("TAA", &self.TAA())
+                .field("TXPR", &self.TXPR())
+                .field("PR", &self.PR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_MODE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_MODE {
+                SWR: bool,
+                DA: bool,
+                TAA: u8,
+                TXPR: bool,
+                PR: u8,
+            }
+            let proxy = DMA_MODE {
+                SWR: self.SWR(),
+                DA: self.DA(),
+                TAA: self.TAA(),
+                TXPR: self.TXPR(),
+                PR: self.PR(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA System Bus Mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1456,6 +1967,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA_SYSBUS_MODE {
             DMA_SYSBUS_MODE(0)
+        }
+    }
+    impl core::fmt::Debug for DMA_SYSBUS_MODE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA_SYSBUS_MODE")
+                .field("FB", &self.FB())
+                .field("AAL", &self.AAL())
+                .field("MB", &self.MB())
+                .field("RB", &self.RB())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_SYSBUS_MODE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA_SYSBUS_MODE {
+                FB: bool,
+                AAL: bool,
+                MB: bool,
+                RB: bool,
+            }
+            let proxy = DMA_SYSBUS_MODE {
+                FB: self.FB(),
+                AAL: self.AAL(),
+                MB: self.MB(),
+                RB: self.RB(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Indirect Access Control"]
@@ -1515,6 +2055,38 @@ pub mod regs {
             INDIR_ACCESS_CTRL(0)
         }
     }
+    impl core::fmt::Debug for INDIR_ACCESS_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("INDIR_ACCESS_CTRL")
+                .field("OB", &self.OB())
+                .field("COM", &self.COM())
+                .field("AUTO", &self.AUTO())
+                .field("AOFF", &self.AOFF())
+                .field("MSEL", &self.MSEL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INDIR_ACCESS_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct INDIR_ACCESS_CTRL {
+                OB: bool,
+                COM: bool,
+                AUTO: bool,
+                AOFF: u8,
+                MSEL: u8,
+            }
+            let proxy = INDIR_ACCESS_CTRL {
+                OB: self.OB(),
+                COM: self.COM(),
+                AUTO: self.AUTO(),
+                AOFF: self.AOFF(),
+                MSEL: self.MSEL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "MAC Address0 High"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1552,6 +2124,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_ADDRESS0_HIGH {
             MAC_ADDRESS0_HIGH(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_ADDRESS0_HIGH {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_ADDRESS0_HIGH")
+                .field("ADDRHI", &self.ADDRHI())
+                .field("DCS", &self.DCS())
+                .field("AE", &self.AE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_ADDRESS0_HIGH {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_ADDRESS0_HIGH {
+                ADDRHI: u16,
+                DCS: u8,
+                AE: bool,
+            }
+            let proxy = MAC_ADDRESS0_HIGH {
+                ADDRHI: self.ADDRHI(),
+                DCS: self.DCS(),
+                AE: self.AE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MAC Configuration"]
@@ -1773,6 +2371,92 @@ pub mod regs {
             MAC_CONFIGURATION(0)
         }
     }
+    impl core::fmt::Debug for MAC_CONFIGURATION {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_CONFIGURATION")
+                .field("RE", &self.RE())
+                .field("TE", &self.TE())
+                .field("PRELEN", &self.PRELEN())
+                .field("DC", &self.DC())
+                .field("BL", &self.BL())
+                .field("DR", &self.DR())
+                .field("DCRS", &self.DCRS())
+                .field("DO", &self.DO())
+                .field("ECRSFD", &self.ECRSFD())
+                .field("LM", &self.LM())
+                .field("DM", &self.DM())
+                .field("FES", &self.FES())
+                .field("PS", &self.PS())
+                .field("JE", &self.JE())
+                .field("JD", &self.JD())
+                .field("WD", &self.WD())
+                .field("ACS", &self.ACS())
+                .field("CST", &self.CST())
+                .field("S2KP", &self.S2KP())
+                .field("GPSLCE", &self.GPSLCE())
+                .field("IPG", &self.IPG())
+                .field("IPC", &self.IPC())
+                .field("SARC", &self.SARC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_CONFIGURATION {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_CONFIGURATION {
+                RE: bool,
+                TE: bool,
+                PRELEN: u8,
+                DC: bool,
+                BL: u8,
+                DR: bool,
+                DCRS: bool,
+                DO: bool,
+                ECRSFD: bool,
+                LM: bool,
+                DM: bool,
+                FES: bool,
+                PS: bool,
+                JE: bool,
+                JD: bool,
+                WD: bool,
+                ACS: bool,
+                CST: bool,
+                S2KP: bool,
+                GPSLCE: bool,
+                IPG: u8,
+                IPC: bool,
+                SARC: u8,
+            }
+            let proxy = MAC_CONFIGURATION {
+                RE: self.RE(),
+                TE: self.TE(),
+                PRELEN: self.PRELEN(),
+                DC: self.DC(),
+                BL: self.BL(),
+                DR: self.DR(),
+                DCRS: self.DCRS(),
+                DO: self.DO(),
+                ECRSFD: self.ECRSFD(),
+                LM: self.LM(),
+                DM: self.DM(),
+                FES: self.FES(),
+                PS: self.PS(),
+                JE: self.JE(),
+                JD: self.JD(),
+                WD: self.WD(),
+                ACS: self.ACS(),
+                CST: self.CST(),
+                S2KP: self.S2KP(),
+                GPSLCE: self.GPSLCE(),
+                IPG: self.IPG(),
+                IPC: self.IPC(),
+                SARC: self.SARC(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CSR Software Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1792,6 +2476,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_CSR_SW_CTRL {
             MAC_CSR_SW_CTRL(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_CSR_SW_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_CSR_SW_CTRL")
+                .field("RCWE", &self.RCWE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_CSR_SW_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_CSR_SW_CTRL {
+                RCWE: bool,
+            }
+            let proxy = MAC_CSR_SW_CTRL { RCWE: self.RCWE() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MAC Debug"]
@@ -1840,6 +2542,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_DEBUG {
             MAC_DEBUG(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_DEBUG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_DEBUG")
+                .field("RPESTS", &self.RPESTS())
+                .field("RFCFCSTS", &self.RFCFCSTS())
+                .field("TPESTS", &self.TPESTS())
+                .field("TFCSTS", &self.TFCSTS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_DEBUG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_DEBUG {
+                RPESTS: bool,
+                RFCFCSTS: u8,
+                TPESTS: bool,
+                TFCSTS: u8,
+            }
+            let proxy = MAC_DEBUG {
+                RPESTS: self.RPESTS(),
+                RFCFCSTS: self.RFCFCSTS(),
+                TPESTS: self.TPESTS(),
+                TFCSTS: self.TFCSTS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MAC Extended Configuration Register"]
@@ -1915,6 +2646,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_EXT_CONFIGURATION {
             MAC_EXT_CONFIGURATION(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_EXT_CONFIGURATION {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_EXT_CONFIGURATION")
+                .field("GPSL", &self.GPSL())
+                .field("DCRCC", &self.DCRCC())
+                .field("SPEN", &self.SPEN())
+                .field("USP", &self.USP())
+                .field("PDC", &self.PDC())
+                .field("EIPGEN", &self.EIPGEN())
+                .field("EIPG", &self.EIPG())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_EXT_CONFIGURATION {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_EXT_CONFIGURATION {
+                GPSL: u16,
+                DCRCC: bool,
+                SPEN: bool,
+                USP: bool,
+                PDC: bool,
+                EIPGEN: bool,
+                EIPG: u8,
+            }
+            let proxy = MAC_EXT_CONFIGURATION {
+                GPSL: self.GPSL(),
+                DCRCC: self.DCRCC(),
+                SPEN: self.SPEN(),
+                USP: self.USP(),
+                PDC: self.PDC(),
+                EIPGEN: self.EIPGEN(),
+                EIPG: self.EIPG(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Hardware Features 0..Hardware Features 3"]
@@ -2442,6 +3211,194 @@ pub mod regs {
             MAC_HW_FEAT(0)
         }
     }
+    impl core::fmt::Debug for MAC_HW_FEAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_HW_FEAT")
+                .field("MIISEL", &self.MIISEL())
+                .field("NRVF", &self.NRVF())
+                .field("RXFIFOSIZE", &self.RXFIFOSIZE())
+                .field("RXQCNT", &self.RXQCNT())
+                .field("GMIISEL", &self.GMIISEL())
+                .field("HDSEL", &self.HDSEL())
+                .field("PCSSEL", &self.PCSSEL())
+                .field("CBTISEL", &self.CBTISEL())
+                .field("VLHASH", &self.VLHASH())
+                .field("DVLAN", &self.DVLAN())
+                .field("SMASEL", &self.SMASEL())
+                .field("SPRAM", &self.SPRAM())
+                .field("RWKSEL", &self.RWKSEL())
+                .field("TXFIFOSIZE", &self.TXFIFOSIZE())
+                .field("TXQCNT", &self.TXQCNT())
+                .field("MGKSEL", &self.MGKSEL())
+                .field("MMCSEL", &self.MMCSEL())
+                .field("ARPOFFSEL", &self.ARPOFFSEL())
+                .field("PDUPSEL", &self.PDUPSEL())
+                .field("FRPSEL", &self.FRPSEL())
+                .field("FRPBS", &self.FRPBS())
+                .field("OSTEN", &self.OSTEN())
+                .field("PTOEN", &self.PTOEN())
+                .field("RXCHCNT", &self.RXCHCNT())
+                .field("TSSEL", &self.TSSEL())
+                .field("ADVTHWORD", &self.ADVTHWORD())
+                .field("EEESEL", &self.EEESEL())
+                .field("FRPES", &self.FRPES())
+                .field("ADDR64", &self.ADDR64())
+                .field("TXCOESEL", &self.TXCOESEL())
+                .field("DCBEN", &self.DCBEN())
+                .field("ESTSEL", &self.ESTSEL())
+                .field("RDCSZ", &self.RDCSZ())
+                .field("RXCOESEL", &self.RXCOESEL())
+                .field("ESTDEP", &self.ESTDEP())
+                .field("SPHEN", &self.SPHEN())
+                .field("ADDMACADRSEL", &self.ADDMACADRSEL())
+                .field("TSOEN", &self.TSOEN())
+                .field("TXCHCNT", &self.TXCHCNT())
+                .field("DBGMEMA", &self.DBGMEMA())
+                .field("AVSEL", &self.AVSEL())
+                .field("ESTWID", &self.ESTWID())
+                .field("RAVSEL", &self.RAVSEL())
+                .field("TDCSZ", &self.TDCSZ())
+                .field("MACADR32SEL", &self.MACADR32SEL())
+                .field("POUOST", &self.POUOST())
+                .field("HASHTBLSZ", &self.HASHTBLSZ())
+                .field("MACADR64SEL", &self.MACADR64SEL())
+                .field("PPSOUTNUM", &self.PPSOUTNUM())
+                .field("TSSTSSEL", &self.TSSTSSEL())
+                .field("FPESEL", &self.FPESEL())
+                .field("L3L4FNUM", &self.L3L4FNUM())
+                .field("SAVLANINS", &self.SAVLANINS())
+                .field("TBSSEL", &self.TBSSEL())
+                .field("ACTPHYSEL", &self.ACTPHYSEL())
+                .field("ASP", &self.ASP())
+                .field("AUXSNAPNUM", &self.AUXSNAPNUM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_HW_FEAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_HW_FEAT {
+                MIISEL: bool,
+                NRVF: u8,
+                RXFIFOSIZE: u8,
+                RXQCNT: u8,
+                GMIISEL: bool,
+                HDSEL: bool,
+                PCSSEL: bool,
+                CBTISEL: bool,
+                VLHASH: bool,
+                DVLAN: bool,
+                SMASEL: bool,
+                SPRAM: bool,
+                RWKSEL: bool,
+                TXFIFOSIZE: u8,
+                TXQCNT: u8,
+                MGKSEL: bool,
+                MMCSEL: bool,
+                ARPOFFSEL: bool,
+                PDUPSEL: bool,
+                FRPSEL: bool,
+                FRPBS: u8,
+                OSTEN: bool,
+                PTOEN: bool,
+                RXCHCNT: u8,
+                TSSEL: bool,
+                ADVTHWORD: bool,
+                EEESEL: bool,
+                FRPES: u8,
+                ADDR64: u8,
+                TXCOESEL: bool,
+                DCBEN: bool,
+                ESTSEL: bool,
+                RDCSZ: u8,
+                RXCOESEL: bool,
+                ESTDEP: u8,
+                SPHEN: bool,
+                ADDMACADRSEL: u8,
+                TSOEN: bool,
+                TXCHCNT: u8,
+                DBGMEMA: bool,
+                AVSEL: bool,
+                ESTWID: u8,
+                RAVSEL: bool,
+                TDCSZ: u8,
+                MACADR32SEL: bool,
+                POUOST: bool,
+                HASHTBLSZ: u8,
+                MACADR64SEL: bool,
+                PPSOUTNUM: u8,
+                TSSTSSEL: u8,
+                FPESEL: bool,
+                L3L4FNUM: u8,
+                SAVLANINS: bool,
+                TBSSEL: bool,
+                ACTPHYSEL: u8,
+                ASP: u8,
+                AUXSNAPNUM: u8,
+            }
+            let proxy = MAC_HW_FEAT {
+                MIISEL: self.MIISEL(),
+                NRVF: self.NRVF(),
+                RXFIFOSIZE: self.RXFIFOSIZE(),
+                RXQCNT: self.RXQCNT(),
+                GMIISEL: self.GMIISEL(),
+                HDSEL: self.HDSEL(),
+                PCSSEL: self.PCSSEL(),
+                CBTISEL: self.CBTISEL(),
+                VLHASH: self.VLHASH(),
+                DVLAN: self.DVLAN(),
+                SMASEL: self.SMASEL(),
+                SPRAM: self.SPRAM(),
+                RWKSEL: self.RWKSEL(),
+                TXFIFOSIZE: self.TXFIFOSIZE(),
+                TXQCNT: self.TXQCNT(),
+                MGKSEL: self.MGKSEL(),
+                MMCSEL: self.MMCSEL(),
+                ARPOFFSEL: self.ARPOFFSEL(),
+                PDUPSEL: self.PDUPSEL(),
+                FRPSEL: self.FRPSEL(),
+                FRPBS: self.FRPBS(),
+                OSTEN: self.OSTEN(),
+                PTOEN: self.PTOEN(),
+                RXCHCNT: self.RXCHCNT(),
+                TSSEL: self.TSSEL(),
+                ADVTHWORD: self.ADVTHWORD(),
+                EEESEL: self.EEESEL(),
+                FRPES: self.FRPES(),
+                ADDR64: self.ADDR64(),
+                TXCOESEL: self.TXCOESEL(),
+                DCBEN: self.DCBEN(),
+                ESTSEL: self.ESTSEL(),
+                RDCSZ: self.RDCSZ(),
+                RXCOESEL: self.RXCOESEL(),
+                ESTDEP: self.ESTDEP(),
+                SPHEN: self.SPHEN(),
+                ADDMACADRSEL: self.ADDMACADRSEL(),
+                TSOEN: self.TSOEN(),
+                TXCHCNT: self.TXCHCNT(),
+                DBGMEMA: self.DBGMEMA(),
+                AVSEL: self.AVSEL(),
+                ESTWID: self.ESTWID(),
+                RAVSEL: self.RAVSEL(),
+                TDCSZ: self.TDCSZ(),
+                MACADR32SEL: self.MACADR32SEL(),
+                POUOST: self.POUOST(),
+                HASHTBLSZ: self.HASHTBLSZ(),
+                MACADR64SEL: self.MACADR64SEL(),
+                PPSOUTNUM: self.PPSOUTNUM(),
+                TSSTSSEL: self.TSSTSSEL(),
+                FPESEL: self.FPESEL(),
+                L3L4FNUM: self.L3L4FNUM(),
+                SAVLANINS: self.SAVLANINS(),
+                TBSSEL: self.TBSSEL(),
+                ACTPHYSEL: self.ACTPHYSEL(),
+                ASP: self.ASP(),
+                AUXSNAPNUM: self.AUXSNAPNUM(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "MAC Inner VLAN Tag Inclusion or Replacement"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2497,6 +3454,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_INNER_VLAN_INCL {
             MAC_INNER_VLAN_INCL(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_INNER_VLAN_INCL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_INNER_VLAN_INCL")
+                .field("VLT", &self.VLT())
+                .field("VLC", &self.VLC())
+                .field("VLP", &self.VLP())
+                .field("CSVL", &self.CSVL())
+                .field("VLTI", &self.VLTI())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_INNER_VLAN_INCL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_INNER_VLAN_INCL {
+                VLT: u16,
+                VLC: u8,
+                VLP: bool,
+                CSVL: bool,
+                VLTI: bool,
+            }
+            let proxy = MAC_INNER_VLAN_INCL {
+                VLT: self.VLT(),
+                VLC: self.VLC(),
+                VLP: self.VLP(),
+                CSVL: self.CSVL(),
+                VLTI: self.VLTI(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Enable"]
@@ -2574,6 +3563,44 @@ pub mod regs {
             MAC_INTERRUPT_ENABLE(0)
         }
     }
+    impl core::fmt::Debug for MAC_INTERRUPT_ENABLE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_INTERRUPT_ENABLE")
+                .field("PHYIE", &self.PHYIE())
+                .field("PMTIE", &self.PMTIE())
+                .field("LPIIE", &self.LPIIE())
+                .field("TSIE", &self.TSIE())
+                .field("TXSTSIE", &self.TXSTSIE())
+                .field("RXSTSIE", &self.RXSTSIE())
+                .field("MDIOIE", &self.MDIOIE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_INTERRUPT_ENABLE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_INTERRUPT_ENABLE {
+                PHYIE: bool,
+                PMTIE: bool,
+                LPIIE: bool,
+                TSIE: bool,
+                TXSTSIE: bool,
+                RXSTSIE: bool,
+                MDIOIE: bool,
+            }
+            let proxy = MAC_INTERRUPT_ENABLE {
+                PHYIE: self.PHYIE(),
+                PMTIE: self.PMTIE(),
+                LPIIE: self.LPIIE(),
+                TSIE: self.TSIE(),
+                TXSTSIE: self.TXSTSIE(),
+                RXSTSIE: self.RXSTSIE(),
+                MDIOIE: self.MDIOIE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2647,6 +3674,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_INTERRUPT_STATUS {
             MAC_INTERRUPT_STATUS(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_INTERRUPT_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_INTERRUPT_STATUS")
+                .field("PHYIS", &self.PHYIS())
+                .field("PMTIS", &self.PMTIS())
+                .field("LPIIS", &self.LPIIS())
+                .field("TSIS", &self.TSIS())
+                .field("TXSTSIS", &self.TXSTSIS())
+                .field("RXSTSIS", &self.RXSTSIS())
+                .field("MDIOIS", &self.MDIOIS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_INTERRUPT_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_INTERRUPT_STATUS {
+                PHYIS: bool,
+                PMTIS: bool,
+                LPIIS: bool,
+                TSIS: bool,
+                TXSTSIS: bool,
+                RXSTSIS: bool,
+                MDIOIS: bool,
+            }
+            let proxy = MAC_INTERRUPT_STATUS {
+                PHYIS: self.PHYIS(),
+                PMTIS: self.PMTIS(),
+                LPIIS: self.LPIIS(),
+                TSIS: self.TSIS(),
+                TXSTSIS: self.TXSTSIS(),
+                RXSTSIS: self.RXSTSIS(),
+                MDIOIS: self.MDIOIS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPI Control and Status"]
@@ -2760,6 +3825,56 @@ pub mod regs {
             MAC_LPI_CONTROL_STATUS(0)
         }
     }
+    impl core::fmt::Debug for MAC_LPI_CONTROL_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_LPI_CONTROL_STATUS")
+                .field("TLPIEN", &self.TLPIEN())
+                .field("TLPIEX", &self.TLPIEX())
+                .field("RLPIEN", &self.RLPIEN())
+                .field("RLPIEX", &self.RLPIEX())
+                .field("TLPIST", &self.TLPIST())
+                .field("RLPIST", &self.RLPIST())
+                .field("LPIEN", &self.LPIEN())
+                .field("PLS", &self.PLS())
+                .field("LPITXA", &self.LPITXA())
+                .field("LPIATE", &self.LPIATE())
+                .field("LPITCSE", &self.LPITCSE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_LPI_CONTROL_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_LPI_CONTROL_STATUS {
+                TLPIEN: bool,
+                TLPIEX: bool,
+                RLPIEN: bool,
+                RLPIEX: bool,
+                TLPIST: bool,
+                RLPIST: bool,
+                LPIEN: bool,
+                PLS: bool,
+                LPITXA: bool,
+                LPIATE: bool,
+                LPITCSE: bool,
+            }
+            let proxy = MAC_LPI_CONTROL_STATUS {
+                TLPIEN: self.TLPIEN(),
+                TLPIEX: self.TLPIEX(),
+                RLPIEN: self.RLPIEN(),
+                RLPIEX: self.RLPIEX(),
+                TLPIST: self.TLPIST(),
+                RLPIST: self.RLPIST(),
+                LPIEN: self.LPIEN(),
+                PLS: self.PLS(),
+                LPITXA: self.LPITXA(),
+                LPIATE: self.LPIATE(),
+                LPITCSE: self.LPITCSE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Tx LPI Entry Timer Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2779,6 +3894,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_LPI_ENTRY_TIMER {
             MAC_LPI_ENTRY_TIMER(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_LPI_ENTRY_TIMER {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_LPI_ENTRY_TIMER")
+                .field("LPIET", &self.LPIET())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_LPI_ENTRY_TIMER {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_LPI_ENTRY_TIMER {
+                LPIET: u32,
+            }
+            let proxy = MAC_LPI_ENTRY_TIMER {
+                LPIET: self.LPIET(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPI Timers Control"]
@@ -2809,6 +3944,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_LPI_TIMERS_CONTROL {
             MAC_LPI_TIMERS_CONTROL(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_LPI_TIMERS_CONTROL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_LPI_TIMERS_CONTROL")
+                .field("TWT", &self.TWT())
+                .field("LST", &self.LST())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_LPI_TIMERS_CONTROL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_LPI_TIMERS_CONTROL {
+                TWT: u16,
+                LST: u16,
+            }
+            let proxy = MAC_LPI_TIMERS_CONTROL {
+                TWT: self.TWT(),
+                LST: self.LST(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MDIO Address"]
@@ -2922,6 +4080,56 @@ pub mod regs {
             MAC_MDIO_ADDRESS(0)
         }
     }
+    impl core::fmt::Debug for MAC_MDIO_ADDRESS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_MDIO_ADDRESS")
+                .field("GB", &self.GB())
+                .field("C45E", &self.C45E())
+                .field("GOC_0", &self.GOC_0())
+                .field("GOC_1", &self.GOC_1())
+                .field("SKAP", &self.SKAP())
+                .field("CR", &self.CR())
+                .field("NTC", &self.NTC())
+                .field("RDA", &self.RDA())
+                .field("PA", &self.PA())
+                .field("BTB", &self.BTB())
+                .field("PSE", &self.PSE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_MDIO_ADDRESS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_MDIO_ADDRESS {
+                GB: bool,
+                C45E: bool,
+                GOC_0: bool,
+                GOC_1: bool,
+                SKAP: bool,
+                CR: u8,
+                NTC: u8,
+                RDA: u8,
+                PA: u8,
+                BTB: bool,
+                PSE: bool,
+            }
+            let proxy = MAC_MDIO_ADDRESS {
+                GB: self.GB(),
+                C45E: self.C45E(),
+                GOC_0: self.GOC_0(),
+                GOC_1: self.GOC_1(),
+                SKAP: self.SKAP(),
+                CR: self.CR(),
+                NTC: self.NTC(),
+                RDA: self.RDA(),
+                PA: self.PA(),
+                BTB: self.BTB(),
+                PSE: self.PSE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "MAC MDIO Data"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2952,6 +4160,29 @@ pub mod regs {
             MAC_MDIO_DATA(0)
         }
     }
+    impl core::fmt::Debug for MAC_MDIO_DATA {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_MDIO_DATA")
+                .field("GD", &self.GD())
+                .field("RA", &self.RA())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_MDIO_DATA {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_MDIO_DATA {
+                GD: u16,
+                RA: u16,
+            }
+            let proxy = MAC_MDIO_DATA {
+                GD: self.GD(),
+                RA: self.RA(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "One-microsecond Reference Timer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2971,6 +4202,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_ONEUS_TIC_COUNTER {
             MAC_ONEUS_TIC_COUNTER(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_ONEUS_TIC_COUNTER {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_ONEUS_TIC_COUNTER")
+                .field("TIC_1US_CNTR", &self.TIC_1US_CNTR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_ONEUS_TIC_COUNTER {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_ONEUS_TIC_COUNTER {
+                TIC_1US_CNTR: u16,
+            }
+            let proxy = MAC_ONEUS_TIC_COUNTER {
+                TIC_1US_CNTR: self.TIC_1US_CNTR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MAC Packet Filter"]
@@ -3046,6 +4297,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_PACKET_FILTER {
             MAC_PACKET_FILTER(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_PACKET_FILTER {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_PACKET_FILTER")
+                .field("PR", &self.PR())
+                .field("DAIF", &self.DAIF())
+                .field("PM", &self.PM())
+                .field("DBF", &self.DBF())
+                .field("PCF", &self.PCF())
+                .field("VTFE", &self.VTFE())
+                .field("RA", &self.RA())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_PACKET_FILTER {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_PACKET_FILTER {
+                PR: bool,
+                DAIF: bool,
+                PM: bool,
+                DBF: bool,
+                PCF: u8,
+                VTFE: bool,
+                RA: bool,
+            }
+            let proxy = MAC_PACKET_FILTER {
+                PR: self.PR(),
+                DAIF: self.DAIF(),
+                PM: self.PM(),
+                DBF: self.DBF(),
+                PCF: self.PCF(),
+                VTFE: self.VTFE(),
+                RA: self.RA(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PMT Control and Status"]
@@ -3141,6 +4430,50 @@ pub mod regs {
             MAC_PMT_CONTROL_STATUS(0)
         }
     }
+    impl core::fmt::Debug for MAC_PMT_CONTROL_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_PMT_CONTROL_STATUS")
+                .field("PWRDWN", &self.PWRDWN())
+                .field("MGKPKTEN", &self.MGKPKTEN())
+                .field("RWKPKTEN", &self.RWKPKTEN())
+                .field("MGKPRCVD", &self.MGKPRCVD())
+                .field("RWKPRCVD", &self.RWKPRCVD())
+                .field("GLBLUCAST", &self.GLBLUCAST())
+                .field("RWKPFE", &self.RWKPFE())
+                .field("RWKPTR", &self.RWKPTR())
+                .field("RWKFILTRST", &self.RWKFILTRST())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_PMT_CONTROL_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_PMT_CONTROL_STATUS {
+                PWRDWN: bool,
+                MGKPKTEN: bool,
+                RWKPKTEN: bool,
+                MGKPRCVD: bool,
+                RWKPRCVD: bool,
+                GLBLUCAST: bool,
+                RWKPFE: bool,
+                RWKPTR: u8,
+                RWKFILTRST: bool,
+            }
+            let proxy = MAC_PMT_CONTROL_STATUS {
+                PWRDWN: self.PWRDWN(),
+                MGKPKTEN: self.MGKPKTEN(),
+                RWKPKTEN: self.RWKPKTEN(),
+                MGKPRCVD: self.MGKPRCVD(),
+                RWKPRCVD: self.RWKPRCVD(),
+                GLBLUCAST: self.GLBLUCAST(),
+                RWKPFE: self.RWKPFE(),
+                RWKPTR: self.RWKPTR(),
+                RWKFILTRST: self.RWKFILTRST(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PPS Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3160,6 +4493,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_PPS_CONTROL {
             MAC_PPS_CONTROL(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_PPS_CONTROL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_PPS_CONTROL")
+                .field("PPSCTRL_PPSCMD", &self.PPSCTRL_PPSCMD())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_PPS_CONTROL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_PPS_CONTROL {
+                PPSCTRL_PPSCMD: u8,
+            }
+            let proxy = MAC_PPS_CONTROL {
+                PPSCTRL_PPSCMD: self.PPSCTRL_PPSCMD(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Receive Queue Control 0..Receive Queue Control 2"]
@@ -3291,6 +4644,62 @@ pub mod regs {
             MAC_RXQ_CTRL(0)
         }
     }
+    impl core::fmt::Debug for MAC_RXQ_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_RXQ_CTRL")
+                .field("AVCPQ", &self.AVCPQ())
+                .field("PSRQ0", &self.PSRQ0())
+                .field("RXQ0EN", &self.RXQ0EN())
+                .field("RXQ1EN", &self.RXQ1EN())
+                .field("PTPQ", &self.PTPQ())
+                .field("PSRQ1", &self.PSRQ1())
+                .field("UPQ", &self.UPQ())
+                .field("MCBCQ", &self.MCBCQ())
+                .field("MCBCQEN", &self.MCBCQEN())
+                .field("TACPQE", &self.TACPQE())
+                .field("TPQC", &self.TPQC())
+                .field("OMCBCQ", &self.OMCBCQ())
+                .field("TBRQE", &self.TBRQE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_RXQ_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_RXQ_CTRL {
+                AVCPQ: u8,
+                PSRQ0: u8,
+                RXQ0EN: u8,
+                RXQ1EN: u8,
+                PTPQ: u8,
+                PSRQ1: u8,
+                UPQ: u8,
+                MCBCQ: u8,
+                MCBCQEN: bool,
+                TACPQE: bool,
+                TPQC: u8,
+                OMCBCQ: bool,
+                TBRQE: bool,
+            }
+            let proxy = MAC_RXQ_CTRL {
+                AVCPQ: self.AVCPQ(),
+                PSRQ0: self.PSRQ0(),
+                RXQ0EN: self.RXQ0EN(),
+                RXQ1EN: self.RXQ1EN(),
+                PTPQ: self.PTPQ(),
+                PSRQ1: self.PSRQ1(),
+                UPQ: self.UPQ(),
+                MCBCQ: self.MCBCQ(),
+                MCBCQEN: self.MCBCQEN(),
+                TACPQE: self.TACPQE(),
+                TPQC: self.TPQC(),
+                OMCBCQ: self.OMCBCQ(),
+                TBRQE: self.TBRQE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Receive Queue Control 4"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3357,6 +4766,41 @@ pub mod regs {
             MAC_RXQ_CTRL4(0)
         }
     }
+    impl core::fmt::Debug for MAC_RXQ_CTRL4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_RXQ_CTRL4")
+                .field("UFFQE", &self.UFFQE())
+                .field("UFFQ", &self.UFFQ())
+                .field("MFFQE", &self.MFFQE())
+                .field("MFFQ", &self.MFFQ())
+                .field("VFFQE", &self.VFFQE())
+                .field("VFFQ", &self.VFFQ())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_RXQ_CTRL4 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_RXQ_CTRL4 {
+                UFFQE: bool,
+                UFFQ: bool,
+                MFFQE: bool,
+                MFFQ: bool,
+                VFFQE: bool,
+                VFFQ: bool,
+            }
+            let proxy = MAC_RXQ_CTRL4 {
+                UFFQE: self.UFFQE(),
+                UFFQ: self.UFFQ(),
+                MFFQE: self.MFFQE(),
+                MFFQ: self.MFFQ(),
+                VFFQE: self.VFFQE(),
+                VFFQ: self.VFFQ(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "MAC Rx Flow Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3385,6 +4829,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_RX_FLOW_CTRL {
             MAC_RX_FLOW_CTRL(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_RX_FLOW_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_RX_FLOW_CTRL")
+                .field("RFE", &self.RFE())
+                .field("UP", &self.UP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_RX_FLOW_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_RX_FLOW_CTRL {
+                RFE: bool,
+                UP: bool,
+            }
+            let proxy = MAC_RX_FLOW_CTRL {
+                RFE: self.RFE(),
+                UP: self.UP(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Receive Transmit Status"]
@@ -3462,6 +4929,44 @@ pub mod regs {
             MAC_RX_TX_STATUS(0)
         }
     }
+    impl core::fmt::Debug for MAC_RX_TX_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_RX_TX_STATUS")
+                .field("TJT", &self.TJT())
+                .field("NCARR", &self.NCARR())
+                .field("LCARR", &self.LCARR())
+                .field("EXDEF", &self.EXDEF())
+                .field("LCOL", &self.LCOL())
+                .field("EXCOL", &self.EXCOL())
+                .field("RWT", &self.RWT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_RX_TX_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_RX_TX_STATUS {
+                TJT: bool,
+                NCARR: bool,
+                LCARR: bool,
+                EXDEF: bool,
+                LCOL: bool,
+                EXCOL: bool,
+                RWT: bool,
+            }
+            let proxy = MAC_RX_TX_STATUS {
+                TJT: self.TJT(),
+                NCARR: self.NCARR(),
+                LCARR: self.LCARR(),
+                EXDEF: self.EXDEF(),
+                LCOL: self.LCOL(),
+                EXCOL: self.EXCOL(),
+                RWT: self.RWT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Subsecond Increment"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3483,6 +4988,26 @@ pub mod regs {
             MAC_SUB_SECOND_INCREMENT(0)
         }
     }
+    impl core::fmt::Debug for MAC_SUB_SECOND_INCREMENT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_SUB_SECOND_INCREMENT")
+                .field("SNSINC", &self.SNSINC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_SUB_SECOND_INCREMENT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_SUB_SECOND_INCREMENT {
+                SNSINC: u8,
+            }
+            let proxy = MAC_SUB_SECOND_INCREMENT {
+                SNSINC: self.SNSINC(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "System Time Nanoseconds"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3502,6 +5027,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_SYSTEM_TIME_NANOSECONDS {
             MAC_SYSTEM_TIME_NANOSECONDS(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_SYSTEM_TIME_NANOSECONDS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_SYSTEM_TIME_NANOSECONDS")
+                .field("TSSS", &self.TSSS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_SYSTEM_TIME_NANOSECONDS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_SYSTEM_TIME_NANOSECONDS {
+                TSSS: u32,
+            }
+            let proxy = MAC_SYSTEM_TIME_NANOSECONDS { TSSS: self.TSSS() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "System Time Nanoseconds Update"]
@@ -3532,6 +5075,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_SYSTEM_TIME_NANOSECONDS_UPDATE {
             MAC_SYSTEM_TIME_NANOSECONDS_UPDATE(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_SYSTEM_TIME_NANOSECONDS_UPDATE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_SYSTEM_TIME_NANOSECONDS_UPDATE")
+                .field("TSSS", &self.TSSS())
+                .field("ADDSUB", &self.ADDSUB())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_SYSTEM_TIME_NANOSECONDS_UPDATE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_SYSTEM_TIME_NANOSECONDS_UPDATE {
+                TSSS: u32,
+                ADDSUB: bool,
+            }
+            let proxy = MAC_SYSTEM_TIME_NANOSECONDS_UPDATE {
+                TSSS: self.TSSS(),
+                ADDSUB: self.ADDSUB(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Timestamp Control"]
@@ -3717,6 +5283,80 @@ pub mod regs {
             MAC_TIMESTAMP_CONTROL(0)
         }
     }
+    impl core::fmt::Debug for MAC_TIMESTAMP_CONTROL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_TIMESTAMP_CONTROL")
+                .field("TSENA", &self.TSENA())
+                .field("TSCFUPDT", &self.TSCFUPDT())
+                .field("TSINIT", &self.TSINIT())
+                .field("TSUPDT", &self.TSUPDT())
+                .field("TSTRIG", &self.TSTRIG())
+                .field("TSADDREG", &self.TSADDREG())
+                .field("TSENALL", &self.TSENALL())
+                .field("TSCTRLSSR", &self.TSCTRLSSR())
+                .field("TSVER2ENA", &self.TSVER2ENA())
+                .field("TSIPENA", &self.TSIPENA())
+                .field("TSIPV6ENA", &self.TSIPV6ENA())
+                .field("TSIPV4ENA", &self.TSIPV4ENA())
+                .field("TSEVNTENA", &self.TSEVNTENA())
+                .field("TSMSTRENA", &self.TSMSTRENA())
+                .field("SNAPTYPSEL", &self.SNAPTYPSEL())
+                .field("TSENMACADDR", &self.TSENMACADDR())
+                .field("ESTI", &self.ESTI())
+                .field("TXTSSTSM", &self.TXTSSTSM())
+                .field("AV8021ASMEN", &self.AV8021ASMEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_TIMESTAMP_CONTROL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_TIMESTAMP_CONTROL {
+                TSENA: bool,
+                TSCFUPDT: bool,
+                TSINIT: bool,
+                TSUPDT: bool,
+                TSTRIG: bool,
+                TSADDREG: bool,
+                TSENALL: bool,
+                TSCTRLSSR: bool,
+                TSVER2ENA: bool,
+                TSIPENA: bool,
+                TSIPV6ENA: bool,
+                TSIPV4ENA: bool,
+                TSEVNTENA: bool,
+                TSMSTRENA: bool,
+                SNAPTYPSEL: u8,
+                TSENMACADDR: bool,
+                ESTI: bool,
+                TXTSSTSM: bool,
+                AV8021ASMEN: bool,
+            }
+            let proxy = MAC_TIMESTAMP_CONTROL {
+                TSENA: self.TSENA(),
+                TSCFUPDT: self.TSCFUPDT(),
+                TSINIT: self.TSINIT(),
+                TSUPDT: self.TSUPDT(),
+                TSTRIG: self.TSTRIG(),
+                TSADDREG: self.TSADDREG(),
+                TSENALL: self.TSENALL(),
+                TSCTRLSSR: self.TSCTRLSSR(),
+                TSVER2ENA: self.TSVER2ENA(),
+                TSIPENA: self.TSIPENA(),
+                TSIPV6ENA: self.TSIPV6ENA(),
+                TSIPV4ENA: self.TSIPV4ENA(),
+                TSEVNTENA: self.TSEVNTENA(),
+                TSMSTRENA: self.TSMSTRENA(),
+                SNAPTYPSEL: self.SNAPTYPSEL(),
+                TSENMACADDR: self.TSENMACADDR(),
+                ESTI: self.ESTI(),
+                TXTSSTSM: self.TXTSSTSM(),
+                AV8021ASMEN: self.AV8021ASMEN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Timestamp Egress Latency"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3747,6 +5387,29 @@ pub mod regs {
             MAC_TIMESTAMP_EGRESS_LATENCY(0)
         }
     }
+    impl core::fmt::Debug for MAC_TIMESTAMP_EGRESS_LATENCY {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_TIMESTAMP_EGRESS_LATENCY")
+                .field("ETLSNS", &self.ETLSNS())
+                .field("ETLNS", &self.ETLNS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_TIMESTAMP_EGRESS_LATENCY {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_TIMESTAMP_EGRESS_LATENCY {
+                ETLSNS: u8,
+                ETLNS: u16,
+            }
+            let proxy = MAC_TIMESTAMP_EGRESS_LATENCY {
+                ETLSNS: self.ETLSNS(),
+                ETLNS: self.ETLNS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Timestamp Ingress Latency"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3775,6 +5438,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_TIMESTAMP_INGRESS_LATENCY {
             MAC_TIMESTAMP_INGRESS_LATENCY(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_TIMESTAMP_INGRESS_LATENCY {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_TIMESTAMP_INGRESS_LATENCY")
+                .field("ITLSNS", &self.ITLSNS())
+                .field("ITLNS", &self.ITLNS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_TIMESTAMP_INGRESS_LATENCY {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_TIMESTAMP_INGRESS_LATENCY {
+                ITLSNS: u8,
+                ITLNS: u16,
+            }
+            let proxy = MAC_TIMESTAMP_INGRESS_LATENCY {
+                ITLSNS: self.ITLSNS(),
+                ITLNS: self.ITLNS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Timestamp Status"]
@@ -3823,6 +5509,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_TIMESTAMP_STATUS {
             MAC_TIMESTAMP_STATUS(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_TIMESTAMP_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_TIMESTAMP_STATUS")
+                .field("TSSOVF", &self.TSSOVF())
+                .field("TSTARGT0", &self.TSTARGT0())
+                .field("TSTRGTERR0", &self.TSTRGTERR0())
+                .field("TXTSSIS", &self.TXTSSIS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_TIMESTAMP_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_TIMESTAMP_STATUS {
+                TSSOVF: bool,
+                TSTARGT0: bool,
+                TSTRGTERR0: bool,
+                TXTSSIS: bool,
+            }
+            let proxy = MAC_TIMESTAMP_STATUS {
+                TSSOVF: self.TSSOVF(),
+                TSTARGT0: self.TSTARGT0(),
+                TSTRGTERR0: self.TSTRGTERR0(),
+                TXTSSIS: self.TXTSSIS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MAC Q0 Tx Flow Control"]
@@ -3882,6 +5597,38 @@ pub mod regs {
             MAC_TX_FLOW_CTRL_Q(0)
         }
     }
+    impl core::fmt::Debug for MAC_TX_FLOW_CTRL_Q {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_TX_FLOW_CTRL_Q")
+                .field("FCB_BPA", &self.FCB_BPA())
+                .field("TFE", &self.TFE())
+                .field("PLT", &self.PLT())
+                .field("DZPQ", &self.DZPQ())
+                .field("PT", &self.PT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_TX_FLOW_CTRL_Q {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_TX_FLOW_CTRL_Q {
+                FCB_BPA: bool,
+                TFE: bool,
+                PLT: u8,
+                DZPQ: bool,
+                PT: u16,
+            }
+            let proxy = MAC_TX_FLOW_CTRL_Q {
+                FCB_BPA: self.FCB_BPA(),
+                TFE: self.TFE(),
+                PLT: self.PLT(),
+                DZPQ: self.DZPQ(),
+                PT: self.PT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Transmit Timestamp Status Nanoseconds"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3912,6 +5659,29 @@ pub mod regs {
             MAC_TX_TIMESTAMP_STATUS_NANOSECONDS(0)
         }
     }
+    impl core::fmt::Debug for MAC_TX_TIMESTAMP_STATUS_NANOSECONDS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_TX_TIMESTAMP_STATUS_NANOSECONDS")
+                .field("TXTSSLO", &self.TXTSSLO())
+                .field("TXTSSMIS", &self.TXTSSMIS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_TX_TIMESTAMP_STATUS_NANOSECONDS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_TX_TIMESTAMP_STATUS_NANOSECONDS {
+                TXTSSLO: u32,
+                TXTSSMIS: bool,
+            }
+            let proxy = MAC_TX_TIMESTAMP_STATUS_NANOSECONDS {
+                TXTSSLO: self.TXTSSLO(),
+                TXTSSMIS: self.TXTSSMIS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "MAC Version"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3940,6 +5710,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_VERSION {
             MAC_VERSION(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_VERSION {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_VERSION")
+                .field("SNPSVER", &self.SNPSVER())
+                .field("USERVER", &self.USERVER())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_VERSION {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_VERSION {
+                SNPSVER: u8,
+                USERVER: u8,
+            }
+            let proxy = MAC_VERSION {
+                SNPSVER: self.SNPSVER(),
+                USERVER: self.USERVER(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "VLAN Tag Inclusion or Replacement"]
@@ -4033,6 +5826,50 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MAC_VLAN_INCL {
             MAC_VLAN_INCL(0)
+        }
+    }
+    impl core::fmt::Debug for MAC_VLAN_INCL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_VLAN_INCL")
+                .field("VLT", &self.VLT())
+                .field("VLC", &self.VLC())
+                .field("VLP", &self.VLP())
+                .field("CSVL", &self.CSVL())
+                .field("VLTI", &self.VLTI())
+                .field("CBTI", &self.CBTI())
+                .field("ADDR", &self.ADDR())
+                .field("RDWR", &self.RDWR())
+                .field("BUSY", &self.BUSY())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_VLAN_INCL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_VLAN_INCL {
+                VLT: u16,
+                VLC: u8,
+                VLP: bool,
+                CSVL: bool,
+                VLTI: bool,
+                CBTI: bool,
+                ADDR: bool,
+                RDWR: bool,
+                BUSY: bool,
+            }
+            let proxy = MAC_VLAN_INCL {
+                VLT: self.VLT(),
+                VLC: self.VLC(),
+                VLP: self.VLP(),
+                CSVL: self.CSVL(),
+                VLTI: self.VLTI(),
+                CBTI: self.CBTI(),
+                ADDR: self.ADDR(),
+                RDWR: self.RDWR(),
+                BUSY: self.BUSY(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MAC VLAN Tag Control"]
@@ -4155,6 +5992,59 @@ pub mod regs {
             MAC_VLAN_TAG_CTRL(0)
         }
     }
+    impl core::fmt::Debug for MAC_VLAN_TAG_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_VLAN_TAG_CTRL")
+                .field("VL", &self.VL())
+                .field("ETV", &self.ETV())
+                .field("VTIM", &self.VTIM())
+                .field("ESVL", &self.ESVL())
+                .field("ERSVLM", &self.ERSVLM())
+                .field("DOVLTC", &self.DOVLTC())
+                .field("EVLS", &self.EVLS())
+                .field("EVLRXS", &self.EVLRXS())
+                .field("EDVLP", &self.EDVLP())
+                .field("ERIVLT", &self.ERIVLT())
+                .field("EIVLS", &self.EIVLS())
+                .field("EIVLRXS", &self.EIVLRXS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_VLAN_TAG_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_VLAN_TAG_CTRL {
+                VL: u16,
+                ETV: bool,
+                VTIM: bool,
+                ESVL: bool,
+                ERSVLM: bool,
+                DOVLTC: bool,
+                EVLS: u8,
+                EVLRXS: bool,
+                EDVLP: bool,
+                ERIVLT: bool,
+                EIVLS: u8,
+                EIVLRXS: bool,
+            }
+            let proxy = MAC_VLAN_TAG_CTRL {
+                VL: self.VL(),
+                ETV: self.ETV(),
+                VTIM: self.VTIM(),
+                ESVL: self.ESVL(),
+                ERSVLM: self.ERSVLM(),
+                DOVLTC: self.DOVLTC(),
+                EVLS: self.EVLS(),
+                EVLRXS: self.EVLRXS(),
+                EDVLP: self.EDVLP(),
+                ERIVLT: self.ERIVLT(),
+                EIVLS: self.EIVLS(),
+                EIVLRXS: self.EIVLRXS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Watchdog Timeout"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4185,6 +6075,29 @@ pub mod regs {
             MAC_WATCHDOG_TIMEOUT(0)
         }
     }
+    impl core::fmt::Debug for MAC_WATCHDOG_TIMEOUT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MAC_WATCHDOG_TIMEOUT")
+                .field("WTO", &self.WTO())
+                .field("PWE", &self.PWE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_WATCHDOG_TIMEOUT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MAC_WATCHDOG_TIMEOUT {
+                WTO: u8,
+                PWE: bool,
+            }
+            let proxy = MAC_WATCHDOG_TIMEOUT {
+                WTO: self.WTO(),
+                PWE: self.PWE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "MTL Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4213,6 +6126,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MTL_INTERRUPT_STATUS {
             MTL_INTERRUPT_STATUS(0)
+        }
+    }
+    impl core::fmt::Debug for MTL_INTERRUPT_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_INTERRUPT_STATUS")
+                .field("Q0IS", &self.Q0IS())
+                .field("Q1IS", &self.Q1IS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_INTERRUPT_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_INTERRUPT_STATUS {
+                Q0IS: bool,
+                Q1IS: bool,
+            }
+            let proxy = MTL_INTERRUPT_STATUS {
+                Q0IS: self.Q0IS(),
+                Q1IS: self.Q1IS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MTL Operation Mode"]
@@ -4270,6 +6206,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MTL_OPERATION_MODE {
             MTL_OPERATION_MODE(0)
+        }
+    }
+    impl core::fmt::Debug for MTL_OPERATION_MODE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_OPERATION_MODE")
+                .field("DTXSTS", &self.DTXSTS())
+                .field("RAA", &self.RAA())
+                .field("SCHALG", &self.SCHALG())
+                .field("CNTPRST", &self.CNTPRST())
+                .field("CNTCLR", &self.CNTCLR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_OPERATION_MODE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_OPERATION_MODE {
+                DTXSTS: bool,
+                RAA: bool,
+                SCHALG: u8,
+                CNTPRST: bool,
+                CNTCLR: bool,
+            }
+            let proxy = MTL_OPERATION_MODE {
+                DTXSTS: self.DTXSTS(),
+                RAA: self.RAA(),
+                SCHALG: self.SCHALG(),
+                CNTPRST: self.CNTPRST(),
+                CNTCLR: self.CNTCLR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Queue 0 Interrupt Control Status..Queue 1 Interrupt Control Status"]
@@ -4338,6 +6306,41 @@ pub mod regs {
             MTL_QUEUE_MTL_QX_INTCTRL_STAT(0)
         }
     }
+    impl core::fmt::Debug for MTL_QUEUE_MTL_QX_INTCTRL_STAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_QUEUE_MTL_QX_INTCTRL_STAT")
+                .field("TXUNFIS", &self.TXUNFIS())
+                .field("ABPSIS", &self.ABPSIS())
+                .field("TXUIE", &self.TXUIE())
+                .field("ABPSIE", &self.ABPSIE())
+                .field("RXOVFIS", &self.RXOVFIS())
+                .field("RXOIE", &self.RXOIE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_QX_INTCTRL_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_QUEUE_MTL_QX_INTCTRL_STAT {
+                TXUNFIS: bool,
+                ABPSIS: bool,
+                TXUIE: bool,
+                ABPSIE: bool,
+                RXOVFIS: bool,
+                RXOIE: bool,
+            }
+            let proxy = MTL_QUEUE_MTL_QX_INTCTRL_STAT {
+                TXUNFIS: self.TXUNFIS(),
+                ABPSIS: self.ABPSIS(),
+                TXUIE: self.TXUIE(),
+                ABPSIE: self.ABPSIE(),
+                RXOVFIS: self.RXOVFIS(),
+                RXOIE: self.RXOIE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Queue 0 Receive Control..Queue 1 Receive Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4366,6 +6369,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MTL_QUEUE_MTL_RXQX_CTRL {
             MTL_QUEUE_MTL_RXQX_CTRL(0)
+        }
+    }
+    impl core::fmt::Debug for MTL_QUEUE_MTL_RXQX_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_QUEUE_MTL_RXQX_CTRL")
+                .field("RXQ_WEGT", &self.RXQ_WEGT())
+                .field("RXQ_FRM_ARBIT", &self.RXQ_FRM_ARBIT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_RXQX_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_QUEUE_MTL_RXQX_CTRL {
+                RXQ_WEGT: u8,
+                RXQ_FRM_ARBIT: bool,
+            }
+            let proxy = MTL_QUEUE_MTL_RXQX_CTRL {
+                RXQ_WEGT: self.RXQ_WEGT(),
+                RXQ_FRM_ARBIT: self.RXQ_FRM_ARBIT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Queue 0 Receive Debug..Queue 1 Receive Debug"]
@@ -4416,6 +6442,35 @@ pub mod regs {
             MTL_QUEUE_MTL_RXQX_DBG(0)
         }
     }
+    impl core::fmt::Debug for MTL_QUEUE_MTL_RXQX_DBG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_QUEUE_MTL_RXQX_DBG")
+                .field("RWCSTS", &self.RWCSTS())
+                .field("RRCSTS", &self.RRCSTS())
+                .field("RXQSTS", &self.RXQSTS())
+                .field("PRXQ", &self.PRXQ())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_RXQX_DBG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_QUEUE_MTL_RXQX_DBG {
+                RWCSTS: bool,
+                RRCSTS: u8,
+                RXQSTS: u8,
+                PRXQ: u16,
+            }
+            let proxy = MTL_QUEUE_MTL_RXQX_DBG {
+                RWCSTS: self.RWCSTS(),
+                RRCSTS: self.RRCSTS(),
+                RXQSTS: self.RXQSTS(),
+                PRXQ: self.PRXQ(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Queue 0 Missed Packet and Overflow Counter..Queue 1 Missed Packet and Overflow Counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4462,6 +6517,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MTL_QUEUE_MTL_RXQX_MISSPKT_OVRFLW_CNT {
             MTL_QUEUE_MTL_RXQX_MISSPKT_OVRFLW_CNT(0)
+        }
+    }
+    impl core::fmt::Debug for MTL_QUEUE_MTL_RXQX_MISSPKT_OVRFLW_CNT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_QUEUE_MTL_RXQX_MISSPKT_OVRFLW_CNT")
+                .field("OVFPKTCNT", &self.OVFPKTCNT())
+                .field("OVFCNTOVF", &self.OVFCNTOVF())
+                .field("MISPKTCNT", &self.MISPKTCNT())
+                .field("MISCNTOVF", &self.MISCNTOVF())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_RXQX_MISSPKT_OVRFLW_CNT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_QUEUE_MTL_RXQX_MISSPKT_OVRFLW_CNT {
+                OVFPKTCNT: u16,
+                OVFCNTOVF: bool,
+                MISPKTCNT: u16,
+                MISCNTOVF: bool,
+            }
+            let proxy = MTL_QUEUE_MTL_RXQX_MISSPKT_OVRFLW_CNT {
+                OVFPKTCNT: self.OVFPKTCNT(),
+                OVFCNTOVF: self.OVFCNTOVF(),
+                MISPKTCNT: self.MISPKTCNT(),
+                MISCNTOVF: self.MISCNTOVF(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Queue 0 Receive Operation Mode..Queue 1 Receive Operation Mode"]
@@ -4528,6 +6612,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MTL_QUEUE_MTL_RXQX_OP_MODE {
             MTL_QUEUE_MTL_RXQX_OP_MODE(0)
+        }
+    }
+    impl core::fmt::Debug for MTL_QUEUE_MTL_RXQX_OP_MODE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_QUEUE_MTL_RXQX_OP_MODE")
+                .field("RTC", &self.RTC())
+                .field("FUP", &self.FUP())
+                .field("FEP", &self.FEP())
+                .field("RSF", &self.RSF())
+                .field("DIS_TCP_EF", &self.DIS_TCP_EF())
+                .field("RQS", &self.RQS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_RXQX_OP_MODE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_QUEUE_MTL_RXQX_OP_MODE {
+                RTC: u8,
+                FUP: bool,
+                FEP: bool,
+                RSF: bool,
+                DIS_TCP_EF: bool,
+                RQS: u8,
+            }
+            let proxy = MTL_QUEUE_MTL_RXQX_OP_MODE {
+                RTC: self.RTC(),
+                FUP: self.FUP(),
+                FEP: self.FEP(),
+                RSF: self.RSF(),
+                DIS_TCP_EF: self.DIS_TCP_EF(),
+                RQS: self.RQS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Queue 0 Transmit Debug..Queue 1 Transmit Debug"]
@@ -4605,6 +6724,44 @@ pub mod regs {
             MTL_QUEUE_MTL_TXQX_DBG(0)
         }
     }
+    impl core::fmt::Debug for MTL_QUEUE_MTL_TXQX_DBG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_QUEUE_MTL_TXQX_DBG")
+                .field("TXQPAUSED", &self.TXQPAUSED())
+                .field("TRCSTS", &self.TRCSTS())
+                .field("TWCSTS", &self.TWCSTS())
+                .field("TXQSTS", &self.TXQSTS())
+                .field("TXSTSFSTS", &self.TXSTSFSTS())
+                .field("PTXQ", &self.PTXQ())
+                .field("STXSTSF", &self.STXSTSF())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_DBG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_QUEUE_MTL_TXQX_DBG {
+                TXQPAUSED: bool,
+                TRCSTS: u8,
+                TWCSTS: bool,
+                TXQSTS: bool,
+                TXSTSFSTS: bool,
+                PTXQ: u8,
+                STXSTSF: u8,
+            }
+            let proxy = MTL_QUEUE_MTL_TXQX_DBG {
+                TXQPAUSED: self.TXQPAUSED(),
+                TRCSTS: self.TRCSTS(),
+                TWCSTS: self.TWCSTS(),
+                TXQSTS: self.TXQSTS(),
+                TXSTSFSTS: self.TXSTSFSTS(),
+                PTXQ: self.PTXQ(),
+                STXSTSF: self.STXSTSF(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Queue 1 ETS Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4644,6 +6801,32 @@ pub mod regs {
             MTL_QUEUE_MTL_TXQX_ETS_CTRL(0)
         }
     }
+    impl core::fmt::Debug for MTL_QUEUE_MTL_TXQX_ETS_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_QUEUE_MTL_TXQX_ETS_CTRL")
+                .field("AVALG", &self.AVALG())
+                .field("CC", &self.CC())
+                .field("SLC", &self.SLC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_ETS_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_QUEUE_MTL_TXQX_ETS_CTRL {
+                AVALG: bool,
+                CC: bool,
+                SLC: u8,
+            }
+            let proxy = MTL_QUEUE_MTL_TXQX_ETS_CTRL {
+                AVALG: self.AVALG(),
+                CC: self.CC(),
+                SLC: self.SLC(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Queue 0 ETS Status..Queue 1 ETS Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4663,6 +6846,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MTL_QUEUE_MTL_TXQX_ETS_STAT {
             MTL_QUEUE_MTL_TXQX_ETS_STAT(0)
+        }
+    }
+    impl core::fmt::Debug for MTL_QUEUE_MTL_TXQX_ETS_STAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_QUEUE_MTL_TXQX_ETS_STAT")
+                .field("ABS", &self.ABS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_ETS_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_QUEUE_MTL_TXQX_ETS_STAT {
+                ABS: u32,
+            }
+            let proxy = MTL_QUEUE_MTL_TXQX_ETS_STAT { ABS: self.ABS() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Queue 1 hiCredit"]
@@ -4686,6 +6887,24 @@ pub mod regs {
             MTL_QUEUE_MTL_TXQX_HI_CRDT(0)
         }
     }
+    impl core::fmt::Debug for MTL_QUEUE_MTL_TXQX_HI_CRDT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_QUEUE_MTL_TXQX_HI_CRDT")
+                .field("HC", &self.HC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_HI_CRDT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_QUEUE_MTL_TXQX_HI_CRDT {
+                HC: u32,
+            }
+            let proxy = MTL_QUEUE_MTL_TXQX_HI_CRDT { HC: self.HC() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Queue 1 loCredit"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4705,6 +6924,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MTL_QUEUE_MTL_TXQX_LO_CRDT {
             MTL_QUEUE_MTL_TXQX_LO_CRDT(0)
+        }
+    }
+    impl core::fmt::Debug for MTL_QUEUE_MTL_TXQX_LO_CRDT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_QUEUE_MTL_TXQX_LO_CRDT")
+                .field("LC", &self.LC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_LO_CRDT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_QUEUE_MTL_TXQX_LO_CRDT {
+                LC: u32,
+            }
+            let proxy = MTL_QUEUE_MTL_TXQX_LO_CRDT { LC: self.LC() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Queue 0 Transmit Operation Mode..Queue 1 Transmit Operation Mode"]
@@ -4764,6 +7001,38 @@ pub mod regs {
             MTL_QUEUE_MTL_TXQX_OP_MODE(0)
         }
     }
+    impl core::fmt::Debug for MTL_QUEUE_MTL_TXQX_OP_MODE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_QUEUE_MTL_TXQX_OP_MODE")
+                .field("FTQ", &self.FTQ())
+                .field("TSF", &self.TSF())
+                .field("TXQEN", &self.TXQEN())
+                .field("TTC", &self.TTC())
+                .field("TQS", &self.TQS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_OP_MODE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_QUEUE_MTL_TXQX_OP_MODE {
+                FTQ: bool,
+                TSF: bool,
+                TXQEN: u8,
+                TTC: u8,
+                TQS: u8,
+            }
+            let proxy = MTL_QUEUE_MTL_TXQX_OP_MODE {
+                FTQ: self.FTQ(),
+                TSF: self.TSF(),
+                TXQEN: self.TXQEN(),
+                TTC: self.TTC(),
+                TQS: self.TQS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Queue 0 Quantum or Weights..Queue 1 idleSlopeCredit, Quantum or Weights"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4785,6 +7054,26 @@ pub mod regs {
             MTL_QUEUE_MTL_TXQX_QNTM_WGHT(0)
         }
     }
+    impl core::fmt::Debug for MTL_QUEUE_MTL_TXQX_QNTM_WGHT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_QUEUE_MTL_TXQX_QNTM_WGHT")
+                .field("ISCQW", &self.ISCQW())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_QNTM_WGHT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_QUEUE_MTL_TXQX_QNTM_WGHT {
+                ISCQW: u32,
+            }
+            let proxy = MTL_QUEUE_MTL_TXQX_QNTM_WGHT {
+                ISCQW: self.ISCQW(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Queue 1 sendSlopeCredit"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4804,6 +7093,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MTL_QUEUE_MTL_TXQX_SNDSLP_CRDT {
             MTL_QUEUE_MTL_TXQX_SNDSLP_CRDT(0)
+        }
+    }
+    impl core::fmt::Debug for MTL_QUEUE_MTL_TXQX_SNDSLP_CRDT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_QUEUE_MTL_TXQX_SNDSLP_CRDT")
+                .field("SSC", &self.SSC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_SNDSLP_CRDT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_QUEUE_MTL_TXQX_SNDSLP_CRDT {
+                SSC: u16,
+            }
+            let proxy = MTL_QUEUE_MTL_TXQX_SNDSLP_CRDT { SSC: self.SSC() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Queue 0 Underflow Counter..Queue 1 Underflow Counter"]
@@ -4834,6 +7141,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MTL_QUEUE_MTL_TXQX_UNDRFLW {
             MTL_QUEUE_MTL_TXQX_UNDRFLW(0)
+        }
+    }
+    impl core::fmt::Debug for MTL_QUEUE_MTL_TXQX_UNDRFLW {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_QUEUE_MTL_TXQX_UNDRFLW")
+                .field("UFFRMCNT", &self.UFFRMCNT())
+                .field("UFCNTOVF", &self.UFCNTOVF())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_UNDRFLW {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_QUEUE_MTL_TXQX_UNDRFLW {
+                UFFRMCNT: u16,
+                UFCNTOVF: bool,
+            }
+            let proxy = MTL_QUEUE_MTL_TXQX_UNDRFLW {
+                UFFRMCNT: self.UFFRMCNT(),
+                UFCNTOVF: self.UFCNTOVF(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Receive Queue and DMA Channel Mapping 0"]
@@ -4884,6 +7214,35 @@ pub mod regs {
             MTL_RXQ_DMA_MAP0(0)
         }
     }
+    impl core::fmt::Debug for MTL_RXQ_DMA_MAP0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MTL_RXQ_DMA_MAP0")
+                .field("Q0MDMACH", &self.Q0MDMACH())
+                .field("Q0DDMACH", &self.Q0DDMACH())
+                .field("Q1MDMACH", &self.Q1MDMACH())
+                .field("Q1DDMACH", &self.Q1DDMACH())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_RXQ_DMA_MAP0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MTL_RXQ_DMA_MAP0 {
+                Q0MDMACH: bool,
+                Q0DDMACH: bool,
+                Q1MDMACH: bool,
+                Q1DDMACH: bool,
+            }
+            let proxy = MTL_RXQ_DMA_MAP0 {
+                Q0MDMACH: self.Q0MDMACH(),
+                Q0DDMACH: self.Q0DDMACH(),
+                Q1MDMACH: self.Q1MDMACH(),
+                Q1DDMACH: self.Q1DDMACH(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PPS0 Target Time Nanoseconds"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4903,6 +7262,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PPS0_TARGET_TIME_NANOSECONDS {
             PPS0_TARGET_TIME_NANOSECONDS(0)
+        }
+    }
+    impl core::fmt::Debug for PPS0_TARGET_TIME_NANOSECONDS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PPS0_TARGET_TIME_NANOSECONDS")
+                .field("TTSL0", &self.TTSL0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PPS0_TARGET_TIME_NANOSECONDS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PPS0_TARGET_TIME_NANOSECONDS {
+                TTSL0: u32,
+            }
+            let proxy = PPS0_TARGET_TIME_NANOSECONDS {
+                TTSL0: self.TTSL0(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

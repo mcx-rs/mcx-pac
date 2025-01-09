@@ -511,6 +511,26 @@ pub mod regs {
             ADC0_TRIG(0)
         }
     }
+    impl core::fmt::Debug for ADC0_TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ADC0_TRIG")
+                .field("TRIGIN", &self.TRIGIN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ADC0_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ADC0_TRIG {
+                TRIGIN: u8,
+            }
+            let proxy = ADC0_TRIG {
+                TRIGIN: self.TRIGIN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "ADC Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -530,6 +550,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ADC1_TRIG {
             ADC1_TRIG(0)
+        }
+    }
+    impl core::fmt::Debug for ADC1_TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ADC1_TRIG")
+                .field("TRIGIN", &self.TRIGIN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ADC1_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ADC1_TRIG {
+                TRIGIN: u8,
+            }
+            let proxy = ADC1_TRIG {
+                TRIGIN: self.TRIGIN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CMP0 Input Connections"]
@@ -553,6 +593,26 @@ pub mod regs {
             CMP0_TRIG(0)
         }
     }
+    impl core::fmt::Debug for CMP0_TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CMP0_TRIG")
+                .field("TRIGIN", &self.TRIGIN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CMP0_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CMP0_TRIG {
+                TRIGIN: u8,
+            }
+            let proxy = CMP0_TRIG {
+                TRIGIN: self.TRIGIN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CMP1 Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -572,6 +632,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CMP1_TRIG {
             CMP1_TRIG(0)
+        }
+    }
+    impl core::fmt::Debug for CMP1_TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CMP1_TRIG")
+                .field("TRIGIN", &self.TRIGIN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CMP1_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CMP1_TRIG {
+                TRIGIN: u8,
+            }
+            let proxy = CMP1_TRIG {
+                TRIGIN: self.TRIGIN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -595,6 +675,24 @@ pub mod regs {
             CTIMER0CAP0(0)
         }
     }
+    impl core::fmt::Debug for CTIMER0CAP0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER0CAP0")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER0CAP0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER0CAP0 {
+                INP: u8,
+            }
+            let proxy = CTIMER0CAP0 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -614,6 +712,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CTIMER0CAP1 {
             CTIMER0CAP1(0)
+        }
+    }
+    impl core::fmt::Debug for CTIMER0CAP1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER0CAP1")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER0CAP1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER0CAP1 {
+                INP: u8,
+            }
+            let proxy = CTIMER0CAP1 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -637,6 +753,24 @@ pub mod regs {
             CTIMER0CAP2(0)
         }
     }
+    impl core::fmt::Debug for CTIMER0CAP2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER0CAP2")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER0CAP2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER0CAP2 {
+                INP: u8,
+            }
+            let proxy = CTIMER0CAP2 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -656,6 +790,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CTIMER0CAP3 {
             CTIMER0CAP3(0)
+        }
+    }
+    impl core::fmt::Debug for CTIMER0CAP3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER0CAP3")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER0CAP3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER0CAP3 {
+                INP: u8,
+            }
+            let proxy = CTIMER0CAP3 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -679,6 +831,24 @@ pub mod regs {
             CTIMER1CAP0(0)
         }
     }
+    impl core::fmt::Debug for CTIMER1CAP0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER1CAP0")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER1CAP0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER1CAP0 {
+                INP: u8,
+            }
+            let proxy = CTIMER1CAP0 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -698,6 +868,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CTIMER1CAP1 {
             CTIMER1CAP1(0)
+        }
+    }
+    impl core::fmt::Debug for CTIMER1CAP1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER1CAP1")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER1CAP1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER1CAP1 {
+                INP: u8,
+            }
+            let proxy = CTIMER1CAP1 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -721,6 +909,24 @@ pub mod regs {
             CTIMER1CAP2(0)
         }
     }
+    impl core::fmt::Debug for CTIMER1CAP2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER1CAP2")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER1CAP2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER1CAP2 {
+                INP: u8,
+            }
+            let proxy = CTIMER1CAP2 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -740,6 +946,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CTIMER1CAP3 {
             CTIMER1CAP3(0)
+        }
+    }
+    impl core::fmt::Debug for CTIMER1CAP3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER1CAP3")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER1CAP3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER1CAP3 {
+                INP: u8,
+            }
+            let proxy = CTIMER1CAP3 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -763,6 +987,24 @@ pub mod regs {
             CTIMER2CAP0(0)
         }
     }
+    impl core::fmt::Debug for CTIMER2CAP0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER2CAP0")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER2CAP0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER2CAP0 {
+                INP: u8,
+            }
+            let proxy = CTIMER2CAP0 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -782,6 +1024,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CTIMER2CAP1 {
             CTIMER2CAP1(0)
+        }
+    }
+    impl core::fmt::Debug for CTIMER2CAP1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER2CAP1")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER2CAP1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER2CAP1 {
+                INP: u8,
+            }
+            let proxy = CTIMER2CAP1 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -805,6 +1065,24 @@ pub mod regs {
             CTIMER2CAP2(0)
         }
     }
+    impl core::fmt::Debug for CTIMER2CAP2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER2CAP2")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER2CAP2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER2CAP2 {
+                INP: u8,
+            }
+            let proxy = CTIMER2CAP2 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -824,6 +1102,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CTIMER2CAP3 {
             CTIMER2CAP3(0)
+        }
+    }
+    impl core::fmt::Debug for CTIMER2CAP3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER2CAP3")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER2CAP3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER2CAP3 {
+                INP: u8,
+            }
+            let proxy = CTIMER2CAP3 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -847,6 +1143,24 @@ pub mod regs {
             CTIMER3CAP0(0)
         }
     }
+    impl core::fmt::Debug for CTIMER3CAP0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER3CAP0")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER3CAP0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER3CAP0 {
+                INP: u8,
+            }
+            let proxy = CTIMER3CAP0 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -866,6 +1180,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CTIMER3CAP1 {
             CTIMER3CAP1(0)
+        }
+    }
+    impl core::fmt::Debug for CTIMER3CAP1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER3CAP1")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER3CAP1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER3CAP1 {
+                INP: u8,
+            }
+            let proxy = CTIMER3CAP1 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -889,6 +1221,24 @@ pub mod regs {
             CTIMER3CAP2(0)
         }
     }
+    impl core::fmt::Debug for CTIMER3CAP2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER3CAP2")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER3CAP2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER3CAP2 {
+                INP: u8,
+            }
+            let proxy = CTIMER3CAP2 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -908,6 +1258,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CTIMER3CAP3 {
             CTIMER3CAP3(0)
+        }
+    }
+    impl core::fmt::Debug for CTIMER3CAP3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER3CAP3")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER3CAP3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER3CAP3 {
+                INP: u8,
+            }
+            let proxy = CTIMER3CAP3 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -931,6 +1299,24 @@ pub mod regs {
             CTIMER4CAP0(0)
         }
     }
+    impl core::fmt::Debug for CTIMER4CAP0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER4CAP0")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER4CAP0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER4CAP0 {
+                INP: u8,
+            }
+            let proxy = CTIMER4CAP0 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -950,6 +1336,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CTIMER4CAP1 {
             CTIMER4CAP1(0)
+        }
+    }
+    impl core::fmt::Debug for CTIMER4CAP1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER4CAP1")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER4CAP1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER4CAP1 {
+                INP: u8,
+            }
+            let proxy = CTIMER4CAP1 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -973,6 +1377,24 @@ pub mod regs {
             CTIMER4CAP2(0)
         }
     }
+    impl core::fmt::Debug for CTIMER4CAP2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER4CAP2")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER4CAP2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER4CAP2 {
+                INP: u8,
+            }
+            let proxy = CTIMER4CAP2 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -992,6 +1414,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CTIMER4CAP3 {
             CTIMER4CAP3(0)
+        }
+    }
+    impl core::fmt::Debug for CTIMER4CAP3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMER4CAP3")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER4CAP3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMER4CAP3 {
+                INP: u8,
+            }
+            let proxy = CTIMER4CAP3 { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA0 Request Enable0"]
@@ -1213,6 +1653,92 @@ pub mod regs {
             DMA0_REQ_ENABLE0(0)
         }
     }
+    impl core::fmt::Debug for DMA0_REQ_ENABLE0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA0_REQ_ENABLE0")
+                .field("REQ3_EN0", &self.REQ3_EN0())
+                .field("REQ4_EN0", &self.REQ4_EN0())
+                .field("REQ5_EN0", &self.REQ5_EN0())
+                .field("REQ6_EN0", &self.REQ6_EN0())
+                .field("REQ7_EN0", &self.REQ7_EN0())
+                .field("REQ8_EN0", &self.REQ8_EN0())
+                .field("REQ9_EN0", &self.REQ9_EN0())
+                .field("REQ10_EN0", &self.REQ10_EN0())
+                .field("REQ11_EN0", &self.REQ11_EN0())
+                .field("REQ12_EN0", &self.REQ12_EN0())
+                .field("REQ13_EN0", &self.REQ13_EN0())
+                .field("REQ14_EN0", &self.REQ14_EN0())
+                .field("REQ15_EN0", &self.REQ15_EN0())
+                .field("REQ16_EN0", &self.REQ16_EN0())
+                .field("REQ17_EN0", &self.REQ17_EN0())
+                .field("REQ18_EN0", &self.REQ18_EN0())
+                .field("REQ21_EN0", &self.REQ21_EN0())
+                .field("REQ22_EN0", &self.REQ22_EN0())
+                .field("REQ23_EN0", &self.REQ23_EN0())
+                .field("REQ24_EN0", &self.REQ24_EN0())
+                .field("REQ28_EN0", &self.REQ28_EN0())
+                .field("REQ29_EN0", &self.REQ29_EN0())
+                .field("REQ31_EN0", &self.REQ31_EN0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA0_REQ_ENABLE0 {
+                REQ3_EN0: bool,
+                REQ4_EN0: bool,
+                REQ5_EN0: bool,
+                REQ6_EN0: bool,
+                REQ7_EN0: bool,
+                REQ8_EN0: bool,
+                REQ9_EN0: bool,
+                REQ10_EN0: bool,
+                REQ11_EN0: bool,
+                REQ12_EN0: bool,
+                REQ13_EN0: bool,
+                REQ14_EN0: bool,
+                REQ15_EN0: bool,
+                REQ16_EN0: bool,
+                REQ17_EN0: bool,
+                REQ18_EN0: bool,
+                REQ21_EN0: bool,
+                REQ22_EN0: bool,
+                REQ23_EN0: bool,
+                REQ24_EN0: bool,
+                REQ28_EN0: bool,
+                REQ29_EN0: bool,
+                REQ31_EN0: bool,
+            }
+            let proxy = DMA0_REQ_ENABLE0 {
+                REQ3_EN0: self.REQ3_EN0(),
+                REQ4_EN0: self.REQ4_EN0(),
+                REQ5_EN0: self.REQ5_EN0(),
+                REQ6_EN0: self.REQ6_EN0(),
+                REQ7_EN0: self.REQ7_EN0(),
+                REQ8_EN0: self.REQ8_EN0(),
+                REQ9_EN0: self.REQ9_EN0(),
+                REQ10_EN0: self.REQ10_EN0(),
+                REQ11_EN0: self.REQ11_EN0(),
+                REQ12_EN0: self.REQ12_EN0(),
+                REQ13_EN0: self.REQ13_EN0(),
+                REQ14_EN0: self.REQ14_EN0(),
+                REQ15_EN0: self.REQ15_EN0(),
+                REQ16_EN0: self.REQ16_EN0(),
+                REQ17_EN0: self.REQ17_EN0(),
+                REQ18_EN0: self.REQ18_EN0(),
+                REQ21_EN0: self.REQ21_EN0(),
+                REQ22_EN0: self.REQ22_EN0(),
+                REQ23_EN0: self.REQ23_EN0(),
+                REQ24_EN0: self.REQ24_EN0(),
+                REQ28_EN0: self.REQ28_EN0(),
+                REQ29_EN0: self.REQ29_EN0(),
+                REQ31_EN0: self.REQ31_EN0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA0 Request Enable0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1430,6 +1956,92 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA0_REQ_ENABLE0_CLR {
             DMA0_REQ_ENABLE0_CLR(0)
+        }
+    }
+    impl core::fmt::Debug for DMA0_REQ_ENABLE0_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA0_REQ_ENABLE0_CLR")
+                .field("REQ3_EN0", &self.REQ3_EN0())
+                .field("REQ4_EN0", &self.REQ4_EN0())
+                .field("REQ5_EN0", &self.REQ5_EN0())
+                .field("REQ6_EN0", &self.REQ6_EN0())
+                .field("REQ7_EN0", &self.REQ7_EN0())
+                .field("REQ8_EN0", &self.REQ8_EN0())
+                .field("REQ9_EN0", &self.REQ9_EN0())
+                .field("REQ10_EN0", &self.REQ10_EN0())
+                .field("REQ11_EN0", &self.REQ11_EN0())
+                .field("REQ12_EN0", &self.REQ12_EN0())
+                .field("REQ13_EN0", &self.REQ13_EN0())
+                .field("REQ14_EN0", &self.REQ14_EN0())
+                .field("REQ15_EN0", &self.REQ15_EN0())
+                .field("REQ16_EN0", &self.REQ16_EN0())
+                .field("REQ17_EN0", &self.REQ17_EN0())
+                .field("REQ18_EN0", &self.REQ18_EN0())
+                .field("REQ21_EN0", &self.REQ21_EN0())
+                .field("REQ22_EN0", &self.REQ22_EN0())
+                .field("REQ23_EN0", &self.REQ23_EN0())
+                .field("REQ24_EN0", &self.REQ24_EN0())
+                .field("REQ28_EN0", &self.REQ28_EN0())
+                .field("REQ29_EN0", &self.REQ29_EN0())
+                .field("REQ31_EN0", &self.REQ31_EN0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE0_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA0_REQ_ENABLE0_CLR {
+                REQ3_EN0: bool,
+                REQ4_EN0: bool,
+                REQ5_EN0: bool,
+                REQ6_EN0: bool,
+                REQ7_EN0: bool,
+                REQ8_EN0: bool,
+                REQ9_EN0: bool,
+                REQ10_EN0: bool,
+                REQ11_EN0: bool,
+                REQ12_EN0: bool,
+                REQ13_EN0: bool,
+                REQ14_EN0: bool,
+                REQ15_EN0: bool,
+                REQ16_EN0: bool,
+                REQ17_EN0: bool,
+                REQ18_EN0: bool,
+                REQ21_EN0: bool,
+                REQ22_EN0: bool,
+                REQ23_EN0: bool,
+                REQ24_EN0: bool,
+                REQ28_EN0: bool,
+                REQ29_EN0: bool,
+                REQ31_EN0: bool,
+            }
+            let proxy = DMA0_REQ_ENABLE0_CLR {
+                REQ3_EN0: self.REQ3_EN0(),
+                REQ4_EN0: self.REQ4_EN0(),
+                REQ5_EN0: self.REQ5_EN0(),
+                REQ6_EN0: self.REQ6_EN0(),
+                REQ7_EN0: self.REQ7_EN0(),
+                REQ8_EN0: self.REQ8_EN0(),
+                REQ9_EN0: self.REQ9_EN0(),
+                REQ10_EN0: self.REQ10_EN0(),
+                REQ11_EN0: self.REQ11_EN0(),
+                REQ12_EN0: self.REQ12_EN0(),
+                REQ13_EN0: self.REQ13_EN0(),
+                REQ14_EN0: self.REQ14_EN0(),
+                REQ15_EN0: self.REQ15_EN0(),
+                REQ16_EN0: self.REQ16_EN0(),
+                REQ17_EN0: self.REQ17_EN0(),
+                REQ18_EN0: self.REQ18_EN0(),
+                REQ21_EN0: self.REQ21_EN0(),
+                REQ22_EN0: self.REQ22_EN0(),
+                REQ23_EN0: self.REQ23_EN0(),
+                REQ24_EN0: self.REQ24_EN0(),
+                REQ28_EN0: self.REQ28_EN0(),
+                REQ29_EN0: self.REQ29_EN0(),
+                REQ31_EN0: self.REQ31_EN0(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA0 Request Enable0"]
@@ -1651,6 +2263,92 @@ pub mod regs {
             DMA0_REQ_ENABLE0_SET(0)
         }
     }
+    impl core::fmt::Debug for DMA0_REQ_ENABLE0_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA0_REQ_ENABLE0_SET")
+                .field("REQ3_EN0", &self.REQ3_EN0())
+                .field("REQ4_EN0", &self.REQ4_EN0())
+                .field("REQ5_EN0", &self.REQ5_EN0())
+                .field("REQ6_EN0", &self.REQ6_EN0())
+                .field("REQ7_EN0", &self.REQ7_EN0())
+                .field("REQ8_EN0", &self.REQ8_EN0())
+                .field("REQ9_EN0", &self.REQ9_EN0())
+                .field("REQ10_EN0", &self.REQ10_EN0())
+                .field("REQ11_EN0", &self.REQ11_EN0())
+                .field("REQ12_EN0", &self.REQ12_EN0())
+                .field("REQ13_EN0", &self.REQ13_EN0())
+                .field("REQ14_EN0", &self.REQ14_EN0())
+                .field("REQ15_EN0", &self.REQ15_EN0())
+                .field("REQ16_EN0", &self.REQ16_EN0())
+                .field("REQ17_EN0", &self.REQ17_EN0())
+                .field("REQ18_EN0", &self.REQ18_EN0())
+                .field("REQ21_EN0", &self.REQ21_EN0())
+                .field("REQ22_EN0", &self.REQ22_EN0())
+                .field("REQ23_EN0", &self.REQ23_EN0())
+                .field("REQ24_EN0", &self.REQ24_EN0())
+                .field("REQ28_EN0", &self.REQ28_EN0())
+                .field("REQ29_EN0", &self.REQ29_EN0())
+                .field("REQ31_EN0", &self.REQ31_EN0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE0_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA0_REQ_ENABLE0_SET {
+                REQ3_EN0: bool,
+                REQ4_EN0: bool,
+                REQ5_EN0: bool,
+                REQ6_EN0: bool,
+                REQ7_EN0: bool,
+                REQ8_EN0: bool,
+                REQ9_EN0: bool,
+                REQ10_EN0: bool,
+                REQ11_EN0: bool,
+                REQ12_EN0: bool,
+                REQ13_EN0: bool,
+                REQ14_EN0: bool,
+                REQ15_EN0: bool,
+                REQ16_EN0: bool,
+                REQ17_EN0: bool,
+                REQ18_EN0: bool,
+                REQ21_EN0: bool,
+                REQ22_EN0: bool,
+                REQ23_EN0: bool,
+                REQ24_EN0: bool,
+                REQ28_EN0: bool,
+                REQ29_EN0: bool,
+                REQ31_EN0: bool,
+            }
+            let proxy = DMA0_REQ_ENABLE0_SET {
+                REQ3_EN0: self.REQ3_EN0(),
+                REQ4_EN0: self.REQ4_EN0(),
+                REQ5_EN0: self.REQ5_EN0(),
+                REQ6_EN0: self.REQ6_EN0(),
+                REQ7_EN0: self.REQ7_EN0(),
+                REQ8_EN0: self.REQ8_EN0(),
+                REQ9_EN0: self.REQ9_EN0(),
+                REQ10_EN0: self.REQ10_EN0(),
+                REQ11_EN0: self.REQ11_EN0(),
+                REQ12_EN0: self.REQ12_EN0(),
+                REQ13_EN0: self.REQ13_EN0(),
+                REQ14_EN0: self.REQ14_EN0(),
+                REQ15_EN0: self.REQ15_EN0(),
+                REQ16_EN0: self.REQ16_EN0(),
+                REQ17_EN0: self.REQ17_EN0(),
+                REQ18_EN0: self.REQ18_EN0(),
+                REQ21_EN0: self.REQ21_EN0(),
+                REQ22_EN0: self.REQ22_EN0(),
+                REQ23_EN0: self.REQ23_EN0(),
+                REQ24_EN0: self.REQ24_EN0(),
+                REQ28_EN0: self.REQ28_EN0(),
+                REQ29_EN0: self.REQ29_EN0(),
+                REQ31_EN0: self.REQ31_EN0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA0 Request Enable0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1868,6 +2566,92 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA0_REQ_ENABLE0_TOG {
             DMA0_REQ_ENABLE0_TOG(0)
+        }
+    }
+    impl core::fmt::Debug for DMA0_REQ_ENABLE0_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA0_REQ_ENABLE0_TOG")
+                .field("REQ3_EN0", &self.REQ3_EN0())
+                .field("REQ4_EN0", &self.REQ4_EN0())
+                .field("REQ5_EN0", &self.REQ5_EN0())
+                .field("REQ6_EN0", &self.REQ6_EN0())
+                .field("REQ7_EN0", &self.REQ7_EN0())
+                .field("REQ8_EN0", &self.REQ8_EN0())
+                .field("REQ9_EN0", &self.REQ9_EN0())
+                .field("REQ10_EN0", &self.REQ10_EN0())
+                .field("REQ11_EN0", &self.REQ11_EN0())
+                .field("REQ12_EN0", &self.REQ12_EN0())
+                .field("REQ13_EN0", &self.REQ13_EN0())
+                .field("REQ14_EN0", &self.REQ14_EN0())
+                .field("REQ15_EN0", &self.REQ15_EN0())
+                .field("REQ16_EN0", &self.REQ16_EN0())
+                .field("REQ17_EN0", &self.REQ17_EN0())
+                .field("REQ18_EN0", &self.REQ18_EN0())
+                .field("REQ21_EN0", &self.REQ21_EN0())
+                .field("REQ22_EN0", &self.REQ22_EN0())
+                .field("REQ23_EN0", &self.REQ23_EN0())
+                .field("REQ24_EN0", &self.REQ24_EN0())
+                .field("REQ28_EN0", &self.REQ28_EN0())
+                .field("REQ29_EN0", &self.REQ29_EN0())
+                .field("REQ31_EN0", &self.REQ31_EN0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE0_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA0_REQ_ENABLE0_TOG {
+                REQ3_EN0: bool,
+                REQ4_EN0: bool,
+                REQ5_EN0: bool,
+                REQ6_EN0: bool,
+                REQ7_EN0: bool,
+                REQ8_EN0: bool,
+                REQ9_EN0: bool,
+                REQ10_EN0: bool,
+                REQ11_EN0: bool,
+                REQ12_EN0: bool,
+                REQ13_EN0: bool,
+                REQ14_EN0: bool,
+                REQ15_EN0: bool,
+                REQ16_EN0: bool,
+                REQ17_EN0: bool,
+                REQ18_EN0: bool,
+                REQ21_EN0: bool,
+                REQ22_EN0: bool,
+                REQ23_EN0: bool,
+                REQ24_EN0: bool,
+                REQ28_EN0: bool,
+                REQ29_EN0: bool,
+                REQ31_EN0: bool,
+            }
+            let proxy = DMA0_REQ_ENABLE0_TOG {
+                REQ3_EN0: self.REQ3_EN0(),
+                REQ4_EN0: self.REQ4_EN0(),
+                REQ5_EN0: self.REQ5_EN0(),
+                REQ6_EN0: self.REQ6_EN0(),
+                REQ7_EN0: self.REQ7_EN0(),
+                REQ8_EN0: self.REQ8_EN0(),
+                REQ9_EN0: self.REQ9_EN0(),
+                REQ10_EN0: self.REQ10_EN0(),
+                REQ11_EN0: self.REQ11_EN0(),
+                REQ12_EN0: self.REQ12_EN0(),
+                REQ13_EN0: self.REQ13_EN0(),
+                REQ14_EN0: self.REQ14_EN0(),
+                REQ15_EN0: self.REQ15_EN0(),
+                REQ16_EN0: self.REQ16_EN0(),
+                REQ17_EN0: self.REQ17_EN0(),
+                REQ18_EN0: self.REQ18_EN0(),
+                REQ21_EN0: self.REQ21_EN0(),
+                REQ22_EN0: self.REQ22_EN0(),
+                REQ23_EN0: self.REQ23_EN0(),
+                REQ24_EN0: self.REQ24_EN0(),
+                REQ28_EN0: self.REQ28_EN0(),
+                REQ29_EN0: self.REQ29_EN0(),
+                REQ31_EN0: self.REQ31_EN0(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA0 Request Enable1"]
@@ -2152,6 +2936,113 @@ pub mod regs {
             DMA0_REQ_ENABLE1(0)
         }
     }
+    impl core::fmt::Debug for DMA0_REQ_ENABLE1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA0_REQ_ENABLE1")
+                .field("REQ32_EN0", &self.REQ32_EN0())
+                .field("REQ33_EN0", &self.REQ33_EN0())
+                .field("REQ34_EN0", &self.REQ34_EN0())
+                .field("REQ35_EN0", &self.REQ35_EN0())
+                .field("REQ36_EN0", &self.REQ36_EN0())
+                .field("REQ37_EN0", &self.REQ37_EN0())
+                .field("REQ38_EN0", &self.REQ38_EN0())
+                .field("REQ39_EN0", &self.REQ39_EN0())
+                .field("REQ40_EN0", &self.REQ40_EN0())
+                .field("REQ41_EN0", &self.REQ41_EN0())
+                .field("REQ42_EN0", &self.REQ42_EN0())
+                .field("REQ43_EN0", &self.REQ43_EN0())
+                .field("REQ44_EN0", &self.REQ44_EN0())
+                .field("REQ45_EN0", &self.REQ45_EN0())
+                .field("REQ46_EN0", &self.REQ46_EN0())
+                .field("REQ47_EN0", &self.REQ47_EN0())
+                .field("REQ48_EN0", &self.REQ48_EN0())
+                .field("REQ49_EN0", &self.REQ49_EN0())
+                .field("REQ50_EN0", &self.REQ50_EN0())
+                .field("REQ51_EN0", &self.REQ51_EN0())
+                .field("REQ52_EN0", &self.REQ52_EN0())
+                .field("REQ53_EN0", &self.REQ53_EN0())
+                .field("REQ54_EN0", &self.REQ54_EN0())
+                .field("REQ57_EN0", &self.REQ57_EN0())
+                .field("REQ58_EN0", &self.REQ58_EN0())
+                .field("REQ59_EN0", &self.REQ59_EN0())
+                .field("REQ60_EN0", &self.REQ60_EN0())
+                .field("REQ61_EN0", &self.REQ61_EN0())
+                .field("REQ62_EN0", &self.REQ62_EN0())
+                .field("REQ63_EN0", &self.REQ63_EN0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA0_REQ_ENABLE1 {
+                REQ32_EN0: bool,
+                REQ33_EN0: bool,
+                REQ34_EN0: bool,
+                REQ35_EN0: bool,
+                REQ36_EN0: bool,
+                REQ37_EN0: bool,
+                REQ38_EN0: bool,
+                REQ39_EN0: bool,
+                REQ40_EN0: bool,
+                REQ41_EN0: bool,
+                REQ42_EN0: bool,
+                REQ43_EN0: bool,
+                REQ44_EN0: bool,
+                REQ45_EN0: bool,
+                REQ46_EN0: bool,
+                REQ47_EN0: bool,
+                REQ48_EN0: bool,
+                REQ49_EN0: bool,
+                REQ50_EN0: bool,
+                REQ51_EN0: bool,
+                REQ52_EN0: bool,
+                REQ53_EN0: bool,
+                REQ54_EN0: bool,
+                REQ57_EN0: bool,
+                REQ58_EN0: bool,
+                REQ59_EN0: bool,
+                REQ60_EN0: bool,
+                REQ61_EN0: bool,
+                REQ62_EN0: bool,
+                REQ63_EN0: bool,
+            }
+            let proxy = DMA0_REQ_ENABLE1 {
+                REQ32_EN0: self.REQ32_EN0(),
+                REQ33_EN0: self.REQ33_EN0(),
+                REQ34_EN0: self.REQ34_EN0(),
+                REQ35_EN0: self.REQ35_EN0(),
+                REQ36_EN0: self.REQ36_EN0(),
+                REQ37_EN0: self.REQ37_EN0(),
+                REQ38_EN0: self.REQ38_EN0(),
+                REQ39_EN0: self.REQ39_EN0(),
+                REQ40_EN0: self.REQ40_EN0(),
+                REQ41_EN0: self.REQ41_EN0(),
+                REQ42_EN0: self.REQ42_EN0(),
+                REQ43_EN0: self.REQ43_EN0(),
+                REQ44_EN0: self.REQ44_EN0(),
+                REQ45_EN0: self.REQ45_EN0(),
+                REQ46_EN0: self.REQ46_EN0(),
+                REQ47_EN0: self.REQ47_EN0(),
+                REQ48_EN0: self.REQ48_EN0(),
+                REQ49_EN0: self.REQ49_EN0(),
+                REQ50_EN0: self.REQ50_EN0(),
+                REQ51_EN0: self.REQ51_EN0(),
+                REQ52_EN0: self.REQ52_EN0(),
+                REQ53_EN0: self.REQ53_EN0(),
+                REQ54_EN0: self.REQ54_EN0(),
+                REQ57_EN0: self.REQ57_EN0(),
+                REQ58_EN0: self.REQ58_EN0(),
+                REQ59_EN0: self.REQ59_EN0(),
+                REQ60_EN0: self.REQ60_EN0(),
+                REQ61_EN0: self.REQ61_EN0(),
+                REQ62_EN0: self.REQ62_EN0(),
+                REQ63_EN0: self.REQ63_EN0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA0 Request Enable1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2432,6 +3323,113 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA0_REQ_ENABLE1_CLR {
             DMA0_REQ_ENABLE1_CLR(0)
+        }
+    }
+    impl core::fmt::Debug for DMA0_REQ_ENABLE1_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA0_REQ_ENABLE1_CLR")
+                .field("REQ32_EN0", &self.REQ32_EN0())
+                .field("REQ33_EN0", &self.REQ33_EN0())
+                .field("REQ34_EN0", &self.REQ34_EN0())
+                .field("REQ35_EN0", &self.REQ35_EN0())
+                .field("REQ36_EN0", &self.REQ36_EN0())
+                .field("REQ37_EN0", &self.REQ37_EN0())
+                .field("REQ38_EN0", &self.REQ38_EN0())
+                .field("REQ39_EN0", &self.REQ39_EN0())
+                .field("REQ40_EN0", &self.REQ40_EN0())
+                .field("REQ41_EN0", &self.REQ41_EN0())
+                .field("REQ42_EN0", &self.REQ42_EN0())
+                .field("REQ43_EN0", &self.REQ43_EN0())
+                .field("REQ44_EN0", &self.REQ44_EN0())
+                .field("REQ45_EN0", &self.REQ45_EN0())
+                .field("REQ46_EN0", &self.REQ46_EN0())
+                .field("REQ47_EN0", &self.REQ47_EN0())
+                .field("REQ48_EN0", &self.REQ48_EN0())
+                .field("REQ49_EN0", &self.REQ49_EN0())
+                .field("REQ50_EN0", &self.REQ50_EN0())
+                .field("REQ51_EN0", &self.REQ51_EN0())
+                .field("REQ52_EN0", &self.REQ52_EN0())
+                .field("REQ53_EN0", &self.REQ53_EN0())
+                .field("REQ54_EN0", &self.REQ54_EN0())
+                .field("REQ57_EN0", &self.REQ57_EN0())
+                .field("REQ58_EN0", &self.REQ58_EN0())
+                .field("REQ59_EN0", &self.REQ59_EN0())
+                .field("REQ60_EN0", &self.REQ60_EN0())
+                .field("REQ61_EN0", &self.REQ61_EN0())
+                .field("REQ62_EN0", &self.REQ62_EN0())
+                .field("REQ63_EN0", &self.REQ63_EN0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE1_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA0_REQ_ENABLE1_CLR {
+                REQ32_EN0: bool,
+                REQ33_EN0: bool,
+                REQ34_EN0: bool,
+                REQ35_EN0: bool,
+                REQ36_EN0: bool,
+                REQ37_EN0: bool,
+                REQ38_EN0: bool,
+                REQ39_EN0: bool,
+                REQ40_EN0: bool,
+                REQ41_EN0: bool,
+                REQ42_EN0: bool,
+                REQ43_EN0: bool,
+                REQ44_EN0: bool,
+                REQ45_EN0: bool,
+                REQ46_EN0: bool,
+                REQ47_EN0: bool,
+                REQ48_EN0: bool,
+                REQ49_EN0: bool,
+                REQ50_EN0: bool,
+                REQ51_EN0: bool,
+                REQ52_EN0: bool,
+                REQ53_EN0: bool,
+                REQ54_EN0: bool,
+                REQ57_EN0: bool,
+                REQ58_EN0: bool,
+                REQ59_EN0: bool,
+                REQ60_EN0: bool,
+                REQ61_EN0: bool,
+                REQ62_EN0: bool,
+                REQ63_EN0: bool,
+            }
+            let proxy = DMA0_REQ_ENABLE1_CLR {
+                REQ32_EN0: self.REQ32_EN0(),
+                REQ33_EN0: self.REQ33_EN0(),
+                REQ34_EN0: self.REQ34_EN0(),
+                REQ35_EN0: self.REQ35_EN0(),
+                REQ36_EN0: self.REQ36_EN0(),
+                REQ37_EN0: self.REQ37_EN0(),
+                REQ38_EN0: self.REQ38_EN0(),
+                REQ39_EN0: self.REQ39_EN0(),
+                REQ40_EN0: self.REQ40_EN0(),
+                REQ41_EN0: self.REQ41_EN0(),
+                REQ42_EN0: self.REQ42_EN0(),
+                REQ43_EN0: self.REQ43_EN0(),
+                REQ44_EN0: self.REQ44_EN0(),
+                REQ45_EN0: self.REQ45_EN0(),
+                REQ46_EN0: self.REQ46_EN0(),
+                REQ47_EN0: self.REQ47_EN0(),
+                REQ48_EN0: self.REQ48_EN0(),
+                REQ49_EN0: self.REQ49_EN0(),
+                REQ50_EN0: self.REQ50_EN0(),
+                REQ51_EN0: self.REQ51_EN0(),
+                REQ52_EN0: self.REQ52_EN0(),
+                REQ53_EN0: self.REQ53_EN0(),
+                REQ54_EN0: self.REQ54_EN0(),
+                REQ57_EN0: self.REQ57_EN0(),
+                REQ58_EN0: self.REQ58_EN0(),
+                REQ59_EN0: self.REQ59_EN0(),
+                REQ60_EN0: self.REQ60_EN0(),
+                REQ61_EN0: self.REQ61_EN0(),
+                REQ62_EN0: self.REQ62_EN0(),
+                REQ63_EN0: self.REQ63_EN0(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA0 Request Enable1"]
@@ -2716,6 +3714,113 @@ pub mod regs {
             DMA0_REQ_ENABLE1_SET(0)
         }
     }
+    impl core::fmt::Debug for DMA0_REQ_ENABLE1_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA0_REQ_ENABLE1_SET")
+                .field("REQ32_EN0", &self.REQ32_EN0())
+                .field("REQ33_EN0", &self.REQ33_EN0())
+                .field("REQ34_EN0", &self.REQ34_EN0())
+                .field("REQ35_EN0", &self.REQ35_EN0())
+                .field("REQ36_EN0", &self.REQ36_EN0())
+                .field("REQ37_EN0", &self.REQ37_EN0())
+                .field("REQ38_EN0", &self.REQ38_EN0())
+                .field("REQ39_EN0", &self.REQ39_EN0())
+                .field("REQ40_EN0", &self.REQ40_EN0())
+                .field("REQ41_EN0", &self.REQ41_EN0())
+                .field("REQ42_EN0", &self.REQ42_EN0())
+                .field("REQ43_EN0", &self.REQ43_EN0())
+                .field("REQ44_EN0", &self.REQ44_EN0())
+                .field("REQ45_EN0", &self.REQ45_EN0())
+                .field("REQ46_EN0", &self.REQ46_EN0())
+                .field("REQ47_EN0", &self.REQ47_EN0())
+                .field("REQ48_EN0", &self.REQ48_EN0())
+                .field("REQ49_EN0", &self.REQ49_EN0())
+                .field("REQ50_EN0", &self.REQ50_EN0())
+                .field("REQ51_EN0", &self.REQ51_EN0())
+                .field("REQ52_EN0", &self.REQ52_EN0())
+                .field("REQ53_EN0", &self.REQ53_EN0())
+                .field("REQ54_EN0", &self.REQ54_EN0())
+                .field("REQ57_EN0", &self.REQ57_EN0())
+                .field("REQ58_EN0", &self.REQ58_EN0())
+                .field("REQ59_EN0", &self.REQ59_EN0())
+                .field("REQ60_EN0", &self.REQ60_EN0())
+                .field("REQ61_EN0", &self.REQ61_EN0())
+                .field("REQ62_EN0", &self.REQ62_EN0())
+                .field("REQ63_EN0", &self.REQ63_EN0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE1_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA0_REQ_ENABLE1_SET {
+                REQ32_EN0: bool,
+                REQ33_EN0: bool,
+                REQ34_EN0: bool,
+                REQ35_EN0: bool,
+                REQ36_EN0: bool,
+                REQ37_EN0: bool,
+                REQ38_EN0: bool,
+                REQ39_EN0: bool,
+                REQ40_EN0: bool,
+                REQ41_EN0: bool,
+                REQ42_EN0: bool,
+                REQ43_EN0: bool,
+                REQ44_EN0: bool,
+                REQ45_EN0: bool,
+                REQ46_EN0: bool,
+                REQ47_EN0: bool,
+                REQ48_EN0: bool,
+                REQ49_EN0: bool,
+                REQ50_EN0: bool,
+                REQ51_EN0: bool,
+                REQ52_EN0: bool,
+                REQ53_EN0: bool,
+                REQ54_EN0: bool,
+                REQ57_EN0: bool,
+                REQ58_EN0: bool,
+                REQ59_EN0: bool,
+                REQ60_EN0: bool,
+                REQ61_EN0: bool,
+                REQ62_EN0: bool,
+                REQ63_EN0: bool,
+            }
+            let proxy = DMA0_REQ_ENABLE1_SET {
+                REQ32_EN0: self.REQ32_EN0(),
+                REQ33_EN0: self.REQ33_EN0(),
+                REQ34_EN0: self.REQ34_EN0(),
+                REQ35_EN0: self.REQ35_EN0(),
+                REQ36_EN0: self.REQ36_EN0(),
+                REQ37_EN0: self.REQ37_EN0(),
+                REQ38_EN0: self.REQ38_EN0(),
+                REQ39_EN0: self.REQ39_EN0(),
+                REQ40_EN0: self.REQ40_EN0(),
+                REQ41_EN0: self.REQ41_EN0(),
+                REQ42_EN0: self.REQ42_EN0(),
+                REQ43_EN0: self.REQ43_EN0(),
+                REQ44_EN0: self.REQ44_EN0(),
+                REQ45_EN0: self.REQ45_EN0(),
+                REQ46_EN0: self.REQ46_EN0(),
+                REQ47_EN0: self.REQ47_EN0(),
+                REQ48_EN0: self.REQ48_EN0(),
+                REQ49_EN0: self.REQ49_EN0(),
+                REQ50_EN0: self.REQ50_EN0(),
+                REQ51_EN0: self.REQ51_EN0(),
+                REQ52_EN0: self.REQ52_EN0(),
+                REQ53_EN0: self.REQ53_EN0(),
+                REQ54_EN0: self.REQ54_EN0(),
+                REQ57_EN0: self.REQ57_EN0(),
+                REQ58_EN0: self.REQ58_EN0(),
+                REQ59_EN0: self.REQ59_EN0(),
+                REQ60_EN0: self.REQ60_EN0(),
+                REQ61_EN0: self.REQ61_EN0(),
+                REQ62_EN0: self.REQ62_EN0(),
+                REQ63_EN0: self.REQ63_EN0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA0 Request Enable1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2998,6 +4103,113 @@ pub mod regs {
             DMA0_REQ_ENABLE1_TOG(0)
         }
     }
+    impl core::fmt::Debug for DMA0_REQ_ENABLE1_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA0_REQ_ENABLE1_TOG")
+                .field("REQ32_EN0", &self.REQ32_EN0())
+                .field("REQ33_EN0", &self.REQ33_EN0())
+                .field("REQ34_EN0", &self.REQ34_EN0())
+                .field("REQ35_EN0", &self.REQ35_EN0())
+                .field("REQ36_EN0", &self.REQ36_EN0())
+                .field("REQ37_EN0", &self.REQ37_EN0())
+                .field("REQ38_EN0", &self.REQ38_EN0())
+                .field("REQ39_EN0", &self.REQ39_EN0())
+                .field("REQ40_EN0", &self.REQ40_EN0())
+                .field("REQ41_EN0", &self.REQ41_EN0())
+                .field("REQ42_EN0", &self.REQ42_EN0())
+                .field("REQ43_EN0", &self.REQ43_EN0())
+                .field("REQ44_EN0", &self.REQ44_EN0())
+                .field("REQ45_EN0", &self.REQ45_EN0())
+                .field("REQ46_EN0", &self.REQ46_EN0())
+                .field("REQ47_EN0", &self.REQ47_EN0())
+                .field("REQ48_EN0", &self.REQ48_EN0())
+                .field("REQ49_EN0", &self.REQ49_EN0())
+                .field("REQ50_EN0", &self.REQ50_EN0())
+                .field("REQ51_EN0", &self.REQ51_EN0())
+                .field("REQ52_EN0", &self.REQ52_EN0())
+                .field("REQ53_EN0", &self.REQ53_EN0())
+                .field("REQ54_EN0", &self.REQ54_EN0())
+                .field("REQ57_EN0", &self.REQ57_EN0())
+                .field("REQ58_EN0", &self.REQ58_EN0())
+                .field("REQ59_EN0", &self.REQ59_EN0())
+                .field("REQ60_EN0", &self.REQ60_EN0())
+                .field("REQ61_EN0", &self.REQ61_EN0())
+                .field("REQ62_EN0", &self.REQ62_EN0())
+                .field("REQ63_EN0", &self.REQ63_EN0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE1_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA0_REQ_ENABLE1_TOG {
+                REQ32_EN0: bool,
+                REQ33_EN0: bool,
+                REQ34_EN0: bool,
+                REQ35_EN0: bool,
+                REQ36_EN0: bool,
+                REQ37_EN0: bool,
+                REQ38_EN0: bool,
+                REQ39_EN0: bool,
+                REQ40_EN0: bool,
+                REQ41_EN0: bool,
+                REQ42_EN0: bool,
+                REQ43_EN0: bool,
+                REQ44_EN0: bool,
+                REQ45_EN0: bool,
+                REQ46_EN0: bool,
+                REQ47_EN0: bool,
+                REQ48_EN0: bool,
+                REQ49_EN0: bool,
+                REQ50_EN0: bool,
+                REQ51_EN0: bool,
+                REQ52_EN0: bool,
+                REQ53_EN0: bool,
+                REQ54_EN0: bool,
+                REQ57_EN0: bool,
+                REQ58_EN0: bool,
+                REQ59_EN0: bool,
+                REQ60_EN0: bool,
+                REQ61_EN0: bool,
+                REQ62_EN0: bool,
+                REQ63_EN0: bool,
+            }
+            let proxy = DMA0_REQ_ENABLE1_TOG {
+                REQ32_EN0: self.REQ32_EN0(),
+                REQ33_EN0: self.REQ33_EN0(),
+                REQ34_EN0: self.REQ34_EN0(),
+                REQ35_EN0: self.REQ35_EN0(),
+                REQ36_EN0: self.REQ36_EN0(),
+                REQ37_EN0: self.REQ37_EN0(),
+                REQ38_EN0: self.REQ38_EN0(),
+                REQ39_EN0: self.REQ39_EN0(),
+                REQ40_EN0: self.REQ40_EN0(),
+                REQ41_EN0: self.REQ41_EN0(),
+                REQ42_EN0: self.REQ42_EN0(),
+                REQ43_EN0: self.REQ43_EN0(),
+                REQ44_EN0: self.REQ44_EN0(),
+                REQ45_EN0: self.REQ45_EN0(),
+                REQ46_EN0: self.REQ46_EN0(),
+                REQ47_EN0: self.REQ47_EN0(),
+                REQ48_EN0: self.REQ48_EN0(),
+                REQ49_EN0: self.REQ49_EN0(),
+                REQ50_EN0: self.REQ50_EN0(),
+                REQ51_EN0: self.REQ51_EN0(),
+                REQ52_EN0: self.REQ52_EN0(),
+                REQ53_EN0: self.REQ53_EN0(),
+                REQ54_EN0: self.REQ54_EN0(),
+                REQ57_EN0: self.REQ57_EN0(),
+                REQ58_EN0: self.REQ58_EN0(),
+                REQ59_EN0: self.REQ59_EN0(),
+                REQ60_EN0: self.REQ60_EN0(),
+                REQ61_EN0: self.REQ61_EN0(),
+                REQ62_EN0: self.REQ62_EN0(),
+                REQ63_EN0: self.REQ63_EN0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA0 Request Enable2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3206,6 +4418,89 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA0_REQ_ENABLE2 {
             DMA0_REQ_ENABLE2(0)
+        }
+    }
+    impl core::fmt::Debug for DMA0_REQ_ENABLE2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA0_REQ_ENABLE2")
+                .field("REQ64_EN0", &self.REQ64_EN0())
+                .field("REQ65_EN0", &self.REQ65_EN0())
+                .field("REQ66_EN0", &self.REQ66_EN0())
+                .field("REQ67_EN0", &self.REQ67_EN0())
+                .field("REQ68_EN0", &self.REQ68_EN0())
+                .field("REQ69_EN0", &self.REQ69_EN0())
+                .field("REQ70_EN0", &self.REQ70_EN0())
+                .field("REQ71_EN0", &self.REQ71_EN0())
+                .field("REQ72_EN0", &self.REQ72_EN0())
+                .field("REQ73_EN0", &self.REQ73_EN0())
+                .field("REQ74_EN0", &self.REQ74_EN0())
+                .field("REQ75_EN0", &self.REQ75_EN0())
+                .field("REQ76_EN0", &self.REQ76_EN0())
+                .field("REQ77_EN0", &self.REQ77_EN0())
+                .field("REQ78_EN0", &self.REQ78_EN0())
+                .field("REQ79_EN0", &self.REQ79_EN0())
+                .field("REQ80_EN0", &self.REQ80_EN0())
+                .field("REQ81_EN0", &self.REQ81_EN0())
+                .field("REQ82_EN0", &self.REQ82_EN0())
+                .field("REQ83_EN0", &self.REQ83_EN0())
+                .field("REQ84_EN0", &self.REQ84_EN0())
+                .field("REQ95_EN0", &self.REQ95_EN0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA0_REQ_ENABLE2 {
+                REQ64_EN0: bool,
+                REQ65_EN0: bool,
+                REQ66_EN0: bool,
+                REQ67_EN0: bool,
+                REQ68_EN0: bool,
+                REQ69_EN0: bool,
+                REQ70_EN0: bool,
+                REQ71_EN0: bool,
+                REQ72_EN0: bool,
+                REQ73_EN0: bool,
+                REQ74_EN0: bool,
+                REQ75_EN0: bool,
+                REQ76_EN0: bool,
+                REQ77_EN0: bool,
+                REQ78_EN0: bool,
+                REQ79_EN0: bool,
+                REQ80_EN0: bool,
+                REQ81_EN0: bool,
+                REQ82_EN0: bool,
+                REQ83_EN0: bool,
+                REQ84_EN0: bool,
+                REQ95_EN0: bool,
+            }
+            let proxy = DMA0_REQ_ENABLE2 {
+                REQ64_EN0: self.REQ64_EN0(),
+                REQ65_EN0: self.REQ65_EN0(),
+                REQ66_EN0: self.REQ66_EN0(),
+                REQ67_EN0: self.REQ67_EN0(),
+                REQ68_EN0: self.REQ68_EN0(),
+                REQ69_EN0: self.REQ69_EN0(),
+                REQ70_EN0: self.REQ70_EN0(),
+                REQ71_EN0: self.REQ71_EN0(),
+                REQ72_EN0: self.REQ72_EN0(),
+                REQ73_EN0: self.REQ73_EN0(),
+                REQ74_EN0: self.REQ74_EN0(),
+                REQ75_EN0: self.REQ75_EN0(),
+                REQ76_EN0: self.REQ76_EN0(),
+                REQ77_EN0: self.REQ77_EN0(),
+                REQ78_EN0: self.REQ78_EN0(),
+                REQ79_EN0: self.REQ79_EN0(),
+                REQ80_EN0: self.REQ80_EN0(),
+                REQ81_EN0: self.REQ81_EN0(),
+                REQ82_EN0: self.REQ82_EN0(),
+                REQ83_EN0: self.REQ83_EN0(),
+                REQ84_EN0: self.REQ84_EN0(),
+                REQ95_EN0: self.REQ95_EN0(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA0 Request Enable2"]
@@ -3418,6 +4713,89 @@ pub mod regs {
             DMA0_REQ_ENABLE2_CLR(0)
         }
     }
+    impl core::fmt::Debug for DMA0_REQ_ENABLE2_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA0_REQ_ENABLE2_CLR")
+                .field("REQ64_EN0", &self.REQ64_EN0())
+                .field("REQ65_EN0", &self.REQ65_EN0())
+                .field("REQ66_EN0", &self.REQ66_EN0())
+                .field("REQ67_EN0", &self.REQ67_EN0())
+                .field("REQ68_EN0", &self.REQ68_EN0())
+                .field("REQ69_EN0", &self.REQ69_EN0())
+                .field("REQ70_EN0", &self.REQ70_EN0())
+                .field("REQ71_EN0", &self.REQ71_EN0())
+                .field("REQ72_EN0", &self.REQ72_EN0())
+                .field("REQ73_EN0", &self.REQ73_EN0())
+                .field("REQ74_EN0", &self.REQ74_EN0())
+                .field("REQ75_EN0", &self.REQ75_EN0())
+                .field("REQ76_EN0", &self.REQ76_EN0())
+                .field("REQ77_EN0", &self.REQ77_EN0())
+                .field("REQ78_EN0", &self.REQ78_EN0())
+                .field("REQ79_EN0", &self.REQ79_EN0())
+                .field("REQ80_EN0", &self.REQ80_EN0())
+                .field("REQ81_EN0", &self.REQ81_EN0())
+                .field("REQ82_EN0", &self.REQ82_EN0())
+                .field("REQ83_EN0", &self.REQ83_EN0())
+                .field("REQ84_EN0", &self.REQ84_EN0())
+                .field("REQ95_EN0", &self.REQ95_EN0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE2_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA0_REQ_ENABLE2_CLR {
+                REQ64_EN0: bool,
+                REQ65_EN0: bool,
+                REQ66_EN0: bool,
+                REQ67_EN0: bool,
+                REQ68_EN0: bool,
+                REQ69_EN0: bool,
+                REQ70_EN0: bool,
+                REQ71_EN0: bool,
+                REQ72_EN0: bool,
+                REQ73_EN0: bool,
+                REQ74_EN0: bool,
+                REQ75_EN0: bool,
+                REQ76_EN0: bool,
+                REQ77_EN0: bool,
+                REQ78_EN0: bool,
+                REQ79_EN0: bool,
+                REQ80_EN0: bool,
+                REQ81_EN0: bool,
+                REQ82_EN0: bool,
+                REQ83_EN0: bool,
+                REQ84_EN0: bool,
+                REQ95_EN0: bool,
+            }
+            let proxy = DMA0_REQ_ENABLE2_CLR {
+                REQ64_EN0: self.REQ64_EN0(),
+                REQ65_EN0: self.REQ65_EN0(),
+                REQ66_EN0: self.REQ66_EN0(),
+                REQ67_EN0: self.REQ67_EN0(),
+                REQ68_EN0: self.REQ68_EN0(),
+                REQ69_EN0: self.REQ69_EN0(),
+                REQ70_EN0: self.REQ70_EN0(),
+                REQ71_EN0: self.REQ71_EN0(),
+                REQ72_EN0: self.REQ72_EN0(),
+                REQ73_EN0: self.REQ73_EN0(),
+                REQ74_EN0: self.REQ74_EN0(),
+                REQ75_EN0: self.REQ75_EN0(),
+                REQ76_EN0: self.REQ76_EN0(),
+                REQ77_EN0: self.REQ77_EN0(),
+                REQ78_EN0: self.REQ78_EN0(),
+                REQ79_EN0: self.REQ79_EN0(),
+                REQ80_EN0: self.REQ80_EN0(),
+                REQ81_EN0: self.REQ81_EN0(),
+                REQ82_EN0: self.REQ82_EN0(),
+                REQ83_EN0: self.REQ83_EN0(),
+                REQ84_EN0: self.REQ84_EN0(),
+                REQ95_EN0: self.REQ95_EN0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA0 Request Enable2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3626,6 +5004,89 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA0_REQ_ENABLE2_SET {
             DMA0_REQ_ENABLE2_SET(0)
+        }
+    }
+    impl core::fmt::Debug for DMA0_REQ_ENABLE2_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA0_REQ_ENABLE2_SET")
+                .field("REQ64_EN0", &self.REQ64_EN0())
+                .field("REQ65_EN0", &self.REQ65_EN0())
+                .field("REQ66_EN0", &self.REQ66_EN0())
+                .field("REQ67_EN0", &self.REQ67_EN0())
+                .field("REQ68_EN0", &self.REQ68_EN0())
+                .field("REQ69_EN0", &self.REQ69_EN0())
+                .field("REQ70_EN0", &self.REQ70_EN0())
+                .field("REQ71_EN0", &self.REQ71_EN0())
+                .field("REQ72_EN0", &self.REQ72_EN0())
+                .field("REQ73_EN0", &self.REQ73_EN0())
+                .field("REQ74_EN0", &self.REQ74_EN0())
+                .field("REQ75_EN0", &self.REQ75_EN0())
+                .field("REQ76_EN0", &self.REQ76_EN0())
+                .field("REQ77_EN0", &self.REQ77_EN0())
+                .field("REQ78_EN0", &self.REQ78_EN0())
+                .field("REQ79_EN0", &self.REQ79_EN0())
+                .field("REQ80_EN0", &self.REQ80_EN0())
+                .field("REQ81_EN0", &self.REQ81_EN0())
+                .field("REQ82_EN0", &self.REQ82_EN0())
+                .field("REQ83_EN0", &self.REQ83_EN0())
+                .field("REQ84_EN0", &self.REQ84_EN0())
+                .field("REQ95_EN0", &self.REQ95_EN0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE2_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA0_REQ_ENABLE2_SET {
+                REQ64_EN0: bool,
+                REQ65_EN0: bool,
+                REQ66_EN0: bool,
+                REQ67_EN0: bool,
+                REQ68_EN0: bool,
+                REQ69_EN0: bool,
+                REQ70_EN0: bool,
+                REQ71_EN0: bool,
+                REQ72_EN0: bool,
+                REQ73_EN0: bool,
+                REQ74_EN0: bool,
+                REQ75_EN0: bool,
+                REQ76_EN0: bool,
+                REQ77_EN0: bool,
+                REQ78_EN0: bool,
+                REQ79_EN0: bool,
+                REQ80_EN0: bool,
+                REQ81_EN0: bool,
+                REQ82_EN0: bool,
+                REQ83_EN0: bool,
+                REQ84_EN0: bool,
+                REQ95_EN0: bool,
+            }
+            let proxy = DMA0_REQ_ENABLE2_SET {
+                REQ64_EN0: self.REQ64_EN0(),
+                REQ65_EN0: self.REQ65_EN0(),
+                REQ66_EN0: self.REQ66_EN0(),
+                REQ67_EN0: self.REQ67_EN0(),
+                REQ68_EN0: self.REQ68_EN0(),
+                REQ69_EN0: self.REQ69_EN0(),
+                REQ70_EN0: self.REQ70_EN0(),
+                REQ71_EN0: self.REQ71_EN0(),
+                REQ72_EN0: self.REQ72_EN0(),
+                REQ73_EN0: self.REQ73_EN0(),
+                REQ74_EN0: self.REQ74_EN0(),
+                REQ75_EN0: self.REQ75_EN0(),
+                REQ76_EN0: self.REQ76_EN0(),
+                REQ77_EN0: self.REQ77_EN0(),
+                REQ78_EN0: self.REQ78_EN0(),
+                REQ79_EN0: self.REQ79_EN0(),
+                REQ80_EN0: self.REQ80_EN0(),
+                REQ81_EN0: self.REQ81_EN0(),
+                REQ82_EN0: self.REQ82_EN0(),
+                REQ83_EN0: self.REQ83_EN0(),
+                REQ84_EN0: self.REQ84_EN0(),
+                REQ95_EN0: self.REQ95_EN0(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA0 Request Enable2"]
@@ -3838,6 +5299,89 @@ pub mod regs {
             DMA0_REQ_ENABLE2_TOG(0)
         }
     }
+    impl core::fmt::Debug for DMA0_REQ_ENABLE2_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA0_REQ_ENABLE2_TOG")
+                .field("REQ64_EN0", &self.REQ64_EN0())
+                .field("REQ65_EN0", &self.REQ65_EN0())
+                .field("REQ66_EN0", &self.REQ66_EN0())
+                .field("REQ67_EN0", &self.REQ67_EN0())
+                .field("REQ68_EN0", &self.REQ68_EN0())
+                .field("REQ69_EN0", &self.REQ69_EN0())
+                .field("REQ70_EN0", &self.REQ70_EN0())
+                .field("REQ71_EN0", &self.REQ71_EN0())
+                .field("REQ72_EN0", &self.REQ72_EN0())
+                .field("REQ73_EN0", &self.REQ73_EN0())
+                .field("REQ74_EN0", &self.REQ74_EN0())
+                .field("REQ75_EN0", &self.REQ75_EN0())
+                .field("REQ76_EN0", &self.REQ76_EN0())
+                .field("REQ77_EN0", &self.REQ77_EN0())
+                .field("REQ78_EN0", &self.REQ78_EN0())
+                .field("REQ79_EN0", &self.REQ79_EN0())
+                .field("REQ80_EN0", &self.REQ80_EN0())
+                .field("REQ81_EN0", &self.REQ81_EN0())
+                .field("REQ82_EN0", &self.REQ82_EN0())
+                .field("REQ83_EN0", &self.REQ83_EN0())
+                .field("REQ84_EN0", &self.REQ84_EN0())
+                .field("REQ95_EN0", &self.REQ95_EN0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE2_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA0_REQ_ENABLE2_TOG {
+                REQ64_EN0: bool,
+                REQ65_EN0: bool,
+                REQ66_EN0: bool,
+                REQ67_EN0: bool,
+                REQ68_EN0: bool,
+                REQ69_EN0: bool,
+                REQ70_EN0: bool,
+                REQ71_EN0: bool,
+                REQ72_EN0: bool,
+                REQ73_EN0: bool,
+                REQ74_EN0: bool,
+                REQ75_EN0: bool,
+                REQ76_EN0: bool,
+                REQ77_EN0: bool,
+                REQ78_EN0: bool,
+                REQ79_EN0: bool,
+                REQ80_EN0: bool,
+                REQ81_EN0: bool,
+                REQ82_EN0: bool,
+                REQ83_EN0: bool,
+                REQ84_EN0: bool,
+                REQ95_EN0: bool,
+            }
+            let proxy = DMA0_REQ_ENABLE2_TOG {
+                REQ64_EN0: self.REQ64_EN0(),
+                REQ65_EN0: self.REQ65_EN0(),
+                REQ66_EN0: self.REQ66_EN0(),
+                REQ67_EN0: self.REQ67_EN0(),
+                REQ68_EN0: self.REQ68_EN0(),
+                REQ69_EN0: self.REQ69_EN0(),
+                REQ70_EN0: self.REQ70_EN0(),
+                REQ71_EN0: self.REQ71_EN0(),
+                REQ72_EN0: self.REQ72_EN0(),
+                REQ73_EN0: self.REQ73_EN0(),
+                REQ74_EN0: self.REQ74_EN0(),
+                REQ75_EN0: self.REQ75_EN0(),
+                REQ76_EN0: self.REQ76_EN0(),
+                REQ77_EN0: self.REQ77_EN0(),
+                REQ78_EN0: self.REQ78_EN0(),
+                REQ79_EN0: self.REQ79_EN0(),
+                REQ80_EN0: self.REQ80_EN0(),
+                REQ81_EN0: self.REQ81_EN0(),
+                REQ82_EN0: self.REQ82_EN0(),
+                REQ83_EN0: self.REQ83_EN0(),
+                REQ84_EN0: self.REQ84_EN0(),
+                REQ95_EN0: self.REQ95_EN0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA0 Request Enable3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4019,6 +5563,80 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA0_REQ_ENABLE3 {
             DMA0_REQ_ENABLE3(0)
+        }
+    }
+    impl core::fmt::Debug for DMA0_REQ_ENABLE3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA0_REQ_ENABLE3")
+                .field("REQ96_EN0", &self.REQ96_EN0())
+                .field("REQ97_EN0", &self.REQ97_EN0())
+                .field("REQ98_EN0", &self.REQ98_EN0())
+                .field("REQ99_EN0", &self.REQ99_EN0())
+                .field("REQ100_EN0", &self.REQ100_EN0())
+                .field("REQ101_EN0", &self.REQ101_EN0())
+                .field("REQ102_EN0", &self.REQ102_EN0())
+                .field("REQ108_EN0", &self.REQ108_EN0())
+                .field("REQ109_EN0", &self.REQ109_EN0())
+                .field("REQ110_EN0", &self.REQ110_EN0())
+                .field("REQ111_EN0", &self.REQ111_EN0())
+                .field("REQ112_EN0", &self.REQ112_EN0())
+                .field("REQ113_EN0", &self.REQ113_EN0())
+                .field("REQ114_EN0", &self.REQ114_EN0())
+                .field("REQ115_EN0", &self.REQ115_EN0())
+                .field("REQ116_EN0", &self.REQ116_EN0())
+                .field("REQ117_EN0", &self.REQ117_EN0())
+                .field("REQ118_EN0", &self.REQ118_EN0())
+                .field("REQ119_EN0", &self.REQ119_EN0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA0_REQ_ENABLE3 {
+                REQ96_EN0: bool,
+                REQ97_EN0: bool,
+                REQ98_EN0: bool,
+                REQ99_EN0: bool,
+                REQ100_EN0: bool,
+                REQ101_EN0: bool,
+                REQ102_EN0: bool,
+                REQ108_EN0: bool,
+                REQ109_EN0: bool,
+                REQ110_EN0: bool,
+                REQ111_EN0: bool,
+                REQ112_EN0: bool,
+                REQ113_EN0: bool,
+                REQ114_EN0: bool,
+                REQ115_EN0: bool,
+                REQ116_EN0: bool,
+                REQ117_EN0: bool,
+                REQ118_EN0: bool,
+                REQ119_EN0: bool,
+            }
+            let proxy = DMA0_REQ_ENABLE3 {
+                REQ96_EN0: self.REQ96_EN0(),
+                REQ97_EN0: self.REQ97_EN0(),
+                REQ98_EN0: self.REQ98_EN0(),
+                REQ99_EN0: self.REQ99_EN0(),
+                REQ100_EN0: self.REQ100_EN0(),
+                REQ101_EN0: self.REQ101_EN0(),
+                REQ102_EN0: self.REQ102_EN0(),
+                REQ108_EN0: self.REQ108_EN0(),
+                REQ109_EN0: self.REQ109_EN0(),
+                REQ110_EN0: self.REQ110_EN0(),
+                REQ111_EN0: self.REQ111_EN0(),
+                REQ112_EN0: self.REQ112_EN0(),
+                REQ113_EN0: self.REQ113_EN0(),
+                REQ114_EN0: self.REQ114_EN0(),
+                REQ115_EN0: self.REQ115_EN0(),
+                REQ116_EN0: self.REQ116_EN0(),
+                REQ117_EN0: self.REQ117_EN0(),
+                REQ118_EN0: self.REQ118_EN0(),
+                REQ119_EN0: self.REQ119_EN0(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA0 Request Enable3"]
@@ -4204,6 +5822,80 @@ pub mod regs {
             DMA0_REQ_ENABLE3_CLR(0)
         }
     }
+    impl core::fmt::Debug for DMA0_REQ_ENABLE3_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA0_REQ_ENABLE3_CLR")
+                .field("REQ96_EN0", &self.REQ96_EN0())
+                .field("REQ97_EN0", &self.REQ97_EN0())
+                .field("REQ98_EN0", &self.REQ98_EN0())
+                .field("REQ99_EN0", &self.REQ99_EN0())
+                .field("REQ100_EN0", &self.REQ100_EN0())
+                .field("REQ101_EN0", &self.REQ101_EN0())
+                .field("REQ102_EN0", &self.REQ102_EN0())
+                .field("REQ108_EN0", &self.REQ108_EN0())
+                .field("REQ109_EN0", &self.REQ109_EN0())
+                .field("REQ110_EN0", &self.REQ110_EN0())
+                .field("REQ111_EN0", &self.REQ111_EN0())
+                .field("REQ112_EN0", &self.REQ112_EN0())
+                .field("REQ113_EN0", &self.REQ113_EN0())
+                .field("REQ114_EN0", &self.REQ114_EN0())
+                .field("REQ115_EN0", &self.REQ115_EN0())
+                .field("REQ116_EN0", &self.REQ116_EN0())
+                .field("REQ117_EN0", &self.REQ117_EN0())
+                .field("REQ118_EN0", &self.REQ118_EN0())
+                .field("REQ119_EN0", &self.REQ119_EN0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE3_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA0_REQ_ENABLE3_CLR {
+                REQ96_EN0: bool,
+                REQ97_EN0: bool,
+                REQ98_EN0: bool,
+                REQ99_EN0: bool,
+                REQ100_EN0: bool,
+                REQ101_EN0: bool,
+                REQ102_EN0: bool,
+                REQ108_EN0: bool,
+                REQ109_EN0: bool,
+                REQ110_EN0: bool,
+                REQ111_EN0: bool,
+                REQ112_EN0: bool,
+                REQ113_EN0: bool,
+                REQ114_EN0: bool,
+                REQ115_EN0: bool,
+                REQ116_EN0: bool,
+                REQ117_EN0: bool,
+                REQ118_EN0: bool,
+                REQ119_EN0: bool,
+            }
+            let proxy = DMA0_REQ_ENABLE3_CLR {
+                REQ96_EN0: self.REQ96_EN0(),
+                REQ97_EN0: self.REQ97_EN0(),
+                REQ98_EN0: self.REQ98_EN0(),
+                REQ99_EN0: self.REQ99_EN0(),
+                REQ100_EN0: self.REQ100_EN0(),
+                REQ101_EN0: self.REQ101_EN0(),
+                REQ102_EN0: self.REQ102_EN0(),
+                REQ108_EN0: self.REQ108_EN0(),
+                REQ109_EN0: self.REQ109_EN0(),
+                REQ110_EN0: self.REQ110_EN0(),
+                REQ111_EN0: self.REQ111_EN0(),
+                REQ112_EN0: self.REQ112_EN0(),
+                REQ113_EN0: self.REQ113_EN0(),
+                REQ114_EN0: self.REQ114_EN0(),
+                REQ115_EN0: self.REQ115_EN0(),
+                REQ116_EN0: self.REQ116_EN0(),
+                REQ117_EN0: self.REQ117_EN0(),
+                REQ118_EN0: self.REQ118_EN0(),
+                REQ119_EN0: self.REQ119_EN0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA0 Request Enable3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4385,6 +6077,80 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA0_REQ_ENABLE3_SET {
             DMA0_REQ_ENABLE3_SET(0)
+        }
+    }
+    impl core::fmt::Debug for DMA0_REQ_ENABLE3_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA0_REQ_ENABLE3_SET")
+                .field("REQ96_EN0", &self.REQ96_EN0())
+                .field("REQ97_EN0", &self.REQ97_EN0())
+                .field("REQ98_EN0", &self.REQ98_EN0())
+                .field("REQ99_EN0", &self.REQ99_EN0())
+                .field("REQ100_EN0", &self.REQ100_EN0())
+                .field("REQ101_EN0", &self.REQ101_EN0())
+                .field("REQ102_EN0", &self.REQ102_EN0())
+                .field("REQ108_EN0", &self.REQ108_EN0())
+                .field("REQ109_EN0", &self.REQ109_EN0())
+                .field("REQ110_EN0", &self.REQ110_EN0())
+                .field("REQ111_EN0", &self.REQ111_EN0())
+                .field("REQ112_EN0", &self.REQ112_EN0())
+                .field("REQ113_EN0", &self.REQ113_EN0())
+                .field("REQ114_EN0", &self.REQ114_EN0())
+                .field("REQ115_EN0", &self.REQ115_EN0())
+                .field("REQ116_EN0", &self.REQ116_EN0())
+                .field("REQ117_EN0", &self.REQ117_EN0())
+                .field("REQ118_EN0", &self.REQ118_EN0())
+                .field("REQ119_EN0", &self.REQ119_EN0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE3_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA0_REQ_ENABLE3_SET {
+                REQ96_EN0: bool,
+                REQ97_EN0: bool,
+                REQ98_EN0: bool,
+                REQ99_EN0: bool,
+                REQ100_EN0: bool,
+                REQ101_EN0: bool,
+                REQ102_EN0: bool,
+                REQ108_EN0: bool,
+                REQ109_EN0: bool,
+                REQ110_EN0: bool,
+                REQ111_EN0: bool,
+                REQ112_EN0: bool,
+                REQ113_EN0: bool,
+                REQ114_EN0: bool,
+                REQ115_EN0: bool,
+                REQ116_EN0: bool,
+                REQ117_EN0: bool,
+                REQ118_EN0: bool,
+                REQ119_EN0: bool,
+            }
+            let proxy = DMA0_REQ_ENABLE3_SET {
+                REQ96_EN0: self.REQ96_EN0(),
+                REQ97_EN0: self.REQ97_EN0(),
+                REQ98_EN0: self.REQ98_EN0(),
+                REQ99_EN0: self.REQ99_EN0(),
+                REQ100_EN0: self.REQ100_EN0(),
+                REQ101_EN0: self.REQ101_EN0(),
+                REQ102_EN0: self.REQ102_EN0(),
+                REQ108_EN0: self.REQ108_EN0(),
+                REQ109_EN0: self.REQ109_EN0(),
+                REQ110_EN0: self.REQ110_EN0(),
+                REQ111_EN0: self.REQ111_EN0(),
+                REQ112_EN0: self.REQ112_EN0(),
+                REQ113_EN0: self.REQ113_EN0(),
+                REQ114_EN0: self.REQ114_EN0(),
+                REQ115_EN0: self.REQ115_EN0(),
+                REQ116_EN0: self.REQ116_EN0(),
+                REQ117_EN0: self.REQ117_EN0(),
+                REQ118_EN0: self.REQ118_EN0(),
+                REQ119_EN0: self.REQ119_EN0(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA1 Request Enable0"]
@@ -4606,6 +6372,92 @@ pub mod regs {
             DMA1_REQ_ENABLE0(0)
         }
     }
+    impl core::fmt::Debug for DMA1_REQ_ENABLE0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA1_REQ_ENABLE0")
+                .field("REQ3_EN1", &self.REQ3_EN1())
+                .field("REQ4_EN1", &self.REQ4_EN1())
+                .field("REQ5_EN1", &self.REQ5_EN1())
+                .field("REQ6_EN1", &self.REQ6_EN1())
+                .field("REQ7_EN1", &self.REQ7_EN1())
+                .field("REQ8_EN1", &self.REQ8_EN1())
+                .field("REQ9_EN1", &self.REQ9_EN1())
+                .field("REQ10_EN1", &self.REQ10_EN1())
+                .field("REQ11_EN1", &self.REQ11_EN1())
+                .field("REQ12_EN1", &self.REQ12_EN1())
+                .field("REQ13_EN1", &self.REQ13_EN1())
+                .field("REQ14_EN1", &self.REQ14_EN1())
+                .field("REQ15_EN1", &self.REQ15_EN1())
+                .field("REQ16_EN1", &self.REQ16_EN1())
+                .field("REQ17_EN1", &self.REQ17_EN1())
+                .field("REQ18_EN1", &self.REQ18_EN1())
+                .field("REQ21_EN1", &self.REQ21_EN1())
+                .field("REQ22_EN1", &self.REQ22_EN1())
+                .field("REQ23_EN1", &self.REQ23_EN1())
+                .field("REQ24_EN1", &self.REQ24_EN1())
+                .field("REQ28_EN1", &self.REQ28_EN1())
+                .field("REQ29_EN1", &self.REQ29_EN1())
+                .field("REQ31_EN1", &self.REQ31_EN1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA1_REQ_ENABLE0 {
+                REQ3_EN1: bool,
+                REQ4_EN1: bool,
+                REQ5_EN1: bool,
+                REQ6_EN1: bool,
+                REQ7_EN1: bool,
+                REQ8_EN1: bool,
+                REQ9_EN1: bool,
+                REQ10_EN1: bool,
+                REQ11_EN1: bool,
+                REQ12_EN1: bool,
+                REQ13_EN1: bool,
+                REQ14_EN1: bool,
+                REQ15_EN1: bool,
+                REQ16_EN1: bool,
+                REQ17_EN1: bool,
+                REQ18_EN1: bool,
+                REQ21_EN1: bool,
+                REQ22_EN1: bool,
+                REQ23_EN1: bool,
+                REQ24_EN1: bool,
+                REQ28_EN1: bool,
+                REQ29_EN1: bool,
+                REQ31_EN1: bool,
+            }
+            let proxy = DMA1_REQ_ENABLE0 {
+                REQ3_EN1: self.REQ3_EN1(),
+                REQ4_EN1: self.REQ4_EN1(),
+                REQ5_EN1: self.REQ5_EN1(),
+                REQ6_EN1: self.REQ6_EN1(),
+                REQ7_EN1: self.REQ7_EN1(),
+                REQ8_EN1: self.REQ8_EN1(),
+                REQ9_EN1: self.REQ9_EN1(),
+                REQ10_EN1: self.REQ10_EN1(),
+                REQ11_EN1: self.REQ11_EN1(),
+                REQ12_EN1: self.REQ12_EN1(),
+                REQ13_EN1: self.REQ13_EN1(),
+                REQ14_EN1: self.REQ14_EN1(),
+                REQ15_EN1: self.REQ15_EN1(),
+                REQ16_EN1: self.REQ16_EN1(),
+                REQ17_EN1: self.REQ17_EN1(),
+                REQ18_EN1: self.REQ18_EN1(),
+                REQ21_EN1: self.REQ21_EN1(),
+                REQ22_EN1: self.REQ22_EN1(),
+                REQ23_EN1: self.REQ23_EN1(),
+                REQ24_EN1: self.REQ24_EN1(),
+                REQ28_EN1: self.REQ28_EN1(),
+                REQ29_EN1: self.REQ29_EN1(),
+                REQ31_EN1: self.REQ31_EN1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA1 Request Enable0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4823,6 +6675,92 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA1_REQ_ENABLE0_CLR {
             DMA1_REQ_ENABLE0_CLR(0)
+        }
+    }
+    impl core::fmt::Debug for DMA1_REQ_ENABLE0_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA1_REQ_ENABLE0_CLR")
+                .field("REQ3_EN1", &self.REQ3_EN1())
+                .field("REQ4_EN1", &self.REQ4_EN1())
+                .field("REQ5_EN1", &self.REQ5_EN1())
+                .field("REQ6_EN1", &self.REQ6_EN1())
+                .field("REQ7_EN1", &self.REQ7_EN1())
+                .field("REQ8_EN1", &self.REQ8_EN1())
+                .field("REQ9_EN1", &self.REQ9_EN1())
+                .field("REQ10_EN1", &self.REQ10_EN1())
+                .field("REQ11_EN1", &self.REQ11_EN1())
+                .field("REQ12_EN1", &self.REQ12_EN1())
+                .field("REQ13_EN1", &self.REQ13_EN1())
+                .field("REQ14_EN1", &self.REQ14_EN1())
+                .field("REQ15_EN1", &self.REQ15_EN1())
+                .field("REQ16_EN1", &self.REQ16_EN1())
+                .field("REQ17_EN1", &self.REQ17_EN1())
+                .field("REQ18_EN1", &self.REQ18_EN1())
+                .field("REQ21_EN1", &self.REQ21_EN1())
+                .field("REQ22_EN1", &self.REQ22_EN1())
+                .field("REQ23_EN1", &self.REQ23_EN1())
+                .field("REQ24_EN1", &self.REQ24_EN1())
+                .field("REQ28_EN1", &self.REQ28_EN1())
+                .field("REQ29_EN1", &self.REQ29_EN1())
+                .field("REQ31_EN1", &self.REQ31_EN1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE0_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA1_REQ_ENABLE0_CLR {
+                REQ3_EN1: bool,
+                REQ4_EN1: bool,
+                REQ5_EN1: bool,
+                REQ6_EN1: bool,
+                REQ7_EN1: bool,
+                REQ8_EN1: bool,
+                REQ9_EN1: bool,
+                REQ10_EN1: bool,
+                REQ11_EN1: bool,
+                REQ12_EN1: bool,
+                REQ13_EN1: bool,
+                REQ14_EN1: bool,
+                REQ15_EN1: bool,
+                REQ16_EN1: bool,
+                REQ17_EN1: bool,
+                REQ18_EN1: bool,
+                REQ21_EN1: bool,
+                REQ22_EN1: bool,
+                REQ23_EN1: bool,
+                REQ24_EN1: bool,
+                REQ28_EN1: bool,
+                REQ29_EN1: bool,
+                REQ31_EN1: bool,
+            }
+            let proxy = DMA1_REQ_ENABLE0_CLR {
+                REQ3_EN1: self.REQ3_EN1(),
+                REQ4_EN1: self.REQ4_EN1(),
+                REQ5_EN1: self.REQ5_EN1(),
+                REQ6_EN1: self.REQ6_EN1(),
+                REQ7_EN1: self.REQ7_EN1(),
+                REQ8_EN1: self.REQ8_EN1(),
+                REQ9_EN1: self.REQ9_EN1(),
+                REQ10_EN1: self.REQ10_EN1(),
+                REQ11_EN1: self.REQ11_EN1(),
+                REQ12_EN1: self.REQ12_EN1(),
+                REQ13_EN1: self.REQ13_EN1(),
+                REQ14_EN1: self.REQ14_EN1(),
+                REQ15_EN1: self.REQ15_EN1(),
+                REQ16_EN1: self.REQ16_EN1(),
+                REQ17_EN1: self.REQ17_EN1(),
+                REQ18_EN1: self.REQ18_EN1(),
+                REQ21_EN1: self.REQ21_EN1(),
+                REQ22_EN1: self.REQ22_EN1(),
+                REQ23_EN1: self.REQ23_EN1(),
+                REQ24_EN1: self.REQ24_EN1(),
+                REQ28_EN1: self.REQ28_EN1(),
+                REQ29_EN1: self.REQ29_EN1(),
+                REQ31_EN1: self.REQ31_EN1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA1 Request Enable0"]
@@ -5044,6 +6982,92 @@ pub mod regs {
             DMA1_REQ_ENABLE0_SET(0)
         }
     }
+    impl core::fmt::Debug for DMA1_REQ_ENABLE0_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA1_REQ_ENABLE0_SET")
+                .field("REQ3_EN1", &self.REQ3_EN1())
+                .field("REQ4_EN1", &self.REQ4_EN1())
+                .field("REQ5_EN1", &self.REQ5_EN1())
+                .field("REQ6_EN1", &self.REQ6_EN1())
+                .field("REQ7_EN1", &self.REQ7_EN1())
+                .field("REQ8_EN1", &self.REQ8_EN1())
+                .field("REQ9_EN1", &self.REQ9_EN1())
+                .field("REQ10_EN1", &self.REQ10_EN1())
+                .field("REQ11_EN1", &self.REQ11_EN1())
+                .field("REQ12_EN1", &self.REQ12_EN1())
+                .field("REQ13_EN1", &self.REQ13_EN1())
+                .field("REQ14_EN1", &self.REQ14_EN1())
+                .field("REQ15_EN1", &self.REQ15_EN1())
+                .field("REQ16_EN1", &self.REQ16_EN1())
+                .field("REQ17_EN1", &self.REQ17_EN1())
+                .field("REQ18_EN1", &self.REQ18_EN1())
+                .field("REQ21_EN1", &self.REQ21_EN1())
+                .field("REQ22_EN1", &self.REQ22_EN1())
+                .field("REQ23_EN1", &self.REQ23_EN1())
+                .field("REQ24_EN1", &self.REQ24_EN1())
+                .field("REQ28_EN1", &self.REQ28_EN1())
+                .field("REQ29_EN1", &self.REQ29_EN1())
+                .field("REQ31_EN1", &self.REQ31_EN1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE0_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA1_REQ_ENABLE0_SET {
+                REQ3_EN1: bool,
+                REQ4_EN1: bool,
+                REQ5_EN1: bool,
+                REQ6_EN1: bool,
+                REQ7_EN1: bool,
+                REQ8_EN1: bool,
+                REQ9_EN1: bool,
+                REQ10_EN1: bool,
+                REQ11_EN1: bool,
+                REQ12_EN1: bool,
+                REQ13_EN1: bool,
+                REQ14_EN1: bool,
+                REQ15_EN1: bool,
+                REQ16_EN1: bool,
+                REQ17_EN1: bool,
+                REQ18_EN1: bool,
+                REQ21_EN1: bool,
+                REQ22_EN1: bool,
+                REQ23_EN1: bool,
+                REQ24_EN1: bool,
+                REQ28_EN1: bool,
+                REQ29_EN1: bool,
+                REQ31_EN1: bool,
+            }
+            let proxy = DMA1_REQ_ENABLE0_SET {
+                REQ3_EN1: self.REQ3_EN1(),
+                REQ4_EN1: self.REQ4_EN1(),
+                REQ5_EN1: self.REQ5_EN1(),
+                REQ6_EN1: self.REQ6_EN1(),
+                REQ7_EN1: self.REQ7_EN1(),
+                REQ8_EN1: self.REQ8_EN1(),
+                REQ9_EN1: self.REQ9_EN1(),
+                REQ10_EN1: self.REQ10_EN1(),
+                REQ11_EN1: self.REQ11_EN1(),
+                REQ12_EN1: self.REQ12_EN1(),
+                REQ13_EN1: self.REQ13_EN1(),
+                REQ14_EN1: self.REQ14_EN1(),
+                REQ15_EN1: self.REQ15_EN1(),
+                REQ16_EN1: self.REQ16_EN1(),
+                REQ17_EN1: self.REQ17_EN1(),
+                REQ18_EN1: self.REQ18_EN1(),
+                REQ21_EN1: self.REQ21_EN1(),
+                REQ22_EN1: self.REQ22_EN1(),
+                REQ23_EN1: self.REQ23_EN1(),
+                REQ24_EN1: self.REQ24_EN1(),
+                REQ28_EN1: self.REQ28_EN1(),
+                REQ29_EN1: self.REQ29_EN1(),
+                REQ31_EN1: self.REQ31_EN1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA1 Request Enable0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5261,6 +7285,92 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA1_REQ_ENABLE0_TOG {
             DMA1_REQ_ENABLE0_TOG(0)
+        }
+    }
+    impl core::fmt::Debug for DMA1_REQ_ENABLE0_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA1_REQ_ENABLE0_TOG")
+                .field("REQ3_EN1", &self.REQ3_EN1())
+                .field("REQ4_EN1", &self.REQ4_EN1())
+                .field("REQ5_EN1", &self.REQ5_EN1())
+                .field("REQ6_EN1", &self.REQ6_EN1())
+                .field("REQ7_EN1", &self.REQ7_EN1())
+                .field("REQ8_EN1", &self.REQ8_EN1())
+                .field("REQ9_EN1", &self.REQ9_EN1())
+                .field("REQ10_EN1", &self.REQ10_EN1())
+                .field("REQ11_EN1", &self.REQ11_EN1())
+                .field("REQ12_EN1", &self.REQ12_EN1())
+                .field("REQ13_EN1", &self.REQ13_EN1())
+                .field("REQ14_EN1", &self.REQ14_EN1())
+                .field("REQ15_EN1", &self.REQ15_EN1())
+                .field("REQ16_EN1", &self.REQ16_EN1())
+                .field("REQ17_EN1", &self.REQ17_EN1())
+                .field("REQ18_EN1", &self.REQ18_EN1())
+                .field("REQ21_EN1", &self.REQ21_EN1())
+                .field("REQ22_EN1", &self.REQ22_EN1())
+                .field("REQ23_EN1", &self.REQ23_EN1())
+                .field("REQ24_EN1", &self.REQ24_EN1())
+                .field("REQ28_EN1", &self.REQ28_EN1())
+                .field("REQ29_EN1", &self.REQ29_EN1())
+                .field("REQ31_EN1", &self.REQ31_EN1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE0_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA1_REQ_ENABLE0_TOG {
+                REQ3_EN1: bool,
+                REQ4_EN1: bool,
+                REQ5_EN1: bool,
+                REQ6_EN1: bool,
+                REQ7_EN1: bool,
+                REQ8_EN1: bool,
+                REQ9_EN1: bool,
+                REQ10_EN1: bool,
+                REQ11_EN1: bool,
+                REQ12_EN1: bool,
+                REQ13_EN1: bool,
+                REQ14_EN1: bool,
+                REQ15_EN1: bool,
+                REQ16_EN1: bool,
+                REQ17_EN1: bool,
+                REQ18_EN1: bool,
+                REQ21_EN1: bool,
+                REQ22_EN1: bool,
+                REQ23_EN1: bool,
+                REQ24_EN1: bool,
+                REQ28_EN1: bool,
+                REQ29_EN1: bool,
+                REQ31_EN1: bool,
+            }
+            let proxy = DMA1_REQ_ENABLE0_TOG {
+                REQ3_EN1: self.REQ3_EN1(),
+                REQ4_EN1: self.REQ4_EN1(),
+                REQ5_EN1: self.REQ5_EN1(),
+                REQ6_EN1: self.REQ6_EN1(),
+                REQ7_EN1: self.REQ7_EN1(),
+                REQ8_EN1: self.REQ8_EN1(),
+                REQ9_EN1: self.REQ9_EN1(),
+                REQ10_EN1: self.REQ10_EN1(),
+                REQ11_EN1: self.REQ11_EN1(),
+                REQ12_EN1: self.REQ12_EN1(),
+                REQ13_EN1: self.REQ13_EN1(),
+                REQ14_EN1: self.REQ14_EN1(),
+                REQ15_EN1: self.REQ15_EN1(),
+                REQ16_EN1: self.REQ16_EN1(),
+                REQ17_EN1: self.REQ17_EN1(),
+                REQ18_EN1: self.REQ18_EN1(),
+                REQ21_EN1: self.REQ21_EN1(),
+                REQ22_EN1: self.REQ22_EN1(),
+                REQ23_EN1: self.REQ23_EN1(),
+                REQ24_EN1: self.REQ24_EN1(),
+                REQ28_EN1: self.REQ28_EN1(),
+                REQ29_EN1: self.REQ29_EN1(),
+                REQ31_EN1: self.REQ31_EN1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA1 Request Enable1"]
@@ -5545,6 +7655,113 @@ pub mod regs {
             DMA1_REQ_ENABLE1(0)
         }
     }
+    impl core::fmt::Debug for DMA1_REQ_ENABLE1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA1_REQ_ENABLE1")
+                .field("REQ32_EN1", &self.REQ32_EN1())
+                .field("REQ33_EN1", &self.REQ33_EN1())
+                .field("REQ34_EN1", &self.REQ34_EN1())
+                .field("REQ35_EN1", &self.REQ35_EN1())
+                .field("REQ36_EN1", &self.REQ36_EN1())
+                .field("REQ37_EN1", &self.REQ37_EN1())
+                .field("REQ38_EN1", &self.REQ38_EN1())
+                .field("REQ39_EN1", &self.REQ39_EN1())
+                .field("REQ40_EN1", &self.REQ40_EN1())
+                .field("REQ41_EN1", &self.REQ41_EN1())
+                .field("REQ42_EN1", &self.REQ42_EN1())
+                .field("REQ43_EN1", &self.REQ43_EN1())
+                .field("REQ44_EN1", &self.REQ44_EN1())
+                .field("REQ45_EN1", &self.REQ45_EN1())
+                .field("REQ46_EN1", &self.REQ46_EN1())
+                .field("REQ47_EN1", &self.REQ47_EN1())
+                .field("REQ48_EN1", &self.REQ48_EN1())
+                .field("REQ49_EN1", &self.REQ49_EN1())
+                .field("REQ50_EN1", &self.REQ50_EN1())
+                .field("REQ51_EN1", &self.REQ51_EN1())
+                .field("REQ52_EN1", &self.REQ52_EN1())
+                .field("REQ53_EN1", &self.REQ53_EN1())
+                .field("REQ54_EN1", &self.REQ54_EN1())
+                .field("REQ57_EN1", &self.REQ57_EN1())
+                .field("REQ58_EN1", &self.REQ58_EN1())
+                .field("REQ59_EN1", &self.REQ59_EN1())
+                .field("REQ60_EN1", &self.REQ60_EN1())
+                .field("REQ61_EN1", &self.REQ61_EN1())
+                .field("REQ62_EN1", &self.REQ62_EN1())
+                .field("REQ63_EN1", &self.REQ63_EN1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA1_REQ_ENABLE1 {
+                REQ32_EN1: bool,
+                REQ33_EN1: bool,
+                REQ34_EN1: bool,
+                REQ35_EN1: bool,
+                REQ36_EN1: bool,
+                REQ37_EN1: bool,
+                REQ38_EN1: bool,
+                REQ39_EN1: bool,
+                REQ40_EN1: bool,
+                REQ41_EN1: bool,
+                REQ42_EN1: bool,
+                REQ43_EN1: bool,
+                REQ44_EN1: bool,
+                REQ45_EN1: bool,
+                REQ46_EN1: bool,
+                REQ47_EN1: bool,
+                REQ48_EN1: bool,
+                REQ49_EN1: bool,
+                REQ50_EN1: bool,
+                REQ51_EN1: bool,
+                REQ52_EN1: bool,
+                REQ53_EN1: bool,
+                REQ54_EN1: bool,
+                REQ57_EN1: bool,
+                REQ58_EN1: bool,
+                REQ59_EN1: bool,
+                REQ60_EN1: bool,
+                REQ61_EN1: bool,
+                REQ62_EN1: bool,
+                REQ63_EN1: bool,
+            }
+            let proxy = DMA1_REQ_ENABLE1 {
+                REQ32_EN1: self.REQ32_EN1(),
+                REQ33_EN1: self.REQ33_EN1(),
+                REQ34_EN1: self.REQ34_EN1(),
+                REQ35_EN1: self.REQ35_EN1(),
+                REQ36_EN1: self.REQ36_EN1(),
+                REQ37_EN1: self.REQ37_EN1(),
+                REQ38_EN1: self.REQ38_EN1(),
+                REQ39_EN1: self.REQ39_EN1(),
+                REQ40_EN1: self.REQ40_EN1(),
+                REQ41_EN1: self.REQ41_EN1(),
+                REQ42_EN1: self.REQ42_EN1(),
+                REQ43_EN1: self.REQ43_EN1(),
+                REQ44_EN1: self.REQ44_EN1(),
+                REQ45_EN1: self.REQ45_EN1(),
+                REQ46_EN1: self.REQ46_EN1(),
+                REQ47_EN1: self.REQ47_EN1(),
+                REQ48_EN1: self.REQ48_EN1(),
+                REQ49_EN1: self.REQ49_EN1(),
+                REQ50_EN1: self.REQ50_EN1(),
+                REQ51_EN1: self.REQ51_EN1(),
+                REQ52_EN1: self.REQ52_EN1(),
+                REQ53_EN1: self.REQ53_EN1(),
+                REQ54_EN1: self.REQ54_EN1(),
+                REQ57_EN1: self.REQ57_EN1(),
+                REQ58_EN1: self.REQ58_EN1(),
+                REQ59_EN1: self.REQ59_EN1(),
+                REQ60_EN1: self.REQ60_EN1(),
+                REQ61_EN1: self.REQ61_EN1(),
+                REQ62_EN1: self.REQ62_EN1(),
+                REQ63_EN1: self.REQ63_EN1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA1 Request Enable1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5825,6 +8042,113 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA1_REQ_ENABLE1_CLR {
             DMA1_REQ_ENABLE1_CLR(0)
+        }
+    }
+    impl core::fmt::Debug for DMA1_REQ_ENABLE1_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA1_REQ_ENABLE1_CLR")
+                .field("REQ32_EN1", &self.REQ32_EN1())
+                .field("REQ33_EN1", &self.REQ33_EN1())
+                .field("REQ34_EN1", &self.REQ34_EN1())
+                .field("REQ35_EN1", &self.REQ35_EN1())
+                .field("REQ36_EN1", &self.REQ36_EN1())
+                .field("REQ37_EN1", &self.REQ37_EN1())
+                .field("REQ38_EN1", &self.REQ38_EN1())
+                .field("REQ39_EN1", &self.REQ39_EN1())
+                .field("REQ40_EN1", &self.REQ40_EN1())
+                .field("REQ41_EN1", &self.REQ41_EN1())
+                .field("REQ42_EN1", &self.REQ42_EN1())
+                .field("REQ43_EN1", &self.REQ43_EN1())
+                .field("REQ44_EN1", &self.REQ44_EN1())
+                .field("REQ45_EN1", &self.REQ45_EN1())
+                .field("REQ46_EN1", &self.REQ46_EN1())
+                .field("REQ47_EN1", &self.REQ47_EN1())
+                .field("REQ48_EN1", &self.REQ48_EN1())
+                .field("REQ49_EN1", &self.REQ49_EN1())
+                .field("REQ50_EN1", &self.REQ50_EN1())
+                .field("REQ51_EN1", &self.REQ51_EN1())
+                .field("REQ52_EN1", &self.REQ52_EN1())
+                .field("REQ53_EN1", &self.REQ53_EN1())
+                .field("REQ54_EN1", &self.REQ54_EN1())
+                .field("REQ57_EN1", &self.REQ57_EN1())
+                .field("REQ58_EN1", &self.REQ58_EN1())
+                .field("REQ59_EN1", &self.REQ59_EN1())
+                .field("REQ60_EN1", &self.REQ60_EN1())
+                .field("REQ61_EN1", &self.REQ61_EN1())
+                .field("REQ62_EN1", &self.REQ62_EN1())
+                .field("REQ63_EN1", &self.REQ63_EN1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE1_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA1_REQ_ENABLE1_CLR {
+                REQ32_EN1: bool,
+                REQ33_EN1: bool,
+                REQ34_EN1: bool,
+                REQ35_EN1: bool,
+                REQ36_EN1: bool,
+                REQ37_EN1: bool,
+                REQ38_EN1: bool,
+                REQ39_EN1: bool,
+                REQ40_EN1: bool,
+                REQ41_EN1: bool,
+                REQ42_EN1: bool,
+                REQ43_EN1: bool,
+                REQ44_EN1: bool,
+                REQ45_EN1: bool,
+                REQ46_EN1: bool,
+                REQ47_EN1: bool,
+                REQ48_EN1: bool,
+                REQ49_EN1: bool,
+                REQ50_EN1: bool,
+                REQ51_EN1: bool,
+                REQ52_EN1: bool,
+                REQ53_EN1: bool,
+                REQ54_EN1: bool,
+                REQ57_EN1: bool,
+                REQ58_EN1: bool,
+                REQ59_EN1: bool,
+                REQ60_EN1: bool,
+                REQ61_EN1: bool,
+                REQ62_EN1: bool,
+                REQ63_EN1: bool,
+            }
+            let proxy = DMA1_REQ_ENABLE1_CLR {
+                REQ32_EN1: self.REQ32_EN1(),
+                REQ33_EN1: self.REQ33_EN1(),
+                REQ34_EN1: self.REQ34_EN1(),
+                REQ35_EN1: self.REQ35_EN1(),
+                REQ36_EN1: self.REQ36_EN1(),
+                REQ37_EN1: self.REQ37_EN1(),
+                REQ38_EN1: self.REQ38_EN1(),
+                REQ39_EN1: self.REQ39_EN1(),
+                REQ40_EN1: self.REQ40_EN1(),
+                REQ41_EN1: self.REQ41_EN1(),
+                REQ42_EN1: self.REQ42_EN1(),
+                REQ43_EN1: self.REQ43_EN1(),
+                REQ44_EN1: self.REQ44_EN1(),
+                REQ45_EN1: self.REQ45_EN1(),
+                REQ46_EN1: self.REQ46_EN1(),
+                REQ47_EN1: self.REQ47_EN1(),
+                REQ48_EN1: self.REQ48_EN1(),
+                REQ49_EN1: self.REQ49_EN1(),
+                REQ50_EN1: self.REQ50_EN1(),
+                REQ51_EN1: self.REQ51_EN1(),
+                REQ52_EN1: self.REQ52_EN1(),
+                REQ53_EN1: self.REQ53_EN1(),
+                REQ54_EN1: self.REQ54_EN1(),
+                REQ57_EN1: self.REQ57_EN1(),
+                REQ58_EN1: self.REQ58_EN1(),
+                REQ59_EN1: self.REQ59_EN1(),
+                REQ60_EN1: self.REQ60_EN1(),
+                REQ61_EN1: self.REQ61_EN1(),
+                REQ62_EN1: self.REQ62_EN1(),
+                REQ63_EN1: self.REQ63_EN1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA1 Request Enable1"]
@@ -6109,6 +8433,113 @@ pub mod regs {
             DMA1_REQ_ENABLE1_SET(0)
         }
     }
+    impl core::fmt::Debug for DMA1_REQ_ENABLE1_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA1_REQ_ENABLE1_SET")
+                .field("REQ32_EN1", &self.REQ32_EN1())
+                .field("REQ33_EN1", &self.REQ33_EN1())
+                .field("REQ34_EN1", &self.REQ34_EN1())
+                .field("REQ35_EN1", &self.REQ35_EN1())
+                .field("REQ36_EN1", &self.REQ36_EN1())
+                .field("REQ37_EN1", &self.REQ37_EN1())
+                .field("REQ38_EN1", &self.REQ38_EN1())
+                .field("REQ39_EN1", &self.REQ39_EN1())
+                .field("REQ40_EN1", &self.REQ40_EN1())
+                .field("REQ41_EN1", &self.REQ41_EN1())
+                .field("REQ42_EN1", &self.REQ42_EN1())
+                .field("REQ43_EN1", &self.REQ43_EN1())
+                .field("REQ44_EN1", &self.REQ44_EN1())
+                .field("REQ45_EN1", &self.REQ45_EN1())
+                .field("REQ46_EN1", &self.REQ46_EN1())
+                .field("REQ47_EN1", &self.REQ47_EN1())
+                .field("REQ48_EN1", &self.REQ48_EN1())
+                .field("REQ49_EN1", &self.REQ49_EN1())
+                .field("REQ50_EN1", &self.REQ50_EN1())
+                .field("REQ51_EN1", &self.REQ51_EN1())
+                .field("REQ52_EN1", &self.REQ52_EN1())
+                .field("REQ53_EN1", &self.REQ53_EN1())
+                .field("REQ54_EN1", &self.REQ54_EN1())
+                .field("REQ57_EN1", &self.REQ57_EN1())
+                .field("REQ58_EN1", &self.REQ58_EN1())
+                .field("REQ59_EN1", &self.REQ59_EN1())
+                .field("REQ60_EN1", &self.REQ60_EN1())
+                .field("REQ61_EN1", &self.REQ61_EN1())
+                .field("REQ62_EN1", &self.REQ62_EN1())
+                .field("REQ63_EN1", &self.REQ63_EN1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE1_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA1_REQ_ENABLE1_SET {
+                REQ32_EN1: bool,
+                REQ33_EN1: bool,
+                REQ34_EN1: bool,
+                REQ35_EN1: bool,
+                REQ36_EN1: bool,
+                REQ37_EN1: bool,
+                REQ38_EN1: bool,
+                REQ39_EN1: bool,
+                REQ40_EN1: bool,
+                REQ41_EN1: bool,
+                REQ42_EN1: bool,
+                REQ43_EN1: bool,
+                REQ44_EN1: bool,
+                REQ45_EN1: bool,
+                REQ46_EN1: bool,
+                REQ47_EN1: bool,
+                REQ48_EN1: bool,
+                REQ49_EN1: bool,
+                REQ50_EN1: bool,
+                REQ51_EN1: bool,
+                REQ52_EN1: bool,
+                REQ53_EN1: bool,
+                REQ54_EN1: bool,
+                REQ57_EN1: bool,
+                REQ58_EN1: bool,
+                REQ59_EN1: bool,
+                REQ60_EN1: bool,
+                REQ61_EN1: bool,
+                REQ62_EN1: bool,
+                REQ63_EN1: bool,
+            }
+            let proxy = DMA1_REQ_ENABLE1_SET {
+                REQ32_EN1: self.REQ32_EN1(),
+                REQ33_EN1: self.REQ33_EN1(),
+                REQ34_EN1: self.REQ34_EN1(),
+                REQ35_EN1: self.REQ35_EN1(),
+                REQ36_EN1: self.REQ36_EN1(),
+                REQ37_EN1: self.REQ37_EN1(),
+                REQ38_EN1: self.REQ38_EN1(),
+                REQ39_EN1: self.REQ39_EN1(),
+                REQ40_EN1: self.REQ40_EN1(),
+                REQ41_EN1: self.REQ41_EN1(),
+                REQ42_EN1: self.REQ42_EN1(),
+                REQ43_EN1: self.REQ43_EN1(),
+                REQ44_EN1: self.REQ44_EN1(),
+                REQ45_EN1: self.REQ45_EN1(),
+                REQ46_EN1: self.REQ46_EN1(),
+                REQ47_EN1: self.REQ47_EN1(),
+                REQ48_EN1: self.REQ48_EN1(),
+                REQ49_EN1: self.REQ49_EN1(),
+                REQ50_EN1: self.REQ50_EN1(),
+                REQ51_EN1: self.REQ51_EN1(),
+                REQ52_EN1: self.REQ52_EN1(),
+                REQ53_EN1: self.REQ53_EN1(),
+                REQ54_EN1: self.REQ54_EN1(),
+                REQ57_EN1: self.REQ57_EN1(),
+                REQ58_EN1: self.REQ58_EN1(),
+                REQ59_EN1: self.REQ59_EN1(),
+                REQ60_EN1: self.REQ60_EN1(),
+                REQ61_EN1: self.REQ61_EN1(),
+                REQ62_EN1: self.REQ62_EN1(),
+                REQ63_EN1: self.REQ63_EN1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA1 Request Enable1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6391,6 +8822,113 @@ pub mod regs {
             DMA1_REQ_ENABLE1_TOG(0)
         }
     }
+    impl core::fmt::Debug for DMA1_REQ_ENABLE1_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA1_REQ_ENABLE1_TOG")
+                .field("REQ32_EN1", &self.REQ32_EN1())
+                .field("REQ33_EN1", &self.REQ33_EN1())
+                .field("REQ34_EN1", &self.REQ34_EN1())
+                .field("REQ35_EN1", &self.REQ35_EN1())
+                .field("REQ36_EN1", &self.REQ36_EN1())
+                .field("REQ37_EN1", &self.REQ37_EN1())
+                .field("REQ38_EN1", &self.REQ38_EN1())
+                .field("REQ39_EN1", &self.REQ39_EN1())
+                .field("REQ40_EN1", &self.REQ40_EN1())
+                .field("REQ41_EN1", &self.REQ41_EN1())
+                .field("REQ42_EN1", &self.REQ42_EN1())
+                .field("REQ43_EN1", &self.REQ43_EN1())
+                .field("REQ44_EN1", &self.REQ44_EN1())
+                .field("REQ45_EN1", &self.REQ45_EN1())
+                .field("REQ46_EN1", &self.REQ46_EN1())
+                .field("REQ47_EN1", &self.REQ47_EN1())
+                .field("REQ48_EN1", &self.REQ48_EN1())
+                .field("REQ49_EN1", &self.REQ49_EN1())
+                .field("REQ50_EN1", &self.REQ50_EN1())
+                .field("REQ51_EN1", &self.REQ51_EN1())
+                .field("REQ52_EN1", &self.REQ52_EN1())
+                .field("REQ53_EN1", &self.REQ53_EN1())
+                .field("REQ54_EN1", &self.REQ54_EN1())
+                .field("REQ57_EN1", &self.REQ57_EN1())
+                .field("REQ58_EN1", &self.REQ58_EN1())
+                .field("REQ59_EN1", &self.REQ59_EN1())
+                .field("REQ60_EN1", &self.REQ60_EN1())
+                .field("REQ61_EN1", &self.REQ61_EN1())
+                .field("REQ62_EN1", &self.REQ62_EN1())
+                .field("REQ63_EN1", &self.REQ63_EN1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE1_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA1_REQ_ENABLE1_TOG {
+                REQ32_EN1: bool,
+                REQ33_EN1: bool,
+                REQ34_EN1: bool,
+                REQ35_EN1: bool,
+                REQ36_EN1: bool,
+                REQ37_EN1: bool,
+                REQ38_EN1: bool,
+                REQ39_EN1: bool,
+                REQ40_EN1: bool,
+                REQ41_EN1: bool,
+                REQ42_EN1: bool,
+                REQ43_EN1: bool,
+                REQ44_EN1: bool,
+                REQ45_EN1: bool,
+                REQ46_EN1: bool,
+                REQ47_EN1: bool,
+                REQ48_EN1: bool,
+                REQ49_EN1: bool,
+                REQ50_EN1: bool,
+                REQ51_EN1: bool,
+                REQ52_EN1: bool,
+                REQ53_EN1: bool,
+                REQ54_EN1: bool,
+                REQ57_EN1: bool,
+                REQ58_EN1: bool,
+                REQ59_EN1: bool,
+                REQ60_EN1: bool,
+                REQ61_EN1: bool,
+                REQ62_EN1: bool,
+                REQ63_EN1: bool,
+            }
+            let proxy = DMA1_REQ_ENABLE1_TOG {
+                REQ32_EN1: self.REQ32_EN1(),
+                REQ33_EN1: self.REQ33_EN1(),
+                REQ34_EN1: self.REQ34_EN1(),
+                REQ35_EN1: self.REQ35_EN1(),
+                REQ36_EN1: self.REQ36_EN1(),
+                REQ37_EN1: self.REQ37_EN1(),
+                REQ38_EN1: self.REQ38_EN1(),
+                REQ39_EN1: self.REQ39_EN1(),
+                REQ40_EN1: self.REQ40_EN1(),
+                REQ41_EN1: self.REQ41_EN1(),
+                REQ42_EN1: self.REQ42_EN1(),
+                REQ43_EN1: self.REQ43_EN1(),
+                REQ44_EN1: self.REQ44_EN1(),
+                REQ45_EN1: self.REQ45_EN1(),
+                REQ46_EN1: self.REQ46_EN1(),
+                REQ47_EN1: self.REQ47_EN1(),
+                REQ48_EN1: self.REQ48_EN1(),
+                REQ49_EN1: self.REQ49_EN1(),
+                REQ50_EN1: self.REQ50_EN1(),
+                REQ51_EN1: self.REQ51_EN1(),
+                REQ52_EN1: self.REQ52_EN1(),
+                REQ53_EN1: self.REQ53_EN1(),
+                REQ54_EN1: self.REQ54_EN1(),
+                REQ57_EN1: self.REQ57_EN1(),
+                REQ58_EN1: self.REQ58_EN1(),
+                REQ59_EN1: self.REQ59_EN1(),
+                REQ60_EN1: self.REQ60_EN1(),
+                REQ61_EN1: self.REQ61_EN1(),
+                REQ62_EN1: self.REQ62_EN1(),
+                REQ63_EN1: self.REQ63_EN1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA1 Request Enable2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6599,6 +9137,89 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA1_REQ_ENABLE2 {
             DMA1_REQ_ENABLE2(0)
+        }
+    }
+    impl core::fmt::Debug for DMA1_REQ_ENABLE2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA1_REQ_ENABLE2")
+                .field("REQ64_EN1", &self.REQ64_EN1())
+                .field("REQ65_EN1", &self.REQ65_EN1())
+                .field("REQ66_EN1", &self.REQ66_EN1())
+                .field("REQ67_EN1", &self.REQ67_EN1())
+                .field("REQ68_EN1", &self.REQ68_EN1())
+                .field("REQ69_EN1", &self.REQ69_EN1())
+                .field("REQ70_EN1", &self.REQ70_EN1())
+                .field("REQ71_EN1", &self.REQ71_EN1())
+                .field("REQ72_EN1", &self.REQ72_EN1())
+                .field("REQ73_EN1", &self.REQ73_EN1())
+                .field("REQ74_EN1", &self.REQ74_EN1())
+                .field("REQ75_EN1", &self.REQ75_EN1())
+                .field("REQ76_EN1", &self.REQ76_EN1())
+                .field("REQ77_EN1", &self.REQ77_EN1())
+                .field("REQ78_EN1", &self.REQ78_EN1())
+                .field("REQ79_EN1", &self.REQ79_EN1())
+                .field("REQ80_EN1", &self.REQ80_EN1())
+                .field("REQ81_EN1", &self.REQ81_EN1())
+                .field("REQ82_EN1", &self.REQ82_EN1())
+                .field("REQ83_EN1", &self.REQ83_EN1())
+                .field("REQ84_EN1", &self.REQ84_EN1())
+                .field("REQ95_EN1", &self.REQ95_EN1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA1_REQ_ENABLE2 {
+                REQ64_EN1: bool,
+                REQ65_EN1: bool,
+                REQ66_EN1: bool,
+                REQ67_EN1: bool,
+                REQ68_EN1: bool,
+                REQ69_EN1: bool,
+                REQ70_EN1: bool,
+                REQ71_EN1: bool,
+                REQ72_EN1: bool,
+                REQ73_EN1: bool,
+                REQ74_EN1: bool,
+                REQ75_EN1: bool,
+                REQ76_EN1: bool,
+                REQ77_EN1: bool,
+                REQ78_EN1: bool,
+                REQ79_EN1: bool,
+                REQ80_EN1: bool,
+                REQ81_EN1: bool,
+                REQ82_EN1: bool,
+                REQ83_EN1: bool,
+                REQ84_EN1: bool,
+                REQ95_EN1: bool,
+            }
+            let proxy = DMA1_REQ_ENABLE2 {
+                REQ64_EN1: self.REQ64_EN1(),
+                REQ65_EN1: self.REQ65_EN1(),
+                REQ66_EN1: self.REQ66_EN1(),
+                REQ67_EN1: self.REQ67_EN1(),
+                REQ68_EN1: self.REQ68_EN1(),
+                REQ69_EN1: self.REQ69_EN1(),
+                REQ70_EN1: self.REQ70_EN1(),
+                REQ71_EN1: self.REQ71_EN1(),
+                REQ72_EN1: self.REQ72_EN1(),
+                REQ73_EN1: self.REQ73_EN1(),
+                REQ74_EN1: self.REQ74_EN1(),
+                REQ75_EN1: self.REQ75_EN1(),
+                REQ76_EN1: self.REQ76_EN1(),
+                REQ77_EN1: self.REQ77_EN1(),
+                REQ78_EN1: self.REQ78_EN1(),
+                REQ79_EN1: self.REQ79_EN1(),
+                REQ80_EN1: self.REQ80_EN1(),
+                REQ81_EN1: self.REQ81_EN1(),
+                REQ82_EN1: self.REQ82_EN1(),
+                REQ83_EN1: self.REQ83_EN1(),
+                REQ84_EN1: self.REQ84_EN1(),
+                REQ95_EN1: self.REQ95_EN1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA1 Request Enable2"]
@@ -6901,6 +9522,119 @@ pub mod regs {
             DMA1_REQ_ENABLE2_CLR(0)
         }
     }
+    impl core::fmt::Debug for DMA1_REQ_ENABLE2_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA1_REQ_ENABLE2_CLR")
+                .field("REQ64_EN1", &self.REQ64_EN1())
+                .field("REQ65_EN1", &self.REQ65_EN1())
+                .field("REQ66_EN1", &self.REQ66_EN1())
+                .field("REQ67_EN1", &self.REQ67_EN1())
+                .field("REQ68_EN1", &self.REQ68_EN1())
+                .field("REQ69_EN1", &self.REQ69_EN1())
+                .field("REQ70_EN1", &self.REQ70_EN1())
+                .field("REQ71_EN1", &self.REQ71_EN1())
+                .field("REQ72_EN1", &self.REQ72_EN1())
+                .field("REQ73_EN1", &self.REQ73_EN1())
+                .field("REQ74_EN1", &self.REQ74_EN1())
+                .field("REQ75_EN1", &self.REQ75_EN1())
+                .field("REQ76_EN1", &self.REQ76_EN1())
+                .field("REQ77_EN1", &self.REQ77_EN1())
+                .field("REQ78_EN1", &self.REQ78_EN1())
+                .field("REQ79_EN1", &self.REQ79_EN1())
+                .field("REQ80_EN1", &self.REQ80_EN1())
+                .field("REQ81_EN1", &self.REQ81_EN1())
+                .field("REQ82_EN1", &self.REQ82_EN1())
+                .field("REQ83_EN1", &self.REQ83_EN1())
+                .field("REQ84_EN1", &self.REQ84_EN1())
+                .field("REQ85_EN1", &self.REQ85_EN1())
+                .field("REQ86_EN1", &self.REQ86_EN1())
+                .field("REQ87_EN1", &self.REQ87_EN1())
+                .field("REQ88_EN1", &self.REQ88_EN1())
+                .field("REQ89_EN1", &self.REQ89_EN1())
+                .field("REQ90_EN1", &self.REQ90_EN1())
+                .field("REQ91_EN1", &self.REQ91_EN1())
+                .field("REQ92_EN1", &self.REQ92_EN1())
+                .field("REQ93_EN1", &self.REQ93_EN1())
+                .field("REQ94_EN1", &self.REQ94_EN1())
+                .field("REQ95_EN1", &self.REQ95_EN1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE2_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA1_REQ_ENABLE2_CLR {
+                REQ64_EN1: bool,
+                REQ65_EN1: bool,
+                REQ66_EN1: bool,
+                REQ67_EN1: bool,
+                REQ68_EN1: bool,
+                REQ69_EN1: bool,
+                REQ70_EN1: bool,
+                REQ71_EN1: bool,
+                REQ72_EN1: bool,
+                REQ73_EN1: bool,
+                REQ74_EN1: bool,
+                REQ75_EN1: bool,
+                REQ76_EN1: bool,
+                REQ77_EN1: bool,
+                REQ78_EN1: bool,
+                REQ79_EN1: bool,
+                REQ80_EN1: bool,
+                REQ81_EN1: bool,
+                REQ82_EN1: bool,
+                REQ83_EN1: bool,
+                REQ84_EN1: bool,
+                REQ85_EN1: bool,
+                REQ86_EN1: bool,
+                REQ87_EN1: bool,
+                REQ88_EN1: bool,
+                REQ89_EN1: bool,
+                REQ90_EN1: bool,
+                REQ91_EN1: bool,
+                REQ92_EN1: bool,
+                REQ93_EN1: bool,
+                REQ94_EN1: bool,
+                REQ95_EN1: bool,
+            }
+            let proxy = DMA1_REQ_ENABLE2_CLR {
+                REQ64_EN1: self.REQ64_EN1(),
+                REQ65_EN1: self.REQ65_EN1(),
+                REQ66_EN1: self.REQ66_EN1(),
+                REQ67_EN1: self.REQ67_EN1(),
+                REQ68_EN1: self.REQ68_EN1(),
+                REQ69_EN1: self.REQ69_EN1(),
+                REQ70_EN1: self.REQ70_EN1(),
+                REQ71_EN1: self.REQ71_EN1(),
+                REQ72_EN1: self.REQ72_EN1(),
+                REQ73_EN1: self.REQ73_EN1(),
+                REQ74_EN1: self.REQ74_EN1(),
+                REQ75_EN1: self.REQ75_EN1(),
+                REQ76_EN1: self.REQ76_EN1(),
+                REQ77_EN1: self.REQ77_EN1(),
+                REQ78_EN1: self.REQ78_EN1(),
+                REQ79_EN1: self.REQ79_EN1(),
+                REQ80_EN1: self.REQ80_EN1(),
+                REQ81_EN1: self.REQ81_EN1(),
+                REQ82_EN1: self.REQ82_EN1(),
+                REQ83_EN1: self.REQ83_EN1(),
+                REQ84_EN1: self.REQ84_EN1(),
+                REQ85_EN1: self.REQ85_EN1(),
+                REQ86_EN1: self.REQ86_EN1(),
+                REQ87_EN1: self.REQ87_EN1(),
+                REQ88_EN1: self.REQ88_EN1(),
+                REQ89_EN1: self.REQ89_EN1(),
+                REQ90_EN1: self.REQ90_EN1(),
+                REQ91_EN1: self.REQ91_EN1(),
+                REQ92_EN1: self.REQ92_EN1(),
+                REQ93_EN1: self.REQ93_EN1(),
+                REQ94_EN1: self.REQ94_EN1(),
+                REQ95_EN1: self.REQ95_EN1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA1 Request Enable2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7199,6 +9933,119 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA1_REQ_ENABLE2_SET {
             DMA1_REQ_ENABLE2_SET(0)
+        }
+    }
+    impl core::fmt::Debug for DMA1_REQ_ENABLE2_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA1_REQ_ENABLE2_SET")
+                .field("REQ64_EN1", &self.REQ64_EN1())
+                .field("REQ65_EN1", &self.REQ65_EN1())
+                .field("REQ66_EN1", &self.REQ66_EN1())
+                .field("REQ67_EN1", &self.REQ67_EN1())
+                .field("REQ68_EN1", &self.REQ68_EN1())
+                .field("REQ69_EN1", &self.REQ69_EN1())
+                .field("REQ70_EN1", &self.REQ70_EN1())
+                .field("REQ71_EN1", &self.REQ71_EN1())
+                .field("REQ72_EN1", &self.REQ72_EN1())
+                .field("REQ73_EN1", &self.REQ73_EN1())
+                .field("REQ74_EN1", &self.REQ74_EN1())
+                .field("REQ75_EN1", &self.REQ75_EN1())
+                .field("REQ76_EN1", &self.REQ76_EN1())
+                .field("REQ77_EN1", &self.REQ77_EN1())
+                .field("REQ78_EN1", &self.REQ78_EN1())
+                .field("REQ79_EN1", &self.REQ79_EN1())
+                .field("REQ80_EN1", &self.REQ80_EN1())
+                .field("REQ81_EN1", &self.REQ81_EN1())
+                .field("REQ82_EN1", &self.REQ82_EN1())
+                .field("REQ83_EN1", &self.REQ83_EN1())
+                .field("REQ84_EN1", &self.REQ84_EN1())
+                .field("REQ85_EN1", &self.REQ85_EN1())
+                .field("REQ86_EN1", &self.REQ86_EN1())
+                .field("REQ87_EN1", &self.REQ87_EN1())
+                .field("REQ88_EN1", &self.REQ88_EN1())
+                .field("REQ89_EN1", &self.REQ89_EN1())
+                .field("REQ90_EN1", &self.REQ90_EN1())
+                .field("REQ91_EN1", &self.REQ91_EN1())
+                .field("REQ92_EN1", &self.REQ92_EN1())
+                .field("REQ93_EN1", &self.REQ93_EN1())
+                .field("REQ94_EN1", &self.REQ94_EN1())
+                .field("REQ95_EN1", &self.REQ95_EN1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE2_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA1_REQ_ENABLE2_SET {
+                REQ64_EN1: bool,
+                REQ65_EN1: bool,
+                REQ66_EN1: bool,
+                REQ67_EN1: bool,
+                REQ68_EN1: bool,
+                REQ69_EN1: bool,
+                REQ70_EN1: bool,
+                REQ71_EN1: bool,
+                REQ72_EN1: bool,
+                REQ73_EN1: bool,
+                REQ74_EN1: bool,
+                REQ75_EN1: bool,
+                REQ76_EN1: bool,
+                REQ77_EN1: bool,
+                REQ78_EN1: bool,
+                REQ79_EN1: bool,
+                REQ80_EN1: bool,
+                REQ81_EN1: bool,
+                REQ82_EN1: bool,
+                REQ83_EN1: bool,
+                REQ84_EN1: bool,
+                REQ85_EN1: bool,
+                REQ86_EN1: bool,
+                REQ87_EN1: bool,
+                REQ88_EN1: bool,
+                REQ89_EN1: bool,
+                REQ90_EN1: bool,
+                REQ91_EN1: bool,
+                REQ92_EN1: bool,
+                REQ93_EN1: bool,
+                REQ94_EN1: bool,
+                REQ95_EN1: bool,
+            }
+            let proxy = DMA1_REQ_ENABLE2_SET {
+                REQ64_EN1: self.REQ64_EN1(),
+                REQ65_EN1: self.REQ65_EN1(),
+                REQ66_EN1: self.REQ66_EN1(),
+                REQ67_EN1: self.REQ67_EN1(),
+                REQ68_EN1: self.REQ68_EN1(),
+                REQ69_EN1: self.REQ69_EN1(),
+                REQ70_EN1: self.REQ70_EN1(),
+                REQ71_EN1: self.REQ71_EN1(),
+                REQ72_EN1: self.REQ72_EN1(),
+                REQ73_EN1: self.REQ73_EN1(),
+                REQ74_EN1: self.REQ74_EN1(),
+                REQ75_EN1: self.REQ75_EN1(),
+                REQ76_EN1: self.REQ76_EN1(),
+                REQ77_EN1: self.REQ77_EN1(),
+                REQ78_EN1: self.REQ78_EN1(),
+                REQ79_EN1: self.REQ79_EN1(),
+                REQ80_EN1: self.REQ80_EN1(),
+                REQ81_EN1: self.REQ81_EN1(),
+                REQ82_EN1: self.REQ82_EN1(),
+                REQ83_EN1: self.REQ83_EN1(),
+                REQ84_EN1: self.REQ84_EN1(),
+                REQ85_EN1: self.REQ85_EN1(),
+                REQ86_EN1: self.REQ86_EN1(),
+                REQ87_EN1: self.REQ87_EN1(),
+                REQ88_EN1: self.REQ88_EN1(),
+                REQ89_EN1: self.REQ89_EN1(),
+                REQ90_EN1: self.REQ90_EN1(),
+                REQ91_EN1: self.REQ91_EN1(),
+                REQ92_EN1: self.REQ92_EN1(),
+                REQ93_EN1: self.REQ93_EN1(),
+                REQ94_EN1: self.REQ94_EN1(),
+                REQ95_EN1: self.REQ95_EN1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA1 Request Enable2"]
@@ -7501,6 +10348,119 @@ pub mod regs {
             DMA1_REQ_ENABLE2_TOG(0)
         }
     }
+    impl core::fmt::Debug for DMA1_REQ_ENABLE2_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA1_REQ_ENABLE2_TOG")
+                .field("REQ64_EN1", &self.REQ64_EN1())
+                .field("REQ65_EN1", &self.REQ65_EN1())
+                .field("REQ66_EN1", &self.REQ66_EN1())
+                .field("REQ67_EN1", &self.REQ67_EN1())
+                .field("REQ68_EN1", &self.REQ68_EN1())
+                .field("REQ69_EN1", &self.REQ69_EN1())
+                .field("REQ70_EN1", &self.REQ70_EN1())
+                .field("REQ71_EN1", &self.REQ71_EN1())
+                .field("REQ72_EN1", &self.REQ72_EN1())
+                .field("REQ73_EN1", &self.REQ73_EN1())
+                .field("REQ74_EN1", &self.REQ74_EN1())
+                .field("REQ75_EN1", &self.REQ75_EN1())
+                .field("REQ76_EN1", &self.REQ76_EN1())
+                .field("REQ77_EN1", &self.REQ77_EN1())
+                .field("REQ78_EN1", &self.REQ78_EN1())
+                .field("REQ79_EN1", &self.REQ79_EN1())
+                .field("REQ80_EN1", &self.REQ80_EN1())
+                .field("REQ81_EN1", &self.REQ81_EN1())
+                .field("REQ82_EN1", &self.REQ82_EN1())
+                .field("REQ83_EN1", &self.REQ83_EN1())
+                .field("REQ84_EN1", &self.REQ84_EN1())
+                .field("REQ85_EN1", &self.REQ85_EN1())
+                .field("REQ86_EN1", &self.REQ86_EN1())
+                .field("REQ87_EN1", &self.REQ87_EN1())
+                .field("REQ88_EN1", &self.REQ88_EN1())
+                .field("REQ89_EN1", &self.REQ89_EN1())
+                .field("REQ90_EN1", &self.REQ90_EN1())
+                .field("REQ91_EN1", &self.REQ91_EN1())
+                .field("REQ92_EN1", &self.REQ92_EN1())
+                .field("REQ93_EN1", &self.REQ93_EN1())
+                .field("REQ94_EN1", &self.REQ94_EN1())
+                .field("REQ95_EN1", &self.REQ95_EN1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE2_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA1_REQ_ENABLE2_TOG {
+                REQ64_EN1: bool,
+                REQ65_EN1: bool,
+                REQ66_EN1: bool,
+                REQ67_EN1: bool,
+                REQ68_EN1: bool,
+                REQ69_EN1: bool,
+                REQ70_EN1: bool,
+                REQ71_EN1: bool,
+                REQ72_EN1: bool,
+                REQ73_EN1: bool,
+                REQ74_EN1: bool,
+                REQ75_EN1: bool,
+                REQ76_EN1: bool,
+                REQ77_EN1: bool,
+                REQ78_EN1: bool,
+                REQ79_EN1: bool,
+                REQ80_EN1: bool,
+                REQ81_EN1: bool,
+                REQ82_EN1: bool,
+                REQ83_EN1: bool,
+                REQ84_EN1: bool,
+                REQ85_EN1: bool,
+                REQ86_EN1: bool,
+                REQ87_EN1: bool,
+                REQ88_EN1: bool,
+                REQ89_EN1: bool,
+                REQ90_EN1: bool,
+                REQ91_EN1: bool,
+                REQ92_EN1: bool,
+                REQ93_EN1: bool,
+                REQ94_EN1: bool,
+                REQ95_EN1: bool,
+            }
+            let proxy = DMA1_REQ_ENABLE2_TOG {
+                REQ64_EN1: self.REQ64_EN1(),
+                REQ65_EN1: self.REQ65_EN1(),
+                REQ66_EN1: self.REQ66_EN1(),
+                REQ67_EN1: self.REQ67_EN1(),
+                REQ68_EN1: self.REQ68_EN1(),
+                REQ69_EN1: self.REQ69_EN1(),
+                REQ70_EN1: self.REQ70_EN1(),
+                REQ71_EN1: self.REQ71_EN1(),
+                REQ72_EN1: self.REQ72_EN1(),
+                REQ73_EN1: self.REQ73_EN1(),
+                REQ74_EN1: self.REQ74_EN1(),
+                REQ75_EN1: self.REQ75_EN1(),
+                REQ76_EN1: self.REQ76_EN1(),
+                REQ77_EN1: self.REQ77_EN1(),
+                REQ78_EN1: self.REQ78_EN1(),
+                REQ79_EN1: self.REQ79_EN1(),
+                REQ80_EN1: self.REQ80_EN1(),
+                REQ81_EN1: self.REQ81_EN1(),
+                REQ82_EN1: self.REQ82_EN1(),
+                REQ83_EN1: self.REQ83_EN1(),
+                REQ84_EN1: self.REQ84_EN1(),
+                REQ85_EN1: self.REQ85_EN1(),
+                REQ86_EN1: self.REQ86_EN1(),
+                REQ87_EN1: self.REQ87_EN1(),
+                REQ88_EN1: self.REQ88_EN1(),
+                REQ89_EN1: self.REQ89_EN1(),
+                REQ90_EN1: self.REQ90_EN1(),
+                REQ91_EN1: self.REQ91_EN1(),
+                REQ92_EN1: self.REQ92_EN1(),
+                REQ93_EN1: self.REQ93_EN1(),
+                REQ94_EN1: self.REQ94_EN1(),
+                REQ95_EN1: self.REQ95_EN1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA1 Request Enable3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7682,6 +10642,80 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DMA1_REQ_ENABLE3 {
             DMA1_REQ_ENABLE3(0)
+        }
+    }
+    impl core::fmt::Debug for DMA1_REQ_ENABLE3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA1_REQ_ENABLE3")
+                .field("REQ96_EN1", &self.REQ96_EN1())
+                .field("REQ97_EN1", &self.REQ97_EN1())
+                .field("REQ98_EN1", &self.REQ98_EN1())
+                .field("REQ99_EN1", &self.REQ99_EN1())
+                .field("REQ100_EN1", &self.REQ100_EN1())
+                .field("REQ101_EN1", &self.REQ101_EN1())
+                .field("REQ102_EN1", &self.REQ102_EN1())
+                .field("REQ108_EN1", &self.REQ108_EN1())
+                .field("REQ109_EN1", &self.REQ109_EN1())
+                .field("REQ110_EN1", &self.REQ110_EN1())
+                .field("REQ111_EN1", &self.REQ111_EN1())
+                .field("REQ112_EN1", &self.REQ112_EN1())
+                .field("REQ113_EN1", &self.REQ113_EN1())
+                .field("REQ114_EN1", &self.REQ114_EN1())
+                .field("REQ115_EN1", &self.REQ115_EN1())
+                .field("REQ116_EN1", &self.REQ116_EN1())
+                .field("REQ117_EN1", &self.REQ117_EN1())
+                .field("REQ118_EN1", &self.REQ118_EN1())
+                .field("REQ119_EN1", &self.REQ119_EN1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA1_REQ_ENABLE3 {
+                REQ96_EN1: bool,
+                REQ97_EN1: bool,
+                REQ98_EN1: bool,
+                REQ99_EN1: bool,
+                REQ100_EN1: bool,
+                REQ101_EN1: bool,
+                REQ102_EN1: bool,
+                REQ108_EN1: bool,
+                REQ109_EN1: bool,
+                REQ110_EN1: bool,
+                REQ111_EN1: bool,
+                REQ112_EN1: bool,
+                REQ113_EN1: bool,
+                REQ114_EN1: bool,
+                REQ115_EN1: bool,
+                REQ116_EN1: bool,
+                REQ117_EN1: bool,
+                REQ118_EN1: bool,
+                REQ119_EN1: bool,
+            }
+            let proxy = DMA1_REQ_ENABLE3 {
+                REQ96_EN1: self.REQ96_EN1(),
+                REQ97_EN1: self.REQ97_EN1(),
+                REQ98_EN1: self.REQ98_EN1(),
+                REQ99_EN1: self.REQ99_EN1(),
+                REQ100_EN1: self.REQ100_EN1(),
+                REQ101_EN1: self.REQ101_EN1(),
+                REQ102_EN1: self.REQ102_EN1(),
+                REQ108_EN1: self.REQ108_EN1(),
+                REQ109_EN1: self.REQ109_EN1(),
+                REQ110_EN1: self.REQ110_EN1(),
+                REQ111_EN1: self.REQ111_EN1(),
+                REQ112_EN1: self.REQ112_EN1(),
+                REQ113_EN1: self.REQ113_EN1(),
+                REQ114_EN1: self.REQ114_EN1(),
+                REQ115_EN1: self.REQ115_EN1(),
+                REQ116_EN1: self.REQ116_EN1(),
+                REQ117_EN1: self.REQ117_EN1(),
+                REQ118_EN1: self.REQ118_EN1(),
+                REQ119_EN1: self.REQ119_EN1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA1 Request Enable3"]
@@ -7930,6 +10964,101 @@ pub mod regs {
             DMA1_REQ_ENABLE3_CLR(0)
         }
     }
+    impl core::fmt::Debug for DMA1_REQ_ENABLE3_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA1_REQ_ENABLE3_CLR")
+                .field("REQ96_EN1", &self.REQ96_EN1())
+                .field("REQ97_EN1", &self.REQ97_EN1())
+                .field("REQ98_EN1", &self.REQ98_EN1())
+                .field("REQ99_EN1", &self.REQ99_EN1())
+                .field("REQ100_EN1", &self.REQ100_EN1())
+                .field("REQ101_EN1", &self.REQ101_EN1())
+                .field("REQ102_EN1", &self.REQ102_EN1())
+                .field("REQ103_EN1", &self.REQ103_EN1())
+                .field("REQ104_EN1", &self.REQ104_EN1())
+                .field("REQ105_EN1", &self.REQ105_EN1())
+                .field("REQ106_EN1", &self.REQ106_EN1())
+                .field("REQ107_EN1", &self.REQ107_EN1())
+                .field("REQ108_EN1", &self.REQ108_EN1())
+                .field("REQ109_EN1", &self.REQ109_EN1())
+                .field("REQ110_EN1", &self.REQ110_EN1())
+                .field("REQ111_EN1", &self.REQ111_EN1())
+                .field("REQ112_EN1", &self.REQ112_EN1())
+                .field("REQ113_EN1", &self.REQ113_EN1())
+                .field("REQ114_EN1", &self.REQ114_EN1())
+                .field("REQ115_EN1", &self.REQ115_EN1())
+                .field("REQ116_EN1", &self.REQ116_EN1())
+                .field("REQ117_EN1", &self.REQ117_EN1())
+                .field("REQ118_EN1", &self.REQ118_EN1())
+                .field("REQ119_EN1", &self.REQ119_EN1())
+                .field("REQ120_EN1", &self.REQ120_EN1())
+                .field("REQ121_EN1", &self.REQ121_EN1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE3_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA1_REQ_ENABLE3_CLR {
+                REQ96_EN1: bool,
+                REQ97_EN1: bool,
+                REQ98_EN1: bool,
+                REQ99_EN1: bool,
+                REQ100_EN1: bool,
+                REQ101_EN1: bool,
+                REQ102_EN1: bool,
+                REQ103_EN1: bool,
+                REQ104_EN1: bool,
+                REQ105_EN1: bool,
+                REQ106_EN1: bool,
+                REQ107_EN1: bool,
+                REQ108_EN1: bool,
+                REQ109_EN1: bool,
+                REQ110_EN1: bool,
+                REQ111_EN1: bool,
+                REQ112_EN1: bool,
+                REQ113_EN1: bool,
+                REQ114_EN1: bool,
+                REQ115_EN1: bool,
+                REQ116_EN1: bool,
+                REQ117_EN1: bool,
+                REQ118_EN1: bool,
+                REQ119_EN1: bool,
+                REQ120_EN1: bool,
+                REQ121_EN1: bool,
+            }
+            let proxy = DMA1_REQ_ENABLE3_CLR {
+                REQ96_EN1: self.REQ96_EN1(),
+                REQ97_EN1: self.REQ97_EN1(),
+                REQ98_EN1: self.REQ98_EN1(),
+                REQ99_EN1: self.REQ99_EN1(),
+                REQ100_EN1: self.REQ100_EN1(),
+                REQ101_EN1: self.REQ101_EN1(),
+                REQ102_EN1: self.REQ102_EN1(),
+                REQ103_EN1: self.REQ103_EN1(),
+                REQ104_EN1: self.REQ104_EN1(),
+                REQ105_EN1: self.REQ105_EN1(),
+                REQ106_EN1: self.REQ106_EN1(),
+                REQ107_EN1: self.REQ107_EN1(),
+                REQ108_EN1: self.REQ108_EN1(),
+                REQ109_EN1: self.REQ109_EN1(),
+                REQ110_EN1: self.REQ110_EN1(),
+                REQ111_EN1: self.REQ111_EN1(),
+                REQ112_EN1: self.REQ112_EN1(),
+                REQ113_EN1: self.REQ113_EN1(),
+                REQ114_EN1: self.REQ114_EN1(),
+                REQ115_EN1: self.REQ115_EN1(),
+                REQ116_EN1: self.REQ116_EN1(),
+                REQ117_EN1: self.REQ117_EN1(),
+                REQ118_EN1: self.REQ118_EN1(),
+                REQ119_EN1: self.REQ119_EN1(),
+                REQ120_EN1: self.REQ120_EN1(),
+                REQ121_EN1: self.REQ121_EN1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DMA1 Request Enable3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8176,6 +11305,101 @@ pub mod regs {
             DMA1_REQ_ENABLE3_SET(0)
         }
     }
+    impl core::fmt::Debug for DMA1_REQ_ENABLE3_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DMA1_REQ_ENABLE3_SET")
+                .field("REQ96_EN1", &self.REQ96_EN1())
+                .field("REQ97_EN1", &self.REQ97_EN1())
+                .field("REQ98_EN1", &self.REQ98_EN1())
+                .field("REQ99_EN1", &self.REQ99_EN1())
+                .field("REQ100_EN1", &self.REQ100_EN1())
+                .field("REQ101_EN1", &self.REQ101_EN1())
+                .field("REQ102_EN1", &self.REQ102_EN1())
+                .field("REQ103_EN1", &self.REQ103_EN1())
+                .field("REQ104_EN1", &self.REQ104_EN1())
+                .field("REQ105_EN1", &self.REQ105_EN1())
+                .field("REQ106_EN1", &self.REQ106_EN1())
+                .field("REQ107_EN1", &self.REQ107_EN1())
+                .field("REQ108_EN1", &self.REQ108_EN1())
+                .field("REQ109_EN1", &self.REQ109_EN1())
+                .field("REQ110_EN1", &self.REQ110_EN1())
+                .field("REQ111_EN1", &self.REQ111_EN1())
+                .field("REQ112_EN1", &self.REQ112_EN1())
+                .field("REQ113_EN1", &self.REQ113_EN1())
+                .field("REQ114_EN1", &self.REQ114_EN1())
+                .field("REQ115_EN1", &self.REQ115_EN1())
+                .field("REQ116_EN1", &self.REQ116_EN1())
+                .field("REQ117_EN1", &self.REQ117_EN1())
+                .field("REQ118_EN1", &self.REQ118_EN1())
+                .field("REQ119_EN1", &self.REQ119_EN1())
+                .field("REQ120_EN1", &self.REQ120_EN1())
+                .field("REQ121_EN1", &self.REQ121_EN1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE3_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DMA1_REQ_ENABLE3_SET {
+                REQ96_EN1: bool,
+                REQ97_EN1: bool,
+                REQ98_EN1: bool,
+                REQ99_EN1: bool,
+                REQ100_EN1: bool,
+                REQ101_EN1: bool,
+                REQ102_EN1: bool,
+                REQ103_EN1: bool,
+                REQ104_EN1: bool,
+                REQ105_EN1: bool,
+                REQ106_EN1: bool,
+                REQ107_EN1: bool,
+                REQ108_EN1: bool,
+                REQ109_EN1: bool,
+                REQ110_EN1: bool,
+                REQ111_EN1: bool,
+                REQ112_EN1: bool,
+                REQ113_EN1: bool,
+                REQ114_EN1: bool,
+                REQ115_EN1: bool,
+                REQ116_EN1: bool,
+                REQ117_EN1: bool,
+                REQ118_EN1: bool,
+                REQ119_EN1: bool,
+                REQ120_EN1: bool,
+                REQ121_EN1: bool,
+            }
+            let proxy = DMA1_REQ_ENABLE3_SET {
+                REQ96_EN1: self.REQ96_EN1(),
+                REQ97_EN1: self.REQ97_EN1(),
+                REQ98_EN1: self.REQ98_EN1(),
+                REQ99_EN1: self.REQ99_EN1(),
+                REQ100_EN1: self.REQ100_EN1(),
+                REQ101_EN1: self.REQ101_EN1(),
+                REQ102_EN1: self.REQ102_EN1(),
+                REQ103_EN1: self.REQ103_EN1(),
+                REQ104_EN1: self.REQ104_EN1(),
+                REQ105_EN1: self.REQ105_EN1(),
+                REQ106_EN1: self.REQ106_EN1(),
+                REQ107_EN1: self.REQ107_EN1(),
+                REQ108_EN1: self.REQ108_EN1(),
+                REQ109_EN1: self.REQ109_EN1(),
+                REQ110_EN1: self.REQ110_EN1(),
+                REQ111_EN1: self.REQ111_EN1(),
+                REQ112_EN1: self.REQ112_EN1(),
+                REQ113_EN1: self.REQ113_EN1(),
+                REQ114_EN1: self.REQ114_EN1(),
+                REQ115_EN1: self.REQ115_EN1(),
+                REQ116_EN1: self.REQ116_EN1(),
+                REQ117_EN1: self.REQ117_EN1(),
+                REQ118_EN1: self.REQ118_EN1(),
+                REQ119_EN1: self.REQ119_EN1(),
+                REQ120_EN1: self.REQ120_EN1(),
+                REQ121_EN1: self.REQ121_EN1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "EVTG Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8195,6 +11419,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EVTG_TRIG {
             EVTG_TRIG(0)
+        }
+    }
+    impl core::fmt::Debug for EVTG_TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EVTG_TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EVTG_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EVTG_TRIG {
+                INP: u8,
+            }
+            let proxy = EVTG_TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "EXT Trigger Connections"]
@@ -8218,6 +11460,24 @@ pub mod regs {
             EXT_TRIG(0)
         }
     }
+    impl core::fmt::Debug for EXT_TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EXT_TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EXT_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EXT_TRIG {
+                INP: u8,
+            }
+            let proxy = EXT_TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LP_FLEXCOMM0 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8237,6 +11497,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FLEXCOMM0_TRIG {
             FLEXCOMM0_TRIG(0)
+        }
+    }
+    impl core::fmt::Debug for FLEXCOMM0_TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXCOMM0_TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM0_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXCOMM0_TRIG {
+                INP: u8,
+            }
+            let proxy = FLEXCOMM0_TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LP_FLEXCOMM1 Trigger Input Connections"]
@@ -8260,6 +11538,24 @@ pub mod regs {
             FLEXCOMM1_TRIG(0)
         }
     }
+    impl core::fmt::Debug for FLEXCOMM1_TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXCOMM1_TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM1_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXCOMM1_TRIG {
+                INP: u8,
+            }
+            let proxy = FLEXCOMM1_TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LP_FLEXCOMM2 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8279,6 +11575,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FLEXCOMM2_TRIG {
             FLEXCOMM2_TRIG(0)
+        }
+    }
+    impl core::fmt::Debug for FLEXCOMM2_TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXCOMM2_TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM2_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXCOMM2_TRIG {
+                INP: u8,
+            }
+            let proxy = FLEXCOMM2_TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LP_FLEXCOMM3 Trigger Input Connections"]
@@ -8302,6 +11616,24 @@ pub mod regs {
             FLEXCOMM3_TRIG(0)
         }
     }
+    impl core::fmt::Debug for FLEXCOMM3_TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXCOMM3_TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM3_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXCOMM3_TRIG {
+                INP: u8,
+            }
+            let proxy = FLEXCOMM3_TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LP_FLEXCOMM4 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8321,6 +11653,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FLEXCOMM4_TRIG {
             FLEXCOMM4_TRIG(0)
+        }
+    }
+    impl core::fmt::Debug for FLEXCOMM4_TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXCOMM4_TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM4_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXCOMM4_TRIG {
+                INP: u8,
+            }
+            let proxy = FLEXCOMM4_TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LP_FLEXCOMM5 Trigger Input Connections"]
@@ -8344,6 +11694,24 @@ pub mod regs {
             FLEXCOMM5_TRIG(0)
         }
     }
+    impl core::fmt::Debug for FLEXCOMM5_TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXCOMM5_TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM5_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXCOMM5_TRIG {
+                INP: u8,
+            }
+            let proxy = FLEXCOMM5_TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LP_FLEXCOMM6 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8363,6 +11731,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FLEXCOMM6_TRIG {
             FLEXCOMM6_TRIG(0)
+        }
+    }
+    impl core::fmt::Debug for FLEXCOMM6_TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXCOMM6_TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM6_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXCOMM6_TRIG {
+                INP: u8,
+            }
+            let proxy = FLEXCOMM6_TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LP_FLEXCOMM7 Trigger Input Connections"]
@@ -8386,6 +11772,24 @@ pub mod regs {
             FLEXCOMM7_TRIG(0)
         }
     }
+    impl core::fmt::Debug for FLEXCOMM7_TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXCOMM7_TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM7_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXCOMM7_TRIG {
+                INP: u8,
+            }
+            let proxy = FLEXCOMM7_TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FlexIO Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8405,6 +11809,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FLEXIO_TRIG {
             FLEXIO_TRIG(0)
+        }
+    }
+    impl core::fmt::Debug for FLEXIO_TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXIO_TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXIO_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXIO_TRIG {
+                INP: u8,
+            }
+            let proxy = FLEXIO_TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PWM0 External Force Trigger Connections"]
@@ -8428,6 +11850,26 @@ pub mod regs {
             FLEXPWM0_EXTFORCE(0)
         }
     }
+    impl core::fmt::Debug for FLEXPWM0_EXTFORCE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXPWM0_EXTFORCE")
+                .field("TRIGIN", &self.TRIGIN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM0_EXTFORCE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXPWM0_EXTFORCE {
+                TRIGIN: u8,
+            }
+            let proxy = FLEXPWM0_EXTFORCE {
+                TRIGIN: self.TRIGIN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PWM0 Fault Input Trigger Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8447,6 +11889,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FLEXPWM0_FAULT {
             FLEXPWM0_FAULT(0)
+        }
+    }
+    impl core::fmt::Debug for FLEXPWM0_FAULT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXPWM0_FAULT")
+                .field("TRIGIN", &self.TRIGIN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM0_FAULT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXPWM0_FAULT {
+                TRIGIN: u8,
+            }
+            let proxy = FLEXPWM0_FAULT {
+                TRIGIN: self.TRIGIN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PWM0 Input Trigger Connections"]
@@ -8470,6 +11932,26 @@ pub mod regs {
             FLEXPWM0_SM_EXTA(0)
         }
     }
+    impl core::fmt::Debug for FLEXPWM0_SM_EXTA {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXPWM0_SM_EXTA")
+                .field("TRIGIN", &self.TRIGIN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM0_SM_EXTA {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXPWM0_SM_EXTA {
+                TRIGIN: u8,
+            }
+            let proxy = FLEXPWM0_SM_EXTA {
+                TRIGIN: self.TRIGIN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PWM0 External Synchronization"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8489,6 +11971,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FLEXPWM0_SM_EXTSYNC {
             FLEXPWM0_SM_EXTSYNC(0)
+        }
+    }
+    impl core::fmt::Debug for FLEXPWM0_SM_EXTSYNC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXPWM0_SM_EXTSYNC")
+                .field("TRIGIN", &self.TRIGIN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM0_SM_EXTSYNC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXPWM0_SM_EXTSYNC {
+                TRIGIN: u8,
+            }
+            let proxy = FLEXPWM0_SM_EXTSYNC {
+                TRIGIN: self.TRIGIN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PWM1 External Force Trigger Connections"]
@@ -8512,6 +12014,26 @@ pub mod regs {
             FLEXPWM1_EXTFORCE(0)
         }
     }
+    impl core::fmt::Debug for FLEXPWM1_EXTFORCE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXPWM1_EXTFORCE")
+                .field("TRIGIN", &self.TRIGIN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM1_EXTFORCE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXPWM1_EXTFORCE {
+                TRIGIN: u8,
+            }
+            let proxy = FLEXPWM1_EXTFORCE {
+                TRIGIN: self.TRIGIN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PWM1 Fault Input Trigger Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8531,6 +12053,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FLEXPWM1_FAULT {
             FLEXPWM1_FAULT(0)
+        }
+    }
+    impl core::fmt::Debug for FLEXPWM1_FAULT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXPWM1_FAULT")
+                .field("TRIGIN", &self.TRIGIN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM1_FAULT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXPWM1_FAULT {
+                TRIGIN: u8,
+            }
+            let proxy = FLEXPWM1_FAULT {
+                TRIGIN: self.TRIGIN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PWM1 Input EXTA Connections"]
@@ -8554,6 +12096,26 @@ pub mod regs {
             FLEXPWM1_SM_EXTA(0)
         }
     }
+    impl core::fmt::Debug for FLEXPWM1_SM_EXTA {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXPWM1_SM_EXTA")
+                .field("TRIGIN", &self.TRIGIN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM1_SM_EXTA {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXPWM1_SM_EXTA {
+                TRIGIN: u8,
+            }
+            let proxy = FLEXPWM1_SM_EXTA {
+                TRIGIN: self.TRIGIN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PWM1 External Synchronization"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8573,6 +12135,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FLEXPWM1_SM_EXTSYNC {
             FLEXPWM1_SM_EXTSYNC(0)
+        }
+    }
+    impl core::fmt::Debug for FLEXPWM1_SM_EXTSYNC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLEXPWM1_SM_EXTSYNC")
+                .field("TRIGIN", &self.TRIGIN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM1_SM_EXTSYNC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLEXPWM1_SM_EXTSYNC {
+                TRIGIN: u8,
+            }
+            let proxy = FLEXPWM1_SM_EXTSYNC {
+                TRIGIN: self.TRIGIN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Selection for Frequency Measurement Reference Clock"]
@@ -8596,6 +12178,24 @@ pub mod regs {
             FREQMEAS_REF(0)
         }
     }
+    impl core::fmt::Debug for FREQMEAS_REF {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FREQMEAS_REF")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FREQMEAS_REF {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FREQMEAS_REF {
+                INP: u8,
+            }
+            let proxy = FREQMEAS_REF { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Selection for Frequency Measurement Target Clock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8615,6 +12215,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FREQMEAS_TAR {
             FREQMEAS_TAR(0)
+        }
+    }
+    impl core::fmt::Debug for FREQMEAS_TAR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FREQMEAS_TAR")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FREQMEAS_TAR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FREQMEAS_TAR {
+                INP: u8,
+            }
+            let proxy = FREQMEAS_TAR { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pin Interrupt Select"]
@@ -8638,6 +12256,22 @@ pub mod regs {
             PINTSEL(0)
         }
     }
+    impl core::fmt::Debug for PINTSEL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PINTSEL").field("INP", &self.INP()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PINTSEL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PINTSEL {
+                INP: u8,
+            }
+            let proxy = PINTSEL { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PWM0 External Clock Trigger"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8657,6 +12291,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PWM0_EXT_CLK {
             PWM0_EXT_CLK(0)
+        }
+    }
+    impl core::fmt::Debug for PWM0_EXT_CLK {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PWM0_EXT_CLK")
+                .field("TRIGIN", &self.TRIGIN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWM0_EXT_CLK {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PWM0_EXT_CLK {
+                TRIGIN: u8,
+            }
+            let proxy = PWM0_EXT_CLK {
+                TRIGIN: self.TRIGIN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PWM1 External Clock Trigger"]
@@ -8680,6 +12334,26 @@ pub mod regs {
             PWM1_EXT_CLK(0)
         }
     }
+    impl core::fmt::Debug for PWM1_EXT_CLK {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PWM1_EXT_CLK")
+                .field("TRIGIN", &self.TRIGIN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWM1_EXT_CLK {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PWM1_EXT_CLK {
+                TRIGIN: u8,
+            }
+            let proxy = PWM1_EXT_CLK {
+                TRIGIN: self.TRIGIN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "QDC0 Input Connections..QDC1 Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8699,6 +12373,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> QDCN_QDC_HOME {
             QDCN_QDC_HOME(0)
+        }
+    }
+    impl core::fmt::Debug for QDCN_QDC_HOME {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("QDCN_QDC_HOME")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDCN_QDC_HOME {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct QDCN_QDC_HOME {
+                INP: u8,
+            }
+            let proxy = QDCN_QDC_HOME { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "QDC0 Input Connections..QDC1 Input Connections"]
@@ -8722,6 +12414,24 @@ pub mod regs {
             QDCN_QDC_INDEX(0)
         }
     }
+    impl core::fmt::Debug for QDCN_QDC_INDEX {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("QDCN_QDC_INDEX")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDCN_QDC_INDEX {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct QDCN_QDC_INDEX {
+                INP: u8,
+            }
+            let proxy = QDCN_QDC_INDEX { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "QDC0 Input Connections..QDC1 Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8741,6 +12451,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> QDCN_QDC_PHASEA {
             QDCN_QDC_PHASEA(0)
+        }
+    }
+    impl core::fmt::Debug for QDCN_QDC_PHASEA {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("QDCN_QDC_PHASEA")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDCN_QDC_PHASEA {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct QDCN_QDC_PHASEA {
+                INP: u8,
+            }
+            let proxy = QDCN_QDC_PHASEA { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "QDC0 Input Connections..QDC1 Input Connections"]
@@ -8764,6 +12492,24 @@ pub mod regs {
             QDCN_QDC_PHASEB(0)
         }
     }
+    impl core::fmt::Debug for QDCN_QDC_PHASEB {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("QDCN_QDC_PHASEB")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDCN_QDC_PHASEB {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct QDCN_QDC_PHASEB {
+                INP: u8,
+            }
+            let proxy = QDCN_QDC_PHASEB { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "QDC0 Trigger Input Connections..QDC1 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8783,6 +12529,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> QDCN_QDC_TRIG {
             QDCN_QDC_TRIG(0)
+        }
+    }
+    impl core::fmt::Debug for QDCN_QDC_TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("QDCN_QDC_TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDCN_QDC_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct QDCN_QDC_TRIG {
+                INP: u8,
+            }
+            let proxy = QDCN_QDC_TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Inputmux Register for SMARTDMA Arch B Inputs"]
@@ -8806,6 +12570,24 @@ pub mod regs {
             SMARTDMAARCHB_INMUX(0)
         }
     }
+    impl core::fmt::Debug for SMARTDMAARCHB_INMUX {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SMARTDMAARCHB_INMUX")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SMARTDMAARCHB_INMUX {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SMARTDMAARCHB_INMUX {
+                INP: u8,
+            }
+            let proxy = SMARTDMAARCHB_INMUX { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Trigger Register for CTIMER"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8825,6 +12607,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TIMER0TRIG {
             TIMER0TRIG(0)
+        }
+    }
+    impl core::fmt::Debug for TIMER0TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TIMER0TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER0TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TIMER0TRIG {
+                INP: u8,
+            }
+            let proxy = TIMER0TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Trigger Register for CTIMER"]
@@ -8848,6 +12648,24 @@ pub mod regs {
             TIMER1TRIG(0)
         }
     }
+    impl core::fmt::Debug for TIMER1TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TIMER1TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER1TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TIMER1TRIG {
+                INP: u8,
+            }
+            let proxy = TIMER1TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Trigger Register for CTIMER"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8867,6 +12685,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TIMER2TRIG {
             TIMER2TRIG(0)
+        }
+    }
+    impl core::fmt::Debug for TIMER2TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TIMER2TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER2TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TIMER2TRIG {
+                INP: u8,
+            }
+            let proxy = TIMER2TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Trigger Register for CTIMER"]
@@ -8890,6 +12726,24 @@ pub mod regs {
             TIMER3TRIG(0)
         }
     }
+    impl core::fmt::Debug for TIMER3TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TIMER3TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER3TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TIMER3TRIG {
+                INP: u8,
+            }
+            let proxy = TIMER3TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Trigger Register for CTIMER"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8909,6 +12763,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TIMER4TRIG {
             TIMER4TRIG(0)
+        }
+    }
+    impl core::fmt::Debug for TIMER4TRIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TIMER4TRIG")
+                .field("INP", &self.INP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER4TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TIMER4TRIG {
+                INP: u8,
+            }
+            let proxy = TIMER4TRIG { INP: self.INP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

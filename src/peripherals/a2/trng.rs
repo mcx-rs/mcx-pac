@@ -246,6 +246,35 @@ pub mod regs {
             CSCLR(0)
         }
     }
+    impl core::fmt::Debug for CSCLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CSCLR")
+                .field("RED_SIGS_CLR", &self.RED_SIGS_CLR())
+                .field("RED_FSM_CLR", &self.RED_FSM_CLR())
+                .field("LOCAL_EDC_CLR", &self.LOCAL_EDC_CLR())
+                .field("BUS_EDC_CLR", &self.BUS_EDC_CLR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CSCLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CSCLR {
+                RED_SIGS_CLR: bool,
+                RED_FSM_CLR: bool,
+                LOCAL_EDC_CLR: bool,
+                BUS_EDC_CLR: bool,
+            }
+            let proxy = CSCLR {
+                RED_SIGS_CLR: self.RED_SIGS_CLR(),
+                RED_FSM_CLR: self.RED_FSM_CLR(),
+                LOCAL_EDC_CLR: self.LOCAL_EDC_CLR(),
+                BUS_EDC_CLR: self.BUS_EDC_CLR(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Common Security Error Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -294,6 +323,35 @@ pub mod regs {
             CSER(0)
         }
     }
+    impl core::fmt::Debug for CSER {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CSER")
+                .field("RED_SIGS", &self.RED_SIGS())
+                .field("RED_FSM", &self.RED_FSM())
+                .field("LOCAL_EDC", &self.LOCAL_EDC())
+                .field("BUS_EDC", &self.BUS_EDC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CSER {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CSER {
+                RED_SIGS: bool,
+                RED_FSM: bool,
+                LOCAL_EDC: bool,
+                BUS_EDC: bool,
+            }
+            let proxy = CSER {
+                RED_SIGS: self.RED_SIGS(),
+                RED_FSM: self.RED_FSM(),
+                LOCAL_EDC: self.LOCAL_EDC(),
+                BUS_EDC: self.BUS_EDC(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Frequency Count Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -313,6 +371,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FRQCNT {
             FRQCNT(0)
+        }
+    }
+    impl core::fmt::Debug for FRQCNT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FRQCNT")
+                .field("FRQ_CT", &self.FRQ_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FRQCNT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FRQCNT {
+                FRQ_CT: u32,
+            }
+            let proxy = FRQCNT {
+                FRQ_CT: self.FRQ_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Frequency Count Maximum Limit Register"]
@@ -336,6 +414,26 @@ pub mod regs {
             FRQMAX(0)
         }
     }
+    impl core::fmt::Debug for FRQMAX {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FRQMAX")
+                .field("FRQ_MAX", &self.FRQ_MAX())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FRQMAX {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FRQMAX {
+                FRQ_MAX: u32,
+            }
+            let proxy = FRQMAX {
+                FRQ_MAX: self.FRQ_MAX(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Frequency Count Minimum Limit Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -355,6 +453,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FRQMIN {
             FRQMIN(0)
+        }
+    }
+    impl core::fmt::Debug for FRQMIN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FRQMIN")
+                .field("FRQ_MIN", &self.FRQ_MIN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FRQMIN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FRQMIN {
+                FRQ_MIN: u32,
+            }
+            let proxy = FRQMIN {
+                FRQ_MIN: self.FRQ_MIN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Control Register"]
@@ -405,6 +523,35 @@ pub mod regs {
             INT_CTRL(0)
         }
     }
+    impl core::fmt::Debug for INT_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("INT_CTRL")
+                .field("HW_ERR", &self.HW_ERR())
+                .field("ENT_VAL", &self.ENT_VAL())
+                .field("FRQ_CT_FAIL", &self.FRQ_CT_FAIL())
+                .field("INTG_FLT", &self.INTG_FLT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INT_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct INT_CTRL {
+                HW_ERR: bool,
+                ENT_VAL: bool,
+                FRQ_CT_FAIL: bool,
+                INTG_FLT: bool,
+            }
+            let proxy = INT_CTRL {
+                HW_ERR: self.HW_ERR(),
+                ENT_VAL: self.ENT_VAL(),
+                FRQ_CT_FAIL: self.FRQ_CT_FAIL(),
+                INTG_FLT: self.INTG_FLT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Mask Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -453,6 +600,35 @@ pub mod regs {
             INT_MASK(0)
         }
     }
+    impl core::fmt::Debug for INT_MASK {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("INT_MASK")
+                .field("HW_ERR", &self.HW_ERR())
+                .field("ENT_VAL", &self.ENT_VAL())
+                .field("FRQ_CT_FAIL", &self.FRQ_CT_FAIL())
+                .field("INTG_FLT", &self.INTG_FLT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INT_MASK {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct INT_MASK {
+                HW_ERR: bool,
+                ENT_VAL: bool,
+                FRQ_CT_FAIL: bool,
+                INTG_FLT: bool,
+            }
+            let proxy = INT_MASK {
+                HW_ERR: self.HW_ERR(),
+                ENT_VAL: self.ENT_VAL(),
+                FRQ_CT_FAIL: self.FRQ_CT_FAIL(),
+                INTG_FLT: self.INTG_FLT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -499,6 +675,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> INT_STATUS {
             INT_STATUS(0)
+        }
+    }
+    impl core::fmt::Debug for INT_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("INT_STATUS")
+                .field("HW_ERR", &self.HW_ERR())
+                .field("ENT_VAL", &self.ENT_VAL())
+                .field("FRQ_CT_FAIL", &self.FRQ_CT_FAIL())
+                .field("INTG_FLT", &self.INTG_FLT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INT_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct INT_STATUS {
+                HW_ERR: bool,
+                ENT_VAL: bool,
+                FRQ_CT_FAIL: bool,
+                INTG_FLT: bool,
+            }
+            let proxy = INT_STATUS {
+                HW_ERR: self.HW_ERR(),
+                ENT_VAL: self.ENT_VAL(),
+                FRQ_CT_FAIL: self.FRQ_CT_FAIL(),
+                INTG_FLT: self.INTG_FLT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Miscellaneous Control Register"]
@@ -621,6 +826,59 @@ pub mod regs {
             MCTL(0)
         }
     }
+    impl core::fmt::Debug for MCTL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MCTL")
+                .field("OSC_DIV", &self.OSC_DIV())
+                .field("DIS_SLF_TST", &self.DIS_SLF_TST())
+                .field("TRNG_ACC", &self.TRNG_ACC())
+                .field("RST_DEF", &self.RST_DEF())
+                .field("FCT_FAIL", &self.FCT_FAIL())
+                .field("FCT_VAL", &self.FCT_VAL())
+                .field("ENT_VAL", &self.ENT_VAL())
+                .field("ERR", &self.ERR())
+                .field("TSTOP_OK", &self.TSTOP_OK())
+                .field("OSC2_FAIL", &self.OSC2_FAIL())
+                .field("PRGM", &self.PRGM())
+                .field("INTG_ERR", &self.INTG_ERR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCTL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MCTL {
+                OSC_DIV: u8,
+                DIS_SLF_TST: bool,
+                TRNG_ACC: bool,
+                RST_DEF: bool,
+                FCT_FAIL: bool,
+                FCT_VAL: bool,
+                ENT_VAL: bool,
+                ERR: bool,
+                TSTOP_OK: bool,
+                OSC2_FAIL: bool,
+                PRGM: bool,
+                INTG_ERR: bool,
+            }
+            let proxy = MCTL {
+                OSC_DIV: self.OSC_DIV(),
+                DIS_SLF_TST: self.DIS_SLF_TST(),
+                TRNG_ACC: self.TRNG_ACC(),
+                RST_DEF: self.RST_DEF(),
+                FCT_FAIL: self.FCT_FAIL(),
+                FCT_VAL: self.FCT_VAL(),
+                ENT_VAL: self.ENT_VAL(),
+                ERR: self.ERR(),
+                TSTOP_OK: self.TSTOP_OK(),
+                OSC2_FAIL: self.OSC2_FAIL(),
+                PRGM: self.PRGM(),
+                INTG_ERR: self.INTG_ERR(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "TRNG Oscillator 2 Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -687,6 +945,41 @@ pub mod regs {
             OSC2_CTL(0)
         }
     }
+    impl core::fmt::Debug for OSC2_CTL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("OSC2_CTL")
+                .field("TRNG_ENT_CTL", &self.TRNG_ENT_CTL())
+                .field("OSC2_DIV", &self.OSC2_DIV())
+                .field("OSC2_OUT_EN", &self.OSC2_OUT_EN())
+                .field("OSC2_FCT_VAL", &self.OSC2_FCT_VAL())
+                .field("OSC_FAILSAFE_LMT", &self.OSC_FAILSAFE_LMT())
+                .field("OSC_FAILSAFE_TEST", &self.OSC_FAILSAFE_TEST())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OSC2_CTL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct OSC2_CTL {
+                TRNG_ENT_CTL: u8,
+                OSC2_DIV: u8,
+                OSC2_OUT_EN: bool,
+                OSC2_FCT_VAL: bool,
+                OSC_FAILSAFE_LMT: u8,
+                OSC_FAILSAFE_TEST: bool,
+            }
+            let proxy = OSC2_CTL {
+                TRNG_ENT_CTL: self.TRNG_ENT_CTL(),
+                OSC2_DIV: self.OSC2_DIV(),
+                OSC2_OUT_EN: self.OSC2_OUT_EN(),
+                OSC2_FCT_VAL: self.OSC2_FCT_VAL(),
+                OSC_FAILSAFE_LMT: self.OSC_FAILSAFE_LMT(),
+                OSC_FAILSAFE_TEST: self.OSC_FAILSAFE_TEST(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Oscillator-2 Frequency Count Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -706,6 +999,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> OSC2_FRQCNT {
             OSC2_FRQCNT(0)
+        }
+    }
+    impl core::fmt::Debug for OSC2_FRQCNT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("OSC2_FRQCNT")
+                .field("OSC2_FRQ_CT", &self.OSC2_FRQ_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OSC2_FRQCNT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct OSC2_FRQCNT {
+                OSC2_FRQ_CT: u32,
+            }
+            let proxy = OSC2_FRQCNT {
+                OSC2_FRQ_CT: self.OSC2_FRQ_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Statistical Check Poker Count 1 and 0 Register"]
@@ -738,6 +1051,29 @@ pub mod regs {
             PKRCNT10(0)
         }
     }
+    impl core::fmt::Debug for PKRCNT10 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKRCNT10")
+                .field("PKR_0_CT", &self.PKR_0_CT())
+                .field("PKR_1_CT", &self.PKR_1_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKRCNT10 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKRCNT10 {
+                PKR_0_CT: u16,
+                PKR_1_CT: u16,
+            }
+            let proxy = PKRCNT10 {
+                PKR_0_CT: self.PKR_0_CT(),
+                PKR_1_CT: self.PKR_1_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Statistical Check Poker Count 3 and 2 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -766,6 +1102,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PKRCNT32 {
             PKRCNT32(0)
+        }
+    }
+    impl core::fmt::Debug for PKRCNT32 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKRCNT32")
+                .field("PKR_2_CT", &self.PKR_2_CT())
+                .field("PKR_3_CT", &self.PKR_3_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKRCNT32 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKRCNT32 {
+                PKR_2_CT: u16,
+                PKR_3_CT: u16,
+            }
+            let proxy = PKRCNT32 {
+                PKR_2_CT: self.PKR_2_CT(),
+                PKR_3_CT: self.PKR_3_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Statistical Check Poker Count 5 and 4 Register"]
@@ -798,6 +1157,29 @@ pub mod regs {
             PKRCNT54(0)
         }
     }
+    impl core::fmt::Debug for PKRCNT54 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKRCNT54")
+                .field("PKR_4_CT", &self.PKR_4_CT())
+                .field("PKR_5_CT", &self.PKR_5_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKRCNT54 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKRCNT54 {
+                PKR_4_CT: u16,
+                PKR_5_CT: u16,
+            }
+            let proxy = PKRCNT54 {
+                PKR_4_CT: self.PKR_4_CT(),
+                PKR_5_CT: self.PKR_5_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Statistical Check Poker Count 7 and 6 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -826,6 +1208,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PKRCNT76 {
             PKRCNT76(0)
+        }
+    }
+    impl core::fmt::Debug for PKRCNT76 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKRCNT76")
+                .field("PKR_6_CT", &self.PKR_6_CT())
+                .field("PKR_7_CT", &self.PKR_7_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKRCNT76 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKRCNT76 {
+                PKR_6_CT: u16,
+                PKR_7_CT: u16,
+            }
+            let proxy = PKRCNT76 {
+                PKR_6_CT: self.PKR_6_CT(),
+                PKR_7_CT: self.PKR_7_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Statistical Check Poker Count 9 and 8 Register"]
@@ -858,6 +1263,29 @@ pub mod regs {
             PKRCNT98(0)
         }
     }
+    impl core::fmt::Debug for PKRCNT98 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKRCNT98")
+                .field("PKR_8_CT", &self.PKR_8_CT())
+                .field("PKR_9_CT", &self.PKR_9_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKRCNT98 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKRCNT98 {
+                PKR_8_CT: u16,
+                PKR_9_CT: u16,
+            }
+            let proxy = PKRCNT98 {
+                PKR_8_CT: self.PKR_8_CT(),
+                PKR_9_CT: self.PKR_9_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Statistical Check Poker Count B and A Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -886,6 +1314,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PKRCNTBA {
             PKRCNTBA(0)
+        }
+    }
+    impl core::fmt::Debug for PKRCNTBA {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKRCNTBA")
+                .field("PKR_A_CT", &self.PKR_A_CT())
+                .field("PKR_B_CT", &self.PKR_B_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKRCNTBA {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKRCNTBA {
+                PKR_A_CT: u16,
+                PKR_B_CT: u16,
+            }
+            let proxy = PKRCNTBA {
+                PKR_A_CT: self.PKR_A_CT(),
+                PKR_B_CT: self.PKR_B_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Statistical Check Poker Count D and C Register"]
@@ -918,6 +1369,29 @@ pub mod regs {
             PKRCNTDC(0)
         }
     }
+    impl core::fmt::Debug for PKRCNTDC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKRCNTDC")
+                .field("PKR_C_CT", &self.PKR_C_CT())
+                .field("PKR_D_CT", &self.PKR_D_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKRCNTDC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKRCNTDC {
+                PKR_C_CT: u16,
+                PKR_D_CT: u16,
+            }
+            let proxy = PKRCNTDC {
+                PKR_C_CT: self.PKR_C_CT(),
+                PKR_D_CT: self.PKR_D_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Statistical Check Poker Count F and E Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -948,6 +1422,29 @@ pub mod regs {
             PKRCNTFE(0)
         }
     }
+    impl core::fmt::Debug for PKRCNTFE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKRCNTFE")
+                .field("PKR_E_CT", &self.PKR_E_CT())
+                .field("PKR_F_CT", &self.PKR_F_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKRCNTFE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKRCNTFE {
+                PKR_E_CT: u16,
+                PKR_F_CT: u16,
+            }
+            let proxy = PKRCNTFE {
+                PKR_E_CT: self.PKR_E_CT(),
+                PKR_F_CT: self.PKR_F_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Poker Maximum Limit Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -967,6 +1464,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PKRMAX {
             PKRMAX(0)
+        }
+    }
+    impl core::fmt::Debug for PKRMAX {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKRMAX")
+                .field("PKR_MAX", &self.PKR_MAX())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKRMAX {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKRMAX {
+                PKR_MAX: u32,
+            }
+            let proxy = PKRMAX {
+                PKR_MAX: self.PKR_MAX(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Poker Range Register"]
@@ -990,6 +1507,26 @@ pub mod regs {
             PKRRNG(0)
         }
     }
+    impl core::fmt::Debug for PKRRNG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKRRNG")
+                .field("PKR_RNG", &self.PKR_RNG())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKRRNG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKRRNG {
+                PKR_RNG: u16,
+            }
+            let proxy = PKRRNG {
+                PKR_RNG: self.PKR_RNG(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Poker Square Calculation Result Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1009,6 +1546,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PKRSQ {
             PKRSQ(0)
+        }
+    }
+    impl core::fmt::Debug for PKRSQ {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKRSQ")
+                .field("PKR_SQ", &self.PKR_SQ())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKRSQ {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKRSQ {
+                PKR_SQ: u32,
+            }
+            let proxy = PKRSQ {
+                PKR_SQ: self.PKR_SQ(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Sparse Bit Limit Register"]
@@ -1032,6 +1589,26 @@ pub mod regs {
             SBLIM(0)
         }
     }
+    impl core::fmt::Debug for SBLIM {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SBLIM")
+                .field("SB_LIM", &self.SB_LIM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SBLIM {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SBLIM {
+                SB_LIM: u16,
+            }
+            let proxy = SBLIM {
+                SB_LIM: self.SB_LIM(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Statistical Check Monobit Count Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1051,6 +1628,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SCMC {
             SCMC(0)
+        }
+    }
+    impl core::fmt::Debug for SCMC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SCMC")
+                .field("MONO_CT", &self.MONO_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCMC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SCMC {
+                MONO_CT: u16,
+            }
+            let proxy = SCMC {
+                MONO_CT: self.MONO_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Statistical Check Miscellaneous Register"]
@@ -1083,6 +1680,29 @@ pub mod regs {
             SCMISC(0)
         }
     }
+    impl core::fmt::Debug for SCMISC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SCMISC")
+                .field("LRUN_MAX", &self.LRUN_MAX())
+                .field("RTY_CT", &self.RTY_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCMISC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SCMISC {
+                LRUN_MAX: u8,
+                RTY_CT: u8,
+            }
+            let proxy = SCMISC {
+                LRUN_MAX: self.LRUN_MAX(),
+                RTY_CT: self.RTY_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Statistical Check Monobit Limit Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1111,6 +1731,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SCML {
             SCML(0)
+        }
+    }
+    impl core::fmt::Debug for SCML {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SCML")
+                .field("MONO_MAX", &self.MONO_MAX())
+                .field("MONO_RNG", &self.MONO_RNG())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCML {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SCML {
+                MONO_MAX: u16,
+                MONO_RNG: u16,
+            }
+            let proxy = SCML {
+                MONO_MAX: self.MONO_MAX(),
+                MONO_RNG: self.MONO_RNG(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Statistical Check Run Length 1 Count Register"]
@@ -1143,6 +1786,29 @@ pub mod regs {
             SCR1C(0)
         }
     }
+    impl core::fmt::Debug for SCR1C {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SCR1C")
+                .field("R1_0_CT", &self.R1_0_CT())
+                .field("R1_1_CT", &self.R1_1_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCR1C {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SCR1C {
+                R1_0_CT: u16,
+                R1_1_CT: u16,
+            }
+            let proxy = SCR1C {
+                R1_0_CT: self.R1_0_CT(),
+                R1_1_CT: self.R1_1_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Statistical Check Run Length 1 Limit Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1171,6 +1837,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SCR1L {
             SCR1L(0)
+        }
+    }
+    impl core::fmt::Debug for SCR1L {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SCR1L")
+                .field("RUN1_MAX", &self.RUN1_MAX())
+                .field("RUN1_RNG", &self.RUN1_RNG())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCR1L {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SCR1L {
+                RUN1_MAX: u16,
+                RUN1_RNG: u16,
+            }
+            let proxy = SCR1L {
+                RUN1_MAX: self.RUN1_MAX(),
+                RUN1_RNG: self.RUN1_RNG(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Statistical Check Run Length 2 Count Register"]
@@ -1203,6 +1892,29 @@ pub mod regs {
             SCR2C(0)
         }
     }
+    impl core::fmt::Debug for SCR2C {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SCR2C")
+                .field("R2_0_CT", &self.R2_0_CT())
+                .field("R2_1_CT", &self.R2_1_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCR2C {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SCR2C {
+                R2_0_CT: u16,
+                R2_1_CT: u16,
+            }
+            let proxy = SCR2C {
+                R2_0_CT: self.R2_0_CT(),
+                R2_1_CT: self.R2_1_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Statistical Check Run Length 2 Limit Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1231,6 +1943,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SCR2L {
             SCR2L(0)
+        }
+    }
+    impl core::fmt::Debug for SCR2L {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SCR2L")
+                .field("RUN2_MAX", &self.RUN2_MAX())
+                .field("RUN2_RNG", &self.RUN2_RNG())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCR2L {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SCR2L {
+                RUN2_MAX: u16,
+                RUN2_RNG: u16,
+            }
+            let proxy = SCR2L {
+                RUN2_MAX: self.RUN2_MAX(),
+                RUN2_RNG: self.RUN2_RNG(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Statistical Check Run Length 3 Count Register"]
@@ -1263,6 +1998,29 @@ pub mod regs {
             SCR3C(0)
         }
     }
+    impl core::fmt::Debug for SCR3C {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SCR3C")
+                .field("R3_0_CT", &self.R3_0_CT())
+                .field("R3_1_CT", &self.R3_1_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCR3C {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SCR3C {
+                R3_0_CT: u16,
+                R3_1_CT: u16,
+            }
+            let proxy = SCR3C {
+                R3_0_CT: self.R3_0_CT(),
+                R3_1_CT: self.R3_1_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Statistical Check Run Length 3 Limit Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1291,6 +2049,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SCR3L {
             SCR3L(0)
+        }
+    }
+    impl core::fmt::Debug for SCR3L {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SCR3L")
+                .field("RUN3_MAX", &self.RUN3_MAX())
+                .field("RUN3_RNG", &self.RUN3_RNG())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCR3L {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SCR3L {
+                RUN3_MAX: u16,
+                RUN3_RNG: u16,
+            }
+            let proxy = SCR3L {
+                RUN3_MAX: self.RUN3_MAX(),
+                RUN3_RNG: self.RUN3_RNG(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Statistical Check Run Length 4 Count Register"]
@@ -1323,6 +2104,29 @@ pub mod regs {
             SCR4C(0)
         }
     }
+    impl core::fmt::Debug for SCR4C {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SCR4C")
+                .field("R4_0_CT", &self.R4_0_CT())
+                .field("R4_1_CT", &self.R4_1_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCR4C {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SCR4C {
+                R4_0_CT: u16,
+                R4_1_CT: u16,
+            }
+            let proxy = SCR4C {
+                R4_0_CT: self.R4_0_CT(),
+                R4_1_CT: self.R4_1_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Statistical Check Run Length 4 Limit Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1351,6 +2155,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SCR4L {
             SCR4L(0)
+        }
+    }
+    impl core::fmt::Debug for SCR4L {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SCR4L")
+                .field("RUN4_MAX", &self.RUN4_MAX())
+                .field("RUN4_RNG", &self.RUN4_RNG())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCR4L {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SCR4L {
+                RUN4_MAX: u16,
+                RUN4_RNG: u16,
+            }
+            let proxy = SCR4L {
+                RUN4_MAX: self.RUN4_MAX(),
+                RUN4_RNG: self.RUN4_RNG(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Statistical Check Run Length 5 Count Register"]
@@ -1383,6 +2210,29 @@ pub mod regs {
             SCR5C(0)
         }
     }
+    impl core::fmt::Debug for SCR5C {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SCR5C")
+                .field("R5_0_CT", &self.R5_0_CT())
+                .field("R5_1_CT", &self.R5_1_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCR5C {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SCR5C {
+                R5_0_CT: u16,
+                R5_1_CT: u16,
+            }
+            let proxy = SCR5C {
+                R5_0_CT: self.R5_0_CT(),
+                R5_1_CT: self.R5_1_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Statistical Check Run Length 5 Limit Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1411,6 +2261,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SCR5L {
             SCR5L(0)
+        }
+    }
+    impl core::fmt::Debug for SCR5L {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SCR5L")
+                .field("RUN5_MAX", &self.RUN5_MAX())
+                .field("RUN5_RNG", &self.RUN5_RNG())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCR5L {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SCR5L {
+                RUN5_MAX: u16,
+                RUN5_RNG: u16,
+            }
+            let proxy = SCR5L {
+                RUN5_MAX: self.RUN5_MAX(),
+                RUN5_RNG: self.RUN5_RNG(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Statistical Check Run Length 6+ Count Register"]
@@ -1443,6 +2316,29 @@ pub mod regs {
             SCR6PC(0)
         }
     }
+    impl core::fmt::Debug for SCR6PC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SCR6PC")
+                .field("R6P_0_CT", &self.R6P_0_CT())
+                .field("R6P_1_CT", &self.R6P_1_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCR6PC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SCR6PC {
+                R6P_0_CT: u16,
+                R6P_1_CT: u16,
+            }
+            let proxy = SCR6PC {
+                R6P_0_CT: self.R6P_0_CT(),
+                R6P_1_CT: self.R6P_1_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Statistical Check Run Length 6+ Limit Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1471,6 +2367,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SCR6PL {
             SCR6PL(0)
+        }
+    }
+    impl core::fmt::Debug for SCR6PL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SCR6PL")
+                .field("RUN6P_MAX", &self.RUN6P_MAX())
+                .field("RUN6P_RNG", &self.RUN6P_RNG())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCR6PL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SCR6PL {
+                RUN6P_MAX: u16,
+                RUN6P_RNG: u16,
+            }
+            let proxy = SCR6PL {
+                RUN6P_MAX: self.RUN6P_MAX(),
+                RUN6P_RNG: self.RUN6P_RNG(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Seed Control Register"]
@@ -1503,6 +2422,29 @@ pub mod regs {
             SDCTL(0)
         }
     }
+    impl core::fmt::Debug for SDCTL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SDCTL")
+                .field("SAMP_SIZE", &self.SAMP_SIZE())
+                .field("ENT_DLY", &self.ENT_DLY())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SDCTL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SDCTL {
+                SAMP_SIZE: u16,
+                ENT_DLY: u16,
+            }
+            let proxy = SDCTL {
+                SAMP_SIZE: self.SAMP_SIZE(),
+                ENT_DLY: self.ENT_DLY(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Security Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1522,6 +2464,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SEC_CFG {
             SEC_CFG(0)
+        }
+    }
+    impl core::fmt::Debug for SEC_CFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SEC_CFG")
+                .field("NO_PRGM", &self.NO_PRGM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SEC_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SEC_CFG {
+                NO_PRGM: bool,
+            }
+            let proxy = SEC_CFG {
+                NO_PRGM: self.NO_PRGM(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status Register"]
@@ -1689,6 +2651,74 @@ pub mod regs {
             STATUS(0)
         }
     }
+    impl core::fmt::Debug for STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("STATUS")
+                .field("TF1BR0", &self.TF1BR0())
+                .field("TF1BR1", &self.TF1BR1())
+                .field("TF2BR0", &self.TF2BR0())
+                .field("TF2BR1", &self.TF2BR1())
+                .field("TF3BR0", &self.TF3BR0())
+                .field("TF3BR1", &self.TF3BR1())
+                .field("TF4BR0", &self.TF4BR0())
+                .field("TF4BR1", &self.TF4BR1())
+                .field("TF5BR0", &self.TF5BR0())
+                .field("TF5BR1", &self.TF5BR1())
+                .field("TF6PBR0", &self.TF6PBR0())
+                .field("TF6PBR1", &self.TF6PBR1())
+                .field("TFSB", &self.TFSB())
+                .field("TFLR", &self.TFLR())
+                .field("TFP", &self.TFP())
+                .field("TFMB", &self.TFMB())
+                .field("RETRY_CT", &self.RETRY_CT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct STATUS {
+                TF1BR0: bool,
+                TF1BR1: bool,
+                TF2BR0: bool,
+                TF2BR1: bool,
+                TF3BR0: bool,
+                TF3BR1: bool,
+                TF4BR0: bool,
+                TF4BR1: bool,
+                TF5BR0: bool,
+                TF5BR1: bool,
+                TF6PBR0: bool,
+                TF6PBR1: bool,
+                TFSB: bool,
+                TFLR: bool,
+                TFP: bool,
+                TFMB: bool,
+                RETRY_CT: u8,
+            }
+            let proxy = STATUS {
+                TF1BR0: self.TF1BR0(),
+                TF1BR1: self.TF1BR1(),
+                TF2BR0: self.TF2BR0(),
+                TF2BR1: self.TF2BR1(),
+                TF3BR0: self.TF3BR0(),
+                TF3BR1: self.TF3BR1(),
+                TF4BR0: self.TF4BR0(),
+                TF4BR1: self.TF4BR1(),
+                TF5BR0: self.TF5BR0(),
+                TF5BR1: self.TF5BR1(),
+                TF6PBR0: self.TF6PBR0(),
+                TF6PBR1: self.TF6PBR1(),
+                TFSB: self.TFSB(),
+                TFLR: self.TFLR(),
+                TFP: self.TFP(),
+                TFMB: self.TFMB(),
+                RETRY_CT: self.RETRY_CT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Total Samples Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1708,6 +2738,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TOTSAM {
             TOTSAM(0)
+        }
+    }
+    impl core::fmt::Debug for TOTSAM {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TOTSAM")
+                .field("TOT_SAM", &self.TOT_SAM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TOTSAM {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TOTSAM {
+                TOT_SAM: u32,
+            }
+            let proxy = TOTSAM {
+                TOT_SAM: self.TOT_SAM(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Version ID Register (MS)"]
@@ -1747,6 +2797,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> VID1 {
             VID1(0)
+        }
+    }
+    impl core::fmt::Debug for VID1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VID1")
+                .field("MIN_REV", &self.MIN_REV())
+                .field("MAJ_REV", &self.MAJ_REV())
+                .field("IP_ID", &self.IP_ID())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VID1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VID1 {
+                MIN_REV: u8,
+                MAJ_REV: u8,
+                IP_ID: u16,
+            }
+            let proxy = VID1 {
+                MIN_REV: self.MIN_REV(),
+                MAJ_REV: self.MAJ_REV(),
+                IP_ID: self.IP_ID(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Version ID Register (LS)"]
@@ -1795,6 +2871,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> VID2 {
             VID2(0)
+        }
+    }
+    impl core::fmt::Debug for VID2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VID2")
+                .field("CONFIG_OPT", &self.CONFIG_OPT())
+                .field("ECO_REV", &self.ECO_REV())
+                .field("INTG_OPT", &self.INTG_OPT())
+                .field("ERA", &self.ERA())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VID2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VID2 {
+                CONFIG_OPT: u8,
+                ECO_REV: u8,
+                INTG_OPT: u8,
+                ERA: u8,
+            }
+            let proxy = VID2 {
+                CONFIG_OPT: self.CONFIG_OPT(),
+                ECO_REV: self.ECO_REV(),
+                INTG_OPT: self.INTG_OPT(),
+                ERA: self.ERA(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

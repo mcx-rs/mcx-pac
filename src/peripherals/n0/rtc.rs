@@ -126,6 +126,26 @@ pub mod regs {
             ALM_DAYS(0)
         }
     }
+    impl core::fmt::Debug for ALM_DAYS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ALM_DAYS")
+                .field("ALM_DAY", &self.ALM_DAY())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ALM_DAYS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ALM_DAYS {
+                ALM_DAY: u8,
+            }
+            let proxy = ALM_DAYS {
+                ALM_DAY: self.ALM_DAY(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Hours and Minutes Alarm"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -154,6 +174,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ALM_HOURMIN {
             ALM_HOURMIN(0)
+        }
+    }
+    impl core::fmt::Debug for ALM_HOURMIN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ALM_HOURMIN")
+                .field("ALM_MIN", &self.ALM_MIN())
+                .field("ALM_HOUR", &self.ALM_HOUR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ALM_HOURMIN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ALM_HOURMIN {
+                ALM_MIN: u8,
+                ALM_HOUR: u8,
+            }
+            let proxy = ALM_HOURMIN {
+                ALM_MIN: self.ALM_MIN(),
+                ALM_HOUR: self.ALM_HOUR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Seconds Alarm"]
@@ -195,6 +238,32 @@ pub mod regs {
             ALM_SECONDS(0)
         }
     }
+    impl core::fmt::Debug for ALM_SECONDS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ALM_SECONDS")
+                .field("ALM_SEC", &self.ALM_SEC())
+                .field("DEC_SEC", &self.DEC_SEC())
+                .field("INC_SEC", &self.INC_SEC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ALM_SECONDS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ALM_SECONDS {
+                ALM_SEC: u8,
+                DEC_SEC: bool,
+                INC_SEC: bool,
+            }
+            let proxy = ALM_SECONDS {
+                ALM_SEC: self.ALM_SEC(),
+                DEC_SEC: self.DEC_SEC(),
+                INC_SEC: self.INC_SEC(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Year and Months Alarm"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -225,6 +294,29 @@ pub mod regs {
             ALM_YEARMON(0)
         }
     }
+    impl core::fmt::Debug for ALM_YEARMON {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ALM_YEARMON")
+                .field("ALM_MON", &self.ALM_MON())
+                .field("ALM_YEAR", &self.ALM_YEAR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ALM_YEARMON {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ALM_YEARMON {
+                ALM_MON: u8,
+                ALM_YEAR: u8,
+            }
+            let proxy = ALM_YEARMON {
+                ALM_MON: self.ALM_MON(),
+                ALM_YEAR: self.ALM_YEAR(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Compensation"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -244,6 +336,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> COMPEN {
             COMPEN(0)
+        }
+    }
+    impl core::fmt::Debug for COMPEN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("COMPEN")
+                .field("COMPEN_VAL", &self.COMPEN_VAL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for COMPEN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct COMPEN {
+                COMPEN_VAL: u16,
+            }
+            let proxy = COMPEN {
+                COMPEN_VAL: self.COMPEN_VAL(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Control"]
@@ -330,6 +442,47 @@ pub mod regs {
             CTRL(0)
         }
     }
+    impl core::fmt::Debug for CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL")
+                .field("FINEEN", &self.FINEEN())
+                .field("COMP_EN", &self.COMP_EN())
+                .field("ALM_MATCH", &self.ALM_MATCH())
+                .field("DST_EN", &self.DST_EN())
+                .field("SWR", &self.SWR())
+                .field("CLK_SEL", &self.CLK_SEL())
+                .field("CLKO_DIS", &self.CLKO_DIS())
+                .field("CLKOUT", &self.CLKOUT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL {
+                FINEEN: bool,
+                COMP_EN: bool,
+                ALM_MATCH: u8,
+                DST_EN: bool,
+                SWR: bool,
+                CLK_SEL: bool,
+                CLKO_DIS: bool,
+                CLKOUT: u8,
+            }
+            let proxy = CTRL {
+                FINEEN: self.FINEEN(),
+                COMP_EN: self.COMP_EN(),
+                ALM_MATCH: self.ALM_MATCH(),
+                DST_EN: self.DST_EN(),
+                SWR: self.SWR(),
+                CLK_SEL: self.CLK_SEL(),
+                CLKO_DIS: self.CLKO_DIS(),
+                CLKOUT: self.CLKOUT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Days and Day-of-Week Counters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -358,6 +511,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DAYS {
             DAYS(0)
+        }
+    }
+    impl core::fmt::Debug for DAYS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DAYS")
+                .field("DAY_CNT", &self.DAY_CNT())
+                .field("DOW", &self.DOW())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DAYS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DAYS {
+                DAY_CNT: u8,
+                DOW: u8,
+            }
+            let proxy = DAYS {
+                DAY_CNT: self.DAY_CNT(),
+                DOW: self.DOW(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Daylight Saving Day"]
@@ -390,6 +566,29 @@ pub mod regs {
             DST_DAY(0)
         }
     }
+    impl core::fmt::Debug for DST_DAY {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DST_DAY")
+                .field("DST_END_DAY", &self.DST_END_DAY())
+                .field("DST_START_DAY", &self.DST_START_DAY())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DST_DAY {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DST_DAY {
+                DST_END_DAY: u8,
+                DST_START_DAY: u8,
+            }
+            let proxy = DST_DAY {
+                DST_END_DAY: self.DST_END_DAY(),
+                DST_START_DAY: self.DST_START_DAY(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Daylight Saving Hour"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -418,6 +617,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DST_HOUR {
             DST_HOUR(0)
+        }
+    }
+    impl core::fmt::Debug for DST_HOUR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DST_HOUR")
+                .field("DST_END_HOUR", &self.DST_END_HOUR())
+                .field("DST_START_HOUR", &self.DST_START_HOUR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DST_HOUR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DST_HOUR {
+                DST_END_HOUR: u8,
+                DST_START_HOUR: u8,
+            }
+            let proxy = DST_HOUR {
+                DST_END_HOUR: self.DST_END_HOUR(),
+                DST_START_HOUR: self.DST_START_HOUR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Daylight Saving Month"]
@@ -450,6 +672,29 @@ pub mod regs {
             DST_MONTH(0)
         }
     }
+    impl core::fmt::Debug for DST_MONTH {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DST_MONTH")
+                .field("DST_END_MONTH", &self.DST_END_MONTH())
+                .field("DST_START_MONTH", &self.DST_START_MONTH())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DST_MONTH {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DST_MONTH {
+                DST_END_MONTH: u8,
+                DST_START_MONTH: u8,
+            }
+            let proxy = DST_MONTH {
+                DST_END_MONTH: self.DST_END_MONTH(),
+                DST_START_MONTH: self.DST_START_MONTH(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Hours and Minutes Counters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -478,6 +723,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> HOURMIN {
             HOURMIN(0)
+        }
+    }
+    impl core::fmt::Debug for HOURMIN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("HOURMIN")
+                .field("MIN_CNT", &self.MIN_CNT())
+                .field("HOUR_CNT", &self.HOUR_CNT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HOURMIN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct HOURMIN {
+                MIN_CNT: u8,
+                HOUR_CNT: u8,
+            }
+            let proxy = HOURMIN {
+                MIN_CNT: self.MIN_CNT(),
+                HOUR_CNT: self.HOUR_CNT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Enable"]
@@ -618,6 +886,65 @@ pub mod regs {
             IER(0)
         }
     }
+    impl core::fmt::Debug for IER {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IER")
+                .field("ALM_IE", &self.ALM_IE())
+                .field("DAY_IE", &self.DAY_IE())
+                .field("HOUR_IE", &self.HOUR_IE())
+                .field("MIN_IE", &self.MIN_IE())
+                .field("IE_1HZ", &self.IE_1HZ())
+                .field("IE_2HZ", &self.IE_2HZ())
+                .field("IE_4HZ", &self.IE_4HZ())
+                .field("IE_8HZ", &self.IE_8HZ())
+                .field("IE_16HZ", &self.IE_16HZ())
+                .field("IE_32HZ", &self.IE_32HZ())
+                .field("IE_64HZ", &self.IE_64HZ())
+                .field("IE_128HZ", &self.IE_128HZ())
+                .field("IE_256HZ", &self.IE_256HZ())
+                .field("IE_512HZ", &self.IE_512HZ())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IER {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IER {
+                ALM_IE: bool,
+                DAY_IE: bool,
+                HOUR_IE: bool,
+                MIN_IE: bool,
+                IE_1HZ: bool,
+                IE_2HZ: bool,
+                IE_4HZ: bool,
+                IE_8HZ: bool,
+                IE_16HZ: bool,
+                IE_32HZ: bool,
+                IE_64HZ: bool,
+                IE_128HZ: bool,
+                IE_256HZ: bool,
+                IE_512HZ: bool,
+            }
+            let proxy = IER {
+                ALM_IE: self.ALM_IE(),
+                DAY_IE: self.DAY_IE(),
+                HOUR_IE: self.HOUR_IE(),
+                MIN_IE: self.MIN_IE(),
+                IE_1HZ: self.IE_1HZ(),
+                IE_2HZ: self.IE_2HZ(),
+                IE_4HZ: self.IE_4HZ(),
+                IE_8HZ: self.IE_8HZ(),
+                IE_16HZ: self.IE_16HZ(),
+                IE_32HZ: self.IE_32HZ(),
+                IE_64HZ: self.IE_64HZ(),
+                IE_128HZ: self.IE_128HZ(),
+                IE_256HZ: self.IE_256HZ(),
+                IE_512HZ: self.IE_512HZ(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -756,6 +1083,65 @@ pub mod regs {
             ISR(0)
         }
     }
+    impl core::fmt::Debug for ISR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ISR")
+                .field("ALM_IS", &self.ALM_IS())
+                .field("DAY_IS", &self.DAY_IS())
+                .field("HOUR_IS", &self.HOUR_IS())
+                .field("MIN_IS", &self.MIN_IS())
+                .field("IS_1HZ", &self.IS_1HZ())
+                .field("IS_2HZ", &self.IS_2HZ())
+                .field("IS_4HZ", &self.IS_4HZ())
+                .field("IS_8HZ", &self.IS_8HZ())
+                .field("IS_16HZ", &self.IS_16HZ())
+                .field("IS_32HZ", &self.IS_32HZ())
+                .field("IS_64HZ", &self.IS_64HZ())
+                .field("IS_128HZ", &self.IS_128HZ())
+                .field("IS_256HZ", &self.IS_256HZ())
+                .field("IS_512HZ", &self.IS_512HZ())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ISR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ISR {
+                ALM_IS: bool,
+                DAY_IS: bool,
+                HOUR_IS: bool,
+                MIN_IS: bool,
+                IS_1HZ: bool,
+                IS_2HZ: bool,
+                IS_4HZ: bool,
+                IS_8HZ: bool,
+                IS_16HZ: bool,
+                IS_32HZ: bool,
+                IS_64HZ: bool,
+                IS_128HZ: bool,
+                IS_256HZ: bool,
+                IS_512HZ: bool,
+            }
+            let proxy = ISR {
+                ALM_IS: self.ALM_IS(),
+                DAY_IS: self.DAY_IS(),
+                HOUR_IS: self.HOUR_IS(),
+                MIN_IS: self.MIN_IS(),
+                IS_1HZ: self.IS_1HZ(),
+                IS_2HZ: self.IS_2HZ(),
+                IS_4HZ: self.IS_4HZ(),
+                IS_8HZ: self.IS_8HZ(),
+                IS_16HZ: self.IS_16HZ(),
+                IS_32HZ: self.IS_32HZ(),
+                IS_64HZ: self.IS_64HZ(),
+                IS_128HZ: self.IS_128HZ(),
+                IS_256HZ: self.IS_256HZ(),
+                IS_512HZ: self.IS_512HZ(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Sub Second Counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -777,6 +1163,26 @@ pub mod regs {
             RTC_TEST2(0)
         }
     }
+    impl core::fmt::Debug for RTC_TEST2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RTC_TEST2")
+                .field("SUB_SECOND_COUNT", &self.SUB_SECOND_COUNT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RTC_TEST2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RTC_TEST2 {
+                SUB_SECOND_COUNT: u16,
+            }
+            let proxy = RTC_TEST2 {
+                SUB_SECOND_COUNT: self.SUB_SECOND_COUNT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Seconds Counters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -796,6 +1202,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SECONDS {
             SECONDS(0)
+        }
+    }
+    impl core::fmt::Debug for SECONDS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SECONDS")
+                .field("SEC_CNT", &self.SEC_CNT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SECONDS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SECONDS {
+                SEC_CNT: u8,
+            }
+            let proxy = SECONDS {
+                SEC_CNT: self.SEC_CNT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status"]
@@ -864,6 +1290,41 @@ pub mod regs {
             STATUS(0)
         }
     }
+    impl core::fmt::Debug for STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("STATUS")
+                .field("INVAL_BIT", &self.INVAL_BIT())
+                .field("WRITE_PROT_EN", &self.WRITE_PROT_EN())
+                .field("CMP_INT", &self.CMP_INT())
+                .field("WE", &self.WE())
+                .field("BUS_ERR", &self.BUS_ERR())
+                .field("CMP_DONE", &self.CMP_DONE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct STATUS {
+                INVAL_BIT: bool,
+                WRITE_PROT_EN: bool,
+                CMP_INT: bool,
+                WE: u8,
+                BUS_ERR: bool,
+                CMP_DONE: bool,
+            }
+            let proxy = STATUS {
+                INVAL_BIT: self.INVAL_BIT(),
+                WRITE_PROT_EN: self.WRITE_PROT_EN(),
+                CMP_INT: self.CMP_INT(),
+                WE: self.WE(),
+                BUS_ERR: self.BUS_ERR(),
+                CMP_DONE: self.CMP_DONE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Subsecond Counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -885,6 +1346,26 @@ pub mod regs {
             SUBSECOND_CNT(0)
         }
     }
+    impl core::fmt::Debug for SUBSECOND_CNT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SUBSECOND_CNT")
+                .field("SUBSECOND_CNT", &self.SUBSECOND_CNT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SUBSECOND_CNT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SUBSECOND_CNT {
+                SUBSECOND_CNT: u16,
+            }
+            let proxy = SUBSECOND_CNT {
+                SUBSECOND_CNT: self.SUBSECOND_CNT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Subsecond Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -904,6 +1385,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SUBSECOND_CTRL {
             SUBSECOND_CTRL(0)
+        }
+    }
+    impl core::fmt::Debug for SUBSECOND_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SUBSECOND_CTRL")
+                .field("SUB_SECOND_CNT_EN", &self.SUB_SECOND_CNT_EN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SUBSECOND_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SUBSECOND_CTRL {
+                SUB_SECOND_CNT_EN: bool,
+            }
+            let proxy = SUBSECOND_CTRL {
+                SUB_SECOND_CNT_EN: self.SUB_SECOND_CNT_EN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Wake Timer Control"]
@@ -954,6 +1455,35 @@ pub mod regs {
             WAKE_TIMER_CTRL(0)
         }
     }
+    impl core::fmt::Debug for WAKE_TIMER_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("WAKE_TIMER_CTRL")
+                .field("WAKE_FLAG", &self.WAKE_FLAG())
+                .field("CLR_WAKE_TIMER", &self.CLR_WAKE_TIMER())
+                .field("OSC_DIV_ENA", &self.OSC_DIV_ENA())
+                .field("INTR_EN", &self.INTR_EN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WAKE_TIMER_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct WAKE_TIMER_CTRL {
+                WAKE_FLAG: bool,
+                CLR_WAKE_TIMER: bool,
+                OSC_DIV_ENA: bool,
+                INTR_EN: bool,
+            }
+            let proxy = WAKE_TIMER_CTRL {
+                WAKE_FLAG: self.WAKE_FLAG(),
+                CLR_WAKE_TIMER: self.CLR_WAKE_TIMER(),
+                OSC_DIV_ENA: self.OSC_DIV_ENA(),
+                INTR_EN: self.INTR_EN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Year and Month Counters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -982,6 +1512,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> YEARMON {
             YEARMON(0)
+        }
+    }
+    impl core::fmt::Debug for YEARMON {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("YEARMON")
+                .field("MON_CNT", &self.MON_CNT())
+                .field("YROFST", &self.YROFST())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for YEARMON {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct YEARMON {
+                MON_CNT: u8,
+                YROFST: u8,
+            }
+            let proxy = YEARMON {
+                MON_CNT: self.MON_CNT(),
+                YROFST: self.YROFST(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -75,4 +75,20 @@ pub mod regs {
             MUTEX(0)
         }
     }
+    impl core::fmt::Debug for MUTEX {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MUTEX").field("EX", &self.EX()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MUTEX {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MUTEX {
+                EX: bool,
+            }
+            let proxy = MUTEX { EX: self.EX() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }

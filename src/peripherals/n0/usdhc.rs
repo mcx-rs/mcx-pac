@@ -178,6 +178,32 @@ pub mod regs {
             ADMA_ERR_STATUS(0)
         }
     }
+    impl core::fmt::Debug for ADMA_ERR_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ADMA_ERR_STATUS")
+                .field("ADMAES", &self.ADMAES())
+                .field("ADMALME", &self.ADMALME())
+                .field("ADMADCE", &self.ADMADCE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ADMA_ERR_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ADMA_ERR_STATUS {
+                ADMAES: u8,
+                ADMALME: bool,
+                ADMADCE: bool,
+            }
+            let proxy = ADMA_ERR_STATUS {
+                ADMAES: self.ADMAES(),
+                ADMALME: self.ADMALME(),
+                ADMADCE: self.ADMADCE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "ADMA System Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -197,6 +223,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ADMA_SYS_ADDR {
             ADMA_SYS_ADDR(0)
+        }
+    }
+    impl core::fmt::Debug for ADMA_SYS_ADDR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ADMA_SYS_ADDR")
+                .field("ADS_ADDR", &self.ADS_ADDR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ADMA_SYS_ADDR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ADMA_SYS_ADDR {
+                ADS_ADDR: u32,
+            }
+            let proxy = ADMA_SYS_ADDR {
+                ADS_ADDR: self.ADS_ADDR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Auto CMD12 Error Status"]
@@ -283,6 +329,47 @@ pub mod regs {
             AUTOCMD12_ERR_STATUS(0)
         }
     }
+    impl core::fmt::Debug for AUTOCMD12_ERR_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AUTOCMD12_ERR_STATUS")
+                .field("AC12NE", &self.AC12NE())
+                .field("AC12TOE", &self.AC12TOE())
+                .field("AC12CE", &self.AC12CE())
+                .field("AC12EBE", &self.AC12EBE())
+                .field("AC12IE", &self.AC12IE())
+                .field("CNIBAC12E", &self.CNIBAC12E())
+                .field("EXECUTE_TUNING", &self.EXECUTE_TUNING())
+                .field("SMP_CLK_SEL", &self.SMP_CLK_SEL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AUTOCMD12_ERR_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AUTOCMD12_ERR_STATUS {
+                AC12NE: bool,
+                AC12TOE: bool,
+                AC12CE: bool,
+                AC12EBE: bool,
+                AC12IE: bool,
+                CNIBAC12E: bool,
+                EXECUTE_TUNING: bool,
+                SMP_CLK_SEL: bool,
+            }
+            let proxy = AUTOCMD12_ERR_STATUS {
+                AC12NE: self.AC12NE(),
+                AC12TOE: self.AC12TOE(),
+                AC12CE: self.AC12CE(),
+                AC12EBE: self.AC12EBE(),
+                AC12IE: self.AC12IE(),
+                CNIBAC12E: self.CNIBAC12E(),
+                EXECUTE_TUNING: self.EXECUTE_TUNING(),
+                SMP_CLK_SEL: self.SMP_CLK_SEL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Block Attributes"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -311,6 +398,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> BLK_ATT {
             BLK_ATT(0)
+        }
+    }
+    impl core::fmt::Debug for BLK_ATT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("BLK_ATT")
+                .field("BLKSIZE", &self.BLKSIZE())
+                .field("BLKCNT", &self.BLKCNT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BLK_ATT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct BLK_ATT {
+                BLKSIZE: u16,
+                BLKCNT: u16,
+            }
+            let proxy = BLK_ATT {
+                BLKSIZE: self.BLKSIZE(),
+                BLKCNT: self.BLKCNT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CLK Tuning Control and Status"]
@@ -395,6 +505,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CLK_TUNE_CTRL_STATUS {
             CLK_TUNE_CTRL_STATUS(0)
+        }
+    }
+    impl core::fmt::Debug for CLK_TUNE_CTRL_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CLK_TUNE_CTRL_STATUS")
+                .field("DLY_CELL_SET_POST", &self.DLY_CELL_SET_POST())
+                .field("DLY_CELL_SET_OUT", &self.DLY_CELL_SET_OUT())
+                .field("DLY_CELL_SET_PRE", &self.DLY_CELL_SET_PRE())
+                .field("NXT_ERR", &self.NXT_ERR())
+                .field("TAP_SEL_POST", &self.TAP_SEL_POST())
+                .field("TAP_SEL_OUT", &self.TAP_SEL_OUT())
+                .field("TAP_SEL_PRE", &self.TAP_SEL_PRE())
+                .field("PRE_ERR", &self.PRE_ERR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CLK_TUNE_CTRL_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CLK_TUNE_CTRL_STATUS {
+                DLY_CELL_SET_POST: u8,
+                DLY_CELL_SET_OUT: u8,
+                DLY_CELL_SET_PRE: u8,
+                NXT_ERR: bool,
+                TAP_SEL_POST: u8,
+                TAP_SEL_OUT: u8,
+                TAP_SEL_PRE: u8,
+                PRE_ERR: bool,
+            }
+            let proxy = CLK_TUNE_CTRL_STATUS {
+                DLY_CELL_SET_POST: self.DLY_CELL_SET_POST(),
+                DLY_CELL_SET_OUT: self.DLY_CELL_SET_OUT(),
+                DLY_CELL_SET_PRE: self.DLY_CELL_SET_PRE(),
+                NXT_ERR: self.NXT_ERR(),
+                TAP_SEL_POST: self.TAP_SEL_POST(),
+                TAP_SEL_OUT: self.TAP_SEL_OUT(),
+                TAP_SEL_PRE: self.TAP_SEL_PRE(),
+                PRE_ERR: self.PRE_ERR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Command Transfer Type"]
@@ -535,6 +686,65 @@ pub mod regs {
             CMD_XFR_TYP(0)
         }
     }
+    impl core::fmt::Debug for CMD_XFR_TYP {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CMD_XFR_TYP")
+                .field("DMAEN", &self.DMAEN())
+                .field("BCEN", &self.BCEN())
+                .field("AC12EN", &self.AC12EN())
+                .field("DDR_EN", &self.DDR_EN())
+                .field("DTDSEL", &self.DTDSEL())
+                .field("MSBSEL", &self.MSBSEL())
+                .field("NIBBLE_POS", &self.NIBBLE_POS())
+                .field("AC23EN", &self.AC23EN())
+                .field("RSPTYP", &self.RSPTYP())
+                .field("CCCEN", &self.CCCEN())
+                .field("CICEN", &self.CICEN())
+                .field("DPSEL", &self.DPSEL())
+                .field("CMDTYP", &self.CMDTYP())
+                .field("CMDINX", &self.CMDINX())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CMD_XFR_TYP {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CMD_XFR_TYP {
+                DMAEN: bool,
+                BCEN: bool,
+                AC12EN: bool,
+                DDR_EN: bool,
+                DTDSEL: bool,
+                MSBSEL: bool,
+                NIBBLE_POS: bool,
+                AC23EN: bool,
+                RSPTYP: u8,
+                CCCEN: bool,
+                CICEN: bool,
+                DPSEL: bool,
+                CMDTYP: u8,
+                CMDINX: u8,
+            }
+            let proxy = CMD_XFR_TYP {
+                DMAEN: self.DMAEN(),
+                BCEN: self.BCEN(),
+                AC12EN: self.AC12EN(),
+                DDR_EN: self.DDR_EN(),
+                DTDSEL: self.DTDSEL(),
+                MSBSEL: self.MSBSEL(),
+                NIBBLE_POS: self.NIBBLE_POS(),
+                AC23EN: self.AC23EN(),
+                RSPTYP: self.RSPTYP(),
+                CCCEN: self.CCCEN(),
+                CICEN: self.CICEN(),
+                DPSEL: self.DPSEL(),
+                CMDTYP: self.CMDTYP(),
+                CMDINX: self.CMDINX(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DLL (Delay Line) Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -637,6 +847,56 @@ pub mod regs {
             DLL_CTRL(0)
         }
     }
+    impl core::fmt::Debug for DLL_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DLL_CTRL")
+                .field("DLL_CTRL_ENABLE", &self.DLL_CTRL_ENABLE())
+                .field("DLL_CTRL_RESET", &self.DLL_CTRL_RESET())
+                .field("DLL_CTRL_SLV_FORCE_UPD", &self.DLL_CTRL_SLV_FORCE_UPD())
+                .field("DLL_CTRL_SLV_DLY_TARGET0", &self.DLL_CTRL_SLV_DLY_TARGET0())
+                .field("DLL_CTRL_GATE_UPDATE", &self.DLL_CTRL_GATE_UPDATE())
+                .field("DLL_CTRL_SLV_OVERRIDE", &self.DLL_CTRL_SLV_OVERRIDE())
+                .field(
+                    "DLL_CTRL_SLV_OVERRIDE_VAL",
+                    &self.DLL_CTRL_SLV_OVERRIDE_VAL(),
+                )
+                .field("DLL_CTRL_SLV_DLY_TARGET1", &self.DLL_CTRL_SLV_DLY_TARGET1())
+                .field("DLL_CTRL_SLV_UPDATE_INT", &self.DLL_CTRL_SLV_UPDATE_INT())
+                .field("DLL_CTRL_REF_UPDATE_INT", &self.DLL_CTRL_REF_UPDATE_INT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DLL_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DLL_CTRL {
+                DLL_CTRL_ENABLE: bool,
+                DLL_CTRL_RESET: bool,
+                DLL_CTRL_SLV_FORCE_UPD: bool,
+                DLL_CTRL_SLV_DLY_TARGET0: u8,
+                DLL_CTRL_GATE_UPDATE: bool,
+                DLL_CTRL_SLV_OVERRIDE: bool,
+                DLL_CTRL_SLV_OVERRIDE_VAL: u8,
+                DLL_CTRL_SLV_DLY_TARGET1: u8,
+                DLL_CTRL_SLV_UPDATE_INT: u8,
+                DLL_CTRL_REF_UPDATE_INT: u8,
+            }
+            let proxy = DLL_CTRL {
+                DLL_CTRL_ENABLE: self.DLL_CTRL_ENABLE(),
+                DLL_CTRL_RESET: self.DLL_CTRL_RESET(),
+                DLL_CTRL_SLV_FORCE_UPD: self.DLL_CTRL_SLV_FORCE_UPD(),
+                DLL_CTRL_SLV_DLY_TARGET0: self.DLL_CTRL_SLV_DLY_TARGET0(),
+                DLL_CTRL_GATE_UPDATE: self.DLL_CTRL_GATE_UPDATE(),
+                DLL_CTRL_SLV_OVERRIDE: self.DLL_CTRL_SLV_OVERRIDE(),
+                DLL_CTRL_SLV_OVERRIDE_VAL: self.DLL_CTRL_SLV_OVERRIDE_VAL(),
+                DLL_CTRL_SLV_DLY_TARGET1: self.DLL_CTRL_SLV_DLY_TARGET1(),
+                DLL_CTRL_SLV_UPDATE_INT: self.DLL_CTRL_SLV_UPDATE_INT(),
+                DLL_CTRL_REF_UPDATE_INT: self.DLL_CTRL_REF_UPDATE_INT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DLL Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -683,6 +943,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DLL_STATUS {
             DLL_STATUS(0)
+        }
+    }
+    impl core::fmt::Debug for DLL_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DLL_STATUS")
+                .field("DLL_STS_SLV_LOCK", &self.DLL_STS_SLV_LOCK())
+                .field("DLL_STS_REF_LOCK", &self.DLL_STS_REF_LOCK())
+                .field("DLL_STS_SLV_SEL", &self.DLL_STS_SLV_SEL())
+                .field("DLL_STS_REF_SEL", &self.DLL_STS_REF_SEL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DLL_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DLL_STATUS {
+                DLL_STS_SLV_LOCK: bool,
+                DLL_STS_REF_LOCK: bool,
+                DLL_STS_SLV_SEL: u8,
+                DLL_STS_REF_SEL: u8,
+            }
+            let proxy = DLL_STATUS {
+                DLL_STS_SLV_LOCK: self.DLL_STS_SLV_LOCK(),
+                DLL_STS_REF_LOCK: self.DLL_STS_REF_LOCK(),
+                DLL_STS_SLV_SEL: self.DLL_STS_SLV_SEL(),
+                DLL_STS_REF_SEL: self.DLL_STS_REF_SEL(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Force Event"]
@@ -850,6 +1139,74 @@ pub mod regs {
             FORCE_EVENT(0)
         }
     }
+    impl core::fmt::Debug for FORCE_EVENT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FORCE_EVENT")
+                .field("FEVTAC12NE", &self.FEVTAC12NE())
+                .field("FEVTAC12TOE", &self.FEVTAC12TOE())
+                .field("FEVTAC12CE", &self.FEVTAC12CE())
+                .field("FEVTAC12EBE", &self.FEVTAC12EBE())
+                .field("FEVTAC12IE", &self.FEVTAC12IE())
+                .field("FEVTCNIBAC12E", &self.FEVTCNIBAC12E())
+                .field("FEVTCTOE", &self.FEVTCTOE())
+                .field("FEVTCCE", &self.FEVTCCE())
+                .field("FEVTCEBE", &self.FEVTCEBE())
+                .field("FEVTCIE", &self.FEVTCIE())
+                .field("FEVTDTOE", &self.FEVTDTOE())
+                .field("FEVTDCE", &self.FEVTDCE())
+                .field("FEVTDEBE", &self.FEVTDEBE())
+                .field("FEVTAC12E", &self.FEVTAC12E())
+                .field("FEVTTNE", &self.FEVTTNE())
+                .field("FEVTDMAE", &self.FEVTDMAE())
+                .field("FEVTCINT", &self.FEVTCINT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FORCE_EVENT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FORCE_EVENT {
+                FEVTAC12NE: bool,
+                FEVTAC12TOE: bool,
+                FEVTAC12CE: bool,
+                FEVTAC12EBE: bool,
+                FEVTAC12IE: bool,
+                FEVTCNIBAC12E: bool,
+                FEVTCTOE: bool,
+                FEVTCCE: bool,
+                FEVTCEBE: bool,
+                FEVTCIE: bool,
+                FEVTDTOE: bool,
+                FEVTDCE: bool,
+                FEVTDEBE: bool,
+                FEVTAC12E: bool,
+                FEVTTNE: bool,
+                FEVTDMAE: bool,
+                FEVTCINT: bool,
+            }
+            let proxy = FORCE_EVENT {
+                FEVTAC12NE: self.FEVTAC12NE(),
+                FEVTAC12TOE: self.FEVTAC12TOE(),
+                FEVTAC12CE: self.FEVTAC12CE(),
+                FEVTAC12EBE: self.FEVTAC12EBE(),
+                FEVTAC12IE: self.FEVTAC12IE(),
+                FEVTCNIBAC12E: self.FEVTCNIBAC12E(),
+                FEVTCTOE: self.FEVTCTOE(),
+                FEVTCCE: self.FEVTCCE(),
+                FEVTCEBE: self.FEVTCEBE(),
+                FEVTCIE: self.FEVTCIE(),
+                FEVTDTOE: self.FEVTDTOE(),
+                FEVTDCE: self.FEVTDCE(),
+                FEVTDEBE: self.FEVTDEBE(),
+                FEVTAC12E: self.FEVTAC12E(),
+                FEVTTNE: self.FEVTTNE(),
+                FEVTDMAE: self.FEVTDMAE(),
+                FEVTCINT: self.FEVTCINT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Host Controller Capabilities"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -968,6 +1325,59 @@ pub mod regs {
         #[inline(always)]
         fn default() -> HOST_CTRL_CAP {
             HOST_CTRL_CAP(0)
+        }
+    }
+    impl core::fmt::Debug for HOST_CTRL_CAP {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("HOST_CTRL_CAP")
+                .field("SDR50_SUPPORT", &self.SDR50_SUPPORT())
+                .field("SDR104_SUPPORT", &self.SDR104_SUPPORT())
+                .field("DDR50_SUPPORT", &self.DDR50_SUPPORT())
+                .field("USE_TUNING_SDR50", &self.USE_TUNING_SDR50())
+                .field("MBL", &self.MBL())
+                .field("ADMAS", &self.ADMAS())
+                .field("HSS", &self.HSS())
+                .field("DMAS", &self.DMAS())
+                .field("SRS", &self.SRS())
+                .field("VS33", &self.VS33())
+                .field("VS30", &self.VS30())
+                .field("VS18", &self.VS18())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HOST_CTRL_CAP {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct HOST_CTRL_CAP {
+                SDR50_SUPPORT: bool,
+                SDR104_SUPPORT: bool,
+                DDR50_SUPPORT: bool,
+                USE_TUNING_SDR50: bool,
+                MBL: u8,
+                ADMAS: bool,
+                HSS: bool,
+                DMAS: bool,
+                SRS: bool,
+                VS33: bool,
+                VS30: bool,
+                VS18: bool,
+            }
+            let proxy = HOST_CTRL_CAP {
+                SDR50_SUPPORT: self.SDR50_SUPPORT(),
+                SDR104_SUPPORT: self.SDR104_SUPPORT(),
+                DDR50_SUPPORT: self.DDR50_SUPPORT(),
+                USE_TUNING_SDR50: self.USE_TUNING_SDR50(),
+                MBL: self.MBL(),
+                ADMAS: self.ADMAS(),
+                HSS: self.HSS(),
+                DMAS: self.DMAS(),
+                SRS: self.SRS(),
+                VS33: self.VS33(),
+                VS30: self.VS30(),
+                VS18: self.VS18(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Signal Enable"]
@@ -1169,6 +1579,86 @@ pub mod regs {
         #[inline(always)]
         fn default() -> INT_SIGNAL_EN {
             INT_SIGNAL_EN(0)
+        }
+    }
+    impl core::fmt::Debug for INT_SIGNAL_EN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("INT_SIGNAL_EN")
+                .field("CCIEN", &self.CCIEN())
+                .field("TCIEN", &self.TCIEN())
+                .field("BGEIEN", &self.BGEIEN())
+                .field("DINTIEN", &self.DINTIEN())
+                .field("BWRIEN", &self.BWRIEN())
+                .field("BRRIEN", &self.BRRIEN())
+                .field("CINSIEN", &self.CINSIEN())
+                .field("CRMIEN", &self.CRMIEN())
+                .field("CINTIEN", &self.CINTIEN())
+                .field("RTEIEN", &self.RTEIEN())
+                .field("TPIEN", &self.TPIEN())
+                .field("CTOEIEN", &self.CTOEIEN())
+                .field("CCEIEN", &self.CCEIEN())
+                .field("CEBEIEN", &self.CEBEIEN())
+                .field("CIEIEN", &self.CIEIEN())
+                .field("DTOEIEN", &self.DTOEIEN())
+                .field("DCEIEN", &self.DCEIEN())
+                .field("DEBEIEN", &self.DEBEIEN())
+                .field("AC12EIEN", &self.AC12EIEN())
+                .field("TNEIEN", &self.TNEIEN())
+                .field("DMAEIEN", &self.DMAEIEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INT_SIGNAL_EN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct INT_SIGNAL_EN {
+                CCIEN: bool,
+                TCIEN: bool,
+                BGEIEN: bool,
+                DINTIEN: bool,
+                BWRIEN: bool,
+                BRRIEN: bool,
+                CINSIEN: bool,
+                CRMIEN: bool,
+                CINTIEN: bool,
+                RTEIEN: bool,
+                TPIEN: bool,
+                CTOEIEN: bool,
+                CCEIEN: bool,
+                CEBEIEN: bool,
+                CIEIEN: bool,
+                DTOEIEN: bool,
+                DCEIEN: bool,
+                DEBEIEN: bool,
+                AC12EIEN: bool,
+                TNEIEN: bool,
+                DMAEIEN: bool,
+            }
+            let proxy = INT_SIGNAL_EN {
+                CCIEN: self.CCIEN(),
+                TCIEN: self.TCIEN(),
+                BGEIEN: self.BGEIEN(),
+                DINTIEN: self.DINTIEN(),
+                BWRIEN: self.BWRIEN(),
+                BRRIEN: self.BRRIEN(),
+                CINSIEN: self.CINSIEN(),
+                CRMIEN: self.CRMIEN(),
+                CINTIEN: self.CINTIEN(),
+                RTEIEN: self.RTEIEN(),
+                TPIEN: self.TPIEN(),
+                CTOEIEN: self.CTOEIEN(),
+                CCEIEN: self.CCEIEN(),
+                CEBEIEN: self.CEBEIEN(),
+                CIEIEN: self.CIEIEN(),
+                DTOEIEN: self.DTOEIEN(),
+                DCEIEN: self.DCEIEN(),
+                DEBEIEN: self.DEBEIEN(),
+                AC12EIEN: self.AC12EIEN(),
+                TNEIEN: self.TNEIEN(),
+                DMAEIEN: self.DMAEIEN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Status"]
@@ -1381,6 +1871,89 @@ pub mod regs {
             INT_STATUS(0)
         }
     }
+    impl core::fmt::Debug for INT_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("INT_STATUS")
+                .field("CC", &self.CC())
+                .field("TC", &self.TC())
+                .field("BGE", &self.BGE())
+                .field("DINT", &self.DINT())
+                .field("BWR", &self.BWR())
+                .field("BRR", &self.BRR())
+                .field("CINS", &self.CINS())
+                .field("CRM", &self.CRM())
+                .field("CINT", &self.CINT())
+                .field("RTE", &self.RTE())
+                .field("TP", &self.TP())
+                .field("ERR_INT_STATUS", &self.ERR_INT_STATUS())
+                .field("CTOE", &self.CTOE())
+                .field("CCE", &self.CCE())
+                .field("CEBE", &self.CEBE())
+                .field("CIE", &self.CIE())
+                .field("DTOE", &self.DTOE())
+                .field("DCE", &self.DCE())
+                .field("DEBE", &self.DEBE())
+                .field("AC12E", &self.AC12E())
+                .field("TNE", &self.TNE())
+                .field("DMAE", &self.DMAE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INT_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct INT_STATUS {
+                CC: bool,
+                TC: bool,
+                BGE: bool,
+                DINT: bool,
+                BWR: bool,
+                BRR: bool,
+                CINS: bool,
+                CRM: bool,
+                CINT: bool,
+                RTE: bool,
+                TP: bool,
+                ERR_INT_STATUS: bool,
+                CTOE: bool,
+                CCE: bool,
+                CEBE: bool,
+                CIE: bool,
+                DTOE: bool,
+                DCE: bool,
+                DEBE: bool,
+                AC12E: bool,
+                TNE: bool,
+                DMAE: bool,
+            }
+            let proxy = INT_STATUS {
+                CC: self.CC(),
+                TC: self.TC(),
+                BGE: self.BGE(),
+                DINT: self.DINT(),
+                BWR: self.BWR(),
+                BRR: self.BRR(),
+                CINS: self.CINS(),
+                CRM: self.CRM(),
+                CINT: self.CINT(),
+                RTE: self.RTE(),
+                TP: self.TP(),
+                ERR_INT_STATUS: self.ERR_INT_STATUS(),
+                CTOE: self.CTOE(),
+                CCE: self.CCE(),
+                CEBE: self.CEBE(),
+                CIE: self.CIE(),
+                DTOE: self.DTOE(),
+                DCE: self.DCE(),
+                DEBE: self.DEBE(),
+                AC12E: self.AC12E(),
+                TNE: self.TNE(),
+                DMAE: self.DMAE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt Status Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1582,6 +2155,86 @@ pub mod regs {
             INT_STATUS_EN(0)
         }
     }
+    impl core::fmt::Debug for INT_STATUS_EN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("INT_STATUS_EN")
+                .field("CCSEN", &self.CCSEN())
+                .field("TCSEN", &self.TCSEN())
+                .field("BGESEN", &self.BGESEN())
+                .field("DINTSEN", &self.DINTSEN())
+                .field("BWRSEN", &self.BWRSEN())
+                .field("BRRSEN", &self.BRRSEN())
+                .field("CINSSEN", &self.CINSSEN())
+                .field("CRMSEN", &self.CRMSEN())
+                .field("CINTSEN", &self.CINTSEN())
+                .field("RTESEN", &self.RTESEN())
+                .field("TPSEN", &self.TPSEN())
+                .field("CTOESEN", &self.CTOESEN())
+                .field("CCESEN", &self.CCESEN())
+                .field("CEBESEN", &self.CEBESEN())
+                .field("CIESEN", &self.CIESEN())
+                .field("DTOESEN", &self.DTOESEN())
+                .field("DCESEN", &self.DCESEN())
+                .field("DEBESEN", &self.DEBESEN())
+                .field("AC12ESEN", &self.AC12ESEN())
+                .field("TNESEN", &self.TNESEN())
+                .field("DMAESEN", &self.DMAESEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INT_STATUS_EN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct INT_STATUS_EN {
+                CCSEN: bool,
+                TCSEN: bool,
+                BGESEN: bool,
+                DINTSEN: bool,
+                BWRSEN: bool,
+                BRRSEN: bool,
+                CINSSEN: bool,
+                CRMSEN: bool,
+                CINTSEN: bool,
+                RTESEN: bool,
+                TPSEN: bool,
+                CTOESEN: bool,
+                CCESEN: bool,
+                CEBESEN: bool,
+                CIESEN: bool,
+                DTOESEN: bool,
+                DCESEN: bool,
+                DEBESEN: bool,
+                AC12ESEN: bool,
+                TNESEN: bool,
+                DMAESEN: bool,
+            }
+            let proxy = INT_STATUS_EN {
+                CCSEN: self.CCSEN(),
+                TCSEN: self.TCSEN(),
+                BGESEN: self.BGESEN(),
+                DINTSEN: self.DINTSEN(),
+                BWRSEN: self.BWRSEN(),
+                BRRSEN: self.BRRSEN(),
+                CINSSEN: self.CINSSEN(),
+                CRMSEN: self.CRMSEN(),
+                CINTSEN: self.CINTSEN(),
+                RTESEN: self.RTESEN(),
+                TPSEN: self.TPSEN(),
+                CTOESEN: self.CTOESEN(),
+                CCESEN: self.CCESEN(),
+                CEBESEN: self.CEBESEN(),
+                CIESEN: self.CIESEN(),
+                DTOESEN: self.DTOESEN(),
+                DCESEN: self.DCESEN(),
+                DEBESEN: self.DEBESEN(),
+                AC12ESEN: self.AC12ESEN(),
+                TNESEN: self.TNESEN(),
+                DMAESEN: self.DMAESEN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Mixer Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1702,6 +2355,59 @@ pub mod regs {
             MIX_CTRL(0)
         }
     }
+    impl core::fmt::Debug for MIX_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MIX_CTRL")
+                .field("DMAEN", &self.DMAEN())
+                .field("BCEN", &self.BCEN())
+                .field("AC12EN", &self.AC12EN())
+                .field("DDR_EN", &self.DDR_EN())
+                .field("DTDSEL", &self.DTDSEL())
+                .field("MSBSEL", &self.MSBSEL())
+                .field("NIBBLE_POS", &self.NIBBLE_POS())
+                .field("AC23EN", &self.AC23EN())
+                .field("EXE_TUNE", &self.EXE_TUNE())
+                .field("SMP_CLK_SEL", &self.SMP_CLK_SEL())
+                .field("AUTO_TUNE_EN", &self.AUTO_TUNE_EN())
+                .field("FBCLK_SEL", &self.FBCLK_SEL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MIX_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MIX_CTRL {
+                DMAEN: bool,
+                BCEN: bool,
+                AC12EN: bool,
+                DDR_EN: bool,
+                DTDSEL: bool,
+                MSBSEL: bool,
+                NIBBLE_POS: bool,
+                AC23EN: bool,
+                EXE_TUNE: bool,
+                SMP_CLK_SEL: bool,
+                AUTO_TUNE_EN: bool,
+                FBCLK_SEL: bool,
+            }
+            let proxy = MIX_CTRL {
+                DMAEN: self.DMAEN(),
+                BCEN: self.BCEN(),
+                AC12EN: self.AC12EN(),
+                DDR_EN: self.DDR_EN(),
+                DTDSEL: self.DTDSEL(),
+                MSBSEL: self.MSBSEL(),
+                NIBBLE_POS: self.NIBBLE_POS(),
+                AC23EN: self.AC23EN(),
+                EXE_TUNE: self.EXE_TUNE(),
+                SMP_CLK_SEL: self.SMP_CLK_SEL(),
+                AUTO_TUNE_EN: self.AUTO_TUNE_EN(),
+                FBCLK_SEL: self.FBCLK_SEL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "eMMC Boot"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1775,6 +2481,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MMC_BOOT {
             MMC_BOOT(0)
+        }
+    }
+    impl core::fmt::Debug for MMC_BOOT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MMC_BOOT")
+                .field("DTOCV_ACK", &self.DTOCV_ACK())
+                .field("BOOT_ACK", &self.BOOT_ACK())
+                .field("BOOT_MODE", &self.BOOT_MODE())
+                .field("BOOT_EN", &self.BOOT_EN())
+                .field("AUTO_SABG_EN", &self.AUTO_SABG_EN())
+                .field("DISABLE_TIME_OUT", &self.DISABLE_TIME_OUT())
+                .field("BOOT_BLK_CNT", &self.BOOT_BLK_CNT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MMC_BOOT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MMC_BOOT {
+                DTOCV_ACK: u8,
+                BOOT_ACK: bool,
+                BOOT_MODE: bool,
+                BOOT_EN: bool,
+                AUTO_SABG_EN: bool,
+                DISABLE_TIME_OUT: bool,
+                BOOT_BLK_CNT: u16,
+            }
+            let proxy = MMC_BOOT {
+                DTOCV_ACK: self.DTOCV_ACK(),
+                BOOT_ACK: self.BOOT_ACK(),
+                BOOT_MODE: self.BOOT_MODE(),
+                BOOT_EN: self.BOOT_EN(),
+                AUTO_SABG_EN: self.AUTO_SABG_EN(),
+                DISABLE_TIME_OUT: self.DISABLE_TIME_OUT(),
+                BOOT_BLK_CNT: self.BOOT_BLK_CNT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Present State"]
@@ -1904,6 +2648,62 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PRES_STATE {
             PRES_STATE(0)
+        }
+    }
+    impl core::fmt::Debug for PRES_STATE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PRES_STATE")
+                .field("CIHB", &self.CIHB())
+                .field("CDIHB", &self.CDIHB())
+                .field("DLA", &self.DLA())
+                .field("SDSTB", &self.SDSTB())
+                .field("WTA", &self.WTA())
+                .field("RTA", &self.RTA())
+                .field("BWEN", &self.BWEN())
+                .field("BREN", &self.BREN())
+                .field("RTR", &self.RTR())
+                .field("TSCD", &self.TSCD())
+                .field("CINST", &self.CINST())
+                .field("CLSL", &self.CLSL())
+                .field("DLSL", &self.DLSL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PRES_STATE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PRES_STATE {
+                CIHB: bool,
+                CDIHB: bool,
+                DLA: bool,
+                SDSTB: bool,
+                WTA: bool,
+                RTA: bool,
+                BWEN: bool,
+                BREN: bool,
+                RTR: bool,
+                TSCD: bool,
+                CINST: bool,
+                CLSL: bool,
+                DLSL: u8,
+            }
+            let proxy = PRES_STATE {
+                CIHB: self.CIHB(),
+                CDIHB: self.CDIHB(),
+                DLA: self.DLA(),
+                SDSTB: self.SDSTB(),
+                WTA: self.WTA(),
+                RTA: self.RTA(),
+                BWEN: self.BWEN(),
+                BREN: self.BREN(),
+                RTR: self.RTR(),
+                TSCD: self.TSCD(),
+                CINST: self.CINST(),
+                CLSL: self.CLSL(),
+                DLSL: self.DLSL(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Protocol Control"]
@@ -2044,6 +2844,65 @@ pub mod regs {
             PROT_CTRL(0)
         }
     }
+    impl core::fmt::Debug for PROT_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PROT_CTRL")
+                .field("DTW", &self.DTW())
+                .field("D3CD", &self.D3CD())
+                .field("EMODE", &self.EMODE())
+                .field("DMASEL", &self.DMASEL())
+                .field("SABGREQ", &self.SABGREQ())
+                .field("CREQ", &self.CREQ())
+                .field("RWCTL", &self.RWCTL())
+                .field("IABG", &self.IABG())
+                .field("RD_DONE_NO_8CLK", &self.RD_DONE_NO_8CLK())
+                .field("WECINT", &self.WECINT())
+                .field("WECINS", &self.WECINS())
+                .field("WECRM", &self.WECRM())
+                .field("BURST_LEN_EN", &self.BURST_LEN_EN())
+                .field("NON_EXACT_BLK_RD", &self.NON_EXACT_BLK_RD())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PROT_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PROT_CTRL {
+                DTW: u8,
+                D3CD: bool,
+                EMODE: u8,
+                DMASEL: u8,
+                SABGREQ: bool,
+                CREQ: bool,
+                RWCTL: bool,
+                IABG: bool,
+                RD_DONE_NO_8CLK: bool,
+                WECINT: bool,
+                WECINS: bool,
+                WECRM: bool,
+                BURST_LEN_EN: u8,
+                NON_EXACT_BLK_RD: bool,
+            }
+            let proxy = PROT_CTRL {
+                DTW: self.DTW(),
+                D3CD: self.D3CD(),
+                EMODE: self.EMODE(),
+                DMASEL: self.DMASEL(),
+                SABGREQ: self.SABGREQ(),
+                CREQ: self.CREQ(),
+                RWCTL: self.RWCTL(),
+                IABG: self.IABG(),
+                RD_DONE_NO_8CLK: self.RD_DONE_NO_8CLK(),
+                WECINT: self.WECINT(),
+                WECINS: self.WECINS(),
+                WECRM: self.WECRM(),
+                BURST_LEN_EN: self.BURST_LEN_EN(),
+                NON_EXACT_BLK_RD: self.NON_EXACT_BLK_RD(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "System Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2146,6 +3005,53 @@ pub mod regs {
             SYS_CTRL(0)
         }
     }
+    impl core::fmt::Debug for SYS_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SYS_CTRL")
+                .field("DVS", &self.DVS())
+                .field("SDCLKFS", &self.SDCLKFS())
+                .field("DTOCV", &self.DTOCV())
+                .field("RST_FIFO", &self.RST_FIFO())
+                .field("IPP_RST_N", &self.IPP_RST_N())
+                .field("RSTA", &self.RSTA())
+                .field("RSTC", &self.RSTC())
+                .field("RSTD", &self.RSTD())
+                .field("INITA", &self.INITA())
+                .field("RSTT", &self.RSTT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SYS_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SYS_CTRL {
+                DVS: u8,
+                SDCLKFS: u8,
+                DTOCV: u8,
+                RST_FIFO: bool,
+                IPP_RST_N: bool,
+                RSTA: bool,
+                RSTC: bool,
+                RSTD: bool,
+                INITA: bool,
+                RSTT: bool,
+            }
+            let proxy = SYS_CTRL {
+                DVS: self.DVS(),
+                SDCLKFS: self.SDCLKFS(),
+                DTOCV: self.DTOCV(),
+                RST_FIFO: self.RST_FIFO(),
+                IPP_RST_N: self.IPP_RST_N(),
+                RSTA: self.RSTA(),
+                RSTC: self.RSTC(),
+                RSTD: self.RSTD(),
+                INITA: self.INITA(),
+                RSTT: self.RSTT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Tuning Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2212,6 +3118,44 @@ pub mod regs {
             TUNING_CTRL(0)
         }
     }
+    impl core::fmt::Debug for TUNING_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TUNING_CTRL")
+                .field("TUNING_START_TAP", &self.TUNING_START_TAP())
+                .field(
+                    "DIS_CMD_CHK_FOR_STD_TUNING",
+                    &self.DIS_CMD_CHK_FOR_STD_TUNING(),
+                )
+                .field("TUNING_COUNTER", &self.TUNING_COUNTER())
+                .field("TUNING_STEP", &self.TUNING_STEP())
+                .field("TUNING_WINDOW", &self.TUNING_WINDOW())
+                .field("STD_TUNING_EN", &self.STD_TUNING_EN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TUNING_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TUNING_CTRL {
+                TUNING_START_TAP: u8,
+                DIS_CMD_CHK_FOR_STD_TUNING: bool,
+                TUNING_COUNTER: u8,
+                TUNING_STEP: u8,
+                TUNING_WINDOW: u8,
+                STD_TUNING_EN: bool,
+            }
+            let proxy = TUNING_CTRL {
+                TUNING_START_TAP: self.TUNING_START_TAP(),
+                DIS_CMD_CHK_FOR_STD_TUNING: self.DIS_CMD_CHK_FOR_STD_TUNING(),
+                TUNING_COUNTER: self.TUNING_COUNTER(),
+                TUNING_STEP: self.TUNING_STEP(),
+                TUNING_WINDOW: self.TUNING_WINDOW(),
+                STD_TUNING_EN: self.STD_TUNING_EN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Vendor Specific Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2258,6 +3202,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> VEND_SPEC {
             VEND_SPEC(0)
+        }
+    }
+    impl core::fmt::Debug for VEND_SPEC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VEND_SPEC")
+                .field("AC12_WR_CHKBUSY_EN", &self.AC12_WR_CHKBUSY_EN())
+                .field("FRC_SDCLK_ON", &self.FRC_SDCLK_ON())
+                .field("CRC_CHK_DIS", &self.CRC_CHK_DIS())
+                .field("CMD_BYTE_EN", &self.CMD_BYTE_EN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VEND_SPEC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VEND_SPEC {
+                AC12_WR_CHKBUSY_EN: bool,
+                FRC_SDCLK_ON: bool,
+                CRC_CHK_DIS: bool,
+                CMD_BYTE_EN: bool,
+            }
+            let proxy = VEND_SPEC {
+                AC12_WR_CHKBUSY_EN: self.AC12_WR_CHKBUSY_EN(),
+                FRC_SDCLK_ON: self.FRC_SDCLK_ON(),
+                CRC_CHK_DIS: self.CRC_CHK_DIS(),
+                CMD_BYTE_EN: self.CMD_BYTE_EN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Vendor Specific 2 Register"]
@@ -2317,6 +3290,38 @@ pub mod regs {
             VEND_SPEC2(0)
         }
     }
+    impl core::fmt::Debug for VEND_SPEC2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VEND_SPEC2")
+                .field("CARD_INT_D3_TEST", &self.CARD_INT_D3_TEST())
+                .field("TUNING_BIT_EN", &self.TUNING_BIT_EN())
+                .field("TUNING_CMD_EN", &self.TUNING_CMD_EN())
+                .field("ACMD23_ARGU2_EN", &self.ACMD23_ARGU2_EN())
+                .field("EN_32K_CLK", &self.EN_32K_CLK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VEND_SPEC2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VEND_SPEC2 {
+                CARD_INT_D3_TEST: bool,
+                TUNING_BIT_EN: u8,
+                TUNING_CMD_EN: bool,
+                ACMD23_ARGU2_EN: bool,
+                EN_32K_CLK: bool,
+            }
+            let proxy = VEND_SPEC2 {
+                CARD_INT_D3_TEST: self.CARD_INT_D3_TEST(),
+                TUNING_BIT_EN: self.TUNING_BIT_EN(),
+                TUNING_CMD_EN: self.TUNING_CMD_EN(),
+                ACMD23_ARGU2_EN: self.ACMD23_ARGU2_EN(),
+                EN_32K_CLK: self.EN_32K_CLK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Watermark Level"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2363,6 +3368,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> WTMK_LVL {
             WTMK_LVL(0)
+        }
+    }
+    impl core::fmt::Debug for WTMK_LVL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("WTMK_LVL")
+                .field("RD_WML", &self.RD_WML())
+                .field("RD_BRST_LEN", &self.RD_BRST_LEN())
+                .field("WR_WML", &self.WR_WML())
+                .field("WR_BRST_LEN", &self.WR_BRST_LEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WTMK_LVL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct WTMK_LVL {
+                RD_WML: u8,
+                RD_BRST_LEN: u8,
+                WR_WML: u8,
+                WR_BRST_LEN: u8,
+            }
+            let proxy = WTMK_LVL {
+                RD_WML: self.RD_WML(),
+                RD_BRST_LEN: self.RD_BRST_LEN(),
+                WR_WML: self.WR_WML(),
+                WR_BRST_LEN: self.WR_BRST_LEN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -60,4 +60,30 @@ pub mod regs {
             REMAP(0)
         }
     }
+    impl core::fmt::Debug for REMAP {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("REMAP")
+                .field("REMAPLK", &self.REMAPLK())
+                .field("LIM", &self.LIM())
+                .field("LIMDP", &self.LIMDP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for REMAP {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct REMAP {
+                REMAPLK: bool,
+                LIM: u8,
+                LIMDP: u8,
+            }
+            let proxy = REMAP {
+                REMAPLK: self.REMAPLK(),
+                LIM: self.LIM(),
+                LIMDP: self.LIMDP(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }

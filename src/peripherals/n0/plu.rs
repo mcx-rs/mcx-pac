@@ -85,6 +85,26 @@ pub mod regs {
             LUT_INP_MUX(0)
         }
     }
+    impl core::fmt::Debug for LUT_INP_MUX {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("LUT_INP_MUX")
+                .field("LUTn_INPx", &self.LUTn_INPx())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LUT_INP_MUX {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct LUT_INP_MUX {
+                LUTn_INPx: u8,
+            }
+            let proxy = LUT_INP_MUX {
+                LUTn_INPx: self.LUTn_INPx(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PLU outputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -106,6 +126,26 @@ pub mod regs {
             OUTPUTS(0)
         }
     }
+    impl core::fmt::Debug for OUTPUTS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("OUTPUTS")
+                .field("OUTPUT_STATE", &self.OUTPUT_STATE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OUTPUTS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct OUTPUTS {
+                OUTPUT_STATE: u8,
+            }
+            let proxy = OUTPUTS {
+                OUTPUT_STATE: self.OUTPUT_STATE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PLU output multiplexer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -125,6 +165,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> OUTPUT_MUX {
             OUTPUT_MUX(0)
+        }
+    }
+    impl core::fmt::Debug for OUTPUT_MUX {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("OUTPUT_MUX")
+                .field("OUTPUT", &self.OUTPUT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OUTPUT_MUX {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct OUTPUT_MUX {
+                OUTPUT: u8,
+            }
+            let proxy = OUTPUT_MUX {
+                OUTPUT: self.OUTPUT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Wakeup interrupt control"]
@@ -182,6 +242,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> WAKEINT_CTRL {
             WAKEINT_CTRL(0)
+        }
+    }
+    impl core::fmt::Debug for WAKEINT_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("WAKEINT_CTRL")
+                .field("MASK", &self.MASK())
+                .field("FILTER_MODE", &self.FILTER_MODE())
+                .field("FILTER_CLKSEL", &self.FILTER_CLKSEL())
+                .field("LATCH_ENABLE", &self.LATCH_ENABLE())
+                .field("INTR_CLEAR", &self.INTR_CLEAR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WAKEINT_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct WAKEINT_CTRL {
+                MASK: u8,
+                FILTER_MODE: u8,
+                FILTER_CLKSEL: u8,
+                LATCH_ENABLE: bool,
+                INTR_CLEAR: bool,
+            }
+            let proxy = WAKEINT_CTRL {
+                MASK: self.MASK(),
+                FILTER_MODE: self.FILTER_MODE(),
+                FILTER_CLKSEL: self.FILTER_CLKSEL(),
+                LATCH_ENABLE: self.LATCH_ENABLE(),
+                INTR_CLEAR: self.INTR_CLEAR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

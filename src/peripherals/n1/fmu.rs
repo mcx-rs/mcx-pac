@@ -91,6 +91,38 @@ pub mod regs {
             FCNFG(0)
         }
     }
+    impl core::fmt::Debug for FCNFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FCNFG")
+                .field("CCIE", &self.CCIE())
+                .field("ERSREQ", &self.ERSREQ())
+                .field("DFDIE", &self.DFDIE())
+                .field("ERSIEN0", &self.ERSIEN0())
+                .field("ERSIEN1", &self.ERSIEN1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FCNFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FCNFG {
+                CCIE: bool,
+                ERSREQ: bool,
+                DFDIE: bool,
+                ERSIEN0: u8,
+                ERSIEN1: u8,
+            }
+            let proxy = FCNFG {
+                CCIE: self.CCIE(),
+                ERSREQ: self.ERSREQ(),
+                DFDIE: self.DFDIE(),
+                ERSIEN0: self.ERSIEN0(),
+                ERSIEN1: self.ERSIEN1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Flash Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -128,6 +160,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FCTRL {
             FCTRL(0)
+        }
+    }
+    impl core::fmt::Debug for FCTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FCTRL")
+                .field("RWSC", &self.RWSC())
+                .field("FDFD", &self.FDFD())
+                .field("ABTREQ", &self.ABTREQ())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FCTRL {
+                RWSC: u8,
+                FDFD: bool,
+                ABTREQ: bool,
+            }
+            let proxy = FCTRL {
+                RWSC: self.RWSC(),
+                FDFD: self.FDFD(),
+                ABTREQ: self.ABTREQ(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Flash Status Register"]
@@ -257,6 +315,62 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FSTAT {
             FSTAT(0)
+        }
+    }
+    impl core::fmt::Debug for FSTAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FSTAT")
+                .field("FAIL", &self.FAIL())
+                .field("CMDABT", &self.CMDABT())
+                .field("PVIOL", &self.PVIOL())
+                .field("ACCERR", &self.ACCERR())
+                .field("CWSABT", &self.CWSABT())
+                .field("CCIF", &self.CCIF())
+                .field("CMDPRT", &self.CMDPRT())
+                .field("CMDP", &self.CMDP())
+                .field("CMDDID", &self.CMDDID())
+                .field("DFDIF", &self.DFDIF())
+                .field("SALV_USED", &self.SALV_USED())
+                .field("PEWEN", &self.PEWEN())
+                .field("PERDY", &self.PERDY())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FSTAT {
+                FAIL: bool,
+                CMDABT: bool,
+                PVIOL: bool,
+                ACCERR: bool,
+                CWSABT: bool,
+                CCIF: bool,
+                CMDPRT: u8,
+                CMDP: bool,
+                CMDDID: u8,
+                DFDIF: bool,
+                SALV_USED: bool,
+                PEWEN: u8,
+                PERDY: bool,
+            }
+            let proxy = FSTAT {
+                FAIL: self.FAIL(),
+                CMDABT: self.CMDABT(),
+                PVIOL: self.PVIOL(),
+                ACCERR: self.ACCERR(),
+                CWSABT: self.CWSABT(),
+                CCIF: self.CCIF(),
+                CMDPRT: self.CMDPRT(),
+                CMDP: self.CMDP(),
+                CMDDID: self.CMDDID(),
+                DFDIF: self.DFDIF(),
+                SALV_USED: self.SALV_USED(),
+                PEWEN: self.PEWEN(),
+                PERDY: self.PERDY(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -62,6 +62,22 @@ pub mod regs {
             FEED(0)
         }
     }
+    impl core::fmt::Debug for FEED {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FEED").field("FEED", &self.FEED()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FEED {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FEED {
+                FEED: u8,
+            }
+            let proxy = FEED { FEED: self.FEED() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -137,6 +153,44 @@ pub mod regs {
             MOD(0)
         }
     }
+    impl core::fmt::Debug for MOD {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MOD")
+                .field("WDEN", &self.WDEN())
+                .field("WDRESET", &self.WDRESET())
+                .field("WDTOF", &self.WDTOF())
+                .field("WDINT", &self.WDINT())
+                .field("WDPROTECT", &self.WDPROTECT())
+                .field("LOCK", &self.LOCK())
+                .field("DEBUG_EN", &self.DEBUG_EN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MOD {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MOD {
+                WDEN: bool,
+                WDRESET: bool,
+                WDTOF: bool,
+                WDINT: bool,
+                WDPROTECT: bool,
+                LOCK: bool,
+                DEBUG_EN: bool,
+            }
+            let proxy = MOD {
+                WDEN: self.WDEN(),
+                WDRESET: self.WDRESET(),
+                WDTOF: self.WDTOF(),
+                WDINT: self.WDINT(),
+                WDPROTECT: self.WDPROTECT(),
+                LOCK: self.LOCK(),
+                DEBUG_EN: self.DEBUG_EN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Timer Constant"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -156,6 +210,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TC {
             TC(0)
+        }
+    }
+    impl core::fmt::Debug for TC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TC").field("COUNT", &self.COUNT()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TC {
+                COUNT: u32,
+            }
+            let proxy = TC {
+                COUNT: self.COUNT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Timer Value"]
@@ -179,6 +251,24 @@ pub mod regs {
             TV(0)
         }
     }
+    impl core::fmt::Debug for TV {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TV").field("COUNT", &self.COUNT()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TV {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TV {
+                COUNT: u32,
+            }
+            let proxy = TV {
+                COUNT: self.COUNT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Warning Interrupt Compare Value"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -200,6 +290,26 @@ pub mod regs {
             WARNINT(0)
         }
     }
+    impl core::fmt::Debug for WARNINT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("WARNINT")
+                .field("WARNINT", &self.WARNINT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WARNINT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct WARNINT {
+                WARNINT: u16,
+            }
+            let proxy = WARNINT {
+                WARNINT: self.WARNINT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Window Compare Value"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -219,6 +329,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> WINDOW {
             WINDOW(0)
+        }
+    }
+    impl core::fmt::Debug for WINDOW {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("WINDOW")
+                .field("WINDOW", &self.WINDOW())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WINDOW {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct WINDOW {
+                WINDOW: u32,
+            }
+            let proxy = WINDOW {
+                WINDOW: self.WINDOW(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

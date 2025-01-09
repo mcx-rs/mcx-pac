@@ -96,6 +96,32 @@ pub mod regs {
             GDET_CONF_0(0)
         }
     }
+    impl core::fmt::Debug for GDET_CONF_0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GDET_CONF_0")
+                .field("FIELD_3_0", &self.FIELD_3_0())
+                .field("SBZ", &self.SBZ())
+                .field("RFU", &self.RFU())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_CONF_0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GDET_CONF_0 {
+                FIELD_3_0: u8,
+                SBZ: bool,
+                RFU: u32,
+            }
+            let proxy = GDET_CONF_0 {
+                FIELD_3_0: self.FIELD_3_0(),
+                SBZ: self.SBZ(),
+                RFU: self.RFU(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "GDET Configuration 1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -199,6 +225,53 @@ pub mod regs {
             GDET_CONF_1(0)
         }
     }
+    impl core::fmt::Debug for GDET_CONF_1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GDET_CONF_1")
+                .field("FIELD_1_0", &self.FIELD_1_0())
+                .field("FIELD_3_2", &self.FIELD_3_2())
+                .field("SBZ1", &self.SBZ1())
+                .field("SBZ2", &self.SBZ2())
+                .field("SBZ3", &self.SBZ3())
+                .field("FIELD_7", &self.FIELD_7())
+                .field("FIELD_8", &self.FIELD_8())
+                .field("SBZ4", &self.SBZ4())
+                .field("SBZ5", &self.SBZ5())
+                .field("RFU", &self.RFU())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_CONF_1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GDET_CONF_1 {
+                FIELD_1_0: u8,
+                FIELD_3_2: u8,
+                SBZ1: bool,
+                SBZ2: bool,
+                SBZ3: bool,
+                FIELD_7: bool,
+                FIELD_8: bool,
+                SBZ4: bool,
+                SBZ5: bool,
+                RFU: u32,
+            }
+            let proxy = GDET_CONF_1 {
+                FIELD_1_0: self.FIELD_1_0(),
+                FIELD_3_2: self.FIELD_3_2(),
+                SBZ1: self.SBZ1(),
+                SBZ2: self.SBZ2(),
+                SBZ3: self.SBZ3(),
+                FIELD_7: self.FIELD_7(),
+                FIELD_8: self.FIELD_8(),
+                SBZ4: self.SBZ4(),
+                SBZ5: self.SBZ5(),
+                RFU: self.RFU(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "GDET Configuration 2 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -265,6 +338,41 @@ pub mod regs {
             GDET_CONF_2(0)
         }
     }
+    impl core::fmt::Debug for GDET_CONF_2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GDET_CONF_2")
+                .field("FIELD_6_0", &self.FIELD_6_0())
+                .field("RFU1", &self.RFU1())
+                .field("FIELD_21_16", &self.FIELD_21_16())
+                .field("RFU2", &self.RFU2())
+                .field("FIELD_29_24", &self.FIELD_29_24())
+                .field("RFU3", &self.RFU3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_CONF_2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GDET_CONF_2 {
+                FIELD_6_0: u8,
+                RFU1: u16,
+                FIELD_21_16: u8,
+                RFU2: u8,
+                FIELD_29_24: u8,
+                RFU3: u8,
+            }
+            let proxy = GDET_CONF_2 {
+                FIELD_6_0: self.FIELD_6_0(),
+                RFU1: self.RFU1(),
+                FIELD_21_16: self.FIELD_21_16(),
+                RFU2: self.RFU2(),
+                FIELD_29_24: self.FIELD_29_24(),
+                RFU3: self.RFU3(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "GDET Configuration 3 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -295,6 +403,29 @@ pub mod regs {
             GDET_CONF_3(0)
         }
     }
+    impl core::fmt::Debug for GDET_CONF_3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GDET_CONF_3")
+                .field("FIELD_6_0", &self.FIELD_6_0())
+                .field("RFU1", &self.RFU1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_CONF_3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GDET_CONF_3 {
+                FIELD_6_0: u8,
+                RFU1: u32,
+            }
+            let proxy = GDET_CONF_3 {
+                FIELD_6_0: self.FIELD_6_0(),
+                RFU1: self.RFU1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "GDET Configuration 4 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -323,6 +454,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> GDET_CONF_4 {
             GDET_CONF_4(0)
+        }
+    }
+    impl core::fmt::Debug for GDET_CONF_4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GDET_CONF_4")
+                .field("FIELD_6_0", &self.FIELD_6_0())
+                .field("RFU1", &self.RFU1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_CONF_4 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GDET_CONF_4 {
+                FIELD_6_0: u8,
+                RFU1: u32,
+            }
+            let proxy = GDET_CONF_4 {
+                FIELD_6_0: self.FIELD_6_0(),
+                RFU1: self.RFU1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "GDET Configuration 5 Register"]
@@ -365,6 +519,32 @@ pub mod regs {
             GDET_CONF_5(0)
         }
     }
+    impl core::fmt::Debug for GDET_CONF_5 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GDET_CONF_5")
+                .field("FIELD_5_0", &self.FIELD_5_0())
+                .field("FIELD_11_6", &self.FIELD_11_6())
+                .field("RFU1", &self.RFU1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_CONF_5 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GDET_CONF_5 {
+                FIELD_5_0: u8,
+                FIELD_11_6: u8,
+                RFU1: u32,
+            }
+            let proxy = GDET_CONF_5 {
+                FIELD_5_0: self.FIELD_5_0(),
+                FIELD_11_6: self.FIELD_11_6(),
+                RFU1: self.RFU1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "GDET Delay Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -404,6 +584,32 @@ pub mod regs {
             GDET_DLY_CTRL(0)
         }
     }
+    impl core::fmt::Debug for GDET_DLY_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GDET_DLY_CTRL")
+                .field("VOL_SEL", &self.VOL_SEL())
+                .field("SW_VOL_CTRL", &self.SW_VOL_CTRL())
+                .field("RFU", &self.RFU())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_DLY_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GDET_DLY_CTRL {
+                VOL_SEL: u8,
+                SW_VOL_CTRL: bool,
+                RFU: u32,
+            }
+            let proxy = GDET_DLY_CTRL {
+                VOL_SEL: self.VOL_SEL(),
+                SW_VOL_CTRL: self.SW_VOL_CTRL(),
+                RFU: self.RFU(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "GDET Enable Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -432,6 +638,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> GDET_ENABLE1 {
             GDET_ENABLE1(0)
+        }
+    }
+    impl core::fmt::Debug for GDET_ENABLE1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GDET_ENABLE1")
+                .field("EN1", &self.EN1())
+                .field("RFU", &self.RFU())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_ENABLE1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GDET_ENABLE1 {
+                EN1: bool,
+                RFU: u32,
+            }
+            let proxy = GDET_ENABLE1 {
+                EN1: self.EN1(),
+                RFU: self.RFU(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "GDET Reset Register"]
@@ -473,6 +702,32 @@ pub mod regs {
             GDET_RESET(0)
         }
     }
+    impl core::fmt::Debug for GDET_RESET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GDET_RESET")
+                .field("RFU1", &self.RFU1())
+                .field("SFT_RST", &self.SFT_RST())
+                .field("RFU2", &self.RFU2())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_RESET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GDET_RESET {
+                RFU1: u8,
+                SFT_RST: bool,
+                RFU2: u32,
+            }
+            let proxy = GDET_RESET {
+                RFU1: self.RFU1(),
+                SFT_RST: self.SFT_RST(),
+                RFU2: self.RFU2(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "GDET Test Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -501,6 +756,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> GDET_TEST {
             GDET_TEST(0)
+        }
+    }
+    impl core::fmt::Debug for GDET_TEST {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GDET_TEST")
+                .field("SBZ", &self.SBZ())
+                .field("RFU", &self.RFU())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_TEST {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GDET_TEST {
+                SBZ: bool,
+                RFU: u32,
+            }
+            let proxy = GDET_TEST {
+                SBZ: self.SBZ(),
+                RFU: self.RFU(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -389,6 +389,44 @@ pub mod regs {
             AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE0(0)
         }
     }
+    impl core::fmt::Debug for AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE0")
+                .field("eDMA0_CH15", &self.eDMA0_CH15())
+                .field("SCT0", &self.SCT0())
+                .field("LP_FLEXCOMM0", &self.LP_FLEXCOMM0())
+                .field("LP_FLEXCOMM1", &self.LP_FLEXCOMM1())
+                .field("LP_FLEXCOMM2", &self.LP_FLEXCOMM2())
+                .field("LP_FLEXCOMM3", &self.LP_FLEXCOMM3())
+                .field("GPIO0_ALIAS0", &self.GPIO0_ALIAS0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE0 {
+                eDMA0_CH15: u8,
+                SCT0: u8,
+                LP_FLEXCOMM0: u8,
+                LP_FLEXCOMM1: u8,
+                LP_FLEXCOMM2: u8,
+                LP_FLEXCOMM3: u8,
+                GPIO0_ALIAS0: u8,
+            }
+            let proxy = AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE0 {
+                eDMA0_CH15: self.eDMA0_CH15(),
+                SCT0: self.SCT0(),
+                LP_FLEXCOMM0: self.LP_FLEXCOMM0(),
+                LP_FLEXCOMM1: self.LP_FLEXCOMM1(),
+                LP_FLEXCOMM2: self.LP_FLEXCOMM2(),
+                LP_FLEXCOMM3: self.LP_FLEXCOMM3(),
+                GPIO0_ALIAS0: self.GPIO0_ALIAS0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AHB Peripheral 0 Slave Port 12 Slave Rule 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -473,6 +511,47 @@ pub mod regs {
             AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE1(0)
         }
     }
+    impl core::fmt::Debug for AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE1")
+                .field("GPIO0_ALIAS1", &self.GPIO0_ALIAS1())
+                .field("GPIO1_ALIAS0", &self.GPIO1_ALIAS0())
+                .field("GPIO1_ALIAS1", &self.GPIO1_ALIAS1())
+                .field("GPIO2_ALIAS0", &self.GPIO2_ALIAS0())
+                .field("GPIO2_ALIAS1", &self.GPIO2_ALIAS1())
+                .field("GPIO3_ALIAS0", &self.GPIO3_ALIAS0())
+                .field("GPIO3_ALIAS1", &self.GPIO3_ALIAS1())
+                .field("GPIO4_ALIAS0", &self.GPIO4_ALIAS0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE1 {
+                GPIO0_ALIAS1: u8,
+                GPIO1_ALIAS0: u8,
+                GPIO1_ALIAS1: u8,
+                GPIO2_ALIAS0: u8,
+                GPIO2_ALIAS1: u8,
+                GPIO3_ALIAS0: u8,
+                GPIO3_ALIAS1: u8,
+                GPIO4_ALIAS0: u8,
+            }
+            let proxy = AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE1 {
+                GPIO0_ALIAS1: self.GPIO0_ALIAS1(),
+                GPIO1_ALIAS0: self.GPIO1_ALIAS0(),
+                GPIO1_ALIAS1: self.GPIO1_ALIAS1(),
+                GPIO2_ALIAS0: self.GPIO2_ALIAS0(),
+                GPIO2_ALIAS1: self.GPIO2_ALIAS1(),
+                GPIO3_ALIAS0: self.GPIO3_ALIAS0(),
+                GPIO3_ALIAS1: self.GPIO3_ALIAS1(),
+                GPIO4_ALIAS0: self.GPIO4_ALIAS0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AHB Peripheral 0 Slave Port 12 Slave Rule 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -492,6 +571,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2 {
             AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2(0)
+        }
+    }
+    impl core::fmt::Debug for AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2")
+                .field("GPIO4_ALIAS1", &self.GPIO4_ALIAS1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2 {
+                GPIO4_ALIAS1: u8,
+            }
+            let proxy = AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2 {
+                GPIO4_ALIAS1: self.GPIO4_ALIAS1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AHB Peripheral 1 Slave Port 13 Slave Rule 0"]
@@ -567,6 +666,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0 {
             AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0(0)
+        }
+    }
+    impl core::fmt::Debug for AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0")
+                .field("eDMA1_CH15", &self.eDMA1_CH15())
+                .field("SEMA42", &self.SEMA42())
+                .field("MAILBOX", &self.MAILBOX())
+                .field("PKC_RAM", &self.PKC_RAM())
+                .field("FLEXCOMM4", &self.FLEXCOMM4())
+                .field("FLEXCOMM5", &self.FLEXCOMM5())
+                .field("FLEXCOMM6", &self.FLEXCOMM6())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0 {
+                eDMA1_CH15: u8,
+                SEMA42: u8,
+                MAILBOX: u8,
+                PKC_RAM: u8,
+                FLEXCOMM4: u8,
+                FLEXCOMM5: u8,
+                FLEXCOMM6: u8,
+            }
+            let proxy = AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0 {
+                eDMA1_CH15: self.eDMA1_CH15(),
+                SEMA42: self.SEMA42(),
+                MAILBOX: self.MAILBOX(),
+                PKC_RAM: self.PKC_RAM(),
+                FLEXCOMM4: self.FLEXCOMM4(),
+                FLEXCOMM5: self.FLEXCOMM5(),
+                FLEXCOMM6: self.FLEXCOMM6(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AHB Peripheral 1 Slave Port 13 Slave Rule 1"]
@@ -653,6 +790,47 @@ pub mod regs {
             AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE1(0)
         }
     }
+    impl core::fmt::Debug for AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE1")
+                .field("FLEXCOMM7", &self.FLEXCOMM7())
+                .field("FLEXCOMM8", &self.FLEXCOMM8())
+                .field("FLEXCOMM9", &self.FLEXCOMM9())
+                .field("USB_FS_OTG_RAM", &self.USB_FS_OTG_RAM())
+                .field("CDOG0", &self.CDOG0())
+                .field("CDOG1", &self.CDOG1())
+                .field("DEBUG_MAILBOX", &self.DEBUG_MAILBOX())
+                .field("NPU", &self.NPU())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE1 {
+                FLEXCOMM7: u8,
+                FLEXCOMM8: u8,
+                FLEXCOMM9: u8,
+                USB_FS_OTG_RAM: u8,
+                CDOG0: u8,
+                CDOG1: u8,
+                DEBUG_MAILBOX: u8,
+                NPU: u8,
+            }
+            let proxy = AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE1 {
+                FLEXCOMM7: self.FLEXCOMM7(),
+                FLEXCOMM8: self.FLEXCOMM8(),
+                FLEXCOMM9: self.FLEXCOMM9(),
+                USB_FS_OTG_RAM: self.USB_FS_OTG_RAM(),
+                CDOG0: self.CDOG0(),
+                CDOG1: self.CDOG1(),
+                DEBUG_MAILBOX: self.DEBUG_MAILBOX(),
+                NPU: self.NPU(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AHB Secure Control Peripheral Rule 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -699,6 +877,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AHB_SECURE_CTRL_PERIPHERAL_RULE0 {
             AHB_SECURE_CTRL_PERIPHERAL_RULE0(0)
+        }
+    }
+    impl core::fmt::Debug for AHB_SECURE_CTRL_PERIPHERAL_RULE0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHB_SECURE_CTRL_PERIPHERAL_RULE0")
+                .field("RULE0", &self.RULE0())
+                .field("RULE1", &self.RULE1())
+                .field("RULE2", &self.RULE2())
+                .field("RULE3", &self.RULE3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHB_SECURE_CTRL_PERIPHERAL_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHB_SECURE_CTRL_PERIPHERAL_RULE0 {
+                RULE0: u8,
+                RULE1: u8,
+                RULE2: u8,
+                RULE3: u8,
+            }
+            let proxy = AHB_SECURE_CTRL_PERIPHERAL_RULE0 {
+                RULE0: self.RULE0(),
+                RULE1: self.RULE1(),
+                RULE2: self.RULE2(),
+                RULE3: self.RULE3(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AIPS Bridge Group 0 Memory Rule 0"]
@@ -776,6 +983,44 @@ pub mod regs {
             AIPS_BRIDGE_GROUP0_MEM_RULE0(0)
         }
     }
+    impl core::fmt::Debug for AIPS_BRIDGE_GROUP0_MEM_RULE0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AIPS_BRIDGE_GROUP0_MEM_RULE0")
+                .field("GPIO5_ALIAS0", &self.GPIO5_ALIAS0())
+                .field("GPIO5_ALIAS1", &self.GPIO5_ALIAS1())
+                .field("PORT5", &self.PORT5())
+                .field("FMU0", &self.FMU0())
+                .field("SCG0", &self.SCG0())
+                .field("SPC0", &self.SPC0())
+                .field("WUU0", &self.WUU0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP0_MEM_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AIPS_BRIDGE_GROUP0_MEM_RULE0 {
+                GPIO5_ALIAS0: u8,
+                GPIO5_ALIAS1: u8,
+                PORT5: u8,
+                FMU0: u8,
+                SCG0: u8,
+                SPC0: u8,
+                WUU0: u8,
+            }
+            let proxy = AIPS_BRIDGE_GROUP0_MEM_RULE0 {
+                GPIO5_ALIAS0: self.GPIO5_ALIAS0(),
+                GPIO5_ALIAS1: self.GPIO5_ALIAS1(),
+                PORT5: self.PORT5(),
+                FMU0: self.FMU0(),
+                SCG0: self.SCG0(),
+                SPC0: self.SPC0(),
+                WUU0: self.WUU0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AIPS Bridge Group 0 Memory Rule 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -822,6 +1067,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AIPS_BRIDGE_GROUP0_MEM_RULE1 {
             AIPS_BRIDGE_GROUP0_MEM_RULE1(0)
+        }
+    }
+    impl core::fmt::Debug for AIPS_BRIDGE_GROUP0_MEM_RULE1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AIPS_BRIDGE_GROUP0_MEM_RULE1")
+                .field("LPTMR0", &self.LPTMR0())
+                .field("LPTMR1", &self.LPTMR1())
+                .field("RTC", &self.RTC())
+                .field("FMU_TEST", &self.FMU_TEST())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP0_MEM_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AIPS_BRIDGE_GROUP0_MEM_RULE1 {
+                LPTMR0: u8,
+                LPTMR1: u8,
+                RTC: u8,
+                FMU_TEST: u8,
+            }
+            let proxy = AIPS_BRIDGE_GROUP0_MEM_RULE1 {
+                LPTMR0: self.LPTMR0(),
+                LPTMR1: self.LPTMR1(),
+                RTC: self.RTC(),
+                FMU_TEST: self.FMU_TEST(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AIPS Bridge Group 0 Memory Rule 2"]
@@ -908,6 +1182,47 @@ pub mod regs {
             AIPS_BRIDGE_GROUP0_MEM_RULE2(0)
         }
     }
+    impl core::fmt::Debug for AIPS_BRIDGE_GROUP0_MEM_RULE2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AIPS_BRIDGE_GROUP0_MEM_RULE2")
+                .field("TSI", &self.TSI())
+                .field("CMP0", &self.CMP0())
+                .field("CMP1", &self.CMP1())
+                .field("CMP2", &self.CMP2())
+                .field("ELS", &self.ELS())
+                .field("ELS_ALIAS1", &self.ELS_ALIAS1())
+                .field("ELS_ALIAS2", &self.ELS_ALIAS2())
+                .field("ELS_ALIAS3", &self.ELS_ALIAS3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP0_MEM_RULE2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AIPS_BRIDGE_GROUP0_MEM_RULE2 {
+                TSI: u8,
+                CMP0: u8,
+                CMP1: u8,
+                CMP2: u8,
+                ELS: u8,
+                ELS_ALIAS1: u8,
+                ELS_ALIAS2: u8,
+                ELS_ALIAS3: u8,
+            }
+            let proxy = AIPS_BRIDGE_GROUP0_MEM_RULE2 {
+                TSI: self.TSI(),
+                CMP0: self.CMP0(),
+                CMP1: self.CMP1(),
+                CMP2: self.CMP2(),
+                ELS: self.ELS(),
+                ELS_ALIAS1: self.ELS_ALIAS1(),
+                ELS_ALIAS2: self.ELS_ALIAS2(),
+                ELS_ALIAS3: self.ELS_ALIAS3(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AIPS Bridge Group 0 Memory Rule 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -972,6 +1287,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AIPS_BRIDGE_GROUP0_MEM_RULE3 {
             AIPS_BRIDGE_GROUP0_MEM_RULE3(0)
+        }
+    }
+    impl core::fmt::Debug for AIPS_BRIDGE_GROUP0_MEM_RULE3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AIPS_BRIDGE_GROUP0_MEM_RULE3")
+                .field("DIGTMP", &self.DIGTMP())
+                .field("VBAT", &self.VBAT())
+                .field("TRNG", &self.TRNG())
+                .field("EIM0", &self.EIM0())
+                .field("ERM0", &self.ERM0())
+                .field("INTM0", &self.INTM0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP0_MEM_RULE3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AIPS_BRIDGE_GROUP0_MEM_RULE3 {
+                DIGTMP: u8,
+                VBAT: u8,
+                TRNG: u8,
+                EIM0: u8,
+                ERM0: u8,
+                INTM0: u8,
+            }
+            let proxy = AIPS_BRIDGE_GROUP0_MEM_RULE3 {
+                DIGTMP: self.DIGTMP(),
+                VBAT: self.VBAT(),
+                TRNG: self.TRNG(),
+                EIM0: self.EIM0(),
+                ERM0: self.ERM0(),
+                INTM0: self.INTM0(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AIPS Bridge Group 1 Rule 0"]
@@ -1058,6 +1408,47 @@ pub mod regs {
             AIPS_BRIDGE_GROUP1_MEM_RULE0(0)
         }
     }
+    impl core::fmt::Debug for AIPS_BRIDGE_GROUP1_MEM_RULE0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AIPS_BRIDGE_GROUP1_MEM_RULE0")
+                .field("eDMA0_MP", &self.eDMA0_MP())
+                .field("eDMA0_CH0", &self.eDMA0_CH0())
+                .field("eDMA0_CH1", &self.eDMA0_CH1())
+                .field("eDMA0_CH2", &self.eDMA0_CH2())
+                .field("eDMA0_CH3", &self.eDMA0_CH3())
+                .field("eDMA0_CH4", &self.eDMA0_CH4())
+                .field("eDMA0_CH5", &self.eDMA0_CH5())
+                .field("eDMA0_CH6", &self.eDMA0_CH6())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP1_MEM_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AIPS_BRIDGE_GROUP1_MEM_RULE0 {
+                eDMA0_MP: u8,
+                eDMA0_CH0: u8,
+                eDMA0_CH1: u8,
+                eDMA0_CH2: u8,
+                eDMA0_CH3: u8,
+                eDMA0_CH4: u8,
+                eDMA0_CH5: u8,
+                eDMA0_CH6: u8,
+            }
+            let proxy = AIPS_BRIDGE_GROUP1_MEM_RULE0 {
+                eDMA0_MP: self.eDMA0_MP(),
+                eDMA0_CH0: self.eDMA0_CH0(),
+                eDMA0_CH1: self.eDMA0_CH1(),
+                eDMA0_CH2: self.eDMA0_CH2(),
+                eDMA0_CH3: self.eDMA0_CH3(),
+                eDMA0_CH4: self.eDMA0_CH4(),
+                eDMA0_CH5: self.eDMA0_CH5(),
+                eDMA0_CH6: self.eDMA0_CH6(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AIPS Bridge Group 1 Rule 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1140,6 +1531,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AIPS_BRIDGE_GROUP1_MEM_RULE1 {
             AIPS_BRIDGE_GROUP1_MEM_RULE1(0)
+        }
+    }
+    impl core::fmt::Debug for AIPS_BRIDGE_GROUP1_MEM_RULE1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AIPS_BRIDGE_GROUP1_MEM_RULE1")
+                .field("eDMA0_CH7", &self.eDMA0_CH7())
+                .field("eDMA0_CH8", &self.eDMA0_CH8())
+                .field("eDMA0_CH9", &self.eDMA0_CH9())
+                .field("eDMA0_CH10", &self.eDMA0_CH10())
+                .field("eDMA0_CH11", &self.eDMA0_CH11())
+                .field("eDMA0_CH12", &self.eDMA0_CH12())
+                .field("eDMA0_CH13", &self.eDMA0_CH13())
+                .field("eDMA0_CH14", &self.eDMA0_CH14())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP1_MEM_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AIPS_BRIDGE_GROUP1_MEM_RULE1 {
+                eDMA0_CH7: u8,
+                eDMA0_CH8: u8,
+                eDMA0_CH9: u8,
+                eDMA0_CH10: u8,
+                eDMA0_CH11: u8,
+                eDMA0_CH12: u8,
+                eDMA0_CH13: u8,
+                eDMA0_CH14: u8,
+            }
+            let proxy = AIPS_BRIDGE_GROUP1_MEM_RULE1 {
+                eDMA0_CH7: self.eDMA0_CH7(),
+                eDMA0_CH8: self.eDMA0_CH8(),
+                eDMA0_CH9: self.eDMA0_CH9(),
+                eDMA0_CH10: self.eDMA0_CH10(),
+                eDMA0_CH11: self.eDMA0_CH11(),
+                eDMA0_CH12: self.eDMA0_CH12(),
+                eDMA0_CH13: self.eDMA0_CH13(),
+                eDMA0_CH14: self.eDMA0_CH14(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AIPS Bridge Group 2 Rule 0"]
@@ -1226,6 +1658,47 @@ pub mod regs {
             AIPS_BRIDGE_GROUP2_MEM_RULE0(0)
         }
     }
+    impl core::fmt::Debug for AIPS_BRIDGE_GROUP2_MEM_RULE0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AIPS_BRIDGE_GROUP2_MEM_RULE0")
+                .field("eDMA1_MP", &self.eDMA1_MP())
+                .field("eDMA1_CH0", &self.eDMA1_CH0())
+                .field("eDMA1_CH1", &self.eDMA1_CH1())
+                .field("eDMA1_CH2", &self.eDMA1_CH2())
+                .field("eDMA1_CH3", &self.eDMA1_CH3())
+                .field("eDMA1_CH4", &self.eDMA1_CH4())
+                .field("eDMA1_CH5", &self.eDMA1_CH5())
+                .field("eDMA1_CH6", &self.eDMA1_CH6())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP2_MEM_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AIPS_BRIDGE_GROUP2_MEM_RULE0 {
+                eDMA1_MP: u8,
+                eDMA1_CH0: u8,
+                eDMA1_CH1: u8,
+                eDMA1_CH2: u8,
+                eDMA1_CH3: u8,
+                eDMA1_CH4: u8,
+                eDMA1_CH5: u8,
+                eDMA1_CH6: u8,
+            }
+            let proxy = AIPS_BRIDGE_GROUP2_MEM_RULE0 {
+                eDMA1_MP: self.eDMA1_MP(),
+                eDMA1_CH0: self.eDMA1_CH0(),
+                eDMA1_CH1: self.eDMA1_CH1(),
+                eDMA1_CH2: self.eDMA1_CH2(),
+                eDMA1_CH3: self.eDMA1_CH3(),
+                eDMA1_CH4: self.eDMA1_CH4(),
+                eDMA1_CH5: self.eDMA1_CH5(),
+                eDMA1_CH6: self.eDMA1_CH6(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AIPS Bridge Group 2 Memory Rule 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1245,6 +1718,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AIPS_BRIDGE_GROUP2_MEM_RULE1 {
             AIPS_BRIDGE_GROUP2_MEM_RULE1(0)
+        }
+    }
+    impl core::fmt::Debug for AIPS_BRIDGE_GROUP2_MEM_RULE1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AIPS_BRIDGE_GROUP2_MEM_RULE1")
+                .field("eDMA1_CH7", &self.eDMA1_CH7())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP2_MEM_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AIPS_BRIDGE_GROUP2_MEM_RULE1 {
+                eDMA1_CH7: u8,
+            }
+            let proxy = AIPS_BRIDGE_GROUP2_MEM_RULE1 {
+                eDMA1_CH7: self.eDMA1_CH7(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AIPS Bridge Group 3 Rule 0"]
@@ -1302,6 +1795,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AIPS_BRIDGE_GROUP3_MEM_RULE0 {
             AIPS_BRIDGE_GROUP3_MEM_RULE0(0)
+        }
+    }
+    impl core::fmt::Debug for AIPS_BRIDGE_GROUP3_MEM_RULE0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AIPS_BRIDGE_GROUP3_MEM_RULE0")
+                .field("EWM0", &self.EWM0())
+                .field("LPCAC", &self.LPCAC())
+                .field("FLEXSPI_CMX", &self.FLEXSPI_CMX())
+                .field("SFA", &self.SFA())
+                .field("MBC", &self.MBC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP3_MEM_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AIPS_BRIDGE_GROUP3_MEM_RULE0 {
+                EWM0: u8,
+                LPCAC: u8,
+                FLEXSPI_CMX: u8,
+                SFA: u8,
+                MBC: u8,
+            }
+            let proxy = AIPS_BRIDGE_GROUP3_MEM_RULE0 {
+                EWM0: self.EWM0(),
+                LPCAC: self.LPCAC(),
+                FLEXSPI_CMX: self.FLEXSPI_CMX(),
+                SFA: self.SFA(),
+                MBC: self.MBC(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AIPS Bridge Group 3 Memory Rule 1"]
@@ -1368,6 +1893,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AIPS_BRIDGE_GROUP3_MEM_RULE1 {
             AIPS_BRIDGE_GROUP3_MEM_RULE1(0)
+        }
+    }
+    impl core::fmt::Debug for AIPS_BRIDGE_GROUP3_MEM_RULE1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AIPS_BRIDGE_GROUP3_MEM_RULE1")
+                .field("FLEXSPI", &self.FLEXSPI())
+                .field("OTPC", &self.OTPC())
+                .field("CRC", &self.CRC())
+                .field("NPX", &self.NPX())
+                .field("PWM", &self.PWM())
+                .field("QDC", &self.QDC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP3_MEM_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AIPS_BRIDGE_GROUP3_MEM_RULE1 {
+                FLEXSPI: u8,
+                OTPC: u8,
+                CRC: u8,
+                NPX: u8,
+                PWM: u8,
+                QDC: u8,
+            }
+            let proxy = AIPS_BRIDGE_GROUP3_MEM_RULE1 {
+                FLEXSPI: self.FLEXSPI(),
+                OTPC: self.OTPC(),
+                CRC: self.CRC(),
+                NPX: self.NPX(),
+                PWM: self.PWM(),
+                QDC: self.QDC(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AIPS Bridge Group 3 Rule 2"]
@@ -1445,6 +2005,44 @@ pub mod regs {
             AIPS_BRIDGE_GROUP3_MEM_RULE2(0)
         }
     }
+    impl core::fmt::Debug for AIPS_BRIDGE_GROUP3_MEM_RULE2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AIPS_BRIDGE_GROUP3_MEM_RULE2")
+                .field("PWM1", &self.PWM1())
+                .field("QDC1", &self.QDC1())
+                .field("EVTG", &self.EVTG())
+                .field("CAN0_RULE0", &self.CAN0_RULE0())
+                .field("CAN0_RULE1", &self.CAN0_RULE1())
+                .field("CAN0_RULE2", &self.CAN0_RULE2())
+                .field("CAN0_RULE3", &self.CAN0_RULE3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP3_MEM_RULE2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AIPS_BRIDGE_GROUP3_MEM_RULE2 {
+                PWM1: u8,
+                QDC1: u8,
+                EVTG: u8,
+                CAN0_RULE0: u8,
+                CAN0_RULE1: u8,
+                CAN0_RULE2: u8,
+                CAN0_RULE3: u8,
+            }
+            let proxy = AIPS_BRIDGE_GROUP3_MEM_RULE2 {
+                PWM1: self.PWM1(),
+                QDC1: self.QDC1(),
+                EVTG: self.EVTG(),
+                CAN0_RULE0: self.CAN0_RULE0(),
+                CAN0_RULE1: self.CAN0_RULE1(),
+                CAN0_RULE2: self.CAN0_RULE2(),
+                CAN0_RULE3: self.CAN0_RULE3(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AIPS Bridge Group 3 Rule 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1511,6 +2109,41 @@ pub mod regs {
             AIPS_BRIDGE_GROUP3_MEM_RULE3(0)
         }
     }
+    impl core::fmt::Debug for AIPS_BRIDGE_GROUP3_MEM_RULE3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AIPS_BRIDGE_GROUP3_MEM_RULE3")
+                .field("CAN1_RULE0", &self.CAN1_RULE0())
+                .field("CAN1_RULE1", &self.CAN1_RULE1())
+                .field("CAN1_RULE2", &self.CAN1_RULE2())
+                .field("CAN1_RULE3", &self.CAN1_RULE3())
+                .field("USBDCD", &self.USBDCD())
+                .field("USBFS", &self.USBFS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP3_MEM_RULE3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AIPS_BRIDGE_GROUP3_MEM_RULE3 {
+                CAN1_RULE0: u8,
+                CAN1_RULE1: u8,
+                CAN1_RULE2: u8,
+                CAN1_RULE3: u8,
+                USBDCD: u8,
+                USBFS: u8,
+            }
+            let proxy = AIPS_BRIDGE_GROUP3_MEM_RULE3 {
+                CAN1_RULE0: self.CAN1_RULE0(),
+                CAN1_RULE1: self.CAN1_RULE1(),
+                CAN1_RULE2: self.CAN1_RULE2(),
+                CAN1_RULE3: self.CAN1_RULE3(),
+                USBDCD: self.USBDCD(),
+                USBFS: self.USBFS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AIPS Bridge Group 4 Rule 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1575,6 +2208,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AIPS_BRIDGE_GROUP4_MEM_RULE0 {
             AIPS_BRIDGE_GROUP4_MEM_RULE0(0)
+        }
+    }
+    impl core::fmt::Debug for AIPS_BRIDGE_GROUP4_MEM_RULE0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AIPS_BRIDGE_GROUP4_MEM_RULE0")
+                .field("ENET", &self.ENET())
+                .field("EMVSIM0", &self.EMVSIM0())
+                .field("EMVSIM1", &self.EMVSIM1())
+                .field("FLEXIO", &self.FLEXIO())
+                .field("SAI0", &self.SAI0())
+                .field("SAI1", &self.SAI1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP4_MEM_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AIPS_BRIDGE_GROUP4_MEM_RULE0 {
+                ENET: u8,
+                EMVSIM0: u8,
+                EMVSIM1: u8,
+                FLEXIO: u8,
+                SAI0: u8,
+                SAI1: u8,
+            }
+            let proxy = AIPS_BRIDGE_GROUP4_MEM_RULE0 {
+                ENET: self.ENET(),
+                EMVSIM0: self.EMVSIM0(),
+                EMVSIM1: self.EMVSIM1(),
+                FLEXIO: self.FLEXIO(),
+                SAI0: self.SAI0(),
+                SAI1: self.SAI1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AIPS Bridge Group 4 Rule 1"]
@@ -1661,6 +2329,47 @@ pub mod regs {
             AIPS_BRIDGE_GROUP4_MEM_RULE1(0)
         }
     }
+    impl core::fmt::Debug for AIPS_BRIDGE_GROUP4_MEM_RULE1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AIPS_BRIDGE_GROUP4_MEM_RULE1")
+                .field("SINC0", &self.SINC0())
+                .field("uSDHC0", &self.uSDHC0())
+                .field("USBHSPHY", &self.USBHSPHY())
+                .field("USBHS", &self.USBHS())
+                .field("MICD", &self.MICD())
+                .field("ADC0", &self.ADC0())
+                .field("ADC1", &self.ADC1())
+                .field("DAC0", &self.DAC0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP4_MEM_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AIPS_BRIDGE_GROUP4_MEM_RULE1 {
+                SINC0: u8,
+                uSDHC0: u8,
+                USBHSPHY: u8,
+                USBHS: u8,
+                MICD: u8,
+                ADC0: u8,
+                ADC1: u8,
+                DAC0: u8,
+            }
+            let proxy = AIPS_BRIDGE_GROUP4_MEM_RULE1 {
+                SINC0: self.SINC0(),
+                uSDHC0: self.uSDHC0(),
+                USBHSPHY: self.USBHSPHY(),
+                USBHS: self.USBHS(),
+                MICD: self.MICD(),
+                ADC0: self.ADC0(),
+                ADC1: self.ADC1(),
+                DAC0: self.DAC0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AIPS Bridge Group 4 Rule 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1745,6 +2454,47 @@ pub mod regs {
             AIPS_BRIDGE_GROUP4_MEM_RULE2(0)
         }
     }
+    impl core::fmt::Debug for AIPS_BRIDGE_GROUP4_MEM_RULE2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AIPS_BRIDGE_GROUP4_MEM_RULE2")
+                .field("OPAMP0", &self.OPAMP0())
+                .field("VREF", &self.VREF())
+                .field("DAC", &self.DAC())
+                .field("OPAMP1", &self.OPAMP1())
+                .field("HPDAC0", &self.HPDAC0())
+                .field("OPAMP2", &self.OPAMP2())
+                .field("PORT0", &self.PORT0())
+                .field("PORT1", &self.PORT1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP4_MEM_RULE2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AIPS_BRIDGE_GROUP4_MEM_RULE2 {
+                OPAMP0: u8,
+                VREF: u8,
+                DAC: u8,
+                OPAMP1: u8,
+                HPDAC0: u8,
+                OPAMP2: u8,
+                PORT0: u8,
+                PORT1: u8,
+            }
+            let proxy = AIPS_BRIDGE_GROUP4_MEM_RULE2 {
+                OPAMP0: self.OPAMP0(),
+                VREF: self.VREF(),
+                DAC: self.DAC(),
+                OPAMP1: self.OPAMP1(),
+                HPDAC0: self.HPDAC0(),
+                OPAMP2: self.OPAMP2(),
+                PORT0: self.PORT0(),
+                PORT1: self.PORT1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AIPS Bridge Group 4 Rule 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1802,6 +2552,38 @@ pub mod regs {
             AIPS_BRIDGE_GROUP4_MEM_RULE3(0)
         }
     }
+    impl core::fmt::Debug for AIPS_BRIDGE_GROUP4_MEM_RULE3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AIPS_BRIDGE_GROUP4_MEM_RULE3")
+                .field("PORT2", &self.PORT2())
+                .field("PORT3", &self.PORT3())
+                .field("PORT4", &self.PORT4())
+                .field("MTR0", &self.MTR0())
+                .field("ATX0", &self.ATX0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP4_MEM_RULE3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AIPS_BRIDGE_GROUP4_MEM_RULE3 {
+                PORT2: u8,
+                PORT3: u8,
+                PORT4: u8,
+                MTR0: u8,
+                ATX0: u8,
+            }
+            let proxy = AIPS_BRIDGE_GROUP4_MEM_RULE3 {
+                PORT2: self.PORT2(),
+                PORT3: self.PORT3(),
+                PORT4: self.PORT4(),
+                MTR0: self.MTR0(),
+                ATX0: self.ATX0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "APB Bridge Group 0 Memory Rule 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1839,6 +2621,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> APB_PERIPHERAL_GROUP0_MEM_RULE0 {
             APB_PERIPHERAL_GROUP0_MEM_RULE0(0)
+        }
+    }
+    impl core::fmt::Debug for APB_PERIPHERAL_GROUP0_MEM_RULE0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("APB_PERIPHERAL_GROUP0_MEM_RULE0")
+                .field("SYSCON", &self.SYSCON())
+                .field("PINT0", &self.PINT0())
+                .field("INPUTMUX", &self.INPUTMUX())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for APB_PERIPHERAL_GROUP0_MEM_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct APB_PERIPHERAL_GROUP0_MEM_RULE0 {
+                SYSCON: u8,
+                PINT0: u8,
+                INPUTMUX: u8,
+            }
+            let proxy = APB_PERIPHERAL_GROUP0_MEM_RULE0 {
+                SYSCON: self.SYSCON(),
+                PINT0: self.PINT0(),
+                INPUTMUX: self.INPUTMUX(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "APB Bridge Group 0 Memory Rule 1"]
@@ -1887,6 +2695,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> APB_PERIPHERAL_GROUP0_MEM_RULE1 {
             APB_PERIPHERAL_GROUP0_MEM_RULE1(0)
+        }
+    }
+    impl core::fmt::Debug for APB_PERIPHERAL_GROUP0_MEM_RULE1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("APB_PERIPHERAL_GROUP0_MEM_RULE1")
+                .field("CTIMER0", &self.CTIMER0())
+                .field("CTIMER1", &self.CTIMER1())
+                .field("CTIMER2", &self.CTIMER2())
+                .field("CTIMER3", &self.CTIMER3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for APB_PERIPHERAL_GROUP0_MEM_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct APB_PERIPHERAL_GROUP0_MEM_RULE1 {
+                CTIMER0: u8,
+                CTIMER1: u8,
+                CTIMER2: u8,
+                CTIMER3: u8,
+            }
+            let proxy = APB_PERIPHERAL_GROUP0_MEM_RULE1 {
+                CTIMER0: self.CTIMER0(),
+                CTIMER1: self.CTIMER1(),
+                CTIMER2: self.CTIMER2(),
+                CTIMER3: self.CTIMER3(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "APB Bridge Group 0 Rule 2"]
@@ -1964,6 +2801,44 @@ pub mod regs {
             APB_PERIPHERAL_GROUP0_MEM_RULE2(0)
         }
     }
+    impl core::fmt::Debug for APB_PERIPHERAL_GROUP0_MEM_RULE2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("APB_PERIPHERAL_GROUP0_MEM_RULE2")
+                .field("CTIMER4", &self.CTIMER4())
+                .field("FREQME0", &self.FREQME0())
+                .field("UTCIK0", &self.UTCIK0())
+                .field("MRT0", &self.MRT0())
+                .field("OSTIMER0", &self.OSTIMER0())
+                .field("WWDT0", &self.WWDT0())
+                .field("WWDT1", &self.WWDT1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for APB_PERIPHERAL_GROUP0_MEM_RULE2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct APB_PERIPHERAL_GROUP0_MEM_RULE2 {
+                CTIMER4: u8,
+                FREQME0: u8,
+                UTCIK0: u8,
+                MRT0: u8,
+                OSTIMER0: u8,
+                WWDT0: u8,
+                WWDT1: u8,
+            }
+            let proxy = APB_PERIPHERAL_GROUP0_MEM_RULE2 {
+                CTIMER4: self.CTIMER4(),
+                FREQME0: self.FREQME0(),
+                UTCIK0: self.UTCIK0(),
+                MRT0: self.MRT0(),
+                OSTIMER0: self.OSTIMER0(),
+                WWDT0: self.WWDT0(),
+                WWDT1: self.WWDT1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "APB Bridge Group 0 Memory Rule 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1983,6 +2858,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> APB_PERIPHERAL_GROUP0_MEM_RULE3 {
             APB_PERIPHERAL_GROUP0_MEM_RULE3(0)
+        }
+    }
+    impl core::fmt::Debug for APB_PERIPHERAL_GROUP0_MEM_RULE3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("APB_PERIPHERAL_GROUP0_MEM_RULE3")
+                .field("CACHE64_POLSEL0", &self.CACHE64_POLSEL0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for APB_PERIPHERAL_GROUP0_MEM_RULE3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct APB_PERIPHERAL_GROUP0_MEM_RULE3 {
+                CACHE64_POLSEL0: u8,
+            }
+            let proxy = APB_PERIPHERAL_GROUP0_MEM_RULE3 {
+                CACHE64_POLSEL0: self.CACHE64_POLSEL0(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "APB Bridge Group 1 Memory Rule 0"]
@@ -2031,6 +2926,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> APB_PERIPHERAL_GROUP1_MEM_RULE0 {
             APB_PERIPHERAL_GROUP1_MEM_RULE0(0)
+        }
+    }
+    impl core::fmt::Debug for APB_PERIPHERAL_GROUP1_MEM_RULE0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("APB_PERIPHERAL_GROUP1_MEM_RULE0")
+                .field("I3C0", &self.I3C0())
+                .field("I3C1", &self.I3C1())
+                .field("GDET", &self.GDET())
+                .field("ITRC", &self.ITRC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for APB_PERIPHERAL_GROUP1_MEM_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct APB_PERIPHERAL_GROUP1_MEM_RULE0 {
+                I3C0: u8,
+                I3C1: u8,
+                GDET: u8,
+                ITRC: u8,
+            }
+            let proxy = APB_PERIPHERAL_GROUP1_MEM_RULE0 {
+                I3C0: self.I3C0(),
+                I3C1: self.I3C1(),
+                GDET: self.GDET(),
+                ITRC: self.ITRC(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "APB Bridge Group 1 Memory Rule 1"]
@@ -2090,6 +3014,38 @@ pub mod regs {
             APB_PERIPHERAL_GROUP1_MEM_RULE1(0)
         }
     }
+    impl core::fmt::Debug for APB_PERIPHERAL_GROUP1_MEM_RULE1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("APB_PERIPHERAL_GROUP1_MEM_RULE1")
+                .field("PKC", &self.PKC())
+                .field("PUF_ALIAS0", &self.PUF_ALIAS0())
+                .field("PUF_ALIAS1", &self.PUF_ALIAS1())
+                .field("PUF_ALIAS2", &self.PUF_ALIAS2())
+                .field("PUF_ALIAS3", &self.PUF_ALIAS3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for APB_PERIPHERAL_GROUP1_MEM_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct APB_PERIPHERAL_GROUP1_MEM_RULE1 {
+                PKC: u8,
+                PUF_ALIAS0: u8,
+                PUF_ALIAS1: u8,
+                PUF_ALIAS2: u8,
+                PUF_ALIAS3: u8,
+            }
+            let proxy = APB_PERIPHERAL_GROUP1_MEM_RULE1 {
+                PKC: self.PKC(),
+                PUF_ALIAS0: self.PUF_ALIAS0(),
+                PUF_ALIAS1: self.PUF_ALIAS1(),
+                PUF_ALIAS2: self.PUF_ALIAS2(),
+                PUF_ALIAS3: self.PUF_ALIAS3(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "APB Bridge Group 1 Memory Rule 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2127,6 +3083,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> APB_PERIPHERAL_GROUP1_MEM_RULE2 {
             APB_PERIPHERAL_GROUP1_MEM_RULE2(0)
+        }
+    }
+    impl core::fmt::Debug for APB_PERIPHERAL_GROUP1_MEM_RULE2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("APB_PERIPHERAL_GROUP1_MEM_RULE2")
+                .field("COOLFLUX", &self.COOLFLUX())
+                .field("SMARTDMA", &self.SMARTDMA())
+                .field("PLU", &self.PLU())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for APB_PERIPHERAL_GROUP1_MEM_RULE2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct APB_PERIPHERAL_GROUP1_MEM_RULE2 {
+                COOLFLUX: u8,
+                SMARTDMA: u8,
+                PLU: u8,
+            }
+            let proxy = APB_PERIPHERAL_GROUP1_MEM_RULE2 {
+                COOLFLUX: self.COOLFLUX(),
+                SMARTDMA: self.SMARTDMA(),
+                PLU: self.PLU(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Miscellaneous CPU0 Control Signals"]
@@ -2193,6 +3175,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CPU0_LOCK_REG {
             CPU0_LOCK_REG(0)
+        }
+    }
+    impl core::fmt::Debug for CPU0_LOCK_REG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CPU0_LOCK_REG")
+                .field("LOCK_NS_VTOR", &self.LOCK_NS_VTOR())
+                .field("LOCK_NS_MPU", &self.LOCK_NS_MPU())
+                .field("LOCK_S_VTAIRCR", &self.LOCK_S_VTAIRCR())
+                .field("LOCK_S_MPU", &self.LOCK_S_MPU())
+                .field("LOCK_SAU", &self.LOCK_SAU())
+                .field("CM33_LOCK_REG_LOCK", &self.CM33_LOCK_REG_LOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CPU0_LOCK_REG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CPU0_LOCK_REG {
+                LOCK_NS_VTOR: u8,
+                LOCK_NS_MPU: u8,
+                LOCK_S_VTAIRCR: u8,
+                LOCK_S_MPU: u8,
+                LOCK_SAU: u8,
+                CM33_LOCK_REG_LOCK: u8,
+            }
+            let proxy = CPU0_LOCK_REG {
+                LOCK_NS_VTOR: self.LOCK_NS_VTOR(),
+                LOCK_NS_MPU: self.LOCK_NS_MPU(),
+                LOCK_S_VTAIRCR: self.LOCK_S_VTAIRCR(),
+                LOCK_S_MPU: self.LOCK_S_MPU(),
+                LOCK_SAU: self.LOCK_SAU(),
+                CM33_LOCK_REG_LOCK: self.CM33_LOCK_REG_LOCK(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Flash Memory Rule"]
@@ -2279,6 +3296,47 @@ pub mod regs {
             FLASH00_MEM_RULE(0)
         }
     }
+    impl core::fmt::Debug for FLASH00_MEM_RULE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLASH00_MEM_RULE")
+                .field("RULE0", &self.RULE0())
+                .field("RULE1", &self.RULE1())
+                .field("RULE2", &self.RULE2())
+                .field("RULE3", &self.RULE3())
+                .field("RULE4", &self.RULE4())
+                .field("RULE5", &self.RULE5())
+                .field("RULE6", &self.RULE6())
+                .field("RULE7", &self.RULE7())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLASH00_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLASH00_MEM_RULE {
+                RULE0: u8,
+                RULE1: u8,
+                RULE2: u8,
+                RULE3: u8,
+                RULE4: u8,
+                RULE5: u8,
+                RULE6: u8,
+                RULE7: u8,
+            }
+            let proxy = FLASH00_MEM_RULE {
+                RULE0: self.RULE0(),
+                RULE1: self.RULE1(),
+                RULE2: self.RULE2(),
+                RULE3: self.RULE3(),
+                RULE4: self.RULE4(),
+                RULE5: self.RULE5(),
+                RULE6: self.RULE6(),
+                RULE7: self.RULE7(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Flash Memory Rule"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2325,6 +3383,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FLASH02_MEM_RULE {
             FLASH02_MEM_RULE(0)
+        }
+    }
+    impl core::fmt::Debug for FLASH02_MEM_RULE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLASH02_MEM_RULE")
+                .field("RULE0", &self.RULE0())
+                .field("RULE1", &self.RULE1())
+                .field("RULE2", &self.RULE2())
+                .field("RULE3", &self.RULE3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLASH02_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLASH02_MEM_RULE {
+                RULE0: u8,
+                RULE1: u8,
+                RULE2: u8,
+                RULE3: u8,
+            }
+            let proxy = FLASH02_MEM_RULE {
+                RULE0: self.RULE0(),
+                RULE1: self.RULE1(),
+                RULE2: self.RULE2(),
+                RULE3: self.RULE3(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Flash Memory Rule"]
@@ -2411,6 +3498,47 @@ pub mod regs {
             FLASH03_MEM_RULE(0)
         }
     }
+    impl core::fmt::Debug for FLASH03_MEM_RULE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLASH03_MEM_RULE")
+                .field("RULE0", &self.RULE0())
+                .field("RULE1", &self.RULE1())
+                .field("RULE2", &self.RULE2())
+                .field("RULE3", &self.RULE3())
+                .field("RULE4", &self.RULE4())
+                .field("RULE5", &self.RULE5())
+                .field("RULE6", &self.RULE6())
+                .field("RULE7", &self.RULE7())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLASH03_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLASH03_MEM_RULE {
+                RULE0: u8,
+                RULE1: u8,
+                RULE2: u8,
+                RULE3: u8,
+                RULE4: u8,
+                RULE5: u8,
+                RULE6: u8,
+                RULE7: u8,
+            }
+            let proxy = FLASH03_MEM_RULE {
+                RULE0: self.RULE0(),
+                RULE1: self.RULE1(),
+                RULE2: self.RULE2(),
+                RULE3: self.RULE3(),
+                RULE4: self.RULE4(),
+                RULE5: self.RULE5(),
+                RULE6: self.RULE6(),
+                RULE7: self.RULE7(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Master Secure Level"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2477,6 +3605,44 @@ pub mod regs {
             MASTER_SEC_ANTI_POL_REG(0)
         }
     }
+    impl core::fmt::Debug for MASTER_SEC_ANTI_POL_REG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MASTER_SEC_ANTI_POL_REG")
+                .field("SMARTDMA", &self.SMARTDMA())
+                .field("eDMA0", &self.eDMA0())
+                .field("eDMA1", &self.eDMA1())
+                .field("PKC", &self.PKC())
+                .field("USB_HS", &self.USB_HS())
+                .field(
+                    "MASTER_SEC_LEVEL_ANTIPOL_LOCK",
+                    &self.MASTER_SEC_LEVEL_ANTIPOL_LOCK(),
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MASTER_SEC_ANTI_POL_REG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MASTER_SEC_ANTI_POL_REG {
+                SMARTDMA: u8,
+                eDMA0: u8,
+                eDMA1: u8,
+                PKC: u8,
+                USB_HS: u8,
+                MASTER_SEC_LEVEL_ANTIPOL_LOCK: u8,
+            }
+            let proxy = MASTER_SEC_ANTI_POL_REG {
+                SMARTDMA: self.SMARTDMA(),
+                eDMA0: self.eDMA0(),
+                eDMA1: self.eDMA1(),
+                PKC: self.PKC(),
+                USB_HS: self.USB_HS(),
+                MASTER_SEC_LEVEL_ANTIPOL_LOCK: self.MASTER_SEC_LEVEL_ANTIPOL_LOCK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Master Secure Level"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2541,6 +3707,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MASTER_SEC_LEVEL {
             MASTER_SEC_LEVEL(0)
+        }
+    }
+    impl core::fmt::Debug for MASTER_SEC_LEVEL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MASTER_SEC_LEVEL")
+                .field("SMARTDMA", &self.SMARTDMA())
+                .field("eDMA0", &self.eDMA0())
+                .field("eDMA1", &self.eDMA1())
+                .field("PKC", &self.PKC())
+                .field("USB_HS", &self.USB_HS())
+                .field("MASTER_SEC_LEVEL_LOCK", &self.MASTER_SEC_LEVEL_LOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MASTER_SEC_LEVEL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MASTER_SEC_LEVEL {
+                SMARTDMA: u8,
+                eDMA0: u8,
+                eDMA1: u8,
+                PKC: u8,
+                USB_HS: u8,
+                MASTER_SEC_LEVEL_LOCK: u8,
+            }
+            let proxy = MASTER_SEC_LEVEL {
+                SMARTDMA: self.SMARTDMA(),
+                eDMA0: self.eDMA0(),
+                eDMA1: self.eDMA1(),
+                PKC: self.PKC(),
+                USB_HS: self.USB_HS(),
+                MASTER_SEC_LEVEL_LOCK: self.MASTER_SEC_LEVEL_LOCK(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Secure Control Duplicate"]
@@ -2618,6 +3819,44 @@ pub mod regs {
             MISC_CTRL_DP_REG(0)
         }
     }
+    impl core::fmt::Debug for MISC_CTRL_DP_REG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MISC_CTRL_DP_REG")
+                .field("WRITE_LOCK", &self.WRITE_LOCK())
+                .field("ENABLE_SECURE_CHECKING", &self.ENABLE_SECURE_CHECKING())
+                .field("ENABLE_S_PRIV_CHECK", &self.ENABLE_S_PRIV_CHECK())
+                .field("ENABLE_NS_PRIV_CHECK", &self.ENABLE_NS_PRIV_CHECK())
+                .field("DISABLE_VIOLATION_ABORT", &self.DISABLE_VIOLATION_ABORT())
+                .field("DISABLE_STRICT_MODE", &self.DISABLE_STRICT_MODE())
+                .field("IDAU_ALL_NS", &self.IDAU_ALL_NS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MISC_CTRL_DP_REG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MISC_CTRL_DP_REG {
+                WRITE_LOCK: u8,
+                ENABLE_SECURE_CHECKING: u8,
+                ENABLE_S_PRIV_CHECK: u8,
+                ENABLE_NS_PRIV_CHECK: u8,
+                DISABLE_VIOLATION_ABORT: u8,
+                DISABLE_STRICT_MODE: u8,
+                IDAU_ALL_NS: u8,
+            }
+            let proxy = MISC_CTRL_DP_REG {
+                WRITE_LOCK: self.WRITE_LOCK(),
+                ENABLE_SECURE_CHECKING: self.ENABLE_SECURE_CHECKING(),
+                ENABLE_S_PRIV_CHECK: self.ENABLE_S_PRIV_CHECK(),
+                ENABLE_NS_PRIV_CHECK: self.ENABLE_NS_PRIV_CHECK(),
+                DISABLE_VIOLATION_ABORT: self.DISABLE_VIOLATION_ABORT(),
+                DISABLE_STRICT_MODE: self.DISABLE_STRICT_MODE(),
+                IDAU_ALL_NS: self.IDAU_ALL_NS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Secure Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2691,6 +3930,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MISC_CTRL_REG {
             MISC_CTRL_REG(0)
+        }
+    }
+    impl core::fmt::Debug for MISC_CTRL_REG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MISC_CTRL_REG")
+                .field("WRITE_LOCK", &self.WRITE_LOCK())
+                .field("ENABLE_SECURE_CHECKING", &self.ENABLE_SECURE_CHECKING())
+                .field("ENABLE_S_PRIV_CHECK", &self.ENABLE_S_PRIV_CHECK())
+                .field("ENABLE_NS_PRIV_CHECK", &self.ENABLE_NS_PRIV_CHECK())
+                .field("DISABLE_VIOLATION_ABORT", &self.DISABLE_VIOLATION_ABORT())
+                .field("DISABLE_STRICT_MODE", &self.DISABLE_STRICT_MODE())
+                .field("IDAU_ALL_NS", &self.IDAU_ALL_NS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MISC_CTRL_REG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MISC_CTRL_REG {
+                WRITE_LOCK: u8,
+                ENABLE_SECURE_CHECKING: u8,
+                ENABLE_S_PRIV_CHECK: u8,
+                ENABLE_NS_PRIV_CHECK: u8,
+                DISABLE_VIOLATION_ABORT: u8,
+                DISABLE_STRICT_MODE: u8,
+                IDAU_ALL_NS: u8,
+            }
+            let proxy = MISC_CTRL_REG {
+                WRITE_LOCK: self.WRITE_LOCK(),
+                ENABLE_SECURE_CHECKING: self.ENABLE_SECURE_CHECKING(),
+                ENABLE_S_PRIV_CHECK: self.ENABLE_S_PRIV_CHECK(),
+                ENABLE_NS_PRIV_CHECK: self.ENABLE_NS_PRIV_CHECK(),
+                DISABLE_VIOLATION_ABORT: self.DISABLE_VIOLATION_ABORT(),
+                DISABLE_STRICT_MODE: self.DISABLE_STRICT_MODE(),
+                IDAU_ALL_NS: self.IDAU_ALL_NS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "RAMA Memory Rule 0"]
@@ -2777,6 +4054,47 @@ pub mod regs {
             RAMA_MEM_RULE(0)
         }
     }
+    impl core::fmt::Debug for RAMA_MEM_RULE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RAMA_MEM_RULE")
+                .field("RULE0", &self.RULE0())
+                .field("RULE1", &self.RULE1())
+                .field("RULE2", &self.RULE2())
+                .field("RULE3", &self.RULE3())
+                .field("RULE4", &self.RULE4())
+                .field("RULE5", &self.RULE5())
+                .field("RULE6", &self.RULE6())
+                .field("RULE7", &self.RULE7())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAMA_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RAMA_MEM_RULE {
+                RULE0: u8,
+                RULE1: u8,
+                RULE2: u8,
+                RULE3: u8,
+                RULE4: u8,
+                RULE5: u8,
+                RULE6: u8,
+                RULE7: u8,
+            }
+            let proxy = RAMA_MEM_RULE {
+                RULE0: self.RULE0(),
+                RULE1: self.RULE1(),
+                RULE2: self.RULE2(),
+                RULE3: self.RULE3(),
+                RULE4: self.RULE4(),
+                RULE5: self.RULE5(),
+                RULE6: self.RULE6(),
+                RULE7: self.RULE7(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "RAMB Memory Rule"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2859,6 +4177,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> RAMB_MEM_RULE {
             RAMB_MEM_RULE(0)
+        }
+    }
+    impl core::fmt::Debug for RAMB_MEM_RULE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RAMB_MEM_RULE")
+                .field("RULE0", &self.RULE0())
+                .field("RULE1", &self.RULE1())
+                .field("RULE2", &self.RULE2())
+                .field("RULE3", &self.RULE3())
+                .field("RULE4", &self.RULE4())
+                .field("RULE5", &self.RULE5())
+                .field("RULE6", &self.RULE6())
+                .field("RULE7", &self.RULE7())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAMB_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RAMB_MEM_RULE {
+                RULE0: u8,
+                RULE1: u8,
+                RULE2: u8,
+                RULE3: u8,
+                RULE4: u8,
+                RULE5: u8,
+                RULE6: u8,
+                RULE7: u8,
+            }
+            let proxy = RAMB_MEM_RULE {
+                RULE0: self.RULE0(),
+                RULE1: self.RULE1(),
+                RULE2: self.RULE2(),
+                RULE3: self.RULE3(),
+                RULE4: self.RULE4(),
+                RULE5: self.RULE5(),
+                RULE6: self.RULE6(),
+                RULE7: self.RULE7(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "RAMC Memory Rule"]
@@ -2945,6 +4304,47 @@ pub mod regs {
             RAMC_MEM_RULE(0)
         }
     }
+    impl core::fmt::Debug for RAMC_MEM_RULE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RAMC_MEM_RULE")
+                .field("RULE0", &self.RULE0())
+                .field("RULE1", &self.RULE1())
+                .field("RULE2", &self.RULE2())
+                .field("RULE3", &self.RULE3())
+                .field("RULE4", &self.RULE4())
+                .field("RULE5", &self.RULE5())
+                .field("RULE6", &self.RULE6())
+                .field("RULE7", &self.RULE7())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAMC_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RAMC_MEM_RULE {
+                RULE0: u8,
+                RULE1: u8,
+                RULE2: u8,
+                RULE3: u8,
+                RULE4: u8,
+                RULE5: u8,
+                RULE6: u8,
+                RULE7: u8,
+            }
+            let proxy = RAMC_MEM_RULE {
+                RULE0: self.RULE0(),
+                RULE1: self.RULE1(),
+                RULE2: self.RULE2(),
+                RULE3: self.RULE3(),
+                RULE4: self.RULE4(),
+                RULE5: self.RULE5(),
+                RULE6: self.RULE6(),
+                RULE7: self.RULE7(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "RAMD Memory Rule"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3027,6 +4427,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> RAMD_MEM_RULE {
             RAMD_MEM_RULE(0)
+        }
+    }
+    impl core::fmt::Debug for RAMD_MEM_RULE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RAMD_MEM_RULE")
+                .field("RULE0", &self.RULE0())
+                .field("RULE1", &self.RULE1())
+                .field("RULE2", &self.RULE2())
+                .field("RULE3", &self.RULE3())
+                .field("RULE4", &self.RULE4())
+                .field("RULE5", &self.RULE5())
+                .field("RULE6", &self.RULE6())
+                .field("RULE7", &self.RULE7())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAMD_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RAMD_MEM_RULE {
+                RULE0: u8,
+                RULE1: u8,
+                RULE2: u8,
+                RULE3: u8,
+                RULE4: u8,
+                RULE5: u8,
+                RULE6: u8,
+                RULE7: u8,
+            }
+            let proxy = RAMD_MEM_RULE {
+                RULE0: self.RULE0(),
+                RULE1: self.RULE1(),
+                RULE2: self.RULE2(),
+                RULE3: self.RULE3(),
+                RULE4: self.RULE4(),
+                RULE5: self.RULE5(),
+                RULE6: self.RULE6(),
+                RULE7: self.RULE7(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "RAME Memory Rule"]
@@ -3113,6 +4554,47 @@ pub mod regs {
             RAME_MEM_RULE(0)
         }
     }
+    impl core::fmt::Debug for RAME_MEM_RULE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RAME_MEM_RULE")
+                .field("RULE0", &self.RULE0())
+                .field("RULE1", &self.RULE1())
+                .field("RULE2", &self.RULE2())
+                .field("RULE3", &self.RULE3())
+                .field("RULE4", &self.RULE4())
+                .field("RULE5", &self.RULE5())
+                .field("RULE6", &self.RULE6())
+                .field("RULE7", &self.RULE7())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAME_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RAME_MEM_RULE {
+                RULE0: u8,
+                RULE1: u8,
+                RULE2: u8,
+                RULE3: u8,
+                RULE4: u8,
+                RULE5: u8,
+                RULE6: u8,
+                RULE7: u8,
+            }
+            let proxy = RAME_MEM_RULE {
+                RULE0: self.RULE0(),
+                RULE1: self.RULE1(),
+                RULE2: self.RULE2(),
+                RULE3: self.RULE3(),
+                RULE4: self.RULE4(),
+                RULE5: self.RULE5(),
+                RULE6: self.RULE6(),
+                RULE7: self.RULE7(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "RAMX Memory Rule"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3197,6 +4679,47 @@ pub mod regs {
             RAMX_MEM_RULE(0)
         }
     }
+    impl core::fmt::Debug for RAMX_MEM_RULE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RAMX_MEM_RULE")
+                .field("RULE0", &self.RULE0())
+                .field("RULE1", &self.RULE1())
+                .field("RULE2", &self.RULE2())
+                .field("RULE3", &self.RULE3())
+                .field("RULE4", &self.RULE4())
+                .field("RULE5", &self.RULE5())
+                .field("RULE6", &self.RULE6())
+                .field("RULE7", &self.RULE7())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAMX_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RAMX_MEM_RULE {
+                RULE0: u8,
+                RULE1: u8,
+                RULE2: u8,
+                RULE3: u8,
+                RULE4: u8,
+                RULE5: u8,
+                RULE6: u8,
+                RULE7: u8,
+            }
+            let proxy = RAMX_MEM_RULE {
+                RULE0: self.RULE0(),
+                RULE1: self.RULE1(),
+                RULE2: self.RULE2(),
+                RULE3: self.RULE3(),
+                RULE4: self.RULE4(),
+                RULE5: self.RULE5(),
+                RULE6: self.RULE6(),
+                RULE7: self.RULE7(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "ROM Memory Rule"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3279,6 +4802,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ROM_MEM_RULE {
             ROM_MEM_RULE(0)
+        }
+    }
+    impl core::fmt::Debug for ROM_MEM_RULE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ROM_MEM_RULE")
+                .field("RULE0", &self.RULE0())
+                .field("RULE1", &self.RULE1())
+                .field("RULE2", &self.RULE2())
+                .field("RULE3", &self.RULE3())
+                .field("RULE4", &self.RULE4())
+                .field("RULE5", &self.RULE5())
+                .field("RULE6", &self.RULE6())
+                .field("RULE7", &self.RULE7())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ROM_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ROM_MEM_RULE {
+                RULE0: u8,
+                RULE1: u8,
+                RULE2: u8,
+                RULE3: u8,
+                RULE4: u8,
+                RULE5: u8,
+                RULE6: u8,
+                RULE7: u8,
+            }
+            let proxy = ROM_MEM_RULE {
+                RULE0: self.RULE0(),
+                RULE1: self.RULE1(),
+                RULE2: self.RULE2(),
+                RULE3: self.RULE3(),
+                RULE4: self.RULE4(),
+                RULE5: self.RULE5(),
+                RULE6: self.RULE6(),
+                RULE7: self.RULE7(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "GPIO Mask for Port 0..GPIO Mask for Port 1"]
@@ -3869,6 +5433,215 @@ pub mod regs {
             SEC_GPIO_MASK(0)
         }
     }
+    impl core::fmt::Debug for SEC_GPIO_MASK {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SEC_GPIO_MASK")
+                .field("PIO0_PIN0_SEC_MASK", &self.PIO0_PIN0_SEC_MASK())
+                .field("PIO1_PIN0_SEC_MASK", &self.PIO1_PIN0_SEC_MASK())
+                .field("PIO0_PIN1_SEC_MASK", &self.PIO0_PIN1_SEC_MASK())
+                .field("PIO1_PIN1_SEC_MASK", &self.PIO1_PIN1_SEC_MASK())
+                .field("PIO0_PIN2_SEC_MASK", &self.PIO0_PIN2_SEC_MASK())
+                .field("PIO1_PIN2_SEC_MASK", &self.PIO1_PIN2_SEC_MASK())
+                .field("PIO0_PIN3_SEC_MASK", &self.PIO0_PIN3_SEC_MASK())
+                .field("PIO1_PIN3_SEC_MASK", &self.PIO1_PIN3_SEC_MASK())
+                .field("PIO0_PIN4_SEC_MASK", &self.PIO0_PIN4_SEC_MASK())
+                .field("PIO1_PIN4_SEC_MASK", &self.PIO1_PIN4_SEC_MASK())
+                .field("PIO0_PIN5_SEC_MASK", &self.PIO0_PIN5_SEC_MASK())
+                .field("PIO1_PIN5_SEC_MASK", &self.PIO1_PIN5_SEC_MASK())
+                .field("PIO0_PIN6_SEC_MASK", &self.PIO0_PIN6_SEC_MASK())
+                .field("PIO1_PIN6_SEC_MASK", &self.PIO1_PIN6_SEC_MASK())
+                .field("PIO0_PIN7_SEC_MASK", &self.PIO0_PIN7_SEC_MASK())
+                .field("PIO1_PIN7_SEC_MASK", &self.PIO1_PIN7_SEC_MASK())
+                .field("PIO0_PIN8_SEC_MASK", &self.PIO0_PIN8_SEC_MASK())
+                .field("PIO1_PIN8_SEC_MASK", &self.PIO1_PIN8_SEC_MASK())
+                .field("PIO0_PIN9_SEC_MASK", &self.PIO0_PIN9_SEC_MASK())
+                .field("PIO1_PIN9_SEC_MASK", &self.PIO1_PIN9_SEC_MASK())
+                .field("PIO0_PIN10_SEC_MASK", &self.PIO0_PIN10_SEC_MASK())
+                .field("PIO1_PIN10_SEC_MASK", &self.PIO1_PIN10_SEC_MASK())
+                .field("PIO0_PIN11_SEC_MASK", &self.PIO0_PIN11_SEC_MASK())
+                .field("PIO1_PIN11_SEC_MASK", &self.PIO1_PIN11_SEC_MASK())
+                .field("PIO0_PIN12_SEC_MASK", &self.PIO0_PIN12_SEC_MASK())
+                .field("PIO1_PIN12_SEC_MASK", &self.PIO1_PIN12_SEC_MASK())
+                .field("PIO0_PIN13_SEC_MASK", &self.PIO0_PIN13_SEC_MASK())
+                .field("PIO1_PIN13_SEC_MASK", &self.PIO1_PIN13_SEC_MASK())
+                .field("PIO0_PIN14_SEC_MASK", &self.PIO0_PIN14_SEC_MASK())
+                .field("PIO1_PIN14_SEC_MASK", &self.PIO1_PIN14_SEC_MASK())
+                .field("PIO0_PIN15_SEC_MASK", &self.PIO0_PIN15_SEC_MASK())
+                .field("PIO1_PIN15_SEC_MASK", &self.PIO1_PIN15_SEC_MASK())
+                .field("PIO0_PIN16_SEC_MASK", &self.PIO0_PIN16_SEC_MASK())
+                .field("PIO1_PIN16_SEC_MASK", &self.PIO1_PIN16_SEC_MASK())
+                .field("PIO0_PIN17_SEC_MASK", &self.PIO0_PIN17_SEC_MASK())
+                .field("PIO1_PIN17_SEC_MASK", &self.PIO1_PIN17_SEC_MASK())
+                .field("PIO0_PIN18_SEC_MASK", &self.PIO0_PIN18_SEC_MASK())
+                .field("PIO1_PIN18_SEC_MASK", &self.PIO1_PIN18_SEC_MASK())
+                .field("PIO0_PIN19_SEC_MASK", &self.PIO0_PIN19_SEC_MASK())
+                .field("PIO1_PIN19_SEC_MASK", &self.PIO1_PIN19_SEC_MASK())
+                .field("PIO0_PIN20_SEC_MASK", &self.PIO0_PIN20_SEC_MASK())
+                .field("PIO1_PIN20_SEC_MASK", &self.PIO1_PIN20_SEC_MASK())
+                .field("PIO0_PIN21_SEC_MASK", &self.PIO0_PIN21_SEC_MASK())
+                .field("PIO1_PIN21_SEC_MASK", &self.PIO1_PIN21_SEC_MASK())
+                .field("PIO0_PIN22_SEC_MASK", &self.PIO0_PIN22_SEC_MASK())
+                .field("PIO1_PIN22_SEC_MASK", &self.PIO1_PIN22_SEC_MASK())
+                .field("PIO0_PIN23_SEC_MASK", &self.PIO0_PIN23_SEC_MASK())
+                .field("PIO1_PIN23_SEC_MASK", &self.PIO1_PIN23_SEC_MASK())
+                .field("PIO0_PIN24_SEC_MASK", &self.PIO0_PIN24_SEC_MASK())
+                .field("PIO1_PIN24_SEC_MASK", &self.PIO1_PIN24_SEC_MASK())
+                .field("PIO0_PIN25_SEC_MASK", &self.PIO0_PIN25_SEC_MASK())
+                .field("PIO1_PIN25_SEC_MASK", &self.PIO1_PIN25_SEC_MASK())
+                .field("PIO0_PIN26_SEC_MASK", &self.PIO0_PIN26_SEC_MASK())
+                .field("PIO1_PIN26_SEC_MASK", &self.PIO1_PIN26_SEC_MASK())
+                .field("PIO0_PIN27_SEC_MASK", &self.PIO0_PIN27_SEC_MASK())
+                .field("PIO1_PIN27_SEC_MASK", &self.PIO1_PIN27_SEC_MASK())
+                .field("PIO0_PIN28_SEC_MASK", &self.PIO0_PIN28_SEC_MASK())
+                .field("PIO1_PIN28_SEC_MASK", &self.PIO1_PIN28_SEC_MASK())
+                .field("PIO0_PIN29_SEC_MASK", &self.PIO0_PIN29_SEC_MASK())
+                .field("PIO1_PIN29_SEC_MASK", &self.PIO1_PIN29_SEC_MASK())
+                .field("PIO0_PIN30_SEC_MASK", &self.PIO0_PIN30_SEC_MASK())
+                .field("PIO1_PIN30_SEC_MASK", &self.PIO1_PIN30_SEC_MASK())
+                .field("PIO0_PIN31_SEC_MASK", &self.PIO0_PIN31_SEC_MASK())
+                .field("PIO1_PIN31_SEC_MASK", &self.PIO1_PIN31_SEC_MASK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SEC_GPIO_MASK {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SEC_GPIO_MASK {
+                PIO0_PIN0_SEC_MASK: bool,
+                PIO1_PIN0_SEC_MASK: bool,
+                PIO0_PIN1_SEC_MASK: bool,
+                PIO1_PIN1_SEC_MASK: bool,
+                PIO0_PIN2_SEC_MASK: bool,
+                PIO1_PIN2_SEC_MASK: bool,
+                PIO0_PIN3_SEC_MASK: bool,
+                PIO1_PIN3_SEC_MASK: bool,
+                PIO0_PIN4_SEC_MASK: bool,
+                PIO1_PIN4_SEC_MASK: bool,
+                PIO0_PIN5_SEC_MASK: bool,
+                PIO1_PIN5_SEC_MASK: bool,
+                PIO0_PIN6_SEC_MASK: bool,
+                PIO1_PIN6_SEC_MASK: bool,
+                PIO0_PIN7_SEC_MASK: bool,
+                PIO1_PIN7_SEC_MASK: bool,
+                PIO0_PIN8_SEC_MASK: bool,
+                PIO1_PIN8_SEC_MASK: bool,
+                PIO0_PIN9_SEC_MASK: bool,
+                PIO1_PIN9_SEC_MASK: bool,
+                PIO0_PIN10_SEC_MASK: bool,
+                PIO1_PIN10_SEC_MASK: bool,
+                PIO0_PIN11_SEC_MASK: bool,
+                PIO1_PIN11_SEC_MASK: bool,
+                PIO0_PIN12_SEC_MASK: bool,
+                PIO1_PIN12_SEC_MASK: bool,
+                PIO0_PIN13_SEC_MASK: bool,
+                PIO1_PIN13_SEC_MASK: bool,
+                PIO0_PIN14_SEC_MASK: bool,
+                PIO1_PIN14_SEC_MASK: bool,
+                PIO0_PIN15_SEC_MASK: bool,
+                PIO1_PIN15_SEC_MASK: bool,
+                PIO0_PIN16_SEC_MASK: bool,
+                PIO1_PIN16_SEC_MASK: bool,
+                PIO0_PIN17_SEC_MASK: bool,
+                PIO1_PIN17_SEC_MASK: bool,
+                PIO0_PIN18_SEC_MASK: bool,
+                PIO1_PIN18_SEC_MASK: bool,
+                PIO0_PIN19_SEC_MASK: bool,
+                PIO1_PIN19_SEC_MASK: bool,
+                PIO0_PIN20_SEC_MASK: bool,
+                PIO1_PIN20_SEC_MASK: bool,
+                PIO0_PIN21_SEC_MASK: bool,
+                PIO1_PIN21_SEC_MASK: bool,
+                PIO0_PIN22_SEC_MASK: bool,
+                PIO1_PIN22_SEC_MASK: bool,
+                PIO0_PIN23_SEC_MASK: bool,
+                PIO1_PIN23_SEC_MASK: bool,
+                PIO0_PIN24_SEC_MASK: bool,
+                PIO1_PIN24_SEC_MASK: bool,
+                PIO0_PIN25_SEC_MASK: bool,
+                PIO1_PIN25_SEC_MASK: bool,
+                PIO0_PIN26_SEC_MASK: bool,
+                PIO1_PIN26_SEC_MASK: bool,
+                PIO0_PIN27_SEC_MASK: bool,
+                PIO1_PIN27_SEC_MASK: bool,
+                PIO0_PIN28_SEC_MASK: bool,
+                PIO1_PIN28_SEC_MASK: bool,
+                PIO0_PIN29_SEC_MASK: bool,
+                PIO1_PIN29_SEC_MASK: bool,
+                PIO0_PIN30_SEC_MASK: bool,
+                PIO1_PIN30_SEC_MASK: bool,
+                PIO0_PIN31_SEC_MASK: bool,
+                PIO1_PIN31_SEC_MASK: bool,
+            }
+            let proxy = SEC_GPIO_MASK {
+                PIO0_PIN0_SEC_MASK: self.PIO0_PIN0_SEC_MASK(),
+                PIO1_PIN0_SEC_MASK: self.PIO1_PIN0_SEC_MASK(),
+                PIO0_PIN1_SEC_MASK: self.PIO0_PIN1_SEC_MASK(),
+                PIO1_PIN1_SEC_MASK: self.PIO1_PIN1_SEC_MASK(),
+                PIO0_PIN2_SEC_MASK: self.PIO0_PIN2_SEC_MASK(),
+                PIO1_PIN2_SEC_MASK: self.PIO1_PIN2_SEC_MASK(),
+                PIO0_PIN3_SEC_MASK: self.PIO0_PIN3_SEC_MASK(),
+                PIO1_PIN3_SEC_MASK: self.PIO1_PIN3_SEC_MASK(),
+                PIO0_PIN4_SEC_MASK: self.PIO0_PIN4_SEC_MASK(),
+                PIO1_PIN4_SEC_MASK: self.PIO1_PIN4_SEC_MASK(),
+                PIO0_PIN5_SEC_MASK: self.PIO0_PIN5_SEC_MASK(),
+                PIO1_PIN5_SEC_MASK: self.PIO1_PIN5_SEC_MASK(),
+                PIO0_PIN6_SEC_MASK: self.PIO0_PIN6_SEC_MASK(),
+                PIO1_PIN6_SEC_MASK: self.PIO1_PIN6_SEC_MASK(),
+                PIO0_PIN7_SEC_MASK: self.PIO0_PIN7_SEC_MASK(),
+                PIO1_PIN7_SEC_MASK: self.PIO1_PIN7_SEC_MASK(),
+                PIO0_PIN8_SEC_MASK: self.PIO0_PIN8_SEC_MASK(),
+                PIO1_PIN8_SEC_MASK: self.PIO1_PIN8_SEC_MASK(),
+                PIO0_PIN9_SEC_MASK: self.PIO0_PIN9_SEC_MASK(),
+                PIO1_PIN9_SEC_MASK: self.PIO1_PIN9_SEC_MASK(),
+                PIO0_PIN10_SEC_MASK: self.PIO0_PIN10_SEC_MASK(),
+                PIO1_PIN10_SEC_MASK: self.PIO1_PIN10_SEC_MASK(),
+                PIO0_PIN11_SEC_MASK: self.PIO0_PIN11_SEC_MASK(),
+                PIO1_PIN11_SEC_MASK: self.PIO1_PIN11_SEC_MASK(),
+                PIO0_PIN12_SEC_MASK: self.PIO0_PIN12_SEC_MASK(),
+                PIO1_PIN12_SEC_MASK: self.PIO1_PIN12_SEC_MASK(),
+                PIO0_PIN13_SEC_MASK: self.PIO0_PIN13_SEC_MASK(),
+                PIO1_PIN13_SEC_MASK: self.PIO1_PIN13_SEC_MASK(),
+                PIO0_PIN14_SEC_MASK: self.PIO0_PIN14_SEC_MASK(),
+                PIO1_PIN14_SEC_MASK: self.PIO1_PIN14_SEC_MASK(),
+                PIO0_PIN15_SEC_MASK: self.PIO0_PIN15_SEC_MASK(),
+                PIO1_PIN15_SEC_MASK: self.PIO1_PIN15_SEC_MASK(),
+                PIO0_PIN16_SEC_MASK: self.PIO0_PIN16_SEC_MASK(),
+                PIO1_PIN16_SEC_MASK: self.PIO1_PIN16_SEC_MASK(),
+                PIO0_PIN17_SEC_MASK: self.PIO0_PIN17_SEC_MASK(),
+                PIO1_PIN17_SEC_MASK: self.PIO1_PIN17_SEC_MASK(),
+                PIO0_PIN18_SEC_MASK: self.PIO0_PIN18_SEC_MASK(),
+                PIO1_PIN18_SEC_MASK: self.PIO1_PIN18_SEC_MASK(),
+                PIO0_PIN19_SEC_MASK: self.PIO0_PIN19_SEC_MASK(),
+                PIO1_PIN19_SEC_MASK: self.PIO1_PIN19_SEC_MASK(),
+                PIO0_PIN20_SEC_MASK: self.PIO0_PIN20_SEC_MASK(),
+                PIO1_PIN20_SEC_MASK: self.PIO1_PIN20_SEC_MASK(),
+                PIO0_PIN21_SEC_MASK: self.PIO0_PIN21_SEC_MASK(),
+                PIO1_PIN21_SEC_MASK: self.PIO1_PIN21_SEC_MASK(),
+                PIO0_PIN22_SEC_MASK: self.PIO0_PIN22_SEC_MASK(),
+                PIO1_PIN22_SEC_MASK: self.PIO1_PIN22_SEC_MASK(),
+                PIO0_PIN23_SEC_MASK: self.PIO0_PIN23_SEC_MASK(),
+                PIO1_PIN23_SEC_MASK: self.PIO1_PIN23_SEC_MASK(),
+                PIO0_PIN24_SEC_MASK: self.PIO0_PIN24_SEC_MASK(),
+                PIO1_PIN24_SEC_MASK: self.PIO1_PIN24_SEC_MASK(),
+                PIO0_PIN25_SEC_MASK: self.PIO0_PIN25_SEC_MASK(),
+                PIO1_PIN25_SEC_MASK: self.PIO1_PIN25_SEC_MASK(),
+                PIO0_PIN26_SEC_MASK: self.PIO0_PIN26_SEC_MASK(),
+                PIO1_PIN26_SEC_MASK: self.PIO1_PIN26_SEC_MASK(),
+                PIO0_PIN27_SEC_MASK: self.PIO0_PIN27_SEC_MASK(),
+                PIO1_PIN27_SEC_MASK: self.PIO1_PIN27_SEC_MASK(),
+                PIO0_PIN28_SEC_MASK: self.PIO0_PIN28_SEC_MASK(),
+                PIO1_PIN28_SEC_MASK: self.PIO1_PIN28_SEC_MASK(),
+                PIO0_PIN29_SEC_MASK: self.PIO0_PIN29_SEC_MASK(),
+                PIO1_PIN29_SEC_MASK: self.PIO1_PIN29_SEC_MASK(),
+                PIO0_PIN30_SEC_MASK: self.PIO0_PIN30_SEC_MASK(),
+                PIO1_PIN30_SEC_MASK: self.PIO1_PIN30_SEC_MASK(),
+                PIO0_PIN31_SEC_MASK: self.PIO0_PIN31_SEC_MASK(),
+                PIO1_PIN31_SEC_MASK: self.PIO1_PIN31_SEC_MASK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Security Violation Info Validity for Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4052,6 +5825,80 @@ pub mod regs {
             SEC_VIO_INFO_VALID(0)
         }
     }
+    impl core::fmt::Debug for SEC_VIO_INFO_VALID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SEC_VIO_INFO_VALID")
+                .field("VIO_INFO_VALID0", &self.VIO_INFO_VALID0())
+                .field("VIO_INFO_VALID1", &self.VIO_INFO_VALID1())
+                .field("VIO_INFO_VALID2", &self.VIO_INFO_VALID2())
+                .field("VIO_INFO_VALID3", &self.VIO_INFO_VALID3())
+                .field("VIO_INFO_VALID4", &self.VIO_INFO_VALID4())
+                .field("VIO_INFO_VALID5", &self.VIO_INFO_VALID5())
+                .field("VIO_INFO_VALID6", &self.VIO_INFO_VALID6())
+                .field("VIO_INFO_VALID7", &self.VIO_INFO_VALID7())
+                .field("VIO_INFO_VALID8", &self.VIO_INFO_VALID8())
+                .field("VIO_INFO_VALID9", &self.VIO_INFO_VALID9())
+                .field("VIO_INFO_VALID10", &self.VIO_INFO_VALID10())
+                .field("VIO_INFO_VALID11", &self.VIO_INFO_VALID11())
+                .field("VIO_INFO_VALID12", &self.VIO_INFO_VALID12())
+                .field("VIO_INFO_VALID13", &self.VIO_INFO_VALID13())
+                .field("VIO_INFO_VALID14", &self.VIO_INFO_VALID14())
+                .field("VIO_INFO_VALID15", &self.VIO_INFO_VALID15())
+                .field("VIO_INFO_VALID16", &self.VIO_INFO_VALID16())
+                .field("VIO_INFO_VALID17", &self.VIO_INFO_VALID17())
+                .field("VIO_INFO_VALID18", &self.VIO_INFO_VALID18())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SEC_VIO_INFO_VALID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SEC_VIO_INFO_VALID {
+                VIO_INFO_VALID0: bool,
+                VIO_INFO_VALID1: bool,
+                VIO_INFO_VALID2: bool,
+                VIO_INFO_VALID3: bool,
+                VIO_INFO_VALID4: bool,
+                VIO_INFO_VALID5: bool,
+                VIO_INFO_VALID6: bool,
+                VIO_INFO_VALID7: bool,
+                VIO_INFO_VALID8: bool,
+                VIO_INFO_VALID9: bool,
+                VIO_INFO_VALID10: bool,
+                VIO_INFO_VALID11: bool,
+                VIO_INFO_VALID12: bool,
+                VIO_INFO_VALID13: bool,
+                VIO_INFO_VALID14: bool,
+                VIO_INFO_VALID15: bool,
+                VIO_INFO_VALID16: bool,
+                VIO_INFO_VALID17: bool,
+                VIO_INFO_VALID18: bool,
+            }
+            let proxy = SEC_VIO_INFO_VALID {
+                VIO_INFO_VALID0: self.VIO_INFO_VALID0(),
+                VIO_INFO_VALID1: self.VIO_INFO_VALID1(),
+                VIO_INFO_VALID2: self.VIO_INFO_VALID2(),
+                VIO_INFO_VALID3: self.VIO_INFO_VALID3(),
+                VIO_INFO_VALID4: self.VIO_INFO_VALID4(),
+                VIO_INFO_VALID5: self.VIO_INFO_VALID5(),
+                VIO_INFO_VALID6: self.VIO_INFO_VALID6(),
+                VIO_INFO_VALID7: self.VIO_INFO_VALID7(),
+                VIO_INFO_VALID8: self.VIO_INFO_VALID8(),
+                VIO_INFO_VALID9: self.VIO_INFO_VALID9(),
+                VIO_INFO_VALID10: self.VIO_INFO_VALID10(),
+                VIO_INFO_VALID11: self.VIO_INFO_VALID11(),
+                VIO_INFO_VALID12: self.VIO_INFO_VALID12(),
+                VIO_INFO_VALID13: self.VIO_INFO_VALID13(),
+                VIO_INFO_VALID14: self.VIO_INFO_VALID14(),
+                VIO_INFO_VALID15: self.VIO_INFO_VALID15(),
+                VIO_INFO_VALID16: self.VIO_INFO_VALID16(),
+                VIO_INFO_VALID17: self.VIO_INFO_VALID17(),
+                VIO_INFO_VALID18: self.VIO_INFO_VALID18(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Security Violation Miscellaneous Information at Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4098,6 +5945,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SEC_VIO_MISC_INFO {
             SEC_VIO_MISC_INFO(0)
+        }
+    }
+    impl core::fmt::Debug for SEC_VIO_MISC_INFO {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SEC_VIO_MISC_INFO")
+                .field("SEC_VIO_INFO_WRITE", &self.SEC_VIO_INFO_WRITE())
+                .field("SEC_VIO_INFO_DATA_ACCESS", &self.SEC_VIO_INFO_DATA_ACCESS())
+                .field(
+                    "SEC_VIO_INFO_MASTER_SEC_LEVEL",
+                    &self.SEC_VIO_INFO_MASTER_SEC_LEVEL(),
+                )
+                .field("SEC_VIO_INFO_MASTER", &self.SEC_VIO_INFO_MASTER())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SEC_VIO_MISC_INFO {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SEC_VIO_MISC_INFO {
+                SEC_VIO_INFO_WRITE: bool,
+                SEC_VIO_INFO_DATA_ACCESS: bool,
+                SEC_VIO_INFO_MASTER_SEC_LEVEL: u8,
+                SEC_VIO_INFO_MASTER: u8,
+            }
+            let proxy = SEC_VIO_MISC_INFO {
+                SEC_VIO_INFO_WRITE: self.SEC_VIO_INFO_WRITE(),
+                SEC_VIO_INFO_DATA_ACCESS: self.SEC_VIO_INFO_DATA_ACCESS(),
+                SEC_VIO_INFO_MASTER_SEC_LEVEL: self.SEC_VIO_INFO_MASTER_SEC_LEVEL(),
+                SEC_VIO_INFO_MASTER: self.SEC_VIO_INFO_MASTER(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

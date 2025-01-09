@@ -118,6 +118,26 @@ pub mod regs {
             EICHD0_WORD0(0)
         }
     }
+    impl core::fmt::Debug for EICHD0_WORD0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EICHD0_WORD0")
+                .field("CHKBIT_MASK", &self.CHKBIT_MASK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD0_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EICHD0_WORD0 {
+                CHKBIT_MASK: u8,
+            }
+            let proxy = EICHD0_WORD0 {
+                CHKBIT_MASK: self.CHKBIT_MASK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Error Injection Channel Descriptor 1, Word0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -137,6 +157,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EICHD1_WORD0 {
             EICHD1_WORD0(0)
+        }
+    }
+    impl core::fmt::Debug for EICHD1_WORD0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EICHD1_WORD0")
+                .field("CHKBIT_MASK", &self.CHKBIT_MASK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD1_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EICHD1_WORD0 {
+                CHKBIT_MASK: u8,
+            }
+            let proxy = EICHD1_WORD0 {
+                CHKBIT_MASK: self.CHKBIT_MASK(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Error Injection Channel Descriptor 2, Word0"]
@@ -160,6 +200,26 @@ pub mod regs {
             EICHD2_WORD0(0)
         }
     }
+    impl core::fmt::Debug for EICHD2_WORD0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EICHD2_WORD0")
+                .field("CHKBIT_MASK", &self.CHKBIT_MASK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD2_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EICHD2_WORD0 {
+                CHKBIT_MASK: u8,
+            }
+            let proxy = EICHD2_WORD0 {
+                CHKBIT_MASK: self.CHKBIT_MASK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Error Injection Channel Descriptor 3, Word0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -179,6 +239,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EICHD3_WORD0 {
             EICHD3_WORD0(0)
+        }
+    }
+    impl core::fmt::Debug for EICHD3_WORD0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EICHD3_WORD0")
+                .field("CHKBIT_MASK", &self.CHKBIT_MASK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD3_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EICHD3_WORD0 {
+                CHKBIT_MASK: u8,
+            }
+            let proxy = EICHD3_WORD0 {
+                CHKBIT_MASK: self.CHKBIT_MASK(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Error Injection Channel Descriptor 4, Word0"]
@@ -202,6 +282,26 @@ pub mod regs {
             EICHD4_WORD0(0)
         }
     }
+    impl core::fmt::Debug for EICHD4_WORD0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EICHD4_WORD0")
+                .field("CHKBIT_MASK", &self.CHKBIT_MASK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD4_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EICHD4_WORD0 {
+                CHKBIT_MASK: u8,
+            }
+            let proxy = EICHD4_WORD0 {
+                CHKBIT_MASK: self.CHKBIT_MASK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Error Injection Channel Descriptor 5, Word0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -221,6 +321,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EICHD5_WORD0 {
             EICHD5_WORD0(0)
+        }
+    }
+    impl core::fmt::Debug for EICHD5_WORD0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EICHD5_WORD0")
+                .field("CHKBIT_MASK", &self.CHKBIT_MASK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD5_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EICHD5_WORD0 {
+                CHKBIT_MASK: u8,
+            }
+            let proxy = EICHD5_WORD0 {
+                CHKBIT_MASK: self.CHKBIT_MASK(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Error Injection Channel Descriptor 6, Word0"]
@@ -244,6 +364,26 @@ pub mod regs {
             EICHD6_WORD0(0)
         }
     }
+    impl core::fmt::Debug for EICHD6_WORD0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EICHD6_WORD0")
+                .field("CHKBIT_MASK", &self.CHKBIT_MASK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD6_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EICHD6_WORD0 {
+                CHKBIT_MASK: u8,
+            }
+            let proxy = EICHD6_WORD0 {
+                CHKBIT_MASK: self.CHKBIT_MASK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Error Injection Channel Descriptor 7, Word0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -265,6 +405,26 @@ pub mod regs {
             EICHD7_WORD0(0)
         }
     }
+    impl core::fmt::Debug for EICHD7_WORD0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EICHD7_WORD0")
+                .field("CHKBIT_MASK", &self.CHKBIT_MASK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD7_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EICHD7_WORD0 {
+                CHKBIT_MASK: bool,
+            }
+            let proxy = EICHD7_WORD0 {
+                CHKBIT_MASK: self.CHKBIT_MASK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Error Injection Channel Descriptor 8, Word0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -284,6 +444,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EICHD8_WORD0 {
             EICHD8_WORD0(0)
+        }
+    }
+    impl core::fmt::Debug for EICHD8_WORD0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EICHD8_WORD0")
+                .field("CHKBIT_MASK", &self.CHKBIT_MASK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD8_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EICHD8_WORD0 {
+                CHKBIT_MASK: u8,
+            }
+            let proxy = EICHD8_WORD0 {
+                CHKBIT_MASK: self.CHKBIT_MASK(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Error Injection Channel Enable register"]
@@ -379,6 +559,50 @@ pub mod regs {
             EICHEN(0)
         }
     }
+    impl core::fmt::Debug for EICHEN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EICHEN")
+                .field("EICH8EN", &self.EICH8EN())
+                .field("EICH7EN", &self.EICH7EN())
+                .field("EICH6EN", &self.EICH6EN())
+                .field("EICH5EN", &self.EICH5EN())
+                .field("EICH4EN", &self.EICH4EN())
+                .field("EICH3EN", &self.EICH3EN())
+                .field("EICH2EN", &self.EICH2EN())
+                .field("EICH1EN", &self.EICH1EN())
+                .field("EICH0EN", &self.EICH0EN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHEN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EICHEN {
+                EICH8EN: bool,
+                EICH7EN: bool,
+                EICH6EN: bool,
+                EICH5EN: bool,
+                EICH4EN: bool,
+                EICH3EN: bool,
+                EICH2EN: bool,
+                EICH1EN: bool,
+                EICH0EN: bool,
+            }
+            let proxy = EICHEN {
+                EICH8EN: self.EICH8EN(),
+                EICH7EN: self.EICH7EN(),
+                EICH6EN: self.EICH6EN(),
+                EICH5EN: self.EICH5EN(),
+                EICH4EN: self.EICH4EN(),
+                EICH3EN: self.EICH3EN(),
+                EICH2EN: self.EICH2EN(),
+                EICH1EN: self.EICH1EN(),
+                EICH0EN: self.EICH0EN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Error Injection Module Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -398,6 +622,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EIMCR {
             EIMCR(0)
+        }
+    }
+    impl core::fmt::Debug for EIMCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EIMCR")
+                .field("GEIEN", &self.GEIEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EIMCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EIMCR {
+                GEIEN: bool,
+            }
+            let proxy = EIMCR {
+                GEIEN: self.GEIEN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

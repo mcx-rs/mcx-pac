@@ -120,6 +120,41 @@ pub mod regs {
             LCD_AR(0)
         }
     }
+    impl core::fmt::Debug for LCD_AR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("LCD_AR")
+                .field("BRATE", &self.BRATE())
+                .field("BMODE", &self.BMODE())
+                .field("BLANK", &self.BLANK())
+                .field("ALT", &self.ALT())
+                .field("BLINK", &self.BLINK())
+                .field("LCDIF", &self.LCDIF())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_AR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct LCD_AR {
+                BRATE: u8,
+                BMODE: bool,
+                BLANK: bool,
+                ALT: bool,
+                BLINK: bool,
+                LCDIF: bool,
+            }
+            let proxy = LCD_AR {
+                BRATE: self.BRATE(),
+                BMODE: self.BMODE(),
+                BLANK: self.BLANK(),
+                ALT: self.ALT(),
+                BLINK: self.BLINK(),
+                LCDIF: self.LCDIF(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LCD Back Plane Enable Register 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -420,6 +455,119 @@ pub mod regs {
             LCD_BPEN0(0)
         }
     }
+    impl core::fmt::Debug for LCD_BPEN0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("LCD_BPEN0")
+                .field("PIN_0_BPEN", &self.PIN_0_BPEN())
+                .field("PIN_1_BPEN", &self.PIN_1_BPEN())
+                .field("PIN_2_BPEN", &self.PIN_2_BPEN())
+                .field("PIN_3_BPEN", &self.PIN_3_BPEN())
+                .field("PIN_4_BPEN", &self.PIN_4_BPEN())
+                .field("PIN_5_BPEN", &self.PIN_5_BPEN())
+                .field("PIN_6_BPEN", &self.PIN_6_BPEN())
+                .field("PIN_7_BPEN", &self.PIN_7_BPEN())
+                .field("PIN_8_BPEN", &self.PIN_8_BPEN())
+                .field("PIN_9_BPEN", &self.PIN_9_BPEN())
+                .field("PIN_10_BPEN", &self.PIN_10_BPEN())
+                .field("PIN_11_BPEN", &self.PIN_11_BPEN())
+                .field("PIN_12_BPEN", &self.PIN_12_BPEN())
+                .field("PIN_13_BPEN", &self.PIN_13_BPEN())
+                .field("PIN_14_BPEN", &self.PIN_14_BPEN())
+                .field("PIN_15_BPEN", &self.PIN_15_BPEN())
+                .field("PIN_16_BPEN", &self.PIN_16_BPEN())
+                .field("PIN_17_BPEN", &self.PIN_17_BPEN())
+                .field("PIN_18_BPEN", &self.PIN_18_BPEN())
+                .field("PIN_19_BPEN", &self.PIN_19_BPEN())
+                .field("PIN_20_BPEN", &self.PIN_20_BPEN())
+                .field("PIN_21_BPEN", &self.PIN_21_BPEN())
+                .field("PIN_22_BPEN", &self.PIN_22_BPEN())
+                .field("PIN_23_BPEN", &self.PIN_23_BPEN())
+                .field("PIN_24_BPEN", &self.PIN_24_BPEN())
+                .field("PIN_25_BPEN", &self.PIN_25_BPEN())
+                .field("PIN_26_BPEN", &self.PIN_26_BPEN())
+                .field("PIN_27_BPEN", &self.PIN_27_BPEN())
+                .field("PIN_28_BPEN", &self.PIN_28_BPEN())
+                .field("PIN_29_BPEN", &self.PIN_29_BPEN())
+                .field("PIN_30_BPEN", &self.PIN_30_BPEN())
+                .field("PIN_31_BPEN", &self.PIN_31_BPEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_BPEN0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct LCD_BPEN0 {
+                PIN_0_BPEN: bool,
+                PIN_1_BPEN: bool,
+                PIN_2_BPEN: bool,
+                PIN_3_BPEN: bool,
+                PIN_4_BPEN: bool,
+                PIN_5_BPEN: bool,
+                PIN_6_BPEN: bool,
+                PIN_7_BPEN: bool,
+                PIN_8_BPEN: bool,
+                PIN_9_BPEN: bool,
+                PIN_10_BPEN: bool,
+                PIN_11_BPEN: bool,
+                PIN_12_BPEN: bool,
+                PIN_13_BPEN: bool,
+                PIN_14_BPEN: bool,
+                PIN_15_BPEN: bool,
+                PIN_16_BPEN: bool,
+                PIN_17_BPEN: bool,
+                PIN_18_BPEN: bool,
+                PIN_19_BPEN: bool,
+                PIN_20_BPEN: bool,
+                PIN_21_BPEN: bool,
+                PIN_22_BPEN: bool,
+                PIN_23_BPEN: bool,
+                PIN_24_BPEN: bool,
+                PIN_25_BPEN: bool,
+                PIN_26_BPEN: bool,
+                PIN_27_BPEN: bool,
+                PIN_28_BPEN: bool,
+                PIN_29_BPEN: bool,
+                PIN_30_BPEN: bool,
+                PIN_31_BPEN: bool,
+            }
+            let proxy = LCD_BPEN0 {
+                PIN_0_BPEN: self.PIN_0_BPEN(),
+                PIN_1_BPEN: self.PIN_1_BPEN(),
+                PIN_2_BPEN: self.PIN_2_BPEN(),
+                PIN_3_BPEN: self.PIN_3_BPEN(),
+                PIN_4_BPEN: self.PIN_4_BPEN(),
+                PIN_5_BPEN: self.PIN_5_BPEN(),
+                PIN_6_BPEN: self.PIN_6_BPEN(),
+                PIN_7_BPEN: self.PIN_7_BPEN(),
+                PIN_8_BPEN: self.PIN_8_BPEN(),
+                PIN_9_BPEN: self.PIN_9_BPEN(),
+                PIN_10_BPEN: self.PIN_10_BPEN(),
+                PIN_11_BPEN: self.PIN_11_BPEN(),
+                PIN_12_BPEN: self.PIN_12_BPEN(),
+                PIN_13_BPEN: self.PIN_13_BPEN(),
+                PIN_14_BPEN: self.PIN_14_BPEN(),
+                PIN_15_BPEN: self.PIN_15_BPEN(),
+                PIN_16_BPEN: self.PIN_16_BPEN(),
+                PIN_17_BPEN: self.PIN_17_BPEN(),
+                PIN_18_BPEN: self.PIN_18_BPEN(),
+                PIN_19_BPEN: self.PIN_19_BPEN(),
+                PIN_20_BPEN: self.PIN_20_BPEN(),
+                PIN_21_BPEN: self.PIN_21_BPEN(),
+                PIN_22_BPEN: self.PIN_22_BPEN(),
+                PIN_23_BPEN: self.PIN_23_BPEN(),
+                PIN_24_BPEN: self.PIN_24_BPEN(),
+                PIN_25_BPEN: self.PIN_25_BPEN(),
+                PIN_26_BPEN: self.PIN_26_BPEN(),
+                PIN_27_BPEN: self.PIN_27_BPEN(),
+                PIN_28_BPEN: self.PIN_28_BPEN(),
+                PIN_29_BPEN: self.PIN_29_BPEN(),
+                PIN_30_BPEN: self.PIN_30_BPEN(),
+                PIN_31_BPEN: self.PIN_31_BPEN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LCD Back Plane Enable Register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -576,6 +724,71 @@ pub mod regs {
             LCD_BPEN1(0)
         }
     }
+    impl core::fmt::Debug for LCD_BPEN1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("LCD_BPEN1")
+                .field("PIN_32_BPEN", &self.PIN_32_BPEN())
+                .field("PIN_33_BPEN", &self.PIN_33_BPEN())
+                .field("PIN_34_BPEN", &self.PIN_34_BPEN())
+                .field("PIN_35_BPEN", &self.PIN_35_BPEN())
+                .field("PIN_36_BPEN", &self.PIN_36_BPEN())
+                .field("PIN_37_BPEN", &self.PIN_37_BPEN())
+                .field("PIN_38_BPEN", &self.PIN_38_BPEN())
+                .field("PIN_39_BPEN", &self.PIN_39_BPEN())
+                .field("PIN_40_BPEN", &self.PIN_40_BPEN())
+                .field("PIN_41_BPEN", &self.PIN_41_BPEN())
+                .field("PIN_42_BPEN", &self.PIN_42_BPEN())
+                .field("PIN_43_BPEN", &self.PIN_43_BPEN())
+                .field("PIN_44_BPEN", &self.PIN_44_BPEN())
+                .field("PIN_45_BPEN", &self.PIN_45_BPEN())
+                .field("PIN_46_BPEN", &self.PIN_46_BPEN())
+                .field("PIN_47_BPEN", &self.PIN_47_BPEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_BPEN1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct LCD_BPEN1 {
+                PIN_32_BPEN: bool,
+                PIN_33_BPEN: bool,
+                PIN_34_BPEN: bool,
+                PIN_35_BPEN: bool,
+                PIN_36_BPEN: bool,
+                PIN_37_BPEN: bool,
+                PIN_38_BPEN: bool,
+                PIN_39_BPEN: bool,
+                PIN_40_BPEN: bool,
+                PIN_41_BPEN: bool,
+                PIN_42_BPEN: bool,
+                PIN_43_BPEN: bool,
+                PIN_44_BPEN: bool,
+                PIN_45_BPEN: bool,
+                PIN_46_BPEN: bool,
+                PIN_47_BPEN: bool,
+            }
+            let proxy = LCD_BPEN1 {
+                PIN_32_BPEN: self.PIN_32_BPEN(),
+                PIN_33_BPEN: self.PIN_33_BPEN(),
+                PIN_34_BPEN: self.PIN_34_BPEN(),
+                PIN_35_BPEN: self.PIN_35_BPEN(),
+                PIN_36_BPEN: self.PIN_36_BPEN(),
+                PIN_37_BPEN: self.PIN_37_BPEN(),
+                PIN_38_BPEN: self.PIN_38_BPEN(),
+                PIN_39_BPEN: self.PIN_39_BPEN(),
+                PIN_40_BPEN: self.PIN_40_BPEN(),
+                PIN_41_BPEN: self.PIN_41_BPEN(),
+                PIN_42_BPEN: self.PIN_42_BPEN(),
+                PIN_43_BPEN: self.PIN_43_BPEN(),
+                PIN_44_BPEN: self.PIN_44_BPEN(),
+                PIN_45_BPEN: self.PIN_45_BPEN(),
+                PIN_46_BPEN: self.PIN_46_BPEN(),
+                PIN_47_BPEN: self.PIN_47_BPEN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LCD Fault Detect Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -633,6 +846,38 @@ pub mod regs {
             LCD_FDCR(0)
         }
     }
+    impl core::fmt::Debug for LCD_FDCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("LCD_FDCR")
+                .field("FDPINID", &self.FDPINID())
+                .field("FDBPEN", &self.FDBPEN())
+                .field("FDEN", &self.FDEN())
+                .field("FDSWW", &self.FDSWW())
+                .field("FDPRS", &self.FDPRS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_FDCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct LCD_FDCR {
+                FDPINID: u8,
+                FDBPEN: bool,
+                FDEN: bool,
+                FDSWW: u8,
+                FDPRS: u8,
+            }
+            let proxy = LCD_FDCR {
+                FDPINID: self.FDPINID(),
+                FDBPEN: self.FDBPEN(),
+                FDEN: self.FDEN(),
+                FDSWW: self.FDSWW(),
+                FDPRS: self.FDPRS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LCD Fault Detect Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -661,6 +906,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> LCD_FDSR {
             LCD_FDSR(0)
+        }
+    }
+    impl core::fmt::Debug for LCD_FDSR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("LCD_FDSR")
+                .field("FDCNT", &self.FDCNT())
+                .field("FDCF", &self.FDCF())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_FDSR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct LCD_FDSR {
+                FDCNT: u8,
+                FDCF: bool,
+            }
+            let proxy = LCD_FDSR {
+                FDCNT: self.FDCNT(),
+                FDCF: self.FDCF(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LCD General Control Register"]
@@ -781,6 +1049,59 @@ pub mod regs {
         #[inline(always)]
         fn default() -> LCD_GCR {
             LCD_GCR(0)
+        }
+    }
+    impl core::fmt::Debug for LCD_GCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("LCD_GCR")
+                .field("DUTY", &self.DUTY())
+                .field("LCLK", &self.LCLK())
+                .field("LCDLP", &self.LCDLP())
+                .field("LCDEN", &self.LCDEN())
+                .field("LCDSTP", &self.LCDSTP())
+                .field("LCDDOZE", &self.LCDDOZE())
+                .field("FDCIEN", &self.FDCIEN())
+                .field("LCDIEN", &self.LCDIEN())
+                .field("SHCYCLE", &self.SHCYCLE())
+                .field("SHEN", &self.SHEN())
+                .field("VLL1TRIM", &self.VLL1TRIM())
+                .field("VLL2TRIM", &self.VLL2TRIM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_GCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct LCD_GCR {
+                DUTY: u8,
+                LCLK: u8,
+                LCDLP: bool,
+                LCDEN: bool,
+                LCDSTP: bool,
+                LCDDOZE: bool,
+                FDCIEN: bool,
+                LCDIEN: bool,
+                SHCYCLE: bool,
+                SHEN: bool,
+                VLL1TRIM: u8,
+                VLL2TRIM: u8,
+            }
+            let proxy = LCD_GCR {
+                DUTY: self.DUTY(),
+                LCLK: self.LCLK(),
+                LCDLP: self.LCDLP(),
+                LCDEN: self.LCDEN(),
+                LCDSTP: self.LCDSTP(),
+                LCDDOZE: self.LCDDOZE(),
+                FDCIEN: self.FDCIEN(),
+                LCDIEN: self.LCDIEN(),
+                SHCYCLE: self.SHCYCLE(),
+                SHEN: self.SHEN(),
+                VLL1TRIM: self.VLL1TRIM(),
+                VLL2TRIM: self.VLL2TRIM(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LCD Pin Enable Register 0"]
@@ -1083,6 +1404,119 @@ pub mod regs {
             LCD_PEN0(0)
         }
     }
+    impl core::fmt::Debug for LCD_PEN0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("LCD_PEN0")
+                .field("PIN_0_EN", &self.PIN_0_EN())
+                .field("PIN_1_EN", &self.PIN_1_EN())
+                .field("PIN_2_EN", &self.PIN_2_EN())
+                .field("PIN_3_EN", &self.PIN_3_EN())
+                .field("PIN_4_EN", &self.PIN_4_EN())
+                .field("PIN_5_EN", &self.PIN_5_EN())
+                .field("PIN_6_EN", &self.PIN_6_EN())
+                .field("PIN_7_EN", &self.PIN_7_EN())
+                .field("PIN_8_EN", &self.PIN_8_EN())
+                .field("PIN_9_EN", &self.PIN_9_EN())
+                .field("PIN_10_EN", &self.PIN_10_EN())
+                .field("PIN_11_EN", &self.PIN_11_EN())
+                .field("PIN_12_EN", &self.PIN_12_EN())
+                .field("PIN_13_EN", &self.PIN_13_EN())
+                .field("PIN_14_EN", &self.PIN_14_EN())
+                .field("PIN_15_EN", &self.PIN_15_EN())
+                .field("PIN_16_EN", &self.PIN_16_EN())
+                .field("PIN_17_EN", &self.PIN_17_EN())
+                .field("PIN_18_EN", &self.PIN_18_EN())
+                .field("PIN_19_EN", &self.PIN_19_EN())
+                .field("PIN_20_EN", &self.PIN_20_EN())
+                .field("PIN_21_EN", &self.PIN_21_EN())
+                .field("PIN_22_EN", &self.PIN_22_EN())
+                .field("PIN_23_EN", &self.PIN_23_EN())
+                .field("PIN_24_EN", &self.PIN_24_EN())
+                .field("PIN_25_EN", &self.PIN_25_EN())
+                .field("PIN_26_EN", &self.PIN_26_EN())
+                .field("PIN_27_EN", &self.PIN_27_EN())
+                .field("PIN_28_EN", &self.PIN_28_EN())
+                .field("PIN_29_EN", &self.PIN_29_EN())
+                .field("PIN_30_EN", &self.PIN_30_EN())
+                .field("PIN_31_EN", &self.PIN_31_EN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_PEN0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct LCD_PEN0 {
+                PIN_0_EN: bool,
+                PIN_1_EN: bool,
+                PIN_2_EN: bool,
+                PIN_3_EN: bool,
+                PIN_4_EN: bool,
+                PIN_5_EN: bool,
+                PIN_6_EN: bool,
+                PIN_7_EN: bool,
+                PIN_8_EN: bool,
+                PIN_9_EN: bool,
+                PIN_10_EN: bool,
+                PIN_11_EN: bool,
+                PIN_12_EN: bool,
+                PIN_13_EN: bool,
+                PIN_14_EN: bool,
+                PIN_15_EN: bool,
+                PIN_16_EN: bool,
+                PIN_17_EN: bool,
+                PIN_18_EN: bool,
+                PIN_19_EN: bool,
+                PIN_20_EN: bool,
+                PIN_21_EN: bool,
+                PIN_22_EN: bool,
+                PIN_23_EN: bool,
+                PIN_24_EN: bool,
+                PIN_25_EN: bool,
+                PIN_26_EN: bool,
+                PIN_27_EN: bool,
+                PIN_28_EN: bool,
+                PIN_29_EN: bool,
+                PIN_30_EN: bool,
+                PIN_31_EN: bool,
+            }
+            let proxy = LCD_PEN0 {
+                PIN_0_EN: self.PIN_0_EN(),
+                PIN_1_EN: self.PIN_1_EN(),
+                PIN_2_EN: self.PIN_2_EN(),
+                PIN_3_EN: self.PIN_3_EN(),
+                PIN_4_EN: self.PIN_4_EN(),
+                PIN_5_EN: self.PIN_5_EN(),
+                PIN_6_EN: self.PIN_6_EN(),
+                PIN_7_EN: self.PIN_7_EN(),
+                PIN_8_EN: self.PIN_8_EN(),
+                PIN_9_EN: self.PIN_9_EN(),
+                PIN_10_EN: self.PIN_10_EN(),
+                PIN_11_EN: self.PIN_11_EN(),
+                PIN_12_EN: self.PIN_12_EN(),
+                PIN_13_EN: self.PIN_13_EN(),
+                PIN_14_EN: self.PIN_14_EN(),
+                PIN_15_EN: self.PIN_15_EN(),
+                PIN_16_EN: self.PIN_16_EN(),
+                PIN_17_EN: self.PIN_17_EN(),
+                PIN_18_EN: self.PIN_18_EN(),
+                PIN_19_EN: self.PIN_19_EN(),
+                PIN_20_EN: self.PIN_20_EN(),
+                PIN_21_EN: self.PIN_21_EN(),
+                PIN_22_EN: self.PIN_22_EN(),
+                PIN_23_EN: self.PIN_23_EN(),
+                PIN_24_EN: self.PIN_24_EN(),
+                PIN_25_EN: self.PIN_25_EN(),
+                PIN_26_EN: self.PIN_26_EN(),
+                PIN_27_EN: self.PIN_27_EN(),
+                PIN_28_EN: self.PIN_28_EN(),
+                PIN_29_EN: self.PIN_29_EN(),
+                PIN_30_EN: self.PIN_30_EN(),
+                PIN_31_EN: self.PIN_31_EN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LCD Pin Enable Register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1237,6 +1671,71 @@ pub mod regs {
         #[inline(always)]
         fn default() -> LCD_PEN1 {
             LCD_PEN1(0)
+        }
+    }
+    impl core::fmt::Debug for LCD_PEN1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("LCD_PEN1")
+                .field("PIN_32_EN", &self.PIN_32_EN())
+                .field("PIN_33_EN", &self.PIN_33_EN())
+                .field("PIN_34_EN", &self.PIN_34_EN())
+                .field("PIN_35_EN", &self.PIN_35_EN())
+                .field("PIN_36_EN", &self.PIN_36_EN())
+                .field("PIN_37_EN", &self.PIN_37_EN())
+                .field("PIN_38_EN", &self.PIN_38_EN())
+                .field("PIN_39_EN", &self.PIN_39_EN())
+                .field("PIN_40_EN", &self.PIN_40_EN())
+                .field("PIN_41_EN", &self.PIN_41_EN())
+                .field("PIN_42_EN", &self.PIN_42_EN())
+                .field("PIN_43_EN", &self.PIN_43_EN())
+                .field("PIN_44_EN", &self.PIN_44_EN())
+                .field("PIN_45_EN", &self.PIN_45_EN())
+                .field("PIN_46_EN", &self.PIN_46_EN())
+                .field("PIN_47_EN", &self.PIN_47_EN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_PEN1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct LCD_PEN1 {
+                PIN_32_EN: bool,
+                PIN_33_EN: bool,
+                PIN_34_EN: bool,
+                PIN_35_EN: bool,
+                PIN_36_EN: bool,
+                PIN_37_EN: bool,
+                PIN_38_EN: bool,
+                PIN_39_EN: bool,
+                PIN_40_EN: bool,
+                PIN_41_EN: bool,
+                PIN_42_EN: bool,
+                PIN_43_EN: bool,
+                PIN_44_EN: bool,
+                PIN_45_EN: bool,
+                PIN_46_EN: bool,
+                PIN_47_EN: bool,
+            }
+            let proxy = LCD_PEN1 {
+                PIN_32_EN: self.PIN_32_EN(),
+                PIN_33_EN: self.PIN_33_EN(),
+                PIN_34_EN: self.PIN_34_EN(),
+                PIN_35_EN: self.PIN_35_EN(),
+                PIN_36_EN: self.PIN_36_EN(),
+                PIN_37_EN: self.PIN_37_EN(),
+                PIN_38_EN: self.PIN_38_EN(),
+                PIN_39_EN: self.PIN_39_EN(),
+                PIN_40_EN: self.PIN_40_EN(),
+                PIN_41_EN: self.PIN_41_EN(),
+                PIN_42_EN: self.PIN_42_EN(),
+                PIN_43_EN: self.PIN_43_EN(),
+                PIN_44_EN: self.PIN_44_EN(),
+                PIN_45_EN: self.PIN_45_EN(),
+                PIN_46_EN: self.PIN_46_EN(),
+                PIN_47_EN: self.PIN_47_EN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LCD Waveform 3 to 0 Register..LCD Waveform 47 to 44 Register"]
@@ -1681,6 +2180,167 @@ pub mod regs {
         #[inline(always)]
         fn default() -> LCD_WFTO {
             LCD_WFTO(0)
+        }
+    }
+    impl core::fmt::Debug for LCD_WFTO {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("LCD_WFTO")
+                .field("WF0", &self.WF0())
+                .field("WF12", &self.WF12())
+                .field("WF16", &self.WF16())
+                .field("WF20", &self.WF20())
+                .field("WF24", &self.WF24())
+                .field("WF28", &self.WF28())
+                .field("WF32", &self.WF32())
+                .field("WF36", &self.WF36())
+                .field("WF4", &self.WF4())
+                .field("WF40", &self.WF40())
+                .field("WF44", &self.WF44())
+                .field("WF8", &self.WF8())
+                .field("WF1", &self.WF1())
+                .field("WF13", &self.WF13())
+                .field("WF17", &self.WF17())
+                .field("WF21", &self.WF21())
+                .field("WF25", &self.WF25())
+                .field("WF29", &self.WF29())
+                .field("WF33", &self.WF33())
+                .field("WF37", &self.WF37())
+                .field("WF41", &self.WF41())
+                .field("WF45", &self.WF45())
+                .field("WF5", &self.WF5())
+                .field("WF9", &self.WF9())
+                .field("WF10", &self.WF10())
+                .field("WF14", &self.WF14())
+                .field("WF18", &self.WF18())
+                .field("WF2", &self.WF2())
+                .field("WF22", &self.WF22())
+                .field("WF26", &self.WF26())
+                .field("WF30", &self.WF30())
+                .field("WF34", &self.WF34())
+                .field("WF38", &self.WF38())
+                .field("WF42", &self.WF42())
+                .field("WF46", &self.WF46())
+                .field("WF6", &self.WF6())
+                .field("WF11", &self.WF11())
+                .field("WF15", &self.WF15())
+                .field("WF19", &self.WF19())
+                .field("WF23", &self.WF23())
+                .field("WF27", &self.WF27())
+                .field("WF3", &self.WF3())
+                .field("WF31", &self.WF31())
+                .field("WF35", &self.WF35())
+                .field("WF39", &self.WF39())
+                .field("WF43", &self.WF43())
+                .field("WF47", &self.WF47())
+                .field("WF7", &self.WF7())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_WFTO {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct LCD_WFTO {
+                WF0: u8,
+                WF12: u8,
+                WF16: u8,
+                WF20: u8,
+                WF24: u8,
+                WF28: u8,
+                WF32: u8,
+                WF36: u8,
+                WF4: u8,
+                WF40: u8,
+                WF44: u8,
+                WF8: u8,
+                WF1: u8,
+                WF13: u8,
+                WF17: u8,
+                WF21: u8,
+                WF25: u8,
+                WF29: u8,
+                WF33: u8,
+                WF37: u8,
+                WF41: u8,
+                WF45: u8,
+                WF5: u8,
+                WF9: u8,
+                WF10: u8,
+                WF14: u8,
+                WF18: u8,
+                WF2: u8,
+                WF22: u8,
+                WF26: u8,
+                WF30: u8,
+                WF34: u8,
+                WF38: u8,
+                WF42: u8,
+                WF46: u8,
+                WF6: u8,
+                WF11: u8,
+                WF15: u8,
+                WF19: u8,
+                WF23: u8,
+                WF27: u8,
+                WF3: u8,
+                WF31: u8,
+                WF35: u8,
+                WF39: u8,
+                WF43: u8,
+                WF47: u8,
+                WF7: u8,
+            }
+            let proxy = LCD_WFTO {
+                WF0: self.WF0(),
+                WF12: self.WF12(),
+                WF16: self.WF16(),
+                WF20: self.WF20(),
+                WF24: self.WF24(),
+                WF28: self.WF28(),
+                WF32: self.WF32(),
+                WF36: self.WF36(),
+                WF4: self.WF4(),
+                WF40: self.WF40(),
+                WF44: self.WF44(),
+                WF8: self.WF8(),
+                WF1: self.WF1(),
+                WF13: self.WF13(),
+                WF17: self.WF17(),
+                WF21: self.WF21(),
+                WF25: self.WF25(),
+                WF29: self.WF29(),
+                WF33: self.WF33(),
+                WF37: self.WF37(),
+                WF41: self.WF41(),
+                WF45: self.WF45(),
+                WF5: self.WF5(),
+                WF9: self.WF9(),
+                WF10: self.WF10(),
+                WF14: self.WF14(),
+                WF18: self.WF18(),
+                WF2: self.WF2(),
+                WF22: self.WF22(),
+                WF26: self.WF26(),
+                WF30: self.WF30(),
+                WF34: self.WF34(),
+                WF38: self.WF38(),
+                WF42: self.WF42(),
+                WF46: self.WF46(),
+                WF6: self.WF6(),
+                WF11: self.WF11(),
+                WF15: self.WF15(),
+                WF19: self.WF19(),
+                WF23: self.WF23(),
+                WF27: self.WF27(),
+                WF3: self.WF3(),
+                WF31: self.WF31(),
+                WF35: self.WF35(),
+                WF39: self.WF39(),
+                WF43: self.WF43(),
+                WF47: self.WF47(),
+                WF7: self.WF7(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

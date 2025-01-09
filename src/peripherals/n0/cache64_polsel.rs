@@ -68,6 +68,32 @@ pub mod regs {
             POLSEL(0)
         }
     }
+    impl core::fmt::Debug for POLSEL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("POLSEL")
+                .field("REG0_POLICY", &self.REG0_POLICY())
+                .field("REG1_POLICY", &self.REG1_POLICY())
+                .field("REG2_POLICY", &self.REG2_POLICY())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for POLSEL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct POLSEL {
+                REG0_POLICY: u8,
+                REG1_POLICY: u8,
+                REG2_POLICY: u8,
+            }
+            let proxy = POLSEL {
+                REG0_POLICY: self.REG0_POLICY(),
+                REG1_POLICY: self.REG1_POLICY(),
+                REG2_POLICY: self.REG2_POLICY(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Region 0 Top Boundary"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -90,6 +116,26 @@ pub mod regs {
             REG0_TOP(0)
         }
     }
+    impl core::fmt::Debug for REG0_TOP {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("REG0_TOP")
+                .field("REG0_TOP", &self.REG0_TOP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for REG0_TOP {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct REG0_TOP {
+                REG0_TOP: u32,
+            }
+            let proxy = REG0_TOP {
+                REG0_TOP: self.REG0_TOP(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Region 1 Top Boundary"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -110,6 +156,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> REG1_TOP {
             REG1_TOP(0)
+        }
+    }
+    impl core::fmt::Debug for REG1_TOP {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("REG1_TOP")
+                .field("REG1_TOP", &self.REG1_TOP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for REG1_TOP {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct REG1_TOP {
+                REG1_TOP: u32,
+            }
+            let proxy = REG1_TOP {
+                REG1_TOP: self.REG1_TOP(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

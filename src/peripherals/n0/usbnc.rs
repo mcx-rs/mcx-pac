@@ -131,6 +131,53 @@ pub mod regs {
             CTRL1(0)
         }
     }
+    impl core::fmt::Debug for CTRL1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL1")
+                .field("OVER_CUR_DIS", &self.OVER_CUR_DIS())
+                .field("OVER_CUR_POL", &self.OVER_CUR_POL())
+                .field("PWR_POL", &self.PWR_POL())
+                .field("WIE", &self.WIE())
+                .field("WKUP_SW_EN", &self.WKUP_SW_EN())
+                .field("WKUP_SW", &self.WKUP_SW())
+                .field("WKUP_ID_EN", &self.WKUP_ID_EN())
+                .field("WKUP_VBUS_EN", &self.WKUP_VBUS_EN())
+                .field("WKUP_DPDM_EN", &self.WKUP_DPDM_EN())
+                .field("WIR", &self.WIR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL1 {
+                OVER_CUR_DIS: bool,
+                OVER_CUR_POL: bool,
+                PWR_POL: bool,
+                WIE: bool,
+                WKUP_SW_EN: bool,
+                WKUP_SW: bool,
+                WKUP_ID_EN: bool,
+                WKUP_VBUS_EN: bool,
+                WKUP_DPDM_EN: bool,
+                WIR: bool,
+            }
+            let proxy = CTRL1 {
+                OVER_CUR_DIS: self.OVER_CUR_DIS(),
+                OVER_CUR_POL: self.OVER_CUR_POL(),
+                PWR_POL: self.PWR_POL(),
+                WIE: self.WIE(),
+                WKUP_SW_EN: self.WKUP_SW_EN(),
+                WKUP_SW: self.WKUP_SW(),
+                WKUP_ID_EN: self.WKUP_ID_EN(),
+                WKUP_VBUS_EN: self.WKUP_VBUS_EN(),
+                WKUP_DPDM_EN: self.WKUP_DPDM_EN(),
+                WIR: self.WIR(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "USB OTG Control 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -179,6 +226,35 @@ pub mod regs {
             CTRL2(0)
         }
     }
+    impl core::fmt::Debug for CTRL2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL2")
+                .field("VBUS_SOURCE_SEL", &self.VBUS_SOURCE_SEL())
+                .field("AUTURESUME_EN", &self.AUTURESUME_EN())
+                .field("LOWSPEED_EN", &self.LOWSPEED_EN())
+                .field("UTMI_CLK_VLD", &self.UTMI_CLK_VLD())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL2 {
+                VBUS_SOURCE_SEL: u8,
+                AUTURESUME_EN: bool,
+                LOWSPEED_EN: bool,
+                UTMI_CLK_VLD: bool,
+            }
+            let proxy = CTRL2 {
+                VBUS_SOURCE_SEL: self.VBUS_SOURCE_SEL(),
+                AUTURESUME_EN: self.AUTURESUME_EN(),
+                LOWSPEED_EN: self.LOWSPEED_EN(),
+                UTMI_CLK_VLD: self.UTMI_CLK_VLD(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "USB Host HSIC Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -216,6 +292,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> HSIC_CTRL {
             HSIC_CTRL(0)
+        }
+    }
+    impl core::fmt::Debug for HSIC_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("HSIC_CTRL")
+                .field("HSIC_CLK_ON", &self.HSIC_CLK_ON())
+                .field("HSIC_EN", &self.HSIC_EN())
+                .field("CLK_VLD", &self.CLK_VLD())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HSIC_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct HSIC_CTRL {
+                HSIC_CLK_ON: bool,
+                HSIC_EN: bool,
+                CLK_VLD: bool,
+            }
+            let proxy = HSIC_CTRL {
+                HSIC_CLK_ON: self.HSIC_CLK_ON(),
+                HSIC_EN: self.HSIC_EN(),
+                CLK_VLD: self.CLK_VLD(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

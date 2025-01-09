@@ -204,6 +204,71 @@ pub mod regs {
             OUT_SEL(0)
         }
     }
+    impl core::fmt::Debug for OUT_SEL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("OUT_SEL")
+                .field("IN0_SELn", &self.IN0_SELn())
+                .field("IN1_SELn", &self.IN1_SELn())
+                .field("IN2_SELn", &self.IN2_SELn())
+                .field("IN3_SELn", &self.IN3_SELn())
+                .field("IN4_SELn", &self.IN4_SELn())
+                .field("IN5_SELn", &self.IN5_SELn())
+                .field("IN6_SELn", &self.IN6_SELn())
+                .field("IN7_SELn", &self.IN7_SELn())
+                .field("IN8_SELn", &self.IN8_SELn())
+                .field("IN9_SELn", &self.IN9_SELn())
+                .field("IN10_SELn", &self.IN10_SELn())
+                .field("IN11_SELn", &self.IN11_SELn())
+                .field("IN12_SELn", &self.IN12_SELn())
+                .field("IN13_SELn", &self.IN13_SELn())
+                .field("IN14_SELn", &self.IN14_SELn())
+                .field("IN15_SELn", &self.IN15_SELn())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OUT_SEL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct OUT_SEL {
+                IN0_SELn: u8,
+                IN1_SELn: u8,
+                IN2_SELn: u8,
+                IN3_SELn: u8,
+                IN4_SELn: u8,
+                IN5_SELn: u8,
+                IN6_SELn: u8,
+                IN7_SELn: u8,
+                IN8_SELn: u8,
+                IN9_SELn: u8,
+                IN10_SELn: u8,
+                IN11_SELn: u8,
+                IN12_SELn: u8,
+                IN13_SELn: u8,
+                IN14_SELn: u8,
+                IN15_SELn: u8,
+            }
+            let proxy = OUT_SEL {
+                IN0_SELn: self.IN0_SELn(),
+                IN1_SELn: self.IN1_SELn(),
+                IN2_SELn: self.IN2_SELn(),
+                IN3_SELn: self.IN3_SELn(),
+                IN4_SELn: self.IN4_SELn(),
+                IN5_SELn: self.IN5_SELn(),
+                IN6_SELn: self.IN6_SELn(),
+                IN7_SELn: self.IN7_SELn(),
+                IN8_SELn: self.IN8_SELn(),
+                IN9_SELn: self.IN9_SELn(),
+                IN10_SELn: self.IN10_SELn(),
+                IN11_SELn: self.IN11_SELn(),
+                IN12_SELn: self.IN12_SELn(),
+                IN13_SELn: self.IN13_SELn(),
+                IN14_SELn: self.IN14_SELn(),
+                IN15_SELn: self.IN15_SELn(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Trigger Source IN16 to IN31 selector"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -360,6 +425,71 @@ pub mod regs {
             OUT_SEL_1(0)
         }
     }
+    impl core::fmt::Debug for OUT_SEL_1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("OUT_SEL_1")
+                .field("IN16_SELn", &self.IN16_SELn())
+                .field("IN17_SELn", &self.IN17_SELn())
+                .field("IN18_SELn", &self.IN18_SELn())
+                .field("IN19_SELn", &self.IN19_SELn())
+                .field("IN20_SELn", &self.IN20_SELn())
+                .field("IN21_SELn", &self.IN21_SELn())
+                .field("IN22_SELn", &self.IN22_SELn())
+                .field("IN23_SELn", &self.IN23_SELn())
+                .field("IN24_SELn", &self.IN24_SELn())
+                .field("IN25_SELn", &self.IN25_SELn())
+                .field("IN26_SELn", &self.IN26_SELn())
+                .field("IN27_SELn", &self.IN27_SELn())
+                .field("IN28_SELn", &self.IN28_SELn())
+                .field("IN29_SELn", &self.IN29_SELn())
+                .field("IN30_SELn", &self.IN30_SELn())
+                .field("IN31_SELn", &self.IN31_SELn())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OUT_SEL_1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct OUT_SEL_1 {
+                IN16_SELn: u8,
+                IN17_SELn: u8,
+                IN18_SELn: u8,
+                IN19_SELn: u8,
+                IN20_SELn: u8,
+                IN21_SELn: u8,
+                IN22_SELn: u8,
+                IN23_SELn: u8,
+                IN24_SELn: u8,
+                IN25_SELn: u8,
+                IN26_SELn: u8,
+                IN27_SELn: u8,
+                IN28_SELn: u8,
+                IN29_SELn: u8,
+                IN30_SELn: u8,
+                IN31_SELn: u8,
+            }
+            let proxy = OUT_SEL_1 {
+                IN16_SELn: self.IN16_SELn(),
+                IN17_SELn: self.IN17_SELn(),
+                IN18_SELn: self.IN18_SELn(),
+                IN19_SELn: self.IN19_SELn(),
+                IN20_SELn: self.IN20_SELn(),
+                IN21_SELn: self.IN21_SELn(),
+                IN22_SELn: self.IN22_SELn(),
+                IN23_SELn: self.IN23_SELn(),
+                IN24_SELn: self.IN24_SELn(),
+                IN25_SELn: self.IN25_SELn(),
+                IN26_SELn: self.IN26_SELn(),
+                IN27_SELn: self.IN27_SELn(),
+                IN28_SELn: self.IN28_SELn(),
+                IN29_SELn: self.IN29_SELn(),
+                IN30_SELn: self.IN30_SELn(),
+                IN31_SELn: self.IN31_SELn(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Trigger source IN32 to IN47 selector"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -442,6 +572,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> OUT_SEL_2 {
             OUT_SEL_2(0)
+        }
+    }
+    impl core::fmt::Debug for OUT_SEL_2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("OUT_SEL_2")
+                .field("IN32_SELn", &self.IN32_SELn())
+                .field("IN33_SELn", &self.IN33_SELn())
+                .field("IN34_SELn", &self.IN34_SELn())
+                .field("IN35_SELn", &self.IN35_SELn())
+                .field("IN36_SELn", &self.IN36_SELn())
+                .field("IN37_SELn", &self.IN37_SELn())
+                .field("IN46_SELn", &self.IN46_SELn())
+                .field("IN47_SELn", &self.IN47_SELn())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OUT_SEL_2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct OUT_SEL_2 {
+                IN32_SELn: u8,
+                IN33_SELn: u8,
+                IN34_SELn: u8,
+                IN35_SELn: u8,
+                IN36_SELn: u8,
+                IN37_SELn: u8,
+                IN46_SELn: u8,
+                IN47_SELn: u8,
+            }
+            let proxy = OUT_SEL_2 {
+                IN32_SELn: self.IN32_SELn(),
+                IN33_SELn: self.IN33_SELn(),
+                IN34_SELn: self.IN34_SELn(),
+                IN35_SELn: self.IN35_SELn(),
+                IN36_SELn: self.IN36_SELn(),
+                IN37_SELn: self.IN37_SELn(),
+                IN46_SELn: self.IN46_SELn(),
+                IN47_SELn: self.IN47_SELn(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ITRC outputs and IN0 to IN15 Status"]
@@ -663,6 +834,92 @@ pub mod regs {
             STATUS(0)
         }
     }
+    impl core::fmt::Debug for STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("STATUS")
+                .field("IN0_STATUS", &self.IN0_STATUS())
+                .field("IN1_STATUS", &self.IN1_STATUS())
+                .field("IN2_STATUS", &self.IN2_STATUS())
+                .field("IN3_STATUS", &self.IN3_STATUS())
+                .field("IN4_STATUS", &self.IN4_STATUS())
+                .field("IN5_STATUS", &self.IN5_STATUS())
+                .field("IN6_STATUS", &self.IN6_STATUS())
+                .field("IN7_STATUS", &self.IN7_STATUS())
+                .field("IN8_STATUS", &self.IN8_STATUS())
+                .field("IN9_STATUS", &self.IN9_STATUS())
+                .field("IN10_STATUS", &self.IN10_STATUS())
+                .field("IN11_STATUS", &self.IN11_STATUS())
+                .field("IN112_STATUS", &self.IN112_STATUS())
+                .field("IN113_STATUS", &self.IN113_STATUS())
+                .field("IN14_STATUS", &self.IN14_STATUS())
+                .field("IN15_STATUS", &self.IN15_STATUS())
+                .field("OUT0_STATUS", &self.OUT0_STATUS())
+                .field("OUT1_STATUS", &self.OUT1_STATUS())
+                .field("OUT2_STATUS", &self.OUT2_STATUS())
+                .field("OUT3_STATUS", &self.OUT3_STATUS())
+                .field("OUT4_STATUS", &self.OUT4_STATUS())
+                .field("OUT5_STATUS", &self.OUT5_STATUS())
+                .field("OUT6_STATUS", &self.OUT6_STATUS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct STATUS {
+                IN0_STATUS: bool,
+                IN1_STATUS: bool,
+                IN2_STATUS: bool,
+                IN3_STATUS: bool,
+                IN4_STATUS: bool,
+                IN5_STATUS: bool,
+                IN6_STATUS: bool,
+                IN7_STATUS: bool,
+                IN8_STATUS: bool,
+                IN9_STATUS: bool,
+                IN10_STATUS: bool,
+                IN11_STATUS: bool,
+                IN112_STATUS: bool,
+                IN113_STATUS: bool,
+                IN14_STATUS: bool,
+                IN15_STATUS: bool,
+                OUT0_STATUS: bool,
+                OUT1_STATUS: bool,
+                OUT2_STATUS: bool,
+                OUT3_STATUS: bool,
+                OUT4_STATUS: bool,
+                OUT5_STATUS: bool,
+                OUT6_STATUS: bool,
+            }
+            let proxy = STATUS {
+                IN0_STATUS: self.IN0_STATUS(),
+                IN1_STATUS: self.IN1_STATUS(),
+                IN2_STATUS: self.IN2_STATUS(),
+                IN3_STATUS: self.IN3_STATUS(),
+                IN4_STATUS: self.IN4_STATUS(),
+                IN5_STATUS: self.IN5_STATUS(),
+                IN6_STATUS: self.IN6_STATUS(),
+                IN7_STATUS: self.IN7_STATUS(),
+                IN8_STATUS: self.IN8_STATUS(),
+                IN9_STATUS: self.IN9_STATUS(),
+                IN10_STATUS: self.IN10_STATUS(),
+                IN11_STATUS: self.IN11_STATUS(),
+                IN112_STATUS: self.IN112_STATUS(),
+                IN113_STATUS: self.IN113_STATUS(),
+                IN14_STATUS: self.IN14_STATUS(),
+                IN15_STATUS: self.IN15_STATUS(),
+                OUT0_STATUS: self.OUT0_STATUS(),
+                OUT1_STATUS: self.OUT1_STATUS(),
+                OUT2_STATUS: self.OUT2_STATUS(),
+                OUT3_STATUS: self.OUT3_STATUS(),
+                OUT4_STATUS: self.OUT4_STATUS(),
+                OUT5_STATUS: self.OUT5_STATUS(),
+                OUT6_STATUS: self.OUT6_STATUS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "ITRC IN16 to IN47 Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -799,6 +1056,65 @@ pub mod regs {
         #[inline(always)]
         fn default() -> STATUS1 {
             STATUS1(0)
+        }
+    }
+    impl core::fmt::Debug for STATUS1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("STATUS1")
+                .field("IN16_STATUS", &self.IN16_STATUS())
+                .field("IN17_STATUS", &self.IN17_STATUS())
+                .field("IN18_STATUS", &self.IN18_STATUS())
+                .field("IN19_STATUS", &self.IN19_STATUS())
+                .field("IN20_STATUS", &self.IN20_STATUS())
+                .field("IN24_21_STATUS", &self.IN24_21_STATUS())
+                .field("IN32_25_STATUS", &self.IN32_25_STATUS())
+                .field("IN33_STATUS", &self.IN33_STATUS())
+                .field("IN34_STATUS", &self.IN34_STATUS())
+                .field("IN35_STATUS", &self.IN35_STATUS())
+                .field("IN36_STATUS", &self.IN36_STATUS())
+                .field("IN37_STATUS", &self.IN37_STATUS())
+                .field("IN46_STATUS", &self.IN46_STATUS())
+                .field("IN47_STATUS", &self.IN47_STATUS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUS1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct STATUS1 {
+                IN16_STATUS: bool,
+                IN17_STATUS: bool,
+                IN18_STATUS: bool,
+                IN19_STATUS: bool,
+                IN20_STATUS: bool,
+                IN24_21_STATUS: u8,
+                IN32_25_STATUS: u8,
+                IN33_STATUS: bool,
+                IN34_STATUS: bool,
+                IN35_STATUS: bool,
+                IN36_STATUS: bool,
+                IN37_STATUS: bool,
+                IN46_STATUS: bool,
+                IN47_STATUS: bool,
+            }
+            let proxy = STATUS1 {
+                IN16_STATUS: self.IN16_STATUS(),
+                IN17_STATUS: self.IN17_STATUS(),
+                IN18_STATUS: self.IN18_STATUS(),
+                IN19_STATUS: self.IN19_STATUS(),
+                IN20_STATUS: self.IN20_STATUS(),
+                IN24_21_STATUS: self.IN24_21_STATUS(),
+                IN32_25_STATUS: self.IN32_25_STATUS(),
+                IN33_STATUS: self.IN33_STATUS(),
+                IN34_STATUS: self.IN34_STATUS(),
+                IN35_STATUS: self.IN35_STATUS(),
+                IN36_STATUS: self.IN36_STATUS(),
+                IN37_STATUS: self.IN37_STATUS(),
+                IN46_STATUS: self.IN46_STATUS(),
+                IN47_STATUS: self.IN47_STATUS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

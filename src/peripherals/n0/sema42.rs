@@ -110,6 +110,26 @@ pub mod regs {
             GATE0(0)
         }
     }
+    impl core::fmt::Debug for GATE0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GATE0")
+                .field("GTFSM", &self.GTFSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GATE0 {
+                GTFSM: u8,
+            }
+            let proxy = GATE0 {
+                GTFSM: self.GTFSM(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -129,6 +149,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> GATE1 {
             GATE1(0)
+        }
+    }
+    impl core::fmt::Debug for GATE1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GATE1")
+                .field("GTFSM", &self.GTFSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GATE1 {
+                GTFSM: u8,
+            }
+            let proxy = GATE1 {
+                GTFSM: self.GTFSM(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Gate"]
@@ -152,6 +192,26 @@ pub mod regs {
             GATE10(0)
         }
     }
+    impl core::fmt::Debug for GATE10 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GATE10")
+                .field("GTFSM", &self.GTFSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE10 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GATE10 {
+                GTFSM: u8,
+            }
+            let proxy = GATE10 {
+                GTFSM: self.GTFSM(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -171,6 +231,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> GATE11 {
             GATE11(0)
+        }
+    }
+    impl core::fmt::Debug for GATE11 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GATE11")
+                .field("GTFSM", &self.GTFSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE11 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GATE11 {
+                GTFSM: u8,
+            }
+            let proxy = GATE11 {
+                GTFSM: self.GTFSM(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Gate"]
@@ -194,6 +274,26 @@ pub mod regs {
             GATE12(0)
         }
     }
+    impl core::fmt::Debug for GATE12 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GATE12")
+                .field("GTFSM", &self.GTFSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE12 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GATE12 {
+                GTFSM: u8,
+            }
+            let proxy = GATE12 {
+                GTFSM: self.GTFSM(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -213,6 +313,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> GATE13 {
             GATE13(0)
+        }
+    }
+    impl core::fmt::Debug for GATE13 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GATE13")
+                .field("GTFSM", &self.GTFSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE13 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GATE13 {
+                GTFSM: u8,
+            }
+            let proxy = GATE13 {
+                GTFSM: self.GTFSM(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Gate"]
@@ -236,6 +356,26 @@ pub mod regs {
             GATE14(0)
         }
     }
+    impl core::fmt::Debug for GATE14 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GATE14")
+                .field("GTFSM", &self.GTFSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE14 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GATE14 {
+                GTFSM: u8,
+            }
+            let proxy = GATE14 {
+                GTFSM: self.GTFSM(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -255,6 +395,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> GATE15 {
             GATE15(0)
+        }
+    }
+    impl core::fmt::Debug for GATE15 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GATE15")
+                .field("GTFSM", &self.GTFSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE15 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GATE15 {
+                GTFSM: u8,
+            }
+            let proxy = GATE15 {
+                GTFSM: self.GTFSM(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Gate"]
@@ -278,6 +438,26 @@ pub mod regs {
             GATE2(0)
         }
     }
+    impl core::fmt::Debug for GATE2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GATE2")
+                .field("GTFSM", &self.GTFSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GATE2 {
+                GTFSM: u8,
+            }
+            let proxy = GATE2 {
+                GTFSM: self.GTFSM(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -297,6 +477,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> GATE3 {
             GATE3(0)
+        }
+    }
+    impl core::fmt::Debug for GATE3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GATE3")
+                .field("GTFSM", &self.GTFSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GATE3 {
+                GTFSM: u8,
+            }
+            let proxy = GATE3 {
+                GTFSM: self.GTFSM(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Gate"]
@@ -320,6 +520,26 @@ pub mod regs {
             GATE4(0)
         }
     }
+    impl core::fmt::Debug for GATE4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GATE4")
+                .field("GTFSM", &self.GTFSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE4 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GATE4 {
+                GTFSM: u8,
+            }
+            let proxy = GATE4 {
+                GTFSM: self.GTFSM(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -339,6 +559,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> GATE5 {
             GATE5(0)
+        }
+    }
+    impl core::fmt::Debug for GATE5 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GATE5")
+                .field("GTFSM", &self.GTFSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE5 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GATE5 {
+                GTFSM: u8,
+            }
+            let proxy = GATE5 {
+                GTFSM: self.GTFSM(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Gate"]
@@ -362,6 +602,26 @@ pub mod regs {
             GATE6(0)
         }
     }
+    impl core::fmt::Debug for GATE6 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GATE6")
+                .field("GTFSM", &self.GTFSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE6 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GATE6 {
+                GTFSM: u8,
+            }
+            let proxy = GATE6 {
+                GTFSM: self.GTFSM(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -381,6 +641,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> GATE7 {
             GATE7(0)
+        }
+    }
+    impl core::fmt::Debug for GATE7 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GATE7")
+                .field("GTFSM", &self.GTFSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE7 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GATE7 {
+                GTFSM: u8,
+            }
+            let proxy = GATE7 {
+                GTFSM: self.GTFSM(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Gate"]
@@ -404,6 +684,26 @@ pub mod regs {
             GATE8(0)
         }
     }
+    impl core::fmt::Debug for GATE8 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GATE8")
+                .field("GTFSM", &self.GTFSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE8 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GATE8 {
+                GTFSM: u8,
+            }
+            let proxy = GATE8 {
+                GTFSM: self.GTFSM(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -423,6 +723,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> GATE9 {
             GATE9(0)
+        }
+    }
+    impl core::fmt::Debug for GATE9 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GATE9")
+                .field("GTFSM", &self.GTFSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE9 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GATE9 {
+                GTFSM: u8,
+            }
+            let proxy = GATE9 {
+                GTFSM: self.GTFSM(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Reset Gate Read"]
@@ -464,6 +784,32 @@ pub mod regs {
             RSTGT_R(0)
         }
     }
+    impl core::fmt::Debug for RSTGT_R {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RSTGT_R")
+                .field("RSTGTN", &self.RSTGTN())
+                .field("RSTGMS", &self.RSTGMS())
+                .field("RSTGSM", &self.RSTGSM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RSTGT_R {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RSTGT_R {
+                RSTGTN: u8,
+                RSTGMS: u8,
+                RSTGSM: u8,
+            }
+            let proxy = RSTGT_R {
+                RSTGTN: self.RSTGTN(),
+                RSTGMS: self.RSTGMS(),
+                RSTGSM: self.RSTGSM(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Reset Gate Write"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -492,6 +838,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> RSTGT_W {
             RSTGT_W(0)
+        }
+    }
+    impl core::fmt::Debug for RSTGT_W {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RSTGT_W")
+                .field("RSTGTN", &self.RSTGTN())
+                .field("RSTGDP", &self.RSTGDP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RSTGT_W {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RSTGT_W {
+                RSTGTN: u8,
+                RSTGDP: u8,
+            }
+            let proxy = RSTGT_W {
+                RSTGTN: self.RSTGTN(),
+                RSTGDP: self.RSTGDP(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

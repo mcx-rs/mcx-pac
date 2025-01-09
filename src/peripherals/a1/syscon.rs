@@ -191,6 +191,29 @@ pub mod regs {
             AHBCLKDIV(0)
         }
     }
+    impl core::fmt::Debug for AHBCLKDIV {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHBCLKDIV")
+                .field("DIV", &self.DIV())
+                .field("UNSTAB", &self.UNSTAB())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBCLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHBCLKDIV {
+                DIV: u8,
+                UNSTAB: bool,
+            }
+            let proxy = AHBCLKDIV {
+                DIV: self.DIV(),
+                UNSTAB: self.UNSTAB(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AHB Matrix Priority Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -239,6 +262,35 @@ pub mod regs {
             AHBMATPRIO(0)
         }
     }
+    impl core::fmt::Debug for AHBMATPRIO {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHBMATPRIO")
+                .field("CPU0_CBUS", &self.CPU0_CBUS())
+                .field("CPU0_SBUS", &self.CPU0_SBUS())
+                .field("DMA0", &self.DMA0())
+                .field("USB_FS_ENET", &self.USB_FS_ENET())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBMATPRIO {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHBMATPRIO {
+                CPU0_CBUS: u8,
+                CPU0_SBUS: u8,
+                DMA0: u8,
+                USB_FS_ENET: u8,
+            }
+            let proxy = AHBMATPRIO {
+                CPU0_CBUS: self.CPU0_CBUS(),
+                CPU0_SBUS: self.CPU0_SBUS(),
+                DMA0: self.DMA0(),
+                USB_FS_ENET: self.USB_FS_ENET(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Gray to Binary Converter Binary Code \\[41:32\\]"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -260,6 +312,26 @@ pub mod regs {
             BINARY_CODE_MSB(0)
         }
     }
+    impl core::fmt::Debug for BINARY_CODE_MSB {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("BINARY_CODE_MSB")
+                .field("code_bin_41_32", &self.code_bin_41_32())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BINARY_CODE_MSB {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct BINARY_CODE_MSB {
+                code_bin_41_32: u16,
+            }
+            let proxy = BINARY_CODE_MSB {
+                code_bin_41_32: self.code_bin_41_32(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Clock Configuration Unlock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -279,6 +351,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CLKUNLOCK {
             CLKUNLOCK(0)
+        }
+    }
+    impl core::fmt::Debug for CLKUNLOCK {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CLKUNLOCK")
+                .field("UNLOCK", &self.UNLOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CLKUNLOCK {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CLKUNLOCK {
+                UNLOCK: bool,
+            }
+            let proxy = CLKUNLOCK {
+                UNLOCK: self.UNLOCK(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Non-Secure CPU0 System Tick Calibration"]
@@ -320,6 +412,32 @@ pub mod regs {
             CPU0NSTCKCAL(0)
         }
     }
+    impl core::fmt::Debug for CPU0NSTCKCAL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CPU0NSTCKCAL")
+                .field("TENMS", &self.TENMS())
+                .field("SKEW", &self.SKEW())
+                .field("NOREF", &self.NOREF())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CPU0NSTCKCAL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CPU0NSTCKCAL {
+                TENMS: u32,
+                SKEW: bool,
+                NOREF: bool,
+            }
+            let proxy = CPU0NSTCKCAL {
+                TENMS: self.TENMS(),
+                SKEW: self.SKEW(),
+                NOREF: self.NOREF(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CPU Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -348,6 +466,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CPUSTAT {
             CPUSTAT(0)
+        }
+    }
+    impl core::fmt::Debug for CPUSTAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CPUSTAT")
+                .field("CPU0SLEEPING", &self.CPU0SLEEPING())
+                .field("CPU0LOCKUP", &self.CPU0LOCKUP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CPUSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CPUSTAT {
+                CPU0SLEEPING: bool,
+                CPU0LOCKUP: bool,
+            }
+            let proxy = CPUSTAT {
+                CPU0SLEEPING: self.CPU0SLEEPING(),
+                CPU0LOCKUP: self.CPU0LOCKUP(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CTIMER Global Start Enable"]
@@ -407,6 +548,38 @@ pub mod regs {
             CTIMERGLOBALSTARTEN(0)
         }
     }
+    impl core::fmt::Debug for CTIMERGLOBALSTARTEN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTIMERGLOBALSTARTEN")
+                .field("CTIMER0_CLK_EN", &self.CTIMER0_CLK_EN())
+                .field("CTIMER1_CLK_EN", &self.CTIMER1_CLK_EN())
+                .field("CTIMER2_CLK_EN", &self.CTIMER2_CLK_EN())
+                .field("CTIMER3_CLK_EN", &self.CTIMER3_CLK_EN())
+                .field("CTIMER4_CLK_EN", &self.CTIMER4_CLK_EN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMERGLOBALSTARTEN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTIMERGLOBALSTARTEN {
+                CTIMER0_CLK_EN: bool,
+                CTIMER1_CLK_EN: bool,
+                CTIMER2_CLK_EN: bool,
+                CTIMER3_CLK_EN: bool,
+                CTIMER4_CLK_EN: bool,
+            }
+            let proxy = CTIMERGLOBALSTARTEN {
+                CTIMER0_CLK_EN: self.CTIMER0_CLK_EN(),
+                CTIMER1_CLK_EN: self.CTIMER1_CLK_EN(),
+                CTIMER2_CLK_EN: self.CTIMER2_CLK_EN(),
+                CTIMER3_CLK_EN: self.CTIMER3_CLK_EN(),
+                CTIMER4_CLK_EN: self.CTIMER4_CLK_EN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Cortex Debug Features Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -435,6 +608,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DEBUG_FEATURES {
             DEBUG_FEATURES(0)
+        }
+    }
+    impl core::fmt::Debug for DEBUG_FEATURES {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DEBUG_FEATURES")
+                .field("CPU0_DBGEN", &self.CPU0_DBGEN())
+                .field("CPU0_NIDEN", &self.CPU0_NIDEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEBUG_FEATURES {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DEBUG_FEATURES {
+                CPU0_DBGEN: u8,
+                CPU0_NIDEN: u8,
+            }
+            let proxy = DEBUG_FEATURES {
+                CPU0_DBGEN: self.CPU0_DBGEN(),
+                CPU0_NIDEN: self.CPU0_NIDEN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Cortex Debug Features Control (Duplicate)"]
@@ -467,6 +663,29 @@ pub mod regs {
             DEBUG_FEATURES_DP(0)
         }
     }
+    impl core::fmt::Debug for DEBUG_FEATURES_DP {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DEBUG_FEATURES_DP")
+                .field("CPU0_DBGEN", &self.CPU0_DBGEN())
+                .field("CPU0_NIDEN", &self.CPU0_NIDEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEBUG_FEATURES_DP {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DEBUG_FEATURES_DP {
+                CPU0_DBGEN: u8,
+                CPU0_NIDEN: u8,
+            }
+            let proxy = DEBUG_FEATURES_DP {
+                CPU0_DBGEN: self.CPU0_DBGEN(),
+                CPU0_NIDEN: self.CPU0_NIDEN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Control Write Access to Security"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -486,6 +705,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DEBUG_LOCK_EN {
             DEBUG_LOCK_EN(0)
+        }
+    }
+    impl core::fmt::Debug for DEBUG_LOCK_EN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DEBUG_LOCK_EN")
+                .field("LOCK_ALL", &self.LOCK_ALL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEBUG_LOCK_EN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DEBUG_LOCK_EN {
+                LOCK_ALL: u8,
+            }
+            let proxy = DEBUG_LOCK_EN {
+                LOCK_ALL: self.LOCK_ALL(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Device ID"]
@@ -536,6 +775,35 @@ pub mod regs {
             DEVICE_ID0(0)
         }
     }
+    impl core::fmt::Debug for DEVICE_ID0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DEVICE_ID0")
+                .field("RAM_SIZE", &self.RAM_SIZE())
+                .field("FLASH_SIZE", &self.FLASH_SIZE())
+                .field("ROM_REV_MINOR", &self.ROM_REV_MINOR())
+                .field("SECURITY", &self.SECURITY())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEVICE_ID0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DEVICE_ID0 {
+                RAM_SIZE: u8,
+                FLASH_SIZE: u8,
+                ROM_REV_MINOR: u8,
+                SECURITY: u8,
+            }
+            let proxy = DEVICE_ID0 {
+                RAM_SIZE: self.RAM_SIZE(),
+                FLASH_SIZE: self.FLASH_SIZE(),
+                ROM_REV_MINOR: self.ROM_REV_MINOR(),
+                SECURITY: self.SECURITY(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Device Type"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -584,6 +852,35 @@ pub mod regs {
             DEVICE_TYPE(0)
         }
     }
+    impl core::fmt::Debug for DEVICE_TYPE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DEVICE_TYPE")
+                .field("DEVICE_TYPE_NUM", &self.DEVICE_TYPE_NUM())
+                .field("DEVICE_TYPE_SEC", &self.DEVICE_TYPE_SEC())
+                .field("DEVICE_TYPE_PKG", &self.DEVICE_TYPE_PKG())
+                .field("DEVICE_TYPE_PIN", &self.DEVICE_TYPE_PIN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEVICE_TYPE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DEVICE_TYPE {
+                DEVICE_TYPE_NUM: u16,
+                DEVICE_TYPE_SEC: bool,
+                DEVICE_TYPE_PKG: u8,
+                DEVICE_TYPE_PIN: u8,
+            }
+            let proxy = DEVICE_TYPE {
+                DEVICE_TYPE_NUM: self.DEVICE_TYPE_NUM(),
+                DEVICE_TYPE_SEC: self.DEVICE_TYPE_SEC(),
+                DEVICE_TYPE_PKG: self.DEVICE_TYPE_PKG(),
+                DEVICE_TYPE_PIN: self.DEVICE_TYPE_PIN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Chip Revision ID and Number"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -623,6 +920,32 @@ pub mod regs {
             DIEID(0)
         }
     }
+    impl core::fmt::Debug for DIEID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DIEID")
+                .field("MINOR_REVISION", &self.MINOR_REVISION())
+                .field("MAJOR_REVISION", &self.MAJOR_REVISION())
+                .field("MCO_NUM_IN_DIE_ID", &self.MCO_NUM_IN_DIE_ID())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DIEID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DIEID {
+                MINOR_REVISION: u8,
+                MAJOR_REVISION: u8,
+                MCO_NUM_IN_DIE_ID: u32,
+            }
+            let proxy = DIEID {
+                MINOR_REVISION: self.MINOR_REVISION(),
+                MAJOR_REVISION: self.MAJOR_REVISION(),
+                MCO_NUM_IN_DIE_ID: self.MCO_NUM_IN_DIE_ID(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Life Cycle State Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -642,6 +965,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ELS_OTP_LC_STATE {
             ELS_OTP_LC_STATE(0)
+        }
+    }
+    impl core::fmt::Debug for ELS_OTP_LC_STATE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ELS_OTP_LC_STATE")
+                .field("OTP_LC_STATE", &self.OTP_LC_STATE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_OTP_LC_STATE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ELS_OTP_LC_STATE {
+                OTP_LC_STATE: u8,
+            }
+            let proxy = ELS_OTP_LC_STATE {
+                OTP_LC_STATE: self.OTP_LC_STATE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Life Cycle State Register (Duplicate)"]
@@ -665,6 +1008,26 @@ pub mod regs {
             ELS_OTP_LC_STATE_DP(0)
         }
     }
+    impl core::fmt::Debug for ELS_OTP_LC_STATE_DP {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ELS_OTP_LC_STATE_DP")
+                .field("OTP_LC_STATE_DP", &self.OTP_LC_STATE_DP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_OTP_LC_STATE_DP {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ELS_OTP_LC_STATE_DP {
+                OTP_LC_STATE_DP: u8,
+            }
+            let proxy = ELS_OTP_LC_STATE_DP {
+                OTP_LC_STATE_DP: self.OTP_LC_STATE_DP(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Gray to Binary Converter Gray Code \\[41:32\\]"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -684,6 +1047,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> GRAY_CODE_MSB {
             GRAY_CODE_MSB(0)
+        }
+    }
+    impl core::fmt::Debug for GRAY_CODE_MSB {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GRAY_CODE_MSB")
+                .field("code_gray_41_32", &self.code_gray_41_32())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GRAY_CODE_MSB {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GRAY_CODE_MSB {
+                code_gray_41_32: u16,
+            }
+            let proxy = GRAY_CODE_MSB {
+                code_gray_41_32: self.code_gray_41_32(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPCAC Control"]
@@ -761,6 +1144,44 @@ pub mod regs {
             LPCAC_CTRL(0)
         }
     }
+    impl core::fmt::Debug for LPCAC_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("LPCAC_CTRL")
+                .field("DIS_LPCAC", &self.DIS_LPCAC())
+                .field("CLR_LPCAC", &self.CLR_LPCAC())
+                .field("FRC_NO_ALLOC", &self.FRC_NO_ALLOC())
+                .field("DIS_LPCAC_WTBF", &self.DIS_LPCAC_WTBF())
+                .field("LIM_LPCAC_WTBF", &self.LIM_LPCAC_WTBF())
+                .field("LPCAC_XOM", &self.LPCAC_XOM())
+                .field("LPCAC_MEM_REQ", &self.LPCAC_MEM_REQ())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LPCAC_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct LPCAC_CTRL {
+                DIS_LPCAC: bool,
+                CLR_LPCAC: bool,
+                FRC_NO_ALLOC: bool,
+                DIS_LPCAC_WTBF: bool,
+                LIM_LPCAC_WTBF: bool,
+                LPCAC_XOM: bool,
+                LPCAC_MEM_REQ: bool,
+            }
+            let proxy = LPCAC_CTRL {
+                DIS_LPCAC: self.DIS_LPCAC(),
+                CLR_LPCAC: self.CLR_LPCAC(),
+                FRC_NO_ALLOC: self.FRC_NO_ALLOC(),
+                DIS_LPCAC_WTBF: self.DIS_LPCAC_WTBF(),
+                LIM_LPCAC_WTBF: self.LIM_LPCAC_WTBF(),
+                LPCAC_XOM: self.LPCAC_XOM(),
+                LPCAC_MEM_REQ: self.LPCAC_MEM_REQ(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "NMI Source Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -789,6 +1210,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> NMISRC {
             NMISRC(0)
+        }
+    }
+    impl core::fmt::Debug for NMISRC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("NMISRC")
+                .field("IRQCPU0", &self.IRQCPU0())
+                .field("NMIENCPU0", &self.NMIENCPU0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for NMISRC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct NMISRC {
+                IRQCPU0: u8,
+                NMIENCPU0: bool,
+            }
+            let proxy = NMISRC {
+                IRQCPU0: self.IRQCPU0(),
+                NMIENCPU0: self.NMIENCPU0(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "NVM Control"]
@@ -848,6 +1292,38 @@ pub mod regs {
             NVM_CTRL(0)
         }
     }
+    impl core::fmt::Debug for NVM_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("NVM_CTRL")
+                .field("DIS_FLASH_SPEC", &self.DIS_FLASH_SPEC())
+                .field("DIS_DATA_SPEC", &self.DIS_DATA_SPEC())
+                .field("FLASH_STALL_EN", &self.FLASH_STALL_EN())
+                .field("DIS_MBECC_ERR_INST", &self.DIS_MBECC_ERR_INST())
+                .field("DIS_MBECC_ERR_DATA", &self.DIS_MBECC_ERR_DATA())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for NVM_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct NVM_CTRL {
+                DIS_FLASH_SPEC: bool,
+                DIS_DATA_SPEC: bool,
+                FLASH_STALL_EN: bool,
+                DIS_MBECC_ERR_INST: bool,
+                DIS_MBECC_ERR_DATA: bool,
+            }
+            let proxy = NVM_CTRL {
+                DIS_FLASH_SPEC: self.DIS_FLASH_SPEC(),
+                DIS_DATA_SPEC: self.DIS_DATA_SPEC(),
+                FLASH_STALL_EN: self.FLASH_STALL_EN(),
+                DIS_MBECC_ERR_INST: self.DIS_MBECC_ERR_INST(),
+                DIS_MBECC_ERR_DATA: self.DIS_MBECC_ERR_DATA(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PWM0 Submodule Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -894,6 +1370,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PWM0SUBCTL {
             PWM0SUBCTL(0)
+        }
+    }
+    impl core::fmt::Debug for PWM0SUBCTL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PWM0SUBCTL")
+                .field("CLK0_EN", &self.CLK0_EN())
+                .field("CLK1_EN", &self.CLK1_EN())
+                .field("CLK2_EN", &self.CLK2_EN())
+                .field("CLK3_EN", &self.CLK3_EN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWM0SUBCTL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PWM0SUBCTL {
+                CLK0_EN: bool,
+                CLK1_EN: bool,
+                CLK2_EN: bool,
+                CLK3_EN: bool,
+            }
+            let proxy = PWM0SUBCTL {
+                CLK0_EN: self.CLK0_EN(),
+                CLK1_EN: self.CLK1_EN(),
+                CLK2_EN: self.CLK2_EN(),
+                CLK3_EN: self.CLK3_EN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PWM1 Submodule Control"]
@@ -944,6 +1449,35 @@ pub mod regs {
             PWM1SUBCTL(0)
         }
     }
+    impl core::fmt::Debug for PWM1SUBCTL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PWM1SUBCTL")
+                .field("CLK0_EN", &self.CLK0_EN())
+                .field("CLK1_EN", &self.CLK1_EN())
+                .field("CLK2_EN", &self.CLK2_EN())
+                .field("CLK3_EN", &self.CLK3_EN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWM1SUBCTL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PWM1SUBCTL {
+                CLK0_EN: bool,
+                CLK1_EN: bool,
+                CLK2_EN: bool,
+                CLK3_EN: bool,
+            }
+            let proxy = PWM1SUBCTL {
+                CLK0_EN: self.CLK0_EN(),
+                CLK1_EN: self.CLK1_EN(),
+                CLK2_EN: self.CLK2_EN(),
+                CLK3_EN: self.CLK3_EN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "RAM Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -990,6 +1524,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> RAM_CTRL {
             RAM_CTRL(0)
+        }
+    }
+    impl core::fmt::Debug for RAM_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RAM_CTRL")
+                .field("RAMA_ECC_ENABLE", &self.RAMA_ECC_ENABLE())
+                .field("RAMA_CG_OVERRIDE", &self.RAMA_CG_OVERRIDE())
+                .field("RAMX_CG_OVERRIDE", &self.RAMX_CG_OVERRIDE())
+                .field("RAMB_CG_OVERRIDE", &self.RAMB_CG_OVERRIDE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAM_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RAM_CTRL {
+                RAMA_ECC_ENABLE: bool,
+                RAMA_CG_OVERRIDE: bool,
+                RAMX_CG_OVERRIDE: bool,
+                RAMB_CG_OVERRIDE: bool,
+            }
+            let proxy = RAM_CTRL {
+                RAMA_ECC_ENABLE: self.RAMA_ECC_ENABLE(),
+                RAMA_CG_OVERRIDE: self.RAMA_CG_OVERRIDE(),
+                RAMX_CG_OVERRIDE: self.RAMX_CG_OVERRIDE(),
+                RAMB_CG_OVERRIDE: self.RAMB_CG_OVERRIDE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AHB Matrix Remap Control"]
@@ -1040,6 +1603,35 @@ pub mod regs {
             REMAP(0)
         }
     }
+    impl core::fmt::Debug for REMAP {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("REMAP")
+                .field("CPU0_SBUS", &self.CPU0_SBUS())
+                .field("DMA0", &self.DMA0())
+                .field("USB0", &self.USB0())
+                .field("LOCK", &self.LOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for REMAP {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct REMAP {
+                CPU0_SBUS: u8,
+                DMA0: u8,
+                USB0: u8,
+                LOCK: bool,
+            }
+            let proxy = REMAP {
+                CPU0_SBUS: self.CPU0_SBUS(),
+                DMA0: self.DMA0(),
+                USB0: self.USB0(),
+                LOCK: self.LOCK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SLOW_CLK Clock Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1077,6 +1669,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SLOWCLKDIV {
             SLOWCLKDIV(0)
+        }
+    }
+    impl core::fmt::Debug for SLOWCLKDIV {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SLOWCLKDIV")
+                .field("RESET", &self.RESET())
+                .field("HALT", &self.HALT())
+                .field("UNSTAB", &self.UNSTAB())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SLOWCLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SLOWCLKDIV {
+                RESET: bool,
+                HALT: bool,
+                UNSTAB: bool,
+            }
+            let proxy = SLOWCLKDIV {
+                RESET: self.RESET(),
+                HALT: self.HALT(),
+                UNSTAB: self.UNSTAB(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "RAM XEN Control"]
@@ -1145,6 +1763,41 @@ pub mod regs {
             SRAM_XEN(0)
         }
     }
+    impl core::fmt::Debug for SRAM_XEN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SRAM_XEN")
+                .field("RAMX0_XEN", &self.RAMX0_XEN())
+                .field("RAMX1_XEN", &self.RAMX1_XEN())
+                .field("RAMA0_XEN", &self.RAMA0_XEN())
+                .field("RAMA1_XEN", &self.RAMA1_XEN())
+                .field("RAMB_XEN", &self.RAMB_XEN())
+                .field("LOCK", &self.LOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRAM_XEN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SRAM_XEN {
+                RAMX0_XEN: bool,
+                RAMX1_XEN: bool,
+                RAMA0_XEN: bool,
+                RAMA1_XEN: bool,
+                RAMB_XEN: bool,
+                LOCK: bool,
+            }
+            let proxy = SRAM_XEN {
+                RAMX0_XEN: self.RAMX0_XEN(),
+                RAMX1_XEN: self.RAMX1_XEN(),
+                RAMA0_XEN: self.RAMA0_XEN(),
+                RAMA1_XEN: self.RAMA1_XEN(),
+                RAMB_XEN: self.RAMB_XEN(),
+                LOCK: self.LOCK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "RAM XEN Control (Duplicate)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1200,6 +1853,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SRAM_XEN_DP {
             SRAM_XEN_DP(0)
+        }
+    }
+    impl core::fmt::Debug for SRAM_XEN_DP {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SRAM_XEN_DP")
+                .field("RAMX0_XEN", &self.RAMX0_XEN())
+                .field("RAMX1_XEN", &self.RAMX1_XEN())
+                .field("RAMA0_XEN", &self.RAMA0_XEN())
+                .field("RAMA1_XEN", &self.RAMA1_XEN())
+                .field("RAMB_XEN", &self.RAMB_XEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRAM_XEN_DP {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SRAM_XEN_DP {
+                RAMX0_XEN: bool,
+                RAMX1_XEN: bool,
+                RAMA0_XEN: bool,
+                RAMA1_XEN: bool,
+                RAMB_XEN: bool,
+            }
+            let proxy = SRAM_XEN_DP {
+                RAMX0_XEN: self.RAMX0_XEN(),
+                RAMX1_XEN: self.RAMX1_XEN(),
+                RAMA0_XEN: self.RAMA0_XEN(),
+                RAMA1_XEN: self.RAMA1_XEN(),
+                RAMB_XEN: self.RAMB_XEN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -221,6 +221,47 @@ pub mod regs {
             PKC_ACCESS_ERR(0)
         }
     }
+    impl core::fmt::Debug for PKC_ACCESS_ERR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_ACCESS_ERR")
+                .field("APB_NOTAV", &self.APB_NOTAV())
+                .field("APB_WRGMD", &self.APB_WRGMD())
+                .field("APB_MASTER", &self.APB_MASTER())
+                .field("AHB", &self.AHB())
+                .field("PKCC", &self.PKCC())
+                .field("FDET", &self.FDET())
+                .field("CTRL", &self.CTRL())
+                .field("UCRC", &self.UCRC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_ACCESS_ERR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_ACCESS_ERR {
+                APB_NOTAV: bool,
+                APB_WRGMD: bool,
+                APB_MASTER: u8,
+                AHB: bool,
+                PKCC: bool,
+                FDET: bool,
+                CTRL: bool,
+                UCRC: bool,
+            }
+            let proxy = PKC_ACCESS_ERR {
+                APB_NOTAV: self.APB_NOTAV(),
+                APB_WRGMD: self.APB_WRGMD(),
+                APB_MASTER: self.APB_MASTER(),
+                AHB: self.AHB(),
+                PKCC: self.PKCC(),
+                FDET: self.FDET(),
+                CTRL: self.CTRL(),
+                UCRC: self.UCRC(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Clear Access Error"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -240,6 +281,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PKC_ACCESS_ERR_CLR {
             PKC_ACCESS_ERR_CLR(0)
+        }
+    }
+    impl core::fmt::Debug for PKC_ACCESS_ERR_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_ACCESS_ERR_CLR")
+                .field("ERR_CLR", &self.ERR_CLR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_ACCESS_ERR_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_ACCESS_ERR_CLR {
+                ERR_CLR: bool,
+            }
+            let proxy = PKC_ACCESS_ERR_CLR {
+                ERR_CLR: self.ERR_CLR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Configuration register"]
@@ -333,6 +394,50 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PKC_CFG {
             PKC_CFG(0)
+        }
+    }
+    impl core::fmt::Debug for PKC_CFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_CFG")
+                .field("IDLEOP", &self.IDLEOP())
+                .field("RFU1", &self.RFU1())
+                .field("RFU2", &self.RFU2())
+                .field("CLKRND", &self.CLKRND())
+                .field("REDMULNOISE", &self.REDMULNOISE())
+                .field("RNDDLY", &self.RNDDLY())
+                .field("SBXNOISE", &self.SBXNOISE())
+                .field("ALPNOISE", &self.ALPNOISE())
+                .field("FMULNOISE", &self.FMULNOISE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_CFG {
+                IDLEOP: bool,
+                RFU1: bool,
+                RFU2: bool,
+                CLKRND: bool,
+                REDMULNOISE: bool,
+                RNDDLY: u8,
+                SBXNOISE: bool,
+                ALPNOISE: bool,
+                FMULNOISE: bool,
+            }
+            let proxy = PKC_CFG {
+                IDLEOP: self.IDLEOP(),
+                RFU1: self.RFU1(),
+                RFU2: self.RFU2(),
+                CLKRND: self.CLKRND(),
+                REDMULNOISE: self.REDMULNOISE(),
+                RNDDLY: self.RNDDLY(),
+                SBXNOISE: self.SBXNOISE(),
+                ALPNOISE: self.ALPNOISE(),
+                FMULNOISE: self.FMULNOISE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Control Register"]
@@ -446,6 +551,56 @@ pub mod regs {
             PKC_CTRL(0)
         }
     }
+    impl core::fmt::Debug for PKC_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_CTRL")
+                .field("RESET", &self.RESET())
+                .field("STOP", &self.STOP())
+                .field("GOD1", &self.GOD1())
+                .field("GOD2", &self.GOD2())
+                .field("GOM1", &self.GOM1())
+                .field("GOM2", &self.GOM2())
+                .field("GOU", &self.GOU())
+                .field("GF2CONV", &self.GF2CONV())
+                .field("CLRCACHE", &self.CLRCACHE())
+                .field("CACHE_EN", &self.CACHE_EN())
+                .field("REDMUL", &self.REDMUL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_CTRL {
+                RESET: bool,
+                STOP: bool,
+                GOD1: bool,
+                GOD2: bool,
+                GOM1: bool,
+                GOM2: bool,
+                GOU: bool,
+                GF2CONV: bool,
+                CLRCACHE: bool,
+                CACHE_EN: bool,
+                REDMUL: u8,
+            }
+            let proxy = PKC_CTRL {
+                RESET: self.RESET(),
+                STOP: self.STOP(),
+                GOD1: self.GOD1(),
+                GOD2: self.GOD2(),
+                GOM1: self.GOM1(),
+                GOM2: self.GOM2(),
+                GOU: self.GOU(),
+                GF2CONV: self.GF2CONV(),
+                CLRCACHE: self.CLRCACHE(),
+                CACHE_EN: self.CACHE_EN(),
+                REDMUL: self.REDMUL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt enable clear"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -465,6 +620,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PKC_INT_CLR_ENABLE {
             PKC_INT_CLR_ENABLE(0)
+        }
+    }
+    impl core::fmt::Debug for PKC_INT_CLR_ENABLE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_INT_CLR_ENABLE")
+                .field("EN_PDONE", &self.EN_PDONE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_INT_CLR_ENABLE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_INT_CLR_ENABLE {
+                EN_PDONE: bool,
+            }
+            let proxy = PKC_INT_CLR_ENABLE {
+                EN_PDONE: self.EN_PDONE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt status clear"]
@@ -488,6 +663,26 @@ pub mod regs {
             PKC_INT_CLR_STATUS(0)
         }
     }
+    impl core::fmt::Debug for PKC_INT_CLR_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_INT_CLR_STATUS")
+                .field("INT_PDONE", &self.INT_PDONE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_INT_CLR_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_INT_CLR_STATUS {
+                INT_PDONE: bool,
+            }
+            let proxy = PKC_INT_CLR_STATUS {
+                INT_PDONE: self.INT_PDONE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -507,6 +702,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PKC_INT_ENABLE {
             PKC_INT_ENABLE(0)
+        }
+    }
+    impl core::fmt::Debug for PKC_INT_ENABLE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_INT_ENABLE")
+                .field("EN_PDONE", &self.EN_PDONE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_INT_ENABLE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_INT_ENABLE {
+                EN_PDONE: bool,
+            }
+            let proxy = PKC_INT_ENABLE {
+                EN_PDONE: self.EN_PDONE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt enable set"]
@@ -530,6 +745,26 @@ pub mod regs {
             PKC_INT_SET_ENABLE(0)
         }
     }
+    impl core::fmt::Debug for PKC_INT_SET_ENABLE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_INT_SET_ENABLE")
+                .field("EN_PDONE", &self.EN_PDONE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_INT_SET_ENABLE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_INT_SET_ENABLE {
+                EN_PDONE: bool,
+            }
+            let proxy = PKC_INT_SET_ENABLE {
+                EN_PDONE: self.EN_PDONE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt status set"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -551,6 +786,26 @@ pub mod regs {
             PKC_INT_SET_STATUS(0)
         }
     }
+    impl core::fmt::Debug for PKC_INT_SET_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_INT_SET_STATUS")
+                .field("INT_PDONE", &self.INT_PDONE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_INT_SET_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_INT_SET_STATUS {
+                INT_PDONE: bool,
+            }
+            let proxy = PKC_INT_SET_STATUS {
+                INT_PDONE: self.INT_PDONE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -570,6 +825,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PKC_INT_STATUS {
             PKC_INT_STATUS(0)
+        }
+    }
+    impl core::fmt::Debug for PKC_INT_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_INT_STATUS")
+                .field("INT_PDONE", &self.INT_PDONE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_INT_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_INT_STATUS {
+                INT_PDONE: bool,
+            }
+            let proxy = PKC_INT_STATUS {
+                INT_PDONE: self.INT_PDONE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Length register, parameter set 1"]
@@ -602,6 +877,29 @@ pub mod regs {
             PKC_LEN1(0)
         }
     }
+    impl core::fmt::Debug for PKC_LEN1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_LEN1")
+                .field("LEN", &self.LEN())
+                .field("MCLEN", &self.MCLEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_LEN1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_LEN1 {
+                LEN: u16,
+                MCLEN: u16,
+            }
+            let proxy = PKC_LEN1 {
+                LEN: self.LEN(),
+                MCLEN: self.MCLEN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Length register, parameter set 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -632,6 +930,29 @@ pub mod regs {
             PKC_LEN2(0)
         }
     }
+    impl core::fmt::Debug for PKC_LEN2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_LEN2")
+                .field("LEN", &self.LEN())
+                .field("MCLEN", &self.MCLEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_LEN2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_LEN2 {
+                LEN: u16,
+                MCLEN: u16,
+            }
+            let proxy = PKC_LEN2 {
+                LEN: self.LEN(),
+                MCLEN: self.MCLEN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Mode register, parameter set 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -653,6 +974,24 @@ pub mod regs {
             PKC_MODE1(0)
         }
     }
+    impl core::fmt::Debug for PKC_MODE1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_MODE1")
+                .field("MODE", &self.MODE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_MODE1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_MODE1 {
+                MODE: u8,
+            }
+            let proxy = PKC_MODE1 { MODE: self.MODE() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Mode register, parameter set 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -672,6 +1011,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PKC_MODE2 {
             PKC_MODE2(0)
+        }
+    }
+    impl core::fmt::Debug for PKC_MODE2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_MODE2")
+                .field("MODE", &self.MODE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_MODE2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_MODE2 {
+                MODE: u8,
+            }
+            let proxy = PKC_MODE2 { MODE: self.MODE() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Module ID"]
@@ -722,6 +1079,35 @@ pub mod regs {
             PKC_MODULE_ID(0)
         }
     }
+    impl core::fmt::Debug for PKC_MODULE_ID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_MODULE_ID")
+                .field("SIZE", &self.SIZE())
+                .field("MINOR_REV", &self.MINOR_REV())
+                .field("MAJOR_REV", &self.MAJOR_REV())
+                .field("ID", &self.ID())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_MODULE_ID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_MODULE_ID {
+                SIZE: u8,
+                MINOR_REV: u8,
+                MAJOR_REV: u8,
+                ID: u16,
+            }
+            let proxy = PKC_MODULE_ID {
+                SIZE: self.SIZE(),
+                MINOR_REV: self.MINOR_REV(),
+                MAJOR_REV: self.MAJOR_REV(),
+                ID: self.ID(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Software reset"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -741,6 +1127,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PKC_SOFT_RST {
             PKC_SOFT_RST(0)
+        }
+    }
+    impl core::fmt::Debug for PKC_SOFT_RST {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_SOFT_RST")
+                .field("SOFT_RST", &self.SOFT_RST())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_SOFT_RST {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_SOFT_RST {
+                SOFT_RST: bool,
+            }
+            let proxy = PKC_SOFT_RST {
+                SOFT_RST: self.SOFT_RST(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status Register"]
@@ -800,6 +1206,38 @@ pub mod regs {
             PKC_STATUS(0)
         }
     }
+    impl core::fmt::Debug for PKC_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_STATUS")
+                .field("ACTIV", &self.ACTIV())
+                .field("CARRY", &self.CARRY())
+                .field("ZERO", &self.ZERO())
+                .field("GOANY", &self.GOANY())
+                .field("LOCKED", &self.LOCKED())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_STATUS {
+                ACTIV: bool,
+                CARRY: bool,
+                ZERO: bool,
+                GOANY: bool,
+                LOCKED: u8,
+            }
+            let proxy = PKC_STATUS {
+                ACTIV: self.ACTIV(),
+                CARRY: self.CARRY(),
+                ZERO: self.ZERO(),
+                GOANY: self.GOANY(),
+                LOCKED: self.LOCKED(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Universal pointer length"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -819,6 +1257,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PKC_ULEN {
             PKC_ULEN(0)
+        }
+    }
+    impl core::fmt::Debug for PKC_ULEN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_ULEN")
+                .field("LEN", &self.LEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_ULEN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_ULEN {
+                LEN: u8,
+            }
+            let proxy = PKC_ULEN { LEN: self.LEN() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PKC version register"]
@@ -932,6 +1388,56 @@ pub mod regs {
             PKC_VERSION(0)
         }
     }
+    impl core::fmt::Debug for PKC_VERSION {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_VERSION")
+                .field("MULSIZE", &self.MULSIZE())
+                .field("MCAVAIL", &self.MCAVAIL())
+                .field("UPAVAIL", &self.UPAVAIL())
+                .field("UPCACHEAVAIL", &self.UPCACHEAVAIL())
+                .field("GF2AVAIL", &self.GF2AVAIL())
+                .field("PARAMNUM", &self.PARAMNUM())
+                .field("SBX0AVAIL", &self.SBX0AVAIL())
+                .field("SBX1AVAIL", &self.SBX1AVAIL())
+                .field("SBX2AVAIL", &self.SBX2AVAIL())
+                .field("SBX3AVAIL", &self.SBX3AVAIL())
+                .field("MCRECONF_SIZE", &self.MCRECONF_SIZE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_VERSION {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_VERSION {
+                MULSIZE: u8,
+                MCAVAIL: bool,
+                UPAVAIL: bool,
+                UPCACHEAVAIL: bool,
+                GF2AVAIL: bool,
+                PARAMNUM: u8,
+                SBX0AVAIL: bool,
+                SBX1AVAIL: bool,
+                SBX2AVAIL: bool,
+                SBX3AVAIL: bool,
+                MCRECONF_SIZE: u8,
+            }
+            let proxy = PKC_VERSION {
+                MULSIZE: self.MULSIZE(),
+                MCAVAIL: self.MCAVAIL(),
+                UPAVAIL: self.UPAVAIL(),
+                UPCACHEAVAIL: self.UPCACHEAVAIL(),
+                GF2AVAIL: self.GF2AVAIL(),
+                PARAMNUM: self.PARAMNUM(),
+                SBX0AVAIL: self.SBX0AVAIL(),
+                SBX1AVAIL: self.SBX1AVAIL(),
+                SBX2AVAIL: self.SBX2AVAIL(),
+                SBX3AVAIL: self.SBX3AVAIL(),
+                MCRECONF_SIZE: self.MCRECONF_SIZE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "X+Y pointer register, parameter set 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -960,6 +1466,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PKC_XYPTR1 {
             PKC_XYPTR1(0)
+        }
+    }
+    impl core::fmt::Debug for PKC_XYPTR1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_XYPTR1")
+                .field("XPTR", &self.XPTR())
+                .field("YPTR", &self.YPTR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_XYPTR1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_XYPTR1 {
+                XPTR: u16,
+                YPTR: u16,
+            }
+            let proxy = PKC_XYPTR1 {
+                XPTR: self.XPTR(),
+                YPTR: self.YPTR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "X+Y pointer register, parameter set 2"]
@@ -992,6 +1521,29 @@ pub mod regs {
             PKC_XYPTR2(0)
         }
     }
+    impl core::fmt::Debug for PKC_XYPTR2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_XYPTR2")
+                .field("XPTR", &self.XPTR())
+                .field("YPTR", &self.YPTR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_XYPTR2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_XYPTR2 {
+                XPTR: u16,
+                YPTR: u16,
+            }
+            let proxy = PKC_XYPTR2 {
+                XPTR: self.XPTR(),
+                YPTR: self.YPTR(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Z+R pointer register, parameter set 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1022,6 +1574,29 @@ pub mod regs {
             PKC_ZRPTR1(0)
         }
     }
+    impl core::fmt::Debug for PKC_ZRPTR1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_ZRPTR1")
+                .field("ZPTR", &self.ZPTR())
+                .field("RPTR", &self.RPTR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_ZRPTR1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_ZRPTR1 {
+                ZPTR: u16,
+                RPTR: u16,
+            }
+            let proxy = PKC_ZRPTR1 {
+                ZPTR: self.ZPTR(),
+                RPTR: self.RPTR(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Z+R pointer register, parameter set 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1050,6 +1625,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PKC_ZRPTR2 {
             PKC_ZRPTR2(0)
+        }
+    }
+    impl core::fmt::Debug for PKC_ZRPTR2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PKC_ZRPTR2")
+                .field("ZPT", &self.ZPT())
+                .field("RPTR", &self.RPTR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_ZRPTR2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PKC_ZRPTR2 {
+                ZPT: u16,
+                RPTR: u16,
+            }
+            let proxy = PKC_ZRPTR2 {
+                ZPT: self.ZPT(),
+                RPTR: self.RPTR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

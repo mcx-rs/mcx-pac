@@ -68,6 +68,29 @@ pub mod regs {
             CAP(0)
         }
     }
+    impl core::fmt::Debug for CAP {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CAP")
+                .field("CAP_VALUE", &self.CAP_VALUE())
+                .field("VALID", &self.VALID())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CAP {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CAP {
+                CAP_VALUE: u32,
+                VALID: bool,
+            }
+            let proxy = CAP {
+                CAP_VALUE: self.CAP_VALUE(),
+                VALID: self.VALID(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Capture Clear"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -114,6 +137,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CAPCLR {
             CAPCLR(0)
+        }
+    }
+    impl core::fmt::Debug for CAPCLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CAPCLR")
+                .field("CAPCLR0", &self.CAPCLR0())
+                .field("CAPCLR1", &self.CAPCLR1())
+                .field("CAPCLR2", &self.CAPCLR2())
+                .field("CAPCLR3", &self.CAPCLR3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CAPCLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CAPCLR {
+                CAPCLR0: bool,
+                CAPCLR1: bool,
+                CAPCLR2: bool,
+                CAPCLR3: bool,
+            }
+            let proxy = CAPCLR {
+                CAPCLR0: self.CAPCLR0(),
+                CAPCLR1: self.CAPCLR1(),
+                CAPCLR2: self.CAPCLR2(),
+                CAPCLR3: self.CAPCLR3(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Configuration"]
@@ -200,6 +252,47 @@ pub mod regs {
             CFG(0)
         }
     }
+    impl core::fmt::Debug for CFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CFG")
+                .field("CAPEN0", &self.CAPEN0())
+                .field("CAPEN1", &self.CAPEN1())
+                .field("CAPEN2", &self.CAPEN2())
+                .field("CAPEN3", &self.CAPEN3())
+                .field("CAPPOL0", &self.CAPPOL0())
+                .field("CAPPOL1", &self.CAPPOL1())
+                .field("CAPPOL2", &self.CAPPOL2())
+                .field("CAPPOL3", &self.CAPPOL3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CFG {
+                CAPEN0: bool,
+                CAPEN1: bool,
+                CAPEN2: bool,
+                CAPEN3: bool,
+                CAPPOL0: bool,
+                CAPPOL1: bool,
+                CAPPOL2: bool,
+                CAPPOL3: bool,
+            }
+            let proxy = CFG {
+                CAPEN0: self.CAPEN0(),
+                CAPEN1: self.CAPEN1(),
+                CAPEN2: self.CAPEN2(),
+                CAPEN3: self.CAPEN3(),
+                CAPPOL0: self.CAPPOL0(),
+                CAPPOL1: self.CAPPOL1(),
+                CAPPOL2: self.CAPPOL2(),
+                CAPPOL3: self.CAPPOL3(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -230,6 +323,29 @@ pub mod regs {
             CTRL(0)
         }
     }
+    impl core::fmt::Debug for CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL")
+                .field("DELAYVAL", &self.DELAYVAL())
+                .field("REPEAT", &self.REPEAT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL {
+                DELAYVAL: u32,
+                REPEAT: bool,
+            }
+            let proxy = CTRL {
+                DELAYVAL: self.DELAYVAL(),
+                REPEAT: self.REPEAT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -258,6 +374,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> STAT {
             STAT(0)
+        }
+    }
+    impl core::fmt::Debug for STAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("STAT")
+                .field("INTR", &self.INTR())
+                .field("ACTIVE", &self.ACTIVE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct STAT {
+                INTR: bool,
+                ACTIVE: bool,
+            }
+            let proxy = STAT {
+                INTR: self.INTR(),
+                ACTIVE: self.ACTIVE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

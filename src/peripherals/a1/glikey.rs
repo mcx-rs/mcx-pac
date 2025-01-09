@@ -94,6 +94,38 @@ pub mod regs {
             CTRL_0(0)
         }
     }
+    impl core::fmt::Debug for CTRL_0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL_0")
+                .field("WRITE_INDEX", &self.WRITE_INDEX())
+                .field("RESERVED15", &self.RESERVED15())
+                .field("WR_EN_0", &self.WR_EN_0())
+                .field("SFT_RST", &self.SFT_RST())
+                .field("RESERVED31", &self.RESERVED31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL_0 {
+                WRITE_INDEX: u8,
+                RESERVED15: u8,
+                WR_EN_0: u8,
+                SFT_RST: bool,
+                RESERVED31: u16,
+            }
+            let proxy = CTRL_0 {
+                WRITE_INDEX: self.WRITE_INDEX(),
+                RESERVED15: self.RESERVED15(),
+                WR_EN_0: self.WR_EN_0(),
+                SFT_RST: self.SFT_RST(),
+                RESERVED31: self.RESERVED31(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Control Register 1 SFR"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -151,6 +183,38 @@ pub mod regs {
             CTRL_1(0)
         }
     }
+    impl core::fmt::Debug for CTRL_1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL_1")
+                .field("READ_INDEX", &self.READ_INDEX())
+                .field("RESERVED15", &self.RESERVED15())
+                .field("WR_EN_1", &self.WR_EN_1())
+                .field("SFR_LOCK", &self.SFR_LOCK())
+                .field("RESERVED31", &self.RESERVED31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL_1 {
+                READ_INDEX: u8,
+                RESERVED15: u8,
+                WR_EN_1: u8,
+                SFR_LOCK: u8,
+                RESERVED31: u16,
+            }
+            let proxy = CTRL_1 {
+                READ_INDEX: self.READ_INDEX(),
+                RESERVED15: self.RESERVED15(),
+                WR_EN_1: self.WR_EN_1(),
+                SFR_LOCK: self.SFR_LOCK(),
+                RESERVED31: self.RESERVED31(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -197,6 +261,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> INTR_CTRL {
             INTR_CTRL(0)
+        }
+    }
+    impl core::fmt::Debug for INTR_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("INTR_CTRL")
+                .field("INT_EN", &self.INT_EN())
+                .field("INT_CLR", &self.INT_CLR())
+                .field("INT_SET", &self.INT_SET())
+                .field("RESERVED31", &self.RESERVED31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INTR_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct INTR_CTRL {
+                INT_EN: bool,
+                INT_CLR: bool,
+                INT_SET: bool,
+                RESERVED31: u32,
+            }
+            let proxy = INTR_CTRL {
+                INT_EN: self.INT_EN(),
+                INT_CLR: self.INT_CLR(),
+                INT_SET: self.INT_SET(),
+                RESERVED31: self.RESERVED31(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status"]
@@ -254,6 +347,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> STATUS {
             STATUS(0)
+        }
+    }
+    impl core::fmt::Debug for STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("STATUS")
+                .field("INT_STATUS", &self.INT_STATUS())
+                .field("LOCK_STATUS", &self.LOCK_STATUS())
+                .field("ERROR_STATUS", &self.ERROR_STATUS())
+                .field("RESERVED18", &self.RESERVED18())
+                .field("FSM_STATE", &self.FSM_STATE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct STATUS {
+                INT_STATUS: bool,
+                LOCK_STATUS: bool,
+                ERROR_STATUS: u8,
+                RESERVED18: u16,
+                FSM_STATE: u16,
+            }
+            let proxy = STATUS {
+                INT_STATUS: self.INT_STATUS(),
+                LOCK_STATUS: self.LOCK_STATUS(),
+                ERROR_STATUS: self.ERROR_STATUS(),
+                RESERVED18: self.RESERVED18(),
+                FSM_STATE: self.FSM_STATE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "IP Version"]
@@ -338,6 +463,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> VERSION {
             VERSION(0)
+        }
+    }
+    impl core::fmt::Debug for VERSION {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VERSION")
+                .field("Reserved3", &self.Reserved3())
+                .field("Reserved7", &self.Reserved7())
+                .field("Reserved11", &self.Reserved11())
+                .field("Reserved15", &self.Reserved15())
+                .field("MILESTONE", &self.MILESTONE())
+                .field("FSM_CONFIG", &self.FSM_CONFIG())
+                .field("INDEX_CONFIG", &self.INDEX_CONFIG())
+                .field("Reserved31", &self.Reserved31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERSION {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VERSION {
+                Reserved3: u8,
+                Reserved7: u8,
+                Reserved11: u8,
+                Reserved15: u8,
+                MILESTONE: u8,
+                FSM_CONFIG: bool,
+                INDEX_CONFIG: u8,
+                Reserved31: u8,
+            }
+            let proxy = VERSION {
+                Reserved3: self.Reserved3(),
+                Reserved7: self.Reserved7(),
+                Reserved11: self.Reserved11(),
+                Reserved15: self.Reserved15(),
+                MILESTONE: self.MILESTONE(),
+                FSM_CONFIG: self.FSM_CONFIG(),
+                INDEX_CONFIG: self.INDEX_CONFIG(),
+                Reserved31: self.Reserved31(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

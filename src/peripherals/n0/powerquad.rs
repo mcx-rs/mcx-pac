@@ -146,6 +146,32 @@ pub mod regs {
             CONTROL(0)
         }
     }
+    impl core::fmt::Debug for CONTROL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CONTROL")
+                .field("DECODE_OPCODE", &self.DECODE_OPCODE())
+                .field("DECODE_MACHINE", &self.DECODE_MACHINE())
+                .field("INST_BUSY", &self.INST_BUSY())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CONTROL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CONTROL {
+                DECODE_OPCODE: u8,
+                DECODE_MACHINE: u8,
+                INST_BUSY: bool,
+            }
+            let proxy = CONTROL {
+                DECODE_OPCODE: self.DECODE_OPCODE(),
+                DECODE_MACHINE: self.DECODE_MACHINE(),
+                INST_BUSY: self.INST_BUSY(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Coprocessor Prescale"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -194,6 +220,35 @@ pub mod regs {
             CPPRE(0)
         }
     }
+    impl core::fmt::Debug for CPPRE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CPPRE")
+                .field("CPPRE_IN", &self.CPPRE_IN())
+                .field("CPPRE_OUT", &self.CPPRE_OUT())
+                .field("CPPRE_SAT", &self.CPPRE_SAT())
+                .field("CPPRE_SAT8", &self.CPPRE_SAT8())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CPPRE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CPPRE {
+                CPPRE_IN: u8,
+                CPPRE_OUT: u8,
+                CPPRE_SAT: bool,
+                CPPRE_SAT8: bool,
+            }
+            let proxy = CPPRE {
+                CPPRE_IN: self.CPPRE_IN(),
+                CPPRE_OUT: self.CPPRE_OUT(),
+                CPPRE_SAT: self.CPPRE_SAT(),
+                CPPRE_SAT8: self.CPPRE_SAT8(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Cursory"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -213,6 +268,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CURSORY {
             CURSORY(0)
+        }
+    }
+    impl core::fmt::Debug for CURSORY {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CURSORY")
+                .field("CURSORY", &self.CURSORY())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CURSORY {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CURSORY {
+                CURSORY: bool,
+            }
+            let proxy = CURSORY {
+                CURSORY: self.CURSORY(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Error Status"]
@@ -270,6 +345,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ERRSTAT {
             ERRSTAT(0)
+        }
+    }
+    impl core::fmt::Debug for ERRSTAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ERRSTAT")
+                .field("OVERFLOW", &self.OVERFLOW())
+                .field("NAN", &self.NAN())
+                .field("FIXEDOVERFLOW", &self.FIXEDOVERFLOW())
+                .field("UNDERFLOW", &self.UNDERFLOW())
+                .field("BUSERROR", &self.BUSERROR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ERRSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ERRSTAT {
+                OVERFLOW: bool,
+                NAN: bool,
+                FIXEDOVERFLOW: bool,
+                UNDERFLOW: bool,
+                BUSERROR: bool,
+            }
+            let proxy = ERRSTAT {
+                OVERFLOW: self.OVERFLOW(),
+                NAN: self.NAN(),
+                FIXEDOVERFLOW: self.FIXEDOVERFLOW(),
+                UNDERFLOW: self.UNDERFLOW(),
+                BUSERROR: self.BUSERROR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Event Enable"]
@@ -338,6 +445,41 @@ pub mod regs {
             EVENTEN(0)
         }
     }
+    impl core::fmt::Debug for EVENTEN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EVENTEN")
+                .field("EVENT_OFLOW", &self.EVENT_OFLOW())
+                .field("EVENT_NAN", &self.EVENT_NAN())
+                .field("EVENT_FIXED", &self.EVENT_FIXED())
+                .field("EVENT_UFLOW", &self.EVENT_UFLOW())
+                .field("EVENT_BERR", &self.EVENT_BERR())
+                .field("EVENT_COMP", &self.EVENT_COMP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EVENTEN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EVENTEN {
+                EVENT_OFLOW: bool,
+                EVENT_NAN: bool,
+                EVENT_FIXED: bool,
+                EVENT_UFLOW: bool,
+                EVENT_BERR: bool,
+                EVENT_COMP: bool,
+            }
+            let proxy = EVENTEN {
+                EVENT_OFLOW: self.EVENT_OFLOW(),
+                EVENT_NAN: self.EVENT_NAN(),
+                EVENT_FIXED: self.EVENT_FIXED(),
+                EVENT_UFLOW: self.EVENT_UFLOW(),
+                EVENT_BERR: self.EVENT_BERR(),
+                EVENT_COMP: self.EVENT_COMP(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Input A Format"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -377,6 +519,32 @@ pub mod regs {
             INAFORMAT(0)
         }
     }
+    impl core::fmt::Debug for INAFORMAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("INAFORMAT")
+                .field("INA_FORMATINT", &self.INA_FORMATINT())
+                .field("INA_FORMATEXT", &self.INA_FORMATEXT())
+                .field("INA_SCALER", &self.INA_SCALER())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INAFORMAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct INAFORMAT {
+                INA_FORMATINT: u8,
+                INA_FORMATEXT: u8,
+                INA_SCALER: u8,
+            }
+            let proxy = INAFORMAT {
+                INA_FORMATINT: self.INA_FORMATINT(),
+                INA_FORMATEXT: self.INA_FORMATEXT(),
+                INA_SCALER: self.INA_SCALER(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Input B Format"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -414,6 +582,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> INBFORMAT {
             INBFORMAT(0)
+        }
+    }
+    impl core::fmt::Debug for INBFORMAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("INBFORMAT")
+                .field("INB_FORMATINT", &self.INB_FORMATINT())
+                .field("INB_FORMATEXT", &self.INB_FORMATEXT())
+                .field("INB_SCALER", &self.INB_SCALER())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INBFORMAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct INBFORMAT {
+                INB_FORMATINT: u8,
+                INB_FORMATEXT: u8,
+                INB_SCALER: u8,
+            }
+            let proxy = INBFORMAT {
+                INB_FORMATINT: self.INB_FORMATINT(),
+                INB_FORMATEXT: self.INB_FORMATEXT(),
+                INB_SCALER: self.INB_SCALER(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Enable"]
@@ -482,6 +676,41 @@ pub mod regs {
             INTREN(0)
         }
     }
+    impl core::fmt::Debug for INTREN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("INTREN")
+                .field("INTR_OFLOW", &self.INTR_OFLOW())
+                .field("INTR_NAN", &self.INTR_NAN())
+                .field("INTR_FIXED", &self.INTR_FIXED())
+                .field("INTR_UFLOW", &self.INTR_UFLOW())
+                .field("INTR_BERR", &self.INTR_BERR())
+                .field("INTR_COMP", &self.INTR_COMP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INTREN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct INTREN {
+                INTR_OFLOW: bool,
+                INTR_NAN: bool,
+                INTR_FIXED: bool,
+                INTR_UFLOW: bool,
+                INTR_BERR: bool,
+                INTR_COMP: bool,
+            }
+            let proxy = INTREN {
+                INTR_OFLOW: self.INTR_OFLOW(),
+                INTR_NAN: self.INTR_NAN(),
+                INTR_FIXED: self.INTR_FIXED(),
+                INTR_UFLOW: self.INTR_UFLOW(),
+                INTR_BERR: self.INTR_BERR(),
+                INTR_COMP: self.INTR_COMP(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -501,6 +730,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> INTRSTAT {
             INTRSTAT(0)
+        }
+    }
+    impl core::fmt::Debug for INTRSTAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("INTRSTAT")
+                .field("INTR_STAT", &self.INTR_STAT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INTRSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct INTRSTAT {
+                INTR_STAT: bool,
+            }
+            let proxy = INTRSTAT {
+                INTR_STAT: self.INTR_STAT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Output Format"]
@@ -542,6 +791,32 @@ pub mod regs {
             OUTFORMAT(0)
         }
     }
+    impl core::fmt::Debug for OUTFORMAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("OUTFORMAT")
+                .field("OUT_FORMATINT", &self.OUT_FORMATINT())
+                .field("OUT_FORMATEXT", &self.OUT_FORMATEXT())
+                .field("OUT_SCALER", &self.OUT_SCALER())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OUTFORMAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct OUTFORMAT {
+                OUT_FORMATINT: u8,
+                OUT_FORMATEXT: u8,
+                OUT_SCALER: u8,
+            }
+            let proxy = OUTFORMAT {
+                OUT_FORMATINT: self.OUT_FORMATINT(),
+                OUT_FORMATEXT: self.OUT_FORMATEXT(),
+                OUT_SCALER: self.OUT_SCALER(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Temporary Format"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -579,6 +854,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TMPFORMAT {
             TMPFORMAT(0)
+        }
+    }
+    impl core::fmt::Debug for TMPFORMAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TMPFORMAT")
+                .field("TMP_FORMATINT", &self.TMP_FORMATINT())
+                .field("TMP_FORMATEXT", &self.TMP_FORMATEXT())
+                .field("TMP_SCALER", &self.TMP_SCALER())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TMPFORMAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TMPFORMAT {
+                TMP_FORMATINT: u8,
+                TMP_FORMATEXT: u8,
+                TMP_SCALER: u8,
+            }
+            let proxy = TMPFORMAT {
+                TMP_FORMATINT: self.TMP_FORMATINT(),
+                TMP_FORMATEXT: self.TMP_FORMATEXT(),
+                TMP_SCALER: self.TMP_SCALER(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

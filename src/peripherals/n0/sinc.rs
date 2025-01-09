@@ -165,6 +165,32 @@ pub mod regs {
             CHANNEL_CACFR(0)
         }
     }
+    impl core::fmt::Debug for CHANNEL_CACFR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CHANNEL_CACFR")
+                .field("ADMASEL", &self.ADMASEL())
+                .field("HPFA", &self.HPFA())
+                .field("IBDLY", &self.IBDLY())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CACFR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CHANNEL_CACFR {
+                ADMASEL: u8,
+                HPFA: u8,
+                IBDLY: u8,
+            }
+            let proxy = CHANNEL_CACFR {
+                ADMASEL: self.ADMASEL(),
+                HPFA: self.HPFA(),
+                IBDLY: self.IBDLY(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Channel 0 Bias..Channel 4 Bias"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -184,6 +210,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CHANNEL_CBIAS {
             CHANNEL_CBIAS(0)
+        }
+    }
+    impl core::fmt::Debug for CHANNEL_CBIAS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CHANNEL_CBIAS")
+                .field("BIAS", &self.BIAS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CBIAS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CHANNEL_CBIAS {
+                BIAS: u32,
+            }
+            let proxy = CHANNEL_CBIAS { BIAS: self.BIAS() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Channel 0 Configuration..Channel 4 Configuration"]
@@ -288,6 +332,53 @@ pub mod regs {
             CHANNEL_CCFR(0)
         }
     }
+    impl core::fmt::Debug for CHANNEL_CCFR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CHANNEL_CCFR")
+                .field("PFSFT", &self.PFSFT())
+                .field("RDFMT", &self.RDFMT())
+                .field("FIFOWMK", &self.FIFOWMK())
+                .field("IBFMT", &self.IBFMT())
+                .field("ICSEL", &self.ICSEL())
+                .field("ICESEL", &self.ICESEL())
+                .field("ITSEL", &self.ITSEL())
+                .field("IBSEL", &self.IBSEL())
+                .field("ITLVL", &self.ITLVL())
+                .field("ZCOP", &self.ZCOP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CCFR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CHANNEL_CCFR {
+                PFSFT: u8,
+                RDFMT: bool,
+                FIFOWMK: u8,
+                IBFMT: u8,
+                ICSEL: u8,
+                ICESEL: u8,
+                ITSEL: u8,
+                IBSEL: u8,
+                ITLVL: bool,
+                ZCOP: u8,
+            }
+            let proxy = CHANNEL_CCFR {
+                PFSFT: self.PFSFT(),
+                RDFMT: self.RDFMT(),
+                FIFOWMK: self.FIFOWMK(),
+                IBFMT: self.IBFMT(),
+                ICSEL: self.ICSEL(),
+                ICESEL: self.ICESEL(),
+                ITSEL: self.ITSEL(),
+                IBSEL: self.IBSEL(),
+                ITLVL: self.ITLVL(),
+                ZCOP: self.ZCOP(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Channel 0 Control..Channel 4 Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -381,6 +472,50 @@ pub mod regs {
             CHANNEL_CCR(0)
         }
     }
+    impl core::fmt::Debug for CHANNEL_CCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CHANNEL_CCR")
+                .field("CHEN", &self.CHEN())
+                .field("PFEN", &self.PFEN())
+                .field("DMAEN", &self.DMAEN())
+                .field("SCDEN", &self.SCDEN())
+                .field("CADEN", &self.CADEN())
+                .field("ZCDEN", &self.ZCDEN())
+                .field("LMTEN", &self.LMTEN())
+                .field("FIFOEN", &self.FIFOEN())
+                .field("DBGSEL", &self.DBGSEL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CHANNEL_CCR {
+                CHEN: bool,
+                PFEN: bool,
+                DMAEN: bool,
+                SCDEN: bool,
+                CADEN: bool,
+                ZCDEN: bool,
+                LMTEN: bool,
+                FIFOEN: bool,
+                DBGSEL: u8,
+            }
+            let proxy = CHANNEL_CCR {
+                CHEN: self.CHEN(),
+                PFEN: self.PFEN(),
+                DMAEN: self.DMAEN(),
+                SCDEN: self.SCDEN(),
+                CADEN: self.CADEN(),
+                ZCDEN: self.ZCDEN(),
+                LMTEN: self.LMTEN(),
+                FIFOEN: self.FIFOEN(),
+                DBGSEL: self.DBGSEL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Channel 0 Data Rate..Channel 4 Data Rate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -420,6 +555,32 @@ pub mod regs {
             CHANNEL_CDR(0)
         }
     }
+    impl core::fmt::Debug for CHANNEL_CDR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CHANNEL_CDR")
+                .field("PFOSR", &self.PFOSR())
+                .field("PFORD", &self.PFORD())
+                .field("PFCM", &self.PFCM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CDR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CHANNEL_CDR {
+                PFOSR: u16,
+                PFORD: u8,
+                PFCM: u8,
+            }
+            let proxy = CHANNEL_CDR {
+                PFOSR: self.PFOSR(),
+                PFORD: self.PFORD(),
+                PFCM: self.PFCM(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Channel 0 High Limit..Channel 4 High Limit"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -441,6 +602,26 @@ pub mod regs {
             CHANNEL_CHILMT(0)
         }
     }
+    impl core::fmt::Debug for CHANNEL_CHILMT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CHANNEL_CHILMT")
+                .field("HILMT", &self.HILMT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CHILMT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CHANNEL_CHILMT {
+                HILMT: u32,
+            }
+            let proxy = CHANNEL_CHILMT {
+                HILMT: self.HILMT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Channel 0 Low Limit..Channel 4 Low Limit"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -460,6 +641,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CHANNEL_CLOLMT {
             CHANNEL_CLOLMT(0)
+        }
+    }
+    impl core::fmt::Debug for CHANNEL_CLOLMT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CHANNEL_CLOLMT")
+                .field("LOLMT", &self.LOLMT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CLOLMT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CHANNEL_CLOLMT {
+                LOLMT: u32,
+            }
+            let proxy = CHANNEL_CLOLMT {
+                LOLMT: self.LOLMT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Channel 0 Protection..Channel 4 Protection"]
@@ -564,6 +765,53 @@ pub mod regs {
             CHANNEL_CPROT(0)
         }
     }
+    impl core::fmt::Debug for CHANNEL_CPROT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CHANNEL_CPROT")
+                .field("SCDLMT", &self.SCDLMT())
+                .field("SCDCM", &self.SCDCM())
+                .field("SCDOP", &self.SCDOP())
+                .field("LMTOP", &self.LMTOP())
+                .field("CADLMT", &self.CADLMT())
+                .field("CADBK", &self.CADBK())
+                .field("SCDBK", &self.SCDBK())
+                .field("LLMTBK", &self.LLMTBK())
+                .field("WLMTBK", &self.WLMTBK())
+                .field("HLMTBK", &self.HLMTBK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CPROT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CHANNEL_CPROT {
+                SCDLMT: u8,
+                SCDCM: bool,
+                SCDOP: u8,
+                LMTOP: u8,
+                CADLMT: u8,
+                CADBK: bool,
+                SCDBK: bool,
+                LLMTBK: bool,
+                WLMTBK: bool,
+                HLMTBK: bool,
+            }
+            let proxy = CHANNEL_CPROT {
+                SCDLMT: self.SCDLMT(),
+                SCDCM: self.SCDCM(),
+                SCDOP: self.SCDOP(),
+                LMTOP: self.LMTOP(),
+                CADLMT: self.CADLMT(),
+                CADBK: self.CADBK(),
+                SCDBK: self.SCDBK(),
+                LLMTBK: self.LLMTBK(),
+                WLMTBK: self.WLMTBK(),
+                HLMTBK: self.HLMTBK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Channel 0 Result Data..Channel 4 Result Data"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -583,6 +831,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CHANNEL_CRDATA {
             CHANNEL_CRDATA(0)
+        }
+    }
+    impl core::fmt::Debug for CHANNEL_CRDATA {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CHANNEL_CRDATA")
+                .field("RDATA", &self.RDATA())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CRDATA {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CHANNEL_CRDATA {
+                RDATA: u32,
+            }
+            let proxy = CHANNEL_CRDATA {
+                RDATA: self.RDATA(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Channel 0 Status..Channel 4 Status"]
@@ -694,6 +962,56 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CHANNEL_CSR {
             CHANNEL_CSR(0)
+        }
+    }
+    impl core::fmt::Debug for CHANNEL_CSR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CHANNEL_CSR")
+                .field("FIFOAVIL", &self.FIFOAVIL())
+                .field("PSRDY", &self.PSRDY())
+                .field("PFSAT", &self.PFSAT())
+                .field("HPFSAT", &self.HPFSAT())
+                .field("SFTSAT", &self.SFTSAT())
+                .field("BIASSAT", &self.BIASSAT())
+                .field("RDRS", &self.RDRS())
+                .field("SRDS", &self.SRDS())
+                .field("DBGRS", &self.DBGRS())
+                .field("CNUM", &self.CNUM())
+                .field("CNUM_OV", &self.CNUM_OV())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CSR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CHANNEL_CSR {
+                FIFOAVIL: u8,
+                PSRDY: bool,
+                PFSAT: bool,
+                HPFSAT: bool,
+                SFTSAT: bool,
+                BIASSAT: bool,
+                RDRS: bool,
+                SRDS: bool,
+                DBGRS: u8,
+                CNUM: u8,
+                CNUM_OV: bool,
+            }
+            let proxy = CHANNEL_CSR {
+                FIFOAVIL: self.FIFOAVIL(),
+                PSRDY: self.PSRDY(),
+                PFSAT: self.PFSAT(),
+                HPFSAT: self.HPFSAT(),
+                SFTSAT: self.SFTSAT(),
+                BIASSAT: self.BIASSAT(),
+                RDRS: self.RDRS(),
+                SRDS: self.SRDS(),
+                DBGRS: self.DBGRS(),
+                CNUM: self.CNUM(),
+                CNUM_OV: self.CNUM_OV(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Error Interrupt Enable"]
@@ -888,6 +1206,83 @@ pub mod regs {
             EIE(0)
         }
     }
+    impl core::fmt::Debug for EIE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EIE")
+                .field("SCDIE0", &self.SCDIE0())
+                .field("SCDIE1", &self.SCDIE1())
+                .field("SCDIE2", &self.SCDIE2())
+                .field("SCDIE3", &self.SCDIE3())
+                .field("SCDIE4", &self.SCDIE4())
+                .field("WLMTIE0", &self.WLMTIE0())
+                .field("WLMTIE1", &self.WLMTIE1())
+                .field("WLMTIE2", &self.WLMTIE2())
+                .field("WLMTIE3", &self.WLMTIE3())
+                .field("WLMTIE4", &self.WLMTIE4())
+                .field("LLMTIE0", &self.LLMTIE0())
+                .field("LLMTIE1", &self.LLMTIE1())
+                .field("LLMTIE2", &self.LLMTIE2())
+                .field("LLMTIE3", &self.LLMTIE3())
+                .field("LLMTIE4", &self.LLMTIE4())
+                .field("HLMTIE0", &self.HLMTIE0())
+                .field("HLMTIE1", &self.HLMTIE1())
+                .field("HLMTIE2", &self.HLMTIE2())
+                .field("HLMTIE3", &self.HLMTIE3())
+                .field("HLMTIE4", &self.HLMTIE4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EIE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EIE {
+                SCDIE0: bool,
+                SCDIE1: bool,
+                SCDIE2: bool,
+                SCDIE3: bool,
+                SCDIE4: bool,
+                WLMTIE0: bool,
+                WLMTIE1: bool,
+                WLMTIE2: bool,
+                WLMTIE3: bool,
+                WLMTIE4: bool,
+                LLMTIE0: bool,
+                LLMTIE1: bool,
+                LLMTIE2: bool,
+                LLMTIE3: bool,
+                LLMTIE4: bool,
+                HLMTIE0: bool,
+                HLMTIE1: bool,
+                HLMTIE2: bool,
+                HLMTIE3: bool,
+                HLMTIE4: bool,
+            }
+            let proxy = EIE {
+                SCDIE0: self.SCDIE0(),
+                SCDIE1: self.SCDIE1(),
+                SCDIE2: self.SCDIE2(),
+                SCDIE3: self.SCDIE3(),
+                SCDIE4: self.SCDIE4(),
+                WLMTIE0: self.WLMTIE0(),
+                WLMTIE1: self.WLMTIE1(),
+                WLMTIE2: self.WLMTIE2(),
+                WLMTIE3: self.WLMTIE3(),
+                WLMTIE4: self.WLMTIE4(),
+                LLMTIE0: self.LLMTIE0(),
+                LLMTIE1: self.LLMTIE1(),
+                LLMTIE2: self.LLMTIE2(),
+                LLMTIE3: self.LLMTIE3(),
+                LLMTIE4: self.LLMTIE4(),
+                HLMTIE0: self.HLMTIE0(),
+                HLMTIE1: self.HLMTIE1(),
+                HLMTIE2: self.HLMTIE2(),
+                HLMTIE3: self.HLMTIE3(),
+                HLMTIE4: self.HLMTIE4(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Error Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1078,6 +1473,83 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EIS {
             EIS(0)
+        }
+    }
+    impl core::fmt::Debug for EIS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EIS")
+                .field("SCD0", &self.SCD0())
+                .field("SCD1", &self.SCD1())
+                .field("SCD2", &self.SCD2())
+                .field("SCD3", &self.SCD3())
+                .field("SCD4", &self.SCD4())
+                .field("WLMT0", &self.WLMT0())
+                .field("WLMT1", &self.WLMT1())
+                .field("WLMT2", &self.WLMT2())
+                .field("WLMT3", &self.WLMT3())
+                .field("WLMT4", &self.WLMT4())
+                .field("LLMT0", &self.LLMT0())
+                .field("LLMT1", &self.LLMT1())
+                .field("LLMT2", &self.LLMT2())
+                .field("LLMT3", &self.LLMT3())
+                .field("LLMT4", &self.LLMT4())
+                .field("HLMT0", &self.HLMT0())
+                .field("HLMT1", &self.HLMT1())
+                .field("HLMT2", &self.HLMT2())
+                .field("HLMT3", &self.HLMT3())
+                .field("HLMT4", &self.HLMT4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EIS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EIS {
+                SCD0: bool,
+                SCD1: bool,
+                SCD2: bool,
+                SCD3: bool,
+                SCD4: bool,
+                WLMT0: bool,
+                WLMT1: bool,
+                WLMT2: bool,
+                WLMT3: bool,
+                WLMT4: bool,
+                LLMT0: bool,
+                LLMT1: bool,
+                LLMT2: bool,
+                LLMT3: bool,
+                LLMT4: bool,
+                HLMT0: bool,
+                HLMT1: bool,
+                HLMT2: bool,
+                HLMT3: bool,
+                HLMT4: bool,
+            }
+            let proxy = EIS {
+                SCD0: self.SCD0(),
+                SCD1: self.SCD1(),
+                SCD2: self.SCD2(),
+                SCD3: self.SCD3(),
+                SCD4: self.SCD4(),
+                WLMT0: self.WLMT0(),
+                WLMT1: self.WLMT1(),
+                WLMT2: self.WLMT2(),
+                WLMT3: self.WLMT3(),
+                WLMT4: self.WLMT4(),
+                LLMT0: self.LLMT0(),
+                LLMT1: self.LLMT1(),
+                LLMT2: self.LLMT2(),
+                LLMT3: self.LLMT3(),
+                LLMT4: self.LLMT4(),
+                HLMT0: self.HLMT0(),
+                HLMT1: self.HLMT1(),
+                HLMT2: self.HLMT2(),
+                HLMT3: self.HLMT3(),
+                HLMT4: self.HLMT4(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FIFO And CAD Error Interrupt Enable"]
@@ -1272,6 +1744,83 @@ pub mod regs {
             FIFOIE(0)
         }
     }
+    impl core::fmt::Debug for FIFOIE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FIFOIE")
+                .field("FUNFIE0", &self.FUNFIE0())
+                .field("FUNFIE1", &self.FUNFIE1())
+                .field("FUNFIE2", &self.FUNFIE2())
+                .field("FUNFIE3", &self.FUNFIE3())
+                .field("FUNFIE4", &self.FUNFIE4())
+                .field("FOVFIE0", &self.FOVFIE0())
+                .field("FOVFIE1", &self.FOVFIE1())
+                .field("FOVFIE2", &self.FOVFIE2())
+                .field("FOVFIE3", &self.FOVFIE3())
+                .field("FOVFIE4", &self.FOVFIE4())
+                .field("CADIE0", &self.CADIE0())
+                .field("CADIE1", &self.CADIE1())
+                .field("CADIE2", &self.CADIE2())
+                .field("CADIE3", &self.CADIE3())
+                .field("CADIE4", &self.CADIE4())
+                .field("SATIE0", &self.SATIE0())
+                .field("SATIE1", &self.SATIE1())
+                .field("SATIE2", &self.SATIE2())
+                .field("SATIE3", &self.SATIE3())
+                .field("SATIE4", &self.SATIE4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIFOIE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FIFOIE {
+                FUNFIE0: bool,
+                FUNFIE1: bool,
+                FUNFIE2: bool,
+                FUNFIE3: bool,
+                FUNFIE4: bool,
+                FOVFIE0: bool,
+                FOVFIE1: bool,
+                FOVFIE2: bool,
+                FOVFIE3: bool,
+                FOVFIE4: bool,
+                CADIE0: bool,
+                CADIE1: bool,
+                CADIE2: bool,
+                CADIE3: bool,
+                CADIE4: bool,
+                SATIE0: bool,
+                SATIE1: bool,
+                SATIE2: bool,
+                SATIE3: bool,
+                SATIE4: bool,
+            }
+            let proxy = FIFOIE {
+                FUNFIE0: self.FUNFIE0(),
+                FUNFIE1: self.FUNFIE1(),
+                FUNFIE2: self.FUNFIE2(),
+                FUNFIE3: self.FUNFIE3(),
+                FUNFIE4: self.FUNFIE4(),
+                FOVFIE0: self.FOVFIE0(),
+                FOVFIE1: self.FOVFIE1(),
+                FOVFIE2: self.FOVFIE2(),
+                FOVFIE3: self.FOVFIE3(),
+                FOVFIE4: self.FOVFIE4(),
+                CADIE0: self.CADIE0(),
+                CADIE1: self.CADIE1(),
+                CADIE2: self.CADIE2(),
+                CADIE3: self.CADIE3(),
+                CADIE4: self.CADIE4(),
+                SATIE0: self.SATIE0(),
+                SATIE1: self.SATIE1(),
+                SATIE2: self.SATIE2(),
+                SATIE3: self.SATIE3(),
+                SATIE4: self.SATIE4(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FIFO And CAD Error Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1464,6 +2013,83 @@ pub mod regs {
             FIFOIS(0)
         }
     }
+    impl core::fmt::Debug for FIFOIS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FIFOIS")
+                .field("FUNF0", &self.FUNF0())
+                .field("FUNF1", &self.FUNF1())
+                .field("FUNF2", &self.FUNF2())
+                .field("FUNF3", &self.FUNF3())
+                .field("FUNF4", &self.FUNF4())
+                .field("FOVF0", &self.FOVF0())
+                .field("FOVF1", &self.FOVF1())
+                .field("FOVF2", &self.FOVF2())
+                .field("FOVF3", &self.FOVF3())
+                .field("FOVF4", &self.FOVF4())
+                .field("CAD0", &self.CAD0())
+                .field("CAD1", &self.CAD1())
+                .field("CAD2", &self.CAD2())
+                .field("CAD3", &self.CAD3())
+                .field("CAD4", &self.CAD4())
+                .field("SAT0", &self.SAT0())
+                .field("SAT1", &self.SAT1())
+                .field("SAT2", &self.SAT2())
+                .field("SAT3", &self.SAT3())
+                .field("SAT4", &self.SAT4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIFOIS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FIFOIS {
+                FUNF0: bool,
+                FUNF1: bool,
+                FUNF2: bool,
+                FUNF3: bool,
+                FUNF4: bool,
+                FOVF0: bool,
+                FOVF1: bool,
+                FOVF2: bool,
+                FOVF3: bool,
+                FOVF4: bool,
+                CAD0: bool,
+                CAD1: bool,
+                CAD2: bool,
+                CAD3: bool,
+                CAD4: bool,
+                SAT0: bool,
+                SAT1: bool,
+                SAT2: bool,
+                SAT3: bool,
+                SAT4: bool,
+            }
+            let proxy = FIFOIS {
+                FUNF0: self.FUNF0(),
+                FUNF1: self.FUNF1(),
+                FUNF2: self.FUNF2(),
+                FUNF3: self.FUNF3(),
+                FUNF4: self.FUNF4(),
+                FOVF0: self.FOVF0(),
+                FOVF1: self.FOVF1(),
+                FOVF2: self.FOVF2(),
+                FOVF3: self.FOVF3(),
+                FOVF4: self.FOVF4(),
+                CAD0: self.CAD0(),
+                CAD1: self.CAD1(),
+                CAD2: self.CAD2(),
+                CAD3: self.CAD3(),
+                CAD4: self.CAD4(),
+                SAT0: self.SAT0(),
+                SAT1: self.SAT1(),
+                SAT2: self.SAT2(),
+                SAT3: self.SAT3(),
+                SAT4: self.SAT4(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Main Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1591,6 +2217,62 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MCR {
             MCR(0)
+        }
+    }
+    impl core::fmt::Debug for MCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MCR")
+                .field("STRIG0", &self.STRIG0())
+                .field("STRIG1", &self.STRIG1())
+                .field("STRIG2", &self.STRIG2())
+                .field("STRIG3", &self.STRIG3())
+                .field("STRIG4", &self.STRIG4())
+                .field("DOZEN", &self.DOZEN())
+                .field("RST", &self.RST())
+                .field("MEN", &self.MEN())
+                .field("MCLKDIV", &self.MCLKDIV())
+                .field("PRESCALE", &self.PRESCALE())
+                .field("MCLK0DIS", &self.MCLK0DIS())
+                .field("MCLK1DIS", &self.MCLK1DIS())
+                .field("MCLK2DIS", &self.MCLK2DIS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MCR {
+                STRIG0: bool,
+                STRIG1: bool,
+                STRIG2: bool,
+                STRIG3: bool,
+                STRIG4: bool,
+                DOZEN: bool,
+                RST: bool,
+                MEN: bool,
+                MCLKDIV: u8,
+                PRESCALE: u8,
+                MCLK0DIS: bool,
+                MCLK1DIS: bool,
+                MCLK2DIS: bool,
+            }
+            let proxy = MCR {
+                STRIG0: self.STRIG0(),
+                STRIG1: self.STRIG1(),
+                STRIG2: self.STRIG2(),
+                STRIG3: self.STRIG3(),
+                STRIG4: self.STRIG4(),
+                DOZEN: self.DOZEN(),
+                RST: self.RST(),
+                MEN: self.MEN(),
+                MCLKDIV: self.MCLKDIV(),
+                PRESCALE: self.PRESCALE(),
+                MCLK0DIS: self.MCLK0DIS(),
+                MCLK1DIS: self.MCLK1DIS(),
+                MCLK2DIS: self.MCLK2DIS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Normal Interrupt Enable"]
@@ -1740,6 +2422,68 @@ pub mod regs {
             NIE(0)
         }
     }
+    impl core::fmt::Debug for NIE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("NIE")
+                .field("COCIE0", &self.COCIE0())
+                .field("COCIE1", &self.COCIE1())
+                .field("COCIE2", &self.COCIE2())
+                .field("COCIE3", &self.COCIE3())
+                .field("COCIE4", &self.COCIE4())
+                .field("CHFIE0", &self.CHFIE0())
+                .field("CHFIE1", &self.CHFIE1())
+                .field("CHFIE2", &self.CHFIE2())
+                .field("CHFIE3", &self.CHFIE3())
+                .field("CHFIE4", &self.CHFIE4())
+                .field("ZCDIE0", &self.ZCDIE0())
+                .field("ZCDIE1", &self.ZCDIE1())
+                .field("ZCDIE2", &self.ZCDIE2())
+                .field("ZCDIE3", &self.ZCDIE3())
+                .field("ZCDIE4", &self.ZCDIE4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for NIE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct NIE {
+                COCIE0: bool,
+                COCIE1: bool,
+                COCIE2: bool,
+                COCIE3: bool,
+                COCIE4: bool,
+                CHFIE0: bool,
+                CHFIE1: bool,
+                CHFIE2: bool,
+                CHFIE3: bool,
+                CHFIE4: bool,
+                ZCDIE0: bool,
+                ZCDIE1: bool,
+                ZCDIE2: bool,
+                ZCDIE3: bool,
+                ZCDIE4: bool,
+            }
+            let proxy = NIE {
+                COCIE0: self.COCIE0(),
+                COCIE1: self.COCIE1(),
+                COCIE2: self.COCIE2(),
+                COCIE3: self.COCIE3(),
+                COCIE4: self.COCIE4(),
+                CHFIE0: self.CHFIE0(),
+                CHFIE1: self.CHFIE1(),
+                CHFIE2: self.CHFIE2(),
+                CHFIE3: self.CHFIE3(),
+                CHFIE4: self.CHFIE4(),
+                ZCDIE0: self.ZCDIE0(),
+                ZCDIE1: self.ZCDIE1(),
+                ZCDIE2: self.ZCDIE2(),
+                ZCDIE3: self.ZCDIE3(),
+                ZCDIE4: self.ZCDIE4(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Normal Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1887,6 +2631,68 @@ pub mod regs {
             NIS(0)
         }
     }
+    impl core::fmt::Debug for NIS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("NIS")
+                .field("COC0", &self.COC0())
+                .field("COC1", &self.COC1())
+                .field("COC2", &self.COC2())
+                .field("COC3", &self.COC3())
+                .field("COC4", &self.COC4())
+                .field("CHF0", &self.CHF0())
+                .field("CHF1", &self.CHF1())
+                .field("CHF2", &self.CHF2())
+                .field("CHF3", &self.CHF3())
+                .field("CHF4", &self.CHF4())
+                .field("ZCD0", &self.ZCD0())
+                .field("ZCD1", &self.ZCD1())
+                .field("ZCD2", &self.ZCD2())
+                .field("ZCD3", &self.ZCD3())
+                .field("ZCD4", &self.ZCD4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for NIS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct NIS {
+                COC0: bool,
+                COC1: bool,
+                COC2: bool,
+                COC3: bool,
+                COC4: bool,
+                CHF0: bool,
+                CHF1: bool,
+                CHF2: bool,
+                CHF3: bool,
+                CHF4: bool,
+                ZCD0: bool,
+                ZCD1: bool,
+                ZCD2: bool,
+                ZCD3: bool,
+                ZCD4: bool,
+            }
+            let proxy = NIS {
+                COC0: self.COC0(),
+                COC1: self.COC1(),
+                COC2: self.COC2(),
+                COC3: self.COC3(),
+                COC4: self.COC4(),
+                CHF0: self.CHF0(),
+                CHF1: self.CHF1(),
+                CHF2: self.CHF2(),
+                CHF3: self.CHF3(),
+                CHF4: self.CHF4(),
+                ZCD0: self.ZCD0(),
+                ZCD1: self.ZCD1(),
+                ZCD2: self.ZCD2(),
+                ZCD3: self.ZCD3(),
+                ZCD4: self.ZCD4(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Parameters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1924,6 +2730,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PARAMETER {
             PARAMETER(0)
+        }
+    }
+    impl core::fmt::Debug for PARAMETER {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PARAMETER")
+                .field("FIFO_DEPTH", &self.FIFO_DEPTH())
+                .field("FLT_NUM", &self.FLT_NUM())
+                .field("PF_ORD_SEL", &self.PF_ORD_SEL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAMETER {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PARAMETER {
+                FIFO_DEPTH: u8,
+                FLT_NUM: u8,
+                PF_ORD_SEL: u8,
+            }
+            let proxy = PARAMETER {
+                FIFO_DEPTH: self.FIFO_DEPTH(),
+                FLT_NUM: self.FLT_NUM(),
+                PF_ORD_SEL: self.PF_ORD_SEL(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status"]
@@ -2100,6 +2932,77 @@ pub mod regs {
             SR(0)
         }
     }
+    impl core::fmt::Debug for SR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SR")
+                .field("CIP0", &self.CIP0())
+                .field("CIP1", &self.CIP1())
+                .field("CIP2", &self.CIP2())
+                .field("CIP3", &self.CIP3())
+                .field("CIP4", &self.CIP4())
+                .field("CHRDY0", &self.CHRDY0())
+                .field("CHRDY1", &self.CHRDY1())
+                .field("CHRDY2", &self.CHRDY2())
+                .field("CHRDY3", &self.CHRDY3())
+                .field("CHRDY4", &self.CHRDY4())
+                .field("FIFOEMPTY0", &self.FIFOEMPTY0())
+                .field("FIFOEMPTY1", &self.FIFOEMPTY1())
+                .field("FIFOEMPTY2", &self.FIFOEMPTY2())
+                .field("FIFOEMPTY3", &self.FIFOEMPTY3())
+                .field("FIFOEMPTY4", &self.FIFOEMPTY4())
+                .field("MCLKRDY0", &self.MCLKRDY0())
+                .field("MCLKRDY1", &self.MCLKRDY1())
+                .field("MCLKRDY2", &self.MCLKRDY2())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SR {
+                CIP0: bool,
+                CIP1: bool,
+                CIP2: bool,
+                CIP3: bool,
+                CIP4: bool,
+                CHRDY0: bool,
+                CHRDY1: bool,
+                CHRDY2: bool,
+                CHRDY3: bool,
+                CHRDY4: bool,
+                FIFOEMPTY0: bool,
+                FIFOEMPTY1: bool,
+                FIFOEMPTY2: bool,
+                FIFOEMPTY3: bool,
+                FIFOEMPTY4: bool,
+                MCLKRDY0: bool,
+                MCLKRDY1: bool,
+                MCLKRDY2: bool,
+            }
+            let proxy = SR {
+                CIP0: self.CIP0(),
+                CIP1: self.CIP1(),
+                CIP2: self.CIP2(),
+                CIP3: self.CIP3(),
+                CIP4: self.CIP4(),
+                CHRDY0: self.CHRDY0(),
+                CHRDY1: self.CHRDY1(),
+                CHRDY2: self.CHRDY2(),
+                CHRDY3: self.CHRDY3(),
+                CHRDY4: self.CHRDY4(),
+                FIFOEMPTY0: self.FIFOEMPTY0(),
+                FIFOEMPTY1: self.FIFOEMPTY1(),
+                FIFOEMPTY2: self.FIFOEMPTY2(),
+                FIFOEMPTY3: self.FIFOEMPTY3(),
+                FIFOEMPTY4: self.FIFOEMPTY4(),
+                MCLKRDY0: self.MCLKRDY0(),
+                MCLKRDY1: self.MCLKRDY1(),
+                MCLKRDY2: self.MCLKRDY2(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2137,6 +3040,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> VERID {
             VERID(0)
+        }
+    }
+    impl core::fmt::Debug for VERID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VERID")
+                .field("FEATURE", &self.FEATURE())
+                .field("MINOR", &self.MINOR())
+                .field("MAJOR", &self.MAJOR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VERID {
+                FEATURE: u16,
+                MINOR: u8,
+                MAJOR: u8,
+            }
+            let proxy = VERID {
+                FEATURE: self.FEATURE(),
+                MINOR: self.MINOR(),
+                MAJOR: self.MAJOR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

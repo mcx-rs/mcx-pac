@@ -82,6 +82,38 @@ pub mod regs {
             ISTAT(0)
         }
     }
+    impl core::fmt::Debug for ISTAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ISTAT")
+                .field("UARTTX", &self.UARTTX())
+                .field("UARTRX", &self.UARTRX())
+                .field("SPI", &self.SPI())
+                .field("I2CM", &self.I2CM())
+                .field("I2CS", &self.I2CS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ISTAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ISTAT {
+                UARTTX: bool,
+                UARTRX: bool,
+                SPI: bool,
+                I2CM: bool,
+                I2CS: bool,
+            }
+            let proxy = ISTAT {
+                UARTTX: self.UARTTX(),
+                UARTRX: self.UARTRX(),
+                SPI: self.SPI(),
+                I2CM: self.I2CM(),
+                I2CS: self.I2CS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Peripheral Select and ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -147,6 +179,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PSELID {
             PSELID(0)
+        }
+    }
+    impl core::fmt::Debug for PSELID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PSELID")
+                .field("PERSEL", &self.PERSEL())
+                .field("LOCK", &self.LOCK())
+                .field("UARTPRESENT", &self.UARTPRESENT())
+                .field("SPIPRESENT", &self.SPIPRESENT())
+                .field("I2CPRESENT", &self.I2CPRESENT())
+                .field("ID", &self.ID())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PSELID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PSELID {
+                PERSEL: u8,
+                LOCK: bool,
+                UARTPRESENT: bool,
+                SPIPRESENT: bool,
+                I2CPRESENT: bool,
+                ID: u32,
+            }
+            let proxy = PSELID {
+                PERSEL: self.PERSEL(),
+                LOCK: self.LOCK(),
+                UARTPRESENT: self.UARTPRESENT(),
+                SPIPRESENT: self.SPIPRESENT(),
+                I2CPRESENT: self.I2CPRESENT(),
+                ID: self.ID(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

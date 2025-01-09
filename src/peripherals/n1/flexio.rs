@@ -249,6 +249,38 @@ pub mod regs {
             CTRL(0)
         }
     }
+    impl core::fmt::Debug for CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL")
+                .field("FLEXEN", &self.FLEXEN())
+                .field("SWRST", &self.SWRST())
+                .field("FASTACC", &self.FASTACC())
+                .field("DBGE", &self.DBGE())
+                .field("DOZEN", &self.DOZEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL {
+                FLEXEN: bool,
+                SWRST: bool,
+                FASTACC: bool,
+                DBGE: bool,
+                DOZEN: bool,
+            }
+            let proxy = CTRL {
+                FLEXEN: self.FLEXEN(),
+                SWRST: self.SWRST(),
+                FASTACC: self.FASTACC(),
+                DBGE: self.DBGE(),
+                DOZEN: self.DOZEN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Parameter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -295,6 +327,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PARAM {
             PARAM(0)
+        }
+    }
+    impl core::fmt::Debug for PARAM {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PARAM")
+                .field("SHIFTER", &self.SHIFTER())
+                .field("TIMER", &self.TIMER())
+                .field("PIN", &self.PIN())
+                .field("TRIGGER", &self.TRIGGER())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAM {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PARAM {
+                SHIFTER: u8,
+                TIMER: u8,
+                PIN: u8,
+                TRIGGER: u8,
+            }
+            let proxy = PARAM {
+                SHIFTER: self.SHIFTER(),
+                TIMER: self.TIMER(),
+                PIN: self.PIN(),
+                TRIGGER: self.TRIGGER(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Shifter Configuration"]
@@ -363,6 +424,41 @@ pub mod regs {
             SHIFTCFG(0)
         }
     }
+    impl core::fmt::Debug for SHIFTCFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SHIFTCFG")
+                .field("SSTART", &self.SSTART())
+                .field("SSTOP", &self.SSTOP())
+                .field("INSRC", &self.INSRC())
+                .field("LATST", &self.LATST())
+                .field("SSIZE", &self.SSIZE())
+                .field("PWIDTH", &self.PWIDTH())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SHIFTCFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SHIFTCFG {
+                SSTART: u8,
+                SSTOP: u8,
+                INSRC: bool,
+                LATST: bool,
+                SSIZE: bool,
+                PWIDTH: u8,
+            }
+            let proxy = SHIFTCFG {
+                SSTART: self.SSTART(),
+                SSTOP: self.SSTOP(),
+                INSRC: self.INSRC(),
+                LATST: self.LATST(),
+                SSIZE: self.SSIZE(),
+                PWIDTH: self.PWIDTH(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Shifter Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -429,6 +525,41 @@ pub mod regs {
             SHIFTCTL(0)
         }
     }
+    impl core::fmt::Debug for SHIFTCTL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SHIFTCTL")
+                .field("SMOD", &self.SMOD())
+                .field("PINPOL", &self.PINPOL())
+                .field("PINSEL", &self.PINSEL())
+                .field("PINCFG", &self.PINCFG())
+                .field("TIMPOL", &self.TIMPOL())
+                .field("TIMSEL", &self.TIMSEL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SHIFTCTL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SHIFTCTL {
+                SMOD: u8,
+                PINPOL: bool,
+                PINSEL: u8,
+                PINCFG: u8,
+                TIMPOL: bool,
+                TIMSEL: u8,
+            }
+            let proxy = SHIFTCTL {
+                SMOD: self.SMOD(),
+                PINPOL: self.PINPOL(),
+                PINSEL: self.PINSEL(),
+                PINCFG: self.PINCFG(),
+                TIMPOL: self.TIMPOL(),
+                TIMSEL: self.TIMSEL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Shifter Error Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -448,6 +579,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SHIFTEIEN {
             SHIFTEIEN(0)
+        }
+    }
+    impl core::fmt::Debug for SHIFTEIEN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SHIFTEIEN")
+                .field("SEIE", &self.SEIE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SHIFTEIEN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SHIFTEIEN {
+                SEIE: u8,
+            }
+            let proxy = SHIFTEIEN { SEIE: self.SEIE() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Shifter Error"]
@@ -471,6 +620,24 @@ pub mod regs {
             SHIFTERR(0)
         }
     }
+    impl core::fmt::Debug for SHIFTERR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SHIFTERR")
+                .field("SEF", &self.SEF())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SHIFTERR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SHIFTERR {
+                SEF: u8,
+            }
+            let proxy = SHIFTERR { SEF: self.SEF() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Shifter Status DMA Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -490,6 +657,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SHIFTSDEN {
             SHIFTSDEN(0)
+        }
+    }
+    impl core::fmt::Debug for SHIFTSDEN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SHIFTSDEN")
+                .field("SSDE", &self.SSDE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SHIFTSDEN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SHIFTSDEN {
+                SSDE: u8,
+            }
+            let proxy = SHIFTSDEN { SSDE: self.SSDE() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Shifter Status Interrupt Enable"]
@@ -513,6 +698,24 @@ pub mod regs {
             SHIFTSIEN(0)
         }
     }
+    impl core::fmt::Debug for SHIFTSIEN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SHIFTSIEN")
+                .field("SSIE", &self.SSIE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SHIFTSIEN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SHIFTSIEN {
+                SSIE: u8,
+            }
+            let proxy = SHIFTSIEN { SSIE: self.SSIE() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Shifter Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -534,6 +737,24 @@ pub mod regs {
             SHIFTSTAT(0)
         }
     }
+    impl core::fmt::Debug for SHIFTSTAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SHIFTSTAT")
+                .field("SSF", &self.SSF())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SHIFTSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SHIFTSTAT {
+                SSF: u8,
+            }
+            let proxy = SHIFTSTAT { SSF: self.SSF() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Shifter State"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -553,6 +774,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SHIFTSTATE {
             SHIFTSTATE(0)
+        }
+    }
+    impl core::fmt::Debug for SHIFTSTATE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SHIFTSTATE")
+                .field("STATE", &self.STATE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SHIFTSTATE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SHIFTSTATE {
+                STATE: u8,
+            }
+            let proxy = SHIFTSTATE {
+                STATE: self.STATE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Timer Configuration"]
@@ -630,6 +871,44 @@ pub mod regs {
             TIMCFG(0)
         }
     }
+    impl core::fmt::Debug for TIMCFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TIMCFG")
+                .field("TSTART", &self.TSTART())
+                .field("TSTOP", &self.TSTOP())
+                .field("TIMENA", &self.TIMENA())
+                .field("TIMDIS", &self.TIMDIS())
+                .field("TIMRST", &self.TIMRST())
+                .field("TIMDEC", &self.TIMDEC())
+                .field("TIMOUT", &self.TIMOUT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMCFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TIMCFG {
+                TSTART: bool,
+                TSTOP: u8,
+                TIMENA: u8,
+                TIMDIS: u8,
+                TIMRST: u8,
+                TIMDEC: u8,
+                TIMOUT: u8,
+            }
+            let proxy = TIMCFG {
+                TSTART: self.TSTART(),
+                TSTOP: self.TSTOP(),
+                TIMENA: self.TIMENA(),
+                TIMDIS: self.TIMDIS(),
+                TIMRST: self.TIMRST(),
+                TIMDEC: self.TIMDEC(),
+                TIMOUT: self.TIMOUT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Timer Compare"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -649,6 +928,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TIMCMP {
             TIMCMP(0)
+        }
+    }
+    impl core::fmt::Debug for TIMCMP {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TIMCMP").field("CMP", &self.CMP()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMCMP {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TIMCMP {
+                CMP: u16,
+            }
+            let proxy = TIMCMP { CMP: self.CMP() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Timer Control"]
@@ -744,6 +1039,50 @@ pub mod regs {
             TIMCTL(0)
         }
     }
+    impl core::fmt::Debug for TIMCTL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TIMCTL")
+                .field("TIMOD", &self.TIMOD())
+                .field("ONETIM", &self.ONETIM())
+                .field("PININS", &self.PININS())
+                .field("PINPOL", &self.PINPOL())
+                .field("PINSEL", &self.PINSEL())
+                .field("PINCFG", &self.PINCFG())
+                .field("TRGSRC", &self.TRGSRC())
+                .field("TRGPOL", &self.TRGPOL())
+                .field("TRGSEL", &self.TRGSEL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMCTL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TIMCTL {
+                TIMOD: u8,
+                ONETIM: bool,
+                PININS: bool,
+                PINPOL: bool,
+                PINSEL: u8,
+                PINCFG: u8,
+                TRGSRC: bool,
+                TRGPOL: bool,
+                TRGSEL: u8,
+            }
+            let proxy = TIMCTL {
+                TIMOD: self.TIMOD(),
+                ONETIM: self.ONETIM(),
+                PININS: self.PININS(),
+                PINPOL: self.PINPOL(),
+                PINSEL: self.PINSEL(),
+                PINCFG: self.PINCFG(),
+                TRGSRC: self.TRGSRC(),
+                TRGPOL: self.TRGPOL(),
+                TRGSEL: self.TRGSEL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Timer Status DMA Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -763,6 +1102,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TIMERSDEN {
             TIMERSDEN(0)
+        }
+    }
+    impl core::fmt::Debug for TIMERSDEN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TIMERSDEN")
+                .field("TSDE", &self.TSDE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMERSDEN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TIMERSDEN {
+                TSDE: u8,
+            }
+            let proxy = TIMERSDEN { TSDE: self.TSDE() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Timer Interrupt Enable"]
@@ -786,6 +1143,24 @@ pub mod regs {
             TIMIEN(0)
         }
     }
+    impl core::fmt::Debug for TIMIEN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TIMIEN")
+                .field("TEIE", &self.TEIE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMIEN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TIMIEN {
+                TEIE: u8,
+            }
+            let proxy = TIMIEN { TEIE: self.TEIE() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Timer Status Flag"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -805,6 +1180,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TIMSTAT {
             TIMSTAT(0)
+        }
+    }
+    impl core::fmt::Debug for TIMSTAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TIMSTAT").field("TSF", &self.TSF()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TIMSTAT {
+                TSF: u8,
+            }
+            let proxy = TIMSTAT { TSF: self.TSF() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Trigger Status"]
@@ -828,6 +1219,24 @@ pub mod regs {
             TRGSTAT(0)
         }
     }
+    impl core::fmt::Debug for TRGSTAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TRGSTAT")
+                .field("ETSF", &self.ETSF())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TRGSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TRGSTAT {
+                ETSF: u8,
+            }
+            let proxy = TRGSTAT { ETSF: self.ETSF() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "External Trigger Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -847,6 +1256,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TRIGIEN {
             TRIGIEN(0)
+        }
+    }
+    impl core::fmt::Debug for TRIGIEN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TRIGIEN")
+                .field("TRIE", &self.TRIE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TRIGIEN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TRIGIEN {
+                TRIE: u8,
+            }
+            let proxy = TRIGIEN { TRIE: self.TRIE() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Version ID"]
@@ -886,6 +1313,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> VERID {
             VERID(0)
+        }
+    }
+    impl core::fmt::Debug for VERID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VERID")
+                .field("FEATURE", &self.FEATURE())
+                .field("MINOR", &self.MINOR())
+                .field("MAJOR", &self.MAJOR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VERID {
+                FEATURE: u16,
+                MINOR: u8,
+                MAJOR: u8,
+            }
+            let proxy = VERID {
+                FEATURE: self.FEATURE(),
+                MINOR: self.MINOR(),
+                MAJOR: self.MAJOR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

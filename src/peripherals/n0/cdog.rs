@@ -177,6 +177,47 @@ pub mod regs {
             CONTROL(0)
         }
     }
+    impl core::fmt::Debug for CONTROL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CONTROL")
+                .field("LOCK_CTRL", &self.LOCK_CTRL())
+                .field("TIMEOUT_CTRL", &self.TIMEOUT_CTRL())
+                .field("MISCOMPARE_CTRL", &self.MISCOMPARE_CTRL())
+                .field("SEQUENCE_CTRL", &self.SEQUENCE_CTRL())
+                .field("STATE_CTRL", &self.STATE_CTRL())
+                .field("ADDRESS_CTRL", &self.ADDRESS_CTRL())
+                .field("IRQ_PAUSE", &self.IRQ_PAUSE())
+                .field("DEBUG_HALT_CTRL", &self.DEBUG_HALT_CTRL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CONTROL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CONTROL {
+                LOCK_CTRL: u8,
+                TIMEOUT_CTRL: u8,
+                MISCOMPARE_CTRL: u8,
+                SEQUENCE_CTRL: u8,
+                STATE_CTRL: u8,
+                ADDRESS_CTRL: u8,
+                IRQ_PAUSE: u8,
+                DEBUG_HALT_CTRL: u8,
+            }
+            let proxy = CONTROL {
+                LOCK_CTRL: self.LOCK_CTRL(),
+                TIMEOUT_CTRL: self.TIMEOUT_CTRL(),
+                MISCOMPARE_CTRL: self.MISCOMPARE_CTRL(),
+                SEQUENCE_CTRL: self.SEQUENCE_CTRL(),
+                STATE_CTRL: self.STATE_CTRL(),
+                ADDRESS_CTRL: self.ADDRESS_CTRL(),
+                IRQ_PAUSE: self.IRQ_PAUSE(),
+                DEBUG_HALT_CTRL: self.DEBUG_HALT_CTRL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Flags Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -252,6 +293,44 @@ pub mod regs {
             FLAGS(0)
         }
     }
+    impl core::fmt::Debug for FLAGS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLAGS")
+                .field("TO_FLAG", &self.TO_FLAG())
+                .field("MISCOM_FLAG", &self.MISCOM_FLAG())
+                .field("SEQ_FLAG", &self.SEQ_FLAG())
+                .field("CNT_FLAG", &self.CNT_FLAG())
+                .field("STATE_FLAG", &self.STATE_FLAG())
+                .field("ADDR_FLAG", &self.ADDR_FLAG())
+                .field("POR_FLAG", &self.POR_FLAG())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLAGS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLAGS {
+                TO_FLAG: bool,
+                MISCOM_FLAG: bool,
+                SEQ_FLAG: bool,
+                CNT_FLAG: bool,
+                STATE_FLAG: bool,
+                ADDR_FLAG: bool,
+                POR_FLAG: bool,
+            }
+            let proxy = FLAGS {
+                TO_FLAG: self.TO_FLAG(),
+                MISCOM_FLAG: self.MISCOM_FLAG(),
+                SEQ_FLAG: self.SEQ_FLAG(),
+                CNT_FLAG: self.CNT_FLAG(),
+                STATE_FLAG: self.STATE_FLAG(),
+                ADDR_FLAG: self.ADDR_FLAG(),
+                POR_FLAG: self.POR_FLAG(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Status 1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -300,6 +379,35 @@ pub mod regs {
             STATUS(0)
         }
     }
+    impl core::fmt::Debug for STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("STATUS")
+                .field("NUMTOF", &self.NUMTOF())
+                .field("NUMMISCOMPF", &self.NUMMISCOMPF())
+                .field("NUMILSEQF", &self.NUMILSEQF())
+                .field("CURST", &self.CURST())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct STATUS {
+                NUMTOF: u8,
+                NUMMISCOMPF: u8,
+                NUMILSEQF: u8,
+                CURST: u8,
+            }
+            let proxy = STATUS {
+                NUMTOF: self.NUMTOF(),
+                NUMMISCOMPF: self.NUMMISCOMPF(),
+                NUMILSEQF: self.NUMILSEQF(),
+                CURST: self.CURST(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Status 2 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -337,6 +445,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> STATUS2 {
             STATUS2(0)
+        }
+    }
+    impl core::fmt::Debug for STATUS2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("STATUS2")
+                .field("NUMCNTF", &self.NUMCNTF())
+                .field("NUMILLSTF", &self.NUMILLSTF())
+                .field("NUMILLA", &self.NUMILLA())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUS2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct STATUS2 {
+                NUMCNTF: u8,
+                NUMILLSTF: u8,
+                NUMILLA: u8,
+            }
+            let proxy = STATUS2 {
+                NUMCNTF: self.NUMCNTF(),
+                NUMILLSTF: self.NUMILLSTF(),
+                NUMILLA: self.NUMILLA(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

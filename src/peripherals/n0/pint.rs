@@ -90,6 +90,26 @@ pub mod regs {
             CIENF(0)
         }
     }
+    impl core::fmt::Debug for CIENF {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CIENF")
+                .field("CENAF", &self.CENAF())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CIENF {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CIENF {
+                CENAF: u8,
+            }
+            let proxy = CIENF {
+                CENAF: self.CENAF(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Pin Interrupt Level (Rising-Edge Interrupt) Clear"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -109,6 +129,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CIENR {
             CIENR(0)
+        }
+    }
+    impl core::fmt::Debug for CIENR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CIENR")
+                .field("CENRL", &self.CENRL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CIENR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CIENR {
+                CENRL: u8,
+            }
+            let proxy = CIENR {
+                CENRL: self.CENRL(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pin Interrupt Falling Edge"]
@@ -132,6 +172,22 @@ pub mod regs {
             FALL(0)
         }
     }
+    impl core::fmt::Debug for FALL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FALL").field("FDET", &self.FDET()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FALL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FALL {
+                FDET: u8,
+            }
+            let proxy = FALL { FDET: self.FDET() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Pin Interrupt Active Level or Falling-Edge Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -151,6 +207,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IENF {
             IENF(0)
+        }
+    }
+    impl core::fmt::Debug for IENF {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IENF").field("ENAF", &self.ENAF()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IENF {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IENF {
+                ENAF: u8,
+            }
+            let proxy = IENF { ENAF: self.ENAF() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pin Interrupt Level or Rising-Edge Interrupt Enable"]
@@ -174,6 +246,22 @@ pub mod regs {
             IENR(0)
         }
     }
+    impl core::fmt::Debug for IENR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IENR").field("ENRL", &self.ENRL()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IENR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IENR {
+                ENRL: u8,
+            }
+            let proxy = IENR { ENRL: self.ENRL() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Pin Interrupt Mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -195,6 +283,26 @@ pub mod regs {
             ISEL(0)
         }
     }
+    impl core::fmt::Debug for ISEL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ISEL")
+                .field("PMODE", &self.PMODE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ISEL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ISEL {
+                PMODE: u8,
+            }
+            let proxy = ISEL {
+                PMODE: self.PMODE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Pin Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -214,6 +322,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IST {
             IST(0)
+        }
+    }
+    impl core::fmt::Debug for IST {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IST").field("PSTAT", &self.PSTAT()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IST {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IST {
+                PSTAT: u8,
+            }
+            let proxy = IST {
+                PSTAT: self.PSTAT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pattern-Match Interrupt Bit Slice Configuration"]
@@ -363,6 +489,68 @@ pub mod regs {
             PMCFG(0)
         }
     }
+    impl core::fmt::Debug for PMCFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PMCFG")
+                .field("PROD_ENDPTS0", &self.PROD_ENDPTS0())
+                .field("PROD_ENDPTS1", &self.PROD_ENDPTS1())
+                .field("PROD_ENDPTS2", &self.PROD_ENDPTS2())
+                .field("PROD_ENDPTS3", &self.PROD_ENDPTS3())
+                .field("PROD_ENDPTS4", &self.PROD_ENDPTS4())
+                .field("PROD_ENDPTS5", &self.PROD_ENDPTS5())
+                .field("PROD_ENDPTS6", &self.PROD_ENDPTS6())
+                .field("CFG0", &self.CFG0())
+                .field("CFG1", &self.CFG1())
+                .field("CFG2", &self.CFG2())
+                .field("CFG3", &self.CFG3())
+                .field("CFG4", &self.CFG4())
+                .field("CFG5", &self.CFG5())
+                .field("CFG6", &self.CFG6())
+                .field("CFG7", &self.CFG7())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PMCFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PMCFG {
+                PROD_ENDPTS0: bool,
+                PROD_ENDPTS1: bool,
+                PROD_ENDPTS2: bool,
+                PROD_ENDPTS3: bool,
+                PROD_ENDPTS4: bool,
+                PROD_ENDPTS5: bool,
+                PROD_ENDPTS6: bool,
+                CFG0: u8,
+                CFG1: u8,
+                CFG2: u8,
+                CFG3: u8,
+                CFG4: u8,
+                CFG5: u8,
+                CFG6: u8,
+                CFG7: u8,
+            }
+            let proxy = PMCFG {
+                PROD_ENDPTS0: self.PROD_ENDPTS0(),
+                PROD_ENDPTS1: self.PROD_ENDPTS1(),
+                PROD_ENDPTS2: self.PROD_ENDPTS2(),
+                PROD_ENDPTS3: self.PROD_ENDPTS3(),
+                PROD_ENDPTS4: self.PROD_ENDPTS4(),
+                PROD_ENDPTS5: self.PROD_ENDPTS5(),
+                PROD_ENDPTS6: self.PROD_ENDPTS6(),
+                CFG0: self.CFG0(),
+                CFG1: self.CFG1(),
+                CFG2: self.CFG2(),
+                CFG3: self.CFG3(),
+                CFG4: self.CFG4(),
+                CFG5: self.CFG5(),
+                CFG6: self.CFG6(),
+                CFG7: self.CFG7(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Pattern-Match Interrupt Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -400,6 +588,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PMCTRL {
             PMCTRL(0)
+        }
+    }
+    impl core::fmt::Debug for PMCTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PMCTRL")
+                .field("SEL_PMATCH", &self.SEL_PMATCH())
+                .field("ENA_RXEV", &self.ENA_RXEV())
+                .field("PMAT", &self.PMAT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PMCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PMCTRL {
+                SEL_PMATCH: bool,
+                ENA_RXEV: bool,
+                PMAT: u8,
+            }
+            let proxy = PMCTRL {
+                SEL_PMATCH: self.SEL_PMATCH(),
+                ENA_RXEV: self.ENA_RXEV(),
+                PMAT: self.PMAT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pattern-Match Interrupt Bit-Slice Source"]
@@ -486,6 +700,47 @@ pub mod regs {
             PMSRC(0)
         }
     }
+    impl core::fmt::Debug for PMSRC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PMSRC")
+                .field("SRC0", &self.SRC0())
+                .field("SRC1", &self.SRC1())
+                .field("SRC2", &self.SRC2())
+                .field("SRC3", &self.SRC3())
+                .field("SRC4", &self.SRC4())
+                .field("SRC5", &self.SRC5())
+                .field("SRC6", &self.SRC6())
+                .field("SRC7", &self.SRC7())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PMSRC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PMSRC {
+                SRC0: u8,
+                SRC1: u8,
+                SRC2: u8,
+                SRC3: u8,
+                SRC4: u8,
+                SRC5: u8,
+                SRC6: u8,
+                SRC7: u8,
+            }
+            let proxy = PMSRC {
+                SRC0: self.SRC0(),
+                SRC1: self.SRC1(),
+                SRC2: self.SRC2(),
+                SRC3: self.SRC3(),
+                SRC4: self.SRC4(),
+                SRC5: self.SRC5(),
+                SRC6: self.SRC6(),
+                SRC7: self.SRC7(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Pin Interrupt Rising Edge"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -505,6 +760,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> RISE {
             RISE(0)
+        }
+    }
+    impl core::fmt::Debug for RISE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RISE").field("RDET", &self.RDET()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RISE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RISE {
+                RDET: u8,
+            }
+            let proxy = RISE { RDET: self.RDET() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pin Interrupt Active Level or Falling-Edge Interrupt Set"]
@@ -528,6 +799,26 @@ pub mod regs {
             SIENF(0)
         }
     }
+    impl core::fmt::Debug for SIENF {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SIENF")
+                .field("SETENAF", &self.SETENAF())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SIENF {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SIENF {
+                SETENAF: u8,
+            }
+            let proxy = SIENF {
+                SETENAF: self.SETENAF(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Pin Interrupt Level or Rising-Edge Interrupt Set"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -547,6 +838,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SIENR {
             SIENR(0)
+        }
+    }
+    impl core::fmt::Debug for SIENR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SIENR")
+                .field("SETENRL", &self.SETENRL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SIENR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SIENR {
+                SETENRL: u8,
+            }
+            let proxy = SIENR {
+                SETENRL: self.SETENRL(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

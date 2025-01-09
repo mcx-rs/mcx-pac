@@ -127,6 +127,22 @@ pub mod regs {
             BLR(0)
         }
     }
+    impl core::fmt::Debug for BLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("BLR").field("LOCK", &self.LOCK()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct BLR {
+                LOCK: u8,
+            }
+            let proxy = BLR { LOCK: self.LOCK() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Clock Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -155,6 +171,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CKCTRL {
             CKCTRL(0)
+        }
+    }
+    impl core::fmt::Debug for CKCTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CKCTRL")
+                .field("CKMODE", &self.CKMODE())
+                .field("LOCK", &self.LOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CKCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CKCTRL {
+                CKMODE: u8,
+                LOCK: bool,
+            }
+            let proxy = CKCTRL {
+                CKMODE: self.CKMODE(),
+                LOCK: self.LOCK(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Clock Status"]
@@ -196,6 +235,32 @@ pub mod regs {
             CKSTAT(0)
         }
     }
+    impl core::fmt::Debug for CKSTAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CKSTAT")
+                .field("CKMODE", &self.CKMODE())
+                .field("WAKEUP", &self.WAKEUP())
+                .field("VALID", &self.VALID())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CKSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CKSTAT {
+                CKMODE: u8,
+                WAKEUP: u8,
+                VALID: bool,
+            }
+            let proxy = CKSTAT {
+                CKMODE: self.CKMODE(),
+                WAKEUP: self.WAKEUP(),
+                VALID: self.VALID(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Core Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -217,6 +282,24 @@ pub mod regs {
             CORECTL(0)
         }
     }
+    impl core::fmt::Debug for CORECTL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CORECTL")
+                .field("NPIE", &self.NPIE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CORECTL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CORECTL {
+                NPIE: bool,
+            }
+            let proxy = CORECTL { NPIE: self.NPIE() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Debug Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -236,6 +319,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DBGCTL {
             DBGCTL(0)
+        }
+    }
+    impl core::fmt::Debug for DBGCTL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DBGCTL").field("SOD", &self.SOD()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DBGCTL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DBGCTL {
+                SOD: bool,
+            }
+            let proxy = DBGCTL { SOD: self.SOD() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Flash Control"]
@@ -268,6 +367,29 @@ pub mod regs {
             FLASHCR(0)
         }
     }
+    impl core::fmt::Debug for FLASHCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLASHCR")
+                .field("FLASHDIS", &self.FLASHDIS())
+                .field("FLASHDOZE", &self.FLASHDOZE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLASHCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLASHCR {
+                FLASHDIS: bool,
+                FLASHDOZE: bool,
+            }
+            let proxy = FLASHCR {
+                FLASHDIS: self.FLASHDIS(),
+                FLASHDOZE: self.FLASHDOZE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Force Mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -287,6 +409,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FM {
             FM(0)
+        }
+    }
+    impl core::fmt::Debug for FM {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FM")
+                .field("FORCECFG", &self.FORCECFG())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FM {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FM {
+                FORCECFG: bool,
+            }
+            let proxy = FM {
+                FORCECFG: self.FORCECFG(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Global Power Mode Control"]
@@ -310,6 +452,26 @@ pub mod regs {
             GPMCTRL(0)
         }
     }
+    impl core::fmt::Debug for GPMCTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GPMCTRL")
+                .field("LPMODE", &self.LPMODE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GPMCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GPMCTRL {
+                LPMODE: u8,
+            }
+            let proxy = GPMCTRL {
+                LPMODE: self.LPMODE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -331,6 +493,26 @@ pub mod regs {
             MR(0)
         }
     }
+    impl core::fmt::Debug for MR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MR")
+                .field("ISPMODE_n", &self.ISPMODE_n())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MR {
+                ISPMODE_n: bool,
+            }
+            let proxy = MR {
+                ISPMODE_n: self.ISPMODE_n(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Power Mode Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -350,6 +532,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PMCTRL {
             PMCTRL(0)
+        }
+    }
+    impl core::fmt::Debug for PMCTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PMCTRL")
+                .field("LPMODE", &self.LPMODE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PMCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PMCTRL {
+                LPMODE: u8,
+            }
+            let proxy = PMCTRL {
+                LPMODE: self.LPMODE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Power Mode Protection"]
@@ -380,6 +582,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PMPROT {
             PMPROT(0)
+        }
+    }
+    impl core::fmt::Debug for PMPROT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PMPROT")
+                .field("LPMODE", &self.LPMODE())
+                .field("LOCK", &self.LOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PMPROT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PMPROT {
+                LPMODE: u8,
+                LOCK: bool,
+            }
+            let proxy = PMPROT {
+                LPMODE: self.LPMODE(),
+                LOCK: self.LOCK(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Reset Pin Control"]
@@ -421,6 +646,32 @@ pub mod regs {
             RPC(0)
         }
     }
+    impl core::fmt::Debug for RPC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RPC")
+                .field("FILTCFG", &self.FILTCFG())
+                .field("FILTEN", &self.FILTEN())
+                .field("LPFEN", &self.LPFEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RPC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RPC {
+                FILTCFG: u8,
+                FILTEN: bool,
+                LPFEN: bool,
+            }
+            let proxy = RPC {
+                FILTCFG: self.FILTCFG(),
+                FILTEN: self.FILTEN(),
+                LPFEN: self.LPFEN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Reset Count Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -440,6 +691,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> RSTCNT {
             RSTCNT(0)
+        }
+    }
+    impl core::fmt::Debug for RSTCNT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RSTCNT")
+                .field("COUNT", &self.COUNT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RSTCNT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RSTCNT {
+                COUNT: u8,
+            }
+            let proxy = RSTCNT {
+                COUNT: self.COUNT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SRAM Disable"]
@@ -742,6 +1013,119 @@ pub mod regs {
             SRAMDIS(0)
         }
     }
+    impl core::fmt::Debug for SRAMDIS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SRAMDIS")
+                .field("DIS0", &self.DIS0())
+                .field("DIS1", &self.DIS1())
+                .field("DIS2", &self.DIS2())
+                .field("DIS3", &self.DIS3())
+                .field("DIS4", &self.DIS4())
+                .field("DIS5", &self.DIS5())
+                .field("DIS6", &self.DIS6())
+                .field("DIS7", &self.DIS7())
+                .field("DIS8", &self.DIS8())
+                .field("DIS9", &self.DIS9())
+                .field("DIS10", &self.DIS10())
+                .field("DIS11", &self.DIS11())
+                .field("DIS12", &self.DIS12())
+                .field("DIS13", &self.DIS13())
+                .field("DIS14", &self.DIS14())
+                .field("DIS15", &self.DIS15())
+                .field("DIS16", &self.DIS16())
+                .field("DIS17", &self.DIS17())
+                .field("DIS18", &self.DIS18())
+                .field("DIS19", &self.DIS19())
+                .field("DIS20", &self.DIS20())
+                .field("DIS21", &self.DIS21())
+                .field("DIS22", &self.DIS22())
+                .field("DIS23", &self.DIS23())
+                .field("DIS24", &self.DIS24())
+                .field("DIS25", &self.DIS25())
+                .field("DIS26", &self.DIS26())
+                .field("DIS27", &self.DIS27())
+                .field("DIS28", &self.DIS28())
+                .field("DIS29", &self.DIS29())
+                .field("DIS30", &self.DIS30())
+                .field("DIS31", &self.DIS31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRAMDIS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SRAMDIS {
+                DIS0: bool,
+                DIS1: bool,
+                DIS2: bool,
+                DIS3: bool,
+                DIS4: bool,
+                DIS5: bool,
+                DIS6: bool,
+                DIS7: bool,
+                DIS8: bool,
+                DIS9: bool,
+                DIS10: bool,
+                DIS11: bool,
+                DIS12: bool,
+                DIS13: bool,
+                DIS14: bool,
+                DIS15: bool,
+                DIS16: bool,
+                DIS17: bool,
+                DIS18: bool,
+                DIS19: bool,
+                DIS20: bool,
+                DIS21: bool,
+                DIS22: bool,
+                DIS23: bool,
+                DIS24: bool,
+                DIS25: bool,
+                DIS26: bool,
+                DIS27: bool,
+                DIS28: bool,
+                DIS29: bool,
+                DIS30: bool,
+                DIS31: bool,
+            }
+            let proxy = SRAMDIS {
+                DIS0: self.DIS0(),
+                DIS1: self.DIS1(),
+                DIS2: self.DIS2(),
+                DIS3: self.DIS3(),
+                DIS4: self.DIS4(),
+                DIS5: self.DIS5(),
+                DIS6: self.DIS6(),
+                DIS7: self.DIS7(),
+                DIS8: self.DIS8(),
+                DIS9: self.DIS9(),
+                DIS10: self.DIS10(),
+                DIS11: self.DIS11(),
+                DIS12: self.DIS12(),
+                DIS13: self.DIS13(),
+                DIS14: self.DIS14(),
+                DIS15: self.DIS15(),
+                DIS16: self.DIS16(),
+                DIS17: self.DIS17(),
+                DIS18: self.DIS18(),
+                DIS19: self.DIS19(),
+                DIS20: self.DIS20(),
+                DIS21: self.DIS21(),
+                DIS22: self.DIS22(),
+                DIS23: self.DIS23(),
+                DIS24: self.DIS24(),
+                DIS25: self.DIS25(),
+                DIS26: self.DIS26(),
+                DIS27: self.DIS27(),
+                DIS28: self.DIS28(),
+                DIS29: self.DIS29(),
+                DIS30: self.DIS30(),
+                DIS31: self.DIS31(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SRAM Retention"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1042,6 +1426,119 @@ pub mod regs {
             SRAMRET(0)
         }
     }
+    impl core::fmt::Debug for SRAMRET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SRAMRET")
+                .field("RET0", &self.RET0())
+                .field("RET1", &self.RET1())
+                .field("RET2", &self.RET2())
+                .field("RET3", &self.RET3())
+                .field("RET4", &self.RET4())
+                .field("RET5", &self.RET5())
+                .field("RET6", &self.RET6())
+                .field("RET7", &self.RET7())
+                .field("RET8", &self.RET8())
+                .field("RET9", &self.RET9())
+                .field("RET10", &self.RET10())
+                .field("RET11", &self.RET11())
+                .field("RET12", &self.RET12())
+                .field("RET13", &self.RET13())
+                .field("RET14", &self.RET14())
+                .field("RET15", &self.RET15())
+                .field("RET16", &self.RET16())
+                .field("RET17", &self.RET17())
+                .field("RET18", &self.RET18())
+                .field("RET19", &self.RET19())
+                .field("RET20", &self.RET20())
+                .field("RET21", &self.RET21())
+                .field("RET22", &self.RET22())
+                .field("RET23", &self.RET23())
+                .field("RET24", &self.RET24())
+                .field("RET25", &self.RET25())
+                .field("RET26", &self.RET26())
+                .field("RET27", &self.RET27())
+                .field("RET28", &self.RET28())
+                .field("RET29", &self.RET29())
+                .field("RET30", &self.RET30())
+                .field("RET31", &self.RET31())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRAMRET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SRAMRET {
+                RET0: bool,
+                RET1: bool,
+                RET2: bool,
+                RET3: bool,
+                RET4: bool,
+                RET5: bool,
+                RET6: bool,
+                RET7: bool,
+                RET8: bool,
+                RET9: bool,
+                RET10: bool,
+                RET11: bool,
+                RET12: bool,
+                RET13: bool,
+                RET14: bool,
+                RET15: bool,
+                RET16: bool,
+                RET17: bool,
+                RET18: bool,
+                RET19: bool,
+                RET20: bool,
+                RET21: bool,
+                RET22: bool,
+                RET23: bool,
+                RET24: bool,
+                RET25: bool,
+                RET26: bool,
+                RET27: bool,
+                RET28: bool,
+                RET29: bool,
+                RET30: bool,
+                RET31: bool,
+            }
+            let proxy = SRAMRET {
+                RET0: self.RET0(),
+                RET1: self.RET1(),
+                RET2: self.RET2(),
+                RET3: self.RET3(),
+                RET4: self.RET4(),
+                RET5: self.RET5(),
+                RET6: self.RET6(),
+                RET7: self.RET7(),
+                RET8: self.RET8(),
+                RET9: self.RET9(),
+                RET10: self.RET10(),
+                RET11: self.RET11(),
+                RET12: self.RET12(),
+                RET13: self.RET13(),
+                RET14: self.RET14(),
+                RET15: self.RET15(),
+                RET16: self.RET16(),
+                RET17: self.RET17(),
+                RET18: self.RET18(),
+                RET19: self.RET19(),
+                RET20: self.RET20(),
+                RET21: self.RET21(),
+                RET22: self.RET22(),
+                RET23: self.RET23(),
+                RET24: self.RET24(),
+                RET25: self.RET25(),
+                RET26: self.RET26(),
+                RET27: self.RET27(),
+                RET28: self.RET28(),
+                RET29: self.RET29(),
+                RET30: self.RET30(),
+                RET31: self.RET31(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "System Reset Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1162,6 +1659,59 @@ pub mod regs {
             SRIE(0)
         }
     }
+    impl core::fmt::Debug for SRIE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SRIE")
+                .field("PIN", &self.PIN())
+                .field("DAP", &self.DAP())
+                .field("LPACK", &self.LPACK())
+                .field("SCG", &self.SCG())
+                .field("WWDT0", &self.WWDT0())
+                .field("SW", &self.SW())
+                .field("LOCKUP", &self.LOCKUP())
+                .field("CPU1", &self.CPU1())
+                .field("VBAT", &self.VBAT())
+                .field("WWDT1", &self.WWDT1())
+                .field("CDOG0", &self.CDOG0())
+                .field("CDOG1", &self.CDOG1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRIE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SRIE {
+                PIN: bool,
+                DAP: bool,
+                LPACK: bool,
+                SCG: bool,
+                WWDT0: bool,
+                SW: bool,
+                LOCKUP: bool,
+                CPU1: bool,
+                VBAT: bool,
+                WWDT1: bool,
+                CDOG0: bool,
+                CDOG1: bool,
+            }
+            let proxy = SRIE {
+                PIN: self.PIN(),
+                DAP: self.DAP(),
+                LPACK: self.LPACK(),
+                SCG: self.SCG(),
+                WWDT0: self.WWDT0(),
+                SW: self.SW(),
+                LOCKUP: self.LOCKUP(),
+                CPU1: self.CPU1(),
+                VBAT: self.VBAT(),
+                WWDT1: self.WWDT1(),
+                CDOG0: self.CDOG0(),
+                CDOG1: self.CDOG1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "System Reset Interrupt Flag"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1271,6 +1821,56 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SRIF {
             SRIF(0)
+        }
+    }
+    impl core::fmt::Debug for SRIF {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SRIF")
+                .field("PIN", &self.PIN())
+                .field("DAP", &self.DAP())
+                .field("LPACK", &self.LPACK())
+                .field("WWDT0", &self.WWDT0())
+                .field("SW", &self.SW())
+                .field("LOCKUP", &self.LOCKUP())
+                .field("CPU1", &self.CPU1())
+                .field("VBAT", &self.VBAT())
+                .field("WWDT1", &self.WWDT1())
+                .field("CDOG0", &self.CDOG0())
+                .field("CDOG1", &self.CDOG1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRIF {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SRIF {
+                PIN: bool,
+                DAP: bool,
+                LPACK: bool,
+                WWDT0: bool,
+                SW: bool,
+                LOCKUP: bool,
+                CPU1: bool,
+                VBAT: bool,
+                WWDT1: bool,
+                CDOG0: bool,
+                CDOG1: bool,
+            }
+            let proxy = SRIF {
+                PIN: self.PIN(),
+                DAP: self.DAP(),
+                LPACK: self.LPACK(),
+                WWDT0: self.WWDT0(),
+                SW: self.SW(),
+                LOCKUP: self.LOCKUP(),
+                CPU1: self.CPU1(),
+                VBAT: self.VBAT(),
+                WWDT1: self.WWDT1(),
+                CDOG0: self.CDOG0(),
+                CDOG1: self.CDOG1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "System Reset Status"]
@@ -1474,6 +2074,86 @@ pub mod regs {
             SRS(0)
         }
     }
+    impl core::fmt::Debug for SRS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SRS")
+                .field("WAKEUP", &self.WAKEUP())
+                .field("POR", &self.POR())
+                .field("VD", &self.VD())
+                .field("WARM", &self.WARM())
+                .field("FATAL", &self.FATAL())
+                .field("PIN", &self.PIN())
+                .field("DAP", &self.DAP())
+                .field("RSTACK", &self.RSTACK())
+                .field("LPACK", &self.LPACK())
+                .field("SCG", &self.SCG())
+                .field("WWDT0", &self.WWDT0())
+                .field("SW", &self.SW())
+                .field("LOCKUP", &self.LOCKUP())
+                .field("CPU1", &self.CPU1())
+                .field("VBAT", &self.VBAT())
+                .field("WWDT1", &self.WWDT1())
+                .field("CDOG0", &self.CDOG0())
+                .field("CDOG1", &self.CDOG1())
+                .field("JTAG", &self.JTAG())
+                .field("SECVIO", &self.SECVIO())
+                .field("TAMPER", &self.TAMPER())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SRS {
+                WAKEUP: bool,
+                POR: bool,
+                VD: bool,
+                WARM: bool,
+                FATAL: bool,
+                PIN: bool,
+                DAP: bool,
+                RSTACK: bool,
+                LPACK: bool,
+                SCG: bool,
+                WWDT0: bool,
+                SW: bool,
+                LOCKUP: bool,
+                CPU1: bool,
+                VBAT: bool,
+                WWDT1: bool,
+                CDOG0: bool,
+                CDOG1: bool,
+                JTAG: bool,
+                SECVIO: bool,
+                TAMPER: bool,
+            }
+            let proxy = SRS {
+                WAKEUP: self.WAKEUP(),
+                POR: self.POR(),
+                VD: self.VD(),
+                WARM: self.WARM(),
+                FATAL: self.FATAL(),
+                PIN: self.PIN(),
+                DAP: self.DAP(),
+                RSTACK: self.RSTACK(),
+                LPACK: self.LPACK(),
+                SCG: self.SCG(),
+                WWDT0: self.WWDT0(),
+                SW: self.SW(),
+                LOCKUP: self.LOCKUP(),
+                CPU1: self.CPU1(),
+                VBAT: self.VBAT(),
+                WWDT1: self.WWDT1(),
+                CDOG0: self.CDOG0(),
+                CDOG1: self.CDOG1(),
+                JTAG: self.JTAG(),
+                SECVIO: self.SECVIO(),
+                TAMPER: self.TAMPER(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Sticky System Reset Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1675,6 +2355,86 @@ pub mod regs {
             SSRS(0)
         }
     }
+    impl core::fmt::Debug for SSRS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SSRS")
+                .field("WAKEUP", &self.WAKEUP())
+                .field("POR", &self.POR())
+                .field("VD", &self.VD())
+                .field("WARM", &self.WARM())
+                .field("FATAL", &self.FATAL())
+                .field("PIN", &self.PIN())
+                .field("DAP", &self.DAP())
+                .field("RSTACK", &self.RSTACK())
+                .field("LPACK", &self.LPACK())
+                .field("SCG", &self.SCG())
+                .field("WWDT0", &self.WWDT0())
+                .field("SW", &self.SW())
+                .field("LOCKUP", &self.LOCKUP())
+                .field("CPU1", &self.CPU1())
+                .field("VBAT", &self.VBAT())
+                .field("WWDT1", &self.WWDT1())
+                .field("CDOG0", &self.CDOG0())
+                .field("CDOG1", &self.CDOG1())
+                .field("JTAG", &self.JTAG())
+                .field("SECVIO", &self.SECVIO())
+                .field("TAMPER", &self.TAMPER())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SSRS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SSRS {
+                WAKEUP: bool,
+                POR: bool,
+                VD: bool,
+                WARM: bool,
+                FATAL: bool,
+                PIN: bool,
+                DAP: bool,
+                RSTACK: bool,
+                LPACK: bool,
+                SCG: bool,
+                WWDT0: bool,
+                SW: bool,
+                LOCKUP: bool,
+                CPU1: bool,
+                VBAT: bool,
+                WWDT1: bool,
+                CDOG0: bool,
+                CDOG1: bool,
+                JTAG: bool,
+                SECVIO: bool,
+                TAMPER: bool,
+            }
+            let proxy = SSRS {
+                WAKEUP: self.WAKEUP(),
+                POR: self.POR(),
+                VD: self.VD(),
+                WARM: self.WARM(),
+                FATAL: self.FATAL(),
+                PIN: self.PIN(),
+                DAP: self.DAP(),
+                RSTACK: self.RSTACK(),
+                LPACK: self.LPACK(),
+                SCG: self.SCG(),
+                WWDT0: self.WWDT0(),
+                SW: self.SW(),
+                LOCKUP: self.LOCKUP(),
+                CPU1: self.CPU1(),
+                VBAT: self.VBAT(),
+                WWDT1: self.WWDT1(),
+                CDOG0: self.CDOG0(),
+                CDOG1: self.CDOG1(),
+                JTAG: self.JTAG(),
+                SECVIO: self.SECVIO(),
+                TAMPER: self.TAMPER(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1712,6 +2472,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> VERID {
             VERID(0)
+        }
+    }
+    impl core::fmt::Debug for VERID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VERID")
+                .field("FEATURE", &self.FEATURE())
+                .field("MINOR", &self.MINOR())
+                .field("MAJOR", &self.MAJOR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VERID {
+                FEATURE: u16,
+                MINOR: u8,
+                MAJOR: u8,
+            }
+            let proxy = VERID {
+                FEATURE: self.FEATURE(),
+                MINOR: self.MINOR(),
+                MAJOR: self.MAJOR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

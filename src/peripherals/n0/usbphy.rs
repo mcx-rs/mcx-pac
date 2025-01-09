@@ -328,6 +328,32 @@ pub mod regs {
             ANACTRL(0)
         }
     }
+    impl core::fmt::Debug for ANACTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ANACTRL")
+                .field("LVI_EN", &self.LVI_EN())
+                .field("PFD_CLK_SEL", &self.PFD_CLK_SEL())
+                .field("DEV_PULLDOWN", &self.DEV_PULLDOWN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ANACTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ANACTRL {
+                LVI_EN: bool,
+                PFD_CLK_SEL: u8,
+                DEV_PULLDOWN: bool,
+            }
+            let proxy = ANACTRL {
+                LVI_EN: self.LVI_EN(),
+                PFD_CLK_SEL: self.PFD_CLK_SEL(),
+                DEV_PULLDOWN: self.DEV_PULLDOWN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Analog Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -365,6 +391,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ANACTRL_CLR {
             ANACTRL_CLR(0)
+        }
+    }
+    impl core::fmt::Debug for ANACTRL_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ANACTRL_CLR")
+                .field("LVI_EN", &self.LVI_EN())
+                .field("PFD_CLK_SEL", &self.PFD_CLK_SEL())
+                .field("DEV_PULLDOWN", &self.DEV_PULLDOWN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ANACTRL_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ANACTRL_CLR {
+                LVI_EN: bool,
+                PFD_CLK_SEL: u8,
+                DEV_PULLDOWN: bool,
+            }
+            let proxy = ANACTRL_CLR {
+                LVI_EN: self.LVI_EN(),
+                PFD_CLK_SEL: self.PFD_CLK_SEL(),
+                DEV_PULLDOWN: self.DEV_PULLDOWN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Analog Control"]
@@ -406,6 +458,32 @@ pub mod regs {
             ANACTRL_SET(0)
         }
     }
+    impl core::fmt::Debug for ANACTRL_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ANACTRL_SET")
+                .field("LVI_EN", &self.LVI_EN())
+                .field("PFD_CLK_SEL", &self.PFD_CLK_SEL())
+                .field("DEV_PULLDOWN", &self.DEV_PULLDOWN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ANACTRL_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ANACTRL_SET {
+                LVI_EN: bool,
+                PFD_CLK_SEL: u8,
+                DEV_PULLDOWN: bool,
+            }
+            let proxy = ANACTRL_SET {
+                LVI_EN: self.LVI_EN(),
+                PFD_CLK_SEL: self.PFD_CLK_SEL(),
+                DEV_PULLDOWN: self.DEV_PULLDOWN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Analog Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -443,6 +521,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ANACTRL_TOG {
             ANACTRL_TOG(0)
+        }
+    }
+    impl core::fmt::Debug for ANACTRL_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ANACTRL_TOG")
+                .field("LVI_EN", &self.LVI_EN())
+                .field("PFD_CLK_SEL", &self.PFD_CLK_SEL())
+                .field("DEV_PULLDOWN", &self.DEV_PULLDOWN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ANACTRL_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ANACTRL_TOG {
+                LVI_EN: bool,
+                PFD_CLK_SEL: u8,
+                DEV_PULLDOWN: bool,
+            }
+            let proxy = ANACTRL_TOG {
+                LVI_EN: self.LVI_EN(),
+                PFD_CLK_SEL: self.PFD_CLK_SEL(),
+                DEV_PULLDOWN: self.DEV_PULLDOWN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "General Purpose Control"]
@@ -682,6 +786,98 @@ pub mod regs {
             CTRL(0)
         }
     }
+    impl core::fmt::Debug for CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL")
+                .field("ENOTG_ID_CHG_IRQ", &self.ENOTG_ID_CHG_IRQ())
+                .field("ENHOSTDISCONDETECT", &self.ENHOSTDISCONDETECT())
+                .field("ENIRQHOSTDISCON", &self.ENIRQHOSTDISCON())
+                .field("HOSTDISCONDETECT_IRQ", &self.HOSTDISCONDETECT_IRQ())
+                .field("ENDEVPLUGINDETECT", &self.ENDEVPLUGINDETECT())
+                .field("DEVPLUGIN_POLARITY", &self.DEVPLUGIN_POLARITY())
+                .field("OTG_ID_CHG_IRQ", &self.OTG_ID_CHG_IRQ())
+                .field("ENOTGIDDETECT", &self.ENOTGIDDETECT())
+                .field("RESUMEIRQSTICKY", &self.RESUMEIRQSTICKY())
+                .field("ENIRQRESUMEDETECT", &self.ENIRQRESUMEDETECT())
+                .field("RESUME_IRQ", &self.RESUME_IRQ())
+                .field("ENIRQDEVPLUGIN", &self.ENIRQDEVPLUGIN())
+                .field("DEVPLUGIN_IRQ", &self.DEVPLUGIN_IRQ())
+                .field("DATA_ON_LRADC", &self.DATA_ON_LRADC())
+                .field("ENUTMILEVEL2", &self.ENUTMILEVEL2())
+                .field("ENUTMILEVEL3", &self.ENUTMILEVEL3())
+                .field("ENIRQWAKEUP", &self.ENIRQWAKEUP())
+                .field("WAKEUP_IRQ", &self.WAKEUP_IRQ())
+                .field("AUTORESUME_EN", &self.AUTORESUME_EN())
+                .field("ENAUTOCLR_CLKGATE", &self.ENAUTOCLR_CLKGATE())
+                .field("ENAUTOCLR_PHY_PWD", &self.ENAUTOCLR_PHY_PWD())
+                .field("OTG_ID_VALUE", &self.OTG_ID_VALUE())
+                .field("UTMI_SUSPENDM", &self.UTMI_SUSPENDM())
+                .field("CLKGATE", &self.CLKGATE())
+                .field("SFTRST", &self.SFTRST())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL {
+                ENOTG_ID_CHG_IRQ: bool,
+                ENHOSTDISCONDETECT: bool,
+                ENIRQHOSTDISCON: bool,
+                HOSTDISCONDETECT_IRQ: bool,
+                ENDEVPLUGINDETECT: bool,
+                DEVPLUGIN_POLARITY: bool,
+                OTG_ID_CHG_IRQ: bool,
+                ENOTGIDDETECT: bool,
+                RESUMEIRQSTICKY: bool,
+                ENIRQRESUMEDETECT: bool,
+                RESUME_IRQ: bool,
+                ENIRQDEVPLUGIN: bool,
+                DEVPLUGIN_IRQ: bool,
+                DATA_ON_LRADC: bool,
+                ENUTMILEVEL2: bool,
+                ENUTMILEVEL3: bool,
+                ENIRQWAKEUP: bool,
+                WAKEUP_IRQ: bool,
+                AUTORESUME_EN: bool,
+                ENAUTOCLR_CLKGATE: bool,
+                ENAUTOCLR_PHY_PWD: bool,
+                OTG_ID_VALUE: bool,
+                UTMI_SUSPENDM: bool,
+                CLKGATE: bool,
+                SFTRST: bool,
+            }
+            let proxy = CTRL {
+                ENOTG_ID_CHG_IRQ: self.ENOTG_ID_CHG_IRQ(),
+                ENHOSTDISCONDETECT: self.ENHOSTDISCONDETECT(),
+                ENIRQHOSTDISCON: self.ENIRQHOSTDISCON(),
+                HOSTDISCONDETECT_IRQ: self.HOSTDISCONDETECT_IRQ(),
+                ENDEVPLUGINDETECT: self.ENDEVPLUGINDETECT(),
+                DEVPLUGIN_POLARITY: self.DEVPLUGIN_POLARITY(),
+                OTG_ID_CHG_IRQ: self.OTG_ID_CHG_IRQ(),
+                ENOTGIDDETECT: self.ENOTGIDDETECT(),
+                RESUMEIRQSTICKY: self.RESUMEIRQSTICKY(),
+                ENIRQRESUMEDETECT: self.ENIRQRESUMEDETECT(),
+                RESUME_IRQ: self.RESUME_IRQ(),
+                ENIRQDEVPLUGIN: self.ENIRQDEVPLUGIN(),
+                DEVPLUGIN_IRQ: self.DEVPLUGIN_IRQ(),
+                DATA_ON_LRADC: self.DATA_ON_LRADC(),
+                ENUTMILEVEL2: self.ENUTMILEVEL2(),
+                ENUTMILEVEL3: self.ENUTMILEVEL3(),
+                ENIRQWAKEUP: self.ENIRQWAKEUP(),
+                WAKEUP_IRQ: self.WAKEUP_IRQ(),
+                AUTORESUME_EN: self.AUTORESUME_EN(),
+                ENAUTOCLR_CLKGATE: self.ENAUTOCLR_CLKGATE(),
+                ENAUTOCLR_PHY_PWD: self.ENAUTOCLR_PHY_PWD(),
+                OTG_ID_VALUE: self.OTG_ID_VALUE(),
+                UTMI_SUSPENDM: self.UTMI_SUSPENDM(),
+                CLKGATE: self.CLKGATE(),
+                SFTRST: self.SFTRST(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "General Purpose Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -917,6 +1113,98 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CTRL_CLR {
             CTRL_CLR(0)
+        }
+    }
+    impl core::fmt::Debug for CTRL_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL_CLR")
+                .field("ENOTG_ID_CHG_IRQ", &self.ENOTG_ID_CHG_IRQ())
+                .field("ENHOSTDISCONDETECT", &self.ENHOSTDISCONDETECT())
+                .field("ENIRQHOSTDISCON", &self.ENIRQHOSTDISCON())
+                .field("HOSTDISCONDETECT_IRQ", &self.HOSTDISCONDETECT_IRQ())
+                .field("ENDEVPLUGINDETECT", &self.ENDEVPLUGINDETECT())
+                .field("DEVPLUGIN_POLARITY", &self.DEVPLUGIN_POLARITY())
+                .field("OTG_ID_CHG_IRQ", &self.OTG_ID_CHG_IRQ())
+                .field("ENOTGIDDETECT", &self.ENOTGIDDETECT())
+                .field("RESUMEIRQSTICKY", &self.RESUMEIRQSTICKY())
+                .field("ENIRQRESUMEDETECT", &self.ENIRQRESUMEDETECT())
+                .field("RESUME_IRQ", &self.RESUME_IRQ())
+                .field("ENIRQDEVPLUGIN", &self.ENIRQDEVPLUGIN())
+                .field("DEVPLUGIN_IRQ", &self.DEVPLUGIN_IRQ())
+                .field("DATA_ON_LRADC", &self.DATA_ON_LRADC())
+                .field("ENUTMILEVEL2", &self.ENUTMILEVEL2())
+                .field("ENUTMILEVEL3", &self.ENUTMILEVEL3())
+                .field("ENIRQWAKEUP", &self.ENIRQWAKEUP())
+                .field("WAKEUP_IRQ", &self.WAKEUP_IRQ())
+                .field("AUTORESUME_EN", &self.AUTORESUME_EN())
+                .field("ENAUTOCLR_CLKGATE", &self.ENAUTOCLR_CLKGATE())
+                .field("ENAUTOCLR_PHY_PWD", &self.ENAUTOCLR_PHY_PWD())
+                .field("OTG_ID_VALUE", &self.OTG_ID_VALUE())
+                .field("UTMI_SUSPENDM", &self.UTMI_SUSPENDM())
+                .field("CLKGATE", &self.CLKGATE())
+                .field("SFTRST", &self.SFTRST())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL_CLR {
+                ENOTG_ID_CHG_IRQ: bool,
+                ENHOSTDISCONDETECT: bool,
+                ENIRQHOSTDISCON: bool,
+                HOSTDISCONDETECT_IRQ: bool,
+                ENDEVPLUGINDETECT: bool,
+                DEVPLUGIN_POLARITY: bool,
+                OTG_ID_CHG_IRQ: bool,
+                ENOTGIDDETECT: bool,
+                RESUMEIRQSTICKY: bool,
+                ENIRQRESUMEDETECT: bool,
+                RESUME_IRQ: bool,
+                ENIRQDEVPLUGIN: bool,
+                DEVPLUGIN_IRQ: bool,
+                DATA_ON_LRADC: bool,
+                ENUTMILEVEL2: bool,
+                ENUTMILEVEL3: bool,
+                ENIRQWAKEUP: bool,
+                WAKEUP_IRQ: bool,
+                AUTORESUME_EN: bool,
+                ENAUTOCLR_CLKGATE: bool,
+                ENAUTOCLR_PHY_PWD: bool,
+                OTG_ID_VALUE: bool,
+                UTMI_SUSPENDM: bool,
+                CLKGATE: bool,
+                SFTRST: bool,
+            }
+            let proxy = CTRL_CLR {
+                ENOTG_ID_CHG_IRQ: self.ENOTG_ID_CHG_IRQ(),
+                ENHOSTDISCONDETECT: self.ENHOSTDISCONDETECT(),
+                ENIRQHOSTDISCON: self.ENIRQHOSTDISCON(),
+                HOSTDISCONDETECT_IRQ: self.HOSTDISCONDETECT_IRQ(),
+                ENDEVPLUGINDETECT: self.ENDEVPLUGINDETECT(),
+                DEVPLUGIN_POLARITY: self.DEVPLUGIN_POLARITY(),
+                OTG_ID_CHG_IRQ: self.OTG_ID_CHG_IRQ(),
+                ENOTGIDDETECT: self.ENOTGIDDETECT(),
+                RESUMEIRQSTICKY: self.RESUMEIRQSTICKY(),
+                ENIRQRESUMEDETECT: self.ENIRQRESUMEDETECT(),
+                RESUME_IRQ: self.RESUME_IRQ(),
+                ENIRQDEVPLUGIN: self.ENIRQDEVPLUGIN(),
+                DEVPLUGIN_IRQ: self.DEVPLUGIN_IRQ(),
+                DATA_ON_LRADC: self.DATA_ON_LRADC(),
+                ENUTMILEVEL2: self.ENUTMILEVEL2(),
+                ENUTMILEVEL3: self.ENUTMILEVEL3(),
+                ENIRQWAKEUP: self.ENIRQWAKEUP(),
+                WAKEUP_IRQ: self.WAKEUP_IRQ(),
+                AUTORESUME_EN: self.AUTORESUME_EN(),
+                ENAUTOCLR_CLKGATE: self.ENAUTOCLR_CLKGATE(),
+                ENAUTOCLR_PHY_PWD: self.ENAUTOCLR_PHY_PWD(),
+                OTG_ID_VALUE: self.OTG_ID_VALUE(),
+                UTMI_SUSPENDM: self.UTMI_SUSPENDM(),
+                CLKGATE: self.CLKGATE(),
+                SFTRST: self.SFTRST(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "General Purpose Control"]
@@ -1156,6 +1444,98 @@ pub mod regs {
             CTRL_SET(0)
         }
     }
+    impl core::fmt::Debug for CTRL_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL_SET")
+                .field("ENOTG_ID_CHG_IRQ", &self.ENOTG_ID_CHG_IRQ())
+                .field("ENHOSTDISCONDETECT", &self.ENHOSTDISCONDETECT())
+                .field("ENIRQHOSTDISCON", &self.ENIRQHOSTDISCON())
+                .field("HOSTDISCONDETECT_IRQ", &self.HOSTDISCONDETECT_IRQ())
+                .field("ENDEVPLUGINDETECT", &self.ENDEVPLUGINDETECT())
+                .field("DEVPLUGIN_POLARITY", &self.DEVPLUGIN_POLARITY())
+                .field("OTG_ID_CHG_IRQ", &self.OTG_ID_CHG_IRQ())
+                .field("ENOTGIDDETECT", &self.ENOTGIDDETECT())
+                .field("RESUMEIRQSTICKY", &self.RESUMEIRQSTICKY())
+                .field("ENIRQRESUMEDETECT", &self.ENIRQRESUMEDETECT())
+                .field("RESUME_IRQ", &self.RESUME_IRQ())
+                .field("ENIRQDEVPLUGIN", &self.ENIRQDEVPLUGIN())
+                .field("DEVPLUGIN_IRQ", &self.DEVPLUGIN_IRQ())
+                .field("DATA_ON_LRADC", &self.DATA_ON_LRADC())
+                .field("ENUTMILEVEL2", &self.ENUTMILEVEL2())
+                .field("ENUTMILEVEL3", &self.ENUTMILEVEL3())
+                .field("ENIRQWAKEUP", &self.ENIRQWAKEUP())
+                .field("WAKEUP_IRQ", &self.WAKEUP_IRQ())
+                .field("AUTORESUME_EN", &self.AUTORESUME_EN())
+                .field("ENAUTOCLR_CLKGATE", &self.ENAUTOCLR_CLKGATE())
+                .field("ENAUTOCLR_PHY_PWD", &self.ENAUTOCLR_PHY_PWD())
+                .field("OTG_ID_VALUE", &self.OTG_ID_VALUE())
+                .field("UTMI_SUSPENDM", &self.UTMI_SUSPENDM())
+                .field("CLKGATE", &self.CLKGATE())
+                .field("SFTRST", &self.SFTRST())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL_SET {
+                ENOTG_ID_CHG_IRQ: bool,
+                ENHOSTDISCONDETECT: bool,
+                ENIRQHOSTDISCON: bool,
+                HOSTDISCONDETECT_IRQ: bool,
+                ENDEVPLUGINDETECT: bool,
+                DEVPLUGIN_POLARITY: bool,
+                OTG_ID_CHG_IRQ: bool,
+                ENOTGIDDETECT: bool,
+                RESUMEIRQSTICKY: bool,
+                ENIRQRESUMEDETECT: bool,
+                RESUME_IRQ: bool,
+                ENIRQDEVPLUGIN: bool,
+                DEVPLUGIN_IRQ: bool,
+                DATA_ON_LRADC: bool,
+                ENUTMILEVEL2: bool,
+                ENUTMILEVEL3: bool,
+                ENIRQWAKEUP: bool,
+                WAKEUP_IRQ: bool,
+                AUTORESUME_EN: bool,
+                ENAUTOCLR_CLKGATE: bool,
+                ENAUTOCLR_PHY_PWD: bool,
+                OTG_ID_VALUE: bool,
+                UTMI_SUSPENDM: bool,
+                CLKGATE: bool,
+                SFTRST: bool,
+            }
+            let proxy = CTRL_SET {
+                ENOTG_ID_CHG_IRQ: self.ENOTG_ID_CHG_IRQ(),
+                ENHOSTDISCONDETECT: self.ENHOSTDISCONDETECT(),
+                ENIRQHOSTDISCON: self.ENIRQHOSTDISCON(),
+                HOSTDISCONDETECT_IRQ: self.HOSTDISCONDETECT_IRQ(),
+                ENDEVPLUGINDETECT: self.ENDEVPLUGINDETECT(),
+                DEVPLUGIN_POLARITY: self.DEVPLUGIN_POLARITY(),
+                OTG_ID_CHG_IRQ: self.OTG_ID_CHG_IRQ(),
+                ENOTGIDDETECT: self.ENOTGIDDETECT(),
+                RESUMEIRQSTICKY: self.RESUMEIRQSTICKY(),
+                ENIRQRESUMEDETECT: self.ENIRQRESUMEDETECT(),
+                RESUME_IRQ: self.RESUME_IRQ(),
+                ENIRQDEVPLUGIN: self.ENIRQDEVPLUGIN(),
+                DEVPLUGIN_IRQ: self.DEVPLUGIN_IRQ(),
+                DATA_ON_LRADC: self.DATA_ON_LRADC(),
+                ENUTMILEVEL2: self.ENUTMILEVEL2(),
+                ENUTMILEVEL3: self.ENUTMILEVEL3(),
+                ENIRQWAKEUP: self.ENIRQWAKEUP(),
+                WAKEUP_IRQ: self.WAKEUP_IRQ(),
+                AUTORESUME_EN: self.AUTORESUME_EN(),
+                ENAUTOCLR_CLKGATE: self.ENAUTOCLR_CLKGATE(),
+                ENAUTOCLR_PHY_PWD: self.ENAUTOCLR_PHY_PWD(),
+                OTG_ID_VALUE: self.OTG_ID_VALUE(),
+                UTMI_SUSPENDM: self.UTMI_SUSPENDM(),
+                CLKGATE: self.CLKGATE(),
+                SFTRST: self.SFTRST(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "General Purpose Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1393,6 +1773,98 @@ pub mod regs {
             CTRL_TOG(0)
         }
     }
+    impl core::fmt::Debug for CTRL_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL_TOG")
+                .field("ENOTG_ID_CHG_IRQ", &self.ENOTG_ID_CHG_IRQ())
+                .field("ENHOSTDISCONDETECT", &self.ENHOSTDISCONDETECT())
+                .field("ENIRQHOSTDISCON", &self.ENIRQHOSTDISCON())
+                .field("HOSTDISCONDETECT_IRQ", &self.HOSTDISCONDETECT_IRQ())
+                .field("ENDEVPLUGINDETECT", &self.ENDEVPLUGINDETECT())
+                .field("DEVPLUGIN_POLARITY", &self.DEVPLUGIN_POLARITY())
+                .field("OTG_ID_CHG_IRQ", &self.OTG_ID_CHG_IRQ())
+                .field("ENOTGIDDETECT", &self.ENOTGIDDETECT())
+                .field("RESUMEIRQSTICKY", &self.RESUMEIRQSTICKY())
+                .field("ENIRQRESUMEDETECT", &self.ENIRQRESUMEDETECT())
+                .field("RESUME_IRQ", &self.RESUME_IRQ())
+                .field("ENIRQDEVPLUGIN", &self.ENIRQDEVPLUGIN())
+                .field("DEVPLUGIN_IRQ", &self.DEVPLUGIN_IRQ())
+                .field("DATA_ON_LRADC", &self.DATA_ON_LRADC())
+                .field("ENUTMILEVEL2", &self.ENUTMILEVEL2())
+                .field("ENUTMILEVEL3", &self.ENUTMILEVEL3())
+                .field("ENIRQWAKEUP", &self.ENIRQWAKEUP())
+                .field("WAKEUP_IRQ", &self.WAKEUP_IRQ())
+                .field("AUTORESUME_EN", &self.AUTORESUME_EN())
+                .field("ENAUTOCLR_CLKGATE", &self.ENAUTOCLR_CLKGATE())
+                .field("ENAUTOCLR_PHY_PWD", &self.ENAUTOCLR_PHY_PWD())
+                .field("OTG_ID_VALUE", &self.OTG_ID_VALUE())
+                .field("UTMI_SUSPENDM", &self.UTMI_SUSPENDM())
+                .field("CLKGATE", &self.CLKGATE())
+                .field("SFTRST", &self.SFTRST())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL_TOG {
+                ENOTG_ID_CHG_IRQ: bool,
+                ENHOSTDISCONDETECT: bool,
+                ENIRQHOSTDISCON: bool,
+                HOSTDISCONDETECT_IRQ: bool,
+                ENDEVPLUGINDETECT: bool,
+                DEVPLUGIN_POLARITY: bool,
+                OTG_ID_CHG_IRQ: bool,
+                ENOTGIDDETECT: bool,
+                RESUMEIRQSTICKY: bool,
+                ENIRQRESUMEDETECT: bool,
+                RESUME_IRQ: bool,
+                ENIRQDEVPLUGIN: bool,
+                DEVPLUGIN_IRQ: bool,
+                DATA_ON_LRADC: bool,
+                ENUTMILEVEL2: bool,
+                ENUTMILEVEL3: bool,
+                ENIRQWAKEUP: bool,
+                WAKEUP_IRQ: bool,
+                AUTORESUME_EN: bool,
+                ENAUTOCLR_CLKGATE: bool,
+                ENAUTOCLR_PHY_PWD: bool,
+                OTG_ID_VALUE: bool,
+                UTMI_SUSPENDM: bool,
+                CLKGATE: bool,
+                SFTRST: bool,
+            }
+            let proxy = CTRL_TOG {
+                ENOTG_ID_CHG_IRQ: self.ENOTG_ID_CHG_IRQ(),
+                ENHOSTDISCONDETECT: self.ENHOSTDISCONDETECT(),
+                ENIRQHOSTDISCON: self.ENIRQHOSTDISCON(),
+                HOSTDISCONDETECT_IRQ: self.HOSTDISCONDETECT_IRQ(),
+                ENDEVPLUGINDETECT: self.ENDEVPLUGINDETECT(),
+                DEVPLUGIN_POLARITY: self.DEVPLUGIN_POLARITY(),
+                OTG_ID_CHG_IRQ: self.OTG_ID_CHG_IRQ(),
+                ENOTGIDDETECT: self.ENOTGIDDETECT(),
+                RESUMEIRQSTICKY: self.RESUMEIRQSTICKY(),
+                ENIRQRESUMEDETECT: self.ENIRQRESUMEDETECT(),
+                RESUME_IRQ: self.RESUME_IRQ(),
+                ENIRQDEVPLUGIN: self.ENIRQDEVPLUGIN(),
+                DEVPLUGIN_IRQ: self.DEVPLUGIN_IRQ(),
+                DATA_ON_LRADC: self.DATA_ON_LRADC(),
+                ENUTMILEVEL2: self.ENUTMILEVEL2(),
+                ENUTMILEVEL3: self.ENUTMILEVEL3(),
+                ENIRQWAKEUP: self.ENIRQWAKEUP(),
+                WAKEUP_IRQ: self.WAKEUP_IRQ(),
+                AUTORESUME_EN: self.AUTORESUME_EN(),
+                ENAUTOCLR_CLKGATE: self.ENAUTOCLR_CLKGATE(),
+                ENAUTOCLR_PHY_PWD: self.ENAUTOCLR_PHY_PWD(),
+                OTG_ID_VALUE: self.OTG_ID_VALUE(),
+                UTMI_SUSPENDM: self.UTMI_SUSPENDM(),
+                CLKGATE: self.CLKGATE(),
+                SFTRST: self.SFTRST(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Debug 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1430,6 +1902,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DEBUG0 {
             DEBUG0(0)
+        }
+    }
+    impl core::fmt::Debug for DEBUG0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DEBUG0")
+                .field("OTGIDPIOLOCK", &self.OTGIDPIOLOCK())
+                .field("HSTPULLDOWN", &self.HSTPULLDOWN())
+                .field("ENHSTPULLDOWN", &self.ENHSTPULLDOWN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEBUG0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DEBUG0 {
+                OTGIDPIOLOCK: bool,
+                HSTPULLDOWN: u8,
+                ENHSTPULLDOWN: u8,
+            }
+            let proxy = DEBUG0 {
+                OTGIDPIOLOCK: self.OTGIDPIOLOCK(),
+                HSTPULLDOWN: self.HSTPULLDOWN(),
+                ENHSTPULLDOWN: self.ENHSTPULLDOWN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Debug 0"]
@@ -1471,6 +1969,32 @@ pub mod regs {
             DEBUG0_CLR(0)
         }
     }
+    impl core::fmt::Debug for DEBUG0_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DEBUG0_CLR")
+                .field("OTGIDPIOLOCK", &self.OTGIDPIOLOCK())
+                .field("HSTPULLDOWN", &self.HSTPULLDOWN())
+                .field("ENHSTPULLDOWN", &self.ENHSTPULLDOWN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEBUG0_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DEBUG0_CLR {
+                OTGIDPIOLOCK: bool,
+                HSTPULLDOWN: u8,
+                ENHSTPULLDOWN: u8,
+            }
+            let proxy = DEBUG0_CLR {
+                OTGIDPIOLOCK: self.OTGIDPIOLOCK(),
+                HSTPULLDOWN: self.HSTPULLDOWN(),
+                ENHSTPULLDOWN: self.ENHSTPULLDOWN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Debug 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1508,6 +2032,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> DEBUG0_SET {
             DEBUG0_SET(0)
+        }
+    }
+    impl core::fmt::Debug for DEBUG0_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DEBUG0_SET")
+                .field("OTGIDPIOLOCK", &self.OTGIDPIOLOCK())
+                .field("HSTPULLDOWN", &self.HSTPULLDOWN())
+                .field("ENHSTPULLDOWN", &self.ENHSTPULLDOWN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEBUG0_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DEBUG0_SET {
+                OTGIDPIOLOCK: bool,
+                HSTPULLDOWN: u8,
+                ENHSTPULLDOWN: u8,
+            }
+            let proxy = DEBUG0_SET {
+                OTGIDPIOLOCK: self.OTGIDPIOLOCK(),
+                HSTPULLDOWN: self.HSTPULLDOWN(),
+                ENHSTPULLDOWN: self.ENHSTPULLDOWN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Debug 0"]
@@ -1549,6 +2099,32 @@ pub mod regs {
             DEBUG0_TOG(0)
         }
     }
+    impl core::fmt::Debug for DEBUG0_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DEBUG0_TOG")
+                .field("OTGIDPIOLOCK", &self.OTGIDPIOLOCK())
+                .field("HSTPULLDOWN", &self.HSTPULLDOWN())
+                .field("ENHSTPULLDOWN", &self.ENHSTPULLDOWN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEBUG0_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DEBUG0_TOG {
+                OTGIDPIOLOCK: bool,
+                HSTPULLDOWN: u8,
+                ENHSTPULLDOWN: u8,
+            }
+            let proxy = DEBUG0_TOG {
+                OTGIDPIOLOCK: self.OTGIDPIOLOCK(),
+                HSTPULLDOWN: self.HSTPULLDOWN(),
+                ENHSTPULLDOWN: self.ENHSTPULLDOWN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "IP Block"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1568,6 +2144,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IP {
             IP(0)
+        }
+    }
+    impl core::fmt::Debug for IP {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IP")
+                .field(
+                    "POWER_CONTROL_SUSPEND_OPTION",
+                    &self.POWER_CONTROL_SUSPEND_OPTION(),
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IP {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IP {
+                POWER_CONTROL_SUSPEND_OPTION: bool,
+            }
+            let proxy = IP {
+                POWER_CONTROL_SUSPEND_OPTION: self.POWER_CONTROL_SUSPEND_OPTION(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "IP Block"]
@@ -1591,6 +2190,29 @@ pub mod regs {
             IP_CLR(0)
         }
     }
+    impl core::fmt::Debug for IP_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IP_CLR")
+                .field(
+                    "POWER_CONTROL_SUSPEND_OPTION",
+                    &self.POWER_CONTROL_SUSPEND_OPTION(),
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IP_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IP_CLR {
+                POWER_CONTROL_SUSPEND_OPTION: bool,
+            }
+            let proxy = IP_CLR {
+                POWER_CONTROL_SUSPEND_OPTION: self.POWER_CONTROL_SUSPEND_OPTION(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "IP Block"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1612,6 +2234,29 @@ pub mod regs {
             IP_SET(0)
         }
     }
+    impl core::fmt::Debug for IP_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IP_SET")
+                .field(
+                    "POWER_CONTROL_SUSPEND_OPTION",
+                    &self.POWER_CONTROL_SUSPEND_OPTION(),
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IP_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IP_SET {
+                POWER_CONTROL_SUSPEND_OPTION: bool,
+            }
+            let proxy = IP_SET {
+                POWER_CONTROL_SUSPEND_OPTION: self.POWER_CONTROL_SUSPEND_OPTION(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "IP Block"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1631,6 +2276,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IP_TOG {
             IP_TOG(0)
+        }
+    }
+    impl core::fmt::Debug for IP_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IP_TOG")
+                .field(
+                    "POWER_CONTROL_SUSPEND_OPTION",
+                    &self.POWER_CONTROL_SUSPEND_OPTION(),
+                )
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IP_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IP_TOG {
+                POWER_CONTROL_SUSPEND_OPTION: bool,
+            }
+            let proxy = IP_TOG {
+                POWER_CONTROL_SUSPEND_OPTION: self.POWER_CONTROL_SUSPEND_OPTION(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PFD A"]
@@ -1672,6 +2340,32 @@ pub mod regs {
             PFDA(0)
         }
     }
+    impl core::fmt::Debug for PFDA {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PFDA")
+                .field("PFD0_CLKGATE", &self.PFD0_CLKGATE())
+                .field("PFD0_FRAC", &self.PFD0_FRAC())
+                .field("PFD0_STABLE", &self.PFD0_STABLE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PFDA {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PFDA {
+                PFD0_CLKGATE: bool,
+                PFD0_FRAC: u8,
+                PFD0_STABLE: bool,
+            }
+            let proxy = PFDA {
+                PFD0_CLKGATE: self.PFD0_CLKGATE(),
+                PFD0_FRAC: self.PFD0_FRAC(),
+                PFD0_STABLE: self.PFD0_STABLE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PFD A"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1709,6 +2403,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PFDA_CLR {
             PFDA_CLR(0)
+        }
+    }
+    impl core::fmt::Debug for PFDA_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PFDA_CLR")
+                .field("PFD0_CLKGATE", &self.PFD0_CLKGATE())
+                .field("PFD0_FRAC", &self.PFD0_FRAC())
+                .field("PFD0_STABLE", &self.PFD0_STABLE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PFDA_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PFDA_CLR {
+                PFD0_CLKGATE: bool,
+                PFD0_FRAC: u8,
+                PFD0_STABLE: bool,
+            }
+            let proxy = PFDA_CLR {
+                PFD0_CLKGATE: self.PFD0_CLKGATE(),
+                PFD0_FRAC: self.PFD0_FRAC(),
+                PFD0_STABLE: self.PFD0_STABLE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PFD A"]
@@ -1750,6 +2470,32 @@ pub mod regs {
             PFDA_SET(0)
         }
     }
+    impl core::fmt::Debug for PFDA_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PFDA_SET")
+                .field("PFD0_CLKGATE", &self.PFD0_CLKGATE())
+                .field("PFD0_FRAC", &self.PFD0_FRAC())
+                .field("PFD0_STABLE", &self.PFD0_STABLE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PFDA_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PFDA_SET {
+                PFD0_CLKGATE: bool,
+                PFD0_FRAC: u8,
+                PFD0_STABLE: bool,
+            }
+            let proxy = PFDA_SET {
+                PFD0_CLKGATE: self.PFD0_CLKGATE(),
+                PFD0_FRAC: self.PFD0_FRAC(),
+                PFD0_STABLE: self.PFD0_STABLE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PFD A"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1787,6 +2533,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PFDA_TOG {
             PFDA_TOG(0)
+        }
+    }
+    impl core::fmt::Debug for PFDA_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PFDA_TOG")
+                .field("PFD0_CLKGATE", &self.PFD0_CLKGATE())
+                .field("PFD0_FRAC", &self.PFD0_FRAC())
+                .field("PFD0_STABLE", &self.PFD0_STABLE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PFDA_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PFDA_TOG {
+                PFD0_CLKGATE: bool,
+                PFD0_FRAC: u8,
+                PFD0_STABLE: bool,
+            }
+            let proxy = PFDA_TOG {
+                PFD0_CLKGATE: self.PFD0_CLKGATE(),
+                PFD0_FRAC: self.PFD0_FRAC(),
+                PFD0_STABLE: self.PFD0_STABLE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PLL SIC"]
@@ -1891,6 +2663,53 @@ pub mod regs {
             PLL_SIC(0)
         }
     }
+    impl core::fmt::Debug for PLL_SIC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PLL_SIC")
+                .field("MISC2_CONTROL0", &self.MISC2_CONTROL0())
+                .field("PLL_EN_USB_CLKS", &self.PLL_EN_USB_CLKS())
+                .field("PLL_POWER", &self.PLL_POWER())
+                .field("PLL_ENABLE", &self.PLL_ENABLE())
+                .field("PLL_BYPASS", &self.PLL_BYPASS())
+                .field("REFBIAS_PWD_SEL", &self.REFBIAS_PWD_SEL())
+                .field("REFBIAS_PWD", &self.REFBIAS_PWD())
+                .field("PLL_REG_ENABLE", &self.PLL_REG_ENABLE())
+                .field("PLL_DIV_SEL", &self.PLL_DIV_SEL())
+                .field("PLL_LOCK", &self.PLL_LOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PLL_SIC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PLL_SIC {
+                MISC2_CONTROL0: bool,
+                PLL_EN_USB_CLKS: bool,
+                PLL_POWER: bool,
+                PLL_ENABLE: bool,
+                PLL_BYPASS: bool,
+                REFBIAS_PWD_SEL: bool,
+                REFBIAS_PWD: bool,
+                PLL_REG_ENABLE: bool,
+                PLL_DIV_SEL: u8,
+                PLL_LOCK: bool,
+            }
+            let proxy = PLL_SIC {
+                MISC2_CONTROL0: self.MISC2_CONTROL0(),
+                PLL_EN_USB_CLKS: self.PLL_EN_USB_CLKS(),
+                PLL_POWER: self.PLL_POWER(),
+                PLL_ENABLE: self.PLL_ENABLE(),
+                PLL_BYPASS: self.PLL_BYPASS(),
+                REFBIAS_PWD_SEL: self.REFBIAS_PWD_SEL(),
+                REFBIAS_PWD: self.REFBIAS_PWD(),
+                PLL_REG_ENABLE: self.PLL_REG_ENABLE(),
+                PLL_DIV_SEL: self.PLL_DIV_SEL(),
+                PLL_LOCK: self.PLL_LOCK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PLL SIC"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1991,6 +2810,53 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PLL_SIC_CLR {
             PLL_SIC_CLR(0)
+        }
+    }
+    impl core::fmt::Debug for PLL_SIC_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PLL_SIC_CLR")
+                .field("MISC2_CONTROL0", &self.MISC2_CONTROL0())
+                .field("PLL_EN_USB_CLKS", &self.PLL_EN_USB_CLKS())
+                .field("PLL_POWER", &self.PLL_POWER())
+                .field("PLL_ENABLE", &self.PLL_ENABLE())
+                .field("PLL_BYPASS", &self.PLL_BYPASS())
+                .field("REFBIAS_PWD_SEL", &self.REFBIAS_PWD_SEL())
+                .field("REFBIAS_PWD", &self.REFBIAS_PWD())
+                .field("PLL_REG_ENABLE", &self.PLL_REG_ENABLE())
+                .field("PLL_DIV_SEL", &self.PLL_DIV_SEL())
+                .field("PLL_LOCK", &self.PLL_LOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PLL_SIC_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PLL_SIC_CLR {
+                MISC2_CONTROL0: bool,
+                PLL_EN_USB_CLKS: bool,
+                PLL_POWER: bool,
+                PLL_ENABLE: bool,
+                PLL_BYPASS: bool,
+                REFBIAS_PWD_SEL: bool,
+                REFBIAS_PWD: bool,
+                PLL_REG_ENABLE: bool,
+                PLL_DIV_SEL: u8,
+                PLL_LOCK: bool,
+            }
+            let proxy = PLL_SIC_CLR {
+                MISC2_CONTROL0: self.MISC2_CONTROL0(),
+                PLL_EN_USB_CLKS: self.PLL_EN_USB_CLKS(),
+                PLL_POWER: self.PLL_POWER(),
+                PLL_ENABLE: self.PLL_ENABLE(),
+                PLL_BYPASS: self.PLL_BYPASS(),
+                REFBIAS_PWD_SEL: self.REFBIAS_PWD_SEL(),
+                REFBIAS_PWD: self.REFBIAS_PWD(),
+                PLL_REG_ENABLE: self.PLL_REG_ENABLE(),
+                PLL_DIV_SEL: self.PLL_DIV_SEL(),
+                PLL_LOCK: self.PLL_LOCK(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PLL SIC"]
@@ -2095,6 +2961,53 @@ pub mod regs {
             PLL_SIC_SET(0)
         }
     }
+    impl core::fmt::Debug for PLL_SIC_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PLL_SIC_SET")
+                .field("MISC2_CONTROL0", &self.MISC2_CONTROL0())
+                .field("PLL_EN_USB_CLKS", &self.PLL_EN_USB_CLKS())
+                .field("PLL_POWER", &self.PLL_POWER())
+                .field("PLL_ENABLE", &self.PLL_ENABLE())
+                .field("PLL_BYPASS", &self.PLL_BYPASS())
+                .field("REFBIAS_PWD_SEL", &self.REFBIAS_PWD_SEL())
+                .field("REFBIAS_PWD", &self.REFBIAS_PWD())
+                .field("PLL_REG_ENABLE", &self.PLL_REG_ENABLE())
+                .field("PLL_DIV_SEL", &self.PLL_DIV_SEL())
+                .field("PLL_LOCK", &self.PLL_LOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PLL_SIC_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PLL_SIC_SET {
+                MISC2_CONTROL0: bool,
+                PLL_EN_USB_CLKS: bool,
+                PLL_POWER: bool,
+                PLL_ENABLE: bool,
+                PLL_BYPASS: bool,
+                REFBIAS_PWD_SEL: bool,
+                REFBIAS_PWD: bool,
+                PLL_REG_ENABLE: bool,
+                PLL_DIV_SEL: u8,
+                PLL_LOCK: bool,
+            }
+            let proxy = PLL_SIC_SET {
+                MISC2_CONTROL0: self.MISC2_CONTROL0(),
+                PLL_EN_USB_CLKS: self.PLL_EN_USB_CLKS(),
+                PLL_POWER: self.PLL_POWER(),
+                PLL_ENABLE: self.PLL_ENABLE(),
+                PLL_BYPASS: self.PLL_BYPASS(),
+                REFBIAS_PWD_SEL: self.REFBIAS_PWD_SEL(),
+                REFBIAS_PWD: self.REFBIAS_PWD(),
+                PLL_REG_ENABLE: self.PLL_REG_ENABLE(),
+                PLL_DIV_SEL: self.PLL_DIV_SEL(),
+                PLL_LOCK: self.PLL_LOCK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PLL SIC"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2197,6 +3110,53 @@ pub mod regs {
             PLL_SIC_TOG(0)
         }
     }
+    impl core::fmt::Debug for PLL_SIC_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PLL_SIC_TOG")
+                .field("MISC2_CONTROL0", &self.MISC2_CONTROL0())
+                .field("PLL_EN_USB_CLKS", &self.PLL_EN_USB_CLKS())
+                .field("PLL_POWER", &self.PLL_POWER())
+                .field("PLL_ENABLE", &self.PLL_ENABLE())
+                .field("PLL_BYPASS", &self.PLL_BYPASS())
+                .field("REFBIAS_PWD_SEL", &self.REFBIAS_PWD_SEL())
+                .field("REFBIAS_PWD", &self.REFBIAS_PWD())
+                .field("PLL_REG_ENABLE", &self.PLL_REG_ENABLE())
+                .field("PLL_DIV_SEL", &self.PLL_DIV_SEL())
+                .field("PLL_LOCK", &self.PLL_LOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PLL_SIC_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PLL_SIC_TOG {
+                MISC2_CONTROL0: bool,
+                PLL_EN_USB_CLKS: bool,
+                PLL_POWER: bool,
+                PLL_ENABLE: bool,
+                PLL_BYPASS: bool,
+                REFBIAS_PWD_SEL: bool,
+                REFBIAS_PWD: bool,
+                PLL_REG_ENABLE: bool,
+                PLL_DIV_SEL: u8,
+                PLL_LOCK: bool,
+            }
+            let proxy = PLL_SIC_TOG {
+                MISC2_CONTROL0: self.MISC2_CONTROL0(),
+                PLL_EN_USB_CLKS: self.PLL_EN_USB_CLKS(),
+                PLL_POWER: self.PLL_POWER(),
+                PLL_ENABLE: self.PLL_ENABLE(),
+                PLL_BYPASS: self.PLL_BYPASS(),
+                REFBIAS_PWD_SEL: self.REFBIAS_PWD_SEL(),
+                REFBIAS_PWD: self.REFBIAS_PWD(),
+                PLL_REG_ENABLE: self.PLL_REG_ENABLE(),
+                PLL_DIV_SEL: self.PLL_DIV_SEL(),
+                PLL_LOCK: self.PLL_LOCK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Power Down"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2270,6 +3230,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PWD {
             PWD(0)
+        }
+    }
+    impl core::fmt::Debug for PWD {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PWD")
+                .field("TXPWDFS", &self.TXPWDFS())
+                .field("TXPWDIBIAS", &self.TXPWDIBIAS())
+                .field("TXPWDV2I", &self.TXPWDV2I())
+                .field("RXPWDENV", &self.RXPWDENV())
+                .field("RXPWD1PT1", &self.RXPWD1PT1())
+                .field("RXPWDDIFF", &self.RXPWDDIFF())
+                .field("RXPWDRX", &self.RXPWDRX())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWD {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PWD {
+                TXPWDFS: bool,
+                TXPWDIBIAS: bool,
+                TXPWDV2I: bool,
+                RXPWDENV: bool,
+                RXPWD1PT1: bool,
+                RXPWDDIFF: bool,
+                RXPWDRX: bool,
+            }
+            let proxy = PWD {
+                TXPWDFS: self.TXPWDFS(),
+                TXPWDIBIAS: self.TXPWDIBIAS(),
+                TXPWDV2I: self.TXPWDV2I(),
+                RXPWDENV: self.RXPWDENV(),
+                RXPWD1PT1: self.RXPWD1PT1(),
+                RXPWDDIFF: self.RXPWDDIFF(),
+                RXPWDRX: self.RXPWDRX(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Power Down"]
@@ -2347,6 +3345,44 @@ pub mod regs {
             PWD_CLR(0)
         }
     }
+    impl core::fmt::Debug for PWD_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PWD_CLR")
+                .field("TXPWDFS", &self.TXPWDFS())
+                .field("TXPWDIBIAS", &self.TXPWDIBIAS())
+                .field("TXPWDV2I", &self.TXPWDV2I())
+                .field("RXPWDENV", &self.RXPWDENV())
+                .field("RXPWD1PT1", &self.RXPWD1PT1())
+                .field("RXPWDDIFF", &self.RXPWDDIFF())
+                .field("RXPWDRX", &self.RXPWDRX())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWD_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PWD_CLR {
+                TXPWDFS: bool,
+                TXPWDIBIAS: bool,
+                TXPWDV2I: bool,
+                RXPWDENV: bool,
+                RXPWD1PT1: bool,
+                RXPWDDIFF: bool,
+                RXPWDRX: bool,
+            }
+            let proxy = PWD_CLR {
+                TXPWDFS: self.TXPWDFS(),
+                TXPWDIBIAS: self.TXPWDIBIAS(),
+                TXPWDV2I: self.TXPWDV2I(),
+                RXPWDENV: self.RXPWDENV(),
+                RXPWD1PT1: self.RXPWD1PT1(),
+                RXPWDDIFF: self.RXPWDDIFF(),
+                RXPWDRX: self.RXPWDRX(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Power Down"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2420,6 +3456,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PWD_SET {
             PWD_SET(0)
+        }
+    }
+    impl core::fmt::Debug for PWD_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PWD_SET")
+                .field("TXPWDFS", &self.TXPWDFS())
+                .field("TXPWDIBIAS", &self.TXPWDIBIAS())
+                .field("TXPWDV2I", &self.TXPWDV2I())
+                .field("RXPWDENV", &self.RXPWDENV())
+                .field("RXPWD1PT1", &self.RXPWD1PT1())
+                .field("RXPWDDIFF", &self.RXPWDDIFF())
+                .field("RXPWDRX", &self.RXPWDRX())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWD_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PWD_SET {
+                TXPWDFS: bool,
+                TXPWDIBIAS: bool,
+                TXPWDV2I: bool,
+                RXPWDENV: bool,
+                RXPWD1PT1: bool,
+                RXPWDDIFF: bool,
+                RXPWDRX: bool,
+            }
+            let proxy = PWD_SET {
+                TXPWDFS: self.TXPWDFS(),
+                TXPWDIBIAS: self.TXPWDIBIAS(),
+                TXPWDV2I: self.TXPWDV2I(),
+                RXPWDENV: self.RXPWDENV(),
+                RXPWD1PT1: self.RXPWD1PT1(),
+                RXPWDDIFF: self.RXPWDDIFF(),
+                RXPWDRX: self.RXPWDRX(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Power Down"]
@@ -2497,6 +3571,44 @@ pub mod regs {
             PWD_TOG(0)
         }
     }
+    impl core::fmt::Debug for PWD_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PWD_TOG")
+                .field("TXPWDFS", &self.TXPWDFS())
+                .field("TXPWDIBIAS", &self.TXPWDIBIAS())
+                .field("TXPWDV2I", &self.TXPWDV2I())
+                .field("RXPWDENV", &self.RXPWDENV())
+                .field("RXPWD1PT1", &self.RXPWD1PT1())
+                .field("RXPWDDIFF", &self.RXPWDDIFF())
+                .field("RXPWDRX", &self.RXPWDRX())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWD_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PWD_TOG {
+                TXPWDFS: bool,
+                TXPWDIBIAS: bool,
+                TXPWDV2I: bool,
+                RXPWDENV: bool,
+                RXPWD1PT1: bool,
+                RXPWDDIFF: bool,
+                RXPWDRX: bool,
+            }
+            let proxy = PWD_TOG {
+                TXPWDFS: self.TXPWDFS(),
+                TXPWDIBIAS: self.TXPWDIBIAS(),
+                TXPWDV2I: self.TXPWDV2I(),
+                RXPWDENV: self.RXPWDENV(),
+                RXPWD1PT1: self.RXPWD1PT1(),
+                RXPWDDIFF: self.RXPWDDIFF(),
+                RXPWDRX: self.RXPWDRX(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "RX Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2525,6 +3637,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> RX {
             RX(0)
+        }
+    }
+    impl core::fmt::Debug for RX {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RX")
+                .field("ENVADJ", &self.ENVADJ())
+                .field("DISCONADJ", &self.DISCONADJ())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RX {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RX {
+                ENVADJ: u8,
+                DISCONADJ: u8,
+            }
+            let proxy = RX {
+                ENVADJ: self.ENVADJ(),
+                DISCONADJ: self.DISCONADJ(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "RX Control"]
@@ -2557,6 +3692,29 @@ pub mod regs {
             RX_CLR(0)
         }
     }
+    impl core::fmt::Debug for RX_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RX_CLR")
+                .field("ENVADJ", &self.ENVADJ())
+                .field("DISCONADJ", &self.DISCONADJ())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RX_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RX_CLR {
+                ENVADJ: u8,
+                DISCONADJ: u8,
+            }
+            let proxy = RX_CLR {
+                ENVADJ: self.ENVADJ(),
+                DISCONADJ: self.DISCONADJ(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "RX Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2587,6 +3745,29 @@ pub mod regs {
             RX_SET(0)
         }
     }
+    impl core::fmt::Debug for RX_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RX_SET")
+                .field("ENVADJ", &self.ENVADJ())
+                .field("DISCONADJ", &self.DISCONADJ())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RX_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RX_SET {
+                ENVADJ: u8,
+                DISCONADJ: u8,
+            }
+            let proxy = RX_SET {
+                ENVADJ: self.ENVADJ(),
+                DISCONADJ: self.DISCONADJ(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "RX Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2615,6 +3796,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> RX_TOG {
             RX_TOG(0)
+        }
+    }
+    impl core::fmt::Debug for RX_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RX_TOG")
+                .field("ENVADJ", &self.ENVADJ())
+                .field("DISCONADJ", &self.DISCONADJ())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RX_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RX_TOG {
+                ENVADJ: u8,
+                DISCONADJ: u8,
+            }
+            let proxy = RX_TOG {
+                ENVADJ: self.ENVADJ(),
+                DISCONADJ: self.DISCONADJ(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status"]
@@ -2672,6 +3876,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> STATUS {
             STATUS(0)
+        }
+    }
+    impl core::fmt::Debug for STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("STATUS")
+                .field("OK_STATUS_3V", &self.OK_STATUS_3V())
+                .field("HOSTDISCONDETECT_STATUS", &self.HOSTDISCONDETECT_STATUS())
+                .field("DEVPLUGIN_STATUS", &self.DEVPLUGIN_STATUS())
+                .field("OTGID_STATUS", &self.OTGID_STATUS())
+                .field("RESUME_STATUS", &self.RESUME_STATUS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct STATUS {
+                OK_STATUS_3V: bool,
+                HOSTDISCONDETECT_STATUS: bool,
+                DEVPLUGIN_STATUS: bool,
+                OTGID_STATUS: bool,
+                RESUME_STATUS: bool,
+            }
+            let proxy = STATUS {
+                OK_STATUS_3V: self.OK_STATUS_3V(),
+                HOSTDISCONDETECT_STATUS: self.HOSTDISCONDETECT_STATUS(),
+                DEVPLUGIN_STATUS: self.DEVPLUGIN_STATUS(),
+                OTGID_STATUS: self.OTGID_STATUS(),
+                RESUME_STATUS: self.RESUME_STATUS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Trim"]
@@ -2758,6 +3994,47 @@ pub mod regs {
             TRIM_OVERRIDE_EN(0)
         }
     }
+    impl core::fmt::Debug for TRIM_OVERRIDE_EN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TRIM_OVERRIDE_EN")
+                .field("DIV_SEL_OVERRIDE", &self.DIV_SEL_OVERRIDE())
+                .field("TX_D_CAL_OVERRIDE", &self.TX_D_CAL_OVERRIDE())
+                .field("TX_CAL45DP_OVERRIDE", &self.TX_CAL45DP_OVERRIDE())
+                .field("TX_CAL45DM_OVERRIDE", &self.TX_CAL45DM_OVERRIDE())
+                .field("PLL_CTRL0_DIV_SEL", &self.PLL_CTRL0_DIV_SEL())
+                .field("USBPHY_TX_D_CAL", &self.USBPHY_TX_D_CAL())
+                .field("USBPHY_TX_CAL45DP", &self.USBPHY_TX_CAL45DP())
+                .field("USBPHY_TX_CAL45DN", &self.USBPHY_TX_CAL45DN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TRIM_OVERRIDE_EN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TRIM_OVERRIDE_EN {
+                DIV_SEL_OVERRIDE: bool,
+                TX_D_CAL_OVERRIDE: bool,
+                TX_CAL45DP_OVERRIDE: bool,
+                TX_CAL45DM_OVERRIDE: bool,
+                PLL_CTRL0_DIV_SEL: u8,
+                USBPHY_TX_D_CAL: u8,
+                USBPHY_TX_CAL45DP: u8,
+                USBPHY_TX_CAL45DN: u8,
+            }
+            let proxy = TRIM_OVERRIDE_EN {
+                DIV_SEL_OVERRIDE: self.DIV_SEL_OVERRIDE(),
+                TX_D_CAL_OVERRIDE: self.TX_D_CAL_OVERRIDE(),
+                TX_CAL45DP_OVERRIDE: self.TX_CAL45DP_OVERRIDE(),
+                TX_CAL45DM_OVERRIDE: self.TX_CAL45DM_OVERRIDE(),
+                PLL_CTRL0_DIV_SEL: self.PLL_CTRL0_DIV_SEL(),
+                USBPHY_TX_D_CAL: self.USBPHY_TX_D_CAL(),
+                USBPHY_TX_CAL45DP: self.USBPHY_TX_CAL45DP(),
+                USBPHY_TX_CAL45DN: self.USBPHY_TX_CAL45DN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Trim"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2840,6 +4117,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TRIM_OVERRIDE_EN_CLR {
             TRIM_OVERRIDE_EN_CLR(0)
+        }
+    }
+    impl core::fmt::Debug for TRIM_OVERRIDE_EN_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TRIM_OVERRIDE_EN_CLR")
+                .field("DIV_SEL_OVERRIDE", &self.DIV_SEL_OVERRIDE())
+                .field("TX_D_CAL_OVERRIDE", &self.TX_D_CAL_OVERRIDE())
+                .field("TX_CAL45DP_OVERRIDE", &self.TX_CAL45DP_OVERRIDE())
+                .field("TX_CAL45DM_OVERRIDE", &self.TX_CAL45DM_OVERRIDE())
+                .field("PLL_CTRL0_DIV_SEL", &self.PLL_CTRL0_DIV_SEL())
+                .field("USBPHY_TX_D_CAL", &self.USBPHY_TX_D_CAL())
+                .field("USBPHY_TX_CAL45DP", &self.USBPHY_TX_CAL45DP())
+                .field("USBPHY_TX_CAL45DN", &self.USBPHY_TX_CAL45DN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TRIM_OVERRIDE_EN_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TRIM_OVERRIDE_EN_CLR {
+                DIV_SEL_OVERRIDE: bool,
+                TX_D_CAL_OVERRIDE: bool,
+                TX_CAL45DP_OVERRIDE: bool,
+                TX_CAL45DM_OVERRIDE: bool,
+                PLL_CTRL0_DIV_SEL: u8,
+                USBPHY_TX_D_CAL: u8,
+                USBPHY_TX_CAL45DP: u8,
+                USBPHY_TX_CAL45DN: u8,
+            }
+            let proxy = TRIM_OVERRIDE_EN_CLR {
+                DIV_SEL_OVERRIDE: self.DIV_SEL_OVERRIDE(),
+                TX_D_CAL_OVERRIDE: self.TX_D_CAL_OVERRIDE(),
+                TX_CAL45DP_OVERRIDE: self.TX_CAL45DP_OVERRIDE(),
+                TX_CAL45DM_OVERRIDE: self.TX_CAL45DM_OVERRIDE(),
+                PLL_CTRL0_DIV_SEL: self.PLL_CTRL0_DIV_SEL(),
+                USBPHY_TX_D_CAL: self.USBPHY_TX_D_CAL(),
+                USBPHY_TX_CAL45DP: self.USBPHY_TX_CAL45DP(),
+                USBPHY_TX_CAL45DN: self.USBPHY_TX_CAL45DN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Trim"]
@@ -2926,6 +4244,47 @@ pub mod regs {
             TRIM_OVERRIDE_EN_SET(0)
         }
     }
+    impl core::fmt::Debug for TRIM_OVERRIDE_EN_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TRIM_OVERRIDE_EN_SET")
+                .field("DIV_SEL_OVERRIDE", &self.DIV_SEL_OVERRIDE())
+                .field("TX_D_CAL_OVERRIDE", &self.TX_D_CAL_OVERRIDE())
+                .field("TX_CAL45DP_OVERRIDE", &self.TX_CAL45DP_OVERRIDE())
+                .field("TX_CAL45DM_OVERRIDE", &self.TX_CAL45DM_OVERRIDE())
+                .field("PLL_CTRL0_DIV_SEL", &self.PLL_CTRL0_DIV_SEL())
+                .field("USBPHY_TX_D_CAL", &self.USBPHY_TX_D_CAL())
+                .field("USBPHY_TX_CAL45DP", &self.USBPHY_TX_CAL45DP())
+                .field("USBPHY_TX_CAL45DN", &self.USBPHY_TX_CAL45DN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TRIM_OVERRIDE_EN_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TRIM_OVERRIDE_EN_SET {
+                DIV_SEL_OVERRIDE: bool,
+                TX_D_CAL_OVERRIDE: bool,
+                TX_CAL45DP_OVERRIDE: bool,
+                TX_CAL45DM_OVERRIDE: bool,
+                PLL_CTRL0_DIV_SEL: u8,
+                USBPHY_TX_D_CAL: u8,
+                USBPHY_TX_CAL45DP: u8,
+                USBPHY_TX_CAL45DN: u8,
+            }
+            let proxy = TRIM_OVERRIDE_EN_SET {
+                DIV_SEL_OVERRIDE: self.DIV_SEL_OVERRIDE(),
+                TX_D_CAL_OVERRIDE: self.TX_D_CAL_OVERRIDE(),
+                TX_CAL45DP_OVERRIDE: self.TX_CAL45DP_OVERRIDE(),
+                TX_CAL45DM_OVERRIDE: self.TX_CAL45DM_OVERRIDE(),
+                PLL_CTRL0_DIV_SEL: self.PLL_CTRL0_DIV_SEL(),
+                USBPHY_TX_D_CAL: self.USBPHY_TX_D_CAL(),
+                USBPHY_TX_CAL45DP: self.USBPHY_TX_CAL45DP(),
+                USBPHY_TX_CAL45DN: self.USBPHY_TX_CAL45DN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Trim"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3010,6 +4369,47 @@ pub mod regs {
             TRIM_OVERRIDE_EN_TOG(0)
         }
     }
+    impl core::fmt::Debug for TRIM_OVERRIDE_EN_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TRIM_OVERRIDE_EN_TOG")
+                .field("DIV_SEL_OVERRIDE", &self.DIV_SEL_OVERRIDE())
+                .field("TX_D_CAL_OVERRIDE", &self.TX_D_CAL_OVERRIDE())
+                .field("TX_CAL45DP_OVERRIDE", &self.TX_CAL45DP_OVERRIDE())
+                .field("TX_CAL45DM_OVERRIDE", &self.TX_CAL45DM_OVERRIDE())
+                .field("PLL_CTRL0_DIV_SEL", &self.PLL_CTRL0_DIV_SEL())
+                .field("USBPHY_TX_D_CAL", &self.USBPHY_TX_D_CAL())
+                .field("USBPHY_TX_CAL45DP", &self.USBPHY_TX_CAL45DP())
+                .field("USBPHY_TX_CAL45DN", &self.USBPHY_TX_CAL45DN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TRIM_OVERRIDE_EN_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TRIM_OVERRIDE_EN_TOG {
+                DIV_SEL_OVERRIDE: bool,
+                TX_D_CAL_OVERRIDE: bool,
+                TX_CAL45DP_OVERRIDE: bool,
+                TX_CAL45DM_OVERRIDE: bool,
+                PLL_CTRL0_DIV_SEL: u8,
+                USBPHY_TX_D_CAL: u8,
+                USBPHY_TX_CAL45DP: u8,
+                USBPHY_TX_CAL45DN: u8,
+            }
+            let proxy = TRIM_OVERRIDE_EN_TOG {
+                DIV_SEL_OVERRIDE: self.DIV_SEL_OVERRIDE(),
+                TX_D_CAL_OVERRIDE: self.TX_D_CAL_OVERRIDE(),
+                TX_CAL45DP_OVERRIDE: self.TX_CAL45DP_OVERRIDE(),
+                TX_CAL45DM_OVERRIDE: self.TX_CAL45DM_OVERRIDE(),
+                PLL_CTRL0_DIV_SEL: self.PLL_CTRL0_DIV_SEL(),
+                USBPHY_TX_D_CAL: self.USBPHY_TX_D_CAL(),
+                USBPHY_TX_CAL45DP: self.USBPHY_TX_CAL45DP(),
+                USBPHY_TX_CAL45DN: self.USBPHY_TX_CAL45DN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "TX Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3047,6 +4447,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TX {
             TX(0)
+        }
+    }
+    impl core::fmt::Debug for TX {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TX")
+                .field("D_CAL", &self.D_CAL())
+                .field("TXCAL45DN", &self.TXCAL45DN())
+                .field("TXCAL45DP", &self.TXCAL45DP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TX {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TX {
+                D_CAL: u8,
+                TXCAL45DN: u8,
+                TXCAL45DP: u8,
+            }
+            let proxy = TX {
+                D_CAL: self.D_CAL(),
+                TXCAL45DN: self.TXCAL45DN(),
+                TXCAL45DP: self.TXCAL45DP(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TX Control"]
@@ -3088,6 +4514,32 @@ pub mod regs {
             TX_CLR(0)
         }
     }
+    impl core::fmt::Debug for TX_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TX_CLR")
+                .field("D_CAL", &self.D_CAL())
+                .field("TXCAL45DN", &self.TXCAL45DN())
+                .field("TXCAL45DP", &self.TXCAL45DP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TX_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TX_CLR {
+                D_CAL: u8,
+                TXCAL45DN: u8,
+                TXCAL45DP: u8,
+            }
+            let proxy = TX_CLR {
+                D_CAL: self.D_CAL(),
+                TXCAL45DN: self.TXCAL45DN(),
+                TXCAL45DP: self.TXCAL45DP(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "TX Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3127,6 +4579,32 @@ pub mod regs {
             TX_SET(0)
         }
     }
+    impl core::fmt::Debug for TX_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TX_SET")
+                .field("D_CAL", &self.D_CAL())
+                .field("TXCAL45DN", &self.TXCAL45DN())
+                .field("TXCAL45DP", &self.TXCAL45DP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TX_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TX_SET {
+                D_CAL: u8,
+                TXCAL45DN: u8,
+                TXCAL45DP: u8,
+            }
+            let proxy = TX_SET {
+                D_CAL: self.D_CAL(),
+                TXCAL45DN: self.TXCAL45DN(),
+                TXCAL45DP: self.TXCAL45DP(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "TX Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3164,6 +4642,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TX_TOG {
             TX_TOG(0)
+        }
+    }
+    impl core::fmt::Debug for TX_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TX_TOG")
+                .field("D_CAL", &self.D_CAL())
+                .field("TXCAL45DN", &self.TXCAL45DN())
+                .field("TXCAL45DP", &self.TXCAL45DP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TX_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TX_TOG {
+                D_CAL: u8,
+                TXCAL45DN: u8,
+                TXCAL45DP: u8,
+            }
+            let proxy = TX_TOG {
+                D_CAL: self.D_CAL(),
+                TXCAL45DN: self.TXCAL45DN(),
+                TXCAL45DP: self.TXCAL45DP(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Charger Detect"]
@@ -3241,6 +4745,44 @@ pub mod regs {
             USB1_CHRG_DETECT(0)
         }
     }
+    impl core::fmt::Debug for USB1_CHRG_DETECT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("USB1_CHRG_DETECT")
+                .field("DETECT_SEC", &self.DETECT_SEC())
+                .field("PULLUP_DP", &self.PULLUP_DP())
+                .field("VDM_SRC_ENABLE", &self.VDM_SRC_ENABLE())
+                .field("CHK_CONTACT", &self.CHK_CONTACT())
+                .field("CHK_CHRG_B", &self.CHK_CHRG_B())
+                .field("EN_B", &self.EN_B())
+                .field("DCDSEL", &self.DCDSEL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_CHRG_DETECT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct USB1_CHRG_DETECT {
+                DETECT_SEC: bool,
+                PULLUP_DP: bool,
+                VDM_SRC_ENABLE: bool,
+                CHK_CONTACT: bool,
+                CHK_CHRG_B: bool,
+                EN_B: bool,
+                DCDSEL: bool,
+            }
+            let proxy = USB1_CHRG_DETECT {
+                DETECT_SEC: self.DETECT_SEC(),
+                PULLUP_DP: self.PULLUP_DP(),
+                VDM_SRC_ENABLE: self.VDM_SRC_ENABLE(),
+                CHK_CONTACT: self.CHK_CONTACT(),
+                CHK_CHRG_B: self.CHK_CHRG_B(),
+                EN_B: self.EN_B(),
+                DCDSEL: self.DCDSEL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Charger Detect"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3314,6 +4856,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> USB1_CHRG_DETECT_CLR {
             USB1_CHRG_DETECT_CLR(0)
+        }
+    }
+    impl core::fmt::Debug for USB1_CHRG_DETECT_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("USB1_CHRG_DETECT_CLR")
+                .field("DETECT_SEC", &self.DETECT_SEC())
+                .field("PULLUP_DP", &self.PULLUP_DP())
+                .field("VDM_SRC_ENABLE", &self.VDM_SRC_ENABLE())
+                .field("CHK_CONTACT", &self.CHK_CONTACT())
+                .field("CHK_CHRG_B", &self.CHK_CHRG_B())
+                .field("EN_B", &self.EN_B())
+                .field("DCDSEL", &self.DCDSEL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_CHRG_DETECT_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct USB1_CHRG_DETECT_CLR {
+                DETECT_SEC: bool,
+                PULLUP_DP: bool,
+                VDM_SRC_ENABLE: bool,
+                CHK_CONTACT: bool,
+                CHK_CHRG_B: bool,
+                EN_B: bool,
+                DCDSEL: bool,
+            }
+            let proxy = USB1_CHRG_DETECT_CLR {
+                DETECT_SEC: self.DETECT_SEC(),
+                PULLUP_DP: self.PULLUP_DP(),
+                VDM_SRC_ENABLE: self.VDM_SRC_ENABLE(),
+                CHK_CONTACT: self.CHK_CONTACT(),
+                CHK_CHRG_B: self.CHK_CHRG_B(),
+                EN_B: self.EN_B(),
+                DCDSEL: self.DCDSEL(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Charger Detect"]
@@ -3391,6 +4971,44 @@ pub mod regs {
             USB1_CHRG_DETECT_SET(0)
         }
     }
+    impl core::fmt::Debug for USB1_CHRG_DETECT_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("USB1_CHRG_DETECT_SET")
+                .field("DETECT_SEC", &self.DETECT_SEC())
+                .field("PULLUP_DP", &self.PULLUP_DP())
+                .field("VDM_SRC_ENABLE", &self.VDM_SRC_ENABLE())
+                .field("CHK_CONTACT", &self.CHK_CONTACT())
+                .field("CHK_CHRG_B", &self.CHK_CHRG_B())
+                .field("EN_B", &self.EN_B())
+                .field("DCDSEL", &self.DCDSEL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_CHRG_DETECT_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct USB1_CHRG_DETECT_SET {
+                DETECT_SEC: bool,
+                PULLUP_DP: bool,
+                VDM_SRC_ENABLE: bool,
+                CHK_CONTACT: bool,
+                CHK_CHRG_B: bool,
+                EN_B: bool,
+                DCDSEL: bool,
+            }
+            let proxy = USB1_CHRG_DETECT_SET {
+                DETECT_SEC: self.DETECT_SEC(),
+                PULLUP_DP: self.PULLUP_DP(),
+                VDM_SRC_ENABLE: self.VDM_SRC_ENABLE(),
+                CHK_CONTACT: self.CHK_CONTACT(),
+                CHK_CHRG_B: self.CHK_CHRG_B(),
+                EN_B: self.EN_B(),
+                DCDSEL: self.DCDSEL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Charger Detect"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3466,6 +5084,44 @@ pub mod regs {
             USB1_CHRG_DETECT_TOG(0)
         }
     }
+    impl core::fmt::Debug for USB1_CHRG_DETECT_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("USB1_CHRG_DETECT_TOG")
+                .field("DETECT_SEC", &self.DETECT_SEC())
+                .field("PULLUP_DP", &self.PULLUP_DP())
+                .field("VDM_SRC_ENABLE", &self.VDM_SRC_ENABLE())
+                .field("CHK_CONTACT", &self.CHK_CONTACT())
+                .field("CHK_CHRG_B", &self.CHK_CHRG_B())
+                .field("EN_B", &self.EN_B())
+                .field("DCDSEL", &self.DCDSEL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_CHRG_DETECT_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct USB1_CHRG_DETECT_TOG {
+                DETECT_SEC: bool,
+                PULLUP_DP: bool,
+                VDM_SRC_ENABLE: bool,
+                CHK_CONTACT: bool,
+                CHK_CHRG_B: bool,
+                EN_B: bool,
+                DCDSEL: bool,
+            }
+            let proxy = USB1_CHRG_DETECT_TOG {
+                DETECT_SEC: self.DETECT_SEC(),
+                PULLUP_DP: self.PULLUP_DP(),
+                VDM_SRC_ENABLE: self.VDM_SRC_ENABLE(),
+                CHK_CONTACT: self.CHK_CONTACT(),
+                CHK_CHRG_B: self.CHK_CHRG_B(),
+                EN_B: self.EN_B(),
+                DCDSEL: self.DCDSEL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Charger Detect Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3521,6 +5177,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> USB1_CHRG_DET_STAT {
             USB1_CHRG_DET_STAT(0)
+        }
+    }
+    impl core::fmt::Debug for USB1_CHRG_DET_STAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("USB1_CHRG_DET_STAT")
+                .field("PLUG_CONTACT", &self.PLUG_CONTACT())
+                .field("CHRG_DETECTED", &self.CHRG_DETECTED())
+                .field("DM_STATE", &self.DM_STATE())
+                .field("DP_STATE", &self.DP_STATE())
+                .field("SECDET_DCP", &self.SECDET_DCP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_CHRG_DET_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct USB1_CHRG_DET_STAT {
+                PLUG_CONTACT: bool,
+                CHRG_DETECTED: bool,
+                DM_STATE: bool,
+                DP_STATE: bool,
+                SECDET_DCP: bool,
+            }
+            let proxy = USB1_CHRG_DET_STAT {
+                PLUG_CONTACT: self.PLUG_CONTACT(),
+                CHRG_DETECTED: self.CHRG_DETECTED(),
+                DM_STATE: self.DM_STATE(),
+                DP_STATE: self.DP_STATE(),
+                SECDET_DCP: self.SECDET_DCP(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Charger Detect Status"]
@@ -3580,6 +5268,38 @@ pub mod regs {
             USB1_CHRG_DET_STAT_CLR(0)
         }
     }
+    impl core::fmt::Debug for USB1_CHRG_DET_STAT_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("USB1_CHRG_DET_STAT_CLR")
+                .field("PLUG_CONTACT", &self.PLUG_CONTACT())
+                .field("CHRG_DETECTED", &self.CHRG_DETECTED())
+                .field("DM_STATE", &self.DM_STATE())
+                .field("DP_STATE", &self.DP_STATE())
+                .field("SECDET_DCP", &self.SECDET_DCP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_CHRG_DET_STAT_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct USB1_CHRG_DET_STAT_CLR {
+                PLUG_CONTACT: bool,
+                CHRG_DETECTED: bool,
+                DM_STATE: bool,
+                DP_STATE: bool,
+                SECDET_DCP: bool,
+            }
+            let proxy = USB1_CHRG_DET_STAT_CLR {
+                PLUG_CONTACT: self.PLUG_CONTACT(),
+                CHRG_DETECTED: self.CHRG_DETECTED(),
+                DM_STATE: self.DM_STATE(),
+                DP_STATE: self.DP_STATE(),
+                SECDET_DCP: self.SECDET_DCP(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Charger Detect Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3637,6 +5357,38 @@ pub mod regs {
             USB1_CHRG_DET_STAT_SET(0)
         }
     }
+    impl core::fmt::Debug for USB1_CHRG_DET_STAT_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("USB1_CHRG_DET_STAT_SET")
+                .field("PLUG_CONTACT", &self.PLUG_CONTACT())
+                .field("CHRG_DETECTED", &self.CHRG_DETECTED())
+                .field("DM_STATE", &self.DM_STATE())
+                .field("DP_STATE", &self.DP_STATE())
+                .field("SECDET_DCP", &self.SECDET_DCP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_CHRG_DET_STAT_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct USB1_CHRG_DET_STAT_SET {
+                PLUG_CONTACT: bool,
+                CHRG_DETECTED: bool,
+                DM_STATE: bool,
+                DP_STATE: bool,
+                SECDET_DCP: bool,
+            }
+            let proxy = USB1_CHRG_DET_STAT_SET {
+                PLUG_CONTACT: self.PLUG_CONTACT(),
+                CHRG_DETECTED: self.CHRG_DETECTED(),
+                DM_STATE: self.DM_STATE(),
+                DP_STATE: self.DP_STATE(),
+                SECDET_DCP: self.SECDET_DCP(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Charger Detect Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3692,6 +5444,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> USB1_CHRG_DET_STAT_TOG {
             USB1_CHRG_DET_STAT_TOG(0)
+        }
+    }
+    impl core::fmt::Debug for USB1_CHRG_DET_STAT_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("USB1_CHRG_DET_STAT_TOG")
+                .field("PLUG_CONTACT", &self.PLUG_CONTACT())
+                .field("CHRG_DETECTED", &self.CHRG_DETECTED())
+                .field("DM_STATE", &self.DM_STATE())
+                .field("DP_STATE", &self.DP_STATE())
+                .field("SECDET_DCP", &self.SECDET_DCP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_CHRG_DET_STAT_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct USB1_CHRG_DET_STAT_TOG {
+                PLUG_CONTACT: bool,
+                CHRG_DETECTED: bool,
+                DM_STATE: bool,
+                DP_STATE: bool,
+                SECDET_DCP: bool,
+            }
+            let proxy = USB1_CHRG_DET_STAT_TOG {
+                PLUG_CONTACT: self.PLUG_CONTACT(),
+                CHRG_DETECTED: self.CHRG_DETECTED(),
+                DM_STATE: self.DM_STATE(),
+                DP_STATE: self.DP_STATE(),
+                SECDET_DCP: self.SECDET_DCP(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "VBUS Detect"]
@@ -3841,6 +5625,68 @@ pub mod regs {
             USB1_VBUS_DETECT(0)
         }
     }
+    impl core::fmt::Debug for USB1_VBUS_DETECT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("USB1_VBUS_DETECT")
+                .field("VBUSVALID_THRESH", &self.VBUSVALID_THRESH())
+                .field("VBUS_OVERRIDE_EN", &self.VBUS_OVERRIDE_EN())
+                .field("SESSEND_OVERRIDE", &self.SESSEND_OVERRIDE())
+                .field("BVALID_OVERRIDE", &self.BVALID_OVERRIDE())
+                .field("AVALID_OVERRIDE", &self.AVALID_OVERRIDE())
+                .field("VBUSVALID_OVERRIDE", &self.VBUSVALID_OVERRIDE())
+                .field("VBUSVALID_SEL", &self.VBUSVALID_SEL())
+                .field("VBUS_SOURCE_SEL", &self.VBUS_SOURCE_SEL())
+                .field("ID_OVERRIDE_EN", &self.ID_OVERRIDE_EN())
+                .field("ID_OVERRIDE", &self.ID_OVERRIDE())
+                .field("EXT_ID_OVERRIDE_EN", &self.EXT_ID_OVERRIDE_EN())
+                .field("EXT_VBUS_OVERRIDE_EN", &self.EXT_VBUS_OVERRIDE_EN())
+                .field("VBUSVALID_TO_B", &self.VBUSVALID_TO_B())
+                .field("VBUSVALID_PWRUP_CMPS", &self.VBUSVALID_PWRUP_CMPS())
+                .field("DISCHARGE_VBUS", &self.DISCHARGE_VBUS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_VBUS_DETECT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct USB1_VBUS_DETECT {
+                VBUSVALID_THRESH: u8,
+                VBUS_OVERRIDE_EN: bool,
+                SESSEND_OVERRIDE: bool,
+                BVALID_OVERRIDE: bool,
+                AVALID_OVERRIDE: bool,
+                VBUSVALID_OVERRIDE: bool,
+                VBUSVALID_SEL: bool,
+                VBUS_SOURCE_SEL: u8,
+                ID_OVERRIDE_EN: bool,
+                ID_OVERRIDE: bool,
+                EXT_ID_OVERRIDE_EN: bool,
+                EXT_VBUS_OVERRIDE_EN: bool,
+                VBUSVALID_TO_B: bool,
+                VBUSVALID_PWRUP_CMPS: u8,
+                DISCHARGE_VBUS: bool,
+            }
+            let proxy = USB1_VBUS_DETECT {
+                VBUSVALID_THRESH: self.VBUSVALID_THRESH(),
+                VBUS_OVERRIDE_EN: self.VBUS_OVERRIDE_EN(),
+                SESSEND_OVERRIDE: self.SESSEND_OVERRIDE(),
+                BVALID_OVERRIDE: self.BVALID_OVERRIDE(),
+                AVALID_OVERRIDE: self.AVALID_OVERRIDE(),
+                VBUSVALID_OVERRIDE: self.VBUSVALID_OVERRIDE(),
+                VBUSVALID_SEL: self.VBUSVALID_SEL(),
+                VBUS_SOURCE_SEL: self.VBUS_SOURCE_SEL(),
+                ID_OVERRIDE_EN: self.ID_OVERRIDE_EN(),
+                ID_OVERRIDE: self.ID_OVERRIDE(),
+                EXT_ID_OVERRIDE_EN: self.EXT_ID_OVERRIDE_EN(),
+                EXT_VBUS_OVERRIDE_EN: self.EXT_VBUS_OVERRIDE_EN(),
+                VBUSVALID_TO_B: self.VBUSVALID_TO_B(),
+                VBUSVALID_PWRUP_CMPS: self.VBUSVALID_PWRUP_CMPS(),
+                DISCHARGE_VBUS: self.DISCHARGE_VBUS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "VBUS Detect"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3986,6 +5832,68 @@ pub mod regs {
         #[inline(always)]
         fn default() -> USB1_VBUS_DETECT_CLR {
             USB1_VBUS_DETECT_CLR(0)
+        }
+    }
+    impl core::fmt::Debug for USB1_VBUS_DETECT_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("USB1_VBUS_DETECT_CLR")
+                .field("VBUSVALID_THRESH", &self.VBUSVALID_THRESH())
+                .field("VBUS_OVERRIDE_EN", &self.VBUS_OVERRIDE_EN())
+                .field("SESSEND_OVERRIDE", &self.SESSEND_OVERRIDE())
+                .field("BVALID_OVERRIDE", &self.BVALID_OVERRIDE())
+                .field("AVALID_OVERRIDE", &self.AVALID_OVERRIDE())
+                .field("VBUSVALID_OVERRIDE", &self.VBUSVALID_OVERRIDE())
+                .field("VBUSVALID_SEL", &self.VBUSVALID_SEL())
+                .field("VBUS_SOURCE_SEL", &self.VBUS_SOURCE_SEL())
+                .field("ID_OVERRIDE_EN", &self.ID_OVERRIDE_EN())
+                .field("ID_OVERRIDE", &self.ID_OVERRIDE())
+                .field("EXT_ID_OVERRIDE_EN", &self.EXT_ID_OVERRIDE_EN())
+                .field("EXT_VBUS_OVERRIDE_EN", &self.EXT_VBUS_OVERRIDE_EN())
+                .field("VBUSVALID_TO_B", &self.VBUSVALID_TO_B())
+                .field("VBUSVALID_PWRUP_CMPS", &self.VBUSVALID_PWRUP_CMPS())
+                .field("DISCHARGE_VBUS", &self.DISCHARGE_VBUS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_VBUS_DETECT_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct USB1_VBUS_DETECT_CLR {
+                VBUSVALID_THRESH: u8,
+                VBUS_OVERRIDE_EN: bool,
+                SESSEND_OVERRIDE: bool,
+                BVALID_OVERRIDE: bool,
+                AVALID_OVERRIDE: bool,
+                VBUSVALID_OVERRIDE: bool,
+                VBUSVALID_SEL: bool,
+                VBUS_SOURCE_SEL: u8,
+                ID_OVERRIDE_EN: bool,
+                ID_OVERRIDE: bool,
+                EXT_ID_OVERRIDE_EN: bool,
+                EXT_VBUS_OVERRIDE_EN: bool,
+                VBUSVALID_TO_B: bool,
+                VBUSVALID_PWRUP_CMPS: u8,
+                DISCHARGE_VBUS: bool,
+            }
+            let proxy = USB1_VBUS_DETECT_CLR {
+                VBUSVALID_THRESH: self.VBUSVALID_THRESH(),
+                VBUS_OVERRIDE_EN: self.VBUS_OVERRIDE_EN(),
+                SESSEND_OVERRIDE: self.SESSEND_OVERRIDE(),
+                BVALID_OVERRIDE: self.BVALID_OVERRIDE(),
+                AVALID_OVERRIDE: self.AVALID_OVERRIDE(),
+                VBUSVALID_OVERRIDE: self.VBUSVALID_OVERRIDE(),
+                VBUSVALID_SEL: self.VBUSVALID_SEL(),
+                VBUS_SOURCE_SEL: self.VBUS_SOURCE_SEL(),
+                ID_OVERRIDE_EN: self.ID_OVERRIDE_EN(),
+                ID_OVERRIDE: self.ID_OVERRIDE(),
+                EXT_ID_OVERRIDE_EN: self.EXT_ID_OVERRIDE_EN(),
+                EXT_VBUS_OVERRIDE_EN: self.EXT_VBUS_OVERRIDE_EN(),
+                VBUSVALID_TO_B: self.VBUSVALID_TO_B(),
+                VBUSVALID_PWRUP_CMPS: self.VBUSVALID_PWRUP_CMPS(),
+                DISCHARGE_VBUS: self.DISCHARGE_VBUS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "VBUS Detect"]
@@ -4135,6 +6043,68 @@ pub mod regs {
             USB1_VBUS_DETECT_SET(0)
         }
     }
+    impl core::fmt::Debug for USB1_VBUS_DETECT_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("USB1_VBUS_DETECT_SET")
+                .field("VBUSVALID_THRESH", &self.VBUSVALID_THRESH())
+                .field("VBUS_OVERRIDE_EN", &self.VBUS_OVERRIDE_EN())
+                .field("SESSEND_OVERRIDE", &self.SESSEND_OVERRIDE())
+                .field("BVALID_OVERRIDE", &self.BVALID_OVERRIDE())
+                .field("AVALID_OVERRIDE", &self.AVALID_OVERRIDE())
+                .field("VBUSVALID_OVERRIDE", &self.VBUSVALID_OVERRIDE())
+                .field("VBUSVALID_SEL", &self.VBUSVALID_SEL())
+                .field("VBUS_SOURCE_SEL", &self.VBUS_SOURCE_SEL())
+                .field("ID_OVERRIDE_EN", &self.ID_OVERRIDE_EN())
+                .field("ID_OVERRIDE", &self.ID_OVERRIDE())
+                .field("EXT_ID_OVERRIDE_EN", &self.EXT_ID_OVERRIDE_EN())
+                .field("EXT_VBUS_OVERRIDE_EN", &self.EXT_VBUS_OVERRIDE_EN())
+                .field("VBUSVALID_TO_B", &self.VBUSVALID_TO_B())
+                .field("VBUSVALID_PWRUP_CMPS", &self.VBUSVALID_PWRUP_CMPS())
+                .field("DISCHARGE_VBUS", &self.DISCHARGE_VBUS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_VBUS_DETECT_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct USB1_VBUS_DETECT_SET {
+                VBUSVALID_THRESH: u8,
+                VBUS_OVERRIDE_EN: bool,
+                SESSEND_OVERRIDE: bool,
+                BVALID_OVERRIDE: bool,
+                AVALID_OVERRIDE: bool,
+                VBUSVALID_OVERRIDE: bool,
+                VBUSVALID_SEL: bool,
+                VBUS_SOURCE_SEL: u8,
+                ID_OVERRIDE_EN: bool,
+                ID_OVERRIDE: bool,
+                EXT_ID_OVERRIDE_EN: bool,
+                EXT_VBUS_OVERRIDE_EN: bool,
+                VBUSVALID_TO_B: bool,
+                VBUSVALID_PWRUP_CMPS: u8,
+                DISCHARGE_VBUS: bool,
+            }
+            let proxy = USB1_VBUS_DETECT_SET {
+                VBUSVALID_THRESH: self.VBUSVALID_THRESH(),
+                VBUS_OVERRIDE_EN: self.VBUS_OVERRIDE_EN(),
+                SESSEND_OVERRIDE: self.SESSEND_OVERRIDE(),
+                BVALID_OVERRIDE: self.BVALID_OVERRIDE(),
+                AVALID_OVERRIDE: self.AVALID_OVERRIDE(),
+                VBUSVALID_OVERRIDE: self.VBUSVALID_OVERRIDE(),
+                VBUSVALID_SEL: self.VBUSVALID_SEL(),
+                VBUS_SOURCE_SEL: self.VBUS_SOURCE_SEL(),
+                ID_OVERRIDE_EN: self.ID_OVERRIDE_EN(),
+                ID_OVERRIDE: self.ID_OVERRIDE(),
+                EXT_ID_OVERRIDE_EN: self.EXT_ID_OVERRIDE_EN(),
+                EXT_VBUS_OVERRIDE_EN: self.EXT_VBUS_OVERRIDE_EN(),
+                VBUSVALID_TO_B: self.VBUSVALID_TO_B(),
+                VBUSVALID_PWRUP_CMPS: self.VBUSVALID_PWRUP_CMPS(),
+                DISCHARGE_VBUS: self.DISCHARGE_VBUS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "VBUS Detect"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4282,6 +6252,68 @@ pub mod regs {
             USB1_VBUS_DETECT_TOG(0)
         }
     }
+    impl core::fmt::Debug for USB1_VBUS_DETECT_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("USB1_VBUS_DETECT_TOG")
+                .field("VBUSVALID_THRESH", &self.VBUSVALID_THRESH())
+                .field("VBUS_OVERRIDE_EN", &self.VBUS_OVERRIDE_EN())
+                .field("SESSEND_OVERRIDE", &self.SESSEND_OVERRIDE())
+                .field("BVALID_OVERRIDE", &self.BVALID_OVERRIDE())
+                .field("AVALID_OVERRIDE", &self.AVALID_OVERRIDE())
+                .field("VBUSVALID_OVERRIDE", &self.VBUSVALID_OVERRIDE())
+                .field("VBUSVALID_SEL", &self.VBUSVALID_SEL())
+                .field("VBUS_SOURCE_SEL", &self.VBUS_SOURCE_SEL())
+                .field("ID_OVERRIDE_EN", &self.ID_OVERRIDE_EN())
+                .field("ID_OVERRIDE", &self.ID_OVERRIDE())
+                .field("EXT_ID_OVERRIDE_EN", &self.EXT_ID_OVERRIDE_EN())
+                .field("EXT_VBUS_OVERRIDE_EN", &self.EXT_VBUS_OVERRIDE_EN())
+                .field("VBUSVALID_TO_B", &self.VBUSVALID_TO_B())
+                .field("VBUSVALID_PWRUP_CMPS", &self.VBUSVALID_PWRUP_CMPS())
+                .field("DISCHARGE_VBUS", &self.DISCHARGE_VBUS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_VBUS_DETECT_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct USB1_VBUS_DETECT_TOG {
+                VBUSVALID_THRESH: u8,
+                VBUS_OVERRIDE_EN: bool,
+                SESSEND_OVERRIDE: bool,
+                BVALID_OVERRIDE: bool,
+                AVALID_OVERRIDE: bool,
+                VBUSVALID_OVERRIDE: bool,
+                VBUSVALID_SEL: bool,
+                VBUS_SOURCE_SEL: u8,
+                ID_OVERRIDE_EN: bool,
+                ID_OVERRIDE: bool,
+                EXT_ID_OVERRIDE_EN: bool,
+                EXT_VBUS_OVERRIDE_EN: bool,
+                VBUSVALID_TO_B: bool,
+                VBUSVALID_PWRUP_CMPS: u8,
+                DISCHARGE_VBUS: bool,
+            }
+            let proxy = USB1_VBUS_DETECT_TOG {
+                VBUSVALID_THRESH: self.VBUSVALID_THRESH(),
+                VBUS_OVERRIDE_EN: self.VBUS_OVERRIDE_EN(),
+                SESSEND_OVERRIDE: self.SESSEND_OVERRIDE(),
+                BVALID_OVERRIDE: self.BVALID_OVERRIDE(),
+                AVALID_OVERRIDE: self.AVALID_OVERRIDE(),
+                VBUSVALID_OVERRIDE: self.VBUSVALID_OVERRIDE(),
+                VBUSVALID_SEL: self.VBUSVALID_SEL(),
+                VBUS_SOURCE_SEL: self.VBUS_SOURCE_SEL(),
+                ID_OVERRIDE_EN: self.ID_OVERRIDE_EN(),
+                ID_OVERRIDE: self.ID_OVERRIDE(),
+                EXT_ID_OVERRIDE_EN: self.EXT_ID_OVERRIDE_EN(),
+                EXT_VBUS_OVERRIDE_EN: self.EXT_VBUS_OVERRIDE_EN(),
+                VBUSVALID_TO_B: self.VBUSVALID_TO_B(),
+                VBUSVALID_PWRUP_CMPS: self.VBUSVALID_PWRUP_CMPS(),
+                DISCHARGE_VBUS: self.DISCHARGE_VBUS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "VBUS Detect Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4346,6 +6378,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> USB1_VBUS_DET_STAT {
             USB1_VBUS_DET_STAT(0)
+        }
+    }
+    impl core::fmt::Debug for USB1_VBUS_DET_STAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("USB1_VBUS_DET_STAT")
+                .field("SESSEND", &self.SESSEND())
+                .field("BVALID", &self.BVALID())
+                .field("AVALID", &self.AVALID())
+                .field("VBUS_VALID", &self.VBUS_VALID())
+                .field("VBUS_VALID_3V", &self.VBUS_VALID_3V())
+                .field("EXT_ID", &self.EXT_ID())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_VBUS_DET_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct USB1_VBUS_DET_STAT {
+                SESSEND: bool,
+                BVALID: bool,
+                AVALID: bool,
+                VBUS_VALID: bool,
+                VBUS_VALID_3V: bool,
+                EXT_ID: bool,
+            }
+            let proxy = USB1_VBUS_DET_STAT {
+                SESSEND: self.SESSEND(),
+                BVALID: self.BVALID(),
+                AVALID: self.AVALID(),
+                VBUS_VALID: self.VBUS_VALID(),
+                VBUS_VALID_3V: self.VBUS_VALID_3V(),
+                EXT_ID: self.EXT_ID(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "VBUS Detect Status"]
@@ -4414,6 +6481,41 @@ pub mod regs {
             USB1_VBUS_DET_STAT_CLR(0)
         }
     }
+    impl core::fmt::Debug for USB1_VBUS_DET_STAT_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("USB1_VBUS_DET_STAT_CLR")
+                .field("SESSEND", &self.SESSEND())
+                .field("BVALID", &self.BVALID())
+                .field("AVALID", &self.AVALID())
+                .field("VBUS_VALID", &self.VBUS_VALID())
+                .field("VBUS_VALID_3V", &self.VBUS_VALID_3V())
+                .field("EXT_ID", &self.EXT_ID())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_VBUS_DET_STAT_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct USB1_VBUS_DET_STAT_CLR {
+                SESSEND: bool,
+                BVALID: bool,
+                AVALID: bool,
+                VBUS_VALID: bool,
+                VBUS_VALID_3V: bool,
+                EXT_ID: bool,
+            }
+            let proxy = USB1_VBUS_DET_STAT_CLR {
+                SESSEND: self.SESSEND(),
+                BVALID: self.BVALID(),
+                AVALID: self.AVALID(),
+                VBUS_VALID: self.VBUS_VALID(),
+                VBUS_VALID_3V: self.VBUS_VALID_3V(),
+                EXT_ID: self.EXT_ID(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "VBUS Detect Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4478,6 +6580,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> USB1_VBUS_DET_STAT_SET {
             USB1_VBUS_DET_STAT_SET(0)
+        }
+    }
+    impl core::fmt::Debug for USB1_VBUS_DET_STAT_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("USB1_VBUS_DET_STAT_SET")
+                .field("SESSEND", &self.SESSEND())
+                .field("BVALID", &self.BVALID())
+                .field("AVALID", &self.AVALID())
+                .field("VBUS_VALID", &self.VBUS_VALID())
+                .field("VBUS_VALID_3V", &self.VBUS_VALID_3V())
+                .field("EXT_ID", &self.EXT_ID())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_VBUS_DET_STAT_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct USB1_VBUS_DET_STAT_SET {
+                SESSEND: bool,
+                BVALID: bool,
+                AVALID: bool,
+                VBUS_VALID: bool,
+                VBUS_VALID_3V: bool,
+                EXT_ID: bool,
+            }
+            let proxy = USB1_VBUS_DET_STAT_SET {
+                SESSEND: self.SESSEND(),
+                BVALID: self.BVALID(),
+                AVALID: self.AVALID(),
+                VBUS_VALID: self.VBUS_VALID(),
+                VBUS_VALID_3V: self.VBUS_VALID_3V(),
+                EXT_ID: self.EXT_ID(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "VBUS Detect Status"]
@@ -4546,6 +6683,41 @@ pub mod regs {
             USB1_VBUS_DET_STAT_TOG(0)
         }
     }
+    impl core::fmt::Debug for USB1_VBUS_DET_STAT_TOG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("USB1_VBUS_DET_STAT_TOG")
+                .field("SESSEND", &self.SESSEND())
+                .field("BVALID", &self.BVALID())
+                .field("AVALID", &self.AVALID())
+                .field("VBUS_VALID", &self.VBUS_VALID())
+                .field("VBUS_VALID_3V", &self.VBUS_VALID_3V())
+                .field("EXT_ID", &self.EXT_ID())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_VBUS_DET_STAT_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct USB1_VBUS_DET_STAT_TOG {
+                SESSEND: bool,
+                BVALID: bool,
+                AVALID: bool,
+                VBUS_VALID: bool,
+                VBUS_VALID_3V: bool,
+                EXT_ID: bool,
+            }
+            let proxy = USB1_VBUS_DET_STAT_TOG {
+                SESSEND: self.SESSEND(),
+                BVALID: self.BVALID(),
+                AVALID: self.AVALID(),
+                VBUS_VALID: self.VBUS_VALID(),
+                VBUS_VALID_3V: self.VBUS_VALID_3V(),
+                EXT_ID: self.EXT_ID(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Version"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4583,6 +6755,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> VERSION {
             VERSION(0)
+        }
+    }
+    impl core::fmt::Debug for VERSION {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VERSION")
+                .field("STEP", &self.STEP())
+                .field("MINOR", &self.MINOR())
+                .field("MAJOR", &self.MAJOR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERSION {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VERSION {
+                STEP: u16,
+                MINOR: u8,
+                MAJOR: u8,
+            }
+            let proxy = VERSION {
+                STEP: self.STEP(),
+                MINOR: self.MINOR(),
+                MAJOR: self.MAJOR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -99,4 +99,39 @@ pub mod regs {
             CSW(0)
         }
     }
+    impl core::fmt::Debug for CSW {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CSW")
+                .field("RESYNCH_REQ", &self.RESYNCH_REQ())
+                .field("REQ_PENDING", &self.REQ_PENDING())
+                .field("DBG_OR_ERR", &self.DBG_OR_ERR())
+                .field("AHB_OR_ERR", &self.AHB_OR_ERR())
+                .field("SOFT_RESET", &self.SOFT_RESET())
+                .field("CHIP_RESET_REQ", &self.CHIP_RESET_REQ())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CSW {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CSW {
+                RESYNCH_REQ: bool,
+                REQ_PENDING: bool,
+                DBG_OR_ERR: bool,
+                AHB_OR_ERR: bool,
+                SOFT_RESET: bool,
+                CHIP_RESET_REQ: bool,
+            }
+            let proxy = CSW {
+                RESYNCH_REQ: self.RESYNCH_REQ(),
+                REQ_PENDING: self.REQ_PENDING(),
+                DBG_OR_ERR: self.DBG_OR_ERR(),
+                AHB_OR_ERR: self.AHB_OR_ERR(),
+                SOFT_RESET: self.SOFT_RESET(),
+                CHIP_RESET_REQ: self.CHIP_RESET_REQ(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
 }

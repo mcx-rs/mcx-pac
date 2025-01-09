@@ -192,6 +192,59 @@ pub mod regs {
             CCR(0)
         }
     }
+    impl core::fmt::Debug for CCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CCR")
+                .field("CAP0RE", &self.CAP0RE())
+                .field("CAP0FE", &self.CAP0FE())
+                .field("CAP0I", &self.CAP0I())
+                .field("CAP1RE", &self.CAP1RE())
+                .field("CAP1FE", &self.CAP1FE())
+                .field("CAP1I", &self.CAP1I())
+                .field("CAP2RE", &self.CAP2RE())
+                .field("CAP2FE", &self.CAP2FE())
+                .field("CAP2I", &self.CAP2I())
+                .field("CAP3RE", &self.CAP3RE())
+                .field("CAP3FE", &self.CAP3FE())
+                .field("CAP3I", &self.CAP3I())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CCR {
+                CAP0RE: bool,
+                CAP0FE: bool,
+                CAP0I: bool,
+                CAP1RE: bool,
+                CAP1FE: bool,
+                CAP1I: bool,
+                CAP2RE: bool,
+                CAP2FE: bool,
+                CAP2I: bool,
+                CAP3RE: bool,
+                CAP3FE: bool,
+                CAP3I: bool,
+            }
+            let proxy = CCR {
+                CAP0RE: self.CAP0RE(),
+                CAP0FE: self.CAP0FE(),
+                CAP0I: self.CAP0I(),
+                CAP1RE: self.CAP1RE(),
+                CAP1FE: self.CAP1FE(),
+                CAP1I: self.CAP1I(),
+                CAP2RE: self.CAP2RE(),
+                CAP2FE: self.CAP2FE(),
+                CAP2I: self.CAP2I(),
+                CAP3RE: self.CAP3RE(),
+                CAP3FE: self.CAP3FE(),
+                CAP3I: self.CAP3I(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Count Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -238,6 +291,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CTCR {
             CTCR(0)
+        }
+    }
+    impl core::fmt::Debug for CTCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTCR")
+                .field("CTMODE", &self.CTMODE())
+                .field("CINSEL", &self.CINSEL())
+                .field("ENCC", &self.ENCC())
+                .field("SELCC", &self.SELCC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTCR {
+                CTMODE: u8,
+                CINSEL: u8,
+                ENCC: bool,
+                SELCC: u8,
+            }
+            let proxy = CTCR {
+                CTMODE: self.CTMODE(),
+                CINSEL: self.CINSEL(),
+                ENCC: self.ENCC(),
+                SELCC: self.SELCC(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "External Match"]
@@ -324,6 +406,47 @@ pub mod regs {
             EMR(0)
         }
     }
+    impl core::fmt::Debug for EMR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EMR")
+                .field("EM0", &self.EM0())
+                .field("EM1", &self.EM1())
+                .field("EM2", &self.EM2())
+                .field("EM3", &self.EM3())
+                .field("EMC0", &self.EMC0())
+                .field("EMC1", &self.EMC1())
+                .field("EMC2", &self.EMC2())
+                .field("EMC3", &self.EMC3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EMR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EMR {
+                EM0: bool,
+                EM1: bool,
+                EM2: bool,
+                EM3: bool,
+                EMC0: u8,
+                EMC1: u8,
+                EMC2: u8,
+                EMC3: u8,
+            }
+            let proxy = EMR {
+                EM0: self.EM0(),
+                EM1: self.EM1(),
+                EM2: self.EM2(),
+                EM3: self.EM3(),
+                EMC0: self.EMC0(),
+                EMC1: self.EMC1(),
+                EMC2: self.EMC2(),
+                EMC3: self.EMC3(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -406,6 +529,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IR {
             IR(0)
+        }
+    }
+    impl core::fmt::Debug for IR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IR")
+                .field("MR0INT", &self.MR0INT())
+                .field("MR1INT", &self.MR1INT())
+                .field("MR2INT", &self.MR2INT())
+                .field("MR3INT", &self.MR3INT())
+                .field("CR0INT", &self.CR0INT())
+                .field("CR1INT", &self.CR1INT())
+                .field("CR2INT", &self.CR2INT())
+                .field("CR3INT", &self.CR3INT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IR {
+                MR0INT: bool,
+                MR1INT: bool,
+                MR2INT: bool,
+                MR3INT: bool,
+                CR0INT: bool,
+                CR1INT: bool,
+                CR2INT: bool,
+                CR3INT: bool,
+            }
+            let proxy = IR {
+                MR0INT: self.MR0INT(),
+                MR1INT: self.MR1INT(),
+                MR2INT: self.MR2INT(),
+                MR3INT: self.MR3INT(),
+                CR0INT: self.CR0INT(),
+                CR1INT: self.CR1INT(),
+                CR2INT: self.CR2INT(),
+                CR3INT: self.CR3INT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Match Control"]
@@ -564,6 +728,71 @@ pub mod regs {
             MCR(0)
         }
     }
+    impl core::fmt::Debug for MCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MCR")
+                .field("MR0I", &self.MR0I())
+                .field("MR0R", &self.MR0R())
+                .field("MR0S", &self.MR0S())
+                .field("MR1I", &self.MR1I())
+                .field("MR1R", &self.MR1R())
+                .field("MR1S", &self.MR1S())
+                .field("MR2I", &self.MR2I())
+                .field("MR2R", &self.MR2R())
+                .field("MR2S", &self.MR2S())
+                .field("MR3I", &self.MR3I())
+                .field("MR3R", &self.MR3R())
+                .field("MR3S", &self.MR3S())
+                .field("MR0RL", &self.MR0RL())
+                .field("MR1RL", &self.MR1RL())
+                .field("MR2RL", &self.MR2RL())
+                .field("MR3RL", &self.MR3RL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MCR {
+                MR0I: bool,
+                MR0R: bool,
+                MR0S: bool,
+                MR1I: bool,
+                MR1R: bool,
+                MR1S: bool,
+                MR2I: bool,
+                MR2R: bool,
+                MR2S: bool,
+                MR3I: bool,
+                MR3R: bool,
+                MR3S: bool,
+                MR0RL: bool,
+                MR1RL: bool,
+                MR2RL: bool,
+                MR3RL: bool,
+            }
+            let proxy = MCR {
+                MR0I: self.MR0I(),
+                MR0R: self.MR0R(),
+                MR0S: self.MR0S(),
+                MR1I: self.MR1I(),
+                MR1R: self.MR1R(),
+                MR1S: self.MR1S(),
+                MR2I: self.MR2I(),
+                MR2R: self.MR2R(),
+                MR2S: self.MR2S(),
+                MR3I: self.MR3I(),
+                MR3R: self.MR3R(),
+                MR3S: self.MR3S(),
+                MR0RL: self.MR0RL(),
+                MR1RL: self.MR1RL(),
+                MR2RL: self.MR2RL(),
+                MR3RL: self.MR3RL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "PWM Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -612,6 +841,35 @@ pub mod regs {
             PWMC(0)
         }
     }
+    impl core::fmt::Debug for PWMC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PWMC")
+                .field("PWMEN0", &self.PWMEN0())
+                .field("PWMEN1", &self.PWMEN1())
+                .field("PWMEN2", &self.PWMEN2())
+                .field("PWMEN3", &self.PWMEN3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWMC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PWMC {
+                PWMEN0: bool,
+                PWMEN1: bool,
+                PWMEN2: bool,
+                PWMEN3: bool,
+            }
+            let proxy = PWMC {
+                PWMEN0: self.PWMEN0(),
+                PWMEN1: self.PWMEN1(),
+                PWMEN2: self.PWMEN2(),
+                PWMEN3: self.PWMEN3(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Timer Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -658,6 +916,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TCR {
             TCR(0)
+        }
+    }
+    impl core::fmt::Debug for TCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TCR")
+                .field("CEN", &self.CEN())
+                .field("CRST", &self.CRST())
+                .field("AGCEN", &self.AGCEN())
+                .field("ATCEN", &self.ATCEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TCR {
+                CEN: bool,
+                CRST: bool,
+                AGCEN: bool,
+                ATCEN: bool,
+            }
+            let proxy = TCR {
+                CEN: self.CEN(),
+                CRST: self.CRST(),
+                AGCEN: self.AGCEN(),
+                ATCEN: self.ATCEN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

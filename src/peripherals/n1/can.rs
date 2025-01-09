@@ -449,6 +449,41 @@ pub mod regs {
             CBT(0)
         }
     }
+    impl core::fmt::Debug for CBT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CBT")
+                .field("EPSEG2", &self.EPSEG2())
+                .field("EPSEG1", &self.EPSEG1())
+                .field("EPROPSEG", &self.EPROPSEG())
+                .field("ERJW", &self.ERJW())
+                .field("EPRESDIV", &self.EPRESDIV())
+                .field("BTF", &self.BTF())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CBT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CBT {
+                EPSEG2: u8,
+                EPSEG1: u8,
+                EPROPSEG: u8,
+                ERJW: u8,
+                EPRESDIV: u16,
+                BTF: bool,
+            }
+            let proxy = CBT {
+                EPSEG2: self.EPSEG2(),
+                EPSEG1: self.EPSEG1(),
+                EPROPSEG: self.EPROPSEG(),
+                ERJW: self.ERJW(),
+                EPRESDIV: self.EPRESDIV(),
+                BTF: self.BTF(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Cyclic Redundancy Check"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -477,6 +512,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CRCR {
             CRCR(0)
+        }
+    }
+    impl core::fmt::Debug for CRCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CRCR")
+                .field("TXCRC", &self.TXCRC())
+                .field("MBCRC", &self.MBCRC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CRCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CRCR {
+                TXCRC: u16,
+                MBCRC: u8,
+            }
+            let proxy = CRCR {
+                TXCRC: self.TXCRC(),
+                MBCRC: self.MBCRC(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Control 1"]
@@ -626,6 +684,68 @@ pub mod regs {
             CTRL1(0)
         }
     }
+    impl core::fmt::Debug for CTRL1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL1")
+                .field("PROPSEG", &self.PROPSEG())
+                .field("LOM", &self.LOM())
+                .field("LBUF", &self.LBUF())
+                .field("TSYN", &self.TSYN())
+                .field("BOFFREC", &self.BOFFREC())
+                .field("SMP", &self.SMP())
+                .field("RWRNMSK", &self.RWRNMSK())
+                .field("TWRNMSK", &self.TWRNMSK())
+                .field("LPB", &self.LPB())
+                .field("ERRMSK", &self.ERRMSK())
+                .field("BOFFMSK", &self.BOFFMSK())
+                .field("PSEG2", &self.PSEG2())
+                .field("PSEG1", &self.PSEG1())
+                .field("RJW", &self.RJW())
+                .field("PRESDIV", &self.PRESDIV())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL1 {
+                PROPSEG: u8,
+                LOM: bool,
+                LBUF: bool,
+                TSYN: bool,
+                BOFFREC: bool,
+                SMP: bool,
+                RWRNMSK: bool,
+                TWRNMSK: bool,
+                LPB: bool,
+                ERRMSK: bool,
+                BOFFMSK: bool,
+                PSEG2: u8,
+                PSEG1: u8,
+                RJW: u8,
+                PRESDIV: u8,
+            }
+            let proxy = CTRL1 {
+                PROPSEG: self.PROPSEG(),
+                LOM: self.LOM(),
+                LBUF: self.LBUF(),
+                TSYN: self.TSYN(),
+                BOFFREC: self.BOFFREC(),
+                SMP: self.SMP(),
+                RWRNMSK: self.RWRNMSK(),
+                TWRNMSK: self.TWRNMSK(),
+                LPB: self.LPB(),
+                ERRMSK: self.ERRMSK(),
+                BOFFMSK: self.BOFFMSK(),
+                PSEG2: self.PSEG2(),
+                PSEG1: self.PSEG1(),
+                RJW: self.RJW(),
+                PRESDIV: self.PRESDIV(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Pretended Networking Control 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -690,6 +810,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CTRL1_PN {
             CTRL1_PN(0)
+        }
+    }
+    impl core::fmt::Debug for CTRL1_PN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL1_PN")
+                .field("FCS", &self.FCS())
+                .field("IDFS", &self.IDFS())
+                .field("PLFS", &self.PLFS())
+                .field("NMATCH", &self.NMATCH())
+                .field("WUMF_MSK", &self.WUMF_MSK())
+                .field("WTOF_MSK", &self.WTOF_MSK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL1_PN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL1_PN {
+                FCS: u8,
+                IDFS: u8,
+                PLFS: u8,
+                NMATCH: u8,
+                WUMF_MSK: bool,
+                WTOF_MSK: bool,
+            }
+            let proxy = CTRL1_PN {
+                FCS: self.FCS(),
+                IDFS: self.IDFS(),
+                PLFS: self.PLFS(),
+                NMATCH: self.NMATCH(),
+                WUMF_MSK: self.WUMF_MSK(),
+                WTOF_MSK: self.WTOF_MSK(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Control 2"]
@@ -803,6 +958,56 @@ pub mod regs {
             CTRL2(0)
         }
     }
+    impl core::fmt::Debug for CTRL2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL2")
+                .field("EDFLTDIS", &self.EDFLTDIS())
+                .field("ISOCANFDEN", &self.ISOCANFDEN())
+                .field("BTE", &self.BTE())
+                .field("PREXCEN", &self.PREXCEN())
+                .field("EACEN", &self.EACEN())
+                .field("RRS", &self.RRS())
+                .field("MRP", &self.MRP())
+                .field("TASD", &self.TASD())
+                .field("RFFN", &self.RFFN())
+                .field("BOFFDONEMSK", &self.BOFFDONEMSK())
+                .field("ERRMSK_FAST", &self.ERRMSK_FAST())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL2 {
+                EDFLTDIS: bool,
+                ISOCANFDEN: bool,
+                BTE: bool,
+                PREXCEN: bool,
+                EACEN: bool,
+                RRS: bool,
+                MRP: bool,
+                TASD: u8,
+                RFFN: u8,
+                BOFFDONEMSK: bool,
+                ERRMSK_FAST: bool,
+            }
+            let proxy = CTRL2 {
+                EDFLTDIS: self.EDFLTDIS(),
+                ISOCANFDEN: self.ISOCANFDEN(),
+                BTE: self.BTE(),
+                PREXCEN: self.PREXCEN(),
+                EACEN: self.EACEN(),
+                RRS: self.RRS(),
+                MRP: self.MRP(),
+                TASD: self.TASD(),
+                RFFN: self.RFFN(),
+                BOFFDONEMSK: self.BOFFDONEMSK(),
+                ERRMSK_FAST: self.ERRMSK_FAST(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Pretended Networking Control 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -822,6 +1027,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CTRL2_PN {
             CTRL2_PN(0)
+        }
+    }
+    impl core::fmt::Debug for CTRL2_PN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL2_PN")
+                .field("MATCHTO", &self.MATCHTO())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL2_PN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL2_PN {
+                MATCHTO: u16,
+            }
+            let proxy = CTRL2_PN {
+                MATCHTO: self.MATCHTO(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Error Counter"]
@@ -872,6 +1097,35 @@ pub mod regs {
             ECR(0)
         }
     }
+    impl core::fmt::Debug for ECR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ECR")
+                .field("TXERRCNT", &self.TXERRCNT())
+                .field("RXERRCNT", &self.RXERRCNT())
+                .field("TXERRCNT_FAST", &self.TXERRCNT_FAST())
+                .field("RXERRCNT_FAST", &self.RXERRCNT_FAST())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ECR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ECR {
+                TXERRCNT: u8,
+                RXERRCNT: u8,
+                TXERRCNT_FAST: u8,
+                RXERRCNT_FAST: u8,
+            }
+            let proxy = ECR {
+                TXERRCNT: self.TXERRCNT(),
+                RXERRCNT: self.RXERRCNT(),
+                TXERRCNT_FAST: self.TXERRCNT_FAST(),
+                RXERRCNT_FAST: self.RXERRCNT_FAST(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Enhanced Data Phase CAN Bit Timing"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -909,6 +1163,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EDCBT {
             EDCBT(0)
+        }
+    }
+    impl core::fmt::Debug for EDCBT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EDCBT")
+                .field("DTSEG1", &self.DTSEG1())
+                .field("DTSEG2", &self.DTSEG2())
+                .field("DRJW", &self.DRJW())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EDCBT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EDCBT {
+                DTSEG1: u8,
+                DTSEG2: u8,
+                DRJW: u8,
+            }
+            let proxy = EDCBT {
+                DTSEG1: self.DTSEG1(),
+                DTSEG2: self.DTSEG2(),
+                DRJW: self.DRJW(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Enhanced Nominal CAN Bit Timing"]
@@ -950,6 +1230,32 @@ pub mod regs {
             ENCBT(0)
         }
     }
+    impl core::fmt::Debug for ENCBT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ENCBT")
+                .field("NTSEG1", &self.NTSEG1())
+                .field("NTSEG2", &self.NTSEG2())
+                .field("NRJW", &self.NRJW())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ENCBT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ENCBT {
+                NTSEG1: u8,
+                NTSEG2: u8,
+                NRJW: u8,
+            }
+            let proxy = ENCBT {
+                NTSEG1: self.NTSEG1(),
+                NTSEG2: self.NTSEG2(),
+                NRJW: self.NRJW(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Enhanced CAN Bit Timing Prescalers"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -978,6 +1284,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EPRS {
             EPRS(0)
+        }
+    }
+    impl core::fmt::Debug for EPRS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EPRS")
+                .field("ENPRESDIV", &self.ENPRESDIV())
+                .field("EDPRESDIV", &self.EDPRESDIV())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EPRS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EPRS {
+                ENPRESDIV: u16,
+                EDPRESDIV: u16,
+            }
+            let proxy = EPRS {
+                ENPRESDIV: self.ENPRESDIV(),
+                EDPRESDIV: self.EDPRESDIV(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Enhanced RX FIFO Control"]
@@ -1037,6 +1366,38 @@ pub mod regs {
             ERFCR(0)
         }
     }
+    impl core::fmt::Debug for ERFCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ERFCR")
+                .field("ERFWM", &self.ERFWM())
+                .field("NFE", &self.NFE())
+                .field("NEXIF", &self.NEXIF())
+                .field("DMALW", &self.DMALW())
+                .field("ERFEN", &self.ERFEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ERFCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ERFCR {
+                ERFWM: u8,
+                NFE: u8,
+                NEXIF: u8,
+                DMALW: u8,
+                ERFEN: bool,
+            }
+            let proxy = ERFCR {
+                ERFWM: self.ERFWM(),
+                NFE: self.NFE(),
+                NEXIF: self.NEXIF(),
+                DMALW: self.DMALW(),
+                ERFEN: self.ERFEN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Enhanced RX FIFO Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1083,6 +1444,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ERFIER {
             ERFIER(0)
+        }
+    }
+    impl core::fmt::Debug for ERFIER {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ERFIER")
+                .field("ERFDAIE", &self.ERFDAIE())
+                .field("ERFWMIIE", &self.ERFWMIIE())
+                .field("ERFOVFIE", &self.ERFOVFIE())
+                .field("ERFUFWIE", &self.ERFUFWIE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ERFIER {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ERFIER {
+                ERFDAIE: bool,
+                ERFWMIIE: bool,
+                ERFOVFIE: bool,
+                ERFUFWIE: bool,
+            }
+            let proxy = ERFIER {
+                ERFDAIE: self.ERFDAIE(),
+                ERFWMIIE: self.ERFWMIIE(),
+                ERFOVFIE: self.ERFOVFIE(),
+                ERFUFWIE: self.ERFUFWIE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Enhanced RX FIFO Status"]
@@ -1167,6 +1557,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ERFSR {
             ERFSR(0)
+        }
+    }
+    impl core::fmt::Debug for ERFSR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ERFSR")
+                .field("ERFEL", &self.ERFEL())
+                .field("ERFF", &self.ERFF())
+                .field("ERFE", &self.ERFE())
+                .field("ERFCLR", &self.ERFCLR())
+                .field("ERFDA", &self.ERFDA())
+                .field("ERFWMI", &self.ERFWMI())
+                .field("ERFOVF", &self.ERFOVF())
+                .field("ERFUFW", &self.ERFUFW())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ERFSR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ERFSR {
+                ERFEL: u8,
+                ERFF: bool,
+                ERFE: bool,
+                ERFCLR: bool,
+                ERFDA: bool,
+                ERFWMI: bool,
+                ERFOVF: bool,
+                ERFUFW: bool,
+            }
+            let proxy = ERFSR {
+                ERFEL: self.ERFEL(),
+                ERFF: self.ERFF(),
+                ERFE: self.ERFE(),
+                ERFCLR: self.ERFCLR(),
+                ERFDA: self.ERFDA(),
+                ERFWMI: self.ERFWMI(),
+                ERFOVF: self.ERFOVF(),
+                ERFUFW: self.ERFUFW(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Error and Status 1"]
@@ -1415,6 +1846,101 @@ pub mod regs {
             ESR1(0)
         }
     }
+    impl core::fmt::Debug for ESR1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ESR1")
+                .field("WAKINT", &self.WAKINT())
+                .field("ERRINT", &self.ERRINT())
+                .field("BOFFINT", &self.BOFFINT())
+                .field("RX", &self.RX())
+                .field("FLTCONF", &self.FLTCONF())
+                .field("TX", &self.TX())
+                .field("IDLE", &self.IDLE())
+                .field("RXWRN", &self.RXWRN())
+                .field("TXWRN", &self.TXWRN())
+                .field("STFERR", &self.STFERR())
+                .field("FRMERR", &self.FRMERR())
+                .field("CRCERR", &self.CRCERR())
+                .field("ACKERR", &self.ACKERR())
+                .field("BIT0ERR", &self.BIT0ERR())
+                .field("BIT1ERR", &self.BIT1ERR())
+                .field("RWRNINT", &self.RWRNINT())
+                .field("TWRNINT", &self.TWRNINT())
+                .field("SYNCH", &self.SYNCH())
+                .field("BOFFDONEINT", &self.BOFFDONEINT())
+                .field("ERRINT_FAST", &self.ERRINT_FAST())
+                .field("ERROVR", &self.ERROVR())
+                .field("STFERR_FAST", &self.STFERR_FAST())
+                .field("FRMERR_FAST", &self.FRMERR_FAST())
+                .field("CRCERR_FAST", &self.CRCERR_FAST())
+                .field("BIT0ERR_FAST", &self.BIT0ERR_FAST())
+                .field("BIT1ERR_FAST", &self.BIT1ERR_FAST())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ESR1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ESR1 {
+                WAKINT: bool,
+                ERRINT: bool,
+                BOFFINT: bool,
+                RX: bool,
+                FLTCONF: u8,
+                TX: bool,
+                IDLE: bool,
+                RXWRN: bool,
+                TXWRN: bool,
+                STFERR: bool,
+                FRMERR: bool,
+                CRCERR: bool,
+                ACKERR: bool,
+                BIT0ERR: bool,
+                BIT1ERR: bool,
+                RWRNINT: bool,
+                TWRNINT: bool,
+                SYNCH: bool,
+                BOFFDONEINT: bool,
+                ERRINT_FAST: bool,
+                ERROVR: bool,
+                STFERR_FAST: bool,
+                FRMERR_FAST: bool,
+                CRCERR_FAST: bool,
+                BIT0ERR_FAST: bool,
+                BIT1ERR_FAST: bool,
+            }
+            let proxy = ESR1 {
+                WAKINT: self.WAKINT(),
+                ERRINT: self.ERRINT(),
+                BOFFINT: self.BOFFINT(),
+                RX: self.RX(),
+                FLTCONF: self.FLTCONF(),
+                TX: self.TX(),
+                IDLE: self.IDLE(),
+                RXWRN: self.RXWRN(),
+                TXWRN: self.TXWRN(),
+                STFERR: self.STFERR(),
+                FRMERR: self.FRMERR(),
+                CRCERR: self.CRCERR(),
+                ACKERR: self.ACKERR(),
+                BIT0ERR: self.BIT0ERR(),
+                BIT1ERR: self.BIT1ERR(),
+                RWRNINT: self.RWRNINT(),
+                TWRNINT: self.TWRNINT(),
+                SYNCH: self.SYNCH(),
+                BOFFDONEINT: self.BOFFDONEINT(),
+                ERRINT_FAST: self.ERRINT_FAST(),
+                ERROVR: self.ERROVR(),
+                STFERR_FAST: self.STFERR_FAST(),
+                FRMERR_FAST: self.FRMERR_FAST(),
+                CRCERR_FAST: self.CRCERR_FAST(),
+                BIT0ERR_FAST: self.BIT0ERR_FAST(),
+                BIT1ERR_FAST: self.BIT1ERR_FAST(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Error and Status 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1452,6 +1978,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ESR2 {
             ESR2(0)
+        }
+    }
+    impl core::fmt::Debug for ESR2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ESR2")
+                .field("IMB", &self.IMB())
+                .field("VPS", &self.VPS())
+                .field("LPTM", &self.LPTM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ESR2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ESR2 {
+                IMB: bool,
+                VPS: bool,
+                LPTM: u8,
+            }
+            let proxy = ESR2 {
+                IMB: self.IMB(),
+                VPS: self.VPS(),
+                LPTM: self.LPTM(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Enhanced Transceiver Delay Compensation"]
@@ -1511,6 +2063,38 @@ pub mod regs {
             ETDC(0)
         }
     }
+    impl core::fmt::Debug for ETDC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ETDC")
+                .field("ETDCVAL", &self.ETDCVAL())
+                .field("ETDCFAIL", &self.ETDCFAIL())
+                .field("ETDCOFF", &self.ETDCOFF())
+                .field("TDMDIS", &self.TDMDIS())
+                .field("ETDCEN", &self.ETDCEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ETDC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ETDC {
+                ETDCVAL: u8,
+                ETDCFAIL: bool,
+                ETDCOFF: u8,
+                TDMDIS: bool,
+                ETDCEN: bool,
+            }
+            let proxy = ETDC {
+                ETDCVAL: self.ETDCVAL(),
+                ETDCFAIL: self.ETDCFAIL(),
+                ETDCOFF: self.ETDCOFF(),
+                TDMDIS: self.TDMDIS(),
+                ETDCEN: self.ETDCEN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CAN FD Bit Timing"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1568,6 +2152,38 @@ pub mod regs {
             FDCBT(0)
         }
     }
+    impl core::fmt::Debug for FDCBT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FDCBT")
+                .field("FPSEG2", &self.FPSEG2())
+                .field("FPSEG1", &self.FPSEG1())
+                .field("FPROPSEG", &self.FPROPSEG())
+                .field("FRJW", &self.FRJW())
+                .field("FPRESDIV", &self.FPRESDIV())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FDCBT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FDCBT {
+                FPSEG2: u8,
+                FPSEG1: u8,
+                FPROPSEG: u8,
+                FRJW: u8,
+                FPRESDIV: u16,
+            }
+            let proxy = FDCBT {
+                FPSEG2: self.FPSEG2(),
+                FPSEG1: self.FPSEG1(),
+                FPROPSEG: self.FPROPSEG(),
+                FRJW: self.FRJW(),
+                FPRESDIV: self.FPRESDIV(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "CAN FD CRC"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1596,6 +2212,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FDCRC {
             FDCRC(0)
+        }
+    }
+    impl core::fmt::Debug for FDCRC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FDCRC")
+                .field("FD_TXCRC", &self.FD_TXCRC())
+                .field("FD_MBCRC", &self.FD_MBCRC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FDCRC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FDCRC {
+                FD_TXCRC: u32,
+                FD_MBCRC: u8,
+            }
+            let proxy = FDCRC {
+                FD_TXCRC: self.FD_TXCRC(),
+                FD_MBCRC: self.FD_MBCRC(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CAN FD Control"]
@@ -1664,6 +2303,41 @@ pub mod regs {
             FDCTRL(0)
         }
     }
+    impl core::fmt::Debug for FDCTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FDCTRL")
+                .field("TDCVAL", &self.TDCVAL())
+                .field("TDCOFF", &self.TDCOFF())
+                .field("TDCFAIL", &self.TDCFAIL())
+                .field("TDCEN", &self.TDCEN())
+                .field("MBDSR0", &self.MBDSR0())
+                .field("FDRATE", &self.FDRATE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FDCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FDCTRL {
+                TDCVAL: u8,
+                TDCOFF: u8,
+                TDCFAIL: bool,
+                TDCEN: bool,
+                MBDSR0: u8,
+                FDRATE: bool,
+            }
+            let proxy = FDCTRL {
+                TDCVAL: self.TDCVAL(),
+                TDCOFF: self.TDCOFF(),
+                TDCFAIL: self.TDCFAIL(),
+                TDCEN: self.TDCEN(),
+                MBDSR0: self.MBDSR0(),
+                FDRATE: self.FDRATE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Pretended Networking Data Length Code (DLC) Filter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1692,6 +2366,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FLT_DLC {
             FLT_DLC(0)
+        }
+    }
+    impl core::fmt::Debug for FLT_DLC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLT_DLC")
+                .field("FLT_DLC_HI", &self.FLT_DLC_HI())
+                .field("FLT_DLC_LO", &self.FLT_DLC_LO())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLT_DLC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLT_DLC {
+                FLT_DLC_HI: u8,
+                FLT_DLC_LO: u8,
+            }
+            let proxy = FLT_DLC {
+                FLT_DLC_HI: self.FLT_DLC_HI(),
+                FLT_DLC_LO: self.FLT_DLC_LO(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pretended Networking ID Filter 1"]
@@ -1733,6 +2430,32 @@ pub mod regs {
             FLT_ID1(0)
         }
     }
+    impl core::fmt::Debug for FLT_ID1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLT_ID1")
+                .field("FLT_ID1", &self.FLT_ID1())
+                .field("FLT_RTR", &self.FLT_RTR())
+                .field("FLT_IDE", &self.FLT_IDE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLT_ID1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLT_ID1 {
+                FLT_ID1: u32,
+                FLT_RTR: bool,
+                FLT_IDE: bool,
+            }
+            let proxy = FLT_ID1 {
+                FLT_ID1: self.FLT_ID1(),
+                FLT_RTR: self.FLT_RTR(),
+                FLT_IDE: self.FLT_IDE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Pretended Networking ID Filter 2 or ID Mask"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1770,6 +2493,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FLT_ID2_IDMASK {
             FLT_ID2_IDMASK(0)
+        }
+    }
+    impl core::fmt::Debug for FLT_ID2_IDMASK {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLT_ID2_IDMASK")
+                .field("FLT_ID2_IDMASK", &self.FLT_ID2_IDMASK())
+                .field("RTR_MSK", &self.RTR_MSK())
+                .field("IDE_MSK", &self.IDE_MSK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLT_ID2_IDMASK {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLT_ID2_IDMASK {
+                FLT_ID2_IDMASK: u32,
+                RTR_MSK: bool,
+                IDE_MSK: bool,
+            }
+            let proxy = FLT_ID2_IDMASK {
+                FLT_ID2_IDMASK: self.FLT_ID2_IDMASK(),
+                RTR_MSK: self.RTR_MSK(),
+                IDE_MSK: self.IDE_MSK(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Flags 1"]
@@ -1836,6 +2585,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IFLAG1 {
             IFLAG1(0)
+        }
+    }
+    impl core::fmt::Debug for IFLAG1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IFLAG1")
+                .field("BUF0I", &self.BUF0I())
+                .field("BUF4TO1I", &self.BUF4TO1I())
+                .field("BUF5I", &self.BUF5I())
+                .field("BUF6I", &self.BUF6I())
+                .field("BUF7I", &self.BUF7I())
+                .field("BUF31TO8I", &self.BUF31TO8I())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IFLAG1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IFLAG1 {
+                BUF0I: bool,
+                BUF4TO1I: u8,
+                BUF5I: bool,
+                BUF6I: bool,
+                BUF7I: bool,
+                BUF31TO8I: u32,
+            }
+            let proxy = IFLAG1 {
+                BUF0I: self.BUF0I(),
+                BUF4TO1I: self.BUF4TO1I(),
+                BUF5I: self.BUF5I(),
+                BUF6I: self.BUF6I(),
+                BUF7I: self.BUF7I(),
+                BUF31TO8I: self.BUF31TO8I(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Message Buffer 0 CS Register..Message Buffer 20 CS Register"]
@@ -1931,6 +2715,50 @@ pub mod regs {
             MB_16B_CS(0)
         }
     }
+    impl core::fmt::Debug for MB_16B_CS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MB_16B_CS")
+                .field("TIME_STAMP", &self.TIME_STAMP())
+                .field("DLC", &self.DLC())
+                .field("RTR", &self.RTR())
+                .field("IDE", &self.IDE())
+                .field("SRR", &self.SRR())
+                .field("CODE", &self.CODE())
+                .field("ESI", &self.ESI())
+                .field("BRS", &self.BRS())
+                .field("EDL", &self.EDL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_16B_CS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MB_16B_CS {
+                TIME_STAMP: u16,
+                DLC: u8,
+                RTR: bool,
+                IDE: bool,
+                SRR: bool,
+                CODE: u8,
+                ESI: bool,
+                BRS: bool,
+                EDL: bool,
+            }
+            let proxy = MB_16B_CS {
+                TIME_STAMP: self.TIME_STAMP(),
+                DLC: self.DLC(),
+                RTR: self.RTR(),
+                IDE: self.IDE(),
+                SRR: self.SRR(),
+                CODE: self.CODE(),
+                ESI: self.ESI(),
+                BRS: self.BRS(),
+                EDL: self.EDL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Message Buffer 0 ID Register..Message Buffer 20 ID Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1968,6 +2796,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MB_16B_ID {
             MB_16B_ID(0)
+        }
+    }
+    impl core::fmt::Debug for MB_16B_ID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MB_16B_ID")
+                .field("EXT", &self.EXT())
+                .field("STD", &self.STD())
+                .field("PRIO", &self.PRIO())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_16B_ID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MB_16B_ID {
+                EXT: u32,
+                STD: u16,
+                PRIO: u8,
+            }
+            let proxy = MB_16B_ID {
+                EXT: self.EXT(),
+                STD: self.STD(),
+                PRIO: self.PRIO(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Message Buffer 0 WORD_16B Register..Message Buffer 20 WORD_16B Register"]
@@ -2126,6 +2980,71 @@ pub mod regs {
             MB_16B_WORD(0)
         }
     }
+    impl core::fmt::Debug for MB_16B_WORD {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MB_16B_WORD")
+                .field("DATA_BYTE_11", &self.DATA_BYTE_11())
+                .field("DATA_BYTE_15", &self.DATA_BYTE_15())
+                .field("DATA_BYTE_3", &self.DATA_BYTE_3())
+                .field("DATA_BYTE_7", &self.DATA_BYTE_7())
+                .field("DATA_BYTE_10", &self.DATA_BYTE_10())
+                .field("DATA_BYTE_14", &self.DATA_BYTE_14())
+                .field("DATA_BYTE_2", &self.DATA_BYTE_2())
+                .field("DATA_BYTE_6", &self.DATA_BYTE_6())
+                .field("DATA_BYTE_1", &self.DATA_BYTE_1())
+                .field("DATA_BYTE_13", &self.DATA_BYTE_13())
+                .field("DATA_BYTE_5", &self.DATA_BYTE_5())
+                .field("DATA_BYTE_9", &self.DATA_BYTE_9())
+                .field("DATA_BYTE_0", &self.DATA_BYTE_0())
+                .field("DATA_BYTE_12", &self.DATA_BYTE_12())
+                .field("DATA_BYTE_4", &self.DATA_BYTE_4())
+                .field("DATA_BYTE_8", &self.DATA_BYTE_8())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_16B_WORD {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MB_16B_WORD {
+                DATA_BYTE_11: u8,
+                DATA_BYTE_15: u8,
+                DATA_BYTE_3: u8,
+                DATA_BYTE_7: u8,
+                DATA_BYTE_10: u8,
+                DATA_BYTE_14: u8,
+                DATA_BYTE_2: u8,
+                DATA_BYTE_6: u8,
+                DATA_BYTE_1: u8,
+                DATA_BYTE_13: u8,
+                DATA_BYTE_5: u8,
+                DATA_BYTE_9: u8,
+                DATA_BYTE_0: u8,
+                DATA_BYTE_12: u8,
+                DATA_BYTE_4: u8,
+                DATA_BYTE_8: u8,
+            }
+            let proxy = MB_16B_WORD {
+                DATA_BYTE_11: self.DATA_BYTE_11(),
+                DATA_BYTE_15: self.DATA_BYTE_15(),
+                DATA_BYTE_3: self.DATA_BYTE_3(),
+                DATA_BYTE_7: self.DATA_BYTE_7(),
+                DATA_BYTE_10: self.DATA_BYTE_10(),
+                DATA_BYTE_14: self.DATA_BYTE_14(),
+                DATA_BYTE_2: self.DATA_BYTE_2(),
+                DATA_BYTE_6: self.DATA_BYTE_6(),
+                DATA_BYTE_1: self.DATA_BYTE_1(),
+                DATA_BYTE_13: self.DATA_BYTE_13(),
+                DATA_BYTE_5: self.DATA_BYTE_5(),
+                DATA_BYTE_9: self.DATA_BYTE_9(),
+                DATA_BYTE_0: self.DATA_BYTE_0(),
+                DATA_BYTE_12: self.DATA_BYTE_12(),
+                DATA_BYTE_4: self.DATA_BYTE_4(),
+                DATA_BYTE_8: self.DATA_BYTE_8(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Message Buffer 0 CS Register..Message Buffer 11 CS Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2219,6 +3138,50 @@ pub mod regs {
             MB_32B_CS(0)
         }
     }
+    impl core::fmt::Debug for MB_32B_CS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MB_32B_CS")
+                .field("TIME_STAMP", &self.TIME_STAMP())
+                .field("DLC", &self.DLC())
+                .field("RTR", &self.RTR())
+                .field("IDE", &self.IDE())
+                .field("SRR", &self.SRR())
+                .field("CODE", &self.CODE())
+                .field("ESI", &self.ESI())
+                .field("BRS", &self.BRS())
+                .field("EDL", &self.EDL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_32B_CS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MB_32B_CS {
+                TIME_STAMP: u16,
+                DLC: u8,
+                RTR: bool,
+                IDE: bool,
+                SRR: bool,
+                CODE: u8,
+                ESI: bool,
+                BRS: bool,
+                EDL: bool,
+            }
+            let proxy = MB_32B_CS {
+                TIME_STAMP: self.TIME_STAMP(),
+                DLC: self.DLC(),
+                RTR: self.RTR(),
+                IDE: self.IDE(),
+                SRR: self.SRR(),
+                CODE: self.CODE(),
+                ESI: self.ESI(),
+                BRS: self.BRS(),
+                EDL: self.EDL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Message Buffer 0 ID Register..Message Buffer 11 ID Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2256,6 +3219,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MB_32B_ID {
             MB_32B_ID(0)
+        }
+    }
+    impl core::fmt::Debug for MB_32B_ID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MB_32B_ID")
+                .field("EXT", &self.EXT())
+                .field("STD", &self.STD())
+                .field("PRIO", &self.PRIO())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_32B_ID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MB_32B_ID {
+                EXT: u32,
+                STD: u16,
+                PRIO: u8,
+            }
+            let proxy = MB_32B_ID {
+                EXT: self.EXT(),
+                STD: self.STD(),
+                PRIO: self.PRIO(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Message Buffer 0 WORD_32B Register..Message Buffer 11 WORD_32B Register"]
@@ -2558,6 +3547,119 @@ pub mod regs {
             MB_32B_WORD(0)
         }
     }
+    impl core::fmt::Debug for MB_32B_WORD {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MB_32B_WORD")
+                .field("DATA_BYTE_11", &self.DATA_BYTE_11())
+                .field("DATA_BYTE_15", &self.DATA_BYTE_15())
+                .field("DATA_BYTE_19", &self.DATA_BYTE_19())
+                .field("DATA_BYTE_23", &self.DATA_BYTE_23())
+                .field("DATA_BYTE_27", &self.DATA_BYTE_27())
+                .field("DATA_BYTE_3", &self.DATA_BYTE_3())
+                .field("DATA_BYTE_31", &self.DATA_BYTE_31())
+                .field("DATA_BYTE_7", &self.DATA_BYTE_7())
+                .field("DATA_BYTE_10", &self.DATA_BYTE_10())
+                .field("DATA_BYTE_14", &self.DATA_BYTE_14())
+                .field("DATA_BYTE_18", &self.DATA_BYTE_18())
+                .field("DATA_BYTE_2", &self.DATA_BYTE_2())
+                .field("DATA_BYTE_22", &self.DATA_BYTE_22())
+                .field("DATA_BYTE_26", &self.DATA_BYTE_26())
+                .field("DATA_BYTE_30", &self.DATA_BYTE_30())
+                .field("DATA_BYTE_6", &self.DATA_BYTE_6())
+                .field("DATA_BYTE_1", &self.DATA_BYTE_1())
+                .field("DATA_BYTE_13", &self.DATA_BYTE_13())
+                .field("DATA_BYTE_17", &self.DATA_BYTE_17())
+                .field("DATA_BYTE_21", &self.DATA_BYTE_21())
+                .field("DATA_BYTE_25", &self.DATA_BYTE_25())
+                .field("DATA_BYTE_29", &self.DATA_BYTE_29())
+                .field("DATA_BYTE_5", &self.DATA_BYTE_5())
+                .field("DATA_BYTE_9", &self.DATA_BYTE_9())
+                .field("DATA_BYTE_0", &self.DATA_BYTE_0())
+                .field("DATA_BYTE_12", &self.DATA_BYTE_12())
+                .field("DATA_BYTE_16", &self.DATA_BYTE_16())
+                .field("DATA_BYTE_20", &self.DATA_BYTE_20())
+                .field("DATA_BYTE_24", &self.DATA_BYTE_24())
+                .field("DATA_BYTE_28", &self.DATA_BYTE_28())
+                .field("DATA_BYTE_4", &self.DATA_BYTE_4())
+                .field("DATA_BYTE_8", &self.DATA_BYTE_8())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_32B_WORD {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MB_32B_WORD {
+                DATA_BYTE_11: u8,
+                DATA_BYTE_15: u8,
+                DATA_BYTE_19: u8,
+                DATA_BYTE_23: u8,
+                DATA_BYTE_27: u8,
+                DATA_BYTE_3: u8,
+                DATA_BYTE_31: u8,
+                DATA_BYTE_7: u8,
+                DATA_BYTE_10: u8,
+                DATA_BYTE_14: u8,
+                DATA_BYTE_18: u8,
+                DATA_BYTE_2: u8,
+                DATA_BYTE_22: u8,
+                DATA_BYTE_26: u8,
+                DATA_BYTE_30: u8,
+                DATA_BYTE_6: u8,
+                DATA_BYTE_1: u8,
+                DATA_BYTE_13: u8,
+                DATA_BYTE_17: u8,
+                DATA_BYTE_21: u8,
+                DATA_BYTE_25: u8,
+                DATA_BYTE_29: u8,
+                DATA_BYTE_5: u8,
+                DATA_BYTE_9: u8,
+                DATA_BYTE_0: u8,
+                DATA_BYTE_12: u8,
+                DATA_BYTE_16: u8,
+                DATA_BYTE_20: u8,
+                DATA_BYTE_24: u8,
+                DATA_BYTE_28: u8,
+                DATA_BYTE_4: u8,
+                DATA_BYTE_8: u8,
+            }
+            let proxy = MB_32B_WORD {
+                DATA_BYTE_11: self.DATA_BYTE_11(),
+                DATA_BYTE_15: self.DATA_BYTE_15(),
+                DATA_BYTE_19: self.DATA_BYTE_19(),
+                DATA_BYTE_23: self.DATA_BYTE_23(),
+                DATA_BYTE_27: self.DATA_BYTE_27(),
+                DATA_BYTE_3: self.DATA_BYTE_3(),
+                DATA_BYTE_31: self.DATA_BYTE_31(),
+                DATA_BYTE_7: self.DATA_BYTE_7(),
+                DATA_BYTE_10: self.DATA_BYTE_10(),
+                DATA_BYTE_14: self.DATA_BYTE_14(),
+                DATA_BYTE_18: self.DATA_BYTE_18(),
+                DATA_BYTE_2: self.DATA_BYTE_2(),
+                DATA_BYTE_22: self.DATA_BYTE_22(),
+                DATA_BYTE_26: self.DATA_BYTE_26(),
+                DATA_BYTE_30: self.DATA_BYTE_30(),
+                DATA_BYTE_6: self.DATA_BYTE_6(),
+                DATA_BYTE_1: self.DATA_BYTE_1(),
+                DATA_BYTE_13: self.DATA_BYTE_13(),
+                DATA_BYTE_17: self.DATA_BYTE_17(),
+                DATA_BYTE_21: self.DATA_BYTE_21(),
+                DATA_BYTE_25: self.DATA_BYTE_25(),
+                DATA_BYTE_29: self.DATA_BYTE_29(),
+                DATA_BYTE_5: self.DATA_BYTE_5(),
+                DATA_BYTE_9: self.DATA_BYTE_9(),
+                DATA_BYTE_0: self.DATA_BYTE_0(),
+                DATA_BYTE_12: self.DATA_BYTE_12(),
+                DATA_BYTE_16: self.DATA_BYTE_16(),
+                DATA_BYTE_20: self.DATA_BYTE_20(),
+                DATA_BYTE_24: self.DATA_BYTE_24(),
+                DATA_BYTE_28: self.DATA_BYTE_28(),
+                DATA_BYTE_4: self.DATA_BYTE_4(),
+                DATA_BYTE_8: self.DATA_BYTE_8(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Message Buffer 0 CS Register..Message Buffer 6 CS Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2651,6 +3753,50 @@ pub mod regs {
             MB_64B_CS(0)
         }
     }
+    impl core::fmt::Debug for MB_64B_CS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MB_64B_CS")
+                .field("TIME_STAMP", &self.TIME_STAMP())
+                .field("DLC", &self.DLC())
+                .field("RTR", &self.RTR())
+                .field("IDE", &self.IDE())
+                .field("SRR", &self.SRR())
+                .field("CODE", &self.CODE())
+                .field("ESI", &self.ESI())
+                .field("BRS", &self.BRS())
+                .field("EDL", &self.EDL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_64B_CS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MB_64B_CS {
+                TIME_STAMP: u16,
+                DLC: u8,
+                RTR: bool,
+                IDE: bool,
+                SRR: bool,
+                CODE: u8,
+                ESI: bool,
+                BRS: bool,
+                EDL: bool,
+            }
+            let proxy = MB_64B_CS {
+                TIME_STAMP: self.TIME_STAMP(),
+                DLC: self.DLC(),
+                RTR: self.RTR(),
+                IDE: self.IDE(),
+                SRR: self.SRR(),
+                CODE: self.CODE(),
+                ESI: self.ESI(),
+                BRS: self.BRS(),
+                EDL: self.EDL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Message Buffer 0 ID Register..Message Buffer 6 ID Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2688,6 +3834,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MB_64B_ID {
             MB_64B_ID(0)
+        }
+    }
+    impl core::fmt::Debug for MB_64B_ID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MB_64B_ID")
+                .field("EXT", &self.EXT())
+                .field("STD", &self.STD())
+                .field("PRIO", &self.PRIO())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_64B_ID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MB_64B_ID {
+                EXT: u32,
+                STD: u16,
+                PRIO: u8,
+            }
+            let proxy = MB_64B_ID {
+                EXT: self.EXT(),
+                STD: self.STD(),
+                PRIO: self.PRIO(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Message Buffer 0 WORD_64B Register..Message Buffer 6 WORD_64B Register"]
@@ -3278,6 +4450,215 @@ pub mod regs {
             MB_64B_WORD(0)
         }
     }
+    impl core::fmt::Debug for MB_64B_WORD {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MB_64B_WORD")
+                .field("DATA_BYTE_11", &self.DATA_BYTE_11())
+                .field("DATA_BYTE_15", &self.DATA_BYTE_15())
+                .field("DATA_BYTE_19", &self.DATA_BYTE_19())
+                .field("DATA_BYTE_23", &self.DATA_BYTE_23())
+                .field("DATA_BYTE_27", &self.DATA_BYTE_27())
+                .field("DATA_BYTE_3", &self.DATA_BYTE_3())
+                .field("DATA_BYTE_31", &self.DATA_BYTE_31())
+                .field("DATA_BYTE_35", &self.DATA_BYTE_35())
+                .field("DATA_BYTE_39", &self.DATA_BYTE_39())
+                .field("DATA_BYTE_43", &self.DATA_BYTE_43())
+                .field("DATA_BYTE_47", &self.DATA_BYTE_47())
+                .field("DATA_BYTE_51", &self.DATA_BYTE_51())
+                .field("DATA_BYTE_55", &self.DATA_BYTE_55())
+                .field("DATA_BYTE_59", &self.DATA_BYTE_59())
+                .field("DATA_BYTE_63", &self.DATA_BYTE_63())
+                .field("DATA_BYTE_7", &self.DATA_BYTE_7())
+                .field("DATA_BYTE_10", &self.DATA_BYTE_10())
+                .field("DATA_BYTE_14", &self.DATA_BYTE_14())
+                .field("DATA_BYTE_18", &self.DATA_BYTE_18())
+                .field("DATA_BYTE_2", &self.DATA_BYTE_2())
+                .field("DATA_BYTE_22", &self.DATA_BYTE_22())
+                .field("DATA_BYTE_26", &self.DATA_BYTE_26())
+                .field("DATA_BYTE_30", &self.DATA_BYTE_30())
+                .field("DATA_BYTE_34", &self.DATA_BYTE_34())
+                .field("DATA_BYTE_38", &self.DATA_BYTE_38())
+                .field("DATA_BYTE_42", &self.DATA_BYTE_42())
+                .field("DATA_BYTE_46", &self.DATA_BYTE_46())
+                .field("DATA_BYTE_50", &self.DATA_BYTE_50())
+                .field("DATA_BYTE_54", &self.DATA_BYTE_54())
+                .field("DATA_BYTE_58", &self.DATA_BYTE_58())
+                .field("DATA_BYTE_6", &self.DATA_BYTE_6())
+                .field("DATA_BYTE_62", &self.DATA_BYTE_62())
+                .field("DATA_BYTE_1", &self.DATA_BYTE_1())
+                .field("DATA_BYTE_13", &self.DATA_BYTE_13())
+                .field("DATA_BYTE_17", &self.DATA_BYTE_17())
+                .field("DATA_BYTE_21", &self.DATA_BYTE_21())
+                .field("DATA_BYTE_25", &self.DATA_BYTE_25())
+                .field("DATA_BYTE_29", &self.DATA_BYTE_29())
+                .field("DATA_BYTE_33", &self.DATA_BYTE_33())
+                .field("DATA_BYTE_37", &self.DATA_BYTE_37())
+                .field("DATA_BYTE_41", &self.DATA_BYTE_41())
+                .field("DATA_BYTE_45", &self.DATA_BYTE_45())
+                .field("DATA_BYTE_49", &self.DATA_BYTE_49())
+                .field("DATA_BYTE_5", &self.DATA_BYTE_5())
+                .field("DATA_BYTE_53", &self.DATA_BYTE_53())
+                .field("DATA_BYTE_57", &self.DATA_BYTE_57())
+                .field("DATA_BYTE_61", &self.DATA_BYTE_61())
+                .field("DATA_BYTE_9", &self.DATA_BYTE_9())
+                .field("DATA_BYTE_0", &self.DATA_BYTE_0())
+                .field("DATA_BYTE_12", &self.DATA_BYTE_12())
+                .field("DATA_BYTE_16", &self.DATA_BYTE_16())
+                .field("DATA_BYTE_20", &self.DATA_BYTE_20())
+                .field("DATA_BYTE_24", &self.DATA_BYTE_24())
+                .field("DATA_BYTE_28", &self.DATA_BYTE_28())
+                .field("DATA_BYTE_32", &self.DATA_BYTE_32())
+                .field("DATA_BYTE_36", &self.DATA_BYTE_36())
+                .field("DATA_BYTE_4", &self.DATA_BYTE_4())
+                .field("DATA_BYTE_40", &self.DATA_BYTE_40())
+                .field("DATA_BYTE_44", &self.DATA_BYTE_44())
+                .field("DATA_BYTE_48", &self.DATA_BYTE_48())
+                .field("DATA_BYTE_52", &self.DATA_BYTE_52())
+                .field("DATA_BYTE_56", &self.DATA_BYTE_56())
+                .field("DATA_BYTE_60", &self.DATA_BYTE_60())
+                .field("DATA_BYTE_8", &self.DATA_BYTE_8())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_64B_WORD {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MB_64B_WORD {
+                DATA_BYTE_11: u8,
+                DATA_BYTE_15: u8,
+                DATA_BYTE_19: u8,
+                DATA_BYTE_23: u8,
+                DATA_BYTE_27: u8,
+                DATA_BYTE_3: u8,
+                DATA_BYTE_31: u8,
+                DATA_BYTE_35: u8,
+                DATA_BYTE_39: u8,
+                DATA_BYTE_43: u8,
+                DATA_BYTE_47: u8,
+                DATA_BYTE_51: u8,
+                DATA_BYTE_55: u8,
+                DATA_BYTE_59: u8,
+                DATA_BYTE_63: u8,
+                DATA_BYTE_7: u8,
+                DATA_BYTE_10: u8,
+                DATA_BYTE_14: u8,
+                DATA_BYTE_18: u8,
+                DATA_BYTE_2: u8,
+                DATA_BYTE_22: u8,
+                DATA_BYTE_26: u8,
+                DATA_BYTE_30: u8,
+                DATA_BYTE_34: u8,
+                DATA_BYTE_38: u8,
+                DATA_BYTE_42: u8,
+                DATA_BYTE_46: u8,
+                DATA_BYTE_50: u8,
+                DATA_BYTE_54: u8,
+                DATA_BYTE_58: u8,
+                DATA_BYTE_6: u8,
+                DATA_BYTE_62: u8,
+                DATA_BYTE_1: u8,
+                DATA_BYTE_13: u8,
+                DATA_BYTE_17: u8,
+                DATA_BYTE_21: u8,
+                DATA_BYTE_25: u8,
+                DATA_BYTE_29: u8,
+                DATA_BYTE_33: u8,
+                DATA_BYTE_37: u8,
+                DATA_BYTE_41: u8,
+                DATA_BYTE_45: u8,
+                DATA_BYTE_49: u8,
+                DATA_BYTE_5: u8,
+                DATA_BYTE_53: u8,
+                DATA_BYTE_57: u8,
+                DATA_BYTE_61: u8,
+                DATA_BYTE_9: u8,
+                DATA_BYTE_0: u8,
+                DATA_BYTE_12: u8,
+                DATA_BYTE_16: u8,
+                DATA_BYTE_20: u8,
+                DATA_BYTE_24: u8,
+                DATA_BYTE_28: u8,
+                DATA_BYTE_32: u8,
+                DATA_BYTE_36: u8,
+                DATA_BYTE_4: u8,
+                DATA_BYTE_40: u8,
+                DATA_BYTE_44: u8,
+                DATA_BYTE_48: u8,
+                DATA_BYTE_52: u8,
+                DATA_BYTE_56: u8,
+                DATA_BYTE_60: u8,
+                DATA_BYTE_8: u8,
+            }
+            let proxy = MB_64B_WORD {
+                DATA_BYTE_11: self.DATA_BYTE_11(),
+                DATA_BYTE_15: self.DATA_BYTE_15(),
+                DATA_BYTE_19: self.DATA_BYTE_19(),
+                DATA_BYTE_23: self.DATA_BYTE_23(),
+                DATA_BYTE_27: self.DATA_BYTE_27(),
+                DATA_BYTE_3: self.DATA_BYTE_3(),
+                DATA_BYTE_31: self.DATA_BYTE_31(),
+                DATA_BYTE_35: self.DATA_BYTE_35(),
+                DATA_BYTE_39: self.DATA_BYTE_39(),
+                DATA_BYTE_43: self.DATA_BYTE_43(),
+                DATA_BYTE_47: self.DATA_BYTE_47(),
+                DATA_BYTE_51: self.DATA_BYTE_51(),
+                DATA_BYTE_55: self.DATA_BYTE_55(),
+                DATA_BYTE_59: self.DATA_BYTE_59(),
+                DATA_BYTE_63: self.DATA_BYTE_63(),
+                DATA_BYTE_7: self.DATA_BYTE_7(),
+                DATA_BYTE_10: self.DATA_BYTE_10(),
+                DATA_BYTE_14: self.DATA_BYTE_14(),
+                DATA_BYTE_18: self.DATA_BYTE_18(),
+                DATA_BYTE_2: self.DATA_BYTE_2(),
+                DATA_BYTE_22: self.DATA_BYTE_22(),
+                DATA_BYTE_26: self.DATA_BYTE_26(),
+                DATA_BYTE_30: self.DATA_BYTE_30(),
+                DATA_BYTE_34: self.DATA_BYTE_34(),
+                DATA_BYTE_38: self.DATA_BYTE_38(),
+                DATA_BYTE_42: self.DATA_BYTE_42(),
+                DATA_BYTE_46: self.DATA_BYTE_46(),
+                DATA_BYTE_50: self.DATA_BYTE_50(),
+                DATA_BYTE_54: self.DATA_BYTE_54(),
+                DATA_BYTE_58: self.DATA_BYTE_58(),
+                DATA_BYTE_6: self.DATA_BYTE_6(),
+                DATA_BYTE_62: self.DATA_BYTE_62(),
+                DATA_BYTE_1: self.DATA_BYTE_1(),
+                DATA_BYTE_13: self.DATA_BYTE_13(),
+                DATA_BYTE_17: self.DATA_BYTE_17(),
+                DATA_BYTE_21: self.DATA_BYTE_21(),
+                DATA_BYTE_25: self.DATA_BYTE_25(),
+                DATA_BYTE_29: self.DATA_BYTE_29(),
+                DATA_BYTE_33: self.DATA_BYTE_33(),
+                DATA_BYTE_37: self.DATA_BYTE_37(),
+                DATA_BYTE_41: self.DATA_BYTE_41(),
+                DATA_BYTE_45: self.DATA_BYTE_45(),
+                DATA_BYTE_49: self.DATA_BYTE_49(),
+                DATA_BYTE_5: self.DATA_BYTE_5(),
+                DATA_BYTE_53: self.DATA_BYTE_53(),
+                DATA_BYTE_57: self.DATA_BYTE_57(),
+                DATA_BYTE_61: self.DATA_BYTE_61(),
+                DATA_BYTE_9: self.DATA_BYTE_9(),
+                DATA_BYTE_0: self.DATA_BYTE_0(),
+                DATA_BYTE_12: self.DATA_BYTE_12(),
+                DATA_BYTE_16: self.DATA_BYTE_16(),
+                DATA_BYTE_20: self.DATA_BYTE_20(),
+                DATA_BYTE_24: self.DATA_BYTE_24(),
+                DATA_BYTE_28: self.DATA_BYTE_28(),
+                DATA_BYTE_32: self.DATA_BYTE_32(),
+                DATA_BYTE_36: self.DATA_BYTE_36(),
+                DATA_BYTE_4: self.DATA_BYTE_4(),
+                DATA_BYTE_40: self.DATA_BYTE_40(),
+                DATA_BYTE_44: self.DATA_BYTE_44(),
+                DATA_BYTE_48: self.DATA_BYTE_48(),
+                DATA_BYTE_52: self.DATA_BYTE_52(),
+                DATA_BYTE_56: self.DATA_BYTE_56(),
+                DATA_BYTE_60: self.DATA_BYTE_60(),
+                DATA_BYTE_8: self.DATA_BYTE_8(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Message Buffer 0 CS Register..Message Buffer 31 CS Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3371,6 +4752,50 @@ pub mod regs {
             MB_8B_CS(0)
         }
     }
+    impl core::fmt::Debug for MB_8B_CS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MB_8B_CS")
+                .field("TIME_STAMP", &self.TIME_STAMP())
+                .field("DLC", &self.DLC())
+                .field("RTR", &self.RTR())
+                .field("IDE", &self.IDE())
+                .field("SRR", &self.SRR())
+                .field("CODE", &self.CODE())
+                .field("ESI", &self.ESI())
+                .field("BRS", &self.BRS())
+                .field("EDL", &self.EDL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_8B_CS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MB_8B_CS {
+                TIME_STAMP: u16,
+                DLC: u8,
+                RTR: bool,
+                IDE: bool,
+                SRR: bool,
+                CODE: u8,
+                ESI: bool,
+                BRS: bool,
+                EDL: bool,
+            }
+            let proxy = MB_8B_CS {
+                TIME_STAMP: self.TIME_STAMP(),
+                DLC: self.DLC(),
+                RTR: self.RTR(),
+                IDE: self.IDE(),
+                SRR: self.SRR(),
+                CODE: self.CODE(),
+                ESI: self.ESI(),
+                BRS: self.BRS(),
+                EDL: self.EDL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Message Buffer 0 ID Register..Message Buffer 31 ID Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3408,6 +4833,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MB_8B_ID {
             MB_8B_ID(0)
+        }
+    }
+    impl core::fmt::Debug for MB_8B_ID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MB_8B_ID")
+                .field("EXT", &self.EXT())
+                .field("STD", &self.STD())
+                .field("PRIO", &self.PRIO())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_8B_ID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MB_8B_ID {
+                EXT: u32,
+                STD: u16,
+                PRIO: u8,
+            }
+            let proxy = MB_8B_ID {
+                EXT: self.EXT(),
+                STD: self.STD(),
+                PRIO: self.PRIO(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Message Buffer 0 WORD_8B Register..Message Buffer 31 WORD_8B Register"]
@@ -3492,6 +4943,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MB_8B_WORD {
             MB_8B_WORD(0)
+        }
+    }
+    impl core::fmt::Debug for MB_8B_WORD {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MB_8B_WORD")
+                .field("DATA_BYTE_3", &self.DATA_BYTE_3())
+                .field("DATA_BYTE_7", &self.DATA_BYTE_7())
+                .field("DATA_BYTE_2", &self.DATA_BYTE_2())
+                .field("DATA_BYTE_6", &self.DATA_BYTE_6())
+                .field("DATA_BYTE_1", &self.DATA_BYTE_1())
+                .field("DATA_BYTE_5", &self.DATA_BYTE_5())
+                .field("DATA_BYTE_0", &self.DATA_BYTE_0())
+                .field("DATA_BYTE_4", &self.DATA_BYTE_4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_8B_WORD {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MB_8B_WORD {
+                DATA_BYTE_3: u8,
+                DATA_BYTE_7: u8,
+                DATA_BYTE_2: u8,
+                DATA_BYTE_6: u8,
+                DATA_BYTE_1: u8,
+                DATA_BYTE_5: u8,
+                DATA_BYTE_0: u8,
+                DATA_BYTE_4: u8,
+            }
+            let proxy = MB_8B_WORD {
+                DATA_BYTE_3: self.DATA_BYTE_3(),
+                DATA_BYTE_7: self.DATA_BYTE_7(),
+                DATA_BYTE_2: self.DATA_BYTE_2(),
+                DATA_BYTE_6: self.DATA_BYTE_6(),
+                DATA_BYTE_1: self.DATA_BYTE_1(),
+                DATA_BYTE_5: self.DATA_BYTE_5(),
+                DATA_BYTE_0: self.DATA_BYTE_0(),
+                DATA_BYTE_4: self.DATA_BYTE_4(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Message Buffer 0 CS Register..Message Buffer 31 CS Register"]
@@ -3587,6 +5079,50 @@ pub mod regs {
             MB_CS(0)
         }
     }
+    impl core::fmt::Debug for MB_CS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MB_CS")
+                .field("TIME_STAMP", &self.TIME_STAMP())
+                .field("DLC", &self.DLC())
+                .field("RTR", &self.RTR())
+                .field("IDE", &self.IDE())
+                .field("SRR", &self.SRR())
+                .field("CODE", &self.CODE())
+                .field("ESI", &self.ESI())
+                .field("BRS", &self.BRS())
+                .field("EDL", &self.EDL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_CS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MB_CS {
+                TIME_STAMP: u16,
+                DLC: u8,
+                RTR: bool,
+                IDE: bool,
+                SRR: bool,
+                CODE: u8,
+                ESI: bool,
+                BRS: bool,
+                EDL: bool,
+            }
+            let proxy = MB_CS {
+                TIME_STAMP: self.TIME_STAMP(),
+                DLC: self.DLC(),
+                RTR: self.RTR(),
+                IDE: self.IDE(),
+                SRR: self.SRR(),
+                CODE: self.CODE(),
+                ESI: self.ESI(),
+                BRS: self.BRS(),
+                EDL: self.EDL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Message Buffer 0 ID Register..Message Buffer 31 ID Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3624,6 +5160,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MB_ID {
             MB_ID(0)
+        }
+    }
+    impl core::fmt::Debug for MB_ID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MB_ID")
+                .field("EXT", &self.EXT())
+                .field("STD", &self.STD())
+                .field("PRIO", &self.PRIO())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_ID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MB_ID {
+                EXT: u32,
+                STD: u16,
+                PRIO: u8,
+            }
+            let proxy = MB_ID {
+                EXT: self.EXT(),
+                STD: self.STD(),
+                PRIO: self.PRIO(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Message Buffer 0 WORD0 Register..Message Buffer 31 WORD0 Register"]
@@ -3674,6 +5236,35 @@ pub mod regs {
             MB_WORD0(0)
         }
     }
+    impl core::fmt::Debug for MB_WORD0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MB_WORD0")
+                .field("DATA_BYTE_3", &self.DATA_BYTE_3())
+                .field("DATA_BYTE_2", &self.DATA_BYTE_2())
+                .field("DATA_BYTE_1", &self.DATA_BYTE_1())
+                .field("DATA_BYTE_0", &self.DATA_BYTE_0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MB_WORD0 {
+                DATA_BYTE_3: u8,
+                DATA_BYTE_2: u8,
+                DATA_BYTE_1: u8,
+                DATA_BYTE_0: u8,
+            }
+            let proxy = MB_WORD0 {
+                DATA_BYTE_3: self.DATA_BYTE_3(),
+                DATA_BYTE_2: self.DATA_BYTE_2(),
+                DATA_BYTE_1: self.DATA_BYTE_1(),
+                DATA_BYTE_0: self.DATA_BYTE_0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Message Buffer 0 WORD1 Register..Message Buffer 31 WORD1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3720,6 +5311,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MB_WORD1 {
             MB_WORD1(0)
+        }
+    }
+    impl core::fmt::Debug for MB_WORD1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MB_WORD1")
+                .field("DATA_BYTE_7", &self.DATA_BYTE_7())
+                .field("DATA_BYTE_6", &self.DATA_BYTE_6())
+                .field("DATA_BYTE_5", &self.DATA_BYTE_5())
+                .field("DATA_BYTE_4", &self.DATA_BYTE_4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_WORD1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MB_WORD1 {
+                DATA_BYTE_7: u8,
+                DATA_BYTE_6: u8,
+                DATA_BYTE_5: u8,
+                DATA_BYTE_4: u8,
+            }
+            let proxy = MB_WORD1 {
+                DATA_BYTE_7: self.DATA_BYTE_7(),
+                DATA_BYTE_6: self.DATA_BYTE_6(),
+                DATA_BYTE_5: self.DATA_BYTE_5(),
+                DATA_BYTE_4: self.DATA_BYTE_4(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Module Configuration"]
@@ -3923,6 +5543,86 @@ pub mod regs {
             MCR(0)
         }
     }
+    impl core::fmt::Debug for MCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MCR")
+                .field("MAXMB", &self.MAXMB())
+                .field("IDAM", &self.IDAM())
+                .field("FDEN", &self.FDEN())
+                .field("AEN", &self.AEN())
+                .field("LPRIOEN", &self.LPRIOEN())
+                .field("PNET_EN", &self.PNET_EN())
+                .field("DMA", &self.DMA())
+                .field("IRMQ", &self.IRMQ())
+                .field("SRXDIS", &self.SRXDIS())
+                .field("WAKSRC", &self.WAKSRC())
+                .field("LPMACK", &self.LPMACK())
+                .field("WRNEN", &self.WRNEN())
+                .field("SLFWAK", &self.SLFWAK())
+                .field("FRZACK", &self.FRZACK())
+                .field("SOFTRST", &self.SOFTRST())
+                .field("WAKMSK", &self.WAKMSK())
+                .field("NOTRDY", &self.NOTRDY())
+                .field("HALT", &self.HALT())
+                .field("RFEN", &self.RFEN())
+                .field("FRZ", &self.FRZ())
+                .field("MDIS", &self.MDIS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MCR {
+                MAXMB: u8,
+                IDAM: u8,
+                FDEN: bool,
+                AEN: bool,
+                LPRIOEN: bool,
+                PNET_EN: bool,
+                DMA: bool,
+                IRMQ: bool,
+                SRXDIS: bool,
+                WAKSRC: bool,
+                LPMACK: bool,
+                WRNEN: bool,
+                SLFWAK: bool,
+                FRZACK: bool,
+                SOFTRST: bool,
+                WAKMSK: bool,
+                NOTRDY: bool,
+                HALT: bool,
+                RFEN: bool,
+                FRZ: bool,
+                MDIS: bool,
+            }
+            let proxy = MCR {
+                MAXMB: self.MAXMB(),
+                IDAM: self.IDAM(),
+                FDEN: self.FDEN(),
+                AEN: self.AEN(),
+                LPRIOEN: self.LPRIOEN(),
+                PNET_EN: self.PNET_EN(),
+                DMA: self.DMA(),
+                IRMQ: self.IRMQ(),
+                SRXDIS: self.SRXDIS(),
+                WAKSRC: self.WAKSRC(),
+                LPMACK: self.LPMACK(),
+                WRNEN: self.WRNEN(),
+                SLFWAK: self.SLFWAK(),
+                FRZACK: self.FRZACK(),
+                SOFTRST: self.SOFTRST(),
+                WAKMSK: self.WAKMSK(),
+                NOTRDY: self.NOTRDY(),
+                HALT: self.HALT(),
+                RFEN: self.RFEN(),
+                FRZ: self.FRZ(),
+                MDIS: self.MDIS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Pretended Networking Payload High Filter 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3969,6 +5669,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PL1_HI {
             PL1_HI(0)
+        }
+    }
+    impl core::fmt::Debug for PL1_HI {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PL1_HI")
+                .field("Data_byte_7", &self.Data_byte_7())
+                .field("Data_byte_6", &self.Data_byte_6())
+                .field("Data_byte_5", &self.Data_byte_5())
+                .field("Data_byte_4", &self.Data_byte_4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PL1_HI {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PL1_HI {
+                Data_byte_7: u8,
+                Data_byte_6: u8,
+                Data_byte_5: u8,
+                Data_byte_4: u8,
+            }
+            let proxy = PL1_HI {
+                Data_byte_7: self.Data_byte_7(),
+                Data_byte_6: self.Data_byte_6(),
+                Data_byte_5: self.Data_byte_5(),
+                Data_byte_4: self.Data_byte_4(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pretended Networking Payload Low Filter 1"]
@@ -4019,6 +5748,35 @@ pub mod regs {
             PL1_LO(0)
         }
     }
+    impl core::fmt::Debug for PL1_LO {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PL1_LO")
+                .field("Data_byte_3", &self.Data_byte_3())
+                .field("Data_byte_2", &self.Data_byte_2())
+                .field("Data_byte_1", &self.Data_byte_1())
+                .field("Data_byte_0", &self.Data_byte_0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PL1_LO {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PL1_LO {
+                Data_byte_3: u8,
+                Data_byte_2: u8,
+                Data_byte_1: u8,
+                Data_byte_0: u8,
+            }
+            let proxy = PL1_LO {
+                Data_byte_3: self.Data_byte_3(),
+                Data_byte_2: self.Data_byte_2(),
+                Data_byte_1: self.Data_byte_1(),
+                Data_byte_0: self.Data_byte_0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Pretended Networking Payload High Filter 2 and Payload High Mask"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4065,6 +5823,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PL2_PLMASK_HI {
             PL2_PLMASK_HI(0)
+        }
+    }
+    impl core::fmt::Debug for PL2_PLMASK_HI {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PL2_PLMASK_HI")
+                .field("Data_byte_7", &self.Data_byte_7())
+                .field("Data_byte_6", &self.Data_byte_6())
+                .field("Data_byte_5", &self.Data_byte_5())
+                .field("Data_byte_4", &self.Data_byte_4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PL2_PLMASK_HI {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PL2_PLMASK_HI {
+                Data_byte_7: u8,
+                Data_byte_6: u8,
+                Data_byte_5: u8,
+                Data_byte_4: u8,
+            }
+            let proxy = PL2_PLMASK_HI {
+                Data_byte_7: self.Data_byte_7(),
+                Data_byte_6: self.Data_byte_6(),
+                Data_byte_5: self.Data_byte_5(),
+                Data_byte_4: self.Data_byte_4(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pretended Networking Payload Low Filter 2 and Payload Low Mask"]
@@ -4115,6 +5902,35 @@ pub mod regs {
             PL2_PLMASK_LO(0)
         }
     }
+    impl core::fmt::Debug for PL2_PLMASK_LO {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PL2_PLMASK_LO")
+                .field("Data_byte_3", &self.Data_byte_3())
+                .field("Data_byte_2", &self.Data_byte_2())
+                .field("Data_byte_1", &self.Data_byte_1())
+                .field("Data_byte_0", &self.Data_byte_0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PL2_PLMASK_LO {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PL2_PLMASK_LO {
+                Data_byte_3: u8,
+                Data_byte_2: u8,
+                Data_byte_1: u8,
+                Data_byte_0: u8,
+            }
+            let proxy = PL2_PLMASK_LO {
+                Data_byte_3: self.Data_byte_3(),
+                Data_byte_2: self.Data_byte_2(),
+                Data_byte_1: self.Data_byte_1(),
+                Data_byte_0: self.Data_byte_0(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Legacy RX FIFO Information"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4136,6 +5952,26 @@ pub mod regs {
             RXFIR(0)
         }
     }
+    impl core::fmt::Debug for RXFIR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RXFIR")
+                .field("IDHIT", &self.IDHIT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RXFIR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RXFIR {
+                IDHIT: u16,
+            }
+            let proxy = RXFIR {
+                IDHIT: self.IDHIT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Free-Running Timer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4155,6 +5991,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TIMER {
             TIMER(0)
+        }
+    }
+    impl core::fmt::Debug for TIMER {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TIMER")
+                .field("TIMER", &self.TIMER())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TIMER {
+                TIMER: u16,
+            }
+            let proxy = TIMER {
+                TIMER: self.TIMER(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Wake-Up Message Buffer"]
@@ -4205,6 +6061,35 @@ pub mod regs {
             WMB_CS(0)
         }
     }
+    impl core::fmt::Debug for WMB_CS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("WMB_CS")
+                .field("DLC", &self.DLC())
+                .field("RTR", &self.RTR())
+                .field("IDE", &self.IDE())
+                .field("SRR", &self.SRR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WMB_CS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct WMB_CS {
+                DLC: u8,
+                RTR: bool,
+                IDE: bool,
+                SRR: bool,
+            }
+            let proxy = WMB_CS {
+                DLC: self.DLC(),
+                RTR: self.RTR(),
+                IDE: self.IDE(),
+                SRR: self.SRR(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Wake-Up Message Buffer for Data 0-3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4251,6 +6136,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> WMB_D03 {
             WMB_D03(0)
+        }
+    }
+    impl core::fmt::Debug for WMB_D03 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("WMB_D03")
+                .field("Data_byte_3", &self.Data_byte_3())
+                .field("Data_byte_2", &self.Data_byte_2())
+                .field("Data_byte_1", &self.Data_byte_1())
+                .field("Data_byte_0", &self.Data_byte_0())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WMB_D03 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct WMB_D03 {
+                Data_byte_3: u8,
+                Data_byte_2: u8,
+                Data_byte_1: u8,
+                Data_byte_0: u8,
+            }
+            let proxy = WMB_D03 {
+                Data_byte_3: self.Data_byte_3(),
+                Data_byte_2: self.Data_byte_2(),
+                Data_byte_1: self.Data_byte_1(),
+                Data_byte_0: self.Data_byte_0(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Wake-Up Message Buffer Register Data 4-7"]
@@ -4301,6 +6215,35 @@ pub mod regs {
             WMB_D47(0)
         }
     }
+    impl core::fmt::Debug for WMB_D47 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("WMB_D47")
+                .field("Data_byte_7", &self.Data_byte_7())
+                .field("Data_byte_6", &self.Data_byte_6())
+                .field("Data_byte_5", &self.Data_byte_5())
+                .field("Data_byte_4", &self.Data_byte_4())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WMB_D47 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct WMB_D47 {
+                Data_byte_7: u8,
+                Data_byte_6: u8,
+                Data_byte_5: u8,
+                Data_byte_4: u8,
+            }
+            let proxy = WMB_D47 {
+                Data_byte_7: self.Data_byte_7(),
+                Data_byte_6: self.Data_byte_6(),
+                Data_byte_5: self.Data_byte_5(),
+                Data_byte_4: self.Data_byte_4(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Wake-Up Message Buffer for ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4320,6 +6263,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> WMB_ID {
             WMB_ID(0)
+        }
+    }
+    impl core::fmt::Debug for WMB_ID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("WMB_ID").field("ID", &self.ID()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WMB_ID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct WMB_ID {
+                ID: u32,
+            }
+            let proxy = WMB_ID { ID: self.ID() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pretended Networking Wake-Up Match"]
@@ -4359,6 +6318,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> WU_MTC {
             WU_MTC(0)
+        }
+    }
+    impl core::fmt::Debug for WU_MTC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("WU_MTC")
+                .field("MCOUNTER", &self.MCOUNTER())
+                .field("WUMF", &self.WUMF())
+                .field("WTOF", &self.WTOF())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WU_MTC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct WU_MTC {
+                MCOUNTER: u8,
+                WUMF: bool,
+                WTOF: bool,
+            }
+            let proxy = WU_MTC {
+                MCOUNTER: self.MCOUNTER(),
+                WUMF: self.WUMF(),
+                WTOF: self.WTOF(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

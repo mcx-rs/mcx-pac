@@ -62,6 +62,26 @@ pub mod regs {
             CLKCTRL(0)
         }
     }
+    impl core::fmt::Debug for CLKCTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CLKCTRL")
+                .field("CLKSEL", &self.CLKSEL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CLKCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CLKCTRL {
+                CLKSEL: u8,
+            }
+            let proxy = CLKCTRL {
+                CLKSEL: self.CLKSEL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Clock Prescaler"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -81,6 +101,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CLKPRESCALER {
             CLKPRESCALER(0)
+        }
+    }
+    impl core::fmt::Debug for CLKPRESCALER {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CLKPRESCALER")
+                .field("CLK_DIV", &self.CLK_DIV())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CLKPRESCALER {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CLKPRESCALER {
+                CLK_DIV: u8,
+            }
+            let proxy = CLKPRESCALER {
+                CLK_DIV: self.CLK_DIV(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Compare High"]
@@ -104,6 +144,26 @@ pub mod regs {
             CMPH(0)
         }
     }
+    impl core::fmt::Debug for CMPH {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CMPH")
+                .field("COMPAREH", &self.COMPAREH())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CMPH {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CMPH {
+                COMPAREH: u8,
+            }
+            let proxy = CMPH {
+                COMPAREH: self.COMPAREH(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Compare Low"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -123,6 +183,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CMPL {
             CMPL(0)
+        }
+    }
+    impl core::fmt::Debug for CMPL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CMPL")
+                .field("COMPAREL", &self.COMPAREL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CMPL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CMPL {
+                COMPAREL: u8,
+            }
+            let proxy = CMPL {
+                COMPAREL: self.COMPAREL(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Control"]
@@ -173,6 +253,35 @@ pub mod regs {
             CTRL(0)
         }
     }
+    impl core::fmt::Debug for CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL")
+                .field("EWMEN", &self.EWMEN())
+                .field("ASSIN", &self.ASSIN())
+                .field("INEN", &self.INEN())
+                .field("INTEN", &self.INTEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL {
+                EWMEN: bool,
+                ASSIN: bool,
+                INEN: bool,
+                INTEN: bool,
+            }
+            let proxy = CTRL {
+                EWMEN: self.EWMEN(),
+                ASSIN: self.ASSIN(),
+                INEN: self.INEN(),
+                INTEN: self.INTEN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Service"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -192,6 +301,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SERV {
             SERV(0)
+        }
+    }
+    impl core::fmt::Debug for SERV {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SERV")
+                .field("SERVICE", &self.SERVICE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SERV {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SERV {
+                SERVICE: u8,
+            }
+            let proxy = SERV {
+                SERVICE: self.SERVICE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

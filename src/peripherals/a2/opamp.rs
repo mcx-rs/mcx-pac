@@ -68,6 +68,32 @@ pub mod regs {
             OPAMP_CTRL(0)
         }
     }
+    impl core::fmt::Debug for OPAMP_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("OPAMP_CTRL")
+                .field("OPA_EN", &self.OPA_EN())
+                .field("OPA_CC_SEL", &self.OPA_CC_SEL())
+                .field("OPA_BC_SEL", &self.OPA_BC_SEL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OPAMP_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct OPAMP_CTRL {
+                OPA_EN: bool,
+                OPA_CC_SEL: u8,
+                OPA_BC_SEL: u8,
+            }
+            let proxy = OPAMP_CTRL {
+                OPA_EN: self.OPA_EN(),
+                OPA_CC_SEL: self.OPA_CC_SEL(),
+                OPA_BC_SEL: self.OPA_BC_SEL(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -105,6 +131,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> VERID {
             VERID(0)
+        }
+    }
+    impl core::fmt::Debug for VERID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VERID")
+                .field("FEATURE", &self.FEATURE())
+                .field("MINOR", &self.MINOR())
+                .field("MAJOR", &self.MAJOR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VERID {
+                FEATURE: u16,
+                MINOR: u8,
+                MAJOR: u8,
+            }
+            let proxy = VERID {
+                FEATURE: self.FEATURE(),
+                MINOR: self.MINOR(),
+                MAJOR: self.MAJOR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

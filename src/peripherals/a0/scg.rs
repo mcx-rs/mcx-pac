@@ -102,6 +102,22 @@ pub mod regs {
             CSR(0)
         }
     }
+    impl core::fmt::Debug for CSR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CSR").field("SCS", &self.SCS()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CSR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CSR {
+                SCS: u8,
+            }
+            let proxy = CSR { SCS: self.SCS() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FIRC Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -121,6 +137,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FIRCCFG {
             FIRCCFG(0)
+        }
+    }
+    impl core::fmt::Debug for FIRCCFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FIRCCFG")
+                .field("FREQ_SEL", &self.FREQ_SEL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIRCCFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FIRCCFG {
+                FREQ_SEL: u8,
+            }
+            let proxy = FIRCCFG {
+                FREQ_SEL: self.FREQ_SEL(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FIRC Control Status Register"]
@@ -270,6 +306,68 @@ pub mod regs {
             FIRCCSR(0)
         }
     }
+    impl core::fmt::Debug for FIRCCSR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FIRCCSR")
+                .field("FIRCEN", &self.FIRCEN())
+                .field("FIRCSTEN", &self.FIRCSTEN())
+                .field("FIRC_SCLK_PERIPH_EN", &self.FIRC_SCLK_PERIPH_EN())
+                .field("FIRC_FCLK_PERIPH_EN", &self.FIRC_FCLK_PERIPH_EN())
+                .field("FIRCTREN", &self.FIRCTREN())
+                .field("FIRCTRUP", &self.FIRCTRUP())
+                .field("TRIM_LOCK", &self.TRIM_LOCK())
+                .field("COARSE_TRIM_BYPASS", &self.COARSE_TRIM_BYPASS())
+                .field("LK", &self.LK())
+                .field("FIRCVLD", &self.FIRCVLD())
+                .field("FIRCSEL", &self.FIRCSEL())
+                .field("FIRCERR", &self.FIRCERR())
+                .field("FIRCERR_IE", &self.FIRCERR_IE())
+                .field("FIRCACC_IE", &self.FIRCACC_IE())
+                .field("FIRCACC", &self.FIRCACC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIRCCSR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FIRCCSR {
+                FIRCEN: bool,
+                FIRCSTEN: bool,
+                FIRC_SCLK_PERIPH_EN: bool,
+                FIRC_FCLK_PERIPH_EN: bool,
+                FIRCTREN: bool,
+                FIRCTRUP: bool,
+                TRIM_LOCK: bool,
+                COARSE_TRIM_BYPASS: bool,
+                LK: bool,
+                FIRCVLD: bool,
+                FIRCSEL: bool,
+                FIRCERR: bool,
+                FIRCERR_IE: bool,
+                FIRCACC_IE: bool,
+                FIRCACC: bool,
+            }
+            let proxy = FIRCCSR {
+                FIRCEN: self.FIRCEN(),
+                FIRCSTEN: self.FIRCSTEN(),
+                FIRC_SCLK_PERIPH_EN: self.FIRC_SCLK_PERIPH_EN(),
+                FIRC_FCLK_PERIPH_EN: self.FIRC_FCLK_PERIPH_EN(),
+                FIRCTREN: self.FIRCTREN(),
+                FIRCTRUP: self.FIRCTRUP(),
+                TRIM_LOCK: self.TRIM_LOCK(),
+                COARSE_TRIM_BYPASS: self.COARSE_TRIM_BYPASS(),
+                LK: self.LK(),
+                FIRCVLD: self.FIRCVLD(),
+                FIRCSEL: self.FIRCSEL(),
+                FIRCERR: self.FIRCERR(),
+                FIRCERR_IE: self.FIRCERR_IE(),
+                FIRCACC_IE: self.FIRCACC_IE(),
+                FIRCACC: self.FIRCACC(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FIRC Auto-trimming Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -300,6 +398,29 @@ pub mod regs {
             FIRCSTAT(0)
         }
     }
+    impl core::fmt::Debug for FIRCSTAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FIRCSTAT")
+                .field("TRIMFINE", &self.TRIMFINE())
+                .field("TRIMCOAR", &self.TRIMCOAR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIRCSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FIRCSTAT {
+                TRIMFINE: u8,
+                TRIMCOAR: u8,
+            }
+            let proxy = FIRCSTAT {
+                TRIMFINE: self.TRIMFINE(),
+                TRIMCOAR: self.TRIMCOAR(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "FIRC Trim Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -328,6 +449,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FIRCTCFG {
             FIRCTCFG(0)
+        }
+    }
+    impl core::fmt::Debug for FIRCTCFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FIRCTCFG")
+                .field("TRIMSRC", &self.TRIMSRC())
+                .field("TRIMDIV", &self.TRIMDIV())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIRCTCFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FIRCTCFG {
+                TRIMSRC: u8,
+                TRIMDIV: u8,
+            }
+            let proxy = FIRCTCFG {
+                TRIMSRC: self.TRIMSRC(),
+                TRIMDIV: self.TRIMDIV(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FIRC Trim Register"]
@@ -387,6 +531,38 @@ pub mod regs {
             FIRCTRIM(0)
         }
     }
+    impl core::fmt::Debug for FIRCTRIM {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FIRCTRIM")
+                .field("TRIMFINE", &self.TRIMFINE())
+                .field("TRIMCOAR", &self.TRIMCOAR())
+                .field("TRIMTEMP1", &self.TRIMTEMP1())
+                .field("TRIMTEMP2", &self.TRIMTEMP2())
+                .field("TRIMSTART", &self.TRIMSTART())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIRCTRIM {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FIRCTRIM {
+                TRIMFINE: u8,
+                TRIMCOAR: u8,
+                TRIMTEMP1: u8,
+                TRIMTEMP2: u8,
+                TRIMSTART: u8,
+            }
+            let proxy = FIRCTRIM {
+                TRIMFINE: self.TRIMFINE(),
+                TRIMCOAR: self.TRIMCOAR(),
+                TRIMTEMP1: self.TRIMTEMP1(),
+                TRIMTEMP2: self.TRIMTEMP2(),
+                TRIMSTART: self.TRIMSTART(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Parameter Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -435,6 +611,35 @@ pub mod regs {
             PARAM(0)
         }
     }
+    impl core::fmt::Debug for PARAM {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PARAM")
+                .field("SOSCCLKPRES", &self.SOSCCLKPRES())
+                .field("SIRCCLKPRES", &self.SIRCCLKPRES())
+                .field("FIRCCLKPRES", &self.FIRCCLKPRES())
+                .field("ROSCCLKPRES", &self.ROSCCLKPRES())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAM {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PARAM {
+                SOSCCLKPRES: bool,
+                SIRCCLKPRES: bool,
+                FIRCCLKPRES: bool,
+                ROSCCLKPRES: bool,
+            }
+            let proxy = PARAM {
+                SOSCCLKPRES: self.SOSCCLKPRES(),
+                SIRCCLKPRES: self.SIRCCLKPRES(),
+                FIRCCLKPRES: self.FIRCCLKPRES(),
+                ROSCCLKPRES: self.ROSCCLKPRES(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Run Clock Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -454,6 +659,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> RCCR {
             RCCR(0)
+        }
+    }
+    impl core::fmt::Debug for RCCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("RCCR").field("SCS", &self.SCS()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RCCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct RCCR {
+                SCS: u8,
+            }
+            let proxy = RCCR { SCS: self.SCS() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ROSC Control Status Register"]
@@ -502,6 +723,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ROSCCSR {
             ROSCCSR(0)
+        }
+    }
+    impl core::fmt::Debug for ROSCCSR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ROSCCSR")
+                .field("LK", &self.LK())
+                .field("ROSCVLD", &self.ROSCVLD())
+                .field("ROSCSEL", &self.ROSCSEL())
+                .field("ROSCERR", &self.ROSCERR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ROSCCSR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ROSCCSR {
+                LK: bool,
+                ROSCVLD: bool,
+                ROSCSEL: bool,
+                ROSCERR: bool,
+            }
+            let proxy = ROSCCSR {
+                LK: self.LK(),
+                ROSCVLD: self.ROSCVLD(),
+                ROSCSEL: self.ROSCSEL(),
+                ROSCERR: self.ROSCERR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SIRC Control Status Register"]
@@ -615,6 +865,56 @@ pub mod regs {
             SIRCCSR(0)
         }
     }
+    impl core::fmt::Debug for SIRCCSR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SIRCCSR")
+                .field("SIRCSTEN", &self.SIRCSTEN())
+                .field("SIRC_CLK_PERIPH_EN", &self.SIRC_CLK_PERIPH_EN())
+                .field("SIRCTREN", &self.SIRCTREN())
+                .field("SIRCTRUP", &self.SIRCTRUP())
+                .field("TRIM_LOCK", &self.TRIM_LOCK())
+                .field("COARSE_TRIM_BYPASS", &self.COARSE_TRIM_BYPASS())
+                .field("LK", &self.LK())
+                .field("SIRCVLD", &self.SIRCVLD())
+                .field("SIRCSEL", &self.SIRCSEL())
+                .field("SIRCERR", &self.SIRCERR())
+                .field("SIRCERR_IE", &self.SIRCERR_IE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SIRCCSR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SIRCCSR {
+                SIRCSTEN: bool,
+                SIRC_CLK_PERIPH_EN: bool,
+                SIRCTREN: bool,
+                SIRCTRUP: bool,
+                TRIM_LOCK: bool,
+                COARSE_TRIM_BYPASS: bool,
+                LK: bool,
+                SIRCVLD: bool,
+                SIRCSEL: bool,
+                SIRCERR: bool,
+                SIRCERR_IE: bool,
+            }
+            let proxy = SIRCCSR {
+                SIRCSTEN: self.SIRCSTEN(),
+                SIRC_CLK_PERIPH_EN: self.SIRC_CLK_PERIPH_EN(),
+                SIRCTREN: self.SIRCTREN(),
+                SIRCTRUP: self.SIRCTRUP(),
+                TRIM_LOCK: self.TRIM_LOCK(),
+                COARSE_TRIM_BYPASS: self.COARSE_TRIM_BYPASS(),
+                LK: self.LK(),
+                SIRCVLD: self.SIRCVLD(),
+                SIRCSEL: self.SIRCSEL(),
+                SIRCERR: self.SIRCERR(),
+                SIRCERR_IE: self.SIRCERR_IE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SIRC Auto-trimming Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -643,6 +943,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SIRCSTAT {
             SIRCSTAT(0)
+        }
+    }
+    impl core::fmt::Debug for SIRCSTAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SIRCSTAT")
+                .field("CCOTRIM", &self.CCOTRIM())
+                .field("CLTRIM", &self.CLTRIM())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SIRCSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SIRCSTAT {
+                CCOTRIM: u8,
+                CLTRIM: u8,
+            }
+            let proxy = SIRCSTAT {
+                CCOTRIM: self.CCOTRIM(),
+                CLTRIM: self.CLTRIM(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SIRC Trim Configuration Register"]
@@ -675,6 +998,29 @@ pub mod regs {
             SIRCTCFG(0)
         }
     }
+    impl core::fmt::Debug for SIRCTCFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SIRCTCFG")
+                .field("TRIMSRC", &self.TRIMSRC())
+                .field("TRIMDIV", &self.TRIMDIV())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SIRCTCFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SIRCTCFG {
+                TRIMSRC: u8,
+                TRIMDIV: u8,
+            }
+            let proxy = SIRCTCFG {
+                TRIMSRC: self.TRIMSRC(),
+                TRIMDIV: self.TRIMDIV(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SOSC Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -703,6 +1049,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SOSCCFG {
             SOSCCFG(0)
+        }
+    }
+    impl core::fmt::Debug for SOSCCFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SOSCCFG")
+                .field("EREFS", &self.EREFS())
+                .field("RANGE", &self.RANGE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SOSCCFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SOSCCFG {
+                EREFS: bool,
+                RANGE: u8,
+            }
+            let proxy = SOSCCFG {
+                EREFS: self.EREFS(),
+                RANGE: self.RANGE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SOSC Control Status Register"]
@@ -798,6 +1167,50 @@ pub mod regs {
             SOSCCSR(0)
         }
     }
+    impl core::fmt::Debug for SOSCCSR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SOSCCSR")
+                .field("SOSCEN", &self.SOSCEN())
+                .field("SOSCSTEN", &self.SOSCSTEN())
+                .field("SOSCCM", &self.SOSCCM())
+                .field("SOSCCMRE", &self.SOSCCMRE())
+                .field("LK", &self.LK())
+                .field("SOSCVLD", &self.SOSCVLD())
+                .field("SOSCSEL", &self.SOSCSEL())
+                .field("SOSCERR", &self.SOSCERR())
+                .field("SOSCVLD_IE", &self.SOSCVLD_IE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SOSCCSR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SOSCCSR {
+                SOSCEN: bool,
+                SOSCSTEN: bool,
+                SOSCCM: bool,
+                SOSCCMRE: bool,
+                LK: bool,
+                SOSCVLD: bool,
+                SOSCSEL: bool,
+                SOSCERR: bool,
+                SOSCVLD_IE: bool,
+            }
+            let proxy = SOSCCSR {
+                SOSCEN: self.SOSCEN(),
+                SOSCSTEN: self.SOSCSTEN(),
+                SOSCCM: self.SOSCCM(),
+                SOSCCMRE: self.SOSCCMRE(),
+                LK: self.LK(),
+                SOSCVLD: self.SOSCVLD(),
+                SOSCSEL: self.SOSCSEL(),
+                SOSCERR: self.SOSCERR(),
+                SOSCVLD_IE: self.SOSCVLD_IE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Trim Lock register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -835,6 +1248,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> TRIM_LOCK {
             TRIM_LOCK(0)
+        }
+    }
+    impl core::fmt::Debug for TRIM_LOCK {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TRIM_LOCK")
+                .field("TRIM_UNLOCK", &self.TRIM_UNLOCK())
+                .field("IFR_DISABLE", &self.IFR_DISABLE())
+                .field("TRIM_LOCK_KEY", &self.TRIM_LOCK_KEY())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TRIM_LOCK {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct TRIM_LOCK {
+                TRIM_UNLOCK: bool,
+                IFR_DISABLE: bool,
+                TRIM_LOCK_KEY: u16,
+            }
+            let proxy = TRIM_LOCK {
+                TRIM_UNLOCK: self.TRIM_UNLOCK(),
+                IFR_DISABLE: self.IFR_DISABLE(),
+                TRIM_LOCK_KEY: self.TRIM_LOCK_KEY(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

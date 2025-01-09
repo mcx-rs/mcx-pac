@@ -117,6 +117,47 @@ pub mod regs {
             CSR(0)
         }
     }
+    impl core::fmt::Debug for CSR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CSR")
+                .field("TEN", &self.TEN())
+                .field("TMS", &self.TMS())
+                .field("TFC", &self.TFC())
+                .field("TPP", &self.TPP())
+                .field("TPS", &self.TPS())
+                .field("TIE", &self.TIE())
+                .field("TCF", &self.TCF())
+                .field("TDRE", &self.TDRE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CSR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CSR {
+                TEN: bool,
+                TMS: bool,
+                TFC: bool,
+                TPP: bool,
+                TPS: u8,
+                TIE: bool,
+                TCF: bool,
+                TDRE: bool,
+            }
+            let proxy = CSR {
+                TEN: self.TEN(),
+                TMS: self.TMS(),
+                TFC: self.TFC(),
+                TPP: self.TPP(),
+                TPS: self.TPS(),
+                TIE: self.TIE(),
+                TCF: self.TCF(),
+                TDRE: self.TDRE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Prescaler and Glitch Filter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -154,6 +195,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PSR {
             PSR(0)
+        }
+    }
+    impl core::fmt::Debug for PSR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PSR")
+                .field("PCS", &self.PCS())
+                .field("PBYP", &self.PBYP())
+                .field("PRESCALE", &self.PRESCALE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PSR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PSR {
+                PCS: u8,
+                PBYP: bool,
+                PRESCALE: u8,
+            }
+            let proxy = PSR {
+                PCS: self.PCS(),
+                PBYP: self.PBYP(),
+                PRESCALE: self.PRESCALE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

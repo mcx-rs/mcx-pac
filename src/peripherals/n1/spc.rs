@@ -269,6 +269,71 @@ pub mod regs {
             ACTIVE_CFG(0)
         }
     }
+    impl core::fmt::Debug for ACTIVE_CFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ACTIVE_CFG")
+                .field("CORELDO_VDD_DS", &self.CORELDO_VDD_DS())
+                .field("CORELDO_VDD_LVL", &self.CORELDO_VDD_LVL())
+                .field("SYSLDO_VDD_DS", &self.SYSLDO_VDD_DS())
+                .field("SYSLDO_VDD_LVL", &self.SYSLDO_VDD_LVL())
+                .field("DCDC_VDD_DS", &self.DCDC_VDD_DS())
+                .field("DCDC_VDD_LVL", &self.DCDC_VDD_LVL())
+                .field("GLITCH_DETECT_DISABLE", &self.GLITCH_DETECT_DISABLE())
+                .field("LPBUFF_EN", &self.LPBUFF_EN())
+                .field("BGMODE", &self.BGMODE())
+                .field("VDD_VD_DISABLE", &self.VDD_VD_DISABLE())
+                .field("CORE_LVDE", &self.CORE_LVDE())
+                .field("SYS_LVDE", &self.SYS_LVDE())
+                .field("IO_LVDE", &self.IO_LVDE())
+                .field("CORE_HVDE", &self.CORE_HVDE())
+                .field("SYS_HVDE", &self.SYS_HVDE())
+                .field("IO_HVDE", &self.IO_HVDE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ACTIVE_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ACTIVE_CFG {
+                CORELDO_VDD_DS: bool,
+                CORELDO_VDD_LVL: u8,
+                SYSLDO_VDD_DS: bool,
+                SYSLDO_VDD_LVL: bool,
+                DCDC_VDD_DS: u8,
+                DCDC_VDD_LVL: u8,
+                GLITCH_DETECT_DISABLE: bool,
+                LPBUFF_EN: bool,
+                BGMODE: u8,
+                VDD_VD_DISABLE: bool,
+                CORE_LVDE: bool,
+                SYS_LVDE: bool,
+                IO_LVDE: bool,
+                CORE_HVDE: bool,
+                SYS_HVDE: bool,
+                IO_HVDE: bool,
+            }
+            let proxy = ACTIVE_CFG {
+                CORELDO_VDD_DS: self.CORELDO_VDD_DS(),
+                CORELDO_VDD_LVL: self.CORELDO_VDD_LVL(),
+                SYSLDO_VDD_DS: self.SYSLDO_VDD_DS(),
+                SYSLDO_VDD_LVL: self.SYSLDO_VDD_LVL(),
+                DCDC_VDD_DS: self.DCDC_VDD_DS(),
+                DCDC_VDD_LVL: self.DCDC_VDD_LVL(),
+                GLITCH_DETECT_DISABLE: self.GLITCH_DETECT_DISABLE(),
+                LPBUFF_EN: self.LPBUFF_EN(),
+                BGMODE: self.BGMODE(),
+                VDD_VD_DISABLE: self.VDD_VD_DISABLE(),
+                CORE_LVDE: self.CORE_LVDE(),
+                SYS_LVDE: self.SYS_LVDE(),
+                IO_LVDE: self.IO_LVDE(),
+                CORE_HVDE: self.CORE_HVDE(),
+                SYS_HVDE: self.SYS_HVDE(),
+                IO_HVDE: self.IO_HVDE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Active Voltage Trim Delay"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -288,6 +353,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> ACTIVE_VDELAY {
             ACTIVE_VDELAY(0)
+        }
+    }
+    impl core::fmt::Debug for ACTIVE_VDELAY {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ACTIVE_VDELAY")
+                .field("ACTIVE_VDELAY", &self.ACTIVE_VDELAY())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ACTIVE_VDELAY {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ACTIVE_VDELAY {
+                ACTIVE_VDELAY: u16,
+            }
+            let proxy = ACTIVE_VDELAY {
+                ACTIVE_VDELAY: self.ACTIVE_VDELAY(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SPC Regulator Control"]
@@ -329,6 +414,32 @@ pub mod regs {
             CNTRL(0)
         }
     }
+    impl core::fmt::Debug for CNTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CNTRL")
+                .field("CORELDO_EN", &self.CORELDO_EN())
+                .field("SYSLDO_EN", &self.SYSLDO_EN())
+                .field("DCDC_EN", &self.DCDC_EN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CNTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CNTRL {
+                CORELDO_EN: bool,
+                SYSLDO_EN: bool,
+                DCDC_EN: bool,
+            }
+            let proxy = CNTRL {
+                CORELDO_EN: self.CORELDO_EN(),
+                SYSLDO_EN: self.SYSLDO_EN(),
+                DCDC_EN: self.DCDC_EN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LDO_CORE Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -348,6 +459,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> CORELDO_CFG {
             CORELDO_CFG(0)
+        }
+    }
+    impl core::fmt::Debug for CORELDO_CFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CORELDO_CFG")
+                .field("DPDOWN_PULLDOWN_DISABLE", &self.DPDOWN_PULLDOWN_DISABLE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CORELDO_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CORELDO_CFG {
+                DPDOWN_PULLDOWN_DISABLE: bool,
+            }
+            let proxy = CORELDO_CFG {
+                DPDOWN_PULLDOWN_DISABLE: self.DPDOWN_PULLDOWN_DISABLE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DCDC Burst Configuration"]
@@ -398,6 +529,35 @@ pub mod regs {
             DCDC_BURST_CFG(0)
         }
     }
+    impl core::fmt::Debug for DCDC_BURST_CFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DCDC_BURST_CFG")
+                .field("BURST_REQ", &self.BURST_REQ())
+                .field("EXT_BURST_EN", &self.EXT_BURST_EN())
+                .field("BURST_ACK", &self.BURST_ACK())
+                .field("PULSE_REFRESH_CNT", &self.PULSE_REFRESH_CNT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DCDC_BURST_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DCDC_BURST_CFG {
+                BURST_REQ: bool,
+                EXT_BURST_EN: bool,
+                BURST_ACK: bool,
+                PULSE_REFRESH_CNT: u16,
+            }
+            let proxy = DCDC_BURST_CFG {
+                BURST_REQ: self.BURST_REQ(),
+                EXT_BURST_EN: self.EXT_BURST_EN(),
+                BURST_ACK: self.BURST_ACK(),
+                PULSE_REFRESH_CNT: self.PULSE_REFRESH_CNT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "DCDC Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -437,6 +597,32 @@ pub mod regs {
             DCDC_CFG(0)
         }
     }
+    impl core::fmt::Debug for DCDC_CFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DCDC_CFG")
+                .field("FREQ_CNTRL_ON", &self.FREQ_CNTRL_ON())
+                .field("FREQ_CNTRL", &self.FREQ_CNTRL())
+                .field("BLEED_EN", &self.BLEED_EN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DCDC_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DCDC_CFG {
+                FREQ_CNTRL_ON: bool,
+                FREQ_CNTRL: u8,
+                BLEED_EN: bool,
+            }
+            let proxy = DCDC_CFG {
+                FREQ_CNTRL_ON: self.FREQ_CNTRL_ON(),
+                FREQ_CNTRL: self.FREQ_CNTRL(),
+                BLEED_EN: self.BLEED_EN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "External Voltage Domain Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -474,6 +660,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EVD_CFG {
             EVD_CFG(0)
+        }
+    }
+    impl core::fmt::Debug for EVD_CFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EVD_CFG")
+                .field("EVDISO", &self.EVDISO())
+                .field("EVDLPISO", &self.EVDLPISO())
+                .field("EVDSTAT", &self.EVDSTAT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EVD_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EVD_CFG {
+                EVDISO: u8,
+                EVDLPISO: u8,
+                EVDSTAT: u8,
+            }
+            let proxy = EVD_CFG {
+                EVDISO: self.EVDISO(),
+                EVDLPISO: self.EVDLPISO(),
+                EVDSTAT: self.EVDSTAT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Glitch Detect Status Control"]
@@ -542,6 +754,41 @@ pub mod regs {
             GLITCH_DETECT_SC(0)
         }
     }
+    impl core::fmt::Debug for GLITCH_DETECT_SC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("GLITCH_DETECT_SC")
+                .field("CNT_SELECT", &self.CNT_SELECT())
+                .field("TIMEOUT", &self.TIMEOUT())
+                .field("RE", &self.RE())
+                .field("IE", &self.IE())
+                .field("GLITCH_DETECT_FLAG", &self.GLITCH_DETECT_FLAG())
+                .field("LOCK", &self.LOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GLITCH_DETECT_SC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct GLITCH_DETECT_SC {
+                CNT_SELECT: u8,
+                TIMEOUT: u8,
+                RE: bool,
+                IE: bool,
+                GLITCH_DETECT_FLAG: u8,
+                LOCK: bool,
+            }
+            let proxy = GLITCH_DETECT_SC {
+                CNT_SELECT: self.CNT_SELECT(),
+                TIMEOUT: self.TIMEOUT(),
+                RE: self.RE(),
+                IE: self.IE(),
+                GLITCH_DETECT_FLAG: self.GLITCH_DETECT_FLAG(),
+                LOCK: self.LOCK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Low-Power Request Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -581,6 +828,32 @@ pub mod regs {
             LPREQ_CFG(0)
         }
     }
+    impl core::fmt::Debug for LPREQ_CFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("LPREQ_CFG")
+                .field("LPREQOE", &self.LPREQOE())
+                .field("LPREQPOL", &self.LPREQPOL())
+                .field("LPREQOV", &self.LPREQOV())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LPREQ_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct LPREQ_CFG {
+                LPREQOE: bool,
+                LPREQPOL: bool,
+                LPREQOV: u8,
+            }
+            let proxy = LPREQ_CFG {
+                LPREQOE: self.LPREQOE(),
+                LPREQPOL: self.LPREQPOL(),
+                LPREQOV: self.LPREQOV(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Low Power Wake-Up Delay"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -600,6 +873,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> LPWKUP_DELAY {
             LPWKUP_DELAY(0)
+        }
+    }
+    impl core::fmt::Debug for LPWKUP_DELAY {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("LPWKUP_DELAY")
+                .field("LPWKUP_DELAY", &self.LPWKUP_DELAY())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LPWKUP_DELAY {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct LPWKUP_DELAY {
+                LPWKUP_DELAY: u16,
+            }
+            let proxy = LPWKUP_DELAY {
+                LPWKUP_DELAY: self.LPWKUP_DELAY(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Low-Power Mode Configuration"]
@@ -758,6 +1051,71 @@ pub mod regs {
             LP_CFG(0)
         }
     }
+    impl core::fmt::Debug for LP_CFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("LP_CFG")
+                .field("CORELDO_VDD_DS", &self.CORELDO_VDD_DS())
+                .field("CORELDO_VDD_LVL", &self.CORELDO_VDD_LVL())
+                .field("SYSLDO_VDD_DS", &self.SYSLDO_VDD_DS())
+                .field("DCDC_VDD_DS", &self.DCDC_VDD_DS())
+                .field("DCDC_VDD_LVL", &self.DCDC_VDD_LVL())
+                .field("GLITCH_DETECT_DISABLE", &self.GLITCH_DETECT_DISABLE())
+                .field("COREVDD_IVS_EN", &self.COREVDD_IVS_EN())
+                .field("LPBUFF_EN", &self.LPBUFF_EN())
+                .field("BGMODE", &self.BGMODE())
+                .field("LP_IREFEN", &self.LP_IREFEN())
+                .field("CORE_LVDE", &self.CORE_LVDE())
+                .field("SYS_LVDE", &self.SYS_LVDE())
+                .field("IO_LVDE", &self.IO_LVDE())
+                .field("CORE_HVDE", &self.CORE_HVDE())
+                .field("SYS_HVDE", &self.SYS_HVDE())
+                .field("IO_HVDE", &self.IO_HVDE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LP_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct LP_CFG {
+                CORELDO_VDD_DS: bool,
+                CORELDO_VDD_LVL: u8,
+                SYSLDO_VDD_DS: bool,
+                DCDC_VDD_DS: u8,
+                DCDC_VDD_LVL: u8,
+                GLITCH_DETECT_DISABLE: bool,
+                COREVDD_IVS_EN: bool,
+                LPBUFF_EN: bool,
+                BGMODE: u8,
+                LP_IREFEN: bool,
+                CORE_LVDE: bool,
+                SYS_LVDE: bool,
+                IO_LVDE: bool,
+                CORE_HVDE: bool,
+                SYS_HVDE: bool,
+                IO_HVDE: bool,
+            }
+            let proxy = LP_CFG {
+                CORELDO_VDD_DS: self.CORELDO_VDD_DS(),
+                CORELDO_VDD_LVL: self.CORELDO_VDD_LVL(),
+                SYSLDO_VDD_DS: self.SYSLDO_VDD_DS(),
+                DCDC_VDD_DS: self.DCDC_VDD_DS(),
+                DCDC_VDD_LVL: self.DCDC_VDD_LVL(),
+                GLITCH_DETECT_DISABLE: self.GLITCH_DETECT_DISABLE(),
+                COREVDD_IVS_EN: self.COREVDD_IVS_EN(),
+                LPBUFF_EN: self.LPBUFF_EN(),
+                BGMODE: self.BGMODE(),
+                LP_IREFEN: self.LP_IREFEN(),
+                CORE_LVDE: self.CORE_LVDE(),
+                SYS_LVDE: self.SYS_LVDE(),
+                IO_LVDE: self.IO_LVDE(),
+                CORE_HVDE: self.CORE_HVDE(),
+                SYS_HVDE: self.SYS_HVDE(),
+                IO_HVDE: self.IO_HVDE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SPC Power Domain Mode Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -795,6 +1153,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PD_STATUS {
             PD_STATUS(0)
+        }
+    }
+    impl core::fmt::Debug for PD_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PD_STATUS")
+                .field("PWR_REQ_STATUS", &self.PWR_REQ_STATUS())
+                .field("PD_LP_REQ", &self.PD_LP_REQ())
+                .field("LP_MODE", &self.LP_MODE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PD_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PD_STATUS {
+                PWR_REQ_STATUS: bool,
+                PD_LP_REQ: bool,
+                LP_MODE: u8,
+            }
+            let proxy = PD_STATUS {
+                PWR_REQ_STATUS: self.PWR_REQ_STATUS(),
+                PD_LP_REQ: self.PD_LP_REQ(),
+                LP_MODE: self.LP_MODE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status Control"]
@@ -845,6 +1229,35 @@ pub mod regs {
             SC(0)
         }
     }
+    impl core::fmt::Debug for SC {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SC")
+                .field("BUSY", &self.BUSY())
+                .field("SPC_LP_REQ", &self.SPC_LP_REQ())
+                .field("SPC_LP_MODE", &self.SPC_LP_MODE())
+                .field("ISO_CLR", &self.ISO_CLR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SC {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SC {
+                BUSY: bool,
+                SPC_LP_REQ: bool,
+                SPC_LP_MODE: u8,
+                ISO_CLR: u8,
+            }
+            let proxy = SC {
+                BUSY: self.BUSY(),
+                SPC_LP_REQ: self.SPC_LP_REQ(),
+                SPC_LP_MODE: self.SPC_LP_MODE(),
+                ISO_CLR: self.ISO_CLR(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SRAM Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -884,6 +1297,32 @@ pub mod regs {
             SRAMCTL(0)
         }
     }
+    impl core::fmt::Debug for SRAMCTL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SRAMCTL")
+                .field("VSM", &self.VSM())
+                .field("REQ", &self.REQ())
+                .field("ACK", &self.ACK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRAMCTL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SRAMCTL {
+                VSM: u8,
+                REQ: bool,
+                ACK: bool,
+            }
+            let proxy = SRAMCTL {
+                VSM: self.VSM(),
+                REQ: self.REQ(),
+                ACK: self.ACK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LDO_SYS Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -903,6 +1342,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SYSLDO_CFG {
             SYSLDO_CFG(0)
+        }
+    }
+    impl core::fmt::Debug for SYSLDO_CFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SYSLDO_CFG")
+                .field("ISINKEN", &self.ISINKEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SYSLDO_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SYSLDO_CFG {
+                ISINKEN: bool,
+            }
+            let proxy = SYSLDO_CFG {
+                ISINKEN: self.ISINKEN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Core Voltage Detect Configuration"]
@@ -960,6 +1419,38 @@ pub mod regs {
         #[inline(always)]
         fn default() -> VD_CORE_CFG {
             VD_CORE_CFG(0)
+        }
+    }
+    impl core::fmt::Debug for VD_CORE_CFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VD_CORE_CFG")
+                .field("LVDRE", &self.LVDRE())
+                .field("LVDIE", &self.LVDIE())
+                .field("HVDRE", &self.HVDRE())
+                .field("HVDIE", &self.HVDIE())
+                .field("LOCK", &self.LOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VD_CORE_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VD_CORE_CFG {
+                LVDRE: bool,
+                LVDIE: bool,
+                HVDRE: bool,
+                HVDIE: bool,
+                LOCK: bool,
+            }
+            let proxy = VD_CORE_CFG {
+                LVDRE: self.LVDRE(),
+                LVDIE: self.LVDIE(),
+                HVDRE: self.HVDRE(),
+                HVDIE: self.HVDIE(),
+                LOCK: self.LOCK(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "IO Voltage Detect Configuration"]
@@ -1028,6 +1519,41 @@ pub mod regs {
             VD_IO_CFG(0)
         }
     }
+    impl core::fmt::Debug for VD_IO_CFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VD_IO_CFG")
+                .field("LVDRE", &self.LVDRE())
+                .field("LVDIE", &self.LVDIE())
+                .field("HVDRE", &self.HVDRE())
+                .field("HVDIE", &self.HVDIE())
+                .field("LVSEL", &self.LVSEL())
+                .field("LOCK", &self.LOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VD_IO_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VD_IO_CFG {
+                LVDRE: bool,
+                LVDIE: bool,
+                HVDRE: bool,
+                HVDIE: bool,
+                LVSEL: bool,
+                LOCK: bool,
+            }
+            let proxy = VD_IO_CFG {
+                LVDRE: self.LVDRE(),
+                LVDIE: self.LVDIE(),
+                HVDRE: self.HVDRE(),
+                HVDIE: self.HVDIE(),
+                LVSEL: self.LVSEL(),
+                LOCK: self.LOCK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Voltage Detect Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1092,6 +1618,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> VD_STAT {
             VD_STAT(0)
+        }
+    }
+    impl core::fmt::Debug for VD_STAT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VD_STAT")
+                .field("COREVDD_LVDF", &self.COREVDD_LVDF())
+                .field("SYSVDD_LVDF", &self.SYSVDD_LVDF())
+                .field("IOVDD_LVDF", &self.IOVDD_LVDF())
+                .field("COREVDD_HVDF", &self.COREVDD_HVDF())
+                .field("SYSVDD_HVDF", &self.SYSVDD_HVDF())
+                .field("IOVDD_HVDF", &self.IOVDD_HVDF())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VD_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VD_STAT {
+                COREVDD_LVDF: bool,
+                SYSVDD_LVDF: bool,
+                IOVDD_LVDF: bool,
+                COREVDD_HVDF: bool,
+                SYSVDD_HVDF: bool,
+                IOVDD_HVDF: bool,
+            }
+            let proxy = VD_STAT {
+                COREVDD_LVDF: self.COREVDD_LVDF(),
+                SYSVDD_LVDF: self.SYSVDD_LVDF(),
+                IOVDD_LVDF: self.IOVDD_LVDF(),
+                COREVDD_HVDF: self.COREVDD_HVDF(),
+                SYSVDD_HVDF: self.SYSVDD_HVDF(),
+                IOVDD_HVDF: self.IOVDD_HVDF(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "System Voltage Detect Configuration"]
@@ -1160,6 +1721,41 @@ pub mod regs {
             VD_SYS_CFG(0)
         }
     }
+    impl core::fmt::Debug for VD_SYS_CFG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VD_SYS_CFG")
+                .field("LVDRE", &self.LVDRE())
+                .field("LVDIE", &self.LVDIE())
+                .field("HVDRE", &self.HVDRE())
+                .field("HVDIE", &self.HVDIE())
+                .field("LVSEL", &self.LVSEL())
+                .field("LOCK", &self.LOCK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VD_SYS_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VD_SYS_CFG {
+                LVDRE: bool,
+                LVDIE: bool,
+                HVDRE: bool,
+                HVDIE: bool,
+                LVSEL: bool,
+                LOCK: bool,
+            }
+            let proxy = VD_SYS_CFG {
+                LVDRE: self.LVDRE(),
+                LVDIE: self.LVDIE(),
+                HVDRE: self.HVDRE(),
+                HVDIE: self.HVDIE(),
+                LVSEL: self.LVSEL(),
+                LOCK: self.LOCK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1197,6 +1793,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> VERID {
             VERID(0)
+        }
+    }
+    impl core::fmt::Debug for VERID {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("VERID")
+                .field("FEATURE", &self.FEATURE())
+                .field("MINOR", &self.MINOR())
+                .field("MAJOR", &self.MAJOR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct VERID {
+                FEATURE: u16,
+                MINOR: u8,
+                MAJOR: u8,
+            }
+            let proxy = VERID {
+                FEATURE: self.FEATURE(),
+                MINOR: self.MINOR(),
+                MAJOR: self.MAJOR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

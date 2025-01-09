@@ -85,6 +85,24 @@ pub mod regs {
             INTM_IACK(0)
         }
     }
+    impl core::fmt::Debug for INTM_IACK {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("INTM_IACK")
+                .field("IRQ", &self.IRQ())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INTM_IACK {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct INTM_IACK {
+                IRQ: u16,
+            }
+            let proxy = INTM_IACK { IRQ: self.IRQ() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Monitor Mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -104,6 +122,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> INTM_MM {
             INTM_MM(0)
+        }
+    }
+    impl core::fmt::Debug for INTM_MM {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("INTM_MM").field("MM", &self.MM()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INTM_MM {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct INTM_MM {
+                MM: bool,
+            }
+            let proxy = INTM_MM { MM: self.MM() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Request Select for Monitor 0..Interrupt Request Select for Monitor 3"]
@@ -127,6 +161,24 @@ pub mod regs {
             MON_INTM_IRQSEL(0)
         }
     }
+    impl core::fmt::Debug for MON_INTM_IRQSEL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MON_INTM_IRQSEL")
+                .field("IRQ", &self.IRQ())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MON_INTM_IRQSEL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MON_INTM_IRQSEL {
+                IRQ: u16,
+            }
+            let proxy = MON_INTM_IRQSEL { IRQ: self.IRQ() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt Latency for Monitor 0..Interrupt Latency for Monitor 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -146,6 +198,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MON_INTM_LATENCY {
             MON_INTM_LATENCY(0)
+        }
+    }
+    impl core::fmt::Debug for MON_INTM_LATENCY {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MON_INTM_LATENCY")
+                .field("LAT", &self.LAT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MON_INTM_LATENCY {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MON_INTM_LATENCY {
+                LAT: u32,
+            }
+            let proxy = MON_INTM_LATENCY { LAT: self.LAT() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status for Monitor 0..Status for Monitor 3"]
@@ -169,6 +239,26 @@ pub mod regs {
             MON_INTM_STATUS(0)
         }
     }
+    impl core::fmt::Debug for MON_INTM_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MON_INTM_STATUS")
+                .field("STATUS", &self.STATUS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MON_INTM_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MON_INTM_STATUS {
+                STATUS: bool,
+            }
+            let proxy = MON_INTM_STATUS {
+                STATUS: self.STATUS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Timer for Monitor 0..Timer for Monitor 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -188,6 +278,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MON_INTM_TIMER {
             MON_INTM_TIMER(0)
+        }
+    }
+    impl core::fmt::Debug for MON_INTM_TIMER {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MON_INTM_TIMER")
+                .field("TIMER", &self.TIMER())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MON_INTM_TIMER {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MON_INTM_TIMER {
+                TIMER: u32,
+            }
+            let proxy = MON_INTM_TIMER {
+                TIMER: self.TIMER(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

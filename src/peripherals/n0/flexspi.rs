@@ -423,6 +423,26 @@ pub mod regs {
             AHBBUFREGIONEND0(0)
         }
     }
+    impl core::fmt::Debug for AHBBUFREGIONEND0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHBBUFREGIONEND0")
+                .field("END_ADDRESS", &self.END_ADDRESS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBBUFREGIONEND0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHBBUFREGIONEND0 {
+                END_ADDRESS: u32,
+            }
+            let proxy = AHBBUFREGIONEND0 {
+                END_ADDRESS: self.END_ADDRESS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Receive Buffer Region 1 End Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -443,6 +463,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AHBBUFREGIONEND1 {
             AHBBUFREGIONEND1(0)
+        }
+    }
+    impl core::fmt::Debug for AHBBUFREGIONEND1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHBBUFREGIONEND1")
+                .field("END_ADDRESS", &self.END_ADDRESS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBBUFREGIONEND1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHBBUFREGIONEND1 {
+                END_ADDRESS: u32,
+            }
+            let proxy = AHBBUFREGIONEND1 {
+                END_ADDRESS: self.END_ADDRESS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Receive Buffer Region 2 End Address"]
@@ -467,6 +507,26 @@ pub mod regs {
             AHBBUFREGIONEND2(0)
         }
     }
+    impl core::fmt::Debug for AHBBUFREGIONEND2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHBBUFREGIONEND2")
+                .field("END_ADDRESS", &self.END_ADDRESS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBBUFREGIONEND2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHBBUFREGIONEND2 {
+                END_ADDRESS: u32,
+            }
+            let proxy = AHBBUFREGIONEND2 {
+                END_ADDRESS: self.END_ADDRESS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Receive Buffer Region 3 End Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -487,6 +547,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AHBBUFREGIONEND3 {
             AHBBUFREGIONEND3(0)
+        }
+    }
+    impl core::fmt::Debug for AHBBUFREGIONEND3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHBBUFREGIONEND3")
+                .field("END_ADDRESS", &self.END_ADDRESS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBBUFREGIONEND3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHBBUFREGIONEND3 {
+                END_ADDRESS: u32,
+            }
+            let proxy = AHBBUFREGIONEND3 {
+                END_ADDRESS: self.END_ADDRESS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Receive Buffer Start Address of Region 0"]
@@ -511,6 +591,26 @@ pub mod regs {
             AHBBUFREGIONSTART0(0)
         }
     }
+    impl core::fmt::Debug for AHBBUFREGIONSTART0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHBBUFREGIONSTART0")
+                .field("START_ADDRESS", &self.START_ADDRESS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBBUFREGIONSTART0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHBBUFREGIONSTART0 {
+                START_ADDRESS: u32,
+            }
+            let proxy = AHBBUFREGIONSTART0 {
+                START_ADDRESS: self.START_ADDRESS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Receive Buffer Start Address of Region 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -531,6 +631,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AHBBUFREGIONSTART1 {
             AHBBUFREGIONSTART1(0)
+        }
+    }
+    impl core::fmt::Debug for AHBBUFREGIONSTART1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHBBUFREGIONSTART1")
+                .field("START_ADDRESS", &self.START_ADDRESS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBBUFREGIONSTART1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHBBUFREGIONSTART1 {
+                START_ADDRESS: u32,
+            }
+            let proxy = AHBBUFREGIONSTART1 {
+                START_ADDRESS: self.START_ADDRESS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Receive Buffer Start Address of Region 2"]
@@ -555,6 +675,26 @@ pub mod regs {
             AHBBUFREGIONSTART2(0)
         }
     }
+    impl core::fmt::Debug for AHBBUFREGIONSTART2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHBBUFREGIONSTART2")
+                .field("START_ADDRESS", &self.START_ADDRESS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBBUFREGIONSTART2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHBBUFREGIONSTART2 {
+                START_ADDRESS: u32,
+            }
+            let proxy = AHBBUFREGIONSTART2 {
+                START_ADDRESS: self.START_ADDRESS(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Receive Buffer Start Address of Region 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -575,6 +715,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AHBBUFREGIONSTART3 {
             AHBBUFREGIONSTART3(0)
+        }
+    }
+    impl core::fmt::Debug for AHBBUFREGIONSTART3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHBBUFREGIONSTART3")
+                .field("START_ADDRESS", &self.START_ADDRESS())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBBUFREGIONSTART3 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHBBUFREGIONSTART3 {
+                START_ADDRESS: u32,
+            }
+            let proxy = AHBBUFREGIONSTART3 {
+                START_ADDRESS: self.START_ADDRESS(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AHB Bus Control"]
@@ -688,6 +848,56 @@ pub mod regs {
             AHBCR(0)
         }
     }
+    impl core::fmt::Debug for AHBCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHBCR")
+                .field("APAREN", &self.APAREN())
+                .field("CLRAHBRXBUF", &self.CLRAHBRXBUF())
+                .field("CLRAHBTXBUF", &self.CLRAHBTXBUF())
+                .field("CACHABLEEN", &self.CACHABLEEN())
+                .field("BUFFERABLEEN", &self.BUFFERABLEEN())
+                .field("PREFETCHEN", &self.PREFETCHEN())
+                .field("READADDROPT", &self.READADDROPT())
+                .field("RESUMEDISABLE", &self.RESUMEDISABLE())
+                .field("READSZALIGN", &self.READSZALIGN())
+                .field("ALIGNMENT", &self.ALIGNMENT())
+                .field("AFLASHBASE", &self.AFLASHBASE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHBCR {
+                APAREN: bool,
+                CLRAHBRXBUF: bool,
+                CLRAHBTXBUF: bool,
+                CACHABLEEN: bool,
+                BUFFERABLEEN: bool,
+                PREFETCHEN: bool,
+                READADDROPT: bool,
+                RESUMEDISABLE: bool,
+                READSZALIGN: bool,
+                ALIGNMENT: u8,
+                AFLASHBASE: u8,
+            }
+            let proxy = AHBCR {
+                APAREN: self.APAREN(),
+                CLRAHBRXBUF: self.CLRAHBRXBUF(),
+                CLRAHBTXBUF: self.CLRAHBTXBUF(),
+                CACHABLEEN: self.CACHABLEEN(),
+                BUFFERABLEEN: self.BUFFERABLEEN(),
+                PREFETCHEN: self.PREFETCHEN(),
+                READADDROPT: self.READADDROPT(),
+                RESUMEDISABLE: self.RESUMEDISABLE(),
+                READSZALIGN: self.READSZALIGN(),
+                ALIGNMENT: self.ALIGNMENT(),
+                AFLASHBASE: self.AFLASHBASE(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AHB Receive Buffer 0 Control 0..AHB Receive Buffer 7 Control 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -745,6 +955,38 @@ pub mod regs {
             AHBRXBUFCR0(0)
         }
     }
+    impl core::fmt::Debug for AHBRXBUFCR0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHBRXBUFCR0")
+                .field("BUFSZ", &self.BUFSZ())
+                .field("MSTRID", &self.MSTRID())
+                .field("PRIORITY", &self.PRIORITY())
+                .field("REGIONEN", &self.REGIONEN())
+                .field("PREFETCHEN", &self.PREFETCHEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBRXBUFCR0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHBRXBUFCR0 {
+                BUFSZ: u8,
+                MSTRID: u8,
+                PRIORITY: u8,
+                REGIONEN: bool,
+                PREFETCHEN: bool,
+            }
+            let proxy = AHBRXBUFCR0 {
+                BUFSZ: self.BUFSZ(),
+                MSTRID: self.MSTRID(),
+                PRIORITY: self.PRIORITY(),
+                REGIONEN: self.REGIONEN(),
+                PREFETCHEN: self.PREFETCHEN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "AHB Suspend Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -782,6 +1024,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> AHBSPNDSTS {
             AHBSPNDSTS(0)
+        }
+    }
+    impl core::fmt::Debug for AHBSPNDSTS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AHBSPNDSTS")
+                .field("ACTIVE", &self.ACTIVE())
+                .field("BUFID", &self.BUFID())
+                .field("DATLFT", &self.DATLFT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBSPNDSTS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct AHBSPNDSTS {
+                ACTIVE: bool,
+                BUFID: u8,
+                DATLFT: u16,
+            }
+            let proxy = AHBSPNDSTS {
+                ACTIVE: self.ACTIVE(),
+                BUFID: self.BUFID(),
+                DATLFT: self.DATLFT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DLL Control 0"]
@@ -850,6 +1118,41 @@ pub mod regs {
             DLLCR(0)
         }
     }
+    impl core::fmt::Debug for DLLCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DLLCR")
+                .field("DLLEN", &self.DLLEN())
+                .field("DLLRESET", &self.DLLRESET())
+                .field("SLVDLYTARGET", &self.SLVDLYTARGET())
+                .field("OVRDEN", &self.OVRDEN())
+                .field("OVRDVAL", &self.OVRDVAL())
+                .field("REFPHASEGAP", &self.REFPHASEGAP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DLLCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct DLLCR {
+                DLLEN: bool,
+                DLLRESET: bool,
+                SLVDLYTARGET: u8,
+                OVRDEN: bool,
+                OVRDVAL: u8,
+                REFPHASEGAP: u8,
+            }
+            let proxy = DLLCR {
+                DLLEN: self.DLLEN(),
+                DLLRESET: self.DLLRESET(),
+                SLVDLYTARGET: self.SLVDLYTARGET(),
+                OVRDEN: self.OVRDEN(),
+                OVRDVAL: self.OVRDVAL(),
+                REFPHASEGAP: self.REFPHASEGAP(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Flash Control 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -896,6 +1199,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FLSHCR0 {
             FLSHCR0(0)
+        }
+    }
+    impl core::fmt::Debug for FLSHCR0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLSHCR0")
+                .field("FLSHSZ", &self.FLSHSZ())
+                .field("ADDRSHIFT", &self.ADDRSHIFT())
+                .field("SPLITWREN", &self.SPLITWREN())
+                .field("SPLITRDEN", &self.SPLITRDEN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLSHCR0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLSHCR0 {
+                FLSHSZ: u32,
+                ADDRSHIFT: bool,
+                SPLITWREN: bool,
+                SPLITRDEN: bool,
+            }
+            let proxy = FLSHCR0 {
+                FLSHSZ: self.FLSHSZ(),
+                ADDRSHIFT: self.ADDRSHIFT(),
+                SPLITWREN: self.SPLITWREN(),
+                SPLITRDEN: self.SPLITRDEN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Flash Control 1"]
@@ -962,6 +1294,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> FLSHCR1 {
             FLSHCR1(0)
+        }
+    }
+    impl core::fmt::Debug for FLSHCR1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLSHCR1")
+                .field("TCSS", &self.TCSS())
+                .field("TCSH", &self.TCSH())
+                .field("WA", &self.WA())
+                .field("CAS", &self.CAS())
+                .field("CSINTERVALUNIT", &self.CSINTERVALUNIT())
+                .field("CSINTERVAL", &self.CSINTERVAL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLSHCR1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLSHCR1 {
+                TCSS: u8,
+                TCSH: u8,
+                WA: bool,
+                CAS: u8,
+                CSINTERVALUNIT: bool,
+                CSINTERVAL: u16,
+            }
+            let proxy = FLSHCR1 {
+                TCSS: self.TCSS(),
+                TCSH: self.TCSH(),
+                WA: self.WA(),
+                CAS: self.CAS(),
+                CSINTERVALUNIT: self.CSINTERVALUNIT(),
+                CSINTERVAL: self.CSINTERVAL(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Flash Control 2"]
@@ -1039,6 +1406,44 @@ pub mod regs {
             FLSHCR2(0)
         }
     }
+    impl core::fmt::Debug for FLSHCR2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLSHCR2")
+                .field("ARDSEQID", &self.ARDSEQID())
+                .field("ARDSEQNUM", &self.ARDSEQNUM())
+                .field("AWRSEQID", &self.AWRSEQID())
+                .field("AWRSEQNUM", &self.AWRSEQNUM())
+                .field("AWRWAIT", &self.AWRWAIT())
+                .field("AWRWAITUNIT", &self.AWRWAITUNIT())
+                .field("CLRINSTRPTR", &self.CLRINSTRPTR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLSHCR2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLSHCR2 {
+                ARDSEQID: u8,
+                ARDSEQNUM: u8,
+                AWRSEQID: u8,
+                AWRSEQNUM: u8,
+                AWRWAIT: u16,
+                AWRWAITUNIT: u8,
+                CLRINSTRPTR: bool,
+            }
+            let proxy = FLSHCR2 {
+                ARDSEQID: self.ARDSEQID(),
+                ARDSEQNUM: self.ARDSEQNUM(),
+                AWRSEQID: self.AWRSEQID(),
+                AWRSEQNUM: self.AWRSEQNUM(),
+                AWRWAIT: self.AWRWAIT(),
+                AWRWAITUNIT: self.AWRWAITUNIT(),
+                CLRINSTRPTR: self.CLRINSTRPTR(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Flash Control 4"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1078,6 +1483,32 @@ pub mod regs {
             FLSHCR4(0)
         }
     }
+    impl core::fmt::Debug for FLSHCR4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("FLSHCR4")
+                .field("WMOPT1", &self.WMOPT1())
+                .field("WMENA", &self.WMENA())
+                .field("WMENB", &self.WMENB())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLSHCR4 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct FLSHCR4 {
+                WMOPT1: bool,
+                WMENA: bool,
+                WMENB: bool,
+            }
+            let proxy = FLSHCR4 {
+                WMOPT1: self.WMOPT1(),
+                WMENA: self.WMENA(),
+                WMENB: self.WMENB(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "HADDR REMAP END ADDR"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1100,6 +1531,26 @@ pub mod regs {
             HADDREND(0)
         }
     }
+    impl core::fmt::Debug for HADDREND {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("HADDREND")
+                .field("ENDSTART", &self.ENDSTART())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HADDREND {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct HADDREND {
+                ENDSTART: u32,
+            }
+            let proxy = HADDREND {
+                ENDSTART: self.ENDSTART(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "HADDR Remap Offset"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1120,6 +1571,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> HADDROFFSET {
             HADDROFFSET(0)
+        }
+    }
+    impl core::fmt::Debug for HADDROFFSET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("HADDROFFSET")
+                .field("ADDROFFSET", &self.ADDROFFSET())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HADDROFFSET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct HADDROFFSET {
+                ADDROFFSET: u32,
+            }
+            let proxy = HADDROFFSET {
+                ADDROFFSET: self.ADDROFFSET(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "HADDR REMAP Start Address"]
@@ -1151,6 +1622,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> HADDRSTART {
             HADDRSTART(0)
+        }
+    }
+    impl core::fmt::Debug for HADDRSTART {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("HADDRSTART")
+                .field("REMAPEN", &self.REMAPEN())
+                .field("ADDRSTART", &self.ADDRSTART())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HADDRSTART {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct HADDRSTART {
+                REMAPEN: bool,
+                ADDRSTART: u32,
+            }
+            let proxy = HADDRSTART {
+                REMAPEN: self.REMAPEN(),
+                ADDRSTART: self.ADDRSTART(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Enable"]
@@ -1291,6 +1785,65 @@ pub mod regs {
             INTEN(0)
         }
     }
+    impl core::fmt::Debug for INTEN {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("INTEN")
+                .field("IPCMDDONEEN", &self.IPCMDDONEEN())
+                .field("IPCMDGEEN", &self.IPCMDGEEN())
+                .field("AHBCMDGEEN", &self.AHBCMDGEEN())
+                .field("IPCMDERREN", &self.IPCMDERREN())
+                .field("AHBCMDERREN", &self.AHBCMDERREN())
+                .field("IPRXWAEN", &self.IPRXWAEN())
+                .field("IPTXWEEN", &self.IPTXWEEN())
+                .field("DATALEARNFAILEN", &self.DATALEARNFAILEN())
+                .field("SCKSTOPBYRDEN", &self.SCKSTOPBYRDEN())
+                .field("SCKSTOPBYWREN", &self.SCKSTOPBYWREN())
+                .field("AHBBUSTIMEOUTEN", &self.AHBBUSTIMEOUTEN())
+                .field("SEQTIMEOUTEN", &self.SEQTIMEOUTEN())
+                .field("IPCMDSECUREVIOEN", &self.IPCMDSECUREVIOEN())
+                .field("AHBGCMERREN", &self.AHBGCMERREN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INTEN {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct INTEN {
+                IPCMDDONEEN: bool,
+                IPCMDGEEN: bool,
+                AHBCMDGEEN: bool,
+                IPCMDERREN: bool,
+                AHBCMDERREN: bool,
+                IPRXWAEN: bool,
+                IPTXWEEN: bool,
+                DATALEARNFAILEN: bool,
+                SCKSTOPBYRDEN: bool,
+                SCKSTOPBYWREN: bool,
+                AHBBUSTIMEOUTEN: bool,
+                SEQTIMEOUTEN: bool,
+                IPCMDSECUREVIOEN: bool,
+                AHBGCMERREN: bool,
+            }
+            let proxy = INTEN {
+                IPCMDDONEEN: self.IPCMDDONEEN(),
+                IPCMDGEEN: self.IPCMDGEEN(),
+                AHBCMDGEEN: self.AHBCMDGEEN(),
+                IPCMDERREN: self.IPCMDERREN(),
+                AHBCMDERREN: self.AHBCMDERREN(),
+                IPRXWAEN: self.IPRXWAEN(),
+                IPTXWEEN: self.IPTXWEEN(),
+                DATALEARNFAILEN: self.DATALEARNFAILEN(),
+                SCKSTOPBYRDEN: self.SCKSTOPBYRDEN(),
+                SCKSTOPBYWREN: self.SCKSTOPBYWREN(),
+                AHBBUSTIMEOUTEN: self.AHBBUSTIMEOUTEN(),
+                SEQTIMEOUTEN: self.SEQTIMEOUTEN(),
+                IPCMDSECUREVIOEN: self.IPCMDSECUREVIOEN(),
+                AHBGCMERREN: self.AHBGCMERREN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1429,6 +1982,65 @@ pub mod regs {
             INTR(0)
         }
     }
+    impl core::fmt::Debug for INTR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("INTR")
+                .field("IPCMDDONE", &self.IPCMDDONE())
+                .field("IPCMDGE", &self.IPCMDGE())
+                .field("AHBCMDGE", &self.AHBCMDGE())
+                .field("IPCMDERR", &self.IPCMDERR())
+                .field("AHBCMDERR", &self.AHBCMDERR())
+                .field("IPRXWA", &self.IPRXWA())
+                .field("IPTXWE", &self.IPTXWE())
+                .field("DATALEARNFAIL", &self.DATALEARNFAIL())
+                .field("SCKSTOPBYRD", &self.SCKSTOPBYRD())
+                .field("SCKSTOPBYWR", &self.SCKSTOPBYWR())
+                .field("AHBBUSTIMEOUT", &self.AHBBUSTIMEOUT())
+                .field("SEQTIMEOUT", &self.SEQTIMEOUT())
+                .field("IPCMDSECUREVIO", &self.IPCMDSECUREVIO())
+                .field("AHBGCMERR", &self.AHBGCMERR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INTR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct INTR {
+                IPCMDDONE: bool,
+                IPCMDGE: bool,
+                AHBCMDGE: bool,
+                IPCMDERR: bool,
+                AHBCMDERR: bool,
+                IPRXWA: bool,
+                IPTXWE: bool,
+                DATALEARNFAIL: bool,
+                SCKSTOPBYRD: bool,
+                SCKSTOPBYWR: bool,
+                AHBBUSTIMEOUT: bool,
+                SEQTIMEOUT: bool,
+                IPCMDSECUREVIO: bool,
+                AHBGCMERR: bool,
+            }
+            let proxy = INTR {
+                IPCMDDONE: self.IPCMDDONE(),
+                IPCMDGE: self.IPCMDGE(),
+                AHBCMDGE: self.AHBCMDGE(),
+                IPCMDERR: self.IPCMDERR(),
+                AHBCMDERR: self.AHBCMDERR(),
+                IPRXWA: self.IPRXWA(),
+                IPTXWE: self.IPTXWE(),
+                DATALEARNFAIL: self.DATALEARNFAIL(),
+                SCKSTOPBYRD: self.SCKSTOPBYRD(),
+                SCKSTOPBYWR: self.SCKSTOPBYWR(),
+                AHBBUSTIMEOUT: self.AHBBUSTIMEOUT(),
+                SEQTIMEOUT: self.SEQTIMEOUT(),
+                IPCMDSECUREVIO: self.IPCMDSECUREVIO(),
+                AHBGCMERR: self.AHBGCMERR(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "IP Command"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1448,6 +2060,22 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPCMD {
             IPCMD(0)
+        }
+    }
+    impl core::fmt::Debug for IPCMD {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPCMD").field("TRG", &self.TRG()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPCMD {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPCMD {
+                TRG: bool,
+            }
+            let proxy = IPCMD { TRG: self.TRG() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "IP Control 1"]
@@ -1498,6 +2126,35 @@ pub mod regs {
             IPCR1(0)
         }
     }
+    impl core::fmt::Debug for IPCR1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPCR1")
+                .field("IDATSZ", &self.IDATSZ())
+                .field("ISEQID", &self.ISEQID())
+                .field("ISEQNUM", &self.ISEQNUM())
+                .field("IPAREN", &self.IPAREN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPCR1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPCR1 {
+                IDATSZ: u16,
+                ISEQID: u8,
+                ISEQNUM: u8,
+                IPAREN: bool,
+            }
+            let proxy = IPCR1 {
+                IDATSZ: self.IDATSZ(),
+                ISEQID: self.ISEQID(),
+                ISEQNUM: self.ISEQNUM(),
+                IPAREN: self.IPAREN(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "IP Control 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1535,6 +2192,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPCR2 {
             IPCR2(0)
+        }
+    }
+    impl core::fmt::Debug for IPCR2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPCR2")
+                .field("IPBLKAHBREQ", &self.IPBLKAHBREQ())
+                .field("IPBLKAHBACK", &self.IPBLKAHBACK())
+                .field("IPBLKALLAHB", &self.IPBLKALLAHB())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPCR2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPCR2 {
+                IPBLKAHBREQ: bool,
+                IPBLKAHBACK: bool,
+                IPBLKALLAHB: bool,
+            }
+            let proxy = IPCR2 {
+                IPBLKAHBREQ: self.IPBLKAHBREQ(),
+                IPBLKAHBACK: self.IPBLKAHBACK(),
+                IPBLKALLAHB: self.IPBLKALLAHB(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "IPED Function Control"]
@@ -1639,6 +2322,53 @@ pub mod regs {
             IPEDCTRL(0)
         }
     }
+    impl core::fmt::Debug for IPEDCTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPEDCTRL")
+                .field("CONFIG", &self.CONFIG())
+                .field("IPED_EN", &self.IPED_EN())
+                .field("IPWR_EN", &self.IPWR_EN())
+                .field("AHBWR_EN", &self.AHBWR_EN())
+                .field("AHBRD_EN", &self.AHBRD_EN())
+                .field("IPGCMWR", &self.IPGCMWR())
+                .field("AHGCMWR", &self.AHGCMWR())
+                .field("AHBGCMRD", &self.AHBGCMRD())
+                .field("IPED_PROTECT", &self.IPED_PROTECT())
+                .field("IPED_SWRESET", &self.IPED_SWRESET())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPEDCTRL {
+                CONFIG: bool,
+                IPED_EN: bool,
+                IPWR_EN: bool,
+                AHBWR_EN: bool,
+                AHBRD_EN: bool,
+                IPGCMWR: bool,
+                AHGCMWR: bool,
+                AHBGCMRD: bool,
+                IPED_PROTECT: bool,
+                IPED_SWRESET: bool,
+            }
+            let proxy = IPEDCTRL {
+                CONFIG: self.CONFIG(),
+                IPED_EN: self.IPED_EN(),
+                IPWR_EN: self.IPWR_EN(),
+                AHBWR_EN: self.AHBWR_EN(),
+                AHBRD_EN: self.AHBRD_EN(),
+                IPGCMWR: self.IPGCMWR(),
+                AHGCMWR: self.AHGCMWR(),
+                AHBGCMRD: self.AHBGCMRD(),
+                IPED_PROTECT: self.IPED_PROTECT(),
+                IPED_SWRESET: self.IPED_SWRESET(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1658,6 +2388,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPEDCTX0END {
             IPEDCTX0END(0)
+        }
+    }
+    impl core::fmt::Debug for IPEDCTX0END {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPEDCTX0END")
+                .field("end_address", &self.end_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX0END {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPEDCTX0END {
+                end_address: u32,
+            }
+            let proxy = IPEDCTX0END {
+                end_address: self.end_address(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Start Address of Region"]
@@ -1699,6 +2449,32 @@ pub mod regs {
             IPEDCTX0START(0)
         }
     }
+    impl core::fmt::Debug for IPEDCTX0START {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPEDCTX0START")
+                .field("GCM", &self.GCM())
+                .field("ahbbuserror_dis", &self.ahbbuserror_dis())
+                .field("start_address", &self.start_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX0START {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPEDCTX0START {
+                GCM: bool,
+                ahbbuserror_dis: bool,
+                start_address: u32,
+            }
+            let proxy = IPEDCTX0START {
+                GCM: self.GCM(),
+                ahbbuserror_dis: self.ahbbuserror_dis(),
+                start_address: self.start_address(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1718,6 +2494,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPEDCTX1END {
             IPEDCTX1END(0)
+        }
+    }
+    impl core::fmt::Debug for IPEDCTX1END {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPEDCTX1END")
+                .field("end_address", &self.end_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX1END {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPEDCTX1END {
+                end_address: u32,
+            }
+            let proxy = IPEDCTX1END {
+                end_address: self.end_address(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Start Address of Region"]
@@ -1759,6 +2555,32 @@ pub mod regs {
             IPEDCTX1START(0)
         }
     }
+    impl core::fmt::Debug for IPEDCTX1START {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPEDCTX1START")
+                .field("GCM", &self.GCM())
+                .field("ahbbuserror_dis", &self.ahbbuserror_dis())
+                .field("start_address", &self.start_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX1START {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPEDCTX1START {
+                GCM: bool,
+                ahbbuserror_dis: bool,
+                start_address: u32,
+            }
+            let proxy = IPEDCTX1START {
+                GCM: self.GCM(),
+                ahbbuserror_dis: self.ahbbuserror_dis(),
+                start_address: self.start_address(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1778,6 +2600,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPEDCTX2END {
             IPEDCTX2END(0)
+        }
+    }
+    impl core::fmt::Debug for IPEDCTX2END {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPEDCTX2END")
+                .field("end_address", &self.end_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX2END {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPEDCTX2END {
+                end_address: u32,
+            }
+            let proxy = IPEDCTX2END {
+                end_address: self.end_address(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Start Address of Region"]
@@ -1819,6 +2661,32 @@ pub mod regs {
             IPEDCTX2START(0)
         }
     }
+    impl core::fmt::Debug for IPEDCTX2START {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPEDCTX2START")
+                .field("GCM", &self.GCM())
+                .field("ahbbuserror_dis", &self.ahbbuserror_dis())
+                .field("start_address", &self.start_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX2START {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPEDCTX2START {
+                GCM: bool,
+                ahbbuserror_dis: bool,
+                start_address: u32,
+            }
+            let proxy = IPEDCTX2START {
+                GCM: self.GCM(),
+                ahbbuserror_dis: self.ahbbuserror_dis(),
+                start_address: self.start_address(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1838,6 +2706,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPEDCTX3END {
             IPEDCTX3END(0)
+        }
+    }
+    impl core::fmt::Debug for IPEDCTX3END {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPEDCTX3END")
+                .field("end_address", &self.end_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX3END {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPEDCTX3END {
+                end_address: u32,
+            }
+            let proxy = IPEDCTX3END {
+                end_address: self.end_address(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Start Address of Region"]
@@ -1879,6 +2767,32 @@ pub mod regs {
             IPEDCTX3START(0)
         }
     }
+    impl core::fmt::Debug for IPEDCTX3START {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPEDCTX3START")
+                .field("GCM", &self.GCM())
+                .field("ahbbuserror_dis", &self.ahbbuserror_dis())
+                .field("start_address", &self.start_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX3START {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPEDCTX3START {
+                GCM: bool,
+                ahbbuserror_dis: bool,
+                start_address: u32,
+            }
+            let proxy = IPEDCTX3START {
+                GCM: self.GCM(),
+                ahbbuserror_dis: self.ahbbuserror_dis(),
+                start_address: self.start_address(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1898,6 +2812,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPEDCTX4END {
             IPEDCTX4END(0)
+        }
+    }
+    impl core::fmt::Debug for IPEDCTX4END {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPEDCTX4END")
+                .field("end_address", &self.end_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX4END {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPEDCTX4END {
+                end_address: u32,
+            }
+            let proxy = IPEDCTX4END {
+                end_address: self.end_address(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Start Address of Region"]
@@ -1939,6 +2873,32 @@ pub mod regs {
             IPEDCTX4START(0)
         }
     }
+    impl core::fmt::Debug for IPEDCTX4START {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPEDCTX4START")
+                .field("GCM", &self.GCM())
+                .field("ahbbuserror_dis", &self.ahbbuserror_dis())
+                .field("start_address", &self.start_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX4START {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPEDCTX4START {
+                GCM: bool,
+                ahbbuserror_dis: bool,
+                start_address: u32,
+            }
+            let proxy = IPEDCTX4START {
+                GCM: self.GCM(),
+                ahbbuserror_dis: self.ahbbuserror_dis(),
+                start_address: self.start_address(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1958,6 +2918,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPEDCTX5END {
             IPEDCTX5END(0)
+        }
+    }
+    impl core::fmt::Debug for IPEDCTX5END {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPEDCTX5END")
+                .field("end_address", &self.end_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX5END {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPEDCTX5END {
+                end_address: u32,
+            }
+            let proxy = IPEDCTX5END {
+                end_address: self.end_address(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Start Address of Region"]
@@ -1999,6 +2979,32 @@ pub mod regs {
             IPEDCTX5START(0)
         }
     }
+    impl core::fmt::Debug for IPEDCTX5START {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPEDCTX5START")
+                .field("GCM", &self.GCM())
+                .field("ahbbuserror_dis", &self.ahbbuserror_dis())
+                .field("start_address", &self.start_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX5START {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPEDCTX5START {
+                GCM: bool,
+                ahbbuserror_dis: bool,
+                start_address: u32,
+            }
+            let proxy = IPEDCTX5START {
+                GCM: self.GCM(),
+                ahbbuserror_dis: self.ahbbuserror_dis(),
+                start_address: self.start_address(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2018,6 +3024,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPEDCTX6END {
             IPEDCTX6END(0)
+        }
+    }
+    impl core::fmt::Debug for IPEDCTX6END {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPEDCTX6END")
+                .field("end_address", &self.end_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX6END {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPEDCTX6END {
+                end_address: u32,
+            }
+            let proxy = IPEDCTX6END {
+                end_address: self.end_address(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Start Address of Region"]
@@ -2057,6 +3083,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPEDCTX6START {
             IPEDCTX6START(0)
+        }
+    }
+    impl core::fmt::Debug for IPEDCTX6START {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPEDCTX6START")
+                .field("GCM", &self.GCM())
+                .field("ahbbuserror_dis", &self.ahbbuserror_dis())
+                .field("start_address", &self.start_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX6START {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPEDCTX6START {
+                GCM: bool,
+                ahbbuserror_dis: bool,
+                start_address: u32,
+            }
+            let proxy = IPEDCTX6START {
+                GCM: self.GCM(),
+                ahbbuserror_dis: self.ahbbuserror_dis(),
+                start_address: self.start_address(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "IPED context control 0..IPED context control 1"]
@@ -2197,6 +3249,65 @@ pub mod regs {
             IPEDCTXCTRL(0)
         }
     }
+    impl core::fmt::Debug for IPEDCTXCTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPEDCTXCTRL")
+                .field("CTX0_FREEZE0", &self.CTX0_FREEZE0())
+                .field("CTX0_FREEZE1", &self.CTX0_FREEZE1())
+                .field("CTX1_FREEZE0", &self.CTX1_FREEZE0())
+                .field("CTX1_FREEZE1", &self.CTX1_FREEZE1())
+                .field("CTX2_FREEZE0", &self.CTX2_FREEZE0())
+                .field("CTX2_FREEZE1", &self.CTX2_FREEZE1())
+                .field("CTX3_FREEZE0", &self.CTX3_FREEZE0())
+                .field("CTX3_FREEZE1", &self.CTX3_FREEZE1())
+                .field("CTX4_FREEZE0", &self.CTX4_FREEZE0())
+                .field("CTX4_FREEZE1", &self.CTX4_FREEZE1())
+                .field("CTX5_FREEZE0", &self.CTX5_FREEZE0())
+                .field("CTX5_FREEZE1", &self.CTX5_FREEZE1())
+                .field("CTX6_FREEZE0", &self.CTX6_FREEZE0())
+                .field("CTX6_FREEZE1", &self.CTX6_FREEZE1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTXCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPEDCTXCTRL {
+                CTX0_FREEZE0: u8,
+                CTX0_FREEZE1: u8,
+                CTX1_FREEZE0: u8,
+                CTX1_FREEZE1: u8,
+                CTX2_FREEZE0: u8,
+                CTX2_FREEZE1: u8,
+                CTX3_FREEZE0: u8,
+                CTX3_FREEZE1: u8,
+                CTX4_FREEZE0: u8,
+                CTX4_FREEZE1: u8,
+                CTX5_FREEZE0: u8,
+                CTX5_FREEZE1: u8,
+                CTX6_FREEZE0: u8,
+                CTX6_FREEZE1: u8,
+            }
+            let proxy = IPEDCTXCTRL {
+                CTX0_FREEZE0: self.CTX0_FREEZE0(),
+                CTX0_FREEZE1: self.CTX0_FREEZE1(),
+                CTX1_FREEZE0: self.CTX1_FREEZE0(),
+                CTX1_FREEZE1: self.CTX1_FREEZE1(),
+                CTX2_FREEZE0: self.CTX2_FREEZE0(),
+                CTX2_FREEZE1: self.CTX2_FREEZE1(),
+                CTX3_FREEZE0: self.CTX3_FREEZE0(),
+                CTX3_FREEZE1: self.CTX3_FREEZE1(),
+                CTX4_FREEZE0: self.CTX4_FREEZE0(),
+                CTX4_FREEZE1: self.CTX4_FREEZE1(),
+                CTX5_FREEZE0: self.CTX5_FREEZE0(),
+                CTX5_FREEZE1: self.CTX5_FREEZE1(),
+                CTX6_FREEZE0: self.CTX6_FREEZE0(),
+                CTX6_FREEZE1: self.CTX6_FREEZE1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "IP Receive FIFO Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2236,6 +3347,32 @@ pub mod regs {
             IPRXFCR(0)
         }
     }
+    impl core::fmt::Debug for IPRXFCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPRXFCR")
+                .field("CLRIPRXF", &self.CLRIPRXF())
+                .field("RXDMAEN", &self.RXDMAEN())
+                .field("RXWMRK", &self.RXWMRK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPRXFCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPRXFCR {
+                CLRIPRXF: bool,
+                RXDMAEN: bool,
+                RXWMRK: u8,
+            }
+            let proxy = IPRXFCR {
+                CLRIPRXF: self.CLRIPRXF(),
+                RXDMAEN: self.RXDMAEN(),
+                RXWMRK: self.RXWMRK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "IP Receive FIFO Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2266,6 +3403,29 @@ pub mod regs {
             IPRXFSTS(0)
         }
     }
+    impl core::fmt::Debug for IPRXFSTS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPRXFSTS")
+                .field("FILL", &self.FILL())
+                .field("RDCNTR", &self.RDCNTR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPRXFSTS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPRXFSTS {
+                FILL: u8,
+                RDCNTR: u16,
+            }
+            let proxy = IPRXFSTS {
+                FILL: self.FILL(),
+                RDCNTR: self.RDCNTR(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "IPS Nonsecure Region 0 End Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2286,6 +3446,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPSNSZEND0 {
             IPSNSZEND0(0)
+        }
+    }
+    impl core::fmt::Debug for IPSNSZEND0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPSNSZEND0")
+                .field("end_address", &self.end_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPSNSZEND0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPSNSZEND0 {
+                end_address: u32,
+            }
+            let proxy = IPSNSZEND0 {
+                end_address: self.end_address(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "IPS Nonsecure Region 1 End Address"]
@@ -2310,6 +3490,26 @@ pub mod regs {
             IPSNSZEND1(0)
         }
     }
+    impl core::fmt::Debug for IPSNSZEND1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPSNSZEND1")
+                .field("end_address", &self.end_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPSNSZEND1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPSNSZEND1 {
+                end_address: u32,
+            }
+            let proxy = IPSNSZEND1 {
+                end_address: self.end_address(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "IPS Nonsecure Region 0 Start Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2332,6 +3532,26 @@ pub mod regs {
             IPSNSZSTART0(0)
         }
     }
+    impl core::fmt::Debug for IPSNSZSTART0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPSNSZSTART0")
+                .field("start_address", &self.start_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPSNSZSTART0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPSNSZSTART0 {
+                start_address: u32,
+            }
+            let proxy = IPSNSZSTART0 {
+                start_address: self.start_address(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "IPS Nonsecure Region 1 Start Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2352,6 +3572,26 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPSNSZSTART1 {
             IPSNSZSTART1(0)
+        }
+    }
+    impl core::fmt::Debug for IPSNSZSTART1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPSNSZSTART1")
+                .field("start_address", &self.start_address())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPSNSZSTART1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPSNSZSTART1 {
+                start_address: u32,
+            }
+            let proxy = IPSNSZSTART1 {
+                start_address: self.start_address(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "IP Transmit FIFO Control"]
@@ -2393,6 +3633,32 @@ pub mod regs {
             IPTXFCR(0)
         }
     }
+    impl core::fmt::Debug for IPTXFCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPTXFCR")
+                .field("CLRIPTXF", &self.CLRIPTXF())
+                .field("TXDMAEN", &self.TXDMAEN())
+                .field("TXWMRK", &self.TXWMRK())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPTXFCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPTXFCR {
+                CLRIPTXF: bool,
+                TXDMAEN: bool,
+                TXWMRK: u8,
+            }
+            let proxy = IPTXFCR {
+                CLRIPTXF: self.CLRIPTXF(),
+                TXDMAEN: self.TXDMAEN(),
+                TXWMRK: self.TXWMRK(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "IP Transmit FIFO Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2421,6 +3687,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> IPTXFSTS {
             IPTXFSTS(0)
+        }
+    }
+    impl core::fmt::Debug for IPTXFSTS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IPTXFSTS")
+                .field("FILL", &self.FILL())
+                .field("WRCNTR", &self.WRCNTR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPTXFSTS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct IPTXFSTS {
+                FILL: u8,
+                WRCNTR: u16,
+            }
+            let proxy = IPTXFSTS {
+                FILL: self.FILL(),
+                WRCNTR: self.WRCNTR(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Lookup Table 0..Lookup Table 63"]
@@ -2489,6 +3778,41 @@ pub mod regs {
             LUT(0)
         }
     }
+    impl core::fmt::Debug for LUT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("LUT")
+                .field("OPERAND0", &self.OPERAND0())
+                .field("NUM_PADS0", &self.NUM_PADS0())
+                .field("OPCODE0", &self.OPCODE0())
+                .field("OPERAND1", &self.OPERAND1())
+                .field("NUM_PADS1", &self.NUM_PADS1())
+                .field("OPCODE1", &self.OPCODE1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LUT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct LUT {
+                OPERAND0: u8,
+                NUM_PADS0: u8,
+                OPCODE0: u8,
+                OPERAND1: u8,
+                NUM_PADS1: u8,
+                OPCODE1: u8,
+            }
+            let proxy = LUT {
+                OPERAND0: self.OPERAND0(),
+                NUM_PADS0: self.NUM_PADS0(),
+                OPCODE0: self.OPCODE0(),
+                OPERAND1: self.OPERAND1(),
+                NUM_PADS1: self.NUM_PADS1(),
+                OPCODE1: self.OPCODE1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "LUT Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2526,6 +3850,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> LUTCR {
             LUTCR(0)
+        }
+    }
+    impl core::fmt::Debug for LUTCR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("LUTCR")
+                .field("LOCK", &self.LOCK())
+                .field("UNLOCK", &self.UNLOCK())
+                .field("PROTECT", &self.PROTECT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LUTCR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct LUTCR {
+                LOCK: bool,
+                UNLOCK: bool,
+                PROTECT: bool,
+            }
+            let proxy = LUTCR {
+                LOCK: self.LOCK(),
+                UNLOCK: self.UNLOCK(),
+                PROTECT: self.PROTECT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Module Control 0"]
@@ -2657,6 +4007,62 @@ pub mod regs {
             MCR0(0)
         }
     }
+    impl core::fmt::Debug for MCR0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MCR0")
+                .field("SWRESET", &self.SWRESET())
+                .field("MDIS", &self.MDIS())
+                .field("RXCLKSRC", &self.RXCLKSRC())
+                .field("ARDFEN", &self.ARDFEN())
+                .field("ATDFEN", &self.ATDFEN())
+                .field("SERCLKDIV", &self.SERCLKDIV())
+                .field("HSEN", &self.HSEN())
+                .field("DOZEEN", &self.DOZEEN())
+                .field("COMBINATIONEN", &self.COMBINATIONEN())
+                .field("SCKFREERUNEN", &self.SCKFREERUNEN())
+                .field("LEARNEN", &self.LEARNEN())
+                .field("IPGRANTWAIT", &self.IPGRANTWAIT())
+                .field("AHBGRANTWAIT", &self.AHBGRANTWAIT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCR0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MCR0 {
+                SWRESET: bool,
+                MDIS: bool,
+                RXCLKSRC: u8,
+                ARDFEN: bool,
+                ATDFEN: bool,
+                SERCLKDIV: u8,
+                HSEN: bool,
+                DOZEEN: bool,
+                COMBINATIONEN: bool,
+                SCKFREERUNEN: bool,
+                LEARNEN: bool,
+                IPGRANTWAIT: u8,
+                AHBGRANTWAIT: u8,
+            }
+            let proxy = MCR0 {
+                SWRESET: self.SWRESET(),
+                MDIS: self.MDIS(),
+                RXCLKSRC: self.RXCLKSRC(),
+                ARDFEN: self.ARDFEN(),
+                ATDFEN: self.ATDFEN(),
+                SERCLKDIV: self.SERCLKDIV(),
+                HSEN: self.HSEN(),
+                DOZEEN: self.DOZEEN(),
+                COMBINATIONEN: self.COMBINATIONEN(),
+                SCKFREERUNEN: self.SCKFREERUNEN(),
+                LEARNEN: self.LEARNEN(),
+                IPGRANTWAIT: self.IPGRANTWAIT(),
+                AHBGRANTWAIT: self.AHBGRANTWAIT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Module Control 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2685,6 +4091,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> MCR1 {
             MCR1(0)
+        }
+    }
+    impl core::fmt::Debug for MCR1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MCR1")
+                .field("AHBBUSWAIT", &self.AHBBUSWAIT())
+                .field("SEQWAIT", &self.SEQWAIT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCR1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MCR1 {
+                AHBBUSWAIT: u16,
+                SEQWAIT: u16,
+            }
+            let proxy = MCR1 {
+                AHBBUSWAIT: self.AHBBUSWAIT(),
+                SEQWAIT: self.SEQWAIT(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Module Control 2"]
@@ -2762,6 +4191,44 @@ pub mod regs {
             MCR2(0)
         }
     }
+    impl core::fmt::Debug for MCR2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MCR2")
+                .field("CLRAHBBUFOPT", &self.CLRAHBBUFOPT())
+                .field("CLRLEARNPHASE", &self.CLRLEARNPHASE())
+                .field("SAMEDEVICEEN", &self.SAMEDEVICEEN())
+                .field("SCKBDIFFOPT", &self.SCKBDIFFOPT())
+                .field("RXCLKSRC_B", &self.RXCLKSRC_B())
+                .field("RX_CLK_SRC_DIFF", &self.RX_CLK_SRC_DIFF())
+                .field("RESUMEWAIT", &self.RESUMEWAIT())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCR2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct MCR2 {
+                CLRAHBBUFOPT: bool,
+                CLRLEARNPHASE: bool,
+                SAMEDEVICEEN: bool,
+                SCKBDIFFOPT: bool,
+                RXCLKSRC_B: u8,
+                RX_CLK_SRC_DIFF: bool,
+                RESUMEWAIT: u8,
+            }
+            let proxy = MCR2 {
+                CLRAHBBUFOPT: self.CLRAHBBUFOPT(),
+                CLRLEARNPHASE: self.CLRLEARNPHASE(),
+                SAMEDEVICEEN: self.SAMEDEVICEEN(),
+                SCKBDIFFOPT: self.SCKBDIFFOPT(),
+                RXCLKSRC_B: self.RXCLKSRC_B(),
+                RX_CLK_SRC_DIFF: self.RX_CLK_SRC_DIFF(),
+                RESUMEWAIT: self.RESUMEWAIT(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Status 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2819,6 +4286,38 @@ pub mod regs {
             STS0(0)
         }
     }
+    impl core::fmt::Debug for STS0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("STS0")
+                .field("SEQIDLE", &self.SEQIDLE())
+                .field("ARBIDLE", &self.ARBIDLE())
+                .field("ARBCMDSRC", &self.ARBCMDSRC())
+                .field("DATALEARNPHASEA", &self.DATALEARNPHASEA())
+                .field("DATALEARNPHASEB", &self.DATALEARNPHASEB())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STS0 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct STS0 {
+                SEQIDLE: bool,
+                ARBIDLE: bool,
+                ARBCMDSRC: u8,
+                DATALEARNPHASEA: u8,
+                DATALEARNPHASEB: u8,
+            }
+            let proxy = STS0 {
+                SEQIDLE: self.SEQIDLE(),
+                ARBIDLE: self.ARBIDLE(),
+                ARBCMDSRC: self.ARBCMDSRC(),
+                DATALEARNPHASEA: self.DATALEARNPHASEA(),
+                DATALEARNPHASEB: self.DATALEARNPHASEB(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Status 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2865,6 +4364,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> STS1 {
             STS1(0)
+        }
+    }
+    impl core::fmt::Debug for STS1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("STS1")
+                .field("AHBCMDERRID", &self.AHBCMDERRID())
+                .field("AHBCMDERRCODE", &self.AHBCMDERRCODE())
+                .field("IPCMDERRID", &self.IPCMDERRID())
+                .field("IPCMDERRCODE", &self.IPCMDERRCODE())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STS1 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct STS1 {
+                AHBCMDERRID: u8,
+                AHBCMDERRCODE: u8,
+                IPCMDERRID: u8,
+                IPCMDERRCODE: u8,
+            }
+            let proxy = STS1 {
+                AHBCMDERRID: self.AHBCMDERRID(),
+                AHBCMDERRCODE: self.AHBCMDERRCODE(),
+                IPCMDERRID: self.IPCMDERRID(),
+                IPCMDERRCODE: self.IPCMDERRCODE(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status 2"]
@@ -2949,6 +4477,47 @@ pub mod regs {
         #[inline(always)]
         fn default() -> STS2 {
             STS2(0)
+        }
+    }
+    impl core::fmt::Debug for STS2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("STS2")
+                .field("ASLVLOCK", &self.ASLVLOCK())
+                .field("AREFLOCK", &self.AREFLOCK())
+                .field("ASLVSEL", &self.ASLVSEL())
+                .field("AREFSEL", &self.AREFSEL())
+                .field("BSLVLOCK", &self.BSLVLOCK())
+                .field("BREFLOCK", &self.BREFLOCK())
+                .field("BSLVSEL", &self.BSLVSEL())
+                .field("BREFSEL", &self.BREFSEL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STS2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct STS2 {
+                ASLVLOCK: bool,
+                AREFLOCK: bool,
+                ASLVSEL: u8,
+                AREFSEL: u8,
+                BSLVLOCK: bool,
+                BREFLOCK: bool,
+                BSLVSEL: u8,
+                BREFSEL: u8,
+            }
+            let proxy = STS2 {
+                ASLVLOCK: self.ASLVLOCK(),
+                AREFLOCK: self.AREFLOCK(),
+                ASLVSEL: self.ASLVSEL(),
+                AREFSEL: self.AREFSEL(),
+                BSLVLOCK: self.BSLVLOCK(),
+                BREFLOCK: self.BREFLOCK(),
+                BSLVSEL: self.BSLVSEL(),
+                BREFSEL: self.BREFSEL(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

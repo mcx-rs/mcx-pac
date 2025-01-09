@@ -91,6 +91,29 @@ pub mod regs {
             ARM2EZH(0)
         }
     }
+    impl core::fmt::Debug for ARM2EZH {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ARM2EZH")
+                .field("IE", &self.IE())
+                .field("GP", &self.GP())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ARM2EZH {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct ARM2EZH {
+                IE: u8,
+                GP: u32,
+            }
+            let proxy = ARM2EZH {
+                IE: self.IE(),
+                GP: self.GP(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Boot Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -110,6 +133,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> BOOTADR {
             BOOTADR(0)
+        }
+    }
+    impl core::fmt::Debug for BOOTADR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("BOOTADR")
+                .field("ADDR", &self.ADDR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BOOTADR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct BOOTADR {
+                ADDR: u32,
+            }
+            let proxy = BOOTADR { ADDR: self.ADDR() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Breakpoint Address"]
@@ -133,6 +174,24 @@ pub mod regs {
             BREAK_ADDR(0)
         }
     }
+    impl core::fmt::Debug for BREAK_ADDR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("BREAK_ADDR")
+                .field("ADDR", &self.ADDR())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BREAK_ADDR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct BREAK_ADDR {
+                ADDR: u32,
+            }
+            let proxy = BREAK_ADDR { ADDR: self.ADDR() };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Breakpoint Vector"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -152,6 +211,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> BREAK_VECT {
             BREAK_VECT(0)
+        }
+    }
+    impl core::fmt::Debug for BREAK_VECT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("BREAK_VECT")
+                .field("VEC", &self.VEC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BREAK_VECT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct BREAK_VECT {
+                VEC: u32,
+            }
+            let proxy = BREAK_VECT { VEC: self.VEC() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Control"]
@@ -220,6 +297,41 @@ pub mod regs {
             CTRL(0)
         }
     }
+    impl core::fmt::Debug for CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CTRL")
+                .field("START", &self.START())
+                .field("EXF", &self.EXF())
+                .field("ERRDIS", &self.ERRDIS())
+                .field("BUFEN", &self.BUFEN())
+                .field("SYNCEN", &self.SYNCEN())
+                .field("WKEY", &self.WKEY())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct CTRL {
+                START: bool,
+                EXF: bool,
+                ERRDIS: bool,
+                BUFEN: bool,
+                SYNCEN: bool,
+                WKEY: u16,
+            }
+            let proxy = CTRL {
+                START: self.START(),
+                EXF: self.EXF(),
+                ERRDIS: self.ERRDIS(),
+                BUFEN: self.BUFEN(),
+                SYNCEN: self.SYNCEN(),
+                WKEY: self.WKEY(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Emergency Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -250,6 +362,29 @@ pub mod regs {
             EMER_SEL(0)
         }
     }
+    impl core::fmt::Debug for EMER_SEL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EMER_SEL")
+                .field("EN", &self.EN())
+                .field("RQ", &self.RQ())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EMER_SEL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EMER_SEL {
+                EN: bool,
+                RQ: bool,
+            }
+            let proxy = EMER_SEL {
+                EN: self.EN(),
+                RQ: self.RQ(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Emergency Vector"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -269,6 +404,24 @@ pub mod regs {
         #[inline(always)]
         fn default() -> EMER_VECT {
             EMER_VECT(0)
+        }
+    }
+    impl core::fmt::Debug for EMER_VECT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EMER_VECT")
+                .field("VEC", &self.VEC())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EMER_VECT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct EMER_VECT {
+                VEC: u32,
+            }
+            let proxy = EMER_VECT { VEC: self.VEC() };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pending Trap Control"]
@@ -308,6 +461,32 @@ pub mod regs {
         #[inline(always)]
         fn default() -> PENDTRAP {
             PENDTRAP(0)
+        }
+    }
+    impl core::fmt::Debug for PENDTRAP {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PENDTRAP")
+                .field("STATUS", &self.STATUS())
+                .field("POL", &self.POL())
+                .field("EN", &self.EN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PENDTRAP {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct PENDTRAP {
+                STATUS: u8,
+                POL: u8,
+                EN: u8,
+            }
+            let proxy = PENDTRAP {
+                STATUS: self.STATUS(),
+                POL: self.POL(),
+                EN: self.EN(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }

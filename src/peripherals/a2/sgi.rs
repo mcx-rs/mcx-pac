@@ -398,6 +398,38 @@ pub mod regs {
             SGI_ACCESS_ERR(0)
         }
     }
+    impl core::fmt::Debug for SGI_ACCESS_ERR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_ACCESS_ERR")
+                .field("apb_notav", &self.apb_notav())
+                .field("apb_wrgmd", &self.apb_wrgmd())
+                .field("accerr_rsvd1", &self.accerr_rsvd1())
+                .field("apb_master", &self.apb_master())
+                .field("accerr_rsvd2", &self.accerr_rsvd2())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_ACCESS_ERR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_ACCESS_ERR {
+                apb_notav: bool,
+                apb_wrgmd: bool,
+                accerr_rsvd1: u8,
+                apb_master: u8,
+                accerr_rsvd2: u32,
+            }
+            let proxy = SGI_ACCESS_ERR {
+                apb_notav: self.apb_notav(),
+                apb_wrgmd: self.apb_wrgmd(),
+                accerr_rsvd1: self.accerr_rsvd1(),
+                apb_master: self.apb_master(),
+                accerr_rsvd2: self.accerr_rsvd2(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Clear Access Error"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -426,6 +458,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SGI_ACCESS_ERR_CLR {
             SGI_ACCESS_ERR_CLR(0)
+        }
+    }
+    impl core::fmt::Debug for SGI_ACCESS_ERR_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_ACCESS_ERR_CLR")
+                .field("err_clr", &self.err_clr())
+                .field("accerrc_rsvd", &self.accerrc_rsvd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_ACCESS_ERR_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_ACCESS_ERR_CLR {
+                err_clr: bool,
+                accerrc_rsvd: u32,
+            }
+            let proxy = SGI_ACCESS_ERR_CLR {
+                err_clr: self.err_clr(),
+                accerrc_rsvd: self.accerrc_rsvd(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SGI Auto Mode Control register"]
@@ -474,6 +529,35 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SGI_AUTO_DMA_CTRL {
             SGI_AUTO_DMA_CTRL(0)
+        }
+    }
+    impl core::fmt::Debug for SGI_AUTO_DMA_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_AUTO_DMA_CTRL")
+                .field("ife", &self.ife())
+                .field("auto_dma_rsvd1", &self.auto_dma_rsvd1())
+                .field("ofe", &self.ofe())
+                .field("auto_dma_rsvd2", &self.auto_dma_rsvd2())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_AUTO_DMA_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_AUTO_DMA_CTRL {
+                ife: bool,
+                auto_dma_rsvd1: u8,
+                ofe: bool,
+                auto_dma_rsvd2: u32,
+            }
+            let proxy = SGI_AUTO_DMA_CTRL {
+                ife: self.ife(),
+                auto_dma_rsvd1: self.auto_dma_rsvd1(),
+                ofe: self.ofe(),
+                auto_dma_rsvd2: self.auto_dma_rsvd2(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SGI Auto Mode Control register"]
@@ -549,6 +633,44 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SGI_AUTO_MODE {
             SGI_AUTO_MODE(0)
+        }
+    }
+    impl core::fmt::Debug for SGI_AUTO_MODE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_AUTO_MODE")
+                .field("auto_mode_en", &self.auto_mode_en())
+                .field("auto_mode_stop", &self.auto_mode_stop())
+                .field("auto_mode_rsvd1", &self.auto_mode_rsvd1())
+                .field("incr_mode", &self.incr_mode())
+                .field("auto_mode_rsvd2", &self.auto_mode_rsvd2())
+                .field("cmd", &self.cmd())
+                .field("auto_mode_rsvd3", &self.auto_mode_rsvd3())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_AUTO_MODE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_AUTO_MODE {
+                auto_mode_en: bool,
+                auto_mode_stop: bool,
+                auto_mode_rsvd1: u8,
+                incr_mode: u8,
+                auto_mode_rsvd2: u8,
+                cmd: u8,
+                auto_mode_rsvd3: u16,
+            }
+            let proxy = SGI_AUTO_MODE {
+                auto_mode_en: self.auto_mode_en(),
+                auto_mode_stop: self.auto_mode_stop(),
+                auto_mode_rsvd1: self.auto_mode_rsvd1(),
+                incr_mode: self.incr_mode(),
+                auto_mode_rsvd2: self.auto_mode_rsvd2(),
+                cmd: self.cmd(),
+                auto_mode_rsvd3: self.auto_mode_rsvd3(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SHA Configuration Reg"]
@@ -788,6 +910,98 @@ pub mod regs {
             SGI_CONFIG(0)
         }
     }
+    impl core::fmt::Debug for SGI_CONFIG {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_CONFIG")
+                .field("row", &self.row())
+                .field("china", &self.china())
+                .field("cc", &self.cc())
+                .field("has_aes", &self.has_aes())
+                .field("has_des", &self.has_des())
+                .field("has_sha", &self.has_sha())
+                .field("has_movem", &self.has_movem())
+                .field("has_cmac", &self.has_cmac())
+                .field("has_gfmul", &self.has_gfmul())
+                .field("internal_prng", &self.internal_prng())
+                .field("key_digest", &self.key_digest())
+                .field("count_size", &self.count_size())
+                .field("configc_rsvd", &self.configc_rsvd())
+                .field("fa", &self.fa())
+                .field("configb2_rsvd", &self.configb2_rsvd())
+                .field("bus_width", &self.bus_width())
+                .field("num_datin", &self.num_datin())
+                .field("num_key", &self.num_key())
+                .field("edc", &self.edc())
+                .field("configb_rsvd", &self.configb_rsvd())
+                .field("sha_256_only", &self.sha_256_only())
+                .field("spb_support", &self.spb_support())
+                .field("spb_masking", &self.spb_masking())
+                .field("sfr_sw_mask", &self.sfr_sw_mask())
+                .field("configa_rsvd", &self.configa_rsvd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_CONFIG {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_CONFIG {
+                row: bool,
+                china: bool,
+                cc: bool,
+                has_aes: bool,
+                has_des: bool,
+                has_sha: bool,
+                has_movem: bool,
+                has_cmac: bool,
+                has_gfmul: bool,
+                internal_prng: bool,
+                key_digest: bool,
+                count_size: bool,
+                configc_rsvd: bool,
+                fa: bool,
+                configb2_rsvd: bool,
+                bus_width: bool,
+                num_datin: u8,
+                num_key: u8,
+                edc: bool,
+                configb_rsvd: u8,
+                sha_256_only: bool,
+                spb_support: bool,
+                spb_masking: bool,
+                sfr_sw_mask: bool,
+                configa_rsvd: u8,
+            }
+            let proxy = SGI_CONFIG {
+                row: self.row(),
+                china: self.china(),
+                cc: self.cc(),
+                has_aes: self.has_aes(),
+                has_des: self.has_des(),
+                has_sha: self.has_sha(),
+                has_movem: self.has_movem(),
+                has_cmac: self.has_cmac(),
+                has_gfmul: self.has_gfmul(),
+                internal_prng: self.internal_prng(),
+                key_digest: self.key_digest(),
+                count_size: self.count_size(),
+                configc_rsvd: self.configc_rsvd(),
+                fa: self.fa(),
+                configb2_rsvd: self.configb2_rsvd(),
+                bus_width: self.bus_width(),
+                num_datin: self.num_datin(),
+                num_key: self.num_key(),
+                edc: self.edc(),
+                configb_rsvd: self.configb_rsvd(),
+                sha_256_only: self.sha_256_only(),
+                spb_support: self.spb_support(),
+                spb_masking: self.spb_masking(),
+                sfr_sw_mask: self.sfr_sw_mask(),
+                configa_rsvd: self.configa_rsvd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SHA Configuration 2 Reg"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -863,6 +1077,44 @@ pub mod regs {
             SGI_CONFIG2(0)
         }
     }
+    impl core::fmt::Debug for SGI_CONFIG2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_CONFIG2")
+                .field("aes_used", &self.aes_used())
+                .field("aes_num_sboxes", &self.aes_num_sboxes())
+                .field("aes_keysize", &self.aes_keysize())
+                .field("config2b_rsvd", &self.config2b_rsvd())
+                .field("des_used", &self.des_used())
+                .field("des_num_sboxes", &self.des_num_sboxes())
+                .field("config2a_rsvd", &self.config2a_rsvd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_CONFIG2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_CONFIG2 {
+                aes_used: u8,
+                aes_num_sboxes: u8,
+                aes_keysize: u8,
+                config2b_rsvd: u8,
+                des_used: u8,
+                des_num_sboxes: u8,
+                config2a_rsvd: u8,
+            }
+            let proxy = SGI_CONFIG2 {
+                aes_used: self.aes_used(),
+                aes_num_sboxes: self.aes_num_sboxes(),
+                aes_keysize: self.aes_keysize(),
+                config2b_rsvd: self.config2b_rsvd(),
+                des_used: self.des_used(),
+                des_num_sboxes: self.des_num_sboxes(),
+                config2a_rsvd: self.config2a_rsvd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Calculation counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -891,6 +1143,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SGI_COUNT {
             SGI_COUNT(0)
+        }
+    }
+    impl core::fmt::Debug for SGI_COUNT {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_COUNT")
+                .field("count", &self.count())
+                .field("count_rsvd", &self.count_rsvd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_COUNT {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_COUNT {
+                count: u16,
+                count_rsvd: u16,
+            }
+            let proxy = SGI_COUNT {
+                count: self.count(),
+                count_rsvd: self.count_rsvd(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SGI Control register"]
@@ -1047,6 +1322,71 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SGI_CTRL {
             SGI_CTRL(0)
+        }
+    }
+    impl core::fmt::Debug for SGI_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_CTRL")
+                .field("start", &self.start())
+                .field("decrypt", &self.decrypt())
+                .field("aeskeysz", &self.aeskeysz())
+                .field("crypto_op", &self.crypto_op())
+                .field("insel", &self.insel())
+                .field("outsel", &self.outsel())
+                .field("datout_res", &self.datout_res())
+                .field("aes_en", &self.aes_en())
+                .field("des_en", &self.des_en())
+                .field("gcm_en", &self.gcm_en())
+                .field("prng_en", &self.prng_en())
+                .field("inkeysel", &self.inkeysel())
+                .field("tdeskey", &self.tdeskey())
+                .field("aes_no_kl", &self.aes_no_kl())
+                .field("aes_sel", &self.aes_sel())
+                .field("ctrl_rsvd", &self.ctrl_rsvd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_CTRL {
+                start: bool,
+                decrypt: bool,
+                aeskeysz: u8,
+                crypto_op: u8,
+                insel: u8,
+                outsel: u8,
+                datout_res: u8,
+                aes_en: bool,
+                des_en: bool,
+                gcm_en: bool,
+                prng_en: bool,
+                inkeysel: u8,
+                tdeskey: bool,
+                aes_no_kl: bool,
+                aes_sel: bool,
+                ctrl_rsvd: u8,
+            }
+            let proxy = SGI_CTRL {
+                start: self.start(),
+                decrypt: self.decrypt(),
+                aeskeysz: self.aeskeysz(),
+                crypto_op: self.crypto_op(),
+                insel: self.insel(),
+                outsel: self.outsel(),
+                datout_res: self.datout_res(),
+                aes_en: self.aes_en(),
+                des_en: self.des_en(),
+                gcm_en: self.gcm_en(),
+                prng_en: self.prng_en(),
+                inkeysel: self.inkeysel(),
+                tdeskey: self.tdeskey(),
+                aes_no_kl: self.aes_no_kl(),
+                aes_sel: self.aes_sel(),
+                ctrl_rsvd: self.ctrl_rsvd(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SGI Control register 2"]
@@ -1223,6 +1563,77 @@ pub mod regs {
             SGI_CTRL2(0)
         }
     }
+    impl core::fmt::Debug for SGI_CTRL2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_CTRL2")
+                .field("flush", &self.flush())
+                .field("key_flush", &self.key_flush())
+                .field("datin_flush", &self.datin_flush())
+                .field("incr", &self.incr())
+                .field("xorwr", &self.xorwr())
+                .field("flushwr", &self.flushwr())
+                .field("incr_cin", &self.incr_cin())
+                .field("ctrl2_rsvd3", &self.ctrl2_rsvd3())
+                .field("smasken", &self.smasken())
+                .field("smaskstep", &self.smaskstep())
+                .field("smasksw", &self.smasksw())
+                .field("ctrl2_rsvd2", &self.ctrl2_rsvd2())
+                .field("movem", &self.movem())
+                .field("keyres", &self.keyres())
+                .field("rkey", &self.rkey())
+                .field("bytes_order", &self.bytes_order())
+                .field("gcm_inxor", &self.gcm_inxor())
+                .field("ctrl2_rsvd1", &self.ctrl2_rsvd1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_CTRL2 {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_CTRL2 {
+                flush: bool,
+                key_flush: bool,
+                datin_flush: bool,
+                incr: bool,
+                xorwr: bool,
+                flushwr: bool,
+                incr_cin: bool,
+                ctrl2_rsvd3: bool,
+                smasken: bool,
+                smaskstep: bool,
+                smasksw: bool,
+                ctrl2_rsvd2: bool,
+                movem: u8,
+                keyres: u8,
+                rkey: bool,
+                bytes_order: bool,
+                gcm_inxor: bool,
+                ctrl2_rsvd1: u8,
+            }
+            let proxy = SGI_CTRL2 {
+                flush: self.flush(),
+                key_flush: self.key_flush(),
+                datin_flush: self.datin_flush(),
+                incr: self.incr(),
+                xorwr: self.xorwr(),
+                flushwr: self.flushwr(),
+                incr_cin: self.incr_cin(),
+                ctrl2_rsvd3: self.ctrl2_rsvd3(),
+                smasken: self.smasken(),
+                smaskstep: self.smaskstep(),
+                smasksw: self.smasksw(),
+                ctrl2_rsvd2: self.ctrl2_rsvd2(),
+                movem: self.movem(),
+                keyres: self.keyres(),
+                rkey: self.rkey(),
+                bytes_order: self.bytes_order(),
+                gcm_inxor: self.gcm_inxor(),
+                ctrl2_rsvd1: self.ctrl2_rsvd1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Configuration of dummy controls"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1271,6 +1682,35 @@ pub mod regs {
             SGI_DUMMY_CTRL(0)
         }
     }
+    impl core::fmt::Debug for SGI_DUMMY_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_DUMMY_CTRL")
+                .field("ddctrl", &self.ddctrl())
+                .field("dmyctl_rsvd2", &self.dmyctl_rsvd2())
+                .field("adctrl", &self.adctrl())
+                .field("dmyctl_rsvd1", &self.dmyctl_rsvd1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_DUMMY_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_DUMMY_CTRL {
+                ddctrl: u16,
+                dmyctl_rsvd2: u8,
+                adctrl: u16,
+                dmyctl_rsvd1: u8,
+            }
+            let proxy = SGI_DUMMY_CTRL {
+                ddctrl: self.ddctrl(),
+                dmyctl_rsvd2: self.dmyctl_rsvd2(),
+                adctrl: self.adctrl(),
+                dmyctl_rsvd1: self.dmyctl_rsvd1(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1299,6 +1739,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SGI_INT_ENABLE {
             SGI_INT_ENABLE(0)
+        }
+    }
+    impl core::fmt::Debug for SGI_INT_ENABLE {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_INT_ENABLE")
+                .field("int_en", &self.int_en())
+                .field("int_ena_rsvd", &self.int_ena_rsvd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_INT_ENABLE {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_INT_ENABLE {
+                int_en: bool,
+                int_ena_rsvd: u32,
+            }
+            let proxy = SGI_INT_ENABLE {
+                int_en: self.int_en(),
+                int_ena_rsvd: self.int_ena_rsvd(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt status"]
@@ -1331,6 +1794,29 @@ pub mod regs {
             SGI_INT_STATUS(0)
         }
     }
+    impl core::fmt::Debug for SGI_INT_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_INT_STATUS")
+                .field("int_pdone", &self.int_pdone())
+                .field("intst_rsvd", &self.intst_rsvd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_INT_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_INT_STATUS {
+                int_pdone: bool,
+                intst_rsvd: u32,
+            }
+            let proxy = SGI_INT_STATUS {
+                int_pdone: self.int_pdone(),
+                intst_rsvd: self.intst_rsvd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt status clear"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1361,6 +1847,29 @@ pub mod regs {
             SGI_INT_STATUS_CLR(0)
         }
     }
+    impl core::fmt::Debug for SGI_INT_STATUS_CLR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_INT_STATUS_CLR")
+                .field("int_clr", &self.int_clr())
+                .field("int_stsc_rsvd", &self.int_stsc_rsvd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_INT_STATUS_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_INT_STATUS_CLR {
+                int_clr: bool,
+                int_stsc_rsvd: u32,
+            }
+            let proxy = SGI_INT_STATUS_CLR {
+                int_clr: self.int_clr(),
+                int_stsc_rsvd: self.int_stsc_rsvd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "Interrupt status set"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1389,6 +1898,29 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SGI_INT_STATUS_SET {
             SGI_INT_STATUS_SET(0)
+        }
+    }
+    impl core::fmt::Debug for SGI_INT_STATUS_SET {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_INT_STATUS_SET")
+                .field("int_set", &self.int_set())
+                .field("int_stss_rsvd", &self.int_stss_rsvd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_INT_STATUS_SET {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_INT_STATUS_SET {
+                int_set: bool,
+                int_stss_rsvd: u32,
+            }
+            let proxy = SGI_INT_STATUS_SET {
+                int_set: self.int_set(),
+                int_stss_rsvd: self.int_stss_rsvd(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SHA Control Register"]
@@ -1491,6 +2023,53 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SGI_SHA2_CTRL {
             SGI_SHA2_CTRL(0)
+        }
+    }
+    impl core::fmt::Debug for SGI_SHA2_CTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_SHA2_CTRL")
+                .field("sha2_en", &self.sha2_en())
+                .field("sha2_mode", &self.sha2_mode())
+                .field("sha2_size", &self.sha2_size())
+                .field("sha2_low_lim", &self.sha2_low_lim())
+                .field("sha2_high_lim", &self.sha2_high_lim())
+                .field("sha2_count_en", &self.sha2_count_en())
+                .field("hash_reload", &self.hash_reload())
+                .field("sha2_stop", &self.sha2_stop())
+                .field("no_auto_init", &self.no_auto_init())
+                .field("sha2ctl_rsvd", &self.sha2ctl_rsvd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_SHA2_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_SHA2_CTRL {
+                sha2_en: bool,
+                sha2_mode: bool,
+                sha2_size: u8,
+                sha2_low_lim: u8,
+                sha2_high_lim: u8,
+                sha2_count_en: bool,
+                hash_reload: bool,
+                sha2_stop: bool,
+                no_auto_init: bool,
+                sha2ctl_rsvd: u16,
+            }
+            let proxy = SGI_SHA2_CTRL {
+                sha2_en: self.sha2_en(),
+                sha2_mode: self.sha2_mode(),
+                sha2_size: self.sha2_size(),
+                sha2_low_lim: self.sha2_low_lim(),
+                sha2_high_lim: self.sha2_high_lim(),
+                sha2_count_en: self.sha2_count_en(),
+                hash_reload: self.hash_reload(),
+                sha2_stop: self.sha2_stop(),
+                no_auto_init: self.no_auto_init(),
+                sha2ctl_rsvd: self.sha2ctl_rsvd(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status register"]
@@ -1622,6 +2201,62 @@ pub mod regs {
             SGI_STATUS(0)
         }
     }
+    impl core::fmt::Debug for SGI_STATUS {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_STATUS")
+                .field("busy", &self.busy())
+                .field("oflow", &self.oflow())
+                .field("prng_rdy", &self.prng_rdy())
+                .field("error", &self.error())
+                .field("sha2_busy", &self.sha2_busy())
+                .field("irq", &self.irq())
+                .field("sha_fifo_full", &self.sha_fifo_full())
+                .field("sha_fifo_level", &self.sha_fifo_level())
+                .field("sha_error", &self.sha_error())
+                .field("key_read_err", &self.key_read_err())
+                .field("key_unwrap_err", &self.key_unwrap_err())
+                .field("status_rsvd3", &self.status_rsvd3())
+                .field("status_rsvd", &self.status_rsvd())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_STATUS {
+                busy: bool,
+                oflow: bool,
+                prng_rdy: bool,
+                error: u8,
+                sha2_busy: bool,
+                irq: bool,
+                sha_fifo_full: bool,
+                sha_fifo_level: u8,
+                sha_error: bool,
+                key_read_err: bool,
+                key_unwrap_err: bool,
+                status_rsvd3: bool,
+                status_rsvd: u16,
+            }
+            let proxy = SGI_STATUS {
+                busy: self.busy(),
+                oflow: self.oflow(),
+                prng_rdy: self.prng_rdy(),
+                error: self.error(),
+                sha2_busy: self.sha2_busy(),
+                irq: self.irq(),
+                sha_fifo_full: self.sha_fifo_full(),
+                sha_fifo_level: self.sha_fifo_level(),
+                sha_error: self.sha_error(),
+                key_read_err: self.key_read_err(),
+                key_unwrap_err: self.key_unwrap_err(),
+                status_rsvd3: self.status_rsvd3(),
+                status_rsvd: self.status_rsvd(),
+            };
+            defmt::write!(f, "{}", proxy)
+        }
+    }
     #[doc = "SGI Version"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1686,6 +2321,41 @@ pub mod regs {
         #[inline(always)]
         fn default() -> SGI_VERSION {
             SGI_VERSION(0)
+        }
+    }
+    impl core::fmt::Debug for SGI_VERSION {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SGI_VERSION")
+                .field("z", &self.z())
+                .field("y2", &self.y2())
+                .field("y1", &self.y1())
+                .field("x", &self.x())
+                .field("milestone", &self.milestone())
+                .field("version_rsvd_1", &self.version_rsvd_1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_VERSION {
+        fn format(&self, f: defmt::Formatter) {
+            #[derive(defmt :: Format)]
+            struct SGI_VERSION {
+                z: u8,
+                y2: u8,
+                y1: u8,
+                x: u8,
+                milestone: u8,
+                version_rsvd_1: u16,
+            }
+            let proxy = SGI_VERSION {
+                z: self.z(),
+                y2: self.y2(),
+                y1: self.y1(),
+                x: self.x(),
+                milestone: self.milestone(),
+                version_rsvd_1: self.version_rsvd_1(),
+            };
+            defmt::write!(f, "{}", proxy)
         }
     }
 }
