@@ -661,8 +661,12 @@ pub mod adc {
             ADDRESSES[N as usize]
         }
     }
-    pub type ADC0 = Instance<0u8>;
-    pub type ADC1 = Instance<1u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type ADC0 = Instance<0u8>;
+        pub type ADC1 = Instance<1u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod ahbsc {
@@ -689,7 +693,11 @@ pub mod ahbsc {
             ADDRESSES[N as usize]
         }
     }
-    pub type AHBSC0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type AHBSC0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod can {
@@ -716,8 +724,12 @@ pub mod can {
             ADDRESSES[N as usize]
         }
     }
-    pub type CAN0 = Instance<0u8>;
-    pub type CAN1 = Instance<1u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type CAN0 = Instance<0u8>;
+        pub type CAN1 = Instance<1u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod cdog {
@@ -744,8 +756,12 @@ pub mod cdog {
             ADDRESSES[N as usize]
         }
     }
-    pub type CDOG0 = Instance<0u8>;
-    pub type CDOG1 = Instance<1u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type CDOG0 = Instance<0u8>;
+        pub type CDOG1 = Instance<1u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod cmc {
@@ -772,7 +788,11 @@ pub mod cmc {
             ADDRESSES[N as usize]
         }
     }
-    pub type CMC0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type CMC0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod crc {
@@ -799,7 +819,11 @@ pub mod crc {
             ADDRESSES[N as usize]
         }
     }
-    pub type CRC0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type CRC0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod ctimer {
@@ -832,11 +856,15 @@ pub mod ctimer {
             ADDRESSES[N as usize]
         }
     }
-    pub type CTIMER0 = Instance<0u8>;
-    pub type CTIMER1 = Instance<1u8>;
-    pub type CTIMER2 = Instance<2u8>;
-    pub type CTIMER3 = Instance<3u8>;
-    pub type CTIMER4 = Instance<4u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type CTIMER0 = Instance<0u8>;
+        pub type CTIMER1 = Instance<1u8>;
+        pub type CTIMER2 = Instance<2u8>;
+        pub type CTIMER3 = Instance<3u8>;
+        pub type CTIMER4 = Instance<4u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod digtmp {
@@ -863,7 +891,11 @@ pub mod digtmp {
             ADDRESSES[N as usize]
         }
     }
-    pub type TDET0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type TDET0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod dm {
@@ -890,7 +922,11 @@ pub mod dm {
             ADDRESSES[N as usize]
         }
     }
-    pub type DM0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type DM0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod dma {
@@ -917,8 +953,12 @@ pub mod dma {
             ADDRESSES[N as usize]
         }
     }
-    pub type DMA0 = Instance<0u8>;
-    pub type DMA1 = Instance<1u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type DMA0 = Instance<0u8>;
+        pub type DMA1 = Instance<1u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod eim {
@@ -945,7 +985,11 @@ pub mod eim {
             ADDRESSES[N as usize]
         }
     }
-    pub type EIM0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type EIM0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod erm {
@@ -972,7 +1016,11 @@ pub mod erm {
             ADDRESSES[N as usize]
         }
     }
-    pub type ERM0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type ERM0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod evtg {
@@ -999,7 +1047,11 @@ pub mod evtg {
             ADDRESSES[N as usize]
         }
     }
-    pub type EVTG0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type EVTG0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod ewm {
@@ -1026,7 +1078,11 @@ pub mod ewm {
             ADDRESSES[N as usize]
         }
     }
-    pub type EWM0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type EWM0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod flexio {
@@ -1053,7 +1109,11 @@ pub mod flexio {
             ADDRESSES[N as usize]
         }
     }
-    pub type FLEXIO0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type FLEXIO0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod fmu {
@@ -1080,7 +1140,11 @@ pub mod fmu {
             ADDRESSES[N as usize]
         }
     }
-    pub type FMU0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type FMU0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod fmutest {
@@ -1107,7 +1171,11 @@ pub mod fmutest {
             ADDRESSES[N as usize]
         }
     }
-    pub type FMU0TEST = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type FMU0TEST = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod freqme {
@@ -1134,7 +1202,11 @@ pub mod freqme {
             ADDRESSES[N as usize]
         }
     }
-    pub type FREQME0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type FREQME0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod gdet {
@@ -1161,8 +1233,12 @@ pub mod gdet {
             ADDRESSES[N as usize]
         }
     }
-    pub type GDET0 = Instance<0u8>;
-    pub type GDET1 = Instance<1u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type GDET0 = Instance<0u8>;
+        pub type GDET1 = Instance<1u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod gpio {
@@ -1196,12 +1272,16 @@ pub mod gpio {
             ADDRESSES[N as usize]
         }
     }
-    pub type GPIO0 = Instance<0u8>;
-    pub type GPIO1 = Instance<1u8>;
-    pub type GPIO2 = Instance<2u8>;
-    pub type GPIO3 = Instance<3u8>;
-    pub type GPIO4 = Instance<4u8>;
-    pub type GPIO5 = Instance<5u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type GPIO0 = Instance<0u8>;
+        pub type GPIO1 = Instance<1u8>;
+        pub type GPIO2 = Instance<2u8>;
+        pub type GPIO3 = Instance<3u8>;
+        pub type GPIO4 = Instance<4u8>;
+        pub type GPIO5 = Instance<5u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod i2s {
@@ -1228,8 +1308,12 @@ pub mod i2s {
             ADDRESSES[N as usize]
         }
     }
-    pub type SAI0 = Instance<0u8>;
-    pub type SAI1 = Instance<1u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type SAI0 = Instance<0u8>;
+        pub type SAI1 = Instance<1u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod i3c {
@@ -1256,8 +1340,12 @@ pub mod i3c {
             ADDRESSES[N as usize]
         }
     }
-    pub type I3C0 = Instance<0u8>;
-    pub type I3C1 = Instance<1u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type I3C0 = Instance<0u8>;
+        pub type I3C1 = Instance<1u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod inputmux {
@@ -1284,7 +1372,11 @@ pub mod inputmux {
             ADDRESSES[N as usize]
         }
     }
-    pub type INPUTMUX0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type INPUTMUX0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod intm {
@@ -1311,7 +1403,11 @@ pub mod intm {
             ADDRESSES[N as usize]
         }
     }
-    pub type INTM0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type INTM0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod itrc {
@@ -1338,7 +1434,11 @@ pub mod itrc {
             ADDRESSES[N as usize]
         }
     }
-    pub type ITRC0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type ITRC0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod lp_flexcomm {
@@ -1374,14 +1474,18 @@ pub mod lp_flexcomm {
             ADDRESSES[N as usize]
         }
     }
-    pub type LP_FLEXCOMM0 = Instance<0u8>;
-    pub type LP_FLEXCOMM1 = Instance<1u8>;
-    pub type LP_FLEXCOMM2 = Instance<2u8>;
-    pub type LP_FLEXCOMM3 = Instance<3u8>;
-    pub type LP_FLEXCOMM4 = Instance<4u8>;
-    pub type LP_FLEXCOMM5 = Instance<5u8>;
-    pub type LP_FLEXCOMM6 = Instance<6u8>;
-    pub type LP_FLEXCOMM7 = Instance<7u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type LP_FLEXCOMM0 = Instance<0u8>;
+        pub type LP_FLEXCOMM1 = Instance<1u8>;
+        pub type LP_FLEXCOMM2 = Instance<2u8>;
+        pub type LP_FLEXCOMM3 = Instance<3u8>;
+        pub type LP_FLEXCOMM4 = Instance<4u8>;
+        pub type LP_FLEXCOMM5 = Instance<5u8>;
+        pub type LP_FLEXCOMM6 = Instance<6u8>;
+        pub type LP_FLEXCOMM7 = Instance<7u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod lpcmp {
@@ -1408,8 +1512,12 @@ pub mod lpcmp {
             ADDRESSES[N as usize]
         }
     }
-    pub type CMP0 = Instance<0u8>;
-    pub type CMP1 = Instance<1u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type CMP0 = Instance<0u8>;
+        pub type CMP1 = Instance<1u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod lpi2c {
@@ -1445,14 +1553,18 @@ pub mod lpi2c {
             ADDRESSES[N as usize]
         }
     }
-    pub type LPI2C0 = Instance<0u8>;
-    pub type LPI2C1 = Instance<1u8>;
-    pub type LPI2C2 = Instance<2u8>;
-    pub type LPI2C3 = Instance<3u8>;
-    pub type LPI2C4 = Instance<4u8>;
-    pub type LPI2C5 = Instance<5u8>;
-    pub type LPI2C6 = Instance<6u8>;
-    pub type LPI2C7 = Instance<7u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type LPI2C0 = Instance<0u8>;
+        pub type LPI2C1 = Instance<1u8>;
+        pub type LPI2C2 = Instance<2u8>;
+        pub type LPI2C3 = Instance<3u8>;
+        pub type LPI2C4 = Instance<4u8>;
+        pub type LPI2C5 = Instance<5u8>;
+        pub type LPI2C6 = Instance<6u8>;
+        pub type LPI2C7 = Instance<7u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod lpspi {
@@ -1488,14 +1600,18 @@ pub mod lpspi {
             ADDRESSES[N as usize]
         }
     }
-    pub type LPSPI0 = Instance<0u8>;
-    pub type LPSPI1 = Instance<1u8>;
-    pub type LPSPI2 = Instance<2u8>;
-    pub type LPSPI3 = Instance<3u8>;
-    pub type LPSPI4 = Instance<4u8>;
-    pub type LPSPI5 = Instance<5u8>;
-    pub type LPSPI6 = Instance<6u8>;
-    pub type LPSPI7 = Instance<7u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type LPSPI0 = Instance<0u8>;
+        pub type LPSPI1 = Instance<1u8>;
+        pub type LPSPI2 = Instance<2u8>;
+        pub type LPSPI3 = Instance<3u8>;
+        pub type LPSPI4 = Instance<4u8>;
+        pub type LPSPI5 = Instance<5u8>;
+        pub type LPSPI6 = Instance<6u8>;
+        pub type LPSPI7 = Instance<7u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod lptmr {
@@ -1522,8 +1638,12 @@ pub mod lptmr {
             ADDRESSES[N as usize]
         }
     }
-    pub type LPTMR0 = Instance<0u8>;
-    pub type LPTMR1 = Instance<1u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type LPTMR0 = Instance<0u8>;
+        pub type LPTMR1 = Instance<1u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod lpuart {
@@ -1559,14 +1679,18 @@ pub mod lpuart {
             ADDRESSES[N as usize]
         }
     }
-    pub type LPUART0 = Instance<0u8>;
-    pub type LPUART1 = Instance<1u8>;
-    pub type LPUART2 = Instance<2u8>;
-    pub type LPUART3 = Instance<3u8>;
-    pub type LPUART4 = Instance<4u8>;
-    pub type LPUART5 = Instance<5u8>;
-    pub type LPUART6 = Instance<6u8>;
-    pub type LPUART7 = Instance<7u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type LPUART0 = Instance<0u8>;
+        pub type LPUART1 = Instance<1u8>;
+        pub type LPUART2 = Instance<2u8>;
+        pub type LPUART3 = Instance<3u8>;
+        pub type LPUART4 = Instance<4u8>;
+        pub type LPUART5 = Instance<5u8>;
+        pub type LPUART6 = Instance<6u8>;
+        pub type LPUART7 = Instance<7u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod mrt {
@@ -1593,7 +1717,11 @@ pub mod mrt {
             ADDRESSES[N as usize]
         }
     }
-    pub type MRT0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type MRT0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod npx {
@@ -1620,7 +1748,11 @@ pub mod npx {
             ADDRESSES[N as usize]
         }
     }
-    pub type NPX0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type NPX0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod ostimer {
@@ -1647,7 +1779,11 @@ pub mod ostimer {
             ADDRESSES[N as usize]
         }
     }
-    pub type OSTIMER0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type OSTIMER0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod otpc {
@@ -1674,7 +1810,11 @@ pub mod otpc {
             ADDRESSES[N as usize]
         }
     }
-    pub type OTPC0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type OTPC0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod pdm {
@@ -1701,7 +1841,11 @@ pub mod pdm {
             ADDRESSES[N as usize]
         }
     }
-    pub type PDM0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type PDM0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod pint {
@@ -1728,7 +1872,11 @@ pub mod pint {
             ADDRESSES[N as usize]
         }
     }
-    pub type PINT0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type PINT0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod pkc {
@@ -1755,7 +1903,11 @@ pub mod pkc {
             ADDRESSES[N as usize]
         }
     }
-    pub type PKC0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type PKC0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod port {
@@ -1789,12 +1941,16 @@ pub mod port {
             ADDRESSES[N as usize]
         }
     }
-    pub type PORT0 = Instance<0u8>;
-    pub type PORT1 = Instance<1u8>;
-    pub type PORT2 = Instance<2u8>;
-    pub type PORT3 = Instance<3u8>;
-    pub type PORT4 = Instance<4u8>;
-    pub type PORT5 = Instance<5u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type PORT0 = Instance<0u8>;
+        pub type PORT1 = Instance<1u8>;
+        pub type PORT2 = Instance<2u8>;
+        pub type PORT3 = Instance<3u8>;
+        pub type PORT4 = Instance<4u8>;
+        pub type PORT5 = Instance<5u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod puf {
@@ -1821,7 +1977,11 @@ pub mod puf {
             ADDRESSES[N as usize]
         }
     }
-    pub type PUF0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type PUF0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod pwm {
@@ -1848,8 +2008,12 @@ pub mod pwm {
             ADDRESSES[N as usize]
         }
     }
-    pub type PWM0 = Instance<0u8>;
-    pub type PWM1 = Instance<1u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type PWM0 = Instance<0u8>;
+        pub type PWM1 = Instance<1u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod qdc {
@@ -1876,8 +2040,12 @@ pub mod qdc {
             ADDRESSES[N as usize]
         }
     }
-    pub type QDC0 = Instance<0u8>;
-    pub type QDC1 = Instance<1u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type QDC0 = Instance<0u8>;
+        pub type QDC1 = Instance<1u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod rtc {
@@ -1904,7 +2072,11 @@ pub mod rtc {
             ADDRESSES[N as usize]
         }
     }
-    pub type RTC0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type RTC0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod s50 {
@@ -1931,7 +2103,11 @@ pub mod s50 {
             ADDRESSES[N as usize]
         }
     }
-    pub type ELS = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type ELS = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod scg {
@@ -1958,7 +2134,11 @@ pub mod scg {
             ADDRESSES[N as usize]
         }
     }
-    pub type SCG0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type SCG0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod smartdma {
@@ -1985,7 +2165,11 @@ pub mod smartdma {
             ADDRESSES[N as usize]
         }
     }
-    pub type SMARTDMA0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type SMARTDMA0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod spc {
@@ -2012,7 +2196,11 @@ pub mod spc {
             ADDRESSES[N as usize]
         }
     }
-    pub type SPC0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type SPC0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod syscon {
@@ -2039,7 +2227,11 @@ pub mod syscon {
             ADDRESSES[N as usize]
         }
     }
-    pub type SYSCON0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type SYSCON0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod syspm {
@@ -2066,7 +2258,11 @@ pub mod syspm {
             ADDRESSES[N as usize]
         }
     }
-    pub type CMX_PERFMON0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type CMX_PERFMON0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod trdc {
@@ -2093,7 +2289,11 @@ pub mod trdc {
             ADDRESSES[N as usize]
         }
     }
-    pub type TRDC0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type TRDC0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod usbhs {
@@ -2120,7 +2320,11 @@ pub mod usbhs {
             ADDRESSES[N as usize]
         }
     }
-    pub type USBHS1__USBC = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type USBHS1__USBC = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod usbhsdcd {
@@ -2147,7 +2351,11 @@ pub mod usbhsdcd {
             ADDRESSES[N as usize]
         }
     }
-    pub type USBHS1_PHY_DCD = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type USBHS1_PHY_DCD = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod usbnc {
@@ -2174,7 +2382,11 @@ pub mod usbnc {
             ADDRESSES[N as usize]
         }
     }
-    pub type USBHS1__USBNC = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type USBHS1__USBNC = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod usbphy {
@@ -2201,7 +2413,11 @@ pub mod usbphy {
             ADDRESSES[N as usize]
         }
     }
-    pub type USBPHY0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type USBPHY0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod utick {
@@ -2228,7 +2444,11 @@ pub mod utick {
             ADDRESSES[N as usize]
         }
     }
-    pub type UTICK0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type UTICK0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod vbat {
@@ -2255,7 +2475,11 @@ pub mod vbat {
             ADDRESSES[N as usize]
         }
     }
-    pub type VBAT0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type VBAT0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod vref {
@@ -2282,7 +2506,11 @@ pub mod vref {
             ADDRESSES[N as usize]
         }
     }
-    pub type VREF0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type VREF0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod wuu {
@@ -2309,7 +2537,11 @@ pub mod wuu {
             ADDRESSES[N as usize]
         }
     }
-    pub type WUU0 = Instance<0u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type WUU0 = Instance<0u8>;
+    }
+    pub use instances::*;
 }
 #[path = "../../peripherals/n1"]
 pub mod wwdt {
@@ -2336,8 +2568,12 @@ pub mod wwdt {
             ADDRESSES[N as usize]
         }
     }
-    pub type WWDT0 = Instance<0u8>;
-    pub type WWDT1 = Instance<1u8>;
+    pub mod instances {
+        use super::Instance;
+        pub type WWDT0 = Instance<0u8>;
+        pub type WWDT1 = Instance<1u8>;
+    }
+    pub use instances::*;
 }
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]

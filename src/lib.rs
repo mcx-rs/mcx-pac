@@ -3,7 +3,7 @@
 #![allow(non_snake_case)]
 #![allow(unused_attributes)]
 
-mod common;
+pub mod common;
 
 mod device;
 use core::marker::PhantomData;
