@@ -104,21 +104,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CHANNEL_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CHANNEL_CTRL {
-                INTEN: bool,
-                MODE: u8,
-            }
-            let proxy = CHANNEL_CTRL {
-                INTEN: self.INTEN(),
-                MODE: self.MODE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Time Interval Value"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -155,21 +140,6 @@ pub mod regs {
                 .field("IVALUE", &self.IVALUE())
                 .field("LOAD", &self.LOAD())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CHANNEL_INTVAL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CHANNEL_INTVAL {
-                IVALUE: u32,
-                LOAD: bool,
-            }
-            let proxy = CHANNEL_INTVAL {
-                IVALUE: self.IVALUE(),
-                LOAD: self.LOAD(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status"]
@@ -220,23 +190,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CHANNEL_STAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CHANNEL_STAT {
-                INTFLAG: bool,
-                RUN: bool,
-                INUSE: bool,
-            }
-            let proxy = CHANNEL_STAT {
-                INTFLAG: self.INTFLAG(),
-                RUN: self.RUN(),
-                INUSE: self.INUSE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Timer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -265,19 +218,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CHANNEL_TIMER {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CHANNEL_TIMER {
-                VALUE: u32,
-            }
-            let proxy = CHANNEL_TIMER {
-                VALUE: self.VALUE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Idle Channel"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -304,17 +244,6 @@ pub mod regs {
             f.debug_struct("IDLE_CH")
                 .field("CHAN", &self.CHAN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for IDLE_CH {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct IDLE_CH {
-                CHAN: u8,
-            }
-            let proxy = IDLE_CH { CHAN: self.CHAN() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Global Interrupt Flag"]
@@ -375,25 +304,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for IRQ_FLAG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct IRQ_FLAG {
-                GFLAG0: bool,
-                GFLAG1: bool,
-                GFLAG2: bool,
-                GFLAG3: bool,
-            }
-            let proxy = IRQ_FLAG {
-                GFLAG0: self.GFLAG0(),
-                GFLAG1: self.GFLAG1(),
-                GFLAG2: self.GFLAG2(),
-                GFLAG3: self.GFLAG3(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Module Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -440,23 +350,6 @@ pub mod regs {
                 .field("NOB", &self.NOB())
                 .field("MULTITASK", &self.MULTITASK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MODCFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MODCFG {
-                NOC: u8,
-                NOB: u8,
-                MULTITASK: bool,
-            }
-            let proxy = MODCFG {
-                NOC: self.NOC(),
-                NOB: self.NOB(),
-                MULTITASK: self.MULTITASK(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

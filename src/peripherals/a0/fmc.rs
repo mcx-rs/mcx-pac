@@ -69,21 +69,4 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for REMAP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct REMAP {
-                REMAPLK: bool,
-                LIM: u8,
-                LIMDP: u8,
-            }
-            let proxy = REMAP {
-                REMAPLK: self.REMAPLK(),
-                LIM: self.LIM(),
-                LIMDP: self.LIMDP(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
 }

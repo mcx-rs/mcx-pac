@@ -284,51 +284,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GICHR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GICHR {
-                GIWE16: bool,
-                GIWE17: bool,
-                GIWE18: bool,
-                GIWE19: bool,
-                GIWE20: bool,
-                GIWE21: bool,
-                GIWE22: bool,
-                GIWE23: bool,
-                GIWE24: bool,
-                GIWE25: bool,
-                GIWE26: bool,
-                GIWE27: bool,
-                GIWE28: bool,
-                GIWE29: bool,
-                GIWE30: bool,
-                GIWE31: bool,
-                GIWD: u16,
-            }
-            let proxy = GICHR {
-                GIWE16: self.GIWE16(),
-                GIWE17: self.GIWE17(),
-                GIWE18: self.GIWE18(),
-                GIWE19: self.GIWE19(),
-                GIWE20: self.GIWE20(),
-                GIWE21: self.GIWE21(),
-                GIWE22: self.GIWE22(),
-                GIWE23: self.GIWE23(),
-                GIWE24: self.GIWE24(),
-                GIWE25: self.GIWE25(),
-                GIWE26: self.GIWE26(),
-                GIWE27: self.GIWE27(),
-                GIWE28: self.GIWE28(),
-                GIWE29: self.GIWE29(),
-                GIWE30: self.GIWE30(),
-                GIWE31: self.GIWE31(),
-                GIWD: self.GIWD(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Global Interrupt Control Low"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -517,51 +472,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GICLR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GICLR {
-                GIWE0: bool,
-                GIWE1: bool,
-                GIWE2: bool,
-                GIWE3: bool,
-                GIWE4: bool,
-                GIWE5: bool,
-                GIWE6: bool,
-                GIWE7: bool,
-                GIWE8: bool,
-                GIWE9: bool,
-                GIWE10: bool,
-                GIWE11: bool,
-                GIWE12: bool,
-                GIWE13: bool,
-                GIWE14: bool,
-                GIWE15: bool,
-                GIWD: u16,
-            }
-            let proxy = GICLR {
-                GIWE0: self.GIWE0(),
-                GIWE1: self.GIWE1(),
-                GIWE2: self.GIWE2(),
-                GIWE3: self.GIWE3(),
-                GIWE4: self.GIWE4(),
-                GIWE5: self.GIWE5(),
-                GIWE6: self.GIWE6(),
-                GIWE7: self.GIWE7(),
-                GIWE8: self.GIWE8(),
-                GIWE9: self.GIWE9(),
-                GIWE10: self.GIWE10(),
-                GIWE11: self.GIWE11(),
-                GIWE12: self.GIWE12(),
-                GIWE13: self.GIWE13(),
-                GIWE14: self.GIWE14(),
-                GIWE15: self.GIWE15(),
-                GIWD: self.GIWD(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Interrupt Control Nonprivilege"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -600,21 +510,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ICNP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ICNP {
-                NPE0: bool,
-                NPE1: bool,
-            }
-            let proxy = ICNP {
-                NPE0: self.NPE0(),
-                NPE1: self.NPE1(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Interrupt Control Nonsecure"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -651,21 +546,6 @@ pub mod regs {
                 .field("NSE0", &self.NSE0())
                 .field("NSE1", &self.NSE1())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ICNS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ICNS {
-                NSE0: bool,
-                NSE1: bool,
-            }
-            let proxy = ICNS {
-                NSE0: self.NSE0(),
-                NSE1: self.NSE1(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Control 0..Interrupt Control 31"]
@@ -724,25 +604,6 @@ pub mod regs {
                 .field("LK", &self.LK())
                 .field("ISF", &self.ISF())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ICR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ICR {
-                IRQC: u8,
-                IRQS: bool,
-                LK: bool,
-                ISF: bool,
-            }
-            let proxy = ICR {
-                IRQC: self.IRQC(),
-                IRQS: self.IRQS(),
-                LK: self.LK(),
-                ISF: self.ISF(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Status Flag"]
@@ -1083,81 +944,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ISFR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ISFR {
-                ISF0: bool,
-                ISF1: bool,
-                ISF2: bool,
-                ISF3: bool,
-                ISF4: bool,
-                ISF5: bool,
-                ISF6: bool,
-                ISF7: bool,
-                ISF8: bool,
-                ISF9: bool,
-                ISF10: bool,
-                ISF11: bool,
-                ISF12: bool,
-                ISF13: bool,
-                ISF14: bool,
-                ISF15: bool,
-                ISF16: bool,
-                ISF17: bool,
-                ISF18: bool,
-                ISF19: bool,
-                ISF20: bool,
-                ISF21: bool,
-                ISF22: bool,
-                ISF23: bool,
-                ISF24: bool,
-                ISF25: bool,
-                ISF26: bool,
-                ISF27: bool,
-                ISF28: bool,
-                ISF29: bool,
-                ISF30: bool,
-                ISF31: bool,
-            }
-            let proxy = ISFR {
-                ISF0: self.ISF0(),
-                ISF1: self.ISF1(),
-                ISF2: self.ISF2(),
-                ISF3: self.ISF3(),
-                ISF4: self.ISF4(),
-                ISF5: self.ISF5(),
-                ISF6: self.ISF6(),
-                ISF7: self.ISF7(),
-                ISF8: self.ISF8(),
-                ISF9: self.ISF9(),
-                ISF10: self.ISF10(),
-                ISF11: self.ISF11(),
-                ISF12: self.ISF12(),
-                ISF13: self.ISF13(),
-                ISF14: self.ISF14(),
-                ISF15: self.ISF15(),
-                ISF16: self.ISF16(),
-                ISF17: self.ISF17(),
-                ISF18: self.ISF18(),
-                ISF19: self.ISF19(),
-                ISF20: self.ISF20(),
-                ISF21: self.ISF21(),
-                ISF22: self.ISF22(),
-                ISF23: self.ISF23(),
-                ISF24: self.ISF24(),
-                ISF25: self.ISF25(),
-                ISF26: self.ISF26(),
-                ISF27: self.ISF27(),
-                ISF28: self.ISF28(),
-                ISF29: self.ISF29(),
-                ISF30: self.ISF30(),
-                ISF31: self.ISF31(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Lock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1216,25 +1002,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LOCK {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LOCK {
-                PCNS: bool,
-                ICNS: bool,
-                PCNP: bool,
-                ICNP: bool,
-            }
-            let proxy = LOCK {
-                PCNS: self.PCNS(),
-                ICNS: self.ICNS(),
-                PCNP: self.PCNP(),
-                ICNP: self.ICNP(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Parameter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1261,19 +1028,6 @@ pub mod regs {
             f.debug_struct("PARAM")
                 .field("IRQNUM", &self.IRQNUM())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PARAM {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PARAM {
-                IRQNUM: u8,
-            }
-            let proxy = PARAM {
-                IRQNUM: self.IRQNUM(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pin Control Nonprivilege"]
@@ -1614,81 +1368,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PCNP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PCNP {
-                NPE0: bool,
-                NPE1: bool,
-                NPE2: bool,
-                NPE3: bool,
-                NPE4: bool,
-                NPE5: bool,
-                NPE6: bool,
-                NPE7: bool,
-                NPE8: bool,
-                NPE9: bool,
-                NPE10: bool,
-                NPE11: bool,
-                NPE12: bool,
-                NPE13: bool,
-                NPE14: bool,
-                NPE15: bool,
-                NPE16: bool,
-                NPE17: bool,
-                NPE18: bool,
-                NPE19: bool,
-                NPE20: bool,
-                NPE21: bool,
-                NPE22: bool,
-                NPE23: bool,
-                NPE24: bool,
-                NPE25: bool,
-                NPE26: bool,
-                NPE27: bool,
-                NPE28: bool,
-                NPE29: bool,
-                NPE30: bool,
-                NPE31: bool,
-            }
-            let proxy = PCNP {
-                NPE0: self.NPE0(),
-                NPE1: self.NPE1(),
-                NPE2: self.NPE2(),
-                NPE3: self.NPE3(),
-                NPE4: self.NPE4(),
-                NPE5: self.NPE5(),
-                NPE6: self.NPE6(),
-                NPE7: self.NPE7(),
-                NPE8: self.NPE8(),
-                NPE9: self.NPE9(),
-                NPE10: self.NPE10(),
-                NPE11: self.NPE11(),
-                NPE12: self.NPE12(),
-                NPE13: self.NPE13(),
-                NPE14: self.NPE14(),
-                NPE15: self.NPE15(),
-                NPE16: self.NPE16(),
-                NPE17: self.NPE17(),
-                NPE18: self.NPE18(),
-                NPE19: self.NPE19(),
-                NPE20: self.NPE20(),
-                NPE21: self.NPE21(),
-                NPE22: self.NPE22(),
-                NPE23: self.NPE23(),
-                NPE24: self.NPE24(),
-                NPE25: self.NPE25(),
-                NPE26: self.NPE26(),
-                NPE27: self.NPE27(),
-                NPE28: self.NPE28(),
-                NPE29: self.NPE29(),
-                NPE30: self.NPE30(),
-                NPE31: self.NPE31(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Pin Control Nonsecure"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2027,81 +1706,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PCNS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PCNS {
-                NSE0: bool,
-                NSE1: bool,
-                NSE2: bool,
-                NSE3: bool,
-                NSE4: bool,
-                NSE5: bool,
-                NSE6: bool,
-                NSE7: bool,
-                NSE8: bool,
-                NSE9: bool,
-                NSE10: bool,
-                NSE11: bool,
-                NSE12: bool,
-                NSE13: bool,
-                NSE14: bool,
-                NSE15: bool,
-                NSE16: bool,
-                NSE17: bool,
-                NSE18: bool,
-                NSE19: bool,
-                NSE20: bool,
-                NSE21: bool,
-                NSE22: bool,
-                NSE23: bool,
-                NSE24: bool,
-                NSE25: bool,
-                NSE26: bool,
-                NSE27: bool,
-                NSE28: bool,
-                NSE29: bool,
-                NSE30: bool,
-                NSE31: bool,
-            }
-            let proxy = PCNS {
-                NSE0: self.NSE0(),
-                NSE1: self.NSE1(),
-                NSE2: self.NSE2(),
-                NSE3: self.NSE3(),
-                NSE4: self.NSE4(),
-                NSE5: self.NSE5(),
-                NSE6: self.NSE6(),
-                NSE7: self.NSE7(),
-                NSE8: self.NSE8(),
-                NSE9: self.NSE9(),
-                NSE10: self.NSE10(),
-                NSE11: self.NSE11(),
-                NSE12: self.NSE12(),
-                NSE13: self.NSE13(),
-                NSE14: self.NSE14(),
-                NSE15: self.NSE15(),
-                NSE16: self.NSE16(),
-                NSE17: self.NSE17(),
-                NSE18: self.NSE18(),
-                NSE19: self.NSE19(),
-                NSE20: self.NSE20(),
-                NSE21: self.NSE21(),
-                NSE22: self.NSE22(),
-                NSE23: self.NSE23(),
-                NSE24: self.NSE24(),
-                NSE25: self.NSE25(),
-                NSE26: self.NSE26(),
-                NSE27: self.NSE27(),
-                NSE28: self.NSE28(),
-                NSE29: self.NSE29(),
-                NSE30: self.NSE30(),
-                NSE31: self.NSE31(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Port Clear Output"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2168,52 +1772,6 @@ pub mod regs {
                     ],
                 )
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PCOR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PCOR {
-                PTCO: [bool; 32usize],
-            }
-            let proxy = PCOR {
-                PTCO: [
-                    self.PTCO(0usize),
-                    self.PTCO(1usize),
-                    self.PTCO(2usize),
-                    self.PTCO(3usize),
-                    self.PTCO(4usize),
-                    self.PTCO(5usize),
-                    self.PTCO(6usize),
-                    self.PTCO(7usize),
-                    self.PTCO(8usize),
-                    self.PTCO(9usize),
-                    self.PTCO(10usize),
-                    self.PTCO(11usize),
-                    self.PTCO(12usize),
-                    self.PTCO(13usize),
-                    self.PTCO(14usize),
-                    self.PTCO(15usize),
-                    self.PTCO(16usize),
-                    self.PTCO(17usize),
-                    self.PTCO(18usize),
-                    self.PTCO(19usize),
-                    self.PTCO(20usize),
-                    self.PTCO(21usize),
-                    self.PTCO(22usize),
-                    self.PTCO(23usize),
-                    self.PTCO(24usize),
-                    self.PTCO(25usize),
-                    self.PTCO(26usize),
-                    self.PTCO(27usize),
-                    self.PTCO(28usize),
-                    self.PTCO(29usize),
-                    self.PTCO(30usize),
-                    self.PTCO(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Port Data Direction"]
@@ -2284,52 +1842,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PDDR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PDDR {
-                PDD: [bool; 32usize],
-            }
-            let proxy = PDDR {
-                PDD: [
-                    self.PDD(0usize),
-                    self.PDD(1usize),
-                    self.PDD(2usize),
-                    self.PDD(3usize),
-                    self.PDD(4usize),
-                    self.PDD(5usize),
-                    self.PDD(6usize),
-                    self.PDD(7usize),
-                    self.PDD(8usize),
-                    self.PDD(9usize),
-                    self.PDD(10usize),
-                    self.PDD(11usize),
-                    self.PDD(12usize),
-                    self.PDD(13usize),
-                    self.PDD(14usize),
-                    self.PDD(15usize),
-                    self.PDD(16usize),
-                    self.PDD(17usize),
-                    self.PDD(18usize),
-                    self.PDD(19usize),
-                    self.PDD(20usize),
-                    self.PDD(21usize),
-                    self.PDD(22usize),
-                    self.PDD(23usize),
-                    self.PDD(24usize),
-                    self.PDD(25usize),
-                    self.PDD(26usize),
-                    self.PDD(27usize),
-                    self.PDD(28usize),
-                    self.PDD(29usize),
-                    self.PDD(30usize),
-                    self.PDD(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Port Data Input"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2396,52 +1908,6 @@ pub mod regs {
                     ],
                 )
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PDIR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PDIR {
-                PDI: [bool; 32usize],
-            }
-            let proxy = PDIR {
-                PDI: [
-                    self.PDI(0usize),
-                    self.PDI(1usize),
-                    self.PDI(2usize),
-                    self.PDI(3usize),
-                    self.PDI(4usize),
-                    self.PDI(5usize),
-                    self.PDI(6usize),
-                    self.PDI(7usize),
-                    self.PDI(8usize),
-                    self.PDI(9usize),
-                    self.PDI(10usize),
-                    self.PDI(11usize),
-                    self.PDI(12usize),
-                    self.PDI(13usize),
-                    self.PDI(14usize),
-                    self.PDI(15usize),
-                    self.PDI(16usize),
-                    self.PDI(17usize),
-                    self.PDI(18usize),
-                    self.PDI(19usize),
-                    self.PDI(20usize),
-                    self.PDI(21usize),
-                    self.PDI(22usize),
-                    self.PDI(23usize),
-                    self.PDI(24usize),
-                    self.PDI(25usize),
-                    self.PDI(26usize),
-                    self.PDI(27usize),
-                    self.PDI(28usize),
-                    self.PDI(29usize),
-                    self.PDI(30usize),
-                    self.PDI(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Port Data Output"]
@@ -2512,52 +1978,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PDOR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PDOR {
-                PDO: [bool; 32usize],
-            }
-            let proxy = PDOR {
-                PDO: [
-                    self.PDO(0usize),
-                    self.PDO(1usize),
-                    self.PDO(2usize),
-                    self.PDO(3usize),
-                    self.PDO(4usize),
-                    self.PDO(5usize),
-                    self.PDO(6usize),
-                    self.PDO(7usize),
-                    self.PDO(8usize),
-                    self.PDO(9usize),
-                    self.PDO(10usize),
-                    self.PDO(11usize),
-                    self.PDO(12usize),
-                    self.PDO(13usize),
-                    self.PDO(14usize),
-                    self.PDO(15usize),
-                    self.PDO(16usize),
-                    self.PDO(17usize),
-                    self.PDO(18usize),
-                    self.PDO(19usize),
-                    self.PDO(20usize),
-                    self.PDO(21usize),
-                    self.PDO(22usize),
-                    self.PDO(23usize),
-                    self.PDO(24usize),
-                    self.PDO(25usize),
-                    self.PDO(26usize),
-                    self.PDO(27usize),
-                    self.PDO(28usize),
-                    self.PDO(29usize),
-                    self.PDO(30usize),
-                    self.PDO(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Pin Data"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2582,17 +2002,6 @@ pub mod regs {
     impl core::fmt::Debug for PDR {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("PDR").field("PD", &self.PD()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PDR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PDR {
-                PD: bool,
-            }
-            let proxy = PDR { PD: self.PD() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Port Input Disable"]
@@ -2663,52 +2072,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PIDR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PIDR {
-                PID: [bool; 32usize],
-            }
-            let proxy = PIDR {
-                PID: [
-                    self.PID(0usize),
-                    self.PID(1usize),
-                    self.PID(2usize),
-                    self.PID(3usize),
-                    self.PID(4usize),
-                    self.PID(5usize),
-                    self.PID(6usize),
-                    self.PID(7usize),
-                    self.PID(8usize),
-                    self.PID(9usize),
-                    self.PID(10usize),
-                    self.PID(11usize),
-                    self.PID(12usize),
-                    self.PID(13usize),
-                    self.PID(14usize),
-                    self.PID(15usize),
-                    self.PID(16usize),
-                    self.PID(17usize),
-                    self.PID(18usize),
-                    self.PID(19usize),
-                    self.PID(20usize),
-                    self.PID(21usize),
-                    self.PID(22usize),
-                    self.PID(23usize),
-                    self.PID(24usize),
-                    self.PID(25usize),
-                    self.PID(26usize),
-                    self.PID(27usize),
-                    self.PID(28usize),
-                    self.PID(29usize),
-                    self.PID(30usize),
-                    self.PID(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Port Set Output"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2775,52 +2138,6 @@ pub mod regs {
                     ],
                 )
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PSOR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PSOR {
-                PTSO: [bool; 32usize],
-            }
-            let proxy = PSOR {
-                PTSO: [
-                    self.PTSO(0usize),
-                    self.PTSO(1usize),
-                    self.PTSO(2usize),
-                    self.PTSO(3usize),
-                    self.PTSO(4usize),
-                    self.PTSO(5usize),
-                    self.PTSO(6usize),
-                    self.PTSO(7usize),
-                    self.PTSO(8usize),
-                    self.PTSO(9usize),
-                    self.PTSO(10usize),
-                    self.PTSO(11usize),
-                    self.PTSO(12usize),
-                    self.PTSO(13usize),
-                    self.PTSO(14usize),
-                    self.PTSO(15usize),
-                    self.PTSO(16usize),
-                    self.PTSO(17usize),
-                    self.PTSO(18usize),
-                    self.PTSO(19usize),
-                    self.PTSO(20usize),
-                    self.PTSO(21usize),
-                    self.PTSO(22usize),
-                    self.PTSO(23usize),
-                    self.PTSO(24usize),
-                    self.PTSO(25usize),
-                    self.PTSO(26usize),
-                    self.PTSO(27usize),
-                    self.PTSO(28usize),
-                    self.PTSO(29usize),
-                    self.PTSO(30usize),
-                    self.PTSO(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Port Toggle Output"]
@@ -2891,52 +2208,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PTOR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PTOR {
-                PTTO: [bool; 32usize],
-            }
-            let proxy = PTOR {
-                PTTO: [
-                    self.PTTO(0usize),
-                    self.PTTO(1usize),
-                    self.PTTO(2usize),
-                    self.PTTO(3usize),
-                    self.PTTO(4usize),
-                    self.PTTO(5usize),
-                    self.PTTO(6usize),
-                    self.PTTO(7usize),
-                    self.PTTO(8usize),
-                    self.PTTO(9usize),
-                    self.PTTO(10usize),
-                    self.PTTO(11usize),
-                    self.PTTO(12usize),
-                    self.PTTO(13usize),
-                    self.PTTO(14usize),
-                    self.PTTO(15usize),
-                    self.PTTO(16usize),
-                    self.PTTO(17usize),
-                    self.PTTO(18usize),
-                    self.PTTO(19usize),
-                    self.PTTO(20usize),
-                    self.PTTO(21usize),
-                    self.PTTO(22usize),
-                    self.PTTO(23usize),
-                    self.PTTO(24usize),
-                    self.PTTO(25usize),
-                    self.PTTO(26usize),
-                    self.PTTO(27usize),
-                    self.PTTO(28usize),
-                    self.PTTO(29usize),
-                    self.PTTO(30usize),
-                    self.PTTO(31usize),
-                ],
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2983,23 +2254,6 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for VERID {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VERID {
-                FEATURE: u16,
-                MINOR: u8,
-                MAJOR: u8,
-            }
-            let proxy = VERID {
-                FEATURE: self.FEATURE(),
-                MINOR: self.MINOR(),
-                MAJOR: self.MAJOR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -299,49 +299,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTRL {
-                CMPIE: bool,
-                CMPIRQ: bool,
-                WDE: bool,
-                DIE: bool,
-                DIRQ: bool,
-                XNE: bool,
-                XIP: bool,
-                XIE: bool,
-                XIRQ: bool,
-                PH1: bool,
-                REV: bool,
-                SWIP: bool,
-                HNE: bool,
-                HIP: bool,
-                HIE: bool,
-                HIRQ: bool,
-            }
-            let proxy = CTRL {
-                CMPIE: self.CMPIE(),
-                CMPIRQ: self.CMPIRQ(),
-                WDE: self.WDE(),
-                DIE: self.DIE(),
-                DIRQ: self.DIRQ(),
-                XNE: self.XNE(),
-                XIP: self.XIP(),
-                XIE: self.XIE(),
-                XIRQ: self.XIRQ(),
-                PH1: self.PH1(),
-                REV: self.REV(),
-                SWIP: self.SWIP(),
-                HNE: self.HNE(),
-                HIP: self.HIP(),
-                HIE: self.HIE(),
-                HIRQ: self.HIRQ(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Control 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -490,43 +447,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTRL2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTRL2 {
-                UPDHLD: bool,
-                UPDPOS: bool,
-                MOD: bool,
-                DIR: bool,
-                RUIE: bool,
-                RUIRQ: bool,
-                ROIE: bool,
-                ROIRQ: bool,
-                REVMOD: bool,
-                OUTCTL: bool,
-                SABIE: bool,
-                SABIRQ: bool,
-                INITPOS: bool,
-            }
-            let proxy = CTRL2 {
-                UPDHLD: self.UPDHLD(),
-                UPDPOS: self.UPDPOS(),
-                MOD: self.MOD(),
-                DIR: self.DIR(),
-                RUIE: self.RUIE(),
-                RUIRQ: self.RUIRQ(),
-                ROIE: self.ROIE(),
-                ROIRQ: self.ROIRQ(),
-                REVMOD: self.REVMOD(),
-                OUTCTL: self.OUTCTL(),
-                SABIE: self.SABIE(),
-                SABIRQ: self.SABIRQ(),
-                INITPOS: self.INITPOS(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Control 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -563,21 +483,6 @@ pub mod regs {
                 .field("PMEN", &self.PMEN())
                 .field("PRSC", &self.PRSC())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTRL3 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTRL3 {
-                PMEN: bool,
-                PRSC: u8,
-            }
-            let proxy = CTRL3 {
-                PMEN: self.PMEN(),
-                PRSC: self.PRSC(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Input Filter"]
@@ -626,23 +531,6 @@ pub mod regs {
                 .field("FILT_CNT", &self.FILT_CNT())
                 .field("FILT_PRSC", &self.FILT_PRSC())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FILT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FILT {
-                FILT_PER: u8,
-                FILT_CNT: u8,
-                FILT_PRSC: u8,
-            }
-            let proxy = FILT {
-                FILT_PER: self.FILT_PER(),
-                FILT_CNT: self.FILT_CNT(),
-                FILT_PRSC: self.FILT_PRSC(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Input Monitor"]
@@ -743,33 +631,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for IMR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct IMR {
-                HOME: bool,
-                INDEX: bool,
-                PHB: bool,
-                PHA: bool,
-                FHOM: bool,
-                FIND: bool,
-                FPHB: bool,
-                FPHA: bool,
-            }
-            let proxy = IMR {
-                HOME: self.HOME(),
-                INDEX: self.INDEX(),
-                PHB: self.PHB(),
-                PHA: self.PHA(),
-                FHOM: self.FHOM(),
-                FIND: self.FIND(),
-                FPHB: self.FPHB(),
-                FPHA: self.FPHA(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Last Edge Time"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -796,19 +657,6 @@ pub mod regs {
             f.debug_struct("LASTEDGE")
                 .field("LASTEDGE", &self.LASTEDGE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LASTEDGE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LASTEDGE {
-                LASTEDGE: u16,
-            }
-            let proxy = LASTEDGE {
-                LASTEDGE: self.LASTEDGE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Last Edge Time Hold"]
@@ -839,19 +687,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LASTEDGEH {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LASTEDGEH {
-                LASTEDGEH: u16,
-            }
-            let proxy = LASTEDGEH {
-                LASTEDGEH: self.LASTEDGEH(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Lower Position Compare"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -876,17 +711,6 @@ pub mod regs {
     impl core::fmt::Debug for LCOMP {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("LCOMP").field("COMP", &self.COMP()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LCOMP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LCOMP {
-                COMP: u16,
-            }
-            let proxy = LCOMP { COMP: self.COMP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Lower Initialization"]
@@ -915,17 +739,6 @@ pub mod regs {
             f.debug_struct("LINIT").field("INIT", &self.INIT()).finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LINIT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LINIT {
-                INIT: u16,
-            }
-            let proxy = LINIT { INIT: self.INIT() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Lower Modulus"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -950,17 +763,6 @@ pub mod regs {
     impl core::fmt::Debug for LMOD {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("LMOD").field("MOD", &self.MOD()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LMOD {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LMOD {
-                MOD: u16,
-            }
-            let proxy = LMOD { MOD: self.MOD() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Lower Position Counter"]
@@ -989,17 +791,6 @@ pub mod regs {
             f.debug_struct("LPOS").field("POS", &self.POS()).finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LPOS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LPOS {
-                POS: u16,
-            }
-            let proxy = LPOS { POS: self.POS() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Lower Position Hold"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1026,17 +817,6 @@ pub mod regs {
             f.debug_struct("LPOSH").field("POSH", &self.POSH()).finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LPOSH {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LPOSH {
-                POSH: u16,
-            }
-            let proxy = LPOSH { POSH: self.POSH() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Position Difference Counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1061,17 +841,6 @@ pub mod regs {
     impl core::fmt::Debug for POSD {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("POSD").field("POSD", &self.POSD()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for POSD {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct POSD {
-                POSD: u16,
-            }
-            let proxy = POSD { POSD: self.POSD() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Position Difference Hold"]
@@ -1102,19 +871,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for POSDH {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct POSDH {
-                POSDH: u16,
-            }
-            let proxy = POSDH {
-                POSDH: self.POSDH(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Position Difference Period Counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1141,19 +897,6 @@ pub mod regs {
             f.debug_struct("POSDPER")
                 .field("POSDPER", &self.POSDPER())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for POSDPER {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct POSDPER {
-                POSDPER: u16,
-            }
-            let proxy = POSDPER {
-                POSDPER: self.POSDPER(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Position Difference Period Buffer"]
@@ -1184,19 +927,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for POSDPERBFR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct POSDPERBFR {
-                POSDPERBFR: u16,
-            }
-            let proxy = POSDPERBFR {
-                POSDPERBFR: self.POSDPERBFR(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Position Difference Period Hold"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1225,19 +955,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for POSDPERH {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct POSDPERH {
-                POSDPERH: u16,
-            }
-            let proxy = POSDPERH {
-                POSDPERH: self.POSDPERH(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Revolution Counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1264,17 +981,6 @@ pub mod regs {
             f.debug_struct("REV").field("REV", &self.REV()).finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for REV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct REV {
-                REV: u16,
-            }
-            let proxy = REV { REV: self.REV() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Revolution Hold"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1299,17 +1005,6 @@ pub mod regs {
     impl core::fmt::Debug for REVH {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("REVH").field("REVH", &self.REVH()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for REVH {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct REVH {
-                REVH: u16,
-            }
-            let proxy = REVH { REVH: self.REVH() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Test"]
@@ -1380,27 +1075,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TST {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TST {
-                TEST_COUNT: u8,
-                TEST_PERIOD: u8,
-                QDN: bool,
-                TCE: bool,
-                TEN: bool,
-            }
-            let proxy = TST {
-                TEST_COUNT: self.TEST_COUNT(),
-                TEST_PERIOD: self.TEST_PERIOD(),
-                QDN: self.QDN(),
-                TCE: self.TCE(),
-                TEN: self.TEN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Upper Position Compare"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1425,17 +1099,6 @@ pub mod regs {
     impl core::fmt::Debug for UCOMP {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("UCOMP").field("COMP", &self.COMP()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for UCOMP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct UCOMP {
-                COMP: u16,
-            }
-            let proxy = UCOMP { COMP: self.COMP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Upper Initialization"]
@@ -1464,17 +1127,6 @@ pub mod regs {
             f.debug_struct("UINIT").field("INIT", &self.INIT()).finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for UINIT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct UINIT {
-                INIT: u16,
-            }
-            let proxy = UINIT { INIT: self.INIT() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Upper Modulus"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1499,17 +1151,6 @@ pub mod regs {
     impl core::fmt::Debug for UMOD {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("UMOD").field("MOD", &self.MOD()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for UMOD {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct UMOD {
-                MOD: u16,
-            }
-            let proxy = UMOD { MOD: self.MOD() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Upper Position Counter"]
@@ -1538,17 +1179,6 @@ pub mod regs {
             f.debug_struct("UPOS").field("POS", &self.POS()).finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for UPOS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct UPOS {
-                POS: u16,
-            }
-            let proxy = UPOS { POS: self.POS() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Upper Position Hold"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1575,17 +1205,6 @@ pub mod regs {
             f.debug_struct("UPOSH").field("POSH", &self.POSH()).finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for UPOSH {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct UPOSH {
-                POSH: u16,
-            }
-            let proxy = UPOSH { POSH: self.POSH() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Watchdog Timeout"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1610,17 +1229,6 @@ pub mod regs {
     impl core::fmt::Debug for WTR {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("WTR").field("WDOG", &self.WDOG()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for WTR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct WTR {
-                WDOG: u16,
-            }
-            let proxy = WTR { WDOG: self.WDOG() };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

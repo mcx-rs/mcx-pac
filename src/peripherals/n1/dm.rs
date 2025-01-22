@@ -111,27 +111,4 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CSW {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CSW {
-                RESYNCH_REQ: bool,
-                REQ_PENDING: bool,
-                DBG_OR_ERR: bool,
-                AHB_OR_ERR: bool,
-                SOFT_RESET: bool,
-                CHIP_RESET_REQ: bool,
-            }
-            let proxy = CSW {
-                RESYNCH_REQ: self.RESYNCH_REQ(),
-                REQ_PENDING: self.REQ_PENDING(),
-                DBG_OR_ERR: self.DBG_OR_ERR(),
-                AHB_OR_ERR: self.AHB_OR_ERR(),
-                SOFT_RESET: self.SOFT_RESET(),
-                CHIP_RESET_REQ: self.CHIP_RESET_REQ(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
 }

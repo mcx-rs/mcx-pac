@@ -84,21 +84,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CALIB0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CALIB0 {
-                NCAL: u8,
-                PCAL: u8,
-            }
-            let proxy = CALIB0 {
-                NCAL: self.NCAL(),
-                PCAL: self.PCAL(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Calibration 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -137,21 +122,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CALIB1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CALIB1 {
-                NCAL: u8,
-                PCAL: u8,
-            }
-            let proxy = CALIB1 {
-                NCAL: self.NCAL(),
-                PCAL: self.PCAL(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -178,19 +148,6 @@ pub mod regs {
             f.debug_struct("CONFIG")
                 .field("RANGE", &self.RANGE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CONFIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CONFIG {
-                RANGE: bool,
-            }
-            let proxy = CONFIG {
-                RANGE: self.RANGE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Global Pin Control High"]
@@ -381,51 +338,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GPCHR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GPCHR {
-                GPWD: u16,
-                GPWE16: bool,
-                GPWE17: bool,
-                GPWE18: bool,
-                GPWE19: bool,
-                GPWE20: bool,
-                GPWE21: bool,
-                GPWE22: bool,
-                GPWE23: bool,
-                GPWE24: bool,
-                GPWE25: bool,
-                GPWE26: bool,
-                GPWE27: bool,
-                GPWE28: bool,
-                GPWE29: bool,
-                GPWE30: bool,
-                GPWE31: bool,
-            }
-            let proxy = GPCHR {
-                GPWD: self.GPWD(),
-                GPWE16: self.GPWE16(),
-                GPWE17: self.GPWE17(),
-                GPWE18: self.GPWE18(),
-                GPWE19: self.GPWE19(),
-                GPWE20: self.GPWE20(),
-                GPWE21: self.GPWE21(),
-                GPWE22: self.GPWE22(),
-                GPWE23: self.GPWE23(),
-                GPWE24: self.GPWE24(),
-                GPWE25: self.GPWE25(),
-                GPWE26: self.GPWE26(),
-                GPWE27: self.GPWE27(),
-                GPWE28: self.GPWE28(),
-                GPWE29: self.GPWE29(),
-                GPWE30: self.GPWE30(),
-                GPWE31: self.GPWE31(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Global Pin Control Low"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -614,51 +526,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GPCLR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GPCLR {
-                GPWD: u16,
-                GPWE0: bool,
-                GPWE1: bool,
-                GPWE2: bool,
-                GPWE3: bool,
-                GPWE4: bool,
-                GPWE5: bool,
-                GPWE6: bool,
-                GPWE7: bool,
-                GPWE8: bool,
-                GPWE9: bool,
-                GPWE10: bool,
-                GPWE11: bool,
-                GPWE12: bool,
-                GPWE13: bool,
-                GPWE14: bool,
-                GPWE15: bool,
-            }
-            let proxy = GPCLR {
-                GPWD: self.GPWD(),
-                GPWE0: self.GPWE0(),
-                GPWE1: self.GPWE1(),
-                GPWE2: self.GPWE2(),
-                GPWE3: self.GPWE3(),
-                GPWE4: self.GPWE4(),
-                GPWE5: self.GPWE5(),
-                GPWE6: self.GPWE6(),
-                GPWE7: self.GPWE7(),
-                GPWE8: self.GPWE8(),
-                GPWE9: self.GPWE9(),
-                GPWE10: self.GPWE10(),
-                GPWE11: self.GPWE11(),
-                GPWE12: self.GPWE12(),
-                GPWE13: self.GPWE13(),
-                GPWE14: self.GPWE14(),
-                GPWE15: self.GPWE15(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Pin Control 0..Pin Control 31"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -797,41 +664,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PCR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PCR {
-                PS: bool,
-                PE: bool,
-                PV: bool,
-                SRE: bool,
-                PFE: bool,
-                ODE: bool,
-                DSE: bool,
-                DSE1: bool,
-                MUX: u8,
-                IBE: bool,
-                INV: bool,
-                LK: bool,
-            }
-            let proxy = PCR {
-                PS: self.PS(),
-                PE: self.PE(),
-                PV: self.PV(),
-                SRE: self.SRE(),
-                PFE: self.PFE(),
-                ODE: self.ODE(),
-                DSE: self.DSE(),
-                DSE1: self.DSE1(),
-                MUX: self.MUX(),
-                IBE: self.IBE(),
-                INV: self.INV(),
-                LK: self.LK(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -878,23 +710,6 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for VERID {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VERID {
-                FEATURE: u16,
-                MINOR: u8,
-                MAJOR: u8,
-            }
-            let proxy = VERID {
-                FEATURE: self.FEATURE(),
-                MINOR: self.MINOR(),
-                MAJOR: self.MAJOR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

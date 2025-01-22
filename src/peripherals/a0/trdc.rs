@@ -300,49 +300,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W {
-                MBACSEL0: u8,
-                NSE0: bool,
-                MBACSEL1: u8,
-                NSE1: bool,
-                MBACSEL2: u8,
-                NSE2: bool,
-                MBACSEL3: u8,
-                NSE3: bool,
-                MBACSEL4: u8,
-                NSE4: bool,
-                MBACSEL5: u8,
-                NSE5: bool,
-                MBACSEL6: u8,
-                NSE6: bool,
-                MBACSEL7: u8,
-                NSE7: bool,
-            }
-            let proxy = MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W {
-                MBACSEL0: self.MBACSEL0(),
-                NSE0: self.NSE0(),
-                MBACSEL1: self.MBACSEL1(),
-                NSE1: self.NSE1(),
-                MBACSEL2: self.MBACSEL2(),
-                NSE2: self.NSE2(),
-                MBACSEL3: self.MBACSEL3(),
-                NSE3: self.NSE3(),
-                MBACSEL4: self.MBACSEL4(),
-                NSE4: self.NSE4(),
-                MBACSEL5: self.MBACSEL5(),
-                NSE5: self.NSE5(),
-                MBACSEL6: self.MBACSEL6(),
-                NSE6: self.NSE6(),
-                MBACSEL7: self.MBACSEL7(),
-                NSE7: self.NSE7(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MBC Memory Block NonSecure Enable Word"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -681,81 +638,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM0_BLK_NSE_W {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MBC_INDEX_MBC_DOM0_MEM0_BLK_NSE_W {
-                BIT0: bool,
-                BIT1: bool,
-                BIT2: bool,
-                BIT3: bool,
-                BIT4: bool,
-                BIT5: bool,
-                BIT6: bool,
-                BIT7: bool,
-                BIT8: bool,
-                BIT9: bool,
-                BIT10: bool,
-                BIT11: bool,
-                BIT12: bool,
-                BIT13: bool,
-                BIT14: bool,
-                BIT15: bool,
-                BIT16: bool,
-                BIT17: bool,
-                BIT18: bool,
-                BIT19: bool,
-                BIT20: bool,
-                BIT21: bool,
-                BIT22: bool,
-                BIT23: bool,
-                BIT24: bool,
-                BIT25: bool,
-                BIT26: bool,
-                BIT27: bool,
-                BIT28: bool,
-                BIT29: bool,
-                BIT30: bool,
-                BIT31: bool,
-            }
-            let proxy = MBC_INDEX_MBC_DOM0_MEM0_BLK_NSE_W {
-                BIT0: self.BIT0(),
-                BIT1: self.BIT1(),
-                BIT2: self.BIT2(),
-                BIT3: self.BIT3(),
-                BIT4: self.BIT4(),
-                BIT5: self.BIT5(),
-                BIT6: self.BIT6(),
-                BIT7: self.BIT7(),
-                BIT8: self.BIT8(),
-                BIT9: self.BIT9(),
-                BIT10: self.BIT10(),
-                BIT11: self.BIT11(),
-                BIT12: self.BIT12(),
-                BIT13: self.BIT13(),
-                BIT14: self.BIT14(),
-                BIT15: self.BIT15(),
-                BIT16: self.BIT16(),
-                BIT17: self.BIT17(),
-                BIT18: self.BIT18(),
-                BIT19: self.BIT19(),
-                BIT20: self.BIT20(),
-                BIT21: self.BIT21(),
-                BIT22: self.BIT22(),
-                BIT23: self.BIT23(),
-                BIT24: self.BIT24(),
-                BIT25: self.BIT25(),
-                BIT26: self.BIT26(),
-                BIT27: self.BIT27(),
-                BIT28: self.BIT28(),
-                BIT29: self.BIT29(),
-                BIT30: self.BIT30(),
-                BIT31: self.BIT31(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MBC Memory Block Configuration Word"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -932,49 +814,6 @@ pub mod regs {
                 .field("MBACSEL7", &self.MBACSEL7())
                 .field("NSE7", &self.NSE7())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W {
-                MBACSEL0: u8,
-                NSE0: bool,
-                MBACSEL1: u8,
-                NSE1: bool,
-                MBACSEL2: u8,
-                NSE2: bool,
-                MBACSEL3: u8,
-                NSE3: bool,
-                MBACSEL4: u8,
-                NSE4: bool,
-                MBACSEL5: u8,
-                NSE5: bool,
-                MBACSEL6: u8,
-                NSE6: bool,
-                MBACSEL7: u8,
-                NSE7: bool,
-            }
-            let proxy = MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W {
-                MBACSEL0: self.MBACSEL0(),
-                NSE0: self.NSE0(),
-                MBACSEL1: self.MBACSEL1(),
-                NSE1: self.NSE1(),
-                MBACSEL2: self.MBACSEL2(),
-                NSE2: self.NSE2(),
-                MBACSEL3: self.MBACSEL3(),
-                NSE3: self.NSE3(),
-                MBACSEL4: self.MBACSEL4(),
-                NSE4: self.NSE4(),
-                MBACSEL5: self.MBACSEL5(),
-                NSE5: self.NSE5(),
-                MBACSEL6: self.MBACSEL6(),
-                NSE6: self.NSE6(),
-                MBACSEL7: self.MBACSEL7(),
-                NSE7: self.NSE7(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MBC Memory Block NonSecure Enable Word"]
@@ -1315,81 +1154,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM1_BLK_NSE_W {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MBC_INDEX_MBC_DOM0_MEM1_BLK_NSE_W {
-                BIT0: bool,
-                BIT1: bool,
-                BIT2: bool,
-                BIT3: bool,
-                BIT4: bool,
-                BIT5: bool,
-                BIT6: bool,
-                BIT7: bool,
-                BIT8: bool,
-                BIT9: bool,
-                BIT10: bool,
-                BIT11: bool,
-                BIT12: bool,
-                BIT13: bool,
-                BIT14: bool,
-                BIT15: bool,
-                BIT16: bool,
-                BIT17: bool,
-                BIT18: bool,
-                BIT19: bool,
-                BIT20: bool,
-                BIT21: bool,
-                BIT22: bool,
-                BIT23: bool,
-                BIT24: bool,
-                BIT25: bool,
-                BIT26: bool,
-                BIT27: bool,
-                BIT28: bool,
-                BIT29: bool,
-                BIT30: bool,
-                BIT31: bool,
-            }
-            let proxy = MBC_INDEX_MBC_DOM0_MEM1_BLK_NSE_W {
-                BIT0: self.BIT0(),
-                BIT1: self.BIT1(),
-                BIT2: self.BIT2(),
-                BIT3: self.BIT3(),
-                BIT4: self.BIT4(),
-                BIT5: self.BIT5(),
-                BIT6: self.BIT6(),
-                BIT7: self.BIT7(),
-                BIT8: self.BIT8(),
-                BIT9: self.BIT9(),
-                BIT10: self.BIT10(),
-                BIT11: self.BIT11(),
-                BIT12: self.BIT12(),
-                BIT13: self.BIT13(),
-                BIT14: self.BIT14(),
-                BIT15: self.BIT15(),
-                BIT16: self.BIT16(),
-                BIT17: self.BIT17(),
-                BIT18: self.BIT18(),
-                BIT19: self.BIT19(),
-                BIT20: self.BIT20(),
-                BIT21: self.BIT21(),
-                BIT22: self.BIT22(),
-                BIT23: self.BIT23(),
-                BIT24: self.BIT24(),
-                BIT25: self.BIT25(),
-                BIT26: self.BIT26(),
-                BIT27: self.BIT27(),
-                BIT28: self.BIT28(),
-                BIT29: self.BIT29(),
-                BIT30: self.BIT30(),
-                BIT31: self.BIT31(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MBC Memory Block Configuration Word"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1566,49 +1330,6 @@ pub mod regs {
                 .field("MBACSEL7", &self.MBACSEL7())
                 .field("NSE7", &self.NSE7())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W {
-                MBACSEL0: u8,
-                NSE0: bool,
-                MBACSEL1: u8,
-                NSE1: bool,
-                MBACSEL2: u8,
-                NSE2: bool,
-                MBACSEL3: u8,
-                NSE3: bool,
-                MBACSEL4: u8,
-                NSE4: bool,
-                MBACSEL5: u8,
-                NSE5: bool,
-                MBACSEL6: u8,
-                NSE6: bool,
-                MBACSEL7: u8,
-                NSE7: bool,
-            }
-            let proxy = MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W {
-                MBACSEL0: self.MBACSEL0(),
-                NSE0: self.NSE0(),
-                MBACSEL1: self.MBACSEL1(),
-                NSE1: self.NSE1(),
-                MBACSEL2: self.MBACSEL2(),
-                NSE2: self.NSE2(),
-                MBACSEL3: self.MBACSEL3(),
-                NSE3: self.NSE3(),
-                MBACSEL4: self.MBACSEL4(),
-                NSE4: self.NSE4(),
-                MBACSEL5: self.MBACSEL5(),
-                NSE5: self.NSE5(),
-                MBACSEL6: self.MBACSEL6(),
-                NSE6: self.NSE6(),
-                MBACSEL7: self.MBACSEL7(),
-                NSE7: self.NSE7(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MBC Memory Block NonSecure Enable Word"]
@@ -1949,81 +1670,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM2_BLK_NSE_W {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MBC_INDEX_MBC_DOM0_MEM2_BLK_NSE_W {
-                BIT0: bool,
-                BIT1: bool,
-                BIT2: bool,
-                BIT3: bool,
-                BIT4: bool,
-                BIT5: bool,
-                BIT6: bool,
-                BIT7: bool,
-                BIT8: bool,
-                BIT9: bool,
-                BIT10: bool,
-                BIT11: bool,
-                BIT12: bool,
-                BIT13: bool,
-                BIT14: bool,
-                BIT15: bool,
-                BIT16: bool,
-                BIT17: bool,
-                BIT18: bool,
-                BIT19: bool,
-                BIT20: bool,
-                BIT21: bool,
-                BIT22: bool,
-                BIT23: bool,
-                BIT24: bool,
-                BIT25: bool,
-                BIT26: bool,
-                BIT27: bool,
-                BIT28: bool,
-                BIT29: bool,
-                BIT30: bool,
-                BIT31: bool,
-            }
-            let proxy = MBC_INDEX_MBC_DOM0_MEM2_BLK_NSE_W {
-                BIT0: self.BIT0(),
-                BIT1: self.BIT1(),
-                BIT2: self.BIT2(),
-                BIT3: self.BIT3(),
-                BIT4: self.BIT4(),
-                BIT5: self.BIT5(),
-                BIT6: self.BIT6(),
-                BIT7: self.BIT7(),
-                BIT8: self.BIT8(),
-                BIT9: self.BIT9(),
-                BIT10: self.BIT10(),
-                BIT11: self.BIT11(),
-                BIT12: self.BIT12(),
-                BIT13: self.BIT13(),
-                BIT14: self.BIT14(),
-                BIT15: self.BIT15(),
-                BIT16: self.BIT16(),
-                BIT17: self.BIT17(),
-                BIT18: self.BIT18(),
-                BIT19: self.BIT19(),
-                BIT20: self.BIT20(),
-                BIT21: self.BIT21(),
-                BIT22: self.BIT22(),
-                BIT23: self.BIT23(),
-                BIT24: self.BIT24(),
-                BIT25: self.BIT25(),
-                BIT26: self.BIT26(),
-                BIT27: self.BIT27(),
-                BIT28: self.BIT28(),
-                BIT29: self.BIT29(),
-                BIT30: self.BIT30(),
-                BIT31: self.BIT31(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MBC Global Access Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2172,43 +1818,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MBC_INDEX_MBC_MEMN_GLBAC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MBC_INDEX_MBC_MEMN_GLBAC {
-                NUX: bool,
-                NUW: bool,
-                NUR: bool,
-                NPX: bool,
-                NPW: bool,
-                NPR: bool,
-                SUX: bool,
-                SUW: bool,
-                SUR: bool,
-                SPX: bool,
-                SPW: bool,
-                SPR: bool,
-                LK: bool,
-            }
-            let proxy = MBC_INDEX_MBC_MEMN_GLBAC {
-                NUX: self.NUX(),
-                NUW: self.NUW(),
-                NUR: self.NUR(),
-                NPX: self.NPX(),
-                NPW: self.NPW(),
-                NPR: self.NPR(),
-                SUX: self.SUX(),
-                SUW: self.SUW(),
-                SUR: self.SUR(),
-                SPX: self.SPX(),
-                SPW: self.SPW(),
-                SPR: self.SPR(),
-                LK: self.LK(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MBC Global Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2257,23 +1866,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MBC_INDEX_MBC_MEM_GLBCFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MBC_INDEX_MBC_MEM_GLBCFG {
-                NBLKS: u16,
-                SIZE_LOG2: u8,
-                CLRE: u8,
-            }
-            let proxy = MBC_INDEX_MBC_MEM_GLBCFG {
-                NBLKS: self.NBLKS(),
-                SIZE_LOG2: self.SIZE_LOG2(),
-                CLRE: self.CLRE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MBC NonSecure Enable Block Clear All"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2310,21 +1902,6 @@ pub mod regs {
                 .field("MEMSEL", &self.MEMSEL())
                 .field("DID_SEL0", &self.DID_SEL0())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MBC_INDEX_MBC_NSE_BLK_CLR_ALL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MBC_INDEX_MBC_NSE_BLK_CLR_ALL {
-                MEMSEL: u8,
-                DID_SEL0: bool,
-            }
-            let proxy = MBC_INDEX_MBC_NSE_BLK_CLR_ALL {
-                MEMSEL: self.MEMSEL(),
-                DID_SEL0: self.DID_SEL0(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MBC NonSecure Enable Block Index"]
@@ -2383,25 +1960,6 @@ pub mod regs {
                 .field("DID_SEL0", &self.DID_SEL0())
                 .field("AI", &self.AI())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MBC_INDEX_MBC_NSE_BLK_INDEX {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MBC_INDEX_MBC_NSE_BLK_INDEX {
-                WNDX: u8,
-                MEM_SEL: u8,
-                DID_SEL0: bool,
-                AI: bool,
-            }
-            let proxy = MBC_INDEX_MBC_NSE_BLK_INDEX {
-                WNDX: self.WNDX(),
-                MEM_SEL: self.MEM_SEL(),
-                DID_SEL0: self.DID_SEL0(),
-                AI: self.AI(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

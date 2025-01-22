@@ -97,19 +97,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CCR0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CCR0 {
-                CMP_EN: bool,
-            }
-            let proxy = CCR0 {
-                CMP_EN: self.CMP_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Comparator Control Register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -268,45 +255,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CCR1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CCR1 {
-                WINDOW_EN: bool,
-                SAMPLE_EN: bool,
-                DMA_EN: bool,
-                COUT_INV: bool,
-                COUT_SEL: bool,
-                COUT_PEN: bool,
-                COUTA_OWEN: bool,
-                COUTA_OW: bool,
-                WINDOW_INV: bool,
-                WINDOW_CLS: bool,
-                EVT_SEL: u8,
-                FUNC_CLK_SEL: u8,
-                FILT_CNT: u8,
-                FILT_PER: u8,
-            }
-            let proxy = CCR1 {
-                WINDOW_EN: self.WINDOW_EN(),
-                SAMPLE_EN: self.SAMPLE_EN(),
-                DMA_EN: self.DMA_EN(),
-                COUT_INV: self.COUT_INV(),
-                COUT_SEL: self.COUT_SEL(),
-                COUT_PEN: self.COUT_PEN(),
-                COUTA_OWEN: self.COUTA_OWEN(),
-                COUTA_OW: self.COUTA_OW(),
-                WINDOW_INV: self.WINDOW_INV(),
-                WINDOW_CLS: self.WINDOW_CLS(),
-                EVT_SEL: self.EVT_SEL(),
-                FUNC_CLK_SEL: self.FUNC_CLK_SEL(),
-                FILT_CNT: self.FILT_CNT(),
-                FILT_PER: self.FILT_PER(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Comparator Control Register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -375,27 +323,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CCR2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CCR2 {
-                CMP_HPMD: bool,
-                CMP_NPMD: bool,
-                HYSTCTR: u8,
-                PSEL: u8,
-                MSEL: u8,
-            }
-            let proxy = CCR2 {
-                CMP_HPMD: self.CMP_HPMD(),
-                CMP_NPMD: self.CMP_NPMD(),
-                HYSTCTR: self.HYSTCTR(),
-                PSEL: self.PSEL(),
-                MSEL: self.MSEL(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Comparator Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -452,25 +379,6 @@ pub mod regs {
                 .field("RRF", &self.RRF())
                 .field("COUT", &self.COUT())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CSR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CSR {
-                CFR: bool,
-                CFF: bool,
-                RRF: bool,
-                COUT: bool,
-            }
-            let proxy = CSR {
-                CFR: self.CFR(),
-                CFF: self.CFF(),
-                RRF: self.RRF(),
-                COUT: self.COUT(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DAC Control"]
@@ -531,25 +439,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DCR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DCR {
-                DAC_EN: bool,
-                DAC_HPMD: bool,
-                VRSEL: bool,
-                DAC_DATA: u8,
-            }
-            let proxy = DCR {
-                DAC_EN: self.DAC_EN(),
-                DAC_HPMD: self.DAC_HPMD(),
-                VRSEL: self.VRSEL(),
-                DAC_DATA: self.DAC_DATA(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -598,23 +487,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for IER {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct IER {
-                CFR_IE: bool,
-                CFF_IE: bool,
-                RRF_IE: bool,
-            }
-            let proxy = IER {
-                CFR_IE: self.CFR_IE(),
-                CFF_IE: self.CFF_IE(),
-                RRF_IE: self.RRF_IE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Parameter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -641,19 +513,6 @@ pub mod regs {
             f.debug_struct("PARAM")
                 .field("DAC_RES", &self.DAC_RES())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PARAM {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PARAM {
-                DAC_RES: u8,
-            }
-            let proxy = PARAM {
-                DAC_RES: self.DAC_RES(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Round Robin Control Register 0"]
@@ -742,31 +601,6 @@ pub mod regs {
                 .field("RR_SAMPLE_CNT", &self.RR_SAMPLE_CNT())
                 .field("RR_SAMPLE_THRESHOLD", &self.RR_SAMPLE_THRESHOLD())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RRCR0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RRCR0 {
-                RR_EN: bool,
-                RR_TRG_SEL: bool,
-                RR_NSAM: u8,
-                RR_CLK_SEL: u8,
-                RR_INITMOD: u8,
-                RR_SAMPLE_CNT: u8,
-                RR_SAMPLE_THRESHOLD: u8,
-            }
-            let proxy = RRCR0 {
-                RR_EN: self.RR_EN(),
-                RR_TRG_SEL: self.RR_TRG_SEL(),
-                RR_NSAM: self.RR_NSAM(),
-                RR_CLK_SEL: self.RR_CLK_SEL(),
-                RR_INITMOD: self.RR_INITMOD(),
-                RR_SAMPLE_CNT: self.RR_SAMPLE_CNT(),
-                RR_SAMPLE_THRESHOLD: self.RR_SAMPLE_THRESHOLD(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Round Robin Control Register 1"]
@@ -887,37 +721,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RRCR1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RRCR1 {
-                RR_CH0EN: bool,
-                RR_CH1EN: bool,
-                RR_CH2EN: bool,
-                RR_CH3EN: bool,
-                RR_CH4EN: bool,
-                RR_CH5EN: bool,
-                RR_CH6EN: bool,
-                RR_CH7EN: bool,
-                FIXP: bool,
-                FIXCH: u8,
-            }
-            let proxy = RRCR1 {
-                RR_CH0EN: self.RR_CH0EN(),
-                RR_CH1EN: self.RR_CH1EN(),
-                RR_CH2EN: self.RR_CH2EN(),
-                RR_CH3EN: self.RR_CH3EN(),
-                RR_CH4EN: self.RR_CH4EN(),
-                RR_CH5EN: self.RR_CH5EN(),
-                RR_CH6EN: self.RR_CH6EN(),
-                RR_CH7EN: self.RR_CH7EN(),
-                FIXP: self.FIXP(),
-                FIXCH: self.FIXCH(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Round Robin Control Register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -954,21 +757,6 @@ pub mod regs {
                 .field("RR_TIMER_RELOAD", &self.RR_TIMER_RELOAD())
                 .field("RR_TIMER_EN", &self.RR_TIMER_EN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RRCR2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RRCR2 {
-                RR_TIMER_RELOAD: u32,
-                RR_TIMER_EN: bool,
-            }
-            let proxy = RRCR2 {
-                RR_TIMER_RELOAD: self.RR_TIMER_RELOAD(),
-                RR_TIMER_EN: self.RR_TIMER_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Round Robin Control and Status"]
@@ -1069,33 +857,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RRCSR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RRCSR {
-                RR_CH0OUT: bool,
-                RR_CH1OUT: bool,
-                RR_CH2OUT: bool,
-                RR_CH3OUT: bool,
-                RR_CH4OUT: bool,
-                RR_CH5OUT: bool,
-                RR_CH6OUT: bool,
-                RR_CH7OUT: bool,
-            }
-            let proxy = RRCSR {
-                RR_CH0OUT: self.RR_CH0OUT(),
-                RR_CH1OUT: self.RR_CH1OUT(),
-                RR_CH2OUT: self.RR_CH2OUT(),
-                RR_CH3OUT: self.RR_CH3OUT(),
-                RR_CH4OUT: self.RR_CH4OUT(),
-                RR_CH5OUT: self.RR_CH5OUT(),
-                RR_CH6OUT: self.RR_CH6OUT(),
-                RR_CH7OUT: self.RR_CH7OUT(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Round Robin Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1194,33 +955,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RRSR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RRSR {
-                RR_CH0F: bool,
-                RR_CH1F: bool,
-                RR_CH2F: bool,
-                RR_CH3F: bool,
-                RR_CH4F: bool,
-                RR_CH5F: bool,
-                RR_CH6F: bool,
-                RR_CH7F: bool,
-            }
-            let proxy = RRSR {
-                RR_CH0F: self.RR_CH0F(),
-                RR_CH1F: self.RR_CH1F(),
-                RR_CH2F: self.RR_CH2F(),
-                RR_CH3F: self.RR_CH3F(),
-                RR_CH4F: self.RR_CH4F(),
-                RR_CH5F: self.RR_CH5F(),
-                RR_CH6F: self.RR_CH6F(),
-                RR_CH7F: self.RR_CH7F(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1267,23 +1001,6 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for VERID {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VERID {
-                FEATURE: u16,
-                MINOR: u8,
-                MAJOR: u8,
-            }
-            let proxy = VERID {
-                FEATURE: self.FEATURE(),
-                MINOR: self.MINOR(),
-                MAJOR: self.MAJOR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

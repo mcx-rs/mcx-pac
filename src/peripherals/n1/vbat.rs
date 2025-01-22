@@ -262,17 +262,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FROCLKE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FROCLKE {
-                CLKE: u8,
-            }
-            let proxy = FROCLKE { CLKE: self.CLKE() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "FRO16K Control A"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -299,19 +288,6 @@ pub mod regs {
             f.debug_struct("FROCTLA")
                 .field("FRO_EN", &self.FRO_EN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FROCTLA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FROCTLA {
-                FRO_EN: bool,
-            }
-            let proxy = FROCTLA {
-                FRO_EN: self.FRO_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FRO16K Control B"]
@@ -342,19 +318,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FROCTLB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FROCTLB {
-                INVERSE: bool,
-            }
-            let proxy = FROCTLB {
-                INVERSE: self.INVERSE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "FRO16K Lock A"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -383,17 +346,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FROLCKA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FROLCKA {
-                LOCK: bool,
-            }
-            let proxy = FROLCKA { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "FRO16K Lock B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -420,17 +372,6 @@ pub mod regs {
             f.debug_struct("FROLCKB")
                 .field("LOCK", &self.LOCK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FROLCKB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FROLCKB {
-                LOCK: bool,
-            }
-            let proxy = FROLCKB { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Enable A"]
@@ -611,49 +552,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for IRQENA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct IRQENA {
-                POR_DET: bool,
-                WAKEUP_FLAG: bool,
-                TIMER0_FLAG: bool,
-                TIMER1_FLAG: bool,
-                LDO_RDY: bool,
-                OSC_RDY: bool,
-                CLOCK_DET: bool,
-                CONFIG_DET: bool,
-                VOLT_DET: bool,
-                TEMP_DET: bool,
-                LIGHT_DET: bool,
-                SEC0_DET: bool,
-                IRQ0_DET: bool,
-                IRQ1_DET: bool,
-                IRQ2_DET: bool,
-                IRQ3_DET: bool,
-            }
-            let proxy = IRQENA {
-                POR_DET: self.POR_DET(),
-                WAKEUP_FLAG: self.WAKEUP_FLAG(),
-                TIMER0_FLAG: self.TIMER0_FLAG(),
-                TIMER1_FLAG: self.TIMER1_FLAG(),
-                LDO_RDY: self.LDO_RDY(),
-                OSC_RDY: self.OSC_RDY(),
-                CLOCK_DET: self.CLOCK_DET(),
-                CONFIG_DET: self.CONFIG_DET(),
-                VOLT_DET: self.VOLT_DET(),
-                TEMP_DET: self.TEMP_DET(),
-                LIGHT_DET: self.LIGHT_DET(),
-                SEC0_DET: self.SEC0_DET(),
-                IRQ0_DET: self.IRQ0_DET(),
-                IRQ1_DET: self.IRQ1_DET(),
-                IRQ2_DET: self.IRQ2_DET(),
-                IRQ3_DET: self.IRQ3_DET(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Interrupt Enable B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -680,19 +578,6 @@ pub mod regs {
             f.debug_struct("IRQENB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for IRQENB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct IRQENB {
-                INVERSE: u32,
-            }
-            let proxy = IRQENB {
-                INVERSE: self.INVERSE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LDO_RAM Control A"]
@@ -743,23 +628,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LDOCTLA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LDOCTLA {
-                BG_EN: bool,
-                LDO_EN: bool,
-                REFRESH_EN: bool,
-            }
-            let proxy = LDOCTLA {
-                BG_EN: self.BG_EN(),
-                LDO_EN: self.LDO_EN(),
-                REFRESH_EN: self.REFRESH_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LDO_RAM Control B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -786,19 +654,6 @@ pub mod regs {
             f.debug_struct("LDOCTLB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LDOCTLB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LDOCTLB {
-                INVERSE: u8,
-            }
-            let proxy = LDOCTLB {
-                INVERSE: self.INVERSE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LDO_RAM Lock A"]
@@ -829,17 +684,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LDOLCKA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LDOLCKA {
-                LOCK: bool,
-            }
-            let proxy = LDOLCKA { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LDO_RAM Lock B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -866,17 +710,6 @@ pub mod regs {
             f.debug_struct("LDOLCKB")
                 .field("LOCK", &self.LOCK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LDOLCKB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LDOLCKB {
-                LOCK: bool,
-            }
-            let proxy = LDOLCKB { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "RAM Control"]
@@ -957,29 +790,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LDORAMC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LDORAMC {
-                ISO: bool,
-                SWI: bool,
-                RET0: bool,
-                RET1: bool,
-                RET2: bool,
-                RET3: bool,
-            }
-            let proxy = LDORAMC {
-                ISO: self.ISO(),
-                SWI: self.SWI(),
-                RET0: self.RET0(),
-                RET1: self.RET1(),
-                RET2: self.RET2(),
-                RET3: self.RET3(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Bandgap Timer 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1016,21 +826,6 @@ pub mod regs {
                 .field("TIMCFG", &self.TIMCFG())
                 .field("TIMEN", &self.TIMEN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LDOTIMER0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LDOTIMER0 {
-                TIMCFG: u8,
-                TIMEN: bool,
-            }
-            let proxy = LDOTIMER0 {
-                TIMCFG: self.TIMCFG(),
-                TIMEN: self.TIMEN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Bandgap Timer 1"]
@@ -1071,21 +866,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LDOTIMER1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LDOTIMER1 {
-                TIMCFG: u32,
-                TIMEN: bool,
-            }
-            let proxy = LDOTIMER1 {
-                TIMCFG: self.TIMCFG(),
-                TIMEN: self.TIMEN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Lock A"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1112,17 +892,6 @@ pub mod regs {
             f.debug_struct("LOCKA").field("LOCK", &self.LOCK()).finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LOCKA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LOCKA {
-                LOCK: bool,
-            }
-            let proxy = LOCKA { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Lock B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1147,17 +916,6 @@ pub mod regs {
     impl core::fmt::Debug for LOCKB {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("LOCKB").field("LOCK", &self.LOCK()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LOCKB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LOCKB {
-                LOCK: bool,
-            }
-            let proxy = LOCKB { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CLKMON Configuration A"]
@@ -1208,23 +966,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MONCFGA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MONCFGA {
-                FREQ_TRIM: u8,
-                DIVIDE_TRIM: bool,
-                RSVD_TRIM: u8,
-            }
-            let proxy = MONCFGA {
-                FREQ_TRIM: self.FREQ_TRIM(),
-                DIVIDE_TRIM: self.DIVIDE_TRIM(),
-                RSVD_TRIM: self.RSVD_TRIM(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CLKMON Configuration B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1251,19 +992,6 @@ pub mod regs {
             f.debug_struct("MONCFGB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MONCFGB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MONCFGB {
-                INVERSE: u8,
-            }
-            let proxy = MONCFGB {
-                INVERSE: self.INVERSE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CLKMON Control A"]
@@ -1294,19 +1022,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MONCTLA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MONCTLA {
-                MON_EN: bool,
-            }
-            let proxy = MONCTLA {
-                MON_EN: self.MON_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CLKMON Control B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1333,19 +1048,6 @@ pub mod regs {
             f.debug_struct("MONCTLB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MONCTLB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MONCTLB {
-                INVERSE: bool,
-            }
-            let proxy = MONCTLB {
-                INVERSE: self.INVERSE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CLKMON Lock A"]
@@ -1376,17 +1078,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MONLCKA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MONLCKA {
-                LOCK: bool,
-            }
-            let proxy = MONLCKA { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CLKMON Lock B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1413,17 +1104,6 @@ pub mod regs {
             f.debug_struct("MONLCKB")
                 .field("LOCK", &self.LOCK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MONLCKB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MONLCKB {
-                LOCK: bool,
-            }
-            let proxy = MONLCKB { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Oscillator Configuration A"]
@@ -1494,27 +1174,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for OSCCFGA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct OSCCFGA {
-                CMP_TRIM: u8,
-                CAP2_TRIM: bool,
-                DLY_TRIM: u8,
-                CAP_TRIM: u8,
-                INIT_TRIM: u8,
-            }
-            let proxy = OSCCFGA {
-                CMP_TRIM: self.CMP_TRIM(),
-                CAP2_TRIM: self.CAP2_TRIM(),
-                DLY_TRIM: self.DLY_TRIM(),
-                CAP_TRIM: self.CAP_TRIM(),
-                INIT_TRIM: self.INIT_TRIM(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Oscillator Configuration B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1543,19 +1202,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for OSCCFGB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct OSCCFGB {
-                INVERSE: u16,
-            }
-            let proxy = OSCCFGB {
-                INVERSE: self.INVERSE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Oscillator Clock Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1582,17 +1228,6 @@ pub mod regs {
             f.debug_struct("OSCCLKE")
                 .field("CLKE", &self.CLKE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for OSCCLKE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct OSCCLKE {
-                CLKE: u8,
-            }
-            let proxy = OSCCLKE { CLKE: self.CLKE() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Oscillator Control A"]
@@ -1693,33 +1328,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for OSCCTLA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct OSCCTLA {
-                OSC_EN: bool,
-                OSC_BYP_EN: bool,
-                COARSE_AMP_GAIN: u8,
-                CAP_SEL_EN: bool,
-                EXTAL_CAP_SEL: u8,
-                XTAL_CAP_SEL: u8,
-                MODE_EN: u8,
-                SUPPLY_DET: u8,
-            }
-            let proxy = OSCCTLA {
-                OSC_EN: self.OSC_EN(),
-                OSC_BYP_EN: self.OSC_BYP_EN(),
-                COARSE_AMP_GAIN: self.COARSE_AMP_GAIN(),
-                CAP_SEL_EN: self.CAP_SEL_EN(),
-                EXTAL_CAP_SEL: self.EXTAL_CAP_SEL(),
-                XTAL_CAP_SEL: self.XTAL_CAP_SEL(),
-                MODE_EN: self.MODE_EN(),
-                SUPPLY_DET: self.SUPPLY_DET(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Oscillator Control B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1746,19 +1354,6 @@ pub mod regs {
             f.debug_struct("OSCCTLB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for OSCCTLB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct OSCCTLB {
-                INVERSE: u32,
-            }
-            let proxy = OSCCTLB {
-                INVERSE: self.INVERSE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Oscillator Lock A"]
@@ -1789,17 +1384,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for OSCLCKA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct OSCLCKA {
-                LOCK: bool,
-            }
-            let proxy = OSCLCKA { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Oscillator Lock B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1826,17 +1410,6 @@ pub mod regs {
             f.debug_struct("OSCLCKB")
                 .field("LOCK", &self.LOCK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for OSCLCKB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct OSCLCKB {
-                LOCK: bool,
-            }
-            let proxy = OSCLCKB { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status A"]
@@ -2017,49 +1590,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for STATUSA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct STATUSA {
-                POR_DET: bool,
-                WAKEUP_FLAG: bool,
-                TIMER0_FLAG: bool,
-                TIMER1_FLAG: bool,
-                LDO_RDY: bool,
-                OSC_RDY: bool,
-                CLOCK_DET: bool,
-                CONFIG_DET: bool,
-                VOLT_DET: bool,
-                TEMP_DET: bool,
-                LIGHT_DET: bool,
-                SEC0_DET: bool,
-                IRQ0_DET: bool,
-                IRQ1_DET: bool,
-                IRQ2_DET: bool,
-                IRQ3_DET: bool,
-            }
-            let proxy = STATUSA {
-                POR_DET: self.POR_DET(),
-                WAKEUP_FLAG: self.WAKEUP_FLAG(),
-                TIMER0_FLAG: self.TIMER0_FLAG(),
-                TIMER1_FLAG: self.TIMER1_FLAG(),
-                LDO_RDY: self.LDO_RDY(),
-                OSC_RDY: self.OSC_RDY(),
-                CLOCK_DET: self.CLOCK_DET(),
-                CONFIG_DET: self.CONFIG_DET(),
-                VOLT_DET: self.VOLT_DET(),
-                TEMP_DET: self.TEMP_DET(),
-                LIGHT_DET: self.LIGHT_DET(),
-                SEC0_DET: self.SEC0_DET(),
-                IRQ0_DET: self.IRQ0_DET(),
-                IRQ1_DET: self.IRQ1_DET(),
-                IRQ2_DET: self.IRQ2_DET(),
-                IRQ3_DET: self.IRQ3_DET(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Status B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2086,19 +1616,6 @@ pub mod regs {
             f.debug_struct("STATUSB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for STATUSB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct STATUSB {
-                INVERSE: u32,
-            }
-            let proxy = STATUSB {
-                INVERSE: self.INVERSE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Switch Control A"]
@@ -2139,21 +1656,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SWICTLA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SWICTLA {
-                SWI_EN: bool,
-                LP_EN: bool,
-            }
-            let proxy = SWICTLA {
-                SWI_EN: self.SWI_EN(),
-                LP_EN: self.LP_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Switch Control B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2180,19 +1682,6 @@ pub mod regs {
             f.debug_struct("SWICTLB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SWICTLB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SWICTLB {
-                INVERSE: u8,
-            }
-            let proxy = SWICTLB {
-                INVERSE: self.INVERSE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Switch Lock A"]
@@ -2223,17 +1712,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SWILCKA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SWILCKA {
-                LOCK: bool,
-            }
-            let proxy = SWILCKA { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Switch Lock B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2260,17 +1738,6 @@ pub mod regs {
             f.debug_struct("SWILCKB")
                 .field("LOCK", &self.LOCK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SWILCKB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SWILCKB {
-                LOCK: bool,
-            }
-            let proxy = SWILCKB { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TAMPER Control A"]
@@ -2321,23 +1788,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TAMCTLA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TAMCTLA {
-                VOLT_EN: bool,
-                TEMP_EN: bool,
-                LIGHT_EN: bool,
-            }
-            let proxy = TAMCTLA {
-                VOLT_EN: self.VOLT_EN(),
-                TEMP_EN: self.TEMP_EN(),
-                LIGHT_EN: self.LIGHT_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "TAMPER Control B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2364,19 +1814,6 @@ pub mod regs {
             f.debug_struct("TAMCTLB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TAMCTLB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TAMCTLB {
-                INVERSE: u8,
-            }
-            let proxy = TAMCTLB {
-                INVERSE: self.INVERSE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TAMPER Lock A"]
@@ -2407,17 +1844,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TAMLCKA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TAMLCKA {
-                LOCK: bool,
-            }
-            let proxy = TAMLCKA { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "TAMPER Lock B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2444,17 +1870,6 @@ pub mod regs {
             f.debug_struct("TAMLCKB")
                 .field("LOCK", &self.LOCK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TAMLCKB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TAMLCKB {
-                LOCK: bool,
-            }
-            let proxy = TAMLCKB { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Tamper Enable A"]
@@ -2545,31 +1960,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TAMPERA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TAMPERA {
-                POR_DET: bool,
-                CLOCK_DET: bool,
-                CONFIG_DET: bool,
-                VOLT_DET: bool,
-                TEMP_DET: bool,
-                LIGHT_DET: bool,
-                SEC0_DET: bool,
-            }
-            let proxy = TAMPERA {
-                POR_DET: self.POR_DET(),
-                CLOCK_DET: self.CLOCK_DET(),
-                CONFIG_DET: self.CONFIG_DET(),
-                VOLT_DET: self.VOLT_DET(),
-                TEMP_DET: self.TEMP_DET(),
-                LIGHT_DET: self.LIGHT_DET(),
-                SEC0_DET: self.SEC0_DET(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Tamper Enable B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2596,19 +1986,6 @@ pub mod regs {
             f.debug_struct("TAMPERB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TAMPERB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TAMPERB {
-                INVERSE: u16,
-            }
-            let proxy = TAMPERB {
-                INVERSE: self.INVERSE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Version ID"]
@@ -2659,23 +2036,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for VERID {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VERID {
-                FEATURE: u16,
-                MINOR: u8,
-                MAJOR: u8,
-            }
-            let proxy = VERID {
-                FEATURE: self.FEATURE(),
-                MINOR: self.MINOR(),
-                MAJOR: self.MAJOR(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Wake-up Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2700,17 +2060,6 @@ pub mod regs {
     impl core::fmt::Debug for WAKECFG {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("WAKECFG").field("OUT", &self.OUT()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for WAKECFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct WAKECFG {
-                OUT: bool,
-            }
-            let proxy = WAKECFG { OUT: self.OUT() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Wake-up Enable A"]
@@ -2891,49 +2240,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for WAKENA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct WAKENA {
-                POR_DET: bool,
-                WAKEUP_FLAG: bool,
-                TIMER0_FLAG: bool,
-                TIMER1_FLAG: bool,
-                LDO_RDY: bool,
-                OSC_RDY: bool,
-                CLOCK_DET: bool,
-                CONFIG_DET: bool,
-                VOLT_DET: bool,
-                TEMP_DET: bool,
-                LIGHT_DET: bool,
-                SEC0_DET: bool,
-                IRQ0_DET: bool,
-                IRQ1_DET: bool,
-                IRQ2_DET: bool,
-                IRQ3_DET: bool,
-            }
-            let proxy = WAKENA {
-                POR_DET: self.POR_DET(),
-                WAKEUP_FLAG: self.WAKEUP_FLAG(),
-                TIMER0_FLAG: self.TIMER0_FLAG(),
-                TIMER1_FLAG: self.TIMER1_FLAG(),
-                LDO_RDY: self.LDO_RDY(),
-                OSC_RDY: self.OSC_RDY(),
-                CLOCK_DET: self.CLOCK_DET(),
-                CONFIG_DET: self.CONFIG_DET(),
-                VOLT_DET: self.VOLT_DET(),
-                TEMP_DET: self.TEMP_DET(),
-                LIGHT_DET: self.LIGHT_DET(),
-                SEC0_DET: self.SEC0_DET(),
-                IRQ0_DET: self.IRQ0_DET(),
-                IRQ1_DET: self.IRQ1_DET(),
-                IRQ2_DET: self.IRQ2_DET(),
-                IRQ3_DET: self.IRQ3_DET(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Wake-up Enable B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2960,19 +2266,6 @@ pub mod regs {
             f.debug_struct("WAKENB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for WAKENB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct WAKENB {
-                INVERSE: u32,
-            }
-            let proxy = WAKENB {
-                INVERSE: self.INVERSE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Wakeup Lock A"]
@@ -3003,17 +2296,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for WAKLCKA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct WAKLCKA {
-                LOCK: bool,
-            }
-            let proxy = WAKLCKA { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Wakeup Lock B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3040,17 +2322,6 @@ pub mod regs {
             f.debug_struct("WAKLCKB")
                 .field("LOCK", &self.LOCK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for WAKLCKB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct WAKLCKB {
-                LOCK: bool,
-            }
-            let proxy = WAKLCKB { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

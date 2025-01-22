@@ -144,33 +144,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for BFCRT_BFCRT01 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct BFCRT_BFCRT01 {
-                PT1_DC: u8,
-                PT1_CC: u8,
-                PT1_BC: u8,
-                PT1_AC: u8,
-                PT0_DC: u8,
-                PT0_CC: u8,
-                PT0_BC: u8,
-                PT0_AC: u8,
-            }
-            let proxy = BFCRT_BFCRT01 {
-                PT1_DC: self.PT1_DC(),
-                PT1_CC: self.PT1_CC(),
-                PT1_BC: self.PT1_BC(),
-                PT1_AC: self.PT1_AC(),
-                PT0_DC: self.PT0_DC(),
-                PT0_CC: self.PT0_CC(),
-                PT0_BC: self.PT0_BC(),
-                PT0_AC: self.PT0_AC(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Boolean Function Term 2 and 3 Configuration for EVENT0..Boolean Function Term 2 and 3 Configuration for EVENT3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -267,33 +240,6 @@ pub mod regs {
                 .field("PT2_BC", &self.PT2_BC())
                 .field("PT2_AC", &self.PT2_AC())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for BFCRT_BFCRT23 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct BFCRT_BFCRT23 {
-                PT3_DC: u8,
-                PT3_CC: u8,
-                PT3_BC: u8,
-                PT3_AC: u8,
-                PT2_DC: u8,
-                PT2_CC: u8,
-                PT2_BC: u8,
-                PT2_AC: u8,
-            }
-            let proxy = BFCRT_BFCRT23 {
-                PT3_DC: self.PT3_DC(),
-                PT3_CC: self.PT3_CC(),
-                PT3_BC: self.PT3_BC(),
-                PT3_AC: self.PT3_AC(),
-                PT2_DC: self.PT2_DC(),
-                PT2_CC: self.PT2_CC(),
-                PT2_BC: self.PT2_BC(),
-                PT2_AC: self.PT2_AC(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

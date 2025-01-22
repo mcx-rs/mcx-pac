@@ -97,21 +97,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ATR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ATR {
-                ATSR: u16,
-                ATP: u16,
-            }
-            let proxy = ATR {
-                ATSR: self.ATSR(),
-                ATP: self.ATP(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -208,33 +193,6 @@ pub mod regs {
                 .field("DISTAM", &self.DISTAM())
                 .field("DPR", &self.DPR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CR {
-                SWR: bool,
-                DEN: bool,
-                TFSR: bool,
-                UM: bool,
-                ATCS0: bool,
-                ATCS1: bool,
-                DISTAM: bool,
-                DPR: u16,
-            }
-            let proxy = CR {
-                SWR: self.SWR(),
-                DEN: self.DEN(),
-                TFSR: self.TFSR(),
-                UM: self.UM(),
-                ATCS0: self.ATCS0(),
-                ATCS1: self.ATCS1(),
-                DISTAM: self.DISTAM(),
-                DPR: self.DPR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Enable"]
@@ -445,55 +403,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for IER {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct IER {
-                DTIE: bool,
-                TIIE0: bool,
-                TIIE1: bool,
-                TIIE2: bool,
-                TIIE3: bool,
-                TIIE4: bool,
-                TIIE5: bool,
-                TIIE6: bool,
-                TIIE7: bool,
-                TIIE8: bool,
-                TIIE9: bool,
-                TPIE0: bool,
-                TPIE1: bool,
-                TPIE2: bool,
-                TPIE3: bool,
-                TPIE4: bool,
-                TPIE5: bool,
-                TPIE6: bool,
-                TPIE7: bool,
-            }
-            let proxy = IER {
-                DTIE: self.DTIE(),
-                TIIE0: self.TIIE0(),
-                TIIE1: self.TIIE1(),
-                TIIE2: self.TIIE2(),
-                TIIE3: self.TIIE3(),
-                TIIE4: self.TIIE4(),
-                TIIE5: self.TIIE5(),
-                TIIE6: self.TIIE6(),
-                TIIE7: self.TIIE7(),
-                TIIE8: self.TIIE8(),
-                TIIE9: self.TIIE9(),
-                TPIE0: self.TPIE0(),
-                TPIE1: self.TPIE1(),
-                TPIE2: self.TPIE2(),
-                TPIE3: self.TPIE3(),
-                TPIE4: self.TPIE4(),
-                TPIE5: self.TPIE5(),
-                TPIE6: self.TPIE6(),
-                TPIE7: self.TPIE7(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Lock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -692,53 +601,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LR {
-                CRL: bool,
-                SRL: bool,
-                LRL: bool,
-                IEL: bool,
-                TSL: bool,
-                TEL: bool,
-                PDL: bool,
-                PPL: bool,
-                ATL0: bool,
-                ATL1: bool,
-                GFL0: bool,
-                GFL1: bool,
-                GFL2: bool,
-                GFL3: bool,
-                GFL4: bool,
-                GFL5: bool,
-                GFL6: bool,
-                GFL7: bool,
-            }
-            let proxy = LR {
-                CRL: self.CRL(),
-                SRL: self.SRL(),
-                LRL: self.LRL(),
-                IEL: self.IEL(),
-                TSL: self.TSL(),
-                TEL: self.TEL(),
-                PDL: self.PDL(),
-                PPL: self.PPL(),
-                ATL0: self.ATL0(),
-                ATL1: self.ATL1(),
-                GFL0: self.GFL0(),
-                GFL1: self.GFL1(),
-                GFL2: self.GFL2(),
-                GFL3: self.GFL3(),
-                GFL4: self.GFL4(),
-                GFL5: self.GFL5(),
-                GFL6: self.GFL6(),
-                GFL7: self.GFL7(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Pin Direction"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -917,49 +779,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PDR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PDR {
-                TPD0: bool,
-                TPD1: bool,
-                TPD2: bool,
-                TPD3: bool,
-                TPD4: bool,
-                TPD5: bool,
-                TPD6: bool,
-                TPD7: bool,
-                TPOD0: bool,
-                TPOD1: bool,
-                TPOD2: bool,
-                TPOD3: bool,
-                TPOD4: bool,
-                TPOD5: bool,
-                TPOD6: bool,
-                TPOD7: bool,
-            }
-            let proxy = PDR {
-                TPD0: self.TPD0(),
-                TPD1: self.TPD1(),
-                TPD2: self.TPD2(),
-                TPD3: self.TPD3(),
-                TPD4: self.TPD4(),
-                TPD5: self.TPD5(),
-                TPD6: self.TPD6(),
-                TPD7: self.TPD7(),
-                TPOD0: self.TPOD0(),
-                TPOD1: self.TPOD1(),
-                TPOD2: self.TPOD2(),
-                TPOD3: self.TPOD3(),
-                TPOD4: self.TPOD4(),
-                TPOD5: self.TPOD5(),
-                TPOD6: self.TPOD6(),
-                TPOD7: self.TPOD7(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Pin Glitch Filter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1056,33 +875,6 @@ pub mod regs {
                 .field("TPE", &self.TPE())
                 .field("TPS", &self.TPS())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PGFR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PGFR {
-                GFW: u8,
-                GFP: bool,
-                GFE: bool,
-                TPSW: u8,
-                TPSF: u8,
-                TPEX: u8,
-                TPE: bool,
-                TPS: bool,
-            }
-            let proxy = PGFR {
-                GFW: self.GFW(),
-                GFP: self.GFP(),
-                GFE: self.GFE(),
-                TPSW: self.TPSW(),
-                TPSF: self.TPSF(),
-                TPEX: self.TPEX(),
-                TPE: self.TPE(),
-                TPS: self.TPS(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pin Polarity"]
@@ -1261,49 +1053,6 @@ pub mod regs {
                 .field("TPID6", &self.TPID6())
                 .field("TPID7", &self.TPID7())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PPR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PPR {
-                TPP0: bool,
-                TPP1: bool,
-                TPP2: bool,
-                TPP3: bool,
-                TPP4: bool,
-                TPP5: bool,
-                TPP6: bool,
-                TPP7: bool,
-                TPID0: bool,
-                TPID1: bool,
-                TPID2: bool,
-                TPID3: bool,
-                TPID4: bool,
-                TPID5: bool,
-                TPID6: bool,
-                TPID7: bool,
-            }
-            let proxy = PPR {
-                TPP0: self.TPP0(),
-                TPP1: self.TPP1(),
-                TPP2: self.TPP2(),
-                TPP3: self.TPP3(),
-                TPP4: self.TPP4(),
-                TPP5: self.TPP5(),
-                TPP6: self.TPP6(),
-                TPP7: self.TPP7(),
-                TPID0: self.TPID0(),
-                TPID1: self.TPID1(),
-                TPID2: self.TPID2(),
-                TPID3: self.TPID3(),
-                TPID4: self.TPID4(),
-                TPID5: self.TPID5(),
-                TPID6: self.TPID6(),
-                TPID7: self.TPID7(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status"]
@@ -1524,57 +1273,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SR {
-                DTF: bool,
-                TAF: bool,
-                TIF0: bool,
-                TIF1: bool,
-                TIF2: bool,
-                TIF3: bool,
-                TIF4: bool,
-                TIF5: bool,
-                TIF6: bool,
-                TIF7: bool,
-                TIF8: bool,
-                TIF9: bool,
-                TPF0: bool,
-                TPF1: bool,
-                TPF2: bool,
-                TPF3: bool,
-                TPF4: bool,
-                TPF5: bool,
-                TPF6: bool,
-                TPF7: bool,
-            }
-            let proxy = SR {
-                DTF: self.DTF(),
-                TAF: self.TAF(),
-                TIF0: self.TIF0(),
-                TIF1: self.TIF1(),
-                TIF2: self.TIF2(),
-                TIF3: self.TIF3(),
-                TIF4: self.TIF4(),
-                TIF5: self.TIF5(),
-                TIF6: self.TIF6(),
-                TIF7: self.TIF7(),
-                TIF8: self.TIF8(),
-                TIF9: self.TIF9(),
-                TPF0: self.TPF0(),
-                TPF1: self.TPF1(),
-                TPF2: self.TPF2(),
-                TPF3: self.TPF3(),
-                TPF4: self.TPF4(),
-                TPF5: self.TPF5(),
-                TPF6: self.TPF6(),
-                TPF7: self.TPF7(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Tamper Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1771,53 +1469,6 @@ pub mod regs {
                 .field("TPE6", &self.TPE6())
                 .field("TPE7", &self.TPE7())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TER {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TER {
-                TIE0: bool,
-                TIE1: bool,
-                TIE2: bool,
-                TIE3: bool,
-                TIE4: bool,
-                TIE5: bool,
-                TIE6: bool,
-                TIE7: bool,
-                TIE8: bool,
-                TIE9: bool,
-                TPE0: bool,
-                TPE1: bool,
-                TPE2: bool,
-                TPE3: bool,
-                TPE4: bool,
-                TPE5: bool,
-                TPE6: bool,
-                TPE7: bool,
-            }
-            let proxy = TER {
-                TIE0: self.TIE0(),
-                TIE1: self.TIE1(),
-                TIE2: self.TIE2(),
-                TIE3: self.TIE3(),
-                TIE4: self.TIE4(),
-                TIE5: self.TIE5(),
-                TIE6: self.TIE6(),
-                TIE7: self.TIE7(),
-                TIE8: self.TIE8(),
-                TIE9: self.TIE9(),
-                TPE0: self.TPE0(),
-                TPE1: self.TPE1(),
-                TPE2: self.TPE2(),
-                TPE3: self.TPE3(),
-                TPE4: self.TPE4(),
-                TPE5: self.TPE5(),
-                TPE6: self.TPE6(),
-                TPE7: self.TPE7(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

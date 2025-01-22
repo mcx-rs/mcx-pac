@@ -280,39 +280,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for AR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct AR {
-                ALLOW_ENROLL: bool,
-                ALLOW_START: bool,
-                ALLOW_RECONSTRUCT: bool,
-                ALLOW_STOP: bool,
-                ALLOW_GET_KEY: bool,
-                ALLOW_UNWRAP: bool,
-                ALLOW_WRAP_GENERATED_RANDOM: bool,
-                ALLOW_WRAP: bool,
-                ALLOW_GENERATE_RANDOM: bool,
-                ALLOW_TEST_MEMORY: bool,
-                ALLOW_TEST_PUF: bool,
-            }
-            let proxy = AR {
-                ALLOW_ENROLL: self.ALLOW_ENROLL(),
-                ALLOW_START: self.ALLOW_START(),
-                ALLOW_RECONSTRUCT: self.ALLOW_RECONSTRUCT(),
-                ALLOW_STOP: self.ALLOW_STOP(),
-                ALLOW_GET_KEY: self.ALLOW_GET_KEY(),
-                ALLOW_UNWRAP: self.ALLOW_UNWRAP(),
-                ALLOW_WRAP_GENERATED_RANDOM: self.ALLOW_WRAP_GENERATED_RANDOM(),
-                ALLOW_WRAP: self.ALLOW_WRAP(),
-                ALLOW_GENERATE_RANDOM: self.ALLOW_GENERATE_RANDOM(),
-                ALLOW_TEST_MEMORY: self.ALLOW_TEST_MEMORY(),
-                ALLOW_TEST_PUF: self.ALLOW_TEST_PUF(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "PUF command blocking configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -422,35 +389,6 @@ pub mod regs {
                 )
                 .field("DIS_PUF_TEST", &self.DIS_PUF_TEST())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CONFIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CONFIG {
-                DIS_PUF_ENROLL: bool,
-                DIS_PUF_START: bool,
-                DIS_PUF_STOP: bool,
-                DIS_PUF_GET_KEY: bool,
-                DIS_PUF_UNWRAP_KEY: bool,
-                DIS_PUF_GEN_WRAP_KEY: bool,
-                DIS_PUF_WRAP_KEY: bool,
-                DIS_PUF_GEN_RANDOM_NUMBER: bool,
-                DIS_PUF_TEST: bool,
-            }
-            let proxy = CONFIG {
-                DIS_PUF_ENROLL: self.DIS_PUF_ENROLL(),
-                DIS_PUF_START: self.DIS_PUF_START(),
-                DIS_PUF_STOP: self.DIS_PUF_STOP(),
-                DIS_PUF_GET_KEY: self.DIS_PUF_GET_KEY(),
-                DIS_PUF_UNWRAP_KEY: self.DIS_PUF_UNWRAP_KEY(),
-                DIS_PUF_GEN_WRAP_KEY: self.DIS_PUF_GEN_WRAP_KEY(),
-                DIS_PUF_WRAP_KEY: self.DIS_PUF_WRAP_KEY(),
-                DIS_PUF_GEN_RANDOM_NUMBER: self.DIS_PUF_GEN_RANDOM_NUMBER(),
-                DIS_PUF_TEST: self.DIS_PUF_TEST(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Control"]
@@ -591,41 +529,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CR {
-                ZEROIZE: bool,
-                ENROLL: bool,
-                START: bool,
-                RECONSTRUCT: bool,
-                STOP: bool,
-                GET_KEY: bool,
-                UNWRAP: bool,
-                WRAP_GENERATED_RANDOM: bool,
-                WRAP: bool,
-                GENERATE_RANDOM: bool,
-                TEST_MEMORY: bool,
-                TEST_PUF: bool,
-            }
-            let proxy = CR {
-                ZEROIZE: self.ZEROIZE(),
-                ENROLL: self.ENROLL(),
-                START: self.START(),
-                RECONSTRUCT: self.RECONSTRUCT(),
-                STOP: self.STOP(),
-                GET_KEY: self.GET_KEY(),
-                UNWRAP: self.UNWRAP(),
-                WRAP_GENERATED_RANDOM: self.WRAP_GENERATED_RANDOM(),
-                WRAP: self.WRAP(),
-                GENERATE_RANDOM: self.GENERATE_RANDOM(),
-                TEST_MEMORY: self.TEST_MEMORY(),
-                TEST_PUF: self.TEST_PUF(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Data Destination"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -662,21 +565,6 @@ pub mod regs {
                 .field("DEST_DOR", &self.DEST_DOR())
                 .field("DEST_SO", &self.DEST_SO())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DATA_DEST {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DATA_DEST {
-                DEST_DOR: bool,
-                DEST_SO: bool,
-            }
-            let proxy = DATA_DEST {
-                DEST_DOR: self.DEST_DOR(),
-                DEST_SO: self.DEST_SO(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Data Source"]
@@ -717,21 +605,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DATA_SRC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DATA_SRC {
-                SRC_DIR: bool,
-                SRC_SI: bool,
-            }
-            let proxy = DATA_SRC {
-                SRC_DIR: self.SRC_DIR(),
-                SRC_SI: self.SRC_SI(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Hardware Information"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -768,21 +641,6 @@ pub mod regs {
                 .field("CONFIG_WRAP", &self.CONFIG_WRAP())
                 .field("CONFIG_TYPE", &self.CONFIG_TYPE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for HW_INFO {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HW_INFO {
-                CONFIG_WRAP: bool,
-                CONFIG_TYPE: u8,
-            }
-            let proxy = HW_INFO {
-                CONFIG_WRAP: self.CONFIG_WRAP(),
-                CONFIG_TYPE: self.CONFIG_TYPE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Hardware Restrict User Context 0"]
@@ -863,29 +721,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for HW_RUC0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HW_RUC0 {
-                LC_STATE: u8,
-                BOOT_STATE: u16,
-                CPU0_DEBUG: bool,
-                COOLFLUX_DEBUG: bool,
-                dsp_debug: bool,
-                ACCESS_LEVEL: u8,
-            }
-            let proxy = HW_RUC0 {
-                LC_STATE: self.LC_STATE(),
-                BOOT_STATE: self.BOOT_STATE(),
-                CPU0_DEBUG: self.CPU0_DEBUG(),
-                COOLFLUX_DEBUG: self.COOLFLUX_DEBUG(),
-                dsp_debug: self.dsp_debug(),
-                ACCESS_LEVEL: self.ACCESS_LEVEL(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Hardware Version"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -934,23 +769,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for HW_VER {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HW_VER {
-                HW_REV: u8,
-                HW_VERSION_MINOR: u8,
-                HW_VERSION_MAJOR: u8,
-            }
-            let proxy = HW_VER {
-                HW_REV: self.HW_REV(),
-                HW_VERSION_MINOR: self.HW_VERSION_MINOR(),
-                HW_VERSION_MAJOR: self.HW_VERSION_MAJOR(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -979,19 +797,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for IER {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct IER {
-                INT_EN: bool,
-            }
-            let proxy = IER {
-                INT_EN: self.INT_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Interface Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1018,19 +823,6 @@ pub mod regs {
             f.debug_struct("IF_SR")
                 .field("APB_ERROR", &self.APB_ERROR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for IF_SR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct IF_SR {
-                APB_ERROR: bool,
-            }
-            let proxy = IF_SR {
-                APB_ERROR: self.APB_ERROR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Mask"]
@@ -1121,31 +913,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for IMR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct IMR {
-                INT_EN_BUSY: bool,
-                INT_EN_OK: bool,
-                INT_EN_ERROR: bool,
-                INT_EN_ZEROIZED: bool,
-                INT_EN_REJECTED: bool,
-                INT_EN_DI_REQUEST: bool,
-                INT_EN_DO_REQUEST: bool,
-            }
-            let proxy = IMR {
-                INT_EN_BUSY: self.INT_EN_BUSY(),
-                INT_EN_OK: self.INT_EN_OK(),
-                INT_EN_ERROR: self.INT_EN_ERROR(),
-                INT_EN_ZEROIZED: self.INT_EN_ZEROIZED(),
-                INT_EN_REJECTED: self.INT_EN_REJECTED(),
-                INT_EN_DI_REQUEST: self.INT_EN_DI_REQUEST(),
-                INT_EN_DO_REQUEST: self.INT_EN_DO_REQUEST(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1234,31 +1001,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ISR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ISR {
-                INT_BUSY: bool,
-                INT_OK: bool,
-                INT_ERROR: bool,
-                INT_ZEROIZED: bool,
-                INT_REJECTED: bool,
-                INT_DI_REQUEST: bool,
-                INT_DO_REQUEST: bool,
-            }
-            let proxy = ISR {
-                INT_BUSY: self.INT_BUSY(),
-                INT_OK: self.INT_OK(),
-                INT_ERROR: self.INT_ERROR(),
-                INT_ZEROIZED: self.INT_ZEROIZED(),
-                INT_REJECTED: self.INT_REJECTED(),
-                INT_DI_REQUEST: self.INT_DI_REQUEST(),
-                INT_DO_REQUEST: self.INT_DO_REQUEST(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Miscellaneous"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1285,19 +1027,6 @@ pub mod regs {
             f.debug_struct("MISC")
                 .field("DATA_ENDIANNESS", &self.DATA_ENDIANNESS())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MISC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MISC {
-                DATA_ENDIANNESS: bool,
-            }
-            let proxy = MISC {
-                DATA_ENDIANNESS: self.DATA_ENDIANNESS(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Operation Result"]
@@ -1338,21 +1067,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ORR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ORR {
-                RESULT_CODE: u8,
-                LAST_OPERATION: u8,
-            }
-            let proxy = ORR {
-                RESULT_CODE: self.RESULT_CODE(),
-                LAST_OPERATION: self.LAST_OPERATION(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "PUF Score"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1379,19 +1093,6 @@ pub mod regs {
             f.debug_struct("PSR")
                 .field("PUF_SCORE", &self.PUF_SCORE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PSR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PSR {
-                PUF_SCORE: u8,
-            }
-            let proxy = PSR {
-                PUF_SCORE: self.PUF_SCORE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Security level lock"]
@@ -1440,23 +1141,6 @@ pub mod regs {
                 .field("ANTI_POLE_SEC_LEVEL", &self.ANTI_POLE_SEC_LEVEL())
                 .field("PATTERN", &self.PATTERN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SEC_LOCK {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SEC_LOCK {
-                SEC_LEVEL: u8,
-                ANTI_POLE_SEC_LEVEL: u8,
-                PATTERN: u16,
-            }
-            let proxy = SEC_LOCK {
-                SEC_LEVEL: self.SEC_LEVEL(),
-                ANTI_POLE_SEC_LEVEL: self.ANTI_POLE_SEC_LEVEL(),
-                PATTERN: self.PATTERN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status"]
@@ -1547,31 +1231,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SR {
-                BUSY: bool,
-                OK: bool,
-                ERROR: bool,
-                ZEROIZED: bool,
-                REJECTED: bool,
-                DI_REQUEST: bool,
-                DO_REQUEST: bool,
-            }
-            let proxy = SR {
-                BUSY: self.BUSY(),
-                OK: self.OK(),
-                ERROR: self.ERROR(),
-                ZEROIZED: self.ZEROIZED(),
-                REJECTED: self.REJECTED(),
-                DI_REQUEST: self.DI_REQUEST(),
-                DO_REQUEST: self.DO_REQUEST(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SRAM Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1608,21 +1267,6 @@ pub mod regs {
                 .field("ENABLE", &self.ENABLE())
                 .field("CKGATING", &self.CKGATING())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRAM_CFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRAM_CFG {
-                ENABLE: bool,
-                CKGATING: bool,
-            }
-            let proxy = SRAM_CFG {
-                ENABLE: self.ENABLE(),
-                CKGATING: self.CKGATING(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Enable Clear"]
@@ -1663,21 +1307,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRAM_INT_CLR_ENABLE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRAM_INT_CLR_ENABLE {
-                READY: bool,
-                APB_ERR: bool,
-            }
-            let proxy = SRAM_INT_CLR_ENABLE {
-                READY: self.READY(),
-                APB_ERR: self.APB_ERR(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Interrupt Status Clear"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1714,21 +1343,6 @@ pub mod regs {
                 .field("READY", &self.READY())
                 .field("APB_ERR", &self.APB_ERR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRAM_INT_CLR_STATUS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRAM_INT_CLR_STATUS {
-                READY: bool,
-                APB_ERR: bool,
-            }
-            let proxy = SRAM_INT_CLR_STATUS {
-                READY: self.READY(),
-                APB_ERR: self.APB_ERR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Enable"]
@@ -1769,21 +1383,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRAM_INT_ENABLE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRAM_INT_ENABLE {
-                READY: bool,
-                SRAM_APB_ERR: bool,
-            }
-            let proxy = SRAM_INT_ENABLE {
-                READY: self.READY(),
-                SRAM_APB_ERR: self.SRAM_APB_ERR(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Interrupt Enable Set"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1820,21 +1419,6 @@ pub mod regs {
                 .field("READY", &self.READY())
                 .field("APB_ERR", &self.APB_ERR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRAM_INT_SET_ENABLE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRAM_INT_SET_ENABLE {
-                READY: bool,
-                APB_ERR: bool,
-            }
-            let proxy = SRAM_INT_SET_ENABLE {
-                READY: self.READY(),
-                APB_ERR: self.APB_ERR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Status set"]
@@ -1875,21 +1459,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRAM_INT_SET_STATUS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRAM_INT_SET_STATUS {
-                READY: bool,
-                APB_ERR: bool,
-            }
-            let proxy = SRAM_INT_SET_STATUS {
-                READY: self.READY(),
-                APB_ERR: self.APB_ERR(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1928,21 +1497,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRAM_INT_STATUS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRAM_INT_STATUS {
-                READY: bool,
-                APB_ERR: bool,
-            }
-            let proxy = SRAM_INT_STATUS {
-                READY: self.READY(),
-                APB_ERR: self.APB_ERR(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1969,19 +1523,6 @@ pub mod regs {
             f.debug_struct("SRAM_STATUS")
                 .field("READY", &self.READY())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRAM_STATUS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRAM_STATUS {
-                READY: bool,
-            }
-            let proxy = SRAM_STATUS {
-                READY: self.READY(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

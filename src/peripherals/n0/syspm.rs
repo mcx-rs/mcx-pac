@@ -179,35 +179,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PMCR_PMCR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PMCR_PMCR {
-                MENB: bool,
-                SSC: u8,
-                CMODE: u8,
-                RECTR1: bool,
-                RECTR2: bool,
-                RECTR3: bool,
-                SELEVT1: u8,
-                SELEVT2: u8,
-                SELEVT3: u8,
-            }
-            let proxy = PMCR_PMCR {
-                MENB: self.MENB(),
-                SSC: self.SSC(),
-                CMODE: self.CMODE(),
-                RECTR1: self.RECTR1(),
-                RECTR2: self.RECTR2(),
-                RECTR3: self.RECTR3(),
-                SELEVT1: self.SELEVT1(),
-                SELEVT2: self.SELEVT2(),
-                SELEVT3: self.SELEVT3(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Performance Monitor Event Counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -234,17 +205,6 @@ pub mod regs {
             f.debug_struct("PMCR_PMECTR_HI")
                 .field("ECTR", &self.ECTR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PMCR_PMECTR_HI {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PMCR_PMECTR_HI {
-                ECTR: u8,
-            }
-            let proxy = PMCR_PMECTR_HI { ECTR: self.ECTR() };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

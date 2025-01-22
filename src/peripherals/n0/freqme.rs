@@ -165,39 +165,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTRLSTAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTRLSTAT {
-                REF_SCALE: u8,
-                PULSE_MODE: bool,
-                PULSE_POL: bool,
-                LT_MIN_INT_EN: bool,
-                GT_MAX_INT_EN: bool,
-                RESULT_READY_INT_EN: bool,
-                LT_MIN_STAT: bool,
-                GT_MAX_STAT: bool,
-                RESULT_READY_STAT: bool,
-                CONTINUOUS_MODE_EN: bool,
-                MEASURE_IN_PROGRESS: bool,
-            }
-            let proxy = CTRLSTAT {
-                REF_SCALE: self.REF_SCALE(),
-                PULSE_MODE: self.PULSE_MODE(),
-                PULSE_POL: self.PULSE_POL(),
-                LT_MIN_INT_EN: self.LT_MIN_INT_EN(),
-                GT_MAX_INT_EN: self.GT_MAX_INT_EN(),
-                RESULT_READY_INT_EN: self.RESULT_READY_INT_EN(),
-                LT_MIN_STAT: self.LT_MIN_STAT(),
-                GT_MAX_STAT: self.GT_MAX_STAT(),
-                RESULT_READY_STAT: self.RESULT_READY_STAT(),
-                CONTINUOUS_MODE_EN: self.CONTINUOUS_MODE_EN(),
-                MEASURE_IN_PROGRESS: self.MEASURE_IN_PROGRESS(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Control (in Read mode)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -234,21 +201,6 @@ pub mod regs {
                 .field("RESULT", &self.RESULT())
                 .field("MEASURE_IN_PROGRESS", &self.MEASURE_IN_PROGRESS())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTRL_R {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTRL_R {
-                RESULT: u32,
-                MEASURE_IN_PROGRESS: bool,
-            }
-            let proxy = CTRL_R {
-                RESULT: self.RESULT(),
-                MEASURE_IN_PROGRESS: self.MEASURE_IN_PROGRESS(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Control (in Write mode)"]
@@ -349,33 +301,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTRL_W {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTRL_W {
-                REF_SCALE: u8,
-                PULSE_MODE: bool,
-                PULSE_POL: bool,
-                LT_MIN_INT_EN: bool,
-                GT_MAX_INT_EN: bool,
-                RESULT_READY_INT_EN: bool,
-                CONTINUOUS_MODE_EN: bool,
-                MEASURE_IN_PROGRESS: bool,
-            }
-            let proxy = CTRL_W {
-                REF_SCALE: self.REF_SCALE(),
-                PULSE_MODE: self.PULSE_MODE(),
-                PULSE_POL: self.PULSE_POL(),
-                LT_MIN_INT_EN: self.LT_MIN_INT_EN(),
-                GT_MAX_INT_EN: self.GT_MAX_INT_EN(),
-                RESULT_READY_INT_EN: self.RESULT_READY_INT_EN(),
-                CONTINUOUS_MODE_EN: self.CONTINUOUS_MODE_EN(),
-                MEASURE_IN_PROGRESS: self.MEASURE_IN_PROGRESS(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Maximum"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -404,19 +329,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAX {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAX {
-                MAX_VALUE: u32,
-            }
-            let proxy = MAX {
-                MAX_VALUE: self.MAX_VALUE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Minimum"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -443,19 +355,6 @@ pub mod regs {
             f.debug_struct("MIN")
                 .field("MIN_VALUE", &self.MIN_VALUE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MIN {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MIN {
-                MIN_VALUE: u32,
-            }
-            let proxy = MIN {
-                MIN_VALUE: self.MIN_VALUE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

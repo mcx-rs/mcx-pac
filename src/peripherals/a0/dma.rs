@@ -229,29 +229,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_CH_CSR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_CH_CSR {
-                ERQ: bool,
-                EARQ: bool,
-                EEI: bool,
-                EBW: bool,
-                DONE: bool,
-                ACTIVE: bool,
-            }
-            let proxy = CH_CH_CSR {
-                ERQ: self.ERQ(),
-                EARQ: self.EARQ(),
-                EEI: self.EEI(),
-                EBW: self.EBW(),
-                DONE: self.DONE(),
-                ACTIVE: self.ACTIVE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Channel Error Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -360,35 +337,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_CH_ES {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_CH_ES {
-                DBE: bool,
-                SBE: bool,
-                SGE: bool,
-                NCE: bool,
-                DOE: bool,
-                DAE: bool,
-                SOE: bool,
-                SAE: bool,
-                ERR: bool,
-            }
-            let proxy = CH_CH_ES {
-                DBE: self.DBE(),
-                SBE: self.SBE(),
-                SGE: self.SGE(),
-                NCE: self.NCE(),
-                DOE: self.DOE(),
-                DAE: self.DAE(),
-                SOE: self.SOE(),
-                SAE: self.SAE(),
-                ERR: self.ERR(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Channel Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -417,17 +365,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_CH_INT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_CH_INT {
-                INT: bool,
-            }
-            let proxy = CH_CH_INT { INT: self.INT() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Channel Multiplexor Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -454,17 +391,6 @@ pub mod regs {
             f.debug_struct("CH_CH_MUX")
                 .field("SRC", &self.SRC())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_CH_MUX {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_CH_MUX {
-                SRC: u8,
-            }
-            let proxy = CH_CH_MUX { SRC: self.SRC() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Channel Priority"]
@@ -515,23 +441,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_CH_PRI {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_CH_PRI {
-                APL: u8,
-                DPA: bool,
-                ECP: bool,
-            }
-            let proxy = CH_CH_PRI {
-                APL: self.APL(),
-                DPA: self.DPA(),
-                ECP: self.ECP(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Channel System Bus"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -580,23 +489,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_CH_SBR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_CH_SBR {
-                MID: u8,
-                PAL: bool,
-                EMI: bool,
-            }
-            let proxy = CH_CH_SBR {
-                MID: self.MID(),
-                PAL: self.PAL(),
-                EMI: self.EMI(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Channel Arbitration Group"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -623,19 +515,6 @@ pub mod regs {
             f.debug_struct("CH_GRPRI")
                 .field("GRPRI", &self.GRPRI())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_GRPRI {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_GRPRI {
-                GRPRI: u8,
-            }
-            let proxy = CH_GRPRI {
-                GRPRI: self.GRPRI(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TCD Transfer Attributes"]
@@ -696,25 +575,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_TCD_ATTR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_TCD_ATTR {
-                DSIZE: u8,
-                DMOD: u8,
-                SSIZE: u8,
-                SMOD: u8,
-            }
-            let proxy = CH_TCD_ATTR {
-                DSIZE: self.DSIZE(),
-                DMOD: self.DMOD(),
-                SSIZE: self.SSIZE(),
-                SMOD: self.SMOD(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "TCD Beginning Major Loop Count (Minor Loop Channel Linking Disabled)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -751,21 +611,6 @@ pub mod regs {
                 .field("BITER", &self.BITER())
                 .field("ELINK", &self.ELINK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_TCD_BITER_ELINKNO {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_TCD_BITER_ELINKNO {
-                BITER: u16,
-                ELINK: bool,
-            }
-            let proxy = CH_TCD_BITER_ELINKNO {
-                BITER: self.BITER(),
-                ELINK: self.ELINK(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TCD Beginning Major Loop Count (Minor Loop Channel Linking Enabled)"]
@@ -816,23 +661,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_TCD_BITER_ELINKYES {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_TCD_BITER_ELINKYES {
-                BITER: u16,
-                LINKCH: u8,
-                ELINK: bool,
-            }
-            let proxy = CH_TCD_BITER_ELINKYES {
-                BITER: self.BITER(),
-                LINKCH: self.LINKCH(),
-                ELINK: self.ELINK(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "TCD Current Major Loop Count (Minor Loop Channel Linking Disabled)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -869,21 +697,6 @@ pub mod regs {
                 .field("CITER", &self.CITER())
                 .field("ELINK", &self.ELINK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_TCD_CITER_ELINKNO {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_TCD_CITER_ELINKNO {
-                CITER: u16,
-                ELINK: bool,
-            }
-            let proxy = CH_TCD_CITER_ELINKNO {
-                CITER: self.CITER(),
-                ELINK: self.ELINK(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TCD Current Major Loop Count (Minor Loop Channel Linking Enabled)"]
@@ -932,23 +745,6 @@ pub mod regs {
                 .field("LINKCH", &self.LINKCH())
                 .field("ELINK", &self.ELINK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_TCD_CITER_ELINKYES {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_TCD_CITER_ELINKYES {
-                CITER: u16,
-                LINKCH: u8,
-                ELINK: bool,
-            }
-            let proxy = CH_TCD_CITER_ELINKYES {
-                CITER: self.CITER(),
-                LINKCH: self.LINKCH(),
-                ELINK: self.ELINK(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TCD Control and Status"]
@@ -1069,37 +865,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_TCD_CSR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_TCD_CSR {
-                START: bool,
-                INTMAJOR: bool,
-                INTHALF: bool,
-                DREQ: bool,
-                ESG: bool,
-                MAJORELINK: bool,
-                EEOP: bool,
-                ESDA: bool,
-                MAJORLINKCH: u8,
-                BWC: u8,
-            }
-            let proxy = CH_TCD_CSR {
-                START: self.START(),
-                INTMAJOR: self.INTMAJOR(),
-                INTHALF: self.INTHALF(),
-                DREQ: self.DREQ(),
-                ESG: self.ESG(),
-                MAJORELINK: self.MAJORELINK(),
-                EEOP: self.EEOP(),
-                ESDA: self.ESDA(),
-                MAJORLINKCH: self.MAJORLINKCH(),
-                BWC: self.BWC(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "TCD Signed Destination Address Offset"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1126,17 +891,6 @@ pub mod regs {
             f.debug_struct("CH_TCD_DOFF")
                 .field("DOFF", &self.DOFF())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_TCD_DOFF {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_TCD_DOFF {
-                DOFF: u16,
-            }
-            let proxy = CH_TCD_DOFF { DOFF: self.DOFF() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TCD Transfer Size Without Minor Loop Offsets"]
@@ -1185,23 +939,6 @@ pub mod regs {
                 .field("DMLOE", &self.DMLOE())
                 .field("SMLOE", &self.SMLOE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_TCD_NBYTES_MLOFFNO {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_TCD_NBYTES_MLOFFNO {
-                NBYTES: u32,
-                DMLOE: bool,
-                SMLOE: bool,
-            }
-            let proxy = CH_TCD_NBYTES_MLOFFNO {
-                NBYTES: self.NBYTES(),
-                DMLOE: self.DMLOE(),
-                SMLOE: self.SMLOE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TCD Transfer Size with Minor Loop Offsets"]
@@ -1263,25 +1000,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_TCD_NBYTES_MLOFFYES {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_TCD_NBYTES_MLOFFYES {
-                NBYTES: u16,
-                MLOFF: u32,
-                DMLOE: bool,
-                SMLOE: bool,
-            }
-            let proxy = CH_TCD_NBYTES_MLOFFYES {
-                NBYTES: self.NBYTES(),
-                MLOFF: self.MLOFF(),
-                DMLOE: self.DMLOE(),
-                SMLOE: self.SMLOE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "TCD Signed Source Address Offset"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1308,17 +1026,6 @@ pub mod regs {
             f.debug_struct("CH_TCD_SOFF")
                 .field("SOFF", &self.SOFF())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CH_TCD_SOFF {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CH_TCD_SOFF {
-                SOFF: u16,
-            }
-            let proxy = CH_TCD_SOFF { SOFF: self.SOFF() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Management Page Control"]
@@ -1437,37 +1144,6 @@ pub mod regs {
                 .field("ACTIVE_ID", &self.ACTIVE_ID())
                 .field("ACTIVE", &self.ACTIVE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MP_CSR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MP_CSR {
-                EDBG: bool,
-                ERCA: bool,
-                HAE: bool,
-                HALT: bool,
-                GCLC: bool,
-                GMRC: bool,
-                ECX: bool,
-                CX: bool,
-                ACTIVE_ID: u8,
-                ACTIVE: bool,
-            }
-            let proxy = MP_CSR {
-                EDBG: self.EDBG(),
-                ERCA: self.ERCA(),
-                HAE: self.HAE(),
-                HALT: self.HALT(),
-                GCLC: self.GCLC(),
-                GMRC: self.GMRC(),
-                ECX: self.ECX(),
-                CX: self.CX(),
-                ACTIVE_ID: self.ACTIVE_ID(),
-                ACTIVE: self.ACTIVE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Management Page Error Status"]
@@ -1598,39 +1274,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MP_ES {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MP_ES {
-                DBE: bool,
-                SBE: bool,
-                SGE: bool,
-                NCE: bool,
-                DOE: bool,
-                DAE: bool,
-                SOE: bool,
-                SAE: bool,
-                ECX: bool,
-                ERRCHN: u8,
-                VLD: bool,
-            }
-            let proxy = MP_ES {
-                DBE: self.DBE(),
-                SBE: self.SBE(),
-                SGE: self.SGE(),
-                NCE: self.NCE(),
-                DOE: self.DOE(),
-                DAE: self.DAE(),
-                SOE: self.SOE(),
-                SAE: self.SAE(),
-                ECX: self.ECX(),
-                ERRCHN: self.ERRCHN(),
-                VLD: self.VLD(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Management Page Interrupt Request Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1655,17 +1298,6 @@ pub mod regs {
     impl core::fmt::Debug for MP_INT {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MP_INT").field("INT", &self.INT()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MP_INT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MP_INT {
-                INT: u8,
-            }
-            let proxy = MP_INT { INT: self.INT() };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -561,25 +561,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_ADC_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_ADC_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_ADC_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "ADCx clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -606,17 +587,6 @@ pub mod regs {
             f.debug_struct("MRCC_ADC_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_ADC_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_ADC_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_ADC_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CLKOUT clock divider control"]
@@ -677,25 +647,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CLKOUT_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CLKOUT_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_CLKOUT_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CLKOUT clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -722,17 +673,6 @@ pub mod regs {
             f.debug_struct("MRCC_CLKOUT_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CLKOUT_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CLKOUT_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_CLKOUT_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CMP0_FUNC clock divider control"]
@@ -793,25 +733,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CMP0_FUNC_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CMP0_FUNC_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_CMP0_FUNC_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CMP0_RR clock divider control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -870,25 +791,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CMP0_RR_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CMP0_RR_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_CMP0_RR_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CMP0_RR clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -915,17 +817,6 @@ pub mod regs {
             f.debug_struct("MRCC_CMP0_RR_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CMP0_RR_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CMP0_RR_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_CMP0_RR_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CMP1_FUNC clock divider control"]
@@ -986,25 +877,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CMP1_FUNC_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CMP1_FUNC_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_CMP1_FUNC_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CMP1_RR clock divider control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1063,25 +935,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CMP1_RR_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CMP1_RR_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_CMP1_RR_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CMP1_RR clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1108,17 +961,6 @@ pub mod regs {
             f.debug_struct("MRCC_CMP1_RR_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CMP1_RR_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CMP1_RR_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_CMP1_RR_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CMP2_FUNC clock divider control"]
@@ -1179,25 +1021,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CMP2_FUNC_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CMP2_FUNC_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_CMP2_FUNC_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CMP2_RR clock divider control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1256,25 +1079,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CMP2_RR_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CMP2_RR_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_CMP2_RR_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CMP2_RR clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1301,17 +1105,6 @@ pub mod regs {
             f.debug_struct("MRCC_CMP2_RR_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CMP2_RR_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CMP2_RR_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_CMP2_RR_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CTIMER0 clock divider control"]
@@ -1372,25 +1165,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CTIMER0_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CTIMER0_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_CTIMER0_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CTIMER0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1417,17 +1191,6 @@ pub mod regs {
             f.debug_struct("MRCC_CTIMER0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CTIMER0_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CTIMER0_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_CTIMER0_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CTIMER1 clock divider control"]
@@ -1488,25 +1251,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CTIMER1_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CTIMER1_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_CTIMER1_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CTIMER1 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1533,17 +1277,6 @@ pub mod regs {
             f.debug_struct("MRCC_CTIMER1_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CTIMER1_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CTIMER1_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_CTIMER1_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CTIMER2 clock divider control"]
@@ -1604,25 +1337,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CTIMER2_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CTIMER2_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_CTIMER2_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CTIMER2 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1649,17 +1363,6 @@ pub mod regs {
             f.debug_struct("MRCC_CTIMER2_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CTIMER2_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CTIMER2_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_CTIMER2_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CTIMER3 clock divider control"]
@@ -1720,25 +1423,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CTIMER3_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CTIMER3_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_CTIMER3_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CTIMER3 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1765,17 +1449,6 @@ pub mod regs {
             f.debug_struct("MRCC_CTIMER3_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CTIMER3_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CTIMER3_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_CTIMER3_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CTIMER4 clock divider control"]
@@ -1836,25 +1509,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CTIMER4_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CTIMER4_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_CTIMER4_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CTIMER4 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1881,17 +1535,6 @@ pub mod regs {
             f.debug_struct("MRCC_CTIMER4_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_CTIMER4_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_CTIMER4_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_CTIMER4_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DAC0 clock divider control"]
@@ -1952,25 +1595,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_DAC0_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_DAC0_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_DAC0_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "DAC0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1997,17 +1621,6 @@ pub mod regs {
             f.debug_struct("MRCC_DAC0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_DAC0_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_DAC0_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_DAC0_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DBG_TRACE clock divider control"]
@@ -2068,25 +1681,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_DBG_TRACE_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_DBG_TRACE_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_DBG_TRACE_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "DBG_TRACE clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2113,17 +1707,6 @@ pub mod regs {
             f.debug_struct("MRCC_DBG_TRACE_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_DBG_TRACE_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_DBG_TRACE_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_DBG_TRACE_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLEXCAN0 clock divider control"]
@@ -2184,25 +1767,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_FLEXCAN0_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_FLEXCAN0_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_FLEXCAN0_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "FLEXCAN0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2229,17 +1793,6 @@ pub mod regs {
             f.debug_struct("MRCC_FLEXCAN0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_FLEXCAN0_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_FLEXCAN0_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_FLEXCAN0_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLEXCAN1 clock divider control"]
@@ -2300,25 +1853,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_FLEXCAN1_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_FLEXCAN1_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_FLEXCAN1_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "FLEXCAN1 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2345,17 +1879,6 @@ pub mod regs {
             f.debug_struct("MRCC_FLEXCAN1_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_FLEXCAN1_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_FLEXCAN1_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_FLEXCAN1_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLEXIO0 clock divider control"]
@@ -2416,25 +1939,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_FLEXIO0_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_FLEXIO0_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_FLEXIO0_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "FLEXIO0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2461,17 +1965,6 @@ pub mod regs {
             f.debug_struct("MRCC_FLEXIO0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_FLEXIO0_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_FLEXIO0_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_FLEXIO0_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Control Automatic Clock Gating 0"]
@@ -2812,81 +2305,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_GLB_ACC0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_GLB_ACC0 {
-                INPUTMUX0: bool,
-                I3C0: bool,
-                CTIMER0: bool,
-                CTIMER1: bool,
-                CTIMER2: bool,
-                CTIMER3: bool,
-                CTIMER4: bool,
-                FREQME: bool,
-                UTICK0: bool,
-                WWDT0: bool,
-                SMARTDMA0: bool,
-                DMA0: bool,
-                AOI0: bool,
-                CRC0: bool,
-                EIM0: bool,
-                ERM0: bool,
-                FMC: bool,
-                AOI1: bool,
-                FLEXIO0: bool,
-                LPI2C0: bool,
-                LPI2C1: bool,
-                LPSPI0: bool,
-                LPSPI1: bool,
-                LPUART0: bool,
-                LPUART1: bool,
-                LPUART2: bool,
-                LPUART3: bool,
-                LPUART4: bool,
-                USB0: bool,
-                QDC0: bool,
-                QDC1: bool,
-                FLEXPWM0: bool,
-            }
-            let proxy = MRCC_GLB_ACC0 {
-                INPUTMUX0: self.INPUTMUX0(),
-                I3C0: self.I3C0(),
-                CTIMER0: self.CTIMER0(),
-                CTIMER1: self.CTIMER1(),
-                CTIMER2: self.CTIMER2(),
-                CTIMER3: self.CTIMER3(),
-                CTIMER4: self.CTIMER4(),
-                FREQME: self.FREQME(),
-                UTICK0: self.UTICK0(),
-                WWDT0: self.WWDT0(),
-                SMARTDMA0: self.SMARTDMA0(),
-                DMA0: self.DMA0(),
-                AOI0: self.AOI0(),
-                CRC0: self.CRC0(),
-                EIM0: self.EIM0(),
-                ERM0: self.ERM0(),
-                FMC: self.FMC(),
-                AOI1: self.AOI1(),
-                FLEXIO0: self.FLEXIO0(),
-                LPI2C0: self.LPI2C0(),
-                LPI2C1: self.LPI2C1(),
-                LPSPI0: self.LPSPI0(),
-                LPSPI1: self.LPSPI1(),
-                LPUART0: self.LPUART0(),
-                LPUART1: self.LPUART1(),
-                LPUART2: self.LPUART2(),
-                LPUART3: self.LPUART3(),
-                LPUART4: self.LPUART4(),
-                USB0: self.USB0(),
-                QDC0: self.QDC0(),
-                QDC1: self.QDC1(),
-                FLEXPWM0: self.FLEXPWM0(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Control Automatic Clock Gating 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3195,75 +2613,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_GLB_ACC1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_GLB_ACC1 {
-                FLEXPWM1: bool,
-                OSTIMER0: bool,
-                ADC0: bool,
-                ADC1: bool,
-                CMP0: bool,
-                CMP1: bool,
-                CMP2: bool,
-                DAC0: bool,
-                OPAMP0: bool,
-                OPAMP1: bool,
-                OPAMP2: bool,
-                OPAMP3: bool,
-                PORT0: bool,
-                PORT1: bool,
-                PORT2: bool,
-                PORT3: bool,
-                PORT4: bool,
-                SLCD0: bool,
-                FLEXCAN0: bool,
-                FLEXCAN1: bool,
-                LPI2C2: bool,
-                LPI2C3: bool,
-                LPUART5: bool,
-                PKC0: bool,
-                SGI0: bool,
-                TRNG0: bool,
-                UDF0: bool,
-                ADC2: bool,
-                ADC3: bool,
-            }
-            let proxy = MRCC_GLB_ACC1 {
-                FLEXPWM1: self.FLEXPWM1(),
-                OSTIMER0: self.OSTIMER0(),
-                ADC0: self.ADC0(),
-                ADC1: self.ADC1(),
-                CMP0: self.CMP0(),
-                CMP1: self.CMP1(),
-                CMP2: self.CMP2(),
-                DAC0: self.DAC0(),
-                OPAMP0: self.OPAMP0(),
-                OPAMP1: self.OPAMP1(),
-                OPAMP2: self.OPAMP2(),
-                OPAMP3: self.OPAMP3(),
-                PORT0: self.PORT0(),
-                PORT1: self.PORT1(),
-                PORT2: self.PORT2(),
-                PORT3: self.PORT3(),
-                PORT4: self.PORT4(),
-                SLCD0: self.SLCD0(),
-                FLEXCAN0: self.FLEXCAN0(),
-                FLEXCAN1: self.FLEXCAN1(),
-                LPI2C2: self.LPI2C2(),
-                LPI2C3: self.LPI2C3(),
-                LPUART5: self.LPUART5(),
-                PKC0: self.PKC0(),
-                SGI0: self.SGI0(),
-                TRNG0: self.TRNG0(),
-                UDF0: self.UDF0(),
-                ADC2: self.ADC2(),
-                ADC3: self.ADC3(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Control Automatic Clock Gating 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3380,37 +2729,6 @@ pub mod regs {
                 .field("MAU0", &self.MAU0())
                 .field("ROMC", &self.ROMC())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_GLB_ACC2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_GLB_ACC2 {
-                RAMA: bool,
-                RAMB: bool,
-                RAMC: bool,
-                GPIO0: bool,
-                GPIO1: bool,
-                GPIO2: bool,
-                GPIO3: bool,
-                GPIO4: bool,
-                MAU0: bool,
-                ROMC: bool,
-            }
-            let proxy = MRCC_GLB_ACC2 {
-                RAMA: self.RAMA(),
-                RAMB: self.RAMB(),
-                RAMC: self.RAMC(),
-                GPIO0: self.GPIO0(),
-                GPIO1: self.GPIO1(),
-                GPIO2: self.GPIO2(),
-                GPIO3: self.GPIO3(),
-                GPIO4: self.GPIO4(),
-                MAU0: self.MAU0(),
-                ROMC: self.ROMC(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AHB Clock Control 0"]
@@ -3751,81 +3069,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_GLB_CC0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_GLB_CC0 {
-                INPUTMUX0: bool,
-                I3C0: bool,
-                CTIMER0: bool,
-                CTIMER1: bool,
-                CTIMER2: bool,
-                CTIMER3: bool,
-                CTIMER4: bool,
-                FREQME: bool,
-                UTICK0: bool,
-                WWDT0: bool,
-                SMARTDMA0: bool,
-                DMA0: bool,
-                AOI0: bool,
-                CRC0: bool,
-                EIM0: bool,
-                ERM0: bool,
-                FMC: bool,
-                AOI1: bool,
-                FLEXIO0: bool,
-                LPI2C0: bool,
-                LPI2C1: bool,
-                LPSPI0: bool,
-                LPSPI1: bool,
-                LPUART0: bool,
-                LPUART1: bool,
-                LPUART2: bool,
-                LPUART3: bool,
-                LPUART4: bool,
-                USB0: bool,
-                QDC0: bool,
-                QDC1: bool,
-                FLEXPWM0: bool,
-            }
-            let proxy = MRCC_GLB_CC0 {
-                INPUTMUX0: self.INPUTMUX0(),
-                I3C0: self.I3C0(),
-                CTIMER0: self.CTIMER0(),
-                CTIMER1: self.CTIMER1(),
-                CTIMER2: self.CTIMER2(),
-                CTIMER3: self.CTIMER3(),
-                CTIMER4: self.CTIMER4(),
-                FREQME: self.FREQME(),
-                UTICK0: self.UTICK0(),
-                WWDT0: self.WWDT0(),
-                SMARTDMA0: self.SMARTDMA0(),
-                DMA0: self.DMA0(),
-                AOI0: self.AOI0(),
-                CRC0: self.CRC0(),
-                EIM0: self.EIM0(),
-                ERM0: self.ERM0(),
-                FMC: self.FMC(),
-                AOI1: self.AOI1(),
-                FLEXIO0: self.FLEXIO0(),
-                LPI2C0: self.LPI2C0(),
-                LPI2C1: self.LPI2C1(),
-                LPSPI0: self.LPSPI0(),
-                LPSPI1: self.LPSPI1(),
-                LPUART0: self.LPUART0(),
-                LPUART1: self.LPUART1(),
-                LPUART2: self.LPUART2(),
-                LPUART3: self.LPUART3(),
-                LPUART4: self.LPUART4(),
-                USB0: self.USB0(),
-                QDC0: self.QDC0(),
-                QDC1: self.QDC1(),
-                FLEXPWM0: self.FLEXPWM0(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "AHB Clock Control 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4144,77 +3387,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_GLB_CC1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_GLB_CC1 {
-                FLEXPWM1: bool,
-                OSTIMER0: bool,
-                ADC0: bool,
-                ADC1: bool,
-                CMP0: bool,
-                CMP1: bool,
-                CMP2: bool,
-                DAC0: bool,
-                OPAMP0: bool,
-                OPAMP1: bool,
-                OPAMP2: bool,
-                OPAMP3: bool,
-                PORT0: bool,
-                PORT1: bool,
-                PORT2: bool,
-                PORT3: bool,
-                PORT4: bool,
-                SLCD0: bool,
-                FLEXCAN0: bool,
-                FLEXCAN1: bool,
-                LPI2C2: bool,
-                LPI2C3: bool,
-                LPUART5: bool,
-                TDET0: bool,
-                PKC0: bool,
-                SGI0: bool,
-                TRNG0: bool,
-                UDF0: bool,
-                ADC2: bool,
-                ADC3: bool,
-            }
-            let proxy = MRCC_GLB_CC1 {
-                FLEXPWM1: self.FLEXPWM1(),
-                OSTIMER0: self.OSTIMER0(),
-                ADC0: self.ADC0(),
-                ADC1: self.ADC1(),
-                CMP0: self.CMP0(),
-                CMP1: self.CMP1(),
-                CMP2: self.CMP2(),
-                DAC0: self.DAC0(),
-                OPAMP0: self.OPAMP0(),
-                OPAMP1: self.OPAMP1(),
-                OPAMP2: self.OPAMP2(),
-                OPAMP3: self.OPAMP3(),
-                PORT0: self.PORT0(),
-                PORT1: self.PORT1(),
-                PORT2: self.PORT2(),
-                PORT3: self.PORT3(),
-                PORT4: self.PORT4(),
-                SLCD0: self.SLCD0(),
-                FLEXCAN0: self.FLEXCAN0(),
-                FLEXCAN1: self.FLEXCAN1(),
-                LPI2C2: self.LPI2C2(),
-                LPI2C3: self.LPI2C3(),
-                LPUART5: self.LPUART5(),
-                TDET0: self.TDET0(),
-                PKC0: self.PKC0(),
-                SGI0: self.SGI0(),
-                TRNG0: self.TRNG0(),
-                UDF0: self.UDF0(),
-                ADC2: self.ADC2(),
-                ADC3: self.ADC3(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "AHB Clock Control 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4331,37 +3503,6 @@ pub mod regs {
                 .field("MAU0", &self.MAU0())
                 .field("ROMC", &self.ROMC())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_GLB_CC2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_GLB_CC2 {
-                RAMA: bool,
-                RAMB: bool,
-                RAMC: bool,
-                GPIO0: bool,
-                GPIO1: bool,
-                GPIO2: bool,
-                GPIO3: bool,
-                GPIO4: bool,
-                MAU0: bool,
-                ROMC: bool,
-            }
-            let proxy = MRCC_GLB_CC2 {
-                RAMA: self.RAMA(),
-                RAMB: self.RAMB(),
-                RAMC: self.RAMC(),
-                GPIO0: self.GPIO0(),
-                GPIO1: self.GPIO1(),
-                GPIO2: self.GPIO2(),
-                GPIO3: self.GPIO3(),
-                GPIO4: self.GPIO4(),
-                MAU0: self.MAU0(),
-                ROMC: self.ROMC(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Peripheral Reset Control 0"]
@@ -4682,77 +3823,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_GLB_RST0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_GLB_RST0 {
-                INPUTMUX0: bool,
-                I3C0: bool,
-                CTIMER0: bool,
-                CTIMER1: bool,
-                CTIMER2: bool,
-                CTIMER3: bool,
-                CTIMER4: bool,
-                FREQME: bool,
-                UTICK0: bool,
-                SMARTDMA0: bool,
-                DMA0: bool,
-                AOI0: bool,
-                CRC0: bool,
-                EIM0: bool,
-                ERM0: bool,
-                AOI1: bool,
-                FLEXIO0: bool,
-                LPI2C0: bool,
-                LPI2C1: bool,
-                LPSPI0: bool,
-                LPSPI1: bool,
-                LPUART0: bool,
-                LPUART1: bool,
-                LPUART2: bool,
-                LPUART3: bool,
-                LPUART4: bool,
-                USB0: bool,
-                QDC0: bool,
-                QDC1: bool,
-                FLEXPWM0: bool,
-            }
-            let proxy = MRCC_GLB_RST0 {
-                INPUTMUX0: self.INPUTMUX0(),
-                I3C0: self.I3C0(),
-                CTIMER0: self.CTIMER0(),
-                CTIMER1: self.CTIMER1(),
-                CTIMER2: self.CTIMER2(),
-                CTIMER3: self.CTIMER3(),
-                CTIMER4: self.CTIMER4(),
-                FREQME: self.FREQME(),
-                UTICK0: self.UTICK0(),
-                SMARTDMA0: self.SMARTDMA0(),
-                DMA0: self.DMA0(),
-                AOI0: self.AOI0(),
-                CRC0: self.CRC0(),
-                EIM0: self.EIM0(),
-                ERM0: self.ERM0(),
-                AOI1: self.AOI1(),
-                FLEXIO0: self.FLEXIO0(),
-                LPI2C0: self.LPI2C0(),
-                LPI2C1: self.LPI2C1(),
-                LPSPI0: self.LPSPI0(),
-                LPSPI1: self.LPSPI1(),
-                LPUART0: self.LPUART0(),
-                LPUART1: self.LPUART1(),
-                LPUART2: self.LPUART2(),
-                LPUART3: self.LPUART3(),
-                LPUART4: self.LPUART4(),
-                USB0: self.USB0(),
-                QDC0: self.QDC0(),
-                QDC1: self.QDC1(),
-                FLEXPWM0: self.FLEXPWM0(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Peripheral Reset Control 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5031,69 +4101,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_GLB_RST1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_GLB_RST1 {
-                FLEXPWM1: bool,
-                OSTIMER0: bool,
-                ADC0: bool,
-                ADC1: bool,
-                CMP1: bool,
-                CMP2: bool,
-                DAC0: bool,
-                OPAMP0: bool,
-                OPAMP1: bool,
-                OPAMP2: bool,
-                OPAMP3: bool,
-                PORT0: bool,
-                PORT1: bool,
-                PORT2: bool,
-                PORT3: bool,
-                PORT4: bool,
-                SLCD0: bool,
-                FLEXCAN0: bool,
-                FLEXCAN1: bool,
-                LPI2C2: bool,
-                LPI2C3: bool,
-                LPUART5: bool,
-                PKC0: bool,
-                TRNG0: bool,
-                ADC2: bool,
-                ADC3: bool,
-            }
-            let proxy = MRCC_GLB_RST1 {
-                FLEXPWM1: self.FLEXPWM1(),
-                OSTIMER0: self.OSTIMER0(),
-                ADC0: self.ADC0(),
-                ADC1: self.ADC1(),
-                CMP1: self.CMP1(),
-                CMP2: self.CMP2(),
-                DAC0: self.DAC0(),
-                OPAMP0: self.OPAMP0(),
-                OPAMP1: self.OPAMP1(),
-                OPAMP2: self.OPAMP2(),
-                OPAMP3: self.OPAMP3(),
-                PORT0: self.PORT0(),
-                PORT1: self.PORT1(),
-                PORT2: self.PORT2(),
-                PORT3: self.PORT3(),
-                PORT4: self.PORT4(),
-                SLCD0: self.SLCD0(),
-                FLEXCAN0: self.FLEXCAN0(),
-                FLEXCAN1: self.FLEXCAN1(),
-                LPI2C2: self.LPI2C2(),
-                LPI2C3: self.LPI2C3(),
-                LPUART5: self.LPUART5(),
-                PKC0: self.PKC0(),
-                TRNG0: self.TRNG0(),
-                ADC2: self.ADC2(),
-                ADC3: self.ADC3(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Peripheral Reset Control 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5172,29 +4179,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_GLB_RST2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_GLB_RST2 {
-                GPIO0: bool,
-                GPIO1: bool,
-                GPIO2: bool,
-                GPIO3: bool,
-                GPIO4: bool,
-                MAU0: bool,
-            }
-            let proxy = MRCC_GLB_RST2 {
-                GPIO0: self.GPIO0(),
-                GPIO1: self.GPIO1(),
-                GPIO2: self.GPIO2(),
-                GPIO3: self.GPIO3(),
-                GPIO4: self.GPIO4(),
-                MAU0: self.MAU0(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "I3C0_FCLK clock divider control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5253,25 +4237,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_I3C0_FCLK_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_I3C0_FCLK_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_I3C0_FCLK_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "I3C0_FCLK clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5298,17 +4263,6 @@ pub mod regs {
             f.debug_struct("MRCC_I3C0_FCLK_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_I3C0_FCLK_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_I3C0_FCLK_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_I3C0_FCLK_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPI2C0 clock divider control"]
@@ -5369,25 +4323,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPI2C0_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPI2C0_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_LPI2C0_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LPI2C0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5414,17 +4349,6 @@ pub mod regs {
             f.debug_struct("MRCC_LPI2C0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPI2C0_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPI2C0_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_LPI2C0_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPI2C1 clock divider control"]
@@ -5485,25 +4409,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPI2C1_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPI2C1_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_LPI2C1_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LPI2C1 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5530,17 +4435,6 @@ pub mod regs {
             f.debug_struct("MRCC_LPI2C1_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPI2C1_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPI2C1_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_LPI2C1_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPI2C2 clock divider control"]
@@ -5601,25 +4495,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPI2C2_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPI2C2_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_LPI2C2_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LPI2C2 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5646,17 +4521,6 @@ pub mod regs {
             f.debug_struct("MRCC_LPI2C2_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPI2C2_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPI2C2_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_LPI2C2_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPI2C3 clock divider control"]
@@ -5717,25 +4581,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPI2C3_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPI2C3_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_LPI2C3_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LPI2C3 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5762,17 +4607,6 @@ pub mod regs {
             f.debug_struct("MRCC_LPI2C3_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPI2C3_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPI2C3_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_LPI2C3_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPSPI0 clock divider control"]
@@ -5833,25 +4667,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPSPI0_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPSPI0_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_LPSPI0_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LPSPI0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5878,17 +4693,6 @@ pub mod regs {
             f.debug_struct("MRCC_LPSPI0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPSPI0_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPSPI0_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_LPSPI0_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPSPI1 clock divider control"]
@@ -5949,25 +4753,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPSPI1_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPSPI1_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_LPSPI1_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LPSPI1 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5994,17 +4779,6 @@ pub mod regs {
             f.debug_struct("MRCC_LPSPI1_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPSPI1_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPSPI1_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_LPSPI1_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPTMR0 clock divider control"]
@@ -6065,25 +4839,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPTMR0_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPTMR0_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_LPTMR0_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LPTMR0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6110,17 +4865,6 @@ pub mod regs {
             f.debug_struct("MRCC_LPTMR0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPTMR0_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPTMR0_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_LPTMR0_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPUART0 clock divider control"]
@@ -6181,25 +4925,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPUART0_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPUART0_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_LPUART0_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LPUART0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6226,17 +4951,6 @@ pub mod regs {
             f.debug_struct("MRCC_LPUART0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPUART0_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPUART0_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_LPUART0_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPUART1 clock divider control"]
@@ -6297,25 +5011,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPUART1_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPUART1_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_LPUART1_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LPUART1 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6342,17 +5037,6 @@ pub mod regs {
             f.debug_struct("MRCC_LPUART1_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPUART1_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPUART1_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_LPUART1_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPUART2 clock divider control"]
@@ -6413,25 +5097,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPUART2_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPUART2_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_LPUART2_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LPUART2 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6458,17 +5123,6 @@ pub mod regs {
             f.debug_struct("MRCC_LPUART2_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPUART2_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPUART2_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_LPUART2_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPUART3 clock divider control"]
@@ -6529,25 +5183,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPUART3_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPUART3_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_LPUART3_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LPUART3 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6574,17 +5209,6 @@ pub mod regs {
             f.debug_struct("MRCC_LPUART3_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPUART3_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPUART3_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_LPUART3_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPUART4 clock divider control"]
@@ -6645,25 +5269,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPUART4_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPUART4_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_LPUART4_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LPUART4 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6690,17 +5295,6 @@ pub mod regs {
             f.debug_struct("MRCC_LPUART4_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPUART4_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPUART4_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_LPUART4_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPUART5 clock divider control"]
@@ -6761,25 +5355,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPUART5_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPUART5_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_LPUART5_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LPUART5 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6808,17 +5383,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_LPUART5_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_LPUART5_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_LPUART5_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "OSTIMER0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6845,17 +5409,6 @@ pub mod regs {
             f.debug_struct("MRCC_OSTIMER0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_OSTIMER0_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_OSTIMER0_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_OSTIMER0_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SYSTICK clock divider control"]
@@ -6916,25 +5469,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_SYSTICK_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_SYSTICK_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_SYSTICK_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SYSTICK clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6961,17 +5495,6 @@ pub mod regs {
             f.debug_struct("MRCC_SYSTICK_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_SYSTICK_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_SYSTICK_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_SYSTICK_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "USB0 clock divider control"]
@@ -7032,25 +5555,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_USB0_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_USB0_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_USB0_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "USB0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7077,17 +5581,6 @@ pub mod regs {
             f.debug_struct("MRCC_USB0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_USB0_CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_USB0_CLKSEL {
-                MUX: u8,
-            }
-            let proxy = MRCC_USB0_CLKSEL { MUX: self.MUX() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "WWDT0 clock divider control"]
@@ -7146,25 +5639,6 @@ pub mod regs {
                 .field("HALT", &self.HALT())
                 .field("UNSTAB", &self.UNSTAB())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRCC_WWDT0_CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRCC_WWDT0_CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MRCC_WWDT0_CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

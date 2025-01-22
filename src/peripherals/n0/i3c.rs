@@ -313,27 +313,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for IBIEXT1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct IBIEXT1 {
-                CNT: u8,
-                MAX: u8,
-                EXT1: u8,
-                EXT2: u8,
-                EXT3: u8,
-            }
-            let proxy = IBIEXT1 {
-                CNT: self.CNT(),
-                MAX: self.MAX(),
-                EXT1: self.EXT1(),
-                EXT2: self.EXT2(),
-                EXT3: self.EXT3(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Extended IBI Data 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -390,25 +369,6 @@ pub mod regs {
                 .field("EXT6", &self.EXT6())
                 .field("EXT7", &self.EXT7())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for IBIEXT2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct IBIEXT2 {
-                EXT4: u8,
-                EXT5: u8,
-                EXT6: u8,
-                EXT7: u8,
-            }
-            let proxy = IBIEXT2 {
-                EXT4: self.EXT4(),
-                EXT5: self.EXT5(),
-                EXT6: self.EXT6(),
-                EXT7: self.EXT7(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Controller Configuration"]
@@ -529,37 +489,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MCONFIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MCONFIG {
-                MSTENA: u8,
-                DISTO: bool,
-                HKEEP: u8,
-                ODSTOP: bool,
-                PPBAUD: u8,
-                PPLOW: u8,
-                ODBAUD: u8,
-                ODHPP: bool,
-                SKEW: u8,
-                I2CBAUD: u8,
-            }
-            let proxy = MCONFIG {
-                MSTENA: self.MSTENA(),
-                DISTO: self.DISTO(),
-                HKEEP: self.HKEEP(),
-                ODSTOP: self.ODSTOP(),
-                PPBAUD: self.PPBAUD(),
-                PPLOW: self.PPLOW(),
-                ODBAUD: self.ODBAUD(),
-                ODHPP: self.ODHPP(),
-                SKEW: self.SKEW(),
-                I2CBAUD: self.I2CBAUD(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Controller Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -636,29 +565,6 @@ pub mod regs {
                 .field("ADDR", &self.ADDR())
                 .field("RDTERM", &self.RDTERM())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MCTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MCTRL {
-                REQUEST: u8,
-                TYPE: u8,
-                IBIRESP: u8,
-                DIR: bool,
-                ADDR: u8,
-                RDTERM: u8,
-            }
-            let proxy = MCTRL {
-                REQUEST: self.REQUEST(),
-                TYPE: self.TYPE(),
-                IBIRESP: self.IBIRESP(),
-                DIR: self.DIR(),
-                ADDR: self.ADDR(),
-                RDTERM: self.RDTERM(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Controller Data Control"]
@@ -769,35 +675,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MDATACTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MDATACTRL {
-                FLUSHTB: bool,
-                FLUSHFB: bool,
-                UNLOCK: bool,
-                TXTRIG: u8,
-                RXTRIG: u8,
-                TXCOUNT: u8,
-                RXCOUNT: u8,
-                TXFULL: bool,
-                RXEMPTY: bool,
-            }
-            let proxy = MDATACTRL {
-                FLUSHTB: self.FLUSHTB(),
-                FLUSHFB: self.FLUSHFB(),
-                UNLOCK: self.UNLOCK(),
-                TXTRIG: self.TXTRIG(),
-                RXTRIG: self.RXTRIG(),
-                TXCOUNT: self.TXCOUNT(),
-                RXCOUNT: self.RXCOUNT(),
-                TXFULL: self.TXFULL(),
-                RXEMPTY: self.RXEMPTY(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Controller DMA Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -846,23 +723,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MDMACTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MDMACTRL {
-                DMAFB: u8,
-                DMATB: u8,
-                DMAWIDTH: u8,
-            }
-            let proxy = MDMACTRL {
-                DMAFB: self.DMAFB(),
-                DMATB: self.DMATB(),
-                DMAWIDTH: self.DMAWIDTH(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Controller Dynamic Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -899,21 +759,6 @@ pub mod regs {
                 .field("DAVALID", &self.DAVALID())
                 .field("DADDR", &self.DADDR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MDYNADDR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MDYNADDR {
-                DAVALID: bool,
-                DADDR: u8,
-            }
-            let proxy = MDYNADDR {
-                DAVALID: self.DAVALID(),
-                DADDR: self.DADDR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Controller Errors and Warnings"]
@@ -1024,35 +869,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MERRWARN {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MERRWARN {
-                NACK: bool,
-                WRABT: bool,
-                HPAR: bool,
-                HCRC: bool,
-                OREAD: bool,
-                OWRITE: bool,
-                MSGERR: bool,
-                INVREQ: bool,
-                TIMEOUT: bool,
-            }
-            let proxy = MERRWARN {
-                NACK: self.NACK(),
-                WRABT: self.WRABT(),
-                HPAR: self.HPAR(),
-                HCRC: self.HCRC(),
-                OREAD: self.OREAD(),
-                OWRITE: self.OWRITE(),
-                MSGERR: self.MSGERR(),
-                INVREQ: self.INVREQ(),
-                TIMEOUT: self.TIMEOUT(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Controller In-band Interrupt Registry and Rules"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1139,31 +955,6 @@ pub mod regs {
                 .field("MSB0", &self.MSB0())
                 .field("NOBYTE", &self.NOBYTE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MIBIRULES {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MIBIRULES {
-                ADDR0: u8,
-                ADDR1: u8,
-                ADDR2: u8,
-                ADDR3: u8,
-                ADDR4: u8,
-                MSB0: bool,
-                NOBYTE: bool,
-            }
-            let proxy = MIBIRULES {
-                ADDR0: self.ADDR0(),
-                ADDR1: self.ADDR1(),
-                ADDR2: self.ADDR2(),
-                ADDR3: self.ADDR3(),
-                ADDR4: self.ADDR4(),
-                MSB0: self.MSB0(),
-                NOBYTE: self.NOBYTE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Controller Interrupt Clear"]
@@ -1264,33 +1055,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MINTCLR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MINTCLR {
-                SLVSTART: bool,
-                MCTRLDONE: bool,
-                COMPLETE: bool,
-                RXPEND: bool,
-                TXNOTFULL: bool,
-                IBIWON: bool,
-                ERRWARN: bool,
-                NOWMASTER: bool,
-            }
-            let proxy = MINTCLR {
-                SLVSTART: self.SLVSTART(),
-                MCTRLDONE: self.MCTRLDONE(),
-                COMPLETE: self.COMPLETE(),
-                RXPEND: self.RXPEND(),
-                TXNOTFULL: self.TXNOTFULL(),
-                IBIWON: self.IBIWON(),
-                ERRWARN: self.ERRWARN(),
-                NOWMASTER: self.NOWMASTER(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Controller Interrupt Mask"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1387,33 +1151,6 @@ pub mod regs {
                 .field("ERRWARN", &self.ERRWARN())
                 .field("NOWMASTER", &self.NOWMASTER())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MINTMASKED {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MINTMASKED {
-                SLVSTART: bool,
-                MCTRLDONE: bool,
-                COMPLETE: bool,
-                RXPEND: bool,
-                TXNOTFULL: bool,
-                IBIWON: bool,
-                ERRWARN: bool,
-                NOWMASTER: bool,
-            }
-            let proxy = MINTMASKED {
-                SLVSTART: self.SLVSTART(),
-                MCTRLDONE: self.MCTRLDONE(),
-                COMPLETE: self.COMPLETE(),
-                RXPEND: self.RXPEND(),
-                TXNOTFULL: self.TXNOTFULL(),
-                IBIWON: self.IBIWON(),
-                ERRWARN: self.ERRWARN(),
-                NOWMASTER: self.NOWMASTER(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Controller Interrupt Set"]
@@ -1514,33 +1251,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MINTSET {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MINTSET {
-                SLVSTART: bool,
-                MCTRLDONE: bool,
-                COMPLETE: bool,
-                RXPEND: bool,
-                TXNOTFULL: bool,
-                IBIWON: bool,
-                ERRWARN: bool,
-                NOWMASTER: bool,
-            }
-            let proxy = MINTSET {
-                SLVSTART: self.SLVSTART(),
-                MCTRLDONE: self.MCTRLDONE(),
-                COMPLETE: self.COMPLETE(),
-                RXPEND: self.RXPEND(),
-                TXNOTFULL: self.TXNOTFULL(),
-                IBIWON: self.IBIWON(),
-                ERRWARN: self.ERRWARN(),
-                NOWMASTER: self.NOWMASTER(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Controller Read Data Byte"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1567,19 +1277,6 @@ pub mod regs {
             f.debug_struct("MRDATAB")
                 .field("VALUE", &self.VALUE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRDATAB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRDATAB {
-                VALUE: u8,
-            }
-            let proxy = MRDATAB {
-                VALUE: self.VALUE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Controller Read Data Halfword"]
@@ -1620,21 +1317,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRDATAH {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRDATAH {
-                LSB: u8,
-                MSB: u8,
-            }
-            let proxy = MRDATAH {
-                LSB: self.LSB(),
-                MSB: self.MSB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Controller Read Message in DDR mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1663,17 +1345,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRMSG_DDR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRMSG_DDR {
-                DATA: u16,
-            }
-            let proxy = MRMSG_DDR { DATA: self.DATA() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Controller Read Message in SDR mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1700,17 +1371,6 @@ pub mod regs {
             f.debug_struct("MRMSG_SDR")
                 .field("DATA", &self.DATA())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MRMSG_SDR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MRMSG_SDR {
-                DATA: u16,
-            }
-            let proxy = MRMSG_SDR { DATA: self.DATA() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Controller Status"]
@@ -1861,43 +1521,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MSTATUS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MSTATUS {
-                STATE: u8,
-                BETWEEN: bool,
-                NACKED: bool,
-                IBITYPE: u8,
-                SLVSTART: bool,
-                MCTRLDONE: bool,
-                COMPLETE: bool,
-                RXPEND: bool,
-                TXNOTFULL: bool,
-                IBIWON: bool,
-                ERRWARN: bool,
-                NOWMASTER: bool,
-                IBIADDR: u8,
-            }
-            let proxy = MSTATUS {
-                STATE: self.STATE(),
-                BETWEEN: self.BETWEEN(),
-                NACKED: self.NACKED(),
-                IBITYPE: self.IBITYPE(),
-                SLVSTART: self.SLVSTART(),
-                MCTRLDONE: self.MCTRLDONE(),
-                COMPLETE: self.COMPLETE(),
-                RXPEND: self.RXPEND(),
-                TXNOTFULL: self.TXNOTFULL(),
-                IBIWON: self.IBIWON(),
-                ERRWARN: self.ERRWARN(),
-                NOWMASTER: self.NOWMASTER(),
-                IBIADDR: self.IBIADDR(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Controller Write Data Byte"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1946,23 +1569,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MWDATAB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MWDATAB {
-                VALUE: u8,
-                END: bool,
-                END_ALSO: bool,
-            }
-            let proxy = MWDATAB {
-                VALUE: self.VALUE(),
-                END: self.END(),
-                END_ALSO: self.END_ALSO(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Controller Write Byte Data 1 (to Bus)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1991,19 +1597,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MWDATAB1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MWDATAB1 {
-                VALUE: u8,
-            }
-            let proxy = MWDATAB1 {
-                VALUE: self.VALUE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Controller Write Data Byte End"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2030,19 +1623,6 @@ pub mod regs {
             f.debug_struct("MWDATABE")
                 .field("VALUE", &self.VALUE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MWDATABE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MWDATABE {
-                VALUE: u8,
-            }
-            let proxy = MWDATABE {
-                VALUE: self.VALUE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Controller Write Data Halfword"]
@@ -2093,23 +1673,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MWDATAH {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MWDATAH {
-                DATA0: u8,
-                DATA1: u8,
-                END: bool,
-            }
-            let proxy = MWDATAH {
-                DATA0: self.DATA0(),
-                DATA1: self.DATA1(),
-                END: self.END(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Controller Write Data Halfword End"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2148,21 +1711,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MWDATAHE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MWDATAHE {
-                DATA0: u8,
-                DATA1: u8,
-            }
-            let proxy = MWDATAHE {
-                DATA0: self.DATA0(),
-                DATA1: self.DATA1(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Controller Write Message in DDR mode: First Control Word"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2189,19 +1737,6 @@ pub mod regs {
             f.debug_struct("MWMSG_DDR_CONTROL")
                 .field("ADDRCMD", &self.ADDRCMD())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MWMSG_DDR_CONTROL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MWMSG_DDR_CONTROL {
-                ADDRCMD: u16,
-            }
-            let proxy = MWMSG_DDR_CONTROL {
-                ADDRCMD: self.ADDRCMD(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Controller Write Message in DDR Mode Control 2"]
@@ -2242,21 +1777,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MWMSG_DDR_CONTROL2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MWMSG_DDR_CONTROL2 {
-                LEN: u16,
-                END: bool,
-            }
-            let proxy = MWMSG_DDR_CONTROL2 {
-                LEN: self.LEN(),
-                END: self.END(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Controller Write Message Data in DDR mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2283,19 +1803,6 @@ pub mod regs {
             f.debug_struct("MWMSG_DDR_DATA")
                 .field("DATA16B", &self.DATA16B())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MWMSG_DDR_DATA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MWMSG_DDR_DATA {
-                DATA16B: u16,
-            }
-            let proxy = MWMSG_DDR_DATA {
-                DATA16B: self.DATA16B(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Controller Write Message Control in SDR mode"]
@@ -2366,27 +1873,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MWMSG_SDR_CONTROL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MWMSG_SDR_CONTROL {
-                DIR: bool,
-                ADDR: u8,
-                END: bool,
-                I2C: bool,
-                LEN: u8,
-            }
-            let proxy = MWMSG_SDR_CONTROL {
-                DIR: self.DIR(),
-                ADDR: self.ADDR(),
-                END: self.END(),
-                I2C: self.I2C(),
-                LEN: self.LEN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Controller Write Message Data in SDR mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2413,19 +1899,6 @@ pub mod regs {
             f.debug_struct("MWMSG_SDR_DATA")
                 .field("DATA16B", &self.DATA16B())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MWMSG_SDR_DATA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MWMSG_SDR_DATA {
-                DATA16B: u16,
-            }
-            let proxy = MWMSG_SDR_DATA {
-                DATA16B: self.DATA16B(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Target Capabilities"]
@@ -2576,43 +2049,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SCAPABILITIES {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SCAPABILITIES {
-                IDENA: u8,
-                IDREG: u8,
-                HDRSUPP: u8,
-                MASTER: bool,
-                SADDR: u8,
-                CCCHANDLE: u8,
-                IBI_MR_HJ: u8,
-                TIMECTRL: bool,
-                EXTFIFO: u8,
-                FIFOTX: u8,
-                FIFORX: u8,
-                INT: bool,
-                DMA: bool,
-            }
-            let proxy = SCAPABILITIES {
-                IDENA: self.IDENA(),
-                IDREG: self.IDREG(),
-                HDRSUPP: self.HDRSUPP(),
-                MASTER: self.MASTER(),
-                SADDR: self.SADDR(),
-                CCCHANDLE: self.CCCHANDLE(),
-                IBI_MR_HJ: self.IBI_MR_HJ(),
-                TIMECTRL: self.TIMECTRL(),
-                EXTFIFO: self.EXTFIFO(),
-                FIFOTX: self.FIFOTX(),
-                FIFORX: self.FIFORX(),
-                INT: self.INT(),
-                DMA: self.DMA(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Target Capabilities 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2741,39 +2177,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SCAPABILITIES2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SCAPABILITIES2 {
-                MAPCNT: u8,
-                I2C10B: bool,
-                I2CRST: bool,
-                I2CDEVID: bool,
-                IBIEXT: bool,
-                IBIXREG: bool,
-                SLVRST: bool,
-                GROUP: u8,
-                AASA: bool,
-                SSTSUB: bool,
-                SSTWR: bool,
-            }
-            let proxy = SCAPABILITIES2 {
-                MAPCNT: self.MAPCNT(),
-                I2C10B: self.I2C10B(),
-                I2CRST: self.I2CRST(),
-                I2CDEVID: self.I2CDEVID(),
-                IBIEXT: self.IBIEXT(),
-                IBIXREG: self.IBIXREG(),
-                SLVRST: self.SLVRST(),
-                GROUP: self.GROUP(),
-                AASA: self.AASA(),
-                SSTSUB: self.SSTSUB(),
-                SSTWR: self.SSTWR(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Target Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2882,35 +2285,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SCONFIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SCONFIG {
-                SLVENA: bool,
-                NACK: bool,
-                MATCHSS: bool,
-                S0IGNORE: bool,
-                DDROK: bool,
-                IDRAND: bool,
-                OFFLINE: bool,
-                BAMATCH: u8,
-                SADDR: u8,
-            }
-            let proxy = SCONFIG {
-                SLVENA: self.SLVENA(),
-                NACK: self.NACK(),
-                MATCHSS: self.MATCHSS(),
-                S0IGNORE: self.S0IGNORE(),
-                DDROK: self.DDROK(),
-                IDRAND: self.IDRAND(),
-                OFFLINE: self.OFFLINE(),
-                BAMATCH: self.BAMATCH(),
-                SADDR: self.SADDR(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Target Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2987,29 +2361,6 @@ pub mod regs {
                 .field("ACTSTATE", &self.ACTSTATE())
                 .field("VENDINFO", &self.VENDINFO())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SCTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SCTRL {
-                EVENT: u8,
-                EXTDATA: bool,
-                IBIDATA: u8,
-                PENDINT: u8,
-                ACTSTATE: u8,
-                VENDINFO: u8,
-            }
-            let proxy = SCTRL {
-                EVENT: self.EVENT(),
-                EXTDATA: self.EXTDATA(),
-                IBIDATA: self.IBIDATA(),
-                PENDINT: self.PENDINT(),
-                ACTSTATE: self.ACTSTATE(),
-                VENDINFO: self.VENDINFO(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Target Data Control"]
@@ -3120,35 +2471,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SDATACTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SDATACTRL {
-                FLUSHTB: bool,
-                FLUSHFB: bool,
-                UNLOCK: bool,
-                TXTRIG: u8,
-                RXTRIG: u8,
-                TXCOUNT: u8,
-                RXCOUNT: u8,
-                TXFULL: bool,
-                RXEMPTY: bool,
-            }
-            let proxy = SDATACTRL {
-                FLUSHTB: self.FLUSHTB(),
-                FLUSHFB: self.FLUSHFB(),
-                UNLOCK: self.UNLOCK(),
-                TXTRIG: self.TXTRIG(),
-                RXTRIG: self.RXTRIG(),
-                TXCOUNT: self.TXCOUNT(),
-                RXCOUNT: self.RXCOUNT(),
-                TXFULL: self.TXFULL(),
-                RXEMPTY: self.RXEMPTY(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Target DMA Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3195,23 +2517,6 @@ pub mod regs {
                 .field("DMATB", &self.DMATB())
                 .field("DMAWIDTH", &self.DMAWIDTH())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SDMACTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SDMACTRL {
-                DMAFB: u8,
-                DMATB: u8,
-                DMAWIDTH: u8,
-            }
-            let proxy = SDMACTRL {
-                DMAFB: self.DMAFB(),
-                DMATB: self.DMATB(),
-                DMAWIDTH: self.DMAWIDTH(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Target Dynamic Address"]
@@ -3280,27 +2585,6 @@ pub mod regs {
                 .field("SA10B", &self.SA10B())
                 .field("KEY", &self.KEY())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SDYNADDR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SDYNADDR {
-                DAVALID: bool,
-                DADDR: u8,
-                MAPSA: bool,
-                SA10B: u8,
-                KEY: u16,
-            }
-            let proxy = SDYNADDR {
-                DAVALID: self.DAVALID(),
-                DADDR: self.DADDR(),
-                MAPSA: self.MAPSA(),
-                SA10B: self.SA10B(),
-                KEY: self.KEY(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Target Errors and Warnings"]
@@ -3431,39 +2715,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SERRWARN {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SERRWARN {
-                ORUN: bool,
-                URUN: bool,
-                URUNNACK: bool,
-                TERM: bool,
-                INVSTART: bool,
-                SPAR: bool,
-                HPAR: bool,
-                HCRC: bool,
-                S0S1: bool,
-                OREAD: bool,
-                OWRITE: bool,
-            }
-            let proxy = SERRWARN {
-                ORUN: self.ORUN(),
-                URUN: self.URUN(),
-                URUNNACK: self.URUNNACK(),
-                TERM: self.TERM(),
-                INVSTART: self.INVSTART(),
-                SPAR: self.SPAR(),
-                HPAR: self.HPAR(),
-                HCRC: self.HCRC(),
-                S0S1: self.S0S1(),
-                OREAD: self.OREAD(),
-                OWRITE: self.OWRITE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Target ID Extension"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3500,21 +2751,6 @@ pub mod regs {
                 .field("DCR", &self.DCR())
                 .field("BCR", &self.BCR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SIDEXT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SIDEXT {
-                DCR: u8,
-                BCR: u8,
-            }
-            let proxy = SIDEXT {
-                DCR: self.DCR(),
-                BCR: self.BCR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Target Interrupt Clear"]
@@ -3645,39 +2881,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SINTCLR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SINTCLR {
-                START: bool,
-                MATCHED: bool,
-                STOP: bool,
-                RXPEND: bool,
-                TXSEND: bool,
-                DACHG: bool,
-                CCC: bool,
-                ERRWARN: bool,
-                DDRMATCHED: bool,
-                CHANDLED: bool,
-                EVENT: bool,
-            }
-            let proxy = SINTCLR {
-                START: self.START(),
-                MATCHED: self.MATCHED(),
-                STOP: self.STOP(),
-                RXPEND: self.RXPEND(),
-                TXSEND: self.TXSEND(),
-                DACHG: self.DACHG(),
-                CCC: self.CCC(),
-                ERRWARN: self.ERRWARN(),
-                DDRMATCHED: self.DDRMATCHED(),
-                CHANDLED: self.CHANDLED(),
-                EVENT: self.EVENT(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Target Interrupt Mask"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3804,39 +3007,6 @@ pub mod regs {
                 .field("CHANDLED", &self.CHANDLED())
                 .field("EVENT", &self.EVENT())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SINTMASKED {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SINTMASKED {
-                START: bool,
-                MATCHED: bool,
-                STOP: bool,
-                RXPEND: bool,
-                TXSEND: bool,
-                DACHG: bool,
-                CCC: bool,
-                ERRWARN: bool,
-                DDRMATCHED: bool,
-                CHANDLED: bool,
-                EVENT: bool,
-            }
-            let proxy = SINTMASKED {
-                START: self.START(),
-                MATCHED: self.MATCHED(),
-                STOP: self.STOP(),
-                RXPEND: self.RXPEND(),
-                TXSEND: self.TXSEND(),
-                DACHG: self.DACHG(),
-                CCC: self.CCC(),
-                ERRWARN: self.ERRWARN(),
-                DDRMATCHED: self.DDRMATCHED(),
-                CHANDLED: self.CHANDLED(),
-                EVENT: self.EVENT(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Target Interrupt Set"]
@@ -3967,39 +3137,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SINTSET {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SINTSET {
-                START: bool,
-                MATCHED: bool,
-                STOP: bool,
-                RXPEND: bool,
-                TXSEND: bool,
-                DACHG: bool,
-                CCC: bool,
-                ERRWARN: bool,
-                DDRMATCHED: bool,
-                CHANDLED: bool,
-                EVENT: bool,
-            }
-            let proxy = SINTSET {
-                START: self.START(),
-                MATCHED: self.MATCHED(),
-                STOP: self.STOP(),
-                RXPEND: self.RXPEND(),
-                TXSEND: self.TXSEND(),
-                DACHG: self.DACHG(),
-                CCC: self.CCC(),
-                ERRWARN: self.ERRWARN(),
-                DDRMATCHED: self.DDRMATCHED(),
-                CHANDLED: self.CHANDLED(),
-                EVENT: self.EVENT(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Map Feature Control 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4048,23 +3185,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SMAPCTRL0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SMAPCTRL0 {
-                ENA: bool,
-                DA: u8,
-                CAUSE: u8,
-            }
-            let proxy = SMAPCTRL0 {
-                ENA: self.ENA(),
-                DA: self.DA(),
-                CAUSE: self.CAUSE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Target Maximum Limits"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4101,21 +3221,6 @@ pub mod regs {
                 .field("MAXRD", &self.MAXRD())
                 .field("MAXWR", &self.MAXWR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SMAXLIMITS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SMAXLIMITS {
-                MAXRD: u16,
-                MAXWR: u16,
-            }
-            let proxy = SMAXLIMITS {
-                MAXRD: self.MAXRD(),
-                MAXWR: self.MAXWR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Target Message Map Address"]
@@ -4176,25 +3281,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SMSGMAPADDR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SMSGMAPADDR {
-                MAPLAST: u8,
-                LASTSTATIC: bool,
-                MAPLASTM1: u8,
-                MAPLASTM2: u8,
-            }
-            let proxy = SMSGMAPADDR {
-                MAPLAST: self.MAPLAST(),
-                LASTSTATIC: self.LASTSTATIC(),
-                MAPLASTM1: self.MAPLASTM1(),
-                MAPLASTM2: self.MAPLASTM2(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Target Read Data Byte"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4221,19 +3307,6 @@ pub mod regs {
             f.debug_struct("SRDATAB")
                 .field("DATA0", &self.DATA0())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRDATAB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRDATAB {
-                DATA0: u8,
-            }
-            let proxy = SRDATAB {
-                DATA0: self.DATA0(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Target Read Data Halfword"]
@@ -4272,21 +3345,6 @@ pub mod regs {
                 .field("LSB", &self.LSB())
                 .field("MSB", &self.MSB())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRDATAH {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRDATAH {
-                LSB: u8,
-                MSB: u8,
-            }
-            let proxy = SRDATAH {
-                LSB: self.LSB(),
-                MSB: self.MSB(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Target Status"]
@@ -4547,65 +3605,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SSTATUS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SSTATUS {
-                STNOTSTOP: bool,
-                STMSG: bool,
-                STCCCH: bool,
-                STREQRD: bool,
-                STREQWR: bool,
-                STDAA: bool,
-                STHDR: bool,
-                START: bool,
-                MATCHED: bool,
-                STOP: bool,
-                RX_PEND: bool,
-                TXNOTFULL: bool,
-                DACHG: bool,
-                CCC: bool,
-                ERRWARN: bool,
-                HDRMATCH: bool,
-                CHANDLED: bool,
-                EVENT: bool,
-                EVDET: u8,
-                IBIDIS: bool,
-                MRDIS: bool,
-                HJDIS: bool,
-                ACTSTATE: u8,
-                TIMECTRL: u8,
-            }
-            let proxy = SSTATUS {
-                STNOTSTOP: self.STNOTSTOP(),
-                STMSG: self.STMSG(),
-                STCCCH: self.STCCCH(),
-                STREQRD: self.STREQRD(),
-                STREQWR: self.STREQWR(),
-                STDAA: self.STDAA(),
-                STHDR: self.STHDR(),
-                START: self.START(),
-                MATCHED: self.MATCHED(),
-                STOP: self.STOP(),
-                RX_PEND: self.RX_PEND(),
-                TXNOTFULL: self.TXNOTFULL(),
-                DACHG: self.DACHG(),
-                CCC: self.CCC(),
-                ERRWARN: self.ERRWARN(),
-                HDRMATCH: self.HDRMATCH(),
-                CHANDLED: self.CHANDLED(),
-                EVENT: self.EVENT(),
-                EVDET: self.EVDET(),
-                IBIDIS: self.IBIDIS(),
-                MRDIS: self.MRDIS(),
-                HJDIS: self.HJDIS(),
-                ACTSTATE: self.ACTSTATE(),
-                TIMECTRL: self.TIMECTRL(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Target Time Control Clock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4644,21 +3643,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for STCCLOCK {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct STCCLOCK {
-                ACCURACY: u8,
-                FREQ: u8,
-            }
-            let proxy = STCCLOCK {
-                ACCURACY: self.ACCURACY(),
-                FREQ: self.FREQ(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Target Vendor ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4685,17 +3669,6 @@ pub mod regs {
             f.debug_struct("SVENDORID")
                 .field("VID", &self.VID())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SVENDORID {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SVENDORID {
-                VID: u16,
-            }
-            let proxy = SVENDORID { VID: self.VID() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Target Write Data Byte"]
@@ -4746,23 +3719,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SWDATAB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SWDATAB {
-                DATA: u8,
-                END: bool,
-                END_ALSO: bool,
-            }
-            let proxy = SWDATAB {
-                DATA: self.DATA(),
-                END: self.END(),
-                END_ALSO: self.END_ALSO(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Target Write Data Byte"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4791,17 +3747,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SWDATAB1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SWDATAB1 {
-                DATA: u8,
-            }
-            let proxy = SWDATAB1 { DATA: self.DATA() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Target Write Data Byte End"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4828,17 +3773,6 @@ pub mod regs {
             f.debug_struct("SWDATABE")
                 .field("DATA", &self.DATA())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SWDATABE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SWDATABE {
-                DATA: u8,
-            }
-            let proxy = SWDATABE { DATA: self.DATA() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Target Write Data Halfword"]
@@ -4889,23 +3823,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SWDATAH {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SWDATAH {
-                DATA0: u8,
-                DATA1: u8,
-                END: bool,
-            }
-            let proxy = SWDATAH {
-                DATA0: self.DATA0(),
-                DATA1: self.DATA1(),
-                END: self.END(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Target Write Data Halfword End"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4942,21 +3859,6 @@ pub mod regs {
                 .field("DATA0", &self.DATA0())
                 .field("DATA1", &self.DATA1())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SWDATAHE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SWDATAHE {
-                DATA0: u8,
-                DATA1: u8,
-            }
-            let proxy = SWDATAHE {
-                DATA0: self.DATA0(),
-                DATA1: self.DATA1(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

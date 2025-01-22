@@ -365,33 +365,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DTSRCSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DTSRCSEL {
-                SM0SEL45: u8,
-                SM0SEL23: u8,
-                SM1SEL45: u8,
-                SM1SEL23: u8,
-                SM2SEL45: u8,
-                SM2SEL23: u8,
-                SM3SEL45: u8,
-                SM3SEL23: u8,
-            }
-            let proxy = DTSRCSEL {
-                SM0SEL45: self.SM0SEL45(),
-                SM0SEL23: self.SM0SEL23(),
-                SM1SEL45: self.SM1SEL45(),
-                SM1SEL23: self.SM1SEL23(),
-                SM2SEL45: self.SM2SEL45(),
-                SM2SEL23: self.SM2SEL23(),
-                SM3SEL45: self.SM3SEL45(),
-                SM3SEL23: self.SM3SEL23(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Fault Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -450,25 +423,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FCTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FCTRL {
-                FIE: u8,
-                FSAFE: u8,
-                FAUTO: u8,
-                FLVL: u8,
-            }
-            let proxy = FCTRL {
-                FIE: self.FIE(),
-                FSAFE: self.FSAFE(),
-                FAUTO: self.FAUTO(),
-                FLVL: self.FLVL(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Fault Control 2 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -495,19 +449,6 @@ pub mod regs {
             f.debug_struct("FCTRL2")
                 .field("NOCOMB", &self.NOCOMB())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FCTRL2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FCTRL2 {
-                NOCOMB: u8,
-            }
-            let proxy = FCTRL2 {
-                NOCOMB: self.NOCOMB(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Fault Filter Register"]
@@ -556,23 +497,6 @@ pub mod regs {
                 .field("FILT_CNT", &self.FILT_CNT())
                 .field("GSTR", &self.GSTR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FFILT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FFILT {
-                FILT_PER: u8,
-                FILT_CNT: u8,
-                GSTR: bool,
-            }
-            let proxy = FFILT {
-                FILT_PER: self.FILT_PER(),
-                FILT_CNT: self.FILT_CNT(),
-                GSTR: self.GSTR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Fault Status Register"]
@@ -633,25 +557,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FSTS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FSTS {
-                FFLAG: u8,
-                FFULL: u8,
-                FFPIN: u8,
-                FHALF: u8,
-            }
-            let proxy = FSTS {
-                FFLAG: self.FFLAG(),
-                FFULL: self.FFULL(),
-                FFPIN: self.FFPIN(),
-                FHALF: self.FHALF(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Fault Test Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -678,19 +583,6 @@ pub mod regs {
             f.debug_struct("FTST")
                 .field("FTEST", &self.FTEST())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FTST {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FTST {
-                FTEST: bool,
-            }
-            let proxy = FTST {
-                FTEST: self.FTEST(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Mask Register"]
@@ -751,25 +643,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MASK {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MASK {
-                MASKX: u8,
-                MASKB: u8,
-                MASKA: u8,
-                UPDATE_MASK: u8,
-            }
-            let proxy = MASK {
-                MASKX: self.MASKX(),
-                MASKB: self.MASKB(),
-                MASKA: self.MASKA(),
-                UPDATE_MASK: self.UPDATE_MASK(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Master Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -828,25 +701,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MCTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MCTRL {
-                LDOK: u8,
-                CLDOK: u8,
-                RUN: u8,
-                IPOL: u8,
-            }
-            let proxy = MCTRL {
-                LDOK: self.LDOK(),
-                CLDOK: self.CLDOK(),
-                RUN: self.RUN(),
-                IPOL: self.IPOL(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Master Control 2 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -883,21 +737,6 @@ pub mod regs {
                 .field("WRPROT", &self.WRPROT())
                 .field("STRETCH_CNT_PRSC", &self.STRETCH_CNT_PRSC())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MCTRL2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MCTRL2 {
-                WRPROT: u8,
-                STRETCH_CNT_PRSC: u8,
-            }
-            let proxy = MCTRL2 {
-                WRPROT: self.WRPROT(),
-                STRETCH_CNT_PRSC: self.STRETCH_CNT_PRSC(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Output Enable Register"]
@@ -948,23 +787,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for OUTEN {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct OUTEN {
-                PWMX_EN: u8,
-                PWMB_EN: u8,
-                PWMA_EN: u8,
-            }
-            let proxy = OUTEN {
-                PWMX_EN: self.PWMX_EN(),
-                PWMB_EN: self.PWMB_EN(),
-                PWMA_EN: self.PWMA_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Capture Compare A Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1001,21 +823,6 @@ pub mod regs {
                 .field("EDGCMPA", &self.EDGCMPA())
                 .field("EDGCNTA", &self.EDGCNTA())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CAPTCOMPA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CAPTCOMPA {
-                EDGCMPA: u8,
-                EDGCNTA: u8,
-            }
-            let proxy = SM_CAPTCOMPA {
-                EDGCMPA: self.EDGCMPA(),
-                EDGCNTA: self.EDGCNTA(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Compare B Register"]
@@ -1056,21 +863,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CAPTCOMPB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CAPTCOMPB {
-                EDGCMPB: u8,
-                EDGCNTB: u8,
-            }
-            let proxy = SM_CAPTCOMPB {
-                EDGCMPB: self.EDGCMPB(),
-                EDGCNTB: self.EDGCNTB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Capture Compare X Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1107,21 +899,6 @@ pub mod regs {
                 .field("EDGCMPX", &self.EDGCMPX())
                 .field("EDGCNTX", &self.EDGCNTX())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CAPTCOMPX {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CAPTCOMPX {
-                EDGCMPX: u8,
-                EDGCNTX: u8,
-            }
-            let proxy = SM_CAPTCOMPX {
-                EDGCMPX: self.EDGCMPX(),
-                EDGCNTX: self.EDGCNTX(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Control A Register"]
@@ -1232,35 +1009,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CAPTCTRLA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CAPTCTRLA {
-                ARMA: bool,
-                ONESHOTA: bool,
-                EDGA0: u8,
-                EDGA1: u8,
-                INP_SELA: bool,
-                EDGCNTA_EN: bool,
-                CFAWM: u8,
-                CA0CNT: u8,
-                CA1CNT: u8,
-            }
-            let proxy = SM_CAPTCTRLA {
-                ARMA: self.ARMA(),
-                ONESHOTA: self.ONESHOTA(),
-                EDGA0: self.EDGA0(),
-                EDGA1: self.EDGA1(),
-                INP_SELA: self.INP_SELA(),
-                EDGCNTA_EN: self.EDGCNTA_EN(),
-                CFAWM: self.CFAWM(),
-                CA0CNT: self.CA0CNT(),
-                CA1CNT: self.CA1CNT(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Capture Control B Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1367,35 +1115,6 @@ pub mod regs {
                 .field("CB0CNT", &self.CB0CNT())
                 .field("CB1CNT", &self.CB1CNT())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CAPTCTRLB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CAPTCTRLB {
-                ARMB: bool,
-                ONESHOTB: bool,
-                EDGB0: u8,
-                EDGB1: u8,
-                INP_SELB: bool,
-                EDGCNTB_EN: bool,
-                CFBWM: u8,
-                CB0CNT: u8,
-                CB1CNT: u8,
-            }
-            let proxy = SM_CAPTCTRLB {
-                ARMB: self.ARMB(),
-                ONESHOTB: self.ONESHOTB(),
-                EDGB0: self.EDGB0(),
-                EDGB1: self.EDGB1(),
-                INP_SELB: self.INP_SELB(),
-                EDGCNTB_EN: self.EDGCNTB_EN(),
-                CFBWM: self.CFBWM(),
-                CB0CNT: self.CB0CNT(),
-                CB1CNT: self.CB1CNT(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Control X Register"]
@@ -1506,35 +1225,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CAPTCTRLX {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CAPTCTRLX {
-                ARMX: bool,
-                ONESHOTX: bool,
-                EDGX0: u8,
-                EDGX1: u8,
-                INP_SELX: bool,
-                EDGCNTX_EN: bool,
-                CFXWM: u8,
-                CX0CNT: u8,
-                CX1CNT: u8,
-            }
-            let proxy = SM_CAPTCTRLX {
-                ARMX: self.ARMX(),
-                ONESHOTX: self.ONESHOTX(),
-                EDGX0: self.EDGX0(),
-                EDGX1: self.EDGX1(),
-                INP_SELX: self.INP_SELX(),
-                EDGCNTX_EN: self.EDGCNTX_EN(),
-                CFXWM: self.CFXWM(),
-                CX0CNT: self.CX0CNT(),
-                CX1CNT: self.CX1CNT(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Capture PWM_A Input Filter Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1571,21 +1261,6 @@ pub mod regs {
                 .field("CAPTA_FILT_PER", &self.CAPTA_FILT_PER())
                 .field("CAPTA_FILT_CNT", &self.CAPTA_FILT_CNT())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CAPTFILTA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CAPTFILTA {
-                CAPTA_FILT_PER: u8,
-                CAPTA_FILT_CNT: u8,
-            }
-            let proxy = SM_CAPTFILTA {
-                CAPTA_FILT_PER: self.CAPTA_FILT_PER(),
-                CAPTA_FILT_CNT: self.CAPTA_FILT_CNT(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture PWM_B Input Filter Register"]
@@ -1626,21 +1301,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CAPTFILTB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CAPTFILTB {
-                CAPTB_FILT_PER: u8,
-                CAPTB_FILT_CNT: u8,
-            }
-            let proxy = SM_CAPTFILTB {
-                CAPTB_FILT_PER: self.CAPTB_FILT_PER(),
-                CAPTB_FILT_CNT: self.CAPTB_FILT_CNT(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Capture PWM_X Input Filter Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1679,21 +1339,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CAPTFILTX {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CAPTFILTX {
-                CAPTX_FILT_PER: u8,
-                CAPTX_FILT_CNT: u8,
-            }
-            let proxy = SM_CAPTFILTX {
-                CAPTX_FILT_PER: self.CAPTX_FILT_PER(),
-                CAPTX_FILT_CNT: self.CAPTX_FILT_CNT(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Counter Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1718,17 +1363,6 @@ pub mod regs {
     impl core::fmt::Debug for SM_CNT {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SM_CNT").field("CNT", &self.CNT()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CNT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CNT {
-                CNT: u16,
-            }
-            let proxy = SM_CNT { CNT: self.CNT() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Control Register"]
@@ -1847,37 +1481,6 @@ pub mod regs {
                 .field("HALF", &self.HALF())
                 .field("LDFQ", &self.LDFQ())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CTRL {
-                DBLEN: bool,
-                DBLX: bool,
-                LDMOD: bool,
-                SPLIT: bool,
-                PRSC: u8,
-                COMPMODE: bool,
-                DT: u8,
-                FULL: bool,
-                HALF: bool,
-                LDFQ: u8,
-            }
-            let proxy = SM_CTRL {
-                DBLEN: self.DBLEN(),
-                DBLX: self.DBLX(),
-                LDMOD: self.LDMOD(),
-                SPLIT: self.SPLIT(),
-                PRSC: self.PRSC(),
-                COMPMODE: self.COMPMODE(),
-                DT: self.DT(),
-                FULL: self.FULL(),
-                HALF: self.HALF(),
-                LDFQ: self.LDFQ(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Control 2 Register"]
@@ -2008,39 +1611,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CTRL2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CTRL2 {
-                CLK_SEL: u8,
-                RELOAD_SEL: bool,
-                FORCE_SEL: u8,
-                FORCE: bool,
-                FRCEN: bool,
-                INIT_SEL: u8,
-                PWMX_INIT: bool,
-                PWM45_INIT: bool,
-                PWM23_INIT: bool,
-                INDEP: bool,
-                DBGEN: bool,
-            }
-            let proxy = SM_CTRL2 {
-                CLK_SEL: self.CLK_SEL(),
-                RELOAD_SEL: self.RELOAD_SEL(),
-                FORCE_SEL: self.FORCE_SEL(),
-                FORCE: self.FORCE(),
-                FRCEN: self.FRCEN(),
-                INIT_SEL: self.INIT_SEL(),
-                PWMX_INIT: self.PWMX_INIT(),
-                PWM45_INIT: self.PWM45_INIT(),
-                PWM23_INIT: self.PWM23_INIT(),
-                INDEP: self.INDEP(),
-                DBGEN: self.DBGEN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Capture Value 0 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2067,19 +1637,6 @@ pub mod regs {
             f.debug_struct("SM_CVAL0")
                 .field("CAPTVAL0", &self.CAPTVAL0())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CVAL0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CVAL0 {
-                CAPTVAL0: u16,
-            }
-            let proxy = SM_CVAL0 {
-                CAPTVAL0: self.CAPTVAL0(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Value 0 Cycle Register"]
@@ -2110,19 +1667,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CVAL0CYC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CVAL0CYC {
-                CVAL0CYC: u8,
-            }
-            let proxy = SM_CVAL0CYC {
-                CVAL0CYC: self.CVAL0CYC(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Capture Value 1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2149,19 +1693,6 @@ pub mod regs {
             f.debug_struct("SM_CVAL1")
                 .field("CAPTVAL1", &self.CAPTVAL1())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CVAL1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CVAL1 {
-                CAPTVAL1: u16,
-            }
-            let proxy = SM_CVAL1 {
-                CAPTVAL1: self.CAPTVAL1(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Value 1 Cycle Register"]
@@ -2192,19 +1723,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CVAL1CYC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CVAL1CYC {
-                CVAL1CYC: u8,
-            }
-            let proxy = SM_CVAL1CYC {
-                CVAL1CYC: self.CVAL1CYC(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Capture Value 2 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2231,19 +1749,6 @@ pub mod regs {
             f.debug_struct("SM_CVAL2")
                 .field("CAPTVAL2", &self.CAPTVAL2())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CVAL2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CVAL2 {
-                CAPTVAL2: u16,
-            }
-            let proxy = SM_CVAL2 {
-                CAPTVAL2: self.CAPTVAL2(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Value 2 Cycle Register"]
@@ -2274,19 +1779,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CVAL2CYC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CVAL2CYC {
-                CVAL2CYC: u8,
-            }
-            let proxy = SM_CVAL2CYC {
-                CVAL2CYC: self.CVAL2CYC(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Capture Value 3 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2313,19 +1805,6 @@ pub mod regs {
             f.debug_struct("SM_CVAL3")
                 .field("CAPTVAL3", &self.CAPTVAL3())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CVAL3 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CVAL3 {
-                CAPTVAL3: u16,
-            }
-            let proxy = SM_CVAL3 {
-                CAPTVAL3: self.CAPTVAL3(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Value 3 Cycle Register"]
@@ -2356,19 +1835,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CVAL3CYC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CVAL3CYC {
-                CVAL3CYC: u8,
-            }
-            let proxy = SM_CVAL3CYC {
-                CVAL3CYC: self.CVAL3CYC(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Capture Value 4 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2395,19 +1861,6 @@ pub mod regs {
             f.debug_struct("SM_CVAL4")
                 .field("CAPTVAL4", &self.CAPTVAL4())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CVAL4 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CVAL4 {
-                CAPTVAL4: u16,
-            }
-            let proxy = SM_CVAL4 {
-                CAPTVAL4: self.CAPTVAL4(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Value 4 Cycle Register"]
@@ -2438,19 +1891,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CVAL4CYC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CVAL4CYC {
-                CVAL4CYC: u8,
-            }
-            let proxy = SM_CVAL4CYC {
-                CVAL4CYC: self.CVAL4CYC(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Capture Value 5 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2479,19 +1919,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CVAL5 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CVAL5 {
-                CAPTVAL5: u16,
-            }
-            let proxy = SM_CVAL5 {
-                CAPTVAL5: self.CAPTVAL5(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Capture Value 5 Cycle Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2518,19 +1945,6 @@ pub mod regs {
             f.debug_struct("SM_CVAL5CYC")
                 .field("CVAL5CYC", &self.CVAL5CYC())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_CVAL5CYC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_CVAL5CYC {
-                CVAL5CYC: u8,
-            }
-            let proxy = SM_CVAL5CYC {
-                CVAL5CYC: self.CVAL5CYC(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Fault Disable Mapping Register 0"]
@@ -2579,23 +1993,6 @@ pub mod regs {
                 .field("DIS0B", &self.DIS0B())
                 .field("DIS0X", &self.DIS0X())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_DISMAP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_DISMAP {
-                DIS0A: u8,
-                DIS0B: u8,
-                DIS0X: u8,
-            }
-            let proxy = SM_DISMAP {
-                DIS0A: self.DIS0A(),
-                DIS0B: self.DIS0B(),
-                DIS0X: self.DIS0X(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA Enable Register"]
@@ -2706,35 +2103,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_DMAEN {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_DMAEN {
-                CX0DE: bool,
-                CX1DE: bool,
-                CB0DE: bool,
-                CB1DE: bool,
-                CA0DE: bool,
-                CA1DE: bool,
-                CAPTDE: u8,
-                FAND: bool,
-                VALDE: bool,
-            }
-            let proxy = SM_DMAEN {
-                CX0DE: self.CX0DE(),
-                CX1DE: self.CX1DE(),
-                CB0DE: self.CB0DE(),
-                CB1DE: self.CB1DE(),
-                CA0DE: self.CA0DE(),
-                CA1DE: self.CA1DE(),
-                CAPTDE: self.CAPTDE(),
-                FAND: self.FAND(),
-                VALDE: self.VALDE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Deadtime Count Register 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2761,19 +2129,6 @@ pub mod regs {
             f.debug_struct("SM_DTCNT0")
                 .field("DTCNT0", &self.DTCNT0())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_DTCNT0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_DTCNT0 {
-                DTCNT0: u16,
-            }
-            let proxy = SM_DTCNT0 {
-                DTCNT0: self.DTCNT0(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Deadtime Count Register 1"]
@@ -2804,19 +2159,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_DTCNT1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_DTCNT1 {
-                DTCNT1: u16,
-            }
-            let proxy = SM_DTCNT1 {
-                DTCNT1: self.DTCNT1(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Fractional Value Register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2843,19 +2185,6 @@ pub mod regs {
             f.debug_struct("SM_FRACVAL1")
                 .field("FRACVAL1", &self.FRACVAL1())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_FRACVAL1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_FRACVAL1 {
-                FRACVAL1: u8,
-            }
-            let proxy = SM_FRACVAL1 {
-                FRACVAL1: self.FRACVAL1(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Fractional Value Register 2"]
@@ -2886,19 +2215,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_FRACVAL2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_FRACVAL2 {
-                FRACVAL2: u8,
-            }
-            let proxy = SM_FRACVAL2 {
-                FRACVAL2: self.FRACVAL2(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Fractional Value Register 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2925,19 +2241,6 @@ pub mod regs {
             f.debug_struct("SM_FRACVAL3")
                 .field("FRACVAL3", &self.FRACVAL3())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_FRACVAL3 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_FRACVAL3 {
-                FRACVAL3: u8,
-            }
-            let proxy = SM_FRACVAL3 {
-                FRACVAL3: self.FRACVAL3(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Fractional Value Register 4"]
@@ -2968,19 +2271,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_FRACVAL4 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_FRACVAL4 {
-                FRACVAL4: u8,
-            }
-            let proxy = SM_FRACVAL4 {
-                FRACVAL4: self.FRACVAL4(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Fractional Value Register 5"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3007,19 +2297,6 @@ pub mod regs {
             f.debug_struct("SM_FRACVAL5")
                 .field("FRACVAL5", &self.FRACVAL5())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_FRACVAL5 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_FRACVAL5 {
-                FRACVAL5: u8,
-            }
-            let proxy = SM_FRACVAL5 {
-                FRACVAL5: self.FRACVAL5(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Fractional Control Register"]
@@ -3080,25 +2357,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_FRCTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_FRCTRL {
-                FRAC1_EN: bool,
-                FRAC23_EN: bool,
-                FRAC45_EN: bool,
-                TEST: bool,
-            }
-            let proxy = SM_FRCTRL {
-                FRAC1_EN: self.FRAC1_EN(),
-                FRAC23_EN: self.FRAC23_EN(),
-                FRAC45_EN: self.FRAC45_EN(),
-                TEST: self.TEST(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Initial Count Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3125,17 +2383,6 @@ pub mod regs {
             f.debug_struct("SM_INIT")
                 .field("INIT", &self.INIT())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_INIT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_INIT {
-                INIT: u16,
-            }
-            let proxy = SM_INIT { INIT: self.INIT() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Enable Register"]
@@ -3246,35 +2493,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_INTEN {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_INTEN {
-                CMPIE: u8,
-                CX0IE: bool,
-                CX1IE: bool,
-                CB0IE: bool,
-                CB1IE: bool,
-                CA0IE: bool,
-                CA1IE: bool,
-                RIE: bool,
-                REIE: bool,
-            }
-            let proxy = SM_INTEN {
-                CMPIE: self.CMPIE(),
-                CX0IE: self.CX0IE(),
-                CX1IE: self.CX1IE(),
-                CB0IE: self.CB0IE(),
-                CB1IE: self.CB1IE(),
-                CA0IE: self.CA0IE(),
-                CA1IE: self.CA1IE(),
-                RIE: self.RIE(),
-                REIE: self.REIE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Output Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3383,35 +2601,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_OCTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_OCTRL {
-                PWMXFS: u8,
-                PWMBFS: u8,
-                PWMAFS: u8,
-                POLX: bool,
-                POLB: bool,
-                POLA: bool,
-                PWMX_IN: bool,
-                PWMB_IN: bool,
-                PWMA_IN: bool,
-            }
-            let proxy = SM_OCTRL {
-                PWMXFS: self.PWMXFS(),
-                PWMBFS: self.PWMBFS(),
-                PWMAFS: self.PWMAFS(),
-                POLX: self.POLX(),
-                POLB: self.POLB(),
-                POLA: self.POLA(),
-                PWMX_IN: self.PWMX_IN(),
-                PWMB_IN: self.PWMB_IN(),
-                PWMA_IN: self.PWMA_IN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Phase Delay Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3438,19 +2627,6 @@ pub mod regs {
             f.debug_struct("SM_PHASEDLY")
                 .field("PHASEDLY", &self.PHASEDLY())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_PHASEDLY {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_PHASEDLY {
-                PHASEDLY: u16,
-            }
-            let proxy = SM_PHASEDLY {
-                PHASEDLY: self.PHASEDLY(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status Register"]
@@ -3571,37 +2747,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_STS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_STS {
-                CMPF: u8,
-                CFX0: bool,
-                CFX1: bool,
-                CFB0: bool,
-                CFB1: bool,
-                CFA0: bool,
-                CFA1: bool,
-                RF: bool,
-                REF: bool,
-                RUF: bool,
-            }
-            let proxy = SM_STS {
-                CMPF: self.CMPF(),
-                CFX0: self.CFX0(),
-                CFX1: self.CFX1(),
-                CFB0: self.CFB0(),
-                CFB1: self.CFB1(),
-                CFA0: self.CFA0(),
-                CFA1: self.CFA1(),
-                RF: self.RF(),
-                REF: self.REF(),
-                RUF: self.RUF(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Output Trigger Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3660,25 +2805,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_TCTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_TCTRL {
-                OUT_TRIG_EN: u8,
-                TRGFRQ: bool,
-                PWBOT1: bool,
-                PWAOT0: bool,
-            }
-            let proxy = SM_TCTRL {
-                OUT_TRIG_EN: self.OUT_TRIG_EN(),
-                TRGFRQ: self.TRGFRQ(),
-                PWBOT1: self.PWBOT1(),
-                PWAOT0: self.PWAOT0(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Value Register 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3705,17 +2831,6 @@ pub mod regs {
             f.debug_struct("SM_VAL0")
                 .field("VAL0", &self.VAL0())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_VAL0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_VAL0 {
-                VAL0: u16,
-            }
-            let proxy = SM_VAL0 { VAL0: self.VAL0() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Value Register 1"]
@@ -3746,17 +2861,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_VAL1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_VAL1 {
-                VAL1: u16,
-            }
-            let proxy = SM_VAL1 { VAL1: self.VAL1() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Value Register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3783,17 +2887,6 @@ pub mod regs {
             f.debug_struct("SM_VAL2")
                 .field("VAL2", &self.VAL2())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_VAL2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_VAL2 {
-                VAL2: u16,
-            }
-            let proxy = SM_VAL2 { VAL2: self.VAL2() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Value Register 3"]
@@ -3824,17 +2917,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_VAL3 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_VAL3 {
-                VAL3: u16,
-            }
-            let proxy = SM_VAL3 { VAL3: self.VAL3() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Value Register 4"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3863,17 +2945,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_VAL4 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_VAL4 {
-                VAL4: u16,
-            }
-            let proxy = SM_VAL4 { VAL4: self.VAL4() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Value Register 5"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3900,17 +2971,6 @@ pub mod regs {
             f.debug_struct("SM_VAL5")
                 .field("VAL5", &self.VAL5())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SM_VAL5 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SM_VAL5 {
-                VAL5: u16,
-            }
-            let proxy = SM_VAL5 { VAL5: self.VAL5() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Software Controlled Output Register"]
@@ -4009,33 +3069,6 @@ pub mod regs {
                 .field("SM3OUT45", &self.SM3OUT45())
                 .field("SM3OUT23", &self.SM3OUT23())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SWCOUT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SWCOUT {
-                SM0OUT45: bool,
-                SM0OUT23: bool,
-                SM1OUT45: bool,
-                SM1OUT23: bool,
-                SM2OUT45: bool,
-                SM2OUT23: bool,
-                SM3OUT45: bool,
-                SM3OUT23: bool,
-            }
-            let proxy = SWCOUT {
-                SM0OUT45: self.SM0OUT45(),
-                SM0OUT23: self.SM0OUT23(),
-                SM1OUT45: self.SM1OUT45(),
-                SM1OUT23: self.SM1OUT23(),
-                SM2OUT45: self.SM2OUT45(),
-                SM2OUT23: self.SM2OUT23(),
-                SM3OUT45: self.SM3OUT45(),
-                SM3OUT23: self.SM3OUT23(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

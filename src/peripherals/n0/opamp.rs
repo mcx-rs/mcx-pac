@@ -187,45 +187,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for OPAMP_CTR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct OPAMP_CTR {
-                EN: bool,
-                MODE: bool,
-                BIASC: u8,
-                INTREF: u8,
-                TRIGMD: bool,
-                INPSEL: bool,
-                INPF: bool,
-                BUFEN: bool,
-                PREF: u8,
-                ADCSW1: bool,
-                ADCSW2: bool,
-                OUTSW: bool,
-                PGAIN: u8,
-                NGAIN: u8,
-            }
-            let proxy = OPAMP_CTR {
-                EN: self.EN(),
-                MODE: self.MODE(),
-                BIASC: self.BIASC(),
-                INTREF: self.INTREF(),
-                TRIGMD: self.TRIGMD(),
-                INPSEL: self.INPSEL(),
-                INPF: self.INPF(),
-                BUFEN: self.BUFEN(),
-                PREF: self.PREF(),
-                ADCSW1: self.ADCSW1(),
-                ADCSW2: self.ADCSW2(),
-                OUTSW: self.OUTSW(),
-                PGAIN: self.PGAIN(),
-                NGAIN: self.NGAIN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Parameter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -252,19 +213,6 @@ pub mod regs {
             f.debug_struct("PARAM")
                 .field("PGA_FUNCTION", &self.PGA_FUNCTION())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PARAM {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PARAM {
-                PGA_FUNCTION: bool,
-            }
-            let proxy = PARAM {
-                PGA_FUNCTION: self.PGA_FUNCTION(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Version ID"]
@@ -313,23 +261,6 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for VERID {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VERID {
-                FEATURE: u16,
-                MINOR: u8,
-                MAJOR: u8,
-            }
-            let proxy = VERID {
-                FEATURE: self.FEATURE(),
-                MINOR: self.MINOR(),
-                MAJOR: self.MAJOR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

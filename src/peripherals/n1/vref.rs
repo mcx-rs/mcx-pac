@@ -137,35 +137,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CSR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CSR {
-                HCBGEN: bool,
-                LPBGEN: bool,
-                LPBG_BUF_EN: bool,
-                CHOPEN: bool,
-                ICOMPEN: bool,
-                REGEN: bool,
-                HI_PWR_LV: bool,
-                BUF21EN: bool,
-                VREFST: bool,
-            }
-            let proxy = CSR {
-                HCBGEN: self.HCBGEN(),
-                LPBGEN: self.LPBGEN(),
-                LPBG_BUF_EN: self.LPBG_BUF_EN(),
-                CHOPEN: self.CHOPEN(),
-                ICOMPEN: self.ICOMPEN(),
-                REGEN: self.REGEN(),
-                HI_PWR_LV: self.HI_PWR_LV(),
-                BUF21EN: self.BUF21EN(),
-                VREFST: self.VREFST(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "User Trim"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -202,21 +173,6 @@ pub mod regs {
                 .field("TRIM2V1", &self.TRIM2V1())
                 .field("VREFTRIM", &self.VREFTRIM())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for UTRIM {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct UTRIM {
-                TRIM2V1: u8,
-                VREFTRIM: u8,
-            }
-            let proxy = UTRIM {
-                TRIM2V1: self.TRIM2V1(),
-                VREFTRIM: self.VREFTRIM(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Version ID"]
@@ -265,23 +221,6 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for VERID {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VERID {
-                FEATURE: u16,
-                MINOR: u8,
-                MAJOR: u8,
-            }
-            let proxy = VERID {
-                FEATURE: self.FEATURE(),
-                MINOR: self.MINOR(),
-                MAJOR: self.MAJOR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

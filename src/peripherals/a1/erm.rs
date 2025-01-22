@@ -69,19 +69,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CORR_ERR_CNT0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CORR_ERR_CNT0 {
-                COUNT: u8,
-            }
-            let proxy = CORR_ERR_CNT0 {
-                COUNT: self.COUNT(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "ERM Memory 1 Correctable Error Count Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -108,19 +95,6 @@ pub mod regs {
             f.debug_struct("CORR_ERR_CNT1")
                 .field("COUNT", &self.COUNT())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CORR_ERR_CNT1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CORR_ERR_CNT1 {
-                COUNT: u8,
-            }
-            let proxy = CORR_ERR_CNT1 {
-                COUNT: self.COUNT(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ERM Configuration Register 0"]
@@ -181,25 +155,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CR0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CR0 {
-                ENCIE1: bool,
-                ESCIE1: bool,
-                ENCIE0: bool,
-                ESCIE0: bool,
-            }
-            let proxy = CR0 {
-                ENCIE1: self.ENCIE1(),
-                ESCIE1: self.ESCIE1(),
-                ENCIE0: self.ENCIE0(),
-                ESCIE0: self.ESCIE0(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "ERM Status Register 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -258,25 +213,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SR0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SR0 {
-                NCE1: bool,
-                SBC1: bool,
-                NCE0: bool,
-                SBC0: bool,
-            }
-            let proxy = SR0 {
-                NCE1: self.NCE1(),
-                SBC1: self.SBC1(),
-                NCE0: self.NCE0(),
-                SBC0: self.SBC0(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "ERM Memory 0 Syndrome Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -303,19 +239,6 @@ pub mod regs {
             f.debug_struct("SYN0")
                 .field("SYNDROME", &self.SYNDROME())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SYN0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SYN0 {
-                SYNDROME: u8,
-            }
-            let proxy = SYN0 {
-                SYNDROME: self.SYNDROME(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

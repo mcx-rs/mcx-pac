@@ -189,31 +189,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ACTIVE_CFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ACTIVE_CFG {
-                CORELDO_VDD_DS: bool,
-                CORELDO_VDD_LVL: u8,
-                BGMODE: u8,
-                VDD_VD_DISABLE: bool,
-                CORE_LVDE: bool,
-                SYS_LVDE: bool,
-                SYS_HVDE: bool,
-            }
-            let proxy = ACTIVE_CFG {
-                CORELDO_VDD_DS: self.CORELDO_VDD_DS(),
-                CORELDO_VDD_LVL: self.CORELDO_VDD_LVL(),
-                BGMODE: self.BGMODE(),
-                VDD_VD_DISABLE: self.VDD_VD_DISABLE(),
-                CORE_LVDE: self.CORE_LVDE(),
-                SYS_LVDE: self.SYS_LVDE(),
-                SYS_HVDE: self.SYS_HVDE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Active Voltage Trim Delay"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -240,19 +215,6 @@ pub mod regs {
             f.debug_struct("ACTIVE_VDELAY")
                 .field("ACTIVE_VDELAY", &self.ACTIVE_VDELAY())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ACTIVE_VDELAY {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ACTIVE_VDELAY {
-                ACTIVE_VDELAY: u16,
-            }
-            let proxy = ACTIVE_VDELAY {
-                ACTIVE_VDELAY: self.ACTIVE_VDELAY(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SPC Configuration"]
@@ -319,25 +281,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CFG {
-                INTG_PWSWTCH_SLEEP_EN: bool,
-                INTG_PWSWTCH_WKUP_EN: bool,
-                INTG_PWSWTCH_SLEEP_ACTIVE_EN: bool,
-                INTG_PWSWTCH_WKUP_ACTIVE_EN: bool,
-            }
-            let proxy = CFG {
-                INTG_PWSWTCH_SLEEP_EN: self.INTG_PWSWTCH_SLEEP_EN(),
-                INTG_PWSWTCH_WKUP_EN: self.INTG_PWSWTCH_WKUP_EN(),
-                INTG_PWSWTCH_SLEEP_ACTIVE_EN: self.INTG_PWSWTCH_SLEEP_ACTIVE_EN(),
-                INTG_PWSWTCH_WKUP_ACTIVE_EN: self.INTG_PWSWTCH_WKUP_ACTIVE_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "External Voltage Domain Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -384,23 +327,6 @@ pub mod regs {
                 .field("EVDLPISO", &self.EVDLPISO())
                 .field("EVDSTAT", &self.EVDSTAT())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for EVD_CFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct EVD_CFG {
-                EVDISO: u8,
-                EVDLPISO: u8,
-                EVDSTAT: u8,
-            }
-            let proxy = EVD_CFG {
-                EVDISO: self.EVDISO(),
-                EVDLPISO: self.EVDLPISO(),
-                EVDSTAT: self.EVDSTAT(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Low-Power Request Configuration"]
@@ -451,23 +377,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LPREQ_CFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LPREQ_CFG {
-                LPREQOE: bool,
-                LPREQPOL: bool,
-                LPREQOV: u8,
-            }
-            let proxy = LPREQ_CFG {
-                LPREQOE: self.LPREQOE(),
-                LPREQPOL: self.LPREQPOL(),
-                LPREQOV: self.LPREQOV(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Low Power Wake-Up Delay"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -494,19 +403,6 @@ pub mod regs {
             f.debug_struct("LPWKUP_DELAY")
                 .field("LPWKUP_DELAY", &self.LPWKUP_DELAY())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LPWKUP_DELAY {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LPWKUP_DELAY {
-                LPWKUP_DELAY: u16,
-            }
-            let proxy = LPWKUP_DELAY {
-                LPWKUP_DELAY: self.LPWKUP_DELAY(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Low-Power Mode Configuration"]
@@ -607,33 +503,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LP_CFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LP_CFG {
-                CORELDO_VDD_DS: bool,
-                CORELDO_VDD_LVL: u8,
-                SRAMLDO_DPD_ON: bool,
-                BGMODE: u8,
-                LP_IREFEN: bool,
-                CORE_LVDE: bool,
-                SYS_LVDE: bool,
-                SYS_HVDE: bool,
-            }
-            let proxy = LP_CFG {
-                CORELDO_VDD_DS: self.CORELDO_VDD_DS(),
-                CORELDO_VDD_LVL: self.CORELDO_VDD_LVL(),
-                SRAMLDO_DPD_ON: self.SRAMLDO_DPD_ON(),
-                BGMODE: self.BGMODE(),
-                LP_IREFEN: self.LP_IREFEN(),
-                CORE_LVDE: self.CORE_LVDE(),
-                SYS_LVDE: self.SYS_LVDE(),
-                SYS_HVDE: self.SYS_HVDE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SPC Power Domain Mode Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -680,23 +549,6 @@ pub mod regs {
                 .field("PD_LP_REQ", &self.PD_LP_REQ())
                 .field("LP_MODE", &self.LP_MODE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PD_STATUS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PD_STATUS {
-                PWR_REQ_STATUS: bool,
-                PD_LP_REQ: bool,
-                LP_MODE: u8,
-            }
-            let proxy = PD_STATUS {
-                PWR_REQ_STATUS: self.PWR_REQ_STATUS(),
-                PD_LP_REQ: self.PD_LP_REQ(),
-                LP_MODE: self.LP_MODE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status Control"]
@@ -767,27 +619,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SC {
-                BUSY: bool,
-                SPC_LP_REQ: bool,
-                SPC_LP_MODE: u8,
-                ISO_CLR: bool,
-                SWITCH_STATE: bool,
-            }
-            let proxy = SC {
-                BUSY: self.BUSY(),
-                SPC_LP_REQ: self.SPC_LP_REQ(),
-                SPC_LP_MODE: self.SPC_LP_MODE(),
-                ISO_CLR: self.ISO_CLR(),
-                SWITCH_STATE: self.SWITCH_STATE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SRAM Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -836,23 +667,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRAMCTL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRAMCTL {
-                VSM: u8,
-                REQ: bool,
-                ACK: bool,
-            }
-            let proxy = SRAMCTL {
-                VSM: self.VSM(),
-                REQ: self.REQ(),
-                ACK: self.ACK(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SRAM Retention LDO Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -891,21 +705,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRAMRETLDO_CNTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRAMRETLDO_CNTRL {
-                SRAMLDO_ON: bool,
-                SRAM_RET_EN: u8,
-            }
-            let proxy = SRAMRETLDO_CNTRL {
-                SRAMLDO_ON: self.SRAMLDO_ON(),
-                SRAM_RET_EN: self.SRAM_RET_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SRAM Retention Reference Trim"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -932,19 +731,6 @@ pub mod regs {
             f.debug_struct("SRAMRETLDO_REFTRIM")
                 .field("REFTRIM", &self.REFTRIM())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRAMRETLDO_REFTRIM {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRAMRETLDO_REFTRIM {
-                REFTRIM: u8,
-            }
-            let proxy = SRAMRETLDO_REFTRIM {
-                REFTRIM: self.REFTRIM(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Core Voltage Detect Configuration"]
@@ -995,23 +781,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for VD_CORE_CFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VD_CORE_CFG {
-                LVDRE: bool,
-                LVDIE: bool,
-                LOCK: bool,
-            }
-            let proxy = VD_CORE_CFG {
-                LVDRE: self.LVDRE(),
-                LVDIE: self.LVDIE(),
-                LOCK: self.LOCK(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Voltage Detect Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1058,23 +827,6 @@ pub mod regs {
                 .field("SYSVDD_LVDF", &self.SYSVDD_LVDF())
                 .field("SYSVDD_HVDF", &self.SYSVDD_HVDF())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for VD_STAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VD_STAT {
-                COREVDD_LVDF: bool,
-                SYSVDD_LVDF: bool,
-                SYSVDD_HVDF: bool,
-            }
-            let proxy = VD_STAT {
-                COREVDD_LVDF: self.COREVDD_LVDF(),
-                SYSVDD_LVDF: self.SYSVDD_LVDF(),
-                SYSVDD_HVDF: self.SYSVDD_HVDF(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "System Voltage Detect Configuration"]
@@ -1155,29 +907,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for VD_SYS_CFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VD_SYS_CFG {
-                LVDRE: bool,
-                LVDIE: bool,
-                HVDRE: bool,
-                HVDIE: bool,
-                LVSEL: bool,
-                LOCK: bool,
-            }
-            let proxy = VD_SYS_CFG {
-                LVDRE: self.LVDRE(),
-                LVDIE: self.LVDIE(),
-                HVDRE: self.HVDRE(),
-                HVDIE: self.HVDIE(),
-                LVSEL: self.LVSEL(),
-                LOCK: self.LOCK(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1224,23 +953,6 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for VERID {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VERID {
-                FEATURE: u16,
-                MINOR: u8,
-                MAJOR: u8,
-            }
-            let proxy = VERID {
-                FEATURE: self.FEATURE(),
-                MINOR: self.MINOR(),
-                MAJOR: self.MAJOR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

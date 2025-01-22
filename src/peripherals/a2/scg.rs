@@ -147,17 +147,6 @@ pub mod regs {
             f.debug_struct("CSR").field("SCS", &self.SCS()).finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CSR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CSR {
-                SCS: u8,
-            }
-            let proxy = CSR { SCS: self.SCS() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "FIRC Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -184,19 +173,6 @@ pub mod regs {
             f.debug_struct("FIRCCFG")
                 .field("FREQ_SEL", &self.FREQ_SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FIRCCFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FIRCCFG {
-                FREQ_SEL: u8,
-            }
-            let proxy = FIRCCFG {
-                FREQ_SEL: self.FREQ_SEL(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FIRC Control Status Register"]
@@ -327,39 +303,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FIRCCSR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FIRCCSR {
-                FIRCEN: bool,
-                FIRCSTEN: bool,
-                FIRC_SCLK_PERIPH_EN: bool,
-                FIRC_FCLK_PERIPH_EN: bool,
-                LK: bool,
-                FIRCVLD: bool,
-                FIRCSEL: bool,
-                FIRCERR: bool,
-                FIRCERR_IE: bool,
-                FIRCACC_IE: bool,
-                FIRCACC: bool,
-            }
-            let proxy = FIRCCSR {
-                FIRCEN: self.FIRCEN(),
-                FIRCSTEN: self.FIRCSTEN(),
-                FIRC_SCLK_PERIPH_EN: self.FIRC_SCLK_PERIPH_EN(),
-                FIRC_FCLK_PERIPH_EN: self.FIRC_FCLK_PERIPH_EN(),
-                LK: self.LK(),
-                FIRCVLD: self.FIRCVLD(),
-                FIRCSEL: self.FIRCSEL(),
-                FIRCERR: self.FIRCERR(),
-                FIRCERR_IE: self.FIRCERR_IE(),
-                FIRCACC_IE: self.FIRCACC_IE(),
-                FIRCACC: self.FIRCACC(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "FIRC Trim Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -418,25 +361,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FIRCTRIM {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FIRCTRIM {
-                TRIMFINE: u8,
-                TRIMCOAR: u8,
-                TRIMTEMP: u8,
-                TRIMSTART: u8,
-            }
-            let proxy = FIRCTRIM {
-                TRIMFINE: self.TRIMFINE(),
-                TRIMCOAR: self.TRIMCOAR(),
-                TRIMTEMP: self.TRIMTEMP(),
-                TRIMSTART: self.TRIMSTART(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LDO Control and Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -493,25 +417,6 @@ pub mod regs {
                 .field("LDOBYPASS", &self.LDOBYPASS())
                 .field("VOUT_OK", &self.VOUT_OK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LDOCSR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LDOCSR {
-                LDOEN: bool,
-                VOUT_SEL: u8,
-                LDOBYPASS: bool,
-                VOUT_OK: bool,
-            }
-            let proxy = LDOCSR {
-                LDOEN: self.LDOEN(),
-                VOUT_SEL: self.VOUT_SEL(),
-                LDOBYPASS: self.LDOBYPASS(),
-                VOUT_OK: self.VOUT_OK(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Parameter Register"]
@@ -582,27 +487,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PARAM {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PARAM {
-                SOSCCLKPRES: bool,
-                SIRCCLKPRES: bool,
-                FIRCCLKPRES: bool,
-                ROSCCLKPRES: bool,
-                SPLLCLKPRES: bool,
-            }
-            let proxy = PARAM {
-                SOSCCLKPRES: self.SOSCCLKPRES(),
-                SIRCCLKPRES: self.SIRCCLKPRES(),
-                FIRCCLKPRES: self.FIRCCLKPRES(),
-                ROSCCLKPRES: self.ROSCCLKPRES(),
-                SPLLCLKPRES: self.SPLLCLKPRES(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Run Clock Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -627,17 +511,6 @@ pub mod regs {
     impl core::fmt::Debug for RCCR {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RCCR").field("SCS", &self.SCS()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RCCR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RCCR {
-                SCS: u8,
-            }
-            let proxy = RCCR { SCS: self.SCS() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ROSC Control Status Register"]
@@ -696,25 +569,6 @@ pub mod regs {
                 .field("ROSCSEL", &self.ROSCSEL())
                 .field("ROSCERR", &self.ROSCERR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ROSCCSR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ROSCCSR {
-                LK: bool,
-                ROSCVLD: bool,
-                ROSCSEL: bool,
-                ROSCERR: bool,
-            }
-            let proxy = ROSCCSR {
-                LK: self.LK(),
-                ROSCVLD: self.ROSCVLD(),
-                ROSCSEL: self.ROSCSEL(),
-                ROSCERR: self.ROSCERR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SIRC Control Status Register"]
@@ -845,39 +699,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SIRCCSR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SIRCCSR {
-                SIRCSTEN: bool,
-                SIRC_CLK_PERIPH_EN: bool,
-                SIRCTREN: bool,
-                SIRCTRUP: bool,
-                TRIM_LOCK: bool,
-                COARSE_TRIM_BYPASS: bool,
-                LK: bool,
-                SIRCVLD: bool,
-                SIRCSEL: bool,
-                SIRCERR: bool,
-                SIRCERR_IE: bool,
-            }
-            let proxy = SIRCCSR {
-                SIRCSTEN: self.SIRCSTEN(),
-                SIRC_CLK_PERIPH_EN: self.SIRC_CLK_PERIPH_EN(),
-                SIRCTREN: self.SIRCTREN(),
-                SIRCTRUP: self.SIRCTRUP(),
-                TRIM_LOCK: self.TRIM_LOCK(),
-                COARSE_TRIM_BYPASS: self.COARSE_TRIM_BYPASS(),
-                LK: self.LK(),
-                SIRCVLD: self.SIRCVLD(),
-                SIRCSEL: self.SIRCSEL(),
-                SIRCERR: self.SIRCERR(),
-                SIRCERR_IE: self.SIRCERR_IE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SIRC Auto-trimming Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -916,21 +737,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SIRCSTAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SIRCSTAT {
-                CCOTRIM: u8,
-                CLTRIM: u8,
-            }
-            let proxy = SIRCSTAT {
-                CCOTRIM: self.CCOTRIM(),
-                CLTRIM: self.CLTRIM(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SIRC Trim Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -967,21 +773,6 @@ pub mod regs {
                 .field("TRIMSRC", &self.TRIMSRC())
                 .field("TRIMDIV", &self.TRIMDIV())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SIRCTCFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SIRCTCFG {
-                TRIMSRC: u8,
-                TRIMDIV: u8,
-            }
-            let proxy = SIRCTCFG {
-                TRIMSRC: self.TRIMSRC(),
-                TRIMDIV: self.TRIMDIV(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SIRC Trim Register"]
@@ -1042,25 +833,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SIRCTRIM {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SIRCTRIM {
-                CCOTRIM: u8,
-                CLTRIM: u8,
-                TCTRIM: u8,
-                FVCHTRIM: u8,
-            }
-            let proxy = SIRCTRIM {
-                CCOTRIM: self.CCOTRIM(),
-                CLTRIM: self.CLTRIM(),
-                TCTRIM: self.TCTRIM(),
-                FVCHTRIM: self.FVCHTRIM(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SOSC Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1097,21 +869,6 @@ pub mod regs {
                 .field("EREFS", &self.EREFS())
                 .field("RANGE", &self.RANGE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SOSCCFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SOSCCFG {
-                EREFS: bool,
-                RANGE: u8,
-            }
-            let proxy = SOSCCFG {
-                EREFS: self.EREFS(),
-                RANGE: self.RANGE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SOSC Control Status Register"]
@@ -1230,37 +987,6 @@ pub mod regs {
                 .field("SOSCVLD_IE", &self.SOSCVLD_IE())
                 .field("SOSC_SAFE_EN", &self.SOSC_SAFE_EN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SOSCCSR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SOSCCSR {
-                SOSCEN: bool,
-                SOSCSTEN: bool,
-                SOSCCM: bool,
-                SOSCCMRE: bool,
-                LK: bool,
-                SOSCVLD: bool,
-                SOSCSEL: bool,
-                SOSCERR: bool,
-                SOSCVLD_IE: bool,
-                SOSC_SAFE_EN: bool,
-            }
-            let proxy = SOSCCSR {
-                SOSCEN: self.SOSCEN(),
-                SOSCSTEN: self.SOSCSTEN(),
-                SOSCCM: self.SOSCCM(),
-                SOSCCMRE: self.SOSCCMRE(),
-                LK: self.LK(),
-                SOSCVLD: self.SOSCVLD(),
-                SOSCSEL: self.SOSCSEL(),
-                SOSCERR: self.SOSCERR(),
-                SOSCVLD_IE: self.SOSCVLD_IE(),
-                SOSC_SAFE_EN: self.SOSC_SAFE_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SPLL Control Status Register"]
@@ -1391,39 +1117,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SPLLCSR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SPLLCSR {
-                SPLLPWREN: bool,
-                SPLLCLKEN: bool,
-                SPLLSTEN: bool,
-                FRM_CLOCKSTABLE: bool,
-                SPLLCM: bool,
-                SPLLCMRE: bool,
-                LK: bool,
-                SPLL_LOCK: bool,
-                SPLLSEL: bool,
-                SPLLERR: bool,
-                SPLL_LOCK_IE: bool,
-            }
-            let proxy = SPLLCSR {
-                SPLLPWREN: self.SPLLPWREN(),
-                SPLLCLKEN: self.SPLLCLKEN(),
-                SPLLSTEN: self.SPLLSTEN(),
-                FRM_CLOCKSTABLE: self.FRM_CLOCKSTABLE(),
-                SPLLCM: self.SPLLCM(),
-                SPLLCMRE: self.SPLLCMRE(),
-                LK: self.LK(),
-                SPLL_LOCK: self.SPLL_LOCK(),
-                SPLLSEL: self.SPLLSEL(),
-                SPLLERR: self.SPLLERR(),
-                SPLL_LOCK_IE: self.SPLL_LOCK_IE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SPLL Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1542,37 +1235,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SPLLCTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SPLLCTRL {
-                SELR: u8,
-                SELI: u8,
-                SELP: u8,
-                BYPASSPOSTDIV2: bool,
-                LIMUPOFF: bool,
-                BANDDIRECT: bool,
-                BYPASSPREDIV: bool,
-                BYPASSPOSTDIV: bool,
-                FRM: bool,
-                SOURCE: u8,
-            }
-            let proxy = SPLLCTRL {
-                SELR: self.SELR(),
-                SELI: self.SELI(),
-                SELP: self.SELP(),
-                BYPASSPOSTDIV2: self.BYPASSPOSTDIV2(),
-                LIMUPOFF: self.LIMUPOFF(),
-                BANDDIRECT: self.BANDDIRECT(),
-                BYPASSPREDIV: self.BYPASSPREDIV(),
-                BYPASSPOSTDIV: self.BYPASSPOSTDIV(),
-                FRM: self.FRM(),
-                SOURCE: self.SOURCE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SPLL LOCK Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1599,19 +1261,6 @@ pub mod regs {
             f.debug_struct("SPLLLOCK_CNFG")
                 .field("LOCK_TIME", &self.LOCK_TIME())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SPLLLOCK_CNFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SPLLLOCK_CNFG {
-                LOCK_TIME: u32,
-            }
-            let proxy = SPLLLOCK_CNFG {
-                LOCK_TIME: self.LOCK_TIME(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SPLL M Divider Register"]
@@ -1652,21 +1301,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SPLLMDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SPLLMDIV {
-                MDIV: u16,
-                MREQ: bool,
-            }
-            let proxy = SPLLMDIV {
-                MDIV: self.MDIV(),
-                MREQ: self.MREQ(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SPLL N Divider Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1705,21 +1339,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SPLLNDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SPLLNDIV {
-                NDIV: u8,
-                NREQ: bool,
-            }
-            let proxy = SPLLNDIV {
-                NDIV: self.NDIV(),
-                NREQ: self.NREQ(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SPLL P Divider Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1756,21 +1375,6 @@ pub mod regs {
                 .field("PDIV", &self.PDIV())
                 .field("PREQ", &self.PREQ())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SPLLPDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SPLLPDIV {
-                PDIV: u8,
-                PREQ: bool,
-            }
-            let proxy = SPLLPDIV {
-                PDIV: self.PDIV(),
-                PREQ: self.PREQ(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SPLL Spread Spectrum Control 1 Register"]
@@ -1871,33 +1475,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SPLLSSCG1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SPLLSSCG1 {
-                SS_MDIV_MSB: bool,
-                SS_MDIV_REQ: bool,
-                MF: u8,
-                MR: u8,
-                MC: u8,
-                DITHER: bool,
-                SEL_SS_MDIV: bool,
-                SS_PD: bool,
-            }
-            let proxy = SPLLSSCG1 {
-                SS_MDIV_MSB: self.SS_MDIV_MSB(),
-                SS_MDIV_REQ: self.SS_MDIV_REQ(),
-                MF: self.MF(),
-                MR: self.MR(),
-                MC: self.MC(),
-                DITHER: self.DITHER(),
-                SEL_SS_MDIV: self.SEL_SS_MDIV(),
-                SS_PD: self.SS_PD(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SPLL SSCG Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1924,19 +1501,6 @@ pub mod regs {
             f.debug_struct("SPLLSSCGSTAT")
                 .field("SS_MDIV_ACK", &self.SS_MDIV_ACK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SPLLSSCGSTAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SPLLSSCGSTAT {
-                SS_MDIV_ACK: bool,
-            }
-            let proxy = SPLLSSCGSTAT {
-                SS_MDIV_ACK: self.SS_MDIV_ACK(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SPLL Status Register"]
@@ -1997,25 +1561,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SPLLSTAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SPLLSTAT {
-                NDIVACK: bool,
-                MDIVACK: bool,
-                PDIVACK: bool,
-                FRMDET: bool,
-            }
-            let proxy = SPLLSTAT {
-                NDIVACK: self.NDIVACK(),
-                MDIVACK: self.MDIVACK(),
-                PDIVACK: self.PDIVACK(),
-                FRMDET: self.FRMDET(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Trim Lock register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2062,23 +1607,6 @@ pub mod regs {
                 .field("IFR_DISABLE", &self.IFR_DISABLE())
                 .field("TRIM_LOCK_KEY", &self.TRIM_LOCK_KEY())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TRIM_LOCK {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TRIM_LOCK {
-                TRIM_UNLOCK: bool,
-                IFR_DISABLE: bool,
-                TRIM_LOCK_KEY: u16,
-            }
-            let proxy = TRIM_LOCK {
-                TRIM_UNLOCK: self.TRIM_UNLOCK(),
-                IFR_DISABLE: self.IFR_DISABLE(),
-                TRIM_LOCK_KEY: self.TRIM_LOCK_KEY(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -87,19 +87,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GEXP_STATUS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GEXP_STATUS {
-                ERROR: bool,
-            }
-            let proxy = GEXP_STATUS {
-                ERROR: self.ERROR(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "General Exception Status Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -126,19 +113,6 @@ pub mod regs {
             f.debug_struct("GEXP_STATUS_IE")
                 .field("ERROR_IE", &self.ERROR_IE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GEXP_STATUS_IE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GEXP_STATUS_IE {
-                ERROR_IE: bool,
-            }
-            let proxy = GEXP_STATUS_IE {
-                ERROR_IE: self.ERROR_IE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Operation Control"]
@@ -237,33 +211,6 @@ pub mod regs {
                 .field("OVDT_EN_RES3", &self.OVDT_EN_RES3())
                 .field("OVDT_RES3", &self.OVDT_RES3())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for OP_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct OP_CTRL {
-                OVDT_EN_RES0: bool,
-                OVDT_RES0: u8,
-                OVDT_EN_RES1: bool,
-                OVDT_RES1: u8,
-                OVDT_EN_RES2: bool,
-                OVDT_RES2: u8,
-                OVDT_EN_RES3: bool,
-                OVDT_RES3: u8,
-            }
-            let proxy = OP_CTRL {
-                OVDT_EN_RES0: self.OVDT_EN_RES0(),
-                OVDT_RES0: self.OVDT_RES0(),
-                OVDT_EN_RES1: self.OVDT_EN_RES1(),
-                OVDT_RES1: self.OVDT_RES1(),
-                OVDT_EN_RES2: self.OVDT_EN_RES2(),
-                OVDT_RES2: self.OVDT_RES2(),
-                OVDT_EN_RES3: self.OVDT_EN_RES3(),
-                OVDT_RES3: self.OVDT_RES3(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Result Status"]
@@ -604,81 +551,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RES_STATUS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RES_STATUS {
-                RES0_NX: bool,
-                RES0_UF: bool,
-                RES0_OF: bool,
-                RES0_DZ: bool,
-                RES0_NV: bool,
-                RES0_ERR: bool,
-                RES0_OVWR: bool,
-                RES0_FULL: bool,
-                RES1_NX: bool,
-                RES1_UF: bool,
-                RES1_OF: bool,
-                RES1_DZ: bool,
-                RES1_NV: bool,
-                RES1_ERR: bool,
-                RES1_OVWR: bool,
-                RES1_FULL: bool,
-                RES2_NX: bool,
-                RES2_UF: bool,
-                RES2_OF: bool,
-                RES2_DZ: bool,
-                RES2_NV: bool,
-                RES2_ERR: bool,
-                RES2_OVWR: bool,
-                RES2_FULL: bool,
-                RES3_NX: bool,
-                RES3_UF: bool,
-                RES3_OF: bool,
-                RES3_DZ: bool,
-                RES3_NV: bool,
-                RES3_ERR: bool,
-                RES3_OVWR: bool,
-                RES3_FULL: bool,
-            }
-            let proxy = RES_STATUS {
-                RES0_NX: self.RES0_NX(),
-                RES0_UF: self.RES0_UF(),
-                RES0_OF: self.RES0_OF(),
-                RES0_DZ: self.RES0_DZ(),
-                RES0_NV: self.RES0_NV(),
-                RES0_ERR: self.RES0_ERR(),
-                RES0_OVWR: self.RES0_OVWR(),
-                RES0_FULL: self.RES0_FULL(),
-                RES1_NX: self.RES1_NX(),
-                RES1_UF: self.RES1_UF(),
-                RES1_OF: self.RES1_OF(),
-                RES1_DZ: self.RES1_DZ(),
-                RES1_NV: self.RES1_NV(),
-                RES1_ERR: self.RES1_ERR(),
-                RES1_OVWR: self.RES1_OVWR(),
-                RES1_FULL: self.RES1_FULL(),
-                RES2_NX: self.RES2_NX(),
-                RES2_UF: self.RES2_UF(),
-                RES2_OF: self.RES2_OF(),
-                RES2_DZ: self.RES2_DZ(),
-                RES2_NV: self.RES2_NV(),
-                RES2_ERR: self.RES2_ERR(),
-                RES2_OVWR: self.RES2_OVWR(),
-                RES2_FULL: self.RES2_FULL(),
-                RES3_NX: self.RES3_NX(),
-                RES3_UF: self.RES3_UF(),
-                RES3_OF: self.RES3_OF(),
-                RES3_DZ: self.RES3_DZ(),
-                RES3_NV: self.RES3_NV(),
-                RES3_ERR: self.RES3_ERR(),
-                RES3_OVWR: self.RES3_OVWR(),
-                RES3_FULL: self.RES3_FULL(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Result Status Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -737,25 +609,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RES_STATUS_IE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RES_STATUS_IE {
-                RES0_IE: bool,
-                RES1_IE: bool,
-                RES2_IE: bool,
-                RES3_IE: bool,
-            }
-            let proxy = RES_STATUS_IE {
-                RES0_IE: self.RES0_IE(),
-                RES1_IE: self.RES1_IE(),
-                RES2_IE: self.RES2_IE(),
-                RES3_IE: self.RES3_IE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "System Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -782,19 +635,6 @@ pub mod regs {
             f.debug_struct("SYS_CTLR")
                 .field("ACG_EN", &self.ACG_EN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SYS_CTLR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SYS_CTLR {
-                ACG_EN: bool,
-            }
-            let proxy = SYS_CTLR {
-                ACG_EN: self.ACG_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -132,17 +132,6 @@ pub mod regs {
             f.debug_struct("BLR").field("LOCK", &self.LOCK()).finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for BLR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct BLR {
-                LOCK: u8,
-            }
-            let proxy = BLR { LOCK: self.LOCK() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Clock Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -179,21 +168,6 @@ pub mod regs {
                 .field("CKMODE", &self.CKMODE())
                 .field("LOCK", &self.LOCK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CKCTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CKCTRL {
-                CKMODE: u8,
-                LOCK: bool,
-            }
-            let proxy = CKCTRL {
-                CKMODE: self.CKMODE(),
-                LOCK: self.LOCK(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Clock Status"]
@@ -244,23 +218,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CKSTAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CKSTAT {
-                CKMODE: u8,
-                WAKEUP: u8,
-                VALID: bool,
-            }
-            let proxy = CKSTAT {
-                CKMODE: self.CKMODE(),
-                WAKEUP: self.WAKEUP(),
-                VALID: self.VALID(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Core Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -289,17 +246,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CORECTL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CORECTL {
-                NPIE: bool,
-            }
-            let proxy = CORECTL { NPIE: self.NPIE() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Debug Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -324,17 +270,6 @@ pub mod regs {
     impl core::fmt::Debug for DBGCTL {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DBGCTL").field("SOD", &self.SOD()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DBGCTL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DBGCTL {
-                SOD: bool,
-            }
-            let proxy = DBGCTL { SOD: self.SOD() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Flash Control"]
@@ -375,21 +310,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLASHCR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLASHCR {
-                FLASHDIS: bool,
-                FLASHDOZE: bool,
-            }
-            let proxy = FLASHCR {
-                FLASHDIS: self.FLASHDIS(),
-                FLASHDOZE: self.FLASHDOZE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Force Mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -416,19 +336,6 @@ pub mod regs {
             f.debug_struct("FM")
                 .field("FORCECFG", &self.FORCECFG())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FM {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FM {
-                FORCECFG: bool,
-            }
-            let proxy = FM {
-                FORCECFG: self.FORCECFG(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Global Power Mode Control"]
@@ -459,19 +366,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GPMCTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GPMCTRL {
-                LPMODE: u8,
-            }
-            let proxy = GPMCTRL {
-                LPMODE: self.LPMODE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -500,19 +394,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MR {
-                ISPMODE_n: bool,
-            }
-            let proxy = MR {
-                ISPMODE_n: self.ISPMODE_n(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Power Mode Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -539,19 +420,6 @@ pub mod regs {
             f.debug_struct("PMCTRL")
                 .field("LPMODE", &self.LPMODE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PMCTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PMCTRL {
-                LPMODE: u8,
-            }
-            let proxy = PMCTRL {
-                LPMODE: self.LPMODE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Power Mode Protection"]
@@ -590,21 +458,6 @@ pub mod regs {
                 .field("LPMODE", &self.LPMODE())
                 .field("LOCK", &self.LOCK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PMPROT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PMPROT {
-                LPMODE: u8,
-                LOCK: bool,
-            }
-            let proxy = PMPROT {
-                LPMODE: self.LPMODE(),
-                LOCK: self.LOCK(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Reset Pin Control"]
@@ -655,23 +508,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RPC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RPC {
-                FILTCFG: u8,
-                FILTEN: bool,
-                LPFEN: bool,
-            }
-            let proxy = RPC {
-                FILTCFG: self.FILTCFG(),
-                FILTEN: self.FILTEN(),
-                LPFEN: self.LPFEN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Reset Count Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -698,19 +534,6 @@ pub mod regs {
             f.debug_struct("RSTCNT")
                 .field("COUNT", &self.COUNT())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RSTCNT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RSTCNT {
-                COUNT: u8,
-            }
-            let proxy = RSTCNT {
-                COUNT: self.COUNT(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SRAM Disable"]
@@ -1051,81 +874,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRAMDIS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRAMDIS {
-                DIS0: bool,
-                DIS1: bool,
-                DIS2: bool,
-                DIS3: bool,
-                DIS4: bool,
-                DIS5: bool,
-                DIS6: bool,
-                DIS7: bool,
-                DIS8: bool,
-                DIS9: bool,
-                DIS10: bool,
-                DIS11: bool,
-                DIS12: bool,
-                DIS13: bool,
-                DIS14: bool,
-                DIS15: bool,
-                DIS16: bool,
-                DIS17: bool,
-                DIS18: bool,
-                DIS19: bool,
-                DIS20: bool,
-                DIS21: bool,
-                DIS22: bool,
-                DIS23: bool,
-                DIS24: bool,
-                DIS25: bool,
-                DIS26: bool,
-                DIS27: bool,
-                DIS28: bool,
-                DIS29: bool,
-                DIS30: bool,
-                DIS31: bool,
-            }
-            let proxy = SRAMDIS {
-                DIS0: self.DIS0(),
-                DIS1: self.DIS1(),
-                DIS2: self.DIS2(),
-                DIS3: self.DIS3(),
-                DIS4: self.DIS4(),
-                DIS5: self.DIS5(),
-                DIS6: self.DIS6(),
-                DIS7: self.DIS7(),
-                DIS8: self.DIS8(),
-                DIS9: self.DIS9(),
-                DIS10: self.DIS10(),
-                DIS11: self.DIS11(),
-                DIS12: self.DIS12(),
-                DIS13: self.DIS13(),
-                DIS14: self.DIS14(),
-                DIS15: self.DIS15(),
-                DIS16: self.DIS16(),
-                DIS17: self.DIS17(),
-                DIS18: self.DIS18(),
-                DIS19: self.DIS19(),
-                DIS20: self.DIS20(),
-                DIS21: self.DIS21(),
-                DIS22: self.DIS22(),
-                DIS23: self.DIS23(),
-                DIS24: self.DIS24(),
-                DIS25: self.DIS25(),
-                DIS26: self.DIS26(),
-                DIS27: self.DIS27(),
-                DIS28: self.DIS28(),
-                DIS29: self.DIS29(),
-                DIS30: self.DIS30(),
-                DIS31: self.DIS31(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SRAM Retention"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1464,81 +1212,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRAMRET {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRAMRET {
-                RET0: bool,
-                RET1: bool,
-                RET2: bool,
-                RET3: bool,
-                RET4: bool,
-                RET5: bool,
-                RET6: bool,
-                RET7: bool,
-                RET8: bool,
-                RET9: bool,
-                RET10: bool,
-                RET11: bool,
-                RET12: bool,
-                RET13: bool,
-                RET14: bool,
-                RET15: bool,
-                RET16: bool,
-                RET17: bool,
-                RET18: bool,
-                RET19: bool,
-                RET20: bool,
-                RET21: bool,
-                RET22: bool,
-                RET23: bool,
-                RET24: bool,
-                RET25: bool,
-                RET26: bool,
-                RET27: bool,
-                RET28: bool,
-                RET29: bool,
-                RET30: bool,
-                RET31: bool,
-            }
-            let proxy = SRAMRET {
-                RET0: self.RET0(),
-                RET1: self.RET1(),
-                RET2: self.RET2(),
-                RET3: self.RET3(),
-                RET4: self.RET4(),
-                RET5: self.RET5(),
-                RET6: self.RET6(),
-                RET7: self.RET7(),
-                RET8: self.RET8(),
-                RET9: self.RET9(),
-                RET10: self.RET10(),
-                RET11: self.RET11(),
-                RET12: self.RET12(),
-                RET13: self.RET13(),
-                RET14: self.RET14(),
-                RET15: self.RET15(),
-                RET16: self.RET16(),
-                RET17: self.RET17(),
-                RET18: self.RET18(),
-                RET19: self.RET19(),
-                RET20: self.RET20(),
-                RET21: self.RET21(),
-                RET22: self.RET22(),
-                RET23: self.RET23(),
-                RET24: self.RET24(),
-                RET25: self.RET25(),
-                RET26: self.RET26(),
-                RET27: self.RET27(),
-                RET28: self.RET28(),
-                RET29: self.RET29(),
-                RET30: self.RET30(),
-                RET31: self.RET31(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "System Reset Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1677,41 +1350,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRIE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRIE {
-                PIN: bool,
-                DAP: bool,
-                LPACK: bool,
-                SCG: bool,
-                WWDT0: bool,
-                SW: bool,
-                LOCKUP: bool,
-                CPU1: bool,
-                VBAT: bool,
-                WWDT1: bool,
-                CDOG0: bool,
-                CDOG1: bool,
-            }
-            let proxy = SRIE {
-                PIN: self.PIN(),
-                DAP: self.DAP(),
-                LPACK: self.LPACK(),
-                SCG: self.SCG(),
-                WWDT0: self.WWDT0(),
-                SW: self.SW(),
-                LOCKUP: self.LOCKUP(),
-                CPU1: self.CPU1(),
-                VBAT: self.VBAT(),
-                WWDT1: self.WWDT1(),
-                CDOG0: self.CDOG0(),
-                CDOG1: self.CDOG1(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "System Reset Interrupt Flag"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1838,39 +1476,6 @@ pub mod regs {
                 .field("CDOG0", &self.CDOG0())
                 .field("CDOG1", &self.CDOG1())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRIF {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRIF {
-                PIN: bool,
-                DAP: bool,
-                LPACK: bool,
-                WWDT0: bool,
-                SW: bool,
-                LOCKUP: bool,
-                CPU1: bool,
-                VBAT: bool,
-                WWDT1: bool,
-                CDOG0: bool,
-                CDOG1: bool,
-            }
-            let proxy = SRIF {
-                PIN: self.PIN(),
-                DAP: self.DAP(),
-                LPACK: self.LPACK(),
-                WWDT0: self.WWDT0(),
-                SW: self.SW(),
-                LOCKUP: self.LOCKUP(),
-                CPU1: self.CPU1(),
-                VBAT: self.VBAT(),
-                WWDT1: self.WWDT1(),
-                CDOG0: self.CDOG0(),
-                CDOG1: self.CDOG1(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "System Reset Status"]
@@ -2101,59 +1706,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRS {
-                WAKEUP: bool,
-                POR: bool,
-                VD: bool,
-                WARM: bool,
-                FATAL: bool,
-                PIN: bool,
-                DAP: bool,
-                RSTACK: bool,
-                LPACK: bool,
-                SCG: bool,
-                WWDT0: bool,
-                SW: bool,
-                LOCKUP: bool,
-                CPU1: bool,
-                VBAT: bool,
-                WWDT1: bool,
-                CDOG0: bool,
-                CDOG1: bool,
-                JTAG: bool,
-                SECVIO: bool,
-                TAMPER: bool,
-            }
-            let proxy = SRS {
-                WAKEUP: self.WAKEUP(),
-                POR: self.POR(),
-                VD: self.VD(),
-                WARM: self.WARM(),
-                FATAL: self.FATAL(),
-                PIN: self.PIN(),
-                DAP: self.DAP(),
-                RSTACK: self.RSTACK(),
-                LPACK: self.LPACK(),
-                SCG: self.SCG(),
-                WWDT0: self.WWDT0(),
-                SW: self.SW(),
-                LOCKUP: self.LOCKUP(),
-                CPU1: self.CPU1(),
-                VBAT: self.VBAT(),
-                WWDT1: self.WWDT1(),
-                CDOG0: self.CDOG0(),
-                CDOG1: self.CDOG1(),
-                JTAG: self.JTAG(),
-                SECVIO: self.SECVIO(),
-                TAMPER: self.TAMPER(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Sticky System Reset Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2382,59 +1934,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SSRS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SSRS {
-                WAKEUP: bool,
-                POR: bool,
-                VD: bool,
-                WARM: bool,
-                FATAL: bool,
-                PIN: bool,
-                DAP: bool,
-                RSTACK: bool,
-                LPACK: bool,
-                SCG: bool,
-                WWDT0: bool,
-                SW: bool,
-                LOCKUP: bool,
-                CPU1: bool,
-                VBAT: bool,
-                WWDT1: bool,
-                CDOG0: bool,
-                CDOG1: bool,
-                JTAG: bool,
-                SECVIO: bool,
-                TAMPER: bool,
-            }
-            let proxy = SSRS {
-                WAKEUP: self.WAKEUP(),
-                POR: self.POR(),
-                VD: self.VD(),
-                WARM: self.WARM(),
-                FATAL: self.FATAL(),
-                PIN: self.PIN(),
-                DAP: self.DAP(),
-                RSTACK: self.RSTACK(),
-                LPACK: self.LPACK(),
-                SCG: self.SCG(),
-                WWDT0: self.WWDT0(),
-                SW: self.SW(),
-                LOCKUP: self.LOCKUP(),
-                CPU1: self.CPU1(),
-                VBAT: self.VBAT(),
-                WWDT1: self.WWDT1(),
-                CDOG0: self.CDOG0(),
-                CDOG1: self.CDOG1(),
-                JTAG: self.JTAG(),
-                SECVIO: self.SECVIO(),
-                TAMPER: self.TAMPER(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2481,23 +1980,6 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for VERID {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VERID {
-                FEATURE: u16,
-                MINOR: u8,
-                MAJOR: u8,
-            }
-            let proxy = VERID {
-                FEATURE: self.FEATURE(),
-                MINOR: self.MINOR(),
-                MAJOR: self.MAJOR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

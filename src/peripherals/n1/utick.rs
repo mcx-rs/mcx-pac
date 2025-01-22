@@ -76,21 +76,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CAP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CAP {
-                CAP_VALUE: u32,
-                VALID: bool,
-            }
-            let proxy = CAP {
-                CAP_VALUE: self.CAP_VALUE(),
-                VALID: self.VALID(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Capture Clear"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -147,25 +132,6 @@ pub mod regs {
                 .field("CAPCLR2", &self.CAPCLR2())
                 .field("CAPCLR3", &self.CAPCLR3())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CAPCLR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CAPCLR {
-                CAPCLR0: bool,
-                CAPCLR1: bool,
-                CAPCLR2: bool,
-                CAPCLR3: bool,
-            }
-            let proxy = CAPCLR {
-                CAPCLR0: self.CAPCLR0(),
-                CAPCLR1: self.CAPCLR1(),
-                CAPCLR2: self.CAPCLR2(),
-                CAPCLR3: self.CAPCLR3(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture Configuration"]
@@ -266,33 +232,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CFG {
-                CAPEN0: bool,
-                CAPEN1: bool,
-                CAPEN2: bool,
-                CAPEN3: bool,
-                CAPPOL0: bool,
-                CAPPOL1: bool,
-                CAPPOL2: bool,
-                CAPPOL3: bool,
-            }
-            let proxy = CFG {
-                CAPEN0: self.CAPEN0(),
-                CAPEN1: self.CAPEN1(),
-                CAPEN2: self.CAPEN2(),
-                CAPEN3: self.CAPEN3(),
-                CAPPOL0: self.CAPPOL0(),
-                CAPPOL1: self.CAPPOL1(),
-                CAPPOL2: self.CAPPOL2(),
-                CAPPOL3: self.CAPPOL3(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -331,21 +270,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTRL {
-                DELAYVAL: u32,
-                REPEAT: bool,
-            }
-            let proxy = CTRL {
-                DELAYVAL: self.DELAYVAL(),
-                REPEAT: self.REPEAT(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -382,21 +306,6 @@ pub mod regs {
                 .field("INTR", &self.INTR())
                 .field("ACTIVE", &self.ACTIVE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for STAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct STAT {
-                INTR: bool,
-                ACTIVE: bool,
-            }
-            let proxy = STAT {
-                INTR: self.INTR(),
-                ACTIVE: self.ACTIVE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

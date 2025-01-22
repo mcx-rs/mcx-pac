@@ -97,23 +97,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CR {
-                SWR: bool,
-                UM: bool,
-                LPOS: bool,
-            }
-            let proxy = CR {
-                SWR: self.SWR(),
-                UM: self.UM(),
-                LPOS: self.LPOS(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "RTC Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -182,27 +165,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for IER {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct IER {
-                TIIE: bool,
-                TOIE: bool,
-                TAIE: bool,
-                TSIE: bool,
-                TSIC: u8,
-            }
-            let proxy = IER {
-                TIIE: self.TIIE(),
-                TOIE: self.TOIE(),
-                TAIE: self.TAIE(),
-                TSIE: self.TSIE(),
-                TSIC: self.TSIC(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "RTC Lock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -259,25 +221,6 @@ pub mod regs {
                 .field("SRL", &self.SRL())
                 .field("LRL", &self.LRL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LR {
-                TCL: bool,
-                CRL: bool,
-                SRL: bool,
-                LRL: bool,
-            }
-            let proxy = LR {
-                TCL: self.TCL(),
-                CRL: self.CRL(),
-                SRL: self.SRL(),
-                LRL: self.LRL(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "RTC Status"]
@@ -338,25 +281,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SR {
-                TIF: bool,
-                TOF: bool,
-                TAF: bool,
-                TCE: bool,
-            }
-            let proxy = SR {
-                TIF: self.TIF(),
-                TOF: self.TOF(),
-                TAF: self.TAF(),
-                TCE: self.TCE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "RTC Time Compensation"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -415,25 +339,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TCR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TCR {
-                TCR: u8,
-                CIR: u8,
-                TCV: u8,
-                CIC: u8,
-            }
-            let proxy = TCR {
-                TCR: self.TCR(),
-                CIR: self.CIR(),
-                TCV: self.TCV(),
-                CIC: self.CIC(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "RTC Time Prescaler"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -458,17 +363,6 @@ pub mod regs {
     impl core::fmt::Debug for TPR {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TPR").field("TPR", &self.TPR()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TPR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TPR {
-                TPR: u16,
-            }
-            let proxy = TPR { TPR: self.TPR() };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

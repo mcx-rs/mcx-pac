@@ -141,35 +141,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CCR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CCR {
-                ENCACHE: bool,
-                ENWRBUF: bool,
-                FRCWT: bool,
-                FRCNOALLC: bool,
-                INVW0: bool,
-                PUSHW0: bool,
-                INVW1: bool,
-                PUSHW1: bool,
-                GO: bool,
-            }
-            let proxy = CCR {
-                ENCACHE: self.ENCACHE(),
-                ENWRBUF: self.ENWRBUF(),
-                FRCWT: self.FRCWT(),
-                FRCNOALLC: self.FRCNOALLC(),
-                INVW0: self.INVW0(),
-                PUSHW0: self.PUSHW0(),
-                INVW1: self.INVW1(),
-                PUSHW1: self.PUSHW1(),
-                GO: self.GO(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Cache Line Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -288,37 +259,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CLCR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CLCR {
-                LGO: bool,
-                CACHEADDR: u16,
-                WSEL: bool,
-                TDSEL: bool,
-                LCIVB: bool,
-                LCIMB: bool,
-                LCWAY: bool,
-                LCMD: u8,
-                LADSEL: bool,
-                LACC: bool,
-            }
-            let proxy = CLCR {
-                LGO: self.LGO(),
-                CACHEADDR: self.CACHEADDR(),
-                WSEL: self.WSEL(),
-                TDSEL: self.TDSEL(),
-                LCIVB: self.LCIVB(),
-                LCIMB: self.LCIMB(),
-                LCWAY: self.LCWAY(),
-                LCMD: self.LCMD(),
-                LADSEL: self.LADSEL(),
-                LACC: self.LACC(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Cache Search Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -355,21 +295,6 @@ pub mod regs {
                 .field("LGO", &self.LGO())
                 .field("PHYADDR", &self.PHYADDR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CSAR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CSAR {
-                LGO: bool,
-                PHYADDR: u32,
-            }
-            let proxy = CSAR {
-                LGO: self.LGO(),
-                PHYADDR: self.PHYADDR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

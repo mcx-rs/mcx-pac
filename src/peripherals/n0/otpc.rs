@@ -197,35 +197,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LOCK {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LOCK {
-                NXP_PART_CFG_LOCK: u8,
-                NXP_EXT_LOCK: u8,
-                BOOT_CFG_LOCK: u8,
-                PRINCE_CFG_LOCK: u8,
-                OSCAA_KEY_LOCK: u8,
-                CUST_LOCK0: u8,
-                CUST_LOCK1: u8,
-                CUST_LOCK2: u8,
-                CUST_LOCK3: u8,
-            }
-            let proxy = LOCK {
-                NXP_PART_CFG_LOCK: self.NXP_PART_CFG_LOCK(),
-                NXP_EXT_LOCK: self.NXP_EXT_LOCK(),
-                BOOT_CFG_LOCK: self.BOOT_CFG_LOCK(),
-                PRINCE_CFG_LOCK: self.PRINCE_CFG_LOCK(),
-                OSCAA_KEY_LOCK: self.OSCAA_KEY_LOCK(),
-                CUST_LOCK0: self.CUST_LOCK0(),
-                CUST_LOCK1: self.CUST_LOCK1(),
-                CUST_LOCK2: self.CUST_LOCK2(),
-                CUST_LOCK3: self.CUST_LOCK3(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Parameters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -252,19 +223,6 @@ pub mod regs {
             f.debug_struct("PARAM")
                 .field("NUM_FUSE", &self.NUM_FUSE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PARAM {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PARAM {
-                NUM_FUSE: u16,
-            }
-            let proxy = PARAM {
-                NUM_FUSE: self.NUM_FUSE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Power Control"]
@@ -315,23 +273,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PCR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PCR {
-                HVREQ: bool,
-                LVREQ: bool,
-                PDREQ: bool,
-            }
-            let proxy = PCR {
-                HVREQ: self.HVREQ(),
-                LVREQ: self.LVREQ(),
-                PDREQ: self.PDREQ(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Reload Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -358,19 +299,6 @@ pub mod regs {
             f.debug_struct("RLC")
                 .field("RELOAD_SHADOWS", &self.RELOAD_SHADOWS())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RLC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RLC {
-                RELOAD_SHADOWS: bool,
-            }
-            let proxy = RLC {
-                RELOAD_SHADOWS: self.RELOAD_SHADOWS(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Read and Write Control"]
@@ -439,27 +367,6 @@ pub mod regs {
                 .field("READ_UPDATE", &self.READ_UPDATE())
                 .field("WR_UNLOCK", &self.WR_UNLOCK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RWC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RWC {
-                ADDR: u8,
-                WR_ALL1S: bool,
-                READ_EFUSE: bool,
-                READ_UPDATE: bool,
-                WR_UNLOCK: u16,
-            }
-            let proxy = RWC {
-                ADDR: self.ADDR(),
-                WR_ALL1S: self.WR_ALL1S(),
-                READ_EFUSE: self.READ_EFUSE(),
-                READ_UPDATE: self.READ_UPDATE(),
-                WR_UNLOCK: self.WR_UNLOCK(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status"]
@@ -640,49 +547,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SR {
-                BUSY: bool,
-                ERROR: bool,
-                ECC_SF: bool,
-                ECC_DF: bool,
-                TRI_F: bool,
-                RD_FUSE_LOCK: bool,
-                WR_FUSE_LOCK: bool,
-                RD_REG_LOCK: bool,
-                WR_REG_LOCK: bool,
-                WR_REG_BUSY: bool,
-                WR_POWER_OFF: bool,
-                FSM: bool,
-                FLC: bool,
-                ADC: bool,
-                IRC: bool,
-                FSC: bool,
-            }
-            let proxy = SR {
-                BUSY: self.BUSY(),
-                ERROR: self.ERROR(),
-                ECC_SF: self.ECC_SF(),
-                ECC_DF: self.ECC_DF(),
-                TRI_F: self.TRI_F(),
-                RD_FUSE_LOCK: self.RD_FUSE_LOCK(),
-                WR_FUSE_LOCK: self.WR_FUSE_LOCK(),
-                RD_REG_LOCK: self.RD_REG_LOCK(),
-                WR_REG_LOCK: self.WR_REG_LOCK(),
-                WR_REG_BUSY: self.WR_REG_BUSY(),
-                WR_POWER_OFF: self.WR_POWER_OFF(),
-                FSM: self.FSM(),
-                FLC: self.FLC(),
-                ADC: self.ADC(),
-                IRC: self.IRC(),
-                FSC: self.FSC(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Timing1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -751,27 +615,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TIMING1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TIMING1 {
-                TADDR: u8,
-                TRELAX: u8,
-                TRD: u8,
-                TPS: u8,
-                TPD: u8,
-            }
-            let proxy = TIMING1 {
-                TADDR: self.TADDR(),
-                TRELAX: self.TRELAX(),
-                TRD: self.TRD(),
-                TPS: self.TPS(),
-                TPD: self.TPD(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Timing2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -798,17 +641,6 @@ pub mod regs {
             f.debug_struct("TIMING2")
                 .field("TPGM", &self.TPGM())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TIMING2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TIMING2 {
-                TPGM: u16,
-            }
-            let proxy = TIMING2 { TPGM: self.TPGM() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Version ID"]
@@ -857,23 +689,6 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for VERID {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VERID {
-                FEATURE: u16,
-                MINOR: u8,
-                MAJOR: u8,
-            }
-            let proxy = VERID {
-                FEATURE: self.FEATURE(),
-                MINOR: self.MINOR(),
-                MAJOR: self.MAJOR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -135,29 +135,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GDET_CONF_0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GDET_CONF_0 {
-                FIELD_3_0: u8,
-                field_3_0: u8,
-                SBZ: bool,
-                sbz: bool,
-                RFU: u32,
-                rfu: u32,
-            }
-            let proxy = GDET_CONF_0 {
-                FIELD_3_0: self.FIELD_3_0(),
-                field_3_0: self.field_3_0(),
-                SBZ: self.SBZ(),
-                sbz: self.sbz(),
-                RFU: self.RFU(),
-                rfu: self.rfu(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "GDET Configuration 1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -378,57 +355,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GDET_CONF_1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GDET_CONF_1 {
-                FIELD_1_0: u8,
-                field_1_0: u8,
-                FIELD_3_2: u8,
-                field_3_2: u8,
-                SBZ1: bool,
-                sbz1: bool,
-                SBZ2: bool,
-                sbz2: bool,
-                SBZ3: bool,
-                sbz3: bool,
-                FIELD_7: bool,
-                field_7: bool,
-                FIELD_8: bool,
-                field_8: bool,
-                SBZ4: bool,
-                sbz4: bool,
-                SBZ5: bool,
-                sbz5: bool,
-                RFU: u32,
-                rfu: u32,
-            }
-            let proxy = GDET_CONF_1 {
-                FIELD_1_0: self.FIELD_1_0(),
-                field_1_0: self.field_1_0(),
-                FIELD_3_2: self.FIELD_3_2(),
-                field_3_2: self.field_3_2(),
-                SBZ1: self.SBZ1(),
-                sbz1: self.sbz1(),
-                SBZ2: self.SBZ2(),
-                sbz2: self.sbz2(),
-                SBZ3: self.SBZ3(),
-                sbz3: self.sbz3(),
-                FIELD_7: self.FIELD_7(),
-                field_7: self.field_7(),
-                FIELD_8: self.FIELD_8(),
-                field_8: self.field_8(),
-                SBZ4: self.SBZ4(),
-                sbz4: self.sbz4(),
-                SBZ5: self.SBZ5(),
-                sbz5: self.sbz5(),
-                RFU: self.RFU(),
-                rfu: self.rfu(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "GDET Configuration 2 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -567,41 +493,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GDET_CONF_2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GDET_CONF_2 {
-                FIELD_6_0: u8,
-                field_6_0: u8,
-                RFU1: u16,
-                rfu1: u16,
-                FIELD_21_16: u8,
-                field_21_16: u8,
-                RFU2: u8,
-                rfu2: u8,
-                FIELD_29_24: u8,
-                field_29_24: u8,
-                RFU3: u8,
-                rfu3: u8,
-            }
-            let proxy = GDET_CONF_2 {
-                FIELD_6_0: self.FIELD_6_0(),
-                field_6_0: self.field_6_0(),
-                RFU1: self.RFU1(),
-                rfu1: self.rfu1(),
-                FIELD_21_16: self.FIELD_21_16(),
-                field_21_16: self.field_21_16(),
-                RFU2: self.RFU2(),
-                rfu2: self.rfu2(),
-                FIELD_29_24: self.FIELD_29_24(),
-                field_29_24: self.field_29_24(),
-                RFU3: self.RFU3(),
-                rfu3: self.rfu3(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "GDET Configuration 3 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -660,25 +551,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GDET_CONF_3 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GDET_CONF_3 {
-                FIELD_6_0: u8,
-                field_6_0: u8,
-                RFU1: u32,
-                rfu1: u32,
-            }
-            let proxy = GDET_CONF_3 {
-                FIELD_6_0: self.FIELD_6_0(),
-                field_6_0: self.field_6_0(),
-                RFU1: self.RFU1(),
-                rfu1: self.rfu1(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "GDET Configuration 4 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -735,25 +607,6 @@ pub mod regs {
                 .field("RFU1", &self.RFU1())
                 .field("rfu1", &self.rfu1())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GDET_CONF_4 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GDET_CONF_4 {
-                FIELD_6_0: u8,
-                field_6_0: u8,
-                RFU1: u32,
-                rfu1: u32,
-            }
-            let proxy = GDET_CONF_4 {
-                FIELD_6_0: self.FIELD_6_0(),
-                field_6_0: self.field_6_0(),
-                RFU1: self.RFU1(),
-                rfu1: self.rfu1(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "GDET Configuration 5 Register"]
@@ -836,29 +689,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GDET_CONF_5 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GDET_CONF_5 {
-                FIELD_5_0: u8,
-                field_5_0: u8,
-                FIELD_11_6: u8,
-                field_11_6: u8,
-                RFU1: u32,
-                rfu1: u32,
-            }
-            let proxy = GDET_CONF_5 {
-                FIELD_5_0: self.FIELD_5_0(),
-                field_5_0: self.field_5_0(),
-                FIELD_11_6: self.FIELD_11_6(),
-                field_11_6: self.field_11_6(),
-                RFU1: self.RFU1(),
-                rfu1: self.rfu1(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "GDET Delay Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -937,29 +767,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GDET_DLY_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GDET_DLY_CTRL {
-                VOL_SEL: u8,
-                vol_sel: u8,
-                SW_VOL_CTRL: bool,
-                sw_vol_ctrl: bool,
-                RFU: u32,
-                rfu: u32,
-            }
-            let proxy = GDET_DLY_CTRL {
-                VOL_SEL: self.VOL_SEL(),
-                vol_sel: self.vol_sel(),
-                SW_VOL_CTRL: self.SW_VOL_CTRL(),
-                sw_vol_ctrl: self.sw_vol_ctrl(),
-                RFU: self.RFU(),
-                rfu: self.rfu(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "GDET Enable Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1016,25 +823,6 @@ pub mod regs {
                 .field("RFU", &self.RFU())
                 .field("rfu", &self.rfu())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GDET_ENABLE1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GDET_ENABLE1 {
-                EN1: bool,
-                en1: bool,
-                RFU: u32,
-                rfu: u32,
-            }
-            let proxy = GDET_ENABLE1 {
-                EN1: self.EN1(),
-                en1: self.en1(),
-                RFU: self.RFU(),
-                rfu: self.rfu(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "GDET Reset Register"]
@@ -1115,29 +903,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GDET_RESET {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GDET_RESET {
-                RFU1: u8,
-                rfu1: u8,
-                SFT_RST: bool,
-                sft_rst: bool,
-                RFU2: u32,
-                rfu2: u32,
-            }
-            let proxy = GDET_RESET {
-                RFU1: self.RFU1(),
-                rfu1: self.rfu1(),
-                SFT_RST: self.SFT_RST(),
-                sft_rst: self.sft_rst(),
-                RFU2: self.RFU2(),
-                rfu2: self.rfu2(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "GDET Test Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1194,25 +959,6 @@ pub mod regs {
                 .field("RFU", &self.RFU())
                 .field("rfu", &self.rfu())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GDET_TEST {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GDET_TEST {
-                SBZ: bool,
-                sbz: bool,
-                RFU: u32,
-                rfu: u32,
-            }
-            let proxy = GDET_TEST {
-                SBZ: self.SBZ(),
-                sbz: self.sbz(),
-                RFU: self.RFU(),
-                rfu: self.rfu(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -238,19 +238,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ADC0_TRIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ADC0_TRIG {
-                TRIGIN: u8,
-            }
-            let proxy = ADC0_TRIG {
-                TRIGIN: self.TRIGIN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "AOI0 trigger input connections 0-15"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -277,17 +264,6 @@ pub mod regs {
             f.debug_struct("AOI0_MUX")
                 .field("INP", &self.INP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for AOI0_MUX {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct AOI0_MUX {
-                INP: u8,
-            }
-            let proxy = AOI0_MUX { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CMP0 input connections"]
@@ -318,19 +294,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CMP0_TRIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CMP0_TRIG {
-                TRIGIN: u8,
-            }
-            let proxy = CMP0_TRIG {
-                TRIGIN: self.TRIGIN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CMP1 input connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -357,19 +320,6 @@ pub mod regs {
             f.debug_struct("CMP1_TRIG")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CMP1_TRIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CMP1_TRIG {
-                TRIGIN: u8,
-            }
-            let proxy = CMP1_TRIG {
-                TRIGIN: self.TRIGIN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture select register for CTIMER inputs"]
@@ -400,17 +350,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTIMER0CAP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTIMER0CAP {
-                INP: u8,
-            }
-            let proxy = CTIMER0CAP { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Capture select register for CTIMER inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -437,17 +376,6 @@ pub mod regs {
             f.debug_struct("CTIMER1CAP")
                 .field("INP", &self.INP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTIMER1CAP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTIMER1CAP {
-                INP: u8,
-            }
-            let proxy = CTIMER1CAP { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Capture select register for CTIMER inputs"]
@@ -478,17 +406,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTIMER2CAP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTIMER2CAP {
-                INP: u8,
-            }
-            let proxy = CTIMER2CAP { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "EXT trigger connections 0-4"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -515,17 +432,6 @@ pub mod regs {
             f.debug_struct("EXT_TRIG")
                 .field("INP", &self.INP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for EXT_TRIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct EXT_TRIG {
-                INP: u8,
-            }
-            let proxy = EXT_TRIG { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "EXT trigger connections 6-7"]
@@ -556,17 +462,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for EXT_TRIG6 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct EXT_TRIG6 {
-                INP: u8,
-            }
-            let proxy = EXT_TRIG6 { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "PWM0 input trigger connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -593,19 +488,6 @@ pub mod regs {
             f.debug_struct("FLEXPWM0_FAULT0")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXPWM0_FAULT0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXPWM0_FAULT0 {
-                TRIGIN: u8,
-            }
-            let proxy = FLEXPWM0_FAULT0 {
-                TRIGIN: self.TRIGIN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PWM0 input trigger connections"]
@@ -636,19 +518,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXPWM0_FAULT1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXPWM0_FAULT1 {
-                TRIGIN: u8,
-            }
-            let proxy = FLEXPWM0_FAULT1 {
-                TRIGIN: self.TRIGIN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "PWM0 input trigger connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -675,19 +544,6 @@ pub mod regs {
             f.debug_struct("FLEXPWM0_FAULT2")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXPWM0_FAULT2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXPWM0_FAULT2 {
-                TRIGIN: u8,
-            }
-            let proxy = FLEXPWM0_FAULT2 {
-                TRIGIN: self.TRIGIN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PWM0 input trigger connections"]
@@ -718,19 +574,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXPWM0_FAULT3 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXPWM0_FAULT3 {
-                TRIGIN: u8,
-            }
-            let proxy = FLEXPWM0_FAULT3 {
-                TRIGIN: self.TRIGIN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "PWM0 input trigger connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -757,19 +600,6 @@ pub mod regs {
             f.debug_struct("FLEXPWM0_FORCE")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXPWM0_FORCE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXPWM0_FORCE {
-                TRIGIN: u8,
-            }
-            let proxy = FLEXPWM0_FORCE {
-                TRIGIN: self.TRIGIN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PWM0 input trigger connections"]
@@ -800,19 +630,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXPWM0_SM0_EXTA0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXPWM0_SM0_EXTA0 {
-                TRIGIN: u8,
-            }
-            let proxy = FLEXPWM0_SM0_EXTA0 {
-                TRIGIN: self.TRIGIN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "PWM0 input trigger connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -839,19 +656,6 @@ pub mod regs {
             f.debug_struct("FLEXPWM0_SM0_EXTSYNC0")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXPWM0_SM0_EXTSYNC0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXPWM0_SM0_EXTSYNC0 {
-                TRIGIN: u8,
-            }
-            let proxy = FLEXPWM0_SM0_EXTSYNC0 {
-                TRIGIN: self.TRIGIN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PWM0 input trigger connections"]
@@ -882,19 +686,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXPWM0_SM1_EXTA1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXPWM0_SM1_EXTA1 {
-                TRIGIN: u8,
-            }
-            let proxy = FLEXPWM0_SM1_EXTA1 {
-                TRIGIN: self.TRIGIN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "PWM0 input trigger connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -921,19 +712,6 @@ pub mod regs {
             f.debug_struct("FLEXPWM0_SM1_EXTSYNC1")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXPWM0_SM1_EXTSYNC1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXPWM0_SM1_EXTSYNC1 {
-                TRIGIN: u8,
-            }
-            let proxy = FLEXPWM0_SM1_EXTSYNC1 {
-                TRIGIN: self.TRIGIN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PWM0 input trigger connections"]
@@ -964,19 +742,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXPWM0_SM2_EXTA2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXPWM0_SM2_EXTA2 {
-                TRIGIN: u8,
-            }
-            let proxy = FLEXPWM0_SM2_EXTA2 {
-                TRIGIN: self.TRIGIN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "PWM0 input trigger connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1003,19 +768,6 @@ pub mod regs {
             f.debug_struct("FLEXPWM0_SM2_EXTSYNC2")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXPWM0_SM2_EXTSYNC2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXPWM0_SM2_EXTSYNC2 {
-                TRIGIN: u8,
-            }
-            let proxy = FLEXPWM0_SM2_EXTSYNC2 {
-                TRIGIN: self.TRIGIN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Selection for frequency measurement reference clock"]
@@ -1046,17 +798,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FREQMEAS_REF {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FREQMEAS_REF {
-                INP: u8,
-            }
-            let proxy = FREQMEAS_REF { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Selection for frequency measurement reference clock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1083,17 +824,6 @@ pub mod regs {
             f.debug_struct("FREQMEAS_TAR")
                 .field("INP", &self.INP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FREQMEAS_TAR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FREQMEAS_TAR {
-                INP: u8,
-            }
-            let proxy = FREQMEAS_TAR { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPI2C0 trigger input connections"]
@@ -1124,17 +854,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LPI2C0_TRIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LPI2C0_TRIG {
-                INP: u8,
-            }
-            let proxy = LPI2C0_TRIG { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LPSPI0 trigger input connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1161,17 +880,6 @@ pub mod regs {
             f.debug_struct("LPSPI0_TRIG")
                 .field("INP", &self.INP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LPSPI0_TRIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LPSPI0_TRIG {
-                INP: u8,
-            }
-            let proxy = LPSPI0_TRIG { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPSPI1 trigger input connections"]
@@ -1202,17 +910,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LPSPI1_TRIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LPSPI1_TRIG {
-                INP: u8,
-            }
-            let proxy = LPSPI1_TRIG { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LPUART0 trigger input connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1239,17 +936,6 @@ pub mod regs {
             f.debug_struct("LPUART0r")
                 .field("INP", &self.INP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LPUART0r {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LPUART0r {
-                INP: u8,
-            }
-            let proxy = LPUART0r { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPUART1 trigger input connections"]
@@ -1280,17 +966,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LPUART1r {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LPUART1r {
-                INP: u8,
-            }
-            let proxy = LPUART1r { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LPUART2 trigger input connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1317,17 +992,6 @@ pub mod regs {
             f.debug_struct("LPUART2r")
                 .field("INP", &self.INP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LPUART2r {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LPUART2r {
-                INP: u8,
-            }
-            let proxy = LPUART2r { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PWM0 external clock trigger"]
@@ -1358,19 +1022,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PWM0_EXT_CLK {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PWM0_EXT_CLK {
-                TRIGIN: u8,
-            }
-            let proxy = PWM0_EXT_CLK {
-                TRIGIN: self.TRIGIN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "QDC0 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1397,17 +1048,6 @@ pub mod regs {
             f.debug_struct("QDC0_HOME")
                 .field("INP", &self.INP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for QDC0_HOME {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct QDC0_HOME {
-                INP: u8,
-            }
-            let proxy = QDC0_HOME { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "QDC0 Trigger Input Connections"]
@@ -1438,17 +1078,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for QDC0_ICAP1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct QDC0_ICAP1 {
-                INP: u8,
-            }
-            let proxy = QDC0_ICAP1 { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "QDC0 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1475,17 +1104,6 @@ pub mod regs {
             f.debug_struct("QDC0_ICAP2")
                 .field("INP", &self.INP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for QDC0_ICAP2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct QDC0_ICAP2 {
-                INP: u8,
-            }
-            let proxy = QDC0_ICAP2 { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "QDC0 Trigger Input Connections"]
@@ -1516,17 +1134,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for QDC0_ICAP3 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct QDC0_ICAP3 {
-                INP: u8,
-            }
-            let proxy = QDC0_ICAP3 { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "QDC0 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1553,17 +1160,6 @@ pub mod regs {
             f.debug_struct("QDC0_INDEX")
                 .field("INP", &self.INP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for QDC0_INDEX {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct QDC0_INDEX {
-                INP: u8,
-            }
-            let proxy = QDC0_INDEX { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "QDC0 Trigger Input Connections"]
@@ -1594,17 +1190,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for QDC0_PHASEA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct QDC0_PHASEA {
-                INP: u8,
-            }
-            let proxy = QDC0_PHASEA { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "QDC0 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1631,17 +1216,6 @@ pub mod regs {
             f.debug_struct("QDC0_PHASEB")
                 .field("INP", &self.INP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for QDC0_PHASEB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct QDC0_PHASEB {
-                INP: u8,
-            }
-            let proxy = QDC0_PHASEB { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "QDC0 Trigger Input Connections"]
@@ -1672,17 +1246,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for QDC0_TRIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct QDC0_TRIG {
-                INP: u8,
-            }
-            let proxy = QDC0_TRIG { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Trigger register for TIMER0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1709,17 +1272,6 @@ pub mod regs {
             f.debug_struct("TIMER0TRIG")
                 .field("INP", &self.INP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TIMER0TRIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TIMER0TRIG {
-                INP: u8,
-            }
-            let proxy = TIMER0TRIG { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Trigger register for TIMER1"]
@@ -1750,17 +1302,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TIMER1TRIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TIMER1TRIG {
-                INP: u8,
-            }
-            let proxy = TIMER1TRIG { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Trigger register for TIMER2 inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1789,17 +1330,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TIMER2TRIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TIMER2TRIG {
-                INP: u8,
-            }
-            let proxy = TIMER2TRIG { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "USB-FS trigger input connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1826,17 +1356,6 @@ pub mod regs {
             f.debug_struct("USBFS_TRIG")
                 .field("INP", &self.INP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for USBFS_TRIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct USBFS_TRIG {
-                INP: u8,
-            }
-            let proxy = USBFS_TRIG { INP: self.INP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

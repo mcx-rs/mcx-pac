@@ -93,27 +93,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ISTAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ISTAT {
-                UARTTX: bool,
-                UARTRX: bool,
-                SPI: bool,
-                I2CM: bool,
-                I2CS: bool,
-            }
-            let proxy = ISTAT {
-                UARTTX: self.UARTTX(),
-                UARTRX: self.UARTRX(),
-                SPI: self.SPI(),
-                I2CM: self.I2CM(),
-                I2CS: self.I2CS(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Peripheral Select and ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -191,29 +170,6 @@ pub mod regs {
                 .field("I2CPRESENT", &self.I2CPRESENT())
                 .field("ID", &self.ID())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PSELID {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PSELID {
-                PERSEL: u8,
-                LOCK: bool,
-                UARTPRESENT: bool,
-                SPIPRESENT: bool,
-                I2CPRESENT: bool,
-                ID: u32,
-            }
-            let proxy = PSELID {
-                PERSEL: self.PERSEL(),
-                LOCK: self.LOCK(),
-                UARTPRESENT: self.UARTPRESENT(),
-                SPIPRESENT: self.SPIPRESENT(),
-                I2CPRESENT: self.I2CPRESENT(),
-                ID: self.ID(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

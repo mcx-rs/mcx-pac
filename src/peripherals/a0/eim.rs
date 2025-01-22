@@ -61,19 +61,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for EICHD0_WORD0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct EICHD0_WORD0 {
-                CHKBIT_MASK: u8,
-            }
-            let proxy = EICHD0_WORD0 {
-                CHKBIT_MASK: self.CHKBIT_MASK(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Error Injection Channel Enable register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -102,19 +89,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for EICHEN {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct EICHEN {
-                EICH0EN: bool,
-            }
-            let proxy = EICHEN {
-                EICH0EN: self.EICH0EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Error Injection Module Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -141,19 +115,6 @@ pub mod regs {
             f.debug_struct("EIMCR")
                 .field("GEIEN", &self.GEIEN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for EIMCR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct EIMCR {
-                GEIEN: bool,
-            }
-            let proxy = EIMCR {
-                GEIEN: self.GEIEN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -624,25 +624,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ADC0CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ADC0CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = ADC0CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "ADC0 Clock Source Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -669,17 +650,6 @@ pub mod regs {
             f.debug_struct("ADC0CLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ADC0CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ADC0CLKSEL {
-                SEL: u8,
-            }
-            let proxy = ADC0CLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ADC1 Clock Divider"]
@@ -740,25 +710,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ADC1CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ADC1CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = ADC1CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "ADC1 Clock Source Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -785,17 +736,6 @@ pub mod regs {
             f.debug_struct("ADC1CLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ADC1CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ADC1CLKSEL {
-                SEL: u8,
-            }
-            let proxy = ADC1CLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AHB Clock Control 0"]
@@ -1046,63 +986,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for AHBCLKCTRL0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct AHBCLKCTRL0 {
-                ROM: bool,
-                RAMB_CTRL: bool,
-                RAMC_CTRL: bool,
-                RAMD_CTRL: bool,
-                RAME_CTRL: bool,
-                FMU: bool,
-                FMC: bool,
-                MUX: bool,
-                PORT0: bool,
-                PORT1: bool,
-                PORT2: bool,
-                PORT3: bool,
-                PORT4: bool,
-                GPIO0: bool,
-                GPIO1: bool,
-                GPIO2: bool,
-                GPIO3: bool,
-                GPIO4: bool,
-                PINT: bool,
-                DMA0: bool,
-                CRC: bool,
-                WWDT0: bool,
-                WWDT1: bool,
-            }
-            let proxy = AHBCLKCTRL0 {
-                ROM: self.ROM(),
-                RAMB_CTRL: self.RAMB_CTRL(),
-                RAMC_CTRL: self.RAMC_CTRL(),
-                RAMD_CTRL: self.RAMD_CTRL(),
-                RAME_CTRL: self.RAME_CTRL(),
-                FMU: self.FMU(),
-                FMC: self.FMC(),
-                MUX: self.MUX(),
-                PORT0: self.PORT0(),
-                PORT1: self.PORT1(),
-                PORT2: self.PORT2(),
-                PORT3: self.PORT3(),
-                PORT4: self.PORT4(),
-                GPIO0: self.GPIO0(),
-                GPIO1: self.GPIO1(),
-                GPIO2: self.GPIO2(),
-                GPIO3: self.GPIO3(),
-                GPIO4: self.GPIO4(),
-                PINT: self.PINT(),
-                DMA0: self.DMA0(),
-                CRC: self.CRC(),
-                WWDT0: self.WWDT0(),
-                WWDT1: self.WWDT1(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "AHB Clock Control 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1321,57 +1204,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for AHBCLKCTRL1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct AHBCLKCTRL1 {
-                MRT: bool,
-                OSTIMER: bool,
-                ADC0: bool,
-                ADC1: bool,
-                RTC: bool,
-                UTICK: bool,
-                FC0: bool,
-                FC1: bool,
-                FC2: bool,
-                FC3: bool,
-                FC4: bool,
-                FC5: bool,
-                FC6: bool,
-                FC7: bool,
-                MICFIL: bool,
-                TIMER2: bool,
-                TIMER0: bool,
-                TIMER1: bool,
-                PKC_RAM: bool,
-                SmartDMA: bool,
-            }
-            let proxy = AHBCLKCTRL1 {
-                MRT: self.MRT(),
-                OSTIMER: self.OSTIMER(),
-                ADC0: self.ADC0(),
-                ADC1: self.ADC1(),
-                RTC: self.RTC(),
-                UTICK: self.UTICK(),
-                FC0: self.FC0(),
-                FC1: self.FC1(),
-                FC2: self.FC2(),
-                FC3: self.FC3(),
-                FC4: self.FC4(),
-                FC5: self.FC5(),
-                FC6: self.FC6(),
-                FC7: self.FC7(),
-                MICFIL: self.MICFIL(),
-                TIMER2: self.TIMER2(),
-                TIMER0: self.TIMER0(),
-                TIMER1: self.TIMER1(),
-                PKC_RAM: self.PKC_RAM(),
-                SmartDMA: self.SmartDMA(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "AHB Clock Control 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1560,51 +1392,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for AHBCLKCTRL2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct AHBCLKCTRL2 {
-                DMA1: bool,
-                FLEXIO: bool,
-                SAI0: bool,
-                SAI1: bool,
-                TRO: bool,
-                FREQME: bool,
-                FLEXCAN0: bool,
-                FLEXCAN1: bool,
-                USB_HS: bool,
-                USB_HS_PHY: bool,
-                ELS: bool,
-                TIMER3: bool,
-                TIMER4: bool,
-                PUF: bool,
-                PKC: bool,
-                SCG: bool,
-                GDET: bool,
-            }
-            let proxy = AHBCLKCTRL2 {
-                DMA1: self.DMA1(),
-                FLEXIO: self.FLEXIO(),
-                SAI0: self.SAI0(),
-                SAI1: self.SAI1(),
-                TRO: self.TRO(),
-                FREQME: self.FREQME(),
-                FLEXCAN0: self.FLEXCAN0(),
-                FLEXCAN1: self.FLEXCAN1(),
-                USB_HS: self.USB_HS(),
-                USB_HS_PHY: self.USB_HS_PHY(),
-                ELS: self.ELS(),
-                TIMER3: self.TIMER3(),
-                TIMER4: self.TIMER4(),
-                PUF: self.PUF(),
-                PKC: self.PKC(),
-                SCG: self.SCG(),
-                GDET: self.GDET(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "AHB Clock Control 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1743,41 +1530,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for AHBCLKCTRL3 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct AHBCLKCTRL3 {
-                I3C0: bool,
-                I3C1: bool,
-                QDC0: bool,
-                QDC1: bool,
-                PWM0: bool,
-                PWM1: bool,
-                EVTG: bool,
-                VREF: bool,
-                EWM: bool,
-                EIM: bool,
-                ERM: bool,
-                INTM: bool,
-            }
-            let proxy = AHBCLKCTRL3 {
-                I3C0: self.I3C0(),
-                I3C1: self.I3C1(),
-                QDC0: self.QDC0(),
-                QDC1: self.QDC1(),
-                PWM0: self.PWM0(),
-                PWM1: self.PWM1(),
-                EVTG: self.EVTG(),
-                VREF: self.VREF(),
-                EWM: self.EWM(),
-                EIM: self.EIM(),
-                ERM: self.ERM(),
-                INTM: self.INTM(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "System Clock Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1814,21 +1566,6 @@ pub mod regs {
                 .field("DIV", &self.DIV())
                 .field("UNSTAB", &self.UNSTAB())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for AHBCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct AHBCLKDIV {
-                DIV: u8,
-                UNSTAB: bool,
-            }
-            let proxy = AHBCLKDIV {
-                DIV: self.DIV(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AHB Matrix Priority Control"]
@@ -1909,29 +1646,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for AHBMATPRIO {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct AHBMATPRIO {
-                PRI_CPU0_CBUS: u8,
-                PRI_CPU0_SBUS: u8,
-                DMA0: u8,
-                DMA1: u8,
-                PRI_PKC_ELS: u8,
-                PRI_USB_HS: u8,
-            }
-            let proxy = AHBMATPRIO {
-                PRI_CPU0_CBUS: self.PRI_CPU0_CBUS(),
-                PRI_CPU0_SBUS: self.PRI_CPU0_SBUS(),
-                DMA0: self.DMA0(),
-                DMA1: self.DMA1(),
-                PRI_PKC_ELS: self.PRI_PKC_ELS(),
-                PRI_USB_HS: self.PRI_USB_HS(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Control Automatic Clock Gating"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1990,25 +1704,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for AUTOCLKGATEOVERRIDE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct AUTOCLKGATEOVERRIDE {
-                RAMB_CTRL: bool,
-                RAMC_CTRL: bool,
-                RAMD_CTRL: bool,
-                RAME_CTRL: bool,
-            }
-            let proxy = AUTOCLKGATEOVERRIDE {
-                RAMB_CTRL: self.RAMB_CTRL(),
-                RAMC_CTRL: self.RAMC_CTRL(),
-                RAMD_CTRL: self.RAMD_CTRL(),
-                RAME_CTRL: self.RAME_CTRL(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Control Automatic Clock Gating C"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2047,21 +1742,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for AUTOCLKGATEOVERRIDEC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct AUTOCLKGATEOVERRIDEC {
-                RAMX: bool,
-                RAMA: bool,
-            }
-            let proxy = AUTOCLKGATEOVERRIDEC {
-                RAMX: self.RAMX(),
-                RAMA: self.RAMA(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Gray to Binary Converter Binary Code \\[41:32\\]"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2088,19 +1768,6 @@ pub mod regs {
             f.debug_struct("BINARY_CODE_MSB")
                 .field("code_bin_41_32", &self.code_bin_41_32())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for BINARY_CODE_MSB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct BINARY_CODE_MSB {
-                code_bin_41_32: u16,
-            }
-            let proxy = BINARY_CODE_MSB {
-                code_bin_41_32: self.code_bin_41_32(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CLKOUT Clock Divider"]
@@ -2161,25 +1828,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CLKOUTDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CLKOUTDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = CLKOUTDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CLKOUT Clock Source Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2206,17 +1854,6 @@ pub mod regs {
             f.debug_struct("CLKOUTSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CLKOUTSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CLKOUTSEL {
-                SEL: u8,
-            }
-            let proxy = CLKOUTSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CLKOUT FRG Control"]
@@ -2257,21 +1894,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CLKOUT_FRGCTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CLKOUT_FRGCTRL {
-                DIV: u8,
-                MULT: u8,
-            }
-            let proxy = CLKOUT_FRGCTRL {
-                DIV: self.DIV(),
-                MULT: self.MULT(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Clock Configuration Unlock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2298,19 +1920,6 @@ pub mod regs {
             f.debug_struct("CLKUNLOCK")
                 .field("UNLOCK", &self.UNLOCK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CLKUNLOCK {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CLKUNLOCK {
-                UNLOCK: bool,
-            }
-            let proxy = CLKUNLOCK {
-                UNLOCK: self.UNLOCK(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Clock Control"]
@@ -2391,29 +2000,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CLOCK_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CLOCK_CTRL {
-                CLKIN_ENA_FM_USBH_LPT: bool,
-                FRO1MHZ_ENA: bool,
-                FRO12MHZ_ENA: bool,
-                FRO_HF_ENA: bool,
-                CLKIN_ENA: bool,
-                FRO1MHZ_CLK_ENA: bool,
-            }
-            let proxy = CLOCK_CTRL {
-                CLKIN_ENA_FM_USBH_LPT: self.CLKIN_ENA_FM_USBH_LPT(),
-                FRO1MHZ_ENA: self.FRO1MHZ_ENA(),
-                FRO12MHZ_ENA: self.FRO12MHZ_ENA(),
-                FRO_HF_ENA: self.FRO_HF_ENA(),
-                CLKIN_ENA: self.CLKIN_ENA(),
-                FRO1MHZ_CLK_ENA: self.FRO1MHZ_CLK_ENA(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CMP0 Function Clock Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2472,25 +2058,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CMP0FCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CMP0FCLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = CMP0FCLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CMP0 Function Clock Selection"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2517,17 +2084,6 @@ pub mod regs {
             f.debug_struct("CMP0FCLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CMP0FCLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CMP0FCLKSEL {
-                SEL: u8,
-            }
-            let proxy = CMP0FCLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CMP0 Round Robin Clock Divider"]
@@ -2588,25 +2144,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CMP0RRCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CMP0RRCLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = CMP0RRCLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CMP0 Round Robin Clock Selection"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2633,17 +2170,6 @@ pub mod regs {
             f.debug_struct("CMP0RRCLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CMP0RRCLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CMP0RRCLKSEL {
-                SEL: u8,
-            }
-            let proxy = CMP0RRCLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CMP1 Function Clock Divider"]
@@ -2704,25 +2230,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CMP1FCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CMP1FCLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = CMP1FCLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CMP1 Function Clock Selection"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2749,17 +2256,6 @@ pub mod regs {
             f.debug_struct("CMP1FCLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CMP1FCLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CMP1FCLKSEL {
-                SEL: u8,
-            }
-            let proxy = CMP1FCLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CMP1 Round Robin Clock Division"]
@@ -2820,25 +2316,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CMP1RRCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CMP1RRCLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = CMP1RRCLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CMP1 Round Robin Clock Source Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2865,17 +2342,6 @@ pub mod regs {
             f.debug_struct("CMP1RRCLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CMP1RRCLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CMP1RRCLKSEL {
-                SEL: u8,
-            }
-            let proxy = CMP1RRCLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Non-Secure CPU0 System Tick Calibration"]
@@ -2926,23 +2392,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CPU0NSTCKCAL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CPU0NSTCKCAL {
-                TENMS: u32,
-                SKEW: bool,
-                NOREF: bool,
-            }
-            let proxy = CPU0NSTCKCAL {
-                TENMS: self.TENMS(),
-                SKEW: self.SKEW(),
-                NOREF: self.NOREF(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Secure CPU0 System Tick Calibration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2991,23 +2440,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CPU0STCKCAL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CPU0STCKCAL {
-                TENMS: u32,
-                SKEW: bool,
-                NOREF: bool,
-            }
-            let proxy = CPU0STCKCAL {
-                TENMS: self.TENMS(),
-                SKEW: self.SKEW(),
-                NOREF: self.NOREF(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CPU Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3044,21 +2476,6 @@ pub mod regs {
                 .field("CPU0SLEEPING", &self.CPU0SLEEPING())
                 .field("CPU0LOCKUP", &self.CPU0LOCKUP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CPUSTAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CPUSTAT {
-                CPU0SLEEPING: bool,
-                CPU0LOCKUP: bool,
-            }
-            let proxy = CPUSTAT {
-                CPU0SLEEPING: self.CPU0SLEEPING(),
-                CPU0LOCKUP: self.CPU0LOCKUP(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CTimer Clock Divider"]
@@ -3119,25 +2536,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTIMERCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTIMERCLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = CTIMERCLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CTIMER Clock Source Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3164,17 +2562,6 @@ pub mod regs {
             f.debug_struct("CTIMERCLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTIMERCLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTIMERCLKSEL {
-                SEL: u8,
-            }
-            let proxy = CTIMERCLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CTIMER Global Start Enable"]
@@ -3245,27 +2632,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTIMERGLOBALSTARTEN {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTIMERGLOBALSTARTEN {
-                CTIMER0_CLK_EN: bool,
-                CTIMER1_CLK_EN: bool,
-                CTIMER2_CLK_EN: bool,
-                CTIMER3_CLK_EN: bool,
-                CTIMER4_CLK_EN: bool,
-            }
-            let proxy = CTIMERGLOBALSTARTEN {
-                CTIMER0_CLK_EN: self.CTIMER0_CLK_EN(),
-                CTIMER1_CLK_EN: self.CTIMER1_CLK_EN(),
-                CTIMER2_CLK_EN: self.CTIMER2_CLK_EN(),
-                CTIMER3_CLK_EN: self.CTIMER3_CLK_EN(),
-                CTIMER4_CLK_EN: self.CTIMER4_CLK_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Cortex Debug Features Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3322,25 +2688,6 @@ pub mod regs {
                 .field("CPU0_SPIDEN", &self.CPU0_SPIDEN())
                 .field("CPU0_SPNIDEN", &self.CPU0_SPNIDEN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DEBUG_FEATURES {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DEBUG_FEATURES {
-                CPU0_DBGEN: u8,
-                CPU0_NIDEN: u8,
-                CPU0_SPIDEN: u8,
-                CPU0_SPNIDEN: u8,
-            }
-            let proxy = DEBUG_FEATURES {
-                CPU0_DBGEN: self.CPU0_DBGEN(),
-                CPU0_NIDEN: self.CPU0_NIDEN(),
-                CPU0_SPIDEN: self.CPU0_SPIDEN(),
-                CPU0_SPNIDEN: self.CPU0_SPNIDEN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Cortex Debug Features Control (Duplicate)"]
@@ -3401,25 +2748,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DEBUG_FEATURES_DP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DEBUG_FEATURES_DP {
-                CPU0_DBGEN: u8,
-                CPU0_NIDEN: u8,
-                CPU0_SPIDEN: u8,
-                CPU0_SPNIDEN: u8,
-            }
-            let proxy = DEBUG_FEATURES_DP {
-                CPU0_DBGEN: self.CPU0_DBGEN(),
-                CPU0_NIDEN: self.CPU0_NIDEN(),
-                CPU0_SPIDEN: self.CPU0_SPIDEN(),
-                CPU0_SPNIDEN: self.CPU0_SPNIDEN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Control Write Access to Security"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3448,19 +2776,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DEBUG_LOCK_EN {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DEBUG_LOCK_EN {
-                LOCK_ALL: u8,
-            }
-            let proxy = DEBUG_LOCK_EN {
-                LOCK_ALL: self.LOCK_ALL(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Device ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3487,19 +2802,6 @@ pub mod regs {
             f.debug_struct("DEVICE_ID0")
                 .field("ROM_REV_MINOR", &self.ROM_REV_MINOR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DEVICE_ID0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DEVICE_ID0 {
-                ROM_REV_MINOR: u8,
-            }
-            let proxy = DEVICE_ID0 {
-                ROM_REV_MINOR: self.ROM_REV_MINOR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Chip Revision ID and Number"]
@@ -3550,23 +2852,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DIEID {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DIEID {
-                MINOR_REVISION: u8,
-                MAJOR_REVISION: u8,
-                MCO_NUM_IN_DIE_ID: u32,
-            }
-            let proxy = DIEID {
-                MINOR_REVISION: self.MINOR_REVISION(),
-                MAJOR_REVISION: self.MAJOR_REVISION(),
-                MCO_NUM_IN_DIE_ID: self.MCO_NUM_IN_DIE_ID(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "RAM ECC Enable Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3615,23 +2900,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ECC_ENABLE_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ECC_ENABLE_CTRL {
-                RAMA_ECC_ENABLE: bool,
-                RAMB_RAMX_ECC_ENABLE: bool,
-                RAMD_RAMC_ECC_ENABLE: bool,
-            }
-            let proxy = ECC_ENABLE_CTRL {
-                RAMA_ECC_ENABLE: self.RAMA_ECC_ENABLE(),
-                RAMB_RAMX_ECC_ENABLE: self.RAMB_RAMX_ECC_ENABLE(),
-                RAMD_RAMC_ECC_ENABLE: self.RAMD_RAMC_ECC_ENABLE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "ELS Asset Protection Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3658,19 +2926,6 @@ pub mod regs {
             f.debug_struct("ELS_ASSET_PROT")
                 .field("ASSET_PROTECTION", &self.ASSET_PROTECTION())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_ASSET_PROT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_ASSET_PROT {
-                ASSET_PROTECTION: u8,
-            }
-            let proxy = ELS_ASSET_PROT {
-                ASSET_PROTECTION: self.ASSET_PROTECTION(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Boot state captured during boot: Main ROM log"]
@@ -3841,47 +3096,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_AS_BOOT_LOG0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_AS_BOOT_LOG0 {
-                BOOT_IMAGE: u8,
-                CMAC: bool,
-                ECDSA: bool,
-                OFF_CHIP: bool,
-                ON_CHIP: bool,
-                CDI_CSR: bool,
-                CDI_DICE: bool,
-                TRUSTZONE: bool,
-                DEBUG_AUTH: bool,
-                ITRC: bool,
-                DIG_GDET: bool,
-                ANA_GDET: bool,
-                DEEP_PD: bool,
-                LOW_POWER: u8,
-                ISP: bool,
-            }
-            let proxy = ELS_AS_BOOT_LOG0 {
-                BOOT_IMAGE: self.BOOT_IMAGE(),
-                CMAC: self.CMAC(),
-                ECDSA: self.ECDSA(),
-                OFF_CHIP: self.OFF_CHIP(),
-                ON_CHIP: self.ON_CHIP(),
-                CDI_CSR: self.CDI_CSR(),
-                CDI_DICE: self.CDI_DICE(),
-                TRUSTZONE: self.TRUSTZONE(),
-                DEBUG_AUTH: self.DEBUG_AUTH(),
-                ITRC: self.ITRC(),
-                DIG_GDET: self.DIG_GDET(),
-                ANA_GDET: self.ANA_GDET(),
-                DEEP_PD: self.DEEP_PD(),
-                LOW_POWER: self.LOW_POWER(),
-                ISP: self.ISP(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Boot state captured during boot: Library log"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3928,23 +3142,6 @@ pub mod regs {
                 .field("FIPS", &self.FIPS())
                 .field("SB3", &self.SB3())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_AS_BOOT_LOG1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_AS_BOOT_LOG1 {
-                RoTK: u8,
-                FIPS: u8,
-                SB3: u8,
-            }
-            let proxy = ELS_AS_BOOT_LOG1 {
-                RoTK: self.RoTK(),
-                FIPS: self.FIPS(),
-                SB3: self.SB3(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Boot state captured during boot: Hardware status signals log"]
@@ -4015,27 +3212,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_AS_BOOT_LOG2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_AS_BOOT_LOG2 {
-                CMC_SRS0: u8,
-                VBAT_STATUS0: u8,
-                CMC_SRS1: u16,
-                VBAT_STATUS1: u8,
-                CMC_SRS2: u8,
-            }
-            let proxy = ELS_AS_BOOT_LOG2 {
-                CMC_SRS0: self.CMC_SRS0(),
-                VBAT_STATUS0: self.VBAT_STATUS0(),
-                CMC_SRS1: self.CMC_SRS1(),
-                VBAT_STATUS1: self.VBAT_STATUS1(),
-                CMC_SRS2: self.CMC_SRS2(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Boot state captured during boot: Security log"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4072,21 +3248,6 @@ pub mod regs {
                 .field("ERR_AUTH_FAIL_COUNT", &self.ERR_AUTH_FAIL_COUNT())
                 .field("ERR_ITRC_COUNT", &self.ERR_ITRC_COUNT())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_AS_BOOT_LOG3 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_AS_BOOT_LOG3 {
-                ERR_AUTH_FAIL_COUNT: u8,
-                ERR_ITRC_COUNT: u8,
-            }
-            let proxy = ELS_AS_BOOT_LOG3 {
-                ERR_AUTH_FAIL_COUNT: self.ERR_AUTH_FAIL_COUNT(),
-                ERR_ITRC_COUNT: self.ERR_ITRC_COUNT(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ELS AS Configuration"]
@@ -4344,59 +3505,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_AS_CFG0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_AS_CFG0 {
-                CFG_LC_STATE: u8,
-                CFG_LVD_CORE_RESET_ENABLED: bool,
-                CFG_LVD_CORE_IRQ_ENABLED: bool,
-                CFG_WDT0_ENABLED: bool,
-                CFG_CWDT0_ENABLED: bool,
-                CFG_ELS_GDET_ENABLED: bool,
-                CFG_ANA_GDET_RESET_ENABLED: bool,
-                CFG_ANA_GDET_IRQ_ENABLED: bool,
-                CFG_TAMPER_DET_ENABLED: bool,
-                CFG_LVD_VSYS_RESET_ENABLED: bool,
-                CFG_LVD_VDDIO_RESET_ENABLED: bool,
-                CFG_LVD_VSYS_IRQ_ENABLED: bool,
-                CFG_LVD_VDDIO_IRQ_ENABLED: bool,
-                CFG_WDT1_ENABLED: bool,
-                CFG_CWDT1_ENABLED: bool,
-                CFG_TEMPTAMPER_DET_ENABLED: bool,
-                CFG_VOLTAMPER_DET_ENABLED: bool,
-                CFG_LHTTAMPER_DET_ENABLED: bool,
-                CFG_CLKTAMPER_DET_ENABLED: bool,
-                CFG_QK_DISABLE_ENROLL: bool,
-                CFG_QK_DISABLE_WRAP: bool,
-            }
-            let proxy = ELS_AS_CFG0 {
-                CFG_LC_STATE: self.CFG_LC_STATE(),
-                CFG_LVD_CORE_RESET_ENABLED: self.CFG_LVD_CORE_RESET_ENABLED(),
-                CFG_LVD_CORE_IRQ_ENABLED: self.CFG_LVD_CORE_IRQ_ENABLED(),
-                CFG_WDT0_ENABLED: self.CFG_WDT0_ENABLED(),
-                CFG_CWDT0_ENABLED: self.CFG_CWDT0_ENABLED(),
-                CFG_ELS_GDET_ENABLED: self.CFG_ELS_GDET_ENABLED(),
-                CFG_ANA_GDET_RESET_ENABLED: self.CFG_ANA_GDET_RESET_ENABLED(),
-                CFG_ANA_GDET_IRQ_ENABLED: self.CFG_ANA_GDET_IRQ_ENABLED(),
-                CFG_TAMPER_DET_ENABLED: self.CFG_TAMPER_DET_ENABLED(),
-                CFG_LVD_VSYS_RESET_ENABLED: self.CFG_LVD_VSYS_RESET_ENABLED(),
-                CFG_LVD_VDDIO_RESET_ENABLED: self.CFG_LVD_VDDIO_RESET_ENABLED(),
-                CFG_LVD_VSYS_IRQ_ENABLED: self.CFG_LVD_VSYS_IRQ_ENABLED(),
-                CFG_LVD_VDDIO_IRQ_ENABLED: self.CFG_LVD_VDDIO_IRQ_ENABLED(),
-                CFG_WDT1_ENABLED: self.CFG_WDT1_ENABLED(),
-                CFG_CWDT1_ENABLED: self.CFG_CWDT1_ENABLED(),
-                CFG_TEMPTAMPER_DET_ENABLED: self.CFG_TEMPTAMPER_DET_ENABLED(),
-                CFG_VOLTAMPER_DET_ENABLED: self.CFG_VOLTAMPER_DET_ENABLED(),
-                CFG_LHTTAMPER_DET_ENABLED: self.CFG_LHTTAMPER_DET_ENABLED(),
-                CFG_CLKTAMPER_DET_ENABLED: self.CFG_CLKTAMPER_DET_ENABLED(),
-                CFG_QK_DISABLE_ENROLL: self.CFG_QK_DISABLE_ENROLL(),
-                CFG_QK_DISABLE_WRAP: self.CFG_QK_DISABLE_WRAP(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "ELS AS Configuration1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4615,55 +3723,6 @@ pub mod regs {
                     &self.CFG_HVD_VDDIO_IRQ_ENABLED(),
                 )
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_AS_CFG1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_AS_CFG1 {
-                CFG_SEC_DIS_STRICT_MODE: bool,
-                CFG_SEC_DIS_VIOL_ABORT: bool,
-                CFG_SEC_ENA_NS_PRIV_CHK: bool,
-                CFG_SEC_ENA_S_PRIV_CHK: bool,
-                CFG_SEC_ENA_SEC_CHK: bool,
-                CFG_SEC_IDAU_ALLNS: bool,
-                CFG_SEC_LOCK_NS_MPU: bool,
-                CFG_SEC_LOCK_NS_VTOR: bool,
-                CFG_SEC_LOCK_S_MPU: bool,
-                CFG_SEC_LOCK_S_VTAIRCR: bool,
-                CFG_SEC_LOCK_SAU: bool,
-                METAL_VERSION: u8,
-                ROM_PATCH_VERSION: u8,
-                CFG_HVD_CORE_RESET_ENABLED: bool,
-                CFG_HVD_CORE_IRQ_ENABLED: bool,
-                CFG_HVD_VSYS_RESET_ENABLED: bool,
-                CFG_HVD_VDDIO_RESET_ENABLED: bool,
-                CFG_HVD_VSYS_IRQ_ENABLED: bool,
-                CFG_HVD_VDDIO_IRQ_ENABLED: bool,
-            }
-            let proxy = ELS_AS_CFG1 {
-                CFG_SEC_DIS_STRICT_MODE: self.CFG_SEC_DIS_STRICT_MODE(),
-                CFG_SEC_DIS_VIOL_ABORT: self.CFG_SEC_DIS_VIOL_ABORT(),
-                CFG_SEC_ENA_NS_PRIV_CHK: self.CFG_SEC_ENA_NS_PRIV_CHK(),
-                CFG_SEC_ENA_S_PRIV_CHK: self.CFG_SEC_ENA_S_PRIV_CHK(),
-                CFG_SEC_ENA_SEC_CHK: self.CFG_SEC_ENA_SEC_CHK(),
-                CFG_SEC_IDAU_ALLNS: self.CFG_SEC_IDAU_ALLNS(),
-                CFG_SEC_LOCK_NS_MPU: self.CFG_SEC_LOCK_NS_MPU(),
-                CFG_SEC_LOCK_NS_VTOR: self.CFG_SEC_LOCK_NS_VTOR(),
-                CFG_SEC_LOCK_S_MPU: self.CFG_SEC_LOCK_S_MPU(),
-                CFG_SEC_LOCK_S_VTAIRCR: self.CFG_SEC_LOCK_S_VTAIRCR(),
-                CFG_SEC_LOCK_SAU: self.CFG_SEC_LOCK_SAU(),
-                METAL_VERSION: self.METAL_VERSION(),
-                ROM_PATCH_VERSION: self.ROM_PATCH_VERSION(),
-                CFG_HVD_CORE_RESET_ENABLED: self.CFG_HVD_CORE_RESET_ENABLED(),
-                CFG_HVD_CORE_IRQ_ENABLED: self.CFG_HVD_CORE_IRQ_ENABLED(),
-                CFG_HVD_VSYS_RESET_ENABLED: self.CFG_HVD_VSYS_RESET_ENABLED(),
-                CFG_HVD_VDDIO_RESET_ENABLED: self.CFG_HVD_VDDIO_RESET_ENABLED(),
-                CFG_HVD_VSYS_IRQ_ENABLED: self.CFG_HVD_VSYS_IRQ_ENABLED(),
-                CFG_HVD_VDDIO_IRQ_ENABLED: self.CFG_HVD_VDDIO_IRQ_ENABLED(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ELS AS Flag0"]
@@ -4958,67 +4017,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_AS_FLAG0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_AS_FLAG0 {
-                FLAG_AP_ENABLE_CPU0: bool,
-                EFUSE_ATTACK_DETECT: bool,
-                FLAG_LVD_CORE_OCCURED: bool,
-                FLAG_WDT0_RESET_OCCURED: bool,
-                FLAG_CWDT0_RESET_OCCURED: bool,
-                FLAG_WDT0_IRQ_OCCURED: bool,
-                FLAG_CWDT0_IRQ_OCCURED: bool,
-                FLAG_QK_ERROR: bool,
-                FLAG_ELS_GLITCH_DETECTED: bool,
-                FLAG_ANA_GLITCH_DETECTED: bool,
-                FLAG_TAMPER_EVENT_DETECTED: bool,
-                FLAG_FLASH_ECC_INVALID: bool,
-                FLAG_SEC_VIOL_IRQ_OCURRED: bool,
-                FLAG_CPU0_NS_C_ACC_OCCURED: bool,
-                FLAG_CPU0_NS_D_ACC_OCCURED: bool,
-                FLAG_LVD_VSYS_OCCURED: bool,
-                FLAG_LVD_VDDIO_OCCURED: bool,
-                FLAG_WDT1_RESET_OCCURED: bool,
-                FLAG_CWDT1_RESET_OCCURED: bool,
-                FLAG_WDT1_IRQ_OCCURED: bool,
-                FLAG_CWDT1_IRQ_OCCURED: bool,
-                FLAG_TEMPTAMPER_DET_IRQ_OCCURED: bool,
-                FLAG_VOLTAMPER_DET_IRQ_OCCURED: bool,
-                FLAG_LHTTAMPER_DET_IRQ_OCCURED: bool,
-                FLAG_CLKTAMPER_DET_IRQ_OCCURED: bool,
-            }
-            let proxy = ELS_AS_FLAG0 {
-                FLAG_AP_ENABLE_CPU0: self.FLAG_AP_ENABLE_CPU0(),
-                EFUSE_ATTACK_DETECT: self.EFUSE_ATTACK_DETECT(),
-                FLAG_LVD_CORE_OCCURED: self.FLAG_LVD_CORE_OCCURED(),
-                FLAG_WDT0_RESET_OCCURED: self.FLAG_WDT0_RESET_OCCURED(),
-                FLAG_CWDT0_RESET_OCCURED: self.FLAG_CWDT0_RESET_OCCURED(),
-                FLAG_WDT0_IRQ_OCCURED: self.FLAG_WDT0_IRQ_OCCURED(),
-                FLAG_CWDT0_IRQ_OCCURED: self.FLAG_CWDT0_IRQ_OCCURED(),
-                FLAG_QK_ERROR: self.FLAG_QK_ERROR(),
-                FLAG_ELS_GLITCH_DETECTED: self.FLAG_ELS_GLITCH_DETECTED(),
-                FLAG_ANA_GLITCH_DETECTED: self.FLAG_ANA_GLITCH_DETECTED(),
-                FLAG_TAMPER_EVENT_DETECTED: self.FLAG_TAMPER_EVENT_DETECTED(),
-                FLAG_FLASH_ECC_INVALID: self.FLAG_FLASH_ECC_INVALID(),
-                FLAG_SEC_VIOL_IRQ_OCURRED: self.FLAG_SEC_VIOL_IRQ_OCURRED(),
-                FLAG_CPU0_NS_C_ACC_OCCURED: self.FLAG_CPU0_NS_C_ACC_OCCURED(),
-                FLAG_CPU0_NS_D_ACC_OCCURED: self.FLAG_CPU0_NS_D_ACC_OCCURED(),
-                FLAG_LVD_VSYS_OCCURED: self.FLAG_LVD_VSYS_OCCURED(),
-                FLAG_LVD_VDDIO_OCCURED: self.FLAG_LVD_VDDIO_OCCURED(),
-                FLAG_WDT1_RESET_OCCURED: self.FLAG_WDT1_RESET_OCCURED(),
-                FLAG_CWDT1_RESET_OCCURED: self.FLAG_CWDT1_RESET_OCCURED(),
-                FLAG_WDT1_IRQ_OCCURED: self.FLAG_WDT1_IRQ_OCCURED(),
-                FLAG_CWDT1_IRQ_OCCURED: self.FLAG_CWDT1_IRQ_OCCURED(),
-                FLAG_TEMPTAMPER_DET_IRQ_OCCURED: self.FLAG_TEMPTAMPER_DET_IRQ_OCCURED(),
-                FLAG_VOLTAMPER_DET_IRQ_OCCURED: self.FLAG_VOLTAMPER_DET_IRQ_OCCURED(),
-                FLAG_LHTTAMPER_DET_IRQ_OCCURED: self.FLAG_LHTTAMPER_DET_IRQ_OCCURED(),
-                FLAG_CLKTAMPER_DET_IRQ_OCCURED: self.FLAG_CLKTAMPER_DET_IRQ_OCCURED(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "ELS AS Flag1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5065,23 +4063,6 @@ pub mod regs {
                 .field("FLAG_HVD_VSYS_OCCURED", &self.FLAG_HVD_VSYS_OCCURED())
                 .field("FLAG_HVD_VDDIO_OCCURED", &self.FLAG_HVD_VDDIO_OCCURED())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_AS_FLAG1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_AS_FLAG1 {
-                FLAG_HVD_CORE_OCCURED: bool,
-                FLAG_HVD_VSYS_OCCURED: bool,
-                FLAG_HVD_VDDIO_OCCURED: bool,
-            }
-            let proxy = ELS_AS_FLAG1 {
-                FLAG_HVD_CORE_OCCURED: self.FLAG_HVD_CORE_OCCURED(),
-                FLAG_HVD_VSYS_OCCURED: self.FLAG_HVD_VSYS_OCCURED(),
-                FLAG_HVD_VDDIO_OCCURED: self.FLAG_HVD_VDDIO_OCCURED(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ELS AS State Register"]
@@ -5212,39 +4193,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_AS_ST0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_AS_ST0 {
-                ST_TEMPORAL_STATE: u8,
-                ST_CPU0_DBGEN: bool,
-                ST_CPU0_NIDEN: bool,
-                ST_CPU0_SPIDEN: bool,
-                ST_CPU0_SPNIDEN: bool,
-                ST_DAP_ENABLE_CPU0: bool,
-                ST_ALLOW_TEST_ACCESS: bool,
-                ST_XO32K_FAILED: bool,
-                ST_XO40M_FAILED: bool,
-                ST_IFR_LOAD_FAILED: bool,
-                ST_GLITCH_DETECT_FLAG: u8,
-            }
-            let proxy = ELS_AS_ST0 {
-                ST_TEMPORAL_STATE: self.ST_TEMPORAL_STATE(),
-                ST_CPU0_DBGEN: self.ST_CPU0_DBGEN(),
-                ST_CPU0_NIDEN: self.ST_CPU0_NIDEN(),
-                ST_CPU0_SPIDEN: self.ST_CPU0_SPIDEN(),
-                ST_CPU0_SPNIDEN: self.ST_CPU0_SPNIDEN(),
-                ST_DAP_ENABLE_CPU0: self.ST_DAP_ENABLE_CPU0(),
-                ST_ALLOW_TEST_ACCESS: self.ST_ALLOW_TEST_ACCESS(),
-                ST_XO32K_FAILED: self.ST_XO32K_FAILED(),
-                ST_XO40M_FAILED: self.ST_XO40M_FAILED(),
-                ST_IFR_LOAD_FAILED: self.ST_IFR_LOAD_FAILED(),
-                ST_GLITCH_DETECT_FLAG: self.ST_GLITCH_DETECT_FLAG(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "ELS AS State1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5353,35 +4301,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_AS_ST1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_AS_ST1 {
-                ST_QK_PUF_SCORE: u8,
-                ST_QK_ZEROIZED: bool,
-                ST_MAIN_CLK_IS_EXT: bool,
-                ST_DCDC_VOUT: u8,
-                ST_DCDC_DS: u8,
-                ST_BOOT_MODE: u8,
-                ST_BOOT_RETRY_CNT: u8,
-                ST_LDO_CORE_VOUT: u8,
-                ST_LDO_CORE_DS: u8,
-            }
-            let proxy = ELS_AS_ST1 {
-                ST_QK_PUF_SCORE: self.ST_QK_PUF_SCORE(),
-                ST_QK_ZEROIZED: self.ST_QK_ZEROIZED(),
-                ST_MAIN_CLK_IS_EXT: self.ST_MAIN_CLK_IS_EXT(),
-                ST_DCDC_VOUT: self.ST_DCDC_VOUT(),
-                ST_DCDC_DS: self.ST_DCDC_DS(),
-                ST_BOOT_MODE: self.ST_BOOT_MODE(),
-                ST_BOOT_RETRY_CNT: self.ST_BOOT_RETRY_CNT(),
-                ST_LDO_CORE_VOUT: self.ST_LDO_CORE_VOUT(),
-                ST_LDO_CORE_DS: self.ST_LDO_CORE_DS(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "ELS Lock Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5408,19 +4327,6 @@ pub mod regs {
             f.debug_struct("ELS_LOCK_CTRL")
                 .field("LOCK_CTRL", &self.LOCK_CTRL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_LOCK_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_LOCK_CTRL {
-                LOCK_CTRL: u8,
-            }
-            let proxy = ELS_LOCK_CTRL {
-                LOCK_CTRL: self.LOCK_CTRL(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "ELS Lock Control DP"]
@@ -5451,19 +4357,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_LOCK_CTRL_DP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_LOCK_CTRL_DP {
-                LOCK_CTRL_DP: u8,
-            }
-            let proxy = ELS_LOCK_CTRL_DP {
-                LOCK_CTRL_DP: self.LOCK_CTRL_DP(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Life Cycle State Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5490,19 +4383,6 @@ pub mod regs {
             f.debug_struct("ELS_OTP_LC_STATE")
                 .field("OTP_LC_STATE", &self.OTP_LC_STATE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_OTP_LC_STATE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_OTP_LC_STATE {
-                OTP_LC_STATE: u8,
-            }
-            let proxy = ELS_OTP_LC_STATE {
-                OTP_LC_STATE: self.OTP_LC_STATE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Life Cycle State Register (Duplicate)"]
@@ -5533,19 +4413,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_OTP_LC_STATE_DP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_OTP_LC_STATE_DP {
-                OTP_LC_STATE_DP: u8,
-            }
-            let proxy = ELS_OTP_LC_STATE_DP {
-                OTP_LC_STATE_DP: self.OTP_LC_STATE_DP(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "ELS Temporal State"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5572,19 +4439,6 @@ pub mod regs {
             f.debug_struct("ELS_TEMPORAL_STATE")
                 .field("TEMPORAL_STATE", &self.TEMPORAL_STATE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_TEMPORAL_STATE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_TEMPORAL_STATE {
-                TEMPORAL_STATE: u8,
-            }
-            let proxy = ELS_TEMPORAL_STATE {
-                TEMPORAL_STATE: self.TEMPORAL_STATE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "EWM0 Clock Selection"]
@@ -5615,17 +4469,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for EWM0CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct EWM0CLKSEL {
-                SEL: bool,
-            }
-            let proxy = EWM0CLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "LP_FLEXCOMM Clock Source Select for Fractional Rate Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5652,17 +4495,6 @@ pub mod regs {
             f.debug_struct("FCCLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FCCLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FCCLKSEL {
-                SEL: u8,
-            }
-            let proxy = FCCLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLEXCAN0 Function Clock Divider"]
@@ -5723,25 +4555,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXCAN0CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXCAN0CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = FLEXCAN0CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "FLEXCAN0 Clock Selection"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5768,17 +4581,6 @@ pub mod regs {
             f.debug_struct("FLEXCAN0CLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXCAN0CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXCAN0CLKSEL {
-                SEL: u8,
-            }
-            let proxy = FLEXCAN0CLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FLEXCAN1 Function Clock Divider"]
@@ -5839,25 +4641,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXCAN1CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXCAN1CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = FLEXCAN1CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "FLEXCAN1 Clock Selection"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5884,17 +4667,6 @@ pub mod regs {
             f.debug_struct("FLEXCAN1CLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXCAN1CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXCAN1CLKSEL {
-                SEL: u8,
-            }
-            let proxy = FLEXCAN1CLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LP_FLEXCOMM Clock Divider"]
@@ -5955,25 +4727,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXCOMMCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXCOMMCLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = FLEXCOMMCLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "FLEXIO Function Clock Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6032,25 +4785,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXIOCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXIOCLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = FLEXIOCLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "FLEXIO Clock Selection"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6077,17 +4811,6 @@ pub mod regs {
             f.debug_struct("FLEXIOCLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FLEXIOCLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FLEXIOCLKSEL {
-                SEL: u8,
-            }
-            let proxy = FLEXIOCLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FRO_HF_DIV Clock Divider"]
@@ -6136,23 +4859,6 @@ pub mod regs {
                 .field("HALT", &self.HALT())
                 .field("UNSTAB", &self.UNSTAB())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FROHFDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FROHFDIV {
-                DIV: u8,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = FROHFDIV {
-                DIV: self.DIV(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "GDET Control Register"]
@@ -6243,31 +4949,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GDET_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GDET_CTRL {
-                GDET_EVTCNT_CLR: bool,
-                GDET_ERR_CLR: bool,
-                GDET_ISO_SW: u8,
-                EVENT_CNT: u8,
-                POS_SYNC: bool,
-                NEG_SYNC: bool,
-                EVENT_CLR_FLAG: bool,
-            }
-            let proxy = GDET_CTRL {
-                GDET_EVTCNT_CLR: self.GDET_EVTCNT_CLR(),
-                GDET_ERR_CLR: self.GDET_ERR_CLR(),
-                GDET_ISO_SW: self.GDET_ISO_SW(),
-                EVENT_CNT: self.EVENT_CNT(),
-                POS_SYNC: self.POS_SYNC(),
-                NEG_SYNC: self.NEG_SYNC(),
-                EVENT_CLR_FLAG: self.EVENT_CLR_FLAG(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Gray to Binary Converter Gray code_gray\\[41:32\\]"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6294,19 +4975,6 @@ pub mod regs {
             f.debug_struct("GRAY_CODE_MSB")
                 .field("code_gray_41_32", &self.code_gray_41_32())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GRAY_CODE_MSB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GRAY_CODE_MSB {
-                code_gray_41_32: u16,
-            }
-            let proxy = GRAY_CODE_MSB {
-                code_gray_41_32: self.code_gray_41_32(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I3C0 Functional Clock FCLK Divider"]
@@ -6367,25 +5035,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for I3C0FCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct I3C0FCLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = I3C0FCLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "I3C0 Functional Clock Selection"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6412,17 +5061,6 @@ pub mod regs {
             f.debug_struct("I3C0FCLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for I3C0FCLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct I3C0FCLKSEL {
-                SEL: u8,
-            }
-            let proxy = I3C0FCLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "I3C1 Functional Clock FCLK Divider"]
@@ -6483,25 +5121,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for I3C1FCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct I3C1FCLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = I3C1FCLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "I3C1 Functional Clock Selection"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6528,17 +5147,6 @@ pub mod regs {
             f.debug_struct("I3C1FCLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for I3C1FCLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct I3C1FCLKSEL {
-                SEL: u8,
-            }
-            let proxy = I3C1FCLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Key Retain Control"]
@@ -6597,25 +5205,6 @@ pub mod regs {
                 .field("KEY_SAVE", &self.KEY_SAVE())
                 .field("KEY_LOAD", &self.KEY_LOAD())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for KEY_RETAIN_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct KEY_RETAIN_CTRL {
-                KEY_RETAIN_VALID: bool,
-                KEY_RETAIN_DONE: bool,
-                KEY_SAVE: bool,
-                KEY_LOAD: bool,
-            }
-            let proxy = KEY_RETAIN_CTRL {
-                KEY_RETAIN_VALID: self.KEY_RETAIN_VALID(),
-                KEY_RETAIN_DONE: self.KEY_RETAIN_DONE(),
-                KEY_SAVE: self.KEY_SAVE(),
-                KEY_LOAD: self.KEY_LOAD(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPCAC Control"]
@@ -6716,33 +5305,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LPCAC_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LPCAC_CTRL {
-                DIS_LPCAC: bool,
-                CLR_LPCAC: bool,
-                FRC_NO_ALLOC: bool,
-                PARITY_MISS_EN: bool,
-                DIS_LPCAC_WTBF: bool,
-                LIM_LPCAC_WTBF: bool,
-                PARITY_FAULT_EN: bool,
-                LPCAC_XOM: bool,
-            }
-            let proxy = LPCAC_CTRL {
-                DIS_LPCAC: self.DIS_LPCAC(),
-                CLR_LPCAC: self.CLR_LPCAC(),
-                FRC_NO_ALLOC: self.FRC_NO_ALLOC(),
-                PARITY_MISS_EN: self.PARITY_MISS_EN(),
-                DIS_LPCAC_WTBF: self.DIS_LPCAC_WTBF(),
-                LIM_LPCAC_WTBF: self.LIM_LPCAC_WTBF(),
-                PARITY_FAULT_EN: self.PARITY_FAULT_EN(),
-                LPCAC_XOM: self.LPCAC_XOM(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MICFIL Clock Division"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6801,25 +5363,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MICFILFCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MICFILFCLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = MICFILFCLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MICFIL Clock Selection"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6846,17 +5389,6 @@ pub mod regs {
             f.debug_struct("MICFILFCLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MICFILFCLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MICFILFCLKSEL {
-                SEL: u8,
-            }
-            let proxy = MICFILFCLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "NMI Source Select"]
@@ -6895,21 +5427,6 @@ pub mod regs {
                 .field("IRQCPU0", &self.IRQCPU0())
                 .field("NMIENCPU0", &self.NMIENCPU0())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for NMISRC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct NMISRC {
-                IRQCPU0: u8,
-                NMIENCPU0: bool,
-            }
-            let proxy = NMISRC {
-                IRQCPU0: self.IRQCPU0(),
-                NMIENCPU0: self.NMIENCPU0(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "NVM Control"]
@@ -7020,35 +5537,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for NVM_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct NVM_CTRL {
-                DIS_FLASH_SPEC: bool,
-                DIS_DATA_SPEC: bool,
-                DIS_FLASH_CACHE: bool,
-                DIS_FLASH_INST: bool,
-                DIS_FLASH_DATA: bool,
-                CLR_FLASH_CACHE: bool,
-                FLASH_STALL_EN: bool,
-                DIS_MBECC_ERR_INST: bool,
-                DIS_MBECC_ERR_DATA: bool,
-            }
-            let proxy = NVM_CTRL {
-                DIS_FLASH_SPEC: self.DIS_FLASH_SPEC(),
-                DIS_DATA_SPEC: self.DIS_DATA_SPEC(),
-                DIS_FLASH_CACHE: self.DIS_FLASH_CACHE(),
-                DIS_FLASH_INST: self.DIS_FLASH_INST(),
-                DIS_FLASH_DATA: self.DIS_FLASH_DATA(),
-                CLR_FLASH_CACHE: self.CLR_FLASH_CACHE(),
-                FLASH_STALL_EN: self.FLASH_STALL_EN(),
-                DIS_MBECC_ERR_INST: self.DIS_MBECC_ERR_INST(),
-                DIS_MBECC_ERR_DATA: self.DIS_MBECC_ERR_DATA(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "OSTIMER Clock Selection"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7075,17 +5563,6 @@ pub mod regs {
             f.debug_struct("OSTIMERCLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for OSTIMERCLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct OSTIMERCLKSEL {
-                SEL: u8,
-            }
-            let proxy = OSTIMERCLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PLL1 Clock 0 Divider"]
@@ -7146,25 +5623,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PLL1CLK0DIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PLL1CLK0DIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = PLL1CLK0DIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "PLL1 Clock 1 Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7221,25 +5679,6 @@ pub mod regs {
                 .field("HALT", &self.HALT())
                 .field("UNSTAB", &self.UNSTAB())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PLL1CLK1DIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PLL1CLK1DIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = PLL1CLK1DIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PLL Clock Divider"]
@@ -7300,25 +5739,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PLLCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PLLCLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = PLLCLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "PLL Clock Divider Clock Selection"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7345,17 +5765,6 @@ pub mod regs {
             f.debug_struct("PLLCLKDIVSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PLLCLKDIVSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PLLCLKDIVSEL {
-                SEL: u8,
-            }
-            let proxy = PLLCLKDIVSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Peripheral Reset Control 0"]
@@ -7524,47 +5933,6 @@ pub mod regs {
                 .field("DMA0_RST", &self.DMA0_RST())
                 .field("CRC_RST", &self.CRC_RST())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PRESETCTRL0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PRESETCTRL0 {
-                FMU_RST: bool,
-                MUX_RST: bool,
-                PORT0_RST: bool,
-                PORT1_RST: bool,
-                PORT2_RST: bool,
-                PORT3_RST: bool,
-                PORT4_RST: bool,
-                GPIO0_RST: bool,
-                GPIO1_RST: bool,
-                GPIO2_RST: bool,
-                GPIO3_RST: bool,
-                GPIO4_RST: bool,
-                PINT_RST: bool,
-                DMA0_RST: bool,
-                CRC_RST: bool,
-            }
-            let proxy = PRESETCTRL0 {
-                FMU_RST: self.FMU_RST(),
-                MUX_RST: self.MUX_RST(),
-                PORT0_RST: self.PORT0_RST(),
-                PORT1_RST: self.PORT1_RST(),
-                PORT2_RST: self.PORT2_RST(),
-                PORT3_RST: self.PORT3_RST(),
-                PORT4_RST: self.PORT4_RST(),
-                GPIO0_RST: self.GPIO0_RST(),
-                GPIO1_RST: self.GPIO1_RST(),
-                GPIO2_RST: self.GPIO2_RST(),
-                GPIO3_RST: self.GPIO3_RST(),
-                GPIO4_RST: self.GPIO4_RST(),
-                PINT_RST: self.PINT_RST(),
-                DMA0_RST: self.DMA0_RST(),
-                CRC_RST: self.CRC_RST(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Peripheral Reset Control 1"]
@@ -7775,55 +6143,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PRESETCTRL1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PRESETCTRL1 {
-                MRT_RST: bool,
-                OSTIMER_RST: bool,
-                ADC0_RST: bool,
-                ADC1_RST: bool,
-                RTC_RST: bool,
-                UTICK_RST: bool,
-                FC0_RST: bool,
-                FC1_RST: bool,
-                FC2_RST: bool,
-                FC3_RST: bool,
-                FC4_RST: bool,
-                FC5_RST: bool,
-                FC6_RST: bool,
-                FC7_RST: bool,
-                MICFIL_RST: bool,
-                TIMER2_RST: bool,
-                TIMER0_RST: bool,
-                TIMER1_RST: bool,
-                SmartDMA_RST: bool,
-            }
-            let proxy = PRESETCTRL1 {
-                MRT_RST: self.MRT_RST(),
-                OSTIMER_RST: self.OSTIMER_RST(),
-                ADC0_RST: self.ADC0_RST(),
-                ADC1_RST: self.ADC1_RST(),
-                RTC_RST: self.RTC_RST(),
-                UTICK_RST: self.UTICK_RST(),
-                FC0_RST: self.FC0_RST(),
-                FC1_RST: self.FC1_RST(),
-                FC2_RST: self.FC2_RST(),
-                FC3_RST: self.FC3_RST(),
-                FC4_RST: self.FC4_RST(),
-                FC5_RST: self.FC5_RST(),
-                FC6_RST: self.FC6_RST(),
-                FC7_RST: self.FC7_RST(),
-                MICFIL_RST: self.MICFIL_RST(),
-                TIMER2_RST: self.TIMER2_RST(),
-                TIMER0_RST: self.TIMER0_RST(),
-                TIMER1_RST: self.TIMER1_RST(),
-                SmartDMA_RST: self.SmartDMA_RST(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Peripheral Reset Control 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7982,45 +6301,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PRESETCTRL2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PRESETCTRL2 {
-                DMA1_RST: bool,
-                FLEXIO_RST: bool,
-                SAI0_RST: bool,
-                SAI1_RST: bool,
-                TRO_RST: bool,
-                FREQME_RST: bool,
-                FLEXCAN0_RST: bool,
-                FLEXCAN1_RST: bool,
-                USB_HS_RST: bool,
-                USB_HS_PHY_RST: bool,
-                TIMER3_RST: bool,
-                TIMER4_RST: bool,
-                PUF_RST: bool,
-                PKC_RST: bool,
-            }
-            let proxy = PRESETCTRL2 {
-                DMA1_RST: self.DMA1_RST(),
-                FLEXIO_RST: self.FLEXIO_RST(),
-                SAI0_RST: self.SAI0_RST(),
-                SAI1_RST: self.SAI1_RST(),
-                TRO_RST: self.TRO_RST(),
-                FREQME_RST: self.FREQME_RST(),
-                FLEXCAN0_RST: self.FLEXCAN0_RST(),
-                FLEXCAN1_RST: self.FLEXCAN1_RST(),
-                USB_HS_RST: self.USB_HS_RST(),
-                USB_HS_PHY_RST: self.USB_HS_PHY_RST(),
-                TIMER3_RST: self.TIMER3_RST(),
-                TIMER4_RST: self.TIMER4_RST(),
-                PUF_RST: self.PUF_RST(),
-                PKC_RST: self.PKC_RST(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Peripheral Reset Control 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8139,37 +6419,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PRESETCTRL3 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PRESETCTRL3 {
-                I3C0_RST: bool,
-                I3C1_RST: bool,
-                QDC0_RST: bool,
-                QDC1_RST: bool,
-                PWM0_RST: bool,
-                PWM1_RST: bool,
-                AOI0_RST: bool,
-                VREF_RST: bool,
-                EWM_RST: bool,
-                EIM_RST: bool,
-            }
-            let proxy = PRESETCTRL3 {
-                I3C0_RST: self.I3C0_RST(),
-                I3C1_RST: self.I3C1_RST(),
-                QDC0_RST: self.QDC0_RST(),
-                QDC1_RST: self.QDC1_RST(),
-                PWM0_RST: self.PWM0_RST(),
-                PWM1_RST: self.PWM1_RST(),
-                AOI0_RST: self.AOI0_RST(),
-                VREF_RST: self.VREF_RST(),
-                EWM_RST: self.EWM_RST(),
-                EIM_RST: self.EIM_RST(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "PWM0 Submodule Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8266,33 +6515,6 @@ pub mod regs {
                 .field("DMAVALM2", &self.DMAVALM2())
                 .field("DMAVALM3", &self.DMAVALM3())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PWM0SUBCTL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PWM0SUBCTL {
-                CLK0_EN: bool,
-                CLK1_EN: bool,
-                CLK2_EN: bool,
-                CLK3_EN: bool,
-                DMAVALM0: bool,
-                DMAVALM1: bool,
-                DMAVALM2: bool,
-                DMAVALM3: bool,
-            }
-            let proxy = PWM0SUBCTL {
-                CLK0_EN: self.CLK0_EN(),
-                CLK1_EN: self.CLK1_EN(),
-                CLK2_EN: self.CLK2_EN(),
-                CLK3_EN: self.CLK3_EN(),
-                DMAVALM0: self.DMAVALM0(),
-                DMAVALM1: self.DMAVALM1(),
-                DMAVALM2: self.DMAVALM2(),
-                DMAVALM3: self.DMAVALM3(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PWM1 Submodule Control"]
@@ -8393,33 +6615,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PWM1SUBCTL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PWM1SUBCTL {
-                CLK0_EN: bool,
-                CLK1_EN: bool,
-                CLK2_EN: bool,
-                CLK3_EN: bool,
-                DMAVALM0: bool,
-                DMAVALM1: bool,
-                DMAVALM2: bool,
-                DMAVALM3: bool,
-            }
-            let proxy = PWM1SUBCTL {
-                CLK0_EN: self.CLK0_EN(),
-                CLK1_EN: self.CLK1_EN(),
-                CLK2_EN: self.CLK2_EN(),
-                CLK3_EN: self.CLK3_EN(),
-                DMAVALM0: self.DMAVALM0(),
-                DMAVALM1: self.DMAVALM1(),
-                DMAVALM2: self.DMAVALM2(),
-                DMAVALM3: self.DMAVALM3(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Control PKC RAM Interleave Access"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8446,19 +6641,6 @@ pub mod regs {
             f.debug_struct("RAM_INTERLEAVE")
                 .field("INTERLEAVE", &self.INTERLEAVE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RAM_INTERLEAVE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RAM_INTERLEAVE {
-                INTERLEAVE: bool,
-            }
-            let proxy = RAM_INTERLEAVE {
-                INTERLEAVE: self.INTERLEAVE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FRO 48MHz Reference Clock Control"]
@@ -8499,21 +6681,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for REF_CLK_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct REF_CLK_CTRL {
-                GDET_REFCLK_EN: bool,
-                TRNG_REFCLK_EN: bool,
-            }
-            let proxy = REF_CLK_CTRL {
-                GDET_REFCLK_EN: self.GDET_REFCLK_EN(),
-                TRNG_REFCLK_EN: self.TRNG_REFCLK_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "FRO 48MHz Reference Clock Control Clear"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8550,21 +6717,6 @@ pub mod regs {
                 .field("GDET_REFCLK_EN_CLR", &self.GDET_REFCLK_EN_CLR())
                 .field("TRNG_REFCLK_EN_CLR", &self.TRNG_REFCLK_EN_CLR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for REF_CLK_CTRL_CLR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct REF_CLK_CTRL_CLR {
-                GDET_REFCLK_EN_CLR: bool,
-                TRNG_REFCLK_EN_CLR: bool,
-            }
-            let proxy = REF_CLK_CTRL_CLR {
-                GDET_REFCLK_EN_CLR: self.GDET_REFCLK_EN_CLR(),
-                TRNG_REFCLK_EN_CLR: self.TRNG_REFCLK_EN_CLR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FRO 48MHz Reference Clock Control Set"]
@@ -8605,21 +6757,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for REF_CLK_CTRL_SET {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct REF_CLK_CTRL_SET {
-                GDET_REFCLK_EN_SET: bool,
-                TRNG_REFCLK_EN_SET: bool,
-            }
-            let proxy = REF_CLK_CTRL_SET {
-                GDET_REFCLK_EN_SET: self.GDET_REFCLK_EN_SET(),
-                TRNG_REFCLK_EN_SET: self.TRNG_REFCLK_EN_SET(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "ROM Wait State"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8646,19 +6783,6 @@ pub mod regs {
             f.debug_struct("ROMCR")
                 .field("ROM_WAIT", &self.ROM_WAIT())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ROMCR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ROMCR {
-                ROM_WAIT: bool,
-            }
-            let proxy = ROMCR {
-                ROM_WAIT: self.ROM_WAIT(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SAI0 Function Clock Division"]
@@ -8719,25 +6843,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SAI0CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SAI0CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = SAI0CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SAI0 Function Clock Source Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8764,17 +6869,6 @@ pub mod regs {
             f.debug_struct("SAI0CLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SAI0CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SAI0CLKSEL {
-                SEL: u8,
-            }
-            let proxy = SAI0CLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SAI1 Function Clock Division"]
@@ -8835,25 +6929,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SAI1CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SAI1CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = SAI1CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SAI1 Function Clock Source Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8880,17 +6955,6 @@ pub mod regs {
             f.debug_struct("SAI1CLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SAI1CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SAI1CLKSEL {
-                SEL: u8,
-            }
-            let proxy = SAI1CLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SLOW_CLK Clock Divider"]
@@ -8939,23 +7003,6 @@ pub mod regs {
                 .field("HALT", &self.HALT())
                 .field("UNSTAB", &self.UNSTAB())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SLOWCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SLOWCLKDIV {
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = SLOWCLKDIV {
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "SmartDMA Interrupt Hijack"]
@@ -9216,65 +7263,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SMARTDMAINT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SMARTDMAINT {
-                INT0: bool,
-                INT1: bool,
-                INT2: bool,
-                INT3: bool,
-                INT4: bool,
-                INT5: bool,
-                INT6: bool,
-                INT7: bool,
-                INT8: bool,
-                INT9: bool,
-                INT10: bool,
-                INT11: bool,
-                INT12: bool,
-                INT13: bool,
-                INT14: bool,
-                INT15: bool,
-                INT16: bool,
-                INT17: bool,
-                INT18: bool,
-                INT19: bool,
-                INT20: bool,
-                INT21: bool,
-                INT22: bool,
-                INT23: bool,
-            }
-            let proxy = SMARTDMAINT {
-                INT0: self.INT0(),
-                INT1: self.INT1(),
-                INT2: self.INT2(),
-                INT3: self.INT3(),
-                INT4: self.INT4(),
-                INT5: self.INT5(),
-                INT6: self.INT6(),
-                INT7: self.INT7(),
-                INT8: self.INT8(),
-                INT9: self.INT9(),
-                INT10: self.INT10(),
-                INT11: self.INT11(),
-                INT12: self.INT12(),
-                INT13: self.INT13(),
-                INT14: self.INT14(),
-                INT15: self.INT15(),
-                INT16: self.INT16(),
-                INT17: self.INT17(),
-                INT18: self.INT18(),
-                INT19: self.INT19(),
-                INT20: self.INT20(),
-                INT21: self.INT21(),
-                INT22: self.INT22(),
-                INT23: self.INT23(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CPU0 System Tick Timer Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -9333,25 +7321,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SYSTICKCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SYSTICKCLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = SYSTICKCLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CPU0 System Tick Timer Source Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -9378,17 +7347,6 @@ pub mod regs {
             f.debug_struct("SYSTICKCLKSEL0")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SYSTICKCLKSEL0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SYSTICKCLKSEL0 {
-                SEL: u8,
-            }
-            let proxy = SYSTICKCLKSEL0 { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TRACE Clock Divider"]
@@ -9449,25 +7407,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TRACECLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TRACECLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = TRACECLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Trace Clock Source Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -9494,17 +7433,6 @@ pub mod regs {
             f.debug_struct("TRACECLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TRACECLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TRACECLKSEL {
-                SEL: u8,
-            }
-            let proxy = TRACECLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "UTICK Clock Divider"]
@@ -9565,25 +7493,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for UTICKCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct UTICKCLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = UTICKCLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "UTICK Function Clock Source Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -9610,17 +7519,6 @@ pub mod regs {
             f.debug_struct("UTICKCLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for UTICKCLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct UTICKCLKSEL {
-                SEL: u8,
-            }
-            let proxy = UTICKCLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "WDT0 Clock Divider"]
@@ -9681,25 +7579,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for WDT0CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct WDT0CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = WDT0CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "WDT1 Function Clock Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -9758,25 +7637,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for WDT1CLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct WDT1CLKDIV {
-                DIV: u8,
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = WDT1CLKDIV {
-                DIV: self.DIV(),
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "WDT1 Clock Selection"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -9803,17 +7663,6 @@ pub mod regs {
             f.debug_struct("WDT1CLKSEL")
                 .field("SEL", &self.SEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for WDT1CLKSEL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct WDT1CLKSEL {
-                SEL: u8,
-            }
-            let proxy = WDT1CLKSEL { SEL: self.SEL() };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

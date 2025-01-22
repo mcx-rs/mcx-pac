@@ -1519,8 +1519,6 @@ pub mod port {
         pub type PORT4 = Instance<4u8>;
     }
     pub use instances::*;
-
-    use crate::Instance;
 }
 #[path = "../../peripherals/a2"]
 pub mod pwm {

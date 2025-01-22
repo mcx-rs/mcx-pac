@@ -145,27 +145,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for BASELINE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct BASELINE {
-                BASELINE: u16,
-                BASE_TRACE_DEBOUNCE: u8,
-                BASE_TRACE_EN: bool,
-                THESHOLD_RATIO: u8,
-                THRESHOLD_TRACE_EN: bool,
-            }
-            let proxy = BASELINE {
-                BASELINE: self.BASELINE(),
-                BASE_TRACE_DEBOUNCE: self.BASE_TRACE_DEBOUNCE(),
-                BASE_TRACE_EN: self.BASE_TRACE_EN(),
-                THESHOLD_RATIO: self.THESHOLD_RATIO(),
-                THRESHOLD_TRACE_EN: self.THRESHOLD_TRACE_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "TSI Channel Merge"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -192,19 +171,6 @@ pub mod regs {
             f.debug_struct("CHMERGE")
                 .field("CHANNEL_ENABLE", &self.CHANNEL_ENABLE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CHMERGE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CHMERGE {
-                CHANNEL_ENABLE: u32,
-            }
-            let proxy = CHMERGE {
-                CHANNEL_ENABLE: self.CHANNEL_ENABLE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TSI CONFIG (TSI_CONFIG) for Self-Capacitor"]
@@ -313,35 +279,6 @@ pub mod regs {
                 .field("S_XDN", &self.S_XDN())
                 .field("S_XIN_ADD", &self.S_XIN_ADD())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CONFIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CONFIG {
-                MODE: bool,
-                TSICH: u8,
-                S_NOISE: bool,
-                S_XCH: u8,
-                S_XIN: bool,
-                S_CTRIM: u8,
-                S_SEN: bool,
-                S_XDN: u8,
-                S_XIN_ADD: bool,
-            }
-            let proxy = CONFIG {
-                MODE: self.MODE(),
-                TSICH: self.TSICH(),
-                S_NOISE: self.S_NOISE(),
-                S_XCH: self.S_XCH(),
-                S_XIN: self.S_XIN(),
-                S_CTRIM: self.S_CTRIM(),
-                S_SEN: self.S_SEN(),
-                S_XDN: self.S_XDN(),
-                S_XIN_ADD: self.S_XIN_ADD(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TSI CONFIG (TSI_CONFIG) for Mutual-Capacitor"]
@@ -472,39 +409,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CONFIG_MUTUAL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CONFIG_MUTUAL {
-                MODE: bool,
-                M_NMIRROR: u8,
-                M_PMIRRORR: u8,
-                M_PMIRRORL: u8,
-                M_SEL_RX: u8,
-                M_SEL_TX: u8,
-                M_CNT_EN: bool,
-                M_TX_PD_EN: bool,
-                M_SEN_BOOST: u8,
-                M_PRE_RES: u8,
-                M_PRE_CURRENT: u8,
-            }
-            let proxy = CONFIG_MUTUAL {
-                MODE: self.MODE(),
-                M_NMIRROR: self.M_NMIRROR(),
-                M_PMIRRORR: self.M_PMIRRORR(),
-                M_PMIRRORL: self.M_PMIRRORL(),
-                M_SEL_RX: self.M_SEL_RX(),
-                M_SEL_TX: self.M_SEL_TX(),
-                M_CNT_EN: self.M_CNT_EN(),
-                M_TX_PD_EN: self.M_TX_PD_EN(),
-                M_SEN_BOOST: self.M_SEN_BOOST(),
-                M_PRE_RES: self.M_PRE_RES(),
-                M_PRE_CURRENT: self.M_PRE_CURRENT(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "TSI Data and Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -561,25 +465,6 @@ pub mod regs {
                 .field("OVERRUNF", &self.OVERRUNF())
                 .field("OUTRGF", &self.OUTRGF())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DATA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DATA {
-                TSICNT: u16,
-                EOSF: bool,
-                OVERRUNF: bool,
-                OUTRGF: bool,
-            }
-            let proxy = DATA {
-                TSICNT: self.TSICNT(),
-                EOSF: self.EOSF(),
-                OVERRUNF: self.OVERRUNF(),
-                OUTRGF: self.OUTRGF(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TSI General Control and Status"]
@@ -730,43 +615,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GENCS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GENCS {
-                DMAEN_EOS: bool,
-                DMAEN_OUTRG: bool,
-                STM: bool,
-                STPE: bool,
-                TSIEN: bool,
-                SWTS: bool,
-                CTRIM_FINE: u8,
-                DVOLT: u8,
-                DEBOUNCE: u8,
-                S_PROX_EN: bool,
-                SETCLK: u8,
-                ESOR: bool,
-                OUTRG_EN: bool,
-            }
-            let proxy = GENCS {
-                DMAEN_EOS: self.DMAEN_EOS(),
-                DMAEN_OUTRG: self.DMAEN_OUTRG(),
-                STM: self.STM(),
-                STPE: self.STPE(),
-                TSIEN: self.TSIEN(),
-                SWTS: self.SWTS(),
-                CTRIM_FINE: self.CTRIM_FINE(),
-                DVOLT: self.DVOLT(),
-                DEBOUNCE: self.DEBOUNCE(),
-                S_PROX_EN: self.S_PROX_EN(),
-                SETCLK: self.SETCLK(),
-                ESOR: self.ESOR(),
-                OUTRG_EN: self.OUTRG_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "TSI Miscellaneous"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -823,25 +671,6 @@ pub mod regs {
                 .field("TEST_FINGER_EN", &self.TEST_FINGER_EN())
                 .field("CLKDIVIDER", &self.CLKDIVIDER())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MISC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MISC {
-                OSC_CLK_SEL: bool,
-                TEST_FINGER: u8,
-                TEST_FINGER_EN: bool,
-                CLKDIVIDER: u8,
-            }
-            let proxy = MISC {
-                OSC_CLK_SEL: self.OSC_CLK_SEL(),
-                TEST_FINGER: self.TEST_FINGER(),
-                TEST_FINGER_EN: self.TEST_FINGER_EN(),
-                CLKDIVIDER: self.CLKDIVIDER(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TSI Mutual-Capacitance"]
@@ -912,27 +741,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MUL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MUL {
-                M_VPRE_CHOOSE: bool,
-                M_MODE: bool,
-                M_TRIM_CAP: u8,
-                M_TX_USED: u8,
-                M_TRIM: u16,
-            }
-            let proxy = MUL {
-                M_VPRE_CHOOSE: self.M_VPRE_CHOOSE(),
-                M_MODE: self.M_MODE(),
-                M_TRIM_CAP: self.M_TRIM_CAP(),
-                M_TX_USED: self.M_TX_USED(),
-                M_TRIM: self.M_TRIM(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "TSI Shield"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -969,21 +777,6 @@ pub mod regs {
                 .field("SHIELD_ENABLE", &self.SHIELD_ENABLE())
                 .field("M_SEN_RES", &self.M_SEN_RES())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SHIELD {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SHIELD {
-                SHIELD_ENABLE: u8,
-                M_SEN_RES: u8,
-            }
-            let proxy = SHIELD {
-                SHIELD_ENABLE: self.SHIELD_ENABLE(),
-                M_SEN_RES: self.M_SEN_RES(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TSI SINC Filter"]
@@ -1074,31 +867,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SINC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SINC {
-                SSC_CONTROL_OUT: bool,
-                SINC_VALID: bool,
-                SINC_OVERFLOW_FLAG: bool,
-                SWITCH_ENABLE: bool,
-                DECIMATION: u8,
-                ORDER: bool,
-                CUTOFF: u8,
-            }
-            let proxy = SINC {
-                SSC_CONTROL_OUT: self.SSC_CONTROL_OUT(),
-                SINC_VALID: self.SINC_VALID(),
-                SINC_OVERFLOW_FLAG: self.SINC_OVERFLOW_FLAG(),
-                SWITCH_ENABLE: self.SWITCH_ENABLE(),
-                DECIMATION: self.DECIMATION(),
-                ORDER: self.ORDER(),
-                CUTOFF: self.CUTOFF(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "TSI SSC 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1177,29 +945,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SSC0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SSC0 {
-                SSC_PRESCALE_NUM: u8,
-                BASE_NOCHARGE_NUM: u8,
-                CHARGE_NUM: u8,
-                SSC_CONTROL_REVERSE: bool,
-                SSC_MODE: u8,
-                PRBS_OUTSEL: u8,
-            }
-            let proxy = SSC0 {
-                SSC_PRESCALE_NUM: self.SSC_PRESCALE_NUM(),
-                BASE_NOCHARGE_NUM: self.BASE_NOCHARGE_NUM(),
-                CHARGE_NUM: self.CHARGE_NUM(),
-                SSC_CONTROL_REVERSE: self.SSC_CONTROL_REVERSE(),
-                SSC_MODE: self.SSC_MODE(),
-                PRBS_OUTSEL: self.PRBS_OUTSEL(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "TSI SSC 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1256,25 +1001,6 @@ pub mod regs {
                 .field("PRBS_WEIGHT_LO", &self.PRBS_WEIGHT_LO())
                 .field("PRBS_WEIGHT_HI", &self.PRBS_WEIGHT_HI())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SSC1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SSC1 {
-                PRBS_SEED_LO: u8,
-                PRBS_SEED_HI: u8,
-                PRBS_WEIGHT_LO: u8,
-                PRBS_WEIGHT_HI: u8,
-            }
-            let proxy = SSC1 {
-                PRBS_SEED_LO: self.PRBS_SEED_LO(),
-                PRBS_SEED_HI: self.PRBS_SEED_HI(),
-                PRBS_WEIGHT_LO: self.PRBS_WEIGHT_LO(),
-                PRBS_WEIGHT_HI: self.PRBS_WEIGHT_HI(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "TSI SSC 2"]
@@ -1335,25 +1061,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SSC2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SSC2 {
-                MOVE_REPEAT_NUM: u8,
-                MOVE_STEPS_NUM: u8,
-                MOVE_NOCHARGE_MAX: u8,
-                MOVE_NOCHARGE_MIN: u8,
-            }
-            let proxy = SSC2 {
-                MOVE_REPEAT_NUM: self.MOVE_REPEAT_NUM(),
-                MOVE_STEPS_NUM: self.MOVE_STEPS_NUM(),
-                MOVE_NOCHARGE_MAX: self.MOVE_NOCHARGE_MAX(),
-                MOVE_NOCHARGE_MIN: self.MOVE_NOCHARGE_MIN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "TSI AUTO TRIG"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1412,25 +1119,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TRIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TRIG {
-                TRIG_PERIOD_COUNTER: u32,
-                TRIG_CLK_DIVIDER: u8,
-                TRIG_EN: bool,
-                TRIG_CLK_SEL: bool,
-            }
-            let proxy = TRIG {
-                TRIG_PERIOD_COUNTER: self.TRIG_PERIOD_COUNTER(),
-                TRIG_CLK_DIVIDER: self.TRIG_CLK_DIVIDER(),
-                TRIG_EN: self.TRIG_EN(),
-                TRIG_CLK_SEL: self.TRIG_CLK_SEL(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "TSI Threshold"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1467,21 +1155,6 @@ pub mod regs {
                 .field("THRESL", &self.THRESL())
                 .field("THRESH", &self.THRESH())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TSHD {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TSHD {
-                THRESL: u16,
-                THRESH: u16,
-            }
-            let proxy = TSHD {
-                THRESL: self.THRESL(),
-                THRESH: self.THRESH(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

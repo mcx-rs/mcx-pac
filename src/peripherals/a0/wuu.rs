@@ -117,23 +117,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DE {
-                WUDE4: bool,
-                WUDE6: bool,
-                WUDE8: bool,
-            }
-            let proxy = DE {
-                WUDE4: self.WUDE4(),
-                WUDE6: self.WUDE6(),
-                WUDE8: self.WUDE8(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Pin Filter DMA/Trigger Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -170,21 +153,6 @@ pub mod regs {
                 .field("FILTC1", &self.FILTC1())
                 .field("FILTC2", &self.FILTC2())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FDC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FDC {
-                FILTC1: u8,
-                FILTC2: u8,
-            }
-            let proxy = FDC {
-                FILTC1: self.FILTC1(),
-                FILTC2: self.FILTC2(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pin Filter"]
@@ -265,29 +233,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FILT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FILT {
-                FILTSEL1: u8,
-                FILTE1: u8,
-                FILTF1: bool,
-                FILTSEL2: u8,
-                FILTE2: u8,
-                FILTF2: bool,
-            }
-            let proxy = FILT {
-                FILTSEL1: self.FILTSEL1(),
-                FILTE1: self.FILTE1(),
-                FILTF1: self.FILTF1(),
-                FILTSEL2: self.FILTSEL2(),
-                FILTE2: self.FILTE2(),
-                FILTF2: self.FILTF2(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Pin Filter Mode Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -324,21 +269,6 @@ pub mod regs {
                 .field("FILTM1", &self.FILTM1())
                 .field("FILTM2", &self.FILTM2())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FMC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FMC {
-                FILTM1: bool,
-                FILTM2: bool,
-            }
-            let proxy = FMC {
-                FILTM1: self.FILTM1(),
-                FILTM2: self.FILTM2(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Module Interrupt Enable"]
@@ -399,25 +329,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ME {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ME {
-                WUME0: bool,
-                WUME2: bool,
-                WUME6: bool,
-                WUME8: bool,
-            }
-            let proxy = ME {
-                WUME0: self.WUME0(),
-                WUME2: self.WUME2(),
-                WUME6: self.WUME6(),
-                WUME8: self.WUME8(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Parameter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -474,25 +385,6 @@ pub mod regs {
                 .field("MODULES", &self.MODULES())
                 .field("PINS", &self.PINS())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PARAM {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PARAM {
-                FILTERS: u8,
-                DMAS: u8,
-                MODULES: u8,
-                PINS: u8,
-            }
-            let proxy = PARAM {
-                FILTERS: self.FILTERS(),
-                DMAS: self.DMAS(),
-                MODULES: self.MODULES(),
-                PINS: self.PINS(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pin DMA/Trigger Configuration 1"]
@@ -673,49 +565,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PDC1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PDC1 {
-                Reserved0: u8,
-                Reserved1: u8,
-                WUPDC2: u8,
-                Reserved3: u8,
-                Reserved4: u8,
-                Reserved5: u8,
-                WUPDC6: u8,
-                WUPDC7: u8,
-                WUPDC8: u8,
-                WUPDC9: u8,
-                WUPDC10: u8,
-                WUPDC11: u8,
-                WUPDC12: u8,
-                Reserved13: u8,
-                Reserved14: u8,
-                Reserved15: u8,
-            }
-            let proxy = PDC1 {
-                Reserved0: self.Reserved0(),
-                Reserved1: self.Reserved1(),
-                WUPDC2: self.WUPDC2(),
-                Reserved3: self.Reserved3(),
-                Reserved4: self.Reserved4(),
-                Reserved5: self.Reserved5(),
-                WUPDC6: self.WUPDC6(),
-                WUPDC7: self.WUPDC7(),
-                WUPDC8: self.WUPDC8(),
-                WUPDC9: self.WUPDC9(),
-                WUPDC10: self.WUPDC10(),
-                WUPDC11: self.WUPDC11(),
-                WUPDC12: self.WUPDC12(),
-                Reserved13: self.Reserved13(),
-                Reserved14: self.Reserved14(),
-                Reserved15: self.Reserved15(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Pin DMA/Trigger Configuration 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -892,49 +741,6 @@ pub mod regs {
                 .field("Reserved30", &self.Reserved30())
                 .field("WUPDC31", &self.WUPDC31())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PDC2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PDC2 {
-                Reserved16: u8,
-                Reserved17: u8,
-                WUPDC18: u8,
-                WUPDC19: u8,
-                WUPDC20: u8,
-                Reserved21: u8,
-                WUPDC22: u8,
-                WUPDC23: u8,
-                WUPDC24: u8,
-                WUPDC25: u8,
-                WUPDC26: u8,
-                WUPDC27: u8,
-                WUPDC28: u8,
-                WUPDC29: u8,
-                Reserved30: u8,
-                WUPDC31: u8,
-            }
-            let proxy = PDC2 {
-                Reserved16: self.Reserved16(),
-                Reserved17: self.Reserved17(),
-                WUPDC18: self.WUPDC18(),
-                WUPDC19: self.WUPDC19(),
-                WUPDC20: self.WUPDC20(),
-                Reserved21: self.Reserved21(),
-                WUPDC22: self.WUPDC22(),
-                WUPDC23: self.WUPDC23(),
-                WUPDC24: self.WUPDC24(),
-                WUPDC25: self.WUPDC25(),
-                WUPDC26: self.WUPDC26(),
-                WUPDC27: self.WUPDC27(),
-                WUPDC28: self.WUPDC28(),
-                WUPDC29: self.WUPDC29(),
-                Reserved30: self.Reserved30(),
-                WUPDC31: self.WUPDC31(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pin Enable 1"]
@@ -1115,49 +921,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PE1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PE1 {
-                Reserved0: u8,
-                Reserved1: u8,
-                WUPE2: u8,
-                Reserved3: u8,
-                Reserved4: u8,
-                Reserved5: u8,
-                WUPE6: u8,
-                WUPE7: u8,
-                WUPE8: u8,
-                WUPE9: u8,
-                WUPE10: u8,
-                WUPE11: u8,
-                WUPE12: u8,
-                Reserved13: u8,
-                Reserved14: u8,
-                Reserved15: u8,
-            }
-            let proxy = PE1 {
-                Reserved0: self.Reserved0(),
-                Reserved1: self.Reserved1(),
-                WUPE2: self.WUPE2(),
-                Reserved3: self.Reserved3(),
-                Reserved4: self.Reserved4(),
-                Reserved5: self.Reserved5(),
-                WUPE6: self.WUPE6(),
-                WUPE7: self.WUPE7(),
-                WUPE8: self.WUPE8(),
-                WUPE9: self.WUPE9(),
-                WUPE10: self.WUPE10(),
-                WUPE11: self.WUPE11(),
-                WUPE12: self.WUPE12(),
-                Reserved13: self.Reserved13(),
-                Reserved14: self.Reserved14(),
-                Reserved15: self.Reserved15(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Pin Enable 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1334,49 +1097,6 @@ pub mod regs {
                 .field("Reserved30", &self.Reserved30())
                 .field("WUPE31", &self.WUPE31())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PE2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PE2 {
-                Reserved16: u8,
-                Reserved17: u8,
-                WUPE18: u8,
-                WUPE19: u8,
-                WUPE20: u8,
-                Reserved21: u8,
-                WUPE22: u8,
-                WUPE23: u8,
-                WUPE24: u8,
-                WUPE25: u8,
-                WUPE26: u8,
-                WUPE27: u8,
-                WUPE28: u8,
-                WUPE29: u8,
-                Reserved30: u8,
-                WUPE31: u8,
-            }
-            let proxy = PE2 {
-                Reserved16: self.Reserved16(),
-                Reserved17: self.Reserved17(),
-                WUPE18: self.WUPE18(),
-                WUPE19: self.WUPE19(),
-                WUPE20: self.WUPE20(),
-                Reserved21: self.Reserved21(),
-                WUPE22: self.WUPE22(),
-                WUPE23: self.WUPE23(),
-                WUPE24: self.WUPE24(),
-                WUPE25: self.WUPE25(),
-                WUPE26: self.WUPE26(),
-                WUPE27: self.WUPE27(),
-                WUPE28: self.WUPE28(),
-                WUPE29: self.WUPE29(),
-                Reserved30: self.Reserved30(),
-                WUPE31: self.WUPE31(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Pin Flag"]
@@ -1717,81 +1437,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PF {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PF {
-                Reserved0: bool,
-                Reserved1: bool,
-                WUF2: bool,
-                Reserved3: bool,
-                Reserved4: bool,
-                Reserved5: bool,
-                WUF6: bool,
-                WUF7: bool,
-                WUF8: bool,
-                WUF9: bool,
-                WUF10: bool,
-                WUF11: bool,
-                WUF12: bool,
-                Reserved13: bool,
-                Reserved14: bool,
-                Reserved15: bool,
-                Reserved16: bool,
-                Reserved17: bool,
-                WUF18: bool,
-                WUF19: bool,
-                WUF20: bool,
-                Reserved21: bool,
-                WUF22: bool,
-                WUF23: bool,
-                WUF24: bool,
-                WUF25: bool,
-                WUF26: bool,
-                WUF27: bool,
-                WUF28: bool,
-                WUF29: bool,
-                Reserved30: bool,
-                WUF31: bool,
-            }
-            let proxy = PF {
-                Reserved0: self.Reserved0(),
-                Reserved1: self.Reserved1(),
-                WUF2: self.WUF2(),
-                Reserved3: self.Reserved3(),
-                Reserved4: self.Reserved4(),
-                Reserved5: self.Reserved5(),
-                WUF6: self.WUF6(),
-                WUF7: self.WUF7(),
-                WUF8: self.WUF8(),
-                WUF9: self.WUF9(),
-                WUF10: self.WUF10(),
-                WUF11: self.WUF11(),
-                WUF12: self.WUF12(),
-                Reserved13: self.Reserved13(),
-                Reserved14: self.Reserved14(),
-                Reserved15: self.Reserved15(),
-                Reserved16: self.Reserved16(),
-                Reserved17: self.Reserved17(),
-                WUF18: self.WUF18(),
-                WUF19: self.WUF19(),
-                WUF20: self.WUF20(),
-                Reserved21: self.Reserved21(),
-                WUF22: self.WUF22(),
-                WUF23: self.WUF23(),
-                WUF24: self.WUF24(),
-                WUF25: self.WUF25(),
-                WUF26: self.WUF26(),
-                WUF27: self.WUF27(),
-                WUF28: self.WUF28(),
-                WUF29: self.WUF29(),
-                Reserved30: self.Reserved30(),
-                WUF31: self.WUF31(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Pin Mode Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2130,81 +1775,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PMC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PMC {
-                Reserved0: bool,
-                Reserved1: bool,
-                WUPMC2: bool,
-                Reserved3: bool,
-                Reserved4: bool,
-                Reserved5: bool,
-                WUPMC6: bool,
-                WUPMC7: bool,
-                WUPMC8: bool,
-                WUPMC9: bool,
-                WUPMC10: bool,
-                WUPMC11: bool,
-                WUPMC12: bool,
-                Reserved13: bool,
-                Reserved14: bool,
-                Reserved15: bool,
-                Reserved16: bool,
-                Reserved17: bool,
-                WUPMC18: bool,
-                WUPMC19: bool,
-                WUPMC20: bool,
-                Reserved21: bool,
-                WUPMC22: bool,
-                WUPMC23: bool,
-                WUPMC24: bool,
-                WUPMC25: bool,
-                WUPMC26: bool,
-                WUPMC27: bool,
-                WUPMC28: bool,
-                WUPMC29: bool,
-                Reserved30: bool,
-                WUPMC31: bool,
-            }
-            let proxy = PMC {
-                Reserved0: self.Reserved0(),
-                Reserved1: self.Reserved1(),
-                WUPMC2: self.WUPMC2(),
-                Reserved3: self.Reserved3(),
-                Reserved4: self.Reserved4(),
-                Reserved5: self.Reserved5(),
-                WUPMC6: self.WUPMC6(),
-                WUPMC7: self.WUPMC7(),
-                WUPMC8: self.WUPMC8(),
-                WUPMC9: self.WUPMC9(),
-                WUPMC10: self.WUPMC10(),
-                WUPMC11: self.WUPMC11(),
-                WUPMC12: self.WUPMC12(),
-                Reserved13: self.Reserved13(),
-                Reserved14: self.Reserved14(),
-                Reserved15: self.Reserved15(),
-                Reserved16: self.Reserved16(),
-                Reserved17: self.Reserved17(),
-                WUPMC18: self.WUPMC18(),
-                WUPMC19: self.WUPMC19(),
-                WUPMC20: self.WUPMC20(),
-                Reserved21: self.Reserved21(),
-                WUPMC22: self.WUPMC22(),
-                WUPMC23: self.WUPMC23(),
-                WUPMC24: self.WUPMC24(),
-                WUPMC25: self.WUPMC25(),
-                WUPMC26: self.WUPMC26(),
-                WUPMC27: self.WUPMC27(),
-                WUPMC28: self.WUPMC28(),
-                WUPMC29: self.WUPMC29(),
-                Reserved30: self.Reserved30(),
-                WUPMC31: self.WUPMC31(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2251,23 +1821,6 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for VERID {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VERID {
-                FEATURE: u16,
-                MINOR: u8,
-                MAJOR: u8,
-            }
-            let proxy = VERID {
-                FEATURE: self.FEATURE(),
-                MINOR: self.MINOR(),
-                MAJOR: self.MAJOR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

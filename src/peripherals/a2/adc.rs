@@ -229,33 +229,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CFG {
-                TPRICTRL: u8,
-                PWRSEL: bool,
-                REFSEL: u8,
-                TRES: bool,
-                TCMDRES: bool,
-                HPT_EXDI: bool,
-                PUDLY: u8,
-                PWREN: bool,
-            }
-            let proxy = CFG {
-                TPRICTRL: self.TPRICTRL(),
-                PWRSEL: self.PWRSEL(),
-                REFSEL: self.REFSEL(),
-                TRES: self.TRES(),
-                TCMDRES: self.TCMDRES(),
-                HPT_EXDI: self.HPT_EXDI(),
-                PUDLY: self.PUDLY(),
-                PWREN: self.PWREN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Configuration 2 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -312,25 +285,6 @@ pub mod regs {
                 .field("HSEXTRA", &self.HSEXTRA())
                 .field("TUNE", &self.TUNE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CFG2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CFG2 {
-                JLEFT: bool,
-                HS: bool,
-                HSEXTRA: bool,
-                TUNE: u8,
-            }
-            let proxy = CFG2 {
-                JLEFT: self.JLEFT(),
-                HS: self.HS(),
-                HSEXTRA: self.HSEXTRA(),
-                TUNE: self.TUNE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Command High Buffer Register"]
@@ -421,31 +375,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CMD_CMDH {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CMD_CMDH {
-                CMPEN: u8,
-                WAIT_TRIG: bool,
-                LWI: bool,
-                STS: u8,
-                AVGS: u8,
-                LOOP: u8,
-                NEXT: u8,
-            }
-            let proxy = CMD_CMDH {
-                CMPEN: self.CMPEN(),
-                WAIT_TRIG: self.WAIT_TRIG(),
-                LWI: self.LWI(),
-                STS: self.STS(),
-                AVGS: self.AVGS(),
-                LOOP: self.LOOP(),
-                NEXT: self.NEXT(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Command Low Buffer Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -492,23 +421,6 @@ pub mod regs {
                 .field("CTYPE", &self.CTYPE())
                 .field("MODE", &self.MODE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CMD_CMDL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CMD_CMDL {
-                ADCH: u8,
-                CTYPE: u8,
-                MODE: bool,
-            }
-            let proxy = CMD_CMDL {
-                ADCH: self.ADCH(),
-                CTYPE: self.CTYPE(),
-                MODE: self.MODE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Control Register"]
@@ -609,33 +521,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTRL {
-                ADCEN: bool,
-                RST: bool,
-                DOZEN: bool,
-                CAL_REQ: bool,
-                CALOFS: bool,
-                CALHS: bool,
-                RSTFIFO0: bool,
-                CAL_AVGS: u8,
-            }
-            let proxy = CTRL {
-                ADCEN: self.ADCEN(),
-                RST: self.RST(),
-                DOZEN: self.DOZEN(),
-                CAL_REQ: self.CAL_REQ(),
-                CALOFS: self.CALOFS(),
-                CALHS: self.CALHS(),
-                RSTFIFO0: self.RSTFIFO0(),
-                CAL_AVGS: self.CAL_AVGS(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Compare Value Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -674,21 +559,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CV {
-                CVL: u16,
-                CVH: u16,
-            }
-            let proxy = CV {
-                CVL: self.CVL(),
-                CVH: self.CVH(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "DMA Enable Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -715,19 +585,6 @@ pub mod regs {
             f.debug_struct("DE")
                 .field("FWMDE0", &self.FWMDE0())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DE {
-                FWMDE0: bool,
-            }
-            let proxy = DE {
-                FWMDE0: self.FWMDE0(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "FIFO Control Register"]
@@ -768,21 +625,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FCTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FCTRL {
-                FCOUNT: u8,
-                FWMARK: u8,
-            }
-            let proxy = FCTRL {
-                FCOUNT: self.FCOUNT(),
-                FWMARK: self.FWMARK(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Gain Calibration Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -819,21 +661,6 @@ pub mod regs {
                 .field("GAIN_CAL", &self.GAIN_CAL())
                 .field("RDY", &self.RDY())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GCC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GCC {
-                GAIN_CAL: u16,
-                RDY: bool,
-            }
-            let proxy = GCC {
-                GAIN_CAL: self.GAIN_CAL(),
-                RDY: self.RDY(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Gain Calculation Result"]
@@ -874,21 +701,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GCR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GCR {
-                GCALR: u32,
-                RDY: bool,
-            }
-            let proxy = GCR {
-                GCALR: self.GCALR(),
-                RDY: self.RDY(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "High Speed Trim Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -915,19 +727,6 @@ pub mod regs {
             f.debug_struct("HSTRIM")
                 .field("HSTRIM", &self.HSTRIM())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for HSTRIM {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct HSTRIM {
-                HSTRIM: u8,
-            }
-            let proxy = HSTRIM {
-                HSTRIM: self.HSTRIM(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Enable Register"]
@@ -988,25 +787,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for IE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct IE {
-                FWMIE0: bool,
-                FOFIE0: bool,
-                TEXC_IE: bool,
-                TCOMP_IE: u8,
-            }
-            let proxy = IE {
-                FWMIE0: self.FWMIE0(),
-                FOFIE0: self.FOFIE0(),
-                TEXC_IE: self.TEXC_IE(),
-                TCOMP_IE: self.TCOMP_IE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Offset Trim Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1033,19 +813,6 @@ pub mod regs {
             f.debug_struct("OFSTRIM")
                 .field("OFSTRIM", &self.OFSTRIM())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for OFSTRIM {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct OFSTRIM {
-                OFSTRIM: u16,
-            }
-            let proxy = OFSTRIM {
-                OFSTRIM: self.OFSTRIM(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Parameter Register"]
@@ -1106,25 +873,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PARAM {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PARAM {
-                TRIG_NUM: u8,
-                FIFOSIZE: u8,
-                CV_NUM: u8,
-                CMD_NUM: u8,
-            }
-            let proxy = PARAM {
-                TRIG_NUM: self.TRIG_NUM(),
-                FIFOSIZE: self.FIFOSIZE(),
-                CV_NUM: self.CV_NUM(),
-                CMD_NUM: self.CMD_NUM(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Pause Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1161,21 +909,6 @@ pub mod regs {
                 .field("PAUSEDLY", &self.PAUSEDLY())
                 .field("PAUSEEN", &self.PAUSEEN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PAUSE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PAUSE {
-                PAUSEDLY: u16,
-                PAUSEEN: bool,
-            }
-            let proxy = PAUSE {
-                PAUSEDLY: self.PAUSEDLY(),
-                PAUSEEN: self.PAUSEEN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Data Result FIFO Register"]
@@ -1244,27 +977,6 @@ pub mod regs {
                 .field("CMDSRC", &self.CMDSRC())
                 .field("VALID", &self.VALID())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RESFIFO {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RESFIFO {
-                D: u16,
-                TSRC: u8,
-                LOOPCNT: u8,
-                CMDSRC: u8,
-                VALID: bool,
-            }
-            let proxy = RESFIFO {
-                D: self.D(),
-                TSRC: self.TSRC(),
-                LOOPCNT: self.LOOPCNT(),
-                CMDSRC: self.CMDSRC(),
-                VALID: self.VALID(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Status Register"]
@@ -1365,33 +1077,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for STAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct STAT {
-                RDY0: bool,
-                FOF0: bool,
-                TEXC_INT: bool,
-                TCOMP_INT: bool,
-                CAL_RDY: bool,
-                ADC_ACTIVE: bool,
-                TRGACT: u8,
-                CMDACT: u8,
-            }
-            let proxy = STAT {
-                RDY0: self.RDY0(),
-                FOF0: self.FOF0(),
-                TEXC_INT: self.TEXC_INT(),
-                TCOMP_INT: self.TCOMP_INT(),
-                CAL_RDY: self.CAL_RDY(),
-                ADC_ACTIVE: self.ADC_ACTIVE(),
-                TRGACT: self.TRGACT(),
-                CMDACT: self.CMDACT(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Software Trigger Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1448,25 +1133,6 @@ pub mod regs {
                 .field("SWT2", &self.SWT2())
                 .field("SWT3", &self.SWT3())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SWTRIG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SWTRIG {
-                SWT0: bool,
-                SWT1: bool,
-                SWT2: bool,
-                SWT3: bool,
-            }
-            let proxy = SWTRIG {
-                SWT0: self.SWT0(),
-                SWT1: self.SWT1(),
-                SWT2: self.SWT2(),
-                SWT3: self.SWT3(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Trigger Control Register"]
@@ -1547,29 +1213,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TCTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TCTRL {
-                HTEN: bool,
-                TPRI: u8,
-                RSYNC: bool,
-                TDLY: u8,
-                TSYNC: bool,
-                TCMD: u8,
-            }
-            let proxy = TCTRL {
-                HTEN: self.HTEN(),
-                TPRI: self.TPRI(),
-                RSYNC: self.RSYNC(),
-                TDLY: self.TDLY(),
-                TSYNC: self.TSYNC(),
-                TCMD: self.TCMD(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Trigger Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1606,21 +1249,6 @@ pub mod regs {
                 .field("TEXC_NUM", &self.TEXC_NUM())
                 .field("TCOMP_FLAG", &self.TCOMP_FLAG())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for TSTAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct TSTAT {
-                TEXC_NUM: u8,
-                TCOMP_FLAG: u8,
-            }
-            let proxy = TSTAT {
-                TEXC_NUM: self.TEXC_NUM(),
-                TCOMP_FLAG: self.TCOMP_FLAG(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Version ID Register"]
@@ -1749,39 +1377,6 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for VERID {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VERID {
-                RES: bool,
-                DIFFEN: bool,
-                MVI: bool,
-                CSW: u8,
-                VR1RNGI: bool,
-                IADCKI: bool,
-                CALOFSI: bool,
-                NUM_SEC: bool,
-                NUM_FIFO: u8,
-                MINOR: u8,
-                MAJOR: u8,
-            }
-            let proxy = VERID {
-                RES: self.RES(),
-                DIFFEN: self.DIFFEN(),
-                MVI: self.MVI(),
-                CSW: self.CSW(),
-                VR1RNGI: self.VR1RNGI(),
-                IADCKI: self.IADCKI(),
-                CALOFSI: self.CALOFSI(),
-                NUM_SEC: self.NUM_SEC(),
-                NUM_FIFO: self.NUM_FIFO(),
-                MINOR: self.MINOR(),
-                MAJOR: self.MAJOR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

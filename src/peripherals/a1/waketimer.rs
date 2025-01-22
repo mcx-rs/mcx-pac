@@ -85,23 +85,4 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for WAKE_TIMER_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct WAKE_TIMER_CTRL {
-                WAKE_FLAG: bool,
-                CLR_WAKE_TIMER: bool,
-                OSC_DIV_ENA: bool,
-                INTR_EN: bool,
-            }
-            let proxy = WAKE_TIMER_CTRL {
-                WAKE_FLAG: self.WAKE_FLAG(),
-                CLR_WAKE_TIMER: self.CLR_WAKE_TIMER(),
-                OSC_DIV_ENA: self.OSC_DIV_ENA(),
-                INTR_EN: self.INTR_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
 }

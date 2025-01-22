@@ -207,21 +207,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for AHBCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct AHBCLKDIV {
-                DIV: u8,
-                UNSTAB: bool,
-            }
-            let proxy = AHBCLKDIV {
-                DIV: self.DIV(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "AHB Matrix Priority Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -280,25 +265,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for AHBMATPRIO {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct AHBMATPRIO {
-                CPU0_CBUS: u8,
-                CPU0_SBUS: u8,
-                DMA0: u8,
-                USB_FS_ENET: u8,
-            }
-            let proxy = AHBMATPRIO {
-                CPU0_CBUS: self.CPU0_CBUS(),
-                CPU0_SBUS: self.CPU0_SBUS(),
-                DMA0: self.DMA0(),
-                USB_FS_ENET: self.USB_FS_ENET(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Gray to Binary Converter Binary Code \\[41:32\\]"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -327,19 +293,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for BINARY_CODE_MSB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct BINARY_CODE_MSB {
-                code_bin_41_32: u16,
-            }
-            let proxy = BINARY_CODE_MSB {
-                code_bin_41_32: self.code_bin_41_32(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Clock Configuration Unlock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -366,19 +319,6 @@ pub mod regs {
             f.debug_struct("CLKUNLOCK")
                 .field("UNLOCK", &self.UNLOCK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CLKUNLOCK {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CLKUNLOCK {
-                UNLOCK: bool,
-            }
-            let proxy = CLKUNLOCK {
-                UNLOCK: self.UNLOCK(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Non-Secure CPU0 System Tick Calibration"]
@@ -429,23 +369,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CPU0NSTCKCAL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CPU0NSTCKCAL {
-                TENMS: u32,
-                SKEW: bool,
-                NOREF: bool,
-            }
-            let proxy = CPU0NSTCKCAL {
-                TENMS: self.TENMS(),
-                SKEW: self.SKEW(),
-                NOREF: self.NOREF(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CPU Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -482,21 +405,6 @@ pub mod regs {
                 .field("CPU0SLEEPING", &self.CPU0SLEEPING())
                 .field("CPU0LOCKUP", &self.CPU0LOCKUP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CPUSTAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CPUSTAT {
-                CPU0SLEEPING: bool,
-                CPU0LOCKUP: bool,
-            }
-            let proxy = CPUSTAT {
-                CPU0SLEEPING: self.CPU0SLEEPING(),
-                CPU0LOCKUP: self.CPU0LOCKUP(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "CTIMER Global Start Enable"]
@@ -547,23 +455,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTIMERGLOBALSTARTEN {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTIMERGLOBALSTARTEN {
-                CTIMER0_CLK_EN: bool,
-                CTIMER1_CLK_EN: bool,
-                CTIMER2_CLK_EN: bool,
-            }
-            let proxy = CTIMERGLOBALSTARTEN {
-                CTIMER0_CLK_EN: self.CTIMER0_CLK_EN(),
-                CTIMER1_CLK_EN: self.CTIMER1_CLK_EN(),
-                CTIMER2_CLK_EN: self.CTIMER2_CLK_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Cortex Debug Features Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -600,21 +491,6 @@ pub mod regs {
                 .field("CPU0_DBGEN", &self.CPU0_DBGEN())
                 .field("CPU0_NIDEN", &self.CPU0_NIDEN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DEBUG_FEATURES {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DEBUG_FEATURES {
-                CPU0_DBGEN: u8,
-                CPU0_NIDEN: u8,
-            }
-            let proxy = DEBUG_FEATURES {
-                CPU0_DBGEN: self.CPU0_DBGEN(),
-                CPU0_NIDEN: self.CPU0_NIDEN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Cortex Debug Features Control (Duplicate)"]
@@ -655,21 +531,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DEBUG_FEATURES_DP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DEBUG_FEATURES_DP {
-                CPU0_DBGEN: u8,
-                CPU0_NIDEN: u8,
-            }
-            let proxy = DEBUG_FEATURES_DP {
-                CPU0_DBGEN: self.CPU0_DBGEN(),
-                CPU0_NIDEN: self.CPU0_NIDEN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Control Write Access to Security"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -698,19 +559,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DEBUG_LOCK_EN {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DEBUG_LOCK_EN {
-                LOCK_ALL: u8,
-            }
-            let proxy = DEBUG_LOCK_EN {
-                LOCK_ALL: self.LOCK_ALL(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Device ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -737,19 +585,6 @@ pub mod regs {
             f.debug_struct("DEVICE_ID0")
                 .field("ROM_REV_MINOR", &self.ROM_REV_MINOR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DEVICE_ID0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DEVICE_ID0 {
-                ROM_REV_MINOR: u8,
-            }
-            let proxy = DEVICE_ID0 {
-                ROM_REV_MINOR: self.ROM_REV_MINOR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Chip Revision ID and Number"]
@@ -800,23 +635,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DIEID {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DIEID {
-                MINOR_REVISION: u8,
-                MAJOR_REVISION: u8,
-                MCO_NUM_IN_DIE_ID: u32,
-            }
-            let proxy = DIEID {
-                MINOR_REVISION: self.MINOR_REVISION(),
-                MAJOR_REVISION: self.MAJOR_REVISION(),
-                MCO_NUM_IN_DIE_ID: self.MCO_NUM_IN_DIE_ID(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Life Cycle State Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -843,19 +661,6 @@ pub mod regs {
             f.debug_struct("ELS_OTP_LC_STATE")
                 .field("OTP_LC_STATE", &self.OTP_LC_STATE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_OTP_LC_STATE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_OTP_LC_STATE {
-                OTP_LC_STATE: u8,
-            }
-            let proxy = ELS_OTP_LC_STATE {
-                OTP_LC_STATE: self.OTP_LC_STATE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Life Cycle State Register (Duplicate)"]
@@ -886,19 +691,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_OTP_LC_STATE_DP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct ELS_OTP_LC_STATE_DP {
-                OTP_LC_STATE_DP: u8,
-            }
-            let proxy = ELS_OTP_LC_STATE_DP {
-                OTP_LC_STATE_DP: self.OTP_LC_STATE_DP(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Gray to Binary Converter Gray Code \\[41:32\\]"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -925,19 +717,6 @@ pub mod regs {
             f.debug_struct("GRAY_CODE_MSB")
                 .field("code_gray_41_32", &self.code_gray_41_32())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for GRAY_CODE_MSB {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct GRAY_CODE_MSB {
-                code_gray_41_32: u16,
-            }
-            let proxy = GRAY_CODE_MSB {
-                code_gray_41_32: self.code_gray_41_32(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPCAC Control"]
@@ -1028,31 +807,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for LPCAC_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct LPCAC_CTRL {
-                DIS_LPCAC: bool,
-                CLR_LPCAC: bool,
-                FRC_NO_ALLOC: bool,
-                DIS_LPCAC_WTBF: bool,
-                LIM_LPCAC_WTBF: bool,
-                LPCAC_XOM: bool,
-                LPCAC_MEM_REQ: bool,
-            }
-            let proxy = LPCAC_CTRL {
-                DIS_LPCAC: self.DIS_LPCAC(),
-                CLR_LPCAC: self.CLR_LPCAC(),
-                FRC_NO_ALLOC: self.FRC_NO_ALLOC(),
-                DIS_LPCAC_WTBF: self.DIS_LPCAC_WTBF(),
-                LIM_LPCAC_WTBF: self.LIM_LPCAC_WTBF(),
-                LPCAC_XOM: self.LPCAC_XOM(),
-                LPCAC_MEM_REQ: self.LPCAC_MEM_REQ(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "NMI Source Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1089,21 +843,6 @@ pub mod regs {
                 .field("IRQCPU0", &self.IRQCPU0())
                 .field("NMIENCPU0", &self.NMIENCPU0())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for NMISRC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct NMISRC {
-                IRQCPU0: u8,
-                NMIENCPU0: bool,
-            }
-            let proxy = NMISRC {
-                IRQCPU0: self.IRQCPU0(),
-                NMIENCPU0: self.NMIENCPU0(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "NVM Control"]
@@ -1174,27 +913,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for NVM_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct NVM_CTRL {
-                DIS_FLASH_SPEC: bool,
-                DIS_DATA_SPEC: bool,
-                FLASH_STALL_EN: bool,
-                DIS_MBECC_ERR_INST: bool,
-                DIS_MBECC_ERR_DATA: bool,
-            }
-            let proxy = NVM_CTRL {
-                DIS_FLASH_SPEC: self.DIS_FLASH_SPEC(),
-                DIS_DATA_SPEC: self.DIS_DATA_SPEC(),
-                FLASH_STALL_EN: self.FLASH_STALL_EN(),
-                DIS_MBECC_ERR_INST: self.DIS_MBECC_ERR_INST(),
-                DIS_MBECC_ERR_DATA: self.DIS_MBECC_ERR_DATA(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "PWM0 Submodule Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1253,25 +971,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PWM0SUBCTL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PWM0SUBCTL {
-                CLK0_EN: bool,
-                CLK1_EN: bool,
-                CLK2_EN: bool,
-                CLK3_EN: bool,
-            }
-            let proxy = PWM0SUBCTL {
-                CLK0_EN: self.CLK0_EN(),
-                CLK1_EN: self.CLK1_EN(),
-                CLK2_EN: self.CLK2_EN(),
-                CLK3_EN: self.CLK3_EN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "RAM Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1318,23 +1017,6 @@ pub mod regs {
                 .field("RAMA_CG_OVERRIDE", &self.RAMA_CG_OVERRIDE())
                 .field("RAMX_CG_OVERRIDE", &self.RAMX_CG_OVERRIDE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RAM_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RAM_CTRL {
-                RAMA_ECC_ENABLE: bool,
-                RAMA_CG_OVERRIDE: bool,
-                RAMX_CG_OVERRIDE: bool,
-            }
-            let proxy = RAM_CTRL {
-                RAMA_ECC_ENABLE: self.RAMA_ECC_ENABLE(),
-                RAMA_CG_OVERRIDE: self.RAMA_CG_OVERRIDE(),
-                RAMX_CG_OVERRIDE: self.RAMX_CG_OVERRIDE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "AHB Matrix Remap Control"]
@@ -1395,25 +1077,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for REMAP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct REMAP {
-                CPU0_SBUS: u8,
-                DMA0: u8,
-                USB0: u8,
-                LOCK: bool,
-            }
-            let proxy = REMAP {
-                CPU0_SBUS: self.CPU0_SBUS(),
-                DMA0: self.DMA0(),
-                USB0: self.USB0(),
-                LOCK: self.LOCK(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "SLOW_CLK Clock Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1460,23 +1123,6 @@ pub mod regs {
                 .field("HALT", &self.HALT())
                 .field("UNSTAB", &self.UNSTAB())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SLOWCLKDIV {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SLOWCLKDIV {
-                RESET: bool,
-                HALT: bool,
-                UNSTAB: bool,
-            }
-            let proxy = SLOWCLKDIV {
-                RESET: self.RESET(),
-                HALT: self.HALT(),
-                UNSTAB: self.UNSTAB(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "RAM XEN Control"]
@@ -1547,27 +1193,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRAM_XEN {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRAM_XEN {
-                RAMX0_XEN: bool,
-                RAMX1_XEN: bool,
-                RAMA0_XEN: bool,
-                RAMA1_XEN: bool,
-                LOCK: bool,
-            }
-            let proxy = SRAM_XEN {
-                RAMX0_XEN: self.RAMX0_XEN(),
-                RAMX1_XEN: self.RAMX1_XEN(),
-                RAMA0_XEN: self.RAMA0_XEN(),
-                RAMA1_XEN: self.RAMA1_XEN(),
-                LOCK: self.LOCK(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "RAM XEN Control (Duplicate)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1624,25 +1249,6 @@ pub mod regs {
                 .field("RAMA0_XEN", &self.RAMA0_XEN())
                 .field("RAMA1_XEN", &self.RAMA1_XEN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SRAM_XEN_DP {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct SRAM_XEN_DP {
-                RAMX0_XEN: bool,
-                RAMX1_XEN: bool,
-                RAMA0_XEN: bool,
-                RAMA1_XEN: bool,
-            }
-            let proxy = SRAM_XEN_DP {
-                RAMX0_XEN: self.RAMX0_XEN(),
-                RAMX1_XEN: self.RAMX1_XEN(),
-                RAMA0_XEN: self.RAMA0_XEN(),
-                RAMA1_XEN: self.RAMA1_XEN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

@@ -593,21 +593,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_CH_DMA_CHX_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_CH_DMA_CHX_CTRL {
-                PBLx8: bool,
-                DSL: u8,
-            }
-            let proxy = DMA_CH_DMA_CHX_CTRL {
-                PBLx8: self.PBLx8(),
-                DSL: self.DSL(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Channeli Interrupt Enable..Channel 1 Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -756,43 +741,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_CH_DMA_CHX_INT_EN {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_CH_DMA_CHX_INT_EN {
-                TIE: bool,
-                TXSE: bool,
-                TBUE: bool,
-                RIE: bool,
-                RBUE: bool,
-                RSE: bool,
-                RWTE: bool,
-                ETIE: bool,
-                ERIE: bool,
-                FBEE: bool,
-                CDEE: bool,
-                AIE: bool,
-                NIE: bool,
-            }
-            let proxy = DMA_CH_DMA_CHX_INT_EN {
-                TIE: self.TIE(),
-                TXSE: self.TXSE(),
-                TBUE: self.TBUE(),
-                RIE: self.RIE(),
-                RBUE: self.RBUE(),
-                RSE: self.RSE(),
-                RWTE: self.RWTE(),
-                ETIE: self.ETIE(),
-                ERIE: self.ERIE(),
-                FBEE: self.FBEE(),
-                CDEE: self.CDEE(),
-                AIE: self.AIE(),
-                NIE: self.NIE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Channel 0 Missed Frame Counter..Channel 1 Missed Frame Counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -831,21 +779,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_CH_DMA_CHX_MISS_FRAME_CNT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_CH_DMA_CHX_MISS_FRAME_CNT {
-                MFC: u16,
-                MFCO: bool,
-            }
-            let proxy = DMA_CH_DMA_CHX_MISS_FRAME_CNT {
-                MFC: self.MFC(),
-                MFCO: self.MFCO(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Channel 0 Rx Descriptor List Address register..Channel 1 Rx Descriptor List Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -874,19 +807,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_CH_DMA_CHX_RXDESC_LIST_ADDR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_CH_DMA_CHX_RXDESC_LIST_ADDR {
-                RDESLA: u32,
-            }
-            let proxy = DMA_CH_DMA_CHX_RXDESC_LIST_ADDR {
-                RDESLA: self.RDESLA(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Channel 0 Rx Descriptor Tail Pointer..Channel 1 Rx Descriptor Tail Pointer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -913,17 +833,6 @@ pub mod regs {
             f.debug_struct("DMA_CH_DMA_CHX_RXDESC_TAIL_PTR")
                 .field("RDTP", &self.RDTP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_CH_DMA_CHX_RXDESC_TAIL_PTR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_CH_DMA_CHX_RXDESC_TAIL_PTR {
-                RDTP: u32,
-            }
-            let proxy = DMA_CH_DMA_CHX_RXDESC_TAIL_PTR { RDTP: self.RDTP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Channeli Receive Control..DMA Channel 1 Receive Control"]
@@ -962,21 +871,6 @@ pub mod regs {
                 .field("RDRL", &self.RDRL())
                 .field("ARBS", &self.ARBS())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_CH_DMA_CHX_RX_CONTROL2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_CH_DMA_CHX_RX_CONTROL2 {
-                RDRL: u16,
-                ARBS: u8,
-            }
-            let proxy = DMA_CH_DMA_CHX_RX_CONTROL2 {
-                RDRL: self.RDRL(),
-                ARBS: self.ARBS(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA Channel 0 Receive Control..DMA Channel 1 Receive Control"]
@@ -1057,29 +951,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_CH_DMA_CHX_RX_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_CH_DMA_CHX_RX_CTRL {
-                SR: bool,
-                RBSZ_X_0: u8,
-                RBSZ_13_Y: u16,
-                RxPBL: u8,
-                ERIC: bool,
-                RPF: bool,
-            }
-            let proxy = DMA_CH_DMA_CHX_RX_CTRL {
-                SR: self.SR(),
-                RBSZ_X_0: self.RBSZ_X_0(),
-                RBSZ_13_Y: self.RBSZ_13_Y(),
-                RxPBL: self.RxPBL(),
-                ERIC: self.ERIC(),
-                RPF: self.RPF(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Channel 0 Receive ERI Counter..Channel 1 Receive ERI Counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1106,17 +977,6 @@ pub mod regs {
             f.debug_struct("DMA_CH_DMA_CHX_RX_ERI_CNT")
                 .field("ECNT", &self.ECNT())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_CH_DMA_CHX_RX_ERI_CNT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_CH_DMA_CHX_RX_ERI_CNT {
-                ECNT: u16,
-            }
-            let proxy = DMA_CH_DMA_CHX_RX_ERI_CNT { ECNT: self.ECNT() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Channel 0 Receive Interrupt Watchdog Timer..Channel 1 Receive Interrupt Watchdog Timer"]
@@ -1155,21 +1015,6 @@ pub mod regs {
                 .field("RWT", &self.RWT())
                 .field("RWTU", &self.RWTU())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_CH_DMA_CHX_RX_INT_WDTIMER {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_CH_DMA_CHX_RX_INT_WDTIMER {
-                RWT: u8,
-                RWTU: u8,
-            }
-            let proxy = DMA_CH_DMA_CHX_RX_INT_WDTIMER {
-                RWT: self.RWT(),
-                RWTU: self.RWTU(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Channel 0 Slot Function Control and Status..Channel 1 Slot Function Control and Status"]
@@ -1228,25 +1073,6 @@ pub mod regs {
                 .field("SIV", &self.SIV())
                 .field("RSN", &self.RSN())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_CH_DMA_CHX_SLOT_FUNC_CTRL_STAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_CH_DMA_CHX_SLOT_FUNC_CTRL_STAT {
-                ESC: bool,
-                ASC: bool,
-                SIV: u16,
-                RSN: u8,
-            }
-            let proxy = DMA_CH_DMA_CHX_SLOT_FUNC_CTRL_STAT {
-                ESC: self.ESC(),
-                ASC: self.ASC(),
-                SIV: self.SIV(),
-                RSN: self.RSN(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA Channel 0 Status..DMA Channel 1 Status"]
@@ -1417,47 +1243,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_CH_DMA_CHX_STAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_CH_DMA_CHX_STAT {
-                TI: bool,
-                TPS: bool,
-                TBU: bool,
-                RI: bool,
-                RBU: bool,
-                RPS: bool,
-                RWT: bool,
-                ETI: bool,
-                ERI: bool,
-                FBE: bool,
-                CDE: bool,
-                AIS: bool,
-                NIS: bool,
-                TEB: u8,
-                REB: u8,
-            }
-            let proxy = DMA_CH_DMA_CHX_STAT {
-                TI: self.TI(),
-                TPS: self.TPS(),
-                TBU: self.TBU(),
-                RI: self.RI(),
-                RBU: self.RBU(),
-                RPS: self.RPS(),
-                RWT: self.RWT(),
-                ETI: self.ETI(),
-                ERI: self.ERI(),
-                FBE: self.FBE(),
-                CDE: self.CDE(),
-                AIS: self.AIS(),
-                NIS: self.NIS(),
-                TEB: self.TEB(),
-                REB: self.REB(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Channel 0 Tx Descriptor List Address register..Channel 1 Tx Descriptor List Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1484,19 +1269,6 @@ pub mod regs {
             f.debug_struct("DMA_CH_DMA_CHX_TXDESC_LIST_ADDR")
                 .field("TDESLA", &self.TDESLA())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_CH_DMA_CHX_TXDESC_LIST_ADDR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_CH_DMA_CHX_TXDESC_LIST_ADDR {
-                TDESLA: u32,
-            }
-            let proxy = DMA_CH_DMA_CHX_TXDESC_LIST_ADDR {
-                TDESLA: self.TDESLA(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Channel 0 Tx Descriptor Ring Length..Channel 1 Tx Descriptor Ring Length"]
@@ -1527,17 +1299,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_CH_DMA_CHX_TXDESC_RING_LENGTH {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_CH_DMA_CHX_TXDESC_RING_LENGTH {
-                TDRL: u16,
-            }
-            let proxy = DMA_CH_DMA_CHX_TXDESC_RING_LENGTH { TDRL: self.TDRL() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Channel 0 Tx Descriptor Tail Pointer..Channel 1 Tx Descriptor Tail Pointer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1564,17 +1325,6 @@ pub mod regs {
             f.debug_struct("DMA_CH_DMA_CHX_TXDESC_TAIL_PTR")
                 .field("TDTP", &self.TDTP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_CH_DMA_CHX_TXDESC_TAIL_PTR {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_CH_DMA_CHX_TXDESC_TAIL_PTR {
-                TDTP: u32,
-            }
-            let proxy = DMA_CH_DMA_CHX_TXDESC_TAIL_PTR { TDTP: self.TDTP() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA Channel 0 Transmit Control..DMA Channel 1 Transmit Control"]
@@ -1645,27 +1395,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_CH_DMA_CHX_TX_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_CH_DMA_CHX_TX_CTRL {
-                ST: bool,
-                TCW: u8,
-                OSF: bool,
-                TxPBL: u8,
-                ETIC: bool,
-            }
-            let proxy = DMA_CH_DMA_CHX_TX_CTRL {
-                ST: self.ST(),
-                TCW: self.TCW(),
-                OSF: self.OSF(),
-                TxPBL: self.TxPBL(),
-                ETIC: self.ETIC(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "DMA Debug Status 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1734,27 +1463,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_DEBUG_STATUS0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_DEBUG_STATUS0 {
-                AXWHSTS: bool,
-                RPS0: u8,
-                TPS0: u8,
-                RPS1: u8,
-                TPS1: u8,
-            }
-            let proxy = DMA_DEBUG_STATUS0 {
-                AXWHSTS: self.AXWHSTS(),
-                RPS0: self.RPS0(),
-                TPS0: self.TPS0(),
-                RPS1: self.RPS1(),
-                TPS1: self.TPS1(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "DMA Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1811,25 +1519,6 @@ pub mod regs {
                 .field("MTLIS", &self.MTLIS())
                 .field("MACIS", &self.MACIS())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_INTERRUPT_STATUS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_INTERRUPT_STATUS {
-                DC0IS: bool,
-                DC1IS: bool,
-                MTLIS: bool,
-                MACIS: bool,
-            }
-            let proxy = DMA_INTERRUPT_STATUS {
-                DC0IS: self.DC0IS(),
-                DC1IS: self.DC1IS(),
-                MTLIS: self.MTLIS(),
-                MACIS: self.MACIS(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "DMA Bus Mode"]
@@ -1900,27 +1589,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_MODE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_MODE {
-                SWR: bool,
-                DA: bool,
-                TAA: u8,
-                TXPR: bool,
-                PR: u8,
-            }
-            let proxy = DMA_MODE {
-                SWR: self.SWR(),
-                DA: self.DA(),
-                TAA: self.TAA(),
-                TXPR: self.TXPR(),
-                PR: self.PR(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "DMA System Bus Mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1977,25 +1645,6 @@ pub mod regs {
                 .field("MB", &self.MB())
                 .field("RB", &self.RB())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DMA_SYSBUS_MODE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DMA_SYSBUS_MODE {
-                FB: bool,
-                AAL: bool,
-                MB: bool,
-                RB: bool,
-            }
-            let proxy = DMA_SYSBUS_MODE {
-                FB: self.FB(),
-                AAL: self.AAL(),
-                MB: self.MB(),
-                RB: self.RB(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Indirect Access Control"]
@@ -2066,27 +1715,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for INDIR_ACCESS_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct INDIR_ACCESS_CTRL {
-                OB: bool,
-                COM: bool,
-                AUTO: bool,
-                AOFF: u8,
-                MSEL: u8,
-            }
-            let proxy = INDIR_ACCESS_CTRL {
-                OB: self.OB(),
-                COM: self.COM(),
-                AUTO: self.AUTO(),
-                AOFF: self.AOFF(),
-                MSEL: self.MSEL(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MAC Address0 High"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2133,23 +1761,6 @@ pub mod regs {
                 .field("DCS", &self.DCS())
                 .field("AE", &self.AE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_ADDRESS0_HIGH {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_ADDRESS0_HIGH {
-                ADDRHI: u16,
-                DCS: u8,
-                AE: bool,
-            }
-            let proxy = MAC_ADDRESS0_HIGH {
-                ADDRHI: self.ADDRHI(),
-                DCS: self.DCS(),
-                AE: self.AE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MAC Configuration"]
@@ -2400,63 +2011,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_CONFIGURATION {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_CONFIGURATION {
-                RE: bool,
-                TE: bool,
-                PRELEN: u8,
-                DC: bool,
-                BL: u8,
-                DR: bool,
-                DCRS: bool,
-                DO: bool,
-                ECRSFD: bool,
-                LM: bool,
-                DM: bool,
-                FES: bool,
-                PS: bool,
-                JE: bool,
-                JD: bool,
-                WD: bool,
-                ACS: bool,
-                CST: bool,
-                S2KP: bool,
-                GPSLCE: bool,
-                IPG: u8,
-                IPC: bool,
-                SARC: u8,
-            }
-            let proxy = MAC_CONFIGURATION {
-                RE: self.RE(),
-                TE: self.TE(),
-                PRELEN: self.PRELEN(),
-                DC: self.DC(),
-                BL: self.BL(),
-                DR: self.DR(),
-                DCRS: self.DCRS(),
-                DO: self.DO(),
-                ECRSFD: self.ECRSFD(),
-                LM: self.LM(),
-                DM: self.DM(),
-                FES: self.FES(),
-                PS: self.PS(),
-                JE: self.JE(),
-                JD: self.JD(),
-                WD: self.WD(),
-                ACS: self.ACS(),
-                CST: self.CST(),
-                S2KP: self.S2KP(),
-                GPSLCE: self.GPSLCE(),
-                IPG: self.IPG(),
-                IPC: self.IPC(),
-                SARC: self.SARC(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "CSR Software Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2483,17 +2037,6 @@ pub mod regs {
             f.debug_struct("MAC_CSR_SW_CTRL")
                 .field("RCWE", &self.RCWE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_CSR_SW_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_CSR_SW_CTRL {
-                RCWE: bool,
-            }
-            let proxy = MAC_CSR_SW_CTRL { RCWE: self.RCWE() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MAC Debug"]
@@ -2552,25 +2095,6 @@ pub mod regs {
                 .field("TPESTS", &self.TPESTS())
                 .field("TFCSTS", &self.TFCSTS())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_DEBUG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_DEBUG {
-                RPESTS: bool,
-                RFCFCSTS: u8,
-                TPESTS: bool,
-                TFCSTS: u8,
-            }
-            let proxy = MAC_DEBUG {
-                RPESTS: self.RPESTS(),
-                RFCFCSTS: self.RFCFCSTS(),
-                TPESTS: self.TPESTS(),
-                TFCSTS: self.TFCSTS(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MAC Extended Configuration Register"]
@@ -2659,31 +2183,6 @@ pub mod regs {
                 .field("EIPGEN", &self.EIPGEN())
                 .field("EIPG", &self.EIPG())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_EXT_CONFIGURATION {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_EXT_CONFIGURATION {
-                GPSL: u16,
-                DCRCC: bool,
-                SPEN: bool,
-                USP: bool,
-                PDC: bool,
-                EIPGEN: bool,
-                EIPG: u8,
-            }
-            let proxy = MAC_EXT_CONFIGURATION {
-                GPSL: self.GPSL(),
-                DCRCC: self.DCRCC(),
-                SPEN: self.SPEN(),
-                USP: self.USP(),
-                PDC: self.PDC(),
-                EIPGEN: self.EIPGEN(),
-                EIPG: self.EIPG(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Hardware Features 0..Hardware Features 3"]
@@ -3274,131 +2773,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_HW_FEAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_HW_FEAT {
-                MIISEL: bool,
-                NRVF: u8,
-                RXFIFOSIZE: u8,
-                RXQCNT: u8,
-                GMIISEL: bool,
-                HDSEL: bool,
-                PCSSEL: bool,
-                CBTISEL: bool,
-                VLHASH: bool,
-                DVLAN: bool,
-                SMASEL: bool,
-                SPRAM: bool,
-                RWKSEL: bool,
-                TXFIFOSIZE: u8,
-                TXQCNT: u8,
-                MGKSEL: bool,
-                MMCSEL: bool,
-                ARPOFFSEL: bool,
-                PDUPSEL: bool,
-                FRPSEL: bool,
-                FRPBS: u8,
-                OSTEN: bool,
-                PTOEN: bool,
-                RXCHCNT: u8,
-                TSSEL: bool,
-                ADVTHWORD: bool,
-                EEESEL: bool,
-                FRPES: u8,
-                ADDR64: u8,
-                TXCOESEL: bool,
-                DCBEN: bool,
-                ESTSEL: bool,
-                RDCSZ: u8,
-                RXCOESEL: bool,
-                ESTDEP: u8,
-                SPHEN: bool,
-                ADDMACADRSEL: u8,
-                TSOEN: bool,
-                TXCHCNT: u8,
-                DBGMEMA: bool,
-                AVSEL: bool,
-                ESTWID: u8,
-                RAVSEL: bool,
-                TDCSZ: u8,
-                MACADR32SEL: bool,
-                POUOST: bool,
-                HASHTBLSZ: u8,
-                MACADR64SEL: bool,
-                PPSOUTNUM: u8,
-                TSSTSSEL: u8,
-                FPESEL: bool,
-                L3L4FNUM: u8,
-                SAVLANINS: bool,
-                TBSSEL: bool,
-                ACTPHYSEL: u8,
-                ASP: u8,
-                AUXSNAPNUM: u8,
-            }
-            let proxy = MAC_HW_FEAT {
-                MIISEL: self.MIISEL(),
-                NRVF: self.NRVF(),
-                RXFIFOSIZE: self.RXFIFOSIZE(),
-                RXQCNT: self.RXQCNT(),
-                GMIISEL: self.GMIISEL(),
-                HDSEL: self.HDSEL(),
-                PCSSEL: self.PCSSEL(),
-                CBTISEL: self.CBTISEL(),
-                VLHASH: self.VLHASH(),
-                DVLAN: self.DVLAN(),
-                SMASEL: self.SMASEL(),
-                SPRAM: self.SPRAM(),
-                RWKSEL: self.RWKSEL(),
-                TXFIFOSIZE: self.TXFIFOSIZE(),
-                TXQCNT: self.TXQCNT(),
-                MGKSEL: self.MGKSEL(),
-                MMCSEL: self.MMCSEL(),
-                ARPOFFSEL: self.ARPOFFSEL(),
-                PDUPSEL: self.PDUPSEL(),
-                FRPSEL: self.FRPSEL(),
-                FRPBS: self.FRPBS(),
-                OSTEN: self.OSTEN(),
-                PTOEN: self.PTOEN(),
-                RXCHCNT: self.RXCHCNT(),
-                TSSEL: self.TSSEL(),
-                ADVTHWORD: self.ADVTHWORD(),
-                EEESEL: self.EEESEL(),
-                FRPES: self.FRPES(),
-                ADDR64: self.ADDR64(),
-                TXCOESEL: self.TXCOESEL(),
-                DCBEN: self.DCBEN(),
-                ESTSEL: self.ESTSEL(),
-                RDCSZ: self.RDCSZ(),
-                RXCOESEL: self.RXCOESEL(),
-                ESTDEP: self.ESTDEP(),
-                SPHEN: self.SPHEN(),
-                ADDMACADRSEL: self.ADDMACADRSEL(),
-                TSOEN: self.TSOEN(),
-                TXCHCNT: self.TXCHCNT(),
-                DBGMEMA: self.DBGMEMA(),
-                AVSEL: self.AVSEL(),
-                ESTWID: self.ESTWID(),
-                RAVSEL: self.RAVSEL(),
-                TDCSZ: self.TDCSZ(),
-                MACADR32SEL: self.MACADR32SEL(),
-                POUOST: self.POUOST(),
-                HASHTBLSZ: self.HASHTBLSZ(),
-                MACADR64SEL: self.MACADR64SEL(),
-                PPSOUTNUM: self.PPSOUTNUM(),
-                TSSTSSEL: self.TSSTSSEL(),
-                FPESEL: self.FPESEL(),
-                L3L4FNUM: self.L3L4FNUM(),
-                SAVLANINS: self.SAVLANINS(),
-                TBSSEL: self.TBSSEL(),
-                ACTPHYSEL: self.ACTPHYSEL(),
-                ASP: self.ASP(),
-                AUXSNAPNUM: self.AUXSNAPNUM(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MAC Inner VLAN Tag Inclusion or Replacement"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3465,27 +2839,6 @@ pub mod regs {
                 .field("CSVL", &self.CSVL())
                 .field("VLTI", &self.VLTI())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_INNER_VLAN_INCL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_INNER_VLAN_INCL {
-                VLT: u16,
-                VLC: u8,
-                VLP: bool,
-                CSVL: bool,
-                VLTI: bool,
-            }
-            let proxy = MAC_INNER_VLAN_INCL {
-                VLT: self.VLT(),
-                VLC: self.VLC(),
-                VLP: self.VLP(),
-                CSVL: self.CSVL(),
-                VLTI: self.VLTI(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Interrupt Enable"]
@@ -3576,31 +2929,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_INTERRUPT_ENABLE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_INTERRUPT_ENABLE {
-                PHYIE: bool,
-                PMTIE: bool,
-                LPIIE: bool,
-                TSIE: bool,
-                TXSTSIE: bool,
-                RXSTSIE: bool,
-                MDIOIE: bool,
-            }
-            let proxy = MAC_INTERRUPT_ENABLE {
-                PHYIE: self.PHYIE(),
-                PMTIE: self.PMTIE(),
-                LPIIE: self.LPIIE(),
-                TSIE: self.TSIE(),
-                TXSTSIE: self.TXSTSIE(),
-                RXSTSIE: self.RXSTSIE(),
-                MDIOIE: self.MDIOIE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3687,31 +3015,6 @@ pub mod regs {
                 .field("RXSTSIS", &self.RXSTSIS())
                 .field("MDIOIS", &self.MDIOIS())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_INTERRUPT_STATUS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_INTERRUPT_STATUS {
-                PHYIS: bool,
-                PMTIS: bool,
-                LPIIS: bool,
-                TSIS: bool,
-                TXSTSIS: bool,
-                RXSTSIS: bool,
-                MDIOIS: bool,
-            }
-            let proxy = MAC_INTERRUPT_STATUS {
-                PHYIS: self.PHYIS(),
-                PMTIS: self.PMTIS(),
-                LPIIS: self.LPIIS(),
-                TSIS: self.TSIS(),
-                TXSTSIS: self.TXSTSIS(),
-                RXSTSIS: self.RXSTSIS(),
-                MDIOIS: self.MDIOIS(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPI Control and Status"]
@@ -3842,39 +3145,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_LPI_CONTROL_STATUS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_LPI_CONTROL_STATUS {
-                TLPIEN: bool,
-                TLPIEX: bool,
-                RLPIEN: bool,
-                RLPIEX: bool,
-                TLPIST: bool,
-                RLPIST: bool,
-                LPIEN: bool,
-                PLS: bool,
-                LPITXA: bool,
-                LPIATE: bool,
-                LPITCSE: bool,
-            }
-            let proxy = MAC_LPI_CONTROL_STATUS {
-                TLPIEN: self.TLPIEN(),
-                TLPIEX: self.TLPIEX(),
-                RLPIEN: self.RLPIEN(),
-                RLPIEX: self.RLPIEX(),
-                TLPIST: self.TLPIST(),
-                RLPIST: self.RLPIST(),
-                LPIEN: self.LPIEN(),
-                PLS: self.PLS(),
-                LPITXA: self.LPITXA(),
-                LPIATE: self.LPIATE(),
-                LPITCSE: self.LPITCSE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Tx LPI Entry Timer Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3901,19 +3171,6 @@ pub mod regs {
             f.debug_struct("MAC_LPI_ENTRY_TIMER")
                 .field("LPIET", &self.LPIET())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_LPI_ENTRY_TIMER {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_LPI_ENTRY_TIMER {
-                LPIET: u32,
-            }
-            let proxy = MAC_LPI_ENTRY_TIMER {
-                LPIET: self.LPIET(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "LPI Timers Control"]
@@ -3952,21 +3209,6 @@ pub mod regs {
                 .field("TWT", &self.TWT())
                 .field("LST", &self.LST())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_LPI_TIMERS_CONTROL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_LPI_TIMERS_CONTROL {
-                TWT: u16,
-                LST: u16,
-            }
-            let proxy = MAC_LPI_TIMERS_CONTROL {
-                TWT: self.TWT(),
-                LST: self.LST(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MDIO Address"]
@@ -4097,39 +3339,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_MDIO_ADDRESS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_MDIO_ADDRESS {
-                GB: bool,
-                C45E: bool,
-                GOC_0: bool,
-                GOC_1: bool,
-                SKAP: bool,
-                CR: u8,
-                NTC: u8,
-                RDA: u8,
-                PA: u8,
-                BTB: bool,
-                PSE: bool,
-            }
-            let proxy = MAC_MDIO_ADDRESS {
-                GB: self.GB(),
-                C45E: self.C45E(),
-                GOC_0: self.GOC_0(),
-                GOC_1: self.GOC_1(),
-                SKAP: self.SKAP(),
-                CR: self.CR(),
-                NTC: self.NTC(),
-                RDA: self.RDA(),
-                PA: self.PA(),
-                BTB: self.BTB(),
-                PSE: self.PSE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MAC MDIO Data"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4168,21 +3377,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_MDIO_DATA {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_MDIO_DATA {
-                GD: u16,
-                RA: u16,
-            }
-            let proxy = MAC_MDIO_DATA {
-                GD: self.GD(),
-                RA: self.RA(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "One-microsecond Reference Timer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4209,19 +3403,6 @@ pub mod regs {
             f.debug_struct("MAC_ONEUS_TIC_COUNTER")
                 .field("TIC_1US_CNTR", &self.TIC_1US_CNTR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_ONEUS_TIC_COUNTER {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_ONEUS_TIC_COUNTER {
-                TIC_1US_CNTR: u16,
-            }
-            let proxy = MAC_ONEUS_TIC_COUNTER {
-                TIC_1US_CNTR: self.TIC_1US_CNTR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MAC Packet Filter"]
@@ -4310,31 +3491,6 @@ pub mod regs {
                 .field("VTFE", &self.VTFE())
                 .field("RA", &self.RA())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_PACKET_FILTER {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_PACKET_FILTER {
-                PR: bool,
-                DAIF: bool,
-                PM: bool,
-                DBF: bool,
-                PCF: u8,
-                VTFE: bool,
-                RA: bool,
-            }
-            let proxy = MAC_PACKET_FILTER {
-                PR: self.PR(),
-                DAIF: self.DAIF(),
-                PM: self.PM(),
-                DBF: self.DBF(),
-                PCF: self.PCF(),
-                VTFE: self.VTFE(),
-                RA: self.RA(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "PMT Control and Status"]
@@ -4445,35 +3601,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_PMT_CONTROL_STATUS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_PMT_CONTROL_STATUS {
-                PWRDWN: bool,
-                MGKPKTEN: bool,
-                RWKPKTEN: bool,
-                MGKPRCVD: bool,
-                RWKPRCVD: bool,
-                GLBLUCAST: bool,
-                RWKPFE: bool,
-                RWKPTR: u8,
-                RWKFILTRST: bool,
-            }
-            let proxy = MAC_PMT_CONTROL_STATUS {
-                PWRDWN: self.PWRDWN(),
-                MGKPKTEN: self.MGKPKTEN(),
-                RWKPKTEN: self.RWKPKTEN(),
-                MGKPRCVD: self.MGKPRCVD(),
-                RWKPRCVD: self.RWKPRCVD(),
-                GLBLUCAST: self.GLBLUCAST(),
-                RWKPFE: self.RWKPFE(),
-                RWKPTR: self.RWKPTR(),
-                RWKFILTRST: self.RWKFILTRST(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "PPS Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4500,19 +3627,6 @@ pub mod regs {
             f.debug_struct("MAC_PPS_CONTROL")
                 .field("PPSCTRL_PPSCMD", &self.PPSCTRL_PPSCMD())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_PPS_CONTROL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_PPS_CONTROL {
-                PPSCTRL_PPSCMD: u8,
-            }
-            let proxy = MAC_PPS_CONTROL {
-                PPSCTRL_PPSCMD: self.PPSCTRL_PPSCMD(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Receive Queue Control 0..Receive Queue Control 2"]
@@ -4663,43 +3777,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_RXQ_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_RXQ_CTRL {
-                AVCPQ: u8,
-                PSRQ0: u8,
-                RXQ0EN: u8,
-                RXQ1EN: u8,
-                PTPQ: u8,
-                PSRQ1: u8,
-                UPQ: u8,
-                MCBCQ: u8,
-                MCBCQEN: bool,
-                TACPQE: bool,
-                TPQC: u8,
-                OMCBCQ: bool,
-                TBRQE: bool,
-            }
-            let proxy = MAC_RXQ_CTRL {
-                AVCPQ: self.AVCPQ(),
-                PSRQ0: self.PSRQ0(),
-                RXQ0EN: self.RXQ0EN(),
-                RXQ1EN: self.RXQ1EN(),
-                PTPQ: self.PTPQ(),
-                PSRQ1: self.PSRQ1(),
-                UPQ: self.UPQ(),
-                MCBCQ: self.MCBCQ(),
-                MCBCQEN: self.MCBCQEN(),
-                TACPQE: self.TACPQE(),
-                TPQC: self.TPQC(),
-                OMCBCQ: self.OMCBCQ(),
-                TBRQE: self.TBRQE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Receive Queue Control 4"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4778,29 +3855,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_RXQ_CTRL4 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_RXQ_CTRL4 {
-                UFFQE: bool,
-                UFFQ: bool,
-                MFFQE: bool,
-                MFFQ: bool,
-                VFFQE: bool,
-                VFFQ: bool,
-            }
-            let proxy = MAC_RXQ_CTRL4 {
-                UFFQE: self.UFFQE(),
-                UFFQ: self.UFFQ(),
-                MFFQE: self.MFFQE(),
-                MFFQ: self.MFFQ(),
-                VFFQE: self.VFFQE(),
-                VFFQ: self.VFFQ(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MAC Rx Flow Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4837,21 +3891,6 @@ pub mod regs {
                 .field("RFE", &self.RFE())
                 .field("UP", &self.UP())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_RX_FLOW_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_RX_FLOW_CTRL {
-                RFE: bool,
-                UP: bool,
-            }
-            let proxy = MAC_RX_FLOW_CTRL {
-                RFE: self.RFE(),
-                UP: self.UP(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Receive Transmit Status"]
@@ -4942,31 +3981,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_RX_TX_STATUS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_RX_TX_STATUS {
-                TJT: bool,
-                NCARR: bool,
-                LCARR: bool,
-                EXDEF: bool,
-                LCOL: bool,
-                EXCOL: bool,
-                RWT: bool,
-            }
-            let proxy = MAC_RX_TX_STATUS {
-                TJT: self.TJT(),
-                NCARR: self.NCARR(),
-                LCARR: self.LCARR(),
-                EXDEF: self.EXDEF(),
-                LCOL: self.LCOL(),
-                EXCOL: self.EXCOL(),
-                RWT: self.RWT(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Subsecond Increment"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4995,19 +4009,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_SUB_SECOND_INCREMENT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_SUB_SECOND_INCREMENT {
-                SNSINC: u8,
-            }
-            let proxy = MAC_SUB_SECOND_INCREMENT {
-                SNSINC: self.SNSINC(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "System Time Nanoseconds"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5034,17 +4035,6 @@ pub mod regs {
             f.debug_struct("MAC_SYSTEM_TIME_NANOSECONDS")
                 .field("TSSS", &self.TSSS())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_SYSTEM_TIME_NANOSECONDS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_SYSTEM_TIME_NANOSECONDS {
-                TSSS: u32,
-            }
-            let proxy = MAC_SYSTEM_TIME_NANOSECONDS { TSSS: self.TSSS() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "System Time Nanoseconds Update"]
@@ -5083,21 +4073,6 @@ pub mod regs {
                 .field("TSSS", &self.TSSS())
                 .field("ADDSUB", &self.ADDSUB())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_SYSTEM_TIME_NANOSECONDS_UPDATE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_SYSTEM_TIME_NANOSECONDS_UPDATE {
-                TSSS: u32,
-                ADDSUB: bool,
-            }
-            let proxy = MAC_SYSTEM_TIME_NANOSECONDS_UPDATE {
-                TSSS: self.TSSS(),
-                ADDSUB: self.ADDSUB(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Timestamp Control"]
@@ -5308,55 +4283,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_TIMESTAMP_CONTROL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_TIMESTAMP_CONTROL {
-                TSENA: bool,
-                TSCFUPDT: bool,
-                TSINIT: bool,
-                TSUPDT: bool,
-                TSTRIG: bool,
-                TSADDREG: bool,
-                TSENALL: bool,
-                TSCTRLSSR: bool,
-                TSVER2ENA: bool,
-                TSIPENA: bool,
-                TSIPV6ENA: bool,
-                TSIPV4ENA: bool,
-                TSEVNTENA: bool,
-                TSMSTRENA: bool,
-                SNAPTYPSEL: u8,
-                TSENMACADDR: bool,
-                ESTI: bool,
-                TXTSSTSM: bool,
-                AV8021ASMEN: bool,
-            }
-            let proxy = MAC_TIMESTAMP_CONTROL {
-                TSENA: self.TSENA(),
-                TSCFUPDT: self.TSCFUPDT(),
-                TSINIT: self.TSINIT(),
-                TSUPDT: self.TSUPDT(),
-                TSTRIG: self.TSTRIG(),
-                TSADDREG: self.TSADDREG(),
-                TSENALL: self.TSENALL(),
-                TSCTRLSSR: self.TSCTRLSSR(),
-                TSVER2ENA: self.TSVER2ENA(),
-                TSIPENA: self.TSIPENA(),
-                TSIPV6ENA: self.TSIPV6ENA(),
-                TSIPV4ENA: self.TSIPV4ENA(),
-                TSEVNTENA: self.TSEVNTENA(),
-                TSMSTRENA: self.TSMSTRENA(),
-                SNAPTYPSEL: self.SNAPTYPSEL(),
-                TSENMACADDR: self.TSENMACADDR(),
-                ESTI: self.ESTI(),
-                TXTSSTSM: self.TXTSSTSM(),
-                AV8021ASMEN: self.AV8021ASMEN(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Timestamp Egress Latency"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5395,21 +4321,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_TIMESTAMP_EGRESS_LATENCY {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_TIMESTAMP_EGRESS_LATENCY {
-                ETLSNS: u8,
-                ETLNS: u16,
-            }
-            let proxy = MAC_TIMESTAMP_EGRESS_LATENCY {
-                ETLSNS: self.ETLSNS(),
-                ETLNS: self.ETLNS(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Timestamp Ingress Latency"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5446,21 +4357,6 @@ pub mod regs {
                 .field("ITLSNS", &self.ITLSNS())
                 .field("ITLNS", &self.ITLNS())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_TIMESTAMP_INGRESS_LATENCY {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_TIMESTAMP_INGRESS_LATENCY {
-                ITLSNS: u8,
-                ITLNS: u16,
-            }
-            let proxy = MAC_TIMESTAMP_INGRESS_LATENCY {
-                ITLSNS: self.ITLSNS(),
-                ITLNS: self.ITLNS(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Timestamp Status"]
@@ -5519,25 +4415,6 @@ pub mod regs {
                 .field("TSTRGTERR0", &self.TSTRGTERR0())
                 .field("TXTSSIS", &self.TXTSSIS())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_TIMESTAMP_STATUS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_TIMESTAMP_STATUS {
-                TSSOVF: bool,
-                TSTARGT0: bool,
-                TSTRGTERR0: bool,
-                TXTSSIS: bool,
-            }
-            let proxy = MAC_TIMESTAMP_STATUS {
-                TSSOVF: self.TSSOVF(),
-                TSTARGT0: self.TSTARGT0(),
-                TSTRGTERR0: self.TSTRGTERR0(),
-                TXTSSIS: self.TXTSSIS(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MAC Q0 Tx Flow Control"]
@@ -5608,27 +4485,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_TX_FLOW_CTRL_Q {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_TX_FLOW_CTRL_Q {
-                FCB_BPA: bool,
-                TFE: bool,
-                PLT: u8,
-                DZPQ: bool,
-                PT: u16,
-            }
-            let proxy = MAC_TX_FLOW_CTRL_Q {
-                FCB_BPA: self.FCB_BPA(),
-                TFE: self.TFE(),
-                PLT: self.PLT(),
-                DZPQ: self.DZPQ(),
-                PT: self.PT(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Transmit Timestamp Status Nanoseconds"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5667,21 +4523,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_TX_TIMESTAMP_STATUS_NANOSECONDS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_TX_TIMESTAMP_STATUS_NANOSECONDS {
-                TXTSSLO: u32,
-                TXTSSMIS: bool,
-            }
-            let proxy = MAC_TX_TIMESTAMP_STATUS_NANOSECONDS {
-                TXTSSLO: self.TXTSSLO(),
-                TXTSSMIS: self.TXTSSMIS(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MAC Version"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5718,21 +4559,6 @@ pub mod regs {
                 .field("SNPSVER", &self.SNPSVER())
                 .field("USERVER", &self.USERVER())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_VERSION {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_VERSION {
-                SNPSVER: u8,
-                USERVER: u8,
-            }
-            let proxy = MAC_VERSION {
-                SNPSVER: self.SNPSVER(),
-                USERVER: self.USERVER(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "VLAN Tag Inclusion or Replacement"]
@@ -5841,35 +4667,6 @@ pub mod regs {
                 .field("RDWR", &self.RDWR())
                 .field("BUSY", &self.BUSY())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_VLAN_INCL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_VLAN_INCL {
-                VLT: u16,
-                VLC: u8,
-                VLP: bool,
-                CSVL: bool,
-                VLTI: bool,
-                CBTI: bool,
-                ADDR: bool,
-                RDWR: bool,
-                BUSY: bool,
-            }
-            let proxy = MAC_VLAN_INCL {
-                VLT: self.VLT(),
-                VLC: self.VLC(),
-                VLP: self.VLP(),
-                CSVL: self.CSVL(),
-                VLTI: self.VLTI(),
-                CBTI: self.CBTI(),
-                ADDR: self.ADDR(),
-                RDWR: self.RDWR(),
-                BUSY: self.BUSY(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MAC VLAN Tag Control"]
@@ -6010,41 +4807,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_VLAN_TAG_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_VLAN_TAG_CTRL {
-                VL: u16,
-                ETV: bool,
-                VTIM: bool,
-                ESVL: bool,
-                ERSVLM: bool,
-                DOVLTC: bool,
-                EVLS: u8,
-                EVLRXS: bool,
-                EDVLP: bool,
-                ERIVLT: bool,
-                EIVLS: u8,
-                EIVLRXS: bool,
-            }
-            let proxy = MAC_VLAN_TAG_CTRL {
-                VL: self.VL(),
-                ETV: self.ETV(),
-                VTIM: self.VTIM(),
-                ESVL: self.ESVL(),
-                ERSVLM: self.ERSVLM(),
-                DOVLTC: self.DOVLTC(),
-                EVLS: self.EVLS(),
-                EVLRXS: self.EVLRXS(),
-                EDVLP: self.EDVLP(),
-                ERIVLT: self.ERIVLT(),
-                EIVLS: self.EIVLS(),
-                EIVLRXS: self.EIVLRXS(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Watchdog Timeout"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6083,21 +4845,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MAC_WATCHDOG_TIMEOUT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MAC_WATCHDOG_TIMEOUT {
-                WTO: u8,
-                PWE: bool,
-            }
-            let proxy = MAC_WATCHDOG_TIMEOUT {
-                WTO: self.WTO(),
-                PWE: self.PWE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MTL Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6134,21 +4881,6 @@ pub mod regs {
                 .field("Q0IS", &self.Q0IS())
                 .field("Q1IS", &self.Q1IS())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_INTERRUPT_STATUS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_INTERRUPT_STATUS {
-                Q0IS: bool,
-                Q1IS: bool,
-            }
-            let proxy = MTL_INTERRUPT_STATUS {
-                Q0IS: self.Q0IS(),
-                Q1IS: self.Q1IS(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MTL Operation Mode"]
@@ -6217,27 +4949,6 @@ pub mod regs {
                 .field("CNTPRST", &self.CNTPRST())
                 .field("CNTCLR", &self.CNTCLR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_OPERATION_MODE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_OPERATION_MODE {
-                DTXSTS: bool,
-                RAA: bool,
-                SCHALG: u8,
-                CNTPRST: bool,
-                CNTCLR: bool,
-            }
-            let proxy = MTL_OPERATION_MODE {
-                DTXSTS: self.DTXSTS(),
-                RAA: self.RAA(),
-                SCHALG: self.SCHALG(),
-                CNTPRST: self.CNTPRST(),
-                CNTCLR: self.CNTCLR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Queue 0 Interrupt Control Status..Queue 1 Interrupt Control Status"]
@@ -6318,29 +5029,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_QUEUE_MTL_QX_INTCTRL_STAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_QUEUE_MTL_QX_INTCTRL_STAT {
-                TXUNFIS: bool,
-                ABPSIS: bool,
-                TXUIE: bool,
-                ABPSIE: bool,
-                RXOVFIS: bool,
-                RXOIE: bool,
-            }
-            let proxy = MTL_QUEUE_MTL_QX_INTCTRL_STAT {
-                TXUNFIS: self.TXUNFIS(),
-                ABPSIS: self.ABPSIS(),
-                TXUIE: self.TXUIE(),
-                ABPSIE: self.ABPSIE(),
-                RXOVFIS: self.RXOVFIS(),
-                RXOIE: self.RXOIE(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Queue 0 Receive Control..Queue 1 Receive Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6377,21 +5065,6 @@ pub mod regs {
                 .field("RXQ_WEGT", &self.RXQ_WEGT())
                 .field("RXQ_FRM_ARBIT", &self.RXQ_FRM_ARBIT())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_QUEUE_MTL_RXQX_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_QUEUE_MTL_RXQX_CTRL {
-                RXQ_WEGT: u8,
-                RXQ_FRM_ARBIT: bool,
-            }
-            let proxy = MTL_QUEUE_MTL_RXQX_CTRL {
-                RXQ_WEGT: self.RXQ_WEGT(),
-                RXQ_FRM_ARBIT: self.RXQ_FRM_ARBIT(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Queue 0 Receive Debug..Queue 1 Receive Debug"]
@@ -6452,25 +5125,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_QUEUE_MTL_RXQX_DBG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_QUEUE_MTL_RXQX_DBG {
-                RWCSTS: bool,
-                RRCSTS: u8,
-                RXQSTS: u8,
-                PRXQ: u16,
-            }
-            let proxy = MTL_QUEUE_MTL_RXQX_DBG {
-                RWCSTS: self.RWCSTS(),
-                RRCSTS: self.RRCSTS(),
-                RXQSTS: self.RXQSTS(),
-                PRXQ: self.PRXQ(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Queue 0 Missed Packet and Overflow Counter..Queue 1 Missed Packet and Overflow Counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6527,25 +5181,6 @@ pub mod regs {
                 .field("MISPKTCNT", &self.MISPKTCNT())
                 .field("MISCNTOVF", &self.MISCNTOVF())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_QUEUE_MTL_RXQX_MISSPKT_OVRFLW_CNT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_QUEUE_MTL_RXQX_MISSPKT_OVRFLW_CNT {
-                OVFPKTCNT: u16,
-                OVFCNTOVF: bool,
-                MISPKTCNT: u16,
-                MISCNTOVF: bool,
-            }
-            let proxy = MTL_QUEUE_MTL_RXQX_MISSPKT_OVRFLW_CNT {
-                OVFPKTCNT: self.OVFPKTCNT(),
-                OVFCNTOVF: self.OVFCNTOVF(),
-                MISPKTCNT: self.MISPKTCNT(),
-                MISCNTOVF: self.MISCNTOVF(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Queue 0 Receive Operation Mode..Queue 1 Receive Operation Mode"]
@@ -6624,29 +5259,6 @@ pub mod regs {
                 .field("DIS_TCP_EF", &self.DIS_TCP_EF())
                 .field("RQS", &self.RQS())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_QUEUE_MTL_RXQX_OP_MODE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_QUEUE_MTL_RXQX_OP_MODE {
-                RTC: u8,
-                FUP: bool,
-                FEP: bool,
-                RSF: bool,
-                DIS_TCP_EF: bool,
-                RQS: u8,
-            }
-            let proxy = MTL_QUEUE_MTL_RXQX_OP_MODE {
-                RTC: self.RTC(),
-                FUP: self.FUP(),
-                FEP: self.FEP(),
-                RSF: self.RSF(),
-                DIS_TCP_EF: self.DIS_TCP_EF(),
-                RQS: self.RQS(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Queue 0 Transmit Debug..Queue 1 Transmit Debug"]
@@ -6737,31 +5349,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_QUEUE_MTL_TXQX_DBG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_QUEUE_MTL_TXQX_DBG {
-                TXQPAUSED: bool,
-                TRCSTS: u8,
-                TWCSTS: bool,
-                TXQSTS: bool,
-                TXSTSFSTS: bool,
-                PTXQ: u8,
-                STXSTSF: u8,
-            }
-            let proxy = MTL_QUEUE_MTL_TXQX_DBG {
-                TXQPAUSED: self.TXQPAUSED(),
-                TRCSTS: self.TRCSTS(),
-                TWCSTS: self.TWCSTS(),
-                TXQSTS: self.TXQSTS(),
-                TXSTSFSTS: self.TXSTSFSTS(),
-                PTXQ: self.PTXQ(),
-                STXSTSF: self.STXSTSF(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Queue 1 ETS Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6810,23 +5397,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_QUEUE_MTL_TXQX_ETS_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_QUEUE_MTL_TXQX_ETS_CTRL {
-                AVALG: bool,
-                CC: bool,
-                SLC: u8,
-            }
-            let proxy = MTL_QUEUE_MTL_TXQX_ETS_CTRL {
-                AVALG: self.AVALG(),
-                CC: self.CC(),
-                SLC: self.SLC(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Queue 0 ETS Status..Queue 1 ETS Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6853,17 +5423,6 @@ pub mod regs {
             f.debug_struct("MTL_QUEUE_MTL_TXQX_ETS_STAT")
                 .field("ABS", &self.ABS())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_QUEUE_MTL_TXQX_ETS_STAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_QUEUE_MTL_TXQX_ETS_STAT {
-                ABS: u32,
-            }
-            let proxy = MTL_QUEUE_MTL_TXQX_ETS_STAT { ABS: self.ABS() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Queue 1 hiCredit"]
@@ -6894,17 +5453,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_QUEUE_MTL_TXQX_HI_CRDT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_QUEUE_MTL_TXQX_HI_CRDT {
-                HC: u32,
-            }
-            let proxy = MTL_QUEUE_MTL_TXQX_HI_CRDT { HC: self.HC() };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Queue 1 loCredit"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6931,17 +5479,6 @@ pub mod regs {
             f.debug_struct("MTL_QUEUE_MTL_TXQX_LO_CRDT")
                 .field("LC", &self.LC())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_QUEUE_MTL_TXQX_LO_CRDT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_QUEUE_MTL_TXQX_LO_CRDT {
-                LC: u32,
-            }
-            let proxy = MTL_QUEUE_MTL_TXQX_LO_CRDT { LC: self.LC() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Queue 0 Transmit Operation Mode..Queue 1 Transmit Operation Mode"]
@@ -7012,27 +5549,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_QUEUE_MTL_TXQX_OP_MODE {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_QUEUE_MTL_TXQX_OP_MODE {
-                FTQ: bool,
-                TSF: bool,
-                TXQEN: u8,
-                TTC: u8,
-                TQS: u8,
-            }
-            let proxy = MTL_QUEUE_MTL_TXQX_OP_MODE {
-                FTQ: self.FTQ(),
-                TSF: self.TSF(),
-                TXQEN: self.TXQEN(),
-                TTC: self.TTC(),
-                TQS: self.TQS(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Queue 0 Quantum or Weights..Queue 1 idleSlopeCredit, Quantum or Weights"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7061,19 +5577,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_QUEUE_MTL_TXQX_QNTM_WGHT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_QUEUE_MTL_TXQX_QNTM_WGHT {
-                ISCQW: u32,
-            }
-            let proxy = MTL_QUEUE_MTL_TXQX_QNTM_WGHT {
-                ISCQW: self.ISCQW(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Queue 1 sendSlopeCredit"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7100,17 +5603,6 @@ pub mod regs {
             f.debug_struct("MTL_QUEUE_MTL_TXQX_SNDSLP_CRDT")
                 .field("SSC", &self.SSC())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_QUEUE_MTL_TXQX_SNDSLP_CRDT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_QUEUE_MTL_TXQX_SNDSLP_CRDT {
-                SSC: u16,
-            }
-            let proxy = MTL_QUEUE_MTL_TXQX_SNDSLP_CRDT { SSC: self.SSC() };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Queue 0 Underflow Counter..Queue 1 Underflow Counter"]
@@ -7149,21 +5641,6 @@ pub mod regs {
                 .field("UFFRMCNT", &self.UFFRMCNT())
                 .field("UFCNTOVF", &self.UFCNTOVF())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_QUEUE_MTL_TXQX_UNDRFLW {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_QUEUE_MTL_TXQX_UNDRFLW {
-                UFFRMCNT: u16,
-                UFCNTOVF: bool,
-            }
-            let proxy = MTL_QUEUE_MTL_TXQX_UNDRFLW {
-                UFFRMCNT: self.UFFRMCNT(),
-                UFCNTOVF: self.UFCNTOVF(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "Receive Queue and DMA Channel Mapping 0"]
@@ -7224,25 +5701,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MTL_RXQ_DMA_MAP0 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MTL_RXQ_DMA_MAP0 {
-                Q0MDMACH: bool,
-                Q0DDMACH: bool,
-                Q1MDMACH: bool,
-                Q1DDMACH: bool,
-            }
-            let proxy = MTL_RXQ_DMA_MAP0 {
-                Q0MDMACH: self.Q0MDMACH(),
-                Q0DDMACH: self.Q0DDMACH(),
-                Q1MDMACH: self.Q1MDMACH(),
-                Q1DDMACH: self.Q1DDMACH(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "PPS0 Target Time Nanoseconds"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7269,19 +5727,6 @@ pub mod regs {
             f.debug_struct("PPS0_TARGET_TIME_NANOSECONDS")
                 .field("TTSL0", &self.TTSL0())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PPS0_TARGET_TIME_NANOSECONDS {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PPS0_TARGET_TIME_NANOSECONDS {
-                TTSL0: u32,
-            }
-            let proxy = PPS0_TARGET_TIME_NANOSECONDS {
-                TTSL0: self.TTSL0(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

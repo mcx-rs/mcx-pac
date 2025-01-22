@@ -228,45 +228,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTRL_1 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTRL_1 {
-                CH0EN: bool,
-                CH1EN: bool,
-                CH2EN: bool,
-                CH3EN: bool,
-                FSYNCEN: bool,
-                DECFILS: bool,
-                ERREN: bool,
-                DISEL: u8,
-                DBGE: bool,
-                SRES: bool,
-                DBG: bool,
-                PDMIEN: bool,
-                DOZEN: bool,
-                MDIS: bool,
-            }
-            let proxy = CTRL_1 {
-                CH0EN: self.CH0EN(),
-                CH1EN: self.CH1EN(),
-                CH2EN: self.CH2EN(),
-                CH3EN: self.CH3EN(),
-                FSYNCEN: self.FSYNCEN(),
-                DECFILS: self.DECFILS(),
-                ERREN: self.ERREN(),
-                DISEL: self.DISEL(),
-                DBGE: self.DBGE(),
-                SRES: self.SRES(),
-                DBG: self.DBG(),
-                PDMIEN: self.PDMIEN(),
-                DOZEN: self.DOZEN(),
-                MDIS: self.MDIS(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MICFIL Control 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -323,25 +284,6 @@ pub mod regs {
                 .field("CICOSR", &self.CICOSR())
                 .field("QSEL", &self.QSEL())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for CTRL_2 {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct CTRL_2 {
-                CLKDIV: u8,
-                CLKDIVDIS: bool,
-                CICOSR: u8,
-                QSEL: u8,
-            }
-            let proxy = CTRL_2 {
-                CLKDIV: self.CLKDIV(),
-                CLKDIVDIS: self.CLKDIVDIS(),
-                CICOSR: self.CICOSR(),
-                QSEL: self.QSEL(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MICFIL DC Remover Control"]
@@ -402,25 +344,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DC_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DC_CTRL {
-                DCCONFIG0: u8,
-                DCCONFIG1: u8,
-                DCCONFIG2: u8,
-                DCCONFIG3: u8,
-            }
-            let proxy = DC_CTRL {
-                DCCONFIG0: self.DCCONFIG0(),
-                DCCONFIG1: self.DCCONFIG1(),
-                DCCONFIG2: self.DCCONFIG2(),
-                DCCONFIG3: self.DCCONFIG3(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MICFIL Output DC Remover Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -479,25 +402,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DC_OUT_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct DC_OUT_CTRL {
-                DCCONFIG0: u8,
-                DCCONFIG1: u8,
-                DCCONFIG2: u8,
-                DCCONFIG3: u8,
-            }
-            let proxy = DC_OUT_CTRL {
-                DCCONFIG0: self.DCCONFIG0(),
-                DCCONFIG1: self.DCCONFIG1(),
-                DCCONFIG2: self.DCCONFIG2(),
-                DCCONFIG3: self.DCCONFIG3(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MICFIL FIFO Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -524,19 +428,6 @@ pub mod regs {
             f.debug_struct("FIFO_CTRL")
                 .field("FIFOWMK", &self.FIFOWMK())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FIFO_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FIFO_CTRL {
-                FIFOWMK: u8,
-            }
-            let proxy = FIFO_CTRL {
-                FIFOWMK: self.FIFOWMK(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MICFIL FIFO Status"]
@@ -637,33 +528,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for FIFO_STAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct FIFO_STAT {
-                FIFOOVF0: bool,
-                FIFOOVF1: bool,
-                FIFOOVF2: bool,
-                FIFOOVF3: bool,
-                FIFOUND0: bool,
-                FIFOUND1: bool,
-                FIFOUND2: bool,
-                FIFOUND3: bool,
-            }
-            let proxy = FIFO_STAT {
-                FIFOOVF0: self.FIFOOVF0(),
-                FIFOOVF1: self.FIFOOVF1(),
-                FIFOOVF2: self.FIFOOVF2(),
-                FIFOOVF3: self.FIFOOVF3(),
-                FIFOUND0: self.FIFOUND0(),
-                FIFOUND1: self.FIFOUND1(),
-                FIFOUND2: self.FIFOUND2(),
-                FIFOUND3: self.FIFOUND3(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Parameter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -742,29 +606,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for PARAM {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct PARAM {
-                NPAIR: u8,
-                FIFO_PTRWID: u8,
-                FIL_OUT_WIDTH_24B: bool,
-                LOW_POWER: bool,
-                DC_BYPASS: bool,
-                DC_OUT_BYPASS: bool,
-            }
-            let proxy = PARAM {
-                NPAIR: self.NPAIR(),
-                FIFO_PTRWID: self.FIFO_PTRWID(),
-                FIL_OUT_WIDTH_24B: self.FIL_OUT_WIDTH_24B(),
-                LOW_POWER: self.LOW_POWER(),
-                DC_BYPASS: self.DC_BYPASS(),
-                DC_OUT_BYPASS: self.DC_OUT_BYPASS(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MICFIL Range Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -821,25 +662,6 @@ pub mod regs {
                 .field("RANGEADJ2", &self.RANGEADJ2())
                 .field("RANGEADJ3", &self.RANGEADJ3())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RANGE_CTRL {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RANGE_CTRL {
-                RANGEADJ0: u8,
-                RANGEADJ1: u8,
-                RANGEADJ2: u8,
-                RANGEADJ3: u8,
-            }
-            let proxy = RANGE_CTRL {
-                RANGEADJ0: self.RANGEADJ0(),
-                RANGEADJ1: self.RANGEADJ1(),
-                RANGEADJ2: self.RANGEADJ2(),
-                RANGEADJ3: self.RANGEADJ3(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MICFIL Range Status"]
@@ -940,33 +762,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RANGE_STAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct RANGE_STAT {
-                RANGEOVF0: bool,
-                RANGEOVF1: bool,
-                RANGEOVF2: bool,
-                RANGEOVF3: bool,
-                RANGEUNF0: bool,
-                RANGEUNF1: bool,
-                RANGEUNF2: bool,
-                RANGEUNF3: bool,
-            }
-            let proxy = RANGE_STAT {
-                RANGEOVF0: self.RANGEOVF0(),
-                RANGEOVF1: self.RANGEOVF1(),
-                RANGEOVF2: self.RANGEOVF2(),
-                RANGEOVF3: self.RANGEOVF3(),
-                RANGEUNF0: self.RANGEUNF0(),
-                RANGEUNF1: self.RANGEUNF1(),
-                RANGEUNF2: self.RANGEUNF2(),
-                RANGEUNF3: self.RANGEUNF3(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MICFIL Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1035,27 +830,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for STAT {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct STAT {
-                CH0F: bool,
-                CH1F: bool,
-                CH2F: bool,
-                CH3F: bool,
-                BSY_FIL: bool,
-            }
-            let proxy = STAT {
-                CH0F: self.CH0F(),
-                CH1F: self.CH1F(),
-                CH2F: self.CH2F(),
-                CH3F: self.CH3F(),
-                BSY_FIL: self.BSY_FIL(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1102,23 +876,6 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for VERID {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct VERID {
-                FEATURE: u16,
-                MINOR: u8,
-                MAJOR: u8,
-            }
-            let proxy = VERID {
-                FEATURE: self.FEATURE(),
-                MINOR: self.MINOR(),
-                MAJOR: self.MAJOR(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

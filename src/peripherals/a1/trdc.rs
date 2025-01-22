@@ -256,49 +256,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W {
-                MBACSEL0: u8,
-                NSE0: bool,
-                MBACSEL1: u8,
-                NSE1: bool,
-                MBACSEL2: u8,
-                NSE2: bool,
-                MBACSEL3: u8,
-                NSE3: bool,
-                MBACSEL4: u8,
-                NSE4: bool,
-                MBACSEL5: u8,
-                NSE5: bool,
-                MBACSEL6: u8,
-                NSE6: bool,
-                MBACSEL7: u8,
-                NSE7: bool,
-            }
-            let proxy = MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W {
-                MBACSEL0: self.MBACSEL0(),
-                NSE0: self.NSE0(),
-                MBACSEL1: self.MBACSEL1(),
-                NSE1: self.NSE1(),
-                MBACSEL2: self.MBACSEL2(),
-                NSE2: self.NSE2(),
-                MBACSEL3: self.MBACSEL3(),
-                NSE3: self.NSE3(),
-                MBACSEL4: self.MBACSEL4(),
-                NSE4: self.NSE4(),
-                MBACSEL5: self.MBACSEL5(),
-                NSE5: self.NSE5(),
-                MBACSEL6: self.MBACSEL6(),
-                NSE6: self.NSE6(),
-                MBACSEL7: self.MBACSEL7(),
-                NSE7: self.NSE7(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MBC Memory Block Configuration Word"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -475,49 +432,6 @@ pub mod regs {
                 .field("MBACSEL7", &self.MBACSEL7())
                 .field("NSE7", &self.NSE7())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W {
-                MBACSEL0: u8,
-                NSE0: bool,
-                MBACSEL1: u8,
-                NSE1: bool,
-                MBACSEL2: u8,
-                NSE2: bool,
-                MBACSEL3: u8,
-                NSE3: bool,
-                MBACSEL4: u8,
-                NSE4: bool,
-                MBACSEL5: u8,
-                NSE5: bool,
-                MBACSEL6: u8,
-                NSE6: bool,
-                MBACSEL7: u8,
-                NSE7: bool,
-            }
-            let proxy = MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W {
-                MBACSEL0: self.MBACSEL0(),
-                NSE0: self.NSE0(),
-                MBACSEL1: self.MBACSEL1(),
-                NSE1: self.NSE1(),
-                MBACSEL2: self.MBACSEL2(),
-                NSE2: self.NSE2(),
-                MBACSEL3: self.MBACSEL3(),
-                NSE3: self.NSE3(),
-                MBACSEL4: self.MBACSEL4(),
-                NSE4: self.NSE4(),
-                MBACSEL5: self.MBACSEL5(),
-                NSE5: self.NSE5(),
-                MBACSEL6: self.MBACSEL6(),
-                NSE6: self.NSE6(),
-                MBACSEL7: self.MBACSEL7(),
-                NSE7: self.NSE7(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
     #[doc = "MBC Memory Block Configuration Word"]
@@ -698,49 +612,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W {
-                MBACSEL0: u8,
-                NSE0: bool,
-                MBACSEL1: u8,
-                NSE1: bool,
-                MBACSEL2: u8,
-                NSE2: bool,
-                MBACSEL3: u8,
-                NSE3: bool,
-                MBACSEL4: u8,
-                NSE4: bool,
-                MBACSEL5: u8,
-                NSE5: bool,
-                MBACSEL6: u8,
-                NSE6: bool,
-                MBACSEL7: u8,
-                NSE7: bool,
-            }
-            let proxy = MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W {
-                MBACSEL0: self.MBACSEL0(),
-                NSE0: self.NSE0(),
-                MBACSEL1: self.MBACSEL1(),
-                NSE1: self.NSE1(),
-                MBACSEL2: self.MBACSEL2(),
-                NSE2: self.NSE2(),
-                MBACSEL3: self.MBACSEL3(),
-                NSE3: self.NSE3(),
-                MBACSEL4: self.MBACSEL4(),
-                NSE4: self.NSE4(),
-                MBACSEL5: self.MBACSEL5(),
-                NSE5: self.NSE5(),
-                MBACSEL6: self.MBACSEL6(),
-                NSE6: self.NSE6(),
-                MBACSEL7: self.MBACSEL7(),
-                NSE7: self.NSE7(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MBC Global Access Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -889,43 +760,6 @@ pub mod regs {
                 .finish()
         }
     }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MBC_INDEX_MBC_MEMN_GLBAC {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MBC_INDEX_MBC_MEMN_GLBAC {
-                NUX: bool,
-                NUW: bool,
-                NUR: bool,
-                NPX: bool,
-                NPW: bool,
-                NPR: bool,
-                SUX: bool,
-                SUW: bool,
-                SUR: bool,
-                SPX: bool,
-                SPW: bool,
-                SPR: bool,
-                LK: bool,
-            }
-            let proxy = MBC_INDEX_MBC_MEMN_GLBAC {
-                NUX: self.NUX(),
-                NUW: self.NUW(),
-                NUR: self.NUR(),
-                NPX: self.NPX(),
-                NPW: self.NPW(),
-                NPR: self.NPR(),
-                SUX: self.SUX(),
-                SUW: self.SUW(),
-                SUR: self.SUR(),
-                SPX: self.SPX(),
-                SPW: self.SPW(),
-                SPR: self.SPR(),
-                LK: self.LK(),
-            };
-            defmt::write!(f, "{}", proxy)
-        }
-    }
     #[doc = "MBC Global Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -972,23 +806,6 @@ pub mod regs {
                 .field("SIZE_LOG2", &self.SIZE_LOG2())
                 .field("CLRE", &self.CLRE())
                 .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MBC_INDEX_MBC_MEM_GLBCFG {
-        fn format(&self, f: defmt::Formatter) {
-            #[derive(defmt :: Format)]
-            struct MBC_INDEX_MBC_MEM_GLBCFG {
-                NBLKS: u16,
-                SIZE_LOG2: u8,
-                CLRE: u8,
-            }
-            let proxy = MBC_INDEX_MBC_MEM_GLBCFG {
-                NBLKS: self.NBLKS(),
-                SIZE_LOG2: self.SIZE_LOG2(),
-                CLRE: self.CLRE(),
-            };
-            defmt::write!(f, "{}", proxy)
         }
     }
 }

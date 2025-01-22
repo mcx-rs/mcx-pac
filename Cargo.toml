@@ -1,7 +1,7 @@
 [package]
 name = "mcx-pac"
 description = "Peripheral Access Crate for NXP MCX Series MCUs"
-version = "0.1.4"
+version = "0.1.5"
 edition = "2021"
 license = "MIT"
 keywords = ["no-std", "arm", "cortex-m", "nxp", "mcx"]
@@ -15,14 +15,13 @@ include = ["/src", "build.rs", "/examples", "LICENSE-MIT", "LICENSE-BSD"]
 cortex-m = "0.7"
 cortex-m-rt = { version = "0.7", optional = true }
 
-defmt = { version = "0.3", optional = true }
-
 [dev-dependencies]
 panic-halt = "1"
 
 [features]
+default = ["rt", "mcxa276"]
+
 rt = ["cortex-m-rt/device"]
-defmt = ["dep:defmt"]
 
 _device_selected = []
 mcxa132 = ["_device_selected"]
