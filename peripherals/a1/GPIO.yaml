@@ -2,57 +2,57 @@ block/GPIO:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: regs::VERID
+    fieldset: VERID
   - name: PARAM
     byte_offset: 4
-    fieldset: regs::PARAM
+    fieldset: PARAM
   - name: PDOR
     byte_offset: 64
-    fieldset: regs::PDOR
+    fieldset: PDOR
   - name: PSOR
     byte_offset: 68
-    fieldset: regs::PSOR
+    fieldset: PSOR
   - name: PCOR
     byte_offset: 72
-    fieldset: regs::PCOR
+    fieldset: PCOR
   - name: PTOR
     byte_offset: 76
-    fieldset: regs::PTOR
+    fieldset: PTOR
   - name: PDIR
     byte_offset: 80
-    fieldset: regs::PDIR
+    fieldset: PDIR
   - name: PDDR
     byte_offset: 84
-    fieldset: regs::PDDR
+    fieldset: PDDR
   - name: PIDR
     byte_offset: 88
-    fieldset: regs::PIDR
+    fieldset: PIDR
   - name: PDR
     array:
       len: 32
       stride: 1
     byte_offset: 96
     bit_size: 8
-    fieldset: regs::PDR
+    fieldset: PDR
   - name: ICR
     array:
       len: 32
       stride: 4
     byte_offset: 128
-    fieldset: regs::ICR
+    fieldset: ICR
   - name: GICLR
     byte_offset: 256
-    fieldset: regs::GICLR
+    fieldset: GICLR
   - name: GICHR
     byte_offset: 260
-    fieldset: regs::GICHR
+    fieldset: GICHR
   - name: ISFR
     array:
       len: 1
       stride: 4
     byte_offset: 288
-    fieldset: regs::ISFR
-fieldset/regs::GICHR:
+    fieldset: ISFR
+fieldset/GICHR:
   description: Global Interrupt Control High
   fields:
   - name: GIWE16
@@ -106,7 +106,7 @@ fieldset/regs::GICHR:
   - name: GIWD
     bit_offset: 16
     bit_size: 16
-fieldset/regs::GICLR:
+fieldset/GICLR:
   description: Global Interrupt Control Low
   fields:
   - name: GIWE0
@@ -160,7 +160,7 @@ fieldset/regs::GICLR:
   - name: GIWD
     bit_offset: 16
     bit_size: 16
-fieldset/regs::ICR:
+fieldset/ICR:
   description: Interrupt Control 0..Interrupt Control 31
   fields:
   - name: IRQC
@@ -169,7 +169,7 @@ fieldset/regs::ICR:
   - name: ISF
     bit_offset: 24
     bit_size: 1
-fieldset/regs::ISFR:
+fieldset/ISFR:
   description: Interrupt Status Flag
   fields:
   - name: ISF0
@@ -268,82 +268,713 @@ fieldset/regs::ISFR:
   - name: ISF31
     bit_offset: 31
     bit_size: 1
-fieldset/regs::PARAM:
+fieldset/PARAM:
   description: Parameter
   fields:
   - name: IRQNUM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::PCOR:
+fieldset/PCOR:
   description: Port Clear Output
   fields:
-  - name: PTCO
+  - name: PTCO0
     bit_offset: 0
     bit_size: 1
-    array:
-      len: 32
-      stride: 1
-fieldset/regs::PDDR:
+  - name: PTCO1
+    bit_offset: 1
+    bit_size: 1
+  - name: PTCO2
+    bit_offset: 2
+    bit_size: 1
+  - name: PTCO3
+    bit_offset: 3
+    bit_size: 1
+  - name: PTCO4
+    bit_offset: 4
+    bit_size: 1
+  - name: PTCO5
+    bit_offset: 5
+    bit_size: 1
+  - name: PTCO6
+    bit_offset: 6
+    bit_size: 1
+  - name: PTCO7
+    bit_offset: 7
+    bit_size: 1
+  - name: PTCO8
+    bit_offset: 8
+    bit_size: 1
+  - name: PTCO9
+    bit_offset: 9
+    bit_size: 1
+  - name: PTCO10
+    bit_offset: 10
+    bit_size: 1
+  - name: PTCO11
+    bit_offset: 11
+    bit_size: 1
+  - name: PTCO12
+    bit_offset: 12
+    bit_size: 1
+  - name: PTCO13
+    bit_offset: 13
+    bit_size: 1
+  - name: PTCO14
+    bit_offset: 14
+    bit_size: 1
+  - name: PTCO15
+    bit_offset: 15
+    bit_size: 1
+  - name: PTCO16
+    bit_offset: 16
+    bit_size: 1
+  - name: PTCO17
+    bit_offset: 17
+    bit_size: 1
+  - name: PTCO18
+    bit_offset: 18
+    bit_size: 1
+  - name: PTCO19
+    bit_offset: 19
+    bit_size: 1
+  - name: PTCO20
+    bit_offset: 20
+    bit_size: 1
+  - name: PTCO21
+    bit_offset: 21
+    bit_size: 1
+  - name: PTCO22
+    bit_offset: 22
+    bit_size: 1
+  - name: PTCO23
+    bit_offset: 23
+    bit_size: 1
+  - name: PTCO24
+    bit_offset: 24
+    bit_size: 1
+  - name: PTCO25
+    bit_offset: 25
+    bit_size: 1
+  - name: PTCO26
+    bit_offset: 26
+    bit_size: 1
+  - name: PTCO27
+    bit_offset: 27
+    bit_size: 1
+  - name: PTCO28
+    bit_offset: 28
+    bit_size: 1
+  - name: PTCO29
+    bit_offset: 29
+    bit_size: 1
+  - name: PTCO30
+    bit_offset: 30
+    bit_size: 1
+  - name: PTCO31
+    bit_offset: 31
+    bit_size: 1
+fieldset/PDDR:
   description: Port Data Direction
   fields:
-  - name: PDD
+  - name: PDD0
     bit_offset: 0
     bit_size: 1
-    array:
-      len: 32
-      stride: 1
-fieldset/regs::PDIR:
+  - name: PDD1
+    bit_offset: 1
+    bit_size: 1
+  - name: PDD2
+    bit_offset: 2
+    bit_size: 1
+  - name: PDD3
+    bit_offset: 3
+    bit_size: 1
+  - name: PDD4
+    bit_offset: 4
+    bit_size: 1
+  - name: PDD5
+    bit_offset: 5
+    bit_size: 1
+  - name: PDD6
+    bit_offset: 6
+    bit_size: 1
+  - name: PDD7
+    bit_offset: 7
+    bit_size: 1
+  - name: PDD8
+    bit_offset: 8
+    bit_size: 1
+  - name: PDD9
+    bit_offset: 9
+    bit_size: 1
+  - name: PDD10
+    bit_offset: 10
+    bit_size: 1
+  - name: PDD11
+    bit_offset: 11
+    bit_size: 1
+  - name: PDD12
+    bit_offset: 12
+    bit_size: 1
+  - name: PDD13
+    bit_offset: 13
+    bit_size: 1
+  - name: PDD14
+    bit_offset: 14
+    bit_size: 1
+  - name: PDD15
+    bit_offset: 15
+    bit_size: 1
+  - name: PDD16
+    bit_offset: 16
+    bit_size: 1
+  - name: PDD17
+    bit_offset: 17
+    bit_size: 1
+  - name: PDD18
+    bit_offset: 18
+    bit_size: 1
+  - name: PDD19
+    bit_offset: 19
+    bit_size: 1
+  - name: PDD20
+    bit_offset: 20
+    bit_size: 1
+  - name: PDD21
+    bit_offset: 21
+    bit_size: 1
+  - name: PDD22
+    bit_offset: 22
+    bit_size: 1
+  - name: PDD23
+    bit_offset: 23
+    bit_size: 1
+  - name: PDD24
+    bit_offset: 24
+    bit_size: 1
+  - name: PDD25
+    bit_offset: 25
+    bit_size: 1
+  - name: PDD26
+    bit_offset: 26
+    bit_size: 1
+  - name: PDD27
+    bit_offset: 27
+    bit_size: 1
+  - name: PDD28
+    bit_offset: 28
+    bit_size: 1
+  - name: PDD29
+    bit_offset: 29
+    bit_size: 1
+  - name: PDD30
+    bit_offset: 30
+    bit_size: 1
+  - name: PDD31
+    bit_offset: 31
+    bit_size: 1
+fieldset/PDIR:
   description: Port Data Input
   fields:
-  - name: PDI
+  - name: PDI0
     bit_offset: 0
     bit_size: 1
-    array:
-      len: 32
-      stride: 1
-fieldset/regs::PDOR:
+  - name: PDI1
+    bit_offset: 1
+    bit_size: 1
+  - name: PDI2
+    bit_offset: 2
+    bit_size: 1
+  - name: PDI3
+    bit_offset: 3
+    bit_size: 1
+  - name: PDI4
+    bit_offset: 4
+    bit_size: 1
+  - name: PDI5
+    bit_offset: 5
+    bit_size: 1
+  - name: PDI6
+    bit_offset: 6
+    bit_size: 1
+  - name: PDI7
+    bit_offset: 7
+    bit_size: 1
+  - name: PDI8
+    bit_offset: 8
+    bit_size: 1
+  - name: PDI9
+    bit_offset: 9
+    bit_size: 1
+  - name: PDI10
+    bit_offset: 10
+    bit_size: 1
+  - name: PDI11
+    bit_offset: 11
+    bit_size: 1
+  - name: PDI12
+    bit_offset: 12
+    bit_size: 1
+  - name: PDI13
+    bit_offset: 13
+    bit_size: 1
+  - name: PDI14
+    bit_offset: 14
+    bit_size: 1
+  - name: PDI15
+    bit_offset: 15
+    bit_size: 1
+  - name: PDI16
+    bit_offset: 16
+    bit_size: 1
+  - name: PDI17
+    bit_offset: 17
+    bit_size: 1
+  - name: PDI18
+    bit_offset: 18
+    bit_size: 1
+  - name: PDI19
+    bit_offset: 19
+    bit_size: 1
+  - name: PDI20
+    bit_offset: 20
+    bit_size: 1
+  - name: PDI21
+    bit_offset: 21
+    bit_size: 1
+  - name: PDI22
+    bit_offset: 22
+    bit_size: 1
+  - name: PDI23
+    bit_offset: 23
+    bit_size: 1
+  - name: PDI24
+    bit_offset: 24
+    bit_size: 1
+  - name: PDI25
+    bit_offset: 25
+    bit_size: 1
+  - name: PDI26
+    bit_offset: 26
+    bit_size: 1
+  - name: PDI27
+    bit_offset: 27
+    bit_size: 1
+  - name: PDI28
+    bit_offset: 28
+    bit_size: 1
+  - name: PDI29
+    bit_offset: 29
+    bit_size: 1
+  - name: PDI30
+    bit_offset: 30
+    bit_size: 1
+  - name: PDI31
+    bit_offset: 31
+    bit_size: 1
+fieldset/PDOR:
   description: Port Data Output
   fields:
-  - name: PDO
+  - name: PDO0
     bit_offset: 0
     bit_size: 1
-    array:
-      len: 32
-      stride: 1
-fieldset/regs::PDR:
+  - name: PDO1
+    bit_offset: 1
+    bit_size: 1
+  - name: PDO2
+    bit_offset: 2
+    bit_size: 1
+  - name: PDO3
+    bit_offset: 3
+    bit_size: 1
+  - name: PDO4
+    bit_offset: 4
+    bit_size: 1
+  - name: PDO5
+    bit_offset: 5
+    bit_size: 1
+  - name: PDO6
+    bit_offset: 6
+    bit_size: 1
+  - name: PDO7
+    bit_offset: 7
+    bit_size: 1
+  - name: PDO8
+    bit_offset: 8
+    bit_size: 1
+  - name: PDO9
+    bit_offset: 9
+    bit_size: 1
+  - name: PDO10
+    bit_offset: 10
+    bit_size: 1
+  - name: PDO11
+    bit_offset: 11
+    bit_size: 1
+  - name: PDO12
+    bit_offset: 12
+    bit_size: 1
+  - name: PDO13
+    bit_offset: 13
+    bit_size: 1
+  - name: PDO14
+    bit_offset: 14
+    bit_size: 1
+  - name: PDO15
+    bit_offset: 15
+    bit_size: 1
+  - name: PDO16
+    bit_offset: 16
+    bit_size: 1
+  - name: PDO17
+    bit_offset: 17
+    bit_size: 1
+  - name: PDO18
+    bit_offset: 18
+    bit_size: 1
+  - name: PDO19
+    bit_offset: 19
+    bit_size: 1
+  - name: PDO20
+    bit_offset: 20
+    bit_size: 1
+  - name: PDO21
+    bit_offset: 21
+    bit_size: 1
+  - name: PDO22
+    bit_offset: 22
+    bit_size: 1
+  - name: PDO23
+    bit_offset: 23
+    bit_size: 1
+  - name: PDO24
+    bit_offset: 24
+    bit_size: 1
+  - name: PDO25
+    bit_offset: 25
+    bit_size: 1
+  - name: PDO26
+    bit_offset: 26
+    bit_size: 1
+  - name: PDO27
+    bit_offset: 27
+    bit_size: 1
+  - name: PDO28
+    bit_offset: 28
+    bit_size: 1
+  - name: PDO29
+    bit_offset: 29
+    bit_size: 1
+  - name: PDO30
+    bit_offset: 30
+    bit_size: 1
+  - name: PDO31
+    bit_offset: 31
+    bit_size: 1
+fieldset/PDR:
   description: Pin Data
+  bit_size: 8
   fields:
   - name: PD
     bit_offset: 0
     bit_size: 1
-fieldset/regs::PIDR:
+fieldset/PIDR:
   description: Port Input Disable
   fields:
-  - name: PID
+  - name: PID0
     bit_offset: 0
     bit_size: 1
-    array:
-      len: 32
-      stride: 1
-fieldset/regs::PSOR:
+  - name: PID1
+    bit_offset: 1
+    bit_size: 1
+  - name: PID2
+    bit_offset: 2
+    bit_size: 1
+  - name: PID3
+    bit_offset: 3
+    bit_size: 1
+  - name: PID4
+    bit_offset: 4
+    bit_size: 1
+  - name: PID5
+    bit_offset: 5
+    bit_size: 1
+  - name: PID6
+    bit_offset: 6
+    bit_size: 1
+  - name: PID7
+    bit_offset: 7
+    bit_size: 1
+  - name: PID8
+    bit_offset: 8
+    bit_size: 1
+  - name: PID9
+    bit_offset: 9
+    bit_size: 1
+  - name: PID10
+    bit_offset: 10
+    bit_size: 1
+  - name: PID11
+    bit_offset: 11
+    bit_size: 1
+  - name: PID12
+    bit_offset: 12
+    bit_size: 1
+  - name: PID13
+    bit_offset: 13
+    bit_size: 1
+  - name: PID14
+    bit_offset: 14
+    bit_size: 1
+  - name: PID15
+    bit_offset: 15
+    bit_size: 1
+  - name: PID16
+    bit_offset: 16
+    bit_size: 1
+  - name: PID17
+    bit_offset: 17
+    bit_size: 1
+  - name: PID18
+    bit_offset: 18
+    bit_size: 1
+  - name: PID19
+    bit_offset: 19
+    bit_size: 1
+  - name: PID20
+    bit_offset: 20
+    bit_size: 1
+  - name: PID21
+    bit_offset: 21
+    bit_size: 1
+  - name: PID22
+    bit_offset: 22
+    bit_size: 1
+  - name: PID23
+    bit_offset: 23
+    bit_size: 1
+  - name: PID24
+    bit_offset: 24
+    bit_size: 1
+  - name: PID25
+    bit_offset: 25
+    bit_size: 1
+  - name: PID26
+    bit_offset: 26
+    bit_size: 1
+  - name: PID27
+    bit_offset: 27
+    bit_size: 1
+  - name: PID28
+    bit_offset: 28
+    bit_size: 1
+  - name: PID29
+    bit_offset: 29
+    bit_size: 1
+  - name: PID30
+    bit_offset: 30
+    bit_size: 1
+  - name: PID31
+    bit_offset: 31
+    bit_size: 1
+fieldset/PSOR:
   description: Port Set Output
   fields:
-  - name: PTSO
+  - name: PTSO0
     bit_offset: 0
     bit_size: 1
-    array:
-      len: 32
-      stride: 1
-fieldset/regs::PTOR:
+  - name: PTSO1
+    bit_offset: 1
+    bit_size: 1
+  - name: PTSO2
+    bit_offset: 2
+    bit_size: 1
+  - name: PTSO3
+    bit_offset: 3
+    bit_size: 1
+  - name: PTSO4
+    bit_offset: 4
+    bit_size: 1
+  - name: PTSO5
+    bit_offset: 5
+    bit_size: 1
+  - name: PTSO6
+    bit_offset: 6
+    bit_size: 1
+  - name: PTSO7
+    bit_offset: 7
+    bit_size: 1
+  - name: PTSO8
+    bit_offset: 8
+    bit_size: 1
+  - name: PTSO9
+    bit_offset: 9
+    bit_size: 1
+  - name: PTSO10
+    bit_offset: 10
+    bit_size: 1
+  - name: PTSO11
+    bit_offset: 11
+    bit_size: 1
+  - name: PTSO12
+    bit_offset: 12
+    bit_size: 1
+  - name: PTSO13
+    bit_offset: 13
+    bit_size: 1
+  - name: PTSO14
+    bit_offset: 14
+    bit_size: 1
+  - name: PTSO15
+    bit_offset: 15
+    bit_size: 1
+  - name: PTSO16
+    bit_offset: 16
+    bit_size: 1
+  - name: PTSO17
+    bit_offset: 17
+    bit_size: 1
+  - name: PTSO18
+    bit_offset: 18
+    bit_size: 1
+  - name: PTSO19
+    bit_offset: 19
+    bit_size: 1
+  - name: PTSO20
+    bit_offset: 20
+    bit_size: 1
+  - name: PTSO21
+    bit_offset: 21
+    bit_size: 1
+  - name: PTSO22
+    bit_offset: 22
+    bit_size: 1
+  - name: PTSO23
+    bit_offset: 23
+    bit_size: 1
+  - name: PTSO24
+    bit_offset: 24
+    bit_size: 1
+  - name: PTSO25
+    bit_offset: 25
+    bit_size: 1
+  - name: PTSO26
+    bit_offset: 26
+    bit_size: 1
+  - name: PTSO27
+    bit_offset: 27
+    bit_size: 1
+  - name: PTSO28
+    bit_offset: 28
+    bit_size: 1
+  - name: PTSO29
+    bit_offset: 29
+    bit_size: 1
+  - name: PTSO30
+    bit_offset: 30
+    bit_size: 1
+  - name: PTSO31
+    bit_offset: 31
+    bit_size: 1
+fieldset/PTOR:
   description: Port Toggle Output
   fields:
-  - name: PTTO
+  - name: PTTO0
     bit_offset: 0
     bit_size: 1
-    array:
-      len: 32
-      stride: 1
-fieldset/regs::VERID:
+  - name: PTTO1
+    bit_offset: 1
+    bit_size: 1
+  - name: PTTO2
+    bit_offset: 2
+    bit_size: 1
+  - name: PTTO3
+    bit_offset: 3
+    bit_size: 1
+  - name: PTTO4
+    bit_offset: 4
+    bit_size: 1
+  - name: PTTO5
+    bit_offset: 5
+    bit_size: 1
+  - name: PTTO6
+    bit_offset: 6
+    bit_size: 1
+  - name: PTTO7
+    bit_offset: 7
+    bit_size: 1
+  - name: PTTO8
+    bit_offset: 8
+    bit_size: 1
+  - name: PTTO9
+    bit_offset: 9
+    bit_size: 1
+  - name: PTTO10
+    bit_offset: 10
+    bit_size: 1
+  - name: PTTO11
+    bit_offset: 11
+    bit_size: 1
+  - name: PTTO12
+    bit_offset: 12
+    bit_size: 1
+  - name: PTTO13
+    bit_offset: 13
+    bit_size: 1
+  - name: PTTO14
+    bit_offset: 14
+    bit_size: 1
+  - name: PTTO15
+    bit_offset: 15
+    bit_size: 1
+  - name: PTTO16
+    bit_offset: 16
+    bit_size: 1
+  - name: PTTO17
+    bit_offset: 17
+    bit_size: 1
+  - name: PTTO18
+    bit_offset: 18
+    bit_size: 1
+  - name: PTTO19
+    bit_offset: 19
+    bit_size: 1
+  - name: PTTO20
+    bit_offset: 20
+    bit_size: 1
+  - name: PTTO21
+    bit_offset: 21
+    bit_size: 1
+  - name: PTTO22
+    bit_offset: 22
+    bit_size: 1
+  - name: PTTO23
+    bit_offset: 23
+    bit_size: 1
+  - name: PTTO24
+    bit_offset: 24
+    bit_size: 1
+  - name: PTTO25
+    bit_offset: 25
+    bit_size: 1
+  - name: PTTO26
+    bit_offset: 26
+    bit_size: 1
+  - name: PTTO27
+    bit_offset: 27
+    bit_size: 1
+  - name: PTTO28
+    bit_offset: 28
+    bit_size: 1
+  - name: PTTO29
+    bit_offset: 29
+    bit_size: 1
+  - name: PTTO30
+    bit_offset: 30
+    bit_size: 1
+  - name: PTTO31
+    bit_offset: 31
+    bit_size: 1
+fieldset/VERID:
   description: Version ID
   fields:
   - name: FEATURE

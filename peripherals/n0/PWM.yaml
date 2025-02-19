@@ -9,238 +9,223 @@ block/PWM:
   - name: OUTEN
     byte_offset: 384
     bit_size: 16
-    fieldset: regs::OUTEN
+    fieldset: OUTEN
   - name: MASK
     byte_offset: 386
     bit_size: 16
-    fieldset: regs::MASK
+    fieldset: MASK
   - name: SWCOUT
     byte_offset: 388
     bit_size: 16
-    fieldset: regs::SWCOUT
+    fieldset: SWCOUT
   - name: DTSRCSEL
     byte_offset: 390
     bit_size: 16
-    fieldset: regs::DTSRCSEL
+    fieldset: DTSRCSEL
   - name: MCTRL
     byte_offset: 392
     bit_size: 16
-    fieldset: regs::MCTRL
+    fieldset: MCTRL
   - name: MCTRL2
     byte_offset: 394
     bit_size: 16
-    fieldset: regs::MCTRL2
+    fieldset: MCTRL2
   - name: FCTRL
     byte_offset: 396
     bit_size: 16
-    fieldset: regs::FCTRL
+    fieldset: FCTRL
   - name: FSTS
     byte_offset: 398
     bit_size: 16
-    fieldset: regs::FSTS
+    fieldset: FSTS
   - name: FFILT
     byte_offset: 400
     bit_size: 16
-    fieldset: regs::FFILT
+    fieldset: FFILT
   - name: FTST
     byte_offset: 402
     bit_size: 16
-    fieldset: regs::FTST
+    fieldset: FTST
   - name: FCTRL2
     byte_offset: 404
     bit_size: 16
-    fieldset: regs::FCTRL2
+    fieldset: FCTRL2
 block/SM:
   items:
   - name: CNT
     byte_offset: 0
     bit_size: 16
-    fieldset: regs::SM_CNT
   - name: INIT
     byte_offset: 2
     bit_size: 16
-    fieldset: regs::SM_INIT
   - name: CTRL2
     byte_offset: 4
     bit_size: 16
-    fieldset: regs::SM_CTRL2
+    fieldset: SM_CTRL2
   - name: CTRL
     byte_offset: 6
     bit_size: 16
-    fieldset: regs::SM_CTRL
+    fieldset: SM_CTRL
   - name: VAL0
     byte_offset: 10
     bit_size: 16
-    fieldset: regs::SM_VAL0
   - name: FRACVAL1
     byte_offset: 12
     bit_size: 16
-    fieldset: regs::SM_FRACVAL1
+    fieldset: SM_FRACVAL1
   - name: VAL1
     byte_offset: 14
     bit_size: 16
-    fieldset: regs::SM_VAL1
   - name: FRACVAL2
     byte_offset: 16
     bit_size: 16
-    fieldset: regs::SM_FRACVAL2
+    fieldset: SM_FRACVAL2
   - name: VAL2
     byte_offset: 18
     bit_size: 16
-    fieldset: regs::SM_VAL2
   - name: FRACVAL3
     byte_offset: 20
     bit_size: 16
-    fieldset: regs::SM_FRACVAL3
+    fieldset: SM_FRACVAL3
   - name: VAL3
     byte_offset: 22
     bit_size: 16
-    fieldset: regs::SM_VAL3
   - name: FRACVAL4
     byte_offset: 24
     bit_size: 16
-    fieldset: regs::SM_FRACVAL4
+    fieldset: SM_FRACVAL4
   - name: VAL4
     byte_offset: 26
     bit_size: 16
-    fieldset: regs::SM_VAL4
   - name: FRACVAL5
     byte_offset: 28
     bit_size: 16
-    fieldset: regs::SM_FRACVAL5
+    fieldset: SM_FRACVAL5
   - name: VAL5
     byte_offset: 30
     bit_size: 16
-    fieldset: regs::SM_VAL5
   - name: FRCTRL
     byte_offset: 32
     bit_size: 16
-    fieldset: regs::SM_FRCTRL
+    fieldset: SM_FRCTRL
   - name: OCTRL
     byte_offset: 34
     bit_size: 16
-    fieldset: regs::SM_OCTRL
+    fieldset: SM_OCTRL
   - name: STS
     byte_offset: 36
     bit_size: 16
-    fieldset: regs::SM_STS
+    fieldset: SM_STS
   - name: INTEN
     byte_offset: 38
     bit_size: 16
-    fieldset: regs::SM_INTEN
+    fieldset: SM_INTEN
   - name: DMAEN
     byte_offset: 40
     bit_size: 16
-    fieldset: regs::SM_DMAEN
+    fieldset: SM_DMAEN
   - name: TCTRL
     byte_offset: 42
     bit_size: 16
-    fieldset: regs::SM_TCTRL
+    fieldset: SM_TCTRL
   - name: DISMAP
     array:
       len: 1
       stride: 2
     byte_offset: 44
     bit_size: 16
-    fieldset: regs::SM_DISMAP
   - name: DTCNT0
     byte_offset: 48
     bit_size: 16
-    fieldset: regs::SM_DTCNT0
+    fieldset: SM_DTCNT0
   - name: DTCNT1
     byte_offset: 50
     bit_size: 16
-    fieldset: regs::SM_DTCNT1
+    fieldset: SM_DTCNT1
   - name: CAPTCTRLA
     byte_offset: 52
     bit_size: 16
-    fieldset: regs::SM_CAPTCTRLA
+    fieldset: SM_CAPTCTRLA
   - name: CAPTCOMPA
     byte_offset: 54
     bit_size: 16
-    fieldset: regs::SM_CAPTCOMPA
+    fieldset: SM_CAPTCOMPA
   - name: CAPTCTRLB
     byte_offset: 56
     bit_size: 16
-    fieldset: regs::SM_CAPTCTRLB
+    fieldset: SM_CAPTCTRLB
   - name: CAPTCOMPB
     byte_offset: 58
     bit_size: 16
-    fieldset: regs::SM_CAPTCOMPB
+    fieldset: SM_CAPTCOMPB
   - name: CAPTCTRLX
     byte_offset: 60
     bit_size: 16
-    fieldset: regs::SM_CAPTCTRLX
+    fieldset: SM_CAPTCTRLX
   - name: CAPTCOMPX
     byte_offset: 62
     bit_size: 16
-    fieldset: regs::SM_CAPTCOMPX
+    fieldset: SM_CAPTCOMPX
   - name: CVAL0
     byte_offset: 64
     bit_size: 16
-    fieldset: regs::SM_CVAL0
   - name: CVAL0CYC
     byte_offset: 66
     bit_size: 16
-    fieldset: regs::SM_CVAL0CYC
+    fieldset: SM_CVAL0CYC
   - name: CVAL1
     byte_offset: 68
     bit_size: 16
-    fieldset: regs::SM_CVAL1
   - name: CVAL1CYC
     byte_offset: 70
     bit_size: 16
-    fieldset: regs::SM_CVAL1CYC
+    fieldset: SM_CVAL1CYC
   - name: CVAL2
     byte_offset: 72
     bit_size: 16
-    fieldset: regs::SM_CVAL2
   - name: CVAL2CYC
     byte_offset: 74
     bit_size: 16
-    fieldset: regs::SM_CVAL2CYC
+    fieldset: SM_CVAL2CYC
   - name: CVAL3
     byte_offset: 76
     bit_size: 16
-    fieldset: regs::SM_CVAL3
   - name: CVAL3CYC
     byte_offset: 78
     bit_size: 16
-    fieldset: regs::SM_CVAL3CYC
+    fieldset: SM_CVAL3CYC
   - name: CVAL4
     byte_offset: 80
     bit_size: 16
-    fieldset: regs::SM_CVAL4
   - name: CVAL4CYC
     byte_offset: 82
     bit_size: 16
-    fieldset: regs::SM_CVAL4CYC
+    fieldset: SM_CVAL4CYC
   - name: CVAL5
     byte_offset: 84
     bit_size: 16
-    fieldset: regs::SM_CVAL5
   - name: CVAL5CYC
     byte_offset: 86
     bit_size: 16
-    fieldset: regs::SM_CVAL5CYC
+    fieldset: SM_CVAL5CYC
   - name: PHASEDLY
     byte_offset: 88
     bit_size: 16
-    fieldset: regs::SM_PHASEDLY
   - name: CAPTFILTA
     byte_offset: 90
     bit_size: 16
-    fieldset: regs::SM_CAPTFILTA
+    fieldset: SM_CAPTFILTA
   - name: CAPTFILTB
     byte_offset: 92
     bit_size: 16
-    fieldset: regs::SM_CAPTFILTB
+    fieldset: SM_CAPTFILTB
   - name: CAPTFILTX
     byte_offset: 94
     bit_size: 16
-    fieldset: regs::SM_CAPTFILTX
-fieldset/regs::DTSRCSEL:
+    fieldset: SM_CAPTFILTX
+fieldset/DTSRCSEL:
   description: PWM Source Select Register
+  bit_size: 16
   fields:
   - name: SM0SEL45
     bit_offset: 0
@@ -266,8 +251,9 @@ fieldset/regs::DTSRCSEL:
   - name: SM3SEL23
     bit_offset: 14
     bit_size: 2
-fieldset/regs::FCTRL:
+fieldset/FCTRL:
   description: Fault Control Register
+  bit_size: 16
   fields:
   - name: FIE
     bit_offset: 0
@@ -281,14 +267,16 @@ fieldset/regs::FCTRL:
   - name: FLVL
     bit_offset: 12
     bit_size: 4
-fieldset/regs::FCTRL2:
+fieldset/FCTRL2:
   description: Fault Control 2 Register
+  bit_size: 16
   fields:
   - name: NOCOMB
     bit_offset: 0
     bit_size: 4
-fieldset/regs::FFILT:
+fieldset/FFILT:
   description: Fault Filter Register
+  bit_size: 16
   fields:
   - name: FILT_PER
     bit_offset: 0
@@ -299,8 +287,9 @@ fieldset/regs::FFILT:
   - name: GSTR
     bit_offset: 15
     bit_size: 1
-fieldset/regs::FSTS:
+fieldset/FSTS:
   description: Fault Status Register
+  bit_size: 16
   fields:
   - name: FFLAG
     bit_offset: 0
@@ -314,14 +303,16 @@ fieldset/regs::FSTS:
   - name: FHALF
     bit_offset: 12
     bit_size: 4
-fieldset/regs::FTST:
+fieldset/FTST:
   description: Fault Test Register
+  bit_size: 16
   fields:
   - name: FTEST
     bit_offset: 0
     bit_size: 1
-fieldset/regs::MASK:
+fieldset/MASK:
   description: Mask Register
+  bit_size: 16
   fields:
   - name: MASKX
     bit_offset: 0
@@ -335,8 +326,9 @@ fieldset/regs::MASK:
   - name: UPDATE_MASK
     bit_offset: 12
     bit_size: 4
-fieldset/regs::MCTRL:
+fieldset/MCTRL:
   description: Master Control Register
+  bit_size: 16
   fields:
   - name: LDOK
     bit_offset: 0
@@ -350,8 +342,9 @@ fieldset/regs::MCTRL:
   - name: IPOL
     bit_offset: 12
     bit_size: 4
-fieldset/regs::MCTRL2:
+fieldset/MCTRL2:
   description: Master Control 2 Register
+  bit_size: 16
   fields:
   - name: WRPROT
     bit_offset: 2
@@ -359,8 +352,9 @@ fieldset/regs::MCTRL2:
   - name: STRETCH_CNT_PRSC
     bit_offset: 6
     bit_size: 2
-fieldset/regs::OUTEN:
+fieldset/OUTEN:
   description: Output Enable Register
+  bit_size: 16
   fields:
   - name: PWMX_EN
     bit_offset: 0
@@ -371,8 +365,9 @@ fieldset/regs::OUTEN:
   - name: PWMA_EN
     bit_offset: 8
     bit_size: 4
-fieldset/regs::SM_CAPTCOMPA:
+fieldset/SM_CAPTCOMPA:
   description: Capture Compare A Register
+  bit_size: 16
   fields:
   - name: EDGCMPA
     bit_offset: 0
@@ -380,8 +375,9 @@ fieldset/regs::SM_CAPTCOMPA:
   - name: EDGCNTA
     bit_offset: 8
     bit_size: 8
-fieldset/regs::SM_CAPTCOMPB:
+fieldset/SM_CAPTCOMPB:
   description: Capture Compare B Register
+  bit_size: 16
   fields:
   - name: EDGCMPB
     bit_offset: 0
@@ -389,8 +385,9 @@ fieldset/regs::SM_CAPTCOMPB:
   - name: EDGCNTB
     bit_offset: 8
     bit_size: 8
-fieldset/regs::SM_CAPTCOMPX:
+fieldset/SM_CAPTCOMPX:
   description: Capture Compare X Register
+  bit_size: 16
   fields:
   - name: EDGCMPX
     bit_offset: 0
@@ -398,8 +395,9 @@ fieldset/regs::SM_CAPTCOMPX:
   - name: EDGCNTX
     bit_offset: 8
     bit_size: 8
-fieldset/regs::SM_CAPTCTRLA:
+fieldset/SM_CAPTCTRLA:
   description: Capture Control A Register
+  bit_size: 16
   fields:
   - name: ARMA
     bit_offset: 0
@@ -428,8 +426,9 @@ fieldset/regs::SM_CAPTCTRLA:
   - name: CA1CNT
     bit_offset: 13
     bit_size: 3
-fieldset/regs::SM_CAPTCTRLB:
+fieldset/SM_CAPTCTRLB:
   description: Capture Control B Register
+  bit_size: 16
   fields:
   - name: ARMB
     bit_offset: 0
@@ -458,8 +457,9 @@ fieldset/regs::SM_CAPTCTRLB:
   - name: CB1CNT
     bit_offset: 13
     bit_size: 3
-fieldset/regs::SM_CAPTCTRLX:
+fieldset/SM_CAPTCTRLX:
   description: Capture Control X Register
+  bit_size: 16
   fields:
   - name: ARMX
     bit_offset: 0
@@ -488,8 +488,9 @@ fieldset/regs::SM_CAPTCTRLX:
   - name: CX1CNT
     bit_offset: 13
     bit_size: 3
-fieldset/regs::SM_CAPTFILTA:
+fieldset/SM_CAPTFILTA:
   description: Capture PWM_A Input Filter Register
+  bit_size: 16
   fields:
   - name: CAPTA_FILT_PER
     bit_offset: 0
@@ -497,8 +498,9 @@ fieldset/regs::SM_CAPTFILTA:
   - name: CAPTA_FILT_CNT
     bit_offset: 8
     bit_size: 3
-fieldset/regs::SM_CAPTFILTB:
+fieldset/SM_CAPTFILTB:
   description: Capture PWM_B Input Filter Register
+  bit_size: 16
   fields:
   - name: CAPTB_FILT_PER
     bit_offset: 0
@@ -506,8 +508,9 @@ fieldset/regs::SM_CAPTFILTB:
   - name: CAPTB_FILT_CNT
     bit_offset: 8
     bit_size: 3
-fieldset/regs::SM_CAPTFILTX:
+fieldset/SM_CAPTFILTX:
   description: Capture PWM_X Input Filter Register
+  bit_size: 16
   fields:
   - name: CAPTX_FILT_PER
     bit_offset: 0
@@ -515,14 +518,9 @@ fieldset/regs::SM_CAPTFILTX:
   - name: CAPTX_FILT_CNT
     bit_offset: 8
     bit_size: 3
-fieldset/regs::SM_CNT:
-  description: Counter Register
-  fields:
-  - name: CNT
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::SM_CTRL:
+fieldset/SM_CTRL:
   description: Control Register
+  bit_size: 16
   fields:
   - name: DBLEN
     bit_offset: 0
@@ -554,8 +552,9 @@ fieldset/regs::SM_CTRL:
   - name: LDFQ
     bit_offset: 12
     bit_size: 4
-fieldset/regs::SM_CTRL2:
+fieldset/SM_CTRL2:
   description: Control 2 Register
+  bit_size: 16
   fields:
   - name: CLK_SEL
     bit_offset: 0
@@ -590,80 +589,51 @@ fieldset/regs::SM_CTRL2:
   - name: DBGEN
     bit_offset: 15
     bit_size: 1
-fieldset/regs::SM_CVAL0:
-  description: Capture Value 0 Register
-  fields:
-  - name: CAPTVAL0
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::SM_CVAL0CYC:
+fieldset/SM_CVAL0CYC:
   description: Capture Value 0 Cycle Register
+  bit_size: 16
   fields:
   - name: CVAL0CYC
     bit_offset: 0
     bit_size: 4
-fieldset/regs::SM_CVAL1:
-  description: Capture Value 1 Register
-  fields:
-  - name: CAPTVAL1
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::SM_CVAL1CYC:
+fieldset/SM_CVAL1CYC:
   description: Capture Value 1 Cycle Register
+  bit_size: 16
   fields:
   - name: CVAL1CYC
     bit_offset: 0
     bit_size: 4
-fieldset/regs::SM_CVAL2:
-  description: Capture Value 2 Register
-  fields:
-  - name: CAPTVAL2
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::SM_CVAL2CYC:
+fieldset/SM_CVAL2CYC:
   description: Capture Value 2 Cycle Register
+  bit_size: 16
   fields:
   - name: CVAL2CYC
     bit_offset: 0
     bit_size: 4
-fieldset/regs::SM_CVAL3:
-  description: Capture Value 3 Register
-  fields:
-  - name: CAPTVAL3
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::SM_CVAL3CYC:
+fieldset/SM_CVAL3CYC:
   description: Capture Value 3 Cycle Register
+  bit_size: 16
   fields:
   - name: CVAL3CYC
     bit_offset: 0
     bit_size: 4
-fieldset/regs::SM_CVAL4:
-  description: Capture Value 4 Register
-  fields:
-  - name: CAPTVAL4
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::SM_CVAL4CYC:
+fieldset/SM_CVAL4CYC:
   description: Capture Value 4 Cycle Register
+  bit_size: 16
   fields:
   - name: CVAL4CYC
     bit_offset: 0
     bit_size: 4
-fieldset/regs::SM_CVAL5:
-  description: Capture Value 5 Register
-  fields:
-  - name: CAPTVAL5
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::SM_CVAL5CYC:
+fieldset/SM_CVAL5CYC:
   description: Capture Value 5 Cycle Register
+  bit_size: 16
   fields:
   - name: CVAL5CYC
     bit_offset: 0
     bit_size: 4
-fieldset/regs::SM_DISMAP:
+fieldset/SM_DISMAP:
   description: Fault Disable Mapping Register 0
+  bit_size: 16
   fields:
   - name: DIS0A
     bit_offset: 0
@@ -674,8 +644,9 @@ fieldset/regs::SM_DISMAP:
   - name: DIS0X
     bit_offset: 8
     bit_size: 4
-fieldset/regs::SM_DMAEN:
+fieldset/SM_DMAEN:
   description: DMA Enable Register
+  bit_size: 16
   fields:
   - name: CX0DE
     bit_offset: 0
@@ -704,50 +675,58 @@ fieldset/regs::SM_DMAEN:
   - name: VALDE
     bit_offset: 9
     bit_size: 1
-fieldset/regs::SM_DTCNT0:
+fieldset/SM_DTCNT0:
   description: Deadtime Count Register 0
+  bit_size: 16
   fields:
   - name: DTCNT0
     bit_offset: 0
     bit_size: 11
-fieldset/regs::SM_DTCNT1:
+fieldset/SM_DTCNT1:
   description: Deadtime Count Register 1
+  bit_size: 16
   fields:
   - name: DTCNT1
     bit_offset: 0
     bit_size: 11
-fieldset/regs::SM_FRACVAL1:
+fieldset/SM_FRACVAL1:
   description: Fractional Value Register 1
+  bit_size: 16
   fields:
   - name: FRACVAL1
     bit_offset: 11
     bit_size: 5
-fieldset/regs::SM_FRACVAL2:
+fieldset/SM_FRACVAL2:
   description: Fractional Value Register 2
+  bit_size: 16
   fields:
   - name: FRACVAL2
     bit_offset: 11
     bit_size: 5
-fieldset/regs::SM_FRACVAL3:
+fieldset/SM_FRACVAL3:
   description: Fractional Value Register 3
+  bit_size: 16
   fields:
   - name: FRACVAL3
     bit_offset: 11
     bit_size: 5
-fieldset/regs::SM_FRACVAL4:
+fieldset/SM_FRACVAL4:
   description: Fractional Value Register 4
+  bit_size: 16
   fields:
   - name: FRACVAL4
     bit_offset: 11
     bit_size: 5
-fieldset/regs::SM_FRACVAL5:
+fieldset/SM_FRACVAL5:
   description: Fractional Value Register 5
+  bit_size: 16
   fields:
   - name: FRACVAL5
     bit_offset: 11
     bit_size: 5
-fieldset/regs::SM_FRCTRL:
+fieldset/SM_FRCTRL:
   description: Fractional Control Register
+  bit_size: 16
   fields:
   - name: FRAC1_EN
     bit_offset: 1
@@ -761,14 +740,9 @@ fieldset/regs::SM_FRCTRL:
   - name: TEST
     bit_offset: 15
     bit_size: 1
-fieldset/regs::SM_INIT:
-  description: Initial Count Register
-  fields:
-  - name: INIT
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::SM_INTEN:
+fieldset/SM_INTEN:
   description: Interrupt Enable Register
+  bit_size: 16
   fields:
   - name: CMPIE
     bit_offset: 0
@@ -797,8 +771,9 @@ fieldset/regs::SM_INTEN:
   - name: REIE
     bit_offset: 13
     bit_size: 1
-fieldset/regs::SM_OCTRL:
+fieldset/SM_OCTRL:
   description: Output Control Register
+  bit_size: 16
   fields:
   - name: PWMXFS
     bit_offset: 0
@@ -827,14 +802,9 @@ fieldset/regs::SM_OCTRL:
   - name: PWMA_IN
     bit_offset: 15
     bit_size: 1
-fieldset/regs::SM_PHASEDLY:
-  description: Phase Delay Register
-  fields:
-  - name: PHASEDLY
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::SM_STS:
+fieldset/SM_STS:
   description: Status Register
+  bit_size: 16
   fields:
   - name: CMPF
     bit_offset: 0
@@ -866,8 +836,9 @@ fieldset/regs::SM_STS:
   - name: RUF
     bit_offset: 14
     bit_size: 1
-fieldset/regs::SM_TCTRL:
+fieldset/SM_TCTRL:
   description: Output Trigger Control Register
+  bit_size: 16
   fields:
   - name: OUT_TRIG_EN
     bit_offset: 0
@@ -881,44 +852,9 @@ fieldset/regs::SM_TCTRL:
   - name: PWAOT0
     bit_offset: 15
     bit_size: 1
-fieldset/regs::SM_VAL0:
-  description: Value Register 0
-  fields:
-  - name: VAL0
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::SM_VAL1:
-  description: Value Register 1
-  fields:
-  - name: VAL1
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::SM_VAL2:
-  description: Value Register 2
-  fields:
-  - name: VAL2
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::SM_VAL3:
-  description: Value Register 3
-  fields:
-  - name: VAL3
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::SM_VAL4:
-  description: Value Register 4
-  fields:
-  - name: VAL4
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::SM_VAL5:
-  description: Value Register 5
-  fields:
-  - name: VAL5
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::SWCOUT:
+fieldset/SWCOUT:
   description: Software Controlled Output Register
+  bit_size: 16
   fields:
   - name: SM0OUT45
     bit_offset: 0

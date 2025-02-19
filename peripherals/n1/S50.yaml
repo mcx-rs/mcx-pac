@@ -2,21 +2,21 @@ block/S50:
   items:
   - name: ELS_STATUS
     byte_offset: 0
-    fieldset: regs::ELS_STATUS
+    fieldset: ELS_STATUS
   - name: ELS_CTRL
     byte_offset: 4
-    fieldset: regs::ELS_CTRL
+    fieldset: ELS_CTRL
   - name: ELS_CMDCFG0
     byte_offset: 8
   - name: ELS_CFG
     byte_offset: 12
-    fieldset: regs::ELS_CFG
+    fieldset: ELS_CFG
   - name: ELS_KIDX0
     byte_offset: 16
-    fieldset: regs::ELS_KIDX0
+    fieldset: ELS_KIDX0
   - name: ELS_KIDX1
     byte_offset: 20
-    fieldset: regs::ELS_KIDX1
+    fieldset: ELS_KIDX1
   - name: ELS_KPROPIN
     byte_offset: 24
   - name: ELS_DMA_SRC0
@@ -35,27 +35,27 @@ block/S50:
     byte_offset: 60
   - name: ELS_INT_ENABLE
     byte_offset: 64
-    fieldset: regs::ELS_INT_ENABLE
+    fieldset: ELS_INT_ENABLE
   - name: ELS_INT_STATUS_CLR
     byte_offset: 68
-    fieldset: regs::ELS_INT_STATUS_CLR
+    fieldset: ELS_INT_STATUS_CLR
   - name: ELS_INT_STATUS_SET
     byte_offset: 72
-    fieldset: regs::ELS_INT_STATUS_SET
+    fieldset: ELS_INT_STATUS_SET
   - name: ELS_ERR_STATUS
     byte_offset: 76
-    fieldset: regs::ELS_ERR_STATUS
+    fieldset: ELS_ERR_STATUS
   - name: ELS_ERR_STATUS_CLR
     byte_offset: 80
-    fieldset: regs::ELS_ERR_STATUS_CLR
+    fieldset: ELS_ERR_STATUS_CLR
   - name: ELS_VERSION
     byte_offset: 84
-    fieldset: regs::ELS_VERSION
+    fieldset: ELS_VERSION
   - name: ELS_PRNG_DATOUT
     byte_offset: 92
   - name: ELS_CMDCRC_CTRL
     byte_offset: 96
-    fieldset: regs::ELS_CMDCRC_CTRL
+    fieldset: ELS_CMDCRC_CTRL
   - name: ELS_CMDCRC
     byte_offset: 100
   - name: ELS_SESSION_ID
@@ -64,77 +64,77 @@ block/S50:
     byte_offset: 112
   - name: ELS_MASTER_ID
     byte_offset: 116
-    fieldset: regs::ELS_MASTER_ID
+    fieldset: ELS_MASTER_ID
   - name: ELS_KIDX2
     byte_offset: 120
-    fieldset: regs::ELS_KIDX2
+    fieldset: ELS_KIDX2
   - name: ELS_KS0
     byte_offset: 336
-    fieldset: regs::ELS_KS0
+    fieldset: ELS_KS0
   - name: ELS_KS1
     byte_offset: 340
-    fieldset: regs::ELS_KS1
+    fieldset: ELS_KS1
   - name: ELS_KS2
     byte_offset: 344
-    fieldset: regs::ELS_KS2
+    fieldset: ELS_KS2
   - name: ELS_KS3
     byte_offset: 348
-    fieldset: regs::ELS_KS3
+    fieldset: ELS_KS3
   - name: ELS_KS4
     byte_offset: 352
-    fieldset: regs::ELS_KS4
+    fieldset: ELS_KS4
   - name: ELS_KS5
     byte_offset: 356
-    fieldset: regs::ELS_KS5
+    fieldset: ELS_KS5
   - name: ELS_KS6
     byte_offset: 360
-    fieldset: regs::ELS_KS6
+    fieldset: ELS_KS6
   - name: ELS_KS7
     byte_offset: 364
-    fieldset: regs::ELS_KS7
+    fieldset: ELS_KS7
   - name: ELS_KS8
     byte_offset: 368
-    fieldset: regs::ELS_KS8
+    fieldset: ELS_KS8
   - name: ELS_KS9
     byte_offset: 372
-    fieldset: regs::ELS_KS9
+    fieldset: ELS_KS9
   - name: ELS_KS10
     byte_offset: 376
-    fieldset: regs::ELS_KS10
+    fieldset: ELS_KS10
   - name: ELS_KS11
     byte_offset: 380
-    fieldset: regs::ELS_KS11
+    fieldset: ELS_KS11
   - name: ELS_KS12
     byte_offset: 384
-    fieldset: regs::ELS_KS12
+    fieldset: ELS_KS12
   - name: ELS_KS13
     byte_offset: 388
-    fieldset: regs::ELS_KS13
+    fieldset: ELS_KS13
   - name: ELS_KS14
     byte_offset: 392
-    fieldset: regs::ELS_KS14
+    fieldset: ELS_KS14
   - name: ELS_KS15
     byte_offset: 396
-    fieldset: regs::ELS_KS15
+    fieldset: ELS_KS15
   - name: ELS_KS16
     byte_offset: 400
-    fieldset: regs::ELS_KS16
+    fieldset: ELS_KS16
   - name: ELS_KS17
     byte_offset: 404
-    fieldset: regs::ELS_KS17
+    fieldset: ELS_KS17
   - name: ELS_KS18
     byte_offset: 408
-    fieldset: regs::ELS_KS18
+    fieldset: ELS_KS18
   - name: ELS_KS19
     byte_offset: 412
-    fieldset: regs::ELS_KS19
-fieldset/regs::ELS_CFG:
+    fieldset: ELS_KS19
+fieldset/ELS_CFG:
   description: Configuration Register
   fields:
   - name: ADCTRL
     bit_offset: 16
     bit_size: 10
-fieldset/regs::ELS_CMDCRC_CTRL:
+fieldset/ELS_CMDCRC_CTRL:
   description: CRC Configuration
   fields:
   - name: CMDCRC_RST
@@ -143,7 +143,7 @@ fieldset/regs::ELS_CMDCRC_CTRL:
   - name: CMDCRC_EN
     bit_offset: 1
     bit_size: 1
-fieldset/regs::ELS_CTRL:
+fieldset/ELS_CTRL:
   description: Control Register
   fields:
   - name: ELS_EN
@@ -161,7 +161,7 @@ fieldset/regs::ELS_CTRL:
   - name: BYTE_ORDER
     bit_offset: 8
     bit_size: 1
-fieldset/regs::ELS_ERR_STATUS:
+fieldset/ELS_ERR_STATUS:
   description: Error Status
   fields:
   - name: BUS_ERR
@@ -188,49 +188,49 @@ fieldset/regs::ELS_ERR_STATUS:
   - name: DTRNG_ERR
     bit_offset: 8
     bit_size: 1
-fieldset/regs::ELS_ERR_STATUS_CLR:
+fieldset/ELS_ERR_STATUS_CLR:
   description: Error Status Clear
   fields:
   - name: ERR_CLR
     bit_offset: 0
     bit_size: 1
-fieldset/regs::ELS_INT_ENABLE:
+fieldset/ELS_INT_ENABLE:
   description: Interrupt Enable
   fields:
   - name: INT_EN
     bit_offset: 0
     bit_size: 1
-fieldset/regs::ELS_INT_STATUS_CLR:
+fieldset/ELS_INT_STATUS_CLR:
   description: Interrupt Status Clear
   fields:
   - name: INT_CLR
     bit_offset: 0
     bit_size: 1
-fieldset/regs::ELS_INT_STATUS_SET:
+fieldset/ELS_INT_STATUS_SET:
   description: Interrupt Status Set
   fields:
   - name: INT_SET
     bit_offset: 0
     bit_size: 1
-fieldset/regs::ELS_KIDX0:
+fieldset/ELS_KIDX0:
   description: Keystore Index 0
   fields:
   - name: KIDX0
     bit_offset: 0
     bit_size: 5
-fieldset/regs::ELS_KIDX1:
+fieldset/ELS_KIDX1:
   description: Keystore Index 1
   fields:
   - name: KIDX1
     bit_offset: 0
     bit_size: 5
-fieldset/regs::ELS_KIDX2:
+fieldset/ELS_KIDX2:
   description: Keystore Index 2
   fields:
   - name: KIDX2
     bit_offset: 0
     bit_size: 5
-fieldset/regs::ELS_KS0:
+fieldset/ELS_KS0:
   description: Status Register
   fields:
   - name: KS0_KSIZE
@@ -311,7 +311,7 @@ fieldset/regs::ELS_KS0:
   - name: KS0_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS1:
+fieldset/ELS_KS1:
   description: Status Register
   fields:
   - name: KS1_KSIZE
@@ -392,7 +392,7 @@ fieldset/regs::ELS_KS1:
   - name: KS1_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS10:
+fieldset/ELS_KS10:
   description: Status Register
   fields:
   - name: KS10_KSIZE
@@ -473,7 +473,7 @@ fieldset/regs::ELS_KS10:
   - name: KS10_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS11:
+fieldset/ELS_KS11:
   description: Status Register
   fields:
   - name: KS11_KSIZE
@@ -554,7 +554,7 @@ fieldset/regs::ELS_KS11:
   - name: KS11_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS12:
+fieldset/ELS_KS12:
   description: Status Register
   fields:
   - name: KS12_KSIZE
@@ -635,7 +635,7 @@ fieldset/regs::ELS_KS12:
   - name: KS12_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS13:
+fieldset/ELS_KS13:
   description: Status Register
   fields:
   - name: KS13_KSIZE
@@ -716,7 +716,7 @@ fieldset/regs::ELS_KS13:
   - name: KS13_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS14:
+fieldset/ELS_KS14:
   description: Status Register
   fields:
   - name: KS14_KSIZE
@@ -797,7 +797,7 @@ fieldset/regs::ELS_KS14:
   - name: KS14_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS15:
+fieldset/ELS_KS15:
   description: Status Register
   fields:
   - name: KS15_KSIZE
@@ -878,7 +878,7 @@ fieldset/regs::ELS_KS15:
   - name: KS15_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS16:
+fieldset/ELS_KS16:
   description: Status Register
   fields:
   - name: KS16_KSIZE
@@ -959,7 +959,7 @@ fieldset/regs::ELS_KS16:
   - name: KS16_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS17:
+fieldset/ELS_KS17:
   description: Status Register
   fields:
   - name: KS17_KSIZE
@@ -1040,7 +1040,7 @@ fieldset/regs::ELS_KS17:
   - name: KS17_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS18:
+fieldset/ELS_KS18:
   description: Status Register
   fields:
   - name: KS18_KSIZE
@@ -1121,7 +1121,7 @@ fieldset/regs::ELS_KS18:
   - name: KS18_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS19:
+fieldset/ELS_KS19:
   description: Status Register
   fields:
   - name: KS19_KSIZE
@@ -1202,7 +1202,7 @@ fieldset/regs::ELS_KS19:
   - name: KS19_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS2:
+fieldset/ELS_KS2:
   description: Status Register
   fields:
   - name: KS2_KSIZE
@@ -1283,7 +1283,7 @@ fieldset/regs::ELS_KS2:
   - name: KS2_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS3:
+fieldset/ELS_KS3:
   description: Status Register
   fields:
   - name: KS3_KSIZE
@@ -1364,7 +1364,7 @@ fieldset/regs::ELS_KS3:
   - name: KS3_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS4:
+fieldset/ELS_KS4:
   description: Status Register
   fields:
   - name: KS4_KSIZE
@@ -1445,7 +1445,7 @@ fieldset/regs::ELS_KS4:
   - name: KS4_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS5:
+fieldset/ELS_KS5:
   description: Status Register
   fields:
   - name: KS5_KSIZE
@@ -1526,7 +1526,7 @@ fieldset/regs::ELS_KS5:
   - name: KS5_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS6:
+fieldset/ELS_KS6:
   description: Status Register
   fields:
   - name: KS6_KSIZE
@@ -1607,7 +1607,7 @@ fieldset/regs::ELS_KS6:
   - name: KS6_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS7:
+fieldset/ELS_KS7:
   description: Status Register
   fields:
   - name: KS7_KSIZE
@@ -1688,7 +1688,7 @@ fieldset/regs::ELS_KS7:
   - name: KS7_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS8:
+fieldset/ELS_KS8:
   description: Status Register
   fields:
   - name: KS8_KSIZE
@@ -1769,7 +1769,7 @@ fieldset/regs::ELS_KS8:
   - name: KS8_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_KS9:
+fieldset/ELS_KS9:
   description: Status Register
   fields:
   - name: KS9_KSIZE
@@ -1850,13 +1850,13 @@ fieldset/regs::ELS_KS9:
   - name: KS9_UPPROT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::ELS_MASTER_ID:
+fieldset/ELS_MASTER_ID:
   description: Master ID
   fields:
   - name: MASTER_ID
     bit_offset: 0
     bit_size: 5
-fieldset/regs::ELS_STATUS:
+fieldset/ELS_STATUS:
   description: Status Register
   fields:
   - name: ELS_BUSY
@@ -1886,7 +1886,7 @@ fieldset/regs::ELS_STATUS:
   - name: ELS_LOCKED
     bit_offset: 16
     bit_size: 1
-fieldset/regs::ELS_VERSION:
+fieldset/ELS_VERSION:
   description: Version Register
   fields:
   - name: Z

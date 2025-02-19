@@ -2,61 +2,61 @@ block/ADC:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: regs::VERID
+    fieldset: VERID
   - name: PARAM
     byte_offset: 4
-    fieldset: regs::PARAM
+    fieldset: PARAM
   - name: CTRL
     byte_offset: 16
-    fieldset: regs::CTRL
+    fieldset: CTRL
   - name: STAT
     byte_offset: 20
-    fieldset: regs::STAT
+    fieldset: STAT
   - name: IE
     byte_offset: 24
-    fieldset: regs::IE
+    fieldset: IE
   - name: DE
     byte_offset: 28
-    fieldset: regs::DE
+    fieldset: DE
   - name: CFG
     byte_offset: 32
-    fieldset: regs::CFG
+    fieldset: CFG
   - name: PAUSE
     byte_offset: 36
-    fieldset: regs::PAUSE
+    fieldset: PAUSE
   - name: SWTRIG
     byte_offset: 52
-    fieldset: regs::SWTRIG
+    fieldset: SWTRIG
   - name: TSTAT
     byte_offset: 56
-    fieldset: regs::TSTAT
+    fieldset: TSTAT
   - name: OFSTRIM
     byte_offset: 64
-    fieldset: regs::OFSTRIM
+    fieldset: OFSTRIM
   - name: TCTRL
     array:
       len: 4
       stride: 4
     byte_offset: 160
-    fieldset: regs::TCTRL
+    fieldset: TCTRL
   - name: FCTRL
     array:
       len: 2
       stride: 4
     byte_offset: 224
-    fieldset: regs::FCTRL
+    fieldset: FCTRL
   - name: GCC
     array:
       len: 2
       stride: 4
     byte_offset: 240
-    fieldset: regs::GCC
+    fieldset: GCC
   - name: GCR
     array:
       len: 2
       stride: 4
     byte_offset: 248
-    fieldset: regs::GCR
+    fieldset: GCR
   - name: CMD
     array:
       len: 15
@@ -68,32 +68,616 @@ block/ADC:
       len: 15
       stride: 4
     byte_offset: 512
-    fieldset: regs::CV
+    fieldset: CV
   - name: RESFIFO
     array:
       len: 2
       stride: 4
     byte_offset: 768
-    fieldset: regs::RESFIFO
-  - name: CAL_GAR
-    array:
-      len: 33
-      stride: 4
+    fieldset: RESFIFO
+  - name: CAL_GAR0
     byte_offset: 1024
-  - name: CAL_GBR
-    array:
-      len: 33
-      stride: 4
+    fieldset: CAL_GAR0
+  - name: CAL_GAR1
+    byte_offset: 1028
+    fieldset: CAL_GAR1
+  - name: CAL_GAR2
+    byte_offset: 1032
+    fieldset: CAL_GAR2
+  - name: CAL_GAR3
+    byte_offset: 1036
+    fieldset: CAL_GAR3
+  - name: CAL_GAR4
+    byte_offset: 1040
+    fieldset: CAL_GAR4
+  - name: CAL_GAR5
+    byte_offset: 1044
+    fieldset: CAL_GAR5
+  - name: CAL_GAR6
+    byte_offset: 1048
+    fieldset: CAL_GAR6
+  - name: CAL_GAR7
+    byte_offset: 1052
+    fieldset: CAL_GAR7
+  - name: CAL_GAR8
+    byte_offset: 1056
+    fieldset: CAL_GAR8
+  - name: CAL_GAR9
+    byte_offset: 1060
+    fieldset: CAL_GAR9
+  - name: CAL_GAR10
+    byte_offset: 1064
+    fieldset: CAL_GAR10
+  - name: CAL_GAR11
+    byte_offset: 1068
+    fieldset: CAL_GAR11
+  - name: CAL_GAR12
+    byte_offset: 1072
+    fieldset: CAL_GAR12
+  - name: CAL_GAR13
+    byte_offset: 1076
+    fieldset: CAL_GAR13
+  - name: CAL_GAR14
+    byte_offset: 1080
+    fieldset: CAL_GAR14
+  - name: CAL_GAR15
+    byte_offset: 1084
+    fieldset: CAL_GAR15
+  - name: CAL_GAR16
+    byte_offset: 1088
+    fieldset: CAL_GAR16
+  - name: CAL_GAR17
+    byte_offset: 1092
+    fieldset: CAL_GAR17
+  - name: CAL_GAR18
+    byte_offset: 1096
+    fieldset: CAL_GAR18
+  - name: CAL_GAR19
+    byte_offset: 1100
+    fieldset: CAL_GAR19
+  - name: CAL_GAR20
+    byte_offset: 1104
+    fieldset: CAL_GAR20
+  - name: CAL_GAR21
+    byte_offset: 1108
+    fieldset: CAL_GAR21
+  - name: CAL_GAR22
+    byte_offset: 1112
+    fieldset: CAL_GAR22
+  - name: CAL_GAR23
+    byte_offset: 1116
+    fieldset: CAL_GAR23
+  - name: CAL_GAR24
+    byte_offset: 1120
+    fieldset: CAL_GAR24
+  - name: CAL_GAR25
+    byte_offset: 1124
+    fieldset: CAL_GAR25
+  - name: CAL_GAR26
+    byte_offset: 1128
+    fieldset: CAL_GAR26
+  - name: CAL_GAR27
+    byte_offset: 1132
+    fieldset: CAL_GAR27
+  - name: CAL_GAR28
+    byte_offset: 1136
+    fieldset: CAL_GAR28
+  - name: CAL_GAR29
+    byte_offset: 1140
+    fieldset: CAL_GAR29
+  - name: CAL_GAR30
+    byte_offset: 1144
+    fieldset: CAL_GAR30
+  - name: CAL_GAR31
+    byte_offset: 1148
+    fieldset: CAL_GAR31
+  - name: CAL_GAR32
+    byte_offset: 1152
+    fieldset: CAL_GAR32
+  - name: CAL_GBR0
     byte_offset: 1280
+    fieldset: CAL_GBR0
+  - name: CAL_GBR1
+    byte_offset: 1284
+    fieldset: CAL_GBR1
+  - name: CAL_GBR2
+    byte_offset: 1288
+    fieldset: CAL_GBR2
+  - name: CAL_GBR3
+    byte_offset: 1292
+    fieldset: CAL_GBR3
+  - name: CAL_GBR4
+    byte_offset: 1296
+    fieldset: CAL_GBR4
+  - name: CAL_GBR5
+    byte_offset: 1300
+    fieldset: CAL_GBR5
+  - name: CAL_GBR6
+    byte_offset: 1304
+    fieldset: CAL_GBR6
+  - name: CAL_GBR7
+    byte_offset: 1308
+    fieldset: CAL_GBR7
+  - name: CAL_GBR8
+    byte_offset: 1312
+    fieldset: CAL_GBR8
+  - name: CAL_GBR9
+    byte_offset: 1316
+    fieldset: CAL_GBR9
+  - name: CAL_GBR10
+    byte_offset: 1320
+    fieldset: CAL_GBR10
+  - name: CAL_GBR11
+    byte_offset: 1324
+    fieldset: CAL_GBR11
+  - name: CAL_GBR12
+    byte_offset: 1328
+    fieldset: CAL_GBR12
+  - name: CAL_GBR13
+    byte_offset: 1332
+    fieldset: CAL_GBR13
+  - name: CAL_GBR14
+    byte_offset: 1336
+    fieldset: CAL_GBR14
+  - name: CAL_GBR15
+    byte_offset: 1340
+    fieldset: CAL_GBR15
+  - name: CAL_GBR16
+    byte_offset: 1344
+    fieldset: CAL_GBR16
+  - name: CAL_GBR17
+    byte_offset: 1348
+    fieldset: CAL_GBR17
+  - name: CAL_GBR18
+    byte_offset: 1352
+    fieldset: CAL_GBR18
+  - name: CAL_GBR19
+    byte_offset: 1356
+    fieldset: CAL_GBR19
+  - name: CAL_GBR20
+    byte_offset: 1360
+    fieldset: CAL_GBR20
+  - name: CAL_GBR21
+    byte_offset: 1364
+    fieldset: CAL_GBR21
+  - name: CAL_GBR22
+    byte_offset: 1368
+    fieldset: CAL_GBR22
+  - name: CAL_GBR23
+    byte_offset: 1372
+    fieldset: CAL_GBR23
+  - name: CAL_GBR24
+    byte_offset: 1376
+    fieldset: CAL_GBR24
+  - name: CAL_GBR25
+    byte_offset: 1380
+    fieldset: CAL_GBR25
+  - name: CAL_GBR26
+    byte_offset: 1384
+    fieldset: CAL_GBR26
+  - name: CAL_GBR27
+    byte_offset: 1388
+    fieldset: CAL_GBR27
+  - name: CAL_GBR28
+    byte_offset: 1392
+    fieldset: CAL_GBR28
+  - name: CAL_GBR29
+    byte_offset: 1396
+    fieldset: CAL_GBR29
+  - name: CAL_GBR30
+    byte_offset: 1400
+    fieldset: CAL_GBR30
+  - name: CAL_GBR31
+    byte_offset: 1404
+    fieldset: CAL_GBR31
+  - name: CAL_GBR32
+    byte_offset: 1408
+    fieldset: CAL_GBR32
 block/CMD:
   items:
   - name: CMDL
     byte_offset: 0
-    fieldset: regs::CMD_CMDL
+    fieldset: CMD_CMDL
   - name: CMDH
     byte_offset: 4
-    fieldset: regs::CMD_CMDH
-fieldset/regs::CFG:
+    fieldset: CMD_CMDH
+fieldset/CAL_GAR0:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 11
+fieldset/CAL_GAR1:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 12
+fieldset/CAL_GAR10:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 15
+fieldset/CAL_GAR11:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 15
+fieldset/CAL_GAR12:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 15
+fieldset/CAL_GAR13:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 15
+fieldset/CAL_GAR14:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 15
+fieldset/CAL_GAR15:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 15
+fieldset/CAL_GAR16:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GAR17:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GAR18:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GAR19:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GAR2:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 13
+fieldset/CAL_GAR20:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GAR21:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GAR22:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GAR23:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GAR24:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GAR25:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GAR26:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GAR27:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GAR28:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GAR29:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GAR3:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 13
+fieldset/CAL_GAR30:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GAR31:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GAR32:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 11
+fieldset/CAL_GAR4:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 14
+fieldset/CAL_GAR5:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 14
+fieldset/CAL_GAR6:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 14
+fieldset/CAL_GAR7:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 14
+fieldset/CAL_GAR8:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 15
+fieldset/CAL_GAR9:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 15
+fieldset/CAL_GBR0:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 11
+fieldset/CAL_GBR1:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 12
+fieldset/CAL_GBR10:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 15
+fieldset/CAL_GBR11:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 15
+fieldset/CAL_GBR12:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 15
+fieldset/CAL_GBR13:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 15
+fieldset/CAL_GBR14:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 15
+fieldset/CAL_GBR15:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 15
+fieldset/CAL_GBR16:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR17:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR18:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR19:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR2:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 13
+fieldset/CAL_GBR20:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR21:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR22:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR23:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR24:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR25:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR26:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR27:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR28:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR29:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR3:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 13
+fieldset/CAL_GBR30:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR31:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR32:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 11
+fieldset/CAL_GBR4:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 14
+fieldset/CAL_GBR5:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 14
+fieldset/CAL_GBR6:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 14
+fieldset/CAL_GBR7:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 14
+fieldset/CAL_GBR8:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 15
+fieldset/CAL_GBR9:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 15
+fieldset/CFG:
   description: Configuration Register
   fields:
   - name: TPRICTRL
@@ -120,7 +704,7 @@ fieldset/regs::CFG:
   - name: PWREN
     bit_offset: 28
     bit_size: 1
-fieldset/regs::CMD_CMDH:
+fieldset/CMD_CMDH:
   description: Command High Buffer Register
   fields:
   - name: CMPEN
@@ -144,7 +728,7 @@ fieldset/regs::CMD_CMDH:
   - name: NEXT
     bit_offset: 24
     bit_size: 4
-fieldset/regs::CMD_CMDL:
+fieldset/CMD_CMDL:
   description: Command Low Buffer Register
   fields:
   - name: ADCH
@@ -162,7 +746,7 @@ fieldset/regs::CMD_CMDL:
   - name: ALTBEN
     bit_offset: 21
     bit_size: 1
-fieldset/regs::CTRL:
+fieldset/CTRL:
   description: Control Register
   fields:
   - name: ADCEN
@@ -189,7 +773,7 @@ fieldset/regs::CTRL:
   - name: CAL_AVGS
     bit_offset: 16
     bit_size: 4
-fieldset/regs::CV:
+fieldset/CV:
   description: Compare Value Register
   fields:
   - name: CVL
@@ -198,7 +782,7 @@ fieldset/regs::CV:
   - name: CVH
     bit_offset: 16
     bit_size: 16
-fieldset/regs::DE:
+fieldset/DE:
   description: DMA Enable Register
   fields:
   - name: FWMDE0
@@ -207,7 +791,7 @@ fieldset/regs::DE:
   - name: FWMDE1
     bit_offset: 1
     bit_size: 1
-fieldset/regs::FCTRL:
+fieldset/FCTRL:
   description: FIFO Control Register
   fields:
   - name: FCOUNT
@@ -216,7 +800,7 @@ fieldset/regs::FCTRL:
   - name: FWMARK
     bit_offset: 16
     bit_size: 4
-fieldset/regs::GCC:
+fieldset/GCC:
   description: Gain Calibration Control
   fields:
   - name: GAIN_CAL
@@ -225,7 +809,7 @@ fieldset/regs::GCC:
   - name: RDY
     bit_offset: 24
     bit_size: 1
-fieldset/regs::GCR:
+fieldset/GCR:
   description: Gain Calculation Result
   fields:
   - name: GCALR
@@ -234,7 +818,7 @@ fieldset/regs::GCR:
   - name: RDY
     bit_offset: 24
     bit_size: 1
-fieldset/regs::IE:
+fieldset/IE:
   description: Interrupt Enable Register
   fields:
   - name: FWMIE0
@@ -255,7 +839,7 @@ fieldset/regs::IE:
   - name: TCOMP_IE
     bit_offset: 16
     bit_size: 4
-fieldset/regs::OFSTRIM:
+fieldset/OFSTRIM:
   description: Offset Trim Register
   fields:
   - name: OFSTRIM_A
@@ -264,7 +848,7 @@ fieldset/regs::OFSTRIM:
   - name: OFSTRIM_B
     bit_offset: 16
     bit_size: 5
-fieldset/regs::PARAM:
+fieldset/PARAM:
   description: Parameter Register
   fields:
   - name: TRIG_NUM
@@ -279,7 +863,7 @@ fieldset/regs::PARAM:
   - name: CMD_NUM
     bit_offset: 24
     bit_size: 8
-fieldset/regs::PAUSE:
+fieldset/PAUSE:
   description: Pause Register
   fields:
   - name: PAUSEDLY
@@ -288,7 +872,7 @@ fieldset/regs::PAUSE:
   - name: PAUSEEN
     bit_offset: 31
     bit_size: 1
-fieldset/regs::RESFIFO:
+fieldset/RESFIFO:
   description: Data Result FIFO Register
   fields:
   - name: D
@@ -306,7 +890,7 @@ fieldset/regs::RESFIFO:
   - name: VALID
     bit_offset: 31
     bit_size: 1
-fieldset/regs::STAT:
+fieldset/STAT:
   description: Status Register
   fields:
   - name: RDY0
@@ -339,7 +923,7 @@ fieldset/regs::STAT:
   - name: CMDACT
     bit_offset: 24
     bit_size: 4
-fieldset/regs::SWTRIG:
+fieldset/SWTRIG:
   description: Software Trigger Register
   fields:
   - name: SWT0
@@ -354,7 +938,7 @@ fieldset/regs::SWTRIG:
   - name: SWT3
     bit_offset: 3
     bit_size: 1
-fieldset/regs::TCTRL:
+fieldset/TCTRL:
   description: Trigger Control Register
   fields:
   - name: HTEN
@@ -378,7 +962,7 @@ fieldset/regs::TCTRL:
   - name: TCMD
     bit_offset: 24
     bit_size: 4
-fieldset/regs::TSTAT:
+fieldset/TSTAT:
   description: Trigger Status Register
   fields:
   - name: TEXC_NUM
@@ -387,7 +971,7 @@ fieldset/regs::TSTAT:
   - name: TCOMP_FLAG
     bit_offset: 16
     bit_size: 4
-fieldset/regs::VERID:
+fieldset/VERID:
   description: Version ID Register
   fields:
   - name: RES

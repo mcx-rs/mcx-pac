@@ -2,110 +2,110 @@ block/LPI2C:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: regs::VERID
+    fieldset: VERID
   - name: PARAM
     byte_offset: 4
-    fieldset: regs::PARAM
+    fieldset: PARAM
   - name: MCR
     byte_offset: 16
-    fieldset: regs::MCR
+    fieldset: MCR
   - name: MSR
     byte_offset: 20
-    fieldset: regs::MSR
+    fieldset: MSR
   - name: MIER
     byte_offset: 24
-    fieldset: regs::MIER
+    fieldset: MIER
   - name: MDER
     byte_offset: 28
-    fieldset: regs::MDER
+    fieldset: MDER
   - name: MCFGR0
     byte_offset: 32
-    fieldset: regs::MCFGR0
+    fieldset: MCFGR0
   - name: MCFGR1
     byte_offset: 36
-    fieldset: regs::MCFGR1
+    fieldset: MCFGR1
   - name: MCFGR2
     byte_offset: 40
-    fieldset: regs::MCFGR2
+    fieldset: MCFGR2
   - name: MCFGR3
     byte_offset: 44
-    fieldset: regs::MCFGR3
+    fieldset: MCFGR3
   - name: MDMR
     byte_offset: 64
-    fieldset: regs::MDMR
+    fieldset: MDMR
   - name: MCCR0
     byte_offset: 72
-    fieldset: regs::MCCR0
+    fieldset: MCCR0
   - name: MCCR1
     byte_offset: 80
-    fieldset: regs::MCCR1
+    fieldset: MCCR1
   - name: MFCR
     byte_offset: 88
-    fieldset: regs::MFCR
+    fieldset: MFCR
   - name: MFSR
     byte_offset: 92
-    fieldset: regs::MFSR
+    fieldset: MFSR
   - name: MTDR
     byte_offset: 96
-    fieldset: regs::MTDR
+    fieldset: MTDR
   - name: MRDR
     byte_offset: 112
-    fieldset: regs::MRDR
+    fieldset: MRDR
   - name: MRDROR
     byte_offset: 120
-    fieldset: regs::MRDROR
+    fieldset: MRDROR
   - name: SCR
     byte_offset: 272
-    fieldset: regs::SCR
+    fieldset: SCR
   - name: SSR
     byte_offset: 276
-    fieldset: regs::SSR
+    fieldset: SSR
   - name: SIER
     byte_offset: 280
-    fieldset: regs::SIER
+    fieldset: SIER
   - name: SDER
     byte_offset: 284
-    fieldset: regs::SDER
+    fieldset: SDER
   - name: SCFGR0
     byte_offset: 288
-    fieldset: regs::SCFGR0
+    fieldset: SCFGR0
   - name: SCFGR1
     byte_offset: 292
-    fieldset: regs::SCFGR1
+    fieldset: SCFGR1
   - name: SCFGR2
     byte_offset: 296
-    fieldset: regs::SCFGR2
+    fieldset: SCFGR2
   - name: SAMR
     byte_offset: 320
-    fieldset: regs::SAMR
+    fieldset: SAMR
   - name: SASR
     byte_offset: 336
-    fieldset: regs::SASR
+    fieldset: SASR
   - name: STAR
     byte_offset: 340
-    fieldset: regs::STAR
+    fieldset: STAR
   - name: STDR
     byte_offset: 352
-    fieldset: regs::STDR
+    fieldset: STDR
   - name: SRDR
     byte_offset: 368
-    fieldset: regs::SRDR
+    fieldset: SRDR
   - name: SRDROR
     byte_offset: 376
-    fieldset: regs::SRDROR
+    fieldset: SRDROR
   - name: MTCBR
     array:
       len: 128
       stride: 4
     byte_offset: 512
-    fieldset: regs::MTCBR
+    fieldset: MTCBR
   - name: MTDBR
     array:
       len: 253
       stride: 4
     byte_offset: 1024
-    fieldset: regs::MTDBR
-fieldset/regs::MCCR0:
+    fieldset: MTDBR
+fieldset/MCCR0:
   description: Controller Clock Configuration 0
   fields:
   - name: CLKLO
@@ -120,7 +120,7 @@ fieldset/regs::MCCR0:
   - name: DATAVD
     bit_offset: 24
     bit_size: 6
-fieldset/regs::MCCR1:
+fieldset/MCCR1:
   description: Controller Clock Configuration 1
   fields:
   - name: CLKLO
@@ -135,7 +135,7 @@ fieldset/regs::MCCR1:
   - name: DATAVD
     bit_offset: 24
     bit_size: 6
-fieldset/regs::MCFGR0:
+fieldset/MCFGR0:
   description: Controller Configuration 0
   fields:
   - name: HREN
@@ -162,7 +162,7 @@ fieldset/regs::MCFGR0:
   - name: ABORT
     bit_offset: 17
     bit_size: 1
-fieldset/regs::MCFGR1:
+fieldset/MCFGR1:
   description: Controller Configuration 1
   fields:
   - name: PRESCALE
@@ -189,7 +189,7 @@ fieldset/regs::MCFGR1:
   - name: PINCFG
     bit_offset: 24
     bit_size: 3
-fieldset/regs::MCFGR2:
+fieldset/MCFGR2:
   description: Controller Configuration 2
   fields:
   - name: BUSIDLE
@@ -201,13 +201,13 @@ fieldset/regs::MCFGR2:
   - name: FILTSDA
     bit_offset: 24
     bit_size: 4
-fieldset/regs::MCFGR3:
+fieldset/MCFGR3:
   description: Controller Configuration 3
   fields:
   - name: PINLOW
     bit_offset: 8
     bit_size: 12
-fieldset/regs::MCR:
+fieldset/MCR:
   description: Controller Control
   fields:
   - name: MEN
@@ -228,7 +228,7 @@ fieldset/regs::MCR:
   - name: RRF
     bit_offset: 9
     bit_size: 1
-fieldset/regs::MDER:
+fieldset/MDER:
   description: Controller DMA Enable
   fields:
   - name: TDDE
@@ -237,7 +237,7 @@ fieldset/regs::MDER:
   - name: RDDE
     bit_offset: 1
     bit_size: 1
-fieldset/regs::MDMR:
+fieldset/MDMR:
   description: Controller Data Match
   fields:
   - name: MATCH0
@@ -246,7 +246,7 @@ fieldset/regs::MDMR:
   - name: MATCH1
     bit_offset: 16
     bit_size: 8
-fieldset/regs::MFCR:
+fieldset/MFCR:
   description: Controller FIFO Control
   fields:
   - name: TXWATER
@@ -255,7 +255,7 @@ fieldset/regs::MFCR:
   - name: RXWATER
     bit_offset: 16
     bit_size: 3
-fieldset/regs::MFSR:
+fieldset/MFSR:
   description: Controller FIFO Status
   fields:
   - name: TXCOUNT
@@ -264,7 +264,7 @@ fieldset/regs::MFSR:
   - name: RXCOUNT
     bit_offset: 16
     bit_size: 4
-fieldset/regs::MIER:
+fieldset/MIER:
   description: Controller Interrupt Enable
   fields:
   - name: TDIE
@@ -297,7 +297,7 @@ fieldset/regs::MIER:
   - name: STIE
     bit_offset: 15
     bit_size: 1
-fieldset/regs::MRDR:
+fieldset/MRDR:
   description: Controller Receive Data
   fields:
   - name: DATA
@@ -306,7 +306,7 @@ fieldset/regs::MRDR:
   - name: RXEMPTY
     bit_offset: 14
     bit_size: 1
-fieldset/regs::MRDROR:
+fieldset/MRDROR:
   description: Controller Receive Data Read Only
   fields:
   - name: DATA
@@ -315,7 +315,7 @@ fieldset/regs::MRDROR:
   - name: RXEMPTY
     bit_offset: 14
     bit_size: 1
-fieldset/regs::MSR:
+fieldset/MSR:
   description: Controller Status
   fields:
   - name: TDF
@@ -354,7 +354,7 @@ fieldset/regs::MSR:
   - name: BBF
     bit_offset: 25
     bit_size: 1
-fieldset/regs::MTCBR:
+fieldset/MTCBR:
   description: Controller Transmit Command Burst
   fields:
   - name: DATA
@@ -363,7 +363,7 @@ fieldset/regs::MTCBR:
   - name: CMD
     bit_offset: 8
     bit_size: 3
-fieldset/regs::MTDBR:
+fieldset/MTDBR:
   description: Transmit Data Burst
   fields:
   - name: DATA0
@@ -378,7 +378,7 @@ fieldset/regs::MTDBR:
   - name: DATA3
     bit_offset: 24
     bit_size: 8
-fieldset/regs::MTDR:
+fieldset/MTDR:
   description: Controller Transmit Data
   fields:
   - name: DATA
@@ -387,7 +387,7 @@ fieldset/regs::MTDR:
   - name: CMD
     bit_offset: 8
     bit_size: 3
-fieldset/regs::PARAM:
+fieldset/PARAM:
   description: Parameter
   fields:
   - name: MTXFIFO
@@ -396,7 +396,7 @@ fieldset/regs::PARAM:
   - name: MRXFIFO
     bit_offset: 8
     bit_size: 4
-fieldset/regs::SAMR:
+fieldset/SAMR:
   description: Target Address Match
   fields:
   - name: ADDR0
@@ -405,7 +405,7 @@ fieldset/regs::SAMR:
   - name: ADDR1
     bit_offset: 17
     bit_size: 10
-fieldset/regs::SASR:
+fieldset/SASR:
   description: Target Address Status
   fields:
   - name: RADDR
@@ -414,7 +414,7 @@ fieldset/regs::SASR:
   - name: ANV
     bit_offset: 14
     bit_size: 1
-fieldset/regs::SCFGR0:
+fieldset/SCFGR0:
   description: Target Configuration 0
   fields:
   - name: RDREQ
@@ -423,7 +423,7 @@ fieldset/regs::SCFGR0:
   - name: RDACK
     bit_offset: 1
     bit_size: 1
-fieldset/regs::SCFGR1:
+fieldset/SCFGR1:
   description: Target Configuration 1
   fields:
   - name: ADRSTALL
@@ -471,7 +471,7 @@ fieldset/regs::SCFGR1:
   - name: SDCFG
     bit_offset: 26
     bit_size: 1
-fieldset/regs::SCFGR2:
+fieldset/SCFGR2:
   description: Target Configuration 2
   fields:
   - name: CLKHOLD
@@ -486,7 +486,7 @@ fieldset/regs::SCFGR2:
   - name: FILTSDA
     bit_offset: 24
     bit_size: 4
-fieldset/regs::SCR:
+fieldset/SCR:
   description: Target Control
   fields:
   - name: SEN
@@ -507,7 +507,7 @@ fieldset/regs::SCR:
   - name: RRF
     bit_offset: 9
     bit_size: 1
-fieldset/regs::SDER:
+fieldset/SDER:
   description: Target DMA Enable
   fields:
   - name: TDDE
@@ -525,7 +525,7 @@ fieldset/regs::SDER:
   - name: SDDE
     bit_offset: 9
     bit_size: 1
-fieldset/regs::SIER:
+fieldset/SIER:
   description: Target Interrupt Enable
   fields:
   - name: TDIE
@@ -564,7 +564,7 @@ fieldset/regs::SIER:
   - name: SARIE
     bit_offset: 15
     bit_size: 1
-fieldset/regs::SRDR:
+fieldset/SRDR:
   description: Target Receive Data
   fields:
   - name: DATA
@@ -579,7 +579,7 @@ fieldset/regs::SRDR:
   - name: SOF
     bit_offset: 15
     bit_size: 1
-fieldset/regs::SRDROR:
+fieldset/SRDROR:
   description: Target Receive Data Read Only
   fields:
   - name: DATA
@@ -594,7 +594,7 @@ fieldset/regs::SRDROR:
   - name: SOF
     bit_offset: 15
     bit_size: 1
-fieldset/regs::SSR:
+fieldset/SSR:
   description: Target Status
   fields:
   - name: TDF
@@ -639,19 +639,19 @@ fieldset/regs::SSR:
   - name: BBF
     bit_offset: 25
     bit_size: 1
-fieldset/regs::STAR:
+fieldset/STAR:
   description: Target Transmit ACK
   fields:
   - name: TXNACK
     bit_offset: 0
     bit_size: 1
-fieldset/regs::STDR:
+fieldset/STDR:
   description: Target Transmit Data
   fields:
   - name: DATA
     bit_offset: 0
     bit_size: 8
-fieldset/regs::VERID:
+fieldset/VERID:
   description: Version ID
   fields:
   - name: FEATURE

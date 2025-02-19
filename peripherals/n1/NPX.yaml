@@ -14,22 +14,22 @@ block/NPX:
   items:
   - name: NPXCR
     byte_offset: 0
-    fieldset: regs::NPXCR
+    fieldset: NPXCR
   - name: NPXSR
     byte_offset: 8
-    fieldset: regs::NPXSR
+    fieldset: NPXSR
   - name: CACMSK
     byte_offset: 16
   - name: REMAP
     byte_offset: 32
-    fieldset: regs::REMAP
+    fieldset: REMAP
   - name: CTX_VALID_IV_ARRAY
     array:
       len: 4
       stride: 16
     byte_offset: 64
     block: CTX_VALID_IV_ARRAY
-fieldset/regs::CTX_VALID_IV_ARRAY_BIVCTX_WD:
+fieldset/CTX_VALID_IV_ARRAY_BIVCTX_WD:
   description: Block Initial Vector for Memory Context 0..Block Initial Vector for Memory Context 3
   fields:
   - name: BIV_WD0
@@ -38,7 +38,7 @@ fieldset/regs::CTX_VALID_IV_ARRAY_BIVCTX_WD:
   - name: BIV_WD1
     bit_offset: 0
     bit_size: 32
-fieldset/regs::CTX_VALID_IV_ARRAY_VMAPCTX_WD:
+fieldset/CTX_VALID_IV_ARRAY_VMAPCTX_WD:
   description: Bitmap of Valid Control for Memory Context 0..Bitmap of Valid Control for Memory Context 3
   fields:
   - name: VAL0
@@ -233,7 +233,7 @@ fieldset/regs::CTX_VALID_IV_ARRAY_VMAPCTX_WD:
   - name: VAL63
     bit_offset: 31
     bit_size: 1
-fieldset/regs::NPXCR:
+fieldset/NPXCR:
   description: NPX Control Register
   fields:
   - name: GEE
@@ -260,7 +260,7 @@ fieldset/regs::NPXCR:
   - name: CTX3LK
     bit_offset: 14
     bit_size: 1
-fieldset/regs::NPXSR:
+fieldset/NPXSR:
   description: NPX Status Register
   fields:
   - name: NUMCTX
@@ -278,7 +278,7 @@ fieldset/regs::NPXSR:
   - name: V3
     bit_offset: 11
     bit_size: 1
-fieldset/regs::REMAP:
+fieldset/REMAP:
   description: Data Remap
   fields:
   - name: REMAPLK

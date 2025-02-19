@@ -2,8 +2,8 @@ block/FMC:
   items:
   - name: REMAP
     byte_offset: 32
-    fieldset: regs::REMAP
-fieldset/regs::REMAP:
+    fieldset: REMAP
+fieldset/REMAP:
   description: Data Remap
   fields:
   - name: REMAPLK

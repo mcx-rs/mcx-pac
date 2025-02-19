@@ -2,10 +2,10 @@ block/CTIMER:
   items:
   - name: IR
     byte_offset: 0
-    fieldset: regs::IR
+    fieldset: IR
   - name: TCR
     byte_offset: 4
-    fieldset: regs::TCR
+    fieldset: TCR
   - name: TC
     byte_offset: 8
   - name: PR
@@ -14,7 +14,7 @@ block/CTIMER:
     byte_offset: 16
   - name: MCR
     byte_offset: 20
-    fieldset: regs::MCR
+    fieldset: MCR
   - name: MR
     array:
       len: 4
@@ -22,7 +22,7 @@ block/CTIMER:
     byte_offset: 24
   - name: CCR
     byte_offset: 40
-    fieldset: regs::CCR
+    fieldset: CCR
   - name: CR
     array:
       len: 4
@@ -30,19 +30,19 @@ block/CTIMER:
     byte_offset: 44
   - name: EMR
     byte_offset: 60
-    fieldset: regs::EMR
+    fieldset: EMR
   - name: CTCR
     byte_offset: 112
-    fieldset: regs::CTCR
+    fieldset: CTCR
   - name: PWMC
     byte_offset: 116
-    fieldset: regs::PWMC
+    fieldset: PWMC
   - name: MSR
     array:
       len: 4
       stride: 4
     byte_offset: 120
-fieldset/regs::CCR:
+fieldset/CCR:
   description: Capture Control
   fields:
   - name: CAP0RE
@@ -81,7 +81,7 @@ fieldset/regs::CCR:
   - name: CAP3I
     bit_offset: 11
     bit_size: 1
-fieldset/regs::CTCR:
+fieldset/CTCR:
   description: Count Control
   fields:
   - name: CTMODE
@@ -96,7 +96,7 @@ fieldset/regs::CTCR:
   - name: SELCC
     bit_offset: 5
     bit_size: 3
-fieldset/regs::EMR:
+fieldset/EMR:
   description: External Match
   fields:
   - name: EM0
@@ -123,7 +123,7 @@ fieldset/regs::EMR:
   - name: EMC3
     bit_offset: 10
     bit_size: 2
-fieldset/regs::IR:
+fieldset/IR:
   description: Interrupt
   fields:
   - name: MR0INT
@@ -150,7 +150,7 @@ fieldset/regs::IR:
   - name: CR3INT
     bit_offset: 7
     bit_size: 1
-fieldset/regs::MCR:
+fieldset/MCR:
   description: Match Control
   fields:
   - name: MR0I
@@ -201,7 +201,7 @@ fieldset/regs::MCR:
   - name: MR3RL
     bit_offset: 27
     bit_size: 1
-fieldset/regs::PWMC:
+fieldset/PWMC:
   description: PWM Control
   fields:
   - name: PWMEN0
@@ -216,7 +216,7 @@ fieldset/regs::PWMC:
   - name: PWMEN3
     bit_offset: 3
     bit_size: 1
-fieldset/regs::TCR:
+fieldset/TCR:
   description: Timer Control
   fields:
   - name: CEN

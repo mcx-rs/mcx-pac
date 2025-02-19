@@ -2,20 +2,20 @@ block/CDOG:
   items:
   - name: CONTROL
     byte_offset: 0
-    fieldset: regs::CONTROL
+    fieldset: CONTROL
   - name: RELOAD
     byte_offset: 4
   - name: INSTRUCTION_TIMER
     byte_offset: 8
   - name: STATUS
     byte_offset: 16
-    fieldset: regs::STATUS
+    fieldset: STATUS
   - name: STATUS2
     byte_offset: 20
-    fieldset: regs::STATUS2
+    fieldset: STATUS2
   - name: FLAGS
     byte_offset: 24
-    fieldset: regs::FLAGS
+    fieldset: FLAGS
   - name: PERSISTENT
     byte_offset: 28
   - name: START
@@ -42,7 +42,7 @@ block/CDOG:
     byte_offset: 72
   - name: ASSERT16
     byte_offset: 76
-fieldset/regs::CONTROL:
+fieldset/CONTROL:
   description: Control Register
   fields:
   - name: LOCK_CTRL
@@ -69,7 +69,7 @@ fieldset/regs::CONTROL:
   - name: DEBUG_HALT_CTRL
     bit_offset: 30
     bit_size: 2
-fieldset/regs::FLAGS:
+fieldset/FLAGS:
   description: Flags Register
   fields:
   - name: TO_FLAG
@@ -93,7 +93,7 @@ fieldset/regs::FLAGS:
   - name: POR_FLAG
     bit_offset: 16
     bit_size: 1
-fieldset/regs::STATUS:
+fieldset/STATUS:
   description: Status 1 Register
   fields:
   - name: NUMTOF
@@ -108,7 +108,7 @@ fieldset/regs::STATUS:
   - name: CURST
     bit_offset: 28
     bit_size: 4
-fieldset/regs::STATUS2:
+fieldset/STATUS2:
   description: Status 2 Register
   fields:
   - name: NUMCNTF

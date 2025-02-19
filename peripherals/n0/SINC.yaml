@@ -2,77 +2,77 @@ block/CHANNEL:
   items:
   - name: CCR
     byte_offset: 0
-    fieldset: regs::CHANNEL_CCR
+    fieldset: CHANNEL_CCR
   - name: CDR
     byte_offset: 4
-    fieldset: regs::CHANNEL_CDR
+    fieldset: CHANNEL_CDR
   - name: CCFR
     byte_offset: 8
-    fieldset: regs::CHANNEL_CCFR
+    fieldset: CHANNEL_CCFR
   - name: CPROT
     byte_offset: 12
-    fieldset: regs::CHANNEL_CPROT
+    fieldset: CHANNEL_CPROT
   - name: CBIAS
     byte_offset: 16
-    fieldset: regs::CHANNEL_CBIAS
+    fieldset: CHANNEL_CBIAS
   - name: CLOLMT
     byte_offset: 20
-    fieldset: regs::CHANNEL_CLOLMT
+    fieldset: CHANNEL_CLOLMT
   - name: CHILMT
     byte_offset: 24
-    fieldset: regs::CHANNEL_CHILMT
+    fieldset: CHANNEL_CHILMT
   - name: CRDATA
     byte_offset: 28
-    fieldset: regs::CHANNEL_CRDATA
+    fieldset: CHANNEL_CRDATA
   - name: CMPDATA
     byte_offset: 32
   - name: CACFR
     byte_offset: 36
-    fieldset: regs::CHANNEL_CACFR
+    fieldset: CHANNEL_CACFR
   - name: CSR
     byte_offset: 40
-    fieldset: regs::CHANNEL_CSR
+    fieldset: CHANNEL_CSR
   - name: CDBGR
     byte_offset: 44
 block/SINC:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: regs::VERID
+    fieldset: VERID
   - name: PARAMETER
     byte_offset: 4
-    fieldset: regs::PARAMETER
+    fieldset: PARAMETER
   - name: MCR
     byte_offset: 8
-    fieldset: regs::MCR
+    fieldset: MCR
   - name: NIE
     byte_offset: 12
-    fieldset: regs::NIE
+    fieldset: NIE
   - name: EIE
     byte_offset: 16
-    fieldset: regs::EIE
+    fieldset: EIE
   - name: FIFOIE
     byte_offset: 20
-    fieldset: regs::FIFOIE
+    fieldset: FIFOIE
   - name: NIS
     byte_offset: 24
-    fieldset: regs::NIS
+    fieldset: NIS
   - name: EIS
     byte_offset: 28
-    fieldset: regs::EIS
+    fieldset: EIS
   - name: FIFOIS
     byte_offset: 32
-    fieldset: regs::FIFOIS
+    fieldset: FIFOIS
   - name: SR
     byte_offset: 36
-    fieldset: regs::SR
+    fieldset: SR
   - name: CHANNEL
     array:
       len: 5
       stride: 48
     byte_offset: 56
     block: CHANNEL
-fieldset/regs::CHANNEL_CACFR:
+fieldset/CHANNEL_CACFR:
   description: Channel 0 Advanced Configuration..Channel 4 Advanced Configuration
   fields:
   - name: ADMASEL
@@ -84,13 +84,13 @@ fieldset/regs::CHANNEL_CACFR:
   - name: IBDLY
     bit_offset: 20
     bit_size: 4
-fieldset/regs::CHANNEL_CBIAS:
+fieldset/CHANNEL_CBIAS:
   description: Channel 0 Bias..Channel 4 Bias
   fields:
   - name: BIAS
     bit_offset: 8
     bit_size: 24
-fieldset/regs::CHANNEL_CCFR:
+fieldset/CHANNEL_CCFR:
   description: Channel 0 Configuration..Channel 4 Configuration
   fields:
   - name: PFSFT
@@ -123,7 +123,7 @@ fieldset/regs::CHANNEL_CCFR:
   - name: ZCOP
     bit_offset: 30
     bit_size: 2
-fieldset/regs::CHANNEL_CCR:
+fieldset/CHANNEL_CCR:
   description: Channel 0 Control..Channel 4 Control
   fields:
   - name: CHEN
@@ -153,7 +153,7 @@ fieldset/regs::CHANNEL_CCR:
   - name: DBGSEL
     bit_offset: 20
     bit_size: 4
-fieldset/regs::CHANNEL_CDR:
+fieldset/CHANNEL_CDR:
   description: Channel 0 Data Rate..Channel 4 Data Rate
   fields:
   - name: PFOSR
@@ -165,19 +165,19 @@ fieldset/regs::CHANNEL_CDR:
   - name: PFCM
     bit_offset: 14
     bit_size: 2
-fieldset/regs::CHANNEL_CHILMT:
+fieldset/CHANNEL_CHILMT:
   description: Channel 0 High Limit..Channel 4 High Limit
   fields:
   - name: HILMT
     bit_offset: 8
     bit_size: 24
-fieldset/regs::CHANNEL_CLOLMT:
+fieldset/CHANNEL_CLOLMT:
   description: Channel 0 Low Limit..Channel 4 Low Limit
   fields:
   - name: LOLMT
     bit_offset: 8
     bit_size: 24
-fieldset/regs::CHANNEL_CPROT:
+fieldset/CHANNEL_CPROT:
   description: Channel 0 Protection..Channel 4 Protection
   fields:
   - name: SCDLMT
@@ -210,13 +210,13 @@ fieldset/regs::CHANNEL_CPROT:
   - name: HLMTBK
     bit_offset: 31
     bit_size: 1
-fieldset/regs::CHANNEL_CRDATA:
+fieldset/CHANNEL_CRDATA:
   description: Channel 0 Result Data..Channel 4 Result Data
   fields:
   - name: RDATA
     bit_offset: 8
     bit_size: 24
-fieldset/regs::CHANNEL_CSR:
+fieldset/CHANNEL_CSR:
   description: Channel 0 Status..Channel 4 Status
   fields:
   - name: FIFOAVIL
@@ -252,7 +252,7 @@ fieldset/regs::CHANNEL_CSR:
   - name: CNUM_OV
     bit_offset: 23
     bit_size: 1
-fieldset/regs::EIE:
+fieldset/EIE:
   description: Error Interrupt Enable
   fields:
   - name: SCDIE0
@@ -315,7 +315,7 @@ fieldset/regs::EIE:
   - name: HLMTIE4
     bit_offset: 28
     bit_size: 1
-fieldset/regs::EIS:
+fieldset/EIS:
   description: Error Interrupt Status
   fields:
   - name: SCD0
@@ -378,7 +378,7 @@ fieldset/regs::EIS:
   - name: HLMT4
     bit_offset: 28
     bit_size: 1
-fieldset/regs::FIFOIE:
+fieldset/FIFOIE:
   description: FIFO And CAD Error Interrupt Enable
   fields:
   - name: FUNFIE0
@@ -441,7 +441,7 @@ fieldset/regs::FIFOIE:
   - name: SATIE4
     bit_offset: 28
     bit_size: 1
-fieldset/regs::FIFOIS:
+fieldset/FIFOIS:
   description: FIFO And CAD Error Interrupt Status
   fields:
   - name: FUNF0
@@ -504,7 +504,7 @@ fieldset/regs::FIFOIS:
   - name: SAT4
     bit_offset: 28
     bit_size: 1
-fieldset/regs::MCR:
+fieldset/MCR:
   description: Main Control
   fields:
   - name: STRIG0
@@ -546,7 +546,7 @@ fieldset/regs::MCR:
   - name: MCLK2DIS
     bit_offset: 29
     bit_size: 1
-fieldset/regs::NIE:
+fieldset/NIE:
   description: Normal Interrupt Enable
   fields:
   - name: COCIE0
@@ -594,7 +594,7 @@ fieldset/regs::NIE:
   - name: ZCDIE4
     bit_offset: 20
     bit_size: 1
-fieldset/regs::NIS:
+fieldset/NIS:
   description: Normal Interrupt Status
   fields:
   - name: COC0
@@ -642,7 +642,7 @@ fieldset/regs::NIS:
   - name: ZCD4
     bit_offset: 20
     bit_size: 1
-fieldset/regs::PARAMETER:
+fieldset/PARAMETER:
   description: Parameters
   fields:
   - name: FIFO_DEPTH
@@ -654,7 +654,7 @@ fieldset/regs::PARAMETER:
   - name: PF_ORD_SEL
     bit_offset: 19
     bit_size: 2
-fieldset/regs::SR:
+fieldset/SR:
   description: Status
   fields:
   - name: CIP0
@@ -711,7 +711,7 @@ fieldset/regs::SR:
   - name: MCLKRDY2
     bit_offset: 26
     bit_size: 1
-fieldset/regs::VERID:
+fieldset/VERID:
   description: Version ID
   fields:
   - name: FEATURE

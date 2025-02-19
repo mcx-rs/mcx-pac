@@ -4,25 +4,25 @@ block/RTC:
     byte_offset: 0
   - name: TPR
     byte_offset: 4
-    fieldset: regs::TPR
+    fieldset: TPR
   - name: TAR
     byte_offset: 8
   - name: TCR
     byte_offset: 12
-    fieldset: regs::TCR
+    fieldset: TCR
   - name: CR
     byte_offset: 16
-    fieldset: regs::CR
+    fieldset: CR
   - name: SR
     byte_offset: 20
-    fieldset: regs::SR
+    fieldset: SR
   - name: LR
     byte_offset: 24
-    fieldset: regs::LR
+    fieldset: LR
   - name: IER
     byte_offset: 28
-    fieldset: regs::IER
-fieldset/regs::CR:
+    fieldset: IER
+fieldset/CR:
   description: RTC Control
   fields:
   - name: SWR
@@ -34,7 +34,7 @@ fieldset/regs::CR:
   - name: LPOS
     bit_offset: 7
     bit_size: 1
-fieldset/regs::IER:
+fieldset/IER:
   description: RTC Interrupt Enable
   fields:
   - name: TIIE
@@ -52,7 +52,7 @@ fieldset/regs::IER:
   - name: TSIC
     bit_offset: 16
     bit_size: 3
-fieldset/regs::LR:
+fieldset/LR:
   description: RTC Lock
   fields:
   - name: TCL
@@ -67,7 +67,7 @@ fieldset/regs::LR:
   - name: LRL
     bit_offset: 6
     bit_size: 1
-fieldset/regs::SR:
+fieldset/SR:
   description: RTC Status
   fields:
   - name: TIF
@@ -82,7 +82,7 @@ fieldset/regs::SR:
   - name: TCE
     bit_offset: 4
     bit_size: 1
-fieldset/regs::TCR:
+fieldset/TCR:
   description: RTC Time Compensation
   fields:
   - name: TCR
@@ -97,7 +97,7 @@ fieldset/regs::TCR:
   - name: CIC
     bit_offset: 24
     bit_size: 8
-fieldset/regs::TPR:
+fieldset/TPR:
   description: RTC Time Prescaler
   fields:
   - name: TPR

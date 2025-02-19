@@ -4,126 +4,126 @@ block/SCG:
     byte_offset: 0
   - name: PARAM
     byte_offset: 4
-    fieldset: regs::PARAM
+    fieldset: PARAM
   - name: TRIM_LOCK
     byte_offset: 8
-    fieldset: regs::TRIM_LOCK
+    fieldset: TRIM_LOCK
   - name: CSR
     byte_offset: 16
-    fieldset: regs::CSR
+    fieldset: CSR
   - name: RCCR
     byte_offset: 20
-    fieldset: regs::RCCR
+    fieldset: RCCR
   - name: SOSCCSR
     byte_offset: 256
-    fieldset: regs::SOSCCSR
+    fieldset: SOSCCSR
   - name: SOSCCFG
     byte_offset: 264
-    fieldset: regs::SOSCCFG
+    fieldset: SOSCCFG
   - name: SIRCCSR
     byte_offset: 512
-    fieldset: regs::SIRCCSR
+    fieldset: SIRCCSR
   - name: SIRCTCFG
     byte_offset: 524
-    fieldset: regs::SIRCTCFG
+    fieldset: SIRCTCFG
   - name: SIRCTRIM
     byte_offset: 528
-    fieldset: regs::SIRCTRIM
+    fieldset: SIRCTRIM
   - name: SIRCSTAT
     byte_offset: 536
-    fieldset: regs::SIRCSTAT
+    fieldset: SIRCSTAT
   - name: FIRCCSR
     byte_offset: 768
-    fieldset: regs::FIRCCSR
+    fieldset: FIRCCSR
   - name: FIRCCFG
     byte_offset: 776
-    fieldset: regs::FIRCCFG
+    fieldset: FIRCCFG
   - name: FIRCTCFG
     byte_offset: 780
-    fieldset: regs::FIRCTCFG
+    fieldset: FIRCTCFG
   - name: FIRCTRIM
     byte_offset: 784
-    fieldset: regs::FIRCTRIM
+    fieldset: FIRCTRIM
   - name: FIRCSTAT
     byte_offset: 792
-    fieldset: regs::FIRCSTAT
+    fieldset: FIRCSTAT
   - name: ROSCCSR
     byte_offset: 1024
-    fieldset: regs::ROSCCSR
+    fieldset: ROSCCSR
   - name: APLLCSR
     byte_offset: 1280
-    fieldset: regs::APLLCSR
+    fieldset: APLLCSR
   - name: APLLCTRL
     byte_offset: 1284
-    fieldset: regs::APLLCTRL
+    fieldset: APLLCTRL
   - name: APLLSTAT
     byte_offset: 1288
-    fieldset: regs::APLLSTAT
+    fieldset: APLLSTAT
   - name: APLLNDIV
     byte_offset: 1292
-    fieldset: regs::APLLNDIV
+    fieldset: APLLNDIV
   - name: APLLMDIV
     byte_offset: 1296
-    fieldset: regs::APLLMDIV
+    fieldset: APLLMDIV
   - name: APLLPDIV
     byte_offset: 1300
-    fieldset: regs::APLLPDIV
+    fieldset: APLLPDIV
   - name: APLLLOCK_CNFG
     byte_offset: 1304
-    fieldset: regs::APLLLOCK_CNFG
+    fieldset: APLLLOCK_CNFG
   - name: APLLSSCGSTAT
     byte_offset: 1312
-    fieldset: regs::APLLSSCGSTAT
+    fieldset: APLLSSCGSTAT
   - name: APLLSSCG0
     byte_offset: 1316
   - name: APLLSSCG1
     byte_offset: 1320
-    fieldset: regs::APLLSSCG1
+    fieldset: APLLSSCG1
   - name: APLL_OVRD
     byte_offset: 1524
-    fieldset: regs::APLL_OVRD
+    fieldset: APLL_OVRD
   - name: SPLLCSR
     byte_offset: 1536
-    fieldset: regs::SPLLCSR
+    fieldset: SPLLCSR
   - name: SPLLCTRL
     byte_offset: 1540
-    fieldset: regs::SPLLCTRL
+    fieldset: SPLLCTRL
   - name: SPLLSTAT
     byte_offset: 1544
-    fieldset: regs::SPLLSTAT
+    fieldset: SPLLSTAT
   - name: SPLLNDIV
     byte_offset: 1548
-    fieldset: regs::SPLLNDIV
+    fieldset: SPLLNDIV
   - name: SPLLMDIV
     byte_offset: 1552
-    fieldset: regs::SPLLMDIV
+    fieldset: SPLLMDIV
   - name: SPLLPDIV
     byte_offset: 1556
-    fieldset: regs::SPLLPDIV
+    fieldset: SPLLPDIV
   - name: SPLLLOCK_CNFG
     byte_offset: 1560
-    fieldset: regs::SPLLLOCK_CNFG
+    fieldset: SPLLLOCK_CNFG
   - name: SPLLSSCGSTAT
     byte_offset: 1568
-    fieldset: regs::SPLLSSCGSTAT
+    fieldset: SPLLSSCGSTAT
   - name: SPLLSSCG0
     byte_offset: 1572
   - name: SPLLSSCG1
     byte_offset: 1576
-    fieldset: regs::SPLLSSCG1
+    fieldset: SPLLSSCG1
   - name: SPLL_OVRD
     byte_offset: 1780
-    fieldset: regs::SPLL_OVRD
+    fieldset: SPLL_OVRD
   - name: UPLLCSR
     byte_offset: 1792
-    fieldset: regs::UPLLCSR
+    fieldset: UPLLCSR
   - name: LDOCSR
     byte_offset: 2048
-    fieldset: regs::LDOCSR
+    fieldset: LDOCSR
   - name: TROCSR
     byte_offset: 2304
-    fieldset: regs::TROCSR
-fieldset/regs::APLLCSR:
+    fieldset: TROCSR
+fieldset/APLLCSR:
   description: APLL Control Status Register
   fields:
   - name: APLLPWREN
@@ -159,7 +159,7 @@ fieldset/regs::APLLCSR:
   - name: APLL_LOCK_IE
     bit_offset: 30
     bit_size: 1
-fieldset/regs::APLLCTRL:
+fieldset/APLLCTRL:
   description: APLL Control Register
   fields:
   - name: SELR
@@ -192,13 +192,13 @@ fieldset/regs::APLLCTRL:
   - name: SOURCE
     bit_offset: 25
     bit_size: 2
-fieldset/regs::APLLLOCK_CNFG:
+fieldset/APLLLOCK_CNFG:
   description: APLL LOCK Configuration Register
   fields:
   - name: LOCK_TIME
     bit_offset: 0
     bit_size: 17
-fieldset/regs::APLLMDIV:
+fieldset/APLLMDIV:
   description: APLL M Divider Register
   fields:
   - name: MDIV
@@ -207,7 +207,7 @@ fieldset/regs::APLLMDIV:
   - name: MREQ
     bit_offset: 31
     bit_size: 1
-fieldset/regs::APLLNDIV:
+fieldset/APLLNDIV:
   description: APLL N Divider Register
   fields:
   - name: NDIV
@@ -216,7 +216,7 @@ fieldset/regs::APLLNDIV:
   - name: NREQ
     bit_offset: 31
     bit_size: 1
-fieldset/regs::APLLPDIV:
+fieldset/APLLPDIV:
   description: APLL P Divider Register
   fields:
   - name: PDIV
@@ -225,7 +225,7 @@ fieldset/regs::APLLPDIV:
   - name: PREQ
     bit_offset: 31
     bit_size: 1
-fieldset/regs::APLLSSCG1:
+fieldset/APLLSSCG1:
   description: APLL Spread Spectrum Control 1 Register
   fields:
   - name: SS_MDIV_MSB
@@ -252,13 +252,13 @@ fieldset/regs::APLLSSCG1:
   - name: SS_PD
     bit_offset: 31
     bit_size: 1
-fieldset/regs::APLLSSCGSTAT:
+fieldset/APLLSSCGSTAT:
   description: APLL SSCG Status Register
   fields:
   - name: SS_MDIV_ACK
     bit_offset: 0
     bit_size: 1
-fieldset/regs::APLLSTAT:
+fieldset/APLLSTAT:
   description: APLL Status Register
   fields:
   - name: NDIVACK
@@ -273,7 +273,7 @@ fieldset/regs::APLLSTAT:
   - name: FRMDET
     bit_offset: 4
     bit_size: 1
-fieldset/regs::APLL_OVRD:
+fieldset/APLL_OVRD:
   description: APLL Override Register
   fields:
   - name: APLLPWREN_OVRD
@@ -285,19 +285,19 @@ fieldset/regs::APLL_OVRD:
   - name: APLL_OVRD_EN
     bit_offset: 31
     bit_size: 1
-fieldset/regs::CSR:
+fieldset/CSR:
   description: Clock Status Register
   fields:
   - name: SCS
     bit_offset: 24
     bit_size: 4
-fieldset/regs::FIRCCFG:
+fieldset/FIRCCFG:
   description: FIRC Configuration Register
   fields:
   - name: RANGE
     bit_offset: 0
     bit_size: 1
-fieldset/regs::FIRCCSR:
+fieldset/FIRCCSR:
   description: FIRC Control Status Register
   fields:
   - name: FIRCEN
@@ -345,7 +345,7 @@ fieldset/regs::FIRCCSR:
   - name: FIRCACC
     bit_offset: 31
     bit_size: 1
-fieldset/regs::FIRCSTAT:
+fieldset/FIRCSTAT:
   description: FIRC Auto-trimming Status Register
   fields:
   - name: TRIMFINE
@@ -354,7 +354,7 @@ fieldset/regs::FIRCSTAT:
   - name: TRIMCOAR
     bit_offset: 8
     bit_size: 6
-fieldset/regs::FIRCTCFG:
+fieldset/FIRCTCFG:
   description: FIRC Trim Configuration Register
   fields:
   - name: TRIMSRC
@@ -363,7 +363,7 @@ fieldset/regs::FIRCTCFG:
   - name: TRIMDIV
     bit_offset: 16
     bit_size: 7
-fieldset/regs::FIRCTRIM:
+fieldset/FIRCTRIM:
   description: FIRC Trim Register
   fields:
   - name: TRIMFINE
@@ -378,7 +378,7 @@ fieldset/regs::FIRCTRIM:
   - name: TRIMSTART
     bit_offset: 24
     bit_size: 6
-fieldset/regs::LDOCSR:
+fieldset/LDOCSR:
   description: LDO Control and Status Register
   fields:
   - name: LDOEN
@@ -393,7 +393,7 @@ fieldset/regs::LDOCSR:
   - name: VOUT_OK
     bit_offset: 31
     bit_size: 1
-fieldset/regs::PARAM:
+fieldset/PARAM:
   description: Parameter Register
   fields:
   - name: SOSCCLKPRES
@@ -420,13 +420,13 @@ fieldset/regs::PARAM:
   - name: TROCLKPRES
     bit_offset: 8
     bit_size: 1
-fieldset/regs::RCCR:
+fieldset/RCCR:
   description: Run Clock Control Register
   fields:
   - name: SCS
     bit_offset: 24
     bit_size: 4
-fieldset/regs::ROSCCSR:
+fieldset/ROSCCSR:
   description: ROSC Control Status Register
   fields:
   - name: ROSCCM
@@ -447,7 +447,7 @@ fieldset/regs::ROSCCSR:
   - name: ROSCERR
     bit_offset: 26
     bit_size: 1
-fieldset/regs::SIRCCSR:
+fieldset/SIRCCSR:
   description: SIRC Control Status Register
   fields:
   - name: SIRCSTEN
@@ -483,7 +483,7 @@ fieldset/regs::SIRCCSR:
   - name: SIRCERR_IE
     bit_offset: 27
     bit_size: 1
-fieldset/regs::SIRCSTAT:
+fieldset/SIRCSTAT:
   description: SIRC Auto-trimming Status Register
   fields:
   - name: CCOTRIM
@@ -492,7 +492,7 @@ fieldset/regs::SIRCSTAT:
   - name: CLTRIM
     bit_offset: 8
     bit_size: 6
-fieldset/regs::SIRCTCFG:
+fieldset/SIRCTCFG:
   description: SIRC Trim Configuration Register
   fields:
   - name: TRIMSRC
@@ -501,7 +501,7 @@ fieldset/regs::SIRCTCFG:
   - name: TRIMDIV
     bit_offset: 16
     bit_size: 7
-fieldset/regs::SIRCTRIM:
+fieldset/SIRCTRIM:
   description: SIRC Trim Register
   fields:
   - name: CCOTRIM
@@ -516,7 +516,7 @@ fieldset/regs::SIRCTRIM:
   - name: FVCHTRIM
     bit_offset: 24
     bit_size: 5
-fieldset/regs::SOSCCFG:
+fieldset/SOSCCFG:
   description: SOSC Configuration Register
   fields:
   - name: EREFS
@@ -525,7 +525,7 @@ fieldset/regs::SOSCCFG:
   - name: RANGE
     bit_offset: 4
     bit_size: 2
-fieldset/regs::SOSCCSR:
+fieldset/SOSCCSR:
   description: SOSC Control Status Register
   fields:
   - name: SOSCEN
@@ -555,7 +555,7 @@ fieldset/regs::SOSCCSR:
   - name: SOSCVLD_IE
     bit_offset: 30
     bit_size: 1
-fieldset/regs::SPLLCSR:
+fieldset/SPLLCSR:
   description: SPLL Control Status Register
   fields:
   - name: SPLLPWREN
@@ -591,7 +591,7 @@ fieldset/regs::SPLLCSR:
   - name: SPLL_LOCK_IE
     bit_offset: 30
     bit_size: 1
-fieldset/regs::SPLLCTRL:
+fieldset/SPLLCTRL:
   description: SPLL Control Register
   fields:
   - name: SELR
@@ -624,13 +624,13 @@ fieldset/regs::SPLLCTRL:
   - name: SOURCE
     bit_offset: 25
     bit_size: 2
-fieldset/regs::SPLLLOCK_CNFG:
+fieldset/SPLLLOCK_CNFG:
   description: SPLL LOCK Configuration Register
   fields:
   - name: LOCK_TIME
     bit_offset: 0
     bit_size: 17
-fieldset/regs::SPLLMDIV:
+fieldset/SPLLMDIV:
   description: SPLL M Divider Register
   fields:
   - name: MDIV
@@ -639,7 +639,7 @@ fieldset/regs::SPLLMDIV:
   - name: MREQ
     bit_offset: 31
     bit_size: 1
-fieldset/regs::SPLLNDIV:
+fieldset/SPLLNDIV:
   description: SPLL N Divider Register
   fields:
   - name: NDIV
@@ -648,7 +648,7 @@ fieldset/regs::SPLLNDIV:
   - name: NREQ
     bit_offset: 31
     bit_size: 1
-fieldset/regs::SPLLPDIV:
+fieldset/SPLLPDIV:
   description: SPLL P Divider Register
   fields:
   - name: PDIV
@@ -657,7 +657,7 @@ fieldset/regs::SPLLPDIV:
   - name: PREQ
     bit_offset: 31
     bit_size: 1
-fieldset/regs::SPLLSSCG1:
+fieldset/SPLLSSCG1:
   description: SPLL Spread Spectrum Control 1 Register
   fields:
   - name: SS_MDIV_MSB
@@ -684,13 +684,13 @@ fieldset/regs::SPLLSSCG1:
   - name: SS_PD
     bit_offset: 31
     bit_size: 1
-fieldset/regs::SPLLSSCGSTAT:
+fieldset/SPLLSSCGSTAT:
   description: SPLL SSCG Status Register
   fields:
   - name: SS_MDIV_ACK
     bit_offset: 0
     bit_size: 1
-fieldset/regs::SPLLSTAT:
+fieldset/SPLLSTAT:
   description: SPLL Status Register
   fields:
   - name: NDIVACK
@@ -705,7 +705,7 @@ fieldset/regs::SPLLSTAT:
   - name: FRMDET
     bit_offset: 4
     bit_size: 1
-fieldset/regs::SPLL_OVRD:
+fieldset/SPLL_OVRD:
   description: SPLL Override Register
   fields:
   - name: SPLLPWREN_OVRD
@@ -717,7 +717,7 @@ fieldset/regs::SPLL_OVRD:
   - name: SPLL_OVRD_EN
     bit_offset: 31
     bit_size: 1
-fieldset/regs::TRIM_LOCK:
+fieldset/TRIM_LOCK:
   description: Trim Lock register
   fields:
   - name: TRIM_UNLOCK
@@ -729,7 +729,7 @@ fieldset/regs::TRIM_LOCK:
   - name: TRIM_LOCK_KEY
     bit_offset: 16
     bit_size: 16
-fieldset/regs::TROCSR:
+fieldset/TROCSR:
   description: TRO Control Status Register
   fields:
   - name: TROCM
@@ -753,7 +753,7 @@ fieldset/regs::TROCSR:
   - name: TROERR
     bit_offset: 26
     bit_size: 1
-fieldset/regs::UPLLCSR:
+fieldset/UPLLCSR:
   description: UPLL Control Status Register
   fields:
   - name: UPLLCM

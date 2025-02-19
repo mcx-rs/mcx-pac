@@ -2,19 +2,19 @@ block/PDM:
   items:
   - name: CTRL_1
     byte_offset: 0
-    fieldset: regs::CTRL_1
+    fieldset: CTRL_1
   - name: CTRL_2
     byte_offset: 4
-    fieldset: regs::CTRL_2
+    fieldset: CTRL_2
   - name: STAT
     byte_offset: 8
-    fieldset: regs::STAT
+    fieldset: STAT
   - name: FIFO_CTRL
     byte_offset: 16
-    fieldset: regs::FIFO_CTRL
+    fieldset: FIFO_CTRL
   - name: FIFO_STAT
     byte_offset: 20
-    fieldset: regs::FIFO_STAT
+    fieldset: FIFO_STAT
   - name: DATACH
     array:
       len: 4
@@ -22,25 +22,25 @@ block/PDM:
     byte_offset: 36
   - name: DC_CTRL
     byte_offset: 100
-    fieldset: regs::DC_CTRL
+    fieldset: DC_CTRL
   - name: DC_OUT_CTRL
     byte_offset: 104
-    fieldset: regs::DC_OUT_CTRL
+    fieldset: DC_OUT_CTRL
   - name: RANGE_CTRL
     byte_offset: 116
-    fieldset: regs::RANGE_CTRL
+    fieldset: RANGE_CTRL
   - name: RANGE_STAT
     byte_offset: 124
-    fieldset: regs::RANGE_STAT
+    fieldset: RANGE_STAT
   - name: FSYNC_CTRL
     byte_offset: 128
   - name: VERID
     byte_offset: 132
-    fieldset: regs::VERID
+    fieldset: VERID
   - name: PARAM
     byte_offset: 136
-    fieldset: regs::PARAM
-fieldset/regs::CTRL_1:
+    fieldset: PARAM
+fieldset/CTRL_1:
   description: MICFIL Control 1
   fields:
   - name: CH0EN
@@ -85,7 +85,7 @@ fieldset/regs::CTRL_1:
   - name: MDIS
     bit_offset: 31
     bit_size: 1
-fieldset/regs::CTRL_2:
+fieldset/CTRL_2:
   description: MICFIL Control 2
   fields:
   - name: CLKDIV
@@ -100,7 +100,7 @@ fieldset/regs::CTRL_2:
   - name: QSEL
     bit_offset: 25
     bit_size: 3
-fieldset/regs::DC_CTRL:
+fieldset/DC_CTRL:
   description: MICFIL DC Remover Control
   fields:
   - name: DCCONFIG0
@@ -115,7 +115,7 @@ fieldset/regs::DC_CTRL:
   - name: DCCONFIG3
     bit_offset: 6
     bit_size: 2
-fieldset/regs::DC_OUT_CTRL:
+fieldset/DC_OUT_CTRL:
   description: MICFIL Output DC Remover Control
   fields:
   - name: DCCONFIG0
@@ -130,13 +130,13 @@ fieldset/regs::DC_OUT_CTRL:
   - name: DCCONFIG3
     bit_offset: 6
     bit_size: 2
-fieldset/regs::FIFO_CTRL:
+fieldset/FIFO_CTRL:
   description: MICFIL FIFO Control
   fields:
   - name: FIFOWMK
     bit_offset: 0
     bit_size: 4
-fieldset/regs::FIFO_STAT:
+fieldset/FIFO_STAT:
   description: MICFIL FIFO Status
   fields:
   - name: FIFOOVF0
@@ -163,7 +163,7 @@ fieldset/regs::FIFO_STAT:
   - name: FIFOUND3
     bit_offset: 11
     bit_size: 1
-fieldset/regs::PARAM:
+fieldset/PARAM:
   description: Parameter
   fields:
   - name: NPAIR
@@ -184,7 +184,7 @@ fieldset/regs::PARAM:
   - name: DC_OUT_BYPASS
     bit_offset: 11
     bit_size: 1
-fieldset/regs::RANGE_CTRL:
+fieldset/RANGE_CTRL:
   description: MICFIL Range Control
   fields:
   - name: RANGEADJ0
@@ -199,7 +199,7 @@ fieldset/regs::RANGE_CTRL:
   - name: RANGEADJ3
     bit_offset: 12
     bit_size: 4
-fieldset/regs::RANGE_STAT:
+fieldset/RANGE_STAT:
   description: MICFIL Range Status
   fields:
   - name: RANGEOVF0
@@ -226,7 +226,7 @@ fieldset/regs::RANGE_STAT:
   - name: RANGEUNF3
     bit_offset: 19
     bit_size: 1
-fieldset/regs::STAT:
+fieldset/STAT:
   description: MICFIL Status
   fields:
   - name: CH0F
@@ -244,7 +244,7 @@ fieldset/regs::STAT:
   - name: BSY_FIL
     bit_offset: 31
     bit_size: 1
-fieldset/regs::VERID:
+fieldset/VERID:
   description: Version ID
   fields:
   - name: FEATURE

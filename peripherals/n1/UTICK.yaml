@@ -2,23 +2,23 @@ block/UTICK:
   items:
   - name: CTRL
     byte_offset: 0
-    fieldset: regs::CTRL
+    fieldset: CTRL
   - name: STAT
     byte_offset: 4
-    fieldset: regs::STAT
+    fieldset: STAT
   - name: CFG
     byte_offset: 8
-    fieldset: regs::CFG
+    fieldset: CFG
   - name: CAPCLR
     byte_offset: 12
-    fieldset: regs::CAPCLR
+    fieldset: CAPCLR
   - name: CAP
     array:
       len: 4
       stride: 4
     byte_offset: 16
-    fieldset: regs::CAP
-fieldset/regs::CAP:
+    fieldset: CAP
+fieldset/CAP:
   description: Capture
   fields:
   - name: CAP_VALUE
@@ -27,7 +27,7 @@ fieldset/regs::CAP:
   - name: VALID
     bit_offset: 31
     bit_size: 1
-fieldset/regs::CAPCLR:
+fieldset/CAPCLR:
   description: Capture Clear
   fields:
   - name: CAPCLR0
@@ -42,7 +42,7 @@ fieldset/regs::CAPCLR:
   - name: CAPCLR3
     bit_offset: 3
     bit_size: 1
-fieldset/regs::CFG:
+fieldset/CFG:
   description: Capture Configuration
   fields:
   - name: CAPEN0
@@ -69,7 +69,7 @@ fieldset/regs::CFG:
   - name: CAPPOL3
     bit_offset: 11
     bit_size: 1
-fieldset/regs::CTRL:
+fieldset/CTRL:
   description: Control
   fields:
   - name: DELAYVAL
@@ -78,7 +78,7 @@ fieldset/regs::CTRL:
   - name: REPEAT
     bit_offset: 31
     bit_size: 1
-fieldset/regs::STAT:
+fieldset/STAT:
   description: Status
   fields:
   - name: INTR

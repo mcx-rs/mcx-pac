@@ -2,20 +2,20 @@ block/GLIKEY:
   items:
   - name: CTRL_0
     byte_offset: 0
-    fieldset: regs::CTRL_0
+    fieldset: CTRL_0
   - name: CTRL_1
     byte_offset: 4
-    fieldset: regs::CTRL_1
+    fieldset: CTRL_1
   - name: INTR_CTRL
     byte_offset: 8
-    fieldset: regs::INTR_CTRL
+    fieldset: INTR_CTRL
   - name: STATUS
     byte_offset: 12
-    fieldset: regs::STATUS
+    fieldset: STATUS
   - name: VERSION
     byte_offset: 252
-    fieldset: regs::VERSION
-fieldset/regs::CTRL_0:
+    fieldset: VERSION
+fieldset/CTRL_0:
   description: Control Register 0 SFR
   fields:
   - name: WRITE_INDEX
@@ -33,7 +33,7 @@ fieldset/regs::CTRL_0:
   - name: RESERVED31
     bit_offset: 19
     bit_size: 13
-fieldset/regs::CTRL_1:
+fieldset/CTRL_1:
   description: Control Register 1 SFR
   fields:
   - name: READ_INDEX
@@ -51,7 +51,7 @@ fieldset/regs::CTRL_1:
   - name: RESERVED31
     bit_offset: 22
     bit_size: 10
-fieldset/regs::INTR_CTRL:
+fieldset/INTR_CTRL:
   description: Interrupt Control
   fields:
   - name: INT_EN
@@ -66,7 +66,7 @@ fieldset/regs::INTR_CTRL:
   - name: RESERVED31
     bit_offset: 3
     bit_size: 29
-fieldset/regs::STATUS:
+fieldset/STATUS:
   description: Status
   fields:
   - name: INT_STATUS
@@ -84,7 +84,7 @@ fieldset/regs::STATUS:
   - name: FSM_STATE
     bit_offset: 19
     bit_size: 13
-fieldset/regs::VERSION:
+fieldset/VERSION:
   description: IP Version
   fields:
   - name: Reserved3

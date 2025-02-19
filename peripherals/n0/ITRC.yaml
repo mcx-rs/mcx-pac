@@ -2,33 +2,33 @@ block/ITRC:
   items:
   - name: STATUS
     byte_offset: 0
-    fieldset: regs::STATUS
+    fieldset: STATUS
   - name: STATUS1
     byte_offset: 4
-    fieldset: regs::STATUS1
-  - name: OUTX_SELY
+    fieldset: STATUS1
+  - name: OUT_SEL
     array:
       len: 7
       stride: 8
     byte_offset: 8
-    bit_size: 64
-  - name: OUTX_SELY
+    fieldset: OUT_SEL
+  - name: OUT_SEL_1
     array:
       len: 7
       stride: 8
     byte_offset: 72
-    bit_size: 64
-  - name: OUTX_SELY
+    fieldset: OUT_SEL_1
+  - name: OUT_SEL_2
     array:
       len: 7
       stride: 8
     byte_offset: 136
-    bit_size: 64
+    fieldset: OUT_SEL_2
   - name: SW_EVENT0
     byte_offset: 240
   - name: SW_EVENT1
     byte_offset: 244
-fieldset/regs::OUT_SEL:
+fieldset/OUT_SEL:
   description: Trigger Source IN0 to IN15 selector
   fields:
   - name: IN0_SELn
@@ -79,7 +79,7 @@ fieldset/regs::OUT_SEL:
   - name: IN15_SELn
     bit_offset: 30
     bit_size: 2
-fieldset/regs::OUT_SEL_1:
+fieldset/OUT_SEL_1:
   description: Trigger Source IN16 to IN31 selector
   fields:
   - name: IN16_SELn
@@ -130,7 +130,7 @@ fieldset/regs::OUT_SEL_1:
   - name: IN31_SELn
     bit_offset: 30
     bit_size: 2
-fieldset/regs::OUT_SEL_2:
+fieldset/OUT_SEL_2:
   description: Trigger source IN32 to IN47 selector
   fields:
   - name: IN32_SELn
@@ -157,7 +157,7 @@ fieldset/regs::OUT_SEL_2:
   - name: IN47_SELn
     bit_offset: 30
     bit_size: 2
-fieldset/regs::STATUS:
+fieldset/STATUS:
   description: ITRC outputs and IN0 to IN15 Status
   fields:
   - name: IN0_STATUS
@@ -229,7 +229,7 @@ fieldset/regs::STATUS:
   - name: OUT6_STATUS
     bit_offset: 22
     bit_size: 1
-fieldset/regs::STATUS1:
+fieldset/STATUS1:
   description: ITRC IN16 to IN47 Status
   fields:
   - name: IN16_STATUS

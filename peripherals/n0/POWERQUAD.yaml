@@ -4,35 +4,35 @@ block/POWERQUAD:
     byte_offset: 0
   - name: OUTFORMAT
     byte_offset: 4
-    fieldset: regs::OUTFORMAT
+    fieldset: OUTFORMAT
   - name: TMPBASE
     byte_offset: 8
   - name: TMPFORMAT
     byte_offset: 12
-    fieldset: regs::TMPFORMAT
+    fieldset: TMPFORMAT
   - name: INABASE
     byte_offset: 16
   - name: INAFORMAT
     byte_offset: 20
-    fieldset: regs::INAFORMAT
+    fieldset: INAFORMAT
   - name: INBBASE
     byte_offset: 24
   - name: INBFORMAT
     byte_offset: 28
-    fieldset: regs::INBFORMAT
+    fieldset: INBFORMAT
   - name: CONTROL
     byte_offset: 256
-    fieldset: regs::CONTROL
+    fieldset: CONTROL
   - name: LENGTH
     byte_offset: 260
   - name: CPPRE
     byte_offset: 264
-    fieldset: regs::CPPRE
+    fieldset: CPPRE
   - name: MISC
     byte_offset: 268
   - name: CURSORY
     byte_offset: 272
-    fieldset: regs::CURSORY
+    fieldset: CURSORY
   - name: CORDIC_X
     byte_offset: 384
   - name: CORDIC_Y
@@ -41,16 +41,16 @@ block/POWERQUAD:
     byte_offset: 392
   - name: ERRSTAT
     byte_offset: 396
-    fieldset: regs::ERRSTAT
+    fieldset: ERRSTAT
   - name: INTREN
     byte_offset: 400
-    fieldset: regs::INTREN
+    fieldset: INTREN
   - name: EVENTEN
     byte_offset: 404
-    fieldset: regs::EVENTEN
+    fieldset: EVENTEN
   - name: INTRSTAT
     byte_offset: 408
-    fieldset: regs::INTRSTAT
+    fieldset: INTRSTAT
   - name: GPREG
     array:
       len: 16
@@ -61,7 +61,7 @@ block/POWERQUAD:
       len: 8
       stride: 4
     byte_offset: 576
-fieldset/regs::CONTROL:
+fieldset/CONTROL:
   description: Control
   fields:
   - name: DECODE_OPCODE
@@ -73,7 +73,7 @@ fieldset/regs::CONTROL:
   - name: INST_BUSY
     bit_offset: 31
     bit_size: 1
-fieldset/regs::CPPRE:
+fieldset/CPPRE:
   description: Coprocessor Prescale
   fields:
   - name: CPPRE_IN
@@ -88,13 +88,13 @@ fieldset/regs::CPPRE:
   - name: CPPRE_SAT8
     bit_offset: 17
     bit_size: 1
-fieldset/regs::CURSORY:
+fieldset/CURSORY:
   description: Cursory
   fields:
   - name: CURSORY
     bit_offset: 0
     bit_size: 1
-fieldset/regs::ERRSTAT:
+fieldset/ERRSTAT:
   description: Error Status
   fields:
   - name: OVERFLOW
@@ -112,7 +112,7 @@ fieldset/regs::ERRSTAT:
   - name: BUSERROR
     bit_offset: 4
     bit_size: 1
-fieldset/regs::EVENTEN:
+fieldset/EVENTEN:
   description: Event Enable
   fields:
   - name: EVENT_OFLOW
@@ -133,7 +133,7 @@ fieldset/regs::EVENTEN:
   - name: EVENT_COMP
     bit_offset: 7
     bit_size: 1
-fieldset/regs::INAFORMAT:
+fieldset/INAFORMAT:
   description: Input A Format
   fields:
   - name: INA_FORMATINT
@@ -145,7 +145,7 @@ fieldset/regs::INAFORMAT:
   - name: INA_SCALER
     bit_offset: 8
     bit_size: 8
-fieldset/regs::INBFORMAT:
+fieldset/INBFORMAT:
   description: Input B Format
   fields:
   - name: INB_FORMATINT
@@ -157,7 +157,7 @@ fieldset/regs::INBFORMAT:
   - name: INB_SCALER
     bit_offset: 8
     bit_size: 8
-fieldset/regs::INTREN:
+fieldset/INTREN:
   description: Interrupt Enable
   fields:
   - name: INTR_OFLOW
@@ -178,13 +178,13 @@ fieldset/regs::INTREN:
   - name: INTR_COMP
     bit_offset: 7
     bit_size: 1
-fieldset/regs::INTRSTAT:
+fieldset/INTRSTAT:
   description: Interrupt Status
   fields:
   - name: INTR_STAT
     bit_offset: 0
     bit_size: 1
-fieldset/regs::OUTFORMAT:
+fieldset/OUTFORMAT:
   description: Output Format
   fields:
   - name: OUT_FORMATINT
@@ -196,7 +196,7 @@ fieldset/regs::OUTFORMAT:
   - name: OUT_SCALER
     bit_offset: 8
     bit_size: 8
-fieldset/regs::TMPFORMAT:
+fieldset/TMPFORMAT:
   description: Temporary Format
   fields:
   - name: TMP_FORMATINT

@@ -2,29 +2,29 @@ block/WWDT:
   items:
   - name: MOD
     byte_offset: 0
-    fieldset: regs::MOD
+    fieldset: MOD
   - name: TC
     byte_offset: 4
-    fieldset: regs::TC
+    fieldset: TC
   - name: FEED
     byte_offset: 8
-    fieldset: regs::FEED
+    fieldset: FEED
   - name: TV
     byte_offset: 12
-    fieldset: regs::TV
+    fieldset: TV
   - name: WARNINT
     byte_offset: 20
-    fieldset: regs::WARNINT
+    fieldset: WARNINT
   - name: WINDOW
     byte_offset: 24
-    fieldset: regs::WINDOW
-fieldset/regs::FEED:
+    fieldset: WINDOW
+fieldset/FEED:
   description: Feed Sequence
   fields:
   - name: FEED
     bit_offset: 0
     bit_size: 8
-fieldset/regs::MOD:
+fieldset/MOD:
   description: Mode
   fields:
   - name: WDEN
@@ -48,25 +48,25 @@ fieldset/regs::MOD:
   - name: DEBUG_EN
     bit_offset: 6
     bit_size: 1
-fieldset/regs::TC:
+fieldset/TC:
   description: Timer Constant
   fields:
   - name: COUNT
     bit_offset: 0
     bit_size: 24
-fieldset/regs::TV:
+fieldset/TV:
   description: Timer Value
   fields:
   - name: COUNT
     bit_offset: 0
     bit_size: 24
-fieldset/regs::WARNINT:
+fieldset/WARNINT:
   description: Warning Interrupt Compare Value
   fields:
   - name: WARNINT
     bit_offset: 0
     bit_size: 10
-fieldset/regs::WINDOW:
+fieldset/WINDOW:
   description: Window Compare Value
   fields:
   - name: WINDOW

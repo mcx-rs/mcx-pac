@@ -2,83 +2,83 @@ block/LPUART:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: regs::VERID
+    fieldset: VERID
   - name: PARAM
     byte_offset: 4
-    fieldset: regs::PARAM
+    fieldset: PARAM
   - name: GLOBAL
     byte_offset: 8
-    fieldset: regs::GLOBAL
+    fieldset: GLOBAL
   - name: PINCFG
     byte_offset: 12
-    fieldset: regs::PINCFG
+    fieldset: PINCFG
   - name: BAUD
     byte_offset: 16
-    fieldset: regs::BAUD
+    fieldset: BAUD
   - name: STAT
     byte_offset: 20
-    fieldset: regs::STAT
+    fieldset: STAT
   - name: CTRL
     byte_offset: 24
-    fieldset: regs::CTRL
+    fieldset: CTRL
   - name: DATA
     byte_offset: 28
-    fieldset: regs::DATA
+    fieldset: DATA
   - name: MATCH
     byte_offset: 32
-    fieldset: regs::MATCH
+    fieldset: MATCH
   - name: MODIR
     byte_offset: 36
-    fieldset: regs::MODIR
+    fieldset: MODIR
   - name: FIFO
     byte_offset: 40
-    fieldset: regs::FIFO
+    fieldset: FIFO
   - name: WATER
     byte_offset: 44
-    fieldset: regs::WATER
+    fieldset: WATER
   - name: DATARO
     byte_offset: 48
-    fieldset: regs::DATARO
+    fieldset: DATARO
   - name: MCR
     byte_offset: 64
-    fieldset: regs::MCR
+    fieldset: MCR
   - name: MSR
     byte_offset: 68
-    fieldset: regs::MSR
+    fieldset: MSR
   - name: REIR
     byte_offset: 72
-    fieldset: regs::REIR
+    fieldset: REIR
   - name: TEIR
     byte_offset: 76
-    fieldset: regs::TEIR
+    fieldset: TEIR
   - name: HDCR
     byte_offset: 80
-    fieldset: regs::HDCR
+    fieldset: HDCR
   - name: TOCR
     byte_offset: 88
-    fieldset: regs::TOCR
+    fieldset: TOCR
   - name: TOSR
     byte_offset: 92
-    fieldset: regs::TOSR
+    fieldset: TOSR
   - name: TIMEOUT
     array:
       len: 4
       stride: 4
     byte_offset: 96
-    fieldset: regs::TIMEOUT
+    fieldset: TIMEOUT
   - name: TCBR
     array:
       len: 128
       stride: 4
     byte_offset: 512
-    fieldset: regs::TCBR
+    fieldset: TCBR
   - name: TDBR
     array:
       len: 256
       stride: 4
     byte_offset: 1024
-    fieldset: regs::TDBR
-fieldset/regs::BAUD:
+    fieldset: TDBR
+fieldset/BAUD:
   description: Baud Rate
   fields:
   - name: SBR
@@ -123,7 +123,7 @@ fieldset/regs::BAUD:
   - name: MAEN1
     bit_offset: 31
     bit_size: 1
-fieldset/regs::CTRL:
+fieldset/CTRL:
   description: Control
   fields:
   - name: PT
@@ -210,7 +210,7 @@ fieldset/regs::CTRL:
   - name: R8T9
     bit_offset: 31
     bit_size: 1
-fieldset/regs::DATA:
+fieldset/DATA:
   description: Data
   fields:
   - name: R0T0
@@ -261,13 +261,13 @@ fieldset/regs::DATA:
   - name: NOISY
     bit_offset: 15
     bit_size: 1
-fieldset/regs::DATARO:
+fieldset/DATARO:
   description: Data Read-Only
   fields:
   - name: DATA
     bit_offset: 0
     bit_size: 16
-fieldset/regs::FIFO:
+fieldset/FIFO:
   description: FIFO
   fields:
   - name: RXFIFOSIZE
@@ -309,13 +309,13 @@ fieldset/regs::FIFO:
   - name: TXEMPT
     bit_offset: 23
     bit_size: 1
-fieldset/regs::GLOBAL:
+fieldset/GLOBAL:
   description: Global
   fields:
   - name: RST
     bit_offset: 1
     bit_size: 1
-fieldset/regs::HDCR:
+fieldset/HDCR:
   description: Half Duplex Control
   fields:
   - name: TXSTALL
@@ -333,7 +333,7 @@ fieldset/regs::HDCR:
   - name: RTSEXT
     bit_offset: 8
     bit_size: 8
-fieldset/regs::MATCH:
+fieldset/MATCH:
   description: Match Address
   fields:
   - name: MA1
@@ -342,7 +342,7 @@ fieldset/regs::MATCH:
   - name: MA2
     bit_offset: 16
     bit_size: 10
-fieldset/regs::MCR:
+fieldset/MCR:
   description: MODEM Control
   fields:
   - name: CTS
@@ -363,7 +363,7 @@ fieldset/regs::MCR:
   - name: RTS
     bit_offset: 9
     bit_size: 1
-fieldset/regs::MODIR:
+fieldset/MODIR:
   description: MODEM IrDA
   fields:
   - name: TXCTSE
@@ -393,7 +393,7 @@ fieldset/regs::MODIR:
   - name: IREN
     bit_offset: 18
     bit_size: 1
-fieldset/regs::MSR:
+fieldset/MSR:
   description: MODEM Status
   fields:
   - name: DCTS
@@ -420,7 +420,7 @@ fieldset/regs::MSR:
   - name: DCD
     bit_offset: 7
     bit_size: 1
-fieldset/regs::PARAM:
+fieldset/PARAM:
   description: Parameter
   fields:
   - name: TXFIFO
@@ -429,19 +429,19 @@ fieldset/regs::PARAM:
   - name: RXFIFO
     bit_offset: 8
     bit_size: 8
-fieldset/regs::PINCFG:
+fieldset/PINCFG:
   description: Pin Configuration
   fields:
   - name: TRGSEL
     bit_offset: 0
     bit_size: 2
-fieldset/regs::REIR:
+fieldset/REIR:
   description: Receiver Extended Idle
   fields:
   - name: IDTIME
     bit_offset: 0
     bit_size: 14
-fieldset/regs::STAT:
+fieldset/STAT:
   description: Status
   fields:
   - name: LBKFE
@@ -510,13 +510,13 @@ fieldset/regs::STAT:
   - name: LBKDIF
     bit_offset: 31
     bit_size: 1
-fieldset/regs::TCBR:
+fieldset/TCBR:
   description: Transmit Command Burst
   fields:
   - name: DATA
     bit_offset: 0
     bit_size: 16
-fieldset/regs::TDBR:
+fieldset/TDBR:
   description: Transmit Data Burst
   fields:
   - name: DATA0
@@ -531,13 +531,13 @@ fieldset/regs::TDBR:
   - name: DATA3
     bit_offset: 24
     bit_size: 8
-fieldset/regs::TEIR:
+fieldset/TEIR:
   description: Transmitter Extended Idle
   fields:
   - name: IDTIME
     bit_offset: 0
     bit_size: 14
-fieldset/regs::TIMEOUT:
+fieldset/TIMEOUT:
   description: Timeout N
   fields:
   - name: TIMEOUT
@@ -546,7 +546,7 @@ fieldset/regs::TIMEOUT:
   - name: CFG
     bit_offset: 30
     bit_size: 2
-fieldset/regs::TOCR:
+fieldset/TOCR:
   description: Timeout Control
   fields:
   - name: TOEN
@@ -555,7 +555,7 @@ fieldset/regs::TOCR:
   - name: TOIE
     bit_offset: 8
     bit_size: 4
-fieldset/regs::TOSR:
+fieldset/TOSR:
   description: Timeout Status
   fields:
   - name: TOZ
@@ -564,7 +564,7 @@ fieldset/regs::TOSR:
   - name: TOF
     bit_offset: 8
     bit_size: 4
-fieldset/regs::VERID:
+fieldset/VERID:
   description: Version ID
   fields:
   - name: FEATURE
@@ -576,7 +576,7 @@ fieldset/regs::VERID:
   - name: MAJOR
     bit_offset: 24
     bit_size: 8
-fieldset/regs::WATER:
+fieldset/WATER:
   description: Watermark
   fields:
   - name: TXWATER

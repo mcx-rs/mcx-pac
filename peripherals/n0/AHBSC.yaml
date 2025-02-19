@@ -5,165 +5,166 @@ block/AHBSC:
       len: 4
       stride: 4
     byte_offset: 16
-    fieldset: regs::FLASH00_MEM_RULE
+    fieldset: FLASH00_MEM_RULE
   - name: FLASH01_MEM_RULE
     array:
       len: 4
       stride: 4
     byte_offset: 32
-    fieldset: regs::FLASH01_MEM_RULE
+    fieldset: FLASH01_MEM_RULE
   - name: FLASH02_MEM_RULE
     byte_offset: 48
-    fieldset: regs::FLASH02_MEM_RULE
+    fieldset: FLASH02_MEM_RULE
   - name: FLASH03_MEM_RULE
     byte_offset: 64
-    fieldset: regs::FLASH03_MEM_RULE
+    fieldset: FLASH03_MEM_RULE
   - name: ROM_MEM_RULE
     array:
       len: 4
       stride: 4
     byte_offset: 96
-    fieldset: regs::ROM_MEM_RULE
+    fieldset: ROM_MEM_RULE
   - name: RAMX_MEM_RULE
     array:
       len: 3
       stride: 4
     byte_offset: 128
+    fieldset: RAMX_MEM_RULE
   - name: RAMA_MEM_RULE
     byte_offset: 160
-    fieldset: regs::RAMA_MEM_RULE
+    fieldset: RAMA_MEM_RULE
   - name: RAMB_MEM_RULE
     byte_offset: 192
-    fieldset: regs::RAMB_MEM_RULE
+    fieldset: RAMB_MEM_RULE
   - name: RAMC_MEM_RULE
     array:
       len: 2
       stride: 4
     byte_offset: 224
-    fieldset: regs::RAMC_MEM_RULE
+    fieldset: RAMC_MEM_RULE
   - name: RAMD_MEM_RULE
     array:
       len: 2
       stride: 4
     byte_offset: 256
-    fieldset: regs::RAMD_MEM_RULE
+    fieldset: RAMD_MEM_RULE
   - name: RAME_MEM_RULE
     array:
       len: 2
       stride: 4
     byte_offset: 288
-    fieldset: regs::RAME_MEM_RULE
+    fieldset: RAME_MEM_RULE
   - name: RAMF_MEM_RULE
     array:
       len: 2
       stride: 4
     byte_offset: 320
-    fieldset: regs::RAMF_MEM_RULE
+    fieldset: RAMF_MEM_RULE
   - name: RAMG_MEM_RULE
     array:
       len: 2
       stride: 4
     byte_offset: 352
-    fieldset: regs::RAMG_MEM_RULE
+    fieldset: RAMG_MEM_RULE
   - name: RAMH_MEM_RULE
     byte_offset: 384
-    fieldset: regs::RAMH_MEM_RULE
+    fieldset: RAMH_MEM_RULE
   - name: APB_PERIPHERAL_GROUP0_MEM_RULE0
     byte_offset: 416
-    fieldset: regs::APB_PERIPHERAL_GROUP0_MEM_RULE0
+    fieldset: APB_PERIPHERAL_GROUP0_MEM_RULE0
   - name: APB_PERIPHERAL_GROUP0_MEM_RULE1
     byte_offset: 420
-    fieldset: regs::APB_PERIPHERAL_GROUP0_MEM_RULE1
+    fieldset: APB_PERIPHERAL_GROUP0_MEM_RULE1
   - name: APB_PERIPHERAL_GROUP0_MEM_RULE2
     byte_offset: 424
-    fieldset: regs::APB_PERIPHERAL_GROUP0_MEM_RULE2
+    fieldset: APB_PERIPHERAL_GROUP0_MEM_RULE2
   - name: APB_PERIPHERAL_GROUP0_MEM_RULE3
     byte_offset: 428
-    fieldset: regs::APB_PERIPHERAL_GROUP0_MEM_RULE3
+    fieldset: APB_PERIPHERAL_GROUP0_MEM_RULE3
   - name: APB_PERIPHERAL_GROUP1_MEM_RULE0
     byte_offset: 432
-    fieldset: regs::APB_PERIPHERAL_GROUP1_MEM_RULE0
+    fieldset: APB_PERIPHERAL_GROUP1_MEM_RULE0
   - name: APB_PERIPHERAL_GROUP1_MEM_RULE1
     byte_offset: 436
-    fieldset: regs::APB_PERIPHERAL_GROUP1_MEM_RULE1
+    fieldset: APB_PERIPHERAL_GROUP1_MEM_RULE1
   - name: APB_PERIPHERAL_GROUP1_MEM_RULE2
     byte_offset: 444
-    fieldset: regs::APB_PERIPHERAL_GROUP1_MEM_RULE2
+    fieldset: APB_PERIPHERAL_GROUP1_MEM_RULE2
   - name: AIPS_BRIDGE_GROUP0_MEM_RULE0
     byte_offset: 448
-    fieldset: regs::AIPS_BRIDGE_GROUP0_MEM_RULE0
+    fieldset: AIPS_BRIDGE_GROUP0_MEM_RULE0
   - name: AIPS_BRIDGE_GROUP0_MEM_RULE1
     byte_offset: 452
-    fieldset: regs::AIPS_BRIDGE_GROUP0_MEM_RULE1
+    fieldset: AIPS_BRIDGE_GROUP0_MEM_RULE1
   - name: AIPS_BRIDGE_GROUP0_MEM_RULE2
     byte_offset: 456
-    fieldset: regs::AIPS_BRIDGE_GROUP0_MEM_RULE2
+    fieldset: AIPS_BRIDGE_GROUP0_MEM_RULE2
   - name: AIPS_BRIDGE_GROUP0_MEM_RULE3
     byte_offset: 460
-    fieldset: regs::AIPS_BRIDGE_GROUP0_MEM_RULE3
+    fieldset: AIPS_BRIDGE_GROUP0_MEM_RULE3
   - name: AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE0
     byte_offset: 464
-    fieldset: regs::AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE0
+    fieldset: AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE0
   - name: AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE1
     byte_offset: 468
-    fieldset: regs::AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE1
+    fieldset: AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE1
   - name: AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2
     byte_offset: 472
-    fieldset: regs::AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2
+    fieldset: AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2
   - name: AIPS_BRIDGE_GROUP1_MEM_RULE0
     byte_offset: 480
-    fieldset: regs::AIPS_BRIDGE_GROUP1_MEM_RULE0
+    fieldset: AIPS_BRIDGE_GROUP1_MEM_RULE0
   - name: AIPS_BRIDGE_GROUP1_MEM_RULE1
     byte_offset: 484
-    fieldset: regs::AIPS_BRIDGE_GROUP1_MEM_RULE1
+    fieldset: AIPS_BRIDGE_GROUP1_MEM_RULE1
   - name: AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0
     byte_offset: 496
-    fieldset: regs::AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0
+    fieldset: AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0
   - name: AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE1
     byte_offset: 500
-    fieldset: regs::AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE1
+    fieldset: AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE1
   - name: AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE2
     byte_offset: 504
-    fieldset: regs::AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE2
+    fieldset: AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE2
   - name: AIPS_BRIDGE_GROUP2_MEM_RULE0
     byte_offset: 512
-    fieldset: regs::AIPS_BRIDGE_GROUP2_MEM_RULE0
+    fieldset: AIPS_BRIDGE_GROUP2_MEM_RULE0
   - name: AIPS_BRIDGE_GROUP2_MEM_RULE1
     byte_offset: 516
-    fieldset: regs::AIPS_BRIDGE_GROUP2_MEM_RULE1
+    fieldset: AIPS_BRIDGE_GROUP2_MEM_RULE1
   - name: AIPS_BRIDGE_GROUP3_MEM_RULE0
     byte_offset: 544
-    fieldset: regs::AIPS_BRIDGE_GROUP3_MEM_RULE0
+    fieldset: AIPS_BRIDGE_GROUP3_MEM_RULE0
   - name: AIPS_BRIDGE_GROUP3_MEM_RULE1
     byte_offset: 548
-    fieldset: regs::AIPS_BRIDGE_GROUP3_MEM_RULE1
+    fieldset: AIPS_BRIDGE_GROUP3_MEM_RULE1
   - name: AIPS_BRIDGE_GROUP3_MEM_RULE2
     byte_offset: 552
-    fieldset: regs::AIPS_BRIDGE_GROUP3_MEM_RULE2
+    fieldset: AIPS_BRIDGE_GROUP3_MEM_RULE2
   - name: AIPS_BRIDGE_GROUP3_MEM_RULE3
     byte_offset: 556
-    fieldset: regs::AIPS_BRIDGE_GROUP3_MEM_RULE3
+    fieldset: AIPS_BRIDGE_GROUP3_MEM_RULE3
   - name: AIPS_BRIDGE_GROUP4_MEM_RULE0
     byte_offset: 576
-    fieldset: regs::AIPS_BRIDGE_GROUP4_MEM_RULE0
+    fieldset: AIPS_BRIDGE_GROUP4_MEM_RULE0
   - name: AIPS_BRIDGE_GROUP4_MEM_RULE1
     byte_offset: 580
-    fieldset: regs::AIPS_BRIDGE_GROUP4_MEM_RULE1
+    fieldset: AIPS_BRIDGE_GROUP4_MEM_RULE1
   - name: AIPS_BRIDGE_GROUP4_MEM_RULE2
     byte_offset: 584
-    fieldset: regs::AIPS_BRIDGE_GROUP4_MEM_RULE2
+    fieldset: AIPS_BRIDGE_GROUP4_MEM_RULE2
   - name: AIPS_BRIDGE_GROUP4_MEM_RULE3
     byte_offset: 588
-    fieldset: regs::AIPS_BRIDGE_GROUP4_MEM_RULE3
+    fieldset: AIPS_BRIDGE_GROUP4_MEM_RULE3
   - name: AHB_SECURE_CTRL_PERIPHERAL_RULE0
     byte_offset: 592
-    fieldset: regs::AHB_SECURE_CTRL_PERIPHERAL_RULE0
+    fieldset: AHB_SECURE_CTRL_PERIPHERAL_RULE0
   - name: FLEXSPI0_REGION0_MEM_RULE
     array:
       len: 4
       stride: 4
     byte_offset: 624
-    fieldset: regs::FLEXSPI0_REGION0_MEM_RULE
+    fieldset: FLEXSPI0_REGION0_MEM_RULE
   - name: FLEXSPI0_REGION1_6_MEM_RULE
     array:
       len: 6
@@ -175,7 +176,7 @@ block/AHBSC:
       len: 4
       stride: 4
     byte_offset: 736
-    fieldset: regs::FLEXSPI0_REGION7_MEM_RULE
+    fieldset: FLEXSPI0_REGION7_MEM_RULE
   - name: FLEXSPI0_REGION8_13_MEM_RULE
     array:
       len: 6
@@ -192,61 +193,63 @@ block/AHBSC:
       len: 32
       stride: 4
     byte_offset: 3712
+    fieldset: SEC_VIO_MISC_INFO
   - name: SEC_VIO_INFO_VALID
     byte_offset: 3840
-    fieldset: regs::SEC_VIO_INFO_VALID
+    fieldset: SEC_VIO_INFO_VALID
   - name: SEC_GPIO_MASK
     array:
       len: 2
       stride: 4
     byte_offset: 3968
+    fieldset: SEC_GPIO_MASK
   - name: SEC_CPU1_INT_MASK0
     byte_offset: 3992
-    fieldset: regs::SEC_CPU1_INT_MASK0
+    fieldset: SEC_CPU1_INT_MASK0
   - name: SEC_CPU1_INT_MASK1
     byte_offset: 3996
-    fieldset: regs::SEC_CPU1_INT_MASK1
+    fieldset: SEC_CPU1_INT_MASK1
   - name: SEC_CPU1_INT_MASK2
     byte_offset: 4000
-    fieldset: regs::SEC_CPU1_INT_MASK2
+    fieldset: SEC_CPU1_INT_MASK2
   - name: SEC_CPU1_INT_MASK3
     byte_offset: 4004
-    fieldset: regs::SEC_CPU1_INT_MASK3
+    fieldset: SEC_CPU1_INT_MASK3
   - name: SEC_CPU1_INT_MASK4
     byte_offset: 4008
-    fieldset: regs::SEC_CPU1_INT_MASK4
+    fieldset: SEC_CPU1_INT_MASK4
   - name: SEC_GP_REG_LOCK
     byte_offset: 4028
-    fieldset: regs::SEC_GP_REG_LOCK
+    fieldset: SEC_GP_REG_LOCK
   - name: MASTER_SEC_LEVEL
     byte_offset: 4048
-    fieldset: regs::MASTER_SEC_LEVEL
+    fieldset: MASTER_SEC_LEVEL
   - name: MASTER_SEC_ANTI_POL_REG
     byte_offset: 4052
-    fieldset: regs::MASTER_SEC_ANTI_POL_REG
+    fieldset: MASTER_SEC_ANTI_POL_REG
   - name: CPU0_LOCK_REG
     byte_offset: 4076
-    fieldset: regs::CPU0_LOCK_REG
+    fieldset: CPU0_LOCK_REG
   - name: CPU1_LOCK_REG
     byte_offset: 4080
-    fieldset: regs::CPU1_LOCK_REG
+    fieldset: CPU1_LOCK_REG
   - name: MISC_CTRL_DP_REG
     byte_offset: 4088
-    fieldset: regs::MISC_CTRL_DP_REG
+    fieldset: MISC_CTRL_DP_REG
   - name: MISC_CTRL_REG
     byte_offset: 4092
-    fieldset: regs::MISC_CTRL_REG
+    fieldset: MISC_CTRL_REG
 block/FLEXSPI0_REGION1_6_MEM_RULE:
   items:
   - name: FLEXSPI0_REGION_MEM_RULE0
     byte_offset: 0
-    fieldset: regs::FLEXSPI0_REGION1_6_MEM_RULE_FLEXSPI0_REGION_MEM_RULE0
+    fieldset: FLEXSPI0_REGION1_6_MEM_RULE_FLEXSPI0_REGION_MEM_RULE0
 block/FLEXSPI0_REGION8_13_MEM_RULE:
   items:
   - name: FLEXSPI0_REGION_MEM_RULE0
     byte_offset: 0
-    fieldset: regs::FLEXSPI0_REGION8_13_MEM_RULE_FLEXSPI0_REGION_MEM_RULE0
-fieldset/regs::AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE0:
+    fieldset: FLEXSPI0_REGION8_13_MEM_RULE_FLEXSPI0_REGION_MEM_RULE0
+fieldset/AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE0:
   description: AHB Peripheral 0 Slave Port 12 Slave Rule 0
   fields:
   - name: eDMA0_CH15
@@ -270,7 +273,7 @@ fieldset/regs::AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE0:
   - name: GPIO0_ALIAS0
     bit_offset: 28
     bit_size: 2
-fieldset/regs::AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE1:
+fieldset/AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE1:
   description: AHB Peripheral 0 Slave Port 12 Slave Rule 1
   fields:
   - name: GPIO0_ALIAS1
@@ -297,13 +300,13 @@ fieldset/regs::AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE1:
   - name: GPIO4_ALIAS0
     bit_offset: 28
     bit_size: 2
-fieldset/regs::AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2:
+fieldset/AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2:
   description: AHB Peripheral 0 Slave Port 12 Slave Rule 2
   fields:
   - name: GPIO4_ALIAS1
     bit_offset: 0
     bit_size: 2
-fieldset/regs::AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0:
+fieldset/AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0:
   description: AHB Peripheral 1 Slave Port 13 Slave Rule 0
   fields:
   - name: eDMA1_CH15
@@ -327,7 +330,7 @@ fieldset/regs::AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0:
   - name: FLEXCOMM6
     bit_offset: 28
     bit_size: 2
-fieldset/regs::AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE1:
+fieldset/AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE1:
   description: AHB Peripheral 1 Slave Port 13 Slave Rule 1
   fields:
   - name: FLEXCOMM7
@@ -354,13 +357,13 @@ fieldset/regs::AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE1:
   - name: NPU
     bit_offset: 28
     bit_size: 2
-fieldset/regs::AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE2:
+fieldset/AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE2:
   description: AHB Peripheral 1 Slave Port 13 Slave Rule 2
   fields:
   - name: POWERQUAD
     bit_offset: 0
     bit_size: 2
-fieldset/regs::AHB_SECURE_CTRL_PERIPHERAL_RULE0:
+fieldset/AHB_SECURE_CTRL_PERIPHERAL_RULE0:
   description: AHB Secure Control Peripheral Rule 0
   fields:
   - name: RULE0
@@ -375,7 +378,7 @@ fieldset/regs::AHB_SECURE_CTRL_PERIPHERAL_RULE0:
   - name: RULE3
     bit_offset: 12
     bit_size: 2
-fieldset/regs::AIPS_BRIDGE_GROUP0_MEM_RULE0:
+fieldset/AIPS_BRIDGE_GROUP0_MEM_RULE0:
   description: AIPS Bridge Group 0 Memory Rule 0
   fields:
   - name: GPIO5_ALIAS0
@@ -402,7 +405,7 @@ fieldset/regs::AIPS_BRIDGE_GROUP0_MEM_RULE0:
   - name: TRO0
     bit_offset: 28
     bit_size: 2
-fieldset/regs::AIPS_BRIDGE_GROUP0_MEM_RULE1:
+fieldset/AIPS_BRIDGE_GROUP0_MEM_RULE1:
   description: AIPS Bridge Group 0 Memory Rule 1
   fields:
   - name: LPTMR0
@@ -417,7 +420,7 @@ fieldset/regs::AIPS_BRIDGE_GROUP0_MEM_RULE1:
   - name: FMU_TEST
     bit_offset: 24
     bit_size: 2
-fieldset/regs::AIPS_BRIDGE_GROUP0_MEM_RULE2:
+fieldset/AIPS_BRIDGE_GROUP0_MEM_RULE2:
   description: AIPS Bridge Group 0 Memory Rule 2
   fields:
   - name: TSI
@@ -444,7 +447,7 @@ fieldset/regs::AIPS_BRIDGE_GROUP0_MEM_RULE2:
   - name: ELS_ALIAS3
     bit_offset: 28
     bit_size: 2
-fieldset/regs::AIPS_BRIDGE_GROUP0_MEM_RULE3:
+fieldset/AIPS_BRIDGE_GROUP0_MEM_RULE3:
   description: AIPS Bridge Group 0 Memory Rule 3
   fields:
   - name: DIGTMP
@@ -465,7 +468,7 @@ fieldset/regs::AIPS_BRIDGE_GROUP0_MEM_RULE3:
   - name: INTM0
     bit_offset: 20
     bit_size: 2
-fieldset/regs::AIPS_BRIDGE_GROUP1_MEM_RULE0:
+fieldset/AIPS_BRIDGE_GROUP1_MEM_RULE0:
   description: AIPS Bridge Group 1 Rule 0
   fields:
   - name: eDMA0_MP
@@ -492,7 +495,7 @@ fieldset/regs::AIPS_BRIDGE_GROUP1_MEM_RULE0:
   - name: eDMA0_CH6
     bit_offset: 28
     bit_size: 2
-fieldset/regs::AIPS_BRIDGE_GROUP1_MEM_RULE1:
+fieldset/AIPS_BRIDGE_GROUP1_MEM_RULE1:
   description: AIPS Bridge Group 1 Rule 1
   fields:
   - name: eDMA0_CH7
@@ -519,7 +522,7 @@ fieldset/regs::AIPS_BRIDGE_GROUP1_MEM_RULE1:
   - name: eDMA0_CH14
     bit_offset: 28
     bit_size: 2
-fieldset/regs::AIPS_BRIDGE_GROUP2_MEM_RULE0:
+fieldset/AIPS_BRIDGE_GROUP2_MEM_RULE0:
   description: AIPS Bridge Group 2 Rule 0
   fields:
   - name: eDMA1_MP
@@ -546,7 +549,7 @@ fieldset/regs::AIPS_BRIDGE_GROUP2_MEM_RULE0:
   - name: eDMA1_CH6
     bit_offset: 28
     bit_size: 2
-fieldset/regs::AIPS_BRIDGE_GROUP2_MEM_RULE1:
+fieldset/AIPS_BRIDGE_GROUP2_MEM_RULE1:
   description: AIPS Bridge Group 2 Memory Rule 1
   fields:
   - name: eDMA1_CH7
@@ -573,7 +576,7 @@ fieldset/regs::AIPS_BRIDGE_GROUP2_MEM_RULE1:
   - name: eDMA1_CH14
     bit_offset: 28
     bit_size: 2
-fieldset/regs::AIPS_BRIDGE_GROUP3_MEM_RULE0:
+fieldset/AIPS_BRIDGE_GROUP3_MEM_RULE0:
   description: AIPS Bridge Group 3 Rule 0
   fields:
   - name: EWM0
@@ -591,7 +594,7 @@ fieldset/regs::AIPS_BRIDGE_GROUP3_MEM_RULE0:
   - name: MBC
     bit_offset: 28
     bit_size: 2
-fieldset/regs::AIPS_BRIDGE_GROUP3_MEM_RULE1:
+fieldset/AIPS_BRIDGE_GROUP3_MEM_RULE1:
   description: AIPS Bridge Group 3 Memory Rule 1
   fields:
   - name: FLEXSPI
@@ -612,7 +615,7 @@ fieldset/regs::AIPS_BRIDGE_GROUP3_MEM_RULE1:
   - name: ENC
     bit_offset: 28
     bit_size: 2
-fieldset/regs::AIPS_BRIDGE_GROUP3_MEM_RULE2:
+fieldset/AIPS_BRIDGE_GROUP3_MEM_RULE2:
   description: AIPS Bridge Group 3 Rule 2
   fields:
   - name: PWM1
@@ -636,7 +639,7 @@ fieldset/regs::AIPS_BRIDGE_GROUP3_MEM_RULE2:
   - name: CAN0_RULE3
     bit_offset: 28
     bit_size: 2
-fieldset/regs::AIPS_BRIDGE_GROUP3_MEM_RULE3:
+fieldset/AIPS_BRIDGE_GROUP3_MEM_RULE3:
   description: AIPS Bridge Group 3 Rule 3
   fields:
   - name: CAN1_RULE0
@@ -657,7 +660,7 @@ fieldset/regs::AIPS_BRIDGE_GROUP3_MEM_RULE3:
   - name: USBFS
     bit_offset: 20
     bit_size: 2
-fieldset/regs::AIPS_BRIDGE_GROUP4_MEM_RULE0:
+fieldset/AIPS_BRIDGE_GROUP4_MEM_RULE0:
   description: AIPS Bridge Group 4 Rule 0
   fields:
   - name: ENET
@@ -678,7 +681,7 @@ fieldset/regs::AIPS_BRIDGE_GROUP4_MEM_RULE0:
   - name: SAI1
     bit_offset: 28
     bit_size: 2
-fieldset/regs::AIPS_BRIDGE_GROUP4_MEM_RULE1:
+fieldset/AIPS_BRIDGE_GROUP4_MEM_RULE1:
   description: AIPS Bridge Group 4 Rule 1
   fields:
   - name: SINC0
@@ -705,7 +708,7 @@ fieldset/regs::AIPS_BRIDGE_GROUP4_MEM_RULE1:
   - name: DAC0
     bit_offset: 28
     bit_size: 2
-fieldset/regs::AIPS_BRIDGE_GROUP4_MEM_RULE2:
+fieldset/AIPS_BRIDGE_GROUP4_MEM_RULE2:
   description: AIPS Bridge Group 4 Rule 2
   fields:
   - name: OPAMP0
@@ -732,7 +735,7 @@ fieldset/regs::AIPS_BRIDGE_GROUP4_MEM_RULE2:
   - name: PORT1
     bit_offset: 28
     bit_size: 2
-fieldset/regs::AIPS_BRIDGE_GROUP4_MEM_RULE3:
+fieldset/AIPS_BRIDGE_GROUP4_MEM_RULE3:
   description: AIPS Bridge Group 4 Rule 3
   fields:
   - name: PORT2
@@ -750,7 +753,7 @@ fieldset/regs::AIPS_BRIDGE_GROUP4_MEM_RULE3:
   - name: ATX0
     bit_offset: 28
     bit_size: 2
-fieldset/regs::APB_PERIPHERAL_GROUP0_MEM_RULE0:
+fieldset/APB_PERIPHERAL_GROUP0_MEM_RULE0:
   description: APB Bridge Group 0 Memory Rule 0
   fields:
   - name: SYSCON
@@ -762,7 +765,7 @@ fieldset/regs::APB_PERIPHERAL_GROUP0_MEM_RULE0:
   - name: INPUTMUX
     bit_offset: 24
     bit_size: 2
-fieldset/regs::APB_PERIPHERAL_GROUP0_MEM_RULE1:
+fieldset/APB_PERIPHERAL_GROUP0_MEM_RULE1:
   description: APB Bridge Group 0 Memory Rule 1
   fields:
   - name: CTIMER0
@@ -777,7 +780,7 @@ fieldset/regs::APB_PERIPHERAL_GROUP0_MEM_RULE1:
   - name: CTIMER3
     bit_offset: 28
     bit_size: 2
-fieldset/regs::APB_PERIPHERAL_GROUP0_MEM_RULE2:
+fieldset/APB_PERIPHERAL_GROUP0_MEM_RULE2:
   description: APB Bridge Group 0 Rule 2
   fields:
   - name: CTIMER4
@@ -801,13 +804,13 @@ fieldset/regs::APB_PERIPHERAL_GROUP0_MEM_RULE2:
   - name: WWDT1
     bit_offset: 28
     bit_size: 2
-fieldset/regs::APB_PERIPHERAL_GROUP0_MEM_RULE3:
+fieldset/APB_PERIPHERAL_GROUP0_MEM_RULE3:
   description: APB Bridge Group 0 Memory Rule 3
   fields:
   - name: CACHE64_POLSEL0
     bit_offset: 12
     bit_size: 2
-fieldset/regs::APB_PERIPHERAL_GROUP1_MEM_RULE0:
+fieldset/APB_PERIPHERAL_GROUP1_MEM_RULE0:
   description: APB Bridge Group 1 Memory Rule 0
   fields:
   - name: I3C0
@@ -822,7 +825,7 @@ fieldset/regs::APB_PERIPHERAL_GROUP1_MEM_RULE0:
   - name: ITRC
     bit_offset: 24
     bit_size: 2
-fieldset/regs::APB_PERIPHERAL_GROUP1_MEM_RULE1:
+fieldset/APB_PERIPHERAL_GROUP1_MEM_RULE1:
   description: APB Bridge Group 1 Memory Rule 1
   fields:
   - name: PKC
@@ -840,7 +843,7 @@ fieldset/regs::APB_PERIPHERAL_GROUP1_MEM_RULE1:
   - name: PUF_ALIAS3
     bit_offset: 28
     bit_size: 2
-fieldset/regs::APB_PERIPHERAL_GROUP1_MEM_RULE2:
+fieldset/APB_PERIPHERAL_GROUP1_MEM_RULE2:
   description: APB Bridge Group 1 Memory Rule 2
   fields:
   - name: SM3
@@ -855,7 +858,7 @@ fieldset/regs::APB_PERIPHERAL_GROUP1_MEM_RULE2:
   - name: PLU
     bit_offset: 16
     bit_size: 2
-fieldset/regs::CPU0_LOCK_REG:
+fieldset/CPU0_LOCK_REG:
   description: Miscellaneous CPU0 Control Signals
   fields:
   - name: LOCK_NS_VTOR
@@ -876,7 +879,7 @@ fieldset/regs::CPU0_LOCK_REG:
   - name: CM33_LOCK_REG_LOCK
     bit_offset: 30
     bit_size: 2
-fieldset/regs::CPU1_LOCK_REG:
+fieldset/CPU1_LOCK_REG:
   description: Miscellaneous CPU1 Control Signals
   fields:
   - name: LOCK_NS_VTOR
@@ -885,7 +888,7 @@ fieldset/regs::CPU1_LOCK_REG:
   - name: LOCK_NS_MPU
     bit_offset: 2
     bit_size: 2
-fieldset/regs::FLASH00_MEM_RULE:
+fieldset/FLASH00_MEM_RULE:
   description: Flash Memory Rule
   fields:
   - name: RULE0
@@ -912,7 +915,7 @@ fieldset/regs::FLASH00_MEM_RULE:
   - name: RULE7
     bit_offset: 28
     bit_size: 2
-fieldset/regs::FLASH01_MEM_RULE:
+fieldset/FLASH01_MEM_RULE:
   description: Flash Memory Rule
   fields:
   - name: RULE0
@@ -939,7 +942,7 @@ fieldset/regs::FLASH01_MEM_RULE:
   - name: RULE7
     bit_offset: 28
     bit_size: 2
-fieldset/regs::FLASH02_MEM_RULE:
+fieldset/FLASH02_MEM_RULE:
   description: Flash Memory Rule
   fields:
   - name: RULE0
@@ -954,7 +957,7 @@ fieldset/regs::FLASH02_MEM_RULE:
   - name: RULE3
     bit_offset: 12
     bit_size: 2
-fieldset/regs::FLASH03_MEM_RULE:
+fieldset/FLASH03_MEM_RULE:
   description: Flash Memory Rule
   fields:
   - name: RULE0
@@ -981,7 +984,7 @@ fieldset/regs::FLASH03_MEM_RULE:
   - name: RULE7
     bit_offset: 28
     bit_size: 2
-fieldset/regs::FLEXSPI0_REGION0_MEM_RULE:
+fieldset/FLEXSPI0_REGION0_MEM_RULE:
   description: FLEXSPI0 Region 0 Memory Rule
   fields:
   - name: RULE0
@@ -1008,7 +1011,7 @@ fieldset/regs::FLEXSPI0_REGION0_MEM_RULE:
   - name: RULE7
     bit_offset: 28
     bit_size: 2
-fieldset/regs::FLEXSPI0_REGION1_6_MEM_RULE_FLEXSPI0_REGION_MEM_RULE0:
+fieldset/FLEXSPI0_REGION1_6_MEM_RULE_FLEXSPI0_REGION_MEM_RULE0:
   description: FLEXSPI0 Region 1 Memory Rule 0..FLEXSPI0 Region 6 Memory Rule 0
   fields:
   - name: RULE0
@@ -1029,7 +1032,7 @@ fieldset/regs::FLEXSPI0_REGION1_6_MEM_RULE_FLEXSPI0_REGION_MEM_RULE0:
   - name: RULE5
     bit_offset: 20
     bit_size: 2
-fieldset/regs::FLEXSPI0_REGION7_MEM_RULE:
+fieldset/FLEXSPI0_REGION7_MEM_RULE:
   description: FLEXSPI0 Region 7 Memory Rule
   fields:
   - name: RULE0
@@ -1056,7 +1059,7 @@ fieldset/regs::FLEXSPI0_REGION7_MEM_RULE:
   - name: RULE7
     bit_offset: 28
     bit_size: 2
-fieldset/regs::FLEXSPI0_REGION8_13_MEM_RULE_FLEXSPI0_REGION_MEM_RULE0:
+fieldset/FLEXSPI0_REGION8_13_MEM_RULE_FLEXSPI0_REGION_MEM_RULE0:
   description: FLEXSPI0 Region 8 Memory Rule 0..FLEXSPI0 Region 13 Memory Rule 0
   fields:
   - name: RULE0
@@ -1077,7 +1080,7 @@ fieldset/regs::FLEXSPI0_REGION8_13_MEM_RULE_FLEXSPI0_REGION_MEM_RULE0:
   - name: RULE5
     bit_offset: 20
     bit_size: 2
-fieldset/regs::MASTER_SEC_ANTI_POL_REG:
+fieldset/MASTER_SEC_ANTI_POL_REG:
   description: Master Secure Level
   fields:
   - name: CPU1
@@ -1119,7 +1122,7 @@ fieldset/regs::MASTER_SEC_ANTI_POL_REG:
   - name: MASTER_SEC_LEVEL_ANTIPOL_LOCK
     bit_offset: 30
     bit_size: 2
-fieldset/regs::MASTER_SEC_LEVEL:
+fieldset/MASTER_SEC_LEVEL:
   description: Master Secure Level
   fields:
   - name: CPU1
@@ -1161,7 +1164,7 @@ fieldset/regs::MASTER_SEC_LEVEL:
   - name: MASTER_SEC_LEVEL_LOCK
     bit_offset: 30
     bit_size: 2
-fieldset/regs::MISC_CTRL_DP_REG:
+fieldset/MISC_CTRL_DP_REG:
   description: Secure Control Duplicate
   fields:
   - name: WRITE_LOCK
@@ -1185,7 +1188,7 @@ fieldset/regs::MISC_CTRL_DP_REG:
   - name: IDAU_ALL_NS
     bit_offset: 14
     bit_size: 2
-fieldset/regs::MISC_CTRL_REG:
+fieldset/MISC_CTRL_REG:
   description: Secure Control
   fields:
   - name: WRITE_LOCK
@@ -1209,7 +1212,7 @@ fieldset/regs::MISC_CTRL_REG:
   - name: IDAU_ALL_NS
     bit_offset: 14
     bit_size: 2
-fieldset/regs::RAMA_MEM_RULE:
+fieldset/RAMA_MEM_RULE:
   description: RAMA Memory Rule 0
   fields:
   - name: RULE0
@@ -1236,7 +1239,7 @@ fieldset/regs::RAMA_MEM_RULE:
   - name: RULE7
     bit_offset: 28
     bit_size: 2
-fieldset/regs::RAMB_MEM_RULE:
+fieldset/RAMB_MEM_RULE:
   description: RAMB Memory Rule
   fields:
   - name: RULE0
@@ -1263,7 +1266,7 @@ fieldset/regs::RAMB_MEM_RULE:
   - name: RULE7
     bit_offset: 28
     bit_size: 2
-fieldset/regs::RAMC_MEM_RULE:
+fieldset/RAMC_MEM_RULE:
   description: RAMC Memory Rule
   fields:
   - name: RULE0
@@ -1290,7 +1293,7 @@ fieldset/regs::RAMC_MEM_RULE:
   - name: RULE7
     bit_offset: 28
     bit_size: 2
-fieldset/regs::RAMD_MEM_RULE:
+fieldset/RAMD_MEM_RULE:
   description: RAMD Memory Rule
   fields:
   - name: RULE0
@@ -1317,7 +1320,7 @@ fieldset/regs::RAMD_MEM_RULE:
   - name: RULE7
     bit_offset: 28
     bit_size: 2
-fieldset/regs::RAME_MEM_RULE:
+fieldset/RAME_MEM_RULE:
   description: RAME Memory Rule
   fields:
   - name: RULE0
@@ -1344,7 +1347,7 @@ fieldset/regs::RAME_MEM_RULE:
   - name: RULE7
     bit_offset: 28
     bit_size: 2
-fieldset/regs::RAMF_MEM_RULE:
+fieldset/RAMF_MEM_RULE:
   description: RAMF Memory Rule
   fields:
   - name: RULE0
@@ -1371,7 +1374,7 @@ fieldset/regs::RAMF_MEM_RULE:
   - name: RULE7
     bit_offset: 28
     bit_size: 2
-fieldset/regs::RAMG_MEM_RULE:
+fieldset/RAMG_MEM_RULE:
   description: RAMG Memory Rule
   fields:
   - name: RULE0
@@ -1398,7 +1401,7 @@ fieldset/regs::RAMG_MEM_RULE:
   - name: RULE7
     bit_offset: 28
     bit_size: 2
-fieldset/regs::RAMH_MEM_RULE:
+fieldset/RAMH_MEM_RULE:
   description: RAMH Memory Rule
   fields:
   - name: RULE0
@@ -1425,7 +1428,7 @@ fieldset/regs::RAMH_MEM_RULE:
   - name: RULE7
     bit_offset: 28
     bit_size: 2
-fieldset/regs::RAMX_MEM_RULE:
+fieldset/RAMX_MEM_RULE:
   description: RAMX Memory Rule
   fields:
   - name: RULE0
@@ -1452,7 +1455,7 @@ fieldset/regs::RAMX_MEM_RULE:
   - name: RULE7
     bit_offset: 28
     bit_size: 2
-fieldset/regs::ROM_MEM_RULE:
+fieldset/ROM_MEM_RULE:
   description: ROM Memory Rule
   fields:
   - name: RULE0
@@ -1479,7 +1482,7 @@ fieldset/regs::ROM_MEM_RULE:
   - name: RULE7
     bit_offset: 28
     bit_size: 2
-fieldset/regs::SEC_CPU1_INT_MASK0:
+fieldset/SEC_CPU1_INT_MASK0:
   description: Secure Interrupt Mask 0 for CPU1
   fields:
   - name: INT0_MASK
@@ -1578,7 +1581,7 @@ fieldset/regs::SEC_CPU1_INT_MASK0:
   - name: INT31_MASK
     bit_offset: 31
     bit_size: 1
-fieldset/regs::SEC_CPU1_INT_MASK1:
+fieldset/SEC_CPU1_INT_MASK1:
   description: Secure Interrupt Mask 1 for CPU1
   fields:
   - name: INT32_MASK
@@ -1677,7 +1680,7 @@ fieldset/regs::SEC_CPU1_INT_MASK1:
   - name: INT63_MASK
     bit_offset: 31
     bit_size: 1
-fieldset/regs::SEC_CPU1_INT_MASK2:
+fieldset/SEC_CPU1_INT_MASK2:
   description: Secure Interrupt Mask 2 for CPU1
   fields:
   - name: INT64_MASK
@@ -1776,7 +1779,7 @@ fieldset/regs::SEC_CPU1_INT_MASK2:
   - name: INT95_MASK
     bit_offset: 31
     bit_size: 1
-fieldset/regs::SEC_CPU1_INT_MASK3:
+fieldset/SEC_CPU1_INT_MASK3:
   description: Secure Interrupt Mask 3 for CPU1
   fields:
   - name: INT96_MASK
@@ -1875,7 +1878,7 @@ fieldset/regs::SEC_CPU1_INT_MASK3:
   - name: INT127_MASK
     bit_offset: 31
     bit_size: 1
-fieldset/regs::SEC_CPU1_INT_MASK4:
+fieldset/SEC_CPU1_INT_MASK4:
   description: Secure Interrupt Mask 4 for CPU1
   fields:
   - name: INT128_MASK
@@ -1974,7 +1977,7 @@ fieldset/regs::SEC_CPU1_INT_MASK4:
   - name: INT159_MASK
     bit_offset: 31
     bit_size: 1
-fieldset/regs::SEC_GPIO_MASK:
+fieldset/SEC_GPIO_MASK:
   description: GPIO Mask for Port 0..GPIO Mask for Port 1
   fields:
   - name: PIO0_PIN0_SEC_MASK
@@ -2169,7 +2172,7 @@ fieldset/regs::SEC_GPIO_MASK:
   - name: PIO1_PIN31_SEC_MASK
     bit_offset: 31
     bit_size: 1
-fieldset/regs::SEC_GP_REG_LOCK:
+fieldset/SEC_GP_REG_LOCK:
   description: Secure Mask Lock
   fields:
   - name: SEC_GPIO_MASK0_LOCK
@@ -2193,7 +2196,7 @@ fieldset/regs::SEC_GP_REG_LOCK:
   - name: SEC_CPU1_INT_MASK4_LOCK
     bit_offset: 20
     bit_size: 2
-fieldset/regs::SEC_VIO_INFO_VALID:
+fieldset/SEC_VIO_INFO_VALID:
   description: Security Violation Info Validity for Address
   fields:
   - name: VIO_INFO_VALID0
@@ -2253,7 +2256,7 @@ fieldset/regs::SEC_VIO_INFO_VALID:
   - name: VIO_INFO_VALID18
     bit_offset: 18
     bit_size: 1
-fieldset/regs::SEC_VIO_MISC_INFO:
+fieldset/SEC_VIO_MISC_INFO:
   description: Security Violation Miscellaneous Information at Address
   fields:
   - name: SEC_VIO_INFO_WRITE

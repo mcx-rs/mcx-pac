@@ -2,7 +2,7 @@ block/CRC:
   items:
   - name: DATA
     byte_offset: 0
-    fieldset: regs::DATA
+    fieldset: DATA
   - name: DATALL
     byte_offset: 0
     bit_size: 8
@@ -23,7 +23,7 @@ block/CRC:
     bit_size: 16
   - name: GPOLY
     byte_offset: 4
-    fieldset: regs::GPOLY
+    fieldset: GPOLY
   - name: GPOLYLL
     byte_offset: 4
     bit_size: 8
@@ -44,47 +44,12 @@ block/CRC:
     bit_size: 16
   - name: CTRL
     byte_offset: 8
-    fieldset: regs::CTRL
+    fieldset: CTRL
   - name: CTRLHU
     byte_offset: 11
     bit_size: 8
-fieldset/regs::ACCESS16BIT_DATAH:
-  description: CRC_DATAH register
-  fields:
-  - name: DATAH
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::ACCESS16BIT_DATAL:
-  description: CRC_DATAL register
-  fields:
-  - name: DATAL
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::ACCESS8BIT_DATAHL:
-  description: CRC_DATAHL register
-  fields:
-  - name: DATAHL
-    bit_offset: 0
-    bit_size: 8
-fieldset/regs::ACCESS8BIT_DATAHU:
-  description: CRC_DATAHU register
-  fields:
-  - name: DATAHU
-    bit_offset: 0
-    bit_size: 8
-fieldset/regs::ACCESS8BIT_DATALL:
-  description: CRC_DATALL register
-  fields:
-  - name: DATALL
-    bit_offset: 0
-    bit_size: 8
-fieldset/regs::ACCESS8BIT_DATALU:
-  description: CRC_DATALU register
-  fields:
-  - name: DATALU
-    bit_offset: 0
-    bit_size: 8
-fieldset/regs::CTRL:
+    fieldset: CTRL_ACCESS8BIT_CTRLHU
+fieldset/CTRL:
   description: Control
   fields:
   - name: TCRC
@@ -102,8 +67,9 @@ fieldset/regs::CTRL:
   - name: TOT
     bit_offset: 30
     bit_size: 2
-fieldset/regs::CTRL_ACCESS8BIT_CTRLHU:
+fieldset/CTRL_ACCESS8BIT_CTRLHU:
   description: CRC_CTRLHU register
+  bit_size: 8
   fields:
   - name: TCRC
     bit_offset: 0
@@ -120,7 +86,7 @@ fieldset/regs::CTRL_ACCESS8BIT_CTRLHU:
   - name: TOT
     bit_offset: 6
     bit_size: 2
-fieldset/regs::DATA:
+fieldset/DATA:
   description: Data
   fields:
   - name: LL
@@ -135,7 +101,7 @@ fieldset/regs::DATA:
   - name: HU
     bit_offset: 24
     bit_size: 8
-fieldset/regs::GPOLY:
+fieldset/GPOLY:
   description: Polynomial
   fields:
   - name: LOW
@@ -144,39 +110,3 @@ fieldset/regs::GPOLY:
   - name: HIGH
     bit_offset: 16
     bit_size: 16
-fieldset/regs::GPOLY_ACCESS16BIT_GPOLYH:
-  description: CRC_GPOLYH register
-  fields:
-  - name: GPOLYH
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::GPOLY_ACCESS16BIT_GPOLYL:
-  description: CRC_GPOLYL register
-  fields:
-  - name: GPOLYL
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::GPOLY_ACCESS8BIT_GPOLYHL:
-  description: CRC_GPOLYHL register
-  fields:
-  - name: GPOLYHL
-    bit_offset: 0
-    bit_size: 8
-fieldset/regs::GPOLY_ACCESS8BIT_GPOLYHU:
-  description: CRC_GPOLYHU register
-  fields:
-  - name: GPOLYHU
-    bit_offset: 0
-    bit_size: 8
-fieldset/regs::GPOLY_ACCESS8BIT_GPOLYLL:
-  description: CRC_GPOLYLL register
-  fields:
-  - name: GPOLYLL
-    bit_offset: 0
-    bit_size: 8
-fieldset/regs::GPOLY_ACCESS8BIT_GPOLYLU:
-  description: CRC_GPOLYLU register
-  fields:
-  - name: GPOLYLU
-    bit_offset: 0
-    bit_size: 8

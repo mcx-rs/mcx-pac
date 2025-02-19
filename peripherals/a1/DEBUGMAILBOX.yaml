@@ -2,14 +2,14 @@ block/DEBUGMAILBOX:
   items:
   - name: CSW
     byte_offset: 0
-    fieldset: regs::CSW
+    fieldset: CSW
   - name: REQUEST
     byte_offset: 4
   - name: RETURN
     byte_offset: 8
   - name: ID
     byte_offset: 252
-fieldset/regs::CSW:
+fieldset/CSW:
   description: Command and Status Word
   fields:
   - name: RESYNCH_REQ

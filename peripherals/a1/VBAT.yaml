@@ -2,16 +2,16 @@ block/VBAT:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: regs::VERID
+    fieldset: VERID
   - name: FROCTLA
     byte_offset: 512
-    fieldset: regs::FROCTLA
+    fieldset: FROCTLA
   - name: FROLCKA
     byte_offset: 536
-    fieldset: regs::FROLCKA
+    fieldset: FROLCKA
   - name: FROCLKE
     byte_offset: 544
-    fieldset: regs::FROCLKE
+    fieldset: FROCLKE
   - name: WAKEUP
     array:
       len: 2
@@ -20,30 +20,30 @@ block/VBAT:
     block: WAKEUP
   - name: WAKLCKA
     byte_offset: 2040
-    fieldset: regs::WAKLCKA
+    fieldset: WAKLCKA
 block/WAKEUP:
   items:
   - name: WAKEUPA
     byte_offset: 0
-fieldset/regs::FROCLKE:
+fieldset/FROCLKE:
   description: FRO16K Clock Enable
   fields:
   - name: CLKE
     bit_offset: 0
     bit_size: 2
-fieldset/regs::FROCTLA:
+fieldset/FROCTLA:
   description: FRO16K Control A
   fields:
   - name: FRO_EN
     bit_offset: 0
     bit_size: 1
-fieldset/regs::FROLCKA:
+fieldset/FROLCKA:
   description: FRO16K Lock A
   fields:
   - name: LOCK
     bit_offset: 0
     bit_size: 1
-fieldset/regs::VERID:
+fieldset/VERID:
   description: Version ID
   fields:
   - name: FEATURE
@@ -55,7 +55,7 @@ fieldset/regs::VERID:
   - name: MAJOR
     bit_offset: 24
     bit_size: 8
-fieldset/regs::WAKLCKA:
+fieldset/WAKLCKA:
   description: Wakeup Lock A
   fields:
   - name: LOCK

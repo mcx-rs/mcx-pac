@@ -2,20 +2,20 @@ block/FREQME:
   items:
   - name: CTRL_R
     byte_offset: 0
-    fieldset: regs::CTRL_R
+    fieldset: CTRL_R
   - name: CTRL_W
     byte_offset: 0
-    fieldset: regs::CTRL_W
+    fieldset: CTRL_W
   - name: CTRLSTAT
     byte_offset: 4
-    fieldset: regs::CTRLSTAT
+    fieldset: CTRLSTAT
   - name: MIN
     byte_offset: 8
-    fieldset: regs::MIN
+    fieldset: MIN
   - name: MAX
     byte_offset: 12
-    fieldset: regs::MAX
-fieldset/regs::CTRLSTAT:
+    fieldset: MAX
+fieldset/CTRLSTAT:
   description: Control Status
   fields:
   - name: REF_SCALE
@@ -51,7 +51,7 @@ fieldset/regs::CTRLSTAT:
   - name: MEASURE_IN_PROGRESS
     bit_offset: 31
     bit_size: 1
-fieldset/regs::CTRL_R:
+fieldset/CTRL_R:
   description: Control (in Read mode)
   fields:
   - name: RESULT
@@ -60,7 +60,7 @@ fieldset/regs::CTRL_R:
   - name: MEASURE_IN_PROGRESS
     bit_offset: 31
     bit_size: 1
-fieldset/regs::CTRL_W:
+fieldset/CTRL_W:
   description: Control (in Write mode)
   fields:
   - name: REF_SCALE
@@ -87,13 +87,13 @@ fieldset/regs::CTRL_W:
   - name: MEASURE_IN_PROGRESS
     bit_offset: 31
     bit_size: 1
-fieldset/regs::MAX:
+fieldset/MAX:
   description: Maximum
   fields:
   - name: MAX_VALUE
     bit_offset: 0
     bit_size: 31
-fieldset/regs::MIN:
+fieldset/MIN:
   description: Minimum
   fields:
   - name: MIN_VALUE

@@ -2,90 +2,90 @@ block/PUF:
   items:
   - name: CR
     byte_offset: 0
-    fieldset: regs::CR
+    fieldset: CR
   - name: ORR
     byte_offset: 4
-    fieldset: regs::ORR
+    fieldset: ORR
   - name: SR
     byte_offset: 8
-    fieldset: regs::SR
+    fieldset: SR
   - name: AR
     byte_offset: 12
-    fieldset: regs::AR
+    fieldset: AR
   - name: IER
     byte_offset: 16
-    fieldset: regs::IER
+    fieldset: IER
   - name: IMR
     byte_offset: 20
-    fieldset: regs::IMR
+    fieldset: IMR
   - name: ISR
     byte_offset: 24
-    fieldset: regs::ISR
+    fieldset: ISR
   - name: DATA_DEST
     byte_offset: 32
-    fieldset: regs::DATA_DEST
+    fieldset: DATA_DEST
   - name: DATA_SRC
     byte_offset: 36
-    fieldset: regs::DATA_SRC
+    fieldset: DATA_SRC
   - name: DIR
     byte_offset: 160
   - name: DOR
     byte_offset: 168
   - name: MISC
     byte_offset: 192
-    fieldset: regs::MISC
+    fieldset: MISC
   - name: IF_SR
     byte_offset: 208
-    fieldset: regs::IF_SR
+    fieldset: IF_SR
   - name: PSR
     byte_offset: 220
-    fieldset: regs::PSR
+    fieldset: PSR
   - name: HW_RUC0
     byte_offset: 224
-    fieldset: regs::HW_RUC0
+    fieldset: HW_RUC0
   - name: HW_RUC1
     byte_offset: 228
   - name: HW_INFO
     byte_offset: 244
-    fieldset: regs::HW_INFO
+    fieldset: HW_INFO
   - name: HW_ID
     byte_offset: 248
   - name: HW_VER
     byte_offset: 252
-    fieldset: regs::HW_VER
+    fieldset: HW_VER
   - name: CONFIG
     byte_offset: 256
-    fieldset: regs::CONFIG
+    fieldset: CONFIG
   - name: SEC_LOCK
     byte_offset: 260
-    fieldset: regs::SEC_LOCK
+    fieldset: SEC_LOCK
   - name: APP_CTX_MASK
     byte_offset: 264
   - name: SRAM_CFG
     byte_offset: 768
-    fieldset: regs::SRAM_CFG
+    fieldset: SRAM_CFG
   - name: SRAM_STATUS
     byte_offset: 772
-    fieldset: regs::SRAM_STATUS
+    fieldset: SRAM_STATUS
   - name: SRAM_INT_CLR_ENABLE
     byte_offset: 984
-    fieldset: regs::SRAM_INT_CLR_ENABLE
+    fieldset: SRAM_INT_CLR_ENABLE
   - name: SRAM_INT_SET_ENABLE
     byte_offset: 988
-    fieldset: regs::SRAM_INT_SET_ENABLE
+    fieldset: SRAM_INT_SET_ENABLE
   - name: SRAM_INT_STATUS
     byte_offset: 992
-    fieldset: regs::SRAM_INT_STATUS
+    fieldset: SRAM_INT_STATUS
   - name: SRAM_INT_ENABLE
     byte_offset: 996
-    fieldset: regs::SRAM_INT_ENABLE
+    fieldset: SRAM_INT_ENABLE
   - name: SRAM_INT_CLR_STATUS
     byte_offset: 1000
-    fieldset: regs::SRAM_INT_CLR_STATUS
+    fieldset: SRAM_INT_CLR_STATUS
   - name: SRAM_INT_SET_STATUS
     byte_offset: 1004
-    fieldset: regs::SRAM_INT_SET_STATUS
-fieldset/regs::AR:
+    fieldset: SRAM_INT_SET_STATUS
+fieldset/AR:
   description: Allow
   fields:
   - name: ALLOW_ENROLL
@@ -121,7 +121,7 @@ fieldset/regs::AR:
   - name: ALLOW_TEST_PUF
     bit_offset: 31
     bit_size: 1
-fieldset/regs::CONFIG:
+fieldset/CONFIG:
   description: PUF command blocking configuration
   fields:
   - name: DIS_PUF_ENROLL
@@ -151,7 +151,7 @@ fieldset/regs::CONFIG:
   - name: DIS_PUF_TEST
     bit_offset: 31
     bit_size: 1
-fieldset/regs::CR:
+fieldset/CR:
   description: Control
   fields:
   - name: ZEROIZE
@@ -190,7 +190,7 @@ fieldset/regs::CR:
   - name: TEST_PUF
     bit_offset: 31
     bit_size: 1
-fieldset/regs::DATA_DEST:
+fieldset/DATA_DEST:
   description: Data Destination
   fields:
   - name: DEST_DOR
@@ -199,7 +199,7 @@ fieldset/regs::DATA_DEST:
   - name: DEST_SO
     bit_offset: 1
     bit_size: 1
-fieldset/regs::DATA_SRC:
+fieldset/DATA_SRC:
   description: Data Source
   fields:
   - name: SRC_DIR
@@ -208,7 +208,7 @@ fieldset/regs::DATA_SRC:
   - name: SRC_SI
     bit_offset: 1
     bit_size: 1
-fieldset/regs::HW_INFO:
+fieldset/HW_INFO:
   description: Hardware Information
   fields:
   - name: CONFIG_WRAP
@@ -217,7 +217,7 @@ fieldset/regs::HW_INFO:
   - name: CONFIG_TYPE
     bit_offset: 28
     bit_size: 4
-fieldset/regs::HW_RUC0:
+fieldset/HW_RUC0:
   description: Hardware Restrict User Context 0
   fields:
   - name: LC_STATE
@@ -238,7 +238,7 @@ fieldset/regs::HW_RUC0:
   - name: ACCESS_LEVEL
     bit_offset: 28
     bit_size: 4
-fieldset/regs::HW_VER:
+fieldset/HW_VER:
   description: Hardware Version
   fields:
   - name: HW_REV
@@ -250,19 +250,19 @@ fieldset/regs::HW_VER:
   - name: HW_VERSION_MAJOR
     bit_offset: 16
     bit_size: 8
-fieldset/regs::IER:
+fieldset/IER:
   description: Interrupt Enable
   fields:
   - name: INT_EN
     bit_offset: 0
     bit_size: 1
-fieldset/regs::IF_SR:
+fieldset/IF_SR:
   description: Interface Status
   fields:
   - name: APB_ERROR
     bit_offset: 0
     bit_size: 1
-fieldset/regs::IMR:
+fieldset/IMR:
   description: Interrupt Mask
   fields:
   - name: INT_EN_BUSY
@@ -286,7 +286,7 @@ fieldset/regs::IMR:
   - name: INT_EN_DO_REQUEST
     bit_offset: 6
     bit_size: 1
-fieldset/regs::ISR:
+fieldset/ISR:
   description: Interrupt Status
   fields:
   - name: INT_BUSY
@@ -310,13 +310,13 @@ fieldset/regs::ISR:
   - name: INT_DO_REQUEST
     bit_offset: 6
     bit_size: 1
-fieldset/regs::MISC:
+fieldset/MISC:
   description: Miscellaneous
   fields:
   - name: DATA_ENDIANNESS
     bit_offset: 0
     bit_size: 1
-fieldset/regs::ORR:
+fieldset/ORR:
   description: Operation Result
   fields:
   - name: RESULT_CODE
@@ -325,13 +325,13 @@ fieldset/regs::ORR:
   - name: LAST_OPERATION
     bit_offset: 24
     bit_size: 8
-fieldset/regs::PSR:
+fieldset/PSR:
   description: PUF Score
   fields:
   - name: PUF_SCORE
     bit_offset: 0
     bit_size: 4
-fieldset/regs::SEC_LOCK:
+fieldset/SEC_LOCK:
   description: Security level lock
   fields:
   - name: SEC_LEVEL
@@ -343,7 +343,7 @@ fieldset/regs::SEC_LOCK:
   - name: PATTERN
     bit_offset: 4
     bit_size: 12
-fieldset/regs::SR:
+fieldset/SR:
   description: Status
   fields:
   - name: BUSY
@@ -367,7 +367,7 @@ fieldset/regs::SR:
   - name: DO_REQUEST
     bit_offset: 6
     bit_size: 1
-fieldset/regs::SRAM_CFG:
+fieldset/SRAM_CFG:
   description: SRAM Configuration
   fields:
   - name: ENABLE
@@ -376,7 +376,7 @@ fieldset/regs::SRAM_CFG:
   - name: CKGATING
     bit_offset: 2
     bit_size: 1
-fieldset/regs::SRAM_INT_CLR_ENABLE:
+fieldset/SRAM_INT_CLR_ENABLE:
   description: Interrupt Enable Clear
   fields:
   - name: READY
@@ -385,7 +385,7 @@ fieldset/regs::SRAM_INT_CLR_ENABLE:
   - name: APB_ERR
     bit_offset: 1
     bit_size: 1
-fieldset/regs::SRAM_INT_CLR_STATUS:
+fieldset/SRAM_INT_CLR_STATUS:
   description: Interrupt Status Clear
   fields:
   - name: READY
@@ -394,7 +394,7 @@ fieldset/regs::SRAM_INT_CLR_STATUS:
   - name: APB_ERR
     bit_offset: 1
     bit_size: 1
-fieldset/regs::SRAM_INT_ENABLE:
+fieldset/SRAM_INT_ENABLE:
   description: Interrupt Enable
   fields:
   - name: READY
@@ -403,7 +403,7 @@ fieldset/regs::SRAM_INT_ENABLE:
   - name: SRAM_APB_ERR
     bit_offset: 1
     bit_size: 1
-fieldset/regs::SRAM_INT_SET_ENABLE:
+fieldset/SRAM_INT_SET_ENABLE:
   description: Interrupt Enable Set
   fields:
   - name: READY
@@ -412,7 +412,7 @@ fieldset/regs::SRAM_INT_SET_ENABLE:
   - name: APB_ERR
     bit_offset: 1
     bit_size: 1
-fieldset/regs::SRAM_INT_SET_STATUS:
+fieldset/SRAM_INT_SET_STATUS:
   description: Interrupt Status set
   fields:
   - name: READY
@@ -421,7 +421,7 @@ fieldset/regs::SRAM_INT_SET_STATUS:
   - name: APB_ERR
     bit_offset: 1
     bit_size: 1
-fieldset/regs::SRAM_INT_STATUS:
+fieldset/SRAM_INT_STATUS:
   description: Interrupt Status
   fields:
   - name: READY
@@ -430,7 +430,7 @@ fieldset/regs::SRAM_INT_STATUS:
   - name: APB_ERR
     bit_offset: 1
     bit_size: 1
-fieldset/regs::SRAM_STATUS:
+fieldset/SRAM_STATUS:
   description: Status
   fields:
   - name: READY

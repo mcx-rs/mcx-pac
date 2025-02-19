@@ -2,179 +2,179 @@ block/USBPHY:
   items:
   - name: PWD
     byte_offset: 0
-    fieldset: regs::PWD
+    fieldset: PWD
   - name: PWD_SET
     byte_offset: 4
-    fieldset: regs::PWD_SET
+    fieldset: PWD_SET
   - name: PWD_CLR
     byte_offset: 8
-    fieldset: regs::PWD_CLR
+    fieldset: PWD_CLR
   - name: PWD_TOG
     byte_offset: 12
-    fieldset: regs::PWD_TOG
+    fieldset: PWD_TOG
   - name: TX
     byte_offset: 16
-    fieldset: regs::TX
+    fieldset: TX
   - name: TX_SET
     byte_offset: 20
-    fieldset: regs::TX_SET
+    fieldset: TX_SET
   - name: TX_CLR
     byte_offset: 24
-    fieldset: regs::TX_CLR
+    fieldset: TX_CLR
   - name: TX_TOG
     byte_offset: 28
-    fieldset: regs::TX_TOG
+    fieldset: TX_TOG
   - name: RX
     byte_offset: 32
-    fieldset: regs::RX
+    fieldset: RX
   - name: RX_SET
     byte_offset: 36
-    fieldset: regs::RX_SET
+    fieldset: RX_SET
   - name: RX_CLR
     byte_offset: 40
-    fieldset: regs::RX_CLR
+    fieldset: RX_CLR
   - name: RX_TOG
     byte_offset: 44
-    fieldset: regs::RX_TOG
+    fieldset: RX_TOG
   - name: CTRL
     byte_offset: 48
-    fieldset: regs::CTRL
+    fieldset: CTRL
   - name: CTRL_SET
     byte_offset: 52
-    fieldset: regs::CTRL_SET
+    fieldset: CTRL_SET
   - name: CTRL_CLR
     byte_offset: 56
-    fieldset: regs::CTRL_CLR
+    fieldset: CTRL_CLR
   - name: CTRL_TOG
     byte_offset: 60
-    fieldset: regs::CTRL_TOG
+    fieldset: CTRL_TOG
   - name: STATUS
     byte_offset: 64
-    fieldset: regs::STATUS
+    fieldset: STATUS
   - name: DEBUG0
     byte_offset: 80
-    fieldset: regs::DEBUG0
+    fieldset: DEBUG0
   - name: DEBUG0_SET
     byte_offset: 84
-    fieldset: regs::DEBUG0_SET
+    fieldset: DEBUG0_SET
   - name: DEBUG0_CLR
     byte_offset: 88
-    fieldset: regs::DEBUG0_CLR
+    fieldset: DEBUG0_CLR
   - name: DEBUG0_TOG
     byte_offset: 92
-    fieldset: regs::DEBUG0_TOG
+    fieldset: DEBUG0_TOG
   - name: VERSION
     byte_offset: 128
-    fieldset: regs::VERSION
+    fieldset: VERSION
   - name: IP
     byte_offset: 144
-    fieldset: regs::IP
+    fieldset: IP
   - name: IP_SET
     byte_offset: 148
-    fieldset: regs::IP_SET
+    fieldset: IP_SET
   - name: IP_CLR
     byte_offset: 152
-    fieldset: regs::IP_CLR
+    fieldset: IP_CLR
   - name: IP_TOG
     byte_offset: 156
-    fieldset: regs::IP_TOG
+    fieldset: IP_TOG
   - name: PLL_SIC
     byte_offset: 160
-    fieldset: regs::PLL_SIC
+    fieldset: PLL_SIC
   - name: PLL_SIC_SET
     byte_offset: 164
-    fieldset: regs::PLL_SIC_SET
+    fieldset: PLL_SIC_SET
   - name: PLL_SIC_CLR
     byte_offset: 168
-    fieldset: regs::PLL_SIC_CLR
+    fieldset: PLL_SIC_CLR
   - name: PLL_SIC_TOG
     byte_offset: 172
-    fieldset: regs::PLL_SIC_TOG
+    fieldset: PLL_SIC_TOG
   - name: USB1_VBUS_DETECT
     byte_offset: 192
-    fieldset: regs::USB1_VBUS_DETECT
+    fieldset: USB1_VBUS_DETECT
   - name: USB1_VBUS_DETECT_SET
     byte_offset: 196
-    fieldset: regs::USB1_VBUS_DETECT_SET
+    fieldset: USB1_VBUS_DETECT_SET
   - name: USB1_VBUS_DETECT_CLR
     byte_offset: 200
-    fieldset: regs::USB1_VBUS_DETECT_CLR
+    fieldset: USB1_VBUS_DETECT_CLR
   - name: USB1_VBUS_DETECT_TOG
     byte_offset: 204
-    fieldset: regs::USB1_VBUS_DETECT_TOG
+    fieldset: USB1_VBUS_DETECT_TOG
   - name: USB1_VBUS_DET_STAT
     byte_offset: 208
-    fieldset: regs::USB1_VBUS_DET_STAT
+    fieldset: USB1_VBUS_DET_STAT
   - name: USB1_VBUS_DET_STAT_SET
     byte_offset: 212
-    fieldset: regs::USB1_VBUS_DET_STAT_SET
+    fieldset: USB1_VBUS_DET_STAT_SET
   - name: USB1_VBUS_DET_STAT_CLR
     byte_offset: 216
-    fieldset: regs::USB1_VBUS_DET_STAT_CLR
+    fieldset: USB1_VBUS_DET_STAT_CLR
   - name: USB1_VBUS_DET_STAT_TOG
     byte_offset: 220
-    fieldset: regs::USB1_VBUS_DET_STAT_TOG
+    fieldset: USB1_VBUS_DET_STAT_TOG
   - name: USB1_CHRG_DETECT
     byte_offset: 224
-    fieldset: regs::USB1_CHRG_DETECT
+    fieldset: USB1_CHRG_DETECT
   - name: USB1_CHRG_DETECT_SET
     byte_offset: 228
-    fieldset: regs::USB1_CHRG_DETECT_SET
+    fieldset: USB1_CHRG_DETECT_SET
   - name: USB1_CHRG_DETECT_CLR
     byte_offset: 232
-    fieldset: regs::USB1_CHRG_DETECT_CLR
+    fieldset: USB1_CHRG_DETECT_CLR
   - name: USB1_CHRG_DETECT_TOG
     byte_offset: 236
-    fieldset: regs::USB1_CHRG_DETECT_TOG
+    fieldset: USB1_CHRG_DETECT_TOG
   - name: USB1_CHRG_DET_STAT
     byte_offset: 240
-    fieldset: regs::USB1_CHRG_DET_STAT
+    fieldset: USB1_CHRG_DET_STAT
   - name: USB1_CHRG_DET_STAT_SET
     byte_offset: 244
-    fieldset: regs::USB1_CHRG_DET_STAT_SET
+    fieldset: USB1_CHRG_DET_STAT_SET
   - name: USB1_CHRG_DET_STAT_CLR
     byte_offset: 248
-    fieldset: regs::USB1_CHRG_DET_STAT_CLR
+    fieldset: USB1_CHRG_DET_STAT_CLR
   - name: USB1_CHRG_DET_STAT_TOG
     byte_offset: 252
-    fieldset: regs::USB1_CHRG_DET_STAT_TOG
+    fieldset: USB1_CHRG_DET_STAT_TOG
   - name: ANACTRL
     byte_offset: 256
-    fieldset: regs::ANACTRL
+    fieldset: ANACTRL
   - name: ANACTRL_SET
     byte_offset: 260
-    fieldset: regs::ANACTRL_SET
+    fieldset: ANACTRL_SET
   - name: ANACTRL_CLR
     byte_offset: 264
-    fieldset: regs::ANACTRL_CLR
+    fieldset: ANACTRL_CLR
   - name: ANACTRL_TOG
     byte_offset: 268
-    fieldset: regs::ANACTRL_TOG
+    fieldset: ANACTRL_TOG
   - name: TRIM_OVERRIDE_EN
     byte_offset: 304
-    fieldset: regs::TRIM_OVERRIDE_EN
+    fieldset: TRIM_OVERRIDE_EN
   - name: TRIM_OVERRIDE_EN_SET
     byte_offset: 308
-    fieldset: regs::TRIM_OVERRIDE_EN_SET
+    fieldset: TRIM_OVERRIDE_EN_SET
   - name: TRIM_OVERRIDE_EN_CLR
     byte_offset: 312
-    fieldset: regs::TRIM_OVERRIDE_EN_CLR
+    fieldset: TRIM_OVERRIDE_EN_CLR
   - name: TRIM_OVERRIDE_EN_TOG
     byte_offset: 316
-    fieldset: regs::TRIM_OVERRIDE_EN_TOG
+    fieldset: TRIM_OVERRIDE_EN_TOG
   - name: PFDA
     byte_offset: 320
-    fieldset: regs::PFDA
+    fieldset: PFDA
   - name: PFDA_SET
     byte_offset: 324
-    fieldset: regs::PFDA_SET
+    fieldset: PFDA_SET
   - name: PFDA_CLR
     byte_offset: 328
-    fieldset: regs::PFDA_CLR
+    fieldset: PFDA_CLR
   - name: PFDA_TOG
     byte_offset: 332
-    fieldset: regs::PFDA_TOG
-fieldset/regs::ANACTRL:
+    fieldset: PFDA_TOG
+fieldset/ANACTRL:
   description: Analog Control
   fields:
   - name: LVI_EN
@@ -186,7 +186,7 @@ fieldset/regs::ANACTRL:
   - name: DEV_PULLDOWN
     bit_offset: 10
     bit_size: 1
-fieldset/regs::ANACTRL_CLR:
+fieldset/ANACTRL_CLR:
   description: Analog Control
   fields:
   - name: LVI_EN
@@ -198,7 +198,7 @@ fieldset/regs::ANACTRL_CLR:
   - name: DEV_PULLDOWN
     bit_offset: 10
     bit_size: 1
-fieldset/regs::ANACTRL_SET:
+fieldset/ANACTRL_SET:
   description: Analog Control
   fields:
   - name: LVI_EN
@@ -210,7 +210,7 @@ fieldset/regs::ANACTRL_SET:
   - name: DEV_PULLDOWN
     bit_offset: 10
     bit_size: 1
-fieldset/regs::ANACTRL_TOG:
+fieldset/ANACTRL_TOG:
   description: Analog Control
   fields:
   - name: LVI_EN
@@ -222,7 +222,7 @@ fieldset/regs::ANACTRL_TOG:
   - name: DEV_PULLDOWN
     bit_offset: 10
     bit_size: 1
-fieldset/regs::CTRL:
+fieldset/CTRL:
   description: General Purpose Control
   fields:
   - name: ENOTG_ID_CHG_IRQ
@@ -300,7 +300,7 @@ fieldset/regs::CTRL:
   - name: SFTRST
     bit_offset: 31
     bit_size: 1
-fieldset/regs::CTRL_CLR:
+fieldset/CTRL_CLR:
   description: General Purpose Control
   fields:
   - name: ENOTG_ID_CHG_IRQ
@@ -378,7 +378,7 @@ fieldset/regs::CTRL_CLR:
   - name: SFTRST
     bit_offset: 31
     bit_size: 1
-fieldset/regs::CTRL_SET:
+fieldset/CTRL_SET:
   description: General Purpose Control
   fields:
   - name: ENOTG_ID_CHG_IRQ
@@ -456,7 +456,7 @@ fieldset/regs::CTRL_SET:
   - name: SFTRST
     bit_offset: 31
     bit_size: 1
-fieldset/regs::CTRL_TOG:
+fieldset/CTRL_TOG:
   description: General Purpose Control
   fields:
   - name: ENOTG_ID_CHG_IRQ
@@ -534,7 +534,7 @@ fieldset/regs::CTRL_TOG:
   - name: SFTRST
     bit_offset: 31
     bit_size: 1
-fieldset/regs::DEBUG0:
+fieldset/DEBUG0:
   description: Debug 0
   fields:
   - name: OTGIDPIOLOCK
@@ -546,7 +546,7 @@ fieldset/regs::DEBUG0:
   - name: ENHSTPULLDOWN
     bit_offset: 4
     bit_size: 2
-fieldset/regs::DEBUG0_CLR:
+fieldset/DEBUG0_CLR:
   description: Debug 0
   fields:
   - name: OTGIDPIOLOCK
@@ -558,7 +558,7 @@ fieldset/regs::DEBUG0_CLR:
   - name: ENHSTPULLDOWN
     bit_offset: 4
     bit_size: 2
-fieldset/regs::DEBUG0_SET:
+fieldset/DEBUG0_SET:
   description: Debug 0
   fields:
   - name: OTGIDPIOLOCK
@@ -570,7 +570,7 @@ fieldset/regs::DEBUG0_SET:
   - name: ENHSTPULLDOWN
     bit_offset: 4
     bit_size: 2
-fieldset/regs::DEBUG0_TOG:
+fieldset/DEBUG0_TOG:
   description: Debug 0
   fields:
   - name: OTGIDPIOLOCK
@@ -582,31 +582,31 @@ fieldset/regs::DEBUG0_TOG:
   - name: ENHSTPULLDOWN
     bit_offset: 4
     bit_size: 2
-fieldset/regs::IP:
+fieldset/IP:
   description: IP Block
   fields:
   - name: POWER_CONTROL_SUSPEND_OPTION
     bit_offset: 0
     bit_size: 1
-fieldset/regs::IP_CLR:
+fieldset/IP_CLR:
   description: IP Block
   fields:
   - name: POWER_CONTROL_SUSPEND_OPTION
     bit_offset: 0
     bit_size: 1
-fieldset/regs::IP_SET:
+fieldset/IP_SET:
   description: IP Block
   fields:
   - name: POWER_CONTROL_SUSPEND_OPTION
     bit_offset: 0
     bit_size: 1
-fieldset/regs::IP_TOG:
+fieldset/IP_TOG:
   description: IP Block
   fields:
   - name: POWER_CONTROL_SUSPEND_OPTION
     bit_offset: 0
     bit_size: 1
-fieldset/regs::PFDA:
+fieldset/PFDA:
   description: PFD A
   fields:
   - name: PFD0_CLKGATE
@@ -618,7 +618,7 @@ fieldset/regs::PFDA:
   - name: PFD0_STABLE
     bit_offset: 7
     bit_size: 1
-fieldset/regs::PFDA_CLR:
+fieldset/PFDA_CLR:
   description: PFD A
   fields:
   - name: PFD0_CLKGATE
@@ -630,7 +630,7 @@ fieldset/regs::PFDA_CLR:
   - name: PFD0_STABLE
     bit_offset: 7
     bit_size: 1
-fieldset/regs::PFDA_SET:
+fieldset/PFDA_SET:
   description: PFD A
   fields:
   - name: PFD0_CLKGATE
@@ -642,7 +642,7 @@ fieldset/regs::PFDA_SET:
   - name: PFD0_STABLE
     bit_offset: 7
     bit_size: 1
-fieldset/regs::PFDA_TOG:
+fieldset/PFDA_TOG:
   description: PFD A
   fields:
   - name: PFD0_CLKGATE
@@ -654,7 +654,7 @@ fieldset/regs::PFDA_TOG:
   - name: PFD0_STABLE
     bit_offset: 7
     bit_size: 1
-fieldset/regs::PLL_SIC:
+fieldset/PLL_SIC:
   description: PLL SIC
   fields:
   - name: MISC2_CONTROL0
@@ -687,7 +687,7 @@ fieldset/regs::PLL_SIC:
   - name: PLL_LOCK
     bit_offset: 31
     bit_size: 1
-fieldset/regs::PLL_SIC_CLR:
+fieldset/PLL_SIC_CLR:
   description: PLL SIC
   fields:
   - name: MISC2_CONTROL0
@@ -720,7 +720,7 @@ fieldset/regs::PLL_SIC_CLR:
   - name: PLL_LOCK
     bit_offset: 31
     bit_size: 1
-fieldset/regs::PLL_SIC_SET:
+fieldset/PLL_SIC_SET:
   description: PLL SIC
   fields:
   - name: MISC2_CONTROL0
@@ -753,7 +753,7 @@ fieldset/regs::PLL_SIC_SET:
   - name: PLL_LOCK
     bit_offset: 31
     bit_size: 1
-fieldset/regs::PLL_SIC_TOG:
+fieldset/PLL_SIC_TOG:
   description: PLL SIC
   fields:
   - name: MISC2_CONTROL0
@@ -786,7 +786,7 @@ fieldset/regs::PLL_SIC_TOG:
   - name: PLL_LOCK
     bit_offset: 31
     bit_size: 1
-fieldset/regs::PWD:
+fieldset/PWD:
   description: Power Down
   fields:
   - name: TXPWDFS
@@ -810,7 +810,7 @@ fieldset/regs::PWD:
   - name: RXPWDRX
     bit_offset: 20
     bit_size: 1
-fieldset/regs::PWD_CLR:
+fieldset/PWD_CLR:
   description: Power Down
   fields:
   - name: TXPWDFS
@@ -834,7 +834,7 @@ fieldset/regs::PWD_CLR:
   - name: RXPWDRX
     bit_offset: 20
     bit_size: 1
-fieldset/regs::PWD_SET:
+fieldset/PWD_SET:
   description: Power Down
   fields:
   - name: TXPWDFS
@@ -858,7 +858,7 @@ fieldset/regs::PWD_SET:
   - name: RXPWDRX
     bit_offset: 20
     bit_size: 1
-fieldset/regs::PWD_TOG:
+fieldset/PWD_TOG:
   description: Power Down
   fields:
   - name: TXPWDFS
@@ -882,7 +882,7 @@ fieldset/regs::PWD_TOG:
   - name: RXPWDRX
     bit_offset: 20
     bit_size: 1
-fieldset/regs::RX:
+fieldset/RX:
   description: RX Control
   fields:
   - name: ENVADJ
@@ -891,7 +891,7 @@ fieldset/regs::RX:
   - name: DISCONADJ
     bit_offset: 4
     bit_size: 3
-fieldset/regs::RX_CLR:
+fieldset/RX_CLR:
   description: RX Control
   fields:
   - name: ENVADJ
@@ -900,7 +900,7 @@ fieldset/regs::RX_CLR:
   - name: DISCONADJ
     bit_offset: 4
     bit_size: 3
-fieldset/regs::RX_SET:
+fieldset/RX_SET:
   description: RX Control
   fields:
   - name: ENVADJ
@@ -909,7 +909,7 @@ fieldset/regs::RX_SET:
   - name: DISCONADJ
     bit_offset: 4
     bit_size: 3
-fieldset/regs::RX_TOG:
+fieldset/RX_TOG:
   description: RX Control
   fields:
   - name: ENVADJ
@@ -918,7 +918,7 @@ fieldset/regs::RX_TOG:
   - name: DISCONADJ
     bit_offset: 4
     bit_size: 3
-fieldset/regs::STATUS:
+fieldset/STATUS:
   description: Status
   fields:
   - name: OK_STATUS_3V
@@ -936,7 +936,7 @@ fieldset/regs::STATUS:
   - name: RESUME_STATUS
     bit_offset: 10
     bit_size: 1
-fieldset/regs::TRIM_OVERRIDE_EN:
+fieldset/TRIM_OVERRIDE_EN:
   description: Trim
   fields:
   - name: DIV_SEL_OVERRIDE
@@ -963,7 +963,7 @@ fieldset/regs::TRIM_OVERRIDE_EN:
   - name: USBPHY_TX_CAL45DN
     bit_offset: 28
     bit_size: 4
-fieldset/regs::TRIM_OVERRIDE_EN_CLR:
+fieldset/TRIM_OVERRIDE_EN_CLR:
   description: Trim
   fields:
   - name: DIV_SEL_OVERRIDE
@@ -990,7 +990,7 @@ fieldset/regs::TRIM_OVERRIDE_EN_CLR:
   - name: USBPHY_TX_CAL45DN
     bit_offset: 28
     bit_size: 4
-fieldset/regs::TRIM_OVERRIDE_EN_SET:
+fieldset/TRIM_OVERRIDE_EN_SET:
   description: Trim
   fields:
   - name: DIV_SEL_OVERRIDE
@@ -1017,7 +1017,7 @@ fieldset/regs::TRIM_OVERRIDE_EN_SET:
   - name: USBPHY_TX_CAL45DN
     bit_offset: 28
     bit_size: 4
-fieldset/regs::TRIM_OVERRIDE_EN_TOG:
+fieldset/TRIM_OVERRIDE_EN_TOG:
   description: Trim
   fields:
   - name: DIV_SEL_OVERRIDE
@@ -1044,7 +1044,7 @@ fieldset/regs::TRIM_OVERRIDE_EN_TOG:
   - name: USBPHY_TX_CAL45DN
     bit_offset: 28
     bit_size: 4
-fieldset/regs::TX:
+fieldset/TX:
   description: TX Control
   fields:
   - name: D_CAL
@@ -1056,7 +1056,7 @@ fieldset/regs::TX:
   - name: TXCAL45DP
     bit_offset: 16
     bit_size: 4
-fieldset/regs::TX_CLR:
+fieldset/TX_CLR:
   description: TX Control
   fields:
   - name: D_CAL
@@ -1068,7 +1068,7 @@ fieldset/regs::TX_CLR:
   - name: TXCAL45DP
     bit_offset: 16
     bit_size: 4
-fieldset/regs::TX_SET:
+fieldset/TX_SET:
   description: TX Control
   fields:
   - name: D_CAL
@@ -1080,7 +1080,7 @@ fieldset/regs::TX_SET:
   - name: TXCAL45DP
     bit_offset: 16
     bit_size: 4
-fieldset/regs::TX_TOG:
+fieldset/TX_TOG:
   description: TX Control
   fields:
   - name: D_CAL
@@ -1092,7 +1092,7 @@ fieldset/regs::TX_TOG:
   - name: TXCAL45DP
     bit_offset: 16
     bit_size: 4
-fieldset/regs::USB1_CHRG_DETECT:
+fieldset/USB1_CHRG_DETECT:
   description: Charger Detect
   fields:
   - name: DETECT_SEC
@@ -1116,7 +1116,7 @@ fieldset/regs::USB1_CHRG_DETECT:
   - name: DCDSEL
     bit_offset: 31
     bit_size: 1
-fieldset/regs::USB1_CHRG_DETECT_CLR:
+fieldset/USB1_CHRG_DETECT_CLR:
   description: Charger Detect
   fields:
   - name: DETECT_SEC
@@ -1140,7 +1140,7 @@ fieldset/regs::USB1_CHRG_DETECT_CLR:
   - name: DCDSEL
     bit_offset: 31
     bit_size: 1
-fieldset/regs::USB1_CHRG_DETECT_SET:
+fieldset/USB1_CHRG_DETECT_SET:
   description: Charger Detect
   fields:
   - name: DETECT_SEC
@@ -1164,7 +1164,7 @@ fieldset/regs::USB1_CHRG_DETECT_SET:
   - name: DCDSEL
     bit_offset: 31
     bit_size: 1
-fieldset/regs::USB1_CHRG_DETECT_TOG:
+fieldset/USB1_CHRG_DETECT_TOG:
   description: Charger Detect
   fields:
   - name: DETECT_SEC
@@ -1188,7 +1188,7 @@ fieldset/regs::USB1_CHRG_DETECT_TOG:
   - name: DCDSEL
     bit_offset: 31
     bit_size: 1
-fieldset/regs::USB1_CHRG_DET_STAT:
+fieldset/USB1_CHRG_DET_STAT:
   description: Charger Detect Status
   fields:
   - name: PLUG_CONTACT
@@ -1206,7 +1206,7 @@ fieldset/regs::USB1_CHRG_DET_STAT:
   - name: SECDET_DCP
     bit_offset: 4
     bit_size: 1
-fieldset/regs::USB1_CHRG_DET_STAT_CLR:
+fieldset/USB1_CHRG_DET_STAT_CLR:
   description: Charger Detect Status
   fields:
   - name: PLUG_CONTACT
@@ -1224,7 +1224,7 @@ fieldset/regs::USB1_CHRG_DET_STAT_CLR:
   - name: SECDET_DCP
     bit_offset: 4
     bit_size: 1
-fieldset/regs::USB1_CHRG_DET_STAT_SET:
+fieldset/USB1_CHRG_DET_STAT_SET:
   description: Charger Detect Status
   fields:
   - name: PLUG_CONTACT
@@ -1242,7 +1242,7 @@ fieldset/regs::USB1_CHRG_DET_STAT_SET:
   - name: SECDET_DCP
     bit_offset: 4
     bit_size: 1
-fieldset/regs::USB1_CHRG_DET_STAT_TOG:
+fieldset/USB1_CHRG_DET_STAT_TOG:
   description: Charger Detect Status
   fields:
   - name: PLUG_CONTACT
@@ -1260,7 +1260,7 @@ fieldset/regs::USB1_CHRG_DET_STAT_TOG:
   - name: SECDET_DCP
     bit_offset: 4
     bit_size: 1
-fieldset/regs::USB1_VBUS_DETECT:
+fieldset/USB1_VBUS_DETECT:
   description: VBUS Detect
   fields:
   - name: VBUSVALID_THRESH
@@ -1308,7 +1308,7 @@ fieldset/regs::USB1_VBUS_DETECT:
   - name: DISCHARGE_VBUS
     bit_offset: 26
     bit_size: 1
-fieldset/regs::USB1_VBUS_DETECT_CLR:
+fieldset/USB1_VBUS_DETECT_CLR:
   description: VBUS Detect
   fields:
   - name: VBUSVALID_THRESH
@@ -1356,7 +1356,7 @@ fieldset/regs::USB1_VBUS_DETECT_CLR:
   - name: DISCHARGE_VBUS
     bit_offset: 26
     bit_size: 1
-fieldset/regs::USB1_VBUS_DETECT_SET:
+fieldset/USB1_VBUS_DETECT_SET:
   description: VBUS Detect
   fields:
   - name: VBUSVALID_THRESH
@@ -1404,7 +1404,7 @@ fieldset/regs::USB1_VBUS_DETECT_SET:
   - name: DISCHARGE_VBUS
     bit_offset: 26
     bit_size: 1
-fieldset/regs::USB1_VBUS_DETECT_TOG:
+fieldset/USB1_VBUS_DETECT_TOG:
   description: VBUS Detect
   fields:
   - name: VBUSVALID_THRESH
@@ -1452,7 +1452,7 @@ fieldset/regs::USB1_VBUS_DETECT_TOG:
   - name: DISCHARGE_VBUS
     bit_offset: 26
     bit_size: 1
-fieldset/regs::USB1_VBUS_DET_STAT:
+fieldset/USB1_VBUS_DET_STAT:
   description: VBUS Detect Status
   fields:
   - name: SESSEND
@@ -1473,7 +1473,7 @@ fieldset/regs::USB1_VBUS_DET_STAT:
   - name: EXT_ID
     bit_offset: 5
     bit_size: 1
-fieldset/regs::USB1_VBUS_DET_STAT_CLR:
+fieldset/USB1_VBUS_DET_STAT_CLR:
   description: VBUS Detect Status
   fields:
   - name: SESSEND
@@ -1494,7 +1494,7 @@ fieldset/regs::USB1_VBUS_DET_STAT_CLR:
   - name: EXT_ID
     bit_offset: 5
     bit_size: 1
-fieldset/regs::USB1_VBUS_DET_STAT_SET:
+fieldset/USB1_VBUS_DET_STAT_SET:
   description: VBUS Detect Status
   fields:
   - name: SESSEND
@@ -1515,7 +1515,7 @@ fieldset/regs::USB1_VBUS_DET_STAT_SET:
   - name: EXT_ID
     bit_offset: 5
     bit_size: 1
-fieldset/regs::USB1_VBUS_DET_STAT_TOG:
+fieldset/USB1_VBUS_DET_STAT_TOG:
   description: VBUS Detect Status
   fields:
   - name: SESSEND
@@ -1536,7 +1536,7 @@ fieldset/regs::USB1_VBUS_DET_STAT_TOG:
   - name: EXT_ID
     bit_offset: 5
     bit_size: 1
-fieldset/regs::VERSION:
+fieldset/VERSION:
   description: Version
   fields:
   - name: STEP

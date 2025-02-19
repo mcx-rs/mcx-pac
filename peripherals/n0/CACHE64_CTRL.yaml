@@ -2,16 +2,16 @@ block/CACHE64_CTRL:
   items:
   - name: CCR
     byte_offset: 2048
-    fieldset: regs::CCR
+    fieldset: CCR
   - name: CLCR
     byte_offset: 2052
-    fieldset: regs::CLCR
+    fieldset: CLCR
   - name: CSAR
     byte_offset: 2056
-    fieldset: regs::CSAR
+    fieldset: CSAR
   - name: CCVR
     byte_offset: 2060
-fieldset/regs::CCR:
+fieldset/CCR:
   description: Cache Control
   fields:
   - name: ENCACHE
@@ -41,7 +41,7 @@ fieldset/regs::CCR:
   - name: GO
     bit_offset: 31
     bit_size: 1
-fieldset/regs::CLCR:
+fieldset/CLCR:
   description: Cache Line Control
   fields:
   - name: LGO
@@ -74,7 +74,7 @@ fieldset/regs::CLCR:
   - name: LACC
     bit_offset: 27
     bit_size: 1
-fieldset/regs::CSAR:
+fieldset/CSAR:
   description: Cache Search Address
   fields:
   - name: LGO

@@ -2,47 +2,47 @@ block/HPDAC:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: regs::VERID
+    fieldset: VERID
   - name: PARAM
     byte_offset: 4
-    fieldset: regs::PARAM
+    fieldset: PARAM
   - name: DATA
     byte_offset: 8
-    fieldset: regs::DATA
+    fieldset: DATA
   - name: GCR
     byte_offset: 12
-    fieldset: regs::GCR
+    fieldset: GCR
   - name: FCR
     byte_offset: 16
-    fieldset: regs::FCR
+    fieldset: FCR
   - name: FPR
     byte_offset: 20
-    fieldset: regs::FPR
+    fieldset: FPR
   - name: FSR
     byte_offset: 24
-    fieldset: regs::FSR
+    fieldset: FSR
   - name: IER
     byte_offset: 28
-    fieldset: regs::IER
+    fieldset: IER
   - name: DER
     byte_offset: 32
-    fieldset: regs::DER
+    fieldset: DER
   - name: RCR
     byte_offset: 36
-    fieldset: regs::RCR
+    fieldset: RCR
   - name: TCR
     byte_offset: 40
-    fieldset: regs::TCR
+    fieldset: TCR
   - name: PCR
     byte_offset: 44
-    fieldset: regs::PCR
-fieldset/regs::DATA:
+    fieldset: PCR
+fieldset/DATA:
   description: Data
   fields:
   - name: DATA
     bit_offset: 0
     bit_size: 14
-fieldset/regs::DER:
+fieldset/DER:
   description: DMA Enable
   fields:
   - name: EMPTY_DMAEN
@@ -51,13 +51,13 @@ fieldset/regs::DER:
   - name: WM_DMAEN
     bit_offset: 2
     bit_size: 1
-fieldset/regs::FCR:
+fieldset/FCR:
   description: DAC FIFO Control
   fields:
   - name: WML
     bit_offset: 0
     bit_size: 5
-fieldset/regs::FPR:
+fieldset/FPR:
   description: DAC FIFO Pointer
   fields:
   - name: FIFO_RPT
@@ -66,7 +66,7 @@ fieldset/regs::FPR:
   - name: FIFO_WPT
     bit_offset: 16
     bit_size: 5
-fieldset/regs::FSR:
+fieldset/FSR:
   description: FIFO Status
   fields:
   - name: FULL
@@ -90,7 +90,7 @@ fieldset/regs::FSR:
   - name: PTGCOCO
     bit_offset: 8
     bit_size: 1
-fieldset/regs::GCR:
+fieldset/GCR:
   description: Global Control
   fields:
   - name: DACEN
@@ -111,7 +111,7 @@ fieldset/regs::GCR:
   - name: BUF_EN
     bit_offset: 17
     bit_size: 1
-fieldset/regs::IER:
+fieldset/IER:
   description: Interrupt Enable
   fields:
   - name: FULL_IE
@@ -135,13 +135,13 @@ fieldset/regs::IER:
   - name: PTGCOCO_IE
     bit_offset: 8
     bit_size: 1
-fieldset/regs::PARAM:
+fieldset/PARAM:
   description: Parameter
   fields:
   - name: FIFOSZ
     bit_offset: 0
     bit_size: 3
-fieldset/regs::PCR:
+fieldset/PCR:
   description: Periodic Trigger Control
   fields:
   - name: PTG_NUM
@@ -150,7 +150,7 @@ fieldset/regs::PCR:
   - name: PTG_PERIOD
     bit_offset: 16
     bit_size: 16
-fieldset/regs::RCR:
+fieldset/RCR:
   description: Reset Control
   fields:
   - name: SWRST
@@ -159,13 +159,13 @@ fieldset/regs::RCR:
   - name: FIFORST
     bit_offset: 1
     bit_size: 1
-fieldset/regs::TCR:
+fieldset/TCR:
   description: Trigger Control
   fields:
   - name: SWTRG
     bit_offset: 0
     bit_size: 1
-fieldset/regs::VERID:
+fieldset/VERID:
   description: Version Identifier
   fields:
   - name: FEATURE

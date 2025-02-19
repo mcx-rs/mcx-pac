@@ -2,61 +2,61 @@ block/ADC:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: regs::VERID
+    fieldset: VERID
   - name: PARAM
     byte_offset: 4
-    fieldset: regs::PARAM
+    fieldset: PARAM
   - name: CTRL
     byte_offset: 16
-    fieldset: regs::CTRL
+    fieldset: CTRL
   - name: STAT
     byte_offset: 20
-    fieldset: regs::STAT
+    fieldset: STAT
   - name: IE
     byte_offset: 24
-    fieldset: regs::IE
+    fieldset: IE
   - name: DE
     byte_offset: 28
-    fieldset: regs::DE
+    fieldset: DE
   - name: CFG
     byte_offset: 32
-    fieldset: regs::CFG
+    fieldset: CFG
   - name: PAUSE
     byte_offset: 36
-    fieldset: regs::PAUSE
+    fieldset: PAUSE
   - name: SWTRIG
     byte_offset: 52
-    fieldset: regs::SWTRIG
+    fieldset: SWTRIG
   - name: TSTAT
     byte_offset: 56
-    fieldset: regs::TSTAT
+    fieldset: TSTAT
   - name: OFSTRIM
     byte_offset: 64
-    fieldset: regs::OFSTRIM
+    fieldset: OFSTRIM
   - name: TCTRL
     array:
       len: 4
       stride: 4
     byte_offset: 160
-    fieldset: regs::TCTRL
+    fieldset: TCTRL
   - name: FCTRL
     array:
       len: 2
       stride: 4
     byte_offset: 224
-    fieldset: regs::FCTRL
+    fieldset: FCTRL
   - name: GCC
     array:
       len: 2
       stride: 4
     byte_offset: 240
-    fieldset: regs::GCC
+    fieldset: GCC
   - name: GCR
     array:
       len: 2
       stride: 4
     byte_offset: 248
-    fieldset: regs::GCR
+    fieldset: GCR
   - name: CMD
     array:
       len: 15
@@ -68,32 +68,46 @@ block/ADC:
       len: 15
       stride: 4
     byte_offset: 512
-    fieldset: regs::CV
+    fieldset: CV
   - name: RESFIFO
     array:
       len: 2
       stride: 4
     byte_offset: 768
-    fieldset: regs::RESFIFO
+    fieldset: RESFIFO
   - name: CAL_GAR
     array:
       len: 33
       stride: 4
     byte_offset: 1024
+    fieldset: CAL_GAR
   - name: CAL_GBR
     array:
       len: 33
       stride: 4
     byte_offset: 1280
+    fieldset: CAL_GBR
 block/CMD:
   items:
   - name: CMDL
     byte_offset: 0
-    fieldset: regs::CMD_CMDL
+    fieldset: CMD_CMDL
   - name: CMDH
     byte_offset: 4
-    fieldset: regs::CMD_CMDH
-fieldset/regs::CFG:
+    fieldset: CMD_CMDH
+fieldset/CAL_GAR:
+  description: Calibration General A-Side Registers
+  fields:
+  - name: CAL_GAR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CAL_GBR:
+  description: Calibration General B-Side Registers
+  fields:
+  - name: CAL_GBR_VAL
+    bit_offset: 0
+    bit_size: 16
+fieldset/CFG:
   description: Configuration Register
   fields:
   - name: TPRICTRL
@@ -120,7 +134,7 @@ fieldset/regs::CFG:
   - name: PWREN
     bit_offset: 28
     bit_size: 1
-fieldset/regs::CMD_CMDH:
+fieldset/CMD_CMDH:
   description: Command High Buffer Register
   fields:
   - name: CMPEN
@@ -144,7 +158,7 @@ fieldset/regs::CMD_CMDH:
   - name: NEXT
     bit_offset: 24
     bit_size: 4
-fieldset/regs::CMD_CMDL:
+fieldset/CMD_CMDL:
   description: Command Low Buffer Register
   fields:
   - name: ADCH
@@ -162,7 +176,7 @@ fieldset/regs::CMD_CMDL:
   - name: ALTBEN
     bit_offset: 21
     bit_size: 1
-fieldset/regs::CTRL:
+fieldset/CTRL:
   description: Control Register
   fields:
   - name: ADCEN
@@ -189,7 +203,7 @@ fieldset/regs::CTRL:
   - name: CAL_AVGS
     bit_offset: 16
     bit_size: 4
-fieldset/regs::CV:
+fieldset/CV:
   description: Compare Value Register
   fields:
   - name: CVL
@@ -198,7 +212,7 @@ fieldset/regs::CV:
   - name: CVH
     bit_offset: 16
     bit_size: 16
-fieldset/regs::DE:
+fieldset/DE:
   description: DMA Enable Register
   fields:
   - name: FWMDE0
@@ -207,7 +221,7 @@ fieldset/regs::DE:
   - name: FWMDE1
     bit_offset: 1
     bit_size: 1
-fieldset/regs::FCTRL:
+fieldset/FCTRL:
   description: FIFO Control Register
   fields:
   - name: FCOUNT
@@ -216,7 +230,7 @@ fieldset/regs::FCTRL:
   - name: FWMARK
     bit_offset: 16
     bit_size: 4
-fieldset/regs::GCC:
+fieldset/GCC:
   description: Gain Calibration Control
   fields:
   - name: GAIN_CAL
@@ -225,7 +239,7 @@ fieldset/regs::GCC:
   - name: RDY
     bit_offset: 24
     bit_size: 1
-fieldset/regs::GCR:
+fieldset/GCR:
   description: Gain Calculation Result
   fields:
   - name: GCALR
@@ -234,7 +248,7 @@ fieldset/regs::GCR:
   - name: RDY
     bit_offset: 24
     bit_size: 1
-fieldset/regs::IE:
+fieldset/IE:
   description: Interrupt Enable Register
   fields:
   - name: FWMIE0
@@ -255,7 +269,7 @@ fieldset/regs::IE:
   - name: TCOMP_IE
     bit_offset: 16
     bit_size: 4
-fieldset/regs::OFSTRIM:
+fieldset/OFSTRIM:
   description: Offset Trim Register
   fields:
   - name: OFSTRIM_A
@@ -264,7 +278,7 @@ fieldset/regs::OFSTRIM:
   - name: OFSTRIM_B
     bit_offset: 16
     bit_size: 5
-fieldset/regs::PARAM:
+fieldset/PARAM:
   description: Parameter Register
   fields:
   - name: TRIG_NUM
@@ -279,7 +293,7 @@ fieldset/regs::PARAM:
   - name: CMD_NUM
     bit_offset: 24
     bit_size: 8
-fieldset/regs::PAUSE:
+fieldset/PAUSE:
   description: Pause Register
   fields:
   - name: PAUSEDLY
@@ -288,7 +302,7 @@ fieldset/regs::PAUSE:
   - name: PAUSEEN
     bit_offset: 31
     bit_size: 1
-fieldset/regs::RESFIFO:
+fieldset/RESFIFO:
   description: Data Result FIFO Register
   fields:
   - name: D
@@ -306,7 +320,7 @@ fieldset/regs::RESFIFO:
   - name: VALID
     bit_offset: 31
     bit_size: 1
-fieldset/regs::STAT:
+fieldset/STAT:
   description: Status Register
   fields:
   - name: RDY0
@@ -339,7 +353,7 @@ fieldset/regs::STAT:
   - name: CMDACT
     bit_offset: 24
     bit_size: 4
-fieldset/regs::SWTRIG:
+fieldset/SWTRIG:
   description: Software Trigger Register
   fields:
   - name: SWT0
@@ -354,7 +368,7 @@ fieldset/regs::SWTRIG:
   - name: SWT3
     bit_offset: 3
     bit_size: 1
-fieldset/regs::TCTRL:
+fieldset/TCTRL:
   description: Trigger Control Register
   fields:
   - name: HTEN
@@ -378,7 +392,7 @@ fieldset/regs::TCTRL:
   - name: TCMD
     bit_offset: 24
     bit_size: 4
-fieldset/regs::TSTAT:
+fieldset/TSTAT:
   description: Trigger Status Register
   fields:
   - name: TEXC_NUM
@@ -387,7 +401,7 @@ fieldset/regs::TSTAT:
   - name: TCOMP_FLAG
     bit_offset: 16
     bit_size: 4
-fieldset/regs::VERID:
+fieldset/VERID:
   description: Version ID Register
   fields:
   - name: RES

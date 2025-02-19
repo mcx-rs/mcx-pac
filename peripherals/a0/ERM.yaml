@@ -2,34 +2,34 @@ block/ERM:
   items:
   - name: CR0
     byte_offset: 0
-    fieldset: regs::CR0
+    fieldset: CR0
   - name: SR0
     byte_offset: 16
-    fieldset: regs::SR0
+    fieldset: SR0
   - name: EAR0
     byte_offset: 256
   - name: SYN0
     byte_offset: 260
-    fieldset: regs::SYN0
+    fieldset: SYN0
   - name: CORR_ERR_CNT0
     byte_offset: 264
-    fieldset: regs::CORR_ERR_CNT0
+    fieldset: CORR_ERR_CNT0
   - name: CORR_ERR_CNT1
     byte_offset: 280
-    fieldset: regs::CORR_ERR_CNT1
-fieldset/regs::CORR_ERR_CNT0:
+    fieldset: CORR_ERR_CNT1
+fieldset/CORR_ERR_CNT0:
   description: ERM Memory 0 Correctable Error Count Register
   fields:
   - name: COUNT
     bit_offset: 0
     bit_size: 8
-fieldset/regs::CORR_ERR_CNT1:
+fieldset/CORR_ERR_CNT1:
   description: ERM Memory 1 Correctable Error Count Register
   fields:
   - name: COUNT
     bit_offset: 0
     bit_size: 8
-fieldset/regs::CR0:
+fieldset/CR0:
   description: ERM Configuration Register 0
   fields:
   - name: ENCIE1
@@ -44,7 +44,7 @@ fieldset/regs::CR0:
   - name: ESCIE0
     bit_offset: 31
     bit_size: 1
-fieldset/regs::SR0:
+fieldset/SR0:
   description: ERM Status Register 0
   fields:
   - name: NCE1
@@ -59,7 +59,7 @@ fieldset/regs::SR0:
   - name: SBC0
     bit_offset: 31
     bit_size: 1
-fieldset/regs::SYN0:
+fieldset/SYN0:
   description: ERM Memory 0 Syndrome Register
   fields:
   - name: SYNDROME

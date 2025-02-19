@@ -2,86 +2,86 @@ block/PINT:
   items:
   - name: ISEL
     byte_offset: 0
-    fieldset: regs::ISEL
+    fieldset: ISEL
   - name: IENR
     byte_offset: 4
-    fieldset: regs::IENR
+    fieldset: IENR
   - name: SIENR
     byte_offset: 8
-    fieldset: regs::SIENR
+    fieldset: SIENR
   - name: CIENR
     byte_offset: 12
-    fieldset: regs::CIENR
+    fieldset: CIENR
   - name: IENF
     byte_offset: 16
-    fieldset: regs::IENF
+    fieldset: IENF
   - name: SIENF
     byte_offset: 20
-    fieldset: regs::SIENF
+    fieldset: SIENF
   - name: CIENF
     byte_offset: 24
-    fieldset: regs::CIENF
+    fieldset: CIENF
   - name: RISE
     byte_offset: 28
-    fieldset: regs::RISE
+    fieldset: RISE
   - name: FALL
     byte_offset: 32
-    fieldset: regs::FALL
+    fieldset: FALL
   - name: IST
     byte_offset: 36
-    fieldset: regs::IST
+    fieldset: IST
   - name: PMCTRL
     byte_offset: 40
-    fieldset: regs::PMCTRL
+    fieldset: PMCTRL
   - name: PMSRC
     byte_offset: 44
-    fieldset: regs::PMSRC
+    fieldset: PMSRC
   - name: PMCFG
     byte_offset: 48
-    fieldset: regs::PMCFG
-fieldset/regs::CIENF:
+    fieldset: PMCFG
+fieldset/CIENF:
   description: Pin Interrupt Active Level or Falling-Edge Interrupt Clear
   fields:
   - name: CENAF
     bit_offset: 0
     bit_size: 8
-fieldset/regs::CIENR:
+fieldset/CIENR:
   description: Pin Interrupt Level (Rising-Edge Interrupt) Clear
   fields:
   - name: CENRL
     bit_offset: 0
     bit_size: 8
-fieldset/regs::FALL:
+fieldset/FALL:
   description: Pin Interrupt Falling Edge
   fields:
   - name: FDET
     bit_offset: 0
     bit_size: 8
-fieldset/regs::IENF:
+fieldset/IENF:
   description: Pin Interrupt Active Level or Falling-Edge Interrupt Enable
   fields:
   - name: ENAF
     bit_offset: 0
     bit_size: 8
-fieldset/regs::IENR:
+fieldset/IENR:
   description: Pin Interrupt Level or Rising-Edge Interrupt Enable
   fields:
   - name: ENRL
     bit_offset: 0
     bit_size: 8
-fieldset/regs::ISEL:
+fieldset/ISEL:
   description: Pin Interrupt Mode
   fields:
   - name: PMODE
     bit_offset: 0
     bit_size: 8
-fieldset/regs::IST:
+fieldset/IST:
   description: Pin Interrupt Status
   fields:
   - name: PSTAT
     bit_offset: 0
     bit_size: 8
-fieldset/regs::PMCFG:
+fieldset/PMCFG:
   description: Pattern-Match Interrupt Bit Slice Configuration
   fields:
   - name: PROD_ENDPTS0
@@ -129,7 +129,7 @@ fieldset/regs::PMCFG:
   - name: CFG7
     bit_offset: 29
     bit_size: 3
-fieldset/regs::PMCTRL:
+fieldset/PMCTRL:
   description: Pattern-Match Interrupt Control
   fields:
   - name: SEL_PMATCH
@@ -141,7 +141,7 @@ fieldset/regs::PMCTRL:
   - name: PMAT
     bit_offset: 24
     bit_size: 8
-fieldset/regs::PMSRC:
+fieldset/PMSRC:
   description: Pattern-Match Interrupt Bit-Slice Source
   fields:
   - name: SRC0
@@ -168,19 +168,19 @@ fieldset/regs::PMSRC:
   - name: SRC7
     bit_offset: 29
     bit_size: 3
-fieldset/regs::RISE:
+fieldset/RISE:
   description: Pin Interrupt Rising Edge
   fields:
   - name: RDET
     bit_offset: 0
     bit_size: 8
-fieldset/regs::SIENF:
+fieldset/SIENF:
   description: Pin Interrupt Active Level or Falling-Edge Interrupt Set
   fields:
   - name: SETENAF
     bit_offset: 0
     bit_size: 8
-fieldset/regs::SIENR:
+fieldset/SIENR:
   description: Pin Interrupt Level or Rising-Edge Interrupt Set
   fields:
   - name: SETENRL

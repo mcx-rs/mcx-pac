@@ -5,23 +5,21 @@ block/MBC_INDEX:
       len: 4
       stride: 4
     byte_offset: 0
-    fieldset: regs::MBC_INDEX_MBC_MEM_GLBCFG
   - name: MBC_NSE_BLK_INDEX
     byte_offset: 16
-    fieldset: regs::MBC_INDEX_MBC_NSE_BLK_INDEX
+    fieldset: MBC_INDEX_MBC_NSE_BLK_INDEX
   - name: MBC_NSE_BLK_SET
     byte_offset: 20
   - name: MBC_NSE_BLK_CLR
     byte_offset: 24
   - name: MBC_NSE_BLK_CLR_ALL
     byte_offset: 28
-    fieldset: regs::MBC_INDEX_MBC_NSE_BLK_CLR_ALL
+    fieldset: MBC_INDEX_MBC_NSE_BLK_CLR_ALL
   - name: MBC_MEMN_GLBAC
     array:
       len: 8
       stride: 4
     byte_offset: 32
-    fieldset: regs::MBC_INDEX_MBC_MEMN_GLBAC
   - name: MBC_DOM0_MEM0_BLK_CFG_W
     array:
       len: 8
@@ -60,7 +58,7 @@ block/TRDC:
       stride: 460
     byte_offset: 0
     block: MBC_INDEX
-fieldset/regs::MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W:
+fieldset/MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W:
   description: MBC Memory Block Configuration Word
   fields:
   - name: MBACSEL0
@@ -111,7 +109,7 @@ fieldset/regs::MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W:
   - name: NSE7
     bit_offset: 31
     bit_size: 1
-fieldset/regs::MBC_INDEX_MBC_DOM0_MEM0_BLK_NSE_W:
+fieldset/MBC_INDEX_MBC_DOM0_MEM0_BLK_NSE_W:
   description: MBC Memory Block NonSecure Enable Word
   fields:
   - name: BIT0
@@ -210,7 +208,7 @@ fieldset/regs::MBC_INDEX_MBC_DOM0_MEM0_BLK_NSE_W:
   - name: BIT31
     bit_offset: 31
     bit_size: 1
-fieldset/regs::MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W:
+fieldset/MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W:
   description: MBC Memory Block Configuration Word
   fields:
   - name: MBACSEL0
@@ -261,7 +259,7 @@ fieldset/regs::MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W:
   - name: NSE7
     bit_offset: 31
     bit_size: 1
-fieldset/regs::MBC_INDEX_MBC_DOM0_MEM1_BLK_NSE_W:
+fieldset/MBC_INDEX_MBC_DOM0_MEM1_BLK_NSE_W:
   description: MBC Memory Block NonSecure Enable Word
   fields:
   - name: BIT0
@@ -360,7 +358,7 @@ fieldset/regs::MBC_INDEX_MBC_DOM0_MEM1_BLK_NSE_W:
   - name: BIT31
     bit_offset: 31
     bit_size: 1
-fieldset/regs::MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W:
+fieldset/MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W:
   description: MBC Memory Block Configuration Word
   fields:
   - name: MBACSEL0
@@ -411,7 +409,7 @@ fieldset/regs::MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W:
   - name: NSE7
     bit_offset: 31
     bit_size: 1
-fieldset/regs::MBC_INDEX_MBC_DOM0_MEM2_BLK_NSE_W:
+fieldset/MBC_INDEX_MBC_DOM0_MEM2_BLK_NSE_W:
   description: MBC Memory Block NonSecure Enable Word
   fields:
   - name: BIT0
@@ -510,7 +508,7 @@ fieldset/regs::MBC_INDEX_MBC_DOM0_MEM2_BLK_NSE_W:
   - name: BIT31
     bit_offset: 31
     bit_size: 1
-fieldset/regs::MBC_INDEX_MBC_MEMN_GLBAC:
+fieldset/MBC_INDEX_MBC_MEMN_GLBAC:
   description: MBC Global Access Control
   fields:
   - name: NUX
@@ -552,7 +550,7 @@ fieldset/regs::MBC_INDEX_MBC_MEMN_GLBAC:
   - name: LK
     bit_offset: 31
     bit_size: 1
-fieldset/regs::MBC_INDEX_MBC_MEM_GLBCFG:
+fieldset/MBC_INDEX_MBC_MEM_GLBCFG:
   description: MBC Global Configuration Register
   fields:
   - name: NBLKS
@@ -564,7 +562,7 @@ fieldset/regs::MBC_INDEX_MBC_MEM_GLBCFG:
   - name: CLRE
     bit_offset: 30
     bit_size: 2
-fieldset/regs::MBC_INDEX_MBC_NSE_BLK_CLR_ALL:
+fieldset/MBC_INDEX_MBC_NSE_BLK_CLR_ALL:
   description: MBC NonSecure Enable Block Clear All
   fields:
   - name: MEMSEL
@@ -573,7 +571,7 @@ fieldset/regs::MBC_INDEX_MBC_NSE_BLK_CLR_ALL:
   - name: DID_SEL0
     bit_offset: 16
     bit_size: 1
-fieldset/regs::MBC_INDEX_MBC_NSE_BLK_INDEX:
+fieldset/MBC_INDEX_MBC_NSE_BLK_INDEX:
   description: MBC NonSecure Enable Block Index
   fields:
   - name: WNDX

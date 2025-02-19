@@ -2,62 +2,62 @@ block/CMC:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: regs::VERID
+    fieldset: VERID
   - name: CKCTRL
     byte_offset: 16
-    fieldset: regs::CKCTRL
+    fieldset: CKCTRL
   - name: CKSTAT
     byte_offset: 20
-    fieldset: regs::CKSTAT
+    fieldset: CKSTAT
   - name: PMPROT
     byte_offset: 24
-    fieldset: regs::PMPROT
+    fieldset: PMPROT
   - name: GPMCTRL
     byte_offset: 28
-    fieldset: regs::GPMCTRL
+    fieldset: GPMCTRL
   - name: PMCTRL
     array:
       len: 1
       stride: 4
     byte_offset: 32
-    fieldset: regs::PMCTRL
+    fieldset: PMCTRL
   - name: SRS
     byte_offset: 128
-    fieldset: regs::SRS
+    fieldset: SRS
   - name: RPC
     byte_offset: 132
-    fieldset: regs::RPC
+    fieldset: RPC
   - name: SSRS
     byte_offset: 136
-    fieldset: regs::SSRS
+    fieldset: SSRS
   - name: SRIE
     byte_offset: 140
-    fieldset: regs::SRIE
+    fieldset: SRIE
   - name: SRIF
     byte_offset: 144
-    fieldset: regs::SRIF
+    fieldset: SRIF
   - name: MR
     array:
       len: 1
       stride: 4
     byte_offset: 160
-    fieldset: regs::MR
+    fieldset: MR
   - name: FM
     array:
       len: 1
       stride: 4
     byte_offset: 176
-    fieldset: regs::FM
+    fieldset: FM
   - name: FLASHCR
     byte_offset: 224
-    fieldset: regs::FLASHCR
+    fieldset: FLASHCR
   - name: CORECTL
     byte_offset: 272
-    fieldset: regs::CORECTL
+    fieldset: CORECTL
   - name: DBGCTL
     byte_offset: 288
-    fieldset: regs::DBGCTL
-fieldset/regs::CKCTRL:
+    fieldset: DBGCTL
+fieldset/CKCTRL:
   description: Clock Control
   fields:
   - name: CKMODE
@@ -66,7 +66,7 @@ fieldset/regs::CKCTRL:
   - name: LOCK
     bit_offset: 31
     bit_size: 1
-fieldset/regs::CKSTAT:
+fieldset/CKSTAT:
   description: Clock Status
   fields:
   - name: CKMODE
@@ -78,19 +78,19 @@ fieldset/regs::CKSTAT:
   - name: VALID
     bit_offset: 31
     bit_size: 1
-fieldset/regs::CORECTL:
+fieldset/CORECTL:
   description: Core Control
   fields:
   - name: NPIE
     bit_offset: 0
     bit_size: 1
-fieldset/regs::DBGCTL:
+fieldset/DBGCTL:
   description: Debug Control
   fields:
   - name: SOD
     bit_offset: 0
     bit_size: 1
-fieldset/regs::FLASHCR:
+fieldset/FLASHCR:
   description: Flash Control
   fields:
   - name: FLASHDIS
@@ -102,31 +102,31 @@ fieldset/regs::FLASHCR:
   - name: FLASHWAKE
     bit_offset: 2
     bit_size: 1
-fieldset/regs::FM:
+fieldset/FM:
   description: Force Mode
   fields:
   - name: FORCECFG
     bit_offset: 0
     bit_size: 1
-fieldset/regs::GPMCTRL:
+fieldset/GPMCTRL:
   description: Global Power Mode Control
   fields:
   - name: LPMODE
     bit_offset: 0
     bit_size: 4
-fieldset/regs::MR:
+fieldset/MR:
   description: Mode
   fields:
   - name: ISPMODE_n
     bit_offset: 0
     bit_size: 1
-fieldset/regs::PMCTRL:
+fieldset/PMCTRL:
   description: Power Mode Control
   fields:
   - name: LPMODE
     bit_offset: 0
     bit_size: 4
-fieldset/regs::PMPROT:
+fieldset/PMPROT:
   description: Power Mode Protection
   fields:
   - name: LPMODE
@@ -135,7 +135,7 @@ fieldset/regs::PMPROT:
   - name: LOCK
     bit_offset: 31
     bit_size: 1
-fieldset/regs::RPC:
+fieldset/RPC:
   description: Reset Pin Control
   fields:
   - name: FILTCFG
@@ -147,7 +147,7 @@ fieldset/regs::RPC:
   - name: LPFEN
     bit_offset: 9
     bit_size: 1
-fieldset/regs::SRIE:
+fieldset/SRIE:
   description: System Reset Interrupt Enable
   fields:
   - name: PIN
@@ -177,7 +177,7 @@ fieldset/regs::SRIE:
   - name: CDOG1
     bit_offset: 27
     bit_size: 1
-fieldset/regs::SRIF:
+fieldset/SRIF:
   description: System Reset Interrupt Flag
   fields:
   - name: PIN
@@ -204,7 +204,7 @@ fieldset/regs::SRIF:
   - name: CDOG1
     bit_offset: 27
     bit_size: 1
-fieldset/regs::SRS:
+fieldset/SRS:
   description: System Reset Status
   fields:
   - name: WAKEUP
@@ -258,7 +258,7 @@ fieldset/regs::SRS:
   - name: TAMPER
     bit_offset: 31
     bit_size: 1
-fieldset/regs::SSRS:
+fieldset/SSRS:
   description: Sticky System Reset Status
   fields:
   - name: WAKEUP
@@ -312,7 +312,7 @@ fieldset/regs::SSRS:
   - name: TAMPER
     bit_offset: 31
     bit_size: 1
-fieldset/regs::VERID:
+fieldset/VERID:
   description: Version ID
   fields:
   - name: FEATURE

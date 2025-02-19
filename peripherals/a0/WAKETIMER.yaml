@@ -2,10 +2,10 @@ block/WAKETIMER:
   items:
   - name: WAKE_TIMER_CTRL
     byte_offset: 0
-    fieldset: regs::WAKE_TIMER_CTRL
+    fieldset: WAKE_TIMER_CTRL
   - name: WAKE_TIMER_CNT
     byte_offset: 12
-fieldset/regs::WAKE_TIMER_CTRL:
+fieldset/WAKE_TIMER_CTRL:
   description: Wake Timer Control
   fields:
   - name: WAKE_FLAG

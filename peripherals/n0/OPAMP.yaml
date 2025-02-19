@@ -2,14 +2,14 @@ block/OPAMP:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: regs::VERID
+    fieldset: VERID
   - name: PARAM
     byte_offset: 4
-    fieldset: regs::PARAM
+    fieldset: PARAM
   - name: OPAMP_CTR
     byte_offset: 8
-    fieldset: regs::OPAMP_CTR
-fieldset/regs::OPAMP_CTR:
+    fieldset: OPAMP_CTR
+fieldset/OPAMP_CTR:
   description: OPAMP Control
   fields:
   - name: EN
@@ -54,13 +54,13 @@ fieldset/regs::OPAMP_CTR:
   - name: NGAIN
     bit_offset: 28
     bit_size: 3
-fieldset/regs::PARAM:
+fieldset/PARAM:
   description: Parameter
   fields:
   - name: PGA_FUNCTION
     bit_offset: 0
     bit_size: 1
-fieldset/regs::VERID:
+fieldset/VERID:
   description: Version ID
   fields:
   - name: FEATURE

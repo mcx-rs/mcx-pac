@@ -3,173 +3,190 @@ block/SEMA42:
   - name: GATE3
     byte_offset: 0
     bit_size: 8
-    fieldset: regs::GATE3
+    fieldset: GATE3
   - name: GATE2
     byte_offset: 1
     bit_size: 8
-    fieldset: regs::GATE2
+    fieldset: GATE2
   - name: GATE1
     byte_offset: 2
     bit_size: 8
-    fieldset: regs::GATE1
+    fieldset: GATE1
   - name: GATE0
     byte_offset: 3
     bit_size: 8
-    fieldset: regs::GATE0
+    fieldset: GATE0
   - name: GATE7
     byte_offset: 4
     bit_size: 8
-    fieldset: regs::GATE7
+    fieldset: GATE7
   - name: GATE6
     byte_offset: 5
     bit_size: 8
-    fieldset: regs::GATE6
+    fieldset: GATE6
   - name: GATE5
     byte_offset: 6
     bit_size: 8
-    fieldset: regs::GATE5
+    fieldset: GATE5
   - name: GATE4
     byte_offset: 7
     bit_size: 8
-    fieldset: regs::GATE4
+    fieldset: GATE4
   - name: GATE11
     byte_offset: 8
     bit_size: 8
-    fieldset: regs::GATE11
+    fieldset: GATE11
   - name: GATE10
     byte_offset: 9
     bit_size: 8
-    fieldset: regs::GATE10
+    fieldset: GATE10
   - name: GATE9
     byte_offset: 10
     bit_size: 8
-    fieldset: regs::GATE9
+    fieldset: GATE9
   - name: GATE8
     byte_offset: 11
     bit_size: 8
-    fieldset: regs::GATE8
+    fieldset: GATE8
   - name: GATE15
     byte_offset: 12
     bit_size: 8
-    fieldset: regs::GATE15
+    fieldset: GATE15
   - name: GATE14
     byte_offset: 13
     bit_size: 8
-    fieldset: regs::GATE14
+    fieldset: GATE14
   - name: GATE13
     byte_offset: 14
     bit_size: 8
-    fieldset: regs::GATE13
+    fieldset: GATE13
   - name: GATE12
     byte_offset: 15
     bit_size: 8
-    fieldset: regs::GATE12
+    fieldset: GATE12
   - name: RSTGT_R
     byte_offset: 66
     bit_size: 16
-    fieldset: regs::RSTGT_R
+    fieldset: RSTGT_R
   - name: RSTGT_W
     byte_offset: 66
     bit_size: 16
-    fieldset: regs::RSTGT_W
-fieldset/regs::GATE0:
+    fieldset: RSTGT_W
+fieldset/GATE0:
   description: Gate
+  bit_size: 8
   fields:
   - name: GTFSM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::GATE1:
+fieldset/GATE1:
   description: Gate
+  bit_size: 8
   fields:
   - name: GTFSM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::GATE10:
+fieldset/GATE10:
   description: Gate
+  bit_size: 8
   fields:
   - name: GTFSM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::GATE11:
+fieldset/GATE11:
   description: Gate
+  bit_size: 8
   fields:
   - name: GTFSM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::GATE12:
+fieldset/GATE12:
   description: Gate
+  bit_size: 8
   fields:
   - name: GTFSM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::GATE13:
+fieldset/GATE13:
   description: Gate
+  bit_size: 8
   fields:
   - name: GTFSM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::GATE14:
+fieldset/GATE14:
   description: Gate
+  bit_size: 8
   fields:
   - name: GTFSM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::GATE15:
+fieldset/GATE15:
   description: Gate
+  bit_size: 8
   fields:
   - name: GTFSM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::GATE2:
+fieldset/GATE2:
   description: Gate
+  bit_size: 8
   fields:
   - name: GTFSM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::GATE3:
+fieldset/GATE3:
   description: Gate
+  bit_size: 8
   fields:
   - name: GTFSM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::GATE4:
+fieldset/GATE4:
   description: Gate
+  bit_size: 8
   fields:
   - name: GTFSM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::GATE5:
+fieldset/GATE5:
   description: Gate
+  bit_size: 8
   fields:
   - name: GTFSM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::GATE6:
+fieldset/GATE6:
   description: Gate
+  bit_size: 8
   fields:
   - name: GTFSM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::GATE7:
+fieldset/GATE7:
   description: Gate
+  bit_size: 8
   fields:
   - name: GTFSM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::GATE8:
+fieldset/GATE8:
   description: Gate
+  bit_size: 8
   fields:
   - name: GTFSM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::GATE9:
+fieldset/GATE9:
   description: Gate
+  bit_size: 8
   fields:
   - name: GTFSM
     bit_offset: 0
     bit_size: 4
-fieldset/regs::RSTGT_R:
+fieldset/RSTGT_R:
   description: Reset Gate Read
+  bit_size: 16
   fields:
   - name: RSTGTN
     bit_offset: 0
@@ -180,8 +197,9 @@ fieldset/regs::RSTGT_R:
   - name: RSTGSM
     bit_offset: 12
     bit_size: 2
-fieldset/regs::RSTGT_W:
+fieldset/RSTGT_W:
   description: Reset Gate Write
+  bit_size: 16
   fields:
   - name: RSTGTN
     bit_offset: 0

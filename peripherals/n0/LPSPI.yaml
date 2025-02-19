@@ -2,52 +2,52 @@ block/LPSPI:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: regs::VERID
+    fieldset: VERID
   - name: PARAM
     byte_offset: 4
-    fieldset: regs::PARAM
+    fieldset: PARAM
   - name: CR
     byte_offset: 16
-    fieldset: regs::CR
+    fieldset: CR
   - name: SR
     byte_offset: 20
-    fieldset: regs::SR
+    fieldset: SR
   - name: IER
     byte_offset: 24
-    fieldset: regs::IER
+    fieldset: IER
   - name: DER
     byte_offset: 28
-    fieldset: regs::DER
+    fieldset: DER
   - name: CFGR0
     byte_offset: 32
-    fieldset: regs::CFGR0
+    fieldset: CFGR0
   - name: CFGR1
     byte_offset: 36
-    fieldset: regs::CFGR1
+    fieldset: CFGR1
   - name: DMR0
     byte_offset: 48
   - name: DMR1
     byte_offset: 52
   - name: CCR
     byte_offset: 64
-    fieldset: regs::CCR
+    fieldset: CCR
   - name: CCR1
     byte_offset: 68
-    fieldset: regs::CCR1
+    fieldset: CCR1
   - name: FCR
     byte_offset: 88
-    fieldset: regs::FCR
+    fieldset: FCR
   - name: FSR
     byte_offset: 92
-    fieldset: regs::FSR
+    fieldset: FSR
   - name: TCR
     byte_offset: 96
-    fieldset: regs::TCR
+    fieldset: TCR
   - name: TDR
     byte_offset: 100
   - name: RSR
     byte_offset: 112
-    fieldset: regs::RSR
+    fieldset: RSR
   - name: RDR
     byte_offset: 116
   - name: RDROR
@@ -64,7 +64,7 @@ block/LPSPI:
       len: 128
       stride: 4
     byte_offset: 1536
-fieldset/regs::CCR:
+fieldset/CCR:
   description: Clock Configuration
   fields:
   - name: SCKDIV
@@ -79,7 +79,7 @@ fieldset/regs::CCR:
   - name: SCKPCS
     bit_offset: 24
     bit_size: 8
-fieldset/regs::CCR1:
+fieldset/CCR1:
   description: Clock Configuration 1
   fields:
   - name: SCKSET
@@ -94,7 +94,7 @@ fieldset/regs::CCR1:
   - name: SCKSCK
     bit_offset: 24
     bit_size: 8
-fieldset/regs::CFGR0:
+fieldset/CFGR0:
   description: Configuration 0
   fields:
   - name: HREN
@@ -115,7 +115,7 @@ fieldset/regs::CFGR0:
   - name: RDMO
     bit_offset: 9
     bit_size: 1
-fieldset/regs::CFGR1:
+fieldset/CFGR1:
   description: Configuration 1
   fields:
   - name: MASTER
@@ -148,7 +148,7 @@ fieldset/regs::CFGR1:
   - name: PCSCFG
     bit_offset: 27
     bit_size: 1
-fieldset/regs::CR:
+fieldset/CR:
   description: Control
   fields:
   - name: MEN
@@ -166,7 +166,7 @@ fieldset/regs::CR:
   - name: RRF
     bit_offset: 9
     bit_size: 1
-fieldset/regs::DER:
+fieldset/DER:
   description: DMA Enable
   fields:
   - name: TDDE
@@ -178,7 +178,7 @@ fieldset/regs::DER:
   - name: FCDE
     bit_offset: 9
     bit_size: 1
-fieldset/regs::FCR:
+fieldset/FCR:
   description: FIFO Control
   fields:
   - name: TXWATER
@@ -187,7 +187,7 @@ fieldset/regs::FCR:
   - name: RXWATER
     bit_offset: 16
     bit_size: 3
-fieldset/regs::FSR:
+fieldset/FSR:
   description: FIFO Status
   fields:
   - name: TXCOUNT
@@ -196,7 +196,7 @@ fieldset/regs::FSR:
   - name: RXCOUNT
     bit_offset: 16
     bit_size: 4
-fieldset/regs::IER:
+fieldset/IER:
   description: Interrupt Enable
   fields:
   - name: TDIE
@@ -223,7 +223,7 @@ fieldset/regs::IER:
   - name: DMIE
     bit_offset: 13
     bit_size: 1
-fieldset/regs::PARAM:
+fieldset/PARAM:
   description: Parameter
   fields:
   - name: TXFIFO
@@ -235,7 +235,7 @@ fieldset/regs::PARAM:
   - name: PCSNUM
     bit_offset: 16
     bit_size: 8
-fieldset/regs::RSR:
+fieldset/RSR:
   description: Receive Status
   fields:
   - name: SOF
@@ -244,7 +244,7 @@ fieldset/regs::RSR:
   - name: RXEMPTY
     bit_offset: 1
     bit_size: 1
-fieldset/regs::SR:
+fieldset/SR:
   description: Status
   fields:
   - name: TDF
@@ -274,7 +274,7 @@ fieldset/regs::SR:
   - name: MBF
     bit_offset: 24
     bit_size: 1
-fieldset/regs::TCR:
+fieldset/TCR:
   description: Transmit Command
   fields:
   - name: FRAMESZ
@@ -313,7 +313,7 @@ fieldset/regs::TCR:
   - name: CPOL
     bit_offset: 31
     bit_size: 1
-fieldset/regs::VERID:
+fieldset/VERID:
   description: Version ID
   fields:
   - name: FEATURE

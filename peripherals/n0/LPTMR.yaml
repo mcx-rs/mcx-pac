@@ -2,15 +2,15 @@ block/LPTMR:
   items:
   - name: CSR
     byte_offset: 0
-    fieldset: regs::CSR
+    fieldset: CSR
   - name: PSR
     byte_offset: 4
-    fieldset: regs::PSR
+    fieldset: PSR
   - name: CMR
     byte_offset: 8
   - name: CNR
     byte_offset: 12
-fieldset/regs::CSR:
+fieldset/CSR:
   description: Control Status
   fields:
   - name: TEN
@@ -37,7 +37,7 @@ fieldset/regs::CSR:
   - name: TDRE
     bit_offset: 8
     bit_size: 1
-fieldset/regs::PSR:
+fieldset/PSR:
   description: Prescaler and Glitch Filter
   fields:
   - name: PCS

@@ -2,10 +2,10 @@ block/INTM:
   items:
   - name: INTM_MM
     byte_offset: 0
-    fieldset: regs::INTM_MM
+    fieldset: INTM_MM
   - name: INTM_IACK
     byte_offset: 4
-    fieldset: regs::INTM_IACK
+    fieldset: INTM_IACK
   - name: MON
     array:
       len: 4
@@ -16,47 +16,47 @@ block/MON:
   items:
   - name: INTM_IRQSEL
     byte_offset: 0
-    fieldset: regs::MON_INTM_IRQSEL
+    fieldset: MON_INTM_IRQSEL
   - name: INTM_LATENCY
     byte_offset: 4
-    fieldset: regs::MON_INTM_LATENCY
+    fieldset: MON_INTM_LATENCY
   - name: INTM_TIMER
     byte_offset: 8
-    fieldset: regs::MON_INTM_TIMER
+    fieldset: MON_INTM_TIMER
   - name: INTM_STATUS
     byte_offset: 12
-    fieldset: regs::MON_INTM_STATUS
-fieldset/regs::INTM_IACK:
+    fieldset: MON_INTM_STATUS
+fieldset/INTM_IACK:
   description: Interrupt Acknowledge
   fields:
   - name: IRQ
     bit_offset: 0
     bit_size: 10
-fieldset/regs::INTM_MM:
+fieldset/INTM_MM:
   description: Monitor Mode
   fields:
   - name: MM
     bit_offset: 0
     bit_size: 1
-fieldset/regs::MON_INTM_IRQSEL:
+fieldset/MON_INTM_IRQSEL:
   description: Interrupt Request Select for Monitor 0..Interrupt Request Select for Monitor 3
   fields:
   - name: IRQ
     bit_offset: 0
     bit_size: 10
-fieldset/regs::MON_INTM_LATENCY:
+fieldset/MON_INTM_LATENCY:
   description: Interrupt Latency for Monitor 0..Interrupt Latency for Monitor 3
   fields:
   - name: LAT
     bit_offset: 0
     bit_size: 24
-fieldset/regs::MON_INTM_STATUS:
+fieldset/MON_INTM_STATUS:
   description: Status for Monitor 0..Status for Monitor 3
   fields:
   - name: STATUS
     bit_offset: 0
     bit_size: 1
-fieldset/regs::MON_INTM_TIMER:
+fieldset/MON_INTM_TIMER:
   description: Timer for Monitor 0..Timer for Monitor 3
   fields:
   - name: TIMER

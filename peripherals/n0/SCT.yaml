@@ -4,32 +4,34 @@ block/EV:
     byte_offset: 0
   - name: CTRL
     byte_offset: 4
-    fieldset: regs::EV_CTRL
+    fieldset: EV_CTRL
 block/OUT:
   items:
   - name: SET
     byte_offset: 0
-    fieldset: regs::OUT_SET
+    fieldset: OUT_SET
   - name: CLR
     byte_offset: 4
-    fieldset: regs::OUT_CLR
+    fieldset: OUT_CLR
 block/SCT:
   items:
   - name: CONFIG
     byte_offset: 0
-    fieldset: regs::CONFIG
+    fieldset: CONFIG
   - name: CTRL
     byte_offset: 4
-    fieldset: regs::CTRL
+    fieldset: CTRL
   - name: CTRLL
     byte_offset: 4
     bit_size: 16
+    fieldset: CTRL_ACCESS16BIT_CTRLL
   - name: CTRLH
     byte_offset: 6
     bit_size: 16
+    fieldset: CTRL_ACCESS16BIT_CTRLH
   - name: LIMIT
     byte_offset: 8
-    fieldset: regs::LIMIT
+    fieldset: LIMIT
   - name: LIMITL
     byte_offset: 8
     bit_size: 16
@@ -38,7 +40,7 @@ block/SCT:
     bit_size: 16
   - name: HALT
     byte_offset: 12
-    fieldset: regs::HALT
+    fieldset: HALT
   - name: HALTL
     byte_offset: 12
     bit_size: 16
@@ -47,7 +49,7 @@ block/SCT:
     bit_size: 16
   - name: STOP
     byte_offset: 16
-    fieldset: regs::STOP
+    fieldset: STOP
   - name: STOPL
     byte_offset: 16
     bit_size: 16
@@ -56,7 +58,7 @@ block/SCT:
     bit_size: 16
   - name: START
     byte_offset: 20
-    fieldset: regs::START
+    fieldset: START
   - name: STARTL
     byte_offset: 20
     bit_size: 16
@@ -65,10 +67,10 @@ block/SCT:
     bit_size: 16
   - name: DITHER
     byte_offset: 24
-    fieldset: regs::DITHER
+    fieldset: DITHER
   - name: COUNT
     byte_offset: 64
-    fieldset: regs::COUNT
+    fieldset: COUNT
   - name: COUNTL
     byte_offset: 64
     bit_size: 16
@@ -77,7 +79,7 @@ block/SCT:
     bit_size: 16
   - name: STATE
     byte_offset: 68
-    fieldset: regs::STATE
+    fieldset: STATE
   - name: STATEL
     byte_offset: 68
     bit_size: 16
@@ -86,78 +88,81 @@ block/SCT:
     bit_size: 16
   - name: INPUT
     byte_offset: 72
-    fieldset: regs::INPUT
+    fieldset: INPUT
   - name: REGMODE
     byte_offset: 76
-    fieldset: regs::REGMODE
+    fieldset: REGMODE
   - name: REGMODEL
     byte_offset: 76
     bit_size: 16
+    fieldset: REGMODE_ACCESS16BIT_REGMODEL
   - name: REGMODEH
     byte_offset: 78
     bit_size: 16
+    fieldset: REGMODE_ACCESS16BIT_REGMODEH
   - name: OUTPUT
     byte_offset: 80
-    fieldset: regs::OUTPUT
+    fieldset: OUTPUT
   - name: OUTPUTDIRCTRL
     byte_offset: 84
-    fieldset: regs::OUTPUTDIRCTRL
+    fieldset: OUTPUTDIRCTRL
   - name: RES
     byte_offset: 88
-    fieldset: regs::RES
+    fieldset: RES
   - name: DMAREQ0
     byte_offset: 92
-    fieldset: regs::DMAREQ0
+    fieldset: DMAREQ0
   - name: DMAREQ1
     byte_offset: 96
-    fieldset: regs::DMAREQ1
+    fieldset: DMAREQ1
   - name: EVEN
     byte_offset: 240
-    fieldset: regs::EVEN
+    fieldset: EVEN
   - name: EVFLAG
     byte_offset: 244
-    fieldset: regs::EVFLAG
+    fieldset: EVFLAG
   - name: CONEN
     byte_offset: 248
-    fieldset: regs::CONEN
+    fieldset: CONEN
   - name: CONFLAG
     byte_offset: 252
-    fieldset: regs::CONFLAG
-  - name: MergeUnion
+    fieldset: CONFLAG
+  - name: CAP
     array:
       len: 16
       stride: 4
     byte_offset: 256
-    fieldset: regs::CAP
-  - name: MergeUnion
+    fieldset: CAP
+  - name: MATCH
     array:
       len: 16
       stride: 4
     byte_offset: 256
-    fieldset: regs::MATCH
+    fieldset: MATCH
   - name: FRACMAT
     array:
       len: 6
       stride: 4
     byte_offset: 320
-    fieldset: regs::FRACMAT
-  - name: MergeUnion
+    fieldset: FRACMAT
+  - name: CAPCTRL
     array:
       len: 16
       stride: 4
     byte_offset: 512
-  - name: MergeUnion
+    fieldset: CAPCTRL
+  - name: MATCHREL
     array:
       len: 16
       stride: 4
     byte_offset: 512
-    fieldset: regs::MATCHREL
+    fieldset: MATCHREL
   - name: FRACMATREL
     array:
       len: 6
       stride: 4
     byte_offset: 576
-    fieldset: regs::FRACMATREL
+    fieldset: FRACMATREL
   - name: EV
     array:
       len: 16
@@ -170,7 +175,7 @@ block/SCT:
       stride: 8
     byte_offset: 1280
     block: OUT
-fieldset/regs::CAP:
+fieldset/CAP:
   description: Capture Value
   fields:
   - name: CAPn_L
@@ -179,7 +184,7 @@ fieldset/regs::CAP:
   - name: CAPn_H
     bit_offset: 16
     bit_size: 16
-fieldset/regs::CAPCTRL:
+fieldset/CAPCTRL:
   description: Capture Control
   fields:
   - name: CAPCONn_L
@@ -188,31 +193,7 @@ fieldset/regs::CAPCTRL:
   - name: CAPCONn_H
     bit_offset: 16
     bit_size: 16
-fieldset/regs::CAPCTRL_ACCESS16BIT_CAPCTRLH:
-  description: SCT_CAPCTRLH register
-  fields:
-  - name: CAPCTRLH
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::CAPCTRL_ACCESS16BIT_CAPCTRLL:
-  description: SCT_CAPCTRLL register
-  fields:
-  - name: CAPCTRLL
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::CAP_ACCESS16BIT_CAPH:
-  description: SCT_CAPH register
-  fields:
-  - name: CAPH
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::CAP_ACCESS16BIT_CAPL:
-  description: SCT_CAPL register
-  fields:
-  - name: CAPL
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::CONEN:
+fieldset/CONEN:
   description: Conflict Interrupt Enable
   fields:
   - name: NCEN0
@@ -245,7 +226,7 @@ fieldset/regs::CONEN:
   - name: NCEN9
     bit_offset: 9
     bit_size: 1
-fieldset/regs::CONFIG:
+fieldset/CONFIG:
   description: SCT Configuration
   fields:
   - name: UNIFY
@@ -272,7 +253,7 @@ fieldset/regs::CONFIG:
   - name: AUTOLIMIT_H
     bit_offset: 18
     bit_size: 1
-fieldset/regs::CONFLAG:
+fieldset/CONFLAG:
   description: Conflict Flag
   fields:
   - name: NCFLAG0
@@ -311,7 +292,7 @@ fieldset/regs::CONFLAG:
   - name: BUSERRH
     bit_offset: 31
     bit_size: 1
-fieldset/regs::COUNT:
+fieldset/COUNT:
   description: Counter Value
   fields:
   - name: CTR_L
@@ -320,19 +301,7 @@ fieldset/regs::COUNT:
   - name: CTR_H
     bit_offset: 16
     bit_size: 16
-fieldset/regs::COUNT_ACCESS16BIT_COUNTH:
-  description: SCT_COUNTH register
-  fields:
-  - name: COUNTH
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::COUNT_ACCESS16BIT_COUNTL:
-  description: SCT_COUNTL register
-  fields:
-  - name: COUNTL
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::CTRL:
+fieldset/CTRL:
   description: SCT Control
   fields:
   - name: DOWN_L
@@ -371,8 +340,9 @@ fieldset/regs::CTRL:
   - name: PRE_H
     bit_offset: 21
     bit_size: 8
-fieldset/regs::CTRL_ACCESS16BIT_CTRLH:
+fieldset/CTRL_ACCESS16BIT_CTRLH:
   description: SCT_CTRLH register
+  bit_size: 16
   fields:
   - name: DOWN_H
     bit_offset: 0
@@ -392,8 +362,9 @@ fieldset/regs::CTRL_ACCESS16BIT_CTRLH:
   - name: PRE_H
     bit_offset: 5
     bit_size: 8
-fieldset/regs::CTRL_ACCESS16BIT_CTRLL:
+fieldset/CTRL_ACCESS16BIT_CTRLL:
   description: SCT_CTRLL register
+  bit_size: 16
   fields:
   - name: DOWN_L
     bit_offset: 0
@@ -413,7 +384,7 @@ fieldset/regs::CTRL_ACCESS16BIT_CTRLL:
   - name: PRE_L
     bit_offset: 5
     bit_size: 8
-fieldset/regs::DITHER:
+fieldset/DITHER:
   description: Dither Condition
   fields:
   - name: DITHER_L
@@ -422,7 +393,7 @@ fieldset/regs::DITHER:
   - name: DITHER_H
     bit_offset: 16
     bit_size: 16
-fieldset/regs::DMAREQ0:
+fieldset/DMAREQ0:
   description: DMA Request 0
   fields:
   - name: DEV_0
@@ -479,7 +450,7 @@ fieldset/regs::DMAREQ0:
   - name: DRQ0
     bit_offset: 31
     bit_size: 1
-fieldset/regs::DMAREQ1:
+fieldset/DMAREQ1:
   description: DMA Request 1
   fields:
   - name: DEV_0
@@ -536,7 +507,7 @@ fieldset/regs::DMAREQ1:
   - name: DRQ1
     bit_offset: 31
     bit_size: 1
-fieldset/regs::EVEN:
+fieldset/EVEN:
   description: Event Interrupt Enable
   fields:
   - name: IEN0
@@ -587,7 +558,7 @@ fieldset/regs::EVEN:
   - name: IEN15
     bit_offset: 15
     bit_size: 1
-fieldset/regs::EVFLAG:
+fieldset/EVFLAG:
   description: Event Flag
   fields:
   - name: FLAG0
@@ -638,7 +609,7 @@ fieldset/regs::EVFLAG:
   - name: FLAG15
     bit_offset: 15
     bit_size: 1
-fieldset/regs::EV_CTRL:
+fieldset/EV_CTRL:
   description: Event n Control
   fields:
   - name: MATCHSEL
@@ -671,7 +642,7 @@ fieldset/regs::EV_CTRL:
   - name: DIRECTION
     bit_offset: 21
     bit_size: 2
-fieldset/regs::FRACMAT:
+fieldset/FRACMAT:
   description: Fractional Match
   fields:
   - name: FRACMAT_L
@@ -680,7 +651,7 @@ fieldset/regs::FRACMAT:
   - name: FRACMAT_H
     bit_offset: 16
     bit_size: 4
-fieldset/regs::FRACMATREL:
+fieldset/FRACMATREL:
   description: Fractional Match Reload
   fields:
   - name: RELFRAC_L
@@ -689,7 +660,7 @@ fieldset/regs::FRACMATREL:
   - name: RELFRAC_H
     bit_offset: 16
     bit_size: 4
-fieldset/regs::HALT:
+fieldset/HALT:
   description: Halt Event Select
   fields:
   - name: HALTMSK_L
@@ -698,19 +669,7 @@ fieldset/regs::HALT:
   - name: HALTMSK_H
     bit_offset: 16
     bit_size: 16
-fieldset/regs::HALT_ACCESS16BIT_HALTH:
-  description: SCT_HALTH register
-  fields:
-  - name: HALTH
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::HALT_ACCESS16BIT_HALTL:
-  description: SCT_HALTL register
-  fields:
-  - name: HALTL
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::INPUT:
+fieldset/INPUT:
   description: Input State
   fields:
   - name: AIN0
@@ -809,7 +768,7 @@ fieldset/regs::INPUT:
   - name: SIN15
     bit_offset: 31
     bit_size: 1
-fieldset/regs::LIMIT:
+fieldset/LIMIT:
   description: SCT Limit Event Select
   fields:
   - name: LIMMSK_L
@@ -818,19 +777,7 @@ fieldset/regs::LIMIT:
   - name: LIMMSK_H
     bit_offset: 16
     bit_size: 16
-fieldset/regs::LIMIT_ACCESS16BIT_LIMITH:
-  description: SCT_LIMITH register
-  fields:
-  - name: LIMITH
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::LIMIT_ACCESS16BIT_LIMITL:
-  description: SCT_LIMITL register
-  fields:
-  - name: LIMITL
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::MATCH:
+fieldset/MATCH:
   description: Match Value
   fields:
   - name: MATCHn_L
@@ -839,7 +786,7 @@ fieldset/regs::MATCH:
   - name: MATCHn_H
     bit_offset: 16
     bit_size: 16
-fieldset/regs::MATCHREL:
+fieldset/MATCHREL:
   description: Match Reload Value
   fields:
   - name: RELOADn_L
@@ -848,31 +795,7 @@ fieldset/regs::MATCHREL:
   - name: RELOADn_H
     bit_offset: 16
     bit_size: 16
-fieldset/regs::MATCHREL_ACCESS16BIT_MATCHRELH:
-  description: SCT_MATCHRELH register
-  fields:
-  - name: MATCHRELH
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::MATCHREL_ACCESS16BIT_MATCHRELL:
-  description: SCT_MATCHRELL register
-  fields:
-  - name: MATCHRELL
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::MATCH_ACCESS16BIT_MATCHH:
-  description: SCT_MATCHH register
-  fields:
-  - name: MATCHH
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::MATCH_ACCESS16BIT_MATCHL:
-  description: SCT_MATCHL register
-  fields:
-  - name: MATCHL
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::OUTPUT:
+fieldset/OUTPUT:
   description: Output State
   fields:
   - name: OUT0
@@ -905,7 +828,7 @@ fieldset/regs::OUTPUT:
   - name: OUT9
     bit_offset: 9
     bit_size: 1
-fieldset/regs::OUTPUTDIRCTRL:
+fieldset/OUTPUTDIRCTRL:
   description: Output Counter Direction Control
   fields:
   - name: SETCLR0
@@ -938,19 +861,19 @@ fieldset/regs::OUTPUTDIRCTRL:
   - name: SETCLR9
     bit_offset: 18
     bit_size: 2
-fieldset/regs::OUT_CLR:
+fieldset/OUT_CLR:
   description: Output n Clear
   fields:
   - name: CLR
     bit_offset: 0
     bit_size: 16
-fieldset/regs::OUT_SET:
+fieldset/OUT_SET:
   description: Output n Set
   fields:
   - name: SET
     bit_offset: 0
     bit_size: 16
-fieldset/regs::REGMODE:
+fieldset/REGMODE:
   description: Match and Capture Register Mode
   fields:
   - name: REGMOD_L
@@ -1055,8 +978,9 @@ fieldset/regs::REGMODE:
   - name: REGMOD_H15
     bit_offset: 31
     bit_size: 1
-fieldset/regs::REGMODE_ACCESS16BIT_REGMODEH:
+fieldset/REGMODE_ACCESS16BIT_REGMODEH:
   description: SCT_REGMODEH register
+  bit_size: 16
   fields:
   - name: REGMODEH
     bit_offset: 0
@@ -1067,8 +991,9 @@ fieldset/regs::REGMODE_ACCESS16BIT_REGMODEH:
   - name: REGMOD_H
     bit_offset: 16
     bit_size: 16
-fieldset/regs::REGMODE_ACCESS16BIT_REGMODEL:
+fieldset/REGMODE_ACCESS16BIT_REGMODEL:
   description: SCT_REGMODEL register
+  bit_size: 16
   fields:
   - name: REGMODEL
     bit_offset: 0
@@ -1079,7 +1004,7 @@ fieldset/regs::REGMODE_ACCESS16BIT_REGMODEL:
   - name: REGMOD_H
     bit_offset: 16
     bit_size: 16
-fieldset/regs::RES:
+fieldset/RES:
   description: Output Conflict Resolution
   fields:
   - name: O0RES
@@ -1112,7 +1037,7 @@ fieldset/regs::RES:
   - name: O9RES
     bit_offset: 18
     bit_size: 2
-fieldset/regs::START:
+fieldset/START:
   description: Start Event Select
   fields:
   - name: STARTMSK_L
@@ -1121,19 +1046,7 @@ fieldset/regs::START:
   - name: STARTMSK_H
     bit_offset: 16
     bit_size: 16
-fieldset/regs::START_ACCESS16BIT_STARTH:
-  description: SCT_STARTH register
-  fields:
-  - name: STARTH
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::START_ACCESS16BIT_STARTL:
-  description: SCT_STARTL register
-  fields:
-  - name: STARTL
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::STATE:
+fieldset/STATE:
   description: State Variable
   fields:
   - name: STATE_L
@@ -1142,19 +1055,7 @@ fieldset/regs::STATE:
   - name: STATE_H
     bit_offset: 16
     bit_size: 5
-fieldset/regs::STATE_ACCESS16BIT_STATEH:
-  description: SCT_STATEH register
-  fields:
-  - name: STATEH
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::STATE_ACCESS16BIT_STATEL:
-  description: SCT_STATEL register
-  fields:
-  - name: STATEL
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::STOP:
+fieldset/STOP:
   description: Stop Event Select
   fields:
   - name: STOPMSK_L
@@ -1162,16 +1063,4 @@ fieldset/regs::STOP:
     bit_size: 16
   - name: STOPMSK_H
     bit_offset: 16
-    bit_size: 16
-fieldset/regs::STOP_ACCESS16BIT_STOPH:
-  description: SCT_STOPH register
-  fields:
-  - name: STOPH
-    bit_offset: 0
-    bit_size: 16
-fieldset/regs::STOP_ACCESS16BIT_STOPL:
-  description: SCT_STOPL register
-  fields:
-  - name: STOPL
-    bit_offset: 0
     bit_size: 16

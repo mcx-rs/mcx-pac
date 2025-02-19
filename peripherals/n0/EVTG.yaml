@@ -11,33 +11,34 @@ block/EVTG_INST:
   - name: EVTG_AOI0_BFT01
     byte_offset: 0
     bit_size: 16
-    fieldset: regs::EVTG_INST_EVTG_AOI0_BFT01
+    fieldset: EVTG_INST_EVTG_AOI0_BFT01
   - name: EVTG_AOI0_BFT23
     byte_offset: 2
     bit_size: 16
-    fieldset: regs::EVTG_INST_EVTG_AOI0_BFT23
+    fieldset: EVTG_INST_EVTG_AOI0_BFT23
   - name: EVTG_AOI1_BFT01
     byte_offset: 4
     bit_size: 16
-    fieldset: regs::EVTG_INST_EVTG_AOI1_BFT01
+    fieldset: EVTG_INST_EVTG_AOI1_BFT01
   - name: EVTG_AOI1_BFT23
     byte_offset: 6
     bit_size: 16
-    fieldset: regs::EVTG_INST_EVTG_AOI1_BFT23
+    fieldset: EVTG_INST_EVTG_AOI1_BFT23
   - name: EVTG_CTRL
     byte_offset: 10
     bit_size: 16
-    fieldset: regs::EVTG_INST_EVTG_CTRL
+    fieldset: EVTG_INST_EVTG_CTRL
   - name: EVTG_AOI0_FILT
     byte_offset: 12
     bit_size: 16
-    fieldset: regs::EVTG_INST_EVTG_AOI0_FILT
+    fieldset: EVTG_INST_EVTG_AOI0_FILT
   - name: EVTG_AOI1_FILT
     byte_offset: 14
     bit_size: 16
-    fieldset: regs::EVTG_INST_EVTG_AOI1_FILT
-fieldset/regs::EVTG_INST_EVTG_AOI0_BFT01:
+    fieldset: EVTG_INST_EVTG_AOI1_FILT
+fieldset/EVTG_INST_EVTG_AOI0_BFT01:
   description: AOI0 Boolean Function Term 0 and 1 Configuration
+  bit_size: 16
   fields:
   - name: PT1_DC
     bit_offset: 0
@@ -63,8 +64,9 @@ fieldset/regs::EVTG_INST_EVTG_AOI0_BFT01:
   - name: PT0_AC
     bit_offset: 14
     bit_size: 2
-fieldset/regs::EVTG_INST_EVTG_AOI0_BFT23:
+fieldset/EVTG_INST_EVTG_AOI0_BFT23:
   description: AOI0 Boolean Function Term 2 and 3 Configuration
+  bit_size: 16
   fields:
   - name: PT3_DC
     bit_offset: 0
@@ -90,8 +92,9 @@ fieldset/regs::EVTG_INST_EVTG_AOI0_BFT23:
   - name: PT2_AC
     bit_offset: 14
     bit_size: 2
-fieldset/regs::EVTG_INST_EVTG_AOI0_FILT:
+fieldset/EVTG_INST_EVTG_AOI0_FILT:
   description: AOI0 Output Filter
+  bit_size: 16
   fields:
   - name: FILT_PER
     bit_offset: 0
@@ -99,8 +102,9 @@ fieldset/regs::EVTG_INST_EVTG_AOI0_FILT:
   - name: FILT_CNT
     bit_offset: 8
     bit_size: 3
-fieldset/regs::EVTG_INST_EVTG_AOI1_BFT01:
+fieldset/EVTG_INST_EVTG_AOI1_BFT01:
   description: AOI1 Boolean Function Term 0 and 1 Configuration
+  bit_size: 16
   fields:
   - name: PT1_DC
     bit_offset: 0
@@ -126,8 +130,9 @@ fieldset/regs::EVTG_INST_EVTG_AOI1_BFT01:
   - name: PT0_AC
     bit_offset: 14
     bit_size: 2
-fieldset/regs::EVTG_INST_EVTG_AOI1_BFT23:
+fieldset/EVTG_INST_EVTG_AOI1_BFT23:
   description: AOI1 Boolean Function Term 2 and 3 Configuration
+  bit_size: 16
   fields:
   - name: PT3_DC
     bit_offset: 0
@@ -153,8 +158,9 @@ fieldset/regs::EVTG_INST_EVTG_AOI1_BFT23:
   - name: PT2_AC
     bit_offset: 14
     bit_size: 2
-fieldset/regs::EVTG_INST_EVTG_AOI1_FILT:
+fieldset/EVTG_INST_EVTG_AOI1_FILT:
   description: AOI1 Output Filter
+  bit_size: 16
   fields:
   - name: FILT_PER
     bit_offset: 0
@@ -162,8 +168,9 @@ fieldset/regs::EVTG_INST_EVTG_AOI1_FILT:
   - name: FILT_CNT
     bit_offset: 8
     bit_size: 3
-fieldset/regs::EVTG_INST_EVTG_CTRL:
+fieldset/EVTG_INST_EVTG_CTRL:
   description: Control and Status
+  bit_size: 16
   fields:
   - name: FF_INIT
     bit_offset: 0

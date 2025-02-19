@@ -2,7 +2,7 @@ block/PMCR:
   items:
   - name: PMCR
     byte_offset: 0
-    fieldset: regs::PMCR_PMCR
+    fieldset: PMCR_PMCR
   - name: PMECTR
     array:
       len: 3
@@ -24,7 +24,7 @@ block/SYSPM:
       stride: 48
     byte_offset: 0
     block: PMCR
-fieldset/regs::PMCR_PMCR:
+fieldset/PMCR_PMCR:
   description: Performance Monitor Control
   fields:
   - name: MENB
@@ -54,9 +54,3 @@ fieldset/regs::PMCR_PMCR:
   - name: SELEVT3
     bit_offset: 25
     bit_size: 7
-fieldset/regs::PMCR_PMECTR_HI:
-  description: Performance Monitor Event Counter
-  fields:
-  - name: ECTR
-    bit_offset: 0
-    bit_size: 8
