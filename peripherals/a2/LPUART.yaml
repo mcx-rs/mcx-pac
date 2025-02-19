@@ -2,44 +2,44 @@ block/LPUART:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: VERID
+    fieldset: regs::VERID
   - name: PARAM
     byte_offset: 4
-    fieldset: PARAM
+    fieldset: regs::PARAM
   - name: GLOBAL
     byte_offset: 8
-    fieldset: GLOBAL
+    fieldset: regs::GLOBAL
   - name: PINCFG
     byte_offset: 12
-    fieldset: PINCFG
+    fieldset: regs::PINCFG
   - name: BAUD
     byte_offset: 16
-    fieldset: BAUD
+    fieldset: regs::BAUD
   - name: STAT
     byte_offset: 20
-    fieldset: STAT
+    fieldset: regs::STAT
   - name: CTRL
     byte_offset: 24
-    fieldset: CTRL
+    fieldset: regs::CTRL
   - name: DATA
     byte_offset: 28
-    fieldset: DATA
+    fieldset: regs::DATA
   - name: MATCH
     byte_offset: 32
-    fieldset: MATCH
+    fieldset: regs::MATCH
   - name: MODIR
     byte_offset: 36
-    fieldset: MODIR
+    fieldset: regs::MODIR
   - name: FIFO
     byte_offset: 40
-    fieldset: FIFO
+    fieldset: regs::FIFO
   - name: WATER
     byte_offset: 44
-    fieldset: WATER
+    fieldset: regs::WATER
   - name: DATARO
     byte_offset: 48
-    fieldset: DATARO
-fieldset/BAUD:
+    fieldset: regs::DATARO
+fieldset/regs::BAUD:
   description: Baud Rate
   fields:
   - name: SBR
@@ -84,7 +84,7 @@ fieldset/BAUD:
   - name: MAEN1
     bit_offset: 31
     bit_size: 1
-fieldset/CTRL:
+fieldset/regs::CTRL:
   description: Control
   fields:
   - name: PT
@@ -174,7 +174,7 @@ fieldset/CTRL:
   - name: R8T9
     bit_offset: 31
     bit_size: 1
-fieldset/DATA:
+fieldset/regs::DATA:
   description: Data
   fields:
   - name: R0T0
@@ -225,13 +225,13 @@ fieldset/DATA:
   - name: NOISY
     bit_offset: 15
     bit_size: 1
-fieldset/DATARO:
+fieldset/regs::DATARO:
   description: Data Read-Only
   fields:
   - name: DATA
     bit_offset: 0
     bit_size: 16
-fieldset/FIFO:
+fieldset/regs::FIFO:
   description: FIFO
   fields:
   - name: RXFIFOSIZE
@@ -273,13 +273,13 @@ fieldset/FIFO:
   - name: TXEMPT
     bit_offset: 23
     bit_size: 1
-fieldset/GLOBAL:
+fieldset/regs::GLOBAL:
   description: Global
   fields:
   - name: RST
     bit_offset: 1
     bit_size: 1
-fieldset/MATCH:
+fieldset/regs::MATCH:
   description: Match Address
   fields:
   - name: MA1
@@ -288,7 +288,7 @@ fieldset/MATCH:
   - name: MA2
     bit_offset: 16
     bit_size: 10
-fieldset/MODIR:
+fieldset/regs::MODIR:
   description: MODEM IrDA
   fields:
   - name: TXCTSE
@@ -318,7 +318,7 @@ fieldset/MODIR:
   - name: IREN
     bit_offset: 18
     bit_size: 1
-fieldset/PARAM:
+fieldset/regs::PARAM:
   description: Parameter
   fields:
   - name: TXFIFO
@@ -327,13 +327,13 @@ fieldset/PARAM:
   - name: RXFIFO
     bit_offset: 8
     bit_size: 8
-fieldset/PINCFG:
+fieldset/regs::PINCFG:
   description: Pin Configuration
   fields:
   - name: TRGSEL
     bit_offset: 0
     bit_size: 2
-fieldset/STAT:
+fieldset/regs::STAT:
   description: Status
   fields:
   - name: LBKFE
@@ -396,7 +396,7 @@ fieldset/STAT:
   - name: LBKDIF
     bit_offset: 31
     bit_size: 1
-fieldset/VERID:
+fieldset/regs::VERID:
   description: Version ID
   fields:
   - name: FEATURE
@@ -408,7 +408,7 @@ fieldset/VERID:
   - name: MAJOR
     bit_offset: 24
     bit_size: 8
-fieldset/WATER:
+fieldset/regs::WATER:
   description: Watermark
   fields:
   - name: TXWATER

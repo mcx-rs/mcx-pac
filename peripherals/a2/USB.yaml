@@ -3,83 +3,83 @@ block/ENDPOINT:
   - name: ENDPT
     byte_offset: 0
     bit_size: 8
-    fieldset: ENDPOINT_ENDPT
+    fieldset: regs::ENDPOINT_ENDPT
 block/USB:
   items:
   - name: PERID
     byte_offset: 0
     bit_size: 8
-    fieldset: PERID
+    fieldset: regs::PERID
   - name: IDCOMP
     byte_offset: 4
     bit_size: 8
-    fieldset: IDCOMP
+    fieldset: regs::IDCOMP
   - name: REV
     byte_offset: 8
     bit_size: 8
   - name: ADDINFO
     byte_offset: 12
     bit_size: 8
-    fieldset: ADDINFO
+    fieldset: regs::ADDINFO
   - name: OTGISTAT
     byte_offset: 16
     bit_size: 8
-    fieldset: OTGISTAT
+    fieldset: regs::OTGISTAT
   - name: OTGICR
     byte_offset: 20
     bit_size: 8
-    fieldset: OTGICR
+    fieldset: regs::OTGICR
   - name: OTGSTAT
     byte_offset: 24
     bit_size: 8
-    fieldset: OTGSTAT
+    fieldset: regs::OTGSTAT
   - name: OTGCTL
     byte_offset: 28
     bit_size: 8
-    fieldset: OTGCTL
+    fieldset: regs::OTGCTL
   - name: ISTAT
     byte_offset: 128
     bit_size: 8
-    fieldset: ISTAT
+    fieldset: regs::ISTAT
   - name: INTEN
     byte_offset: 132
     bit_size: 8
-    fieldset: INTEN
+    fieldset: regs::INTEN
   - name: ERRSTAT
     byte_offset: 136
     bit_size: 8
-    fieldset: ERRSTAT
+    fieldset: regs::ERRSTAT
   - name: ERREN
     byte_offset: 140
     bit_size: 8
-    fieldset: ERREN
+    fieldset: regs::ERREN
   - name: STAT
     byte_offset: 144
     bit_size: 8
-    fieldset: STAT
+    fieldset: regs::STAT
   - name: CTL
     byte_offset: 148
     bit_size: 8
-    fieldset: CTL
+    fieldset: regs::CTL
   - name: ADDR
     byte_offset: 152
     bit_size: 8
-    fieldset: ADDR
+    fieldset: regs::ADDR
   - name: BDTPAGE1
     byte_offset: 156
     bit_size: 8
-    fieldset: BDTPAGE1
+    fieldset: regs::BDTPAGE1
   - name: FRMNUML
     byte_offset: 160
     bit_size: 8
   - name: FRMNUMH
     byte_offset: 164
     bit_size: 8
-    fieldset: FRMNUMH
+    fieldset: regs::FRMNUMH
   - name: TOKEN
     byte_offset: 168
     bit_size: 8
-    fieldset: TOKEN
+    fieldset: regs::TOKEN
   - name: SOFTHLD
     byte_offset: 172
     bit_size: 8
@@ -98,19 +98,19 @@ block/USB:
   - name: USBCTRL
     byte_offset: 256
     bit_size: 8
-    fieldset: USBCTRL
+    fieldset: regs::USBCTRL
   - name: OBSERVE
     byte_offset: 260
     bit_size: 8
-    fieldset: OBSERVE
+    fieldset: regs::OBSERVE
   - name: CONTROL
     byte_offset: 264
     bit_size: 8
-    fieldset: CONTROL
+    fieldset: regs::CONTROL
   - name: USBTRC0
     byte_offset: 268
     bit_size: 8
-    fieldset: USBTRC0
+    fieldset: regs::USBTRC0
   - name: USBFRMADJUST
     byte_offset: 276
     bit_size: 8
@@ -123,47 +123,47 @@ block/USB:
   - name: MISCCTRL
     byte_offset: 300
     bit_size: 8
-    fieldset: MISCCTRL
+    fieldset: regs::MISCCTRL
   - name: STALL_IL_DIS
     byte_offset: 304
     bit_size: 8
-    fieldset: STALL_IL_DIS
+    fieldset: regs::STALL_IL_DIS
   - name: STALL_IH_DIS
     byte_offset: 308
     bit_size: 8
-    fieldset: STALL_IH_DIS
+    fieldset: regs::STALL_IH_DIS
   - name: STALL_OL_DIS
     byte_offset: 312
     bit_size: 8
-    fieldset: STALL_OL_DIS
+    fieldset: regs::STALL_OL_DIS
   - name: STALL_OH_DIS
     byte_offset: 316
     bit_size: 8
-    fieldset: STALL_OH_DIS
+    fieldset: regs::STALL_OH_DIS
   - name: CLK_RECOVER_CTRL
     byte_offset: 320
     bit_size: 8
-    fieldset: CLK_RECOVER_CTRL
+    fieldset: regs::CLK_RECOVER_CTRL
   - name: CLK_RECOVER_IRC_EN
     byte_offset: 324
     bit_size: 8
-    fieldset: CLK_RECOVER_IRC_EN
+    fieldset: regs::CLK_RECOVER_IRC_EN
   - name: CLK_RECOVER_INT_EN
     byte_offset: 340
     bit_size: 8
-    fieldset: CLK_RECOVER_INT_EN
+    fieldset: regs::CLK_RECOVER_INT_EN
   - name: CLK_RECOVER_INT_STATUS
     byte_offset: 348
     bit_size: 8
-    fieldset: CLK_RECOVER_INT_STATUS
-fieldset/ADDINFO:
+    fieldset: regs::CLK_RECOVER_INT_STATUS
+fieldset/regs::ADDINFO:
   description: Peripheral Additional Information
   bit_size: 8
   fields:
   - name: IEHOST
     bit_offset: 0
     bit_size: 1
-fieldset/ADDR:
+fieldset/regs::ADDR:
   description: Address
   bit_size: 8
   fields:
@@ -173,14 +173,14 @@ fieldset/ADDR:
   - name: LSEN
     bit_offset: 7
     bit_size: 1
-fieldset/BDTPAGE1:
+fieldset/regs::BDTPAGE1:
   description: BDT Page 1
   bit_size: 8
   fields:
   - name: BDTBA
     bit_offset: 1
     bit_size: 7
-fieldset/CLK_RECOVER_CTRL:
+fieldset/regs::CLK_RECOVER_CTRL:
   description: USB Clock Recovery Control
   bit_size: 8
   fields:
@@ -196,28 +196,28 @@ fieldset/CLK_RECOVER_CTRL:
   - name: CLOCK_RECOVER_EN
     bit_offset: 7
     bit_size: 1
-fieldset/CLK_RECOVER_INT_EN:
+fieldset/regs::CLK_RECOVER_INT_EN:
   description: Clock Recovery Combined Interrupt Enable
   bit_size: 8
   fields:
   - name: OVF_ERROR_EN
     bit_offset: 4
     bit_size: 1
-fieldset/CLK_RECOVER_INT_STATUS:
+fieldset/regs::CLK_RECOVER_INT_STATUS:
   description: Clock Recovery Separated Interrupt Status
   bit_size: 8
   fields:
   - name: OVF_ERROR
     bit_offset: 4
     bit_size: 1
-fieldset/CLK_RECOVER_IRC_EN:
+fieldset/regs::CLK_RECOVER_IRC_EN:
   description: FIRC Oscillator Enable
   bit_size: 8
   fields:
   - name: IRC_EN
     bit_offset: 1
     bit_size: 1
-fieldset/CONTROL:
+fieldset/regs::CONTROL:
   description: USB OTG Control
   bit_size: 8
   fields:
@@ -230,7 +230,7 @@ fieldset/CONTROL:
   - name: DPPULLUPNONOTG
     bit_offset: 4
     bit_size: 1
-fieldset/CTL:
+fieldset/regs::CTL:
   description: Control
   bit_size: 8
   fields:
@@ -258,7 +258,7 @@ fieldset/CTL:
   - name: JSTATE
     bit_offset: 7
     bit_size: 1
-fieldset/ENDPOINT_ENDPT:
+fieldset/regs::ENDPOINT_ENDPT:
   description: Endpoint Control
   bit_size: 8
   fields:
@@ -283,7 +283,7 @@ fieldset/ENDPOINT_ENDPT:
   - name: HOSTWOHUB
     bit_offset: 7
     bit_size: 1
-fieldset/ERREN:
+fieldset/regs::ERREN:
   description: Error Interrupt Enable
   bit_size: 8
   fields:
@@ -311,7 +311,7 @@ fieldset/ERREN:
   - name: BTSERREN
     bit_offset: 7
     bit_size: 1
-fieldset/ERRSTAT:
+fieldset/regs::ERRSTAT:
   description: Error Interrupt Status
   bit_size: 8
   fields:
@@ -339,21 +339,21 @@ fieldset/ERRSTAT:
   - name: BTSERR
     bit_offset: 7
     bit_size: 1
-fieldset/FRMNUMH:
+fieldset/regs::FRMNUMH:
   description: Frame Number Register High
   bit_size: 8
   fields:
   - name: FRM
     bit_offset: 0
     bit_size: 3
-fieldset/IDCOMP:
+fieldset/regs::IDCOMP:
   description: Peripheral ID Complement
   bit_size: 8
   fields:
   - name: NID
     bit_offset: 0
     bit_size: 6
-fieldset/INTEN:
+fieldset/regs::INTEN:
   description: Interrupt Enable
   bit_size: 8
   fields:
@@ -381,7 +381,7 @@ fieldset/INTEN:
   - name: STALLEN
     bit_offset: 7
     bit_size: 1
-fieldset/ISTAT:
+fieldset/regs::ISTAT:
   description: Interrupt Status
   bit_size: 8
   fields:
@@ -409,7 +409,7 @@ fieldset/ISTAT:
   - name: STALL
     bit_offset: 7
     bit_size: 1
-fieldset/MISCCTRL:
+fieldset/regs::MISCCTRL:
   description: Miscellaneous Control
   bit_size: 8
   fields:
@@ -431,7 +431,7 @@ fieldset/MISCCTRL:
   - name: STL_ADJ_EN
     bit_offset: 7
     bit_size: 1
-fieldset/OBSERVE:
+fieldset/regs::OBSERVE:
   description: USB OTG Observe
   bit_size: 8
   fields:
@@ -444,7 +444,7 @@ fieldset/OBSERVE:
   - name: DPPU
     bit_offset: 7
     bit_size: 1
-fieldset/OTGCTL:
+fieldset/regs::OTGCTL:
   description: OTG Control
   bit_size: 8
   fields:
@@ -460,7 +460,7 @@ fieldset/OTGCTL:
   - name: DPHIGH
     bit_offset: 7
     bit_size: 1
-fieldset/OTGICR:
+fieldset/regs::OTGICR:
   description: OTG Interrupt Control
   bit_size: 8
   fields:
@@ -470,7 +470,7 @@ fieldset/OTGICR:
   - name: ONEMSECEN
     bit_offset: 6
     bit_size: 1
-fieldset/OTGISTAT:
+fieldset/regs::OTGISTAT:
   description: OTG Interrupt Status
   bit_size: 8
   fields:
@@ -480,7 +480,7 @@ fieldset/OTGISTAT:
   - name: ONEMSEC
     bit_offset: 6
     bit_size: 1
-fieldset/OTGSTAT:
+fieldset/regs::OTGSTAT:
   description: OTG Status
   bit_size: 8
   fields:
@@ -490,14 +490,14 @@ fieldset/OTGSTAT:
   - name: ONEMSEC
     bit_offset: 6
     bit_size: 1
-fieldset/PERID:
+fieldset/regs::PERID:
   description: Peripheral ID
   bit_size: 8
   fields:
   - name: ID
     bit_offset: 0
     bit_size: 6
-fieldset/STALL_IH_DIS:
+fieldset/regs::STALL_IH_DIS:
   description: Peripheral Mode Stall Disable for Endpoints 15 to 8 in IN Direction
   bit_size: 8
   fields:
@@ -525,7 +525,7 @@ fieldset/STALL_IH_DIS:
   - name: STALL_I_DIS15
     bit_offset: 7
     bit_size: 1
-fieldset/STALL_IL_DIS:
+fieldset/regs::STALL_IL_DIS:
   description: Peripheral Mode Stall Disable for Endpoints 7 to 0 in IN Direction
   bit_size: 8
   fields:
@@ -553,7 +553,7 @@ fieldset/STALL_IL_DIS:
   - name: STALL_I_DIS7
     bit_offset: 7
     bit_size: 1
-fieldset/STALL_OH_DIS:
+fieldset/regs::STALL_OH_DIS:
   description: Peripheral Mode Stall Disable for Endpoints 15 to 8 in OUT Direction
   bit_size: 8
   fields:
@@ -581,7 +581,7 @@ fieldset/STALL_OH_DIS:
   - name: STALL_O_DIS15
     bit_offset: 7
     bit_size: 1
-fieldset/STALL_OL_DIS:
+fieldset/regs::STALL_OL_DIS:
   description: Peripheral Mode Stall Disable for Endpoints 7 to 0 in OUT Direction
   bit_size: 8
   fields:
@@ -609,7 +609,7 @@ fieldset/STALL_OL_DIS:
   - name: STALL_O_DIS7
     bit_offset: 7
     bit_size: 1
-fieldset/STAT:
+fieldset/regs::STAT:
   description: Status
   bit_size: 8
   fields:
@@ -622,7 +622,7 @@ fieldset/STAT:
   - name: ENDP
     bit_offset: 4
     bit_size: 4
-fieldset/TOKEN:
+fieldset/regs::TOKEN:
   description: Token
   bit_size: 8
   fields:
@@ -632,7 +632,7 @@ fieldset/TOKEN:
   - name: TOKENPID
     bit_offset: 4
     bit_size: 4
-fieldset/USBCTRL:
+fieldset/regs::USBCTRL:
   description: USB Control
   bit_size: 8
   fields:
@@ -654,7 +654,7 @@ fieldset/USBCTRL:
   - name: SUSP
     bit_offset: 7
     bit_size: 1
-fieldset/USBTRC0:
+fieldset/regs::USBTRC0:
   description: USB Transceiver Control 0
   bit_size: 8
   fields:

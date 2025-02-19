@@ -5,124 +5,124 @@ block/INPUTMUX:
       len: 8
       stride: 4
     byte_offset: 0
-    fieldset: SCT0_INMUX
+    fieldset: regs::SCT0_INMUX
   - name: CTIMER0CAP0
     byte_offset: 32
-    fieldset: CTIMER0CAP0
+    fieldset: regs::CTIMER0CAP0
   - name: CTIMER0CAP1
     byte_offset: 36
-    fieldset: CTIMER0CAP1
+    fieldset: regs::CTIMER0CAP1
   - name: CTIMER0CAP2
     byte_offset: 40
-    fieldset: CTIMER0CAP2
+    fieldset: regs::CTIMER0CAP2
   - name: CTIMER0CAP3
     byte_offset: 44
-    fieldset: CTIMER0CAP3
+    fieldset: regs::CTIMER0CAP3
   - name: TIMER0TRIG
     byte_offset: 48
-    fieldset: TIMER0TRIG
+    fieldset: regs::TIMER0TRIG
   - name: CTIMER1CAP0
     byte_offset: 64
-    fieldset: CTIMER1CAP0
+    fieldset: regs::CTIMER1CAP0
   - name: CTIMER1CAP1
     byte_offset: 68
-    fieldset: CTIMER1CAP1
+    fieldset: regs::CTIMER1CAP1
   - name: CTIMER1CAP2
     byte_offset: 72
-    fieldset: CTIMER1CAP2
+    fieldset: regs::CTIMER1CAP2
   - name: CTIMER1CAP3
     byte_offset: 76
-    fieldset: CTIMER1CAP3
+    fieldset: regs::CTIMER1CAP3
   - name: TIMER1TRIG
     byte_offset: 80
-    fieldset: TIMER1TRIG
+    fieldset: regs::TIMER1TRIG
   - name: CTIMER2CAP0
     byte_offset: 96
-    fieldset: CTIMER2CAP0
+    fieldset: regs::CTIMER2CAP0
   - name: CTIMER2CAP1
     byte_offset: 100
-    fieldset: CTIMER2CAP1
+    fieldset: regs::CTIMER2CAP1
   - name: CTIMER2CAP2
     byte_offset: 104
-    fieldset: CTIMER2CAP2
+    fieldset: regs::CTIMER2CAP2
   - name: CTIMER2CAP3
     byte_offset: 108
-    fieldset: CTIMER2CAP3
+    fieldset: regs::CTIMER2CAP3
   - name: TIMER2TRIG
     byte_offset: 112
-    fieldset: TIMER2TRIG
+    fieldset: regs::TIMER2TRIG
   - name: SMARTDMAARCHB_INMUX
     array:
       len: 8
       stride: 4
     byte_offset: 160
-    fieldset: SMARTDMAARCHB_INMUX
+    fieldset: regs::SMARTDMAARCHB_INMUX
   - name: PINTSEL
     array:
       len: 8
       stride: 4
     byte_offset: 192
-    fieldset: PINTSEL
+    fieldset: regs::PINTSEL
   - name: FREQMEAS_REF
     byte_offset: 384
-    fieldset: FREQMEAS_REF
+    fieldset: regs::FREQMEAS_REF
   - name: FREQMEAS_TAR
     byte_offset: 388
-    fieldset: FREQMEAS_TAR
+    fieldset: regs::FREQMEAS_TAR
   - name: CTIMER3CAP0
     byte_offset: 416
-    fieldset: CTIMER3CAP0
+    fieldset: regs::CTIMER3CAP0
   - name: CTIMER3CAP1
     byte_offset: 420
-    fieldset: CTIMER3CAP1
+    fieldset: regs::CTIMER3CAP1
   - name: CTIMER3CAP2
     byte_offset: 424
-    fieldset: CTIMER3CAP2
+    fieldset: regs::CTIMER3CAP2
   - name: CTIMER3CAP3
     byte_offset: 428
-    fieldset: CTIMER3CAP3
+    fieldset: regs::CTIMER3CAP3
   - name: TIMER3TRIG
     byte_offset: 432
-    fieldset: TIMER3TRIG
+    fieldset: regs::TIMER3TRIG
   - name: CTIMER4CAP0
     byte_offset: 448
-    fieldset: CTIMER4CAP0
+    fieldset: regs::CTIMER4CAP0
   - name: CTIMER4CAP1
     byte_offset: 452
-    fieldset: CTIMER4CAP1
+    fieldset: regs::CTIMER4CAP1
   - name: CTIMER4CAP2
     byte_offset: 456
-    fieldset: CTIMER4CAP2
+    fieldset: regs::CTIMER4CAP2
   - name: CTIMER4CAP3
     byte_offset: 460
-    fieldset: CTIMER4CAP3
+    fieldset: regs::CTIMER4CAP3
   - name: TIMER4TRIG
     byte_offset: 464
-    fieldset: TIMER4TRIG
+    fieldset: regs::TIMER4TRIG
   - name: CMP0_TRIG
     byte_offset: 608
-    fieldset: CMP0_TRIG
+    fieldset: regs::CMP0_TRIG
   - name: ADC0_TRIG
     array:
       len: 4
       stride: 4
     byte_offset: 640
-    fieldset: ADC0_TRIG
+    fieldset: regs::ADC0_TRIG
   - name: ADC1_TRIG
     array:
       len: 4
       stride: 4
     byte_offset: 704
-    fieldset: ADC1_TRIG
+    fieldset: regs::ADC1_TRIG
   - name: DAC0_TRIG
     byte_offset: 768
-    fieldset: DAC0_TRIG
+    fieldset: regs::DAC0_TRIG
   - name: DAC1_TRIG
     byte_offset: 800
-    fieldset: DAC1_TRIG
+    fieldset: regs::DAC1_TRIG
   - name: DAC2_TRIG
     byte_offset: 832
-    fieldset: DAC2_TRIG
+    fieldset: regs::DAC2_TRIG
   - name: QDCN
     array:
       len: 2
@@ -134,397 +134,397 @@ block/INPUTMUX:
       len: 4
       stride: 4
     byte_offset: 928
-    fieldset: FLEXPWM0_SM_EXTSYNC
+    fieldset: regs::FLEXPWM0_SM_EXTSYNC
   - name: FLEXPWM0_SM_EXTA
     array:
       len: 4
       stride: 4
     byte_offset: 944
-    fieldset: FLEXPWM0_SM_EXTA
+    fieldset: regs::FLEXPWM0_SM_EXTA
   - name: FLEXPWM0_EXTFORCE
     byte_offset: 960
-    fieldset: FLEXPWM0_EXTFORCE
+    fieldset: regs::FLEXPWM0_EXTFORCE
   - name: FLEXPWM0_FAULT
     array:
       len: 4
       stride: 4
     byte_offset: 964
-    fieldset: FLEXPWM0_FAULT
+    fieldset: regs::FLEXPWM0_FAULT
   - name: FLEXPWM1_SM_EXTSYNC
     array:
       len: 4
       stride: 4
     byte_offset: 992
-    fieldset: FLEXPWM1_SM_EXTSYNC
+    fieldset: regs::FLEXPWM1_SM_EXTSYNC
   - name: FLEXPWM1_SM_EXTA
     array:
       len: 4
       stride: 4
     byte_offset: 1008
-    fieldset: FLEXPWM1_SM_EXTA
+    fieldset: regs::FLEXPWM1_SM_EXTA
   - name: FLEXPWM1_EXTFORCE
     byte_offset: 1024
-    fieldset: FLEXPWM1_EXTFORCE
+    fieldset: regs::FLEXPWM1_EXTFORCE
   - name: FLEXPWM1_FAULT
     array:
       len: 4
       stride: 4
     byte_offset: 1028
-    fieldset: FLEXPWM1_FAULT
+    fieldset: regs::FLEXPWM1_FAULT
   - name: PWM0_EXT_CLK
     byte_offset: 1056
-    fieldset: PWM0_EXT_CLK
+    fieldset: regs::PWM0_EXT_CLK
   - name: PWM1_EXT_CLK
     byte_offset: 1060
-    fieldset: PWM1_EXT_CLK
+    fieldset: regs::PWM1_EXT_CLK
   - name: EVTG_TRIG
     array:
       len: 16
       stride: 4
     byte_offset: 1088
-    fieldset: EVTG_TRIG
+    fieldset: regs::EVTG_TRIG
   - name: USBFS_TRIG
     byte_offset: 1152
-    fieldset: USBFS_TRIG
+    fieldset: regs::USBFS_TRIG
   - name: TSI_TRIG
     byte_offset: 1184
-    fieldset: TSI_TRIG
+    fieldset: regs::TSI_TRIG
   - name: EXT_TRIG
     array:
       len: 8
       stride: 4
     byte_offset: 1216
-    fieldset: EXT_TRIG
+    fieldset: regs::EXT_TRIG
   - name: CMP1_TRIG
     byte_offset: 1248
-    fieldset: CMP1_TRIG
+    fieldset: regs::CMP1_TRIG
   - name: CMP2_TRIG
     byte_offset: 1280
-    fieldset: CMP2_TRIG
+    fieldset: regs::CMP2_TRIG
   - name: SINC_FILTER_CH
     array:
       len: 5
       stride: 4
     byte_offset: 1312
-    fieldset: SINC_FILTER_CH
+    fieldset: regs::SINC_FILTER_CH
   - name: OPAMP_TRIG
     array:
       len: 3
       stride: 4
     byte_offset: 1408
-    fieldset: OPAMP_TRIG
+    fieldset: regs::OPAMP_TRIG
   - name: FLEXCOMM0_TRIG
     byte_offset: 1440
-    fieldset: FLEXCOMM0_TRIG
+    fieldset: regs::FLEXCOMM0_TRIG
   - name: FLEXCOMM1_TRIG
     byte_offset: 1472
-    fieldset: FLEXCOMM1_TRIG
+    fieldset: regs::FLEXCOMM1_TRIG
   - name: FLEXCOMM2_TRIG
     byte_offset: 1504
-    fieldset: FLEXCOMM2_TRIG
+    fieldset: regs::FLEXCOMM2_TRIG
   - name: FLEXCOMM3_TRIG
     byte_offset: 1536
-    fieldset: FLEXCOMM3_TRIG
+    fieldset: regs::FLEXCOMM3_TRIG
   - name: FLEXCOMM4_TRIG
     byte_offset: 1568
-    fieldset: FLEXCOMM4_TRIG
+    fieldset: regs::FLEXCOMM4_TRIG
   - name: FLEXCOMM5_TRIG
     byte_offset: 1600
-    fieldset: FLEXCOMM5_TRIG
+    fieldset: regs::FLEXCOMM5_TRIG
   - name: FLEXCOMM6_TRIG
     byte_offset: 1632
-    fieldset: FLEXCOMM6_TRIG
+    fieldset: regs::FLEXCOMM6_TRIG
   - name: FLEXCOMM7_TRIG
     byte_offset: 1664
-    fieldset: FLEXCOMM7_TRIG
+    fieldset: regs::FLEXCOMM7_TRIG
   - name: FLEXCOMM8_TRIG
     byte_offset: 1696
-    fieldset: FLEXCOMM8_TRIG
+    fieldset: regs::FLEXCOMM8_TRIG
   - name: FLEXCOMM9_TRIG
     byte_offset: 1728
-    fieldset: FLEXCOMM9_TRIG
+    fieldset: regs::FLEXCOMM9_TRIG
   - name: FLEXIO_TRIG
     array:
       len: 8
       stride: 4
     byte_offset: 1760
-    fieldset: FLEXIO_TRIG
+    fieldset: regs::FLEXIO_TRIG
   - name: DMA0_REQ_ENABLE0
     byte_offset: 1792
-    fieldset: DMA0_REQ_ENABLE0
+    fieldset: regs::DMA0_REQ_ENABLE0
   - name: DMA0_REQ_ENABLE0_SET
     byte_offset: 1796
-    fieldset: DMA0_REQ_ENABLE0_SET
+    fieldset: regs::DMA0_REQ_ENABLE0_SET
   - name: DMA0_REQ_ENABLE0_CLR
     byte_offset: 1800
-    fieldset: DMA0_REQ_ENABLE0_CLR
+    fieldset: regs::DMA0_REQ_ENABLE0_CLR
   - name: DMA0_REQ_ENABLE0_TOG
     byte_offset: 1804
-    fieldset: DMA0_REQ_ENABLE0_TOG
+    fieldset: regs::DMA0_REQ_ENABLE0_TOG
   - name: DMA0_REQ_ENABLE1
     byte_offset: 1808
-    fieldset: DMA0_REQ_ENABLE1
+    fieldset: regs::DMA0_REQ_ENABLE1
   - name: DMA0_REQ_ENABLE1_SET
     byte_offset: 1812
-    fieldset: DMA0_REQ_ENABLE1_SET
+    fieldset: regs::DMA0_REQ_ENABLE1_SET
   - name: DMA0_REQ_ENABLE1_CLR
     byte_offset: 1816
-    fieldset: DMA0_REQ_ENABLE1_CLR
+    fieldset: regs::DMA0_REQ_ENABLE1_CLR
   - name: DMA0_REQ_ENABLE1_TOG
     byte_offset: 1820
-    fieldset: DMA0_REQ_ENABLE1_TOG
+    fieldset: regs::DMA0_REQ_ENABLE1_TOG
   - name: DMA0_REQ_ENABLE2
     byte_offset: 1824
-    fieldset: DMA0_REQ_ENABLE2
+    fieldset: regs::DMA0_REQ_ENABLE2
   - name: DMA0_REQ_ENABLE2_SET
     byte_offset: 1828
-    fieldset: DMA0_REQ_ENABLE2_SET
+    fieldset: regs::DMA0_REQ_ENABLE2_SET
   - name: DMA0_REQ_ENABLE2_CLR
     byte_offset: 1832
-    fieldset: DMA0_REQ_ENABLE2_CLR
+    fieldset: regs::DMA0_REQ_ENABLE2_CLR
   - name: DMA0_REQ_ENABLE2_TOG
     byte_offset: 1836
-    fieldset: DMA0_REQ_ENABLE2_TOG
+    fieldset: regs::DMA0_REQ_ENABLE2_TOG
   - name: DMA0_REQ_ENABLE3
     byte_offset: 1840
-    fieldset: DMA0_REQ_ENABLE3
+    fieldset: regs::DMA0_REQ_ENABLE3
   - name: DMA0_REQ_ENABLE3_SET
     byte_offset: 1844
-    fieldset: DMA0_REQ_ENABLE3_SET
+    fieldset: regs::DMA0_REQ_ENABLE3_SET
   - name: DMA0_REQ_ENABLE3_CLR
     byte_offset: 1848
-    fieldset: DMA0_REQ_ENABLE3_CLR
+    fieldset: regs::DMA0_REQ_ENABLE3_CLR
   - name: DMA1_REQ_ENABLE0
     byte_offset: 1920
-    fieldset: DMA1_REQ_ENABLE0
+    fieldset: regs::DMA1_REQ_ENABLE0
   - name: DMA1_REQ_ENABLE0_SET
     byte_offset: 1924
-    fieldset: DMA1_REQ_ENABLE0_SET
+    fieldset: regs::DMA1_REQ_ENABLE0_SET
   - name: DMA1_REQ_ENABLE0_CLR
     byte_offset: 1928
-    fieldset: DMA1_REQ_ENABLE0_CLR
+    fieldset: regs::DMA1_REQ_ENABLE0_CLR
   - name: DMA1_REQ_ENABLE0_TOG
     byte_offset: 1932
-    fieldset: DMA1_REQ_ENABLE0_TOG
+    fieldset: regs::DMA1_REQ_ENABLE0_TOG
   - name: DMA1_REQ_ENABLE1
     byte_offset: 1936
-    fieldset: DMA1_REQ_ENABLE1
+    fieldset: regs::DMA1_REQ_ENABLE1
   - name: DMA1_REQ_ENABLE1_SET
     byte_offset: 1940
-    fieldset: DMA1_REQ_ENABLE1_SET
+    fieldset: regs::DMA1_REQ_ENABLE1_SET
   - name: DMA1_REQ_ENABLE1_CLR
     byte_offset: 1944
-    fieldset: DMA1_REQ_ENABLE1_CLR
+    fieldset: regs::DMA1_REQ_ENABLE1_CLR
   - name: DMA1_REQ_ENABLE1_TOG
     byte_offset: 1948
-    fieldset: DMA1_REQ_ENABLE1_TOG
+    fieldset: regs::DMA1_REQ_ENABLE1_TOG
   - name: DMA1_REQ_ENABLE2
     byte_offset: 1952
-    fieldset: DMA1_REQ_ENABLE2
+    fieldset: regs::DMA1_REQ_ENABLE2
   - name: DMA1_REQ_ENABLE2_SET
     byte_offset: 1956
-    fieldset: DMA1_REQ_ENABLE2_SET
+    fieldset: regs::DMA1_REQ_ENABLE2_SET
   - name: DMA1_REQ_ENABLE2_CLR
     byte_offset: 1960
-    fieldset: DMA1_REQ_ENABLE2_CLR
+    fieldset: regs::DMA1_REQ_ENABLE2_CLR
   - name: DMA1_REQ_ENABLE2_TOG
     byte_offset: 1964
-    fieldset: DMA1_REQ_ENABLE2_TOG
+    fieldset: regs::DMA1_REQ_ENABLE2_TOG
   - name: DMA1_REQ_ENABLE3
     byte_offset: 1968
-    fieldset: DMA1_REQ_ENABLE3
+    fieldset: regs::DMA1_REQ_ENABLE3
   - name: DMA1_REQ_ENABLE3_SET
     byte_offset: 1972
-    fieldset: DMA1_REQ_ENABLE3_SET
+    fieldset: regs::DMA1_REQ_ENABLE3_SET
   - name: DMA1_REQ_ENABLE3_CLR
     byte_offset: 1976
-    fieldset: DMA1_REQ_ENABLE3_CLR
+    fieldset: regs::DMA1_REQ_ENABLE3_CLR
 block/QDCN:
   items:
   - name: QDC_TRIG
     byte_offset: 0
-    fieldset: QDCN_QDC_TRIG
+    fieldset: regs::QDCN_QDC_TRIG
   - name: QDC_HOME
     byte_offset: 4
-    fieldset: QDCN_QDC_HOME
+    fieldset: regs::QDCN_QDC_HOME
   - name: QDC_INDEX
     byte_offset: 8
-    fieldset: QDCN_QDC_INDEX
+    fieldset: regs::QDCN_QDC_INDEX
   - name: QDC_PHASEB
     byte_offset: 12
-    fieldset: QDCN_QDC_PHASEB
+    fieldset: regs::QDCN_QDC_PHASEB
   - name: QDC_PHASEA
     byte_offset: 16
-    fieldset: QDCN_QDC_PHASEA
-fieldset/ADC0_TRIG:
+    fieldset: regs::QDCN_QDC_PHASEA
+fieldset/regs::ADC0_TRIG:
   description: ADC Trigger Input Connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 8
-fieldset/ADC1_TRIG:
+fieldset/regs::ADC1_TRIG:
   description: ADC Trigger Input Connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 8
-fieldset/CMP0_TRIG:
+fieldset/regs::CMP0_TRIG:
   description: CMP0 Input Connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/CMP1_TRIG:
+fieldset/regs::CMP1_TRIG:
   description: CMP1 Input Connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/CMP2_TRIG:
+fieldset/regs::CMP2_TRIG:
   description: CMP2 Input Connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/CTIMER0CAP0:
+fieldset/regs::CTIMER0CAP0:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER0CAP1:
+fieldset/regs::CTIMER0CAP1:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER0CAP2:
+fieldset/regs::CTIMER0CAP2:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER0CAP3:
+fieldset/regs::CTIMER0CAP3:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER1CAP0:
+fieldset/regs::CTIMER1CAP0:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER1CAP1:
+fieldset/regs::CTIMER1CAP1:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER1CAP2:
+fieldset/regs::CTIMER1CAP2:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER1CAP3:
+fieldset/regs::CTIMER1CAP3:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER2CAP0:
+fieldset/regs::CTIMER2CAP0:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER2CAP1:
+fieldset/regs::CTIMER2CAP1:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER2CAP2:
+fieldset/regs::CTIMER2CAP2:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER2CAP3:
+fieldset/regs::CTIMER2CAP3:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER3CAP0:
+fieldset/regs::CTIMER3CAP0:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER3CAP1:
+fieldset/regs::CTIMER3CAP1:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER3CAP2:
+fieldset/regs::CTIMER3CAP2:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER3CAP3:
+fieldset/regs::CTIMER3CAP3:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER4CAP0:
+fieldset/regs::CTIMER4CAP0:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER4CAP1:
+fieldset/regs::CTIMER4CAP1:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER4CAP2:
+fieldset/regs::CTIMER4CAP2:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER4CAP3:
+fieldset/regs::CTIMER4CAP3:
   description: Capture Select Register for CTIMER Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/DAC0_TRIG:
+fieldset/regs::DAC0_TRIG:
   description: DAC0 Trigger Inputs
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/DAC1_TRIG:
+fieldset/regs::DAC1_TRIG:
   description: DAC1 Trigger Inputs
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/DAC2_TRIG:
+fieldset/regs::DAC2_TRIG:
   description: DAC2 Trigger Inputs
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/DMA0_REQ_ENABLE0:
+fieldset/regs::DMA0_REQ_ENABLE0:
   description: DMA0 Request Enable0
   fields:
   - name: REQ1_EN0
@@ -620,7 +620,7 @@ fieldset/DMA0_REQ_ENABLE0:
   - name: REQ31_EN0
     bit_offset: 31
     bit_size: 1
-fieldset/DMA0_REQ_ENABLE0_CLR:
+fieldset/regs::DMA0_REQ_ENABLE0_CLR:
   description: DMA0 Request Enable0
   fields:
   - name: REQ1_EN0
@@ -716,7 +716,7 @@ fieldset/DMA0_REQ_ENABLE0_CLR:
   - name: REQ31_EN0
     bit_offset: 31
     bit_size: 1
-fieldset/DMA0_REQ_ENABLE0_SET:
+fieldset/regs::DMA0_REQ_ENABLE0_SET:
   description: DMA0 Request Enable0
   fields:
   - name: REQ1_EN0
@@ -812,7 +812,7 @@ fieldset/DMA0_REQ_ENABLE0_SET:
   - name: REQ31_EN0
     bit_offset: 31
     bit_size: 1
-fieldset/DMA0_REQ_ENABLE0_TOG:
+fieldset/regs::DMA0_REQ_ENABLE0_TOG:
   description: DMA0 Request Enable0
   fields:
   - name: REQ1_EN0
@@ -908,7 +908,7 @@ fieldset/DMA0_REQ_ENABLE0_TOG:
   - name: REQ31_EN0
     bit_offset: 31
     bit_size: 1
-fieldset/DMA0_REQ_ENABLE1:
+fieldset/regs::DMA0_REQ_ENABLE1:
   description: DMA0 Request Enable1
   fields:
   - name: REQ32_EN0
@@ -1001,7 +1001,7 @@ fieldset/DMA0_REQ_ENABLE1:
   - name: REQ63_EN0
     bit_offset: 31
     bit_size: 1
-fieldset/DMA0_REQ_ENABLE1_CLR:
+fieldset/regs::DMA0_REQ_ENABLE1_CLR:
   description: DMA0 Request Enable1
   fields:
   - name: REQ32_EN0
@@ -1094,7 +1094,7 @@ fieldset/DMA0_REQ_ENABLE1_CLR:
   - name: REQ63_EN0
     bit_offset: 31
     bit_size: 1
-fieldset/DMA0_REQ_ENABLE1_SET:
+fieldset/regs::DMA0_REQ_ENABLE1_SET:
   description: DMA0 Request Enable1
   fields:
   - name: REQ32_EN0
@@ -1187,7 +1187,7 @@ fieldset/DMA0_REQ_ENABLE1_SET:
   - name: REQ63_EN0
     bit_offset: 31
     bit_size: 1
-fieldset/DMA0_REQ_ENABLE1_TOG:
+fieldset/regs::DMA0_REQ_ENABLE1_TOG:
   description: DMA0 Request Enable1
   fields:
   - name: REQ32_EN0
@@ -1280,7 +1280,7 @@ fieldset/DMA0_REQ_ENABLE1_TOG:
   - name: REQ63_EN0
     bit_offset: 31
     bit_size: 1
-fieldset/DMA0_REQ_ENABLE2:
+fieldset/regs::DMA0_REQ_ENABLE2:
   description: DMA0 Request Enable2
   fields:
   - name: REQ64_EN0
@@ -1373,7 +1373,7 @@ fieldset/DMA0_REQ_ENABLE2:
   - name: REQ95_EN0
     bit_offset: 31
     bit_size: 1
-fieldset/DMA0_REQ_ENABLE2_CLR:
+fieldset/regs::DMA0_REQ_ENABLE2_CLR:
   description: DMA0 Request Enable2
   fields:
   - name: REQ64_EN0
@@ -1466,7 +1466,7 @@ fieldset/DMA0_REQ_ENABLE2_CLR:
   - name: REQ95_EN0
     bit_offset: 31
     bit_size: 1
-fieldset/DMA0_REQ_ENABLE2_SET:
+fieldset/regs::DMA0_REQ_ENABLE2_SET:
   description: DMA0 Request Enable2
   fields:
   - name: REQ64_EN0
@@ -1559,7 +1559,7 @@ fieldset/DMA0_REQ_ENABLE2_SET:
   - name: REQ95_EN0
     bit_offset: 31
     bit_size: 1
-fieldset/DMA0_REQ_ENABLE2_TOG:
+fieldset/regs::DMA0_REQ_ENABLE2_TOG:
   description: DMA0 Request Enable2
   fields:
   - name: REQ64_EN0
@@ -1652,7 +1652,7 @@ fieldset/DMA0_REQ_ENABLE2_TOG:
   - name: REQ95_EN0
     bit_offset: 31
     bit_size: 1
-fieldset/DMA0_REQ_ENABLE3:
+fieldset/regs::DMA0_REQ_ENABLE3:
   description: DMA0 Request Enable3
   fields:
   - name: REQ96_EN0
@@ -1733,7 +1733,7 @@ fieldset/DMA0_REQ_ENABLE3:
   - name: REQ121_EN0
     bit_offset: 25
     bit_size: 1
-fieldset/DMA0_REQ_ENABLE3_CLR:
+fieldset/regs::DMA0_REQ_ENABLE3_CLR:
   description: DMA0 Request Enable3
   fields:
   - name: REQ96_EN0
@@ -1814,7 +1814,7 @@ fieldset/DMA0_REQ_ENABLE3_CLR:
   - name: REQ121_EN0
     bit_offset: 25
     bit_size: 1
-fieldset/DMA0_REQ_ENABLE3_SET:
+fieldset/regs::DMA0_REQ_ENABLE3_SET:
   description: DMA0 Request Enable3
   fields:
   - name: REQ96_EN0
@@ -1895,7 +1895,7 @@ fieldset/DMA0_REQ_ENABLE3_SET:
   - name: REQ121_EN0
     bit_offset: 25
     bit_size: 1
-fieldset/DMA1_REQ_ENABLE0:
+fieldset/regs::DMA1_REQ_ENABLE0:
   description: DMA1 Request Enable0
   fields:
   - name: REQ1_EN1
@@ -1991,7 +1991,7 @@ fieldset/DMA1_REQ_ENABLE0:
   - name: REQ31_EN1
     bit_offset: 31
     bit_size: 1
-fieldset/DMA1_REQ_ENABLE0_CLR:
+fieldset/regs::DMA1_REQ_ENABLE0_CLR:
   description: DMA1 Request Enable0
   fields:
   - name: REQ1_EN1
@@ -2087,7 +2087,7 @@ fieldset/DMA1_REQ_ENABLE0_CLR:
   - name: REQ31_EN1
     bit_offset: 31
     bit_size: 1
-fieldset/DMA1_REQ_ENABLE0_SET:
+fieldset/regs::DMA1_REQ_ENABLE0_SET:
   description: DMA1 Request Enable0
   fields:
   - name: REQ1_EN1
@@ -2183,7 +2183,7 @@ fieldset/DMA1_REQ_ENABLE0_SET:
   - name: REQ31_EN1
     bit_offset: 31
     bit_size: 1
-fieldset/DMA1_REQ_ENABLE0_TOG:
+fieldset/regs::DMA1_REQ_ENABLE0_TOG:
   description: DMA1 Request Enable0
   fields:
   - name: REQ1_EN1
@@ -2279,7 +2279,7 @@ fieldset/DMA1_REQ_ENABLE0_TOG:
   - name: REQ31_EN1
     bit_offset: 31
     bit_size: 1
-fieldset/DMA1_REQ_ENABLE1:
+fieldset/regs::DMA1_REQ_ENABLE1:
   description: DMA1 Request Enable1
   fields:
   - name: REQ32_EN1
@@ -2372,7 +2372,7 @@ fieldset/DMA1_REQ_ENABLE1:
   - name: REQ63_EN1
     bit_offset: 31
     bit_size: 1
-fieldset/DMA1_REQ_ENABLE1_CLR:
+fieldset/regs::DMA1_REQ_ENABLE1_CLR:
   description: DMA1 Request Enable1
   fields:
   - name: REQ32_EN1
@@ -2465,7 +2465,7 @@ fieldset/DMA1_REQ_ENABLE1_CLR:
   - name: REQ63_EN1
     bit_offset: 31
     bit_size: 1
-fieldset/DMA1_REQ_ENABLE1_SET:
+fieldset/regs::DMA1_REQ_ENABLE1_SET:
   description: DMA1 Request Enable1
   fields:
   - name: REQ32_EN1
@@ -2558,7 +2558,7 @@ fieldset/DMA1_REQ_ENABLE1_SET:
   - name: REQ63_EN1
     bit_offset: 31
     bit_size: 1
-fieldset/DMA1_REQ_ENABLE1_TOG:
+fieldset/regs::DMA1_REQ_ENABLE1_TOG:
   description: DMA1 Request Enable1
   fields:
   - name: REQ32_EN1
@@ -2651,7 +2651,7 @@ fieldset/DMA1_REQ_ENABLE1_TOG:
   - name: REQ63_EN1
     bit_offset: 31
     bit_size: 1
-fieldset/DMA1_REQ_ENABLE2:
+fieldset/regs::DMA1_REQ_ENABLE2:
   description: DMA1 Request Enable2
   fields:
   - name: REQ64_EN1
@@ -2744,7 +2744,7 @@ fieldset/DMA1_REQ_ENABLE2:
   - name: REQ95_EN1
     bit_offset: 31
     bit_size: 1
-fieldset/DMA1_REQ_ENABLE2_CLR:
+fieldset/regs::DMA1_REQ_ENABLE2_CLR:
   description: DMA1 Request Enable2
   fields:
   - name: REQ64_EN1
@@ -2843,7 +2843,7 @@ fieldset/DMA1_REQ_ENABLE2_CLR:
   - name: REQ95_EN1
     bit_offset: 31
     bit_size: 1
-fieldset/DMA1_REQ_ENABLE2_SET:
+fieldset/regs::DMA1_REQ_ENABLE2_SET:
   description: DMA1 Request Enable2
   fields:
   - name: REQ64_EN1
@@ -2942,7 +2942,7 @@ fieldset/DMA1_REQ_ENABLE2_SET:
   - name: REQ95_EN1
     bit_offset: 31
     bit_size: 1
-fieldset/DMA1_REQ_ENABLE2_TOG:
+fieldset/regs::DMA1_REQ_ENABLE2_TOG:
   description: DMA1 Request Enable2
   fields:
   - name: REQ64_EN1
@@ -3041,7 +3041,7 @@ fieldset/DMA1_REQ_ENABLE2_TOG:
   - name: REQ95_EN1
     bit_offset: 31
     bit_size: 1
-fieldset/DMA1_REQ_ENABLE3:
+fieldset/regs::DMA1_REQ_ENABLE3:
   description: DMA1 Request Enable3
   fields:
   - name: REQ96_EN1
@@ -3122,7 +3122,7 @@ fieldset/DMA1_REQ_ENABLE3:
   - name: REQ121_EN1
     bit_offset: 25
     bit_size: 1
-fieldset/DMA1_REQ_ENABLE3_CLR:
+fieldset/regs::DMA1_REQ_ENABLE3_CLR:
   description: DMA1 Request Enable3
   fields:
   - name: REQ96_EN1
@@ -3203,7 +3203,7 @@ fieldset/DMA1_REQ_ENABLE3_CLR:
   - name: REQ121_EN1
     bit_offset: 25
     bit_size: 1
-fieldset/DMA1_REQ_ENABLE3_SET:
+fieldset/regs::DMA1_REQ_ENABLE3_SET:
   description: DMA1 Request Enable3
   fields:
   - name: REQ96_EN1
@@ -3284,253 +3284,253 @@ fieldset/DMA1_REQ_ENABLE3_SET:
   - name: REQ121_EN1
     bit_offset: 25
     bit_size: 1
-fieldset/EVTG_TRIG:
+fieldset/regs::EVTG_TRIG:
   description: EVTG Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/EXT_TRIG:
+fieldset/regs::EXT_TRIG:
   description: EXT Trigger Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXCOMM0_TRIG:
+fieldset/regs::FLEXCOMM0_TRIG:
   description: LP_FLEXCOMM0 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXCOMM1_TRIG:
+fieldset/regs::FLEXCOMM1_TRIG:
   description: LP_FLEXCOMM1 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXCOMM2_TRIG:
+fieldset/regs::FLEXCOMM2_TRIG:
   description: LP_FLEXCOMM2 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXCOMM3_TRIG:
+fieldset/regs::FLEXCOMM3_TRIG:
   description: LP_FLEXCOMM3 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXCOMM4_TRIG:
+fieldset/regs::FLEXCOMM4_TRIG:
   description: LP_FLEXCOMM4 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXCOMM5_TRIG:
+fieldset/regs::FLEXCOMM5_TRIG:
   description: LP_FLEXCOMM5 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXCOMM6_TRIG:
+fieldset/regs::FLEXCOMM6_TRIG:
   description: LP_FLEXCOMM6 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXCOMM7_TRIG:
+fieldset/regs::FLEXCOMM7_TRIG:
   description: LP_FLEXCOMM7 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXCOMM8_TRIG:
+fieldset/regs::FLEXCOMM8_TRIG:
   description: LP_FLEXCOMM8 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXCOMM9_TRIG:
+fieldset/regs::FLEXCOMM9_TRIG:
   description: LP_FLEXCOMM9 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXIO_TRIG:
+fieldset/regs::FLEXIO_TRIG:
   description: FlexIO Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/FLEXPWM0_EXTFORCE:
+fieldset/regs::FLEXPWM0_EXTFORCE:
   description: PWM0 External Force Trigger Connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM0_FAULT:
+fieldset/regs::FLEXPWM0_FAULT:
   description: PWM0 Fault Input Trigger Connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM0_SM_EXTA:
+fieldset/regs::FLEXPWM0_SM_EXTA:
   description: PWM0 Input Trigger Connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM0_SM_EXTSYNC:
+fieldset/regs::FLEXPWM0_SM_EXTSYNC:
   description: PWM0 External Synchronization
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM1_EXTFORCE:
+fieldset/regs::FLEXPWM1_EXTFORCE:
   description: PWM1 External Force Trigger Connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM1_FAULT:
+fieldset/regs::FLEXPWM1_FAULT:
   description: PWM1 Fault Input Trigger Connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM1_SM_EXTA:
+fieldset/regs::FLEXPWM1_SM_EXTA:
   description: PWM1 Input EXTA Connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM1_SM_EXTSYNC:
+fieldset/regs::FLEXPWM1_SM_EXTSYNC:
   description: PWM1 External Synchronization
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FREQMEAS_REF:
+fieldset/regs::FREQMEAS_REF:
   description: Selection for Frequency Measurement Reference Clock
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/FREQMEAS_TAR:
+fieldset/regs::FREQMEAS_TAR:
   description: Selection for Frequency Measurement Target Clock
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/OPAMP_TRIG:
+fieldset/regs::OPAMP_TRIG:
   description: OPAMP Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/PINTSEL:
+fieldset/regs::PINTSEL:
   description: Pin Interrupt Select
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/PWM0_EXT_CLK:
+fieldset/regs::PWM0_EXT_CLK:
   description: PWM0 External Clock Trigger
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 3
-fieldset/PWM1_EXT_CLK:
+fieldset/regs::PWM1_EXT_CLK:
   description: PWM1 External Clock Trigger
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 4
-fieldset/QDCN_QDC_HOME:
+fieldset/regs::QDCN_QDC_HOME:
   description: QDC0 Input Connections..QDC1 Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/QDCN_QDC_INDEX:
+fieldset/regs::QDCN_QDC_INDEX:
   description: QDC0 Input Connections..QDC1 Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/QDCN_QDC_PHASEA:
+fieldset/regs::QDCN_QDC_PHASEA:
   description: QDC0 Input Connections..QDC1 Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/QDCN_QDC_PHASEB:
+fieldset/regs::QDCN_QDC_PHASEB:
   description: QDC0 Input Connections..QDC1 Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/QDCN_QDC_TRIG:
+fieldset/regs::QDCN_QDC_TRIG:
   description: QDC0 Trigger Input Connections..QDC1 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/SCT0_INMUX:
+fieldset/regs::SCT0_INMUX:
   description: Inputmux Register for SCT0 Input
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/SINC_FILTER_CH:
+fieldset/regs::SINC_FILTER_CH:
   description: SINC Filter Channel Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/SMARTDMAARCHB_INMUX:
+fieldset/regs::SMARTDMAARCHB_INMUX:
   description: Inputmux Register for SMARTDMA Arch B Inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/TIMER0TRIG:
+fieldset/regs::TIMER0TRIG:
   description: Trigger Register for CTIMER
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/TIMER1TRIG:
+fieldset/regs::TIMER1TRIG:
   description: Trigger Register for CTIMER
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/TIMER2TRIG:
+fieldset/regs::TIMER2TRIG:
   description: Trigger Register for CTIMER
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/TIMER3TRIG:
+fieldset/regs::TIMER3TRIG:
   description: Trigger Register for CTIMER
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/TIMER4TRIG:
+fieldset/regs::TIMER4TRIG:
   description: Trigger Register for CTIMER
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/TSI_TRIG:
+fieldset/regs::TSI_TRIG:
   description: TSI Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 2
-fieldset/USBFS_TRIG:
+fieldset/regs::USBFS_TRIG:
   description: USB-FS Trigger Input Connections
   fields:
   - name: INP

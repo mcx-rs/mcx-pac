@@ -2,65 +2,65 @@ block/CMC:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: VERID
+    fieldset: regs::VERID
   - name: CKCTRL
     byte_offset: 16
-    fieldset: CKCTRL
+    fieldset: regs::CKCTRL
   - name: CKSTAT
     byte_offset: 20
-    fieldset: CKSTAT
+    fieldset: regs::CKSTAT
   - name: PMPROT
     byte_offset: 24
-    fieldset: PMPROT
+    fieldset: regs::PMPROT
   - name: GPMCTRL
     byte_offset: 28
-    fieldset: GPMCTRL
+    fieldset: regs::GPMCTRL
   - name: PMCTRL
     array:
       len: 1
       stride: 4
     byte_offset: 32
-    fieldset: PMCTRL
+    fieldset: regs::PMCTRL
   - name: SRS
     byte_offset: 128
-    fieldset: SRS
+    fieldset: regs::SRS
   - name: RPC
     byte_offset: 132
-    fieldset: RPC
+    fieldset: regs::RPC
   - name: SSRS
     byte_offset: 136
-    fieldset: SSRS
+    fieldset: regs::SSRS
   - name: SRIE
     byte_offset: 140
-    fieldset: SRIE
+    fieldset: regs::SRIE
   - name: SRIF
     byte_offset: 144
-    fieldset: SRIF
+    fieldset: regs::SRIF
   - name: RSTCNT
     byte_offset: 156
-    fieldset: RSTCNT
+    fieldset: regs::RSTCNT
   - name: MR
     array:
       len: 1
       stride: 4
     byte_offset: 160
-    fieldset: MR
+    fieldset: regs::MR
   - name: FM
     array:
       len: 1
       stride: 4
     byte_offset: 176
-    fieldset: FM
+    fieldset: regs::FM
   - name: FLASHCR
     byte_offset: 224
-    fieldset: FLASHCR
+    fieldset: regs::FLASHCR
   - name: CORECTL
     byte_offset: 272
-    fieldset: CORECTL
+    fieldset: regs::CORECTL
   - name: DBGCTL
     byte_offset: 288
-    fieldset: DBGCTL
-fieldset/CKCTRL:
+    fieldset: regs::DBGCTL
+fieldset/regs::CKCTRL:
   description: Clock Control
   fields:
   - name: CKMODE
@@ -69,7 +69,7 @@ fieldset/CKCTRL:
   - name: LOCK
     bit_offset: 31
     bit_size: 1
-fieldset/CKSTAT:
+fieldset/regs::CKSTAT:
   description: Clock Status
   fields:
   - name: CKMODE
@@ -81,19 +81,19 @@ fieldset/CKSTAT:
   - name: VALID
     bit_offset: 31
     bit_size: 1
-fieldset/CORECTL:
+fieldset/regs::CORECTL:
   description: Core Control
   fields:
   - name: NPIE
     bit_offset: 0
     bit_size: 1
-fieldset/DBGCTL:
+fieldset/regs::DBGCTL:
   description: Debug Control
   fields:
   - name: SOD
     bit_offset: 0
     bit_size: 1
-fieldset/FLASHCR:
+fieldset/regs::FLASHCR:
   description: Flash Control
   fields:
   - name: FLASHDIS
@@ -105,31 +105,31 @@ fieldset/FLASHCR:
   - name: FLASHWAKE
     bit_offset: 2
     bit_size: 1
-fieldset/FM:
+fieldset/regs::FM:
   description: Force Mode
   fields:
   - name: FORCECFG
     bit_offset: 0
     bit_size: 1
-fieldset/GPMCTRL:
+fieldset/regs::GPMCTRL:
   description: Global Power Mode Control
   fields:
   - name: LPMODE
     bit_offset: 0
     bit_size: 4
-fieldset/MR:
+fieldset/regs::MR:
   description: Mode
   fields:
   - name: ISPMODE_n
     bit_offset: 0
     bit_size: 1
-fieldset/PMCTRL:
+fieldset/regs::PMCTRL:
   description: Power Mode Control
   fields:
   - name: LPMODE
     bit_offset: 0
     bit_size: 4
-fieldset/PMPROT:
+fieldset/regs::PMPROT:
   description: Power Mode Protection
   fields:
   - name: LPMODE
@@ -138,7 +138,7 @@ fieldset/PMPROT:
   - name: LOCK
     bit_offset: 31
     bit_size: 1
-fieldset/RPC:
+fieldset/regs::RPC:
   description: Reset Pin Control
   fields:
   - name: FILTCFG
@@ -150,13 +150,13 @@ fieldset/RPC:
   - name: LPFEN
     bit_offset: 9
     bit_size: 1
-fieldset/RSTCNT:
+fieldset/regs::RSTCNT:
   description: Reset Count Register
   fields:
   - name: COUNT
     bit_offset: 0
     bit_size: 8
-fieldset/SRIE:
+fieldset/regs::SRIE:
   description: System Reset Interrupt Enable
   fields:
   - name: PIN
@@ -183,7 +183,7 @@ fieldset/SRIE:
   - name: CDOG0
     bit_offset: 26
     bit_size: 1
-fieldset/SRIF:
+fieldset/regs::SRIF:
   description: System Reset Interrupt Flag
   fields:
   - name: PIN
@@ -207,7 +207,7 @@ fieldset/SRIF:
   - name: CDOG0
     bit_offset: 26
     bit_size: 1
-fieldset/SRS:
+fieldset/regs::SRS:
   description: System Reset Status
   fields:
   - name: WAKEUP
@@ -255,7 +255,7 @@ fieldset/SRS:
   - name: JTAG
     bit_offset: 28
     bit_size: 1
-fieldset/SSRS:
+fieldset/regs::SSRS:
   description: Sticky System Reset Status
   fields:
   - name: WAKEUP
@@ -303,7 +303,7 @@ fieldset/SSRS:
   - name: JTAG
     bit_offset: 28
     bit_size: 1
-fieldset/VERID:
+fieldset/regs::VERID:
   description: Version ID
   fields:
   - name: FEATURE

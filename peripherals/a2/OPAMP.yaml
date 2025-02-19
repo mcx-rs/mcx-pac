@@ -2,13 +2,13 @@ block/OPAMP:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: VERID
+    fieldset: regs::VERID
   - name: PARAM
     byte_offset: 4
   - name: OPAMP_CTRL
     byte_offset: 8
-    fieldset: OPAMP_CTRL
-fieldset/OPAMP_CTRL:
+    fieldset: regs::OPAMP_CTRL
+fieldset/regs::OPAMP_CTRL:
   description: OPAMP Control
   fields:
   - name: OPA_EN
@@ -20,7 +20,7 @@ fieldset/OPAMP_CTRL:
   - name: OPA_BC_SEL
     bit_offset: 6
     bit_size: 2
-fieldset/VERID:
+fieldset/regs::VERID:
   description: Version ID
   fields:
   - name: FEATURE

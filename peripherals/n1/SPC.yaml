@@ -2,72 +2,72 @@ block/SPC:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: VERID
+    fieldset: regs::VERID
   - name: SC
     byte_offset: 16
-    fieldset: SC
+    fieldset: regs::SC
   - name: CNTRL
     byte_offset: 20
-    fieldset: CNTRL
+    fieldset: regs::CNTRL
   - name: LPREQ_CFG
     byte_offset: 28
-    fieldset: LPREQ_CFG
+    fieldset: regs::LPREQ_CFG
   - name: PD_STATUS
     array:
       len: 2
       stride: 4
     byte_offset: 48
-    fieldset: PD_STATUS
+    fieldset: regs::PD_STATUS
   - name: SRAMCTL
     byte_offset: 64
-    fieldset: SRAMCTL
+    fieldset: regs::SRAMCTL
   - name: ACTIVE_CFG
     byte_offset: 256
-    fieldset: ACTIVE_CFG
+    fieldset: regs::ACTIVE_CFG
   - name: ACTIVE_CFG1
     byte_offset: 260
   - name: LP_CFG
     byte_offset: 264
-    fieldset: LP_CFG
+    fieldset: regs::LP_CFG
   - name: LP_CFG1
     byte_offset: 268
   - name: LPWKUP_DELAY
     byte_offset: 288
-    fieldset: LPWKUP_DELAY
+    fieldset: regs::LPWKUP_DELAY
   - name: ACTIVE_VDELAY
     byte_offset: 292
-    fieldset: ACTIVE_VDELAY
+    fieldset: regs::ACTIVE_VDELAY
   - name: VD_STAT
     byte_offset: 304
-    fieldset: VD_STAT
+    fieldset: regs::VD_STAT
   - name: VD_CORE_CFG
     byte_offset: 308
-    fieldset: VD_CORE_CFG
+    fieldset: regs::VD_CORE_CFG
   - name: VD_SYS_CFG
     byte_offset: 312
-    fieldset: VD_SYS_CFG
+    fieldset: regs::VD_SYS_CFG
   - name: VD_IO_CFG
     byte_offset: 316
-    fieldset: VD_IO_CFG
+    fieldset: regs::VD_IO_CFG
   - name: EVD_CFG
     byte_offset: 320
-    fieldset: EVD_CFG
+    fieldset: regs::EVD_CFG
   - name: GLITCH_DETECT_SC
     byte_offset: 324
-    fieldset: GLITCH_DETECT_SC
+    fieldset: regs::GLITCH_DETECT_SC
   - name: CORELDO_CFG
     byte_offset: 768
-    fieldset: CORELDO_CFG
+    fieldset: regs::CORELDO_CFG
   - name: SYSLDO_CFG
     byte_offset: 1024
-    fieldset: SYSLDO_CFG
+    fieldset: regs::SYSLDO_CFG
   - name: DCDC_CFG
     byte_offset: 1280
-    fieldset: DCDC_CFG
+    fieldset: regs::DCDC_CFG
   - name: DCDC_BURST_CFG
     byte_offset: 1284
-    fieldset: DCDC_BURST_CFG
-fieldset/ACTIVE_CFG:
+    fieldset: regs::DCDC_BURST_CFG
+fieldset/regs::ACTIVE_CFG:
   description: Active Power Mode Configuration
   fields:
   - name: CORELDO_VDD_DS
@@ -118,13 +118,13 @@ fieldset/ACTIVE_CFG:
   - name: IO_HVDE
     bit_offset: 29
     bit_size: 1
-fieldset/ACTIVE_VDELAY:
+fieldset/regs::ACTIVE_VDELAY:
   description: Active Voltage Trim Delay
   fields:
   - name: ACTIVE_VDELAY
     bit_offset: 0
     bit_size: 16
-fieldset/CNTRL:
+fieldset/regs::CNTRL:
   description: SPC Regulator Control
   fields:
   - name: CORELDO_EN
@@ -136,13 +136,13 @@ fieldset/CNTRL:
   - name: DCDC_EN
     bit_offset: 2
     bit_size: 1
-fieldset/CORELDO_CFG:
+fieldset/regs::CORELDO_CFG:
   description: LDO_CORE Configuration
   fields:
   - name: DPDOWN_PULLDOWN_DISABLE
     bit_offset: 16
     bit_size: 1
-fieldset/DCDC_BURST_CFG:
+fieldset/regs::DCDC_BURST_CFG:
   description: DCDC Burst Configuration
   fields:
   - name: BURST_REQ
@@ -157,7 +157,7 @@ fieldset/DCDC_BURST_CFG:
   - name: PULSE_REFRESH_CNT
     bit_offset: 16
     bit_size: 16
-fieldset/DCDC_CFG:
+fieldset/regs::DCDC_CFG:
   description: DCDC Configuration
   fields:
   - name: FREQ_CNTRL_ON
@@ -169,7 +169,7 @@ fieldset/DCDC_CFG:
   - name: BLEED_EN
     bit_offset: 19
     bit_size: 1
-fieldset/EVD_CFG:
+fieldset/regs::EVD_CFG:
   description: External Voltage Domain Configuration
   fields:
   - name: EVDISO
@@ -181,7 +181,7 @@ fieldset/EVD_CFG:
   - name: EVDSTAT
     bit_offset: 16
     bit_size: 6
-fieldset/GLITCH_DETECT_SC:
+fieldset/regs::GLITCH_DETECT_SC:
   description: Glitch Detect Status Control
   fields:
   - name: CNT_SELECT
@@ -202,7 +202,7 @@ fieldset/GLITCH_DETECT_SC:
   - name: LOCK
     bit_offset: 16
     bit_size: 1
-fieldset/LPREQ_CFG:
+fieldset/regs::LPREQ_CFG:
   description: Low-Power Request Configuration
   fields:
   - name: LPREQOE
@@ -214,13 +214,13 @@ fieldset/LPREQ_CFG:
   - name: LPREQOV
     bit_offset: 2
     bit_size: 2
-fieldset/LPWKUP_DELAY:
+fieldset/regs::LPWKUP_DELAY:
   description: Low Power Wake-Up Delay
   fields:
   - name: LPWKUP_DELAY
     bit_offset: 0
     bit_size: 16
-fieldset/LP_CFG:
+fieldset/regs::LP_CFG:
   description: Low-Power Mode Configuration
   fields:
   - name: CORELDO_VDD_DS
@@ -271,7 +271,7 @@ fieldset/LP_CFG:
   - name: IO_HVDE
     bit_offset: 29
     bit_size: 1
-fieldset/PD_STATUS:
+fieldset/regs::PD_STATUS:
   description: SPC Power Domain Mode Status
   fields:
   - name: PWR_REQ_STATUS
@@ -283,7 +283,7 @@ fieldset/PD_STATUS:
   - name: LP_MODE
     bit_offset: 8
     bit_size: 4
-fieldset/SC:
+fieldset/regs::SC:
   description: Status Control
   fields:
   - name: BUSY
@@ -298,7 +298,7 @@ fieldset/SC:
   - name: ISO_CLR
     bit_offset: 16
     bit_size: 2
-fieldset/SRAMCTL:
+fieldset/regs::SRAMCTL:
   description: SRAM Control
   fields:
   - name: VSM
@@ -310,13 +310,13 @@ fieldset/SRAMCTL:
   - name: ACK
     bit_offset: 31
     bit_size: 1
-fieldset/SYSLDO_CFG:
+fieldset/regs::SYSLDO_CFG:
   description: LDO_SYS Configuration
   fields:
   - name: ISINKEN
     bit_offset: 0
     bit_size: 1
-fieldset/VD_CORE_CFG:
+fieldset/regs::VD_CORE_CFG:
   description: Core Voltage Detect Configuration
   fields:
   - name: LVDRE
@@ -334,7 +334,7 @@ fieldset/VD_CORE_CFG:
   - name: LOCK
     bit_offset: 16
     bit_size: 1
-fieldset/VD_IO_CFG:
+fieldset/regs::VD_IO_CFG:
   description: IO Voltage Detect Configuration
   fields:
   - name: LVDRE
@@ -355,7 +355,7 @@ fieldset/VD_IO_CFG:
   - name: LOCK
     bit_offset: 16
     bit_size: 1
-fieldset/VD_STAT:
+fieldset/regs::VD_STAT:
   description: Voltage Detect Status
   fields:
   - name: COREVDD_LVDF
@@ -376,7 +376,7 @@ fieldset/VD_STAT:
   - name: IOVDD_HVDF
     bit_offset: 6
     bit_size: 1
-fieldset/VD_SYS_CFG:
+fieldset/regs::VD_SYS_CFG:
   description: System Voltage Detect Configuration
   fields:
   - name: LVDRE
@@ -397,7 +397,7 @@ fieldset/VD_SYS_CFG:
   - name: LOCK
     bit_offset: 16
     bit_size: 1
-fieldset/VERID:
+fieldset/regs::VERID:
   description: Version ID
   fields:
   - name: FEATURE

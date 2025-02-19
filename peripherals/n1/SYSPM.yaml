@@ -2,7 +2,7 @@ block/PMCR:
   items:
   - name: PMCR
     byte_offset: 0
-    fieldset: PMCR_PMCR
+    fieldset: regs::PMCR_PMCR
   - name: PMECTR
     array:
       len: 3
@@ -24,7 +24,7 @@ block/SYSPM:
       stride: 48
     byte_offset: 0
     block: PMCR
-fieldset/PMCR_PMCR:
+fieldset/regs::PMCR_PMCR:
   description: Performance Monitor Control
   fields:
   - name: MENB

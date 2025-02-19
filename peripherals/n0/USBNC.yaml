@@ -2,14 +2,14 @@ block/USBNC:
   items:
   - name: CTRL1
     byte_offset: 0
-    fieldset: CTRL1
+    fieldset: regs::CTRL1
   - name: CTRL2
     byte_offset: 4
-    fieldset: CTRL2
+    fieldset: regs::CTRL2
   - name: HSIC_CTRL
     byte_offset: 16
-    fieldset: HSIC_CTRL
-fieldset/CTRL1:
+    fieldset: regs::HSIC_CTRL
+fieldset/regs::CTRL1:
   description: USB OTG Control 1
   fields:
   - name: OVER_CUR_DIS
@@ -42,7 +42,7 @@ fieldset/CTRL1:
   - name: WIR
     bit_offset: 31
     bit_size: 1
-fieldset/CTRL2:
+fieldset/regs::CTRL2:
   description: USB OTG Control 2
   fields:
   - name: VBUS_SOURCE_SEL
@@ -57,7 +57,7 @@ fieldset/CTRL2:
   - name: UTMI_CLK_VLD
     bit_offset: 31
     bit_size: 1
-fieldset/HSIC_CTRL:
+fieldset/regs::HSIC_CTRL:
   description: USB Host HSIC Control
   fields:
   - name: HSIC_CLK_ON

@@ -2,15 +2,15 @@ block/UDF:
   items:
   - name: UDF_CTRL
     byte_offset: 0
-    fieldset: UDF_CTRL
+    fieldset: regs::UDF_CTRL
   - name: UDF_STATUS
     byte_offset: 4
-    fieldset: UDF_STATUS
+    fieldset: regs::UDF_STATUS
   - name: UDF_WR_DATA
     byte_offset: 8
   - name: UDF_RD_DATA
     byte_offset: 12
-fieldset/UDF_CTRL:
+fieldset/regs::UDF_CTRL:
   description: Control register
   fields:
   - name: salt
@@ -37,7 +37,7 @@ fieldset/UDF_CTRL:
   - name: reserved31
     bit_offset: 31
     bit_size: 1
-fieldset/UDF_STATUS:
+fieldset/regs::UDF_STATUS:
   description: Status register
   fields:
   - name: o_status

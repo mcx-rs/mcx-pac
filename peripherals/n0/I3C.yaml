@@ -2,165 +2,165 @@ block/I3C:
   items:
   - name: MCONFIG
     byte_offset: 0
-    fieldset: MCONFIG
+    fieldset: regs::MCONFIG
   - name: SCONFIG
     byte_offset: 4
-    fieldset: SCONFIG
+    fieldset: regs::SCONFIG
   - name: SSTATUS
     byte_offset: 8
-    fieldset: SSTATUS
+    fieldset: regs::SSTATUS
   - name: SCTRL
     byte_offset: 12
-    fieldset: SCTRL
+    fieldset: regs::SCTRL
   - name: SINTSET
     byte_offset: 16
-    fieldset: SINTSET
+    fieldset: regs::SINTSET
   - name: SINTCLR
     byte_offset: 20
-    fieldset: SINTCLR
+    fieldset: regs::SINTCLR
   - name: SINTMASKED
     byte_offset: 24
-    fieldset: SINTMASKED
+    fieldset: regs::SINTMASKED
   - name: SERRWARN
     byte_offset: 28
-    fieldset: SERRWARN
+    fieldset: regs::SERRWARN
   - name: SDMACTRL
     byte_offset: 32
-    fieldset: SDMACTRL
+    fieldset: regs::SDMACTRL
   - name: SDATACTRL
     byte_offset: 44
-    fieldset: SDATACTRL
+    fieldset: regs::SDATACTRL
   - name: SWDATAB
     byte_offset: 48
-    fieldset: SWDATAB
+    fieldset: regs::SWDATAB
   - name: SWDATABE
     byte_offset: 52
-    fieldset: SWDATABE
+    fieldset: regs::SWDATABE
   - name: SWDATAH
     byte_offset: 56
-    fieldset: SWDATAH
+    fieldset: regs::SWDATAH
   - name: SWDATAHE
     byte_offset: 60
-    fieldset: SWDATAHE
+    fieldset: regs::SWDATAHE
   - name: SRDATAB
     byte_offset: 64
-    fieldset: SRDATAB
+    fieldset: regs::SRDATAB
   - name: SRDATAH
     byte_offset: 72
-    fieldset: SRDATAH
+    fieldset: regs::SRDATAH
   - name: SWDATAB1
     byte_offset: 84
-    fieldset: SWDATAB1
+    fieldset: regs::SWDATAB1
   - name: SCAPABILITIES2
     byte_offset: 92
-    fieldset: SCAPABILITIES2
+    fieldset: regs::SCAPABILITIES2
   - name: SCAPABILITIES
     byte_offset: 96
-    fieldset: SCAPABILITIES
+    fieldset: regs::SCAPABILITIES
   - name: SDYNADDR
     byte_offset: 100
-    fieldset: SDYNADDR
+    fieldset: regs::SDYNADDR
   - name: SMAXLIMITS
     byte_offset: 104
-    fieldset: SMAXLIMITS
+    fieldset: regs::SMAXLIMITS
   - name: SIDPARTNO
     byte_offset: 108
   - name: SIDEXT
     byte_offset: 112
-    fieldset: SIDEXT
+    fieldset: regs::SIDEXT
   - name: SVENDORID
     byte_offset: 116
-    fieldset: SVENDORID
+    fieldset: regs::SVENDORID
   - name: STCCLOCK
     byte_offset: 120
-    fieldset: STCCLOCK
+    fieldset: regs::STCCLOCK
   - name: SMSGMAPADDR
     byte_offset: 124
-    fieldset: SMSGMAPADDR
+    fieldset: regs::SMSGMAPADDR
   - name: MCTRL
     byte_offset: 132
-    fieldset: MCTRL
+    fieldset: regs::MCTRL
   - name: MSTATUS
     byte_offset: 136
-    fieldset: MSTATUS
+    fieldset: regs::MSTATUS
   - name: MIBIRULES
     byte_offset: 140
-    fieldset: MIBIRULES
+    fieldset: regs::MIBIRULES
   - name: MINTSET
     byte_offset: 144
-    fieldset: MINTSET
+    fieldset: regs::MINTSET
   - name: MINTCLR
     byte_offset: 148
-    fieldset: MINTCLR
+    fieldset: regs::MINTCLR
   - name: MINTMASKED
     byte_offset: 152
-    fieldset: MINTMASKED
+    fieldset: regs::MINTMASKED
   - name: MERRWARN
     byte_offset: 156
-    fieldset: MERRWARN
+    fieldset: regs::MERRWARN
   - name: MDMACTRL
     byte_offset: 160
-    fieldset: MDMACTRL
+    fieldset: regs::MDMACTRL
   - name: MDATACTRL
     byte_offset: 172
-    fieldset: MDATACTRL
+    fieldset: regs::MDATACTRL
   - name: MWDATAB
     byte_offset: 176
-    fieldset: MWDATAB
+    fieldset: regs::MWDATAB
   - name: MWDATABE
     byte_offset: 180
-    fieldset: MWDATABE
+    fieldset: regs::MWDATABE
   - name: MWDATAH
     byte_offset: 184
-    fieldset: MWDATAH
+    fieldset: regs::MWDATAH
   - name: MWDATAHE
     byte_offset: 188
-    fieldset: MWDATAHE
+    fieldset: regs::MWDATAHE
   - name: MRDATAB
     byte_offset: 192
-    fieldset: MRDATAB
+    fieldset: regs::MRDATAB
   - name: MRDATAH
     byte_offset: 200
-    fieldset: MRDATAH
+    fieldset: regs::MRDATAH
   - name: MWDATAB1
     byte_offset: 204
-    fieldset: MWDATAB1
+    fieldset: regs::MWDATAB1
   - name: MWMSG_SDR_CONTROL
     byte_offset: 208
-    fieldset: MWMSG_SDR_CONTROL
+    fieldset: regs::MWMSG_SDR_CONTROL
   - name: MWMSG_SDR_DATA
     byte_offset: 208
-    fieldset: MWMSG_SDR_DATA
+    fieldset: regs::MWMSG_SDR_DATA
   - name: MRMSG_SDR
     byte_offset: 212
-    fieldset: MRMSG_SDR
+    fieldset: regs::MRMSG_SDR
   - name: MWMSG_DDR_CONTROL
     byte_offset: 216
-    fieldset: MWMSG_DDR_CONTROL
+    fieldset: regs::MWMSG_DDR_CONTROL
   - name: MWMSG_DDR_CONTROL2
     byte_offset: 216
-    fieldset: MWMSG_DDR_CONTROL2
+    fieldset: regs::MWMSG_DDR_CONTROL2
   - name: MWMSG_DDR_DATA
     byte_offset: 216
-    fieldset: MWMSG_DDR_DATA
+    fieldset: regs::MWMSG_DDR_DATA
   - name: MRMSG_DDR
     byte_offset: 220
-    fieldset: MRMSG_DDR
+    fieldset: regs::MRMSG_DDR
   - name: MDYNADDR
     byte_offset: 228
-    fieldset: MDYNADDR
+    fieldset: regs::MDYNADDR
   - name: SMAPCTRL0
     byte_offset: 284
-    fieldset: SMAPCTRL0
+    fieldset: regs::SMAPCTRL0
   - name: IBIEXT1
     byte_offset: 320
-    fieldset: IBIEXT1
+    fieldset: regs::IBIEXT1
   - name: IBIEXT2
     byte_offset: 324
-    fieldset: IBIEXT2
+    fieldset: regs::IBIEXT2
   - name: SID
     byte_offset: 4092
-fieldset/IBIEXT1:
+fieldset/regs::IBIEXT1:
   description: Extended IBI Data 1
   fields:
   - name: CNT
@@ -178,7 +178,7 @@ fieldset/IBIEXT1:
   - name: EXT3
     bit_offset: 24
     bit_size: 8
-fieldset/IBIEXT2:
+fieldset/regs::IBIEXT2:
   description: Extended IBI Data 2
   fields:
   - name: EXT4
@@ -193,7 +193,7 @@ fieldset/IBIEXT2:
   - name: EXT7
     bit_offset: 24
     bit_size: 8
-fieldset/MCONFIG:
+fieldset/regs::MCONFIG:
   description: Controller Configuration
   fields:
   - name: MSTENA
@@ -226,7 +226,7 @@ fieldset/MCONFIG:
   - name: I2CBAUD
     bit_offset: 28
     bit_size: 4
-fieldset/MCTRL:
+fieldset/regs::MCTRL:
   description: Controller Control
   fields:
   - name: REQUEST
@@ -247,7 +247,7 @@ fieldset/MCTRL:
   - name: RDTERM
     bit_offset: 16
     bit_size: 8
-fieldset/MDATACTRL:
+fieldset/regs::MDATACTRL:
   description: Controller Data Control
   fields:
   - name: FLUSHTB
@@ -277,7 +277,7 @@ fieldset/MDATACTRL:
   - name: RXEMPTY
     bit_offset: 31
     bit_size: 1
-fieldset/MDMACTRL:
+fieldset/regs::MDMACTRL:
   description: Controller DMA Control
   fields:
   - name: DMAFB
@@ -289,7 +289,7 @@ fieldset/MDMACTRL:
   - name: DMAWIDTH
     bit_offset: 4
     bit_size: 2
-fieldset/MDYNADDR:
+fieldset/regs::MDYNADDR:
   description: Controller Dynamic Address
   fields:
   - name: DAVALID
@@ -298,7 +298,7 @@ fieldset/MDYNADDR:
   - name: DADDR
     bit_offset: 1
     bit_size: 7
-fieldset/MERRWARN:
+fieldset/regs::MERRWARN:
   description: Controller Errors and Warnings
   fields:
   - name: NACK
@@ -328,7 +328,7 @@ fieldset/MERRWARN:
   - name: TIMEOUT
     bit_offset: 20
     bit_size: 1
-fieldset/MIBIRULES:
+fieldset/regs::MIBIRULES:
   description: Controller In-band Interrupt Registry and Rules
   fields:
   - name: ADDR0
@@ -352,7 +352,7 @@ fieldset/MIBIRULES:
   - name: NOBYTE
     bit_offset: 31
     bit_size: 1
-fieldset/MINTCLR:
+fieldset/regs::MINTCLR:
   description: Controller Interrupt Clear
   fields:
   - name: SLVSTART
@@ -379,7 +379,7 @@ fieldset/MINTCLR:
   - name: NOWMASTER
     bit_offset: 19
     bit_size: 1
-fieldset/MINTMASKED:
+fieldset/regs::MINTMASKED:
   description: Controller Interrupt Mask
   fields:
   - name: SLVSTART
@@ -406,7 +406,7 @@ fieldset/MINTMASKED:
   - name: NOWMASTER
     bit_offset: 19
     bit_size: 1
-fieldset/MINTSET:
+fieldset/regs::MINTSET:
   description: Controller Interrupt Set
   fields:
   - name: SLVSTART
@@ -433,13 +433,13 @@ fieldset/MINTSET:
   - name: NOWMASTER
     bit_offset: 19
     bit_size: 1
-fieldset/MRDATAB:
+fieldset/regs::MRDATAB:
   description: Controller Read Data Byte
   fields:
   - name: VALUE
     bit_offset: 0
     bit_size: 8
-fieldset/MRDATAH:
+fieldset/regs::MRDATAH:
   description: Controller Read Data Halfword
   fields:
   - name: LSB
@@ -448,19 +448,19 @@ fieldset/MRDATAH:
   - name: MSB
     bit_offset: 8
     bit_size: 8
-fieldset/MRMSG_DDR:
+fieldset/regs::MRMSG_DDR:
   description: Controller Read Message in DDR mode
   fields:
   - name: DATA
     bit_offset: 0
     bit_size: 16
-fieldset/MRMSG_SDR:
+fieldset/regs::MRMSG_SDR:
   description: Controller Read Message in SDR mode
   fields:
   - name: DATA
     bit_offset: 0
     bit_size: 16
-fieldset/MSTATUS:
+fieldset/regs::MSTATUS:
   description: Controller Status
   fields:
   - name: STATE
@@ -502,7 +502,7 @@ fieldset/MSTATUS:
   - name: IBIADDR
     bit_offset: 24
     bit_size: 7
-fieldset/MWDATAB:
+fieldset/regs::MWDATAB:
   description: Controller Write Data Byte
   fields:
   - name: VALUE
@@ -514,19 +514,19 @@ fieldset/MWDATAB:
   - name: END_ALSO
     bit_offset: 16
     bit_size: 1
-fieldset/MWDATAB1:
+fieldset/regs::MWDATAB1:
   description: Controller Write Byte Data 1 (to Bus)
   fields:
   - name: VALUE
     bit_offset: 0
     bit_size: 8
-fieldset/MWDATABE:
+fieldset/regs::MWDATABE:
   description: Controller Write Data Byte End
   fields:
   - name: VALUE
     bit_offset: 0
     bit_size: 8
-fieldset/MWDATAH:
+fieldset/regs::MWDATAH:
   description: Controller Write Data Halfword
   fields:
   - name: DATA0
@@ -538,7 +538,7 @@ fieldset/MWDATAH:
   - name: END
     bit_offset: 16
     bit_size: 1
-fieldset/MWDATAHE:
+fieldset/regs::MWDATAHE:
   description: Controller Write Data Halfword End
   fields:
   - name: DATA0
@@ -547,13 +547,13 @@ fieldset/MWDATAHE:
   - name: DATA1
     bit_offset: 8
     bit_size: 8
-fieldset/MWMSG_DDR_CONTROL:
+fieldset/regs::MWMSG_DDR_CONTROL:
   description: 'Controller Write Message in DDR mode: First Control Word'
   fields:
   - name: ADDRCMD
     bit_offset: 0
     bit_size: 16
-fieldset/MWMSG_DDR_CONTROL2:
+fieldset/regs::MWMSG_DDR_CONTROL2:
   description: Controller Write Message in DDR Mode Control 2
   fields:
   - name: LEN
@@ -562,13 +562,13 @@ fieldset/MWMSG_DDR_CONTROL2:
   - name: END
     bit_offset: 14
     bit_size: 1
-fieldset/MWMSG_DDR_DATA:
+fieldset/regs::MWMSG_DDR_DATA:
   description: Controller Write Message Data in DDR mode
   fields:
   - name: DATA16B
     bit_offset: 0
     bit_size: 16
-fieldset/MWMSG_SDR_CONTROL:
+fieldset/regs::MWMSG_SDR_CONTROL:
   description: Controller Write Message Control in SDR mode
   fields:
   - name: DIR
@@ -586,13 +586,13 @@ fieldset/MWMSG_SDR_CONTROL:
   - name: LEN
     bit_offset: 11
     bit_size: 5
-fieldset/MWMSG_SDR_DATA:
+fieldset/regs::MWMSG_SDR_DATA:
   description: Controller Write Message Data in SDR mode
   fields:
   - name: DATA16B
     bit_offset: 0
     bit_size: 16
-fieldset/SCAPABILITIES:
+fieldset/regs::SCAPABILITIES:
   description: Target Capabilities
   fields:
   - name: IDENA
@@ -634,7 +634,7 @@ fieldset/SCAPABILITIES:
   - name: DMA
     bit_offset: 31
     bit_size: 1
-fieldset/SCAPABILITIES2:
+fieldset/regs::SCAPABILITIES2:
   description: Target Capabilities 2
   fields:
   - name: MAPCNT
@@ -670,7 +670,7 @@ fieldset/SCAPABILITIES2:
   - name: SSTWR
     bit_offset: 23
     bit_size: 1
-fieldset/SCONFIG:
+fieldset/regs::SCONFIG:
   description: Target Configuration
   fields:
   - name: SLVENA
@@ -700,7 +700,7 @@ fieldset/SCONFIG:
   - name: SADDR
     bit_offset: 25
     bit_size: 7
-fieldset/SCTRL:
+fieldset/regs::SCTRL:
   description: Target Control
   fields:
   - name: EVENT
@@ -721,7 +721,7 @@ fieldset/SCTRL:
   - name: VENDINFO
     bit_offset: 24
     bit_size: 8
-fieldset/SDATACTRL:
+fieldset/regs::SDATACTRL:
   description: Target Data Control
   fields:
   - name: FLUSHTB
@@ -751,7 +751,7 @@ fieldset/SDATACTRL:
   - name: RXEMPTY
     bit_offset: 31
     bit_size: 1
-fieldset/SDMACTRL:
+fieldset/regs::SDMACTRL:
   description: Target DMA Control
   fields:
   - name: DMAFB
@@ -763,7 +763,7 @@ fieldset/SDMACTRL:
   - name: DMAWIDTH
     bit_offset: 4
     bit_size: 2
-fieldset/SDYNADDR:
+fieldset/regs::SDYNADDR:
   description: Target Dynamic Address
   fields:
   - name: DAVALID
@@ -781,7 +781,7 @@ fieldset/SDYNADDR:
   - name: KEY
     bit_offset: 16
     bit_size: 16
-fieldset/SERRWARN:
+fieldset/regs::SERRWARN:
   description: Target Errors and Warnings
   fields:
   - name: ORUN
@@ -817,7 +817,7 @@ fieldset/SERRWARN:
   - name: OWRITE
     bit_offset: 17
     bit_size: 1
-fieldset/SIDEXT:
+fieldset/regs::SIDEXT:
   description: Target ID Extension
   fields:
   - name: DCR
@@ -826,7 +826,7 @@ fieldset/SIDEXT:
   - name: BCR
     bit_offset: 16
     bit_size: 8
-fieldset/SINTCLR:
+fieldset/regs::SINTCLR:
   description: Target Interrupt Clear
   fields:
   - name: START
@@ -862,7 +862,7 @@ fieldset/SINTCLR:
   - name: EVENT
     bit_offset: 18
     bit_size: 1
-fieldset/SINTMASKED:
+fieldset/regs::SINTMASKED:
   description: Target Interrupt Mask
   fields:
   - name: START
@@ -898,7 +898,7 @@ fieldset/SINTMASKED:
   - name: EVENT
     bit_offset: 18
     bit_size: 1
-fieldset/SINTSET:
+fieldset/regs::SINTSET:
   description: Target Interrupt Set
   fields:
   - name: START
@@ -934,7 +934,7 @@ fieldset/SINTSET:
   - name: EVENT
     bit_offset: 18
     bit_size: 1
-fieldset/SMAPCTRL0:
+fieldset/regs::SMAPCTRL0:
   description: Map Feature Control 0
   fields:
   - name: ENA
@@ -946,7 +946,7 @@ fieldset/SMAPCTRL0:
   - name: CAUSE
     bit_offset: 8
     bit_size: 3
-fieldset/SMAXLIMITS:
+fieldset/regs::SMAXLIMITS:
   description: Target Maximum Limits
   fields:
   - name: MAXRD
@@ -955,7 +955,7 @@ fieldset/SMAXLIMITS:
   - name: MAXWR
     bit_offset: 16
     bit_size: 12
-fieldset/SMSGMAPADDR:
+fieldset/regs::SMSGMAPADDR:
   description: Target Message Map Address
   fields:
   - name: MAPLAST
@@ -970,13 +970,13 @@ fieldset/SMSGMAPADDR:
   - name: MAPLASTM2
     bit_offset: 16
     bit_size: 4
-fieldset/SRDATAB:
+fieldset/regs::SRDATAB:
   description: Target Read Data Byte
   fields:
   - name: DATA0
     bit_offset: 0
     bit_size: 8
-fieldset/SRDATAH:
+fieldset/regs::SRDATAH:
   description: Target Read Data Halfword
   fields:
   - name: LSB
@@ -985,7 +985,7 @@ fieldset/SRDATAH:
   - name: MSB
     bit_offset: 8
     bit_size: 8
-fieldset/SSTATUS:
+fieldset/regs::SSTATUS:
   description: Target Status
   fields:
   - name: STNOTSTOP
@@ -1060,7 +1060,7 @@ fieldset/SSTATUS:
   - name: TIMECTRL
     bit_offset: 30
     bit_size: 2
-fieldset/STCCLOCK:
+fieldset/regs::STCCLOCK:
   description: Target Time Control Clock
   fields:
   - name: ACCURACY
@@ -1069,13 +1069,13 @@ fieldset/STCCLOCK:
   - name: FREQ
     bit_offset: 8
     bit_size: 8
-fieldset/SVENDORID:
+fieldset/regs::SVENDORID:
   description: Target Vendor ID
   fields:
   - name: VID
     bit_offset: 0
     bit_size: 15
-fieldset/SWDATAB:
+fieldset/regs::SWDATAB:
   description: Target Write Data Byte
   fields:
   - name: DATA
@@ -1087,19 +1087,19 @@ fieldset/SWDATAB:
   - name: END_ALSO
     bit_offset: 16
     bit_size: 1
-fieldset/SWDATAB1:
+fieldset/regs::SWDATAB1:
   description: Target Write Data Byte
   fields:
   - name: DATA
     bit_offset: 0
     bit_size: 8
-fieldset/SWDATABE:
+fieldset/regs::SWDATABE:
   description: Target Write Data Byte End
   fields:
   - name: DATA
     bit_offset: 0
     bit_size: 8
-fieldset/SWDATAH:
+fieldset/regs::SWDATAH:
   description: Target Write Data Halfword
   fields:
   - name: DATA0
@@ -1111,7 +1111,7 @@ fieldset/SWDATAH:
   - name: END
     bit_offset: 16
     bit_size: 1
-fieldset/SWDATAHE:
+fieldset/regs::SWDATAHE:
   description: Target Write Data Halfword End
   fields:
   - name: DATA0

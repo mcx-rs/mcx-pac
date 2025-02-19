@@ -4,64 +4,64 @@ block/EMVSIM:
     byte_offset: 0
   - name: PARAM
     byte_offset: 4
-    fieldset: PARAM
+    fieldset: regs::PARAM
   - name: CLKCFG
     byte_offset: 8
-    fieldset: CLKCFG
+    fieldset: regs::CLKCFG
   - name: DIVISOR
     byte_offset: 12
-    fieldset: DIVISOR
+    fieldset: regs::DIVISOR
   - name: CTRL
     byte_offset: 16
-    fieldset: CTRL
+    fieldset: regs::CTRL
   - name: INT_MASK
     byte_offset: 20
-    fieldset: INT_MASK
+    fieldset: regs::INT_MASK
   - name: RX_THD
     byte_offset: 24
-    fieldset: RX_THD
+    fieldset: regs::RX_THD
   - name: TX_THD
     byte_offset: 28
-    fieldset: TX_THD
+    fieldset: regs::TX_THD
   - name: RX_STATUS
     byte_offset: 32
-    fieldset: RX_STATUS
+    fieldset: regs::RX_STATUS
   - name: TX_STATUS
     byte_offset: 36
-    fieldset: TX_STATUS
+    fieldset: regs::TX_STATUS
   - name: PCSR
     byte_offset: 40
-    fieldset: PCSR
+    fieldset: regs::PCSR
   - name: RX_BUF
     byte_offset: 44
-    fieldset: RX_BUF
+    fieldset: regs::RX_BUF
   - name: TX_BUF
     byte_offset: 48
-    fieldset: TX_BUF
+    fieldset: regs::TX_BUF
   - name: TX_GETU
     byte_offset: 52
-    fieldset: TX_GETU
+    fieldset: regs::TX_GETU
   - name: CWT_VAL
     byte_offset: 56
-    fieldset: CWT_VAL
+    fieldset: regs::CWT_VAL
   - name: BWT_VAL
     byte_offset: 60
   - name: BGT_VAL
     byte_offset: 64
-    fieldset: BGT_VAL
+    fieldset: regs::BGT_VAL
   - name: GPCNT0_VAL
     byte_offset: 68
-    fieldset: GPCNT0_VAL
+    fieldset: regs::GPCNT0_VAL
   - name: GPCNT1_VAL
     byte_offset: 72
-    fieldset: GPCNT1_VAL
-fieldset/BGT_VAL:
+    fieldset: regs::GPCNT1_VAL
+fieldset/regs::BGT_VAL:
   description: Block Guard Time Value
   fields:
   - name: BGT
     bit_offset: 0
     bit_size: 16
-fieldset/CLKCFG:
+fieldset/regs::CLKCFG:
   description: Clock Configuration
   fields:
   - name: CLK_PRSC
@@ -73,7 +73,7 @@ fieldset/CLKCFG:
   - name: GPCNT0_CLK_SEL
     bit_offset: 10
     bit_size: 2
-fieldset/CTRL:
+fieldset/regs::CTRL:
   description: Control
   fields:
   - name: IC
@@ -145,31 +145,31 @@ fieldset/CTRL:
   - name: BWT_EN
     bit_offset: 31
     bit_size: 1
-fieldset/CWT_VAL:
+fieldset/regs::CWT_VAL:
   description: Character Wait Time Value
   fields:
   - name: CWT
     bit_offset: 0
     bit_size: 16
-fieldset/DIVISOR:
+fieldset/regs::DIVISOR:
   description: Baud Rate Divisor
   fields:
   - name: DIVISOR_VALUE
     bit_offset: 0
     bit_size: 9
-fieldset/GPCNT0_VAL:
+fieldset/regs::GPCNT0_VAL:
   description: General Purpose Counter 0 Timeout Value
   fields:
   - name: GPCNT0
     bit_offset: 0
     bit_size: 16
-fieldset/GPCNT1_VAL:
+fieldset/regs::GPCNT1_VAL:
   description: General Purpose Counter 1 Timeout Value
   fields:
   - name: GPCNT1
     bit_offset: 0
     bit_size: 16
-fieldset/INT_MASK:
+fieldset/regs::INT_MASK:
   description: Interrupt Mask
   fields:
   - name: RDT_IM
@@ -220,7 +220,7 @@ fieldset/INT_MASK:
   - name: PEF_IM
     bit_offset: 15
     bit_size: 1
-fieldset/PARAM:
+fieldset/regs::PARAM:
   description: Parameters
   fields:
   - name: RX_FIFO_DEPTH
@@ -229,7 +229,7 @@ fieldset/PARAM:
   - name: TX_FIFO_DEPTH
     bit_offset: 8
     bit_size: 8
-fieldset/PCSR:
+fieldset/regs::PCSR:
   description: Port Control and Status
   fields:
   - name: SAPD
@@ -265,13 +265,13 @@ fieldset/PCSR:
   - name: SPDES
     bit_offset: 27
     bit_size: 1
-fieldset/RX_BUF:
+fieldset/regs::RX_BUF:
   description: Receive Data Read Buffer
   fields:
   - name: RX_BYTE
     bit_offset: 0
     bit_size: 8
-fieldset/RX_STATUS:
+fieldset/regs::RX_STATUS:
   description: Receive Status
   fields:
   - name: RFO
@@ -313,7 +313,7 @@ fieldset/RX_STATUS:
   - name: RX_CNT
     bit_offset: 24
     bit_size: 4
-fieldset/RX_THD:
+fieldset/regs::RX_THD:
   description: Receiver Threshold
   fields:
   - name: RDT
@@ -322,19 +322,19 @@ fieldset/RX_THD:
   - name: RNCK_THD
     bit_offset: 8
     bit_size: 4
-fieldset/TX_BUF:
+fieldset/regs::TX_BUF:
   description: Transmit Data Buffer
   fields:
   - name: TX_BYTE
     bit_offset: 0
     bit_size: 8
-fieldset/TX_GETU:
+fieldset/regs::TX_GETU:
   description: Transmitter Guard ETU Value
   fields:
   - name: GETU
     bit_offset: 0
     bit_size: 8
-fieldset/TX_STATUS:
+fieldset/regs::TX_STATUS:
   description: Transmitter Status
   fields:
   - name: TNTE
@@ -367,7 +367,7 @@ fieldset/TX_STATUS:
   - name: TX_CNT
     bit_offset: 24
     bit_size: 4
-fieldset/TX_THD:
+fieldset/regs::TX_THD:
   description: Transmitter Threshold
   fields:
   - name: TDT

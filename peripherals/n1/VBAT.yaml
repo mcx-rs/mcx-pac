@@ -2,139 +2,139 @@ block/VBAT:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: VERID
+    fieldset: regs::VERID
   - name: STATUSA
     byte_offset: 16
-    fieldset: STATUSA
+    fieldset: regs::STATUSA
   - name: STATUSB
     byte_offset: 20
-    fieldset: STATUSB
+    fieldset: regs::STATUSB
   - name: IRQENA
     byte_offset: 24
-    fieldset: IRQENA
+    fieldset: regs::IRQENA
   - name: IRQENB
     byte_offset: 28
-    fieldset: IRQENB
+    fieldset: regs::IRQENB
   - name: WAKENA
     byte_offset: 32
-    fieldset: WAKENA
+    fieldset: regs::WAKENA
   - name: WAKENB
     byte_offset: 36
-    fieldset: WAKENB
+    fieldset: regs::WAKENB
   - name: TAMPERA
     byte_offset: 40
-    fieldset: TAMPERA
+    fieldset: regs::TAMPERA
   - name: TAMPERB
     byte_offset: 44
-    fieldset: TAMPERB
+    fieldset: regs::TAMPERB
   - name: LOCKA
     byte_offset: 48
-    fieldset: LOCKA
+    fieldset: regs::LOCKA
   - name: LOCKB
     byte_offset: 52
-    fieldset: LOCKB
+    fieldset: regs::LOCKB
   - name: WAKECFG
     byte_offset: 56
-    fieldset: WAKECFG
+    fieldset: regs::WAKECFG
   - name: OSCCTLA
     byte_offset: 256
-    fieldset: OSCCTLA
+    fieldset: regs::OSCCTLA
   - name: OSCCTLB
     byte_offset: 260
-    fieldset: OSCCTLB
+    fieldset: regs::OSCCTLB
   - name: OSCCFGA
     byte_offset: 264
-    fieldset: OSCCFGA
+    fieldset: regs::OSCCFGA
   - name: OSCCFGB
     byte_offset: 268
-    fieldset: OSCCFGB
+    fieldset: regs::OSCCFGB
   - name: OSCLCKA
     byte_offset: 280
-    fieldset: OSCLCKA
+    fieldset: regs::OSCLCKA
   - name: OSCLCKB
     byte_offset: 284
-    fieldset: OSCLCKB
+    fieldset: regs::OSCLCKB
   - name: OSCCLKE
     byte_offset: 288
-    fieldset: OSCCLKE
+    fieldset: regs::OSCCLKE
   - name: FROCTLA
     byte_offset: 512
-    fieldset: FROCTLA
+    fieldset: regs::FROCTLA
   - name: FROCTLB
     byte_offset: 516
-    fieldset: FROCTLB
+    fieldset: regs::FROCTLB
   - name: FROLCKA
     byte_offset: 536
-    fieldset: FROLCKA
+    fieldset: regs::FROLCKA
   - name: FROLCKB
     byte_offset: 540
-    fieldset: FROLCKB
+    fieldset: regs::FROLCKB
   - name: FROCLKE
     byte_offset: 544
-    fieldset: FROCLKE
+    fieldset: regs::FROCLKE
   - name: LDOCTLA
     byte_offset: 768
-    fieldset: LDOCTLA
+    fieldset: regs::LDOCTLA
   - name: LDOCTLB
     byte_offset: 772
-    fieldset: LDOCTLB
+    fieldset: regs::LDOCTLB
   - name: LDOLCKA
     byte_offset: 792
-    fieldset: LDOLCKA
+    fieldset: regs::LDOLCKA
   - name: LDOLCKB
     byte_offset: 796
-    fieldset: LDOLCKB
+    fieldset: regs::LDOLCKB
   - name: LDORAMC
     byte_offset: 800
-    fieldset: LDORAMC
+    fieldset: regs::LDORAMC
   - name: LDOTIMER0
     byte_offset: 816
-    fieldset: LDOTIMER0
+    fieldset: regs::LDOTIMER0
   - name: LDOTIMER1
     byte_offset: 824
-    fieldset: LDOTIMER1
+    fieldset: regs::LDOTIMER1
   - name: MONCTLA
     byte_offset: 1024
-    fieldset: MONCTLA
+    fieldset: regs::MONCTLA
   - name: MONCTLB
     byte_offset: 1028
-    fieldset: MONCTLB
+    fieldset: regs::MONCTLB
   - name: MONCFGA
     byte_offset: 1032
-    fieldset: MONCFGA
+    fieldset: regs::MONCFGA
   - name: MONCFGB
     byte_offset: 1036
-    fieldset: MONCFGB
+    fieldset: regs::MONCFGB
   - name: MONLCKA
     byte_offset: 1048
-    fieldset: MONLCKA
+    fieldset: regs::MONLCKA
   - name: MONLCKB
     byte_offset: 1052
-    fieldset: MONLCKB
+    fieldset: regs::MONLCKB
   - name: TAMCTLA
     byte_offset: 1280
-    fieldset: TAMCTLA
+    fieldset: regs::TAMCTLA
   - name: TAMCTLB
     byte_offset: 1284
-    fieldset: TAMCTLB
+    fieldset: regs::TAMCTLB
   - name: TAMLCKA
     byte_offset: 1304
-    fieldset: TAMLCKA
+    fieldset: regs::TAMLCKA
   - name: TAMLCKB
     byte_offset: 1308
-    fieldset: TAMLCKB
+    fieldset: regs::TAMLCKB
   - name: SWICTLA
     byte_offset: 1536
-    fieldset: SWICTLA
+    fieldset: regs::SWICTLA
   - name: SWICTLB
     byte_offset: 1540
-    fieldset: SWICTLB
+    fieldset: regs::SWICTLB
   - name: SWILCKA
     byte_offset: 1560
-    fieldset: SWILCKA
+    fieldset: regs::SWILCKA
   - name: SWILCKB
     byte_offset: 1564
-    fieldset: SWILCKB
+    fieldset: regs::SWILCKB
   - name: WAKEUP
     array:
       len: 2
@@ -143,47 +143,47 @@ block/VBAT:
     block: WAKEUP
   - name: WAKLCKA
     byte_offset: 2040
-    fieldset: WAKLCKA
+    fieldset: regs::WAKLCKA
   - name: WAKLCKB
     byte_offset: 2044
-    fieldset: WAKLCKB
+    fieldset: regs::WAKLCKB
 block/WAKEUP:
   items:
   - name: WAKEUPA
     byte_offset: 0
   - name: WAKEUPB
     byte_offset: 4
-fieldset/FROCLKE:
+fieldset/regs::FROCLKE:
   description: FRO16K Clock Enable
   fields:
   - name: CLKE
     bit_offset: 0
     bit_size: 4
-fieldset/FROCTLA:
+fieldset/regs::FROCTLA:
   description: FRO16K Control A
   fields:
   - name: FRO_EN
     bit_offset: 0
     bit_size: 1
-fieldset/FROCTLB:
+fieldset/regs::FROCTLB:
   description: FRO16K Control B
   fields:
   - name: INVERSE
     bit_offset: 0
     bit_size: 1
-fieldset/FROLCKA:
+fieldset/regs::FROLCKA:
   description: FRO16K Lock A
   fields:
   - name: LOCK
     bit_offset: 0
     bit_size: 1
-fieldset/FROLCKB:
+fieldset/regs::FROLCKB:
   description: FRO16K Lock B
   fields:
   - name: LOCK
     bit_offset: 0
     bit_size: 1
-fieldset/IRQENA:
+fieldset/regs::IRQENA:
   description: Interrupt Enable A
   fields:
   - name: POR_DET
@@ -234,13 +234,13 @@ fieldset/IRQENA:
   - name: IRQ3_DET
     bit_offset: 19
     bit_size: 1
-fieldset/IRQENB:
+fieldset/regs::IRQENB:
   description: Interrupt Enable B
   fields:
   - name: INVERSE
     bit_offset: 0
     bit_size: 20
-fieldset/LDOCTLA:
+fieldset/regs::LDOCTLA:
   description: LDO_RAM Control A
   fields:
   - name: BG_EN
@@ -252,25 +252,25 @@ fieldset/LDOCTLA:
   - name: REFRESH_EN
     bit_offset: 2
     bit_size: 1
-fieldset/LDOCTLB:
+fieldset/regs::LDOCTLB:
   description: LDO_RAM Control B
   fields:
   - name: INVERSE
     bit_offset: 0
     bit_size: 3
-fieldset/LDOLCKA:
+fieldset/regs::LDOLCKA:
   description: LDO_RAM Lock A
   fields:
   - name: LOCK
     bit_offset: 0
     bit_size: 1
-fieldset/LDOLCKB:
+fieldset/regs::LDOLCKB:
   description: LDO_RAM Lock B
   fields:
   - name: LOCK
     bit_offset: 0
     bit_size: 1
-fieldset/LDORAMC:
+fieldset/regs::LDORAMC:
   description: RAM Control
   fields:
   - name: ISO
@@ -291,7 +291,7 @@ fieldset/LDORAMC:
   - name: RET3
     bit_offset: 11
     bit_size: 1
-fieldset/LDOTIMER0:
+fieldset/regs::LDOTIMER0:
   description: Bandgap Timer 0
   fields:
   - name: TIMCFG
@@ -300,7 +300,7 @@ fieldset/LDOTIMER0:
   - name: TIMEN
     bit_offset: 31
     bit_size: 1
-fieldset/LDOTIMER1:
+fieldset/regs::LDOTIMER1:
   description: Bandgap Timer 1
   fields:
   - name: TIMCFG
@@ -309,19 +309,19 @@ fieldset/LDOTIMER1:
   - name: TIMEN
     bit_offset: 31
     bit_size: 1
-fieldset/LOCKA:
+fieldset/regs::LOCKA:
   description: Lock A
   fields:
   - name: LOCK
     bit_offset: 0
     bit_size: 1
-fieldset/LOCKB:
+fieldset/regs::LOCKB:
   description: Lock B
   fields:
   - name: LOCK
     bit_offset: 0
     bit_size: 1
-fieldset/MONCFGA:
+fieldset/regs::MONCFGA:
   description: CLKMON Configuration A
   fields:
   - name: FREQ_TRIM
@@ -333,37 +333,37 @@ fieldset/MONCFGA:
   - name: RSVD_TRIM
     bit_offset: 3
     bit_size: 5
-fieldset/MONCFGB:
+fieldset/regs::MONCFGB:
   description: CLKMON Configuration B
   fields:
   - name: INVERSE
     bit_offset: 0
     bit_size: 8
-fieldset/MONCTLA:
+fieldset/regs::MONCTLA:
   description: CLKMON Control A
   fields:
   - name: MON_EN
     bit_offset: 0
     bit_size: 1
-fieldset/MONCTLB:
+fieldset/regs::MONCTLB:
   description: CLKMON Control B
   fields:
   - name: INVERSE
     bit_offset: 0
     bit_size: 1
-fieldset/MONLCKA:
+fieldset/regs::MONLCKA:
   description: CLKMON Lock A
   fields:
   - name: LOCK
     bit_offset: 0
     bit_size: 1
-fieldset/MONLCKB:
+fieldset/regs::MONLCKB:
   description: CLKMON Lock B
   fields:
   - name: LOCK
     bit_offset: 0
     bit_size: 1
-fieldset/OSCCFGA:
+fieldset/regs::OSCCFGA:
   description: Oscillator Configuration A
   fields:
   - name: CMP_TRIM
@@ -381,19 +381,19 @@ fieldset/OSCCFGA:
   - name: INIT_TRIM
     bit_offset: 9
     bit_size: 3
-fieldset/OSCCFGB:
+fieldset/regs::OSCCFGB:
   description: Oscillator Configuration B
   fields:
   - name: INVERSE
     bit_offset: 0
     bit_size: 12
-fieldset/OSCCLKE:
+fieldset/regs::OSCCLKE:
   description: Oscillator Clock Enable
   fields:
   - name: CLKE
     bit_offset: 0
     bit_size: 4
-fieldset/OSCCTLA:
+fieldset/regs::OSCCTLA:
   description: Oscillator Control A
   fields:
   - name: OSC_EN
@@ -420,25 +420,25 @@ fieldset/OSCCTLA:
   - name: SUPPLY_DET
     bit_offset: 18
     bit_size: 2
-fieldset/OSCCTLB:
+fieldset/regs::OSCCTLB:
   description: Oscillator Control B
   fields:
   - name: INVERSE
     bit_offset: 0
     bit_size: 20
-fieldset/OSCLCKA:
+fieldset/regs::OSCLCKA:
   description: Oscillator Lock A
   fields:
   - name: LOCK
     bit_offset: 0
     bit_size: 1
-fieldset/OSCLCKB:
+fieldset/regs::OSCLCKB:
   description: Oscillator Lock B
   fields:
   - name: LOCK
     bit_offset: 0
     bit_size: 1
-fieldset/STATUSA:
+fieldset/regs::STATUSA:
   description: Status A
   fields:
   - name: POR_DET
@@ -489,13 +489,13 @@ fieldset/STATUSA:
   - name: IRQ3_DET
     bit_offset: 19
     bit_size: 1
-fieldset/STATUSB:
+fieldset/regs::STATUSB:
   description: Status B
   fields:
   - name: INVERSE
     bit_offset: 0
     bit_size: 20
-fieldset/SWICTLA:
+fieldset/regs::SWICTLA:
   description: Switch Control A
   fields:
   - name: SWI_EN
@@ -504,25 +504,25 @@ fieldset/SWICTLA:
   - name: LP_EN
     bit_offset: 1
     bit_size: 1
-fieldset/SWICTLB:
+fieldset/regs::SWICTLB:
   description: Switch Control B
   fields:
   - name: INVERSE
     bit_offset: 0
     bit_size: 2
-fieldset/SWILCKA:
+fieldset/regs::SWILCKA:
   description: Switch Lock A
   fields:
   - name: LOCK
     bit_offset: 0
     bit_size: 1
-fieldset/SWILCKB:
+fieldset/regs::SWILCKB:
   description: Switch Lock B
   fields:
   - name: LOCK
     bit_offset: 0
     bit_size: 1
-fieldset/TAMCTLA:
+fieldset/regs::TAMCTLA:
   description: TAMPER Control A
   fields:
   - name: VOLT_EN
@@ -534,25 +534,25 @@ fieldset/TAMCTLA:
   - name: LIGHT_EN
     bit_offset: 2
     bit_size: 1
-fieldset/TAMCTLB:
+fieldset/regs::TAMCTLB:
   description: TAMPER Control B
   fields:
   - name: INVERSE
     bit_offset: 0
     bit_size: 4
-fieldset/TAMLCKA:
+fieldset/regs::TAMLCKA:
   description: TAMPER Lock A
   fields:
   - name: LOCK
     bit_offset: 0
     bit_size: 1
-fieldset/TAMLCKB:
+fieldset/regs::TAMLCKB:
   description: TAMPER Lock B
   fields:
   - name: LOCK
     bit_offset: 0
     bit_size: 1
-fieldset/TAMPERA:
+fieldset/regs::TAMPERA:
   description: Tamper Enable A
   fields:
   - name: POR_DET
@@ -576,13 +576,13 @@ fieldset/TAMPERA:
   - name: SEC0_DET
     bit_offset: 12
     bit_size: 1
-fieldset/TAMPERB:
+fieldset/regs::TAMPERB:
   description: Tamper Enable B
   fields:
   - name: INVERSE
     bit_offset: 0
     bit_size: 16
-fieldset/VERID:
+fieldset/regs::VERID:
   description: Version ID
   fields:
   - name: FEATURE
@@ -594,13 +594,13 @@ fieldset/VERID:
   - name: MAJOR
     bit_offset: 24
     bit_size: 8
-fieldset/WAKECFG:
+fieldset/regs::WAKECFG:
   description: Wake-up Configuration
   fields:
   - name: OUT
     bit_offset: 0
     bit_size: 1
-fieldset/WAKENA:
+fieldset/regs::WAKENA:
   description: Wake-up Enable A
   fields:
   - name: POR_DET
@@ -651,19 +651,19 @@ fieldset/WAKENA:
   - name: IRQ3_DET
     bit_offset: 19
     bit_size: 1
-fieldset/WAKENB:
+fieldset/regs::WAKENB:
   description: Wake-up Enable B
   fields:
   - name: INVERSE
     bit_offset: 0
     bit_size: 20
-fieldset/WAKLCKA:
+fieldset/regs::WAKLCKA:
   description: Wakeup Lock A
   fields:
   - name: LOCK
     bit_offset: 0
     bit_size: 1
-fieldset/WAKLCKB:
+fieldset/regs::WAKLCKB:
   description: Wakeup Lock B
   fields:
   - name: LOCK

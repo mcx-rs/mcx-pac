@@ -2,7 +2,7 @@ block/CRC:
   items:
   - name: DATA
     byte_offset: 0
-    fieldset: DATA
+    fieldset: regs::DATA
   - name: DATALL
     byte_offset: 0
     bit_size: 8
@@ -23,7 +23,7 @@ block/CRC:
     bit_size: 16
   - name: GPOLY
     byte_offset: 4
-    fieldset: GPOLY
+    fieldset: regs::GPOLY
   - name: GPOLYLL
     byte_offset: 4
     bit_size: 8
@@ -44,12 +44,12 @@ block/CRC:
     bit_size: 16
   - name: CTRL
     byte_offset: 8
-    fieldset: CTRL
+    fieldset: regs::CTRL
   - name: CTRLHU
     byte_offset: 11
     bit_size: 8
-    fieldset: CTRL_ACCESS8BIT_CTRLHU
-fieldset/CTRL:
+    fieldset: regs::CTRL_ACCESS8BIT_CTRLHU
+fieldset/regs::CTRL:
   description: CRC Control
   fields:
   - name: TCRC
@@ -67,7 +67,7 @@ fieldset/CTRL:
   - name: TOT
     bit_offset: 30
     bit_size: 2
-fieldset/CTRL_ACCESS8BIT_CTRLHU:
+fieldset/regs::CTRL_ACCESS8BIT_CTRLHU:
   description: CRC_CTRLHU register
   bit_size: 8
   fields:
@@ -86,7 +86,7 @@ fieldset/CTRL_ACCESS8BIT_CTRLHU:
   - name: TOT
     bit_offset: 6
     bit_size: 2
-fieldset/DATA:
+fieldset/regs::DATA:
   description: CRC Data
   fields:
   - name: LL
@@ -101,7 +101,7 @@ fieldset/DATA:
   - name: HU
     bit_offset: 24
     bit_size: 8
-fieldset/GPOLY:
+fieldset/regs::GPOLY:
   description: CRC Polynomial
   fields:
   - name: LOW

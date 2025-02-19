@@ -2,85 +2,85 @@ block/TRNG:
   items:
   - name: MCTL
     byte_offset: 0
-    fieldset: MCTL
+    fieldset: regs::MCTL
   - name: SCMISC
     byte_offset: 4
-    fieldset: SCMISC
+    fieldset: regs::SCMISC
   - name: PKRRNG
     byte_offset: 8
-    fieldset: PKRRNG
+    fieldset: regs::PKRRNG
   - name: PKRMAX
     byte_offset: 12
-    fieldset: PKRMAX
+    fieldset: regs::PKRMAX
   - name: PKRSQ
     byte_offset: 12
-    fieldset: PKRSQ
+    fieldset: regs::PKRSQ
   - name: SDCTL
     byte_offset: 16
-    fieldset: SDCTL
+    fieldset: regs::SDCTL
   - name: SBLIM
     byte_offset: 20
-    fieldset: SBLIM
+    fieldset: regs::SBLIM
   - name: TOTSAM
     byte_offset: 20
-    fieldset: TOTSAM
+    fieldset: regs::TOTSAM
   - name: FRQMIN
     byte_offset: 24
-    fieldset: FRQMIN
+    fieldset: regs::FRQMIN
   - name: OSC2_FRQCNT
     byte_offset: 24
-    fieldset: OSC2_FRQCNT
+    fieldset: regs::OSC2_FRQCNT
   - name: FRQCNT
     byte_offset: 28
-    fieldset: FRQCNT
+    fieldset: regs::FRQCNT
   - name: FRQMAX
     byte_offset: 28
-    fieldset: FRQMAX
+    fieldset: regs::FRQMAX
   - name: SCMC
     byte_offset: 32
-    fieldset: SCMC
+    fieldset: regs::SCMC
   - name: SCML
     byte_offset: 32
-    fieldset: SCML
+    fieldset: regs::SCML
   - name: SCR1C
     byte_offset: 36
-    fieldset: SCR1C
+    fieldset: regs::SCR1C
   - name: SCR1L
     byte_offset: 36
-    fieldset: SCR1L
+    fieldset: regs::SCR1L
   - name: SCR2C
     byte_offset: 40
-    fieldset: SCR2C
+    fieldset: regs::SCR2C
   - name: SCR2L
     byte_offset: 40
-    fieldset: SCR2L
+    fieldset: regs::SCR2L
   - name: SCR3C
     byte_offset: 44
-    fieldset: SCR3C
+    fieldset: regs::SCR3C
   - name: SCR3L
     byte_offset: 44
-    fieldset: SCR3L
+    fieldset: regs::SCR3L
   - name: SCR4C
     byte_offset: 48
-    fieldset: SCR4C
+    fieldset: regs::SCR4C
   - name: SCR4L
     byte_offset: 48
-    fieldset: SCR4L
+    fieldset: regs::SCR4L
   - name: SCR5C
     byte_offset: 52
-    fieldset: SCR5C
+    fieldset: regs::SCR5C
   - name: SCR5L
     byte_offset: 52
-    fieldset: SCR5L
+    fieldset: regs::SCR5L
   - name: SCR6PC
     byte_offset: 56
-    fieldset: SCR6PC
+    fieldset: regs::SCR6PC
   - name: SCR6PL
     byte_offset: 56
-    fieldset: SCR6PL
+    fieldset: regs::SCR6PL
   - name: STATUS
     byte_offset: 60
-    fieldset: STATUS
+    fieldset: regs::STATUS
   - name: ENT
     array:
       len: 1
@@ -88,56 +88,56 @@ block/TRNG:
     byte_offset: 64
   - name: PKRCNT10
     byte_offset: 128
-    fieldset: PKRCNT10
+    fieldset: regs::PKRCNT10
   - name: PKRCNT32
     byte_offset: 132
-    fieldset: PKRCNT32
+    fieldset: regs::PKRCNT32
   - name: PKRCNT54
     byte_offset: 136
-    fieldset: PKRCNT54
+    fieldset: regs::PKRCNT54
   - name: PKRCNT76
     byte_offset: 140
-    fieldset: PKRCNT76
+    fieldset: regs::PKRCNT76
   - name: PKRCNT98
     byte_offset: 144
-    fieldset: PKRCNT98
+    fieldset: regs::PKRCNT98
   - name: PKRCNTBA
     byte_offset: 148
-    fieldset: PKRCNTBA
+    fieldset: regs::PKRCNTBA
   - name: PKRCNTDC
     byte_offset: 152
-    fieldset: PKRCNTDC
+    fieldset: regs::PKRCNTDC
   - name: PKRCNTFE
     byte_offset: 156
-    fieldset: PKRCNTFE
+    fieldset: regs::PKRCNTFE
   - name: SEC_CFG
     byte_offset: 160
-    fieldset: SEC_CFG
+    fieldset: regs::SEC_CFG
   - name: INT_CTRL
     byte_offset: 164
-    fieldset: INT_CTRL
+    fieldset: regs::INT_CTRL
   - name: INT_MASK
     byte_offset: 168
-    fieldset: INT_MASK
+    fieldset: regs::INT_MASK
   - name: INT_STATUS
     byte_offset: 172
-    fieldset: INT_STATUS
+    fieldset: regs::INT_STATUS
   - name: CSER
     byte_offset: 176
-    fieldset: CSER
+    fieldset: regs::CSER
   - name: CSCLR
     byte_offset: 180
-    fieldset: CSCLR
+    fieldset: regs::CSCLR
   - name: OSC2_CTL
     byte_offset: 236
-    fieldset: OSC2_CTL
+    fieldset: regs::OSC2_CTL
   - name: VID1
     byte_offset: 240
-    fieldset: VID1
+    fieldset: regs::VID1
   - name: VID2
     byte_offset: 244
-    fieldset: VID2
-fieldset/CSCLR:
+    fieldset: regs::VID2
+fieldset/regs::CSCLR:
   description: Common Security Clear Register
   fields:
   - name: RED_SIGS_CLR
@@ -152,7 +152,7 @@ fieldset/CSCLR:
   - name: BUS_EDC_CLR
     bit_offset: 3
     bit_size: 1
-fieldset/CSER:
+fieldset/regs::CSER:
   description: Common Security Error Register
   fields:
   - name: RED_SIGS
@@ -167,25 +167,25 @@ fieldset/CSER:
   - name: BUS_EDC
     bit_offset: 3
     bit_size: 1
-fieldset/FRQCNT:
+fieldset/regs::FRQCNT:
   description: Frequency Count Register
   fields:
   - name: FRQ_CT
     bit_offset: 0
     bit_size: 22
-fieldset/FRQMAX:
+fieldset/regs::FRQMAX:
   description: Frequency Count Maximum Limit Register
   fields:
   - name: FRQ_MAX
     bit_offset: 0
     bit_size: 22
-fieldset/FRQMIN:
+fieldset/regs::FRQMIN:
   description: Frequency Count Minimum Limit Register
   fields:
   - name: FRQ_MIN
     bit_offset: 0
     bit_size: 22
-fieldset/INT_CTRL:
+fieldset/regs::INT_CTRL:
   description: Interrupt Control Register
   fields:
   - name: HW_ERR
@@ -200,7 +200,7 @@ fieldset/INT_CTRL:
   - name: INTG_FLT
     bit_offset: 3
     bit_size: 1
-fieldset/INT_MASK:
+fieldset/regs::INT_MASK:
   description: Mask Register
   fields:
   - name: HW_ERR
@@ -215,7 +215,7 @@ fieldset/INT_MASK:
   - name: INTG_FLT
     bit_offset: 3
     bit_size: 1
-fieldset/INT_STATUS:
+fieldset/regs::INT_STATUS:
   description: Interrupt Status Register
   fields:
   - name: HW_ERR
@@ -230,7 +230,7 @@ fieldset/INT_STATUS:
   - name: INTG_FLT
     bit_offset: 3
     bit_size: 1
-fieldset/MCTL:
+fieldset/regs::MCTL:
   description: Miscellaneous Control Register
   fields:
   - name: OSC_DIV
@@ -269,7 +269,7 @@ fieldset/MCTL:
   - name: INTG_ERR
     bit_offset: 31
     bit_size: 1
-fieldset/OSC2_CTL:
+fieldset/regs::OSC2_CTL:
   description: TRNG Oscillator 2 Control Register
   fields:
   - name: TRNG_ENT_CTL
@@ -290,13 +290,13 @@ fieldset/OSC2_CTL:
   - name: OSC_FAILSAFE_TEST
     bit_offset: 14
     bit_size: 1
-fieldset/OSC2_FRQCNT:
+fieldset/regs::OSC2_FRQCNT:
   description: Oscillator-2 Frequency Count Register
   fields:
   - name: OSC2_FRQ_CT
     bit_offset: 0
     bit_size: 22
-fieldset/PKRCNT10:
+fieldset/regs::PKRCNT10:
   description: Statistical Check Poker Count 1 and 0 Register
   fields:
   - name: PKR_0_CT
@@ -305,7 +305,7 @@ fieldset/PKRCNT10:
   - name: PKR_1_CT
     bit_offset: 16
     bit_size: 16
-fieldset/PKRCNT32:
+fieldset/regs::PKRCNT32:
   description: Statistical Check Poker Count 3 and 2 Register
   fields:
   - name: PKR_2_CT
@@ -314,7 +314,7 @@ fieldset/PKRCNT32:
   - name: PKR_3_CT
     bit_offset: 16
     bit_size: 16
-fieldset/PKRCNT54:
+fieldset/regs::PKRCNT54:
   description: Statistical Check Poker Count 5 and 4 Register
   fields:
   - name: PKR_4_CT
@@ -323,7 +323,7 @@ fieldset/PKRCNT54:
   - name: PKR_5_CT
     bit_offset: 16
     bit_size: 16
-fieldset/PKRCNT76:
+fieldset/regs::PKRCNT76:
   description: Statistical Check Poker Count 7 and 6 Register
   fields:
   - name: PKR_6_CT
@@ -332,7 +332,7 @@ fieldset/PKRCNT76:
   - name: PKR_7_CT
     bit_offset: 16
     bit_size: 16
-fieldset/PKRCNT98:
+fieldset/regs::PKRCNT98:
   description: Statistical Check Poker Count 9 and 8 Register
   fields:
   - name: PKR_8_CT
@@ -341,7 +341,7 @@ fieldset/PKRCNT98:
   - name: PKR_9_CT
     bit_offset: 16
     bit_size: 16
-fieldset/PKRCNTBA:
+fieldset/regs::PKRCNTBA:
   description: Statistical Check Poker Count B and A Register
   fields:
   - name: PKR_A_CT
@@ -350,7 +350,7 @@ fieldset/PKRCNTBA:
   - name: PKR_B_CT
     bit_offset: 16
     bit_size: 16
-fieldset/PKRCNTDC:
+fieldset/regs::PKRCNTDC:
   description: Statistical Check Poker Count D and C Register
   fields:
   - name: PKR_C_CT
@@ -359,7 +359,7 @@ fieldset/PKRCNTDC:
   - name: PKR_D_CT
     bit_offset: 16
     bit_size: 16
-fieldset/PKRCNTFE:
+fieldset/regs::PKRCNTFE:
   description: Statistical Check Poker Count F and E Register
   fields:
   - name: PKR_E_CT
@@ -368,37 +368,37 @@ fieldset/PKRCNTFE:
   - name: PKR_F_CT
     bit_offset: 16
     bit_size: 16
-fieldset/PKRMAX:
+fieldset/regs::PKRMAX:
   description: Poker Maximum Limit Register
   fields:
   - name: PKR_MAX
     bit_offset: 0
     bit_size: 24
-fieldset/PKRRNG:
+fieldset/regs::PKRRNG:
   description: Poker Range Register
   fields:
   - name: PKR_RNG
     bit_offset: 0
     bit_size: 16
-fieldset/PKRSQ:
+fieldset/regs::PKRSQ:
   description: Poker Square Calculation Result Register
   fields:
   - name: PKR_SQ
     bit_offset: 0
     bit_size: 24
-fieldset/SBLIM:
+fieldset/regs::SBLIM:
   description: Sparse Bit Limit Register
   fields:
   - name: SB_LIM
     bit_offset: 0
     bit_size: 10
-fieldset/SCMC:
+fieldset/regs::SCMC:
   description: Statistical Check Monobit Count Register
   fields:
   - name: MONO_CT
     bit_offset: 0
     bit_size: 16
-fieldset/SCMISC:
+fieldset/regs::SCMISC:
   description: Statistical Check Miscellaneous Register
   fields:
   - name: LRUN_MAX
@@ -407,7 +407,7 @@ fieldset/SCMISC:
   - name: RTY_CT
     bit_offset: 16
     bit_size: 4
-fieldset/SCML:
+fieldset/regs::SCML:
   description: Statistical Check Monobit Limit Register
   fields:
   - name: MONO_MAX
@@ -416,7 +416,7 @@ fieldset/SCML:
   - name: MONO_RNG
     bit_offset: 16
     bit_size: 16
-fieldset/SCR1C:
+fieldset/regs::SCR1C:
   description: Statistical Check Run Length 1 Count Register
   fields:
   - name: R1_0_CT
@@ -425,7 +425,7 @@ fieldset/SCR1C:
   - name: R1_1_CT
     bit_offset: 16
     bit_size: 15
-fieldset/SCR1L:
+fieldset/regs::SCR1L:
   description: Statistical Check Run Length 1 Limit Register
   fields:
   - name: RUN1_MAX
@@ -434,7 +434,7 @@ fieldset/SCR1L:
   - name: RUN1_RNG
     bit_offset: 16
     bit_size: 15
-fieldset/SCR2C:
+fieldset/regs::SCR2C:
   description: Statistical Check Run Length 2 Count Register
   fields:
   - name: R2_0_CT
@@ -443,7 +443,7 @@ fieldset/SCR2C:
   - name: R2_1_CT
     bit_offset: 16
     bit_size: 14
-fieldset/SCR2L:
+fieldset/regs::SCR2L:
   description: Statistical Check Run Length 2 Limit Register
   fields:
   - name: RUN2_MAX
@@ -452,7 +452,7 @@ fieldset/SCR2L:
   - name: RUN2_RNG
     bit_offset: 16
     bit_size: 14
-fieldset/SCR3C:
+fieldset/regs::SCR3C:
   description: Statistical Check Run Length 3 Count Register
   fields:
   - name: R3_0_CT
@@ -461,7 +461,7 @@ fieldset/SCR3C:
   - name: R3_1_CT
     bit_offset: 16
     bit_size: 13
-fieldset/SCR3L:
+fieldset/regs::SCR3L:
   description: Statistical Check Run Length 3 Limit Register
   fields:
   - name: RUN3_MAX
@@ -470,7 +470,7 @@ fieldset/SCR3L:
   - name: RUN3_RNG
     bit_offset: 16
     bit_size: 13
-fieldset/SCR4C:
+fieldset/regs::SCR4C:
   description: Statistical Check Run Length 4 Count Register
   fields:
   - name: R4_0_CT
@@ -479,7 +479,7 @@ fieldset/SCR4C:
   - name: R4_1_CT
     bit_offset: 16
     bit_size: 12
-fieldset/SCR4L:
+fieldset/regs::SCR4L:
   description: Statistical Check Run Length 4 Limit Register
   fields:
   - name: RUN4_MAX
@@ -488,7 +488,7 @@ fieldset/SCR4L:
   - name: RUN4_RNG
     bit_offset: 16
     bit_size: 12
-fieldset/SCR5C:
+fieldset/regs::SCR5C:
   description: Statistical Check Run Length 5 Count Register
   fields:
   - name: R5_0_CT
@@ -497,7 +497,7 @@ fieldset/SCR5C:
   - name: R5_1_CT
     bit_offset: 16
     bit_size: 11
-fieldset/SCR5L:
+fieldset/regs::SCR5L:
   description: Statistical Check Run Length 5 Limit Register
   fields:
   - name: RUN5_MAX
@@ -506,7 +506,7 @@ fieldset/SCR5L:
   - name: RUN5_RNG
     bit_offset: 16
     bit_size: 11
-fieldset/SCR6PC:
+fieldset/regs::SCR6PC:
   description: Statistical Check Run Length 6+ Count Register
   fields:
   - name: R6P_0_CT
@@ -515,7 +515,7 @@ fieldset/SCR6PC:
   - name: R6P_1_CT
     bit_offset: 16
     bit_size: 11
-fieldset/SCR6PL:
+fieldset/regs::SCR6PL:
   description: Statistical Check Run Length 6+ Limit Register
   fields:
   - name: RUN6P_MAX
@@ -524,7 +524,7 @@ fieldset/SCR6PL:
   - name: RUN6P_RNG
     bit_offset: 16
     bit_size: 11
-fieldset/SDCTL:
+fieldset/regs::SDCTL:
   description: Seed Control Register
   fields:
   - name: SAMP_SIZE
@@ -533,13 +533,13 @@ fieldset/SDCTL:
   - name: ENT_DLY
     bit_offset: 16
     bit_size: 16
-fieldset/SEC_CFG:
+fieldset/regs::SEC_CFG:
   description: Security Configuration Register
   fields:
   - name: NO_PRGM
     bit_offset: 1
     bit_size: 1
-fieldset/STATUS:
+fieldset/regs::STATUS:
   description: Status Register
   fields:
   - name: TF1BR0
@@ -593,13 +593,13 @@ fieldset/STATUS:
   - name: RETRY_CT
     bit_offset: 16
     bit_size: 4
-fieldset/TOTSAM:
+fieldset/regs::TOTSAM:
   description: Total Samples Register
   fields:
   - name: TOT_SAM
     bit_offset: 0
     bit_size: 20
-fieldset/VID1:
+fieldset/regs::VID1:
   description: Version ID Register (MS)
   fields:
   - name: MIN_REV
@@ -611,7 +611,7 @@ fieldset/VID1:
   - name: IP_ID
     bit_offset: 16
     bit_size: 16
-fieldset/VID2:
+fieldset/regs::VID2:
   description: Version ID Register (LS)
   fields:
   - name: CONFIG_OPT

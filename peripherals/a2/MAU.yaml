@@ -2,22 +2,22 @@ block/MAU:
   items:
   - name: SYS_CTLR
     byte_offset: 16
-    fieldset: SYS_CTLR
+    fieldset: regs::SYS_CTLR
   - name: GEXP_STATUS_IE
     byte_offset: 20
-    fieldset: GEXP_STATUS_IE
+    fieldset: regs::GEXP_STATUS_IE
   - name: GEXP_STATUS
     byte_offset: 24
-    fieldset: GEXP_STATUS
+    fieldset: regs::GEXP_STATUS
   - name: OP_CTRL
     byte_offset: 48
-    fieldset: OP_CTRL
+    fieldset: regs::OP_CTRL
   - name: RES_STATUS_IE
     byte_offset: 56
-    fieldset: RES_STATUS_IE
+    fieldset: regs::RES_STATUS_IE
   - name: RES_STATUS
     byte_offset: 60
-    fieldset: RES_STATUS
+    fieldset: regs::RES_STATUS
   - name: RES0
     byte_offset: 64
   - name: RES1
@@ -26,19 +26,19 @@ block/MAU:
     byte_offset: 72
   - name: RES3
     byte_offset: 76
-fieldset/GEXP_STATUS:
+fieldset/regs::GEXP_STATUS:
   description: General Exception Status
   fields:
   - name: ERROR
     bit_offset: 0
     bit_size: 1
-fieldset/GEXP_STATUS_IE:
+fieldset/regs::GEXP_STATUS_IE:
   description: General Exception Status Interrupt Enable
   fields:
   - name: ERROR_IE
     bit_offset: 0
     bit_size: 1
-fieldset/OP_CTRL:
+fieldset/regs::OP_CTRL:
   description: Operation Control
   fields:
   - name: OVDT_EN_RES0
@@ -65,7 +65,7 @@ fieldset/OP_CTRL:
   - name: OVDT_RES3
     bit_offset: 25
     bit_size: 2
-fieldset/RES_STATUS:
+fieldset/regs::RES_STATUS:
   description: Result Status
   fields:
   - name: RES0_NX
@@ -164,7 +164,7 @@ fieldset/RES_STATUS:
   - name: RES3_FULL
     bit_offset: 31
     bit_size: 1
-fieldset/RES_STATUS_IE:
+fieldset/regs::RES_STATUS_IE:
   description: Result Status Interrupt Enable
   fields:
   - name: RES0_IE
@@ -179,7 +179,7 @@ fieldset/RES_STATUS_IE:
   - name: RES3_IE
     bit_offset: 3
     bit_size: 1
-fieldset/SYS_CTLR:
+fieldset/regs::SYS_CTLR:
   description: System Control
   fields:
   - name: ACG_EN

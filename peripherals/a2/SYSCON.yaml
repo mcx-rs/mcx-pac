@@ -2,112 +2,112 @@ block/SYSCON:
   items:
   - name: REMAP
     byte_offset: 512
-    fieldset: REMAP
+    fieldset: regs::REMAP
   - name: AHBMATPRIO
     byte_offset: 528
-    fieldset: AHBMATPRIO
+    fieldset: regs::AHBMATPRIO
   - name: CPU0NSTCKCAL
     byte_offset: 572
-    fieldset: CPU0NSTCKCAL
+    fieldset: regs::CPU0NSTCKCAL
   - name: NMISRC
     byte_offset: 584
-    fieldset: NMISRC
+    fieldset: regs::NMISRC
   - name: PROTLVL
     byte_offset: 588
-    fieldset: PROTLVL
+    fieldset: regs::PROTLVL
   - name: SLOWCLKDIV
     byte_offset: 888
-    fieldset: SLOWCLKDIV
+    fieldset: regs::SLOWCLKDIV
   - name: BUSCLKDIV
     byte_offset: 892
-    fieldset: BUSCLKDIV
+    fieldset: regs::BUSCLKDIV
   - name: AHBCLKDIV
     byte_offset: 896
-    fieldset: AHBCLKDIV
+    fieldset: regs::AHBCLKDIV
   - name: FROHFDIV
     byte_offset: 904
-    fieldset: FROHFDIV
+    fieldset: regs::FROHFDIV
   - name: FROLFDIV
     byte_offset: 908
-    fieldset: FROLFDIV
+    fieldset: regs::FROLFDIV
   - name: PLL1CLKDIV
     byte_offset: 996
-    fieldset: PLL1CLKDIV
+    fieldset: regs::PLL1CLKDIV
   - name: CLKUNLOCK
     byte_offset: 1020
-    fieldset: CLKUNLOCK
+    fieldset: regs::CLKUNLOCK
   - name: NVM_CTRL
     byte_offset: 1024
-    fieldset: NVM_CTRL
+    fieldset: regs::NVM_CTRL
   - name: SMARTDMAINT
     byte_offset: 1044
-    fieldset: SMARTDMAINT
+    fieldset: regs::SMARTDMAINT
   - name: RAM_INTERLEAVE
     byte_offset: 1136
-    fieldset: RAM_INTERLEAVE
+    fieldset: regs::RAM_INTERLEAVE
   - name: CPUSTAT
     byte_offset: 2060
-    fieldset: CPUSTAT
+    fieldset: regs::CPUSTAT
   - name: LPCAC_CTRL
     byte_offset: 2084
-    fieldset: LPCAC_CTRL
+    fieldset: regs::LPCAC_CTRL
   - name: PWM0SUBCTL
     byte_offset: 2360
-    fieldset: PWM0SUBCTL
+    fieldset: regs::PWM0SUBCTL
   - name: PWM1SUBCTL
     byte_offset: 2364
-    fieldset: PWM1SUBCTL
+    fieldset: regs::PWM1SUBCTL
   - name: CTIMERGLOBALSTARTEN
     byte_offset: 2368
-    fieldset: CTIMERGLOBALSTARTEN
+    fieldset: regs::CTIMERGLOBALSTARTEN
   - name: RAM_CTRL
     byte_offset: 2372
-    fieldset: RAM_CTRL
+    fieldset: regs::RAM_CTRL
   - name: GRAY_CODE_LSB
     byte_offset: 2912
   - name: GRAY_CODE_MSB
     byte_offset: 2916
-    fieldset: GRAY_CODE_MSB
+    fieldset: regs::GRAY_CODE_MSB
   - name: BINARY_CODE_LSB
     byte_offset: 2920
   - name: BINARY_CODE_MSB
     byte_offset: 2924
-    fieldset: BINARY_CODE_MSB
+    fieldset: regs::BINARY_CODE_MSB
   - name: ELS_UDF
     byte_offset: 3600
-    fieldset: ELS_UDF
+    fieldset: regs::ELS_UDF
   - name: MSFCFG
     byte_offset: 3612
-    fieldset: MSFCFG
+    fieldset: regs::MSFCFG
   - name: ELS_UID
     array:
       len: 4
       stride: 4
     byte_offset: 3616
-    fieldset: ELS_UID
+    fieldset: regs::ELS_UID
   - name: ROP_STATE
     byte_offset: 3644
   - name: SRAM_XEN
     byte_offset: 3672
-    fieldset: SRAM_XEN
+    fieldset: regs::SRAM_XEN
   - name: SRAM_XEN_DP
     byte_offset: 3676
-    fieldset: SRAM_XEN_DP
+    fieldset: regs::SRAM_XEN_DP
   - name: ELS_OTP_LC_STATE
     byte_offset: 3712
-    fieldset: ELS_OTP_LC_STATE
+    fieldset: regs::ELS_OTP_LC_STATE
   - name: ELS_OTP_LC_STATE_DP
     byte_offset: 3716
-    fieldset: ELS_OTP_LC_STATE_DP
+    fieldset: regs::ELS_OTP_LC_STATE_DP
   - name: DEBUG_LOCK_EN
     byte_offset: 4000
-    fieldset: DEBUG_LOCK_EN
+    fieldset: regs::DEBUG_LOCK_EN
   - name: DEBUG_FEATURES
     byte_offset: 4004
-    fieldset: DEBUG_FEATURES
+    fieldset: regs::DEBUG_FEATURES
   - name: DEBUG_FEATURES_DP
     byte_offset: 4008
-    fieldset: DEBUG_FEATURES_DP
+    fieldset: regs::DEBUG_FEATURES_DP
   - name: SWD_ACCESS_CPU0
     byte_offset: 4020
   - name: DEBUG_AUTH_BEACON
@@ -116,14 +116,14 @@ block/SYSCON:
     byte_offset: 4080
   - name: DEVICE_TYPE
     byte_offset: 4084
-    fieldset: DEVICE_TYPE
+    fieldset: regs::DEVICE_TYPE
   - name: DEVICE_ID0
     byte_offset: 4088
-    fieldset: DEVICE_ID0
+    fieldset: regs::DEVICE_ID0
   - name: DIEID
     byte_offset: 4092
-    fieldset: DIEID
-fieldset/AHBCLKDIV:
+    fieldset: regs::DIEID
+fieldset/regs::AHBCLKDIV:
   description: System Clock Divider
   fields:
   - name: DIV
@@ -132,7 +132,7 @@ fieldset/AHBCLKDIV:
   - name: UNSTAB
     bit_offset: 31
     bit_size: 1
-fieldset/AHBMATPRIO:
+fieldset/regs::AHBMATPRIO:
   description: AHB Matrix Priority Control
   fields:
   - name: CPU0_CBUS
@@ -156,13 +156,13 @@ fieldset/AHBMATPRIO:
   - name: USB_FS_ENET
     bit_offset: 24
     bit_size: 2
-fieldset/BINARY_CODE_MSB:
+fieldset/regs::BINARY_CODE_MSB:
   description: Gray to Binary Converter Binary Code [41:32]
   fields:
   - name: code_bin_41_32
     bit_offset: 0
     bit_size: 10
-fieldset/BUSCLKDIV:
+fieldset/regs::BUSCLKDIV:
   description: BUS_CLK Clock Divider
   fields:
   - name: DIV
@@ -177,13 +177,13 @@ fieldset/BUSCLKDIV:
   - name: UNSTAB
     bit_offset: 31
     bit_size: 1
-fieldset/CLKUNLOCK:
+fieldset/regs::CLKUNLOCK:
   description: Clock Configuration Unlock
   fields:
   - name: UNLOCK
     bit_offset: 0
     bit_size: 1
-fieldset/CPU0NSTCKCAL:
+fieldset/regs::CPU0NSTCKCAL:
   description: Non-Secure CPU0 System Tick Calibration
   fields:
   - name: TENMS
@@ -195,7 +195,7 @@ fieldset/CPU0NSTCKCAL:
   - name: NOREF
     bit_offset: 25
     bit_size: 1
-fieldset/CPUSTAT:
+fieldset/regs::CPUSTAT:
   description: CPU Status
   fields:
   - name: CPU0SLEEPING
@@ -204,7 +204,7 @@ fieldset/CPUSTAT:
   - name: CPU0LOCKUP
     bit_offset: 2
     bit_size: 1
-fieldset/CTIMERGLOBALSTARTEN:
+fieldset/regs::CTIMERGLOBALSTARTEN:
   description: CTIMER Global Start Enable
   fields:
   - name: CTIMER0_CLK_EN
@@ -222,7 +222,7 @@ fieldset/CTIMERGLOBALSTARTEN:
   - name: CTIMER4_CLK_EN
     bit_offset: 4
     bit_size: 1
-fieldset/DEBUG_FEATURES:
+fieldset/regs::DEBUG_FEATURES:
   description: Cortex Debug Features Control
   fields:
   - name: CPU0_DBGEN
@@ -231,7 +231,7 @@ fieldset/DEBUG_FEATURES:
   - name: CPU0_NIDEN
     bit_offset: 2
     bit_size: 2
-fieldset/DEBUG_FEATURES_DP:
+fieldset/regs::DEBUG_FEATURES_DP:
   description: Cortex Debug Features Control (Duplicate)
   fields:
   - name: CPU0_DBGEN
@@ -240,13 +240,13 @@ fieldset/DEBUG_FEATURES_DP:
   - name: CPU0_NIDEN
     bit_offset: 2
     bit_size: 2
-fieldset/DEBUG_LOCK_EN:
+fieldset/regs::DEBUG_LOCK_EN:
   description: Control Write Access to Security
   fields:
   - name: LOCK_ALL
     bit_offset: 0
     bit_size: 4
-fieldset/DEVICE_ID0:
+fieldset/regs::DEVICE_ID0:
   description: Device ID
   fields:
   - name: RAM_SIZE
@@ -261,7 +261,7 @@ fieldset/DEVICE_ID0:
   - name: SECURITY
     bit_offset: 24
     bit_size: 4
-fieldset/DEVICE_TYPE:
+fieldset/regs::DEVICE_TYPE:
   description: Device Type
   fields:
   - name: DEVICE_TYPE_NUM
@@ -276,7 +276,7 @@ fieldset/DEVICE_TYPE:
   - name: DEVICE_TYPE_PIN
     bit_offset: 24
     bit_size: 8
-fieldset/DIEID:
+fieldset/regs::DIEID:
   description: Chip Revision ID and Number
   fields:
   - name: MINOR_REVISION
@@ -288,19 +288,19 @@ fieldset/DIEID:
   - name: MCO_NUM_IN_DIE_ID
     bit_offset: 8
     bit_size: 20
-fieldset/ELS_OTP_LC_STATE:
+fieldset/regs::ELS_OTP_LC_STATE:
   description: Life Cycle State Register
   fields:
   - name: OTP_LC_STATE
     bit_offset: 0
     bit_size: 8
-fieldset/ELS_OTP_LC_STATE_DP:
+fieldset/regs::ELS_OTP_LC_STATE_DP:
   description: Life Cycle State Register (Duplicate)
   fields:
   - name: OTP_LC_STATE_DP
     bit_offset: 0
     bit_size: 8
-fieldset/ELS_UDF:
+fieldset/regs::ELS_UDF:
   description: UDF Control
   fields:
   - name: KEY_SEL
@@ -312,7 +312,7 @@ fieldset/ELS_UDF:
   - name: UDF_HIDDEN
     bit_offset: 28
     bit_size: 4
-fieldset/ELS_UID:
+fieldset/regs::ELS_UID:
   description: Device UID 0..Device UID 3
   fields:
   - name: UID0
@@ -327,7 +327,7 @@ fieldset/ELS_UID:
   - name: UID3
     bit_offset: 0
     bit_size: 32
-fieldset/FROHFDIV:
+fieldset/regs::FROHFDIV:
   description: FRO_HF_DIV Clock Divider
   fields:
   - name: DIV
@@ -342,7 +342,7 @@ fieldset/FROHFDIV:
   - name: UNSTAB
     bit_offset: 31
     bit_size: 1
-fieldset/FROLFDIV:
+fieldset/regs::FROLFDIV:
   description: FRO_LF_DIV Clock Divider
   fields:
   - name: DIV
@@ -357,13 +357,13 @@ fieldset/FROLFDIV:
   - name: UNSTAB
     bit_offset: 31
     bit_size: 1
-fieldset/GRAY_CODE_MSB:
+fieldset/regs::GRAY_CODE_MSB:
   description: Gray to Binary Converter Gray Code [41:32]
   fields:
   - name: code_gray_41_32
     bit_offset: 0
     bit_size: 10
-fieldset/LPCAC_CTRL:
+fieldset/regs::LPCAC_CTRL:
   description: LPCAC Control
   fields:
   - name: DIS_LPCAC
@@ -387,7 +387,7 @@ fieldset/LPCAC_CTRL:
   - name: LPCAC_MEM_REQ
     bit_offset: 8
     bit_size: 1
-fieldset/MSFCFG:
+fieldset/regs::MSFCFG:
   description: MSF Configuration
   fields:
   - name: IFR_ERASE_DIS0
@@ -405,7 +405,7 @@ fieldset/MSFCFG:
   - name: MASS_ERASE_DIS
     bit_offset: 8
     bit_size: 1
-fieldset/NMISRC:
+fieldset/regs::NMISRC:
   description: NMI Source Select
   fields:
   - name: IRQCPU0
@@ -414,7 +414,7 @@ fieldset/NMISRC:
   - name: NMIENCPU0
     bit_offset: 31
     bit_size: 1
-fieldset/NVM_CTRL:
+fieldset/regs::NVM_CTRL:
   description: NVM Control
   fields:
   - name: DIS_FLASH_SPEC
@@ -432,7 +432,7 @@ fieldset/NVM_CTRL:
   - name: DIS_MBECC_ERR_DATA
     bit_offset: 17
     bit_size: 1
-fieldset/PLL1CLKDIV:
+fieldset/regs::PLL1CLKDIV:
   description: PLL1_CLK_DIV Clock Divider
   fields:
   - name: DIV
@@ -447,7 +447,7 @@ fieldset/PLL1CLKDIV:
   - name: UNSTAB
     bit_offset: 31
     bit_size: 1
-fieldset/PROTLVL:
+fieldset/regs::PROTLVL:
   description: Protect Level Control
   fields:
   - name: PRIV
@@ -459,7 +459,7 @@ fieldset/PROTLVL:
   - name: LOCK
     bit_offset: 31
     bit_size: 1
-fieldset/PWM0SUBCTL:
+fieldset/regs::PWM0SUBCTL:
   description: PWM0 Submodule Control
   fields:
   - name: CLK0_EN
@@ -474,7 +474,7 @@ fieldset/PWM0SUBCTL:
   - name: CLK3_EN
     bit_offset: 3
     bit_size: 1
-fieldset/PWM1SUBCTL:
+fieldset/regs::PWM1SUBCTL:
   description: PWM1 Submodule Control
   fields:
   - name: CLK0_EN
@@ -489,7 +489,7 @@ fieldset/PWM1SUBCTL:
   - name: CLK3_EN
     bit_offset: 3
     bit_size: 1
-fieldset/RAM_CTRL:
+fieldset/regs::RAM_CTRL:
   description: RAM Control
   fields:
   - name: RAMA_ECC_ENABLE
@@ -507,13 +507,13 @@ fieldset/RAM_CTRL:
   - name: RAMC_CG_OVERRIDE
     bit_offset: 19
     bit_size: 1
-fieldset/RAM_INTERLEAVE:
+fieldset/regs::RAM_INTERLEAVE:
   description: Controls RAM Interleave Integration
   fields:
   - name: INTERLEAVE
     bit_offset: 0
     bit_size: 1
-fieldset/REMAP:
+fieldset/regs::REMAP:
   description: AHB Matrix Remap Control
   fields:
   - name: CPU0_SBUS
@@ -537,7 +537,7 @@ fieldset/REMAP:
   - name: LOCK
     bit_offset: 31
     bit_size: 1
-fieldset/SLOWCLKDIV:
+fieldset/regs::SLOWCLKDIV:
   description: SLOW_CLK Clock Divider
   fields:
   - name: DIV
@@ -552,7 +552,7 @@ fieldset/SLOWCLKDIV:
   - name: UNSTAB
     bit_offset: 31
     bit_size: 1
-fieldset/SMARTDMAINT:
+fieldset/regs::SMARTDMAINT:
   description: SmartDMA Interrupt Hijack
   fields:
   - name: INT0
@@ -627,7 +627,7 @@ fieldset/SMARTDMAINT:
   - name: INT23
     bit_offset: 23
     bit_size: 1
-fieldset/SRAM_XEN:
+fieldset/regs::SRAM_XEN:
   description: RAM XEN Control
   fields:
   - name: RAMX0_XEN
@@ -651,7 +651,7 @@ fieldset/SRAM_XEN:
   - name: LOCK
     bit_offset: 31
     bit_size: 1
-fieldset/SRAM_XEN_DP:
+fieldset/regs::SRAM_XEN_DP:
   description: RAM XEN Control (Duplicate)
   fields:
   - name: RAMX0_XEN

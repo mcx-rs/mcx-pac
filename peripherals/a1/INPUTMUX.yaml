@@ -5,220 +5,220 @@ block/INPUTMUX:
       len: 4
       stride: 4
     byte_offset: 32
-    fieldset: CTIMER0CAP
+    fieldset: regs::CTIMER0CAP
   - name: TIMER0TRIG
     byte_offset: 48
-    fieldset: TIMER0TRIG
+    fieldset: regs::TIMER0TRIG
   - name: CTIMER1CAP
     array:
       len: 4
       stride: 4
     byte_offset: 64
-    fieldset: CTIMER1CAP
+    fieldset: regs::CTIMER1CAP
   - name: TIMER1TRIG
     byte_offset: 80
-    fieldset: TIMER1TRIG
+    fieldset: regs::TIMER1TRIG
   - name: CTIMER2CAP
     array:
       len: 4
       stride: 4
     byte_offset: 96
-    fieldset: CTIMER2CAP
+    fieldset: regs::CTIMER2CAP
   - name: TIMER2TRIG
     byte_offset: 112
-    fieldset: TIMER2TRIG
+    fieldset: regs::TIMER2TRIG
   - name: FREQMEAS_REF
     byte_offset: 384
-    fieldset: FREQMEAS_REF
+    fieldset: regs::FREQMEAS_REF
   - name: FREQMEAS_TAR
     byte_offset: 388
-    fieldset: FREQMEAS_TAR
+    fieldset: regs::FREQMEAS_TAR
   - name: CTIMER3CAP
     array:
       len: 4
       stride: 4
     byte_offset: 416
-    fieldset: CTIMER3CAP
+    fieldset: regs::CTIMER3CAP
   - name: TIMER3TRIG
     byte_offset: 432
-    fieldset: TIMER3TRIG
+    fieldset: regs::TIMER3TRIG
   - name: CTIMER4CAP
     array:
       len: 4
       stride: 4
     byte_offset: 448
-    fieldset: CTIMER4CAP
+    fieldset: regs::CTIMER4CAP
   - name: TIMER4TRIG
     byte_offset: 464
-    fieldset: TIMER4TRIG
+    fieldset: regs::TIMER4TRIG
   - name: AOI1_INPUT
     array:
       len: 16
       stride: 4
     byte_offset: 512
-    fieldset: AOI1_INPUT
+    fieldset: regs::AOI1_INPUT
   - name: CMP0_TRIG
     byte_offset: 608
-    fieldset: CMP0_TRIG
+    fieldset: regs::CMP0_TRIG
   - name: ADC0_TRIG
     array:
       len: 4
       stride: 4
     byte_offset: 640
-    fieldset: ADC0_TRIG
+    fieldset: regs::ADC0_TRIG
   - name: ADC1_TRIG
     array:
       len: 4
       stride: 4
     byte_offset: 704
-    fieldset: ADC1_TRIG
+    fieldset: regs::ADC1_TRIG
   - name: DAC0_TRIG
     byte_offset: 768
-    fieldset: DAC0_TRIG
+    fieldset: regs::DAC0_TRIG
   - name: QDC0_TRIG
     byte_offset: 864
-    fieldset: QDC0_TRIG
+    fieldset: regs::QDC0_TRIG
   - name: QDC0_HOME
     byte_offset: 868
-    fieldset: QDC0_HOME
+    fieldset: regs::QDC0_HOME
   - name: QDC0_INDEX
     byte_offset: 872
-    fieldset: QDC0_INDEX
+    fieldset: regs::QDC0_INDEX
   - name: QDC0_PHASEB
     byte_offset: 876
-    fieldset: QDC0_PHASEB
+    fieldset: regs::QDC0_PHASEB
   - name: QDC0_PHASEA
     byte_offset: 880
-    fieldset: QDC0_PHASEA
+    fieldset: regs::QDC0_PHASEA
   - name: QDC0_ICAP1
     byte_offset: 884
-    fieldset: QDC0_ICAP1
+    fieldset: regs::QDC0_ICAP1
   - name: QDC0_ICAP2
     byte_offset: 888
-    fieldset: QDC0_ICAP2
+    fieldset: regs::QDC0_ICAP2
   - name: QDC0_ICAP3
     byte_offset: 892
-    fieldset: QDC0_ICAP3
+    fieldset: regs::QDC0_ICAP3
   - name: QDC1_TRIG
     byte_offset: 896
-    fieldset: QDC1_TRIG
+    fieldset: regs::QDC1_TRIG
   - name: QDC1_HOME
     byte_offset: 900
-    fieldset: QDC1_HOME
+    fieldset: regs::QDC1_HOME
   - name: QDC1_INDEX
     byte_offset: 904
-    fieldset: QDC1_INDEX
+    fieldset: regs::QDC1_INDEX
   - name: QDC1_PHASEB
     byte_offset: 908
-    fieldset: QDC1_PHASEB
+    fieldset: regs::QDC1_PHASEB
   - name: QDC1_PHASEA
     byte_offset: 912
-    fieldset: QDC1_PHASEA
+    fieldset: regs::QDC1_PHASEA
   - name: QDC1_ICAP1
     byte_offset: 916
-    fieldset: QDC1_ICAP1
+    fieldset: regs::QDC1_ICAP1
   - name: QDC1_ICAP2
     byte_offset: 920
-    fieldset: QDC1_ICAP2
+    fieldset: regs::QDC1_ICAP2
   - name: QDC1_ICAP3
     byte_offset: 924
-    fieldset: QDC1_ICAP3
+    fieldset: regs::QDC1_ICAP3
   - name: FLEXPWM0_SM0_EXTA0
     byte_offset: 928
-    fieldset: FLEXPWM0_SM0_EXTA0
+    fieldset: regs::FLEXPWM0_SM0_EXTA0
   - name: FLEXPWM0_SM0_EXTSYNC
     byte_offset: 932
-    fieldset: FLEXPWM0_SM0_EXTSYNC
+    fieldset: regs::FLEXPWM0_SM0_EXTSYNC
   - name: FLEXPWM0_SM1_EXTA
     byte_offset: 936
-    fieldset: FLEXPWM0_SM1_EXTA
+    fieldset: regs::FLEXPWM0_SM1_EXTA
   - name: FLEXPWM0_SM1_EXTSYNC
     byte_offset: 940
-    fieldset: FLEXPWM0_SM1_EXTSYNC
+    fieldset: regs::FLEXPWM0_SM1_EXTSYNC
   - name: FLEXPWM0_SM2_EXTA
     byte_offset: 944
-    fieldset: FLEXPWM0_SM2_EXTA
+    fieldset: regs::FLEXPWM0_SM2_EXTA
   - name: FLEXPWM0_SM2_EXTSYNC
     byte_offset: 948
-    fieldset: FLEXPWM0_SM2_EXTSYNC
+    fieldset: regs::FLEXPWM0_SM2_EXTSYNC
   - name: FLEXPWM0_FAULT
     array:
       len: 4
       stride: 4
     byte_offset: 960
-    fieldset: FLEXPWM0_FAULT
+    fieldset: regs::FLEXPWM0_FAULT
   - name: FLEXPWM0_FORCE
     byte_offset: 976
-    fieldset: FLEXPWM0_FORCE
+    fieldset: regs::FLEXPWM0_FORCE
   - name: FLEXPWM1_SM0_EXTA0
     byte_offset: 992
-    fieldset: FLEXPWM1_SM0_EXTA0
+    fieldset: regs::FLEXPWM1_SM0_EXTA0
   - name: FLEXPWM1_SM0_EXTSYNC
     byte_offset: 996
-    fieldset: FLEXPWM1_SM0_EXTSYNC
+    fieldset: regs::FLEXPWM1_SM0_EXTSYNC
   - name: FLEXPWM1_SM1_EXTA
     byte_offset: 1000
-    fieldset: FLEXPWM1_SM1_EXTA
+    fieldset: regs::FLEXPWM1_SM1_EXTA
   - name: FLEXPWM1_SM1_EXTSYNC
     byte_offset: 1004
-    fieldset: FLEXPWM1_SM1_EXTSYNC
+    fieldset: regs::FLEXPWM1_SM1_EXTSYNC
   - name: FLEXPWM1_SM2_EXTA
     byte_offset: 1008
-    fieldset: FLEXPWM1_SM2_EXTA
+    fieldset: regs::FLEXPWM1_SM2_EXTA
   - name: FLEXPWM1_SM2_EXTSYNC
     byte_offset: 1012
-    fieldset: FLEXPWM1_SM2_EXTSYNC
+    fieldset: regs::FLEXPWM1_SM2_EXTSYNC
   - name: FLEXPWM1_FAULT
     array:
       len: 4
       stride: 4
     byte_offset: 1024
-    fieldset: FLEXPWM1_FAULT
+    fieldset: regs::FLEXPWM1_FAULT
   - name: FLEXPWM1_FORCE
     byte_offset: 1040
-    fieldset: FLEXPWM1_FORCE
+    fieldset: regs::FLEXPWM1_FORCE
   - name: PWM0_EXT_CLK
     byte_offset: 1056
-    fieldset: PWM0_EXT_CLK
+    fieldset: regs::PWM0_EXT_CLK
   - name: PWM1_EXT_CLK
     byte_offset: 1060
-    fieldset: PWM1_EXT_CLK
+    fieldset: regs::PWM1_EXT_CLK
   - name: AOI0_INPUT
     array:
       len: 16
       stride: 4
     byte_offset: 1088
-    fieldset: AOI0_INPUT
+    fieldset: regs::AOI0_INPUT
   - name: USBFS_TRIG
     byte_offset: 1152
-    fieldset: USBFS_TRIG
+    fieldset: regs::USBFS_TRIG
   - name: EXT_TRIG
     array:
       len: 8
       stride: 4
     byte_offset: 1216
-    fieldset: EXT_TRIG
+    fieldset: regs::EXT_TRIG
   - name: CMP1_TRIG
     byte_offset: 1248
-    fieldset: CMP1_TRIG
+    fieldset: regs::CMP1_TRIG
   - name: LPI2C2_TRIG
     byte_offset: 1344
-    fieldset: LPI2C2_TRIG
+    fieldset: regs::LPI2C2_TRIG
   - name: OPAMP0_TRIG
     byte_offset: 1408
-    fieldset: OPAMP0_TRIG
+    fieldset: regs::OPAMP0_TRIG
   - name: LPI2C0_TRIG
     byte_offset: 1440
-    fieldset: LPI2C0_TRIG
+    fieldset: regs::LPI2C0_TRIG
   - name: LPI2C1_TRIG
     byte_offset: 1472
-    fieldset: LPI2C1_TRIG
+    fieldset: regs::LPI2C1_TRIG
   - name: LPSPI0_TRIG
     byte_offset: 1504
-    fieldset: LPSPI0_TRIG
+    fieldset: regs::LPSPI0_TRIG
   - name: LPSPI1_TRIG
     byte_offset: 1536
-    fieldset: LPSPI1_TRIG
+    fieldset: regs::LPSPI1_TRIG
   - name: LPUART0
     byte_offset: 1568
   - name: LPUART1
@@ -234,404 +234,404 @@ block/INPUTMUX:
       len: 4
       stride: 4
     byte_offset: 1760
-    fieldset: FLEXIO_TRIG
-fieldset/ADC0_TRIG:
+    fieldset: regs::FLEXIO_TRIG
+fieldset/regs::ADC0_TRIG:
   description: ADC Trigger input connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/ADC1_TRIG:
+fieldset/regs::ADC1_TRIG:
   description: ADC Trigger input connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/AOI0_INPUT:
+fieldset/regs::AOI0_INPUT:
   description: AOI0 trigger input connections 0
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/AOI1_INPUT:
+fieldset/regs::AOI1_INPUT:
   description: AOI1 trigger input connections 0
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CMP0_TRIG:
+fieldset/regs::CMP0_TRIG:
   description: CMP0 input connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/CMP1_TRIG:
+fieldset/regs::CMP1_TRIG:
   description: CMP1 input connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/CTIMER0CAP:
+fieldset/regs::CTIMER0CAP:
   description: Capture select register for CTIMER inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER1CAP:
+fieldset/regs::CTIMER1CAP:
   description: Capture select register for CTIMER inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER2CAP:
+fieldset/regs::CTIMER2CAP:
   description: Capture select register for CTIMER inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER3CAP:
+fieldset/regs::CTIMER3CAP:
   description: Capture select register for CTIMER inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/CTIMER4CAP:
+fieldset/regs::CTIMER4CAP:
   description: Capture select register for CTIMER inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/DAC0_TRIG:
+fieldset/regs::DAC0_TRIG:
   description: This register selects the DAC0 trigger inputs.
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/EXT_TRIG:
+fieldset/regs::EXT_TRIG:
   description: EXT trigger connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 5
-fieldset/FLEXIO_TRIG:
+fieldset/regs::FLEXIO_TRIG:
   description: FlexIO Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/FLEXPWM0_FAULT:
+fieldset/regs::FLEXPWM0_FAULT:
   description: PWM0 Fault Input Trigger Connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM0_FORCE:
+fieldset/regs::FLEXPWM0_FORCE:
   description: PWM0 input trigger connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM0_SM0_EXTA0:
+fieldset/regs::FLEXPWM0_SM0_EXTA0:
   description: PWM0 input trigger connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM0_SM0_EXTSYNC:
+fieldset/regs::FLEXPWM0_SM0_EXTSYNC:
   description: PWM0 input trigger connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM0_SM1_EXTA:
+fieldset/regs::FLEXPWM0_SM1_EXTA:
   description: PWM0 input trigger connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM0_SM1_EXTSYNC:
+fieldset/regs::FLEXPWM0_SM1_EXTSYNC:
   description: PWM0 input trigger connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM0_SM2_EXTA:
+fieldset/regs::FLEXPWM0_SM2_EXTA:
   description: PWM0 input trigger connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM0_SM2_EXTSYNC:
+fieldset/regs::FLEXPWM0_SM2_EXTSYNC:
   description: PWM0 input trigger connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM1_FAULT:
+fieldset/regs::FLEXPWM1_FAULT:
   description: PWM1 Fault Input Trigger Connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM1_FORCE:
+fieldset/regs::FLEXPWM1_FORCE:
   description: PWM1 input trigger connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM1_SM0_EXTA0:
+fieldset/regs::FLEXPWM1_SM0_EXTA0:
   description: PWM1 input trigger connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM1_SM0_EXTSYNC:
+fieldset/regs::FLEXPWM1_SM0_EXTSYNC:
   description: PWM1 input trigger connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM1_SM1_EXTA:
+fieldset/regs::FLEXPWM1_SM1_EXTA:
   description: PWM1 input trigger connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM1_SM1_EXTSYNC:
+fieldset/regs::FLEXPWM1_SM1_EXTSYNC:
   description: PWM1 input trigger connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM1_SM2_EXTA:
+fieldset/regs::FLEXPWM1_SM2_EXTA:
   description: PWM1 input trigger connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FLEXPWM1_SM2_EXTSYNC:
+fieldset/regs::FLEXPWM1_SM2_EXTSYNC:
   description: PWM1 input trigger connections
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 6
-fieldset/FREQMEAS_REF:
+fieldset/regs::FREQMEAS_REF:
   description: Selection for frequency measurement reference clock
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/FREQMEAS_TAR:
+fieldset/regs::FREQMEAS_TAR:
   description: Selection for frequency measurement target clock
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/LPI2C0_TRIG:
+fieldset/regs::LPI2C0_TRIG:
   description: LPI2C0 trigger input connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/LPI2C1_TRIG:
+fieldset/regs::LPI2C1_TRIG:
   description: LPI2C1 trigger input connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/LPI2C2_TRIG:
+fieldset/regs::LPI2C2_TRIG:
   description: LPI2C2 trigger input connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/LPSPI0_TRIG:
+fieldset/regs::LPSPI0_TRIG:
   description: LPSPI0 trigger input connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/LPSPI1_TRIG:
+fieldset/regs::LPSPI1_TRIG:
   description: LPSPI1 trigger input connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/LPUART0r:
+fieldset/regs::LPUART0r:
   description: LPUART0 trigger input connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/LPUART1r:
+fieldset/regs::LPUART1r:
   description: LPUART1 trigger input connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/LPUART2r:
+fieldset/regs::LPUART2r:
   description: LPUART2 trigger input connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/LPUART3r:
+fieldset/regs::LPUART3r:
   description: LPUART3 trigger input connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/LPUART4r:
+fieldset/regs::LPUART4r:
   description: LPUART4 trigger input connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/OPAMP0_TRIG:
+fieldset/regs::OPAMP0_TRIG:
   description: OPAMP0 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 6
-fieldset/PWM0_EXT_CLK:
+fieldset/regs::PWM0_EXT_CLK:
   description: PWM0 external clock trigger
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 4
-fieldset/PWM1_EXT_CLK:
+fieldset/regs::PWM1_EXT_CLK:
   description: PWM1 external clock trigger
   fields:
   - name: TRIGIN
     bit_offset: 0
     bit_size: 4
-fieldset/QDC0_HOME:
+fieldset/regs::QDC0_HOME:
   description: QDC0 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/QDC0_ICAP1:
+fieldset/regs::QDC0_ICAP1:
   description: QDC0 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/QDC0_ICAP2:
+fieldset/regs::QDC0_ICAP2:
   description: QDC0 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/QDC0_ICAP3:
+fieldset/regs::QDC0_ICAP3:
   description: QDC0 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/QDC0_INDEX:
+fieldset/regs::QDC0_INDEX:
   description: QDC0 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/QDC0_PHASEA:
+fieldset/regs::QDC0_PHASEA:
   description: QDC0 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/QDC0_PHASEB:
+fieldset/regs::QDC0_PHASEB:
   description: QDC0 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/QDC0_TRIG:
+fieldset/regs::QDC0_TRIG:
   description: QDC0 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/QDC1_HOME:
+fieldset/regs::QDC1_HOME:
   description: QDC1 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/QDC1_ICAP1:
+fieldset/regs::QDC1_ICAP1:
   description: QDC1 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/QDC1_ICAP2:
+fieldset/regs::QDC1_ICAP2:
   description: QDC1 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/QDC1_ICAP3:
+fieldset/regs::QDC1_ICAP3:
   description: QDC1 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/QDC1_INDEX:
+fieldset/regs::QDC1_INDEX:
   description: QDC1 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/QDC1_PHASEA:
+fieldset/regs::QDC1_PHASEA:
   description: QDC1 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/QDC1_PHASEB:
+fieldset/regs::QDC1_PHASEB:
   description: QDC1 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/QDC1_TRIG:
+fieldset/regs::QDC1_TRIG:
   description: QDC1 Trigger Input Connections
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/TIMER0TRIG:
+fieldset/regs::TIMER0TRIG:
   description: Trigger register for TIMER0
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/TIMER1TRIG:
+fieldset/regs::TIMER1TRIG:
   description: Trigger register for TIMER1
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/TIMER2TRIG:
+fieldset/regs::TIMER2TRIG:
   description: Trigger register for TIMER2 inputs
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/TIMER3TRIG:
+fieldset/regs::TIMER3TRIG:
   description: Trigger register for TIMER3
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/TIMER4TRIG:
+fieldset/regs::TIMER4TRIG:
   description: Trigger register for TIMER4
   fields:
   - name: INP
     bit_offset: 0
     bit_size: 7
-fieldset/USBFS_TRIG:
+fieldset/regs::USBFS_TRIG:
   description: USB-FS trigger input connections
   fields:
   - name: INP

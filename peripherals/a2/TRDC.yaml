@@ -33,7 +33,7 @@ block/TRDC:
       stride: 428
     byte_offset: 0
     block: MBC_INDEX
-fieldset/MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W:
+fieldset/regs::MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W:
   description: MBC Memory Block Configuration Word
   fields:
   - name: MBACSEL0
@@ -84,7 +84,7 @@ fieldset/MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W:
   - name: NSE7
     bit_offset: 31
     bit_size: 1
-fieldset/MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W:
+fieldset/regs::MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W:
   description: MBC Memory Block Configuration Word
   fields:
   - name: MBACSEL0
@@ -135,7 +135,7 @@ fieldset/MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W:
   - name: NSE7
     bit_offset: 31
     bit_size: 1
-fieldset/MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W:
+fieldset/regs::MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W:
   description: MBC Memory Block Configuration Word
   fields:
   - name: MBACSEL0
@@ -186,7 +186,7 @@ fieldset/MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W:
   - name: NSE7
     bit_offset: 31
     bit_size: 1
-fieldset/MBC_INDEX_MBC_MEMN_GLBAC:
+fieldset/regs::MBC_INDEX_MBC_MEMN_GLBAC:
   description: MBC Global Access Control
   fields:
   - name: NUX
@@ -228,7 +228,7 @@ fieldset/MBC_INDEX_MBC_MEMN_GLBAC:
   - name: LK
     bit_offset: 31
     bit_size: 1
-fieldset/MBC_INDEX_MBC_MEM_GLBCFG:
+fieldset/regs::MBC_INDEX_MBC_MEM_GLBCFG:
   description: MBC Global Configuration Register
   fields:
   - name: NBLKS

@@ -4,12 +4,12 @@ block/USDHC:
     byte_offset: 0
   - name: BLK_ATT
     byte_offset: 4
-    fieldset: BLK_ATT
+    fieldset: regs::BLK_ATT
   - name: CMD_ARG
     byte_offset: 8
   - name: CMD_XFR_TYP
     byte_offset: 12
-    fieldset: CMD_XFR_TYP
+    fieldset: regs::CMD_XFR_TYP
   - name: CMD_RSP0
     byte_offset: 16
   - name: CMD_RSP1
@@ -22,65 +22,65 @@ block/USDHC:
     byte_offset: 32
   - name: PRES_STATE
     byte_offset: 36
-    fieldset: PRES_STATE
+    fieldset: regs::PRES_STATE
   - name: PROT_CTRL
     byte_offset: 40
-    fieldset: PROT_CTRL
+    fieldset: regs::PROT_CTRL
   - name: SYS_CTRL
     byte_offset: 44
-    fieldset: SYS_CTRL
+    fieldset: regs::SYS_CTRL
   - name: INT_STATUS
     byte_offset: 48
-    fieldset: INT_STATUS
+    fieldset: regs::INT_STATUS
   - name: INT_STATUS_EN
     byte_offset: 52
-    fieldset: INT_STATUS_EN
+    fieldset: regs::INT_STATUS_EN
   - name: INT_SIGNAL_EN
     byte_offset: 56
-    fieldset: INT_SIGNAL_EN
+    fieldset: regs::INT_SIGNAL_EN
   - name: AUTOCMD12_ERR_STATUS
     byte_offset: 60
-    fieldset: AUTOCMD12_ERR_STATUS
+    fieldset: regs::AUTOCMD12_ERR_STATUS
   - name: HOST_CTRL_CAP
     byte_offset: 64
-    fieldset: HOST_CTRL_CAP
+    fieldset: regs::HOST_CTRL_CAP
   - name: WTMK_LVL
     byte_offset: 68
-    fieldset: WTMK_LVL
+    fieldset: regs::WTMK_LVL
   - name: MIX_CTRL
     byte_offset: 72
-    fieldset: MIX_CTRL
+    fieldset: regs::MIX_CTRL
   - name: FORCE_EVENT
     byte_offset: 80
-    fieldset: FORCE_EVENT
+    fieldset: regs::FORCE_EVENT
   - name: ADMA_ERR_STATUS
     byte_offset: 84
-    fieldset: ADMA_ERR_STATUS
+    fieldset: regs::ADMA_ERR_STATUS
   - name: ADMA_SYS_ADDR
     byte_offset: 88
-    fieldset: ADMA_SYS_ADDR
+    fieldset: regs::ADMA_SYS_ADDR
   - name: DLL_CTRL
     byte_offset: 96
-    fieldset: DLL_CTRL
+    fieldset: regs::DLL_CTRL
   - name: DLL_STATUS
     byte_offset: 100
-    fieldset: DLL_STATUS
+    fieldset: regs::DLL_STATUS
   - name: CLK_TUNE_CTRL_STATUS
     byte_offset: 104
-    fieldset: CLK_TUNE_CTRL_STATUS
+    fieldset: regs::CLK_TUNE_CTRL_STATUS
   - name: VEND_SPEC
     byte_offset: 192
-    fieldset: VEND_SPEC
+    fieldset: regs::VEND_SPEC
   - name: MMC_BOOT
     byte_offset: 196
-    fieldset: MMC_BOOT
+    fieldset: regs::MMC_BOOT
   - name: VEND_SPEC2
     byte_offset: 200
-    fieldset: VEND_SPEC2
+    fieldset: regs::VEND_SPEC2
   - name: TUNING_CTRL
     byte_offset: 204
-    fieldset: TUNING_CTRL
-fieldset/ADMA_ERR_STATUS:
+    fieldset: regs::TUNING_CTRL
+fieldset/regs::ADMA_ERR_STATUS:
   description: ADMA Error Status
   fields:
   - name: ADMAES
@@ -92,13 +92,13 @@ fieldset/ADMA_ERR_STATUS:
   - name: ADMADCE
     bit_offset: 3
     bit_size: 1
-fieldset/ADMA_SYS_ADDR:
+fieldset/regs::ADMA_SYS_ADDR:
   description: ADMA System Address
   fields:
   - name: ADS_ADDR
     bit_offset: 2
     bit_size: 30
-fieldset/AUTOCMD12_ERR_STATUS:
+fieldset/regs::AUTOCMD12_ERR_STATUS:
   description: Auto CMD12 Error Status
   fields:
   - name: AC12NE
@@ -125,7 +125,7 @@ fieldset/AUTOCMD12_ERR_STATUS:
   - name: SMP_CLK_SEL
     bit_offset: 23
     bit_size: 1
-fieldset/BLK_ATT:
+fieldset/regs::BLK_ATT:
   description: Block Attributes
   fields:
   - name: BLKSIZE
@@ -134,7 +134,7 @@ fieldset/BLK_ATT:
   - name: BLKCNT
     bit_offset: 16
     bit_size: 16
-fieldset/CLK_TUNE_CTRL_STATUS:
+fieldset/regs::CLK_TUNE_CTRL_STATUS:
   description: CLK Tuning Control and Status
   fields:
   - name: DLY_CELL_SET_POST
@@ -161,7 +161,7 @@ fieldset/CLK_TUNE_CTRL_STATUS:
   - name: PRE_ERR
     bit_offset: 31
     bit_size: 1
-fieldset/CMD_XFR_TYP:
+fieldset/regs::CMD_XFR_TYP:
   description: Command Transfer Type
   fields:
   - name: DMAEN
@@ -206,7 +206,7 @@ fieldset/CMD_XFR_TYP:
   - name: CMDINX
     bit_offset: 24
     bit_size: 6
-fieldset/DLL_CTRL:
+fieldset/regs::DLL_CTRL:
   description: DLL (Delay Line) Control
   fields:
   - name: DLL_CTRL_ENABLE
@@ -239,7 +239,7 @@ fieldset/DLL_CTRL:
   - name: DLL_CTRL_REF_UPDATE_INT
     bit_offset: 28
     bit_size: 4
-fieldset/DLL_STATUS:
+fieldset/regs::DLL_STATUS:
   description: DLL Status
   fields:
   - name: DLL_STS_SLV_LOCK
@@ -254,7 +254,7 @@ fieldset/DLL_STATUS:
   - name: DLL_STS_REF_SEL
     bit_offset: 9
     bit_size: 7
-fieldset/FORCE_EVENT:
+fieldset/regs::FORCE_EVENT:
   description: Force Event
   fields:
   - name: FEVTAC12NE
@@ -308,7 +308,7 @@ fieldset/FORCE_EVENT:
   - name: FEVTCINT
     bit_offset: 31
     bit_size: 1
-fieldset/HOST_CTRL_CAP:
+fieldset/regs::HOST_CTRL_CAP:
   description: Host Controller Capabilities
   fields:
   - name: SDR50_SUPPORT
@@ -347,7 +347,7 @@ fieldset/HOST_CTRL_CAP:
   - name: VS18
     bit_offset: 26
     bit_size: 1
-fieldset/INT_SIGNAL_EN:
+fieldset/regs::INT_SIGNAL_EN:
   description: Interrupt Signal Enable
   fields:
   - name: CCIEN
@@ -413,7 +413,7 @@ fieldset/INT_SIGNAL_EN:
   - name: DMAEIEN
     bit_offset: 28
     bit_size: 1
-fieldset/INT_STATUS:
+fieldset/regs::INT_STATUS:
   description: Interrupt Status
   fields:
   - name: CC
@@ -482,7 +482,7 @@ fieldset/INT_STATUS:
   - name: DMAE
     bit_offset: 28
     bit_size: 1
-fieldset/INT_STATUS_EN:
+fieldset/regs::INT_STATUS_EN:
   description: Interrupt Status Enable
   fields:
   - name: CCSEN
@@ -548,7 +548,7 @@ fieldset/INT_STATUS_EN:
   - name: DMAESEN
     bit_offset: 28
     bit_size: 1
-fieldset/MIX_CTRL:
+fieldset/regs::MIX_CTRL:
   description: Mixer Control
   fields:
   - name: DMAEN
@@ -587,7 +587,7 @@ fieldset/MIX_CTRL:
   - name: FBCLK_SEL
     bit_offset: 25
     bit_size: 1
-fieldset/MMC_BOOT:
+fieldset/regs::MMC_BOOT:
   description: eMMC Boot
   fields:
   - name: DTOCV_ACK
@@ -611,7 +611,7 @@ fieldset/MMC_BOOT:
   - name: BOOT_BLK_CNT
     bit_offset: 16
     bit_size: 16
-fieldset/PRES_STATE:
+fieldset/regs::PRES_STATE:
   description: Present State
   fields:
   - name: CIHB
@@ -653,7 +653,7 @@ fieldset/PRES_STATE:
   - name: DLSL
     bit_offset: 24
     bit_size: 8
-fieldset/PROT_CTRL:
+fieldset/regs::PROT_CTRL:
   description: Protocol Control
   fields:
   - name: DTW
@@ -698,7 +698,7 @@ fieldset/PROT_CTRL:
   - name: NON_EXACT_BLK_RD
     bit_offset: 30
     bit_size: 1
-fieldset/SYS_CTRL:
+fieldset/regs::SYS_CTRL:
   description: System Control
   fields:
   - name: DVS
@@ -731,7 +731,7 @@ fieldset/SYS_CTRL:
   - name: RSTT
     bit_offset: 28
     bit_size: 1
-fieldset/TUNING_CTRL:
+fieldset/regs::TUNING_CTRL:
   description: Tuning Control
   fields:
   - name: TUNING_START_TAP
@@ -752,7 +752,7 @@ fieldset/TUNING_CTRL:
   - name: STD_TUNING_EN
     bit_offset: 24
     bit_size: 1
-fieldset/VEND_SPEC:
+fieldset/regs::VEND_SPEC:
   description: Vendor Specific Register
   fields:
   - name: AC12_WR_CHKBUSY_EN
@@ -767,7 +767,7 @@ fieldset/VEND_SPEC:
   - name: CMD_BYTE_EN
     bit_offset: 31
     bit_size: 1
-fieldset/VEND_SPEC2:
+fieldset/regs::VEND_SPEC2:
   description: Vendor Specific 2 Register
   fields:
   - name: CARD_INT_D3_TEST
@@ -785,7 +785,7 @@ fieldset/VEND_SPEC2:
   - name: EN_32K_CLK
     bit_offset: 15
     bit_size: 1
-fieldset/WTMK_LVL:
+fieldset/regs::WTMK_LVL:
   description: Watermark Level
   fields:
   - name: RD_WML

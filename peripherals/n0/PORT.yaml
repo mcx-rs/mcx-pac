@@ -2,38 +2,38 @@ block/PORT:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: VERID
+    fieldset: regs::VERID
   - name: GPCLR
     byte_offset: 16
-    fieldset: GPCLR
+    fieldset: regs::GPCLR
   - name: GPCHR
     byte_offset: 20
-    fieldset: GPCHR
+    fieldset: regs::GPCHR
   - name: CONFIG
     byte_offset: 32
-    fieldset: CONFIG
+    fieldset: regs::CONFIG
   - name: EDFR
     byte_offset: 64
-    fieldset: EDFR
+    fieldset: regs::EDFR
   - name: EDIER
     byte_offset: 68
-    fieldset: EDIER
+    fieldset: regs::EDIER
   - name: EDCR
     byte_offset: 72
-    fieldset: EDCR
+    fieldset: regs::EDCR
   - name: CALIB0
     byte_offset: 96
-    fieldset: CALIB0
+    fieldset: regs::CALIB0
   - name: CALIB1
     byte_offset: 100
-    fieldset: CALIB1
+    fieldset: regs::CALIB1
   - name: PCR
     array:
       len: 32
       stride: 4
     byte_offset: 128
-    fieldset: PCR
-fieldset/CALIB0:
+    fieldset: regs::PCR
+fieldset/regs::CALIB0:
   description: Calibration 0
   fields:
   - name: NCAL
@@ -42,7 +42,7 @@ fieldset/CALIB0:
   - name: PCAL
     bit_offset: 16
     bit_size: 6
-fieldset/CALIB1:
+fieldset/regs::CALIB1:
   description: Calibration 1
   fields:
   - name: NCAL
@@ -51,13 +51,13 @@ fieldset/CALIB1:
   - name: PCAL
     bit_offset: 16
     bit_size: 6
-fieldset/CONFIG:
+fieldset/regs::CONFIG:
   description: Configuration
   fields:
   - name: RANGE
     bit_offset: 0
     bit_size: 1
-fieldset/EDCR:
+fieldset/regs::EDCR:
   description: EFT Detect Clear
   fields:
   - name: EDHC
@@ -66,7 +66,7 @@ fieldset/EDCR:
   - name: EDLC
     bit_offset: 1
     bit_size: 1
-fieldset/EDFR:
+fieldset/regs::EDFR:
   description: EFT Detect Flag
   fields:
   - name: EDF0
@@ -165,7 +165,7 @@ fieldset/EDFR:
   - name: EDF31
     bit_offset: 31
     bit_size: 1
-fieldset/EDIER:
+fieldset/regs::EDIER:
   description: EFT Detect Interrupt Enable
   fields:
   - name: EDIE0
@@ -264,7 +264,7 @@ fieldset/EDIER:
   - name: EDIE31
     bit_offset: 31
     bit_size: 1
-fieldset/GPCHR:
+fieldset/regs::GPCHR:
   description: Global Pin Control High
   fields:
   - name: GPWD
@@ -318,7 +318,7 @@ fieldset/GPCHR:
   - name: GPWE31
     bit_offset: 31
     bit_size: 1
-fieldset/GPCLR:
+fieldset/regs::GPCLR:
   description: Global Pin Control Low
   fields:
   - name: GPWD
@@ -372,7 +372,7 @@ fieldset/GPCLR:
   - name: GPWE15
     bit_offset: 31
     bit_size: 1
-fieldset/PCR:
+fieldset/regs::PCR:
   description: Pin Control 0..Pin Control 31
   fields:
   - name: PS
@@ -408,7 +408,7 @@ fieldset/PCR:
   - name: LK
     bit_offset: 15
     bit_size: 1
-fieldset/VERID:
+fieldset/regs::VERID:
   description: Version ID
   fields:
   - name: FEATURE

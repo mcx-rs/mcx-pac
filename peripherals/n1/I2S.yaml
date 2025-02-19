@@ -2,28 +2,28 @@ block/I2S:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: VERID
+    fieldset: regs::VERID
   - name: PARAM
     byte_offset: 4
-    fieldset: PARAM
+    fieldset: regs::PARAM
   - name: TCSR
     byte_offset: 8
-    fieldset: TCSR
+    fieldset: regs::TCSR
   - name: TCR1
     byte_offset: 12
-    fieldset: TCR1
+    fieldset: regs::TCR1
   - name: TCR2
     byte_offset: 16
-    fieldset: TCR2
+    fieldset: regs::TCR2
   - name: TCR3
     byte_offset: 20
-    fieldset: TCR3
+    fieldset: regs::TCR3
   - name: TCR4
     byte_offset: 24
-    fieldset: TCR4
+    fieldset: regs::TCR4
   - name: TCR5
     byte_offset: 28
-    fieldset: TCR5
+    fieldset: regs::TCR5
   - name: TDR
     array:
       len: 2
@@ -34,27 +34,27 @@ block/I2S:
       len: 2
       stride: 4
     byte_offset: 64
-    fieldset: TFR
+    fieldset: regs::TFR
   - name: TMR
     byte_offset: 96
   - name: RCSR
     byte_offset: 136
-    fieldset: RCSR
+    fieldset: regs::RCSR
   - name: RCR1
     byte_offset: 140
-    fieldset: RCR1
+    fieldset: regs::RCR1
   - name: RCR2
     byte_offset: 144
-    fieldset: RCR2
+    fieldset: regs::RCR2
   - name: RCR3
     byte_offset: 148
-    fieldset: RCR3
+    fieldset: regs::RCR3
   - name: RCR4
     byte_offset: 152
-    fieldset: RCR4
+    fieldset: regs::RCR4
   - name: RCR5
     byte_offset: 156
-    fieldset: RCR5
+    fieldset: regs::RCR5
   - name: RDR
     array:
       len: 2
@@ -65,13 +65,13 @@ block/I2S:
       len: 2
       stride: 4
     byte_offset: 192
-    fieldset: RFR
+    fieldset: regs::RFR
   - name: RMR
     byte_offset: 224
   - name: MCR
     byte_offset: 256
-    fieldset: MCR
-fieldset/MCR:
+    fieldset: regs::MCR
+fieldset/regs::MCR:
   description: MCLK Control
   fields:
   - name: DIV
@@ -86,7 +86,7 @@ fieldset/MCR:
   - name: MOE
     bit_offset: 30
     bit_size: 1
-fieldset/PARAM:
+fieldset/regs::PARAM:
   description: Parameter
   fields:
   - name: DATALINE
@@ -98,13 +98,13 @@ fieldset/PARAM:
   - name: FRAME
     bit_offset: 16
     bit_size: 4
-fieldset/RCR1:
+fieldset/regs::RCR1:
   description: Receive Configuration 1
   fields:
   - name: RFW
     bit_offset: 0
     bit_size: 3
-fieldset/RCR2:
+fieldset/regs::RCR2:
   description: Receive Configuration 2
   fields:
   - name: DIV
@@ -131,7 +131,7 @@ fieldset/RCR2:
   - name: SYNC
     bit_offset: 30
     bit_size: 2
-fieldset/RCR3:
+fieldset/regs::RCR3:
   description: Receive Configuration 3
   fields:
   - name: WDFL
@@ -143,7 +143,7 @@ fieldset/RCR3:
   - name: CFR
     bit_offset: 24
     bit_size: 2
-fieldset/RCR4:
+fieldset/regs::RCR4:
   description: Receive Configuration 4
   fields:
   - name: FSD
@@ -176,7 +176,7 @@ fieldset/RCR4:
   - name: FCONT
     bit_offset: 28
     bit_size: 1
-fieldset/RCR5:
+fieldset/regs::RCR5:
   description: Receive Configuration 5
   fields:
   - name: FBT
@@ -188,7 +188,7 @@ fieldset/RCR5:
   - name: WNW
     bit_offset: 24
     bit_size: 5
-fieldset/RCSR:
+fieldset/regs::RCSR:
   description: Receive Control
   fields:
   - name: FRDE
@@ -245,7 +245,7 @@ fieldset/RCSR:
   - name: RE
     bit_offset: 31
     bit_size: 1
-fieldset/RFR:
+fieldset/regs::RFR:
   description: Receive FIFO
   fields:
   - name: RFP
@@ -257,13 +257,13 @@ fieldset/RFR:
   - name: WFP
     bit_offset: 16
     bit_size: 4
-fieldset/TCR1:
+fieldset/regs::TCR1:
   description: Transmit Configuration 1
   fields:
   - name: TFW
     bit_offset: 0
     bit_size: 3
-fieldset/TCR2:
+fieldset/regs::TCR2:
   description: Transmit Configuration 2
   fields:
   - name: DIV
@@ -290,7 +290,7 @@ fieldset/TCR2:
   - name: SYNC
     bit_offset: 30
     bit_size: 2
-fieldset/TCR3:
+fieldset/regs::TCR3:
   description: Transmit Configuration 3
   fields:
   - name: WDFL
@@ -302,7 +302,7 @@ fieldset/TCR3:
   - name: CFR
     bit_offset: 24
     bit_size: 2
-fieldset/TCR4:
+fieldset/regs::TCR4:
   description: Transmit Configuration 4
   fields:
   - name: FSD
@@ -338,7 +338,7 @@ fieldset/TCR4:
   - name: FCONT
     bit_offset: 28
     bit_size: 1
-fieldset/TCR5:
+fieldset/regs::TCR5:
   description: Transmit Configuration 5
   fields:
   - name: FBT
@@ -350,7 +350,7 @@ fieldset/TCR5:
   - name: WNW
     bit_offset: 24
     bit_size: 5
-fieldset/TCSR:
+fieldset/regs::TCSR:
   description: Transmit Control
   fields:
   - name: FRDE
@@ -407,7 +407,7 @@ fieldset/TCSR:
   - name: TE
     bit_offset: 31
     bit_size: 1
-fieldset/TFR:
+fieldset/regs::TFR:
   description: Transmit FIFO
   fields:
   - name: RFP
@@ -419,7 +419,7 @@ fieldset/TFR:
   - name: WCP
     bit_offset: 31
     bit_size: 1
-fieldset/VERID:
+fieldset/regs::VERID:
   description: Version ID
   fields:
   - name: FEATURE

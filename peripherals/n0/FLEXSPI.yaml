@@ -2,97 +2,97 @@ block/FLEXSPI:
   items:
   - name: MCR0
     byte_offset: 0
-    fieldset: MCR0
+    fieldset: regs::MCR0
   - name: MCR1
     byte_offset: 4
-    fieldset: MCR1
+    fieldset: regs::MCR1
   - name: MCR2
     byte_offset: 8
-    fieldset: MCR2
+    fieldset: regs::MCR2
   - name: AHBCR
     byte_offset: 12
-    fieldset: AHBCR
+    fieldset: regs::AHBCR
   - name: INTEN
     byte_offset: 16
-    fieldset: INTEN
+    fieldset: regs::INTEN
   - name: INTR
     byte_offset: 20
-    fieldset: INTR
+    fieldset: regs::INTR
   - name: LUTKEY
     byte_offset: 24
   - name: LUTCR
     byte_offset: 28
-    fieldset: LUTCR
+    fieldset: regs::LUTCR
   - name: AHBRXBUFCR0
     array:
       len: 8
       stride: 4
     byte_offset: 32
-    fieldset: AHBRXBUFCR0
+    fieldset: regs::AHBRXBUFCR0
   - name: FLSHCR0
     array:
       len: 4
       stride: 4
     byte_offset: 96
-    fieldset: FLSHCR0
+    fieldset: regs::FLSHCR0
   - name: FLSHCR1
     array:
       len: 4
       stride: 4
     byte_offset: 112
-    fieldset: FLSHCR1
+    fieldset: regs::FLSHCR1
   - name: FLSHCR2
     array:
       len: 4
       stride: 4
     byte_offset: 128
-    fieldset: FLSHCR2
+    fieldset: regs::FLSHCR2
   - name: FLSHCR4
     byte_offset: 148
-    fieldset: FLSHCR4
+    fieldset: regs::FLSHCR4
   - name: IPCR0
     byte_offset: 160
   - name: IPCR1
     byte_offset: 164
-    fieldset: IPCR1
+    fieldset: regs::IPCR1
   - name: IPCR2
     byte_offset: 168
-    fieldset: IPCR2
+    fieldset: regs::IPCR2
   - name: IPCMD
     byte_offset: 176
-    fieldset: IPCMD
+    fieldset: regs::IPCMD
   - name: DLPR
     byte_offset: 180
   - name: IPRXFCR
     byte_offset: 184
-    fieldset: IPRXFCR
+    fieldset: regs::IPRXFCR
   - name: IPTXFCR
     byte_offset: 188
-    fieldset: IPTXFCR
+    fieldset: regs::IPTXFCR
   - name: DLLCR
     array:
       len: 2
       stride: 4
     byte_offset: 192
-    fieldset: DLLCR
+    fieldset: regs::DLLCR
   - name: STS0
     byte_offset: 224
-    fieldset: STS0
+    fieldset: regs::STS0
   - name: STS1
     byte_offset: 228
-    fieldset: STS1
+    fieldset: regs::STS1
   - name: STS2
     byte_offset: 232
-    fieldset: STS2
+    fieldset: regs::STS2
   - name: AHBSPNDSTS
     byte_offset: 236
-    fieldset: AHBSPNDSTS
+    fieldset: regs::AHBSPNDSTS
   - name: IPRXFSTS
     byte_offset: 240
-    fieldset: IPRXFSTS
+    fieldset: regs::IPRXFSTS
   - name: IPTXFSTS
     byte_offset: 244
-    fieldset: IPTXFSTS
+    fieldset: regs::IPTXFSTS
   - name: RFDR
     array:
       len: 32
@@ -108,71 +108,71 @@ block/FLEXSPI:
       len: 64
       stride: 4
     byte_offset: 512
-    fieldset: LUT
+    fieldset: regs::LUT
   - name: HADDRSTART
     byte_offset: 1056
-    fieldset: HADDRSTART
+    fieldset: regs::HADDRSTART
   - name: HADDREND
     byte_offset: 1060
-    fieldset: HADDREND
+    fieldset: regs::HADDREND
   - name: HADDROFFSET
     byte_offset: 1064
-    fieldset: HADDROFFSET
+    fieldset: regs::HADDROFFSET
   - name: IPEDCTRL
     byte_offset: 1068
-    fieldset: IPEDCTRL
+    fieldset: regs::IPEDCTRL
   - name: IPSNSZSTART0
     byte_offset: 1072
-    fieldset: IPSNSZSTART0
+    fieldset: regs::IPSNSZSTART0
   - name: IPSNSZEND0
     byte_offset: 1076
-    fieldset: IPSNSZEND0
+    fieldset: regs::IPSNSZEND0
   - name: IPSNSZSTART1
     byte_offset: 1080
-    fieldset: IPSNSZSTART1
+    fieldset: regs::IPSNSZSTART1
   - name: IPSNSZEND1
     byte_offset: 1084
-    fieldset: IPSNSZEND1
+    fieldset: regs::IPSNSZEND1
   - name: AHBBUFREGIONSTART0
     byte_offset: 1088
-    fieldset: AHBBUFREGIONSTART0
+    fieldset: regs::AHBBUFREGIONSTART0
   - name: AHBBUFREGIONEND0
     byte_offset: 1092
-    fieldset: AHBBUFREGIONEND0
+    fieldset: regs::AHBBUFREGIONEND0
   - name: AHBBUFREGIONSTART1
     byte_offset: 1096
-    fieldset: AHBBUFREGIONSTART1
+    fieldset: regs::AHBBUFREGIONSTART1
   - name: AHBBUFREGIONEND1
     byte_offset: 1100
-    fieldset: AHBBUFREGIONEND1
+    fieldset: regs::AHBBUFREGIONEND1
   - name: AHBBUFREGIONSTART2
     byte_offset: 1104
-    fieldset: AHBBUFREGIONSTART2
+    fieldset: regs::AHBBUFREGIONSTART2
   - name: AHBBUFREGIONEND2
     byte_offset: 1108
-    fieldset: AHBBUFREGIONEND2
+    fieldset: regs::AHBBUFREGIONEND2
   - name: AHBBUFREGIONSTART3
     byte_offset: 1112
-    fieldset: AHBBUFREGIONSTART3
+    fieldset: regs::AHBBUFREGIONSTART3
   - name: AHBBUFREGIONEND3
     byte_offset: 1116
-    fieldset: AHBBUFREGIONEND3
+    fieldset: regs::AHBBUFREGIONEND3
   - name: IPEDCTXCTRL
     array:
       len: 2
       stride: 4
     byte_offset: 1280
-    fieldset: IPEDCTXCTRL
+    fieldset: regs::IPEDCTXCTRL
   - name: IPEDCTX0IV0
     byte_offset: 1312
   - name: IPEDCTX0IV1
     byte_offset: 1316
   - name: IPEDCTX0START
     byte_offset: 1320
-    fieldset: IPEDCTX0START
+    fieldset: regs::IPEDCTX0START
   - name: IPEDCTX0END
     byte_offset: 1324
-    fieldset: IPEDCTX0END
+    fieldset: regs::IPEDCTX0END
   - name: IPEDCTX0AAD0
     byte_offset: 1328
   - name: IPEDCTX0AAD1
@@ -183,10 +183,10 @@ block/FLEXSPI:
     byte_offset: 1348
   - name: IPEDCTX1START
     byte_offset: 1352
-    fieldset: IPEDCTX1START
+    fieldset: regs::IPEDCTX1START
   - name: IPEDCTX1END
     byte_offset: 1356
-    fieldset: IPEDCTX1END
+    fieldset: regs::IPEDCTX1END
   - name: IPEDCTX1AAD0
     byte_offset: 1360
   - name: IPEDCTX1AAD1
@@ -197,10 +197,10 @@ block/FLEXSPI:
     byte_offset: 1380
   - name: IPEDCTX2START
     byte_offset: 1384
-    fieldset: IPEDCTX2START
+    fieldset: regs::IPEDCTX2START
   - name: IPEDCTX2END
     byte_offset: 1388
-    fieldset: IPEDCTX2END
+    fieldset: regs::IPEDCTX2END
   - name: IPEDCTX2AAD0
     byte_offset: 1392
   - name: IPEDCTX2AAD1
@@ -211,10 +211,10 @@ block/FLEXSPI:
     byte_offset: 1412
   - name: IPEDCTX3START
     byte_offset: 1416
-    fieldset: IPEDCTX3START
+    fieldset: regs::IPEDCTX3START
   - name: IPEDCTX3END
     byte_offset: 1420
-    fieldset: IPEDCTX3END
+    fieldset: regs::IPEDCTX3END
   - name: IPEDCTX3AAD0
     byte_offset: 1424
   - name: IPEDCTX3AAD1
@@ -225,10 +225,10 @@ block/FLEXSPI:
     byte_offset: 1444
   - name: IPEDCTX4START
     byte_offset: 1448
-    fieldset: IPEDCTX4START
+    fieldset: regs::IPEDCTX4START
   - name: IPEDCTX4END
     byte_offset: 1452
-    fieldset: IPEDCTX4END
+    fieldset: regs::IPEDCTX4END
   - name: IPEDCTX4AAD0
     byte_offset: 1456
   - name: IPEDCTX4AAD1
@@ -239,10 +239,10 @@ block/FLEXSPI:
     byte_offset: 1476
   - name: IPEDCTX5START
     byte_offset: 1480
-    fieldset: IPEDCTX5START
+    fieldset: regs::IPEDCTX5START
   - name: IPEDCTX5END
     byte_offset: 1484
-    fieldset: IPEDCTX5END
+    fieldset: regs::IPEDCTX5END
   - name: IPEDCTX5AAD0
     byte_offset: 1488
   - name: IPEDCTX5AAD1
@@ -253,63 +253,63 @@ block/FLEXSPI:
     byte_offset: 1508
   - name: IPEDCTX6START
     byte_offset: 1512
-    fieldset: IPEDCTX6START
+    fieldset: regs::IPEDCTX6START
   - name: IPEDCTX6END
     byte_offset: 1516
-    fieldset: IPEDCTX6END
+    fieldset: regs::IPEDCTX6END
   - name: IPEDCTX6AAD0
     byte_offset: 1520
   - name: IPEDCTX6AAD1
     byte_offset: 1524
-fieldset/AHBBUFREGIONEND0:
+fieldset/regs::AHBBUFREGIONEND0:
   description: Receive Buffer Region 0 End Address
   fields:
   - name: END_ADDRESS
     bit_offset: 12
     bit_size: 20
-fieldset/AHBBUFREGIONEND1:
+fieldset/regs::AHBBUFREGIONEND1:
   description: Receive Buffer Region 1 End Address
   fields:
   - name: END_ADDRESS
     bit_offset: 12
     bit_size: 20
-fieldset/AHBBUFREGIONEND2:
+fieldset/regs::AHBBUFREGIONEND2:
   description: Receive Buffer Region 2 End Address
   fields:
   - name: END_ADDRESS
     bit_offset: 12
     bit_size: 20
-fieldset/AHBBUFREGIONEND3:
+fieldset/regs::AHBBUFREGIONEND3:
   description: Receive Buffer Region 3 End Address
   fields:
   - name: END_ADDRESS
     bit_offset: 12
     bit_size: 20
-fieldset/AHBBUFREGIONSTART0:
+fieldset/regs::AHBBUFREGIONSTART0:
   description: Receive Buffer Start Address of Region 0
   fields:
   - name: START_ADDRESS
     bit_offset: 12
     bit_size: 20
-fieldset/AHBBUFREGIONSTART1:
+fieldset/regs::AHBBUFREGIONSTART1:
   description: Receive Buffer Start Address of Region 1
   fields:
   - name: START_ADDRESS
     bit_offset: 12
     bit_size: 20
-fieldset/AHBBUFREGIONSTART2:
+fieldset/regs::AHBBUFREGIONSTART2:
   description: Receive Buffer Start Address of Region 2
   fields:
   - name: START_ADDRESS
     bit_offset: 12
     bit_size: 20
-fieldset/AHBBUFREGIONSTART3:
+fieldset/regs::AHBBUFREGIONSTART3:
   description: Receive Buffer Start Address of Region 3
   fields:
   - name: START_ADDRESS
     bit_offset: 12
     bit_size: 20
-fieldset/AHBCR:
+fieldset/regs::AHBCR:
   description: AHB Bus Control
   fields:
   - name: APAREN
@@ -345,7 +345,7 @@ fieldset/AHBCR:
   - name: AFLASHBASE
     bit_offset: 29
     bit_size: 3
-fieldset/AHBRXBUFCR0:
+fieldset/regs::AHBRXBUFCR0:
   description: AHB Receive Buffer 0 Control 0..AHB Receive Buffer 7 Control 0
   fields:
   - name: BUFSZ
@@ -363,7 +363,7 @@ fieldset/AHBRXBUFCR0:
   - name: PREFETCHEN
     bit_offset: 31
     bit_size: 1
-fieldset/AHBSPNDSTS:
+fieldset/regs::AHBSPNDSTS:
   description: AHB Suspend Status
   fields:
   - name: ACTIVE
@@ -375,7 +375,7 @@ fieldset/AHBSPNDSTS:
   - name: DATLFT
     bit_offset: 16
     bit_size: 16
-fieldset/DLLCR:
+fieldset/regs::DLLCR:
   description: DLL Control 0
   fields:
   - name: DLLEN
@@ -396,7 +396,7 @@ fieldset/DLLCR:
   - name: REFPHASEGAP
     bit_offset: 15
     bit_size: 2
-fieldset/FLSHCR0:
+fieldset/regs::FLSHCR0:
   description: Flash Control 0
   fields:
   - name: FLSHSZ
@@ -411,7 +411,7 @@ fieldset/FLSHCR0:
   - name: SPLITRDEN
     bit_offset: 31
     bit_size: 1
-fieldset/FLSHCR1:
+fieldset/regs::FLSHCR1:
   description: Flash Control 1
   fields:
   - name: TCSS
@@ -432,7 +432,7 @@ fieldset/FLSHCR1:
   - name: CSINTERVAL
     bit_offset: 16
     bit_size: 16
-fieldset/FLSHCR2:
+fieldset/regs::FLSHCR2:
   description: Flash Control 2
   fields:
   - name: ARDSEQID
@@ -456,7 +456,7 @@ fieldset/FLSHCR2:
   - name: CLRINSTRPTR
     bit_offset: 31
     bit_size: 1
-fieldset/FLSHCR4:
+fieldset/regs::FLSHCR4:
   description: Flash Control 4
   fields:
   - name: WMOPT1
@@ -468,19 +468,19 @@ fieldset/FLSHCR4:
   - name: WMENB
     bit_offset: 3
     bit_size: 1
-fieldset/HADDREND:
+fieldset/regs::HADDREND:
   description: HADDR REMAP END ADDR
   fields:
   - name: ENDSTART
     bit_offset: 12
     bit_size: 20
-fieldset/HADDROFFSET:
+fieldset/regs::HADDROFFSET:
   description: HADDR Remap Offset
   fields:
   - name: ADDROFFSET
     bit_offset: 12
     bit_size: 20
-fieldset/HADDRSTART:
+fieldset/regs::HADDRSTART:
   description: HADDR REMAP Start Address
   fields:
   - name: REMAPEN
@@ -489,7 +489,7 @@ fieldset/HADDRSTART:
   - name: ADDRSTART
     bit_offset: 12
     bit_size: 20
-fieldset/INTEN:
+fieldset/regs::INTEN:
   description: Interrupt Enable
   fields:
   - name: IPCMDDONEEN
@@ -534,7 +534,7 @@ fieldset/INTEN:
   - name: AHBGCMERREN
     bit_offset: 17
     bit_size: 1
-fieldset/INTR:
+fieldset/regs::INTR:
   description: Interrupt
   fields:
   - name: IPCMDDONE
@@ -579,13 +579,13 @@ fieldset/INTR:
   - name: AHBGCMERR
     bit_offset: 17
     bit_size: 1
-fieldset/IPCMD:
+fieldset/regs::IPCMD:
   description: IP Command
   fields:
   - name: TRG
     bit_offset: 0
     bit_size: 1
-fieldset/IPCR1:
+fieldset/regs::IPCR1:
   description: IP Control 1
   fields:
   - name: IDATSZ
@@ -600,7 +600,7 @@ fieldset/IPCR1:
   - name: IPAREN
     bit_offset: 31
     bit_size: 1
-fieldset/IPCR2:
+fieldset/regs::IPCR2:
   description: IP Control 2
   fields:
   - name: IPBLKAHBREQ
@@ -612,7 +612,7 @@ fieldset/IPCR2:
   - name: IPBLKALLAHB
     bit_offset: 2
     bit_size: 1
-fieldset/IPEDCTRL:
+fieldset/regs::IPEDCTRL:
   description: IPED Function Control
   fields:
   - name: CONFIG
@@ -645,13 +645,13 @@ fieldset/IPEDCTRL:
   - name: IPED_SWRESET
     bit_offset: 10
     bit_size: 1
-fieldset/IPEDCTX0END:
+fieldset/regs::IPEDCTX0END:
   description: End Address of Region
   fields:
   - name: end_address
     bit_offset: 8
     bit_size: 24
-fieldset/IPEDCTX0START:
+fieldset/regs::IPEDCTX0START:
   description: Start Address of Region
   fields:
   - name: GCM
@@ -663,13 +663,13 @@ fieldset/IPEDCTX0START:
   - name: start_address
     bit_offset: 8
     bit_size: 24
-fieldset/IPEDCTX1END:
+fieldset/regs::IPEDCTX1END:
   description: End Address of Region
   fields:
   - name: end_address
     bit_offset: 8
     bit_size: 24
-fieldset/IPEDCTX1START:
+fieldset/regs::IPEDCTX1START:
   description: Start Address of Region
   fields:
   - name: GCM
@@ -681,13 +681,13 @@ fieldset/IPEDCTX1START:
   - name: start_address
     bit_offset: 8
     bit_size: 24
-fieldset/IPEDCTX2END:
+fieldset/regs::IPEDCTX2END:
   description: End Address of Region
   fields:
   - name: end_address
     bit_offset: 8
     bit_size: 24
-fieldset/IPEDCTX2START:
+fieldset/regs::IPEDCTX2START:
   description: Start Address of Region
   fields:
   - name: GCM
@@ -699,13 +699,13 @@ fieldset/IPEDCTX2START:
   - name: start_address
     bit_offset: 8
     bit_size: 24
-fieldset/IPEDCTX3END:
+fieldset/regs::IPEDCTX3END:
   description: End Address of Region
   fields:
   - name: end_address
     bit_offset: 8
     bit_size: 24
-fieldset/IPEDCTX3START:
+fieldset/regs::IPEDCTX3START:
   description: Start Address of Region
   fields:
   - name: GCM
@@ -717,13 +717,13 @@ fieldset/IPEDCTX3START:
   - name: start_address
     bit_offset: 8
     bit_size: 24
-fieldset/IPEDCTX4END:
+fieldset/regs::IPEDCTX4END:
   description: End Address of Region
   fields:
   - name: end_address
     bit_offset: 8
     bit_size: 24
-fieldset/IPEDCTX4START:
+fieldset/regs::IPEDCTX4START:
   description: Start Address of Region
   fields:
   - name: GCM
@@ -735,13 +735,13 @@ fieldset/IPEDCTX4START:
   - name: start_address
     bit_offset: 8
     bit_size: 24
-fieldset/IPEDCTX5END:
+fieldset/regs::IPEDCTX5END:
   description: End Address of Region
   fields:
   - name: end_address
     bit_offset: 8
     bit_size: 24
-fieldset/IPEDCTX5START:
+fieldset/regs::IPEDCTX5START:
   description: Start Address of Region
   fields:
   - name: GCM
@@ -753,13 +753,13 @@ fieldset/IPEDCTX5START:
   - name: start_address
     bit_offset: 8
     bit_size: 24
-fieldset/IPEDCTX6END:
+fieldset/regs::IPEDCTX6END:
   description: End Address of Region
   fields:
   - name: end_address
     bit_offset: 8
     bit_size: 24
-fieldset/IPEDCTX6START:
+fieldset/regs::IPEDCTX6START:
   description: Start Address of Region
   fields:
   - name: GCM
@@ -771,7 +771,7 @@ fieldset/IPEDCTX6START:
   - name: start_address
     bit_offset: 8
     bit_size: 24
-fieldset/IPEDCTXCTRL:
+fieldset/regs::IPEDCTXCTRL:
   description: IPED context control 0..IPED context control 1
   fields:
   - name: CTX0_FREEZE0
@@ -816,7 +816,7 @@ fieldset/IPEDCTXCTRL:
   - name: CTX6_FREEZE1
     bit_offset: 12
     bit_size: 2
-fieldset/IPRXFCR:
+fieldset/regs::IPRXFCR:
   description: IP Receive FIFO Control
   fields:
   - name: CLRIPRXF
@@ -828,7 +828,7 @@ fieldset/IPRXFCR:
   - name: RXWMRK
     bit_offset: 2
     bit_size: 7
-fieldset/IPRXFSTS:
+fieldset/regs::IPRXFSTS:
   description: IP Receive FIFO Status
   fields:
   - name: FILL
@@ -837,31 +837,31 @@ fieldset/IPRXFSTS:
   - name: RDCNTR
     bit_offset: 16
     bit_size: 16
-fieldset/IPSNSZEND0:
+fieldset/regs::IPSNSZEND0:
   description: IPS Nonsecure Region 0 End Address
   fields:
   - name: end_address
     bit_offset: 12
     bit_size: 20
-fieldset/IPSNSZEND1:
+fieldset/regs::IPSNSZEND1:
   description: IPS Nonsecure Region 1 End Address
   fields:
   - name: end_address
     bit_offset: 12
     bit_size: 20
-fieldset/IPSNSZSTART0:
+fieldset/regs::IPSNSZSTART0:
   description: IPS Nonsecure Region 0 Start Address
   fields:
   - name: start_address
     bit_offset: 12
     bit_size: 20
-fieldset/IPSNSZSTART1:
+fieldset/regs::IPSNSZSTART1:
   description: IPS Nonsecure Region 1 Start Address
   fields:
   - name: start_address
     bit_offset: 12
     bit_size: 20
-fieldset/IPTXFCR:
+fieldset/regs::IPTXFCR:
   description: IP Transmit FIFO Control
   fields:
   - name: CLRIPTXF
@@ -873,7 +873,7 @@ fieldset/IPTXFCR:
   - name: TXWMRK
     bit_offset: 2
     bit_size: 7
-fieldset/IPTXFSTS:
+fieldset/regs::IPTXFSTS:
   description: IP Transmit FIFO Status
   fields:
   - name: FILL
@@ -882,7 +882,7 @@ fieldset/IPTXFSTS:
   - name: WRCNTR
     bit_offset: 16
     bit_size: 16
-fieldset/LUT:
+fieldset/regs::LUT:
   description: Lookup Table 0..Lookup Table 63
   fields:
   - name: OPERAND0
@@ -903,7 +903,7 @@ fieldset/LUT:
   - name: OPCODE1
     bit_offset: 26
     bit_size: 6
-fieldset/LUTCR:
+fieldset/regs::LUTCR:
   description: LUT Control
   fields:
   - name: LOCK
@@ -915,7 +915,7 @@ fieldset/LUTCR:
   - name: PROTECT
     bit_offset: 2
     bit_size: 1
-fieldset/MCR0:
+fieldset/regs::MCR0:
   description: Module Control 0
   fields:
   - name: SWRESET
@@ -957,7 +957,7 @@ fieldset/MCR0:
   - name: AHBGRANTWAIT
     bit_offset: 24
     bit_size: 8
-fieldset/MCR1:
+fieldset/regs::MCR1:
   description: Module Control 1
   fields:
   - name: AHBBUSWAIT
@@ -966,7 +966,7 @@ fieldset/MCR1:
   - name: SEQWAIT
     bit_offset: 16
     bit_size: 16
-fieldset/MCR2:
+fieldset/regs::MCR2:
   description: Module Control 2
   fields:
   - name: CLRAHBBUFOPT
@@ -990,7 +990,7 @@ fieldset/MCR2:
   - name: RESUMEWAIT
     bit_offset: 24
     bit_size: 8
-fieldset/STS0:
+fieldset/regs::STS0:
   description: Status 0
   fields:
   - name: SEQIDLE
@@ -1008,7 +1008,7 @@ fieldset/STS0:
   - name: DATALEARNPHASEB
     bit_offset: 8
     bit_size: 4
-fieldset/STS1:
+fieldset/regs::STS1:
   description: Status 1
   fields:
   - name: AHBCMDERRID
@@ -1023,7 +1023,7 @@ fieldset/STS1:
   - name: IPCMDERRCODE
     bit_offset: 24
     bit_size: 4
-fieldset/STS2:
+fieldset/regs::STS2:
   description: Status 2
   fields:
   - name: ASLVLOCK

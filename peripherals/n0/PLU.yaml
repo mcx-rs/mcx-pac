@@ -20,35 +20,35 @@ block/PLU:
     byte_offset: 2048
   - name: OUTPUTS
     byte_offset: 2304
-    fieldset: OUTPUTS
+    fieldset: regs::OUTPUTS
   - name: WAKEINT_CTRL
     byte_offset: 2308
-    fieldset: WAKEINT_CTRL
+    fieldset: regs::WAKEINT_CTRL
   - name: OUTPUT_MUX
     array:
       len: 8
       stride: 4
     byte_offset: 3072
-    fieldset: OUTPUT_MUX
-fieldset/LUT_INP_MUX:
+    fieldset: regs::OUTPUT_MUX
+fieldset/regs::LUT_INP_MUX:
   description: Input select register for LUTn (0 to 25), Inputx (5 inputs)
   fields:
   - name: LUTn_INPx
     bit_offset: 0
     bit_size: 6
-fieldset/OUTPUTS:
+fieldset/regs::OUTPUTS:
   description: PLU outputs
   fields:
   - name: OUTPUT_STATE
     bit_offset: 0
     bit_size: 8
-fieldset/OUTPUT_MUX:
+fieldset/regs::OUTPUT_MUX:
   description: PLU output multiplexer
   fields:
   - name: OUTPUT
     bit_offset: 0
     bit_size: 5
-fieldset/WAKEINT_CTRL:
+fieldset/regs::WAKEINT_CTRL:
   description: Wakeup interrupt control
   fields:
   - name: MASK

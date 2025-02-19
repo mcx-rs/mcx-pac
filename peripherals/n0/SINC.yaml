@@ -2,77 +2,77 @@ block/CHANNEL:
   items:
   - name: CCR
     byte_offset: 0
-    fieldset: CHANNEL_CCR
+    fieldset: regs::CHANNEL_CCR
   - name: CDR
     byte_offset: 4
-    fieldset: CHANNEL_CDR
+    fieldset: regs::CHANNEL_CDR
   - name: CCFR
     byte_offset: 8
-    fieldset: CHANNEL_CCFR
+    fieldset: regs::CHANNEL_CCFR
   - name: CPROT
     byte_offset: 12
-    fieldset: CHANNEL_CPROT
+    fieldset: regs::CHANNEL_CPROT
   - name: CBIAS
     byte_offset: 16
-    fieldset: CHANNEL_CBIAS
+    fieldset: regs::CHANNEL_CBIAS
   - name: CLOLMT
     byte_offset: 20
-    fieldset: CHANNEL_CLOLMT
+    fieldset: regs::CHANNEL_CLOLMT
   - name: CHILMT
     byte_offset: 24
-    fieldset: CHANNEL_CHILMT
+    fieldset: regs::CHANNEL_CHILMT
   - name: CRDATA
     byte_offset: 28
-    fieldset: CHANNEL_CRDATA
+    fieldset: regs::CHANNEL_CRDATA
   - name: CMPDATA
     byte_offset: 32
   - name: CACFR
     byte_offset: 36
-    fieldset: CHANNEL_CACFR
+    fieldset: regs::CHANNEL_CACFR
   - name: CSR
     byte_offset: 40
-    fieldset: CHANNEL_CSR
+    fieldset: regs::CHANNEL_CSR
   - name: CDBGR
     byte_offset: 44
 block/SINC:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: VERID
+    fieldset: regs::VERID
   - name: PARAMETER
     byte_offset: 4
-    fieldset: PARAMETER
+    fieldset: regs::PARAMETER
   - name: MCR
     byte_offset: 8
-    fieldset: MCR
+    fieldset: regs::MCR
   - name: NIE
     byte_offset: 12
-    fieldset: NIE
+    fieldset: regs::NIE
   - name: EIE
     byte_offset: 16
-    fieldset: EIE
+    fieldset: regs::EIE
   - name: FIFOIE
     byte_offset: 20
-    fieldset: FIFOIE
+    fieldset: regs::FIFOIE
   - name: NIS
     byte_offset: 24
-    fieldset: NIS
+    fieldset: regs::NIS
   - name: EIS
     byte_offset: 28
-    fieldset: EIS
+    fieldset: regs::EIS
   - name: FIFOIS
     byte_offset: 32
-    fieldset: FIFOIS
+    fieldset: regs::FIFOIS
   - name: SR
     byte_offset: 36
-    fieldset: SR
+    fieldset: regs::SR
   - name: CHANNEL
     array:
       len: 5
       stride: 48
     byte_offset: 56
     block: CHANNEL
-fieldset/CHANNEL_CACFR:
+fieldset/regs::CHANNEL_CACFR:
   description: Channel 0 Advanced Configuration..Channel 4 Advanced Configuration
   fields:
   - name: ADMASEL
@@ -84,13 +84,13 @@ fieldset/CHANNEL_CACFR:
   - name: IBDLY
     bit_offset: 20
     bit_size: 4
-fieldset/CHANNEL_CBIAS:
+fieldset/regs::CHANNEL_CBIAS:
   description: Channel 0 Bias..Channel 4 Bias
   fields:
   - name: BIAS
     bit_offset: 8
     bit_size: 24
-fieldset/CHANNEL_CCFR:
+fieldset/regs::CHANNEL_CCFR:
   description: Channel 0 Configuration..Channel 4 Configuration
   fields:
   - name: PFSFT
@@ -123,7 +123,7 @@ fieldset/CHANNEL_CCFR:
   - name: ZCOP
     bit_offset: 30
     bit_size: 2
-fieldset/CHANNEL_CCR:
+fieldset/regs::CHANNEL_CCR:
   description: Channel 0 Control..Channel 4 Control
   fields:
   - name: CHEN
@@ -153,7 +153,7 @@ fieldset/CHANNEL_CCR:
   - name: DBGSEL
     bit_offset: 20
     bit_size: 4
-fieldset/CHANNEL_CDR:
+fieldset/regs::CHANNEL_CDR:
   description: Channel 0 Data Rate..Channel 4 Data Rate
   fields:
   - name: PFOSR
@@ -165,19 +165,19 @@ fieldset/CHANNEL_CDR:
   - name: PFCM
     bit_offset: 14
     bit_size: 2
-fieldset/CHANNEL_CHILMT:
+fieldset/regs::CHANNEL_CHILMT:
   description: Channel 0 High Limit..Channel 4 High Limit
   fields:
   - name: HILMT
     bit_offset: 8
     bit_size: 24
-fieldset/CHANNEL_CLOLMT:
+fieldset/regs::CHANNEL_CLOLMT:
   description: Channel 0 Low Limit..Channel 4 Low Limit
   fields:
   - name: LOLMT
     bit_offset: 8
     bit_size: 24
-fieldset/CHANNEL_CPROT:
+fieldset/regs::CHANNEL_CPROT:
   description: Channel 0 Protection..Channel 4 Protection
   fields:
   - name: SCDLMT
@@ -210,13 +210,13 @@ fieldset/CHANNEL_CPROT:
   - name: HLMTBK
     bit_offset: 31
     bit_size: 1
-fieldset/CHANNEL_CRDATA:
+fieldset/regs::CHANNEL_CRDATA:
   description: Channel 0 Result Data..Channel 4 Result Data
   fields:
   - name: RDATA
     bit_offset: 8
     bit_size: 24
-fieldset/CHANNEL_CSR:
+fieldset/regs::CHANNEL_CSR:
   description: Channel 0 Status..Channel 4 Status
   fields:
   - name: FIFOAVIL
@@ -252,7 +252,7 @@ fieldset/CHANNEL_CSR:
   - name: CNUM_OV
     bit_offset: 23
     bit_size: 1
-fieldset/EIE:
+fieldset/regs::EIE:
   description: Error Interrupt Enable
   fields:
   - name: SCDIE0
@@ -315,7 +315,7 @@ fieldset/EIE:
   - name: HLMTIE4
     bit_offset: 28
     bit_size: 1
-fieldset/EIS:
+fieldset/regs::EIS:
   description: Error Interrupt Status
   fields:
   - name: SCD0
@@ -378,7 +378,7 @@ fieldset/EIS:
   - name: HLMT4
     bit_offset: 28
     bit_size: 1
-fieldset/FIFOIE:
+fieldset/regs::FIFOIE:
   description: FIFO And CAD Error Interrupt Enable
   fields:
   - name: FUNFIE0
@@ -441,7 +441,7 @@ fieldset/FIFOIE:
   - name: SATIE4
     bit_offset: 28
     bit_size: 1
-fieldset/FIFOIS:
+fieldset/regs::FIFOIS:
   description: FIFO And CAD Error Interrupt Status
   fields:
   - name: FUNF0
@@ -504,7 +504,7 @@ fieldset/FIFOIS:
   - name: SAT4
     bit_offset: 28
     bit_size: 1
-fieldset/MCR:
+fieldset/regs::MCR:
   description: Main Control
   fields:
   - name: STRIG0
@@ -546,7 +546,7 @@ fieldset/MCR:
   - name: MCLK2DIS
     bit_offset: 29
     bit_size: 1
-fieldset/NIE:
+fieldset/regs::NIE:
   description: Normal Interrupt Enable
   fields:
   - name: COCIE0
@@ -594,7 +594,7 @@ fieldset/NIE:
   - name: ZCDIE4
     bit_offset: 20
     bit_size: 1
-fieldset/NIS:
+fieldset/regs::NIS:
   description: Normal Interrupt Status
   fields:
   - name: COC0
@@ -642,7 +642,7 @@ fieldset/NIS:
   - name: ZCD4
     bit_offset: 20
     bit_size: 1
-fieldset/PARAMETER:
+fieldset/regs::PARAMETER:
   description: Parameters
   fields:
   - name: FIFO_DEPTH
@@ -654,7 +654,7 @@ fieldset/PARAMETER:
   - name: PF_ORD_SEL
     bit_offset: 19
     bit_size: 2
-fieldset/SR:
+fieldset/regs::SR:
   description: Status
   fields:
   - name: CIP0
@@ -711,7 +711,7 @@ fieldset/SR:
   - name: MCLKRDY2
     bit_offset: 26
     bit_size: 1
-fieldset/VERID:
+fieldset/regs::VERID:
   description: Version ID
   fields:
   - name: FEATURE

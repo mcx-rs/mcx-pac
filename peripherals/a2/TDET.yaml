@@ -2,31 +2,31 @@ block/TDET:
   items:
   - name: CR
     byte_offset: 16
-    fieldset: CR
+    fieldset: regs::CR
   - name: SR
     byte_offset: 20
-    fieldset: SR
+    fieldset: regs::SR
   - name: LR
     byte_offset: 24
-    fieldset: LR
+    fieldset: regs::LR
   - name: IER
     byte_offset: 28
-    fieldset: IER
+    fieldset: regs::IER
   - name: TSR
     byte_offset: 32
   - name: TER
     byte_offset: 36
-    fieldset: TER
+    fieldset: regs::TER
   - name: PPR
     byte_offset: 44
-    fieldset: PPR
+    fieldset: regs::PPR
   - name: PGFR
     array:
       len: 6
       stride: 4
     byte_offset: 64
-    fieldset: PGFR
-fieldset/CR:
+    fieldset: regs::PGFR
+fieldset/regs::CR:
   description: Control
   fields:
   - name: SWR
@@ -47,7 +47,7 @@ fieldset/CR:
   - name: DPR
     bit_offset: 17
     bit_size: 15
-fieldset/IER:
+fieldset/regs::IER:
   description: Interrupt Enable
   fields:
   - name: DTIE
@@ -104,7 +104,7 @@ fieldset/IER:
   - name: TPIE5
     bit_offset: 21
     bit_size: 1
-fieldset/LR:
+fieldset/regs::LR:
   description: Lock
   fields:
   - name: CRL
@@ -146,7 +146,7 @@ fieldset/LR:
   - name: GFL5
     bit_offset: 21
     bit_size: 1
-fieldset/PGFR:
+fieldset/regs::PGFR:
   description: Pin Glitch Filter
   fields:
   - name: GFW
@@ -179,7 +179,7 @@ fieldset/PGFR:
   - name: IBE
     bit_offset: 31
     bit_size: 1
-fieldset/PPR:
+fieldset/regs::PPR:
   description: Pin Polarity
   fields:
   - name: TPP0
@@ -218,7 +218,7 @@ fieldset/PPR:
   - name: TPID5
     bit_offset: 21
     bit_size: 1
-fieldset/SR:
+fieldset/regs::SR:
   description: Status
   fields:
   - name: DTF
@@ -278,7 +278,7 @@ fieldset/SR:
   - name: TPF5
     bit_offset: 21
     bit_size: 1
-fieldset/TER:
+fieldset/regs::TER:
   description: Tamper Enable
   fields:
   - name: TIE0

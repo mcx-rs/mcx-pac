@@ -106,42 +106,42 @@ block/SGI:
     byte_offset: 716
   - name: SGI_STATUS
     byte_offset: 3072
-    fieldset: SGI_STATUS
+    fieldset: regs::SGI_STATUS
   - name: SGI_COUNT
     byte_offset: 3076
-    fieldset: SGI_COUNT
+    fieldset: regs::SGI_COUNT
   - name: SGI_KEYCHK
     byte_offset: 3080
   - name: SGI_CTRL
     byte_offset: 3328
-    fieldset: SGI_CTRL
+    fieldset: regs::SGI_CTRL
   - name: SGI_CTRL2
     byte_offset: 3332
-    fieldset: SGI_CTRL2
+    fieldset: regs::SGI_CTRL2
   - name: SGI_DUMMY_CTRL
     byte_offset: 3336
-    fieldset: SGI_DUMMY_CTRL
+    fieldset: regs::SGI_DUMMY_CTRL
   - name: SGI_SFR_SW_MASK
     byte_offset: 3340
   - name: SGI_SFRSEED
     byte_offset: 3344
   - name: SGI_SHA2_CTRL
     byte_offset: 3348
-    fieldset: SGI_SHA2_CTRL
+    fieldset: regs::SGI_SHA2_CTRL
   - name: SGI_SHA_FIFO
     byte_offset: 3352
   - name: SGI_CONFIG
     byte_offset: 3356
-    fieldset: SGI_CONFIG
+    fieldset: regs::SGI_CONFIG
   - name: SGI_CONFIG2
     byte_offset: 3360
-    fieldset: SGI_CONFIG2
+    fieldset: regs::SGI_CONFIG2
   - name: SGI_AUTO_MODE
     byte_offset: 3364
-    fieldset: SGI_AUTO_MODE
+    fieldset: regs::SGI_AUTO_MODE
   - name: SGI_AUTO_DMA_CTRL
     byte_offset: 3368
-    fieldset: SGI_AUTO_DMA_CTRL
+    fieldset: regs::SGI_AUTO_DMA_CTRL
   - name: SGI_PRNG_SW_SEED
     byte_offset: 3376
   - name: SGI_KEY_CTRL
@@ -150,28 +150,28 @@ block/SGI:
     byte_offset: 3408
   - name: SGI_VERSION
     byte_offset: 3848
-    fieldset: SGI_VERSION
+    fieldset: regs::SGI_VERSION
   - name: SGI_ACCESS_ERR
     byte_offset: 4032
-    fieldset: SGI_ACCESS_ERR
+    fieldset: regs::SGI_ACCESS_ERR
   - name: SGI_ACCESS_ERR_CLR
     byte_offset: 4036
-    fieldset: SGI_ACCESS_ERR_CLR
+    fieldset: regs::SGI_ACCESS_ERR_CLR
   - name: SGI_INT_STATUS
     byte_offset: 4064
-    fieldset: SGI_INT_STATUS
+    fieldset: regs::SGI_INT_STATUS
   - name: SGI_INT_ENABLE
     byte_offset: 4068
-    fieldset: SGI_INT_ENABLE
+    fieldset: regs::SGI_INT_ENABLE
   - name: SGI_INT_STATUS_CLR
     byte_offset: 4072
-    fieldset: SGI_INT_STATUS_CLR
+    fieldset: regs::SGI_INT_STATUS_CLR
   - name: SGI_INT_STATUS_SET
     byte_offset: 4076
-    fieldset: SGI_INT_STATUS_SET
+    fieldset: regs::SGI_INT_STATUS_SET
   - name: SGI_MODULE_ID
     byte_offset: 4092
-fieldset/SGI_ACCESS_ERR:
+fieldset/regs::SGI_ACCESS_ERR:
   description: Access Error
   fields:
   - name: apb_notav
@@ -189,7 +189,7 @@ fieldset/SGI_ACCESS_ERR:
   - name: accerr_rsvd2
     bit_offset: 8
     bit_size: 24
-fieldset/SGI_ACCESS_ERR_CLR:
+fieldset/regs::SGI_ACCESS_ERR_CLR:
   description: Clear Access Error
   fields:
   - name: err_clr
@@ -198,7 +198,7 @@ fieldset/SGI_ACCESS_ERR_CLR:
   - name: accerrc_rsvd
     bit_offset: 1
     bit_size: 31
-fieldset/SGI_AUTO_DMA_CTRL:
+fieldset/regs::SGI_AUTO_DMA_CTRL:
   description: SGI Auto Mode Control register
   fields:
   - name: ife
@@ -213,7 +213,7 @@ fieldset/SGI_AUTO_DMA_CTRL:
   - name: auto_dma_rsvd2
     bit_offset: 9
     bit_size: 23
-fieldset/SGI_AUTO_MODE:
+fieldset/regs::SGI_AUTO_MODE:
   description: SGI Auto Mode Control register
   fields:
   - name: auto_mode_en
@@ -237,7 +237,7 @@ fieldset/SGI_AUTO_MODE:
   - name: auto_mode_rsvd3
     bit_offset: 16
     bit_size: 16
-fieldset/SGI_CONFIG:
+fieldset/regs::SGI_CONFIG:
   description: SHA Configuration Reg
   fields:
   - name: row
@@ -315,7 +315,7 @@ fieldset/SGI_CONFIG:
   - name: configa_rsvd
     bit_offset: 28
     bit_size: 4
-fieldset/SGI_CONFIG2:
+fieldset/regs::SGI_CONFIG2:
   description: SHA Configuration 2 Reg
   fields:
   - name: aes_used
@@ -339,7 +339,7 @@ fieldset/SGI_CONFIG2:
   - name: config2a_rsvd
     bit_offset: 25
     bit_size: 7
-fieldset/SGI_COUNT:
+fieldset/regs::SGI_COUNT:
   description: Calculation counter
   fields:
   - name: count
@@ -348,7 +348,7 @@ fieldset/SGI_COUNT:
   - name: count_rsvd
     bit_offset: 16
     bit_size: 16
-fieldset/SGI_CTRL:
+fieldset/regs::SGI_CTRL:
   description: SGI Control register
   fields:
   - name: start
@@ -399,7 +399,7 @@ fieldset/SGI_CTRL:
   - name: ctrl_rsvd
     bit_offset: 28
     bit_size: 4
-fieldset/SGI_CTRL2:
+fieldset/regs::SGI_CTRL2:
   description: SGI Control register 2
   fields:
   - name: flush
@@ -456,7 +456,7 @@ fieldset/SGI_CTRL2:
   - name: ctrl2_rsvd1
     bit_offset: 24
     bit_size: 8
-fieldset/SGI_DUMMY_CTRL:
+fieldset/regs::SGI_DUMMY_CTRL:
   description: Configuration of dummy controls
   fields:
   - name: ddctrl
@@ -471,7 +471,7 @@ fieldset/SGI_DUMMY_CTRL:
   - name: dmyctl_rsvd1
     bit_offset: 26
     bit_size: 6
-fieldset/SGI_INT_ENABLE:
+fieldset/regs::SGI_INT_ENABLE:
   description: Interrupt enable
   fields:
   - name: int_en
@@ -480,7 +480,7 @@ fieldset/SGI_INT_ENABLE:
   - name: int_ena_rsvd
     bit_offset: 1
     bit_size: 31
-fieldset/SGI_INT_STATUS:
+fieldset/regs::SGI_INT_STATUS:
   description: Interrupt status
   fields:
   - name: int_pdone
@@ -489,7 +489,7 @@ fieldset/SGI_INT_STATUS:
   - name: intst_rsvd
     bit_offset: 1
     bit_size: 31
-fieldset/SGI_INT_STATUS_CLR:
+fieldset/regs::SGI_INT_STATUS_CLR:
   description: Interrupt status clear
   fields:
   - name: int_clr
@@ -498,7 +498,7 @@ fieldset/SGI_INT_STATUS_CLR:
   - name: int_stsc_rsvd
     bit_offset: 1
     bit_size: 31
-fieldset/SGI_INT_STATUS_SET:
+fieldset/regs::SGI_INT_STATUS_SET:
   description: Interrupt status set
   fields:
   - name: int_set
@@ -507,7 +507,7 @@ fieldset/SGI_INT_STATUS_SET:
   - name: int_stss_rsvd
     bit_offset: 1
     bit_size: 31
-fieldset/SGI_SHA2_CTRL:
+fieldset/regs::SGI_SHA2_CTRL:
   description: SHA Control Register
   fields:
   - name: sha2_en
@@ -540,7 +540,7 @@ fieldset/SGI_SHA2_CTRL:
   - name: sha2ctl_rsvd
     bit_offset: 16
     bit_size: 16
-fieldset/SGI_STATUS:
+fieldset/regs::SGI_STATUS:
   description: Status register
   fields:
   - name: busy
@@ -582,7 +582,7 @@ fieldset/SGI_STATUS:
   - name: status_rsvd
     bit_offset: 19
     bit_size: 13
-fieldset/SGI_VERSION:
+fieldset/regs::SGI_VERSION:
   description: SGI Version
   fields:
   - name: z

@@ -2,50 +2,50 @@ block/TSI:
   items:
   - name: CONFIG_MUTUAL
     byte_offset: 0
-    fieldset: CONFIG_MUTUAL
+    fieldset: regs::CONFIG_MUTUAL
   - name: CONFIG
     byte_offset: 0
-    fieldset: CONFIG
+    fieldset: regs::CONFIG
   - name: TSHD
     byte_offset: 4
-    fieldset: TSHD
+    fieldset: regs::TSHD
   - name: GENCS
     byte_offset: 8
-    fieldset: GENCS
+    fieldset: regs::GENCS
   - name: MUL
     byte_offset: 12
-    fieldset: MUL
+    fieldset: regs::MUL
   - name: SINC
     byte_offset: 16
-    fieldset: SINC
+    fieldset: regs::SINC
   - name: SSC0
     byte_offset: 20
-    fieldset: SSC0
+    fieldset: regs::SSC0
   - name: SSC1
     byte_offset: 24
-    fieldset: SSC1
+    fieldset: regs::SSC1
   - name: SSC2
     byte_offset: 28
-    fieldset: SSC2
+    fieldset: regs::SSC2
   - name: BASELINE
     byte_offset: 32
-    fieldset: BASELINE
+    fieldset: regs::BASELINE
   - name: CHMERGE
     byte_offset: 36
-    fieldset: CHMERGE
+    fieldset: regs::CHMERGE
   - name: SHIELD
     byte_offset: 40
-    fieldset: SHIELD
+    fieldset: regs::SHIELD
   - name: DATA
     byte_offset: 256
-    fieldset: DATA
+    fieldset: regs::DATA
   - name: MISC
     byte_offset: 264
-    fieldset: MISC
+    fieldset: regs::MISC
   - name: TRIG
     byte_offset: 268
-    fieldset: TRIG
-fieldset/BASELINE:
+    fieldset: regs::TRIG
+fieldset/regs::BASELINE:
   description: TSI Baseline
   fields:
   - name: BASELINE
@@ -63,13 +63,13 @@ fieldset/BASELINE:
   - name: THRESHOLD_TRACE_EN
     bit_offset: 31
     bit_size: 1
-fieldset/CHMERGE:
+fieldset/regs::CHMERGE:
   description: TSI Channel Merge
   fields:
   - name: CHANNEL_ENABLE
     bit_offset: 0
     bit_size: 25
-fieldset/CONFIG:
+fieldset/regs::CONFIG:
   description: TSI CONFIG (TSI_CONFIG) for Self-Capacitor
   fields:
   - name: MODE
@@ -99,7 +99,7 @@ fieldset/CONFIG:
   - name: S_XIN_ADD
     bit_offset: 31
     bit_size: 1
-fieldset/CONFIG_MUTUAL:
+fieldset/regs::CONFIG_MUTUAL:
   description: TSI CONFIG (TSI_CONFIG) for Mutual-Capacitor
   fields:
   - name: MODE
@@ -135,7 +135,7 @@ fieldset/CONFIG_MUTUAL:
   - name: M_PRE_CURRENT
     bit_offset: 29
     bit_size: 3
-fieldset/DATA:
+fieldset/regs::DATA:
   description: TSI Data and Status
   fields:
   - name: TSICNT
@@ -150,7 +150,7 @@ fieldset/DATA:
   - name: OUTRGF
     bit_offset: 30
     bit_size: 1
-fieldset/GENCS:
+fieldset/regs::GENCS:
   description: TSI General Control and Status
   fields:
   - name: DMAEN_EOS
@@ -192,7 +192,7 @@ fieldset/GENCS:
   - name: OUTRG_EN
     bit_offset: 30
     bit_size: 1
-fieldset/MISC:
+fieldset/regs::MISC:
   description: TSI Miscellaneous
   fields:
   - name: OSC_CLK_SEL
@@ -207,7 +207,7 @@ fieldset/MISC:
   - name: CLKDIVIDER
     bit_offset: 24
     bit_size: 5
-fieldset/MUL:
+fieldset/regs::MUL:
   description: TSI Mutual-Capacitance
   fields:
   - name: M_VPRE_CHOOSE
@@ -225,7 +225,7 @@ fieldset/MUL:
   - name: M_TRIM
     bit_offset: 16
     bit_size: 16
-fieldset/SHIELD:
+fieldset/regs::SHIELD:
   description: TSI Shield
   fields:
   - name: SHIELD_ENABLE
@@ -234,7 +234,7 @@ fieldset/SHIELD:
   - name: M_SEN_RES
     bit_offset: 25
     bit_size: 6
-fieldset/SINC:
+fieldset/regs::SINC:
   description: TSI SINC Filter
   fields:
   - name: SSC_CONTROL_OUT
@@ -258,7 +258,7 @@ fieldset/SINC:
   - name: CUTOFF
     bit_offset: 24
     bit_size: 4
-fieldset/SSC0:
+fieldset/regs::SSC0:
   description: TSI SSC 0
   fields:
   - name: SSC_PRESCALE_NUM
@@ -279,7 +279,7 @@ fieldset/SSC0:
   - name: PRBS_OUTSEL
     bit_offset: 28
     bit_size: 4
-fieldset/SSC1:
+fieldset/regs::SSC1:
   description: TSI SSC 1
   fields:
   - name: PRBS_SEED_LO
@@ -294,7 +294,7 @@ fieldset/SSC1:
   - name: PRBS_WEIGHT_HI
     bit_offset: 24
     bit_size: 8
-fieldset/SSC2:
+fieldset/regs::SSC2:
   description: TSI SSC 2
   fields:
   - name: MOVE_REPEAT_NUM
@@ -309,7 +309,7 @@ fieldset/SSC2:
   - name: MOVE_NOCHARGE_MIN
     bit_offset: 28
     bit_size: 4
-fieldset/TRIG:
+fieldset/regs::TRIG:
   description: TSI AUTO TRIG
   fields:
   - name: TRIG_PERIOD_COUNTER
@@ -324,7 +324,7 @@ fieldset/TRIG:
   - name: TRIG_CLK_SEL
     bit_offset: 31
     bit_size: 1
-fieldset/TSHD:
+fieldset/regs::TSHD:
   description: TSI Threshold
   fields:
   - name: THRESL

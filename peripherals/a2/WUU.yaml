@@ -2,44 +2,44 @@ block/WUU:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: VERID
+    fieldset: regs::VERID
   - name: PARAM
     byte_offset: 4
-    fieldset: PARAM
+    fieldset: regs::PARAM
   - name: PE1
     byte_offset: 8
-    fieldset: PE1
+    fieldset: regs::PE1
   - name: PE2
     byte_offset: 12
-    fieldset: PE2
+    fieldset: regs::PE2
   - name: ME
     byte_offset: 24
-    fieldset: ME
+    fieldset: regs::ME
   - name: DE
     byte_offset: 28
-    fieldset: DE
+    fieldset: regs::DE
   - name: PF
     byte_offset: 32
-    fieldset: PF
+    fieldset: regs::PF
   - name: FILT
     byte_offset: 48
-    fieldset: FILT
+    fieldset: regs::FILT
   - name: PDC1
     byte_offset: 56
-    fieldset: PDC1
+    fieldset: regs::PDC1
   - name: PDC2
     byte_offset: 60
-    fieldset: PDC2
+    fieldset: regs::PDC2
   - name: FDC
     byte_offset: 72
-    fieldset: FDC
+    fieldset: regs::FDC
   - name: PMC
     byte_offset: 80
-    fieldset: PMC
+    fieldset: regs::PMC
   - name: FMC
     byte_offset: 88
-    fieldset: FMC
-fieldset/DE:
+    fieldset: regs::FMC
+fieldset/regs::DE:
   description: Module DMA/Trigger Enable
   fields:
   - name: WUDE4
@@ -51,7 +51,7 @@ fieldset/DE:
   - name: WUDE8
     bit_offset: 8
     bit_size: 1
-fieldset/FDC:
+fieldset/regs::FDC:
   description: Pin Filter DMA/Trigger Configuration
   fields:
   - name: FILTC1
@@ -60,7 +60,7 @@ fieldset/FDC:
   - name: FILTC2
     bit_offset: 2
     bit_size: 2
-fieldset/FILT:
+fieldset/regs::FILT:
   description: Pin Filter
   fields:
   - name: FILTSEL1
@@ -81,7 +81,7 @@ fieldset/FILT:
   - name: FILTF2
     bit_offset: 15
     bit_size: 1
-fieldset/FMC:
+fieldset/regs::FMC:
   description: Pin Filter Mode Configuration
   fields:
   - name: FILTM1
@@ -90,7 +90,7 @@ fieldset/FMC:
   - name: FILTM2
     bit_offset: 1
     bit_size: 1
-fieldset/ME:
+fieldset/regs::ME:
   description: Module Interrupt Enable
   fields:
   - name: WUME0
@@ -111,7 +111,7 @@ fieldset/ME:
   - name: WUME8
     bit_offset: 8
     bit_size: 1
-fieldset/PARAM:
+fieldset/regs::PARAM:
   description: Parameter
   fields:
   - name: FILTERS
@@ -126,7 +126,7 @@ fieldset/PARAM:
   - name: PINS
     bit_offset: 24
     bit_size: 8
-fieldset/PDC1:
+fieldset/regs::PDC1:
   description: Pin DMA/Trigger Configuration 1
   fields:
   - name: WUPDC0
@@ -177,7 +177,7 @@ fieldset/PDC1:
   - name: WUPDC15
     bit_offset: 30
     bit_size: 2
-fieldset/PDC2:
+fieldset/regs::PDC2:
   description: Pin DMA/Trigger Configuration 2
   fields:
   - name: WUPDC16
@@ -228,7 +228,7 @@ fieldset/PDC2:
   - name: WUPDC31
     bit_offset: 30
     bit_size: 2
-fieldset/PE1:
+fieldset/regs::PE1:
   description: Pin Enable 1
   fields:
   - name: WUPE0
@@ -279,7 +279,7 @@ fieldset/PE1:
   - name: WUPE15
     bit_offset: 30
     bit_size: 2
-fieldset/PE2:
+fieldset/regs::PE2:
   description: Pin Enable 2
   fields:
   - name: WUPE16
@@ -330,7 +330,7 @@ fieldset/PE2:
   - name: WUPE31
     bit_offset: 30
     bit_size: 2
-fieldset/PF:
+fieldset/regs::PF:
   description: Pin Flag
   fields:
   - name: WUF0
@@ -429,7 +429,7 @@ fieldset/PF:
   - name: WUF31
     bit_offset: 31
     bit_size: 1
-fieldset/PMC:
+fieldset/regs::PMC:
   description: Pin Mode Configuration
   fields:
   - name: WUPMC0
@@ -528,7 +528,7 @@ fieldset/PMC:
   - name: WUPMC31
     bit_offset: 31
     bit_size: 1
-fieldset/VERID:
+fieldset/regs::VERID:
   description: Version ID
   fields:
   - name: FEATURE

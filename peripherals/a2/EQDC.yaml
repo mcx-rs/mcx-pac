@@ -3,15 +3,15 @@ block/EQDC:
   - name: CTRL
     byte_offset: 0
     bit_size: 16
-    fieldset: CTRL
+    fieldset: regs::CTRL
   - name: CTRL2
     byte_offset: 2
     bit_size: 16
-    fieldset: CTRL2
+    fieldset: regs::CTRL2
   - name: FILT
     byte_offset: 4
     bit_size: 16
-    fieldset: FILT
+    fieldset: regs::FILT
   - name: LASTEDGE
     byte_offset: 6
     bit_size: 16
@@ -108,25 +108,25 @@ block/EQDC:
   - name: INTCTRL
     byte_offset: 56
     bit_size: 16
-    fieldset: INTCTRL
+    fieldset: regs::INTCTRL
   - name: WTR
     byte_offset: 58
     bit_size: 16
   - name: IMR
     byte_offset: 60
     bit_size: 16
-    fieldset: IMR
+    fieldset: regs::IMR
   - name: TST
     byte_offset: 62
     bit_size: 16
-    fieldset: TST
+    fieldset: regs::TST
   - name: UVERID
     byte_offset: 80
     bit_size: 16
   - name: LVERID
     byte_offset: 82
     bit_size: 16
-fieldset/CTRL:
+fieldset/regs::CTRL:
   description: Control Register
   bit_size: 16
   fields:
@@ -178,7 +178,7 @@ fieldset/CTRL:
   - name: HIRQ
     bit_offset: 15
     bit_size: 1
-fieldset/CTRL2:
+fieldset/regs::CTRL2:
   description: Control 2 Register
   bit_size: 16
   fields:
@@ -215,7 +215,7 @@ fieldset/CTRL2:
   - name: CMODE
     bit_offset: 14
     bit_size: 2
-fieldset/FILT:
+fieldset/regs::FILT:
   description: Input Filter Register
   bit_size: 16
   fields:
@@ -231,7 +231,7 @@ fieldset/FILT:
   - name: PRSC
     bit_offset: 12
     bit_size: 4
-fieldset/IMR:
+fieldset/regs::IMR:
   description: Input Monitor Register
   bit_size: 16
   fields:
@@ -277,7 +277,7 @@ fieldset/IMR:
   - name: DIR
     bit_offset: 15
     bit_size: 1
-fieldset/INTCTRL:
+fieldset/regs::INTCTRL:
   description: Interrupt Control Register
   bit_size: 16
   fields:
@@ -329,7 +329,7 @@ fieldset/INTCTRL:
   - name: CMP3IRQ
     bit_offset: 15
     bit_size: 1
-fieldset/TST:
+fieldset/regs::TST:
   description: Test Register
   bit_size: 16
   fields:

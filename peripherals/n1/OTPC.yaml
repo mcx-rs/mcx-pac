@@ -2,35 +2,35 @@ block/OTPC:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: VERID
+    fieldset: regs::VERID
   - name: PARAM
     byte_offset: 4
-    fieldset: PARAM
+    fieldset: regs::PARAM
   - name: SR
     byte_offset: 8
-    fieldset: SR
+    fieldset: regs::SR
   - name: RWC
     byte_offset: 16
-    fieldset: RWC
+    fieldset: regs::RWC
   - name: RLC
     byte_offset: 20
-    fieldset: RLC
+    fieldset: regs::RLC
   - name: PCR
     byte_offset: 24
-    fieldset: PCR
+    fieldset: regs::PCR
   - name: WDATA
     byte_offset: 32
   - name: RDATA
     byte_offset: 36
   - name: TIMING1
     byte_offset: 48
-    fieldset: TIMING1
+    fieldset: regs::TIMING1
   - name: TIMING2
     byte_offset: 52
-    fieldset: TIMING2
+    fieldset: regs::TIMING2
   - name: LOCK
     byte_offset: 512
-    fieldset: LOCK
+    fieldset: regs::LOCK
   - name: SECURE
     byte_offset: 516
   - name: SECURE_INV
@@ -45,7 +45,7 @@ block/OTPC:
     byte_offset: 536
   - name: FLEX_CFG1
     byte_offset: 540
-fieldset/LOCK:
+fieldset/regs::LOCK:
   description: Lock
   fields:
   - name: NXP_PART_CFG_LOCK
@@ -75,13 +75,13 @@ fieldset/LOCK:
   - name: CUST_LOCK3
     bit_offset: 27
     bit_size: 3
-fieldset/PARAM:
+fieldset/regs::PARAM:
   description: Parameters
   fields:
   - name: NUM_FUSE
     bit_offset: 0
     bit_size: 16
-fieldset/PCR:
+fieldset/regs::PCR:
   description: Power Control
   fields:
   - name: HVREQ
@@ -93,13 +93,13 @@ fieldset/PCR:
   - name: PDREQ
     bit_offset: 2
     bit_size: 1
-fieldset/RLC:
+fieldset/regs::RLC:
   description: Reload Control
   fields:
   - name: RELOAD_SHADOWS
     bit_offset: 0
     bit_size: 1
-fieldset/RWC:
+fieldset/regs::RWC:
   description: Read and Write Control
   fields:
   - name: ADDR
@@ -117,7 +117,7 @@ fieldset/RWC:
   - name: WR_UNLOCK
     bit_offset: 16
     bit_size: 16
-fieldset/SR:
+fieldset/regs::SR:
   description: Status
   fields:
   - name: BUSY
@@ -168,7 +168,7 @@ fieldset/SR:
   - name: FSC
     bit_offset: 20
     bit_size: 1
-fieldset/TIMING1:
+fieldset/regs::TIMING1:
   description: Timing1
   fields:
   - name: TADDR
@@ -186,13 +186,13 @@ fieldset/TIMING1:
   - name: TPD
     bit_offset: 24
     bit_size: 8
-fieldset/TIMING2:
+fieldset/regs::TIMING2:
   description: Timing2
   fields:
   - name: TPGM
     bit_offset: 0
     bit_size: 12
-fieldset/VERID:
+fieldset/regs::VERID:
   description: Version ID
   fields:
   - name: FEATURE

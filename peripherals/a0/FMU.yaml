@@ -2,19 +2,19 @@ block/FMU:
   items:
   - name: FSTAT
     byte_offset: 0
-    fieldset: FSTAT
+    fieldset: regs::FSTAT
   - name: FCNFG
     byte_offset: 4
-    fieldset: FCNFG
+    fieldset: regs::FCNFG
   - name: FCTRL
     byte_offset: 8
-    fieldset: FCTRL
+    fieldset: regs::FCTRL
   - name: FCCOB
     array:
       len: 8
       stride: 4
     byte_offset: 16
-fieldset/FCNFG:
+fieldset/regs::FCNFG:
   description: Flash Configuration Register
   fields:
   - name: CCIE
@@ -32,7 +32,7 @@ fieldset/FCNFG:
   - name: ERSIEN1
     bit_offset: 28
     bit_size: 4
-fieldset/FCTRL:
+fieldset/regs::FCTRL:
   description: Flash Control Register
   fields:
   - name: RWSC
@@ -47,7 +47,7 @@ fieldset/FCTRL:
   - name: ABTREQ
     bit_offset: 24
     bit_size: 1
-fieldset/FSTAT:
+fieldset/regs::FSTAT:
   description: Flash Status Register
   fields:
   - name: FAIL

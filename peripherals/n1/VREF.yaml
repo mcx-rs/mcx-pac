@@ -2,14 +2,14 @@ block/VREF:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: VERID
+    fieldset: regs::VERID
   - name: CSR
     byte_offset: 8
-    fieldset: CSR
+    fieldset: regs::CSR
   - name: UTRIM
     byte_offset: 16
-    fieldset: UTRIM
-fieldset/CSR:
+    fieldset: regs::UTRIM
+fieldset/regs::CSR:
   description: Control and Status
   fields:
   - name: HCBGEN
@@ -39,7 +39,7 @@ fieldset/CSR:
   - name: VREFST
     bit_offset: 31
     bit_size: 1
-fieldset/UTRIM:
+fieldset/regs::UTRIM:
   description: User Trim
   fields:
   - name: TRIM2V1
@@ -48,7 +48,7 @@ fieldset/UTRIM:
   - name: VREFTRIM
     bit_offset: 8
     bit_size: 6
-fieldset/VERID:
+fieldset/regs::VERID:
   description: Version ID
   fields:
   - name: FEATURE

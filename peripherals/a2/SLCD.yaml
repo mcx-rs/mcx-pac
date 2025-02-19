@@ -2,35 +2,35 @@ block/SLCD:
   items:
   - name: LCD_GCR
     byte_offset: 0
-    fieldset: LCD_GCR
+    fieldset: regs::LCD_GCR
   - name: LCD_AR
     byte_offset: 4
-    fieldset: LCD_AR
+    fieldset: regs::LCD_AR
   - name: LCD_FDCR
     byte_offset: 8
-    fieldset: LCD_FDCR
+    fieldset: regs::LCD_FDCR
   - name: LCD_FDSR
     byte_offset: 12
-    fieldset: LCD_FDSR
+    fieldset: regs::LCD_FDSR
   - name: LCD_PEN0
     byte_offset: 16
-    fieldset: LCD_PEN0
+    fieldset: regs::LCD_PEN0
   - name: LCD_PEN1
     byte_offset: 20
-    fieldset: LCD_PEN1
+    fieldset: regs::LCD_PEN1
   - name: LCD_BPEN0
     byte_offset: 24
-    fieldset: LCD_BPEN0
+    fieldset: regs::LCD_BPEN0
   - name: LCD_BPEN1
     byte_offset: 28
-    fieldset: LCD_BPEN1
+    fieldset: regs::LCD_BPEN1
   - name: LCD_WFTO
     array:
       len: 12
       stride: 4
     byte_offset: 32
-    fieldset: LCD_WFTO
-fieldset/LCD_AR:
+    fieldset: regs::LCD_WFTO
+fieldset/regs::LCD_AR:
   description: LCD Auxiliary Register
   fields:
   - name: BRATE
@@ -51,7 +51,7 @@ fieldset/LCD_AR:
   - name: LCDIF
     bit_offset: 15
     bit_size: 1
-fieldset/LCD_BPEN0:
+fieldset/regs::LCD_BPEN0:
   description: LCD Back Plane Enable Register 0
   fields:
   - name: PIN_0_BPEN
@@ -150,7 +150,7 @@ fieldset/LCD_BPEN0:
   - name: PIN_31_BPEN
     bit_offset: 31
     bit_size: 1
-fieldset/LCD_BPEN1:
+fieldset/regs::LCD_BPEN1:
   description: LCD Back Plane Enable Register 1
   fields:
   - name: PIN_32_BPEN
@@ -201,7 +201,7 @@ fieldset/LCD_BPEN1:
   - name: PIN_47_BPEN
     bit_offset: 15
     bit_size: 1
-fieldset/LCD_FDCR:
+fieldset/regs::LCD_FDCR:
   description: LCD Fault Detect Control Register
   fields:
   - name: FDPINID
@@ -219,7 +219,7 @@ fieldset/LCD_FDCR:
   - name: FDPRS
     bit_offset: 12
     bit_size: 3
-fieldset/LCD_FDSR:
+fieldset/regs::LCD_FDSR:
   description: LCD Fault Detect Status Register
   fields:
   - name: FDCNT
@@ -228,7 +228,7 @@ fieldset/LCD_FDSR:
   - name: FDCF
     bit_offset: 15
     bit_size: 1
-fieldset/LCD_GCR:
+fieldset/regs::LCD_GCR:
   description: LCD General Control Register
   fields:
   - name: DUTY
@@ -267,7 +267,7 @@ fieldset/LCD_GCR:
   - name: VLL2TRIM
     bit_offset: 28
     bit_size: 4
-fieldset/LCD_PEN0:
+fieldset/regs::LCD_PEN0:
   description: LCD Pin Enable Register 0
   fields:
   - name: PIN_0_EN
@@ -366,7 +366,7 @@ fieldset/LCD_PEN0:
   - name: PIN_31_EN
     bit_offset: 31
     bit_size: 1
-fieldset/LCD_PEN1:
+fieldset/regs::LCD_PEN1:
   description: LCD Pin Enable Register 1
   fields:
   - name: PIN_32_EN
@@ -417,7 +417,7 @@ fieldset/LCD_PEN1:
   - name: PIN_47_EN
     bit_offset: 15
     bit_size: 1
-fieldset/LCD_WFTO:
+fieldset/regs::LCD_WFTO:
   description: LCD Waveform 3 to 0 Register..LCD Waveform 47 to 44 Register
   fields:
   - name: WF0

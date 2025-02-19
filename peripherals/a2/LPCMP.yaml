@@ -2,44 +2,44 @@ block/LPCMP:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: VERID
+    fieldset: regs::VERID
   - name: PARAM
     byte_offset: 4
-    fieldset: PARAM
+    fieldset: regs::PARAM
   - name: CCR0
     byte_offset: 8
-    fieldset: CCR0
+    fieldset: regs::CCR0
   - name: CCR1
     byte_offset: 12
-    fieldset: CCR1
+    fieldset: regs::CCR1
   - name: CCR2
     byte_offset: 16
-    fieldset: CCR2
+    fieldset: regs::CCR2
   - name: DCR
     byte_offset: 24
-    fieldset: DCR
+    fieldset: regs::DCR
   - name: IER
     byte_offset: 28
-    fieldset: IER
+    fieldset: regs::IER
   - name: CSR
     byte_offset: 32
-    fieldset: CSR
+    fieldset: regs::CSR
   - name: RRCR0
     byte_offset: 36
-    fieldset: RRCR0
+    fieldset: regs::RRCR0
   - name: RRCR1
     byte_offset: 40
-    fieldset: RRCR1
+    fieldset: regs::RRCR1
   - name: RRCSR
     byte_offset: 44
-    fieldset: RRCSR
+    fieldset: regs::RRCSR
   - name: RRSR
     byte_offset: 48
-    fieldset: RRSR
+    fieldset: regs::RRSR
   - name: RRCR2
     byte_offset: 56
-    fieldset: RRCR2
-fieldset/CCR0:
+    fieldset: regs::RRCR2
+fieldset/regs::CCR0:
   description: Comparator Control Register 0
   fields:
   - name: CMP_EN
@@ -48,7 +48,7 @@ fieldset/CCR0:
   - name: CMP_STOP_EN
     bit_offset: 1
     bit_size: 1
-fieldset/CCR1:
+fieldset/regs::CCR1:
   description: Comparator Control Register 1
   fields:
   - name: WINDOW_EN
@@ -93,7 +93,7 @@ fieldset/CCR1:
   - name: FILT_PER
     bit_offset: 24
     bit_size: 8
-fieldset/CCR2:
+fieldset/regs::CCR2:
   description: Comparator Control Register 2
   fields:
   - name: CMP_HPMD
@@ -111,7 +111,7 @@ fieldset/CCR2:
   - name: MSEL
     bit_offset: 20
     bit_size: 3
-fieldset/CSR:
+fieldset/regs::CSR:
   description: Comparator Status
   fields:
   - name: CFR
@@ -126,7 +126,7 @@ fieldset/CSR:
   - name: COUT
     bit_offset: 8
     bit_size: 1
-fieldset/DCR:
+fieldset/regs::DCR:
   description: DAC Control
   fields:
   - name: DAC_EN
@@ -141,7 +141,7 @@ fieldset/DCR:
   - name: DAC_DATA
     bit_offset: 16
     bit_size: 8
-fieldset/IER:
+fieldset/regs::IER:
   description: Interrupt Enable
   fields:
   - name: CFR_IE
@@ -153,13 +153,13 @@ fieldset/IER:
   - name: RRF_IE
     bit_offset: 2
     bit_size: 1
-fieldset/PARAM:
+fieldset/regs::PARAM:
   description: Parameter
   fields:
   - name: DAC_RES
     bit_offset: 0
     bit_size: 4
-fieldset/RRCR0:
+fieldset/regs::RRCR0:
   description: Round Robin Control Register 0
   fields:
   - name: RR_EN
@@ -186,7 +186,7 @@ fieldset/RRCR0:
   - name: RR_SAMPLE_THRESHOLD
     bit_offset: 28
     bit_size: 4
-fieldset/RRCR1:
+fieldset/regs::RRCR1:
   description: Round Robin Control Register 1
   fields:
   - name: RR_CH0EN
@@ -219,7 +219,7 @@ fieldset/RRCR1:
   - name: FIXCH
     bit_offset: 20
     bit_size: 3
-fieldset/RRCR2:
+fieldset/regs::RRCR2:
   description: Round Robin Control Register 2
   fields:
   - name: RR_TIMER_RELOAD
@@ -228,7 +228,7 @@ fieldset/RRCR2:
   - name: RR_TIMER_EN
     bit_offset: 31
     bit_size: 1
-fieldset/RRCSR:
+fieldset/regs::RRCSR:
   description: Round Robin Control and Status
   fields:
   - name: RR_CH0OUT
@@ -255,7 +255,7 @@ fieldset/RRCSR:
   - name: RR_CH7OUT
     bit_offset: 7
     bit_size: 1
-fieldset/RRSR:
+fieldset/regs::RRSR:
   description: Round Robin Status
   fields:
   - name: RR_CH0F
@@ -282,7 +282,7 @@ fieldset/RRSR:
   - name: RR_CH7F
     bit_offset: 7
     bit_size: 1
-fieldset/VERID:
+fieldset/regs::VERID:
   description: Version ID
   fields:
   - name: FEATURE

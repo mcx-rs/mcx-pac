@@ -2,40 +2,40 @@ block/DIGTMP:
   items:
   - name: CR
     byte_offset: 16
-    fieldset: CR
+    fieldset: regs::CR
   - name: SR
     byte_offset: 20
-    fieldset: SR
+    fieldset: regs::SR
   - name: LR
     byte_offset: 24
-    fieldset: LR
+    fieldset: regs::LR
   - name: IER
     byte_offset: 28
-    fieldset: IER
+    fieldset: regs::IER
   - name: TSR
     byte_offset: 32
   - name: TER
     byte_offset: 36
-    fieldset: TER
+    fieldset: regs::TER
   - name: PDR
     byte_offset: 40
-    fieldset: PDR
+    fieldset: regs::PDR
   - name: PPR
     byte_offset: 44
-    fieldset: PPR
+    fieldset: regs::PPR
   - name: ATR
     array:
       len: 2
       stride: 4
     byte_offset: 48
-    fieldset: ATR
+    fieldset: regs::ATR
   - name: PGFR
     array:
       len: 8
       stride: 4
     byte_offset: 64
-    fieldset: PGFR
-fieldset/ATR:
+    fieldset: regs::PGFR
+fieldset/regs::ATR:
   description: Active Tamper
   fields:
   - name: ATSR
@@ -44,7 +44,7 @@ fieldset/ATR:
   - name: ATP
     bit_offset: 16
     bit_size: 16
-fieldset/CR:
+fieldset/regs::CR:
   description: Control
   fields:
   - name: SWR
@@ -71,7 +71,7 @@ fieldset/CR:
   - name: DPR
     bit_offset: 17
     bit_size: 15
-fieldset/IER:
+fieldset/regs::IER:
   description: Interrupt Enable
   fields:
   - name: DTIE
@@ -131,7 +131,7 @@ fieldset/IER:
   - name: TPIE7
     bit_offset: 23
     bit_size: 1
-fieldset/LR:
+fieldset/regs::LR:
   description: Lock
   fields:
   - name: CRL
@@ -188,7 +188,7 @@ fieldset/LR:
   - name: GFL7
     bit_offset: 23
     bit_size: 1
-fieldset/PDR:
+fieldset/regs::PDR:
   description: Pin Direction
   fields:
   - name: TPD0
@@ -239,7 +239,7 @@ fieldset/PDR:
   - name: TPOD7
     bit_offset: 23
     bit_size: 1
-fieldset/PGFR:
+fieldset/regs::PGFR:
   description: Pin Glitch Filter
   fields:
   - name: GFW
@@ -266,7 +266,7 @@ fieldset/PGFR:
   - name: TPS
     bit_offset: 25
     bit_size: 1
-fieldset/PPR:
+fieldset/regs::PPR:
   description: Pin Polarity
   fields:
   - name: TPP0
@@ -317,7 +317,7 @@ fieldset/PPR:
   - name: TPID7
     bit_offset: 23
     bit_size: 1
-fieldset/SR:
+fieldset/regs::SR:
   description: Status
   fields:
   - name: DTF
@@ -380,7 +380,7 @@ fieldset/SR:
   - name: TPF7
     bit_offset: 23
     bit_size: 1
-fieldset/TER:
+fieldset/regs::TER:
   description: Tamper Enable
   fields:
   - name: TIE0

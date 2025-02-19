@@ -2,13 +2,13 @@ block/CAN:
   items:
   - name: MCR
     byte_offset: 0
-    fieldset: MCR
+    fieldset: regs::MCR
   - name: CTRL1
     byte_offset: 4
-    fieldset: CTRL1
+    fieldset: regs::CTRL1
   - name: TIMER
     byte_offset: 8
-    fieldset: TIMER
+    fieldset: regs::TIMER
   - name: RXMGMASK
     byte_offset: 16
   - name: RX14MASK
@@ -17,32 +17,32 @@ block/CAN:
     byte_offset: 24
   - name: ECR
     byte_offset: 28
-    fieldset: ECR
+    fieldset: regs::ECR
   - name: ESR1
     byte_offset: 32
-    fieldset: ESR1
+    fieldset: regs::ESR1
   - name: IMASK1
     byte_offset: 40
   - name: IFLAG1
     byte_offset: 48
-    fieldset: IFLAG1
+    fieldset: regs::IFLAG1
   - name: CTRL2
     byte_offset: 52
-    fieldset: CTRL2
+    fieldset: regs::CTRL2
   - name: ESR2
     byte_offset: 56
-    fieldset: ESR2
+    fieldset: regs::ESR2
   - name: CRCR
     byte_offset: 68
-    fieldset: CRCR
+    fieldset: regs::CRCR
   - name: RXFGMASK
     byte_offset: 72
   - name: RXFIR
     byte_offset: 76
-    fieldset: RXFIR
+    fieldset: regs::RXFIR
   - name: CBT
     byte_offset: 80
-    fieldset: CBT
+    fieldset: regs::CBT
   - name: MB_16B
     array:
       len: 21
@@ -80,34 +80,34 @@ block/CAN:
     byte_offset: 2176
   - name: CTRL1_PN
     byte_offset: 2816
-    fieldset: CTRL1_PN
+    fieldset: regs::CTRL1_PN
   - name: CTRL2_PN
     byte_offset: 2820
-    fieldset: CTRL2_PN
+    fieldset: regs::CTRL2_PN
   - name: WU_MTC
     byte_offset: 2824
-    fieldset: WU_MTC
+    fieldset: regs::WU_MTC
   - name: FLT_ID1
     byte_offset: 2828
-    fieldset: FLT_ID1
+    fieldset: regs::FLT_ID1
   - name: FLT_DLC
     byte_offset: 2832
-    fieldset: FLT_DLC
+    fieldset: regs::FLT_DLC
   - name: PL1_LO
     byte_offset: 2836
-    fieldset: PL1_LO
+    fieldset: regs::PL1_LO
   - name: PL1_HI
     byte_offset: 2840
-    fieldset: PL1_HI
+    fieldset: regs::PL1_HI
   - name: FLT_ID2_IDMASK
     byte_offset: 2844
-    fieldset: FLT_ID2_IDMASK
+    fieldset: regs::FLT_ID2_IDMASK
   - name: PL2_PLMASK_LO
     byte_offset: 2848
-    fieldset: PL2_PLMASK_LO
+    fieldset: regs::PL2_PLMASK_LO
   - name: PL2_PLMASK_HI
     byte_offset: 2852
-    fieldset: PL2_PLMASK_HI
+    fieldset: regs::PL2_PLMASK_HI
   - name: WMB
     array:
       len: 4
@@ -116,34 +116,34 @@ block/CAN:
     block: WMB
   - name: EPRS
     byte_offset: 3056
-    fieldset: EPRS
+    fieldset: regs::EPRS
   - name: ENCBT
     byte_offset: 3060
-    fieldset: ENCBT
+    fieldset: regs::ENCBT
   - name: EDCBT
     byte_offset: 3064
-    fieldset: EDCBT
+    fieldset: regs::EDCBT
   - name: ETDC
     byte_offset: 3068
-    fieldset: ETDC
+    fieldset: regs::ETDC
   - name: FDCTRL
     byte_offset: 3072
-    fieldset: FDCTRL
+    fieldset: regs::FDCTRL
   - name: FDCBT
     byte_offset: 3076
-    fieldset: FDCBT
+    fieldset: regs::FDCBT
   - name: FDCRC
     byte_offset: 3080
-    fieldset: FDCRC
+    fieldset: regs::FDCRC
   - name: ERFCR
     byte_offset: 3084
-    fieldset: ERFCR
+    fieldset: regs::ERFCR
   - name: ERFIER
     byte_offset: 3088
-    fieldset: ERFIER
+    fieldset: regs::ERFIER
   - name: ERFSR
     byte_offset: 3092
-    fieldset: ERFSR
+    fieldset: regs::ERFSR
   - name: ERFFEL
     array:
       len: 32
@@ -153,24 +153,24 @@ block/MB:
   items:
   - name: CS
     byte_offset: 0
-    fieldset: MB_CS
+    fieldset: regs::MB_CS
   - name: ID
     byte_offset: 4
-    fieldset: MB_ID
+    fieldset: regs::MB_ID
   - name: WORD0
     byte_offset: 8
-    fieldset: MB_WORD0
+    fieldset: regs::MB_WORD0
   - name: WORD1
     byte_offset: 12
-    fieldset: MB_WORD1
+    fieldset: regs::MB_WORD1
 block/MB_16B:
   items:
   - name: CS
     byte_offset: 0
-    fieldset: MB_16B_CS
+    fieldset: regs::MB_16B_CS
   - name: ID
     byte_offset: 4
-    fieldset: MB_16B_ID
+    fieldset: regs::MB_16B_ID
   - name: WORD
     array:
       len: 4
@@ -180,10 +180,10 @@ block/MB_32B:
   items:
   - name: CS
     byte_offset: 0
-    fieldset: MB_32B_CS
+    fieldset: regs::MB_32B_CS
   - name: ID
     byte_offset: 4
-    fieldset: MB_32B_ID
+    fieldset: regs::MB_32B_ID
   - name: WORD
     array:
       len: 8
@@ -193,10 +193,10 @@ block/MB_64B:
   items:
   - name: CS
     byte_offset: 0
-    fieldset: MB_64B_CS
+    fieldset: regs::MB_64B_CS
   - name: ID
     byte_offset: 4
-    fieldset: MB_64B_ID
+    fieldset: regs::MB_64B_ID
   - name: WORD
     array:
       len: 16
@@ -206,10 +206,10 @@ block/MB_8B:
   items:
   - name: CS
     byte_offset: 0
-    fieldset: MB_8B_CS
+    fieldset: regs::MB_8B_CS
   - name: ID
     byte_offset: 4
-    fieldset: MB_8B_ID
+    fieldset: regs::MB_8B_ID
   - name: WORD
     array:
       len: 2
@@ -219,17 +219,17 @@ block/WMB:
   items:
   - name: CS
     byte_offset: 0
-    fieldset: WMB_CS
+    fieldset: regs::WMB_CS
   - name: ID
     byte_offset: 4
-    fieldset: WMB_ID
+    fieldset: regs::WMB_ID
   - name: D03
     byte_offset: 8
-    fieldset: WMB_D03
+    fieldset: regs::WMB_D03
   - name: D47
     byte_offset: 12
-    fieldset: WMB_D47
-fieldset/CBT:
+    fieldset: regs::WMB_D47
+fieldset/regs::CBT:
   description: CAN Bit Timing
   fields:
   - name: EPSEG2
@@ -250,7 +250,7 @@ fieldset/CBT:
   - name: BTF
     bit_offset: 31
     bit_size: 1
-fieldset/CRCR:
+fieldset/regs::CRCR:
   description: Cyclic Redundancy Check
   fields:
   - name: TXCRC
@@ -259,7 +259,7 @@ fieldset/CRCR:
   - name: MBCRC
     bit_offset: 16
     bit_size: 7
-fieldset/CTRL1:
+fieldset/regs::CTRL1:
   description: Control 1
   fields:
   - name: PROPSEG
@@ -307,7 +307,7 @@ fieldset/CTRL1:
   - name: PRESDIV
     bit_offset: 24
     bit_size: 8
-fieldset/CTRL1_PN:
+fieldset/regs::CTRL1_PN:
   description: Pretended Networking Control 1
   fields:
   - name: FCS
@@ -328,7 +328,7 @@ fieldset/CTRL1_PN:
   - name: WTOF_MSK
     bit_offset: 17
     bit_size: 1
-fieldset/CTRL2:
+fieldset/regs::CTRL2:
   description: Control 2
   fields:
   - name: PES
@@ -370,13 +370,13 @@ fieldset/CTRL2:
   - name: ERRMSK_FAST
     bit_offset: 31
     bit_size: 1
-fieldset/CTRL2_PN:
+fieldset/regs::CTRL2_PN:
   description: Pretended Networking Control 2
   fields:
   - name: MATCHTO
     bit_offset: 0
     bit_size: 16
-fieldset/ECR:
+fieldset/regs::ECR:
   description: Error Counter
   fields:
   - name: TXERRCNT
@@ -391,7 +391,7 @@ fieldset/ECR:
   - name: RXERRCNT_FAST
     bit_offset: 24
     bit_size: 8
-fieldset/EDCBT:
+fieldset/regs::EDCBT:
   description: Enhanced Data Phase CAN Bit Timing
   fields:
   - name: DTSEG1
@@ -403,7 +403,7 @@ fieldset/EDCBT:
   - name: DRJW
     bit_offset: 22
     bit_size: 4
-fieldset/ENCBT:
+fieldset/regs::ENCBT:
   description: Enhanced Nominal CAN Bit Timing
   fields:
   - name: NTSEG1
@@ -415,7 +415,7 @@ fieldset/ENCBT:
   - name: NRJW
     bit_offset: 22
     bit_size: 7
-fieldset/EPRS:
+fieldset/regs::EPRS:
   description: Enhanced CAN Bit Timing Prescalers
   fields:
   - name: ENPRESDIV
@@ -424,7 +424,7 @@ fieldset/EPRS:
   - name: EDPRESDIV
     bit_offset: 16
     bit_size: 10
-fieldset/ERFCR:
+fieldset/regs::ERFCR:
   description: Enhanced RX FIFO Control
   fields:
   - name: ERFWM
@@ -442,7 +442,7 @@ fieldset/ERFCR:
   - name: ERFEN
     bit_offset: 31
     bit_size: 1
-fieldset/ERFIER:
+fieldset/regs::ERFIER:
   description: Enhanced RX FIFO Interrupt Enable
   fields:
   - name: ERFDAIE
@@ -457,7 +457,7 @@ fieldset/ERFIER:
   - name: ERFUFWIE
     bit_offset: 31
     bit_size: 1
-fieldset/ERFSR:
+fieldset/regs::ERFSR:
   description: Enhanced RX FIFO Status
   fields:
   - name: ERFEL
@@ -484,7 +484,7 @@ fieldset/ERFSR:
   - name: ERFUFW
     bit_offset: 31
     bit_size: 1
-fieldset/ESR1:
+fieldset/regs::ESR1:
   description: Error and Status 1
   fields:
   - name: WAKINT
@@ -565,7 +565,7 @@ fieldset/ESR1:
   - name: BIT1ERR_FAST
     bit_offset: 31
     bit_size: 1
-fieldset/ESR2:
+fieldset/regs::ESR2:
   description: Error and Status 2
   fields:
   - name: IMB
@@ -577,7 +577,7 @@ fieldset/ESR2:
   - name: LPTM
     bit_offset: 16
     bit_size: 7
-fieldset/ETDC:
+fieldset/regs::ETDC:
   description: Enhanced Transceiver Delay Compensation
   fields:
   - name: ETDCVAL
@@ -595,7 +595,7 @@ fieldset/ETDC:
   - name: ETDCEN
     bit_offset: 31
     bit_size: 1
-fieldset/FDCBT:
+fieldset/regs::FDCBT:
   description: CAN FD Bit Timing
   fields:
   - name: FPSEG2
@@ -613,7 +613,7 @@ fieldset/FDCBT:
   - name: FPRESDIV
     bit_offset: 20
     bit_size: 10
-fieldset/FDCRC:
+fieldset/regs::FDCRC:
   description: CAN FD CRC
   fields:
   - name: FD_TXCRC
@@ -622,7 +622,7 @@ fieldset/FDCRC:
   - name: FD_MBCRC
     bit_offset: 24
     bit_size: 7
-fieldset/FDCTRL:
+fieldset/regs::FDCTRL:
   description: CAN FD Control
   fields:
   - name: TDCVAL
@@ -643,7 +643,7 @@ fieldset/FDCTRL:
   - name: FDRATE
     bit_offset: 31
     bit_size: 1
-fieldset/FLT_DLC:
+fieldset/regs::FLT_DLC:
   description: Pretended Networking Data Length Code (DLC) Filter
   fields:
   - name: FLT_DLC_HI
@@ -652,7 +652,7 @@ fieldset/FLT_DLC:
   - name: FLT_DLC_LO
     bit_offset: 16
     bit_size: 4
-fieldset/FLT_ID1:
+fieldset/regs::FLT_ID1:
   description: Pretended Networking ID Filter 1
   fields:
   - name: FLT_ID1
@@ -664,7 +664,7 @@ fieldset/FLT_ID1:
   - name: FLT_IDE
     bit_offset: 30
     bit_size: 1
-fieldset/FLT_ID2_IDMASK:
+fieldset/regs::FLT_ID2_IDMASK:
   description: Pretended Networking ID Filter 2 or ID Mask
   fields:
   - name: FLT_ID2_IDMASK
@@ -676,7 +676,7 @@ fieldset/FLT_ID2_IDMASK:
   - name: IDE_MSK
     bit_offset: 30
     bit_size: 1
-fieldset/IFLAG1:
+fieldset/regs::IFLAG1:
   description: Interrupt Flags 1
   fields:
   - name: BUF0I
@@ -697,7 +697,7 @@ fieldset/IFLAG1:
   - name: BUF31TO8I
     bit_offset: 8
     bit_size: 24
-fieldset/MB_16B_CS:
+fieldset/regs::MB_16B_CS:
   description: Message Buffer 0 CS Register..Message Buffer 20 CS Register
   fields:
   - name: TIME_STAMP
@@ -727,7 +727,7 @@ fieldset/MB_16B_CS:
   - name: EDL
     bit_offset: 31
     bit_size: 1
-fieldset/MB_16B_ID:
+fieldset/regs::MB_16B_ID:
   description: Message Buffer 0 ID Register..Message Buffer 20 ID Register
   fields:
   - name: EXT
@@ -739,7 +739,7 @@ fieldset/MB_16B_ID:
   - name: PRIO
     bit_offset: 29
     bit_size: 3
-fieldset/MB_16B_WORD:
+fieldset/regs::MB_16B_WORD:
   description: Message Buffer 0 WORD_16B Register..Message Buffer 20 WORD_16B Register
   fields:
   - name: DATA_BYTE_3
@@ -790,7 +790,7 @@ fieldset/MB_16B_WORD:
   - name: DATA_BYTE_12
     bit_offset: 24
     bit_size: 8
-fieldset/MB_32B_CS:
+fieldset/regs::MB_32B_CS:
   description: Message Buffer 0 CS Register..Message Buffer 11 CS Register
   fields:
   - name: TIME_STAMP
@@ -820,7 +820,7 @@ fieldset/MB_32B_CS:
   - name: EDL
     bit_offset: 31
     bit_size: 1
-fieldset/MB_32B_ID:
+fieldset/regs::MB_32B_ID:
   description: Message Buffer 0 ID Register..Message Buffer 11 ID Register
   fields:
   - name: EXT
@@ -832,7 +832,7 @@ fieldset/MB_32B_ID:
   - name: PRIO
     bit_offset: 29
     bit_size: 3
-fieldset/MB_32B_WORD:
+fieldset/regs::MB_32B_WORD:
   description: Message Buffer 0 WORD_32B Register..Message Buffer 11 WORD_32B Register
   fields:
   - name: DATA_BYTE_3
@@ -931,7 +931,7 @@ fieldset/MB_32B_WORD:
   - name: DATA_BYTE_28
     bit_offset: 24
     bit_size: 8
-fieldset/MB_64B_CS:
+fieldset/regs::MB_64B_CS:
   description: Message Buffer 0 CS Register..Message Buffer 6 CS Register
   fields:
   - name: TIME_STAMP
@@ -961,7 +961,7 @@ fieldset/MB_64B_CS:
   - name: EDL
     bit_offset: 31
     bit_size: 1
-fieldset/MB_64B_ID:
+fieldset/regs::MB_64B_ID:
   description: Message Buffer 0 ID Register..Message Buffer 6 ID Register
   fields:
   - name: EXT
@@ -973,7 +973,7 @@ fieldset/MB_64B_ID:
   - name: PRIO
     bit_offset: 29
     bit_size: 3
-fieldset/MB_64B_WORD:
+fieldset/regs::MB_64B_WORD:
   description: Message Buffer 0 WORD_64B Register..Message Buffer 6 WORD_64B Register
   fields:
   - name: DATA_BYTE_3
@@ -1168,7 +1168,7 @@ fieldset/MB_64B_WORD:
   - name: DATA_BYTE_60
     bit_offset: 24
     bit_size: 8
-fieldset/MB_8B_CS:
+fieldset/regs::MB_8B_CS:
   description: Message Buffer 0 CS Register..Message Buffer 31 CS Register
   fields:
   - name: TIME_STAMP
@@ -1198,7 +1198,7 @@ fieldset/MB_8B_CS:
   - name: EDL
     bit_offset: 31
     bit_size: 1
-fieldset/MB_8B_ID:
+fieldset/regs::MB_8B_ID:
   description: Message Buffer 0 ID Register..Message Buffer 31 ID Register
   fields:
   - name: EXT
@@ -1210,7 +1210,7 @@ fieldset/MB_8B_ID:
   - name: PRIO
     bit_offset: 29
     bit_size: 3
-fieldset/MB_8B_WORD:
+fieldset/regs::MB_8B_WORD:
   description: Message Buffer 0 WORD_8B Register..Message Buffer 31 WORD_8B Register
   fields:
   - name: DATA_BYTE_3
@@ -1237,7 +1237,7 @@ fieldset/MB_8B_WORD:
   - name: DATA_BYTE_4
     bit_offset: 24
     bit_size: 8
-fieldset/MB_CS:
+fieldset/regs::MB_CS:
   description: Message Buffer 0 CS Register..Message Buffer 31 CS Register
   fields:
   - name: TIME_STAMP
@@ -1267,7 +1267,7 @@ fieldset/MB_CS:
   - name: EDL
     bit_offset: 31
     bit_size: 1
-fieldset/MB_ID:
+fieldset/regs::MB_ID:
   description: Message Buffer 0 ID Register..Message Buffer 31 ID Register
   fields:
   - name: EXT
@@ -1279,7 +1279,7 @@ fieldset/MB_ID:
   - name: PRIO
     bit_offset: 29
     bit_size: 3
-fieldset/MB_WORD0:
+fieldset/regs::MB_WORD0:
   description: Message Buffer 0 WORD0 Register..Message Buffer 31 WORD0 Register
   fields:
   - name: DATA_BYTE_3
@@ -1294,7 +1294,7 @@ fieldset/MB_WORD0:
   - name: DATA_BYTE_0
     bit_offset: 24
     bit_size: 8
-fieldset/MB_WORD1:
+fieldset/regs::MB_WORD1:
   description: Message Buffer 0 WORD1 Register..Message Buffer 31 WORD1 Register
   fields:
   - name: DATA_BYTE_7
@@ -1309,7 +1309,7 @@ fieldset/MB_WORD1:
   - name: DATA_BYTE_4
     bit_offset: 24
     bit_size: 8
-fieldset/MCR:
+fieldset/regs::MCR:
   description: Module Configuration
   fields:
   - name: MAXMB
@@ -1378,7 +1378,7 @@ fieldset/MCR:
   - name: MDIS
     bit_offset: 31
     bit_size: 1
-fieldset/PL1_HI:
+fieldset/regs::PL1_HI:
   description: Pretended Networking Payload High Filter 1
   fields:
   - name: Data_byte_7
@@ -1393,7 +1393,7 @@ fieldset/PL1_HI:
   - name: Data_byte_4
     bit_offset: 24
     bit_size: 8
-fieldset/PL1_LO:
+fieldset/regs::PL1_LO:
   description: Pretended Networking Payload Low Filter 1
   fields:
   - name: Data_byte_3
@@ -1408,7 +1408,7 @@ fieldset/PL1_LO:
   - name: Data_byte_0
     bit_offset: 24
     bit_size: 8
-fieldset/PL2_PLMASK_HI:
+fieldset/regs::PL2_PLMASK_HI:
   description: Pretended Networking Payload High Filter 2 and Payload High Mask
   fields:
   - name: Data_byte_7
@@ -1423,7 +1423,7 @@ fieldset/PL2_PLMASK_HI:
   - name: Data_byte_4
     bit_offset: 24
     bit_size: 8
-fieldset/PL2_PLMASK_LO:
+fieldset/regs::PL2_PLMASK_LO:
   description: Pretended Networking Payload Low Filter 2 and Payload Low Mask
   fields:
   - name: Data_byte_3
@@ -1438,19 +1438,19 @@ fieldset/PL2_PLMASK_LO:
   - name: Data_byte_0
     bit_offset: 24
     bit_size: 8
-fieldset/RXFIR:
+fieldset/regs::RXFIR:
   description: Legacy RX FIFO Information
   fields:
   - name: IDHIT
     bit_offset: 0
     bit_size: 9
-fieldset/TIMER:
+fieldset/regs::TIMER:
   description: Free-Running Timer
   fields:
   - name: TIMER
     bit_offset: 0
     bit_size: 16
-fieldset/WMB_CS:
+fieldset/regs::WMB_CS:
   description: Wake-Up Message Buffer
   fields:
   - name: DLC
@@ -1465,7 +1465,7 @@ fieldset/WMB_CS:
   - name: SRR
     bit_offset: 22
     bit_size: 1
-fieldset/WMB_D03:
+fieldset/regs::WMB_D03:
   description: Wake-Up Message Buffer for Data 0-3
   fields:
   - name: Data_byte_3
@@ -1480,7 +1480,7 @@ fieldset/WMB_D03:
   - name: Data_byte_0
     bit_offset: 24
     bit_size: 8
-fieldset/WMB_D47:
+fieldset/regs::WMB_D47:
   description: Wake-Up Message Buffer Register Data 4-7
   fields:
   - name: Data_byte_7
@@ -1495,13 +1495,13 @@ fieldset/WMB_D47:
   - name: Data_byte_4
     bit_offset: 24
     bit_size: 8
-fieldset/WMB_ID:
+fieldset/regs::WMB_ID:
   description: Wake-Up Message Buffer for ID
   fields:
   - name: ID
     bit_offset: 0
     bit_size: 29
-fieldset/WU_MTC:
+fieldset/regs::WU_MTC:
   description: Pretended Networking Wake-Up Match
   fields:
   - name: MCOUNTER

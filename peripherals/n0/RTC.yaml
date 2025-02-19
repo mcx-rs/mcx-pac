@@ -3,88 +3,88 @@ block/RTC:
   - name: YEARMON
     byte_offset: 0
     bit_size: 16
-    fieldset: YEARMON
+    fieldset: regs::YEARMON
   - name: DAYS
     byte_offset: 2
     bit_size: 16
-    fieldset: DAYS
+    fieldset: regs::DAYS
   - name: HOURMIN
     byte_offset: 4
     bit_size: 16
-    fieldset: HOURMIN
+    fieldset: regs::HOURMIN
   - name: SECONDS
     byte_offset: 6
     bit_size: 16
-    fieldset: SECONDS
+    fieldset: regs::SECONDS
   - name: ALM_YEARMON
     byte_offset: 8
     bit_size: 16
-    fieldset: ALM_YEARMON
+    fieldset: regs::ALM_YEARMON
   - name: ALM_DAYS
     byte_offset: 10
     bit_size: 16
-    fieldset: ALM_DAYS
+    fieldset: regs::ALM_DAYS
   - name: ALM_HOURMIN
     byte_offset: 12
     bit_size: 16
-    fieldset: ALM_HOURMIN
+    fieldset: regs::ALM_HOURMIN
   - name: ALM_SECONDS
     byte_offset: 14
     bit_size: 16
-    fieldset: ALM_SECONDS
+    fieldset: regs::ALM_SECONDS
   - name: CTRL
     byte_offset: 16
     bit_size: 16
-    fieldset: CTRL
+    fieldset: regs::CTRL
   - name: STATUS
     byte_offset: 18
     bit_size: 16
-    fieldset: STATUS
+    fieldset: regs::STATUS
   - name: ISR
     byte_offset: 20
     bit_size: 16
-    fieldset: ISR
+    fieldset: regs::ISR
   - name: IER
     byte_offset: 22
     bit_size: 16
-    fieldset: IER
+    fieldset: regs::IER
   - name: RTC_TEST2
     byte_offset: 28
     bit_size: 16
   - name: DST_HOUR
     byte_offset: 34
     bit_size: 16
-    fieldset: DST_HOUR
+    fieldset: regs::DST_HOUR
   - name: DST_MONTH
     byte_offset: 36
     bit_size: 16
-    fieldset: DST_MONTH
+    fieldset: regs::DST_MONTH
   - name: DST_DAY
     byte_offset: 38
     bit_size: 16
-    fieldset: DST_DAY
+    fieldset: regs::DST_DAY
   - name: COMPEN
     byte_offset: 40
     bit_size: 16
   - name: SUBSECOND_CTRL
     byte_offset: 2048
-    fieldset: SUBSECOND_CTRL
+    fieldset: regs::SUBSECOND_CTRL
   - name: SUBSECOND_CNT
     byte_offset: 2052
-    fieldset: SUBSECOND_CNT
+    fieldset: regs::SUBSECOND_CNT
   - name: WAKE_TIMER_CTRL
     byte_offset: 3072
-    fieldset: WAKE_TIMER_CTRL
+    fieldset: regs::WAKE_TIMER_CTRL
   - name: WAKE_TIMER_CNT
     byte_offset: 3084
-fieldset/ALM_DAYS:
+fieldset/regs::ALM_DAYS:
   description: Days Alarm
   bit_size: 16
   fields:
   - name: ALM_DAY
     bit_offset: 0
     bit_size: 5
-fieldset/ALM_HOURMIN:
+fieldset/regs::ALM_HOURMIN:
   description: Hours and Minutes Alarm
   bit_size: 16
   fields:
@@ -94,7 +94,7 @@ fieldset/ALM_HOURMIN:
   - name: ALM_HOUR
     bit_offset: 8
     bit_size: 5
-fieldset/ALM_SECONDS:
+fieldset/regs::ALM_SECONDS:
   description: Seconds Alarm
   bit_size: 16
   fields:
@@ -107,7 +107,7 @@ fieldset/ALM_SECONDS:
   - name: INC_SEC
     bit_offset: 9
     bit_size: 1
-fieldset/ALM_YEARMON:
+fieldset/regs::ALM_YEARMON:
   description: Year and Months Alarm
   bit_size: 16
   fields:
@@ -117,7 +117,7 @@ fieldset/ALM_YEARMON:
   - name: ALM_YEAR
     bit_offset: 8
     bit_size: 8
-fieldset/CTRL:
+fieldset/regs::CTRL:
   description: Control
   bit_size: 16
   fields:
@@ -145,7 +145,7 @@ fieldset/CTRL:
   - name: CLKOUT
     bit_offset: 13
     bit_size: 2
-fieldset/DAYS:
+fieldset/regs::DAYS:
   description: Days and Day-of-Week Counters
   bit_size: 16
   fields:
@@ -155,7 +155,7 @@ fieldset/DAYS:
   - name: DOW
     bit_offset: 8
     bit_size: 3
-fieldset/DST_DAY:
+fieldset/regs::DST_DAY:
   description: Daylight Saving Day
   bit_size: 16
   fields:
@@ -165,7 +165,7 @@ fieldset/DST_DAY:
   - name: DST_START_DAY
     bit_offset: 8
     bit_size: 5
-fieldset/DST_HOUR:
+fieldset/regs::DST_HOUR:
   description: Daylight Saving Hour
   bit_size: 16
   fields:
@@ -175,7 +175,7 @@ fieldset/DST_HOUR:
   - name: DST_START_HOUR
     bit_offset: 8
     bit_size: 5
-fieldset/DST_MONTH:
+fieldset/regs::DST_MONTH:
   description: Daylight Saving Month
   bit_size: 16
   fields:
@@ -185,7 +185,7 @@ fieldset/DST_MONTH:
   - name: DST_START_MONTH
     bit_offset: 8
     bit_size: 4
-fieldset/HOURMIN:
+fieldset/regs::HOURMIN:
   description: Hours and Minutes Counters
   bit_size: 16
   fields:
@@ -195,7 +195,7 @@ fieldset/HOURMIN:
   - name: HOUR_CNT
     bit_offset: 8
     bit_size: 5
-fieldset/IER:
+fieldset/regs::IER:
   description: Interrupt Enable
   bit_size: 16
   fields:
@@ -241,7 +241,7 @@ fieldset/IER:
   - name: IE_512HZ
     bit_offset: 15
     bit_size: 1
-fieldset/ISR:
+fieldset/regs::ISR:
   description: Interrupt Status
   bit_size: 16
   fields:
@@ -287,14 +287,14 @@ fieldset/ISR:
   - name: IS_512HZ
     bit_offset: 15
     bit_size: 1
-fieldset/SECONDS:
+fieldset/regs::SECONDS:
   description: Seconds Counters
   bit_size: 16
   fields:
   - name: SEC_CNT
     bit_offset: 0
     bit_size: 6
-fieldset/STATUS:
+fieldset/regs::STATUS:
   description: Status
   bit_size: 16
   fields:
@@ -316,19 +316,19 @@ fieldset/STATUS:
   - name: CMP_DONE
     bit_offset: 11
     bit_size: 1
-fieldset/SUBSECOND_CNT:
+fieldset/regs::SUBSECOND_CNT:
   description: Subsecond Counter
   fields:
   - name: SUBSECOND_CNT
     bit_offset: 0
     bit_size: 16
-fieldset/SUBSECOND_CTRL:
+fieldset/regs::SUBSECOND_CTRL:
   description: Subsecond Control
   fields:
   - name: SUB_SECOND_CNT_EN
     bit_offset: 0
     bit_size: 1
-fieldset/WAKE_TIMER_CTRL:
+fieldset/regs::WAKE_TIMER_CTRL:
   description: Wake Timer Control
   fields:
   - name: WAKE_FLAG
@@ -343,7 +343,7 @@ fieldset/WAKE_TIMER_CTRL:
   - name: INTR_EN
     bit_offset: 5
     bit_size: 1
-fieldset/YEARMON:
+fieldset/regs::YEARMON:
   description: Year and Month Counters
   bit_size: 16
   fields:

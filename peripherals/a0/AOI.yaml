@@ -11,12 +11,12 @@ block/BFCRT:
   - name: BFCRT01
     byte_offset: 0
     bit_size: 16
-    fieldset: BFCRT_BFCRT01
+    fieldset: regs::BFCRT_BFCRT01
   - name: BFCRT23
     byte_offset: 2
     bit_size: 16
-    fieldset: BFCRT_BFCRT23
-fieldset/BFCRT_BFCRT01:
+    fieldset: regs::BFCRT_BFCRT23
+fieldset/regs::BFCRT_BFCRT01:
   description: Boolean Function Term 0 and 1 Configuration for EVENT0..Boolean Function Term 0 and 1 Configuration for EVENT3
   bit_size: 16
   fields:
@@ -44,7 +44,7 @@ fieldset/BFCRT_BFCRT01:
   - name: PT0_AC
     bit_offset: 14
     bit_size: 2
-fieldset/BFCRT_BFCRT23:
+fieldset/regs::BFCRT_BFCRT23:
   description: Boolean Function Term 2 and 3 Configuration for EVENT0..Boolean Function Term 2 and 3 Configuration for EVENT3
   bit_size: 16
   fields:

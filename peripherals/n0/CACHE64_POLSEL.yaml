@@ -2,14 +2,14 @@ block/CACHE64_POLSEL:
   items:
   - name: REG0_TOP
     byte_offset: 20
-    fieldset: REG0_TOP
+    fieldset: regs::REG0_TOP
   - name: REG1_TOP
     byte_offset: 24
-    fieldset: REG1_TOP
+    fieldset: regs::REG1_TOP
   - name: POLSEL
     byte_offset: 28
-    fieldset: POLSEL
-fieldset/POLSEL:
+    fieldset: regs::POLSEL
+fieldset/regs::POLSEL:
   description: Policy Select
   fields:
   - name: REG0_POLICY
@@ -21,13 +21,13 @@ fieldset/POLSEL:
   - name: REG2_POLICY
     bit_offset: 4
     bit_size: 2
-fieldset/REG0_TOP:
+fieldset/regs::REG0_TOP:
   description: Region 0 Top Boundary
   fields:
   - name: REG0_TOP
     bit_offset: 10
     bit_size: 19
-fieldset/REG1_TOP:
+fieldset/regs::REG1_TOP:
   description: Region 1 Top Boundary
   fields:
   - name: REG1_TOP

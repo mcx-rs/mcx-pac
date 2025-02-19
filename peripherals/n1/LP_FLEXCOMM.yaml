@@ -2,11 +2,11 @@ block/LP_FLEXCOMM:
   items:
   - name: ISTAT
     byte_offset: 4084
-    fieldset: ISTAT
+    fieldset: regs::ISTAT
   - name: PSELID
     byte_offset: 4088
-    fieldset: PSELID
-fieldset/ISTAT:
+    fieldset: regs::PSELID
+fieldset/regs::ISTAT:
   description: Interrupt Status
   fields:
   - name: UARTTX
@@ -24,7 +24,7 @@ fieldset/ISTAT:
   - name: I2CS
     bit_offset: 5
     bit_size: 1
-fieldset/PSELID:
+fieldset/regs::PSELID:
   description: Peripheral Select and ID
   fields:
   - name: PERSEL

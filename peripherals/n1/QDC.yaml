@@ -3,11 +3,11 @@ block/QDC:
   - name: CTRL
     byte_offset: 0
     bit_size: 16
-    fieldset: CTRL
+    fieldset: regs::CTRL
   - name: FILT
     byte_offset: 2
     bit_size: 16
-    fieldset: FILT
+    fieldset: regs::FILT
   - name: WTR
     byte_offset: 4
     bit_size: 16
@@ -44,15 +44,15 @@ block/QDC:
   - name: IMR
     byte_offset: 26
     bit_size: 16
-    fieldset: IMR
+    fieldset: regs::IMR
   - name: TST
     byte_offset: 28
     bit_size: 16
-    fieldset: TST
+    fieldset: regs::TST
   - name: CTRL2
     byte_offset: 30
     bit_size: 16
-    fieldset: CTRL2
+    fieldset: regs::CTRL2
   - name: UMOD
     byte_offset: 32
     bit_size: 16
@@ -83,8 +83,8 @@ block/QDC:
   - name: CTRL3
     byte_offset: 50
     bit_size: 16
-    fieldset: CTRL3
-fieldset/CTRL:
+    fieldset: regs::CTRL3
+fieldset/regs::CTRL:
   description: Control
   bit_size: 16
   fields:
@@ -136,7 +136,7 @@ fieldset/CTRL:
   - name: HIRQ
     bit_offset: 15
     bit_size: 1
-fieldset/CTRL2:
+fieldset/regs::CTRL2:
   description: Control 2
   bit_size: 16
   fields:
@@ -182,7 +182,7 @@ fieldset/CTRL2:
   - name: EMIP
     bit_offset: 13
     bit_size: 1
-fieldset/CTRL3:
+fieldset/regs::CTRL3:
   description: Control 3
   bit_size: 16
   fields:
@@ -192,7 +192,7 @@ fieldset/CTRL3:
   - name: PRSC
     bit_offset: 4
     bit_size: 4
-fieldset/FILT:
+fieldset/regs::FILT:
   description: Input Filter
   bit_size: 16
   fields:
@@ -205,7 +205,7 @@ fieldset/FILT:
   - name: FILT_PRSC
     bit_offset: 13
     bit_size: 3
-fieldset/IMR:
+fieldset/regs::IMR:
   description: Input Monitor
   bit_size: 16
   fields:
@@ -233,7 +233,7 @@ fieldset/IMR:
   - name: FPHA
     bit_offset: 7
     bit_size: 1
-fieldset/TST:
+fieldset/regs::TST:
   description: Test
   bit_size: 16
   fields:

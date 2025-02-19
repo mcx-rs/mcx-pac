@@ -3,7 +3,7 @@ block/EWM:
   - name: CTRL
     byte_offset: 0
     bit_size: 8
-    fieldset: CTRL
+    fieldset: regs::CTRL
   - name: SERV
     byte_offset: 1
     bit_size: 8
@@ -16,18 +16,18 @@ block/EWM:
   - name: CLKCTRL
     byte_offset: 4
     bit_size: 8
-    fieldset: CLKCTRL
+    fieldset: regs::CLKCTRL
   - name: CLKPRESCALER
     byte_offset: 5
     bit_size: 8
-fieldset/CLKCTRL:
+fieldset/regs::CLKCTRL:
   description: Clock Control
   bit_size: 8
   fields:
   - name: CLKSEL
     bit_offset: 0
     bit_size: 2
-fieldset/CTRL:
+fieldset/regs::CTRL:
   description: Control
   bit_size: 8
   fields:

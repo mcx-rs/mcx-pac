@@ -2,16 +2,16 @@ block/CHANNEL:
   items:
   - name: INTVAL
     byte_offset: 0
-    fieldset: CHANNEL_INTVAL
+    fieldset: regs::CHANNEL_INTVAL
   - name: TIMER
     byte_offset: 4
-    fieldset: CHANNEL_TIMER
+    fieldset: regs::CHANNEL_TIMER
   - name: CTRL
     byte_offset: 8
-    fieldset: CHANNEL_CTRL
+    fieldset: regs::CHANNEL_CTRL
   - name: STAT
     byte_offset: 12
-    fieldset: CHANNEL_STAT
+    fieldset: regs::CHANNEL_STAT
 block/MRT:
   items:
   - name: CHANNEL
@@ -22,14 +22,14 @@ block/MRT:
     block: CHANNEL
   - name: MODCFG
     byte_offset: 240
-    fieldset: MODCFG
+    fieldset: regs::MODCFG
   - name: IDLE_CH
     byte_offset: 244
-    fieldset: IDLE_CH
+    fieldset: regs::IDLE_CH
   - name: IRQ_FLAG
     byte_offset: 248
-    fieldset: IRQ_FLAG
-fieldset/CHANNEL_CTRL:
+    fieldset: regs::IRQ_FLAG
+fieldset/regs::CHANNEL_CTRL:
   description: Control
   fields:
   - name: INTEN
@@ -38,7 +38,7 @@ fieldset/CHANNEL_CTRL:
   - name: MODE
     bit_offset: 1
     bit_size: 2
-fieldset/CHANNEL_INTVAL:
+fieldset/regs::CHANNEL_INTVAL:
   description: Time Interval Value
   fields:
   - name: IVALUE
@@ -47,7 +47,7 @@ fieldset/CHANNEL_INTVAL:
   - name: LOAD
     bit_offset: 31
     bit_size: 1
-fieldset/CHANNEL_STAT:
+fieldset/regs::CHANNEL_STAT:
   description: Status
   fields:
   - name: INTFLAG
@@ -59,19 +59,19 @@ fieldset/CHANNEL_STAT:
   - name: INUSE
     bit_offset: 2
     bit_size: 1
-fieldset/CHANNEL_TIMER:
+fieldset/regs::CHANNEL_TIMER:
   description: Timer
   fields:
   - name: VALUE
     bit_offset: 0
     bit_size: 24
-fieldset/IDLE_CH:
+fieldset/regs::IDLE_CH:
   description: Idle Channel
   fields:
   - name: CHAN
     bit_offset: 4
     bit_size: 4
-fieldset/IRQ_FLAG:
+fieldset/regs::IRQ_FLAG:
   description: Global Interrupt Flag
   fields:
   - name: GFLAG0
@@ -86,7 +86,7 @@ fieldset/IRQ_FLAG:
   - name: GFLAG3
     bit_offset: 3
     bit_size: 1
-fieldset/MODCFG:
+fieldset/regs::MODCFG:
   description: Module Configuration
   fields:
   - name: NOC

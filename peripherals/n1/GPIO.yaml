@@ -2,72 +2,72 @@ block/GPIO:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: VERID
+    fieldset: regs::VERID
   - name: PARAM
     byte_offset: 4
-    fieldset: PARAM
+    fieldset: regs::PARAM
   - name: LOCK
     byte_offset: 12
-    fieldset: LOCK
+    fieldset: regs::LOCK
   - name: PCNS
     byte_offset: 16
-    fieldset: PCNS
+    fieldset: regs::PCNS
   - name: ICNS
     byte_offset: 20
-    fieldset: ICNS
+    fieldset: regs::ICNS
   - name: PCNP
     byte_offset: 24
-    fieldset: PCNP
+    fieldset: regs::PCNP
   - name: ICNP
     byte_offset: 28
-    fieldset: ICNP
+    fieldset: regs::ICNP
   - name: PDOR
     byte_offset: 64
-    fieldset: PDOR
+    fieldset: regs::PDOR
   - name: PSOR
     byte_offset: 68
-    fieldset: PSOR
+    fieldset: regs::PSOR
   - name: PCOR
     byte_offset: 72
-    fieldset: PCOR
+    fieldset: regs::PCOR
   - name: PTOR
     byte_offset: 76
-    fieldset: PTOR
+    fieldset: regs::PTOR
   - name: PDIR
     byte_offset: 80
-    fieldset: PDIR
+    fieldset: regs::PDIR
   - name: PDDR
     byte_offset: 84
-    fieldset: PDDR
+    fieldset: regs::PDDR
   - name: PIDR
     byte_offset: 88
-    fieldset: PIDR
+    fieldset: regs::PIDR
   - name: PDR
     array:
       len: 32
       stride: 1
     byte_offset: 96
     bit_size: 8
-    fieldset: PDR
+    fieldset: regs::PDR
   - name: ICR
     array:
       len: 32
       stride: 4
     byte_offset: 128
-    fieldset: ICR
+    fieldset: regs::ICR
   - name: GICLR
     byte_offset: 256
-    fieldset: GICLR
+    fieldset: regs::GICLR
   - name: GICHR
     byte_offset: 260
-    fieldset: GICHR
+    fieldset: regs::GICHR
   - name: ISFR
     array:
       len: 2
       stride: 4
     byte_offset: 288
-    fieldset: ISFR
-fieldset/GICHR:
+    fieldset: regs::ISFR
+fieldset/regs::GICHR:
   description: Global Interrupt Control High
   fields:
   - name: GIWE16
@@ -121,7 +121,7 @@ fieldset/GICHR:
   - name: GIWD
     bit_offset: 16
     bit_size: 16
-fieldset/GICLR:
+fieldset/regs::GICLR:
   description: Global Interrupt Control Low
   fields:
   - name: GIWE0
@@ -175,7 +175,7 @@ fieldset/GICLR:
   - name: GIWD
     bit_offset: 16
     bit_size: 16
-fieldset/ICNP:
+fieldset/regs::ICNP:
   description: Interrupt Control Nonprivilege
   fields:
   - name: NPE0
@@ -184,7 +184,7 @@ fieldset/ICNP:
   - name: NPE1
     bit_offset: 1
     bit_size: 1
-fieldset/ICNS:
+fieldset/regs::ICNS:
   description: Interrupt Control Nonsecure
   fields:
   - name: NSE0
@@ -193,7 +193,7 @@ fieldset/ICNS:
   - name: NSE1
     bit_offset: 1
     bit_size: 1
-fieldset/ICR:
+fieldset/regs::ICR:
   description: Interrupt Control 0..Interrupt Control 31
   fields:
   - name: IRQC
@@ -208,7 +208,7 @@ fieldset/ICR:
   - name: ISF
     bit_offset: 24
     bit_size: 1
-fieldset/ISFR:
+fieldset/regs::ISFR:
   description: Interrupt Status Flag
   fields:
   - name: ISF0
@@ -307,7 +307,7 @@ fieldset/ISFR:
   - name: ISF31
     bit_offset: 31
     bit_size: 1
-fieldset/LOCK:
+fieldset/regs::LOCK:
   description: Lock
   fields:
   - name: PCNS
@@ -322,13 +322,13 @@ fieldset/LOCK:
   - name: ICNP
     bit_offset: 3
     bit_size: 1
-fieldset/PARAM:
+fieldset/regs::PARAM:
   description: Parameter
   fields:
   - name: IRQNUM
     bit_offset: 0
     bit_size: 4
-fieldset/PCNP:
+fieldset/regs::PCNP:
   description: Pin Control Nonprivilege
   fields:
   - name: NPE0
@@ -427,7 +427,7 @@ fieldset/PCNP:
   - name: NPE31
     bit_offset: 31
     bit_size: 1
-fieldset/PCNS:
+fieldset/regs::PCNS:
   description: Pin Control Nonsecure
   fields:
   - name: NSE0
@@ -526,7 +526,7 @@ fieldset/PCNS:
   - name: NSE31
     bit_offset: 31
     bit_size: 1
-fieldset/PCOR:
+fieldset/regs::PCOR:
   description: Port Clear Output
   fields:
   - name: PTCO0
@@ -625,7 +625,7 @@ fieldset/PCOR:
   - name: PTCO31
     bit_offset: 31
     bit_size: 1
-fieldset/PDDR:
+fieldset/regs::PDDR:
   description: Port Data Direction
   fields:
   - name: PDD0
@@ -724,7 +724,7 @@ fieldset/PDDR:
   - name: PDD31
     bit_offset: 31
     bit_size: 1
-fieldset/PDIR:
+fieldset/regs::PDIR:
   description: Port Data Input
   fields:
   - name: PDI0
@@ -823,7 +823,7 @@ fieldset/PDIR:
   - name: PDI31
     bit_offset: 31
     bit_size: 1
-fieldset/PDOR:
+fieldset/regs::PDOR:
   description: Port Data Output
   fields:
   - name: PDO0
@@ -922,14 +922,14 @@ fieldset/PDOR:
   - name: PDO31
     bit_offset: 31
     bit_size: 1
-fieldset/PDR:
+fieldset/regs::PDR:
   description: Pin Data
   bit_size: 8
   fields:
   - name: PD
     bit_offset: 0
     bit_size: 1
-fieldset/PIDR:
+fieldset/regs::PIDR:
   description: Port Input Disable
   fields:
   - name: PID0
@@ -1028,7 +1028,7 @@ fieldset/PIDR:
   - name: PID31
     bit_offset: 31
     bit_size: 1
-fieldset/PSOR:
+fieldset/regs::PSOR:
   description: Port Set Output
   fields:
   - name: PTSO0
@@ -1127,7 +1127,7 @@ fieldset/PSOR:
   - name: PTSO31
     bit_offset: 31
     bit_size: 1
-fieldset/PTOR:
+fieldset/regs::PTOR:
   description: Port Toggle Output
   fields:
   - name: PTTO0
@@ -1226,7 +1226,7 @@ fieldset/PTOR:
   - name: PTTO31
     bit_offset: 31
     bit_size: 1
-fieldset/VERID:
+fieldset/regs::VERID:
   description: Version ID
   fields:
   - name: FEATURE

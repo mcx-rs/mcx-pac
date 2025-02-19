@@ -2,48 +2,48 @@ block/FLEXIO:
   items:
   - name: VERID
     byte_offset: 0
-    fieldset: VERID
+    fieldset: regs::VERID
   - name: PARAM
     byte_offset: 4
-    fieldset: PARAM
+    fieldset: regs::PARAM
   - name: CTRL
     byte_offset: 8
-    fieldset: CTRL
+    fieldset: regs::CTRL
   - name: PIN
     byte_offset: 12
   - name: SHIFTSTAT
     byte_offset: 16
-    fieldset: SHIFTSTAT
+    fieldset: regs::SHIFTSTAT
   - name: SHIFTERR
     byte_offset: 20
-    fieldset: SHIFTERR
+    fieldset: regs::SHIFTERR
   - name: TIMSTAT
     byte_offset: 24
-    fieldset: TIMSTAT
+    fieldset: regs::TIMSTAT
   - name: SHIFTSIEN
     byte_offset: 32
-    fieldset: SHIFTSIEN
+    fieldset: regs::SHIFTSIEN
   - name: SHIFTEIEN
     byte_offset: 36
-    fieldset: SHIFTEIEN
+    fieldset: regs::SHIFTEIEN
   - name: TIMIEN
     byte_offset: 40
-    fieldset: TIMIEN
+    fieldset: regs::TIMIEN
   - name: SHIFTSDEN
     byte_offset: 48
-    fieldset: SHIFTSDEN
+    fieldset: regs::SHIFTSDEN
   - name: TIMERSDEN
     byte_offset: 56
-    fieldset: TIMERSDEN
+    fieldset: regs::TIMERSDEN
   - name: SHIFTSTATE
     byte_offset: 64
-    fieldset: SHIFTSTATE
+    fieldset: regs::SHIFTSTATE
   - name: TRGSTAT
     byte_offset: 72
-    fieldset: TRGSTAT
+    fieldset: regs::TRGSTAT
   - name: TRIGIEN
     byte_offset: 76
-    fieldset: TRIGIEN
+    fieldset: regs::TRIGIEN
   - name: PINSTAT
     byte_offset: 80
   - name: PINIEN
@@ -69,13 +69,13 @@ block/FLEXIO:
       len: 4
       stride: 4
     byte_offset: 128
-    fieldset: SHIFTCTL
+    fieldset: regs::SHIFTCTL
   - name: SHIFTCFG
     array:
       len: 4
       stride: 4
     byte_offset: 256
-    fieldset: SHIFTCFG
+    fieldset: regs::SHIFTCFG
   - name: SHIFTBUF
     array:
       len: 4
@@ -101,19 +101,19 @@ block/FLEXIO:
       len: 4
       stride: 4
     byte_offset: 1024
-    fieldset: TIMCTL
+    fieldset: regs::TIMCTL
   - name: TIMCFG
     array:
       len: 4
       stride: 4
     byte_offset: 1152
-    fieldset: TIMCFG
+    fieldset: regs::TIMCFG
   - name: TIMCMP
     array:
       len: 4
       stride: 4
     byte_offset: 1280
-    fieldset: TIMCMP
+    fieldset: regs::TIMCMP
   - name: SHIFTBUFNBS
     array:
       len: 4
@@ -144,7 +144,7 @@ block/FLEXIO:
       len: 4
       stride: 4
     byte_offset: 2304
-fieldset/CTRL:
+fieldset/regs::CTRL:
   description: FLEXIO Control
   fields:
   - name: FLEXEN
@@ -162,7 +162,7 @@ fieldset/CTRL:
   - name: DOZEN
     bit_offset: 31
     bit_size: 1
-fieldset/PARAM:
+fieldset/regs::PARAM:
   description: Parameter
   fields:
   - name: SHIFTER
@@ -177,7 +177,7 @@ fieldset/PARAM:
   - name: TRIGGER
     bit_offset: 24
     bit_size: 8
-fieldset/SHIFTCFG:
+fieldset/regs::SHIFTCFG:
   description: Shifter Configuration
   fields:
   - name: SSTART
@@ -198,7 +198,7 @@ fieldset/SHIFTCFG:
   - name: PWIDTH
     bit_offset: 16
     bit_size: 5
-fieldset/SHIFTCTL:
+fieldset/regs::SHIFTCTL:
   description: Shifter Control
   fields:
   - name: SMOD
@@ -219,43 +219,43 @@ fieldset/SHIFTCTL:
   - name: TIMSEL
     bit_offset: 24
     bit_size: 2
-fieldset/SHIFTEIEN:
+fieldset/regs::SHIFTEIEN:
   description: Shifter Error Interrupt Enable
   fields:
   - name: SEIE
     bit_offset: 0
     bit_size: 4
-fieldset/SHIFTERR:
+fieldset/regs::SHIFTERR:
   description: Shifter Error
   fields:
   - name: SEF
     bit_offset: 0
     bit_size: 4
-fieldset/SHIFTSDEN:
+fieldset/regs::SHIFTSDEN:
   description: Shifter Status DMA Enable
   fields:
   - name: SSDE
     bit_offset: 0
     bit_size: 4
-fieldset/SHIFTSIEN:
+fieldset/regs::SHIFTSIEN:
   description: Shifter Status Interrupt Enable
   fields:
   - name: SSIE
     bit_offset: 0
     bit_size: 4
-fieldset/SHIFTSTAT:
+fieldset/regs::SHIFTSTAT:
   description: Shifter Status
   fields:
   - name: SSF
     bit_offset: 0
     bit_size: 4
-fieldset/SHIFTSTATE:
+fieldset/regs::SHIFTSTATE:
   description: Shifter State
   fields:
   - name: STATE
     bit_offset: 0
     bit_size: 3
-fieldset/TIMCFG:
+fieldset/regs::TIMCFG:
   description: Timer Configuration
   fields:
   - name: TSTART
@@ -279,13 +279,13 @@ fieldset/TIMCFG:
   - name: TIMOUT
     bit_offset: 24
     bit_size: 2
-fieldset/TIMCMP:
+fieldset/regs::TIMCMP:
   description: Timer Compare
   fields:
   - name: CMP
     bit_offset: 0
     bit_size: 16
-fieldset/TIMCTL:
+fieldset/regs::TIMCTL:
   description: Timer Control
   fields:
   - name: TIMOD
@@ -315,37 +315,37 @@ fieldset/TIMCTL:
   - name: TRGSEL
     bit_offset: 24
     bit_size: 6
-fieldset/TIMERSDEN:
+fieldset/regs::TIMERSDEN:
   description: Timer Status DMA Enable
   fields:
   - name: TSDE
     bit_offset: 0
     bit_size: 4
-fieldset/TIMIEN:
+fieldset/regs::TIMIEN:
   description: Timer Interrupt Enable
   fields:
   - name: TEIE
     bit_offset: 0
     bit_size: 4
-fieldset/TIMSTAT:
+fieldset/regs::TIMSTAT:
   description: Timer Status Flag
   fields:
   - name: TSF
     bit_offset: 0
     bit_size: 4
-fieldset/TRGSTAT:
+fieldset/regs::TRGSTAT:
   description: Trigger Status
   fields:
   - name: ETSF
     bit_offset: 0
     bit_size: 4
-fieldset/TRIGIEN:
+fieldset/regs::TRIGIEN:
   description: External Trigger Interrupt Enable
   fields:
   - name: TRIE
     bit_offset: 0
     bit_size: 4
-fieldset/VERID:
+fieldset/regs::VERID:
   description: Version ID
   fields:
   - name: FEATURE
