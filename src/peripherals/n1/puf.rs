@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct PUF {
     ptr: *mut u8,
@@ -280,6 +280,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AR {{ ALLOW_ENROLL: {=bool:?}, ALLOW_START: {=bool:?}, ALLOW_RECONSTRUCT: {=bool:?}, ALLOW_STOP: {=bool:?}, ALLOW_GET_KEY: {=bool:?}, ALLOW_UNWRAP: {=bool:?}, ALLOW_WRAP_GENERATED_RANDOM: {=bool:?}, ALLOW_WRAP: {=bool:?}, ALLOW_GENERATE_RANDOM: {=bool:?}, ALLOW_TEST_MEMORY: {=bool:?}, ALLOW_TEST_PUF: {=bool:?} }}" , self . ALLOW_ENROLL () , self . ALLOW_START () , self . ALLOW_RECONSTRUCT () , self . ALLOW_STOP () , self . ALLOW_GET_KEY () , self . ALLOW_UNWRAP () , self . ALLOW_WRAP_GENERATED_RANDOM () , self . ALLOW_WRAP () , self . ALLOW_GENERATE_RANDOM () , self . ALLOW_TEST_MEMORY () , self . ALLOW_TEST_PUF ())
+        }
+    }
     #[doc = "PUF command blocking configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -389,6 +395,12 @@ pub mod regs {
                 )
                 .field("DIS_PUF_TEST", &self.DIS_PUF_TEST())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CONFIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CONFIG {{ DIS_PUF_ENROLL: {=bool:?}, DIS_PUF_START: {=bool:?}, DIS_PUF_STOP: {=bool:?}, DIS_PUF_GET_KEY: {=bool:?}, DIS_PUF_UNWRAP_KEY: {=bool:?}, DIS_PUF_GEN_WRAP_KEY: {=bool:?}, DIS_PUF_WRAP_KEY: {=bool:?}, DIS_PUF_GEN_RANDOM_NUMBER: {=bool:?}, DIS_PUF_TEST: {=bool:?} }}" , self . DIS_PUF_ENROLL () , self . DIS_PUF_START () , self . DIS_PUF_STOP () , self . DIS_PUF_GET_KEY () , self . DIS_PUF_UNWRAP_KEY () , self . DIS_PUF_GEN_WRAP_KEY () , self . DIS_PUF_WRAP_KEY () , self . DIS_PUF_GEN_RANDOM_NUMBER () , self . DIS_PUF_TEST ())
         }
     }
     #[doc = "Control"]
@@ -529,6 +541,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CR {{ ZEROIZE: {=bool:?}, ENROLL: {=bool:?}, START: {=bool:?}, RECONSTRUCT: {=bool:?}, STOP: {=bool:?}, GET_KEY: {=bool:?}, UNWRAP: {=bool:?}, WRAP_GENERATED_RANDOM: {=bool:?}, WRAP: {=bool:?}, GENERATE_RANDOM: {=bool:?}, TEST_MEMORY: {=bool:?}, TEST_PUF: {=bool:?} }}" , self . ZEROIZE () , self . ENROLL () , self . START () , self . RECONSTRUCT () , self . STOP () , self . GET_KEY () , self . UNWRAP () , self . WRAP_GENERATED_RANDOM () , self . WRAP () , self . GENERATE_RANDOM () , self . TEST_MEMORY () , self . TEST_PUF ())
+        }
+    }
     #[doc = "Data Destination"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -565,6 +583,17 @@ pub mod regs {
                 .field("DEST_DOR", &self.DEST_DOR())
                 .field("DEST_SO", &self.DEST_SO())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DATA_DEST {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DATA_DEST {{ DEST_DOR: {=bool:?}, DEST_SO: {=bool:?} }}",
+                self.DEST_DOR(),
+                self.DEST_SO()
+            )
         }
     }
     #[doc = "Data Source"]
@@ -605,6 +634,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DATA_SRC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DATA_SRC {{ SRC_DIR: {=bool:?}, SRC_SI: {=bool:?} }}",
+                self.SRC_DIR(),
+                self.SRC_SI()
+            )
+        }
+    }
     #[doc = "Hardware Information"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -641,6 +681,17 @@ pub mod regs {
                 .field("CONFIG_WRAP", &self.CONFIG_WRAP())
                 .field("CONFIG_TYPE", &self.CONFIG_TYPE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HW_INFO {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "HW_INFO {{ CONFIG_WRAP: {=bool:?}, CONFIG_TYPE: {=u8:?} }}",
+                self.CONFIG_WRAP(),
+                self.CONFIG_TYPE()
+            )
         }
     }
     #[doc = "Hardware Restrict User Context 0"]
@@ -721,6 +772,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HW_RUC0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "HW_RUC0 {{ LC_STATE: {=u8:?}, BOOT_STATE: {=u16:?}, CPU0_DEBUG: {=bool:?}, COOLFLUX_DEBUG: {=bool:?}, dsp_debug: {=bool:?}, ACCESS_LEVEL: {=u8:?} }}" , self . LC_STATE () , self . BOOT_STATE () , self . CPU0_DEBUG () , self . COOLFLUX_DEBUG () , self . dsp_debug () , self . ACCESS_LEVEL ())
+        }
+    }
     #[doc = "Hardware Version"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -769,6 +826,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HW_VER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "HW_VER {{ HW_REV: {=u8:?}, HW_VERSION_MINOR: {=u8:?}, HW_VERSION_MAJOR: {=u8:?} }}" , self . HW_REV () , self . HW_VERSION_MINOR () , self . HW_VERSION_MAJOR ())
+        }
+    }
     #[doc = "Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -797,6 +860,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "IER {{ INT_EN: {=bool:?} }}", self.INT_EN())
+        }
+    }
     #[doc = "Interface Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -823,6 +892,12 @@ pub mod regs {
             f.debug_struct("IF_SR")
                 .field("APB_ERROR", &self.APB_ERROR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IF_SR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "IF_SR {{ APB_ERROR: {=bool:?} }}", self.APB_ERROR())
         }
     }
     #[doc = "Interrupt Mask"]
@@ -913,6 +988,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IMR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IMR {{ INT_EN_BUSY: {=bool:?}, INT_EN_OK: {=bool:?}, INT_EN_ERROR: {=bool:?}, INT_EN_ZEROIZED: {=bool:?}, INT_EN_REJECTED: {=bool:?}, INT_EN_DI_REQUEST: {=bool:?}, INT_EN_DO_REQUEST: {=bool:?} }}" , self . INT_EN_BUSY () , self . INT_EN_OK () , self . INT_EN_ERROR () , self . INT_EN_ZEROIZED () , self . INT_EN_REJECTED () , self . INT_EN_DI_REQUEST () , self . INT_EN_DO_REQUEST ())
+        }
+    }
     #[doc = "Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1001,6 +1082,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ISR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ISR {{ INT_BUSY: {=bool:?}, INT_OK: {=bool:?}, INT_ERROR: {=bool:?}, INT_ZEROIZED: {=bool:?}, INT_REJECTED: {=bool:?}, INT_DI_REQUEST: {=bool:?}, INT_DO_REQUEST: {=bool:?} }}" , self . INT_BUSY () , self . INT_OK () , self . INT_ERROR () , self . INT_ZEROIZED () , self . INT_REJECTED () , self . INT_DI_REQUEST () , self . INT_DO_REQUEST ())
+        }
+    }
     #[doc = "Miscellaneous"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1027,6 +1114,16 @@ pub mod regs {
             f.debug_struct("MISC")
                 .field("DATA_ENDIANNESS", &self.DATA_ENDIANNESS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MISC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MISC {{ DATA_ENDIANNESS: {=bool:?} }}",
+                self.DATA_ENDIANNESS()
+            )
         }
     }
     #[doc = "Operation Result"]
@@ -1067,6 +1164,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ORR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ORR {{ RESULT_CODE: {=u8:?}, LAST_OPERATION: {=u8:?} }}",
+                self.RESULT_CODE(),
+                self.LAST_OPERATION()
+            )
+        }
+    }
     #[doc = "PUF Score"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1093,6 +1201,12 @@ pub mod regs {
             f.debug_struct("PSR")
                 .field("PUF_SCORE", &self.PUF_SCORE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PSR {{ PUF_SCORE: {=u8:?} }}", self.PUF_SCORE())
         }
     }
     #[doc = "Security level lock"]
@@ -1141,6 +1255,12 @@ pub mod regs {
                 .field("ANTI_POLE_SEC_LEVEL", &self.ANTI_POLE_SEC_LEVEL())
                 .field("PATTERN", &self.PATTERN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SEC_LOCK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SEC_LOCK {{ SEC_LEVEL: {=u8:?}, ANTI_POLE_SEC_LEVEL: {=u8:?}, PATTERN: {=u16:?} }}" , self . SEC_LEVEL () , self . ANTI_POLE_SEC_LEVEL () , self . PATTERN ())
         }
     }
     #[doc = "Status"]
@@ -1231,6 +1351,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SR {{ BUSY: {=bool:?}, OK: {=bool:?}, ERROR: {=bool:?}, ZEROIZED: {=bool:?}, REJECTED: {=bool:?}, DI_REQUEST: {=bool:?}, DO_REQUEST: {=bool:?} }}" , self . BUSY () , self . OK () , self . ERROR () , self . ZEROIZED () , self . REJECTED () , self . DI_REQUEST () , self . DO_REQUEST ())
+        }
+    }
     #[doc = "SRAM Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1267,6 +1393,17 @@ pub mod regs {
                 .field("ENABLE", &self.ENABLE())
                 .field("CKGATING", &self.CKGATING())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRAM_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SRAM_CFG {{ ENABLE: {=bool:?}, CKGATING: {=bool:?} }}",
+                self.ENABLE(),
+                self.CKGATING()
+            )
         }
     }
     #[doc = "Interrupt Enable Clear"]
@@ -1307,6 +1444,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRAM_INT_CLR_ENABLE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SRAM_INT_CLR_ENABLE {{ READY: {=bool:?}, APB_ERR: {=bool:?} }}",
+                self.READY(),
+                self.APB_ERR()
+            )
+        }
+    }
     #[doc = "Interrupt Status Clear"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1343,6 +1491,17 @@ pub mod regs {
                 .field("READY", &self.READY())
                 .field("APB_ERR", &self.APB_ERR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRAM_INT_CLR_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SRAM_INT_CLR_STATUS {{ READY: {=bool:?}, APB_ERR: {=bool:?} }}",
+                self.READY(),
+                self.APB_ERR()
+            )
         }
     }
     #[doc = "Interrupt Enable"]
@@ -1383,6 +1542,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRAM_INT_ENABLE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SRAM_INT_ENABLE {{ READY: {=bool:?}, SRAM_APB_ERR: {=bool:?} }}",
+                self.READY(),
+                self.SRAM_APB_ERR()
+            )
+        }
+    }
     #[doc = "Interrupt Enable Set"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1419,6 +1589,17 @@ pub mod regs {
                 .field("READY", &self.READY())
                 .field("APB_ERR", &self.APB_ERR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRAM_INT_SET_ENABLE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SRAM_INT_SET_ENABLE {{ READY: {=bool:?}, APB_ERR: {=bool:?} }}",
+                self.READY(),
+                self.APB_ERR()
+            )
         }
     }
     #[doc = "Interrupt Status set"]
@@ -1459,6 +1640,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRAM_INT_SET_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SRAM_INT_SET_STATUS {{ READY: {=bool:?}, APB_ERR: {=bool:?} }}",
+                self.READY(),
+                self.APB_ERR()
+            )
+        }
+    }
     #[doc = "Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1497,6 +1689,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRAM_INT_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SRAM_INT_STATUS {{ READY: {=bool:?}, APB_ERR: {=bool:?} }}",
+                self.READY(),
+                self.APB_ERR()
+            )
+        }
+    }
     #[doc = "Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1523,6 +1726,12 @@ pub mod regs {
             f.debug_struct("SRAM_STATUS")
                 .field("READY", &self.READY())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRAM_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SRAM_STATUS {{ READY: {=bool:?} }}", self.READY())
         }
     }
 }

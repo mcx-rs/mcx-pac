@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct CAN {
     ptr: *mut u8,
@@ -461,6 +461,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CBT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CBT {{ EPSEG2: {=u8:?}, EPSEG1: {=u8:?}, EPROPSEG: {=u8:?}, ERJW: {=u8:?}, EPRESDIV: {=u16:?}, BTF: {=bool:?} }}" , self . EPSEG2 () , self . EPSEG1 () , self . EPROPSEG () , self . ERJW () , self . EPRESDIV () , self . BTF ())
+        }
+    }
     #[doc = "Cyclic Redundancy Check"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -497,6 +503,17 @@ pub mod regs {
                 .field("TXCRC", &self.TXCRC())
                 .field("MBCRC", &self.MBCRC())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CRCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CRCR {{ TXCRC: {=u16:?}, MBCRC: {=u8:?} }}",
+                self.TXCRC(),
+                self.MBCRC()
+            )
         }
     }
     #[doc = "Control 1"]
@@ -667,6 +684,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL1 {{ PROPSEG: {=u8:?}, LOM: {=bool:?}, LBUF: {=bool:?}, TSYN: {=bool:?}, BOFFREC: {=bool:?}, SMP: {=bool:?}, RWRNMSK: {=bool:?}, TWRNMSK: {=bool:?}, LPB: {=bool:?}, ERRMSK: {=bool:?}, BOFFMSK: {=bool:?}, PSEG2: {=u8:?}, PSEG1: {=u8:?}, RJW: {=u8:?}, PRESDIV: {=u8:?} }}" , self . PROPSEG () , self . LOM () , self . LBUF () , self . TSYN () , self . BOFFREC () , self . SMP () , self . RWRNMSK () , self . TWRNMSK () , self . LPB () , self . ERRMSK () , self . BOFFMSK () , self . PSEG2 () , self . PSEG1 () , self . RJW () , self . PRESDIV ())
+        }
+    }
     #[doc = "Pretended Networking Control 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -743,6 +766,12 @@ pub mod regs {
                 .field("WUMF_MSK", &self.WUMF_MSK())
                 .field("WTOF_MSK", &self.WTOF_MSK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL1_PN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL1_PN {{ FCS: {=u8:?}, IDFS: {=u8:?}, PLFS: {=u8:?}, NMATCH: {=u8:?}, WUMF_MSK: {=bool:?}, WTOF_MSK: {=bool:?} }}" , self . FCS () , self . IDFS () , self . PLFS () , self . NMATCH () , self . WUMF_MSK () , self . WTOF_MSK ())
         }
     }
     #[doc = "Control 2"]
@@ -873,6 +902,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL2 {{ EDFLTDIS: {=bool:?}, ISOCANFDEN: {=bool:?}, BTE: {=bool:?}, PREXCEN: {=bool:?}, EACEN: {=bool:?}, RRS: {=bool:?}, MRP: {=bool:?}, TASD: {=u8:?}, RFFN: {=u8:?}, BOFFDONEMSK: {=bool:?}, ERRMSK_FAST: {=bool:?} }}" , self . EDFLTDIS () , self . ISOCANFDEN () , self . BTE () , self . PREXCEN () , self . EACEN () , self . RRS () , self . MRP () , self . TASD () , self . RFFN () , self . BOFFDONEMSK () , self . ERRMSK_FAST ())
+        }
+    }
     #[doc = "Pretended Networking Control 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -899,6 +934,12 @@ pub mod regs {
             f.debug_struct("CTRL2_PN")
                 .field("MATCHTO", &self.MATCHTO())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL2_PN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTRL2_PN {{ MATCHTO: {=u16:?} }}", self.MATCHTO())
         }
     }
     #[doc = "Error Counter"]
@@ -959,6 +1000,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ECR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ECR {{ TXERRCNT: {=u8:?}, RXERRCNT: {=u8:?}, TXERRCNT_FAST: {=u8:?}, RXERRCNT_FAST: {=u8:?} }}" , self . TXERRCNT () , self . RXERRCNT () , self . TXERRCNT_FAST () , self . RXERRCNT_FAST ())
+        }
+    }
     #[doc = "Enhanced Data Phase CAN Bit Timing"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1005,6 +1052,18 @@ pub mod regs {
                 .field("DTSEG2", &self.DTSEG2())
                 .field("DRJW", &self.DRJW())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EDCBT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "EDCBT {{ DTSEG1: {=u8:?}, DTSEG2: {=u8:?}, DRJW: {=u8:?} }}",
+                self.DTSEG1(),
+                self.DTSEG2(),
+                self.DRJW()
+            )
         }
     }
     #[doc = "Enhanced Nominal CAN Bit Timing"]
@@ -1055,6 +1114,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ENCBT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ENCBT {{ NTSEG1: {=u8:?}, NTSEG2: {=u8:?}, NRJW: {=u8:?} }}",
+                self.NTSEG1(),
+                self.NTSEG2(),
+                self.NRJW()
+            )
+        }
+    }
     #[doc = "Enhanced CAN Bit Timing Prescalers"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1091,6 +1162,17 @@ pub mod regs {
                 .field("ENPRESDIV", &self.ENPRESDIV())
                 .field("EDPRESDIV", &self.EDPRESDIV())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EPRS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "EPRS {{ ENPRESDIV: {=u16:?}, EDPRESDIV: {=u16:?} }}",
+                self.ENPRESDIV(),
+                self.EDPRESDIV()
+            )
         }
     }
     #[doc = "Enhanced RX FIFO Control"]
@@ -1161,6 +1243,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ERFCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ERFCR {{ ERFWM: {=u8:?}, NFE: {=u8:?}, NEXIF: {=u8:?}, DMALW: {=u8:?}, ERFEN: {=bool:?} }}" , self . ERFWM () , self . NFE () , self . NEXIF () , self . DMALW () , self . ERFEN ())
+        }
+    }
     #[doc = "Enhanced RX FIFO Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1217,6 +1305,12 @@ pub mod regs {
                 .field("ERFOVFIE", &self.ERFOVFIE())
                 .field("ERFUFWIE", &self.ERFUFWIE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ERFIER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ERFIER {{ ERFDAIE: {=bool:?}, ERFWMIIE: {=bool:?}, ERFOVFIE: {=bool:?}, ERFUFWIE: {=bool:?} }}" , self . ERFDAIE () , self . ERFWMIIE () , self . ERFOVFIE () , self . ERFUFWIE ())
         }
     }
     #[doc = "Enhanced RX FIFO Status"]
@@ -1315,6 +1409,12 @@ pub mod regs {
                 .field("ERFOVF", &self.ERFOVF())
                 .field("ERFUFW", &self.ERFUFW())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ERFSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ERFSR {{ ERFEL: {=u8:?}, ERFF: {=bool:?}, ERFE: {=bool:?}, ERFCLR: {=bool:?}, ERFDA: {=bool:?}, ERFWMI: {=bool:?}, ERFOVF: {=bool:?}, ERFUFW: {=bool:?} }}" , self . ERFEL () , self . ERFF () , self . ERFE () , self . ERFCLR () , self . ERFDA () , self . ERFWMI () , self . ERFOVF () , self . ERFUFW ())
         }
     }
     #[doc = "Error and Status 1"]
@@ -1595,6 +1695,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ESR1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ESR1 {{ WAKINT: {=bool:?}, ERRINT: {=bool:?}, BOFFINT: {=bool:?}, RX: {=bool:?}, FLTCONF: {=u8:?}, TX: {=bool:?}, IDLE: {=bool:?}, RXWRN: {=bool:?}, TXWRN: {=bool:?}, STFERR: {=bool:?}, FRMERR: {=bool:?}, CRCERR: {=bool:?}, ACKERR: {=bool:?}, BIT0ERR: {=bool:?}, BIT1ERR: {=bool:?}, RWRNINT: {=bool:?}, TWRNINT: {=bool:?}, SYNCH: {=bool:?}, BOFFDONEINT: {=bool:?}, ERRINT_FAST: {=bool:?}, ERROVR: {=bool:?}, STFERR_FAST: {=bool:?}, FRMERR_FAST: {=bool:?}, CRCERR_FAST: {=bool:?}, BIT0ERR_FAST: {=bool:?}, BIT1ERR_FAST: {=bool:?} }}" , self . WAKINT () , self . ERRINT () , self . BOFFINT () , self . RX () , self . FLTCONF () , self . TX () , self . IDLE () , self . RXWRN () , self . TXWRN () , self . STFERR () , self . FRMERR () , self . CRCERR () , self . ACKERR () , self . BIT0ERR () , self . BIT1ERR () , self . RWRNINT () , self . TWRNINT () , self . SYNCH () , self . BOFFDONEINT () , self . ERRINT_FAST () , self . ERROVR () , self . STFERR_FAST () , self . FRMERR_FAST () , self . CRCERR_FAST () , self . BIT0ERR_FAST () , self . BIT1ERR_FAST ())
+        }
+    }
     #[doc = "Error and Status 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1641,6 +1747,18 @@ pub mod regs {
                 .field("VPS", &self.VPS())
                 .field("LPTM", &self.LPTM())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ESR2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ESR2 {{ IMB: {=bool:?}, VPS: {=bool:?}, LPTM: {=u8:?} }}",
+                self.IMB(),
+                self.VPS(),
+                self.LPTM()
+            )
         }
     }
     #[doc = "Enhanced Transceiver Delay Compensation"]
@@ -1711,6 +1829,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ETDC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ETDC {{ ETDCVAL: {=u8:?}, ETDCFAIL: {=bool:?}, ETDCOFF: {=u8:?}, TDMDIS: {=bool:?}, ETDCEN: {=bool:?} }}" , self . ETDCVAL () , self . ETDCFAIL () , self . ETDCOFF () , self . TDMDIS () , self . ETDCEN ())
+        }
+    }
     #[doc = "CAN FD Bit Timing"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1779,6 +1903,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FDCBT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FDCBT {{ FPSEG2: {=u8:?}, FPSEG1: {=u8:?}, FPROPSEG: {=u8:?}, FRJW: {=u8:?}, FPRESDIV: {=u16:?} }}" , self . FPSEG2 () , self . FPSEG1 () , self . FPROPSEG () , self . FRJW () , self . FPRESDIV ())
+        }
+    }
     #[doc = "CAN FD CRC"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1815,6 +1945,17 @@ pub mod regs {
                 .field("FD_TXCRC", &self.FD_TXCRC())
                 .field("FD_MBCRC", &self.FD_MBCRC())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FDCRC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FDCRC {{ FD_TXCRC: {=u32:?}, FD_MBCRC: {=u8:?} }}",
+                self.FD_TXCRC(),
+                self.FD_MBCRC()
+            )
         }
     }
     #[doc = "CAN FD Control"]
@@ -1895,6 +2036,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FDCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FDCTRL {{ TDCVAL: {=u8:?}, TDCOFF: {=u8:?}, TDCFAIL: {=bool:?}, TDCEN: {=bool:?}, MBDSR0: {=u8:?}, FDRATE: {=bool:?} }}" , self . TDCVAL () , self . TDCOFF () , self . TDCFAIL () , self . TDCEN () , self . MBDSR0 () , self . FDRATE ())
+        }
+    }
     #[doc = "Pretended Networking Data Length Code (DLC) Filter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1931,6 +2078,17 @@ pub mod regs {
                 .field("FLT_DLC_HI", &self.FLT_DLC_HI())
                 .field("FLT_DLC_LO", &self.FLT_DLC_LO())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLT_DLC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FLT_DLC {{ FLT_DLC_HI: {=u8:?}, FLT_DLC_LO: {=u8:?} }}",
+                self.FLT_DLC_HI(),
+                self.FLT_DLC_LO()
+            )
         }
     }
     #[doc = "Pretended Networking ID Filter 1"]
@@ -1981,6 +2139,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLT_ID1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FLT_ID1 {{ FLT_ID1: {=u32:?}, FLT_RTR: {=bool:?}, FLT_IDE: {=bool:?} }}",
+                self.FLT_ID1(),
+                self.FLT_RTR(),
+                self.FLT_IDE()
+            )
+        }
+    }
     #[doc = "Pretended Networking ID Filter 2 or ID Mask"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2027,6 +2197,12 @@ pub mod regs {
                 .field("RTR_MSK", &self.RTR_MSK())
                 .field("IDE_MSK", &self.IDE_MSK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLT_ID2_IDMASK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FLT_ID2_IDMASK {{ FLT_ID2_IDMASK: {=u32:?}, RTR_MSK: {=bool:?}, IDE_MSK: {=bool:?} }}" , self . FLT_ID2_IDMASK () , self . RTR_MSK () , self . IDE_MSK ())
         }
     }
     #[doc = "Interrupt Flags 1"]
@@ -2105,6 +2281,12 @@ pub mod regs {
                 .field("BUF7I", &self.BUF7I())
                 .field("BUF31TO8I", &self.BUF31TO8I())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IFLAG1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IFLAG1 {{ BUF0I: {=bool:?}, BUF4TO1I: {=u8:?}, BUF5I: {=bool:?}, BUF6I: {=bool:?}, BUF7I: {=bool:?}, BUF31TO8I: {=u32:?} }}" , self . BUF0I () , self . BUF4TO1I () , self . BUF5I () , self . BUF6I () , self . BUF7I () , self . BUF31TO8I ())
         }
     }
     #[doc = "Message Buffer 0 CS Register..Message Buffer 20 CS Register"]
@@ -2215,6 +2397,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_16B_CS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MB_16B_CS {{ TIME_STAMP: {=u16:?}, DLC: {=u8:?}, RTR: {=bool:?}, IDE: {=bool:?}, SRR: {=bool:?}, CODE: {=u8:?}, ESI: {=bool:?}, BRS: {=bool:?}, EDL: {=bool:?} }}" , self . TIME_STAMP () , self . DLC () , self . RTR () , self . IDE () , self . SRR () , self . CODE () , self . ESI () , self . BRS () , self . EDL ())
+        }
+    }
     #[doc = "Message Buffer 0 ID Register..Message Buffer 20 ID Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2261,6 +2449,18 @@ pub mod regs {
                 .field("STD", &self.STD())
                 .field("PRIO", &self.PRIO())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_16B_ID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MB_16B_ID {{ EXT: {=u32:?}, STD: {=u16:?}, PRIO: {=u8:?} }}",
+                self.EXT(),
+                self.STD(),
+                self.PRIO()
+            )
         }
     }
     #[doc = "Message Buffer 0 WORD_16B Register..Message Buffer 20 WORD_16B Register"]
@@ -2441,6 +2641,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_16B_WORD {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MB_16B_WORD {{ DATA_BYTE_11: {=u8:?}, DATA_BYTE_15: {=u8:?}, DATA_BYTE_3: {=u8:?}, DATA_BYTE_7: {=u8:?}, DATA_BYTE_10: {=u8:?}, DATA_BYTE_14: {=u8:?}, DATA_BYTE_2: {=u8:?}, DATA_BYTE_6: {=u8:?}, DATA_BYTE_1: {=u8:?}, DATA_BYTE_13: {=u8:?}, DATA_BYTE_5: {=u8:?}, DATA_BYTE_9: {=u8:?}, DATA_BYTE_0: {=u8:?}, DATA_BYTE_12: {=u8:?}, DATA_BYTE_4: {=u8:?}, DATA_BYTE_8: {=u8:?} }}" , self . DATA_BYTE_11 () , self . DATA_BYTE_15 () , self . DATA_BYTE_3 () , self . DATA_BYTE_7 () , self . DATA_BYTE_10 () , self . DATA_BYTE_14 () , self . DATA_BYTE_2 () , self . DATA_BYTE_6 () , self . DATA_BYTE_1 () , self . DATA_BYTE_13 () , self . DATA_BYTE_5 () , self . DATA_BYTE_9 () , self . DATA_BYTE_0 () , self . DATA_BYTE_12 () , self . DATA_BYTE_4 () , self . DATA_BYTE_8 ())
+        }
+    }
     #[doc = "Message Buffer 0 CS Register..Message Buffer 11 CS Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2549,6 +2755,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_32B_CS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MB_32B_CS {{ TIME_STAMP: {=u16:?}, DLC: {=u8:?}, RTR: {=bool:?}, IDE: {=bool:?}, SRR: {=bool:?}, CODE: {=u8:?}, ESI: {=bool:?}, BRS: {=bool:?}, EDL: {=bool:?} }}" , self . TIME_STAMP () , self . DLC () , self . RTR () , self . IDE () , self . SRR () , self . CODE () , self . ESI () , self . BRS () , self . EDL ())
+        }
+    }
     #[doc = "Message Buffer 0 ID Register..Message Buffer 11 ID Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2595,6 +2807,18 @@ pub mod regs {
                 .field("STD", &self.STD())
                 .field("PRIO", &self.PRIO())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_32B_ID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MB_32B_ID {{ EXT: {=u32:?}, STD: {=u16:?}, PRIO: {=u8:?} }}",
+                self.EXT(),
+                self.STD(),
+                self.PRIO()
+            )
         }
     }
     #[doc = "Message Buffer 0 WORD_32B Register..Message Buffer 11 WORD_32B Register"]
@@ -2935,6 +3159,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_32B_WORD {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MB_32B_WORD {{ DATA_BYTE_11: {=u8:?}, DATA_BYTE_15: {=u8:?}, DATA_BYTE_19: {=u8:?}, DATA_BYTE_23: {=u8:?}, DATA_BYTE_27: {=u8:?}, DATA_BYTE_3: {=u8:?}, DATA_BYTE_31: {=u8:?}, DATA_BYTE_7: {=u8:?}, DATA_BYTE_10: {=u8:?}, DATA_BYTE_14: {=u8:?}, DATA_BYTE_18: {=u8:?}, DATA_BYTE_2: {=u8:?}, DATA_BYTE_22: {=u8:?}, DATA_BYTE_26: {=u8:?}, DATA_BYTE_30: {=u8:?}, DATA_BYTE_6: {=u8:?}, DATA_BYTE_1: {=u8:?}, DATA_BYTE_13: {=u8:?}, DATA_BYTE_17: {=u8:?}, DATA_BYTE_21: {=u8:?}, DATA_BYTE_25: {=u8:?}, DATA_BYTE_29: {=u8:?}, DATA_BYTE_5: {=u8:?}, DATA_BYTE_9: {=u8:?}, DATA_BYTE_0: {=u8:?}, DATA_BYTE_12: {=u8:?}, DATA_BYTE_16: {=u8:?}, DATA_BYTE_20: {=u8:?}, DATA_BYTE_24: {=u8:?}, DATA_BYTE_28: {=u8:?}, DATA_BYTE_4: {=u8:?}, DATA_BYTE_8: {=u8:?} }}" , self . DATA_BYTE_11 () , self . DATA_BYTE_15 () , self . DATA_BYTE_19 () , self . DATA_BYTE_23 () , self . DATA_BYTE_27 () , self . DATA_BYTE_3 () , self . DATA_BYTE_31 () , self . DATA_BYTE_7 () , self . DATA_BYTE_10 () , self . DATA_BYTE_14 () , self . DATA_BYTE_18 () , self . DATA_BYTE_2 () , self . DATA_BYTE_22 () , self . DATA_BYTE_26 () , self . DATA_BYTE_30 () , self . DATA_BYTE_6 () , self . DATA_BYTE_1 () , self . DATA_BYTE_13 () , self . DATA_BYTE_17 () , self . DATA_BYTE_21 () , self . DATA_BYTE_25 () , self . DATA_BYTE_29 () , self . DATA_BYTE_5 () , self . DATA_BYTE_9 () , self . DATA_BYTE_0 () , self . DATA_BYTE_12 () , self . DATA_BYTE_16 () , self . DATA_BYTE_20 () , self . DATA_BYTE_24 () , self . DATA_BYTE_28 () , self . DATA_BYTE_4 () , self . DATA_BYTE_8 ())
+        }
+    }
     #[doc = "Message Buffer 0 CS Register..Message Buffer 6 CS Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3043,6 +3273,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_64B_CS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MB_64B_CS {{ TIME_STAMP: {=u16:?}, DLC: {=u8:?}, RTR: {=bool:?}, IDE: {=bool:?}, SRR: {=bool:?}, CODE: {=u8:?}, ESI: {=bool:?}, BRS: {=bool:?}, EDL: {=bool:?} }}" , self . TIME_STAMP () , self . DLC () , self . RTR () , self . IDE () , self . SRR () , self . CODE () , self . ESI () , self . BRS () , self . EDL ())
+        }
+    }
     #[doc = "Message Buffer 0 ID Register..Message Buffer 6 ID Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3089,6 +3325,18 @@ pub mod regs {
                 .field("STD", &self.STD())
                 .field("PRIO", &self.PRIO())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_64B_ID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MB_64B_ID {{ EXT: {=u32:?}, STD: {=u16:?}, PRIO: {=u8:?} }}",
+                self.EXT(),
+                self.STD(),
+                self.PRIO()
+            )
         }
     }
     #[doc = "Message Buffer 0 WORD_64B Register..Message Buffer 6 WORD_64B Register"]
@@ -3749,6 +3997,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_64B_WORD {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MB_64B_WORD {{ DATA_BYTE_11: {=u8:?}, DATA_BYTE_15: {=u8:?}, DATA_BYTE_19: {=u8:?}, DATA_BYTE_23: {=u8:?}, DATA_BYTE_27: {=u8:?}, DATA_BYTE_3: {=u8:?}, DATA_BYTE_31: {=u8:?}, DATA_BYTE_35: {=u8:?}, DATA_BYTE_39: {=u8:?}, DATA_BYTE_43: {=u8:?}, DATA_BYTE_47: {=u8:?}, DATA_BYTE_51: {=u8:?}, DATA_BYTE_55: {=u8:?}, DATA_BYTE_59: {=u8:?}, DATA_BYTE_63: {=u8:?}, DATA_BYTE_7: {=u8:?}, DATA_BYTE_10: {=u8:?}, DATA_BYTE_14: {=u8:?}, DATA_BYTE_18: {=u8:?}, DATA_BYTE_2: {=u8:?}, DATA_BYTE_22: {=u8:?}, DATA_BYTE_26: {=u8:?}, DATA_BYTE_30: {=u8:?}, DATA_BYTE_34: {=u8:?}, DATA_BYTE_38: {=u8:?}, DATA_BYTE_42: {=u8:?}, DATA_BYTE_46: {=u8:?}, DATA_BYTE_50: {=u8:?}, DATA_BYTE_54: {=u8:?}, DATA_BYTE_58: {=u8:?}, DATA_BYTE_6: {=u8:?}, DATA_BYTE_62: {=u8:?}, DATA_BYTE_1: {=u8:?}, DATA_BYTE_13: {=u8:?}, DATA_BYTE_17: {=u8:?}, DATA_BYTE_21: {=u8:?}, DATA_BYTE_25: {=u8:?}, DATA_BYTE_29: {=u8:?}, DATA_BYTE_33: {=u8:?}, DATA_BYTE_37: {=u8:?}, DATA_BYTE_41: {=u8:?}, DATA_BYTE_45: {=u8:?}, DATA_BYTE_49: {=u8:?}, DATA_BYTE_5: {=u8:?}, DATA_BYTE_53: {=u8:?}, DATA_BYTE_57: {=u8:?}, DATA_BYTE_61: {=u8:?}, DATA_BYTE_9: {=u8:?}, DATA_BYTE_0: {=u8:?}, DATA_BYTE_12: {=u8:?}, DATA_BYTE_16: {=u8:?}, DATA_BYTE_20: {=u8:?}, DATA_BYTE_24: {=u8:?}, DATA_BYTE_28: {=u8:?}, DATA_BYTE_32: {=u8:?}, DATA_BYTE_36: {=u8:?}, DATA_BYTE_4: {=u8:?}, DATA_BYTE_40: {=u8:?}, DATA_BYTE_44: {=u8:?}, DATA_BYTE_48: {=u8:?}, DATA_BYTE_52: {=u8:?}, DATA_BYTE_56: {=u8:?}, DATA_BYTE_60: {=u8:?}, DATA_BYTE_8: {=u8:?} }}" , self . DATA_BYTE_11 () , self . DATA_BYTE_15 () , self . DATA_BYTE_19 () , self . DATA_BYTE_23 () , self . DATA_BYTE_27 () , self . DATA_BYTE_3 () , self . DATA_BYTE_31 () , self . DATA_BYTE_35 () , self . DATA_BYTE_39 () , self . DATA_BYTE_43 () , self . DATA_BYTE_47 () , self . DATA_BYTE_51 () , self . DATA_BYTE_55 () , self . DATA_BYTE_59 () , self . DATA_BYTE_63 () , self . DATA_BYTE_7 () , self . DATA_BYTE_10 () , self . DATA_BYTE_14 () , self . DATA_BYTE_18 () , self . DATA_BYTE_2 () , self . DATA_BYTE_22 () , self . DATA_BYTE_26 () , self . DATA_BYTE_30 () , self . DATA_BYTE_34 () , self . DATA_BYTE_38 () , self . DATA_BYTE_42 () , self . DATA_BYTE_46 () , self . DATA_BYTE_50 () , self . DATA_BYTE_54 () , self . DATA_BYTE_58 () , self . DATA_BYTE_6 () , self . DATA_BYTE_62 () , self . DATA_BYTE_1 () , self . DATA_BYTE_13 () , self . DATA_BYTE_17 () , self . DATA_BYTE_21 () , self . DATA_BYTE_25 () , self . DATA_BYTE_29 () , self . DATA_BYTE_33 () , self . DATA_BYTE_37 () , self . DATA_BYTE_41 () , self . DATA_BYTE_45 () , self . DATA_BYTE_49 () , self . DATA_BYTE_5 () , self . DATA_BYTE_53 () , self . DATA_BYTE_57 () , self . DATA_BYTE_61 () , self . DATA_BYTE_9 () , self . DATA_BYTE_0 () , self . DATA_BYTE_12 () , self . DATA_BYTE_16 () , self . DATA_BYTE_20 () , self . DATA_BYTE_24 () , self . DATA_BYTE_28 () , self . DATA_BYTE_32 () , self . DATA_BYTE_36 () , self . DATA_BYTE_4 () , self . DATA_BYTE_40 () , self . DATA_BYTE_44 () , self . DATA_BYTE_48 () , self . DATA_BYTE_52 () , self . DATA_BYTE_56 () , self . DATA_BYTE_60 () , self . DATA_BYTE_8 ())
+        }
+    }
     #[doc = "Message Buffer 0 CS Register..Message Buffer 31 CS Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3857,6 +4111,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_8B_CS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MB_8B_CS {{ TIME_STAMP: {=u16:?}, DLC: {=u8:?}, RTR: {=bool:?}, IDE: {=bool:?}, SRR: {=bool:?}, CODE: {=u8:?}, ESI: {=bool:?}, BRS: {=bool:?}, EDL: {=bool:?} }}" , self . TIME_STAMP () , self . DLC () , self . RTR () , self . IDE () , self . SRR () , self . CODE () , self . ESI () , self . BRS () , self . EDL ())
+        }
+    }
     #[doc = "Message Buffer 0 ID Register..Message Buffer 31 ID Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3903,6 +4163,18 @@ pub mod regs {
                 .field("STD", &self.STD())
                 .field("PRIO", &self.PRIO())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_8B_ID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MB_8B_ID {{ EXT: {=u32:?}, STD: {=u16:?}, PRIO: {=u8:?} }}",
+                self.EXT(),
+                self.STD(),
+                self.PRIO()
+            )
         }
     }
     #[doc = "Message Buffer 0 WORD_8B Register..Message Buffer 31 WORD_8B Register"]
@@ -4001,6 +4273,12 @@ pub mod regs {
                 .field("DATA_BYTE_0", &self.DATA_BYTE_0())
                 .field("DATA_BYTE_4", &self.DATA_BYTE_4())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_8B_WORD {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MB_8B_WORD {{ DATA_BYTE_3: {=u8:?}, DATA_BYTE_7: {=u8:?}, DATA_BYTE_2: {=u8:?}, DATA_BYTE_6: {=u8:?}, DATA_BYTE_1: {=u8:?}, DATA_BYTE_5: {=u8:?}, DATA_BYTE_0: {=u8:?}, DATA_BYTE_4: {=u8:?} }}" , self . DATA_BYTE_3 () , self . DATA_BYTE_7 () , self . DATA_BYTE_2 () , self . DATA_BYTE_6 () , self . DATA_BYTE_1 () , self . DATA_BYTE_5 () , self . DATA_BYTE_0 () , self . DATA_BYTE_4 ())
         }
     }
     #[doc = "Message Buffer 0 CS Register..Message Buffer 31 CS Register"]
@@ -4111,6 +4389,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_CS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MB_CS {{ TIME_STAMP: {=u16:?}, DLC: {=u8:?}, RTR: {=bool:?}, IDE: {=bool:?}, SRR: {=bool:?}, CODE: {=u8:?}, ESI: {=bool:?}, BRS: {=bool:?}, EDL: {=bool:?} }}" , self . TIME_STAMP () , self . DLC () , self . RTR () , self . IDE () , self . SRR () , self . CODE () , self . ESI () , self . BRS () , self . EDL ())
+        }
+    }
     #[doc = "Message Buffer 0 ID Register..Message Buffer 31 ID Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4157,6 +4441,18 @@ pub mod regs {
                 .field("STD", &self.STD())
                 .field("PRIO", &self.PRIO())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_ID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MB_ID {{ EXT: {=u32:?}, STD: {=u16:?}, PRIO: {=u8:?} }}",
+                self.EXT(),
+                self.STD(),
+                self.PRIO()
+            )
         }
     }
     #[doc = "Message Buffer 0 WORD0 Register..Message Buffer 31 WORD0 Register"]
@@ -4217,6 +4513,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MB_WORD0 {{ DATA_BYTE_3: {=u8:?}, DATA_BYTE_2: {=u8:?}, DATA_BYTE_1: {=u8:?}, DATA_BYTE_0: {=u8:?} }}" , self . DATA_BYTE_3 () , self . DATA_BYTE_2 () , self . DATA_BYTE_1 () , self . DATA_BYTE_0 ())
+        }
+    }
     #[doc = "Message Buffer 0 WORD1 Register..Message Buffer 31 WORD1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4273,6 +4575,12 @@ pub mod regs {
                 .field("DATA_BYTE_5", &self.DATA_BYTE_5())
                 .field("DATA_BYTE_4", &self.DATA_BYTE_4())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MB_WORD1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MB_WORD1 {{ DATA_BYTE_7: {=u8:?}, DATA_BYTE_6: {=u8:?}, DATA_BYTE_5: {=u8:?}, DATA_BYTE_4: {=u8:?} }}" , self . DATA_BYTE_7 () , self . DATA_BYTE_6 () , self . DATA_BYTE_5 () , self . DATA_BYTE_4 ())
         }
     }
     #[doc = "Module Configuration"]
@@ -4503,6 +4811,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MCR {{ MAXMB: {=u8:?}, IDAM: {=u8:?}, FDEN: {=bool:?}, AEN: {=bool:?}, LPRIOEN: {=bool:?}, PNET_EN: {=bool:?}, DMA: {=bool:?}, IRMQ: {=bool:?}, SRXDIS: {=bool:?}, WAKSRC: {=bool:?}, LPMACK: {=bool:?}, WRNEN: {=bool:?}, SLFWAK: {=bool:?}, FRZACK: {=bool:?}, SOFTRST: {=bool:?}, WAKMSK: {=bool:?}, NOTRDY: {=bool:?}, HALT: {=bool:?}, RFEN: {=bool:?}, FRZ: {=bool:?}, MDIS: {=bool:?} }}" , self . MAXMB () , self . IDAM () , self . FDEN () , self . AEN () , self . LPRIOEN () , self . PNET_EN () , self . DMA () , self . IRMQ () , self . SRXDIS () , self . WAKSRC () , self . LPMACK () , self . WRNEN () , self . SLFWAK () , self . FRZACK () , self . SOFTRST () , self . WAKMSK () , self . NOTRDY () , self . HALT () , self . RFEN () , self . FRZ () , self . MDIS ())
+        }
+    }
     #[doc = "Pretended Networking Payload High Filter 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4559,6 +4873,12 @@ pub mod regs {
                 .field("Data_byte_5", &self.Data_byte_5())
                 .field("Data_byte_4", &self.Data_byte_4())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PL1_HI {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PL1_HI {{ Data_byte_7: {=u8:?}, Data_byte_6: {=u8:?}, Data_byte_5: {=u8:?}, Data_byte_4: {=u8:?} }}" , self . Data_byte_7 () , self . Data_byte_6 () , self . Data_byte_5 () , self . Data_byte_4 ())
         }
     }
     #[doc = "Pretended Networking Payload Low Filter 1"]
@@ -4619,6 +4939,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PL1_LO {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PL1_LO {{ Data_byte_3: {=u8:?}, Data_byte_2: {=u8:?}, Data_byte_1: {=u8:?}, Data_byte_0: {=u8:?} }}" , self . Data_byte_3 () , self . Data_byte_2 () , self . Data_byte_1 () , self . Data_byte_0 ())
+        }
+    }
     #[doc = "Pretended Networking Payload High Filter 2 and Payload High Mask"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4675,6 +5001,12 @@ pub mod regs {
                 .field("Data_byte_5", &self.Data_byte_5())
                 .field("Data_byte_4", &self.Data_byte_4())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PL2_PLMASK_HI {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PL2_PLMASK_HI {{ Data_byte_7: {=u8:?}, Data_byte_6: {=u8:?}, Data_byte_5: {=u8:?}, Data_byte_4: {=u8:?} }}" , self . Data_byte_7 () , self . Data_byte_6 () , self . Data_byte_5 () , self . Data_byte_4 ())
         }
     }
     #[doc = "Pretended Networking Payload Low Filter 2 and Payload Low Mask"]
@@ -4735,6 +5067,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PL2_PLMASK_LO {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PL2_PLMASK_LO {{ Data_byte_3: {=u8:?}, Data_byte_2: {=u8:?}, Data_byte_1: {=u8:?}, Data_byte_0: {=u8:?} }}" , self . Data_byte_3 () , self . Data_byte_2 () , self . Data_byte_1 () , self . Data_byte_0 ())
+        }
+    }
     #[doc = "Legacy RX FIFO Information"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4763,6 +5101,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RXFIR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "RXFIR {{ IDHIT: {=u16:?} }}", self.IDHIT())
+        }
+    }
     #[doc = "Free-Running Timer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4789,6 +5133,12 @@ pub mod regs {
             f.debug_struct("TIMER")
                 .field("TIMER", &self.TIMER())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TIMER {{ TIMER: {=u16:?} }}", self.TIMER())
         }
     }
     #[doc = "Wake-Up Message Buffer"]
@@ -4849,6 +5199,19 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WMB_CS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "WMB_CS {{ DLC: {=u8:?}, RTR: {=bool:?}, IDE: {=bool:?}, SRR: {=bool:?} }}",
+                self.DLC(),
+                self.RTR(),
+                self.IDE(),
+                self.SRR()
+            )
+        }
+    }
     #[doc = "Wake-Up Message Buffer for Data 0-3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4905,6 +5268,12 @@ pub mod regs {
                 .field("Data_byte_1", &self.Data_byte_1())
                 .field("Data_byte_0", &self.Data_byte_0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WMB_D03 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "WMB_D03 {{ Data_byte_3: {=u8:?}, Data_byte_2: {=u8:?}, Data_byte_1: {=u8:?}, Data_byte_0: {=u8:?} }}" , self . Data_byte_3 () , self . Data_byte_2 () , self . Data_byte_1 () , self . Data_byte_0 ())
         }
     }
     #[doc = "Wake-Up Message Buffer Register Data 4-7"]
@@ -4965,6 +5334,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WMB_D47 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "WMB_D47 {{ Data_byte_7: {=u8:?}, Data_byte_6: {=u8:?}, Data_byte_5: {=u8:?}, Data_byte_4: {=u8:?} }}" , self . Data_byte_7 () , self . Data_byte_6 () , self . Data_byte_5 () , self . Data_byte_4 ())
+        }
+    }
     #[doc = "Wake-Up Message Buffer for ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4989,6 +5364,12 @@ pub mod regs {
     impl core::fmt::Debug for WMB_ID {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("WMB_ID").field("ID", &self.ID()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WMB_ID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "WMB_ID {{ ID: {=u32:?} }}", self.ID())
         }
     }
     #[doc = "Pretended Networking Wake-Up Match"]
@@ -5037,6 +5418,18 @@ pub mod regs {
                 .field("WUMF", &self.WUMF())
                 .field("WTOF", &self.WTOF())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WU_MTC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "WU_MTC {{ MCOUNTER: {=u8:?}, WUMF: {=bool:?}, WTOF: {=bool:?} }}",
+                self.MCOUNTER(),
+                self.WUMF(),
+                self.WTOF()
+            )
         }
     }
 }

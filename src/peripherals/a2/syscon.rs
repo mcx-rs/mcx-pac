@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct SYSCON {
     ptr: *mut u8,
@@ -130,7 +130,7 @@ impl SYSCON {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e1cusize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_UID(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ELS_UID(self, n: usize) -> crate::common::Reg<regs::ELS_UID, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e20usize + n * 4usize) as _) }
     }
@@ -238,6 +238,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBCLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "AHBCLKDIV {{ DIV: {=u8:?}, UNSTAB: {=bool:?} }}",
+                self.DIV(),
+                self.UNSTAB()
+            )
+        }
+    }
     #[doc = "AHB Matrix Priority Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -326,6 +337,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBMATPRIO {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AHBMATPRIO {{ CPU0_CBUS: {=u8:?}, CPU0_SBUS: {=u8:?}, CPU1_CBUS_SmartDMA_I: {=u8:?}, CPU1_SBUS_SmartDMA_D: {=u8:?}, DMA0: {=u8:?}, PKC_ELS: {=u8:?}, USB_FS_ENET: {=u8:?} }}" , self . CPU0_CBUS () , self . CPU0_SBUS () , self . CPU1_CBUS_SmartDMA_I () , self . CPU1_SBUS_SmartDMA_D () , self . DMA0 () , self . PKC_ELS () , self . USB_FS_ENET ())
+        }
+    }
     #[doc = "Gray to Binary Converter Binary Code \\[41:32\\]"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -352,6 +369,16 @@ pub mod regs {
             f.debug_struct("BINARY_CODE_MSB")
                 .field("code_bin_41_32", &self.code_bin_41_32())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BINARY_CODE_MSB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "BINARY_CODE_MSB {{ code_bin_41_32: {=u16:?} }}",
+                self.code_bin_41_32()
+            )
         }
     }
     #[doc = "BUS_CLK Clock Divider"]
@@ -412,6 +439,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BUSCLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "BUSCLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "Clock Configuration Unlock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -438,6 +471,12 @@ pub mod regs {
             f.debug_struct("CLKUNLOCK")
                 .field("UNLOCK", &self.UNLOCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CLKUNLOCK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CLKUNLOCK {{ UNLOCK: {=bool:?} }}", self.UNLOCK())
         }
     }
     #[doc = "Non-Secure CPU0 System Tick Calibration"]
@@ -488,6 +527,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CPU0NSTCKCAL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CPU0NSTCKCAL {{ TENMS: {=u32:?}, SKEW: {=bool:?}, NOREF: {=bool:?} }}",
+                self.TENMS(),
+                self.SKEW(),
+                self.NOREF()
+            )
+        }
+    }
     #[doc = "CPU Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -524,6 +575,17 @@ pub mod regs {
                 .field("CPU0SLEEPING", &self.CPU0SLEEPING())
                 .field("CPU0LOCKUP", &self.CPU0LOCKUP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CPUSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CPUSTAT {{ CPU0SLEEPING: {=bool:?}, CPU0LOCKUP: {=bool:?} }}",
+                self.CPU0SLEEPING(),
+                self.CPU0LOCKUP()
+            )
         }
     }
     #[doc = "CTIMER Global Start Enable"]
@@ -594,6 +656,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMERGLOBALSTARTEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTIMERGLOBALSTARTEN {{ CTIMER0_CLK_EN: {=bool:?}, CTIMER1_CLK_EN: {=bool:?}, CTIMER2_CLK_EN: {=bool:?}, CTIMER3_CLK_EN: {=bool:?}, CTIMER4_CLK_EN: {=bool:?} }}" , self . CTIMER0_CLK_EN () , self . CTIMER1_CLK_EN () , self . CTIMER2_CLK_EN () , self . CTIMER3_CLK_EN () , self . CTIMER4_CLK_EN ())
+        }
+    }
     #[doc = "Cortex Debug Features Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -630,6 +698,17 @@ pub mod regs {
                 .field("CPU0_DBGEN", &self.CPU0_DBGEN())
                 .field("CPU0_NIDEN", &self.CPU0_NIDEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEBUG_FEATURES {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DEBUG_FEATURES {{ CPU0_DBGEN: {=u8:?}, CPU0_NIDEN: {=u8:?} }}",
+                self.CPU0_DBGEN(),
+                self.CPU0_NIDEN()
+            )
         }
     }
     #[doc = "Cortex Debug Features Control (Duplicate)"]
@@ -670,6 +749,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEBUG_FEATURES_DP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DEBUG_FEATURES_DP {{ CPU0_DBGEN: {=u8:?}, CPU0_NIDEN: {=u8:?} }}",
+                self.CPU0_DBGEN(),
+                self.CPU0_NIDEN()
+            )
+        }
+    }
     #[doc = "Control Write Access to Security"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -696,6 +786,12 @@ pub mod regs {
             f.debug_struct("DEBUG_LOCK_EN")
                 .field("LOCK_ALL", &self.LOCK_ALL())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEBUG_LOCK_EN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "DEBUG_LOCK_EN {{ LOCK_ALL: {=u8:?} }}", self.LOCK_ALL())
         }
     }
     #[doc = "Device ID"]
@@ -756,6 +852,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEVICE_ID0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DEVICE_ID0 {{ RAM_SIZE: {=u8:?}, FLASH_SIZE: {=u8:?}, ROM_REV_MINOR: {=u8:?}, SECURITY: {=u8:?} }}" , self . RAM_SIZE () , self . FLASH_SIZE () , self . ROM_REV_MINOR () , self . SECURITY ())
+        }
+    }
     #[doc = "Device Type"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -814,6 +916,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEVICE_TYPE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DEVICE_TYPE {{ DEVICE_TYPE_NUM: {=u16:?}, DEVICE_TYPE_SEC: {=bool:?}, DEVICE_TYPE_PKG: {=u8:?}, DEVICE_TYPE_PIN: {=u8:?} }}" , self . DEVICE_TYPE_NUM () , self . DEVICE_TYPE_SEC () , self . DEVICE_TYPE_PKG () , self . DEVICE_TYPE_PIN ())
+        }
+    }
     #[doc = "Chip Revision ID and Number"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -862,6 +970,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DIEID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DIEID {{ MINOR_REVISION: {=u8:?}, MAJOR_REVISION: {=u8:?}, MCO_NUM_IN_DIE_ID: {=u32:?} }}" , self . MINOR_REVISION () , self . MAJOR_REVISION () , self . MCO_NUM_IN_DIE_ID ())
+        }
+    }
     #[doc = "Life Cycle State Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -890,6 +1004,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_OTP_LC_STATE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ELS_OTP_LC_STATE {{ OTP_LC_STATE: {=u8:?} }}",
+                self.OTP_LC_STATE()
+            )
+        }
+    }
     #[doc = "Life Cycle State Register (Duplicate)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -916,6 +1040,16 @@ pub mod regs {
             f.debug_struct("ELS_OTP_LC_STATE_DP")
                 .field("OTP_LC_STATE_DP", &self.OTP_LC_STATE_DP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_OTP_LC_STATE_DP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ELS_OTP_LC_STATE_DP {{ OTP_LC_STATE_DP: {=u8:?} }}",
+                self.OTP_LC_STATE_DP()
+            )
         }
     }
     #[doc = "UDF Control"]
@@ -964,6 +1098,18 @@ pub mod regs {
                 .field("UID_HIDDEN", &self.UID_HIDDEN())
                 .field("UDF_HIDDEN", &self.UDF_HIDDEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_UDF {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ELS_UDF {{ KEY_SEL: {=u8:?}, UID_HIDDEN: {=u8:?}, UDF_HIDDEN: {=u8:?} }}",
+                self.KEY_SEL(),
+                self.UID_HIDDEN(),
+                self.UDF_HIDDEN()
+            )
         }
     }
     #[doc = "Device UID 0..Device UID 3"]
@@ -1024,6 +1170,19 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_UID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ELS_UID {{ UID0: {=u32:?}, UID1: {=u32:?}, UID2: {=u32:?}, UID3: {=u32:?} }}",
+                self.UID0(),
+                self.UID1(),
+                self.UID2(),
+                self.UID3()
+            )
+        }
+    }
     #[doc = "FRO_HF_DIV Clock Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1080,6 +1239,19 @@ pub mod regs {
                 .field("HALT", &self.HALT())
                 .field("UNSTAB", &self.UNSTAB())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FROHFDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FROHFDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}",
+                self.DIV(),
+                self.RESET(),
+                self.HALT(),
+                self.UNSTAB()
+            )
         }
     }
     #[doc = "FRO_LF_DIV Clock Divider"]
@@ -1140,6 +1312,19 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FROLFDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FROLFDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}",
+                self.DIV(),
+                self.RESET(),
+                self.HALT(),
+                self.UNSTAB()
+            )
+        }
+    }
     #[doc = "Gray to Binary Converter Gray Code \\[41:32\\]"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1166,6 +1351,16 @@ pub mod regs {
             f.debug_struct("GRAY_CODE_MSB")
                 .field("code_gray_41_32", &self.code_gray_41_32())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GRAY_CODE_MSB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "GRAY_CODE_MSB {{ code_gray_41_32: {=u16:?} }}",
+                self.code_gray_41_32()
+            )
         }
     }
     #[doc = "LPCAC Control"]
@@ -1256,6 +1451,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LPCAC_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "LPCAC_CTRL {{ DIS_LPCAC: {=bool:?}, CLR_LPCAC: {=bool:?}, FRC_NO_ALLOC: {=bool:?}, DIS_LPCAC_WTBF: {=bool:?}, LIM_LPCAC_WTBF: {=bool:?}, LPCAC_XOM: {=bool:?}, LPCAC_MEM_REQ: {=bool:?} }}" , self . DIS_LPCAC () , self . CLR_LPCAC () , self . FRC_NO_ALLOC () , self . DIS_LPCAC_WTBF () , self . LIM_LPCAC_WTBF () , self . LPCAC_XOM () , self . LPCAC_MEM_REQ ())
+        }
+    }
     #[doc = "MSF Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1324,6 +1525,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MSFCFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MSFCFG {{ IFR_ERASE_DIS0: {=bool:?}, IFR_ERASE_DIS1: {=bool:?}, IFR_ERASE_DIS2: {=bool:?}, IFR_ERASE_DIS3: {=bool:?}, MASS_ERASE_DIS: {=bool:?} }}" , self . IFR_ERASE_DIS0 () , self . IFR_ERASE_DIS1 () , self . IFR_ERASE_DIS2 () , self . IFR_ERASE_DIS3 () , self . MASS_ERASE_DIS ())
+        }
+    }
     #[doc = "NMI Source Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1360,6 +1567,17 @@ pub mod regs {
                 .field("IRQCPU0", &self.IRQCPU0())
                 .field("NMIENCPU0", &self.NMIENCPU0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for NMISRC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "NMISRC {{ IRQCPU0: {=u8:?}, NMIENCPU0: {=bool:?} }}",
+                self.IRQCPU0(),
+                self.NMIENCPU0()
+            )
         }
     }
     #[doc = "NVM Control"]
@@ -1430,6 +1648,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for NVM_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "NVM_CTRL {{ DIS_FLASH_SPEC: {=bool:?}, DIS_DATA_SPEC: {=bool:?}, FLASH_STALL_EN: {=bool:?}, DIS_MBECC_ERR_INST: {=bool:?}, DIS_MBECC_ERR_DATA: {=bool:?} }}" , self . DIS_FLASH_SPEC () , self . DIS_DATA_SPEC () , self . FLASH_STALL_EN () , self . DIS_MBECC_ERR_INST () , self . DIS_MBECC_ERR_DATA ())
+        }
+    }
     #[doc = "PLL1_CLK_DIV Clock Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1488,6 +1712,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PLL1CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PLL1CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "Protect Level Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1534,6 +1764,18 @@ pub mod regs {
                 .field("LOCKNSMPU", &self.LOCKNSMPU())
                 .field("LOCK", &self.LOCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PROTLVL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PROTLVL {{ PRIV: {=bool:?}, LOCKNSMPU: {=bool:?}, LOCK: {=bool:?} }}",
+                self.PRIV(),
+                self.LOCKNSMPU(),
+                self.LOCK()
+            )
         }
     }
     #[doc = "PWM0 Submodule Control"]
@@ -1594,6 +1836,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWM0SUBCTL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PWM0SUBCTL {{ CLK0_EN: {=bool:?}, CLK1_EN: {=bool:?}, CLK2_EN: {=bool:?}, CLK3_EN: {=bool:?} }}" , self . CLK0_EN () , self . CLK1_EN () , self . CLK2_EN () , self . CLK3_EN ())
+        }
+    }
     #[doc = "PWM1 Submodule Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1650,6 +1898,12 @@ pub mod regs {
                 .field("CLK2_EN", &self.CLK2_EN())
                 .field("CLK3_EN", &self.CLK3_EN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWM1SUBCTL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PWM1SUBCTL {{ CLK0_EN: {=bool:?}, CLK1_EN: {=bool:?}, CLK2_EN: {=bool:?}, CLK3_EN: {=bool:?} }}" , self . CLK0_EN () , self . CLK1_EN () , self . CLK2_EN () , self . CLK3_EN ())
         }
     }
     #[doc = "RAM Control"]
@@ -1720,6 +1974,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAM_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RAM_CTRL {{ RAMA_ECC_ENABLE: {=bool:?}, RAMA_CG_OVERRIDE: {=bool:?}, RAMX_CG_OVERRIDE: {=bool:?}, RAMB_CG_OVERRIDE: {=bool:?}, RAMC_CG_OVERRIDE: {=bool:?} }}" , self . RAMA_ECC_ENABLE () , self . RAMA_CG_OVERRIDE () , self . RAMX_CG_OVERRIDE () , self . RAMB_CG_OVERRIDE () , self . RAMC_CG_OVERRIDE ())
+        }
+    }
     #[doc = "Controls RAM Interleave Integration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1746,6 +2006,16 @@ pub mod regs {
             f.debug_struct("RAM_INTERLEAVE")
                 .field("INTERLEAVE", &self.INTERLEAVE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAM_INTERLEAVE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "RAM_INTERLEAVE {{ INTERLEAVE: {=bool:?} }}",
+                self.INTERLEAVE()
+            )
         }
     }
     #[doc = "AHB Matrix Remap Control"]
@@ -1836,6 +2106,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for REMAP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "REMAP {{ CPU0_SBUS: {=u8:?}, SmartDMA_D: {=u8:?}, SmartDMA_I: {=u8:?}, DMA0: {=u8:?}, PKC: {=u8:?}, USB0: {=u8:?}, LOCK: {=bool:?} }}" , self . CPU0_SBUS () , self . SmartDMA_D () , self . SmartDMA_I () , self . DMA0 () , self . PKC () , self . USB0 () , self . LOCK ())
+        }
+    }
     #[doc = "SLOW_CLK Clock Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1892,6 +2168,12 @@ pub mod regs {
                 .field("HALT", &self.HALT())
                 .field("UNSTAB", &self.UNSTAB())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SLOWCLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SLOWCLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
         }
     }
     #[doc = "SmartDMA Interrupt Hijack"]
@@ -2152,6 +2434,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SMARTDMAINT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SMARTDMAINT {{ INT0: {=bool:?}, INT1: {=bool:?}, INT2: {=bool:?}, INT3: {=bool:?}, INT4: {=bool:?}, INT5: {=bool:?}, INT6: {=bool:?}, INT7: {=bool:?}, INT8: {=bool:?}, INT9: {=bool:?}, INT10: {=bool:?}, INT11: {=bool:?}, INT12: {=bool:?}, INT13: {=bool:?}, INT14: {=bool:?}, INT15: {=bool:?}, INT16: {=bool:?}, INT17: {=bool:?}, INT18: {=bool:?}, INT19: {=bool:?}, INT20: {=bool:?}, INT21: {=bool:?}, INT22: {=bool:?}, INT23: {=bool:?} }}" , self . INT0 () , self . INT1 () , self . INT2 () , self . INT3 () , self . INT4 () , self . INT5 () , self . INT6 () , self . INT7 () , self . INT8 () , self . INT9 () , self . INT10 () , self . INT11 () , self . INT12 () , self . INT13 () , self . INT14 () , self . INT15 () , self . INT16 () , self . INT17 () , self . INT18 () , self . INT19 () , self . INT20 () , self . INT21 () , self . INT22 () , self . INT23 ())
+        }
+    }
     #[doc = "RAM XEN Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2240,6 +2528,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRAM_XEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SRAM_XEN {{ RAMX0_XEN: {=bool:?}, RAMX1_XEN: {=bool:?}, RAMA0_XEN: {=bool:?}, RAMA1_XEN: {=bool:?}, RAMB_XEN: {=bool:?}, RAMC_XEN: {=bool:?}, LOCK: {=bool:?} }}" , self . RAMX0_XEN () , self . RAMX1_XEN () , self . RAMA0_XEN () , self . RAMA1_XEN () , self . RAMB_XEN () , self . RAMC_XEN () , self . LOCK ())
+        }
+    }
     #[doc = "RAM XEN Control (Duplicate)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2316,6 +2610,12 @@ pub mod regs {
                 .field("RAMB_XEN", &self.RAMB_XEN())
                 .field("RAMC_XEN", &self.RAMC_XEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRAM_XEN_DP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SRAM_XEN_DP {{ RAMX0_XEN: {=bool:?}, RAMX1_XEN: {=bool:?}, RAMA0_XEN: {=bool:?}, RAMA1_XEN: {=bool:?}, RAMB_XEN: {=bool:?}, RAMC_XEN: {=bool:?} }}" , self . RAMX0_XEN () , self . RAMX1_XEN () , self . RAMA0_XEN () , self . RAMA1_XEN () , self . RAMB_XEN () , self . RAMC_XEN ())
         }
     }
 }

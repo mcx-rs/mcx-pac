@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct CMC {
     ptr: *mut u8,
@@ -122,6 +122,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CKCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CKCTRL {{ CKMODE: {=u8:?}, LOCK: {=bool:?} }}",
+                self.CKMODE(),
+                self.LOCK()
+            )
+        }
+    }
     #[doc = "Clock Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -170,6 +181,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CKSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CKSTAT {{ CKMODE: {=u8:?}, WAKEUP: {=u8:?}, VALID: {=bool:?} }}",
+                self.CKMODE(),
+                self.WAKEUP(),
+                self.VALID()
+            )
+        }
+    }
     #[doc = "Core Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -198,6 +221,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CORECTL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CORECTL {{ NPIE: {=bool:?} }}", self.NPIE())
+        }
+    }
     #[doc = "Debug Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -222,6 +251,12 @@ pub mod regs {
     impl core::fmt::Debug for DBGCTL {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DBGCTL").field("SOD", &self.SOD()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DBGCTL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "DBGCTL {{ SOD: {=bool:?} }}", self.SOD())
         }
     }
     #[doc = "Flash Control"]
@@ -272,6 +307,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLASHCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FLASHCR {{ FLASHDIS: {=bool:?}, FLASHDOZE: {=bool:?}, FLASHWAKE: {=bool:?} }}",
+                self.FLASHDIS(),
+                self.FLASHDOZE(),
+                self.FLASHWAKE()
+            )
+        }
+    }
     #[doc = "Force Mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -298,6 +345,12 @@ pub mod regs {
             f.debug_struct("FM")
                 .field("FORCECFG", &self.FORCECFG())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FM {{ FORCECFG: {=bool:?} }}", self.FORCECFG())
         }
     }
     #[doc = "Global Power Mode Control"]
@@ -328,6 +381,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GPMCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GPMCTRL {{ LPMODE: {=u8:?} }}", self.LPMODE())
+        }
+    }
     #[doc = "Mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -356,6 +415,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MR {{ ISPMODE_n: {=bool:?} }}", self.ISPMODE_n())
+        }
+    }
     #[doc = "Power Mode Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -382,6 +447,12 @@ pub mod regs {
             f.debug_struct("PMCTRL")
                 .field("LPMODE", &self.LPMODE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PMCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PMCTRL {{ LPMODE: {=u8:?} }}", self.LPMODE())
         }
     }
     #[doc = "Power Mode Protection"]
@@ -420,6 +491,17 @@ pub mod regs {
                 .field("LPMODE", &self.LPMODE())
                 .field("LOCK", &self.LOCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PMPROT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PMPROT {{ LPMODE: {=u8:?}, LOCK: {=bool:?} }}",
+                self.LPMODE(),
+                self.LOCK()
+            )
         }
     }
     #[doc = "Reset Pin Control"]
@@ -468,6 +550,18 @@ pub mod regs {
                 .field("FILTEN", &self.FILTEN())
                 .field("LPFEN", &self.LPFEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RPC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "RPC {{ FILTCFG: {=u8:?}, FILTEN: {=bool:?}, LPFEN: {=bool:?} }}",
+                self.FILTCFG(),
+                self.FILTEN(),
+                self.LPFEN()
+            )
         }
     }
     #[doc = "System Reset Interrupt Enable"]
@@ -578,6 +672,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRIE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SRIE {{ PIN: {=bool:?}, DAP: {=bool:?}, LPACK: {=bool:?}, SCG: {=bool:?}, WWDT0: {=bool:?}, SW: {=bool:?}, LOCKUP: {=bool:?}, CDOG0: {=bool:?}, CDOG1: {=bool:?} }}" , self . PIN () , self . DAP () , self . LPACK () , self . SCG () , self . WWDT0 () , self . SW () , self . LOCKUP () , self . CDOG0 () , self . CDOG1 ())
+        }
+    }
     #[doc = "System Reset Interrupt Flag"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -674,6 +774,12 @@ pub mod regs {
                 .field("CDOG0", &self.CDOG0())
                 .field("CDOG1", &self.CDOG1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRIF {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SRIF {{ PIN: {=bool:?}, DAP: {=bool:?}, LPACK: {=bool:?}, WWDT0: {=bool:?}, SW: {=bool:?}, LOCKUP: {=bool:?}, CDOG0: {=bool:?}, CDOG1: {=bool:?} }}" , self . PIN () , self . DAP () , self . LPACK () , self . WWDT0 () , self . SW () , self . LOCKUP () , self . CDOG0 () , self . CDOG1 ())
         }
     }
     #[doc = "System Reset Status"]
@@ -864,6 +970,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SRS {{ WAKEUP: {=bool:?}, POR: {=bool:?}, VD: {=bool:?}, WARM: {=bool:?}, FATAL: {=bool:?}, PIN: {=bool:?}, DAP: {=bool:?}, RSTACK: {=bool:?}, LPACK: {=bool:?}, SCG: {=bool:?}, WWDT0: {=bool:?}, SW: {=bool:?}, LOCKUP: {=bool:?}, CDOG0: {=bool:?}, CDOG1: {=bool:?}, JTAG: {=bool:?}, TAMPER: {=bool:?} }}" , self . WAKEUP () , self . POR () , self . VD () , self . WARM () , self . FATAL () , self . PIN () , self . DAP () , self . RSTACK () , self . LPACK () , self . SCG () , self . WWDT0 () , self . SW () , self . LOCKUP () , self . CDOG0 () , self . CDOG1 () , self . JTAG () , self . TAMPER ())
+        }
+    }
     #[doc = "Sticky System Reset Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1052,6 +1164,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SSRS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SSRS {{ WAKEUP: {=bool:?}, POR: {=bool:?}, VD: {=bool:?}, WARM: {=bool:?}, FATAL: {=bool:?}, PIN: {=bool:?}, DAP: {=bool:?}, RSTACK: {=bool:?}, LPACK: {=bool:?}, SCG: {=bool:?}, WWDT0: {=bool:?}, SW: {=bool:?}, LOCKUP: {=bool:?}, CDOG0: {=bool:?}, CDOG1: {=bool:?}, JTAG: {=bool:?}, TAMPER: {=bool:?} }}" , self . WAKEUP () , self . POR () , self . VD () , self . WARM () , self . FATAL () , self . PIN () , self . DAP () , self . RSTACK () , self . LPACK () , self . SCG () , self . WWDT0 () , self . SW () , self . LOCKUP () , self . CDOG0 () , self . CDOG1 () , self . JTAG () , self . TAMPER ())
+        }
+    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1098,6 +1216,18 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
         }
     }
 }

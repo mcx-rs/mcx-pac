@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct RTC {
     ptr: *mut u8,
@@ -64,7 +64,7 @@ impl RTC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x16usize) as _) }
     }
     #[inline(always)]
-    pub const fn RTC_TEST2(self) -> crate::common::Reg<regs::RTC_TEST2, crate::common::RW> {
+    pub const fn RTC_TEST2(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[inline(always)]
@@ -80,7 +80,7 @@ impl RTC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x26usize) as _) }
     }
     #[inline(always)]
-    pub const fn COMPEN(self) -> crate::common::Reg<regs::COMPEN, crate::common::RW> {
+    pub const fn COMPEN(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
@@ -108,7 +108,7 @@ pub mod regs {
     #[doc = "Days Alarm"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ALM_DAYS(pub u32);
+    pub struct ALM_DAYS(pub u16);
     impl ALM_DAYS {
         #[inline(always)]
         pub const fn ALM_DAY(&self) -> u8 {
@@ -117,7 +117,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ALM_DAY(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u16) & 0x1f) << 0usize);
         }
     }
     impl Default for ALM_DAYS {
@@ -133,10 +133,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ALM_DAYS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ALM_DAYS {{ ALM_DAY: {=u8:?} }}", self.ALM_DAY())
+        }
+    }
     #[doc = "Hours and Minutes Alarm"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ALM_HOURMIN(pub u32);
+    pub struct ALM_HOURMIN(pub u16);
     impl ALM_HOURMIN {
         #[inline(always)]
         pub const fn ALM_MIN(&self) -> u8 {
@@ -145,7 +151,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ALM_MIN(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
+            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u16) & 0x3f) << 0usize);
         }
         #[inline(always)]
         pub const fn ALM_HOUR(&self) -> u8 {
@@ -154,7 +160,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ALM_HOUR(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
+            self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u16) & 0x1f) << 8usize);
         }
     }
     impl Default for ALM_HOURMIN {
@@ -171,10 +177,21 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ALM_HOURMIN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ALM_HOURMIN {{ ALM_MIN: {=u8:?}, ALM_HOUR: {=u8:?} }}",
+                self.ALM_MIN(),
+                self.ALM_HOUR()
+            )
+        }
+    }
     #[doc = "Seconds Alarm"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ALM_SECONDS(pub u32);
+    pub struct ALM_SECONDS(pub u16);
     impl ALM_SECONDS {
         #[inline(always)]
         pub const fn ALM_SEC(&self) -> u8 {
@@ -183,7 +200,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ALM_SEC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
+            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u16) & 0x3f) << 0usize);
         }
         #[inline(always)]
         pub const fn DEC_SEC(&self) -> bool {
@@ -192,7 +209,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DEC_SEC(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
         }
         #[inline(always)]
         pub const fn INC_SEC(&self) -> bool {
@@ -201,7 +218,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_INC_SEC(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
         }
     }
     impl Default for ALM_SECONDS {
@@ -219,10 +236,22 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ALM_SECONDS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ALM_SECONDS {{ ALM_SEC: {=u8:?}, DEC_SEC: {=bool:?}, INC_SEC: {=bool:?} }}",
+                self.ALM_SEC(),
+                self.DEC_SEC(),
+                self.INC_SEC()
+            )
+        }
+    }
     #[doc = "Year and Months Alarm"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ALM_YEARMON(pub u32);
+    pub struct ALM_YEARMON(pub u16);
     impl ALM_YEARMON {
         #[inline(always)]
         pub const fn ALM_MON(&self) -> u8 {
@@ -231,7 +260,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ALM_MON(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u16) & 0x0f) << 0usize);
         }
         #[inline(always)]
         pub const fn ALM_YEAR(&self) -> u8 {
@@ -240,7 +269,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ALM_YEAR(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
+            self.0 = (self.0 & !(0xff << 8usize)) | (((val as u16) & 0xff) << 8usize);
         }
     }
     impl Default for ALM_YEARMON {
@@ -257,38 +286,21 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "Compensation"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct COMPEN(pub u32);
-    impl COMPEN {
-        #[inline(always)]
-        pub const fn COMPEN_VAL(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_COMPEN_VAL(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for COMPEN {
-        #[inline(always)]
-        fn default() -> COMPEN {
-            COMPEN(0)
-        }
-    }
-    impl core::fmt::Debug for COMPEN {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("COMPEN")
-                .field("COMPEN_VAL", &self.COMPEN_VAL())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ALM_YEARMON {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ALM_YEARMON {{ ALM_MON: {=u8:?}, ALM_YEAR: {=u8:?} }}",
+                self.ALM_MON(),
+                self.ALM_YEAR()
+            )
         }
     }
     #[doc = "Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CTRL(pub u32);
+    pub struct CTRL(pub u16);
     impl CTRL {
         #[inline(always)]
         pub const fn FINEEN(&self) -> bool {
@@ -297,7 +309,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_FINEEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn COMP_EN(&self) -> bool {
@@ -306,7 +318,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_COMP_EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn ALM_MATCH(&self) -> u8 {
@@ -315,7 +327,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ALM_MATCH(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u16) & 0x03) << 2usize);
         }
         #[inline(always)]
         pub const fn DST_EN(&self) -> bool {
@@ -324,7 +336,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DST_EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn SWR(&self) -> bool {
@@ -333,7 +345,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_SWR(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
         }
         #[inline(always)]
         pub const fn CLK_SEL(&self) -> bool {
@@ -342,7 +354,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_CLK_SEL(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
         }
         #[inline(always)]
         pub const fn CLKO_DIS(&self) -> bool {
@@ -351,7 +363,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_CLKO_DIS(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
         }
         #[inline(always)]
         pub const fn CLKOUT(&self) -> u8 {
@@ -360,7 +372,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_CLKOUT(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 13usize)) | (((val as u32) & 0x03) << 13usize);
+            self.0 = (self.0 & !(0x03 << 13usize)) | (((val as u16) & 0x03) << 13usize);
         }
     }
     impl Default for CTRL {
@@ -383,10 +395,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL {{ FINEEN: {=bool:?}, COMP_EN: {=bool:?}, ALM_MATCH: {=u8:?}, DST_EN: {=bool:?}, SWR: {=bool:?}, CLK_SEL: {=bool:?}, CLKO_DIS: {=bool:?}, CLKOUT: {=u8:?} }}" , self . FINEEN () , self . COMP_EN () , self . ALM_MATCH () , self . DST_EN () , self . SWR () , self . CLK_SEL () , self . CLKO_DIS () , self . CLKOUT ())
+        }
+    }
     #[doc = "Days and Day-of-Week Counters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DAYS(pub u32);
+    pub struct DAYS(pub u16);
     impl DAYS {
         #[inline(always)]
         pub const fn DAY_CNT(&self) -> u8 {
@@ -395,7 +413,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DAY_CNT(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u16) & 0x1f) << 0usize);
         }
         #[inline(always)]
         pub const fn DOW(&self) -> u8 {
@@ -404,7 +422,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DOW(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
+            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u16) & 0x07) << 8usize);
         }
     }
     impl Default for DAYS {
@@ -421,10 +439,21 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DAYS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DAYS {{ DAY_CNT: {=u8:?}, DOW: {=u8:?} }}",
+                self.DAY_CNT(),
+                self.DOW()
+            )
+        }
+    }
     #[doc = "Daylight Saving Day"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DST_DAY(pub u32);
+    pub struct DST_DAY(pub u16);
     impl DST_DAY {
         #[inline(always)]
         pub const fn DST_END_DAY(&self) -> u8 {
@@ -433,7 +462,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DST_END_DAY(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u16) & 0x1f) << 0usize);
         }
         #[inline(always)]
         pub const fn DST_START_DAY(&self) -> u8 {
@@ -442,7 +471,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DST_START_DAY(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
+            self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u16) & 0x1f) << 8usize);
         }
     }
     impl Default for DST_DAY {
@@ -459,10 +488,21 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DST_DAY {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DST_DAY {{ DST_END_DAY: {=u8:?}, DST_START_DAY: {=u8:?} }}",
+                self.DST_END_DAY(),
+                self.DST_START_DAY()
+            )
+        }
+    }
     #[doc = "Daylight Saving Hour"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DST_HOUR(pub u32);
+    pub struct DST_HOUR(pub u16);
     impl DST_HOUR {
         #[inline(always)]
         pub const fn DST_END_HOUR(&self) -> u8 {
@@ -471,7 +511,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DST_END_HOUR(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u16) & 0x1f) << 0usize);
         }
         #[inline(always)]
         pub const fn DST_START_HOUR(&self) -> u8 {
@@ -480,7 +520,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DST_START_HOUR(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
+            self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u16) & 0x1f) << 8usize);
         }
     }
     impl Default for DST_HOUR {
@@ -497,10 +537,21 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DST_HOUR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DST_HOUR {{ DST_END_HOUR: {=u8:?}, DST_START_HOUR: {=u8:?} }}",
+                self.DST_END_HOUR(),
+                self.DST_START_HOUR()
+            )
+        }
+    }
     #[doc = "Daylight Saving Month"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DST_MONTH(pub u32);
+    pub struct DST_MONTH(pub u16);
     impl DST_MONTH {
         #[inline(always)]
         pub const fn DST_END_MONTH(&self) -> u8 {
@@ -509,7 +560,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DST_END_MONTH(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u16) & 0x0f) << 0usize);
         }
         #[inline(always)]
         pub const fn DST_START_MONTH(&self) -> u8 {
@@ -518,7 +569,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DST_START_MONTH(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
+            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u16) & 0x0f) << 8usize);
         }
     }
     impl Default for DST_MONTH {
@@ -535,10 +586,21 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DST_MONTH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DST_MONTH {{ DST_END_MONTH: {=u8:?}, DST_START_MONTH: {=u8:?} }}",
+                self.DST_END_MONTH(),
+                self.DST_START_MONTH()
+            )
+        }
+    }
     #[doc = "Hours and Minutes Counters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct HOURMIN(pub u32);
+    pub struct HOURMIN(pub u16);
     impl HOURMIN {
         #[inline(always)]
         pub const fn MIN_CNT(&self) -> u8 {
@@ -547,7 +609,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_MIN_CNT(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
+            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u16) & 0x3f) << 0usize);
         }
         #[inline(always)]
         pub const fn HOUR_CNT(&self) -> u8 {
@@ -556,7 +618,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_HOUR_CNT(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
+            self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u16) & 0x1f) << 8usize);
         }
     }
     impl Default for HOURMIN {
@@ -573,10 +635,21 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HOURMIN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "HOURMIN {{ MIN_CNT: {=u8:?}, HOUR_CNT: {=u8:?} }}",
+                self.MIN_CNT(),
+                self.HOUR_CNT()
+            )
+        }
+    }
     #[doc = "Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IER(pub u32);
+    pub struct IER(pub u16);
     impl IER {
         #[inline(always)]
         pub const fn ALM_IE(&self) -> bool {
@@ -585,7 +658,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ALM_IE(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn DAY_IE(&self) -> bool {
@@ -594,7 +667,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DAY_IE(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u16) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn HOUR_IE(&self) -> bool {
@@ -603,7 +676,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_HOUR_IE(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn MIN_IE(&self) -> bool {
@@ -612,7 +685,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_MIN_IE(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u16) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn IE_1HZ(&self) -> bool {
@@ -621,7 +694,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IE_1HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn IE_2HZ(&self) -> bool {
@@ -630,7 +703,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IE_2HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
         }
         #[inline(always)]
         pub const fn IE_4HZ(&self) -> bool {
@@ -639,7 +712,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IE_4HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
         }
         #[inline(always)]
         pub const fn IE_8HZ(&self) -> bool {
@@ -648,7 +721,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IE_8HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
         }
         #[inline(always)]
         pub const fn IE_16HZ(&self) -> bool {
@@ -657,7 +730,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IE_16HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
         }
         #[inline(always)]
         pub const fn IE_32HZ(&self) -> bool {
@@ -666,7 +739,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IE_32HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u16) & 0x01) << 11usize);
         }
         #[inline(always)]
         pub const fn IE_64HZ(&self) -> bool {
@@ -675,7 +748,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IE_64HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u16) & 0x01) << 12usize);
         }
         #[inline(always)]
         pub const fn IE_128HZ(&self) -> bool {
@@ -684,7 +757,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IE_128HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u16) & 0x01) << 13usize);
         }
         #[inline(always)]
         pub const fn IE_256HZ(&self) -> bool {
@@ -693,7 +766,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IE_256HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u16) & 0x01) << 14usize);
         }
         #[inline(always)]
         pub const fn IE_512HZ(&self) -> bool {
@@ -702,7 +775,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IE_512HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
         }
     }
     impl Default for IER {
@@ -731,10 +804,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IER {{ ALM_IE: {=bool:?}, DAY_IE: {=bool:?}, HOUR_IE: {=bool:?}, MIN_IE: {=bool:?}, IE_1HZ: {=bool:?}, IE_2HZ: {=bool:?}, IE_4HZ: {=bool:?}, IE_8HZ: {=bool:?}, IE_16HZ: {=bool:?}, IE_32HZ: {=bool:?}, IE_64HZ: {=bool:?}, IE_128HZ: {=bool:?}, IE_256HZ: {=bool:?}, IE_512HZ: {=bool:?} }}" , self . ALM_IE () , self . DAY_IE () , self . HOUR_IE () , self . MIN_IE () , self . IE_1HZ () , self . IE_2HZ () , self . IE_4HZ () , self . IE_8HZ () , self . IE_16HZ () , self . IE_32HZ () , self . IE_64HZ () , self . IE_128HZ () , self . IE_256HZ () , self . IE_512HZ ())
+        }
+    }
     #[doc = "Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ISR(pub u32);
+    pub struct ISR(pub u16);
     impl ISR {
         #[inline(always)]
         pub const fn ALM_IS(&self) -> bool {
@@ -743,7 +822,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ALM_IS(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn DAY_IS(&self) -> bool {
@@ -752,7 +831,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DAY_IS(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u16) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn HOUR_IS(&self) -> bool {
@@ -761,7 +840,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_HOUR_IS(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn MIN_IS(&self) -> bool {
@@ -770,7 +849,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_MIN_IS(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u16) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn IS_1HZ(&self) -> bool {
@@ -779,7 +858,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IS_1HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn IS_2HZ(&self) -> bool {
@@ -788,7 +867,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IS_2HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
         }
         #[inline(always)]
         pub const fn IS_4HZ(&self) -> bool {
@@ -797,7 +876,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IS_4HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
         }
         #[inline(always)]
         pub const fn IS_8HZ(&self) -> bool {
@@ -806,7 +885,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IS_8HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
         }
         #[inline(always)]
         pub const fn IS_16HZ(&self) -> bool {
@@ -815,7 +894,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IS_16HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
         }
         #[inline(always)]
         pub const fn IS_32HZ(&self) -> bool {
@@ -824,7 +903,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IS_32HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u16) & 0x01) << 11usize);
         }
         #[inline(always)]
         pub const fn IS_64HZ(&self) -> bool {
@@ -833,7 +912,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IS_64HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u16) & 0x01) << 12usize);
         }
         #[inline(always)]
         pub const fn IS_128HZ(&self) -> bool {
@@ -842,7 +921,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IS_128HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u16) & 0x01) << 13usize);
         }
         #[inline(always)]
         pub const fn IS_256HZ(&self) -> bool {
@@ -851,7 +930,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IS_256HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u16) & 0x01) << 14usize);
         }
         #[inline(always)]
         pub const fn IS_512HZ(&self) -> bool {
@@ -860,7 +939,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IS_512HZ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
         }
     }
     impl Default for ISR {
@@ -889,38 +968,16 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "Sub Second Counter"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RTC_TEST2(pub u32);
-    impl RTC_TEST2 {
-        #[inline(always)]
-        pub const fn SUB_SECOND_COUNT(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_SUB_SECOND_COUNT(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for RTC_TEST2 {
-        #[inline(always)]
-        fn default() -> RTC_TEST2 {
-            RTC_TEST2(0)
-        }
-    }
-    impl core::fmt::Debug for RTC_TEST2 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("RTC_TEST2")
-                .field("SUB_SECOND_COUNT", &self.SUB_SECOND_COUNT())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ISR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ISR {{ ALM_IS: {=bool:?}, DAY_IS: {=bool:?}, HOUR_IS: {=bool:?}, MIN_IS: {=bool:?}, IS_1HZ: {=bool:?}, IS_2HZ: {=bool:?}, IS_4HZ: {=bool:?}, IS_8HZ: {=bool:?}, IS_16HZ: {=bool:?}, IS_32HZ: {=bool:?}, IS_64HZ: {=bool:?}, IS_128HZ: {=bool:?}, IS_256HZ: {=bool:?}, IS_512HZ: {=bool:?} }}" , self . ALM_IS () , self . DAY_IS () , self . HOUR_IS () , self . MIN_IS () , self . IS_1HZ () , self . IS_2HZ () , self . IS_4HZ () , self . IS_8HZ () , self . IS_16HZ () , self . IS_32HZ () , self . IS_64HZ () , self . IS_128HZ () , self . IS_256HZ () , self . IS_512HZ ())
         }
     }
     #[doc = "Seconds Counters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SECONDS(pub u32);
+    pub struct SECONDS(pub u16);
     impl SECONDS {
         #[inline(always)]
         pub const fn SEC_CNT(&self) -> u8 {
@@ -929,7 +986,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_SEC_CNT(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
+            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u16) & 0x3f) << 0usize);
         }
     }
     impl Default for SECONDS {
@@ -945,10 +1002,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SECONDS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SECONDS {{ SEC_CNT: {=u8:?} }}", self.SEC_CNT())
+        }
+    }
     #[doc = "Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct STATUS(pub u32);
+    pub struct STATUS(pub u16);
     impl STATUS {
         #[inline(always)]
         pub const fn INVAL_BIT(&self) -> bool {
@@ -957,7 +1020,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_INVAL_BIT(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn WRITE_PROT_EN(&self) -> bool {
@@ -966,7 +1029,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_WRITE_PROT_EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn CMP_INT(&self) -> bool {
@@ -975,7 +1038,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_CMP_INT(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u16) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn WE(&self) -> u8 {
@@ -984,7 +1047,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_WE(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u16) & 0x03) << 6usize);
         }
         #[inline(always)]
         pub const fn BUS_ERR(&self) -> bool {
@@ -993,7 +1056,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_BUS_ERR(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
         }
         #[inline(always)]
         pub const fn CMP_DONE(&self) -> bool {
@@ -1002,7 +1065,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_CMP_DONE(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u16) & 0x01) << 11usize);
         }
     }
     impl Default for STATUS {
@@ -1021,6 +1084,12 @@ pub mod regs {
                 .field("BUS_ERR", &self.BUS_ERR())
                 .field("CMP_DONE", &self.CMP_DONE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STATUS {{ INVAL_BIT: {=bool:?}, WRITE_PROT_EN: {=bool:?}, CMP_INT: {=bool:?}, WE: {=u8:?}, BUS_ERR: {=bool:?}, CMP_DONE: {=bool:?} }}" , self . INVAL_BIT () , self . WRITE_PROT_EN () , self . CMP_INT () , self . WE () , self . BUS_ERR () , self . CMP_DONE ())
         }
     }
     #[doc = "Subsecond Counter"]
@@ -1051,6 +1120,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SUBSECOND_CNT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SUBSECOND_CNT {{ SUBSECOND_CNT: {=u16:?} }}",
+                self.SUBSECOND_CNT()
+            )
+        }
+    }
     #[doc = "Subsecond Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1077,6 +1156,16 @@ pub mod regs {
             f.debug_struct("SUBSECOND_CTRL")
                 .field("SUB_SECOND_CNT_EN", &self.SUB_SECOND_CNT_EN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SUBSECOND_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SUBSECOND_CTRL {{ SUB_SECOND_CNT_EN: {=bool:?} }}",
+                self.SUB_SECOND_CNT_EN()
+            )
         }
     }
     #[doc = "Wake Timer Control"]
@@ -1137,10 +1226,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WAKE_TIMER_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "WAKE_TIMER_CTRL {{ WAKE_FLAG: {=bool:?}, CLR_WAKE_TIMER: {=bool:?}, OSC_DIV_ENA: {=bool:?}, INTR_EN: {=bool:?} }}" , self . WAKE_FLAG () , self . CLR_WAKE_TIMER () , self . OSC_DIV_ENA () , self . INTR_EN ())
+        }
+    }
     #[doc = "Year and Month Counters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct YEARMON(pub u32);
+    pub struct YEARMON(pub u16);
     impl YEARMON {
         #[inline(always)]
         pub const fn MON_CNT(&self) -> u8 {
@@ -1149,7 +1244,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_MON_CNT(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u16) & 0x0f) << 0usize);
         }
         #[inline(always)]
         pub const fn YROFST(&self) -> u8 {
@@ -1158,7 +1253,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_YROFST(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
+            self.0 = (self.0 & !(0xff << 8usize)) | (((val as u16) & 0xff) << 8usize);
         }
     }
     impl Default for YEARMON {
@@ -1173,6 +1268,17 @@ pub mod regs {
                 .field("MON_CNT", &self.MON_CNT())
                 .field("YROFST", &self.YROFST())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for YEARMON {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "YEARMON {{ MON_CNT: {=u8:?}, YROFST: {=u8:?} }}",
+                self.MON_CNT(),
+                self.YROFST()
+            )
         }
     }
 }

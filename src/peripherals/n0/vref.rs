@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct VREF {
     ptr: *mut u8,
@@ -137,6 +137,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CSR {{ HCBGEN: {=bool:?}, LPBGEN: {=bool:?}, LPBG_BUF_EN: {=bool:?}, CHOPEN: {=bool:?}, ICOMPEN: {=bool:?}, REGEN: {=bool:?}, HI_PWR_LV: {=bool:?}, BUF21EN: {=bool:?}, VREFST: {=bool:?} }}" , self . HCBGEN () , self . LPBGEN () , self . LPBG_BUF_EN () , self . CHOPEN () , self . ICOMPEN () , self . REGEN () , self . HI_PWR_LV () , self . BUF21EN () , self . VREFST ())
+        }
+    }
     #[doc = "User Trim"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -173,6 +179,17 @@ pub mod regs {
                 .field("TRIM2V1", &self.TRIM2V1())
                 .field("VREFTRIM", &self.VREFTRIM())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for UTRIM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "UTRIM {{ TRIM2V1: {=u8:?}, VREFTRIM: {=u8:?} }}",
+                self.TRIM2V1(),
+                self.VREFTRIM()
+            )
         }
     }
     #[doc = "Version ID"]
@@ -221,6 +238,18 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
         }
     }
 }

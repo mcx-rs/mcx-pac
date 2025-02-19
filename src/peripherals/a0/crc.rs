@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct CRC {
     ptr: *mut u8,
@@ -76,179 +76,13 @@ impl CRC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
-    pub const fn CTRLHU(self) -> crate::common::Reg<u8, crate::common::RW> {
+    pub const fn CTRLHU(
+        self,
+    ) -> crate::common::Reg<regs::CTRL_ACCESS8BIT_CTRLHU, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0busize) as _) }
     }
 }
 pub mod regs {
-    #[doc = "CRC_DATAH register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ACCESS16BIT_DATAH(pub u32);
-    impl ACCESS16BIT_DATAH {
-        #[inline(always)]
-        pub const fn DATAH(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_DATAH(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for ACCESS16BIT_DATAH {
-        #[inline(always)]
-        fn default() -> ACCESS16BIT_DATAH {
-            ACCESS16BIT_DATAH(0)
-        }
-    }
-    impl core::fmt::Debug for ACCESS16BIT_DATAH {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("ACCESS16BIT_DATAH")
-                .field("DATAH", &self.DATAH())
-                .finish()
-        }
-    }
-    #[doc = "CRC_DATAL register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ACCESS16BIT_DATAL(pub u32);
-    impl ACCESS16BIT_DATAL {
-        #[inline(always)]
-        pub const fn DATAL(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_DATAL(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for ACCESS16BIT_DATAL {
-        #[inline(always)]
-        fn default() -> ACCESS16BIT_DATAL {
-            ACCESS16BIT_DATAL(0)
-        }
-    }
-    impl core::fmt::Debug for ACCESS16BIT_DATAL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("ACCESS16BIT_DATAL")
-                .field("DATAL", &self.DATAL())
-                .finish()
-        }
-    }
-    #[doc = "CRC_DATAHL register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ACCESS8BIT_DATAHL(pub u32);
-    impl ACCESS8BIT_DATAHL {
-        #[inline(always)]
-        pub const fn DATAHL(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_DATAHL(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for ACCESS8BIT_DATAHL {
-        #[inline(always)]
-        fn default() -> ACCESS8BIT_DATAHL {
-            ACCESS8BIT_DATAHL(0)
-        }
-    }
-    impl core::fmt::Debug for ACCESS8BIT_DATAHL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("ACCESS8BIT_DATAHL")
-                .field("DATAHL", &self.DATAHL())
-                .finish()
-        }
-    }
-    #[doc = "CRC_DATAHU register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ACCESS8BIT_DATAHU(pub u32);
-    impl ACCESS8BIT_DATAHU {
-        #[inline(always)]
-        pub const fn DATAHU(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_DATAHU(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for ACCESS8BIT_DATAHU {
-        #[inline(always)]
-        fn default() -> ACCESS8BIT_DATAHU {
-            ACCESS8BIT_DATAHU(0)
-        }
-    }
-    impl core::fmt::Debug for ACCESS8BIT_DATAHU {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("ACCESS8BIT_DATAHU")
-                .field("DATAHU", &self.DATAHU())
-                .finish()
-        }
-    }
-    #[doc = "CRC_DATALL register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ACCESS8BIT_DATALL(pub u32);
-    impl ACCESS8BIT_DATALL {
-        #[inline(always)]
-        pub const fn DATALL(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_DATALL(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for ACCESS8BIT_DATALL {
-        #[inline(always)]
-        fn default() -> ACCESS8BIT_DATALL {
-            ACCESS8BIT_DATALL(0)
-        }
-    }
-    impl core::fmt::Debug for ACCESS8BIT_DATALL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("ACCESS8BIT_DATALL")
-                .field("DATALL", &self.DATALL())
-                .finish()
-        }
-    }
-    #[doc = "CRC_DATALU register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ACCESS8BIT_DATALU(pub u32);
-    impl ACCESS8BIT_DATALU {
-        #[inline(always)]
-        pub const fn DATALU(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_DATALU(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for ACCESS8BIT_DATALU {
-        #[inline(always)]
-        fn default() -> ACCESS8BIT_DATALU {
-            ACCESS8BIT_DATALU(0)
-        }
-    }
-    impl core::fmt::Debug for ACCESS8BIT_DATALU {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("ACCESS8BIT_DATALU")
-                .field("DATALU", &self.DATALU())
-                .finish()
-        }
-    }
     #[doc = "CRC Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -317,10 +151,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL {{ TCRC: {=bool:?}, WAS: {=bool:?}, FXOR: {=bool:?}, TOTR: {=u8:?}, TOT: {=u8:?} }}" , self . TCRC () , self . WAS () , self . FXOR () , self . TOTR () , self . TOT ())
+        }
+    }
     #[doc = "CRC_CTRLHU register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CTRL_ACCESS8BIT_CTRLHU(pub u32);
+    pub struct CTRL_ACCESS8BIT_CTRLHU(pub u8);
     impl CTRL_ACCESS8BIT_CTRLHU {
         #[inline(always)]
         pub const fn TCRC(&self) -> bool {
@@ -329,7 +169,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_TCRC(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn WAS(&self) -> bool {
@@ -338,7 +178,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_WAS(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn FXOR(&self) -> bool {
@@ -347,7 +187,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_FXOR(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn TOTR(&self) -> u8 {
@@ -356,7 +196,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_TOTR(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u8) & 0x03) << 4usize);
         }
         #[inline(always)]
         pub const fn TOT(&self) -> u8 {
@@ -365,7 +205,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_TOT(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u8) & 0x03) << 6usize);
         }
     }
     impl Default for CTRL_ACCESS8BIT_CTRLHU {
@@ -383,6 +223,12 @@ pub mod regs {
                 .field("TOTR", &self.TOTR())
                 .field("TOT", &self.TOT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_ACCESS8BIT_CTRLHU {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL_ACCESS8BIT_CTRLHU {{ TCRC: {=bool:?}, WAS: {=bool:?}, FXOR: {=bool:?}, TOTR: {=u8:?}, TOT: {=u8:?} }}" , self . TCRC () , self . WAS () , self . FXOR () , self . TOTR () , self . TOT ())
         }
     }
     #[doc = "CRC Data"]
@@ -443,6 +289,19 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DATA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DATA {{ LL: {=u8:?}, LU: {=u8:?}, HL: {=u8:?}, HU: {=u8:?} }}",
+                self.LL(),
+                self.LU(),
+                self.HL(),
+                self.HU()
+            )
+        }
+    }
     #[doc = "CRC Polynomial"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -481,172 +340,15 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "CRC_GPOLYH register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GPOLY_ACCESS16BIT_GPOLYH(pub u32);
-    impl GPOLY_ACCESS16BIT_GPOLYH {
-        #[inline(always)]
-        pub const fn GPOLYH(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_GPOLYH(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for GPOLY_ACCESS16BIT_GPOLYH {
-        #[inline(always)]
-        fn default() -> GPOLY_ACCESS16BIT_GPOLYH {
-            GPOLY_ACCESS16BIT_GPOLYH(0)
-        }
-    }
-    impl core::fmt::Debug for GPOLY_ACCESS16BIT_GPOLYH {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("GPOLY_ACCESS16BIT_GPOLYH")
-                .field("GPOLYH", &self.GPOLYH())
-                .finish()
-        }
-    }
-    #[doc = "CRC_GPOLYL register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GPOLY_ACCESS16BIT_GPOLYL(pub u32);
-    impl GPOLY_ACCESS16BIT_GPOLYL {
-        #[inline(always)]
-        pub const fn GPOLYL(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_GPOLYL(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for GPOLY_ACCESS16BIT_GPOLYL {
-        #[inline(always)]
-        fn default() -> GPOLY_ACCESS16BIT_GPOLYL {
-            GPOLY_ACCESS16BIT_GPOLYL(0)
-        }
-    }
-    impl core::fmt::Debug for GPOLY_ACCESS16BIT_GPOLYL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("GPOLY_ACCESS16BIT_GPOLYL")
-                .field("GPOLYL", &self.GPOLYL())
-                .finish()
-        }
-    }
-    #[doc = "CRC_GPOLYHL register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GPOLY_ACCESS8BIT_GPOLYHL(pub u32);
-    impl GPOLY_ACCESS8BIT_GPOLYHL {
-        #[inline(always)]
-        pub const fn GPOLYHL(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_GPOLYHL(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for GPOLY_ACCESS8BIT_GPOLYHL {
-        #[inline(always)]
-        fn default() -> GPOLY_ACCESS8BIT_GPOLYHL {
-            GPOLY_ACCESS8BIT_GPOLYHL(0)
-        }
-    }
-    impl core::fmt::Debug for GPOLY_ACCESS8BIT_GPOLYHL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("GPOLY_ACCESS8BIT_GPOLYHL")
-                .field("GPOLYHL", &self.GPOLYHL())
-                .finish()
-        }
-    }
-    #[doc = "CRC_GPOLYHU register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GPOLY_ACCESS8BIT_GPOLYHU(pub u32);
-    impl GPOLY_ACCESS8BIT_GPOLYHU {
-        #[inline(always)]
-        pub const fn GPOLYHU(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_GPOLYHU(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for GPOLY_ACCESS8BIT_GPOLYHU {
-        #[inline(always)]
-        fn default() -> GPOLY_ACCESS8BIT_GPOLYHU {
-            GPOLY_ACCESS8BIT_GPOLYHU(0)
-        }
-    }
-    impl core::fmt::Debug for GPOLY_ACCESS8BIT_GPOLYHU {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("GPOLY_ACCESS8BIT_GPOLYHU")
-                .field("GPOLYHU", &self.GPOLYHU())
-                .finish()
-        }
-    }
-    #[doc = "CRC_GPOLYLL register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GPOLY_ACCESS8BIT_GPOLYLL(pub u32);
-    impl GPOLY_ACCESS8BIT_GPOLYLL {
-        #[inline(always)]
-        pub const fn GPOLYLL(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_GPOLYLL(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for GPOLY_ACCESS8BIT_GPOLYLL {
-        #[inline(always)]
-        fn default() -> GPOLY_ACCESS8BIT_GPOLYLL {
-            GPOLY_ACCESS8BIT_GPOLYLL(0)
-        }
-    }
-    impl core::fmt::Debug for GPOLY_ACCESS8BIT_GPOLYLL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("GPOLY_ACCESS8BIT_GPOLYLL")
-                .field("GPOLYLL", &self.GPOLYLL())
-                .finish()
-        }
-    }
-    #[doc = "CRC_GPOLYLU register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GPOLY_ACCESS8BIT_GPOLYLU(pub u32);
-    impl GPOLY_ACCESS8BIT_GPOLYLU {
-        #[inline(always)]
-        pub const fn GPOLYLU(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_GPOLYLU(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for GPOLY_ACCESS8BIT_GPOLYLU {
-        #[inline(always)]
-        fn default() -> GPOLY_ACCESS8BIT_GPOLYLU {
-            GPOLY_ACCESS8BIT_GPOLYLU(0)
-        }
-    }
-    impl core::fmt::Debug for GPOLY_ACCESS8BIT_GPOLYLU {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("GPOLY_ACCESS8BIT_GPOLYLU")
-                .field("GPOLYLU", &self.GPOLYLU())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GPOLY {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "GPOLY {{ LOW: {=u16:?}, HIGH: {=u16:?} }}",
+                self.LOW(),
+                self.HIGH()
+            )
         }
     }
 }

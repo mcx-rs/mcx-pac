@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct INPUTMUX {
     ptr: *mut u8,
@@ -16,7 +16,10 @@ impl INPUTMUX {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn CTIMER0CAP(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CTIMER0CAP(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::CTIMER0CAP, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize + n * 4usize) as _) }
     }
@@ -25,7 +28,10 @@ impl INPUTMUX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[inline(always)]
-    pub const fn CTIMER1CAP(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CTIMER1CAP(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::CTIMER1CAP, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize + n * 4usize) as _) }
     }
@@ -34,7 +40,10 @@ impl INPUTMUX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
     #[inline(always)]
-    pub const fn CTIMER2CAP(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CTIMER2CAP(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::CTIMER2CAP, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize + n * 4usize) as _) }
     }
@@ -51,7 +60,10 @@ impl INPUTMUX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0184usize) as _) }
     }
     #[inline(always)]
-    pub const fn CTIMER3CAP(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CTIMER3CAP(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::CTIMER3CAP, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01a0usize + n * 4usize) as _) }
     }
@@ -60,7 +72,10 @@ impl INPUTMUX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01b0usize) as _) }
     }
     #[inline(always)]
-    pub const fn CTIMER4CAP(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CTIMER4CAP(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::CTIMER4CAP, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c0usize + n * 4usize) as _) }
     }
@@ -69,7 +84,10 @@ impl INPUTMUX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01d0usize) as _) }
     }
     #[inline(always)]
-    pub const fn AOI1_INPUT(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AOI1_INPUT(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::AOI1_INPUT, crate::common::RW> {
         assert!(n < 16usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize + n * 4usize) as _) }
     }
@@ -78,12 +96,18 @@ impl INPUTMUX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0260usize) as _) }
     }
     #[inline(always)]
-    pub const fn ADC0_TRIG(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ADC0_TRIG(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::ADC0_TRIG, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0280usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn ADC1_TRIG(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ADC1_TRIG(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::ADC1_TRIG, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02c0usize + n * 4usize) as _) }
     }
@@ -264,7 +288,10 @@ impl INPUTMUX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0424usize) as _) }
     }
     #[inline(always)]
-    pub const fn AOI0_INPUT(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn AOI0_INPUT(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::AOI0_INPUT, crate::common::RW> {
         assert!(n < 16usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0440usize + n * 4usize) as _) }
     }
@@ -273,7 +300,7 @@ impl INPUTMUX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0480usize) as _) }
     }
     #[inline(always)]
-    pub const fn EXT_TRIG(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EXT_TRIG(self, n: usize) -> crate::common::Reg<regs::EXT_TRIG, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04c0usize + n * 4usize) as _) }
     }
@@ -326,7 +353,10 @@ impl INPUTMUX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06a0usize) as _) }
     }
     #[inline(always)]
-    pub const fn FLEXIO_TRIG(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FLEXIO_TRIG(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::FLEXIO_TRIG, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06e0usize + n * 4usize) as _) }
     }
@@ -360,6 +390,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ADC0_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ADC0_TRIG {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "ADC Trigger input connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -386,6 +422,12 @@ pub mod regs {
             f.debug_struct("ADC1_TRIG")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ADC1_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ADC1_TRIG {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
         }
     }
     #[doc = "AOI0 trigger input connections 0"]
@@ -416,6 +458,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AOI0_INPUT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "AOI0_INPUT {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "AOI1 trigger input connections 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -442,6 +490,12 @@ pub mod regs {
             f.debug_struct("AOI1_INPUT")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AOI1_INPUT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "AOI1_INPUT {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "CMP0 input connections"]
@@ -472,6 +526,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CMP0_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CMP0_TRIG {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "CMP1 input connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -498,6 +558,12 @@ pub mod regs {
             f.debug_struct("CMP1_TRIG")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CMP1_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CMP1_TRIG {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
         }
     }
     #[doc = "Capture select register for CTIMER inputs"]
@@ -528,6 +594,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER0CAP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER0CAP {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Capture select register for CTIMER inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -554,6 +626,12 @@ pub mod regs {
             f.debug_struct("CTIMER1CAP")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER1CAP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER1CAP {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Capture select register for CTIMER inputs"]
@@ -584,6 +662,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER2CAP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER2CAP {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Capture select register for CTIMER inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -610,6 +694,12 @@ pub mod regs {
             f.debug_struct("CTIMER3CAP")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER3CAP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER3CAP {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Capture select register for CTIMER inputs"]
@@ -640,6 +730,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER4CAP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER4CAP {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "This register selects the DAC0 trigger inputs."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -666,6 +762,12 @@ pub mod regs {
             f.debug_struct("DAC0_TRIG")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DAC0_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "DAC0_TRIG {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
         }
     }
     #[doc = "EXT trigger connections"]
@@ -696,6 +798,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EXT_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "EXT_TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "FlexIO Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -722,6 +830,12 @@ pub mod regs {
             f.debug_struct("FLEXIO_TRIG")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXIO_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXIO_TRIG {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "PWM0 Fault Input Trigger Connections"]
@@ -752,6 +866,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM0_FAULT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXPWM0_FAULT {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "PWM0 input trigger connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -778,6 +898,12 @@ pub mod regs {
             f.debug_struct("FLEXPWM0_FORCE")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM0_FORCE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXPWM0_FORCE {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
         }
     }
     #[doc = "PWM0 input trigger connections"]
@@ -808,6 +934,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM0_SM0_EXTA0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXPWM0_SM0_EXTA0 {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "PWM0 input trigger connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -834,6 +966,16 @@ pub mod regs {
             f.debug_struct("FLEXPWM0_SM0_EXTSYNC")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM0_SM0_EXTSYNC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FLEXPWM0_SM0_EXTSYNC {{ TRIGIN: {=u8:?} }}",
+                self.TRIGIN()
+            )
         }
     }
     #[doc = "PWM0 input trigger connections"]
@@ -864,6 +1006,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM0_SM1_EXTA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXPWM0_SM1_EXTA {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "PWM0 input trigger connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -890,6 +1038,16 @@ pub mod regs {
             f.debug_struct("FLEXPWM0_SM1_EXTSYNC")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM0_SM1_EXTSYNC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FLEXPWM0_SM1_EXTSYNC {{ TRIGIN: {=u8:?} }}",
+                self.TRIGIN()
+            )
         }
     }
     #[doc = "PWM0 input trigger connections"]
@@ -920,6 +1078,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM0_SM2_EXTA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXPWM0_SM2_EXTA {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "PWM0 input trigger connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -946,6 +1110,16 @@ pub mod regs {
             f.debug_struct("FLEXPWM0_SM2_EXTSYNC")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM0_SM2_EXTSYNC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FLEXPWM0_SM2_EXTSYNC {{ TRIGIN: {=u8:?} }}",
+                self.TRIGIN()
+            )
         }
     }
     #[doc = "PWM1 Fault Input Trigger Connections"]
@@ -976,6 +1150,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM1_FAULT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXPWM1_FAULT {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "PWM1 input trigger connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1002,6 +1182,12 @@ pub mod regs {
             f.debug_struct("FLEXPWM1_FORCE")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM1_FORCE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXPWM1_FORCE {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
         }
     }
     #[doc = "PWM1 input trigger connections"]
@@ -1032,6 +1218,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM1_SM0_EXTA0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXPWM1_SM0_EXTA0 {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "PWM1 input trigger connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1058,6 +1250,16 @@ pub mod regs {
             f.debug_struct("FLEXPWM1_SM0_EXTSYNC")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM1_SM0_EXTSYNC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FLEXPWM1_SM0_EXTSYNC {{ TRIGIN: {=u8:?} }}",
+                self.TRIGIN()
+            )
         }
     }
     #[doc = "PWM1 input trigger connections"]
@@ -1088,6 +1290,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM1_SM1_EXTA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXPWM1_SM1_EXTA {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "PWM1 input trigger connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1114,6 +1322,16 @@ pub mod regs {
             f.debug_struct("FLEXPWM1_SM1_EXTSYNC")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM1_SM1_EXTSYNC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FLEXPWM1_SM1_EXTSYNC {{ TRIGIN: {=u8:?} }}",
+                self.TRIGIN()
+            )
         }
     }
     #[doc = "PWM1 input trigger connections"]
@@ -1144,6 +1362,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM1_SM2_EXTA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXPWM1_SM2_EXTA {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "PWM1 input trigger connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1170,6 +1394,16 @@ pub mod regs {
             f.debug_struct("FLEXPWM1_SM2_EXTSYNC")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM1_SM2_EXTSYNC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FLEXPWM1_SM2_EXTSYNC {{ TRIGIN: {=u8:?} }}",
+                self.TRIGIN()
+            )
         }
     }
     #[doc = "Selection for frequency measurement reference clock"]
@@ -1200,6 +1434,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FREQMEAS_REF {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FREQMEAS_REF {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Selection for frequency measurement target clock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1226,6 +1466,12 @@ pub mod regs {
             f.debug_struct("FREQMEAS_TAR")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FREQMEAS_TAR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FREQMEAS_TAR {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "LPI2C0 trigger input connections"]
@@ -1256,6 +1502,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LPI2C0_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "LPI2C0_TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "LPI2C1 trigger input connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1282,6 +1534,12 @@ pub mod regs {
             f.debug_struct("LPI2C1_TRIG")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LPI2C1_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "LPI2C1_TRIG {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "LPI2C2 trigger input connections"]
@@ -1312,6 +1570,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LPI2C2_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "LPI2C2_TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "LPSPI0 trigger input connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1338,6 +1602,12 @@ pub mod regs {
             f.debug_struct("LPSPI0_TRIG")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LPSPI0_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "LPSPI0_TRIG {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "LPSPI1 trigger input connections"]
@@ -1368,6 +1638,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LPSPI1_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "LPSPI1_TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "LPUART0 trigger input connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1394,6 +1670,12 @@ pub mod regs {
             f.debug_struct("LPUART0r")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LPUART0r {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "LPUART0r {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "LPUART1 trigger input connections"]
@@ -1424,6 +1706,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LPUART1r {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "LPUART1r {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "LPUART2 trigger input connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1450,6 +1738,12 @@ pub mod regs {
             f.debug_struct("LPUART2r")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LPUART2r {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "LPUART2r {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "LPUART3 trigger input connections"]
@@ -1480,6 +1774,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LPUART3r {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "LPUART3r {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "LPUART4 trigger input connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1506,6 +1806,12 @@ pub mod regs {
             f.debug_struct("LPUART4r")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LPUART4r {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "LPUART4r {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "OPAMP0 Trigger Input Connections"]
@@ -1536,6 +1842,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OPAMP0_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "OPAMP0_TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "PWM0 external clock trigger"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1562,6 +1874,12 @@ pub mod regs {
             f.debug_struct("PWM0_EXT_CLK")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWM0_EXT_CLK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PWM0_EXT_CLK {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
         }
     }
     #[doc = "PWM1 external clock trigger"]
@@ -1592,6 +1910,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWM1_EXT_CLK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PWM1_EXT_CLK {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "QDC0 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1618,6 +1942,12 @@ pub mod regs {
             f.debug_struct("QDC0_HOME")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDC0_HOME {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDC0_HOME {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "QDC0 Trigger Input Connections"]
@@ -1648,6 +1978,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDC0_ICAP1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDC0_ICAP1 {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "QDC0 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1674,6 +2010,12 @@ pub mod regs {
             f.debug_struct("QDC0_ICAP2")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDC0_ICAP2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDC0_ICAP2 {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "QDC0 Trigger Input Connections"]
@@ -1704,6 +2046,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDC0_ICAP3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDC0_ICAP3 {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "QDC0 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1730,6 +2078,12 @@ pub mod regs {
             f.debug_struct("QDC0_INDEX")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDC0_INDEX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDC0_INDEX {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "QDC0 Trigger Input Connections"]
@@ -1760,6 +2114,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDC0_PHASEA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDC0_PHASEA {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "QDC0 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1786,6 +2146,12 @@ pub mod regs {
             f.debug_struct("QDC0_PHASEB")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDC0_PHASEB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDC0_PHASEB {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "QDC0 Trigger Input Connections"]
@@ -1816,6 +2182,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDC0_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDC0_TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "QDC1 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1842,6 +2214,12 @@ pub mod regs {
             f.debug_struct("QDC1_HOME")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDC1_HOME {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDC1_HOME {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "QDC1 Trigger Input Connections"]
@@ -1872,6 +2250,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDC1_ICAP1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDC1_ICAP1 {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "QDC1 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1898,6 +2282,12 @@ pub mod regs {
             f.debug_struct("QDC1_ICAP2")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDC1_ICAP2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDC1_ICAP2 {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "QDC1 Trigger Input Connections"]
@@ -1928,6 +2318,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDC1_ICAP3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDC1_ICAP3 {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "QDC1 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1954,6 +2350,12 @@ pub mod regs {
             f.debug_struct("QDC1_INDEX")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDC1_INDEX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDC1_INDEX {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "QDC1 Trigger Input Connections"]
@@ -1984,6 +2386,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDC1_PHASEA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDC1_PHASEA {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "QDC1 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2010,6 +2418,12 @@ pub mod regs {
             f.debug_struct("QDC1_PHASEB")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDC1_PHASEB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDC1_PHASEB {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "QDC1 Trigger Input Connections"]
@@ -2040,6 +2454,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDC1_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDC1_TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Trigger register for TIMER0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2066,6 +2486,12 @@ pub mod regs {
             f.debug_struct("TIMER0TRIG")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER0TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TIMER0TRIG {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Trigger register for TIMER1"]
@@ -2096,6 +2522,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER1TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TIMER1TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Trigger register for TIMER2 inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2122,6 +2554,12 @@ pub mod regs {
             f.debug_struct("TIMER2TRIG")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER2TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TIMER2TRIG {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Trigger register for TIMER3"]
@@ -2152,6 +2590,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER3TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TIMER3TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Trigger register for TIMER4"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2180,6 +2624,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER4TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TIMER4TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "USB-FS trigger input connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2206,6 +2656,12 @@ pub mod regs {
             f.debug_struct("USBFS_TRIG")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USBFS_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "USBFS_TRIG {{ INP: {=u8:?} }}", self.INP())
         }
     }
 }

@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct UDF {
     ptr: *mut u8,
@@ -131,6 +131,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for UDF_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "UDF_CTRL {{ salt: {=u16:?}, lock: {=u8:?}, reserved21: {=u8:?}, udf_en: {=u8:?}, reserved25: {=bool:?}, reserved27: {=u8:?}, flush: {=u8:?}, reserved31: {=bool:?} }}" , self . salt () , self . lock () , self . reserved21 () , self . udf_en () , self . reserved25 () , self . reserved27 () , self . flush () , self . reserved31 ())
+        }
+    }
     #[doc = "Status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -177,6 +183,18 @@ pub mod regs {
                 .field("rsv", &self.rsv())
                 .field("o_wait", &self.o_wait())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for UDF_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "UDF_STATUS {{ o_status: {=u8:?}, rsv: {=u32:?}, o_wait: {=bool:?} }}",
+                self.o_status(),
+                self.rsv(),
+                self.o_wait()
+            )
         }
     }
 }

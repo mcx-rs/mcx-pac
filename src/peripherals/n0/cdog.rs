@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct CDOG {
     ptr: *mut u8,
@@ -191,6 +191,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CONTROL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CONTROL {{ LOCK_CTRL: {=u8:?}, TIMEOUT_CTRL: {=u8:?}, MISCOMPARE_CTRL: {=u8:?}, SEQUENCE_CTRL: {=u8:?}, STATE_CTRL: {=u8:?}, ADDRESS_CTRL: {=u8:?}, IRQ_PAUSE: {=u8:?}, DEBUG_HALT_CTRL: {=u8:?} }}" , self . LOCK_CTRL () , self . TIMEOUT_CTRL () , self . MISCOMPARE_CTRL () , self . SEQUENCE_CTRL () , self . STATE_CTRL () , self . ADDRESS_CTRL () , self . IRQ_PAUSE () , self . DEBUG_HALT_CTRL ())
+        }
+    }
     #[doc = "Flags Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -279,6 +285,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLAGS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FLAGS {{ TO_FLAG: {=bool:?}, MISCOM_FLAG: {=bool:?}, SEQ_FLAG: {=bool:?}, CNT_FLAG: {=bool:?}, STATE_FLAG: {=bool:?}, ADDR_FLAG: {=bool:?}, POR_FLAG: {=bool:?} }}" , self . TO_FLAG () , self . MISCOM_FLAG () , self . SEQ_FLAG () , self . CNT_FLAG () , self . STATE_FLAG () , self . ADDR_FLAG () , self . POR_FLAG ())
+        }
+    }
     #[doc = "Status 1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -337,6 +349,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STATUS {{ NUMTOF: {=u8:?}, NUMMISCOMPF: {=u8:?}, NUMILSEQF: {=u8:?}, CURST: {=u8:?} }}" , self . NUMTOF () , self . NUMMISCOMPF () , self . NUMILSEQF () , self . CURST ())
+        }
+    }
     #[doc = "Status 2 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -383,6 +401,18 @@ pub mod regs {
                 .field("NUMILLSTF", &self.NUMILLSTF())
                 .field("NUMILLA", &self.NUMILLA())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUS2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "STATUS2 {{ NUMCNTF: {=u8:?}, NUMILLSTF: {=u8:?}, NUMILLA: {=u8:?} }}",
+                self.NUMCNTF(),
+                self.NUMILLSTF(),
+                self.NUMILLA()
+            )
         }
     }
 }

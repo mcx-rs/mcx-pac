@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct EVTG {
     ptr: *mut u8,
@@ -83,7 +83,7 @@ pub mod regs {
     #[doc = "AOI0 Boolean Function Term 0 and 1 Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EVTG_INST_EVTG_AOI0_BFT01(pub u32);
+    pub struct EVTG_INST_EVTG_AOI0_BFT01(pub u16);
     impl EVTG_INST_EVTG_AOI0_BFT01 {
         #[inline(always)]
         pub const fn PT1_DC(&self) -> u8 {
@@ -92,7 +92,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT1_DC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u16) & 0x03) << 0usize);
         }
         #[inline(always)]
         pub const fn PT1_CC(&self) -> u8 {
@@ -101,7 +101,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT1_CC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u16) & 0x03) << 2usize);
         }
         #[inline(always)]
         pub const fn PT1_BC(&self) -> u8 {
@@ -110,7 +110,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT1_BC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u16) & 0x03) << 4usize);
         }
         #[inline(always)]
         pub const fn PT1_AC(&self) -> u8 {
@@ -119,7 +119,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT1_AC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u16) & 0x03) << 6usize);
         }
         #[inline(always)]
         pub const fn PT0_DC(&self) -> u8 {
@@ -128,7 +128,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT0_DC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u16) & 0x03) << 8usize);
         }
         #[inline(always)]
         pub const fn PT0_CC(&self) -> u8 {
@@ -137,7 +137,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT0_CC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
+            self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u16) & 0x03) << 10usize);
         }
         #[inline(always)]
         pub const fn PT0_BC(&self) -> u8 {
@@ -146,7 +146,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT0_BC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u32) & 0x03) << 12usize);
+            self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u16) & 0x03) << 12usize);
         }
         #[inline(always)]
         pub const fn PT0_AC(&self) -> u8 {
@@ -155,7 +155,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT0_AC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u32) & 0x03) << 14usize);
+            self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u16) & 0x03) << 14usize);
         }
     }
     impl Default for EVTG_INST_EVTG_AOI0_BFT01 {
@@ -178,10 +178,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EVTG_INST_EVTG_AOI0_BFT01 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "EVTG_INST_EVTG_AOI0_BFT01 {{ PT1_DC: {=u8:?}, PT1_CC: {=u8:?}, PT1_BC: {=u8:?}, PT1_AC: {=u8:?}, PT0_DC: {=u8:?}, PT0_CC: {=u8:?}, PT0_BC: {=u8:?}, PT0_AC: {=u8:?} }}" , self . PT1_DC () , self . PT1_CC () , self . PT1_BC () , self . PT1_AC () , self . PT0_DC () , self . PT0_CC () , self . PT0_BC () , self . PT0_AC ())
+        }
+    }
     #[doc = "AOI0 Boolean Function Term 2 and 3 Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EVTG_INST_EVTG_AOI0_BFT23(pub u32);
+    pub struct EVTG_INST_EVTG_AOI0_BFT23(pub u16);
     impl EVTG_INST_EVTG_AOI0_BFT23 {
         #[inline(always)]
         pub const fn PT3_DC(&self) -> u8 {
@@ -190,7 +196,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT3_DC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u16) & 0x03) << 0usize);
         }
         #[inline(always)]
         pub const fn PT3_CC(&self) -> u8 {
@@ -199,7 +205,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT3_CC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u16) & 0x03) << 2usize);
         }
         #[inline(always)]
         pub const fn PT3_BC(&self) -> u8 {
@@ -208,7 +214,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT3_BC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u16) & 0x03) << 4usize);
         }
         #[inline(always)]
         pub const fn PT3_AC(&self) -> u8 {
@@ -217,7 +223,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT3_AC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u16) & 0x03) << 6usize);
         }
         #[inline(always)]
         pub const fn PT2_DC(&self) -> u8 {
@@ -226,7 +232,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT2_DC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u16) & 0x03) << 8usize);
         }
         #[inline(always)]
         pub const fn PT2_CC(&self) -> u8 {
@@ -235,7 +241,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT2_CC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
+            self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u16) & 0x03) << 10usize);
         }
         #[inline(always)]
         pub const fn PT2_BC(&self) -> u8 {
@@ -244,7 +250,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT2_BC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u32) & 0x03) << 12usize);
+            self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u16) & 0x03) << 12usize);
         }
         #[inline(always)]
         pub const fn PT2_AC(&self) -> u8 {
@@ -253,7 +259,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT2_AC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u32) & 0x03) << 14usize);
+            self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u16) & 0x03) << 14usize);
         }
     }
     impl Default for EVTG_INST_EVTG_AOI0_BFT23 {
@@ -276,10 +282,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EVTG_INST_EVTG_AOI0_BFT23 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "EVTG_INST_EVTG_AOI0_BFT23 {{ PT3_DC: {=u8:?}, PT3_CC: {=u8:?}, PT3_BC: {=u8:?}, PT3_AC: {=u8:?}, PT2_DC: {=u8:?}, PT2_CC: {=u8:?}, PT2_BC: {=u8:?}, PT2_AC: {=u8:?} }}" , self . PT3_DC () , self . PT3_CC () , self . PT3_BC () , self . PT3_AC () , self . PT2_DC () , self . PT2_CC () , self . PT2_BC () , self . PT2_AC ())
+        }
+    }
     #[doc = "AOI0 Output Filter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EVTG_INST_EVTG_AOI0_FILT(pub u32);
+    pub struct EVTG_INST_EVTG_AOI0_FILT(pub u16);
     impl EVTG_INST_EVTG_AOI0_FILT {
         #[inline(always)]
         pub const fn FILT_PER(&self) -> u8 {
@@ -288,7 +300,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_FILT_PER(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u16) & 0xff) << 0usize);
         }
         #[inline(always)]
         pub const fn FILT_CNT(&self) -> u8 {
@@ -297,7 +309,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_FILT_CNT(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
+            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u16) & 0x07) << 8usize);
         }
     }
     impl Default for EVTG_INST_EVTG_AOI0_FILT {
@@ -314,10 +326,21 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EVTG_INST_EVTG_AOI0_FILT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "EVTG_INST_EVTG_AOI0_FILT {{ FILT_PER: {=u8:?}, FILT_CNT: {=u8:?} }}",
+                self.FILT_PER(),
+                self.FILT_CNT()
+            )
+        }
+    }
     #[doc = "AOI1 Boolean Function Term 0 and 1 Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EVTG_INST_EVTG_AOI1_BFT01(pub u32);
+    pub struct EVTG_INST_EVTG_AOI1_BFT01(pub u16);
     impl EVTG_INST_EVTG_AOI1_BFT01 {
         #[inline(always)]
         pub const fn PT1_DC(&self) -> u8 {
@@ -326,7 +349,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT1_DC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u16) & 0x03) << 0usize);
         }
         #[inline(always)]
         pub const fn PT1_CC(&self) -> u8 {
@@ -335,7 +358,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT1_CC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u16) & 0x03) << 2usize);
         }
         #[inline(always)]
         pub const fn PT1_BC(&self) -> u8 {
@@ -344,7 +367,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT1_BC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u16) & 0x03) << 4usize);
         }
         #[inline(always)]
         pub const fn PT1_AC(&self) -> u8 {
@@ -353,7 +376,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT1_AC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u16) & 0x03) << 6usize);
         }
         #[inline(always)]
         pub const fn PT0_DC(&self) -> u8 {
@@ -362,7 +385,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT0_DC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u16) & 0x03) << 8usize);
         }
         #[inline(always)]
         pub const fn PT0_CC(&self) -> u8 {
@@ -371,7 +394,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT0_CC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
+            self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u16) & 0x03) << 10usize);
         }
         #[inline(always)]
         pub const fn PT0_BC(&self) -> u8 {
@@ -380,7 +403,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT0_BC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u32) & 0x03) << 12usize);
+            self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u16) & 0x03) << 12usize);
         }
         #[inline(always)]
         pub const fn PT0_AC(&self) -> u8 {
@@ -389,7 +412,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT0_AC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u32) & 0x03) << 14usize);
+            self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u16) & 0x03) << 14usize);
         }
     }
     impl Default for EVTG_INST_EVTG_AOI1_BFT01 {
@@ -412,10 +435,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EVTG_INST_EVTG_AOI1_BFT01 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "EVTG_INST_EVTG_AOI1_BFT01 {{ PT1_DC: {=u8:?}, PT1_CC: {=u8:?}, PT1_BC: {=u8:?}, PT1_AC: {=u8:?}, PT0_DC: {=u8:?}, PT0_CC: {=u8:?}, PT0_BC: {=u8:?}, PT0_AC: {=u8:?} }}" , self . PT1_DC () , self . PT1_CC () , self . PT1_BC () , self . PT1_AC () , self . PT0_DC () , self . PT0_CC () , self . PT0_BC () , self . PT0_AC ())
+        }
+    }
     #[doc = "AOI1 Boolean Function Term 2 and 3 Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EVTG_INST_EVTG_AOI1_BFT23(pub u32);
+    pub struct EVTG_INST_EVTG_AOI1_BFT23(pub u16);
     impl EVTG_INST_EVTG_AOI1_BFT23 {
         #[inline(always)]
         pub const fn PT3_DC(&self) -> u8 {
@@ -424,7 +453,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT3_DC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u16) & 0x03) << 0usize);
         }
         #[inline(always)]
         pub const fn PT3_CC(&self) -> u8 {
@@ -433,7 +462,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT3_CC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u16) & 0x03) << 2usize);
         }
         #[inline(always)]
         pub const fn PT3_BC(&self) -> u8 {
@@ -442,7 +471,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT3_BC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u16) & 0x03) << 4usize);
         }
         #[inline(always)]
         pub const fn PT3_AC(&self) -> u8 {
@@ -451,7 +480,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT3_AC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u16) & 0x03) << 6usize);
         }
         #[inline(always)]
         pub const fn PT2_DC(&self) -> u8 {
@@ -460,7 +489,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT2_DC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u16) & 0x03) << 8usize);
         }
         #[inline(always)]
         pub const fn PT2_CC(&self) -> u8 {
@@ -469,7 +498,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT2_CC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
+            self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u16) & 0x03) << 10usize);
         }
         #[inline(always)]
         pub const fn PT2_BC(&self) -> u8 {
@@ -478,7 +507,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT2_BC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u32) & 0x03) << 12usize);
+            self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u16) & 0x03) << 12usize);
         }
         #[inline(always)]
         pub const fn PT2_AC(&self) -> u8 {
@@ -487,7 +516,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PT2_AC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u32) & 0x03) << 14usize);
+            self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u16) & 0x03) << 14usize);
         }
     }
     impl Default for EVTG_INST_EVTG_AOI1_BFT23 {
@@ -510,10 +539,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EVTG_INST_EVTG_AOI1_BFT23 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "EVTG_INST_EVTG_AOI1_BFT23 {{ PT3_DC: {=u8:?}, PT3_CC: {=u8:?}, PT3_BC: {=u8:?}, PT3_AC: {=u8:?}, PT2_DC: {=u8:?}, PT2_CC: {=u8:?}, PT2_BC: {=u8:?}, PT2_AC: {=u8:?} }}" , self . PT3_DC () , self . PT3_CC () , self . PT3_BC () , self . PT3_AC () , self . PT2_DC () , self . PT2_CC () , self . PT2_BC () , self . PT2_AC ())
+        }
+    }
     #[doc = "AOI1 Output Filter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EVTG_INST_EVTG_AOI1_FILT(pub u32);
+    pub struct EVTG_INST_EVTG_AOI1_FILT(pub u16);
     impl EVTG_INST_EVTG_AOI1_FILT {
         #[inline(always)]
         pub const fn FILT_PER(&self) -> u8 {
@@ -522,7 +557,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_FILT_PER(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u16) & 0xff) << 0usize);
         }
         #[inline(always)]
         pub const fn FILT_CNT(&self) -> u8 {
@@ -531,7 +566,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_FILT_CNT(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
+            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u16) & 0x07) << 8usize);
         }
     }
     impl Default for EVTG_INST_EVTG_AOI1_FILT {
@@ -548,10 +583,21 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EVTG_INST_EVTG_AOI1_FILT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "EVTG_INST_EVTG_AOI1_FILT {{ FILT_PER: {=u8:?}, FILT_CNT: {=u8:?} }}",
+                self.FILT_PER(),
+                self.FILT_CNT()
+            )
+        }
+    }
     #[doc = "Control and Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EVTG_INST_EVTG_CTRL(pub u32);
+    pub struct EVTG_INST_EVTG_CTRL(pub u16);
     impl EVTG_INST_EVTG_CTRL {
         #[inline(always)]
         pub const fn FF_INIT(&self) -> bool {
@@ -560,7 +606,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_FF_INIT(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn INIT_EN(&self) -> bool {
@@ -569,7 +615,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_INIT_EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn MODE_SEL(&self) -> u8 {
@@ -578,7 +624,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_MODE_SEL(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 2usize)) | (((val as u32) & 0x07) << 2usize);
+            self.0 = (self.0 & !(0x07 << 2usize)) | (((val as u16) & 0x07) << 2usize);
         }
         #[inline(always)]
         pub const fn FB_OVRD(&self) -> u8 {
@@ -587,7 +633,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_FB_OVRD(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u16) & 0x03) << 6usize);
         }
         #[inline(always)]
         pub const fn SYNC_CTRL(&self) -> u8 {
@@ -596,7 +642,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_SYNC_CTRL(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
+            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u16) & 0x0f) << 8usize);
         }
         #[inline(always)]
         pub const fn FORCE_BYPASS(&self) -> u8 {
@@ -605,7 +651,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_FORCE_BYPASS(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u32) & 0x03) << 12usize);
+            self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u16) & 0x03) << 12usize);
         }
     }
     impl Default for EVTG_INST_EVTG_CTRL {
@@ -624,6 +670,12 @@ pub mod regs {
                 .field("SYNC_CTRL", &self.SYNC_CTRL())
                 .field("FORCE_BYPASS", &self.FORCE_BYPASS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EVTG_INST_EVTG_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "EVTG_INST_EVTG_CTRL {{ FF_INIT: {=bool:?}, INIT_EN: {=bool:?}, MODE_SEL: {=u8:?}, FB_OVRD: {=u8:?}, SYNC_CTRL: {=u8:?}, FORCE_BYPASS: {=u8:?} }}" , self . FF_INIT () , self . INIT_EN () , self . MODE_SEL () , self . FB_OVRD () , self . SYNC_CTRL () , self . FORCE_BYPASS ())
         }
     }
 }

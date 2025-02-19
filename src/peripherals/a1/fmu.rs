@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct FMU {
     ptr: *mut u8,
@@ -102,6 +102,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FCNFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FCNFG {{ CCIE: {=bool:?}, ERSREQ: {=bool:?}, DFDIE: {=bool:?}, ERSIEN0: {=u8:?}, ERSIEN1: {=u8:?} }}" , self . CCIE () , self . ERSREQ () , self . DFDIE () , self . ERSIEN0 () , self . ERSIEN1 ())
+        }
+    }
     #[doc = "Flash Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -158,6 +164,12 @@ pub mod regs {
                 .field("FDFD", &self.FDFD())
                 .field("ABTREQ", &self.ABTREQ())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FCTRL {{ RWSC: {=u8:?}, LSACTIVE: {=bool:?}, FDFD: {=bool:?}, ABTREQ: {=bool:?} }}" , self . RWSC () , self . LSACTIVE () , self . FDFD () , self . ABTREQ ())
         }
     }
     #[doc = "Flash Status Register"]
@@ -306,6 +318,12 @@ pub mod regs {
                 .field("PEWEN", &self.PEWEN())
                 .field("PERDY", &self.PERDY())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FSTAT {{ FAIL: {=bool:?}, CMDABT: {=bool:?}, PVIOL: {=bool:?}, ACCERR: {=bool:?}, CWSABT: {=bool:?}, CCIF: {=bool:?}, CMDPRT: {=u8:?}, CMDP: {=bool:?}, CMDDID: {=u8:?}, DFDIF: {=bool:?}, SALV_USED: {=bool:?}, PEWEN: {=u8:?}, PERDY: {=bool:?} }}" , self . FAIL () , self . CMDABT () , self . PVIOL () , self . ACCERR () , self . CWSABT () , self . CCIF () , self . CMDPRT () , self . CMDP () , self . CMDDID () , self . DFDIF () , self . SALV_USED () , self . PEWEN () , self . PERDY ())
         }
     }
 }

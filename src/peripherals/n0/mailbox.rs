@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct MAILBOX {
     ptr: *mut u8,
@@ -78,6 +78,12 @@ pub mod regs {
     impl core::fmt::Debug for MUTEX {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MUTEX").field("EX", &self.EX()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MUTEX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MUTEX {{ EX: {=bool:?} }}", self.EX())
         }
     }
 }

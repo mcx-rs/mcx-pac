@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct GDET {
     ptr: *mut u8,
@@ -133,6 +133,12 @@ pub mod regs {
                 .field("RFU", &self.RFU())
                 .field("rfu", &self.rfu())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_CONF_0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "GDET_CONF_0 {{ FIELD_3_0: {=u8:?}, field_3_0: {=u8:?}, SBZ: {=bool:?}, sbz: {=bool:?}, RFU: {=u32:?}, rfu: {=u32:?} }}" , self . FIELD_3_0 () , self . field_3_0 () , self . SBZ () , self . sbz () , self . RFU () , self . rfu ())
         }
     }
     #[doc = "GDET Configuration 1 Register"]
@@ -355,6 +361,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_CONF_1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "GDET_CONF_1 {{ FIELD_1_0: {=u8:?}, field_1_0: {=u8:?}, FIELD_3_2: {=u8:?}, field_3_2: {=u8:?}, SBZ1: {=bool:?}, sbz1: {=bool:?}, SBZ2: {=bool:?}, sbz2: {=bool:?}, SBZ3: {=bool:?}, sbz3: {=bool:?}, FIELD_7: {=bool:?}, field_7: {=bool:?}, FIELD_8: {=bool:?}, field_8: {=bool:?}, SBZ4: {=bool:?}, sbz4: {=bool:?}, SBZ5: {=bool:?}, sbz5: {=bool:?}, RFU: {=u32:?}, rfu: {=u32:?} }}" , self . FIELD_1_0 () , self . field_1_0 () , self . FIELD_3_2 () , self . field_3_2 () , self . SBZ1 () , self . sbz1 () , self . SBZ2 () , self . sbz2 () , self . SBZ3 () , self . sbz3 () , self . FIELD_7 () , self . field_7 () , self . FIELD_8 () , self . field_8 () , self . SBZ4 () , self . sbz4 () , self . SBZ5 () , self . sbz5 () , self . RFU () , self . rfu ())
+        }
+    }
     #[doc = "GDET Configuration 2 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -493,6 +505,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_CONF_2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "GDET_CONF_2 {{ FIELD_6_0: {=u8:?}, field_6_0: {=u8:?}, RFU1: {=u16:?}, rfu1: {=u16:?}, FIELD_21_16: {=u8:?}, field_21_16: {=u8:?}, RFU2: {=u8:?}, rfu2: {=u8:?}, FIELD_29_24: {=u8:?}, field_29_24: {=u8:?}, RFU3: {=u8:?}, rfu3: {=u8:?} }}" , self . FIELD_6_0 () , self . field_6_0 () , self . RFU1 () , self . rfu1 () , self . FIELD_21_16 () , self . field_21_16 () , self . RFU2 () , self . rfu2 () , self . FIELD_29_24 () , self . field_29_24 () , self . RFU3 () , self . rfu3 ())
+        }
+    }
     #[doc = "GDET Configuration 3 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -551,6 +569,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_CONF_3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "GDET_CONF_3 {{ FIELD_6_0: {=u8:?}, field_6_0: {=u8:?}, RFU1: {=u32:?}, rfu1: {=u32:?} }}" , self . FIELD_6_0 () , self . field_6_0 () , self . RFU1 () , self . rfu1 ())
+        }
+    }
     #[doc = "GDET Configuration 4 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -607,6 +631,12 @@ pub mod regs {
                 .field("RFU1", &self.RFU1())
                 .field("rfu1", &self.rfu1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_CONF_4 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "GDET_CONF_4 {{ FIELD_6_0: {=u8:?}, field_6_0: {=u8:?}, RFU1: {=u32:?}, rfu1: {=u32:?} }}" , self . FIELD_6_0 () , self . field_6_0 () , self . RFU1 () , self . rfu1 ())
         }
     }
     #[doc = "GDET Configuration 5 Register"]
@@ -689,6 +719,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_CONF_5 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "GDET_CONF_5 {{ FIELD_5_0: {=u8:?}, field_5_0: {=u8:?}, FIELD_11_6: {=u8:?}, field_11_6: {=u8:?}, RFU1: {=u32:?}, rfu1: {=u32:?} }}" , self . FIELD_5_0 () , self . field_5_0 () , self . FIELD_11_6 () , self . field_11_6 () , self . RFU1 () , self . rfu1 ())
+        }
+    }
     #[doc = "GDET Delay Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -767,6 +803,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_DLY_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "GDET_DLY_CTRL {{ VOL_SEL: {=u8:?}, vol_sel: {=u8:?}, SW_VOL_CTRL: {=bool:?}, sw_vol_ctrl: {=bool:?}, RFU: {=u32:?}, rfu: {=u32:?} }}" , self . VOL_SEL () , self . vol_sel () , self . SW_VOL_CTRL () , self . sw_vol_ctrl () , self . RFU () , self . rfu ())
+        }
+    }
     #[doc = "GDET Enable Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -823,6 +865,19 @@ pub mod regs {
                 .field("RFU", &self.RFU())
                 .field("rfu", &self.rfu())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_ENABLE1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "GDET_ENABLE1 {{ EN1: {=bool:?}, en1: {=bool:?}, RFU: {=u32:?}, rfu: {=u32:?} }}",
+                self.EN1(),
+                self.en1(),
+                self.RFU(),
+                self.rfu()
+            )
         }
     }
     #[doc = "GDET Reset Register"]
@@ -903,6 +958,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_RESET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "GDET_RESET {{ RFU1: {=u8:?}, rfu1: {=u8:?}, SFT_RST: {=bool:?}, sft_rst: {=bool:?}, RFU2: {=u32:?}, rfu2: {=u32:?} }}" , self . RFU1 () , self . rfu1 () , self . SFT_RST () , self . sft_rst () , self . RFU2 () , self . rfu2 ())
+        }
+    }
     #[doc = "GDET Test Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -959,6 +1020,19 @@ pub mod regs {
                 .field("RFU", &self.RFU())
                 .field("rfu", &self.rfu())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GDET_TEST {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "GDET_TEST {{ SBZ: {=bool:?}, sbz: {=bool:?}, RFU: {=u32:?}, rfu: {=u32:?} }}",
+                self.SBZ(),
+                self.sbz(),
+                self.RFU(),
+                self.rfu()
+            )
         }
     }
 }

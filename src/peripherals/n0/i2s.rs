@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct I2S {
     ptr: *mut u8,
@@ -163,6 +163,19 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MCR {{ DIV: {=u8:?}, DIVEN: {=bool:?}, MSEL: {=u8:?}, MOE: {=bool:?} }}",
+                self.DIV(),
+                self.DIVEN(),
+                self.MSEL(),
+                self.MOE()
+            )
+        }
+    }
     #[doc = "Parameter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -211,6 +224,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PARAM {{ DATALINE: {=u8:?}, FIFO: {=u8:?}, FRAME: {=u8:?} }}",
+                self.DATALINE(),
+                self.FIFO(),
+                self.FRAME()
+            )
+        }
+    }
     #[doc = "Receive Configuration 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -235,6 +260,12 @@ pub mod regs {
     impl core::fmt::Debug for RCR1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RCR1").field("RFW", &self.RFW()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RCR1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "RCR1 {{ RFW: {=u8:?} }}", self.RFW())
         }
     }
     #[doc = "Receive Configuration 2"]
@@ -335,6 +366,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RCR2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RCR2 {{ DIV: {=u8:?}, BYP: {=bool:?}, BCD: {=bool:?}, BCP: {=bool:?}, MSEL: {=u8:?}, BCI: {=bool:?}, BCS: {=bool:?}, SYNC: {=u8:?} }}" , self . DIV () , self . BYP () , self . BCD () , self . BCP () , self . MSEL () , self . BCI () , self . BCS () , self . SYNC ())
+        }
+    }
     #[doc = "Receive Configuration 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -381,6 +418,18 @@ pub mod regs {
                 .field("RCE", &self.RCE())
                 .field("CFR", &self.CFR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RCR3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "RCR3 {{ WDFL: {=u8:?}, RCE: {=u8:?}, CFR: {=u8:?} }}",
+                self.WDFL(),
+                self.RCE(),
+                self.CFR()
+            )
         }
     }
     #[doc = "Receive Configuration 4"]
@@ -501,6 +550,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RCR4 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RCR4 {{ FSD: {=bool:?}, FSP: {=bool:?}, ONDEM: {=bool:?}, FSE: {=bool:?}, MF: {=bool:?}, SYWD: {=u8:?}, FRSZ: {=u8:?}, FPACK: {=u8:?}, FCOMB: {=u8:?}, FCONT: {=bool:?} }}" , self . FSD () , self . FSP () , self . ONDEM () , self . FSE () , self . MF () , self . SYWD () , self . FRSZ () , self . FPACK () , self . FCOMB () , self . FCONT ())
+        }
+    }
     #[doc = "Receive Configuration 5"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -547,6 +602,18 @@ pub mod regs {
                 .field("W0W", &self.W0W())
                 .field("WNW", &self.WNW())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RCR5 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "RCR5 {{ FBT: {=u8:?}, W0W: {=u8:?}, WNW: {=u8:?} }}",
+                self.FBT(),
+                self.W0W(),
+                self.WNW()
+            )
         }
     }
     #[doc = "Receive Control"]
@@ -747,6 +814,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RCSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RCSR {{ FRDE: {=bool:?}, FWDE: {=bool:?}, FRIE: {=bool:?}, FWIE: {=bool:?}, FEIE: {=bool:?}, SEIE: {=bool:?}, WSIE: {=bool:?}, FRF: {=bool:?}, FWF: {=bool:?}, FEF: {=bool:?}, SEF: {=bool:?}, WSF: {=bool:?}, SR: {=bool:?}, FR: {=bool:?}, BCE: {=bool:?}, DBGE: {=bool:?}, STOPE: {=bool:?}, RE: {=bool:?} }}" , self . FRDE () , self . FWDE () , self . FRIE () , self . FWIE () , self . FEIE () , self . SEIE () , self . WSIE () , self . FRF () , self . FWF () , self . FEF () , self . SEF () , self . WSF () , self . SR () , self . FR () , self . BCE () , self . DBGE () , self . STOPE () , self . RE ())
+        }
+    }
     #[doc = "Receive FIFO"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -795,6 +868,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RFR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "RFR {{ RFP: {=u8:?}, RCP: {=bool:?}, WFP: {=u8:?} }}",
+                self.RFP(),
+                self.RCP(),
+                self.WFP()
+            )
+        }
+    }
     #[doc = "Transmit Configuration 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -819,6 +904,12 @@ pub mod regs {
     impl core::fmt::Debug for TCR1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TCR1").field("TFW", &self.TFW()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TCR1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TCR1 {{ TFW: {=u8:?} }}", self.TFW())
         }
     }
     #[doc = "Transmit Configuration 2"]
@@ -919,6 +1010,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TCR2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TCR2 {{ DIV: {=u8:?}, BYP: {=bool:?}, BCD: {=bool:?}, BCP: {=bool:?}, MSEL: {=u8:?}, BCI: {=bool:?}, BCS: {=bool:?}, SYNC: {=u8:?} }}" , self . DIV () , self . BYP () , self . BCD () , self . BCP () , self . MSEL () , self . BCI () , self . BCS () , self . SYNC ())
+        }
+    }
     #[doc = "Transmit Configuration 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -965,6 +1062,18 @@ pub mod regs {
                 .field("TCE", &self.TCE())
                 .field("CFR", &self.CFR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TCR3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TCR3 {{ WDFL: {=u8:?}, TCE: {=u8:?}, CFR: {=u8:?} }}",
+                self.WDFL(),
+                self.TCE(),
+                self.CFR()
+            )
         }
     }
     #[doc = "Transmit Configuration 4"]
@@ -1095,6 +1204,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TCR4 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TCR4 {{ FSD: {=bool:?}, FSP: {=bool:?}, ONDEM: {=bool:?}, FSE: {=bool:?}, MF: {=bool:?}, CHMOD: {=bool:?}, SYWD: {=u8:?}, FRSZ: {=u8:?}, FPACK: {=u8:?}, FCOMB: {=u8:?}, FCONT: {=bool:?} }}" , self . FSD () , self . FSP () , self . ONDEM () , self . FSE () , self . MF () , self . CHMOD () , self . SYWD () , self . FRSZ () , self . FPACK () , self . FCOMB () , self . FCONT ())
+        }
+    }
     #[doc = "Transmit Configuration 5"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1141,6 +1256,18 @@ pub mod regs {
                 .field("W0W", &self.W0W())
                 .field("WNW", &self.WNW())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TCR5 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TCR5 {{ FBT: {=u8:?}, W0W: {=u8:?}, WNW: {=u8:?} }}",
+                self.FBT(),
+                self.W0W(),
+                self.WNW()
+            )
         }
     }
     #[doc = "Transmit Control"]
@@ -1341,6 +1468,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TCSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TCSR {{ FRDE: {=bool:?}, FWDE: {=bool:?}, FRIE: {=bool:?}, FWIE: {=bool:?}, FEIE: {=bool:?}, SEIE: {=bool:?}, WSIE: {=bool:?}, FRF: {=bool:?}, FWF: {=bool:?}, FEF: {=bool:?}, SEF: {=bool:?}, WSF: {=bool:?}, SR: {=bool:?}, FR: {=bool:?}, BCE: {=bool:?}, DBGE: {=bool:?}, STOPE: {=bool:?}, TE: {=bool:?} }}" , self . FRDE () , self . FWDE () , self . FRIE () , self . FWIE () , self . FEIE () , self . SEIE () , self . WSIE () , self . FRF () , self . FWF () , self . FEF () , self . SEF () , self . WSF () , self . SR () , self . FR () , self . BCE () , self . DBGE () , self . STOPE () , self . TE ())
+        }
+    }
     #[doc = "Transmit FIFO"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1389,6 +1522,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TFR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TFR {{ RFP: {=u8:?}, WFP: {=u8:?}, WCP: {=bool:?} }}",
+                self.RFP(),
+                self.WFP(),
+                self.WCP()
+            )
+        }
+    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1435,6 +1580,18 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
         }
     }
 }

@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct USBNC {
     ptr: *mut u8,
@@ -147,6 +147,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL1 {{ OVER_CUR_DIS: {=bool:?}, OVER_CUR_POL: {=bool:?}, PWR_POL: {=bool:?}, WIE: {=bool:?}, WKUP_SW_EN: {=bool:?}, WKUP_SW: {=bool:?}, WKUP_ID_EN: {=bool:?}, WKUP_VBUS_EN: {=bool:?}, WKUP_DPDM_EN: {=bool:?}, WIR: {=bool:?} }}" , self . OVER_CUR_DIS () , self . OVER_CUR_POL () , self . PWR_POL () , self . WIE () , self . WKUP_SW_EN () , self . WKUP_SW () , self . WKUP_ID_EN () , self . WKUP_VBUS_EN () , self . WKUP_DPDM_EN () , self . WIR ())
+        }
+    }
     #[doc = "USB OTG Control 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -205,6 +211,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL2 {{ VBUS_SOURCE_SEL: {=u8:?}, AUTURESUME_EN: {=bool:?}, LOWSPEED_EN: {=bool:?}, UTMI_CLK_VLD: {=bool:?} }}" , self . VBUS_SOURCE_SEL () , self . AUTURESUME_EN () , self . LOWSPEED_EN () , self . UTMI_CLK_VLD ())
+        }
+    }
     #[doc = "USB Host HSIC Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -251,6 +263,18 @@ pub mod regs {
                 .field("HSIC_EN", &self.HSIC_EN())
                 .field("CLK_VLD", &self.CLK_VLD())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HSIC_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "HSIC_CTRL {{ HSIC_CLK_ON: {=bool:?}, HSIC_EN: {=bool:?}, CLK_VLD: {=bool:?} }}",
+                self.HSIC_CLK_ON(),
+                self.HSIC_EN(),
+                self.CLK_VLD()
+            )
         }
     }
 }

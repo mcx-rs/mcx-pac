@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct SEMA42 {
     ptr: *mut u8,
@@ -92,7 +92,7 @@ pub mod regs {
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GATE0(pub u32);
+    pub struct GATE0(pub u8);
     impl GATE0 {
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
@@ -101,7 +101,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_GTFSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
     impl Default for GATE0 {
@@ -117,10 +117,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GATE0 {{ GTFSM: {=u8:?} }}", self.GTFSM())
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GATE1(pub u32);
+    pub struct GATE1(pub u8);
     impl GATE1 {
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
@@ -129,7 +135,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_GTFSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
     impl Default for GATE1 {
@@ -145,10 +151,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GATE1 {{ GTFSM: {=u8:?} }}", self.GTFSM())
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GATE10(pub u32);
+    pub struct GATE10(pub u8);
     impl GATE10 {
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
@@ -157,7 +169,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_GTFSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
     impl Default for GATE10 {
@@ -173,10 +185,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE10 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GATE10 {{ GTFSM: {=u8:?} }}", self.GTFSM())
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GATE11(pub u32);
+    pub struct GATE11(pub u8);
     impl GATE11 {
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
@@ -185,7 +203,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_GTFSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
     impl Default for GATE11 {
@@ -201,10 +219,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE11 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GATE11 {{ GTFSM: {=u8:?} }}", self.GTFSM())
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GATE12(pub u32);
+    pub struct GATE12(pub u8);
     impl GATE12 {
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
@@ -213,7 +237,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_GTFSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
     impl Default for GATE12 {
@@ -229,10 +253,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE12 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GATE12 {{ GTFSM: {=u8:?} }}", self.GTFSM())
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GATE13(pub u32);
+    pub struct GATE13(pub u8);
     impl GATE13 {
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
@@ -241,7 +271,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_GTFSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
     impl Default for GATE13 {
@@ -257,10 +287,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE13 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GATE13 {{ GTFSM: {=u8:?} }}", self.GTFSM())
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GATE14(pub u32);
+    pub struct GATE14(pub u8);
     impl GATE14 {
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
@@ -269,7 +305,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_GTFSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
     impl Default for GATE14 {
@@ -285,10 +321,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE14 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GATE14 {{ GTFSM: {=u8:?} }}", self.GTFSM())
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GATE15(pub u32);
+    pub struct GATE15(pub u8);
     impl GATE15 {
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
@@ -297,7 +339,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_GTFSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
     impl Default for GATE15 {
@@ -313,10 +355,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE15 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GATE15 {{ GTFSM: {=u8:?} }}", self.GTFSM())
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GATE2(pub u32);
+    pub struct GATE2(pub u8);
     impl GATE2 {
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
@@ -325,7 +373,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_GTFSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
     impl Default for GATE2 {
@@ -341,10 +389,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GATE2 {{ GTFSM: {=u8:?} }}", self.GTFSM())
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GATE3(pub u32);
+    pub struct GATE3(pub u8);
     impl GATE3 {
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
@@ -353,7 +407,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_GTFSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
     impl Default for GATE3 {
@@ -369,10 +423,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GATE3 {{ GTFSM: {=u8:?} }}", self.GTFSM())
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GATE4(pub u32);
+    pub struct GATE4(pub u8);
     impl GATE4 {
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
@@ -381,7 +441,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_GTFSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
     impl Default for GATE4 {
@@ -397,10 +457,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE4 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GATE4 {{ GTFSM: {=u8:?} }}", self.GTFSM())
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GATE5(pub u32);
+    pub struct GATE5(pub u8);
     impl GATE5 {
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
@@ -409,7 +475,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_GTFSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
     impl Default for GATE5 {
@@ -425,10 +491,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE5 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GATE5 {{ GTFSM: {=u8:?} }}", self.GTFSM())
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GATE6(pub u32);
+    pub struct GATE6(pub u8);
     impl GATE6 {
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
@@ -437,7 +509,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_GTFSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
     impl Default for GATE6 {
@@ -453,10 +525,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE6 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GATE6 {{ GTFSM: {=u8:?} }}", self.GTFSM())
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GATE7(pub u32);
+    pub struct GATE7(pub u8);
     impl GATE7 {
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
@@ -465,7 +543,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_GTFSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
     impl Default for GATE7 {
@@ -481,10 +559,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE7 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GATE7 {{ GTFSM: {=u8:?} }}", self.GTFSM())
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GATE8(pub u32);
+    pub struct GATE8(pub u8);
     impl GATE8 {
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
@@ -493,7 +577,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_GTFSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
     impl Default for GATE8 {
@@ -509,10 +593,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE8 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GATE8 {{ GTFSM: {=u8:?} }}", self.GTFSM())
+        }
+    }
     #[doc = "Gate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct GATE9(pub u32);
+    pub struct GATE9(pub u8);
     impl GATE9 {
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
@@ -521,7 +611,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_GTFSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
     impl Default for GATE9 {
@@ -537,10 +627,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GATE9 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GATE9 {{ GTFSM: {=u8:?} }}", self.GTFSM())
+        }
+    }
     #[doc = "Reset Gate Read"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RSTGT_R(pub u32);
+    pub struct RSTGT_R(pub u16);
     impl RSTGT_R {
         #[inline(always)]
         pub const fn RSTGTN(&self) -> u8 {
@@ -549,7 +645,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_RSTGTN(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u16) & 0xff) << 0usize);
         }
         #[inline(always)]
         pub const fn RSTGMS(&self) -> u8 {
@@ -558,7 +654,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_RSTGMS(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
+            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u16) & 0x0f) << 8usize);
         }
         #[inline(always)]
         pub const fn RSTGSM(&self) -> u8 {
@@ -567,7 +663,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_RSTGSM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u32) & 0x03) << 12usize);
+            self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u16) & 0x03) << 12usize);
         }
     }
     impl Default for RSTGT_R {
@@ -585,10 +681,22 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RSTGT_R {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "RSTGT_R {{ RSTGTN: {=u8:?}, RSTGMS: {=u8:?}, RSTGSM: {=u8:?} }}",
+                self.RSTGTN(),
+                self.RSTGMS(),
+                self.RSTGSM()
+            )
+        }
+    }
     #[doc = "Reset Gate Write"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RSTGT_W(pub u32);
+    pub struct RSTGT_W(pub u16);
     impl RSTGT_W {
         #[inline(always)]
         pub const fn RSTGTN(&self) -> u8 {
@@ -597,7 +705,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_RSTGTN(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u16) & 0xff) << 0usize);
         }
         #[inline(always)]
         pub const fn RSTGDP(&self) -> u8 {
@@ -606,7 +714,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_RSTGDP(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
+            self.0 = (self.0 & !(0xff << 8usize)) | (((val as u16) & 0xff) << 8usize);
         }
     }
     impl Default for RSTGT_W {
@@ -621,6 +729,17 @@ pub mod regs {
                 .field("RSTGTN", &self.RSTGTN())
                 .field("RSTGDP", &self.RSTGDP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RSTGT_W {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "RSTGT_W {{ RSTGTN: {=u8:?}, RSTGDP: {=u8:?} }}",
+                self.RSTGTN(),
+                self.RSTGDP()
+            )
         }
     }
 }

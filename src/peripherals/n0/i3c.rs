@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct I3C {
     ptr: *mut u8,
@@ -313,6 +313,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IBIEXT1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IBIEXT1 {{ CNT: {=u8:?}, MAX: {=u8:?}, EXT1: {=u8:?}, EXT2: {=u8:?}, EXT3: {=u8:?} }}" , self . CNT () , self . MAX () , self . EXT1 () , self . EXT2 () , self . EXT3 ())
+        }
+    }
     #[doc = "Extended IBI Data 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -369,6 +375,19 @@ pub mod regs {
                 .field("EXT6", &self.EXT6())
                 .field("EXT7", &self.EXT7())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IBIEXT2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IBIEXT2 {{ EXT4: {=u8:?}, EXT5: {=u8:?}, EXT6: {=u8:?}, EXT7: {=u8:?} }}",
+                self.EXT4(),
+                self.EXT5(),
+                self.EXT6(),
+                self.EXT7()
+            )
         }
     }
     #[doc = "Controller Configuration"]
@@ -489,6 +508,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCONFIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MCONFIG {{ MSTENA: {=u8:?}, DISTO: {=bool:?}, HKEEP: {=u8:?}, ODSTOP: {=bool:?}, PPBAUD: {=u8:?}, PPLOW: {=u8:?}, ODBAUD: {=u8:?}, ODHPP: {=bool:?}, SKEW: {=u8:?}, I2CBAUD: {=u8:?} }}" , self . MSTENA () , self . DISTO () , self . HKEEP () , self . ODSTOP () , self . PPBAUD () , self . PPLOW () , self . ODBAUD () , self . ODHPP () , self . SKEW () , self . I2CBAUD ())
+        }
+    }
     #[doc = "Controller Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -565,6 +590,12 @@ pub mod regs {
                 .field("ADDR", &self.ADDR())
                 .field("RDTERM", &self.RDTERM())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MCTRL {{ REQUEST: {=u8:?}, TYPE: {=u8:?}, IBIRESP: {=u8:?}, DIR: {=bool:?}, ADDR: {=u8:?}, RDTERM: {=u8:?} }}" , self . REQUEST () , self . TYPE () , self . IBIRESP () , self . DIR () , self . ADDR () , self . RDTERM ())
         }
     }
     #[doc = "Controller Data Control"]
@@ -675,6 +706,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MDATACTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MDATACTRL {{ FLUSHTB: {=bool:?}, FLUSHFB: {=bool:?}, UNLOCK: {=bool:?}, TXTRIG: {=u8:?}, RXTRIG: {=u8:?}, TXCOUNT: {=u8:?}, RXCOUNT: {=u8:?}, TXFULL: {=bool:?}, RXEMPTY: {=bool:?} }}" , self . FLUSHTB () , self . FLUSHFB () , self . UNLOCK () , self . TXTRIG () , self . RXTRIG () , self . TXCOUNT () , self . RXCOUNT () , self . TXFULL () , self . RXEMPTY ())
+        }
+    }
     #[doc = "Controller DMA Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -723,6 +760,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MDMACTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MDMACTRL {{ DMAFB: {=u8:?}, DMATB: {=u8:?}, DMAWIDTH: {=u8:?} }}",
+                self.DMAFB(),
+                self.DMATB(),
+                self.DMAWIDTH()
+            )
+        }
+    }
     #[doc = "Controller Dynamic Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -759,6 +808,17 @@ pub mod regs {
                 .field("DAVALID", &self.DAVALID())
                 .field("DADDR", &self.DADDR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MDYNADDR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MDYNADDR {{ DAVALID: {=bool:?}, DADDR: {=u8:?} }}",
+                self.DAVALID(),
+                self.DADDR()
+            )
         }
     }
     #[doc = "Controller Errors and Warnings"]
@@ -869,6 +929,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MERRWARN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MERRWARN {{ NACK: {=bool:?}, WRABT: {=bool:?}, HPAR: {=bool:?}, HCRC: {=bool:?}, OREAD: {=bool:?}, OWRITE: {=bool:?}, MSGERR: {=bool:?}, INVREQ: {=bool:?}, TIMEOUT: {=bool:?} }}" , self . NACK () , self . WRABT () , self . HPAR () , self . HCRC () , self . OREAD () , self . OWRITE () , self . MSGERR () , self . INVREQ () , self . TIMEOUT ())
+        }
+    }
     #[doc = "Controller In-band Interrupt Registry and Rules"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -955,6 +1021,12 @@ pub mod regs {
                 .field("MSB0", &self.MSB0())
                 .field("NOBYTE", &self.NOBYTE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MIBIRULES {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MIBIRULES {{ ADDR0: {=u8:?}, ADDR1: {=u8:?}, ADDR2: {=u8:?}, ADDR3: {=u8:?}, ADDR4: {=u8:?}, MSB0: {=bool:?}, NOBYTE: {=bool:?} }}" , self . ADDR0 () , self . ADDR1 () , self . ADDR2 () , self . ADDR3 () , self . ADDR4 () , self . MSB0 () , self . NOBYTE ())
         }
     }
     #[doc = "Controller Interrupt Clear"]
@@ -1055,6 +1127,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MINTCLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MINTCLR {{ SLVSTART: {=bool:?}, MCTRLDONE: {=bool:?}, COMPLETE: {=bool:?}, RXPEND: {=bool:?}, TXNOTFULL: {=bool:?}, IBIWON: {=bool:?}, ERRWARN: {=bool:?}, NOWMASTER: {=bool:?} }}" , self . SLVSTART () , self . MCTRLDONE () , self . COMPLETE () , self . RXPEND () , self . TXNOTFULL () , self . IBIWON () , self . ERRWARN () , self . NOWMASTER ())
+        }
+    }
     #[doc = "Controller Interrupt Mask"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1151,6 +1229,12 @@ pub mod regs {
                 .field("ERRWARN", &self.ERRWARN())
                 .field("NOWMASTER", &self.NOWMASTER())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MINTMASKED {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MINTMASKED {{ SLVSTART: {=bool:?}, MCTRLDONE: {=bool:?}, COMPLETE: {=bool:?}, RXPEND: {=bool:?}, TXNOTFULL: {=bool:?}, IBIWON: {=bool:?}, ERRWARN: {=bool:?}, NOWMASTER: {=bool:?} }}" , self . SLVSTART () , self . MCTRLDONE () , self . COMPLETE () , self . RXPEND () , self . TXNOTFULL () , self . IBIWON () , self . ERRWARN () , self . NOWMASTER ())
         }
     }
     #[doc = "Controller Interrupt Set"]
@@ -1251,6 +1335,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MINTSET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MINTSET {{ SLVSTART: {=bool:?}, MCTRLDONE: {=bool:?}, COMPLETE: {=bool:?}, RXPEND: {=bool:?}, TXNOTFULL: {=bool:?}, IBIWON: {=bool:?}, ERRWARN: {=bool:?}, NOWMASTER: {=bool:?} }}" , self . SLVSTART () , self . MCTRLDONE () , self . COMPLETE () , self . RXPEND () , self . TXNOTFULL () , self . IBIWON () , self . ERRWARN () , self . NOWMASTER ())
+        }
+    }
     #[doc = "Controller Read Data Byte"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1277,6 +1367,12 @@ pub mod regs {
             f.debug_struct("MRDATAB")
                 .field("VALUE", &self.VALUE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRDATAB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRDATAB {{ VALUE: {=u8:?} }}", self.VALUE())
         }
     }
     #[doc = "Controller Read Data Halfword"]
@@ -1317,6 +1413,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRDATAH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MRDATAH {{ LSB: {=u8:?}, MSB: {=u8:?} }}",
+                self.LSB(),
+                self.MSB()
+            )
+        }
+    }
     #[doc = "Controller Read Message in DDR mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1345,6 +1452,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRMSG_DDR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRMSG_DDR {{ DATA: {=u16:?} }}", self.DATA())
+        }
+    }
     #[doc = "Controller Read Message in SDR mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1371,6 +1484,12 @@ pub mod regs {
             f.debug_struct("MRMSG_SDR")
                 .field("DATA", &self.DATA())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRMSG_SDR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRMSG_SDR {{ DATA: {=u16:?} }}", self.DATA())
         }
     }
     #[doc = "Controller Status"]
@@ -1521,6 +1640,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MSTATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MSTATUS {{ STATE: {=u8:?}, BETWEEN: {=bool:?}, NACKED: {=bool:?}, IBITYPE: {=u8:?}, SLVSTART: {=bool:?}, MCTRLDONE: {=bool:?}, COMPLETE: {=bool:?}, RXPEND: {=bool:?}, TXNOTFULL: {=bool:?}, IBIWON: {=bool:?}, ERRWARN: {=bool:?}, NOWMASTER: {=bool:?}, IBIADDR: {=u8:?} }}" , self . STATE () , self . BETWEEN () , self . NACKED () , self . IBITYPE () , self . SLVSTART () , self . MCTRLDONE () , self . COMPLETE () , self . RXPEND () , self . TXNOTFULL () , self . IBIWON () , self . ERRWARN () , self . NOWMASTER () , self . IBIADDR ())
+        }
+    }
     #[doc = "Controller Write Data Byte"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1569,6 +1694,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MWDATAB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MWDATAB {{ VALUE: {=u8:?}, END: {=bool:?}, END_ALSO: {=bool:?} }}",
+                self.VALUE(),
+                self.END(),
+                self.END_ALSO()
+            )
+        }
+    }
     #[doc = "Controller Write Byte Data 1 (to Bus)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1597,6 +1734,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MWDATAB1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MWDATAB1 {{ VALUE: {=u8:?} }}", self.VALUE())
+        }
+    }
     #[doc = "Controller Write Data Byte End"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1623,6 +1766,12 @@ pub mod regs {
             f.debug_struct("MWDATABE")
                 .field("VALUE", &self.VALUE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MWDATABE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MWDATABE {{ VALUE: {=u8:?} }}", self.VALUE())
         }
     }
     #[doc = "Controller Write Data Halfword"]
@@ -1673,6 +1822,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MWDATAH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MWDATAH {{ DATA0: {=u8:?}, DATA1: {=u8:?}, END: {=bool:?} }}",
+                self.DATA0(),
+                self.DATA1(),
+                self.END()
+            )
+        }
+    }
     #[doc = "Controller Write Data Halfword End"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1711,6 +1872,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MWDATAHE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MWDATAHE {{ DATA0: {=u8:?}, DATA1: {=u8:?} }}",
+                self.DATA0(),
+                self.DATA1()
+            )
+        }
+    }
     #[doc = "Controller Write Message in DDR mode: First Control Word"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1737,6 +1909,16 @@ pub mod regs {
             f.debug_struct("MWMSG_DDR_CONTROL")
                 .field("ADDRCMD", &self.ADDRCMD())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MWMSG_DDR_CONTROL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MWMSG_DDR_CONTROL {{ ADDRCMD: {=u16:?} }}",
+                self.ADDRCMD()
+            )
         }
     }
     #[doc = "Controller Write Message in DDR Mode Control 2"]
@@ -1777,6 +1959,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MWMSG_DDR_CONTROL2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MWMSG_DDR_CONTROL2 {{ LEN: {=u16:?}, END: {=bool:?} }}",
+                self.LEN(),
+                self.END()
+            )
+        }
+    }
     #[doc = "Controller Write Message Data in DDR mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1803,6 +1996,12 @@ pub mod regs {
             f.debug_struct("MWMSG_DDR_DATA")
                 .field("DATA16B", &self.DATA16B())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MWMSG_DDR_DATA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MWMSG_DDR_DATA {{ DATA16B: {=u16:?} }}", self.DATA16B())
         }
     }
     #[doc = "Controller Write Message Control in SDR mode"]
@@ -1873,6 +2072,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MWMSG_SDR_CONTROL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MWMSG_SDR_CONTROL {{ DIR: {=bool:?}, ADDR: {=u8:?}, END: {=bool:?}, I2C: {=bool:?}, LEN: {=u8:?} }}" , self . DIR () , self . ADDR () , self . END () , self . I2C () , self . LEN ())
+        }
+    }
     #[doc = "Controller Write Message Data in SDR mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1899,6 +2104,12 @@ pub mod regs {
             f.debug_struct("MWMSG_SDR_DATA")
                 .field("DATA16B", &self.DATA16B())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MWMSG_SDR_DATA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MWMSG_SDR_DATA {{ DATA16B: {=u16:?} }}", self.DATA16B())
         }
     }
     #[doc = "Target Capabilities"]
@@ -2049,6 +2260,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCAPABILITIES {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SCAPABILITIES {{ IDENA: {=u8:?}, IDREG: {=u8:?}, HDRSUPP: {=u8:?}, MASTER: {=bool:?}, SADDR: {=u8:?}, CCCHANDLE: {=u8:?}, IBI_MR_HJ: {=u8:?}, TIMECTRL: {=bool:?}, EXTFIFO: {=u8:?}, FIFOTX: {=u8:?}, FIFORX: {=u8:?}, INT: {=bool:?}, DMA: {=bool:?} }}" , self . IDENA () , self . IDREG () , self . HDRSUPP () , self . MASTER () , self . SADDR () , self . CCCHANDLE () , self . IBI_MR_HJ () , self . TIMECTRL () , self . EXTFIFO () , self . FIFOTX () , self . FIFORX () , self . INT () , self . DMA ())
+        }
+    }
     #[doc = "Target Capabilities 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2177,6 +2394,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCAPABILITIES2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SCAPABILITIES2 {{ MAPCNT: {=u8:?}, I2C10B: {=bool:?}, I2CRST: {=bool:?}, I2CDEVID: {=bool:?}, IBIEXT: {=bool:?}, IBIXREG: {=bool:?}, SLVRST: {=bool:?}, GROUP: {=u8:?}, AASA: {=bool:?}, SSTSUB: {=bool:?}, SSTWR: {=bool:?} }}" , self . MAPCNT () , self . I2C10B () , self . I2CRST () , self . I2CDEVID () , self . IBIEXT () , self . IBIXREG () , self . SLVRST () , self . GROUP () , self . AASA () , self . SSTSUB () , self . SSTWR ())
+        }
+    }
     #[doc = "Target Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2285,6 +2508,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCONFIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SCONFIG {{ SLVENA: {=bool:?}, NACK: {=bool:?}, MATCHSS: {=bool:?}, S0IGNORE: {=bool:?}, DDROK: {=bool:?}, IDRAND: {=bool:?}, OFFLINE: {=bool:?}, BAMATCH: {=u8:?}, SADDR: {=u8:?} }}" , self . SLVENA () , self . NACK () , self . MATCHSS () , self . S0IGNORE () , self . DDROK () , self . IDRAND () , self . OFFLINE () , self . BAMATCH () , self . SADDR ())
+        }
+    }
     #[doc = "Target Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2361,6 +2590,12 @@ pub mod regs {
                 .field("ACTSTATE", &self.ACTSTATE())
                 .field("VENDINFO", &self.VENDINFO())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SCTRL {{ EVENT: {=u8:?}, EXTDATA: {=bool:?}, IBIDATA: {=u8:?}, PENDINT: {=u8:?}, ACTSTATE: {=u8:?}, VENDINFO: {=u8:?} }}" , self . EVENT () , self . EXTDATA () , self . IBIDATA () , self . PENDINT () , self . ACTSTATE () , self . VENDINFO ())
         }
     }
     #[doc = "Target Data Control"]
@@ -2471,6 +2706,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SDATACTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SDATACTRL {{ FLUSHTB: {=bool:?}, FLUSHFB: {=bool:?}, UNLOCK: {=bool:?}, TXTRIG: {=u8:?}, RXTRIG: {=u8:?}, TXCOUNT: {=u8:?}, RXCOUNT: {=u8:?}, TXFULL: {=bool:?}, RXEMPTY: {=bool:?} }}" , self . FLUSHTB () , self . FLUSHFB () , self . UNLOCK () , self . TXTRIG () , self . RXTRIG () , self . TXCOUNT () , self . RXCOUNT () , self . TXFULL () , self . RXEMPTY ())
+        }
+    }
     #[doc = "Target DMA Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2517,6 +2758,18 @@ pub mod regs {
                 .field("DMATB", &self.DMATB())
                 .field("DMAWIDTH", &self.DMAWIDTH())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SDMACTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SDMACTRL {{ DMAFB: {=u8:?}, DMATB: {=u8:?}, DMAWIDTH: {=u8:?} }}",
+                self.DMAFB(),
+                self.DMATB(),
+                self.DMAWIDTH()
+            )
         }
     }
     #[doc = "Target Dynamic Address"]
@@ -2585,6 +2838,12 @@ pub mod regs {
                 .field("SA10B", &self.SA10B())
                 .field("KEY", &self.KEY())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SDYNADDR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SDYNADDR {{ DAVALID: {=bool:?}, DADDR: {=u8:?}, MAPSA: {=bool:?}, SA10B: {=u8:?}, KEY: {=u16:?} }}" , self . DAVALID () , self . DADDR () , self . MAPSA () , self . SA10B () , self . KEY ())
         }
     }
     #[doc = "Target Errors and Warnings"]
@@ -2715,6 +2974,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SERRWARN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SERRWARN {{ ORUN: {=bool:?}, URUN: {=bool:?}, URUNNACK: {=bool:?}, TERM: {=bool:?}, INVSTART: {=bool:?}, SPAR: {=bool:?}, HPAR: {=bool:?}, HCRC: {=bool:?}, S0S1: {=bool:?}, OREAD: {=bool:?}, OWRITE: {=bool:?} }}" , self . ORUN () , self . URUN () , self . URUNNACK () , self . TERM () , self . INVSTART () , self . SPAR () , self . HPAR () , self . HCRC () , self . S0S1 () , self . OREAD () , self . OWRITE ())
+        }
+    }
     #[doc = "Target ID Extension"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2751,6 +3016,17 @@ pub mod regs {
                 .field("DCR", &self.DCR())
                 .field("BCR", &self.BCR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SIDEXT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SIDEXT {{ DCR: {=u8:?}, BCR: {=u8:?} }}",
+                self.DCR(),
+                self.BCR()
+            )
         }
     }
     #[doc = "Target Interrupt Clear"]
@@ -2881,6 +3157,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SINTCLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SINTCLR {{ START: {=bool:?}, MATCHED: {=bool:?}, STOP: {=bool:?}, RXPEND: {=bool:?}, TXSEND: {=bool:?}, DACHG: {=bool:?}, CCC: {=bool:?}, ERRWARN: {=bool:?}, DDRMATCHED: {=bool:?}, CHANDLED: {=bool:?}, EVENT: {=bool:?} }}" , self . START () , self . MATCHED () , self . STOP () , self . RXPEND () , self . TXSEND () , self . DACHG () , self . CCC () , self . ERRWARN () , self . DDRMATCHED () , self . CHANDLED () , self . EVENT ())
+        }
+    }
     #[doc = "Target Interrupt Mask"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3007,6 +3289,12 @@ pub mod regs {
                 .field("CHANDLED", &self.CHANDLED())
                 .field("EVENT", &self.EVENT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SINTMASKED {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SINTMASKED {{ START: {=bool:?}, MATCHED: {=bool:?}, STOP: {=bool:?}, RXPEND: {=bool:?}, TXSEND: {=bool:?}, DACHG: {=bool:?}, CCC: {=bool:?}, ERRWARN: {=bool:?}, DDRMATCHED: {=bool:?}, CHANDLED: {=bool:?}, EVENT: {=bool:?} }}" , self . START () , self . MATCHED () , self . STOP () , self . RXPEND () , self . TXSEND () , self . DACHG () , self . CCC () , self . ERRWARN () , self . DDRMATCHED () , self . CHANDLED () , self . EVENT ())
         }
     }
     #[doc = "Target Interrupt Set"]
@@ -3137,6 +3425,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SINTSET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SINTSET {{ START: {=bool:?}, MATCHED: {=bool:?}, STOP: {=bool:?}, RXPEND: {=bool:?}, TXSEND: {=bool:?}, DACHG: {=bool:?}, CCC: {=bool:?}, ERRWARN: {=bool:?}, DDRMATCHED: {=bool:?}, CHANDLED: {=bool:?}, EVENT: {=bool:?} }}" , self . START () , self . MATCHED () , self . STOP () , self . RXPEND () , self . TXSEND () , self . DACHG () , self . CCC () , self . ERRWARN () , self . DDRMATCHED () , self . CHANDLED () , self . EVENT ())
+        }
+    }
     #[doc = "Map Feature Control 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3185,6 +3479,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SMAPCTRL0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SMAPCTRL0 {{ ENA: {=bool:?}, DA: {=u8:?}, CAUSE: {=u8:?} }}",
+                self.ENA(),
+                self.DA(),
+                self.CAUSE()
+            )
+        }
+    }
     #[doc = "Target Maximum Limits"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3221,6 +3527,17 @@ pub mod regs {
                 .field("MAXRD", &self.MAXRD())
                 .field("MAXWR", &self.MAXWR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SMAXLIMITS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SMAXLIMITS {{ MAXRD: {=u16:?}, MAXWR: {=u16:?} }}",
+                self.MAXRD(),
+                self.MAXWR()
+            )
         }
     }
     #[doc = "Target Message Map Address"]
@@ -3281,6 +3598,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SMSGMAPADDR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SMSGMAPADDR {{ MAPLAST: {=u8:?}, LASTSTATIC: {=bool:?}, MAPLASTM1: {=u8:?}, MAPLASTM2: {=u8:?} }}" , self . MAPLAST () , self . LASTSTATIC () , self . MAPLASTM1 () , self . MAPLASTM2 ())
+        }
+    }
     #[doc = "Target Read Data Byte"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3307,6 +3630,12 @@ pub mod regs {
             f.debug_struct("SRDATAB")
                 .field("DATA0", &self.DATA0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRDATAB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SRDATAB {{ DATA0: {=u8:?} }}", self.DATA0())
         }
     }
     #[doc = "Target Read Data Halfword"]
@@ -3345,6 +3674,17 @@ pub mod regs {
                 .field("LSB", &self.LSB())
                 .field("MSB", &self.MSB())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRDATAH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SRDATAH {{ LSB: {=u8:?}, MSB: {=u8:?} }}",
+                self.LSB(),
+                self.MSB()
+            )
         }
     }
     #[doc = "Target Status"]
@@ -3605,6 +3945,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SSTATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SSTATUS {{ STNOTSTOP: {=bool:?}, STMSG: {=bool:?}, STCCCH: {=bool:?}, STREQRD: {=bool:?}, STREQWR: {=bool:?}, STDAA: {=bool:?}, STHDR: {=bool:?}, START: {=bool:?}, MATCHED: {=bool:?}, STOP: {=bool:?}, RX_PEND: {=bool:?}, TXNOTFULL: {=bool:?}, DACHG: {=bool:?}, CCC: {=bool:?}, ERRWARN: {=bool:?}, HDRMATCH: {=bool:?}, CHANDLED: {=bool:?}, EVENT: {=bool:?}, EVDET: {=u8:?}, IBIDIS: {=bool:?}, MRDIS: {=bool:?}, HJDIS: {=bool:?}, ACTSTATE: {=u8:?}, TIMECTRL: {=u8:?} }}" , self . STNOTSTOP () , self . STMSG () , self . STCCCH () , self . STREQRD () , self . STREQWR () , self . STDAA () , self . STHDR () , self . START () , self . MATCHED () , self . STOP () , self . RX_PEND () , self . TXNOTFULL () , self . DACHG () , self . CCC () , self . ERRWARN () , self . HDRMATCH () , self . CHANDLED () , self . EVENT () , self . EVDET () , self . IBIDIS () , self . MRDIS () , self . HJDIS () , self . ACTSTATE () , self . TIMECTRL ())
+        }
+    }
     #[doc = "Target Time Control Clock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3643,6 +3989,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STCCLOCK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "STCCLOCK {{ ACCURACY: {=u8:?}, FREQ: {=u8:?} }}",
+                self.ACCURACY(),
+                self.FREQ()
+            )
+        }
+    }
     #[doc = "Target Vendor ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3669,6 +4026,12 @@ pub mod regs {
             f.debug_struct("SVENDORID")
                 .field("VID", &self.VID())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SVENDORID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SVENDORID {{ VID: {=u16:?} }}", self.VID())
         }
     }
     #[doc = "Target Write Data Byte"]
@@ -3719,6 +4082,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SWDATAB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SWDATAB {{ DATA: {=u8:?}, END: {=bool:?}, END_ALSO: {=bool:?} }}",
+                self.DATA(),
+                self.END(),
+                self.END_ALSO()
+            )
+        }
+    }
     #[doc = "Target Write Data Byte"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3747,6 +4122,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SWDATAB1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SWDATAB1 {{ DATA: {=u8:?} }}", self.DATA())
+        }
+    }
     #[doc = "Target Write Data Byte End"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3773,6 +4154,12 @@ pub mod regs {
             f.debug_struct("SWDATABE")
                 .field("DATA", &self.DATA())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SWDATABE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SWDATABE {{ DATA: {=u8:?} }}", self.DATA())
         }
     }
     #[doc = "Target Write Data Halfword"]
@@ -3823,6 +4210,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SWDATAH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SWDATAH {{ DATA0: {=u8:?}, DATA1: {=u8:?}, END: {=bool:?} }}",
+                self.DATA0(),
+                self.DATA1(),
+                self.END()
+            )
+        }
+    }
     #[doc = "Target Write Data Halfword End"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3859,6 +4258,17 @@ pub mod regs {
                 .field("DATA0", &self.DATA0())
                 .field("DATA1", &self.DATA1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SWDATAHE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SWDATAHE {{ DATA0: {=u8:?}, DATA1: {=u8:?} }}",
+                self.DATA0(),
+                self.DATA1()
+            )
         }
     }
 }

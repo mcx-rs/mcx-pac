@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct SMARTDMA {
     ptr: *mut u8,
@@ -99,6 +99,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ARM2EZH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ARM2EZH {{ IE: {=u8:?}, GP: {=u32:?} }}",
+                self.IE(),
+                self.GP()
+            )
+        }
+    }
     #[doc = "Boot Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -125,6 +136,12 @@ pub mod regs {
             f.debug_struct("BOOTADR")
                 .field("ADDR", &self.ADDR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BOOTADR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "BOOTADR {{ ADDR: {=u32:?} }}", self.ADDR())
         }
     }
     #[doc = "Breakpoint Address"]
@@ -155,6 +172,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BREAK_ADDR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "BREAK_ADDR {{ ADDR: {=u32:?} }}", self.ADDR())
+        }
+    }
     #[doc = "Breakpoint Vector"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -181,6 +204,12 @@ pub mod regs {
             f.debug_struct("BREAK_VECT")
                 .field("VEC", &self.VEC())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BREAK_VECT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "BREAK_VECT {{ VEC: {=u32:?} }}", self.VEC())
         }
     }
     #[doc = "Control"]
@@ -261,6 +290,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL {{ START: {=bool:?}, EXF: {=bool:?}, ERRDIS: {=bool:?}, BUFEN: {=bool:?}, SYNCEN: {=bool:?}, WKEY: {=u16:?} }}" , self . START () , self . EXF () , self . ERRDIS () , self . BUFEN () , self . SYNCEN () , self . WKEY ())
+        }
+    }
     #[doc = "Emergency Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -299,6 +334,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EMER_SEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "EMER_SEL {{ EN: {=bool:?}, RQ: {=bool:?} }}",
+                self.EN(),
+                self.RQ()
+            )
+        }
+    }
     #[doc = "Emergency Vector"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -325,6 +371,12 @@ pub mod regs {
             f.debug_struct("EMER_VECT")
                 .field("VEC", &self.VEC())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EMER_VECT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "EMER_VECT {{ VEC: {=u32:?} }}", self.VEC())
         }
     }
     #[doc = "Pending Trap Control"]
@@ -373,6 +425,18 @@ pub mod regs {
                 .field("POL", &self.POL())
                 .field("EN", &self.EN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PENDTRAP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PENDTRAP {{ STATUS: {=u8:?}, POL: {=u8:?}, EN: {=u8:?} }}",
+                self.STATUS(),
+                self.POL(),
+                self.EN()
+            )
         }
     }
 }

@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct POWERQUAD {
     ptr: *mut u8,
@@ -155,6 +155,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CONTROL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CONTROL {{ DECODE_OPCODE: {=u8:?}, DECODE_MACHINE: {=u8:?}, INST_BUSY: {=bool:?} }}" , self . DECODE_OPCODE () , self . DECODE_MACHINE () , self . INST_BUSY ())
+        }
+    }
     #[doc = "Coprocessor Prescale"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -213,6 +219,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CPPRE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CPPRE {{ CPPRE_IN: {=u8:?}, CPPRE_OUT: {=u8:?}, CPPRE_SAT: {=bool:?}, CPPRE_SAT8: {=bool:?} }}" , self . CPPRE_IN () , self . CPPRE_OUT () , self . CPPRE_SAT () , self . CPPRE_SAT8 ())
+        }
+    }
     #[doc = "Cursory"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -239,6 +251,12 @@ pub mod regs {
             f.debug_struct("CURSORY")
                 .field("CURSORY", &self.CURSORY())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CURSORY {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CURSORY {{ CURSORY: {=bool:?} }}", self.CURSORY())
         }
     }
     #[doc = "Error Status"]
@@ -307,6 +325,12 @@ pub mod regs {
                 .field("UNDERFLOW", &self.UNDERFLOW())
                 .field("BUSERROR", &self.BUSERROR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ERRSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ERRSTAT {{ OVERFLOW: {=bool:?}, NAN: {=bool:?}, FIXEDOVERFLOW: {=bool:?}, UNDERFLOW: {=bool:?}, BUSERROR: {=bool:?} }}" , self . OVERFLOW () , self . NAN () , self . FIXEDOVERFLOW () , self . UNDERFLOW () , self . BUSERROR ())
         }
     }
     #[doc = "Event Enable"]
@@ -387,6 +411,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EVENTEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "EVENTEN {{ EVENT_OFLOW: {=bool:?}, EVENT_NAN: {=bool:?}, EVENT_FIXED: {=bool:?}, EVENT_UFLOW: {=bool:?}, EVENT_BERR: {=bool:?}, EVENT_COMP: {=bool:?} }}" , self . EVENT_OFLOW () , self . EVENT_NAN () , self . EVENT_FIXED () , self . EVENT_UFLOW () , self . EVENT_BERR () , self . EVENT_COMP ())
+        }
+    }
     #[doc = "Input A Format"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -435,6 +465,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INAFORMAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "INAFORMAT {{ INA_FORMATINT: {=u8:?}, INA_FORMATEXT: {=u8:?}, INA_SCALER: {=u8:?} }}" , self . INA_FORMATINT () , self . INA_FORMATEXT () , self . INA_SCALER ())
+        }
+    }
     #[doc = "Input B Format"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -481,6 +517,12 @@ pub mod regs {
                 .field("INB_FORMATEXT", &self.INB_FORMATEXT())
                 .field("INB_SCALER", &self.INB_SCALER())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INBFORMAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "INBFORMAT {{ INB_FORMATINT: {=u8:?}, INB_FORMATEXT: {=u8:?}, INB_SCALER: {=u8:?} }}" , self . INB_FORMATINT () , self . INB_FORMATEXT () , self . INB_SCALER ())
         }
     }
     #[doc = "Interrupt Enable"]
@@ -561,6 +603,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INTREN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "INTREN {{ INTR_OFLOW: {=bool:?}, INTR_NAN: {=bool:?}, INTR_FIXED: {=bool:?}, INTR_UFLOW: {=bool:?}, INTR_BERR: {=bool:?}, INTR_COMP: {=bool:?} }}" , self . INTR_OFLOW () , self . INTR_NAN () , self . INTR_FIXED () , self . INTR_UFLOW () , self . INTR_BERR () , self . INTR_COMP ())
+        }
+    }
     #[doc = "Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -587,6 +635,12 @@ pub mod regs {
             f.debug_struct("INTRSTAT")
                 .field("INTR_STAT", &self.INTR_STAT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INTRSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "INTRSTAT {{ INTR_STAT: {=bool:?} }}", self.INTR_STAT())
         }
     }
     #[doc = "Output Format"]
@@ -637,6 +691,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OUTFORMAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "OUTFORMAT {{ OUT_FORMATINT: {=u8:?}, OUT_FORMATEXT: {=u8:?}, OUT_SCALER: {=u8:?} }}" , self . OUT_FORMATINT () , self . OUT_FORMATEXT () , self . OUT_SCALER ())
+        }
+    }
     #[doc = "Temporary Format"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -683,6 +743,12 @@ pub mod regs {
                 .field("TMP_FORMATEXT", &self.TMP_FORMATEXT())
                 .field("TMP_SCALER", &self.TMP_SCALER())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TMPFORMAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TMPFORMAT {{ TMP_FORMATINT: {=u8:?}, TMP_FORMATEXT: {=u8:?}, TMP_SCALER: {=u8:?} }}" , self . TMP_FORMATINT () , self . TMP_FORMATEXT () , self . TMP_SCALER ())
         }
     }
 }

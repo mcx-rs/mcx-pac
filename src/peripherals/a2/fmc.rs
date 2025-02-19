@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct FMC {
     ptr: *mut u8,
@@ -67,6 +67,18 @@ pub mod regs {
                 .field("LIM", &self.LIM())
                 .field("LIMDP", &self.LIMDP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for REMAP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "REMAP {{ REMAPLK: {=bool:?}, LIM: {=u8:?}, LIMDP: {=u8:?} }}",
+                self.REMAPLK(),
+                self.LIM(),
+                self.LIMDP()
+            )
         }
     }
 }

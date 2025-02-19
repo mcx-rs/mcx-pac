@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct SCG {
     ptr: *mut u8,
@@ -107,6 +107,12 @@ pub mod regs {
             f.debug_struct("CSR").field("SCS", &self.SCS()).finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CSR {{ SCS: {=u8:?} }}", self.SCS())
+        }
+    }
     #[doc = "FIRC Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -133,6 +139,12 @@ pub mod regs {
             f.debug_struct("FIRCCFG")
                 .field("FREQ_SEL", &self.FREQ_SEL())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIRCCFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FIRCCFG {{ FREQ_SEL: {=u8:?} }}", self.FREQ_SEL())
         }
     }
     #[doc = "FIRC Control Status Register"]
@@ -303,6 +315,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIRCCSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FIRCCSR {{ FIRCEN: {=bool:?}, FIRCSTEN: {=bool:?}, FIRC_SCLK_PERIPH_EN: {=bool:?}, FIRC_FCLK_PERIPH_EN: {=bool:?}, FIRCTREN: {=bool:?}, FIRCTRUP: {=bool:?}, TRIM_LOCK: {=bool:?}, COARSE_TRIM_BYPASS: {=bool:?}, LK: {=bool:?}, FIRCVLD: {=bool:?}, FIRCSEL: {=bool:?}, FIRCERR: {=bool:?}, FIRCERR_IE: {=bool:?}, FIRCACC_IE: {=bool:?}, FIRCACC: {=bool:?} }}" , self . FIRCEN () , self . FIRCSTEN () , self . FIRC_SCLK_PERIPH_EN () , self . FIRC_FCLK_PERIPH_EN () , self . FIRCTREN () , self . FIRCTRUP () , self . TRIM_LOCK () , self . COARSE_TRIM_BYPASS () , self . LK () , self . FIRCVLD () , self . FIRCSEL () , self . FIRCERR () , self . FIRCERR_IE () , self . FIRCACC_IE () , self . FIRCACC ())
+        }
+    }
     #[doc = "FIRC Auto-trimming Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -341,6 +359,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIRCSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FIRCSTAT {{ TRIMFINE: {=u8:?}, TRIMCOAR: {=u8:?} }}",
+                self.TRIMFINE(),
+                self.TRIMCOAR()
+            )
+        }
+    }
     #[doc = "FIRC Trim Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -377,6 +406,17 @@ pub mod regs {
                 .field("TRIMSRC", &self.TRIMSRC())
                 .field("TRIMDIV", &self.TRIMDIV())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIRCTCFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FIRCTCFG {{ TRIMSRC: {=u8:?}, TRIMDIV: {=u8:?} }}",
+                self.TRIMSRC(),
+                self.TRIMDIV()
+            )
         }
     }
     #[doc = "FIRC Trim Register"]
@@ -447,6 +487,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIRCTRIM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FIRCTRIM {{ TRIMFINE: {=u8:?}, TRIMCOAR: {=u8:?}, TRIMTEMP1: {=u8:?}, TRIMTEMP2: {=u8:?}, TRIMSTART: {=u8:?} }}" , self . TRIMFINE () , self . TRIMCOAR () , self . TRIMTEMP1 () , self . TRIMTEMP2 () , self . TRIMSTART ())
+        }
+    }
     #[doc = "Parameter Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -505,6 +551,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PARAM {{ SOSCCLKPRES: {=bool:?}, SIRCCLKPRES: {=bool:?}, FIRCCLKPRES: {=bool:?}, ROSCCLKPRES: {=bool:?} }}" , self . SOSCCLKPRES () , self . SIRCCLKPRES () , self . FIRCCLKPRES () , self . ROSCCLKPRES ())
+        }
+    }
     #[doc = "Run Clock Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -529,6 +581,12 @@ pub mod regs {
     impl core::fmt::Debug for RCCR {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RCCR").field("SCS", &self.SCS()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RCCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "RCCR {{ SCS: {=u8:?} }}", self.SCS())
         }
     }
     #[doc = "ROSC Control Status Register"]
@@ -587,6 +645,12 @@ pub mod regs {
                 .field("ROSCSEL", &self.ROSCSEL())
                 .field("ROSCERR", &self.ROSCERR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ROSCCSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ROSCCSR {{ LK: {=bool:?}, ROSCVLD: {=bool:?}, ROSCSEL: {=bool:?}, ROSCERR: {=bool:?} }}" , self . LK () , self . ROSCVLD () , self . ROSCSEL () , self . ROSCERR ())
         }
     }
     #[doc = "SIRC Control Status Register"]
@@ -717,6 +781,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SIRCCSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SIRCCSR {{ SIRCSTEN: {=bool:?}, SIRC_CLK_PERIPH_EN: {=bool:?}, SIRCTREN: {=bool:?}, SIRCTRUP: {=bool:?}, TRIM_LOCK: {=bool:?}, COARSE_TRIM_BYPASS: {=bool:?}, LK: {=bool:?}, SIRCVLD: {=bool:?}, SIRCSEL: {=bool:?}, SIRCERR: {=bool:?}, SIRCERR_IE: {=bool:?} }}" , self . SIRCSTEN () , self . SIRC_CLK_PERIPH_EN () , self . SIRCTREN () , self . SIRCTRUP () , self . TRIM_LOCK () , self . COARSE_TRIM_BYPASS () , self . LK () , self . SIRCVLD () , self . SIRCSEL () , self . SIRCERR () , self . SIRCERR_IE ())
+        }
+    }
     #[doc = "SIRC Auto-trimming Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -753,6 +823,17 @@ pub mod regs {
                 .field("CCOTRIM", &self.CCOTRIM())
                 .field("CLTRIM", &self.CLTRIM())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SIRCSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SIRCSTAT {{ CCOTRIM: {=u8:?}, CLTRIM: {=u8:?} }}",
+                self.CCOTRIM(),
+                self.CLTRIM()
+            )
         }
     }
     #[doc = "SIRC Trim Configuration Register"]
@@ -793,6 +874,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SIRCTCFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SIRCTCFG {{ TRIMSRC: {=u8:?}, TRIMDIV: {=u8:?} }}",
+                self.TRIMSRC(),
+                self.TRIMDIV()
+            )
+        }
+    }
     #[doc = "SOSC Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -829,6 +921,17 @@ pub mod regs {
                 .field("EREFS", &self.EREFS())
                 .field("RANGE", &self.RANGE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SOSCCFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SOSCCFG {{ EREFS: {=bool:?}, RANGE: {=u8:?} }}",
+                self.EREFS(),
+                self.RANGE()
+            )
         }
     }
     #[doc = "SOSC Control Status Register"]
@@ -939,6 +1042,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SOSCCSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SOSCCSR {{ SOSCEN: {=bool:?}, SOSCSTEN: {=bool:?}, SOSCCM: {=bool:?}, SOSCCMRE: {=bool:?}, LK: {=bool:?}, SOSCVLD: {=bool:?}, SOSCSEL: {=bool:?}, SOSCERR: {=bool:?}, SOSCVLD_IE: {=bool:?} }}" , self . SOSCEN () , self . SOSCSTEN () , self . SOSCCM () , self . SOSCCMRE () , self . LK () , self . SOSCVLD () , self . SOSCSEL () , self . SOSCERR () , self . SOSCVLD_IE ())
+        }
+    }
     #[doc = "Trim Lock register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -985,6 +1094,12 @@ pub mod regs {
                 .field("IFR_DISABLE", &self.IFR_DISABLE())
                 .field("TRIM_LOCK_KEY", &self.TRIM_LOCK_KEY())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TRIM_LOCK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TRIM_LOCK {{ TRIM_UNLOCK: {=bool:?}, IFR_DISABLE: {=bool:?}, TRIM_LOCK_KEY: {=u16:?} }}" , self . TRIM_UNLOCK () , self . IFR_DISABLE () , self . TRIM_LOCK_KEY ())
         }
     }
 }

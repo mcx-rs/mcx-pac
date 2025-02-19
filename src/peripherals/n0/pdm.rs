@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct PDM {
     ptr: *mut u8,
@@ -228,6 +228,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL_1 {{ CH0EN: {=bool:?}, CH1EN: {=bool:?}, CH2EN: {=bool:?}, CH3EN: {=bool:?}, FSYNCEN: {=bool:?}, DECFILS: {=bool:?}, ERREN: {=bool:?}, DISEL: {=u8:?}, DBGE: {=bool:?}, SRES: {=bool:?}, DBG: {=bool:?}, PDMIEN: {=bool:?}, DOZEN: {=bool:?}, MDIS: {=bool:?} }}" , self . CH0EN () , self . CH1EN () , self . CH2EN () , self . CH3EN () , self . FSYNCEN () , self . DECFILS () , self . ERREN () , self . DISEL () , self . DBGE () , self . SRES () , self . DBG () , self . PDMIEN () , self . DOZEN () , self . MDIS ())
+        }
+    }
     #[doc = "MICFIL Control 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -284,6 +290,12 @@ pub mod regs {
                 .field("CICOSR", &self.CICOSR())
                 .field("QSEL", &self.QSEL())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL_2 {{ CLKDIV: {=u8:?}, CLKDIVDIS: {=bool:?}, CICOSR: {=u8:?}, QSEL: {=u8:?} }}" , self . CLKDIV () , self . CLKDIVDIS () , self . CICOSR () , self . QSEL ())
         }
     }
     #[doc = "MICFIL DC Remover Control"]
@@ -344,6 +356,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DC_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DC_CTRL {{ DCCONFIG0: {=u8:?}, DCCONFIG1: {=u8:?}, DCCONFIG2: {=u8:?}, DCCONFIG3: {=u8:?} }}" , self . DCCONFIG0 () , self . DCCONFIG1 () , self . DCCONFIG2 () , self . DCCONFIG3 ())
+        }
+    }
     #[doc = "MICFIL Output DC Remover Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -402,6 +420,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DC_OUT_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DC_OUT_CTRL {{ DCCONFIG0: {=u8:?}, DCCONFIG1: {=u8:?}, DCCONFIG2: {=u8:?}, DCCONFIG3: {=u8:?} }}" , self . DCCONFIG0 () , self . DCCONFIG1 () , self . DCCONFIG2 () , self . DCCONFIG3 ())
+        }
+    }
     #[doc = "MICFIL FIFO Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -428,6 +452,12 @@ pub mod regs {
             f.debug_struct("FIFO_CTRL")
                 .field("FIFOWMK", &self.FIFOWMK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIFO_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FIFO_CTRL {{ FIFOWMK: {=u8:?} }}", self.FIFOWMK())
         }
     }
     #[doc = "MICFIL FIFO Status"]
@@ -528,6 +558,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIFO_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FIFO_STAT {{ FIFOOVF0: {=bool:?}, FIFOOVF1: {=bool:?}, FIFOOVF2: {=bool:?}, FIFOOVF3: {=bool:?}, FIFOUND0: {=bool:?}, FIFOUND1: {=bool:?}, FIFOUND2: {=bool:?}, FIFOUND3: {=bool:?} }}" , self . FIFOOVF0 () , self . FIFOOVF1 () , self . FIFOOVF2 () , self . FIFOOVF3 () , self . FIFOUND0 () , self . FIFOUND1 () , self . FIFOUND2 () , self . FIFOUND3 ())
+        }
+    }
     #[doc = "Parameter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -606,6 +642,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PARAM {{ NPAIR: {=u8:?}, FIFO_PTRWID: {=u8:?}, FIL_OUT_WIDTH_24B: {=bool:?}, LOW_POWER: {=bool:?}, DC_BYPASS: {=bool:?}, DC_OUT_BYPASS: {=bool:?} }}" , self . NPAIR () , self . FIFO_PTRWID () , self . FIL_OUT_WIDTH_24B () , self . LOW_POWER () , self . DC_BYPASS () , self . DC_OUT_BYPASS ())
+        }
+    }
     #[doc = "MICFIL Range Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -662,6 +704,12 @@ pub mod regs {
                 .field("RANGEADJ2", &self.RANGEADJ2())
                 .field("RANGEADJ3", &self.RANGEADJ3())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RANGE_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RANGE_CTRL {{ RANGEADJ0: {=u8:?}, RANGEADJ1: {=u8:?}, RANGEADJ2: {=u8:?}, RANGEADJ3: {=u8:?} }}" , self . RANGEADJ0 () , self . RANGEADJ1 () , self . RANGEADJ2 () , self . RANGEADJ3 ())
         }
     }
     #[doc = "MICFIL Range Status"]
@@ -762,6 +810,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RANGE_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RANGE_STAT {{ RANGEOVF0: {=bool:?}, RANGEOVF1: {=bool:?}, RANGEOVF2: {=bool:?}, RANGEOVF3: {=bool:?}, RANGEUNF0: {=bool:?}, RANGEUNF1: {=bool:?}, RANGEUNF2: {=bool:?}, RANGEUNF3: {=bool:?} }}" , self . RANGEOVF0 () , self . RANGEOVF1 () , self . RANGEOVF2 () , self . RANGEOVF3 () , self . RANGEUNF0 () , self . RANGEUNF1 () , self . RANGEUNF2 () , self . RANGEUNF3 ())
+        }
+    }
     #[doc = "MICFIL Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -830,6 +884,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STAT {{ CH0F: {=bool:?}, CH1F: {=bool:?}, CH2F: {=bool:?}, CH3F: {=bool:?}, BSY_FIL: {=bool:?} }}" , self . CH0F () , self . CH1F () , self . CH2F () , self . CH3F () , self . BSY_FIL ())
+        }
+    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -876,6 +936,18 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
         }
     }
 }

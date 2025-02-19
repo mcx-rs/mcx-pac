@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct OPAMP {
     ptr: *mut u8,
@@ -187,6 +187,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OPAMP_CTR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "OPAMP_CTR {{ EN: {=bool:?}, MODE: {=bool:?}, BIASC: {=u8:?}, INTREF: {=u8:?}, TRIGMD: {=bool:?}, INPSEL: {=bool:?}, INPF: {=bool:?}, BUFEN: {=bool:?}, PREF: {=u8:?}, ADCSW1: {=bool:?}, ADCSW2: {=bool:?}, OUTSW: {=bool:?}, PGAIN: {=u8:?}, NGAIN: {=u8:?} }}" , self . EN () , self . MODE () , self . BIASC () , self . INTREF () , self . TRIGMD () , self . INPSEL () , self . INPF () , self . BUFEN () , self . PREF () , self . ADCSW1 () , self . ADCSW2 () , self . OUTSW () , self . PGAIN () , self . NGAIN ())
+        }
+    }
     #[doc = "Parameter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -213,6 +219,16 @@ pub mod regs {
             f.debug_struct("PARAM")
                 .field("PGA_FUNCTION", &self.PGA_FUNCTION())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PARAM {{ PGA_FUNCTION: {=bool:?} }}",
+                self.PGA_FUNCTION()
+            )
         }
     }
     #[doc = "Version ID"]
@@ -261,6 +277,18 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
         }
     }
 }

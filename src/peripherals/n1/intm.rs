@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct INTM {
     ptr: *mut u8,
@@ -92,6 +92,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INTM_IACK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "INTM_IACK {{ IRQ: {=u16:?} }}", self.IRQ())
+        }
+    }
     #[doc = "Monitor Mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -116,6 +122,12 @@ pub mod regs {
     impl core::fmt::Debug for INTM_MM {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("INTM_MM").field("MM", &self.MM()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INTM_MM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "INTM_MM {{ MM: {=bool:?} }}", self.MM())
         }
     }
     #[doc = "Interrupt Request Select for Monitor 0..Interrupt Request Select for Monitor 3"]
@@ -146,6 +158,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MON_INTM_IRQSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MON_INTM_IRQSEL {{ IRQ: {=u16:?} }}", self.IRQ())
+        }
+    }
     #[doc = "Interrupt Latency for Monitor 0..Interrupt Latency for Monitor 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -172,6 +190,12 @@ pub mod regs {
             f.debug_struct("MON_INTM_LATENCY")
                 .field("LAT", &self.LAT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MON_INTM_LATENCY {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MON_INTM_LATENCY {{ LAT: {=u32:?} }}", self.LAT())
         }
     }
     #[doc = "Status for Monitor 0..Status for Monitor 3"]
@@ -202,6 +226,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MON_INTM_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MON_INTM_STATUS {{ STATUS: {=bool:?} }}", self.STATUS())
+        }
+    }
     #[doc = "Timer for Monitor 0..Timer for Monitor 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -228,6 +258,12 @@ pub mod regs {
             f.debug_struct("MON_INTM_TIMER")
                 .field("TIMER", &self.TIMER())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MON_INTM_TIMER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MON_INTM_TIMER {{ TIMER: {=u32:?} }}", self.TIMER())
         }
     }
 }

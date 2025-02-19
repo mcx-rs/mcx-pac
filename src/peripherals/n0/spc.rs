@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct SPC {
     ptr: *mut u8,
@@ -291,6 +291,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ACTIVE_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ACTIVE_CFG {{ CORELDO_VDD_DS: {=bool:?}, CORELDO_VDD_LVL: {=u8:?}, SYSLDO_VDD_DS: {=bool:?}, SYSLDO_VDD_LVL: {=bool:?}, DCDC_VDD_DS: {=u8:?}, DCDC_VDD_LVL: {=u8:?}, GLITCH_DETECT_DISABLE: {=bool:?}, LPBUFF_EN: {=bool:?}, BGMODE: {=u8:?}, VDD_VD_DISABLE: {=bool:?}, CORE_LVDE: {=bool:?}, SYS_LVDE: {=bool:?}, IO_LVDE: {=bool:?}, CORE_HVDE: {=bool:?}, SYS_HVDE: {=bool:?}, IO_HVDE: {=bool:?} }}" , self . CORELDO_VDD_DS () , self . CORELDO_VDD_LVL () , self . SYSLDO_VDD_DS () , self . SYSLDO_VDD_LVL () , self . DCDC_VDD_DS () , self . DCDC_VDD_LVL () , self . GLITCH_DETECT_DISABLE () , self . LPBUFF_EN () , self . BGMODE () , self . VDD_VD_DISABLE () , self . CORE_LVDE () , self . SYS_LVDE () , self . IO_LVDE () , self . CORE_HVDE () , self . SYS_HVDE () , self . IO_HVDE ())
+        }
+    }
     #[doc = "Active Voltage Trim Delay"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -317,6 +323,16 @@ pub mod regs {
             f.debug_struct("ACTIVE_VDELAY")
                 .field("ACTIVE_VDELAY", &self.ACTIVE_VDELAY())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ACTIVE_VDELAY {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ACTIVE_VDELAY {{ ACTIVE_VDELAY: {=u16:?} }}",
+                self.ACTIVE_VDELAY()
+            )
         }
     }
     #[doc = "SPC Regulator Control"]
@@ -367,6 +383,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CNTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CNTRL {{ CORELDO_EN: {=bool:?}, SYSLDO_EN: {=bool:?}, DCDC_EN: {=bool:?} }}",
+                self.CORELDO_EN(),
+                self.SYSLDO_EN(),
+                self.DCDC_EN()
+            )
+        }
+    }
     #[doc = "LDO_CORE Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -393,6 +421,16 @@ pub mod regs {
             f.debug_struct("CORELDO_CFG")
                 .field("DPDOWN_PULLDOWN_DISABLE", &self.DPDOWN_PULLDOWN_DISABLE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CORELDO_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CORELDO_CFG {{ DPDOWN_PULLDOWN_DISABLE: {=bool:?} }}",
+                self.DPDOWN_PULLDOWN_DISABLE()
+            )
         }
     }
     #[doc = "DCDC Burst Configuration"]
@@ -453,6 +491,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DCDC_BURST_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DCDC_BURST_CFG {{ BURST_REQ: {=bool:?}, EXT_BURST_EN: {=bool:?}, BURST_ACK: {=bool:?}, PULSE_REFRESH_CNT: {=u16:?} }}" , self . BURST_REQ () , self . EXT_BURST_EN () , self . BURST_ACK () , self . PULSE_REFRESH_CNT ())
+        }
+    }
     #[doc = "DCDC Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -501,6 +545,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DCDC_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DCDC_CFG {{ FREQ_CNTRL_ON: {=bool:?}, FREQ_CNTRL: {=u8:?}, BLEED_EN: {=bool:?} }}",
+                self.FREQ_CNTRL_ON(),
+                self.FREQ_CNTRL(),
+                self.BLEED_EN()
+            )
+        }
+    }
     #[doc = "External Voltage Domain Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -547,6 +603,18 @@ pub mod regs {
                 .field("EVDLPISO", &self.EVDLPISO())
                 .field("EVDSTAT", &self.EVDSTAT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EVD_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "EVD_CFG {{ EVDISO: {=u8:?}, EVDLPISO: {=u8:?}, EVDSTAT: {=u8:?} }}",
+                self.EVDISO(),
+                self.EVDLPISO(),
+                self.EVDSTAT()
+            )
         }
     }
     #[doc = "Glitch Detect Status Control"]
@@ -627,6 +695,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GLITCH_DETECT_SC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "GLITCH_DETECT_SC {{ CNT_SELECT: {=u8:?}, TIMEOUT: {=u8:?}, RE: {=bool:?}, IE: {=bool:?}, GLITCH_DETECT_FLAG: {=u8:?}, LOCK: {=bool:?} }}" , self . CNT_SELECT () , self . TIMEOUT () , self . RE () , self . IE () , self . GLITCH_DETECT_FLAG () , self . LOCK ())
+        }
+    }
     #[doc = "Low-Power Request Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -675,6 +749,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LPREQ_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "LPREQ_CFG {{ LPREQOE: {=bool:?}, LPREQPOL: {=bool:?}, LPREQOV: {=u8:?} }}",
+                self.LPREQOE(),
+                self.LPREQPOL(),
+                self.LPREQOV()
+            )
+        }
+    }
     #[doc = "Low Power Wake-Up Delay"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -701,6 +787,16 @@ pub mod regs {
             f.debug_struct("LPWKUP_DELAY")
                 .field("LPWKUP_DELAY", &self.LPWKUP_DELAY())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LPWKUP_DELAY {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "LPWKUP_DELAY {{ LPWKUP_DELAY: {=u16:?} }}",
+                self.LPWKUP_DELAY()
+            )
         }
     }
     #[doc = "Low-Power Mode Configuration"]
@@ -881,6 +977,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LP_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "LP_CFG {{ CORELDO_VDD_DS: {=bool:?}, CORELDO_VDD_LVL: {=u8:?}, SYSLDO_VDD_DS: {=bool:?}, DCDC_VDD_DS: {=u8:?}, DCDC_VDD_LVL: {=u8:?}, GLITCH_DETECT_DISABLE: {=bool:?}, COREVDD_IVS_EN: {=bool:?}, LPBUFF_EN: {=bool:?}, BGMODE: {=u8:?}, LP_IREFEN: {=bool:?}, CORE_LVDE: {=bool:?}, SYS_LVDE: {=bool:?}, IO_LVDE: {=bool:?}, CORE_HVDE: {=bool:?}, SYS_HVDE: {=bool:?}, IO_HVDE: {=bool:?} }}" , self . CORELDO_VDD_DS () , self . CORELDO_VDD_LVL () , self . SYSLDO_VDD_DS () , self . DCDC_VDD_DS () , self . DCDC_VDD_LVL () , self . GLITCH_DETECT_DISABLE () , self . COREVDD_IVS_EN () , self . LPBUFF_EN () , self . BGMODE () , self . LP_IREFEN () , self . CORE_LVDE () , self . SYS_LVDE () , self . IO_LVDE () , self . CORE_HVDE () , self . SYS_HVDE () , self . IO_HVDE ())
+        }
+    }
     #[doc = "SPC Power Domain Mode Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -927,6 +1029,18 @@ pub mod regs {
                 .field("PD_LP_REQ", &self.PD_LP_REQ())
                 .field("LP_MODE", &self.LP_MODE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PD_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PD_STATUS {{ PWR_REQ_STATUS: {=bool:?}, PD_LP_REQ: {=bool:?}, LP_MODE: {=u8:?} }}",
+                self.PWR_REQ_STATUS(),
+                self.PD_LP_REQ(),
+                self.LP_MODE()
+            )
         }
     }
     #[doc = "Status Control"]
@@ -987,6 +1101,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SC {{ BUSY: {=bool:?}, SPC_LP_REQ: {=bool:?}, SPC_LP_MODE: {=u8:?}, ISO_CLR: {=u8:?} }}" , self . BUSY () , self . SPC_LP_REQ () , self . SPC_LP_MODE () , self . ISO_CLR ())
+        }
+    }
     #[doc = "SRAM Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1035,6 +1155,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SRAMCTL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SRAMCTL {{ VSM: {=u8:?}, REQ: {=bool:?}, ACK: {=bool:?} }}",
+                self.VSM(),
+                self.REQ(),
+                self.ACK()
+            )
+        }
+    }
     #[doc = "LDO_SYS Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1061,6 +1193,12 @@ pub mod regs {
             f.debug_struct("SYSLDO_CFG")
                 .field("ISINKEN", &self.ISINKEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SYSLDO_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SYSLDO_CFG {{ ISINKEN: {=bool:?} }}", self.ISINKEN())
         }
     }
     #[doc = "Core Voltage Detect Configuration"]
@@ -1129,6 +1267,12 @@ pub mod regs {
                 .field("HVDIE", &self.HVDIE())
                 .field("LOCK", &self.LOCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VD_CORE_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "VD_CORE_CFG {{ LVDRE: {=bool:?}, LVDIE: {=bool:?}, HVDRE: {=bool:?}, HVDIE: {=bool:?}, LOCK: {=bool:?} }}" , self . LVDRE () , self . LVDIE () , self . HVDRE () , self . HVDIE () , self . LOCK ())
         }
     }
     #[doc = "IO Voltage Detect Configuration"]
@@ -1209,6 +1353,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VD_IO_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "VD_IO_CFG {{ LVDRE: {=bool:?}, LVDIE: {=bool:?}, HVDRE: {=bool:?}, HVDIE: {=bool:?}, LVSEL: {=bool:?}, LOCK: {=bool:?} }}" , self . LVDRE () , self . LVDIE () , self . HVDRE () , self . HVDIE () , self . LVSEL () , self . LOCK ())
+        }
+    }
     #[doc = "Voltage Detect Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1287,6 +1437,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VD_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "VD_STAT {{ COREVDD_LVDF: {=bool:?}, SYSVDD_LVDF: {=bool:?}, IOVDD_LVDF: {=bool:?}, COREVDD_HVDF: {=bool:?}, SYSVDD_HVDF: {=bool:?}, IOVDD_HVDF: {=bool:?} }}" , self . COREVDD_LVDF () , self . SYSVDD_LVDF () , self . IOVDD_LVDF () , self . COREVDD_HVDF () , self . SYSVDD_HVDF () , self . IOVDD_HVDF ())
+        }
+    }
     #[doc = "System Voltage Detect Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1355,6 +1511,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VD_SYS_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "VD_SYS_CFG {{ LVDRE: {=bool:?}, LVDIE: {=bool:?}, HVDRE: {=bool:?}, HVDIE: {=bool:?}, LOCK: {=bool:?} }}" , self . LVDRE () , self . LVDIE () , self . HVDRE () , self . HVDIE () , self . LOCK ())
+        }
+    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1401,6 +1563,18 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
         }
     }
 }

@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct S50 {
     ptr: *mut u8,
@@ -245,6 +245,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ELS_CFG {{ ADCTRL: {=u16:?} }}", self.ADCTRL())
+        }
+    }
     #[doc = "CRC Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -281,6 +287,17 @@ pub mod regs {
                 .field("CMDCRC_RST", &self.CMDCRC_RST())
                 .field("CMDCRC_EN", &self.CMDCRC_EN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_CMDCRC_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ELS_CMDCRC_CTRL {{ CMDCRC_RST: {=bool:?}, CMDCRC_EN: {=bool:?} }}",
+                self.CMDCRC_RST(),
+                self.CMDCRC_EN()
+            )
         }
     }
     #[doc = "Control Register"]
@@ -349,6 +366,12 @@ pub mod regs {
                 .field("ELS_CMD", &self.ELS_CMD())
                 .field("BYTE_ORDER", &self.BYTE_ORDER())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_CTRL {{ ELS_EN: {=bool:?}, ELS_START: {=bool:?}, ELS_RESET: {=bool:?}, ELS_CMD: {=u8:?}, BYTE_ORDER: {=bool:?} }}" , self . ELS_EN () , self . ELS_START () , self . ELS_RESET () , self . ELS_CMD () , self . BYTE_ORDER ())
         }
     }
     #[doc = "Error Status"]
@@ -449,6 +472,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_ERR_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_ERR_STATUS {{ BUS_ERR: {=bool:?}, OPN_ERR: {=bool:?}, ALG_ERR: {=bool:?}, ITG_ERR: {=bool:?}, FLT_ERR: {=bool:?}, PRNG_ERR: {=bool:?}, ERR_LVL: {=u8:?}, DTRNG_ERR: {=bool:?} }}" , self . BUS_ERR () , self . OPN_ERR () , self . ALG_ERR () , self . ITG_ERR () , self . FLT_ERR () , self . PRNG_ERR () , self . ERR_LVL () , self . DTRNG_ERR ())
+        }
+    }
     #[doc = "Error Status Clear"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -475,6 +504,16 @@ pub mod regs {
             f.debug_struct("ELS_ERR_STATUS_CLR")
                 .field("ERR_CLR", &self.ERR_CLR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_ERR_STATUS_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ELS_ERR_STATUS_CLR {{ ERR_CLR: {=bool:?} }}",
+                self.ERR_CLR()
+            )
         }
     }
     #[doc = "Interrupt Enable"]
@@ -505,6 +544,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_INT_ENABLE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ELS_INT_ENABLE {{ INT_EN: {=bool:?} }}", self.INT_EN())
+        }
+    }
     #[doc = "Interrupt Status Clear"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -531,6 +576,16 @@ pub mod regs {
             f.debug_struct("ELS_INT_STATUS_CLR")
                 .field("INT_CLR", &self.INT_CLR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_INT_STATUS_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ELS_INT_STATUS_CLR {{ INT_CLR: {=bool:?} }}",
+                self.INT_CLR()
+            )
         }
     }
     #[doc = "Interrupt Status Set"]
@@ -561,6 +616,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_INT_STATUS_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ELS_INT_STATUS_SET {{ INT_SET: {=bool:?} }}",
+                self.INT_SET()
+            )
+        }
+    }
     #[doc = "Keystore Index 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -587,6 +652,12 @@ pub mod regs {
             f.debug_struct("ELS_KIDX0")
                 .field("KIDX0", &self.KIDX0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KIDX0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ELS_KIDX0 {{ KIDX0: {=u8:?} }}", self.KIDX0())
         }
     }
     #[doc = "Keystore Index 1"]
@@ -617,6 +688,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KIDX1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ELS_KIDX1 {{ KIDX1: {=u8:?} }}", self.KIDX1())
+        }
+    }
     #[doc = "Keystore Index 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -643,6 +720,12 @@ pub mod regs {
             f.debug_struct("ELS_KIDX2")
                 .field("KIDX2", &self.KIDX2())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KIDX2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ELS_KIDX2 {{ KIDX2: {=u8:?} }}", self.KIDX2())
         }
     }
     #[doc = "Status Register"]
@@ -923,6 +1006,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS0 {{ KS0_KSIZE: {=u8:?}, KS0_KACT: {=bool:?}, KS0_KBASE: {=bool:?}, KS0_FGP: {=bool:?}, KS0_FRTN: {=bool:?}, KS0_FHWO: {=bool:?}, KS0_UKPUK: {=bool:?}, KS0_UTECDH: {=bool:?}, KS0_UCMAC: {=bool:?}, KS0_UKSK: {=bool:?}, KS0_URTF: {=bool:?}, KS0_UCKDF: {=bool:?}, KS0_UHKDF: {=bool:?}, KS0_UECSG: {=bool:?}, KS0_UECDH: {=bool:?}, KS0_UAES: {=bool:?}, KS0_UHMAC: {=bool:?}, KS0_UKWK: {=bool:?}, KS0_UKUOK: {=bool:?}, KS0_UTLSPMS: {=bool:?}, KS0_UTLSMS: {=bool:?}, KS0_UKGSRC: {=bool:?}, KS0_UHWO: {=bool:?}, KS0_UWRPOK: {=bool:?}, KS0_UDUK: {=bool:?}, KS0_UPPROT: {=u8:?} }}" , self . KS0_KSIZE () , self . KS0_KACT () , self . KS0_KBASE () , self . KS0_FGP () , self . KS0_FRTN () , self . KS0_FHWO () , self . KS0_UKPUK () , self . KS0_UTECDH () , self . KS0_UCMAC () , self . KS0_UKSK () , self . KS0_URTF () , self . KS0_UCKDF () , self . KS0_UHKDF () , self . KS0_UECSG () , self . KS0_UECDH () , self . KS0_UAES () , self . KS0_UHMAC () , self . KS0_UKWK () , self . KS0_UKUOK () , self . KS0_UTLSPMS () , self . KS0_UTLSMS () , self . KS0_UKGSRC () , self . KS0_UHWO () , self . KS0_UWRPOK () , self . KS0_UDUK () , self . KS0_UPPROT ())
+        }
+    }
     #[doc = "Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1199,6 +1288,12 @@ pub mod regs {
                 .field("KS1_UDUK", &self.KS1_UDUK())
                 .field("KS1_UPPROT", &self.KS1_UPPROT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS1 {{ KS1_KSIZE: {=u8:?}, KS1_KACT: {=bool:?}, KS1_KBASE: {=bool:?}, KS1_FGP: {=bool:?}, KS1_FRTN: {=bool:?}, KS1_FHWO: {=bool:?}, KS1_UKPUK: {=bool:?}, KS1_UTECDH: {=bool:?}, KS1_UCMAC: {=bool:?}, KS1_UKSK: {=bool:?}, KS1_URTF: {=bool:?}, KS1_UCKDF: {=bool:?}, KS1_UHKDF: {=bool:?}, KS1_UECSG: {=bool:?}, KS1_UECDH: {=bool:?}, KS1_UAES: {=bool:?}, KS1_UHMAC: {=bool:?}, KS1_UKWK: {=bool:?}, KS1_UKUOK: {=bool:?}, KS1_UTLSPMS: {=bool:?}, KS1_UTLSMS: {=bool:?}, KS1_UKGSRC: {=bool:?}, KS1_UHWO: {=bool:?}, KS1_UWRPOK: {=bool:?}, KS1_UDUK: {=bool:?}, KS1_UPPROT: {=u8:?} }}" , self . KS1_KSIZE () , self . KS1_KACT () , self . KS1_KBASE () , self . KS1_FGP () , self . KS1_FRTN () , self . KS1_FHWO () , self . KS1_UKPUK () , self . KS1_UTECDH () , self . KS1_UCMAC () , self . KS1_UKSK () , self . KS1_URTF () , self . KS1_UCKDF () , self . KS1_UHKDF () , self . KS1_UECSG () , self . KS1_UECDH () , self . KS1_UAES () , self . KS1_UHMAC () , self . KS1_UKWK () , self . KS1_UKUOK () , self . KS1_UTLSPMS () , self . KS1_UTLSMS () , self . KS1_UKGSRC () , self . KS1_UHWO () , self . KS1_UWRPOK () , self . KS1_UDUK () , self . KS1_UPPROT ())
         }
     }
     #[doc = "Status Register"]
@@ -1479,6 +1574,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS10 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS10 {{ KS10_KSIZE: {=u8:?}, KS10_KACT: {=bool:?}, KS10_KBASE: {=bool:?}, KS10_FGP: {=bool:?}, KS10_FRTN: {=bool:?}, KS10_FHWO: {=bool:?}, KS10_UKPUK: {=bool:?}, KS10_UTECDH: {=bool:?}, KS10_UCMAC: {=bool:?}, KS10_UKSK: {=bool:?}, KS10_URTF: {=bool:?}, KS10_UCKDF: {=bool:?}, KS10_UHKDF: {=bool:?}, KS10_UECSG: {=bool:?}, KS10_UECDH: {=bool:?}, KS10_UAES: {=bool:?}, KS10_UHMAC: {=bool:?}, KS10_UKWK: {=bool:?}, KS10_UKUOK: {=bool:?}, KS10_UTLSPMS: {=bool:?}, KS10_UTLSMS: {=bool:?}, KS10_UKGSRC: {=bool:?}, KS10_UHWO: {=bool:?}, KS10_UWRPOK: {=bool:?}, KS10_UDUK: {=bool:?}, KS10_UPPROT: {=u8:?} }}" , self . KS10_KSIZE () , self . KS10_KACT () , self . KS10_KBASE () , self . KS10_FGP () , self . KS10_FRTN () , self . KS10_FHWO () , self . KS10_UKPUK () , self . KS10_UTECDH () , self . KS10_UCMAC () , self . KS10_UKSK () , self . KS10_URTF () , self . KS10_UCKDF () , self . KS10_UHKDF () , self . KS10_UECSG () , self . KS10_UECDH () , self . KS10_UAES () , self . KS10_UHMAC () , self . KS10_UKWK () , self . KS10_UKUOK () , self . KS10_UTLSPMS () , self . KS10_UTLSMS () , self . KS10_UKGSRC () , self . KS10_UHWO () , self . KS10_UWRPOK () , self . KS10_UDUK () , self . KS10_UPPROT ())
+        }
+    }
     #[doc = "Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1755,6 +1856,12 @@ pub mod regs {
                 .field("KS11_UDUK", &self.KS11_UDUK())
                 .field("KS11_UPPROT", &self.KS11_UPPROT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS11 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS11 {{ KS11_KSIZE: {=u8:?}, KS11_KACT: {=bool:?}, KS11_KBASE: {=bool:?}, KS11_FGP: {=bool:?}, KS11_FRTN: {=bool:?}, KS11_FHWO: {=bool:?}, KS11_UKPUK: {=bool:?}, KS11_UTECDH: {=bool:?}, KS11_UCMAC: {=bool:?}, KS11_UKSK: {=bool:?}, KS11_URTF: {=bool:?}, KS11_UCKDF: {=bool:?}, KS11_UHKDF: {=bool:?}, KS11_UECSG: {=bool:?}, KS11_UECDH: {=bool:?}, KS11_UAES: {=bool:?}, KS11_UHMAC: {=bool:?}, KS11_UKWK: {=bool:?}, KS11_UKUOK: {=bool:?}, KS11_UTLSPMS: {=bool:?}, KS11_UTLSMS: {=bool:?}, KS11_UKGSRC: {=bool:?}, KS11_UHWO: {=bool:?}, KS11_UWRPOK: {=bool:?}, KS11_UDUK: {=bool:?}, KS11_UPPROT: {=u8:?} }}" , self . KS11_KSIZE () , self . KS11_KACT () , self . KS11_KBASE () , self . KS11_FGP () , self . KS11_FRTN () , self . KS11_FHWO () , self . KS11_UKPUK () , self . KS11_UTECDH () , self . KS11_UCMAC () , self . KS11_UKSK () , self . KS11_URTF () , self . KS11_UCKDF () , self . KS11_UHKDF () , self . KS11_UECSG () , self . KS11_UECDH () , self . KS11_UAES () , self . KS11_UHMAC () , self . KS11_UKWK () , self . KS11_UKUOK () , self . KS11_UTLSPMS () , self . KS11_UTLSMS () , self . KS11_UKGSRC () , self . KS11_UHWO () , self . KS11_UWRPOK () , self . KS11_UDUK () , self . KS11_UPPROT ())
         }
     }
     #[doc = "Status Register"]
@@ -2035,6 +2142,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS12 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS12 {{ KS12_KSIZE: {=u8:?}, KS12_KACT: {=bool:?}, KS12_KBASE: {=bool:?}, KS12_FGP: {=bool:?}, KS12_FRTN: {=bool:?}, KS12_FHWO: {=bool:?}, KS12_UKPUK: {=bool:?}, KS12_UTECDH: {=bool:?}, KS12_UCMAC: {=bool:?}, KS12_UKSK: {=bool:?}, KS12_URTF: {=bool:?}, KS12_UCKDF: {=bool:?}, KS12_UHKDF: {=bool:?}, KS12_UECSG: {=bool:?}, KS12_UECDH: {=bool:?}, KS12_UAES: {=bool:?}, KS12_UHMAC: {=bool:?}, KS12_UKWK: {=bool:?}, KS12_UKUOK: {=bool:?}, KS12_UTLSPMS: {=bool:?}, KS12_UTLSMS: {=bool:?}, KS12_UKGSRC: {=bool:?}, KS12_UHWO: {=bool:?}, KS12_UWRPOK: {=bool:?}, KS12_UDUK: {=bool:?}, KS12_UPPROT: {=u8:?} }}" , self . KS12_KSIZE () , self . KS12_KACT () , self . KS12_KBASE () , self . KS12_FGP () , self . KS12_FRTN () , self . KS12_FHWO () , self . KS12_UKPUK () , self . KS12_UTECDH () , self . KS12_UCMAC () , self . KS12_UKSK () , self . KS12_URTF () , self . KS12_UCKDF () , self . KS12_UHKDF () , self . KS12_UECSG () , self . KS12_UECDH () , self . KS12_UAES () , self . KS12_UHMAC () , self . KS12_UKWK () , self . KS12_UKUOK () , self . KS12_UTLSPMS () , self . KS12_UTLSMS () , self . KS12_UKGSRC () , self . KS12_UHWO () , self . KS12_UWRPOK () , self . KS12_UDUK () , self . KS12_UPPROT ())
+        }
+    }
     #[doc = "Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2311,6 +2424,12 @@ pub mod regs {
                 .field("KS13_UDUK", &self.KS13_UDUK())
                 .field("KS13_UPPROT", &self.KS13_UPPROT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS13 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS13 {{ KS13_KSIZE: {=u8:?}, KS13_KACT: {=bool:?}, KS13_KBASE: {=bool:?}, KS13_FGP: {=bool:?}, KS13_FRTN: {=bool:?}, KS13_FHWO: {=bool:?}, KS13_UKPUK: {=bool:?}, KS13_UTECDH: {=bool:?}, KS13_UCMAC: {=bool:?}, KS13_UKSK: {=bool:?}, KS13_URTF: {=bool:?}, KS13_UCKDF: {=bool:?}, KS13_UHKDF: {=bool:?}, KS13_UECSG: {=bool:?}, KS13_UECDH: {=bool:?}, KS13_UAES: {=bool:?}, KS13_UHMAC: {=bool:?}, KS13_UKWK: {=bool:?}, KS13_UKUOK: {=bool:?}, KS13_UTLSPMS: {=bool:?}, KS13_UTLSMS: {=bool:?}, KS13_UKGSRC: {=bool:?}, KS13_UHWO: {=bool:?}, KS13_UWRPOK: {=bool:?}, KS13_UDUK: {=bool:?}, KS13_UPPROT: {=u8:?} }}" , self . KS13_KSIZE () , self . KS13_KACT () , self . KS13_KBASE () , self . KS13_FGP () , self . KS13_FRTN () , self . KS13_FHWO () , self . KS13_UKPUK () , self . KS13_UTECDH () , self . KS13_UCMAC () , self . KS13_UKSK () , self . KS13_URTF () , self . KS13_UCKDF () , self . KS13_UHKDF () , self . KS13_UECSG () , self . KS13_UECDH () , self . KS13_UAES () , self . KS13_UHMAC () , self . KS13_UKWK () , self . KS13_UKUOK () , self . KS13_UTLSPMS () , self . KS13_UTLSMS () , self . KS13_UKGSRC () , self . KS13_UHWO () , self . KS13_UWRPOK () , self . KS13_UDUK () , self . KS13_UPPROT ())
         }
     }
     #[doc = "Status Register"]
@@ -2591,6 +2710,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS14 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS14 {{ KS14_KSIZE: {=u8:?}, KS14_KACT: {=bool:?}, KS14_KBASE: {=bool:?}, KS14_FGP: {=bool:?}, KS14_FRTN: {=bool:?}, KS14_FHWO: {=bool:?}, KS14_UKPUK: {=bool:?}, KS14_UTECDH: {=bool:?}, KS14_UCMAC: {=bool:?}, KS14_UKSK: {=bool:?}, KS14_URTF: {=bool:?}, KS14_UCKDF: {=bool:?}, KS14_UHKDF: {=bool:?}, KS14_UECSG: {=bool:?}, KS14_UECDH: {=bool:?}, KS14_UAES: {=bool:?}, KS14_UHMAC: {=bool:?}, KS14_UKWK: {=bool:?}, KS14_UKUOK: {=bool:?}, KS14_UTLSPMS: {=bool:?}, KS14_UTLSMS: {=bool:?}, KS14_UKGSRC: {=bool:?}, KS14_UHWO: {=bool:?}, KS14_UWRPOK: {=bool:?}, KS14_UDUK: {=bool:?}, KS14_UPPROT: {=u8:?} }}" , self . KS14_KSIZE () , self . KS14_KACT () , self . KS14_KBASE () , self . KS14_FGP () , self . KS14_FRTN () , self . KS14_FHWO () , self . KS14_UKPUK () , self . KS14_UTECDH () , self . KS14_UCMAC () , self . KS14_UKSK () , self . KS14_URTF () , self . KS14_UCKDF () , self . KS14_UHKDF () , self . KS14_UECSG () , self . KS14_UECDH () , self . KS14_UAES () , self . KS14_UHMAC () , self . KS14_UKWK () , self . KS14_UKUOK () , self . KS14_UTLSPMS () , self . KS14_UTLSMS () , self . KS14_UKGSRC () , self . KS14_UHWO () , self . KS14_UWRPOK () , self . KS14_UDUK () , self . KS14_UPPROT ())
+        }
+    }
     #[doc = "Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2867,6 +2992,12 @@ pub mod regs {
                 .field("KS15_UDUK", &self.KS15_UDUK())
                 .field("KS15_UPPROT", &self.KS15_UPPROT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS15 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS15 {{ KS15_KSIZE: {=u8:?}, KS15_KACT: {=bool:?}, KS15_KBASE: {=bool:?}, KS15_FGP: {=bool:?}, KS15_FRTN: {=bool:?}, KS15_FHWO: {=bool:?}, KS15_UKPUK: {=bool:?}, KS15_UTECDH: {=bool:?}, KS15_UCMAC: {=bool:?}, KS15_UKSK: {=bool:?}, KS15_URTF: {=bool:?}, KS15_UCKDF: {=bool:?}, KS15_UHKDF: {=bool:?}, KS15_UECSG: {=bool:?}, KS15_UECDH: {=bool:?}, KS15_UAES: {=bool:?}, KS15_UHMAC: {=bool:?}, KS15_UKWK: {=bool:?}, KS15_UKUOK: {=bool:?}, KS15_UTLSPMS: {=bool:?}, KS15_UTLSMS: {=bool:?}, KS15_UKGSRC: {=bool:?}, KS15_UHWO: {=bool:?}, KS15_UWRPOK: {=bool:?}, KS15_UDUK: {=bool:?}, KS15_UPPROT: {=u8:?} }}" , self . KS15_KSIZE () , self . KS15_KACT () , self . KS15_KBASE () , self . KS15_FGP () , self . KS15_FRTN () , self . KS15_FHWO () , self . KS15_UKPUK () , self . KS15_UTECDH () , self . KS15_UCMAC () , self . KS15_UKSK () , self . KS15_URTF () , self . KS15_UCKDF () , self . KS15_UHKDF () , self . KS15_UECSG () , self . KS15_UECDH () , self . KS15_UAES () , self . KS15_UHMAC () , self . KS15_UKWK () , self . KS15_UKUOK () , self . KS15_UTLSPMS () , self . KS15_UTLSMS () , self . KS15_UKGSRC () , self . KS15_UHWO () , self . KS15_UWRPOK () , self . KS15_UDUK () , self . KS15_UPPROT ())
         }
     }
     #[doc = "Status Register"]
@@ -3147,6 +3278,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS16 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS16 {{ KS16_KSIZE: {=u8:?}, KS16_KACT: {=bool:?}, KS16_KBASE: {=bool:?}, KS16_FGP: {=bool:?}, KS16_FRTN: {=bool:?}, KS16_FHWO: {=bool:?}, KS16_UKPUK: {=bool:?}, KS16_UTECDH: {=bool:?}, KS16_UCMAC: {=bool:?}, KS16_UKSK: {=bool:?}, KS16_URTF: {=bool:?}, KS16_UCKDF: {=bool:?}, KS16_UHKDF: {=bool:?}, KS16_UECSG: {=bool:?}, KS16_UECDH: {=bool:?}, KS16_UAES: {=bool:?}, KS16_UHMAC: {=bool:?}, KS16_UKWK: {=bool:?}, KS16_UKUOK: {=bool:?}, KS16_UTLSPMS: {=bool:?}, KS16_UTLSMS: {=bool:?}, KS16_UKGSRC: {=bool:?}, KS16_UHWO: {=bool:?}, KS16_UWRPOK: {=bool:?}, KS16_UDUK: {=bool:?}, KS16_UPPROT: {=u8:?} }}" , self . KS16_KSIZE () , self . KS16_KACT () , self . KS16_KBASE () , self . KS16_FGP () , self . KS16_FRTN () , self . KS16_FHWO () , self . KS16_UKPUK () , self . KS16_UTECDH () , self . KS16_UCMAC () , self . KS16_UKSK () , self . KS16_URTF () , self . KS16_UCKDF () , self . KS16_UHKDF () , self . KS16_UECSG () , self . KS16_UECDH () , self . KS16_UAES () , self . KS16_UHMAC () , self . KS16_UKWK () , self . KS16_UKUOK () , self . KS16_UTLSPMS () , self . KS16_UTLSMS () , self . KS16_UKGSRC () , self . KS16_UHWO () , self . KS16_UWRPOK () , self . KS16_UDUK () , self . KS16_UPPROT ())
+        }
+    }
     #[doc = "Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3423,6 +3560,12 @@ pub mod regs {
                 .field("KS17_UDUK", &self.KS17_UDUK())
                 .field("KS17_UPPROT", &self.KS17_UPPROT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS17 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS17 {{ KS17_KSIZE: {=u8:?}, KS17_KACT: {=bool:?}, KS17_KBASE: {=bool:?}, KS17_FGP: {=bool:?}, KS17_FRTN: {=bool:?}, KS17_FHWO: {=bool:?}, KS17_UKPUK: {=bool:?}, KS17_UTECDH: {=bool:?}, KS17_UCMAC: {=bool:?}, KS17_UKSK: {=bool:?}, KS17_URTF: {=bool:?}, KS17_UCKDF: {=bool:?}, KS17_UHKDF: {=bool:?}, KS17_UECSG: {=bool:?}, KS17_UECDH: {=bool:?}, KS17_UAES: {=bool:?}, KS17_UHMAC: {=bool:?}, KS17_UKWK: {=bool:?}, KS17_UKUOK: {=bool:?}, KS17_UTLSPMS: {=bool:?}, KS17_UTLSMS: {=bool:?}, KS17_UKGSRC: {=bool:?}, KS17_UHWO: {=bool:?}, KS17_UWRPOK: {=bool:?}, KS17_UDUK: {=bool:?}, KS17_UPPROT: {=u8:?} }}" , self . KS17_KSIZE () , self . KS17_KACT () , self . KS17_KBASE () , self . KS17_FGP () , self . KS17_FRTN () , self . KS17_FHWO () , self . KS17_UKPUK () , self . KS17_UTECDH () , self . KS17_UCMAC () , self . KS17_UKSK () , self . KS17_URTF () , self . KS17_UCKDF () , self . KS17_UHKDF () , self . KS17_UECSG () , self . KS17_UECDH () , self . KS17_UAES () , self . KS17_UHMAC () , self . KS17_UKWK () , self . KS17_UKUOK () , self . KS17_UTLSPMS () , self . KS17_UTLSMS () , self . KS17_UKGSRC () , self . KS17_UHWO () , self . KS17_UWRPOK () , self . KS17_UDUK () , self . KS17_UPPROT ())
         }
     }
     #[doc = "Status Register"]
@@ -3703,6 +3846,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS18 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS18 {{ KS18_KSIZE: {=u8:?}, KS18_KACT: {=bool:?}, KS18_KBASE: {=bool:?}, KS18_FGP: {=bool:?}, KS18_FRTN: {=bool:?}, KS18_FHWO: {=bool:?}, KS18_UKPUK: {=bool:?}, KS18_UTECDH: {=bool:?}, KS18_UCMAC: {=bool:?}, KS18_UKSK: {=bool:?}, KS18_URTF: {=bool:?}, KS18_UCKDF: {=bool:?}, KS18_UHKDF: {=bool:?}, KS18_UECSG: {=bool:?}, KS18_UECDH: {=bool:?}, KS18_UAES: {=bool:?}, KS18_UHMAC: {=bool:?}, KS18_UKWK: {=bool:?}, KS18_UKUOK: {=bool:?}, KS18_UTLSPMS: {=bool:?}, KS18_UTLSMS: {=bool:?}, KS18_UKGSRC: {=bool:?}, KS18_UHWO: {=bool:?}, KS18_UWRPOK: {=bool:?}, KS18_UDUK: {=bool:?}, KS18_UPPROT: {=u8:?} }}" , self . KS18_KSIZE () , self . KS18_KACT () , self . KS18_KBASE () , self . KS18_FGP () , self . KS18_FRTN () , self . KS18_FHWO () , self . KS18_UKPUK () , self . KS18_UTECDH () , self . KS18_UCMAC () , self . KS18_UKSK () , self . KS18_URTF () , self . KS18_UCKDF () , self . KS18_UHKDF () , self . KS18_UECSG () , self . KS18_UECDH () , self . KS18_UAES () , self . KS18_UHMAC () , self . KS18_UKWK () , self . KS18_UKUOK () , self . KS18_UTLSPMS () , self . KS18_UTLSMS () , self . KS18_UKGSRC () , self . KS18_UHWO () , self . KS18_UWRPOK () , self . KS18_UDUK () , self . KS18_UPPROT ())
+        }
+    }
     #[doc = "Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3979,6 +4128,12 @@ pub mod regs {
                 .field("KS19_UDUK", &self.KS19_UDUK())
                 .field("KS19_UPPROT", &self.KS19_UPPROT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS19 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS19 {{ KS19_KSIZE: {=u8:?}, KS19_KACT: {=bool:?}, KS19_KBASE: {=bool:?}, KS19_FGP: {=bool:?}, KS19_FRTN: {=bool:?}, KS19_FHWO: {=bool:?}, KS19_UKPUK: {=bool:?}, KS19_UTECDH: {=bool:?}, KS19_UCMAC: {=bool:?}, KS19_UKSK: {=bool:?}, KS19_URTF: {=bool:?}, KS19_UCKDF: {=bool:?}, KS19_UHKDF: {=bool:?}, KS19_UECSG: {=bool:?}, KS19_UECDH: {=bool:?}, KS19_UAES: {=bool:?}, KS19_UHMAC: {=bool:?}, KS19_UKWK: {=bool:?}, KS19_UKUOK: {=bool:?}, KS19_UTLSPMS: {=bool:?}, KS19_UTLSMS: {=bool:?}, KS19_UKGSRC: {=bool:?}, KS19_UHWO: {=bool:?}, KS19_UWRPOK: {=bool:?}, KS19_UDUK: {=bool:?}, KS19_UPPROT: {=u8:?} }}" , self . KS19_KSIZE () , self . KS19_KACT () , self . KS19_KBASE () , self . KS19_FGP () , self . KS19_FRTN () , self . KS19_FHWO () , self . KS19_UKPUK () , self . KS19_UTECDH () , self . KS19_UCMAC () , self . KS19_UKSK () , self . KS19_URTF () , self . KS19_UCKDF () , self . KS19_UHKDF () , self . KS19_UECSG () , self . KS19_UECDH () , self . KS19_UAES () , self . KS19_UHMAC () , self . KS19_UKWK () , self . KS19_UKUOK () , self . KS19_UTLSPMS () , self . KS19_UTLSMS () , self . KS19_UKGSRC () , self . KS19_UHWO () , self . KS19_UWRPOK () , self . KS19_UDUK () , self . KS19_UPPROT ())
         }
     }
     #[doc = "Status Register"]
@@ -4259,6 +4414,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS2 {{ KS2_KSIZE: {=u8:?}, KS2_KACT: {=bool:?}, KS2_KBASE: {=bool:?}, KS2_FGP: {=bool:?}, KS2_FRTN: {=bool:?}, KS2_FHWO: {=bool:?}, KS2_UKPUK: {=bool:?}, KS2_UTECDH: {=bool:?}, KS2_UCMAC: {=bool:?}, KS2_UKSK: {=bool:?}, KS2_URTF: {=bool:?}, KS2_UCKDF: {=bool:?}, KS2_UHKDF: {=bool:?}, KS2_UECSG: {=bool:?}, KS2_UECDH: {=bool:?}, KS2_UAES: {=bool:?}, KS2_UHMAC: {=bool:?}, KS2_UKWK: {=bool:?}, KS2_UKUOK: {=bool:?}, KS2_UTLSPMS: {=bool:?}, KS2_UTLSMS: {=bool:?}, KS2_UKGSRC: {=bool:?}, KS2_UHWO: {=bool:?}, KS2_UWRPOK: {=bool:?}, KS2_UDUK: {=bool:?}, KS2_UPPROT: {=u8:?} }}" , self . KS2_KSIZE () , self . KS2_KACT () , self . KS2_KBASE () , self . KS2_FGP () , self . KS2_FRTN () , self . KS2_FHWO () , self . KS2_UKPUK () , self . KS2_UTECDH () , self . KS2_UCMAC () , self . KS2_UKSK () , self . KS2_URTF () , self . KS2_UCKDF () , self . KS2_UHKDF () , self . KS2_UECSG () , self . KS2_UECDH () , self . KS2_UAES () , self . KS2_UHMAC () , self . KS2_UKWK () , self . KS2_UKUOK () , self . KS2_UTLSPMS () , self . KS2_UTLSMS () , self . KS2_UKGSRC () , self . KS2_UHWO () , self . KS2_UWRPOK () , self . KS2_UDUK () , self . KS2_UPPROT ())
+        }
+    }
     #[doc = "Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4535,6 +4696,12 @@ pub mod regs {
                 .field("KS3_UDUK", &self.KS3_UDUK())
                 .field("KS3_UPPROT", &self.KS3_UPPROT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS3 {{ KS3_KSIZE: {=u8:?}, KS3_KACT: {=bool:?}, KS3_KBASE: {=bool:?}, KS3_FGP: {=bool:?}, KS3_FRTN: {=bool:?}, KS3_FHWO: {=bool:?}, KS3_UKPUK: {=bool:?}, KS3_UTECDH: {=bool:?}, KS3_UCMAC: {=bool:?}, KS3_UKSK: {=bool:?}, KS3_URTF: {=bool:?}, KS3_UCKDF: {=bool:?}, KS3_UHKDF: {=bool:?}, KS3_UECSG: {=bool:?}, KS3_UECDH: {=bool:?}, KS3_UAES: {=bool:?}, KS3_UHMAC: {=bool:?}, KS3_UKWK: {=bool:?}, KS3_UKUOK: {=bool:?}, KS3_UTLSPMS: {=bool:?}, KS3_UTLSMS: {=bool:?}, KS3_UKGSRC: {=bool:?}, KS3_UHWO: {=bool:?}, KS3_UWRPOK: {=bool:?}, KS3_UDUK: {=bool:?}, KS3_UPPROT: {=u8:?} }}" , self . KS3_KSIZE () , self . KS3_KACT () , self . KS3_KBASE () , self . KS3_FGP () , self . KS3_FRTN () , self . KS3_FHWO () , self . KS3_UKPUK () , self . KS3_UTECDH () , self . KS3_UCMAC () , self . KS3_UKSK () , self . KS3_URTF () , self . KS3_UCKDF () , self . KS3_UHKDF () , self . KS3_UECSG () , self . KS3_UECDH () , self . KS3_UAES () , self . KS3_UHMAC () , self . KS3_UKWK () , self . KS3_UKUOK () , self . KS3_UTLSPMS () , self . KS3_UTLSMS () , self . KS3_UKGSRC () , self . KS3_UHWO () , self . KS3_UWRPOK () , self . KS3_UDUK () , self . KS3_UPPROT ())
         }
     }
     #[doc = "Status Register"]
@@ -4815,6 +4982,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS4 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS4 {{ KS4_KSIZE: {=u8:?}, KS4_KACT: {=bool:?}, KS4_KBASE: {=bool:?}, KS4_FGP: {=bool:?}, KS4_FRTN: {=bool:?}, KS4_FHWO: {=bool:?}, KS4_UKPUK: {=bool:?}, KS4_UTECDH: {=bool:?}, KS4_UCMAC: {=bool:?}, KS4_UKSK: {=bool:?}, KS4_URTF: {=bool:?}, KS4_UCKDF: {=bool:?}, KS4_UHKDF: {=bool:?}, KS4_UECSG: {=bool:?}, KS4_UECDH: {=bool:?}, KS4_UAES: {=bool:?}, KS4_UHMAC: {=bool:?}, KS4_UKWK: {=bool:?}, KS4_UKUOK: {=bool:?}, KS4_UTLSPMS: {=bool:?}, KS4_UTLSMS: {=bool:?}, KS4_UKGSRC: {=bool:?}, KS4_UHWO: {=bool:?}, KS4_UWRPOK: {=bool:?}, KS4_UDUK: {=bool:?}, KS4_UPPROT: {=u8:?} }}" , self . KS4_KSIZE () , self . KS4_KACT () , self . KS4_KBASE () , self . KS4_FGP () , self . KS4_FRTN () , self . KS4_FHWO () , self . KS4_UKPUK () , self . KS4_UTECDH () , self . KS4_UCMAC () , self . KS4_UKSK () , self . KS4_URTF () , self . KS4_UCKDF () , self . KS4_UHKDF () , self . KS4_UECSG () , self . KS4_UECDH () , self . KS4_UAES () , self . KS4_UHMAC () , self . KS4_UKWK () , self . KS4_UKUOK () , self . KS4_UTLSPMS () , self . KS4_UTLSMS () , self . KS4_UKGSRC () , self . KS4_UHWO () , self . KS4_UWRPOK () , self . KS4_UDUK () , self . KS4_UPPROT ())
+        }
+    }
     #[doc = "Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5091,6 +5264,12 @@ pub mod regs {
                 .field("KS5_UDUK", &self.KS5_UDUK())
                 .field("KS5_UPPROT", &self.KS5_UPPROT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS5 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS5 {{ KS5_KSIZE: {=u8:?}, KS5_KACT: {=bool:?}, KS5_KBASE: {=bool:?}, KS5_FGP: {=bool:?}, KS5_FRTN: {=bool:?}, KS5_FHWO: {=bool:?}, KS5_UKPUK: {=bool:?}, KS5_UTECDH: {=bool:?}, KS5_UCMAC: {=bool:?}, KS5_UKSK: {=bool:?}, KS5_URTF: {=bool:?}, KS5_UCKDF: {=bool:?}, KS5_UHKDF: {=bool:?}, KS5_UECSG: {=bool:?}, KS5_UECDH: {=bool:?}, KS5_UAES: {=bool:?}, KS5_UHMAC: {=bool:?}, KS5_UKWK: {=bool:?}, KS5_UKUOK: {=bool:?}, KS5_UTLSPMS: {=bool:?}, KS5_UTLSMS: {=bool:?}, KS5_UKGSRC: {=bool:?}, KS5_UHWO: {=bool:?}, KS5_UWRPOK: {=bool:?}, KS5_UDUK: {=bool:?}, KS5_UPPROT: {=u8:?} }}" , self . KS5_KSIZE () , self . KS5_KACT () , self . KS5_KBASE () , self . KS5_FGP () , self . KS5_FRTN () , self . KS5_FHWO () , self . KS5_UKPUK () , self . KS5_UTECDH () , self . KS5_UCMAC () , self . KS5_UKSK () , self . KS5_URTF () , self . KS5_UCKDF () , self . KS5_UHKDF () , self . KS5_UECSG () , self . KS5_UECDH () , self . KS5_UAES () , self . KS5_UHMAC () , self . KS5_UKWK () , self . KS5_UKUOK () , self . KS5_UTLSPMS () , self . KS5_UTLSMS () , self . KS5_UKGSRC () , self . KS5_UHWO () , self . KS5_UWRPOK () , self . KS5_UDUK () , self . KS5_UPPROT ())
         }
     }
     #[doc = "Status Register"]
@@ -5371,6 +5550,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS6 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS6 {{ KS6_KSIZE: {=u8:?}, KS6_KACT: {=bool:?}, KS6_KBASE: {=bool:?}, KS6_FGP: {=bool:?}, KS6_FRTN: {=bool:?}, KS6_FHWO: {=bool:?}, KS6_UKPUK: {=bool:?}, KS6_UTECDH: {=bool:?}, KS6_UCMAC: {=bool:?}, KS6_UKSK: {=bool:?}, KS6_URTF: {=bool:?}, KS6_UCKDF: {=bool:?}, KS6_UHKDF: {=bool:?}, KS6_UECSG: {=bool:?}, KS6_UECDH: {=bool:?}, KS6_UAES: {=bool:?}, KS6_UHMAC: {=bool:?}, KS6_UKWK: {=bool:?}, KS6_UKUOK: {=bool:?}, KS6_UTLSPMS: {=bool:?}, KS6_UTLSMS: {=bool:?}, KS6_UKGSRC: {=bool:?}, KS6_UHWO: {=bool:?}, KS6_UWRPOK: {=bool:?}, KS6_UDUK: {=bool:?}, KS6_UPPROT: {=u8:?} }}" , self . KS6_KSIZE () , self . KS6_KACT () , self . KS6_KBASE () , self . KS6_FGP () , self . KS6_FRTN () , self . KS6_FHWO () , self . KS6_UKPUK () , self . KS6_UTECDH () , self . KS6_UCMAC () , self . KS6_UKSK () , self . KS6_URTF () , self . KS6_UCKDF () , self . KS6_UHKDF () , self . KS6_UECSG () , self . KS6_UECDH () , self . KS6_UAES () , self . KS6_UHMAC () , self . KS6_UKWK () , self . KS6_UKUOK () , self . KS6_UTLSPMS () , self . KS6_UTLSMS () , self . KS6_UKGSRC () , self . KS6_UHWO () , self . KS6_UWRPOK () , self . KS6_UDUK () , self . KS6_UPPROT ())
+        }
+    }
     #[doc = "Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5647,6 +5832,12 @@ pub mod regs {
                 .field("KS7_UDUK", &self.KS7_UDUK())
                 .field("KS7_UPPROT", &self.KS7_UPPROT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS7 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS7 {{ KS7_KSIZE: {=u8:?}, KS7_KACT: {=bool:?}, KS7_KBASE: {=bool:?}, KS7_FGP: {=bool:?}, KS7_FRTN: {=bool:?}, KS7_FHWO: {=bool:?}, KS7_UKPUK: {=bool:?}, KS7_UTECDH: {=bool:?}, KS7_UCMAC: {=bool:?}, KS7_UKSK: {=bool:?}, KS7_URTF: {=bool:?}, KS7_UCKDF: {=bool:?}, KS7_UHKDF: {=bool:?}, KS7_UECSG: {=bool:?}, KS7_UECDH: {=bool:?}, KS7_UAES: {=bool:?}, KS7_UHMAC: {=bool:?}, KS7_UKWK: {=bool:?}, KS7_UKUOK: {=bool:?}, KS7_UTLSPMS: {=bool:?}, KS7_UTLSMS: {=bool:?}, KS7_UKGSRC: {=bool:?}, KS7_UHWO: {=bool:?}, KS7_UWRPOK: {=bool:?}, KS7_UDUK: {=bool:?}, KS7_UPPROT: {=u8:?} }}" , self . KS7_KSIZE () , self . KS7_KACT () , self . KS7_KBASE () , self . KS7_FGP () , self . KS7_FRTN () , self . KS7_FHWO () , self . KS7_UKPUK () , self . KS7_UTECDH () , self . KS7_UCMAC () , self . KS7_UKSK () , self . KS7_URTF () , self . KS7_UCKDF () , self . KS7_UHKDF () , self . KS7_UECSG () , self . KS7_UECDH () , self . KS7_UAES () , self . KS7_UHMAC () , self . KS7_UKWK () , self . KS7_UKUOK () , self . KS7_UTLSPMS () , self . KS7_UTLSMS () , self . KS7_UKGSRC () , self . KS7_UHWO () , self . KS7_UWRPOK () , self . KS7_UDUK () , self . KS7_UPPROT ())
         }
     }
     #[doc = "Status Register"]
@@ -5927,6 +6118,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS8 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS8 {{ KS8_KSIZE: {=u8:?}, KS8_KACT: {=bool:?}, KS8_KBASE: {=bool:?}, KS8_FGP: {=bool:?}, KS8_FRTN: {=bool:?}, KS8_FHWO: {=bool:?}, KS8_UKPUK: {=bool:?}, KS8_UTECDH: {=bool:?}, KS8_UCMAC: {=bool:?}, KS8_UKSK: {=bool:?}, KS8_URTF: {=bool:?}, KS8_UCKDF: {=bool:?}, KS8_UHKDF: {=bool:?}, KS8_UECSG: {=bool:?}, KS8_UECDH: {=bool:?}, KS8_UAES: {=bool:?}, KS8_UHMAC: {=bool:?}, KS8_UKWK: {=bool:?}, KS8_UKUOK: {=bool:?}, KS8_UTLSPMS: {=bool:?}, KS8_UTLSMS: {=bool:?}, KS8_UKGSRC: {=bool:?}, KS8_UHWO: {=bool:?}, KS8_UWRPOK: {=bool:?}, KS8_UDUK: {=bool:?}, KS8_UPPROT: {=u8:?} }}" , self . KS8_KSIZE () , self . KS8_KACT () , self . KS8_KBASE () , self . KS8_FGP () , self . KS8_FRTN () , self . KS8_FHWO () , self . KS8_UKPUK () , self . KS8_UTECDH () , self . KS8_UCMAC () , self . KS8_UKSK () , self . KS8_URTF () , self . KS8_UCKDF () , self . KS8_UHKDF () , self . KS8_UECSG () , self . KS8_UECDH () , self . KS8_UAES () , self . KS8_UHMAC () , self . KS8_UKWK () , self . KS8_UKUOK () , self . KS8_UTLSPMS () , self . KS8_UTLSMS () , self . KS8_UKGSRC () , self . KS8_UHWO () , self . KS8_UWRPOK () , self . KS8_UDUK () , self . KS8_UPPROT ())
+        }
+    }
     #[doc = "Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6205,6 +6402,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_KS9 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_KS9 {{ KS9_KSIZE: {=u8:?}, KS9_KACT: {=bool:?}, KS9_KBASE: {=bool:?}, KS9_FGP: {=bool:?}, KS9_FRTN: {=bool:?}, KS9_FHWO: {=bool:?}, KS9_UKPUK: {=bool:?}, KS9_UTECDH: {=bool:?}, KS9_UCMAC: {=bool:?}, KS9_UKSK: {=bool:?}, KS9_URTF: {=bool:?}, KS9_UCKDF: {=bool:?}, KS9_UHKDF: {=bool:?}, KS9_UECSG: {=bool:?}, KS9_UECDH: {=bool:?}, KS9_UAES: {=bool:?}, KS9_UHMAC: {=bool:?}, KS9_UKWK: {=bool:?}, KS9_UKUOK: {=bool:?}, KS9_UTLSPMS: {=bool:?}, KS9_UTLSMS: {=bool:?}, KS9_UKGSRC: {=bool:?}, KS9_UHWO: {=bool:?}, KS9_UWRPOK: {=bool:?}, KS9_UDUK: {=bool:?}, KS9_UPPROT: {=u8:?} }}" , self . KS9_KSIZE () , self . KS9_KACT () , self . KS9_KBASE () , self . KS9_FGP () , self . KS9_FRTN () , self . KS9_FHWO () , self . KS9_UKPUK () , self . KS9_UTECDH () , self . KS9_UCMAC () , self . KS9_UKSK () , self . KS9_URTF () , self . KS9_UCKDF () , self . KS9_UHKDF () , self . KS9_UECSG () , self . KS9_UECDH () , self . KS9_UAES () , self . KS9_UHMAC () , self . KS9_UKWK () , self . KS9_UKUOK () , self . KS9_UTLSPMS () , self . KS9_UTLSMS () , self . KS9_UKGSRC () , self . KS9_UHWO () , self . KS9_UWRPOK () , self . KS9_UDUK () , self . KS9_UPPROT ())
+        }
+    }
     #[doc = "Master ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6231,6 +6434,16 @@ pub mod regs {
             f.debug_struct("ELS_MASTER_ID")
                 .field("MASTER_ID", &self.MASTER_ID())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_MASTER_ID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ELS_MASTER_ID {{ MASTER_ID: {=u8:?} }}",
+                self.MASTER_ID()
+            )
         }
     }
     #[doc = "Status Register"]
@@ -6341,6 +6554,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_STATUS {{ ELS_BUSY: {=bool:?}, ELS_IRQ: {=bool:?}, ELS_ERR: {=bool:?}, PRNG_RDY: {=bool:?}, ECDSA_VFY_STATUS: {=u8:?}, PPROT: {=u8:?}, DRBG_ENT_LVL: {=u8:?}, DTRNG_BUSY: {=bool:?}, ELS_LOCKED: {=bool:?} }}" , self . ELS_BUSY () , self . ELS_IRQ () , self . ELS_ERR () , self . PRNG_RDY () , self . ECDSA_VFY_STATUS () , self . PPROT () , self . DRBG_ENT_LVL () , self . DTRNG_BUSY () , self . ELS_LOCKED ())
+        }
+    }
     #[doc = "Version Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6437,6 +6656,12 @@ pub mod regs {
                 .field("SW_Y1", &self.SW_Y1())
                 .field("SW_X", &self.SW_X())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ELS_VERSION {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ELS_VERSION {{ Z: {=u8:?}, Y2: {=u8:?}, Y1: {=u8:?}, X: {=u8:?}, SW_Z: {=u8:?}, SW_Y2: {=u8:?}, SW_Y1: {=u8:?}, SW_X: {=u8:?} }}" , self . Z () , self . Y2 () , self . Y1 () , self . X () , self . SW_Z () , self . SW_Y2 () , self . SW_Y1 () , self . SW_X ())
         }
     }
 }

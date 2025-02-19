@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct LPUART {
     ptr: *mut u8,
@@ -225,6 +225,12 @@ pub mod regs {
                 .field("MAEN2", &self.MAEN2())
                 .field("MAEN1", &self.MAEN1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BAUD {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "BAUD {{ SBR: {=u16:?}, SBNS: {=bool:?}, RXEDGIE: {=bool:?}, LBKDIE: {=bool:?}, RESYNCDIS: {=bool:?}, BOTHEDGE: {=bool:?}, MATCFG: {=u8:?}, RIDMAE: {=bool:?}, RDMAE: {=bool:?}, TDMAE: {=bool:?}, OSR: {=u8:?}, M10: {=bool:?}, MAEN2: {=bool:?}, MAEN1: {=bool:?} }}" , self . SBR () , self . SBNS () , self . RXEDGIE () , self . LBKDIE () , self . RESYNCDIS () , self . BOTHEDGE () , self . MATCFG () , self . RIDMAE () , self . RDMAE () , self . TDMAE () , self . OSR () , self . M10 () , self . MAEN2 () , self . MAEN1 ())
         }
     }
     #[doc = "Control"]
@@ -525,6 +531,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL {{ PT: {=bool:?}, PE: {=bool:?}, ILT: {=bool:?}, WAKE: {=bool:?}, M: {=bool:?}, RSRC: {=bool:?}, DOZEEN: {=bool:?}, LOOPS: {=bool:?}, IDLECFG: {=u8:?}, M7: {=bool:?}, MA2IE: {=bool:?}, MA1IE: {=bool:?}, SBK: {=bool:?}, RWU: {=bool:?}, RE: {=bool:?}, TE: {=bool:?}, ILIE: {=bool:?}, RIE: {=bool:?}, TCIE: {=bool:?}, TIE: {=bool:?}, PEIE: {=bool:?}, FEIE: {=bool:?}, NEIE: {=bool:?}, ORIE: {=bool:?}, TXINV: {=bool:?}, TXDIR: {=bool:?}, R9T8: {=bool:?}, R8T9: {=bool:?} }}" , self . PT () , self . PE () , self . ILT () , self . WAKE () , self . M () , self . RSRC () , self . DOZEEN () , self . LOOPS () , self . IDLECFG () , self . M7 () , self . MA2IE () , self . MA1IE () , self . SBK () , self . RWU () , self . RE () , self . TE () , self . ILIE () , self . RIE () , self . TCIE () , self . TIE () , self . PEIE () , self . FEIE () , self . NEIE () , self . ORIE () , self . TXINV () , self . TXDIR () , self . R9T8 () , self . R8T9 ())
+        }
+    }
     #[doc = "Data"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -703,6 +715,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DATA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DATA {{ R0T0: {=bool:?}, R1T1: {=bool:?}, R2T2: {=bool:?}, R3T3: {=bool:?}, R4T4: {=bool:?}, R5T5: {=bool:?}, R6T6: {=bool:?}, R7T7: {=bool:?}, R8T8: {=bool:?}, R9T9: {=bool:?}, LINBRK: {=bool:?}, IDLINE: {=bool:?}, RXEMPT: {=bool:?}, FRETSC: {=bool:?}, PARITYE: {=bool:?}, NOISY: {=bool:?} }}" , self . R0T0 () , self . R1T1 () , self . R2T2 () , self . R3T3 () , self . R4T4 () , self . R5T5 () , self . R6T6 () , self . R7T7 () , self . R8T8 () , self . R9T9 () , self . LINBRK () , self . IDLINE () , self . RXEMPT () , self . FRETSC () , self . PARITYE () , self . NOISY ())
+        }
+    }
     #[doc = "Data Read-Only"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -729,6 +747,12 @@ pub mod regs {
             f.debug_struct("DATARO")
                 .field("DATA", &self.DATA())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DATARO {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "DATARO {{ DATA: {=u16:?} }}", self.DATA())
         }
     }
     #[doc = "FIFO"]
@@ -879,6 +903,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIFO {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FIFO {{ RXFIFOSIZE: {=u8:?}, RXFE: {=bool:?}, TXFIFOSIZE: {=u8:?}, TXFE: {=bool:?}, RXUFE: {=bool:?}, TXOFE: {=bool:?}, RXIDEN: {=u8:?}, RXFLUSH: {=bool:?}, TXFLUSH: {=bool:?}, RXUF: {=bool:?}, TXOF: {=bool:?}, RXEMPT: {=bool:?}, TXEMPT: {=bool:?} }}" , self . RXFIFOSIZE () , self . RXFE () , self . TXFIFOSIZE () , self . TXFE () , self . RXUFE () , self . TXOFE () , self . RXIDEN () , self . RXFLUSH () , self . TXFLUSH () , self . RXUF () , self . TXOF () , self . RXEMPT () , self . TXEMPT ())
+        }
+    }
     #[doc = "Global"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -903,6 +933,12 @@ pub mod regs {
     impl core::fmt::Debug for GLOBAL {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("GLOBAL").field("RST", &self.RST()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GLOBAL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GLOBAL {{ RST: {=bool:?} }}", self.RST())
         }
     }
     #[doc = "Match Address"]
@@ -941,6 +977,17 @@ pub mod regs {
                 .field("MA1", &self.MA1())
                 .field("MA2", &self.MA2())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MATCH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MATCH {{ MA1: {=u16:?}, MA2: {=u16:?} }}",
+                self.MA1(),
+                self.MA2()
+            )
         }
     }
     #[doc = "MODEM IrDA"]
@@ -1051,6 +1098,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MODIR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MODIR {{ TXCTSE: {=bool:?}, TXRTSE: {=bool:?}, TXRTSPOL: {=bool:?}, RXRTSE: {=bool:?}, TXCTSC: {=bool:?}, TXCTSSRC: {=bool:?}, RTSWATER: {=u8:?}, TNP: {=u8:?}, IREN: {=bool:?} }}" , self . TXCTSE () , self . TXRTSE () , self . TXRTSPOL () , self . RXRTSE () , self . TXCTSC () , self . TXCTSSRC () , self . RTSWATER () , self . TNP () , self . IREN ())
+        }
+    }
     #[doc = "Parameter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1089,6 +1142,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PARAM {{ TXFIFO: {=u8:?}, RXFIFO: {=u8:?} }}",
+                self.TXFIFO(),
+                self.RXFIFO()
+            )
+        }
+    }
     #[doc = "Pin Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1115,6 +1179,12 @@ pub mod regs {
             f.debug_struct("PINCFG")
                 .field("TRGSEL", &self.TRGSEL())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PINCFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PINCFG {{ TRGSEL: {=u8:?} }}", self.TRGSEL())
         }
     }
     #[doc = "Status"]
@@ -1335,6 +1405,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STAT {{ LBKFE: {=bool:?}, AME: {=bool:?}, MA2F: {=bool:?}, MA1F: {=bool:?}, PF: {=bool:?}, FE: {=bool:?}, NF: {=bool:?}, OR: {=bool:?}, IDLE: {=bool:?}, RDRF: {=bool:?}, TC: {=bool:?}, TDRE: {=bool:?}, RAF: {=bool:?}, LBKDE: {=bool:?}, BRK13: {=bool:?}, RWUID: {=bool:?}, RXINV: {=bool:?}, MSBF: {=bool:?}, RXEDGIF: {=bool:?}, LBKDIF: {=bool:?} }}" , self . LBKFE () , self . AME () , self . MA2F () , self . MA1F () , self . PF () , self . FE () , self . NF () , self . OR () , self . IDLE () , self . RDRF () , self . TC () , self . TDRE () , self . RAF () , self . LBKDE () , self . BRK13 () , self . RWUID () , self . RXINV () , self . MSBF () , self . RXEDGIF () , self . LBKDIF ())
+        }
+    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1381,6 +1457,18 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
         }
     }
     #[doc = "Watermark"]
@@ -1439,6 +1527,12 @@ pub mod regs {
                 .field("RXWATER", &self.RXWATER())
                 .field("RXCOUNT", &self.RXCOUNT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WATER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "WATER {{ TXWATER: {=u8:?}, TXCOUNT: {=u8:?}, RXWATER: {=u8:?}, RXCOUNT: {=u8:?} }}" , self . TXWATER () , self . TXCOUNT () , self . RXWATER () , self . RXCOUNT ())
         }
     }
 }

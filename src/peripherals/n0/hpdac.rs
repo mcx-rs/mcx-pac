@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct HPDAC {
     ptr: *mut u8,
@@ -91,6 +91,12 @@ pub mod regs {
             f.debug_struct("DATA").field("DATA", &self.DATA()).finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DATA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "DATA {{ DATA: {=u16:?} }}", self.DATA())
+        }
+    }
     #[doc = "DMA Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -129,6 +135,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DER {{ EMPTY_DMAEN: {=bool:?}, WM_DMAEN: {=bool:?} }}",
+                self.EMPTY_DMAEN(),
+                self.WM_DMAEN()
+            )
+        }
+    }
     #[doc = "DAC FIFO Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -153,6 +170,12 @@ pub mod regs {
     impl core::fmt::Debug for FCR {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("FCR").field("WML", &self.WML()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FCR {{ WML: {=u8:?} }}", self.WML())
         }
     }
     #[doc = "DAC FIFO Pointer"]
@@ -191,6 +214,17 @@ pub mod regs {
                 .field("FIFO_RPT", &self.FIFO_RPT())
                 .field("FIFO_WPT", &self.FIFO_WPT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FPR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FPR {{ FIFO_RPT: {=u8:?}, FIFO_WPT: {=u8:?} }}",
+                self.FIFO_RPT(),
+                self.FIFO_WPT()
+            )
         }
     }
     #[doc = "FIFO Status"]
@@ -281,6 +315,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FSR {{ FULL: {=bool:?}, EMPTY: {=bool:?}, WM: {=bool:?}, SWBK: {=bool:?}, OF: {=bool:?}, UF: {=bool:?}, PTGCOCO: {=bool:?} }}" , self . FULL () , self . EMPTY () , self . WM () , self . SWBK () , self . OF () , self . UF () , self . PTGCOCO ())
+        }
+    }
     #[doc = "Global Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -357,6 +397,12 @@ pub mod regs {
                 .field("PTGEN", &self.PTGEN())
                 .field("BUF_EN", &self.BUF_EN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "GCR {{ DACEN: {=bool:?}, FIFOEN: {=bool:?}, SWMD: {=bool:?}, TRGSEL: {=bool:?}, PTGEN: {=bool:?}, BUF_EN: {=bool:?} }}" , self . DACEN () , self . FIFOEN () , self . SWMD () , self . TRGSEL () , self . PTGEN () , self . BUF_EN ())
         }
     }
     #[doc = "Interrupt Enable"]
@@ -447,6 +493,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IER {{ FULL_IE: {=bool:?}, EMPTY_IE: {=bool:?}, WM_IE: {=bool:?}, SWBK_IE: {=bool:?}, OF_IE: {=bool:?}, UF_IE: {=bool:?}, PTGCOCO_IE: {=bool:?} }}" , self . FULL_IE () , self . EMPTY_IE () , self . WM_IE () , self . SWBK_IE () , self . OF_IE () , self . UF_IE () , self . PTGCOCO_IE ())
+        }
+    }
     #[doc = "Parameter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -473,6 +525,12 @@ pub mod regs {
             f.debug_struct("PARAM")
                 .field("FIFOSZ", &self.FIFOSZ())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PARAM {{ FIFOSZ: {=u8:?} }}", self.FIFOSZ())
         }
     }
     #[doc = "Periodic Trigger Control"]
@@ -513,6 +571,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PCR {{ PTG_NUM: {=u16:?}, PTG_PERIOD: {=u16:?} }}",
+                self.PTG_NUM(),
+                self.PTG_PERIOD()
+            )
+        }
+    }
     #[doc = "Reset Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -551,6 +620,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "RCR {{ SWRST: {=bool:?}, FIFORST: {=bool:?} }}",
+                self.SWRST(),
+                self.FIFORST()
+            )
+        }
+    }
     #[doc = "Trigger Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -575,6 +655,12 @@ pub mod regs {
     impl core::fmt::Debug for TCR {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TCR").field("SWTRG", &self.SWTRG()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TCR {{ SWTRG: {=bool:?} }}", self.SWTRG())
         }
     }
     #[doc = "Version Identifier"]
@@ -623,6 +709,18 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
         }
     }
 }

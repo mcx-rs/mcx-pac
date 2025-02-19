@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct PKC {
     ptr: *mut u8,
@@ -235,6 +235,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_ACCESS_ERR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PKC_ACCESS_ERR {{ APB_NOTAV: {=bool:?}, APB_WRGMD: {=bool:?}, APB_MASTER: {=u8:?}, AHB: {=bool:?}, PKCC: {=bool:?}, FDET: {=bool:?}, CTRL: {=bool:?}, UCRC: {=bool:?} }}" , self . APB_NOTAV () , self . APB_WRGMD () , self . APB_MASTER () , self . AHB () , self . PKCC () , self . FDET () , self . CTRL () , self . UCRC ())
+        }
+    }
     #[doc = "Clear Access Error"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -261,6 +267,16 @@ pub mod regs {
             f.debug_struct("PKC_ACCESS_ERR_CLR")
                 .field("ERR_CLR", &self.ERR_CLR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_ACCESS_ERR_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PKC_ACCESS_ERR_CLR {{ ERR_CLR: {=bool:?} }}",
+                self.ERR_CLR()
+            )
         }
     }
     #[doc = "Configuration register"]
@@ -369,6 +385,12 @@ pub mod regs {
                 .field("ALPNOISE", &self.ALPNOISE())
                 .field("FMULNOISE", &self.FMULNOISE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_CFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PKC_CFG {{ IDLEOP: {=bool:?}, RFU1: {=bool:?}, RFU2: {=bool:?}, CLKRND: {=bool:?}, REDMULNOISE: {=bool:?}, RNDDLY: {=u8:?}, SBXNOISE: {=bool:?}, ALPNOISE: {=bool:?}, FMULNOISE: {=bool:?} }}" , self . IDLEOP () , self . RFU1 () , self . RFU2 () , self . CLKRND () , self . REDMULNOISE () , self . RNDDLY () , self . SBXNOISE () , self . ALPNOISE () , self . FMULNOISE ())
         }
     }
     #[doc = "Control Register"]
@@ -499,6 +521,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PKC_CTRL {{ RESET: {=bool:?}, STOP: {=bool:?}, GOD1: {=bool:?}, GOD2: {=bool:?}, GOM1: {=bool:?}, GOM2: {=bool:?}, GOU: {=bool:?}, GF2CONV: {=bool:?}, CLRCACHE: {=bool:?}, CACHE_EN: {=bool:?}, REDMUL: {=u8:?} }}" , self . RESET () , self . STOP () , self . GOD1 () , self . GOD2 () , self . GOM1 () , self . GOM2 () , self . GOU () , self . GF2CONV () , self . CLRCACHE () , self . CACHE_EN () , self . REDMUL ())
+        }
+    }
     #[doc = "Interrupt enable clear"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -525,6 +553,16 @@ pub mod regs {
             f.debug_struct("PKC_INT_CLR_ENABLE")
                 .field("EN_PDONE", &self.EN_PDONE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_INT_CLR_ENABLE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PKC_INT_CLR_ENABLE {{ EN_PDONE: {=bool:?} }}",
+                self.EN_PDONE()
+            )
         }
     }
     #[doc = "Interrupt status clear"]
@@ -555,6 +593,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_INT_CLR_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PKC_INT_CLR_STATUS {{ INT_PDONE: {=bool:?} }}",
+                self.INT_PDONE()
+            )
+        }
+    }
     #[doc = "Interrupt enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -581,6 +629,16 @@ pub mod regs {
             f.debug_struct("PKC_INT_ENABLE")
                 .field("EN_PDONE", &self.EN_PDONE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_INT_ENABLE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PKC_INT_ENABLE {{ EN_PDONE: {=bool:?} }}",
+                self.EN_PDONE()
+            )
         }
     }
     #[doc = "Interrupt enable set"]
@@ -611,6 +669,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_INT_SET_ENABLE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PKC_INT_SET_ENABLE {{ EN_PDONE: {=bool:?} }}",
+                self.EN_PDONE()
+            )
+        }
+    }
     #[doc = "Interrupt status set"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -639,6 +707,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_INT_SET_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PKC_INT_SET_STATUS {{ INT_PDONE: {=bool:?} }}",
+                self.INT_PDONE()
+            )
+        }
+    }
     #[doc = "Interrupt status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -665,6 +743,16 @@ pub mod regs {
             f.debug_struct("PKC_INT_STATUS")
                 .field("INT_PDONE", &self.INT_PDONE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_INT_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PKC_INT_STATUS {{ INT_PDONE: {=bool:?} }}",
+                self.INT_PDONE()
+            )
         }
     }
     #[doc = "Length register, parameter set 1"]
@@ -705,6 +793,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_LEN1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PKC_LEN1 {{ LEN: {=u16:?}, MCLEN: {=u16:?} }}",
+                self.LEN(),
+                self.MCLEN()
+            )
+        }
+    }
     #[doc = "Length register, parameter set 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -743,6 +842,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_LEN2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PKC_LEN2 {{ LEN: {=u16:?}, MCLEN: {=u16:?} }}",
+                self.LEN(),
+                self.MCLEN()
+            )
+        }
+    }
     #[doc = "Mode register, parameter set 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -771,6 +881,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_MODE1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PKC_MODE1 {{ MODE: {=u8:?} }}", self.MODE())
+        }
+    }
     #[doc = "Mode register, parameter set 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -797,6 +913,12 @@ pub mod regs {
             f.debug_struct("PKC_MODE2")
                 .field("MODE", &self.MODE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_MODE2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PKC_MODE2 {{ MODE: {=u8:?} }}", self.MODE())
         }
     }
     #[doc = "Module ID"]
@@ -857,6 +979,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_MODULE_ID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PKC_MODULE_ID {{ SIZE: {=u8:?}, MINOR_REV: {=u8:?}, MAJOR_REV: {=u8:?}, ID: {=u16:?} }}" , self . SIZE () , self . MINOR_REV () , self . MAJOR_REV () , self . ID ())
+        }
+    }
     #[doc = "Software reset"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -883,6 +1011,12 @@ pub mod regs {
             f.debug_struct("PKC_SOFT_RST")
                 .field("SOFT_RST", &self.SOFT_RST())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_SOFT_RST {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PKC_SOFT_RST {{ SOFT_RST: {=bool:?} }}", self.SOFT_RST())
         }
     }
     #[doc = "Status Register"]
@@ -953,6 +1087,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PKC_STATUS {{ ACTIV: {=bool:?}, CARRY: {=bool:?}, ZERO: {=bool:?}, GOANY: {=bool:?}, LOCKED: {=u8:?} }}" , self . ACTIV () , self . CARRY () , self . ZERO () , self . GOANY () , self . LOCKED ())
+        }
+    }
     #[doc = "Universal pointer length"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -979,6 +1119,12 @@ pub mod regs {
             f.debug_struct("PKC_ULEN")
                 .field("LEN", &self.LEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_ULEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PKC_ULEN {{ LEN: {=u8:?} }}", self.LEN())
         }
     }
     #[doc = "PKC version register"]
@@ -1109,6 +1255,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_VERSION {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PKC_VERSION {{ MULSIZE: {=u8:?}, MCAVAIL: {=bool:?}, UPAVAIL: {=bool:?}, UPCACHEAVAIL: {=bool:?}, GF2AVAIL: {=bool:?}, PARAMNUM: {=u8:?}, SBX0AVAIL: {=bool:?}, SBX1AVAIL: {=bool:?}, SBX2AVAIL: {=bool:?}, SBX3AVAIL: {=bool:?}, MCRECONF_SIZE: {=u8:?} }}" , self . MULSIZE () , self . MCAVAIL () , self . UPAVAIL () , self . UPCACHEAVAIL () , self . GF2AVAIL () , self . PARAMNUM () , self . SBX0AVAIL () , self . SBX1AVAIL () , self . SBX2AVAIL () , self . SBX3AVAIL () , self . MCRECONF_SIZE ())
+        }
+    }
     #[doc = "X+Y pointer register, parameter set 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1145,6 +1297,17 @@ pub mod regs {
                 .field("XPTR", &self.XPTR())
                 .field("YPTR", &self.YPTR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_XYPTR1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PKC_XYPTR1 {{ XPTR: {=u16:?}, YPTR: {=u16:?} }}",
+                self.XPTR(),
+                self.YPTR()
+            )
         }
     }
     #[doc = "X+Y pointer register, parameter set 2"]
@@ -1185,6 +1348,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_XYPTR2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PKC_XYPTR2 {{ XPTR: {=u16:?}, YPTR: {=u16:?} }}",
+                self.XPTR(),
+                self.YPTR()
+            )
+        }
+    }
     #[doc = "Z+R pointer register, parameter set 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1223,6 +1397,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_ZRPTR1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PKC_ZRPTR1 {{ ZPTR: {=u16:?}, RPTR: {=u16:?} }}",
+                self.ZPTR(),
+                self.RPTR()
+            )
+        }
+    }
     #[doc = "Z+R pointer register, parameter set 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1259,6 +1444,17 @@ pub mod regs {
                 .field("ZPTR", &self.ZPTR())
                 .field("RPTR", &self.RPTR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PKC_ZRPTR2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PKC_ZRPTR2 {{ ZPTR: {=u16:?}, RPTR: {=u16:?} }}",
+                self.ZPTR(),
+                self.RPTR()
+            )
         }
     }
 }

@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct RTC {
     ptr: *mut u8,
@@ -97,6 +97,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CR {{ SWR: {=bool:?}, UM: {=bool:?}, LPOS: {=bool:?} }}",
+                self.SWR(),
+                self.UM(),
+                self.LPOS()
+            )
+        }
+    }
     #[doc = "RTC Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -165,6 +177,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IER {{ TIIE: {=bool:?}, TOIE: {=bool:?}, TAIE: {=bool:?}, TSIE: {=bool:?}, TSIC: {=u8:?} }}" , self . TIIE () , self . TOIE () , self . TAIE () , self . TSIE () , self . TSIC ())
+        }
+    }
     #[doc = "RTC Lock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -221,6 +239,19 @@ pub mod regs {
                 .field("SRL", &self.SRL())
                 .field("LRL", &self.LRL())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "LR {{ TCL: {=bool:?}, CRL: {=bool:?}, SRL: {=bool:?}, LRL: {=bool:?} }}",
+                self.TCL(),
+                self.CRL(),
+                self.SRL(),
+                self.LRL()
+            )
         }
     }
     #[doc = "RTC Status"]
@@ -281,6 +312,19 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SR {{ TIF: {=bool:?}, TOF: {=bool:?}, TAF: {=bool:?}, TCE: {=bool:?} }}",
+                self.TIF(),
+                self.TOF(),
+                self.TAF(),
+                self.TCE()
+            )
+        }
+    }
     #[doc = "RTC Time Compensation"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -339,6 +383,19 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TCR {{ TCR: {=u8:?}, CIR: {=u8:?}, TCV: {=u8:?}, CIC: {=u8:?} }}",
+                self.TCR(),
+                self.CIR(),
+                self.TCV(),
+                self.CIC()
+            )
+        }
+    }
     #[doc = "RTC Time Prescaler"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -363,6 +420,12 @@ pub mod regs {
     impl core::fmt::Debug for TPR {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TPR").field("TPR", &self.TPR()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TPR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TPR {{ TPR: {=u16:?} }}", self.TPR())
         }
     }
 }

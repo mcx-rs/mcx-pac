@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct VBAT {
     ptr: *mut u8,
@@ -90,6 +90,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FROCLKE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FROCLKE {{ CLKE: {=u8:?} }}", self.CLKE())
+        }
+    }
     #[doc = "FRO16K Control A"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -118,6 +124,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FROCTLA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FROCTLA {{ FRO_EN: {=bool:?} }}", self.FRO_EN())
+        }
+    }
     #[doc = "FRO16K Lock A"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -144,6 +156,12 @@ pub mod regs {
             f.debug_struct("FROLCKA")
                 .field("LOCK", &self.LOCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FROLCKA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FROLCKA {{ LOCK: {=bool:?} }}", self.LOCK())
         }
     }
     #[doc = "Version ID"]
@@ -194,6 +212,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
+        }
+    }
     #[doc = "Wakeup Lock A"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -220,6 +250,12 @@ pub mod regs {
             f.debug_struct("WAKLCKA")
                 .field("LOCK", &self.LOCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WAKLCKA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "WAKLCKA {{ LOCK: {=bool:?} }}", self.LOCK())
         }
     }
 }

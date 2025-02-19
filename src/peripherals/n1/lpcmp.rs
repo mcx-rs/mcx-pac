@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct LPCMP {
     ptr: *mut u8,
@@ -95,6 +95,12 @@ pub mod regs {
             f.debug_struct("CCR0")
                 .field("CMP_EN", &self.CMP_EN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CCR0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CCR0 {{ CMP_EN: {=bool:?} }}", self.CMP_EN())
         }
     }
     #[doc = "Comparator Control Register 1"]
@@ -255,6 +261,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CCR1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CCR1 {{ WINDOW_EN: {=bool:?}, SAMPLE_EN: {=bool:?}, DMA_EN: {=bool:?}, COUT_INV: {=bool:?}, COUT_SEL: {=bool:?}, COUT_PEN: {=bool:?}, COUTA_OWEN: {=bool:?}, COUTA_OW: {=bool:?}, WINDOW_INV: {=bool:?}, WINDOW_CLS: {=bool:?}, EVT_SEL: {=u8:?}, FUNC_CLK_SEL: {=u8:?}, FILT_CNT: {=u8:?}, FILT_PER: {=u8:?} }}" , self . WINDOW_EN () , self . SAMPLE_EN () , self . DMA_EN () , self . COUT_INV () , self . COUT_SEL () , self . COUT_PEN () , self . COUTA_OWEN () , self . COUTA_OW () , self . WINDOW_INV () , self . WINDOW_CLS () , self . EVT_SEL () , self . FUNC_CLK_SEL () , self . FILT_CNT () , self . FILT_PER ())
+        }
+    }
     #[doc = "Comparator Control Register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -323,6 +335,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CCR2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CCR2 {{ CMP_HPMD: {=bool:?}, CMP_NPMD: {=bool:?}, HYSTCTR: {=u8:?}, PSEL: {=u8:?}, MSEL: {=u8:?} }}" , self . CMP_HPMD () , self . CMP_NPMD () , self . HYSTCTR () , self . PSEL () , self . MSEL ())
+        }
+    }
     #[doc = "Comparator Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -379,6 +397,19 @@ pub mod regs {
                 .field("RRF", &self.RRF())
                 .field("COUT", &self.COUT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CSR {{ CFR: {=bool:?}, CFF: {=bool:?}, RRF: {=bool:?}, COUT: {=bool:?} }}",
+                self.CFR(),
+                self.CFF(),
+                self.RRF(),
+                self.COUT()
+            )
         }
     }
     #[doc = "DAC Control"]
@@ -439,6 +470,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DCR {{ DAC_EN: {=bool:?}, DAC_HPMD: {=bool:?}, VRSEL: {=bool:?}, DAC_DATA: {=u8:?} }}" , self . DAC_EN () , self . DAC_HPMD () , self . VRSEL () , self . DAC_DATA ())
+        }
+    }
     #[doc = "Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -487,6 +524,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IER {{ CFR_IE: {=bool:?}, CFF_IE: {=bool:?}, RRF_IE: {=bool:?} }}",
+                self.CFR_IE(),
+                self.CFF_IE(),
+                self.RRF_IE()
+            )
+        }
+    }
     #[doc = "Parameter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -513,6 +562,12 @@ pub mod regs {
             f.debug_struct("PARAM")
                 .field("DAC_RES", &self.DAC_RES())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PARAM {{ DAC_RES: {=u8:?} }}", self.DAC_RES())
         }
     }
     #[doc = "Round Robin Control Register 0"]
@@ -601,6 +656,12 @@ pub mod regs {
                 .field("RR_SAMPLE_CNT", &self.RR_SAMPLE_CNT())
                 .field("RR_SAMPLE_THRESHOLD", &self.RR_SAMPLE_THRESHOLD())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RRCR0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RRCR0 {{ RR_EN: {=bool:?}, RR_TRG_SEL: {=bool:?}, RR_NSAM: {=u8:?}, RR_CLK_SEL: {=u8:?}, RR_INITMOD: {=u8:?}, RR_SAMPLE_CNT: {=u8:?}, RR_SAMPLE_THRESHOLD: {=u8:?} }}" , self . RR_EN () , self . RR_TRG_SEL () , self . RR_NSAM () , self . RR_CLK_SEL () , self . RR_INITMOD () , self . RR_SAMPLE_CNT () , self . RR_SAMPLE_THRESHOLD ())
         }
     }
     #[doc = "Round Robin Control Register 1"]
@@ -721,6 +782,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RRCR1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RRCR1 {{ RR_CH0EN: {=bool:?}, RR_CH1EN: {=bool:?}, RR_CH2EN: {=bool:?}, RR_CH3EN: {=bool:?}, RR_CH4EN: {=bool:?}, RR_CH5EN: {=bool:?}, RR_CH6EN: {=bool:?}, RR_CH7EN: {=bool:?}, FIXP: {=bool:?}, FIXCH: {=u8:?} }}" , self . RR_CH0EN () , self . RR_CH1EN () , self . RR_CH2EN () , self . RR_CH3EN () , self . RR_CH4EN () , self . RR_CH5EN () , self . RR_CH6EN () , self . RR_CH7EN () , self . FIXP () , self . FIXCH ())
+        }
+    }
     #[doc = "Round Robin Control Register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -757,6 +824,17 @@ pub mod regs {
                 .field("RR_TIMER_RELOAD", &self.RR_TIMER_RELOAD())
                 .field("RR_TIMER_EN", &self.RR_TIMER_EN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RRCR2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "RRCR2 {{ RR_TIMER_RELOAD: {=u32:?}, RR_TIMER_EN: {=bool:?} }}",
+                self.RR_TIMER_RELOAD(),
+                self.RR_TIMER_EN()
+            )
         }
     }
     #[doc = "Round Robin Control and Status"]
@@ -857,6 +935,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RRCSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RRCSR {{ RR_CH0OUT: {=bool:?}, RR_CH1OUT: {=bool:?}, RR_CH2OUT: {=bool:?}, RR_CH3OUT: {=bool:?}, RR_CH4OUT: {=bool:?}, RR_CH5OUT: {=bool:?}, RR_CH6OUT: {=bool:?}, RR_CH7OUT: {=bool:?} }}" , self . RR_CH0OUT () , self . RR_CH1OUT () , self . RR_CH2OUT () , self . RR_CH3OUT () , self . RR_CH4OUT () , self . RR_CH5OUT () , self . RR_CH6OUT () , self . RR_CH7OUT ())
+        }
+    }
     #[doc = "Round Robin Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -955,6 +1039,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RRSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RRSR {{ RR_CH0F: {=bool:?}, RR_CH1F: {=bool:?}, RR_CH2F: {=bool:?}, RR_CH3F: {=bool:?}, RR_CH4F: {=bool:?}, RR_CH5F: {=bool:?}, RR_CH6F: {=bool:?}, RR_CH7F: {=bool:?} }}" , self . RR_CH0F () , self . RR_CH1F () , self . RR_CH2F () , self . RR_CH3F () , self . RR_CH4F () , self . RR_CH5F () , self . RR_CH6F () , self . RR_CH7F ())
+        }
+    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1001,6 +1091,18 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
         }
     }
 }

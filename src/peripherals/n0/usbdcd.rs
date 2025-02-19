@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct USBDCD {
     ptr: *mut u8,
@@ -89,6 +89,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CLOCK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CLOCK {{ CLOCK_UNIT: {=bool:?}, CLOCK_SPEED: {=u16:?} }}",
+                self.CLOCK_UNIT(),
+                self.CLOCK_SPEED()
+            )
+        }
+    }
     #[doc = "Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -167,6 +178,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CONTROL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CONTROL {{ IACK: {=bool:?}, IF: {=bool:?}, IE: {=bool:?}, BC12: {=bool:?}, START: {=bool:?}, SR: {=bool:?} }}" , self . IACK () , self . IF () , self . IE () , self . BC12 () , self . START () , self . SR ())
+        }
+    }
     #[doc = "Signal Override"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -193,6 +210,12 @@ pub mod regs {
             f.debug_struct("SIGNAL_OVERRIDE")
                 .field("PS", &self.PS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SIGNAL_OVERRIDE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SIGNAL_OVERRIDE {{ PS: {=u8:?} }}", self.PS())
         }
     }
     #[doc = "Status"]
@@ -263,6 +286,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STATUS {{ SEQ_RES: {=u8:?}, SEQ_STAT: {=u8:?}, ERR: {=bool:?}, TO: {=bool:?}, ACTIVE: {=bool:?} }}" , self . SEQ_RES () , self . SEQ_STAT () , self . ERR () , self . TO () , self . ACTIVE ())
+        }
+    }
     #[doc = "TIMER0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -299,6 +328,17 @@ pub mod regs {
                 .field("TUNITCON", &self.TUNITCON())
                 .field("TSEQ_INIT", &self.TSEQ_INIT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TIMER0 {{ TUNITCON: {=u16:?}, TSEQ_INIT: {=u16:?} }}",
+                self.TUNITCON(),
+                self.TSEQ_INIT()
+            )
         }
     }
     #[doc = "TIMER1"]
@@ -339,6 +379,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TIMER1 {{ TVDPSRC_ON: {=u16:?}, TDCD_DBNC: {=u16:?} }}",
+                self.TVDPSRC_ON(),
+                self.TDCD_DBNC()
+            )
+        }
+    }
     #[doc = "TIMER2_BC11"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -377,6 +428,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER2_BC11 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TIMER2_BC11 {{ CHECK_DM: {=u8:?}, TVDPSRC_CON: {=u16:?} }}",
+                self.CHECK_DM(),
+                self.TVDPSRC_CON()
+            )
+        }
+    }
     #[doc = "TIMER2_BC12"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -413,6 +475,17 @@ pub mod regs {
                 .field("TVDMSRC_ON", &self.TVDMSRC_ON())
                 .field("TWAIT_AFTER_PRD", &self.TWAIT_AFTER_PRD())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER2_BC12 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TIMER2_BC12 {{ TVDMSRC_ON: {=u16:?}, TWAIT_AFTER_PRD: {=u16:?} }}",
+                self.TVDMSRC_ON(),
+                self.TWAIT_AFTER_PRD()
+            )
         }
     }
 }

@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct GLIKEY {
     ptr: *mut u8,
@@ -105,6 +105,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL_0 {{ WRITE_INDEX: {=u8:?}, RESERVED15: {=u8:?}, WR_EN_0: {=u8:?}, SFT_RST: {=bool:?}, RESERVED31: {=u16:?} }}" , self . WRITE_INDEX () , self . RESERVED15 () , self . WR_EN_0 () , self . SFT_RST () , self . RESERVED31 ())
+        }
+    }
     #[doc = "Control Register 1 SFR"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -173,6 +179,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL_1 {{ READ_INDEX: {=u8:?}, RESERVED15: {=u8:?}, WR_EN_1: {=u8:?}, SFR_LOCK: {=u8:?}, RESERVED31: {=u16:?} }}" , self . READ_INDEX () , self . RESERVED15 () , self . WR_EN_1 () , self . SFR_LOCK () , self . RESERVED31 ())
+        }
+    }
     #[doc = "Interrupt Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -229,6 +241,12 @@ pub mod regs {
                 .field("INT_SET", &self.INT_SET())
                 .field("RESERVED31", &self.RESERVED31())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INTR_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "INTR_CTRL {{ INT_EN: {=bool:?}, INT_CLR: {=bool:?}, INT_SET: {=bool:?}, RESERVED31: {=u32:?} }}" , self . INT_EN () , self . INT_CLR () , self . INT_SET () , self . RESERVED31 ())
         }
     }
     #[doc = "Status"]
@@ -297,6 +315,12 @@ pub mod regs {
                 .field("RESERVED18", &self.RESERVED18())
                 .field("FSM_STATE", &self.FSM_STATE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STATUS {{ INT_STATUS: {=bool:?}, LOCK_STATUS: {=bool:?}, ERROR_STATUS: {=u8:?}, RESERVED18: {=u16:?}, FSM_STATE: {=u16:?} }}" , self . INT_STATUS () , self . LOCK_STATUS () , self . ERROR_STATUS () , self . RESERVED18 () , self . FSM_STATE ())
         }
     }
     #[doc = "IP Version"]
@@ -395,6 +419,12 @@ pub mod regs {
                 .field("INDEX_CONFIG", &self.INDEX_CONFIG())
                 .field("Reserved31", &self.Reserved31())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERSION {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "VERSION {{ Reserved3: {=u8:?}, Reserved7: {=u8:?}, Reserved11: {=u8:?}, Reserved15: {=u8:?}, MILESTONE: {=u8:?}, FSM_CONFIG: {=bool:?}, INDEX_CONFIG: {=u8:?}, Reserved31: {=u8:?} }}" , self . Reserved3 () , self . Reserved7 () , self . Reserved11 () , self . Reserved15 () , self . MILESTONE () , self . FSM_CONFIG () , self . INDEX_CONFIG () , self . Reserved31 ())
         }
     }
 }

@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct MAU {
     ptr: *mut u8,
@@ -87,6 +87,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GEXP_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GEXP_STATUS {{ ERROR: {=bool:?} }}", self.ERROR())
+        }
+    }
     #[doc = "General Exception Status Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -113,6 +119,16 @@ pub mod regs {
             f.debug_struct("GEXP_STATUS_IE")
                 .field("ERROR_IE", &self.ERROR_IE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GEXP_STATUS_IE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "GEXP_STATUS_IE {{ ERROR_IE: {=bool:?} }}",
+                self.ERROR_IE()
+            )
         }
     }
     #[doc = "Operation Control"]
@@ -211,6 +227,12 @@ pub mod regs {
                 .field("OVDT_EN_RES3", &self.OVDT_EN_RES3())
                 .field("OVDT_RES3", &self.OVDT_RES3())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OP_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "OP_CTRL {{ OVDT_EN_RES0: {=bool:?}, OVDT_RES0: {=u8:?}, OVDT_EN_RES1: {=bool:?}, OVDT_RES1: {=u8:?}, OVDT_EN_RES2: {=bool:?}, OVDT_RES2: {=u8:?}, OVDT_EN_RES3: {=bool:?}, OVDT_RES3: {=u8:?} }}" , self . OVDT_EN_RES0 () , self . OVDT_RES0 () , self . OVDT_EN_RES1 () , self . OVDT_RES1 () , self . OVDT_EN_RES2 () , self . OVDT_RES2 () , self . OVDT_EN_RES3 () , self . OVDT_RES3 ())
         }
     }
     #[doc = "Result Status"]
@@ -551,6 +573,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RES_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RES_STATUS {{ RES0_NX: {=bool:?}, RES0_UF: {=bool:?}, RES0_OF: {=bool:?}, RES0_DZ: {=bool:?}, RES0_NV: {=bool:?}, RES0_ERR: {=bool:?}, RES0_OVWR: {=bool:?}, RES0_FULL: {=bool:?}, RES1_NX: {=bool:?}, RES1_UF: {=bool:?}, RES1_OF: {=bool:?}, RES1_DZ: {=bool:?}, RES1_NV: {=bool:?}, RES1_ERR: {=bool:?}, RES1_OVWR: {=bool:?}, RES1_FULL: {=bool:?}, RES2_NX: {=bool:?}, RES2_UF: {=bool:?}, RES2_OF: {=bool:?}, RES2_DZ: {=bool:?}, RES2_NV: {=bool:?}, RES2_ERR: {=bool:?}, RES2_OVWR: {=bool:?}, RES2_FULL: {=bool:?}, RES3_NX: {=bool:?}, RES3_UF: {=bool:?}, RES3_OF: {=bool:?}, RES3_DZ: {=bool:?}, RES3_NV: {=bool:?}, RES3_ERR: {=bool:?}, RES3_OVWR: {=bool:?}, RES3_FULL: {=bool:?} }}" , self . RES0_NX () , self . RES0_UF () , self . RES0_OF () , self . RES0_DZ () , self . RES0_NV () , self . RES0_ERR () , self . RES0_OVWR () , self . RES0_FULL () , self . RES1_NX () , self . RES1_UF () , self . RES1_OF () , self . RES1_DZ () , self . RES1_NV () , self . RES1_ERR () , self . RES1_OVWR () , self . RES1_FULL () , self . RES2_NX () , self . RES2_UF () , self . RES2_OF () , self . RES2_DZ () , self . RES2_NV () , self . RES2_ERR () , self . RES2_OVWR () , self . RES2_FULL () , self . RES3_NX () , self . RES3_UF () , self . RES3_OF () , self . RES3_DZ () , self . RES3_NV () , self . RES3_ERR () , self . RES3_OVWR () , self . RES3_FULL ())
+        }
+    }
     #[doc = "Result Status Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -609,6 +637,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RES_STATUS_IE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RES_STATUS_IE {{ RES0_IE: {=bool:?}, RES1_IE: {=bool:?}, RES2_IE: {=bool:?}, RES3_IE: {=bool:?} }}" , self . RES0_IE () , self . RES1_IE () , self . RES2_IE () , self . RES3_IE ())
+        }
+    }
     #[doc = "System Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -635,6 +669,12 @@ pub mod regs {
             f.debug_struct("SYS_CTLR")
                 .field("ACG_EN", &self.ACG_EN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SYS_CTLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SYS_CTLR {{ ACG_EN: {=bool:?} }}", self.ACG_EN())
         }
     }
 }

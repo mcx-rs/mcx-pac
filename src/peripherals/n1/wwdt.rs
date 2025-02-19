@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct WWDT {
     ptr: *mut u8,
@@ -65,6 +65,12 @@ pub mod regs {
     impl core::fmt::Debug for FEED {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("FEED").field("FEED", &self.FEED()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FEED {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FEED {{ FEED: {=u8:?} }}", self.FEED())
         }
     }
     #[doc = "Mode"]
@@ -155,6 +161,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MOD {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MOD {{ WDEN: {=bool:?}, WDRESET: {=bool:?}, WDTOF: {=bool:?}, WDINT: {=bool:?}, WDPROTECT: {=bool:?}, LOCK: {=bool:?}, DEBUG_EN: {=bool:?} }}" , self . WDEN () , self . WDRESET () , self . WDTOF () , self . WDINT () , self . WDPROTECT () , self . LOCK () , self . DEBUG_EN ())
+        }
+    }
     #[doc = "Timer Constant"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -181,6 +193,12 @@ pub mod regs {
             f.debug_struct("TC").field("COUNT", &self.COUNT()).finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TC {{ COUNT: {=u32:?} }}", self.COUNT())
+        }
+    }
     #[doc = "Timer Value"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -205,6 +223,12 @@ pub mod regs {
     impl core::fmt::Debug for TV {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TV").field("COUNT", &self.COUNT()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TV {{ COUNT: {=u32:?} }}", self.COUNT())
         }
     }
     #[doc = "Warning Interrupt Compare Value"]
@@ -235,6 +259,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WARNINT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "WARNINT {{ WARNINT: {=u16:?} }}", self.WARNINT())
+        }
+    }
     #[doc = "Window Compare Value"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -261,6 +291,12 @@ pub mod regs {
             f.debug_struct("WINDOW")
                 .field("WINDOW", &self.WINDOW())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WINDOW {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "WINDOW {{ WINDOW: {=u32:?} }}", self.WINDOW())
         }
     }
 }

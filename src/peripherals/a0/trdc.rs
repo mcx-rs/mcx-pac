@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct MBC_INDEX {
     ptr: *mut u8,
@@ -16,10 +16,7 @@ impl MBC_INDEX {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn MBC_MEM_GLBCFG(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::MBC_INDEX_MBC_MEM_GLBCFG, crate::common::RW> {
+    pub const fn MBC_MEM_GLBCFG(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 4usize) as _) }
     }
@@ -44,10 +41,7 @@ impl MBC_INDEX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[inline(always)]
-    pub const fn MBC_MEMN_GLBAC(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::MBC_INDEX_MBC_MEMN_GLBAC, crate::common::RW> {
+    pub const fn MBC_MEMN_GLBAC(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize + n * 4usize) as _) }
     }
@@ -298,6 +292,12 @@ pub mod regs {
                 .field("MBACSEL7", &self.MBACSEL7())
                 .field("NSE7", &self.NSE7())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W {{ MBACSEL0: {=u8:?}, NSE0: {=bool:?}, MBACSEL1: {=u8:?}, NSE1: {=bool:?}, MBACSEL2: {=u8:?}, NSE2: {=bool:?}, MBACSEL3: {=u8:?}, NSE3: {=bool:?}, MBACSEL4: {=u8:?}, NSE4: {=bool:?}, MBACSEL5: {=u8:?}, NSE5: {=bool:?}, MBACSEL6: {=u8:?}, NSE6: {=bool:?}, MBACSEL7: {=u8:?}, NSE7: {=bool:?} }}" , self . MBACSEL0 () , self . NSE0 () , self . MBACSEL1 () , self . NSE1 () , self . MBACSEL2 () , self . NSE2 () , self . MBACSEL3 () , self . NSE3 () , self . MBACSEL4 () , self . NSE4 () , self . MBACSEL5 () , self . NSE5 () , self . MBACSEL6 () , self . NSE6 () , self . MBACSEL7 () , self . NSE7 ())
         }
     }
     #[doc = "MBC Memory Block NonSecure Enable Word"]
@@ -638,6 +638,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM0_BLK_NSE_W {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MBC_INDEX_MBC_DOM0_MEM0_BLK_NSE_W {{ BIT0: {=bool:?}, BIT1: {=bool:?}, BIT2: {=bool:?}, BIT3: {=bool:?}, BIT4: {=bool:?}, BIT5: {=bool:?}, BIT6: {=bool:?}, BIT7: {=bool:?}, BIT8: {=bool:?}, BIT9: {=bool:?}, BIT10: {=bool:?}, BIT11: {=bool:?}, BIT12: {=bool:?}, BIT13: {=bool:?}, BIT14: {=bool:?}, BIT15: {=bool:?}, BIT16: {=bool:?}, BIT17: {=bool:?}, BIT18: {=bool:?}, BIT19: {=bool:?}, BIT20: {=bool:?}, BIT21: {=bool:?}, BIT22: {=bool:?}, BIT23: {=bool:?}, BIT24: {=bool:?}, BIT25: {=bool:?}, BIT26: {=bool:?}, BIT27: {=bool:?}, BIT28: {=bool:?}, BIT29: {=bool:?}, BIT30: {=bool:?}, BIT31: {=bool:?} }}" , self . BIT0 () , self . BIT1 () , self . BIT2 () , self . BIT3 () , self . BIT4 () , self . BIT5 () , self . BIT6 () , self . BIT7 () , self . BIT8 () , self . BIT9 () , self . BIT10 () , self . BIT11 () , self . BIT12 () , self . BIT13 () , self . BIT14 () , self . BIT15 () , self . BIT16 () , self . BIT17 () , self . BIT18 () , self . BIT19 () , self . BIT20 () , self . BIT21 () , self . BIT22 () , self . BIT23 () , self . BIT24 () , self . BIT25 () , self . BIT26 () , self . BIT27 () , self . BIT28 () , self . BIT29 () , self . BIT30 () , self . BIT31 ())
+        }
+    }
     #[doc = "MBC Memory Block Configuration Word"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -814,6 +820,12 @@ pub mod regs {
                 .field("MBACSEL7", &self.MBACSEL7())
                 .field("NSE7", &self.NSE7())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W {{ MBACSEL0: {=u8:?}, NSE0: {=bool:?}, MBACSEL1: {=u8:?}, NSE1: {=bool:?}, MBACSEL2: {=u8:?}, NSE2: {=bool:?}, MBACSEL3: {=u8:?}, NSE3: {=bool:?}, MBACSEL4: {=u8:?}, NSE4: {=bool:?}, MBACSEL5: {=u8:?}, NSE5: {=bool:?}, MBACSEL6: {=u8:?}, NSE6: {=bool:?}, MBACSEL7: {=u8:?}, NSE7: {=bool:?} }}" , self . MBACSEL0 () , self . NSE0 () , self . MBACSEL1 () , self . NSE1 () , self . MBACSEL2 () , self . NSE2 () , self . MBACSEL3 () , self . NSE3 () , self . MBACSEL4 () , self . NSE4 () , self . MBACSEL5 () , self . NSE5 () , self . MBACSEL6 () , self . NSE6 () , self . MBACSEL7 () , self . NSE7 ())
         }
     }
     #[doc = "MBC Memory Block NonSecure Enable Word"]
@@ -1154,6 +1166,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM1_BLK_NSE_W {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MBC_INDEX_MBC_DOM0_MEM1_BLK_NSE_W {{ BIT0: {=bool:?}, BIT1: {=bool:?}, BIT2: {=bool:?}, BIT3: {=bool:?}, BIT4: {=bool:?}, BIT5: {=bool:?}, BIT6: {=bool:?}, BIT7: {=bool:?}, BIT8: {=bool:?}, BIT9: {=bool:?}, BIT10: {=bool:?}, BIT11: {=bool:?}, BIT12: {=bool:?}, BIT13: {=bool:?}, BIT14: {=bool:?}, BIT15: {=bool:?}, BIT16: {=bool:?}, BIT17: {=bool:?}, BIT18: {=bool:?}, BIT19: {=bool:?}, BIT20: {=bool:?}, BIT21: {=bool:?}, BIT22: {=bool:?}, BIT23: {=bool:?}, BIT24: {=bool:?}, BIT25: {=bool:?}, BIT26: {=bool:?}, BIT27: {=bool:?}, BIT28: {=bool:?}, BIT29: {=bool:?}, BIT30: {=bool:?}, BIT31: {=bool:?} }}" , self . BIT0 () , self . BIT1 () , self . BIT2 () , self . BIT3 () , self . BIT4 () , self . BIT5 () , self . BIT6 () , self . BIT7 () , self . BIT8 () , self . BIT9 () , self . BIT10 () , self . BIT11 () , self . BIT12 () , self . BIT13 () , self . BIT14 () , self . BIT15 () , self . BIT16 () , self . BIT17 () , self . BIT18 () , self . BIT19 () , self . BIT20 () , self . BIT21 () , self . BIT22 () , self . BIT23 () , self . BIT24 () , self . BIT25 () , self . BIT26 () , self . BIT27 () , self . BIT28 () , self . BIT29 () , self . BIT30 () , self . BIT31 ())
+        }
+    }
     #[doc = "MBC Memory Block Configuration Word"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1330,6 +1348,12 @@ pub mod regs {
                 .field("MBACSEL7", &self.MBACSEL7())
                 .field("NSE7", &self.NSE7())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W {{ MBACSEL0: {=u8:?}, NSE0: {=bool:?}, MBACSEL1: {=u8:?}, NSE1: {=bool:?}, MBACSEL2: {=u8:?}, NSE2: {=bool:?}, MBACSEL3: {=u8:?}, NSE3: {=bool:?}, MBACSEL4: {=u8:?}, NSE4: {=bool:?}, MBACSEL5: {=u8:?}, NSE5: {=bool:?}, MBACSEL6: {=u8:?}, NSE6: {=bool:?}, MBACSEL7: {=u8:?}, NSE7: {=bool:?} }}" , self . MBACSEL0 () , self . NSE0 () , self . MBACSEL1 () , self . NSE1 () , self . MBACSEL2 () , self . NSE2 () , self . MBACSEL3 () , self . NSE3 () , self . MBACSEL4 () , self . NSE4 () , self . MBACSEL5 () , self . NSE5 () , self . MBACSEL6 () , self . NSE6 () , self . MBACSEL7 () , self . NSE7 ())
         }
     }
     #[doc = "MBC Memory Block NonSecure Enable Word"]
@@ -1670,6 +1694,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM2_BLK_NSE_W {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MBC_INDEX_MBC_DOM0_MEM2_BLK_NSE_W {{ BIT0: {=bool:?}, BIT1: {=bool:?}, BIT2: {=bool:?}, BIT3: {=bool:?}, BIT4: {=bool:?}, BIT5: {=bool:?}, BIT6: {=bool:?}, BIT7: {=bool:?}, BIT8: {=bool:?}, BIT9: {=bool:?}, BIT10: {=bool:?}, BIT11: {=bool:?}, BIT12: {=bool:?}, BIT13: {=bool:?}, BIT14: {=bool:?}, BIT15: {=bool:?}, BIT16: {=bool:?}, BIT17: {=bool:?}, BIT18: {=bool:?}, BIT19: {=bool:?}, BIT20: {=bool:?}, BIT21: {=bool:?}, BIT22: {=bool:?}, BIT23: {=bool:?}, BIT24: {=bool:?}, BIT25: {=bool:?}, BIT26: {=bool:?}, BIT27: {=bool:?}, BIT28: {=bool:?}, BIT29: {=bool:?}, BIT30: {=bool:?}, BIT31: {=bool:?} }}" , self . BIT0 () , self . BIT1 () , self . BIT2 () , self . BIT3 () , self . BIT4 () , self . BIT5 () , self . BIT6 () , self . BIT7 () , self . BIT8 () , self . BIT9 () , self . BIT10 () , self . BIT11 () , self . BIT12 () , self . BIT13 () , self . BIT14 () , self . BIT15 () , self . BIT16 () , self . BIT17 () , self . BIT18 () , self . BIT19 () , self . BIT20 () , self . BIT21 () , self . BIT22 () , self . BIT23 () , self . BIT24 () , self . BIT25 () , self . BIT26 () , self . BIT27 () , self . BIT28 () , self . BIT29 () , self . BIT30 () , self . BIT31 ())
+        }
+    }
     #[doc = "MBC Global Access Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1818,6 +1848,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MBC_INDEX_MBC_MEMN_GLBAC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MBC_INDEX_MBC_MEMN_GLBAC {{ NUX: {=bool:?}, NUW: {=bool:?}, NUR: {=bool:?}, NPX: {=bool:?}, NPW: {=bool:?}, NPR: {=bool:?}, SUX: {=bool:?}, SUW: {=bool:?}, SUR: {=bool:?}, SPX: {=bool:?}, SPW: {=bool:?}, SPR: {=bool:?}, LK: {=bool:?} }}" , self . NUX () , self . NUW () , self . NUR () , self . NPX () , self . NPW () , self . NPR () , self . SUX () , self . SUW () , self . SUR () , self . SPX () , self . SPW () , self . SPR () , self . LK ())
+        }
+    }
     #[doc = "MBC Global Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1866,6 +1902,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MBC_INDEX_MBC_MEM_GLBCFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MBC_INDEX_MBC_MEM_GLBCFG {{ NBLKS: {=u16:?}, SIZE_LOG2: {=u8:?}, CLRE: {=u8:?} }}",
+                self.NBLKS(),
+                self.SIZE_LOG2(),
+                self.CLRE()
+            )
+        }
+    }
     #[doc = "MBC NonSecure Enable Block Clear All"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1902,6 +1950,17 @@ pub mod regs {
                 .field("MEMSEL", &self.MEMSEL())
                 .field("DID_SEL0", &self.DID_SEL0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MBC_INDEX_MBC_NSE_BLK_CLR_ALL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MBC_INDEX_MBC_NSE_BLK_CLR_ALL {{ MEMSEL: {=u8:?}, DID_SEL0: {=bool:?} }}",
+                self.MEMSEL(),
+                self.DID_SEL0()
+            )
         }
     }
     #[doc = "MBC NonSecure Enable Block Index"]
@@ -1960,6 +2019,12 @@ pub mod regs {
                 .field("DID_SEL0", &self.DID_SEL0())
                 .field("AI", &self.AI())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MBC_INDEX_MBC_NSE_BLK_INDEX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MBC_INDEX_MBC_NSE_BLK_INDEX {{ WNDX: {=u8:?}, MEM_SEL: {=u8:?}, DID_SEL0: {=bool:?}, AI: {=bool:?} }}" , self . WNDX () , self . MEM_SEL () , self . DID_SEL0 () , self . AI ())
         }
     }
 }

@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct CH {
     ptr: *mut u8,
@@ -44,7 +44,7 @@ impl CH {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[inline(always)]
-    pub const fn TCD_SOFF(self) -> crate::common::Reg<regs::CH_TCD_SOFF, crate::common::RW> {
+    pub const fn TCD_SOFF(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
     #[inline(always)]
@@ -52,15 +52,11 @@ impl CH {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x26usize) as _) }
     }
     #[inline(always)]
-    pub const fn TCD_NBYTES_MLOFFNO(
-        self,
-    ) -> crate::common::Reg<regs::CH_TCD_NBYTES_MLOFFNO, crate::common::RW> {
+    pub const fn TCD_NBYTES_MLOFFNO(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
-    pub const fn TCD_NBYTES_MLOFFYES(
-        self,
-    ) -> crate::common::Reg<regs::CH_TCD_NBYTES_MLOFFYES, crate::common::RW> {
+    pub const fn TCD_NBYTES_MLOFFYES(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
     #[inline(always)]
@@ -72,19 +68,15 @@ impl CH {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
     }
     #[inline(always)]
-    pub const fn TCD_DOFF(self) -> crate::common::Reg<regs::CH_TCD_DOFF, crate::common::RW> {
+    pub const fn TCD_DOFF(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
     }
     #[inline(always)]
-    pub const fn TCD_CITER_ELINKNO(
-        self,
-    ) -> crate::common::Reg<regs::CH_TCD_CITER_ELINKNO, crate::common::RW> {
+    pub const fn TCD_CITER_ELINKNO(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x36usize) as _) }
     }
     #[inline(always)]
-    pub const fn TCD_CITER_ELINKYES(
-        self,
-    ) -> crate::common::Reg<regs::CH_TCD_CITER_ELINKYES, crate::common::RW> {
+    pub const fn TCD_CITER_ELINKYES(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x36usize) as _) }
     }
     #[inline(always)]
@@ -96,15 +88,11 @@ impl CH {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
     }
     #[inline(always)]
-    pub const fn TCD_BITER_ELINKNO(
-        self,
-    ) -> crate::common::Reg<regs::CH_TCD_BITER_ELINKNO, crate::common::RW> {
+    pub const fn TCD_BITER_ELINKNO(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3eusize) as _) }
     }
     #[inline(always)]
-    pub const fn TCD_BITER_ELINKYES(
-        self,
-    ) -> crate::common::Reg<regs::CH_TCD_BITER_ELINKYES, crate::common::RW> {
+    pub const fn TCD_BITER_ELINKYES(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3eusize) as _) }
     }
 }
@@ -140,7 +128,7 @@ impl DMA {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
     #[inline(always)]
-    pub const fn CH_GRPRI(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CH_GRPRI(self, n: usize) -> crate::common::Reg<regs::CH_GRPRI, crate::common::RW> {
         assert!(n < 16usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize + n * 4usize) as _) }
     }
@@ -227,6 +215,12 @@ pub mod regs {
                 .field("DONE", &self.DONE())
                 .field("ACTIVE", &self.ACTIVE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CH_CH_CSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CH_CH_CSR {{ ERQ: {=bool:?}, EARQ: {=bool:?}, EEI: {=bool:?}, EBW: {=bool:?}, DONE: {=bool:?}, ACTIVE: {=bool:?} }}" , self . ERQ () , self . EARQ () , self . EEI () , self . EBW () , self . DONE () , self . ACTIVE ())
         }
     }
     #[doc = "Channel Error Status"]
@@ -337,6 +331,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CH_CH_ES {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CH_CH_ES {{ DBE: {=bool:?}, SBE: {=bool:?}, SGE: {=bool:?}, NCE: {=bool:?}, DOE: {=bool:?}, DAE: {=bool:?}, SOE: {=bool:?}, SAE: {=bool:?}, ERR: {=bool:?} }}" , self . DBE () , self . SBE () , self . SGE () , self . NCE () , self . DOE () , self . DAE () , self . SOE () , self . SAE () , self . ERR ())
+        }
+    }
     #[doc = "Channel Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -365,6 +365,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CH_CH_INT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CH_CH_INT {{ INT: {=bool:?} }}", self.INT())
+        }
+    }
     #[doc = "Channel Multiplexor Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -391,6 +397,12 @@ pub mod regs {
             f.debug_struct("CH_CH_MUX")
                 .field("SRC", &self.SRC())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CH_CH_MUX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CH_CH_MUX {{ SRC: {=u8:?} }}", self.SRC())
         }
     }
     #[doc = "Channel Priority"]
@@ -439,6 +451,18 @@ pub mod regs {
                 .field("DPA", &self.DPA())
                 .field("ECP", &self.ECP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CH_CH_PRI {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CH_CH_PRI {{ APL: {=u8:?}, DPA: {=bool:?}, ECP: {=bool:?} }}",
+                self.APL(),
+                self.DPA(),
+                self.ECP()
+            )
         }
     }
     #[doc = "Channel System Bus"]
@@ -499,6 +523,19 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CH_CH_SBR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CH_CH_SBR {{ MID: {=u8:?}, SEC: {=bool:?}, PAL: {=bool:?}, EMI: {=bool:?} }}",
+                self.MID(),
+                self.SEC(),
+                self.PAL(),
+                self.EMI()
+            )
+        }
+    }
     #[doc = "Channel Arbitration Group"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -527,10 +564,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CH_GRPRI {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CH_GRPRI {{ GRPRI: {=u8:?} }}", self.GRPRI())
+        }
+    }
     #[doc = "TCD Transfer Attributes"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CH_TCD_ATTR(pub u32);
+    pub struct CH_TCD_ATTR(pub u16);
     impl CH_TCD_ATTR {
         #[inline(always)]
         pub const fn DSIZE(&self) -> u8 {
@@ -539,7 +582,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DSIZE(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u16) & 0x07) << 0usize);
         }
         #[inline(always)]
         pub const fn DMOD(&self) -> u8 {
@@ -548,7 +591,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DMOD(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 3usize)) | (((val as u32) & 0x1f) << 3usize);
+            self.0 = (self.0 & !(0x1f << 3usize)) | (((val as u16) & 0x1f) << 3usize);
         }
         #[inline(always)]
         pub const fn SSIZE(&self) -> u8 {
@@ -557,7 +600,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_SSIZE(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
+            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u16) & 0x07) << 8usize);
         }
         #[inline(always)]
         pub const fn SMOD(&self) -> u8 {
@@ -566,7 +609,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_SMOD(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 11usize)) | (((val as u32) & 0x1f) << 11usize);
+            self.0 = (self.0 & !(0x1f << 11usize)) | (((val as u16) & 0x1f) << 11usize);
         }
     }
     impl Default for CH_TCD_ATTR {
@@ -585,10 +628,23 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CH_TCD_ATTR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CH_TCD_ATTR {{ DSIZE: {=u8:?}, DMOD: {=u8:?}, SSIZE: {=u8:?}, SMOD: {=u8:?} }}",
+                self.DSIZE(),
+                self.DMOD(),
+                self.SSIZE(),
+                self.SMOD()
+            )
+        }
+    }
     #[doc = "TCD Beginning Major Loop Count (Minor Loop Channel Linking Disabled)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CH_TCD_BITER_ELINKNO(pub u32);
+    pub struct CH_TCD_BITER_ELINKNO(pub u16);
     impl CH_TCD_BITER_ELINKNO {
         #[inline(always)]
         pub const fn BITER(&self) -> u16 {
@@ -597,7 +653,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_BITER(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x7fff << 0usize)) | (((val as u32) & 0x7fff) << 0usize);
+            self.0 = (self.0 & !(0x7fff << 0usize)) | (((val as u16) & 0x7fff) << 0usize);
         }
         #[inline(always)]
         pub const fn ELINK(&self) -> bool {
@@ -606,7 +662,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ELINK(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
         }
     }
     impl Default for CH_TCD_BITER_ELINKNO {
@@ -623,10 +679,21 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CH_TCD_BITER_ELINKNO {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CH_TCD_BITER_ELINKNO {{ BITER: {=u16:?}, ELINK: {=bool:?} }}",
+                self.BITER(),
+                self.ELINK()
+            )
+        }
+    }
     #[doc = "TCD Beginning Major Loop Count (Minor Loop Channel Linking Enabled)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CH_TCD_BITER_ELINKYES(pub u32);
+    pub struct CH_TCD_BITER_ELINKYES(pub u16);
     impl CH_TCD_BITER_ELINKYES {
         #[inline(always)]
         pub const fn BITER(&self) -> u16 {
@@ -635,7 +702,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_BITER(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u16) & 0x01ff) << 0usize);
         }
         #[inline(always)]
         pub const fn LINKCH(&self) -> u8 {
@@ -644,7 +711,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_LINKCH(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 9usize)) | (((val as u32) & 0x0f) << 9usize);
+            self.0 = (self.0 & !(0x0f << 9usize)) | (((val as u16) & 0x0f) << 9usize);
         }
         #[inline(always)]
         pub const fn ELINK(&self) -> bool {
@@ -653,7 +720,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ELINK(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
         }
     }
     impl Default for CH_TCD_BITER_ELINKYES {
@@ -671,10 +738,22 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CH_TCD_BITER_ELINKYES {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CH_TCD_BITER_ELINKYES {{ BITER: {=u16:?}, LINKCH: {=u8:?}, ELINK: {=bool:?} }}",
+                self.BITER(),
+                self.LINKCH(),
+                self.ELINK()
+            )
+        }
+    }
     #[doc = "TCD Current Major Loop Count (Minor Loop Channel Linking Disabled)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CH_TCD_CITER_ELINKNO(pub u32);
+    pub struct CH_TCD_CITER_ELINKNO(pub u16);
     impl CH_TCD_CITER_ELINKNO {
         #[inline(always)]
         pub const fn CITER(&self) -> u16 {
@@ -683,7 +762,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_CITER(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x7fff << 0usize)) | (((val as u32) & 0x7fff) << 0usize);
+            self.0 = (self.0 & !(0x7fff << 0usize)) | (((val as u16) & 0x7fff) << 0usize);
         }
         #[inline(always)]
         pub const fn ELINK(&self) -> bool {
@@ -692,7 +771,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ELINK(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
         }
     }
     impl Default for CH_TCD_CITER_ELINKNO {
@@ -709,10 +788,21 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CH_TCD_CITER_ELINKNO {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CH_TCD_CITER_ELINKNO {{ CITER: {=u16:?}, ELINK: {=bool:?} }}",
+                self.CITER(),
+                self.ELINK()
+            )
+        }
+    }
     #[doc = "TCD Current Major Loop Count (Minor Loop Channel Linking Enabled)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CH_TCD_CITER_ELINKYES(pub u32);
+    pub struct CH_TCD_CITER_ELINKYES(pub u16);
     impl CH_TCD_CITER_ELINKYES {
         #[inline(always)]
         pub const fn CITER(&self) -> u16 {
@@ -721,7 +811,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_CITER(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u16) & 0x01ff) << 0usize);
         }
         #[inline(always)]
         pub const fn LINKCH(&self) -> u8 {
@@ -730,7 +820,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_LINKCH(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 9usize)) | (((val as u32) & 0x0f) << 9usize);
+            self.0 = (self.0 & !(0x0f << 9usize)) | (((val as u16) & 0x0f) << 9usize);
         }
         #[inline(always)]
         pub const fn ELINK(&self) -> bool {
@@ -739,7 +829,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ELINK(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
         }
     }
     impl Default for CH_TCD_CITER_ELINKYES {
@@ -757,10 +847,22 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CH_TCD_CITER_ELINKYES {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CH_TCD_CITER_ELINKYES {{ CITER: {=u16:?}, LINKCH: {=u8:?}, ELINK: {=bool:?} }}",
+                self.CITER(),
+                self.LINKCH(),
+                self.ELINK()
+            )
+        }
+    }
     #[doc = "TCD Control and Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CH_TCD_CSR(pub u32);
+    pub struct CH_TCD_CSR(pub u16);
     impl CH_TCD_CSR {
         #[inline(always)]
         pub const fn START(&self) -> bool {
@@ -769,7 +871,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_START(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn INTMAJOR(&self) -> bool {
@@ -778,7 +880,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_INTMAJOR(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn INTHALF(&self) -> bool {
@@ -787,7 +889,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_INTHALF(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn DREQ(&self) -> bool {
@@ -796,7 +898,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DREQ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u16) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn ESG(&self) -> bool {
@@ -805,7 +907,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ESG(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn MAJORELINK(&self) -> bool {
@@ -814,7 +916,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_MAJORELINK(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u16) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn EEOP(&self) -> bool {
@@ -823,7 +925,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_EEOP(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u16) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn ESDA(&self) -> bool {
@@ -832,7 +934,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ESDA(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
         }
         #[inline(always)]
         pub const fn MAJORLINKCH(&self) -> u8 {
@@ -841,7 +943,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_MAJORLINKCH(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
+            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u16) & 0x0f) << 8usize);
         }
         #[inline(always)]
         pub const fn BWC(&self) -> u8 {
@@ -850,7 +952,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_BWC(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u32) & 0x03) << 14usize);
+            self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u16) & 0x03) << 14usize);
         }
     }
     impl Default for CH_TCD_CSR {
@@ -875,32 +977,10 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "TCD Signed Destination Address Offset"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CH_TCD_DOFF(pub u32);
-    impl CH_TCD_DOFF {
-        #[inline(always)]
-        pub const fn DOFF(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_DOFF(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for CH_TCD_DOFF {
-        #[inline(always)]
-        fn default() -> CH_TCD_DOFF {
-            CH_TCD_DOFF(0)
-        }
-    }
-    impl core::fmt::Debug for CH_TCD_DOFF {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("CH_TCD_DOFF")
-                .field("DOFF", &self.DOFF())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CH_TCD_CSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CH_TCD_CSR {{ START: {=bool:?}, INTMAJOR: {=bool:?}, INTHALF: {=bool:?}, DREQ: {=bool:?}, ESG: {=bool:?}, MAJORELINK: {=bool:?}, EEOP: {=bool:?}, ESDA: {=bool:?}, MAJORLINKCH: {=u8:?}, BWC: {=u8:?} }}" , self . START () , self . INTMAJOR () , self . INTHALF () , self . DREQ () , self . ESG () , self . MAJORELINK () , self . EEOP () , self . ESDA () , self . MAJORLINKCH () , self . BWC ())
         }
     }
     #[doc = "TCD Transfer Size Without Minor Loop Offsets"]
@@ -949,6 +1029,18 @@ pub mod regs {
                 .field("DMLOE", &self.DMLOE())
                 .field("SMLOE", &self.SMLOE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CH_TCD_NBYTES_MLOFFNO {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CH_TCD_NBYTES_MLOFFNO {{ NBYTES: {=u32:?}, DMLOE: {=bool:?}, SMLOE: {=bool:?} }}",
+                self.NBYTES(),
+                self.DMLOE(),
+                self.SMLOE()
+            )
         }
     }
     #[doc = "TCD Transfer Size with Minor Loop Offsets"]
@@ -1010,32 +1102,10 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "TCD Signed Source Address Offset"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CH_TCD_SOFF(pub u32);
-    impl CH_TCD_SOFF {
-        #[inline(always)]
-        pub const fn SOFF(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_SOFF(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for CH_TCD_SOFF {
-        #[inline(always)]
-        fn default() -> CH_TCD_SOFF {
-            CH_TCD_SOFF(0)
-        }
-    }
-    impl core::fmt::Debug for CH_TCD_SOFF {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("CH_TCD_SOFF")
-                .field("SOFF", &self.SOFF())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CH_TCD_NBYTES_MLOFFYES {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CH_TCD_NBYTES_MLOFFYES {{ NBYTES: {=u16:?}, MLOFF: {=u32:?}, DMLOE: {=bool:?}, SMLOE: {=bool:?} }}" , self . NBYTES () , self . MLOFF () , self . DMLOE () , self . SMLOE ())
         }
     }
     #[doc = "Management Page Control"]
@@ -1154,6 +1224,12 @@ pub mod regs {
                 .field("ACTIVE_ID", &self.ACTIVE_ID())
                 .field("ACTIVE", &self.ACTIVE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MP_CSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MP_CSR {{ EDBG: {=bool:?}, ERCA: {=bool:?}, HAE: {=bool:?}, HALT: {=bool:?}, GCLC: {=bool:?}, GMRC: {=bool:?}, ECX: {=bool:?}, CX: {=bool:?}, ACTIVE_ID: {=u8:?}, ACTIVE: {=bool:?} }}" , self . EDBG () , self . ERCA () , self . HAE () , self . HALT () , self . GCLC () , self . GMRC () , self . ECX () , self . CX () , self . ACTIVE_ID () , self . ACTIVE ())
         }
     }
     #[doc = "Management Page Error Status"]
@@ -1284,6 +1360,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MP_ES {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MP_ES {{ DBE: {=bool:?}, SBE: {=bool:?}, SGE: {=bool:?}, NCE: {=bool:?}, DOE: {=bool:?}, DAE: {=bool:?}, SOE: {=bool:?}, SAE: {=bool:?}, ECX: {=bool:?}, ERRCHN: {=u8:?}, VLD: {=bool:?} }}" , self . DBE () , self . SBE () , self . SGE () , self . NCE () , self . DOE () , self . DAE () , self . SOE () , self . SAE () , self . ECX () , self . ERRCHN () , self . VLD ())
+        }
+    }
     #[doc = "Management Page Interrupt Request Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1308,6 +1390,12 @@ pub mod regs {
     impl core::fmt::Debug for MP_INT {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MP_INT").field("INT", &self.INT()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MP_INT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MP_INT {{ INT: {=u16:?} }}", self.INT())
         }
     }
 }

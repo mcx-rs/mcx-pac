@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct LP_FLEXCOMM {
     ptr: *mut u8,
@@ -93,6 +93,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ISTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ISTAT {{ UARTTX: {=bool:?}, UARTRX: {=bool:?}, SPI: {=bool:?}, I2CM: {=bool:?}, I2CS: {=bool:?} }}" , self . UARTTX () , self . UARTRX () , self . SPI () , self . I2CM () , self . I2CS ())
+        }
+    }
     #[doc = "Peripheral Select and ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -170,6 +176,12 @@ pub mod regs {
                 .field("I2CPRESENT", &self.I2CPRESENT())
                 .field("ID", &self.ID())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PSELID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PSELID {{ PERSEL: {=u8:?}, LOCK: {=bool:?}, UARTPRESENT: {=bool:?}, SPIPRESENT: {=bool:?}, I2CPRESENT: {=bool:?}, ID: {=u32:?} }}" , self . PERSEL () , self . LOCK () , self . UARTPRESENT () , self . SPIPRESENT () , self . I2CPRESENT () , self . ID ())
         }
     }
 }

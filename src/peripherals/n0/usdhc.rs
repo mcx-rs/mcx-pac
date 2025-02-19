@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct USDHC {
     ptr: *mut u8,
@@ -187,6 +187,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ADMA_ERR_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ADMA_ERR_STATUS {{ ADMAES: {=u8:?}, ADMALME: {=bool:?}, ADMADCE: {=bool:?} }}",
+                self.ADMAES(),
+                self.ADMALME(),
+                self.ADMADCE()
+            )
+        }
+    }
     #[doc = "ADMA System Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -213,6 +225,12 @@ pub mod regs {
             f.debug_struct("ADMA_SYS_ADDR")
                 .field("ADS_ADDR", &self.ADS_ADDR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ADMA_SYS_ADDR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ADMA_SYS_ADDR {{ ADS_ADDR: {=u32:?} }}", self.ADS_ADDR())
         }
     }
     #[doc = "Auto CMD12 Error Status"]
@@ -313,6 +331,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AUTOCMD12_ERR_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AUTOCMD12_ERR_STATUS {{ AC12NE: {=bool:?}, AC12TOE: {=bool:?}, AC12CE: {=bool:?}, AC12EBE: {=bool:?}, AC12IE: {=bool:?}, CNIBAC12E: {=bool:?}, EXECUTE_TUNING: {=bool:?}, SMP_CLK_SEL: {=bool:?} }}" , self . AC12NE () , self . AC12TOE () , self . AC12CE () , self . AC12EBE () , self . AC12IE () , self . CNIBAC12E () , self . EXECUTE_TUNING () , self . SMP_CLK_SEL ())
+        }
+    }
     #[doc = "Block Attributes"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -349,6 +373,17 @@ pub mod regs {
                 .field("BLKSIZE", &self.BLKSIZE())
                 .field("BLKCNT", &self.BLKCNT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BLK_ATT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "BLK_ATT {{ BLKSIZE: {=u16:?}, BLKCNT: {=u16:?} }}",
+                self.BLKSIZE(),
+                self.BLKCNT()
+            )
         }
     }
     #[doc = "CLK Tuning Control and Status"]
@@ -447,6 +482,12 @@ pub mod regs {
                 .field("TAP_SEL_PRE", &self.TAP_SEL_PRE())
                 .field("PRE_ERR", &self.PRE_ERR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CLK_TUNE_CTRL_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CLK_TUNE_CTRL_STATUS {{ DLY_CELL_SET_POST: {=u8:?}, DLY_CELL_SET_OUT: {=u8:?}, DLY_CELL_SET_PRE: {=u8:?}, NXT_ERR: {=bool:?}, TAP_SEL_POST: {=u8:?}, TAP_SEL_OUT: {=u8:?}, TAP_SEL_PRE: {=u8:?}, PRE_ERR: {=bool:?} }}" , self . DLY_CELL_SET_POST () , self . DLY_CELL_SET_OUT () , self . DLY_CELL_SET_PRE () , self . NXT_ERR () , self . TAP_SEL_POST () , self . TAP_SEL_OUT () , self . TAP_SEL_PRE () , self . PRE_ERR ())
         }
     }
     #[doc = "Command Transfer Type"]
@@ -607,6 +648,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CMD_XFR_TYP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CMD_XFR_TYP {{ DMAEN: {=bool:?}, BCEN: {=bool:?}, AC12EN: {=bool:?}, DDR_EN: {=bool:?}, DTDSEL: {=bool:?}, MSBSEL: {=bool:?}, NIBBLE_POS: {=bool:?}, AC23EN: {=bool:?}, RSPTYP: {=u8:?}, CCCEN: {=bool:?}, CICEN: {=bool:?}, DPSEL: {=bool:?}, CMDTYP: {=u8:?}, CMDINX: {=u8:?} }}" , self . DMAEN () , self . BCEN () , self . AC12EN () , self . DDR_EN () , self . DTDSEL () , self . MSBSEL () , self . NIBBLE_POS () , self . AC23EN () , self . RSPTYP () , self . CCCEN () , self . CICEN () , self . DPSEL () , self . CMDTYP () , self . CMDINX ())
+        }
+    }
     #[doc = "DLL (Delay Line) Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -728,6 +775,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DLL_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DLL_CTRL {{ DLL_CTRL_ENABLE: {=bool:?}, DLL_CTRL_RESET: {=bool:?}, DLL_CTRL_SLV_FORCE_UPD: {=bool:?}, DLL_CTRL_SLV_DLY_TARGET0: {=u8:?}, DLL_CTRL_GATE_UPDATE: {=bool:?}, DLL_CTRL_SLV_OVERRIDE: {=bool:?}, DLL_CTRL_SLV_OVERRIDE_VAL: {=u8:?}, DLL_CTRL_SLV_DLY_TARGET1: {=u8:?}, DLL_CTRL_SLV_UPDATE_INT: {=u8:?}, DLL_CTRL_REF_UPDATE_INT: {=u8:?} }}" , self . DLL_CTRL_ENABLE () , self . DLL_CTRL_RESET () , self . DLL_CTRL_SLV_FORCE_UPD () , self . DLL_CTRL_SLV_DLY_TARGET0 () , self . DLL_CTRL_GATE_UPDATE () , self . DLL_CTRL_SLV_OVERRIDE () , self . DLL_CTRL_SLV_OVERRIDE_VAL () , self . DLL_CTRL_SLV_DLY_TARGET1 () , self . DLL_CTRL_SLV_UPDATE_INT () , self . DLL_CTRL_REF_UPDATE_INT ())
+        }
+    }
     #[doc = "DLL Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -784,6 +837,12 @@ pub mod regs {
                 .field("DLL_STS_SLV_SEL", &self.DLL_STS_SLV_SEL())
                 .field("DLL_STS_REF_SEL", &self.DLL_STS_REF_SEL())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DLL_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DLL_STATUS {{ DLL_STS_SLV_LOCK: {=bool:?}, DLL_STS_REF_LOCK: {=bool:?}, DLL_STS_SLV_SEL: {=u8:?}, DLL_STS_REF_SEL: {=u8:?} }}" , self . DLL_STS_SLV_LOCK () , self . DLL_STS_REF_LOCK () , self . DLL_STS_SLV_SEL () , self . DLL_STS_REF_SEL ())
         }
     }
     #[doc = "Force Event"]
@@ -974,6 +1033,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FORCE_EVENT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FORCE_EVENT {{ FEVTAC12NE: {=bool:?}, FEVTAC12TOE: {=bool:?}, FEVTAC12CE: {=bool:?}, FEVTAC12EBE: {=bool:?}, FEVTAC12IE: {=bool:?}, FEVTCNIBAC12E: {=bool:?}, FEVTCTOE: {=bool:?}, FEVTCCE: {=bool:?}, FEVTCEBE: {=bool:?}, FEVTCIE: {=bool:?}, FEVTDTOE: {=bool:?}, FEVTDCE: {=bool:?}, FEVTDEBE: {=bool:?}, FEVTAC12E: {=bool:?}, FEVTTNE: {=bool:?}, FEVTDMAE: {=bool:?}, FEVTCINT: {=bool:?} }}" , self . FEVTAC12NE () , self . FEVTAC12TOE () , self . FEVTAC12CE () , self . FEVTAC12EBE () , self . FEVTAC12IE () , self . FEVTCNIBAC12E () , self . FEVTCTOE () , self . FEVTCCE () , self . FEVTCEBE () , self . FEVTCIE () , self . FEVTDTOE () , self . FEVTDCE () , self . FEVTDEBE () , self . FEVTAC12E () , self . FEVTTNE () , self . FEVTDMAE () , self . FEVTCINT ())
+        }
+    }
     #[doc = "Host Controller Capabilities"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1110,6 +1175,12 @@ pub mod regs {
                 .field("VS30", &self.VS30())
                 .field("VS18", &self.VS18())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HOST_CTRL_CAP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "HOST_CTRL_CAP {{ SDR50_SUPPORT: {=bool:?}, SDR104_SUPPORT: {=bool:?}, DDR50_SUPPORT: {=bool:?}, USE_TUNING_SDR50: {=bool:?}, MBL: {=u8:?}, ADMAS: {=bool:?}, HSS: {=bool:?}, DMAS: {=bool:?}, SRS: {=bool:?}, VS33: {=bool:?}, VS30: {=bool:?}, VS18: {=bool:?} }}" , self . SDR50_SUPPORT () , self . SDR104_SUPPORT () , self . DDR50_SUPPORT () , self . USE_TUNING_SDR50 () , self . MBL () , self . ADMAS () , self . HSS () , self . DMAS () , self . SRS () , self . VS33 () , self . VS30 () , self . VS18 ())
         }
     }
     #[doc = "Interrupt Signal Enable"]
@@ -1338,6 +1409,12 @@ pub mod regs {
                 .field("TNEIEN", &self.TNEIEN())
                 .field("DMAEIEN", &self.DMAEIEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INT_SIGNAL_EN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "INT_SIGNAL_EN {{ CCIEN: {=bool:?}, TCIEN: {=bool:?}, BGEIEN: {=bool:?}, DINTIEN: {=bool:?}, BWRIEN: {=bool:?}, BRRIEN: {=bool:?}, CINSIEN: {=bool:?}, CRMIEN: {=bool:?}, CINTIEN: {=bool:?}, RTEIEN: {=bool:?}, TPIEN: {=bool:?}, CTOEIEN: {=bool:?}, CCEIEN: {=bool:?}, CEBEIEN: {=bool:?}, CIEIEN: {=bool:?}, DTOEIEN: {=bool:?}, DCEIEN: {=bool:?}, DEBEIEN: {=bool:?}, AC12EIEN: {=bool:?}, TNEIEN: {=bool:?}, DMAEIEN: {=bool:?} }}" , self . CCIEN () , self . TCIEN () , self . BGEIEN () , self . DINTIEN () , self . BWRIEN () , self . BRRIEN () , self . CINSIEN () , self . CRMIEN () , self . CINTIEN () , self . RTEIEN () , self . TPIEN () , self . CTOEIEN () , self . CCEIEN () , self . CEBEIEN () , self . CIEIEN () , self . DTOEIEN () , self . DCEIEN () , self . DEBEIEN () , self . AC12EIEN () , self . TNEIEN () , self . DMAEIEN ())
         }
     }
     #[doc = "Interrupt Status"]
@@ -1578,6 +1655,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INT_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "INT_STATUS {{ CC: {=bool:?}, TC: {=bool:?}, BGE: {=bool:?}, DINT: {=bool:?}, BWR: {=bool:?}, BRR: {=bool:?}, CINS: {=bool:?}, CRM: {=bool:?}, CINT: {=bool:?}, RTE: {=bool:?}, TP: {=bool:?}, ERR_INT_STATUS: {=bool:?}, CTOE: {=bool:?}, CCE: {=bool:?}, CEBE: {=bool:?}, CIE: {=bool:?}, DTOE: {=bool:?}, DCE: {=bool:?}, DEBE: {=bool:?}, AC12E: {=bool:?}, TNE: {=bool:?}, DMAE: {=bool:?} }}" , self . CC () , self . TC () , self . BGE () , self . DINT () , self . BWR () , self . BRR () , self . CINS () , self . CRM () , self . CINT () , self . RTE () , self . TP () , self . ERR_INT_STATUS () , self . CTOE () , self . CCE () , self . CEBE () , self . CIE () , self . DTOE () , self . DCE () , self . DEBE () , self . AC12E () , self . TNE () , self . DMAE ())
+        }
+    }
     #[doc = "Interrupt Status Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1806,6 +1889,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INT_STATUS_EN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "INT_STATUS_EN {{ CCSEN: {=bool:?}, TCSEN: {=bool:?}, BGESEN: {=bool:?}, DINTSEN: {=bool:?}, BWRSEN: {=bool:?}, BRRSEN: {=bool:?}, CINSSEN: {=bool:?}, CRMSEN: {=bool:?}, CINTSEN: {=bool:?}, RTESEN: {=bool:?}, TPSEN: {=bool:?}, CTOESEN: {=bool:?}, CCESEN: {=bool:?}, CEBESEN: {=bool:?}, CIESEN: {=bool:?}, DTOESEN: {=bool:?}, DCESEN: {=bool:?}, DEBESEN: {=bool:?}, AC12ESEN: {=bool:?}, TNESEN: {=bool:?}, DMAESEN: {=bool:?} }}" , self . CCSEN () , self . TCSEN () , self . BGESEN () , self . DINTSEN () , self . BWRSEN () , self . BRRSEN () , self . CINSSEN () , self . CRMSEN () , self . CINTSEN () , self . RTESEN () , self . TPSEN () , self . CTOESEN () , self . CCESEN () , self . CEBESEN () , self . CIESEN () , self . DTOESEN () , self . DCESEN () , self . DEBESEN () , self . AC12ESEN () , self . TNESEN () , self . DMAESEN ())
+        }
+    }
     #[doc = "Mixer Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1944,6 +2033,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MIX_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MIX_CTRL {{ DMAEN: {=bool:?}, BCEN: {=bool:?}, AC12EN: {=bool:?}, DDR_EN: {=bool:?}, DTDSEL: {=bool:?}, MSBSEL: {=bool:?}, NIBBLE_POS: {=bool:?}, AC23EN: {=bool:?}, EXE_TUNE: {=bool:?}, SMP_CLK_SEL: {=bool:?}, AUTO_TUNE_EN: {=bool:?}, FBCLK_SEL: {=bool:?} }}" , self . DMAEN () , self . BCEN () , self . AC12EN () , self . DDR_EN () , self . DTDSEL () , self . MSBSEL () , self . NIBBLE_POS () , self . AC23EN () , self . EXE_TUNE () , self . SMP_CLK_SEL () , self . AUTO_TUNE_EN () , self . FBCLK_SEL ())
+        }
+    }
     #[doc = "eMMC Boot"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2030,6 +2125,12 @@ pub mod regs {
                 .field("DISABLE_TIME_OUT", &self.DISABLE_TIME_OUT())
                 .field("BOOT_BLK_CNT", &self.BOOT_BLK_CNT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MMC_BOOT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MMC_BOOT {{ DTOCV_ACK: {=u8:?}, BOOT_ACK: {=bool:?}, BOOT_MODE: {=bool:?}, BOOT_EN: {=bool:?}, AUTO_SABG_EN: {=bool:?}, DISABLE_TIME_OUT: {=bool:?}, BOOT_BLK_CNT: {=u16:?} }}" , self . DTOCV_ACK () , self . BOOT_ACK () , self . BOOT_MODE () , self . BOOT_EN () , self . AUTO_SABG_EN () , self . DISABLE_TIME_OUT () , self . BOOT_BLK_CNT ())
         }
     }
     #[doc = "Present State"]
@@ -2178,6 +2279,12 @@ pub mod regs {
                 .field("CLSL", &self.CLSL())
                 .field("DLSL", &self.DLSL())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PRES_STATE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PRES_STATE {{ CIHB: {=bool:?}, CDIHB: {=bool:?}, DLA: {=bool:?}, SDSTB: {=bool:?}, WTA: {=bool:?}, RTA: {=bool:?}, BWEN: {=bool:?}, BREN: {=bool:?}, RTR: {=bool:?}, TSCD: {=bool:?}, CINST: {=bool:?}, CLSL: {=bool:?}, DLSL: {=u8:?} }}" , self . CIHB () , self . CDIHB () , self . DLA () , self . SDSTB () , self . WTA () , self . RTA () , self . BWEN () , self . BREN () , self . RTR () , self . TSCD () , self . CINST () , self . CLSL () , self . DLSL ())
         }
     }
     #[doc = "Protocol Control"]
@@ -2338,6 +2445,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PROT_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PROT_CTRL {{ DTW: {=u8:?}, D3CD: {=bool:?}, EMODE: {=u8:?}, DMASEL: {=u8:?}, SABGREQ: {=bool:?}, CREQ: {=bool:?}, RWCTL: {=bool:?}, IABG: {=bool:?}, RD_DONE_NO_8CLK: {=bool:?}, WECINT: {=bool:?}, WECINS: {=bool:?}, WECRM: {=bool:?}, BURST_LEN_EN: {=u8:?}, NON_EXACT_BLK_RD: {=bool:?} }}" , self . DTW () , self . D3CD () , self . EMODE () , self . DMASEL () , self . SABGREQ () , self . CREQ () , self . RWCTL () , self . IABG () , self . RD_DONE_NO_8CLK () , self . WECINT () , self . WECINS () , self . WECRM () , self . BURST_LEN_EN () , self . NON_EXACT_BLK_RD ())
+        }
+    }
     #[doc = "System Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2456,6 +2569,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SYS_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SYS_CTRL {{ DVS: {=u8:?}, SDCLKFS: {=u8:?}, DTOCV: {=u8:?}, RST_FIFO: {=bool:?}, IPP_RST_N: {=bool:?}, RSTA: {=bool:?}, RSTC: {=bool:?}, RSTD: {=bool:?}, INITA: {=bool:?}, RSTT: {=bool:?} }}" , self . DVS () , self . SDCLKFS () , self . DTOCV () , self . RST_FIFO () , self . IPP_RST_N () , self . RSTA () , self . RSTC () , self . RSTD () , self . INITA () , self . RSTT ())
+        }
+    }
     #[doc = "Tuning Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2537,6 +2656,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TUNING_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TUNING_CTRL {{ TUNING_START_TAP: {=u8:?}, DIS_CMD_CHK_FOR_STD_TUNING: {=bool:?}, TUNING_COUNTER: {=u8:?}, TUNING_STEP: {=u8:?}, TUNING_WINDOW: {=u8:?}, STD_TUNING_EN: {=bool:?} }}" , self . TUNING_START_TAP () , self . DIS_CMD_CHK_FOR_STD_TUNING () , self . TUNING_COUNTER () , self . TUNING_STEP () , self . TUNING_WINDOW () , self . STD_TUNING_EN ())
+        }
+    }
     #[doc = "Vendor Specific Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2593,6 +2718,12 @@ pub mod regs {
                 .field("CRC_CHK_DIS", &self.CRC_CHK_DIS())
                 .field("CMD_BYTE_EN", &self.CMD_BYTE_EN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VEND_SPEC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "VEND_SPEC {{ AC12_WR_CHKBUSY_EN: {=bool:?}, FRC_SDCLK_ON: {=bool:?}, CRC_CHK_DIS: {=bool:?}, CMD_BYTE_EN: {=bool:?} }}" , self . AC12_WR_CHKBUSY_EN () , self . FRC_SDCLK_ON () , self . CRC_CHK_DIS () , self . CMD_BYTE_EN ())
         }
     }
     #[doc = "Vendor Specific 2 Register"]
@@ -2663,6 +2794,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VEND_SPEC2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "VEND_SPEC2 {{ CARD_INT_D3_TEST: {=bool:?}, TUNING_BIT_EN: {=u8:?}, TUNING_CMD_EN: {=bool:?}, ACMD23_ARGU2_EN: {=bool:?}, EN_32K_CLK: {=bool:?} }}" , self . CARD_INT_D3_TEST () , self . TUNING_BIT_EN () , self . TUNING_CMD_EN () , self . ACMD23_ARGU2_EN () , self . EN_32K_CLK ())
+        }
+    }
     #[doc = "Watermark Level"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2719,6 +2856,12 @@ pub mod regs {
                 .field("WR_WML", &self.WR_WML())
                 .field("WR_BRST_LEN", &self.WR_BRST_LEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WTMK_LVL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "WTMK_LVL {{ RD_WML: {=u8:?}, RD_BRST_LEN: {=u8:?}, WR_WML: {=u8:?}, WR_BRST_LEN: {=u8:?} }}" , self . RD_WML () , self . RD_BRST_LEN () , self . WR_WML () , self . WR_BRST_LEN ())
         }
     }
 }

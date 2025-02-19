@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct FREQME {
     ptr: *mut u8,
@@ -165,6 +165,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRLSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRLSTAT {{ REF_SCALE: {=u8:?}, PULSE_MODE: {=bool:?}, PULSE_POL: {=bool:?}, LT_MIN_INT_EN: {=bool:?}, GT_MAX_INT_EN: {=bool:?}, RESULT_READY_INT_EN: {=bool:?}, LT_MIN_STAT: {=bool:?}, GT_MAX_STAT: {=bool:?}, RESULT_READY_STAT: {=bool:?}, CONTINUOUS_MODE_EN: {=bool:?}, MEASURE_IN_PROGRESS: {=bool:?} }}" , self . REF_SCALE () , self . PULSE_MODE () , self . PULSE_POL () , self . LT_MIN_INT_EN () , self . GT_MAX_INT_EN () , self . RESULT_READY_INT_EN () , self . LT_MIN_STAT () , self . GT_MAX_STAT () , self . RESULT_READY_STAT () , self . CONTINUOUS_MODE_EN () , self . MEASURE_IN_PROGRESS ())
+        }
+    }
     #[doc = "Control (in Read mode)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -201,6 +207,17 @@ pub mod regs {
                 .field("RESULT", &self.RESULT())
                 .field("MEASURE_IN_PROGRESS", &self.MEASURE_IN_PROGRESS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_R {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CTRL_R {{ RESULT: {=u32:?}, MEASURE_IN_PROGRESS: {=bool:?} }}",
+                self.RESULT(),
+                self.MEASURE_IN_PROGRESS()
+            )
         }
     }
     #[doc = "Control (in Write mode)"]
@@ -301,6 +318,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_W {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL_W {{ REF_SCALE: {=u8:?}, PULSE_MODE: {=bool:?}, PULSE_POL: {=bool:?}, LT_MIN_INT_EN: {=bool:?}, GT_MAX_INT_EN: {=bool:?}, RESULT_READY_INT_EN: {=bool:?}, CONTINUOUS_MODE_EN: {=bool:?}, MEASURE_IN_PROGRESS: {=bool:?} }}" , self . REF_SCALE () , self . PULSE_MODE () , self . PULSE_POL () , self . LT_MIN_INT_EN () , self . GT_MAX_INT_EN () , self . RESULT_READY_INT_EN () , self . CONTINUOUS_MODE_EN () , self . MEASURE_IN_PROGRESS ())
+        }
+    }
     #[doc = "Maximum"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -329,6 +352,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MAX {{ MAX_VALUE: {=u32:?} }}", self.MAX_VALUE())
+        }
+    }
     #[doc = "Minimum"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -355,6 +384,12 @@ pub mod regs {
             f.debug_struct("MIN")
                 .field("MIN_VALUE", &self.MIN_VALUE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MIN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MIN {{ MIN_VALUE: {=u32:?} }}", self.MIN_VALUE())
         }
     }
 }

@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct SLCD {
     ptr: *mut u8,
@@ -48,7 +48,7 @@ impl SLCD {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[inline(always)]
-    pub const fn LCD_WFTO(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn LCD_WFTO(self, n: usize) -> crate::common::Reg<regs::LCD_WFTO, crate::common::RW> {
         assert!(n < 12usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize + n * 4usize) as _) }
     }
@@ -130,6 +130,12 @@ pub mod regs {
                 .field("BLINK", &self.BLINK())
                 .field("LCDIF", &self.LCDIF())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_AR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "LCD_AR {{ BRATE: {=u8:?}, BMODE: {=bool:?}, BLANK: {=bool:?}, ALT: {=bool:?}, BLINK: {=bool:?}, LCDIF: {=bool:?} }}" , self . BRATE () , self . BMODE () , self . BLANK () , self . ALT () , self . BLINK () , self . LCDIF ())
         }
     }
     #[doc = "LCD Back Plane Enable Register 0"]
@@ -470,6 +476,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_BPEN0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "LCD_BPEN0 {{ PIN_0_BPEN: {=bool:?}, PIN_1_BPEN: {=bool:?}, PIN_2_BPEN: {=bool:?}, PIN_3_BPEN: {=bool:?}, PIN_4_BPEN: {=bool:?}, PIN_5_BPEN: {=bool:?}, PIN_6_BPEN: {=bool:?}, PIN_7_BPEN: {=bool:?}, PIN_8_BPEN: {=bool:?}, PIN_9_BPEN: {=bool:?}, PIN_10_BPEN: {=bool:?}, PIN_11_BPEN: {=bool:?}, PIN_12_BPEN: {=bool:?}, PIN_13_BPEN: {=bool:?}, PIN_14_BPEN: {=bool:?}, PIN_15_BPEN: {=bool:?}, PIN_16_BPEN: {=bool:?}, PIN_17_BPEN: {=bool:?}, PIN_18_BPEN: {=bool:?}, PIN_19_BPEN: {=bool:?}, PIN_20_BPEN: {=bool:?}, PIN_21_BPEN: {=bool:?}, PIN_22_BPEN: {=bool:?}, PIN_23_BPEN: {=bool:?}, PIN_24_BPEN: {=bool:?}, PIN_25_BPEN: {=bool:?}, PIN_26_BPEN: {=bool:?}, PIN_27_BPEN: {=bool:?}, PIN_28_BPEN: {=bool:?}, PIN_29_BPEN: {=bool:?}, PIN_30_BPEN: {=bool:?}, PIN_31_BPEN: {=bool:?} }}" , self . PIN_0_BPEN () , self . PIN_1_BPEN () , self . PIN_2_BPEN () , self . PIN_3_BPEN () , self . PIN_4_BPEN () , self . PIN_5_BPEN () , self . PIN_6_BPEN () , self . PIN_7_BPEN () , self . PIN_8_BPEN () , self . PIN_9_BPEN () , self . PIN_10_BPEN () , self . PIN_11_BPEN () , self . PIN_12_BPEN () , self . PIN_13_BPEN () , self . PIN_14_BPEN () , self . PIN_15_BPEN () , self . PIN_16_BPEN () , self . PIN_17_BPEN () , self . PIN_18_BPEN () , self . PIN_19_BPEN () , self . PIN_20_BPEN () , self . PIN_21_BPEN () , self . PIN_22_BPEN () , self . PIN_23_BPEN () , self . PIN_24_BPEN () , self . PIN_25_BPEN () , self . PIN_26_BPEN () , self . PIN_27_BPEN () , self . PIN_28_BPEN () , self . PIN_29_BPEN () , self . PIN_30_BPEN () , self . PIN_31_BPEN ())
+        }
+    }
     #[doc = "LCD Back Plane Enable Register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -648,6 +660,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_BPEN1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "LCD_BPEN1 {{ PIN_32_BPEN: {=bool:?}, PIN_33_BPEN: {=bool:?}, PIN_34_BPEN: {=bool:?}, PIN_35_BPEN: {=bool:?}, PIN_36_BPEN: {=bool:?}, PIN_37_BPEN: {=bool:?}, PIN_38_BPEN: {=bool:?}, PIN_39_BPEN: {=bool:?}, PIN_40_BPEN: {=bool:?}, PIN_41_BPEN: {=bool:?}, PIN_42_BPEN: {=bool:?}, PIN_43_BPEN: {=bool:?}, PIN_44_BPEN: {=bool:?}, PIN_45_BPEN: {=bool:?}, PIN_46_BPEN: {=bool:?}, PIN_47_BPEN: {=bool:?} }}" , self . PIN_32_BPEN () , self . PIN_33_BPEN () , self . PIN_34_BPEN () , self . PIN_35_BPEN () , self . PIN_36_BPEN () , self . PIN_37_BPEN () , self . PIN_38_BPEN () , self . PIN_39_BPEN () , self . PIN_40_BPEN () , self . PIN_41_BPEN () , self . PIN_42_BPEN () , self . PIN_43_BPEN () , self . PIN_44_BPEN () , self . PIN_45_BPEN () , self . PIN_46_BPEN () , self . PIN_47_BPEN ())
+        }
+    }
     #[doc = "LCD Fault Detect Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -716,6 +734,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_FDCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "LCD_FDCR {{ FDPINID: {=u8:?}, FDBPEN: {=bool:?}, FDEN: {=bool:?}, FDSWW: {=u8:?}, FDPRS: {=u8:?} }}" , self . FDPINID () , self . FDBPEN () , self . FDEN () , self . FDSWW () , self . FDPRS ())
+        }
+    }
     #[doc = "LCD Fault Detect Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -752,6 +776,17 @@ pub mod regs {
                 .field("FDCNT", &self.FDCNT())
                 .field("FDCF", &self.FDCF())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_FDSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "LCD_FDSR {{ FDCNT: {=u8:?}, FDCF: {=bool:?} }}",
+                self.FDCNT(),
+                self.FDCF()
+            )
         }
     }
     #[doc = "LCD General Control Register"]
@@ -890,6 +925,12 @@ pub mod regs {
                 .field("VLL1TRIM", &self.VLL1TRIM())
                 .field("VLL2TRIM", &self.VLL2TRIM())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_GCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "LCD_GCR {{ DUTY: {=u8:?}, LCLK: {=u8:?}, LCDLP: {=bool:?}, LCDEN: {=bool:?}, LCDSTP: {=bool:?}, LCDDOZE: {=bool:?}, FDCIEN: {=bool:?}, LCDIEN: {=bool:?}, SHCYCLE: {=bool:?}, SHEN: {=bool:?}, VLL1TRIM: {=u8:?}, VLL2TRIM: {=u8:?} }}" , self . DUTY () , self . LCLK () , self . LCDLP () , self . LCDEN () , self . LCDSTP () , self . LCDDOZE () , self . FDCIEN () , self . LCDIEN () , self . SHCYCLE () , self . SHEN () , self . VLL1TRIM () , self . VLL2TRIM ())
         }
     }
     #[doc = "LCD Pin Enable Register 0"]
@@ -1230,6 +1271,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_PEN0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "LCD_PEN0 {{ PIN_0_EN: {=bool:?}, PIN_1_EN: {=bool:?}, PIN_2_EN: {=bool:?}, PIN_3_EN: {=bool:?}, PIN_4_EN: {=bool:?}, PIN_5_EN: {=bool:?}, PIN_6_EN: {=bool:?}, PIN_7_EN: {=bool:?}, PIN_8_EN: {=bool:?}, PIN_9_EN: {=bool:?}, PIN_10_EN: {=bool:?}, PIN_11_EN: {=bool:?}, PIN_12_EN: {=bool:?}, PIN_13_EN: {=bool:?}, PIN_14_EN: {=bool:?}, PIN_15_EN: {=bool:?}, PIN_16_EN: {=bool:?}, PIN_17_EN: {=bool:?}, PIN_18_EN: {=bool:?}, PIN_19_EN: {=bool:?}, PIN_20_EN: {=bool:?}, PIN_21_EN: {=bool:?}, PIN_22_EN: {=bool:?}, PIN_23_EN: {=bool:?}, PIN_24_EN: {=bool:?}, PIN_25_EN: {=bool:?}, PIN_26_EN: {=bool:?}, PIN_27_EN: {=bool:?}, PIN_28_EN: {=bool:?}, PIN_29_EN: {=bool:?}, PIN_30_EN: {=bool:?}, PIN_31_EN: {=bool:?} }}" , self . PIN_0_EN () , self . PIN_1_EN () , self . PIN_2_EN () , self . PIN_3_EN () , self . PIN_4_EN () , self . PIN_5_EN () , self . PIN_6_EN () , self . PIN_7_EN () , self . PIN_8_EN () , self . PIN_9_EN () , self . PIN_10_EN () , self . PIN_11_EN () , self . PIN_12_EN () , self . PIN_13_EN () , self . PIN_14_EN () , self . PIN_15_EN () , self . PIN_16_EN () , self . PIN_17_EN () , self . PIN_18_EN () , self . PIN_19_EN () , self . PIN_20_EN () , self . PIN_21_EN () , self . PIN_22_EN () , self . PIN_23_EN () , self . PIN_24_EN () , self . PIN_25_EN () , self . PIN_26_EN () , self . PIN_27_EN () , self . PIN_28_EN () , self . PIN_29_EN () , self . PIN_30_EN () , self . PIN_31_EN ())
+        }
+    }
     #[doc = "LCD Pin Enable Register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1406,6 +1453,12 @@ pub mod regs {
                 .field("PIN_46_EN", &self.PIN_46_EN())
                 .field("PIN_47_EN", &self.PIN_47_EN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_PEN1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "LCD_PEN1 {{ PIN_32_EN: {=bool:?}, PIN_33_EN: {=bool:?}, PIN_34_EN: {=bool:?}, PIN_35_EN: {=bool:?}, PIN_36_EN: {=bool:?}, PIN_37_EN: {=bool:?}, PIN_38_EN: {=bool:?}, PIN_39_EN: {=bool:?}, PIN_40_EN: {=bool:?}, PIN_41_EN: {=bool:?}, PIN_42_EN: {=bool:?}, PIN_43_EN: {=bool:?}, PIN_44_EN: {=bool:?}, PIN_45_EN: {=bool:?}, PIN_46_EN: {=bool:?}, PIN_47_EN: {=bool:?} }}" , self . PIN_32_EN () , self . PIN_33_EN () , self . PIN_34_EN () , self . PIN_35_EN () , self . PIN_36_EN () , self . PIN_37_EN () , self . PIN_38_EN () , self . PIN_39_EN () , self . PIN_40_EN () , self . PIN_41_EN () , self . PIN_42_EN () , self . PIN_43_EN () , self . PIN_44_EN () , self . PIN_45_EN () , self . PIN_46_EN () , self . PIN_47_EN ())
         }
     }
     #[doc = "LCD Waveform 3 to 0 Register..LCD Waveform 47 to 44 Register"]
@@ -1904,6 +1957,12 @@ pub mod regs {
                 .field("WF47", &self.WF47())
                 .field("WF7", &self.WF7())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LCD_WFTO {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "LCD_WFTO {{ WF0: {=u8:?}, WF12: {=u8:?}, WF16: {=u8:?}, WF20: {=u8:?}, WF24: {=u8:?}, WF28: {=u8:?}, WF32: {=u8:?}, WF36: {=u8:?}, WF4: {=u8:?}, WF40: {=u8:?}, WF44: {=u8:?}, WF8: {=u8:?}, WF1: {=u8:?}, WF13: {=u8:?}, WF17: {=u8:?}, WF21: {=u8:?}, WF25: {=u8:?}, WF29: {=u8:?}, WF33: {=u8:?}, WF37: {=u8:?}, WF41: {=u8:?}, WF45: {=u8:?}, WF5: {=u8:?}, WF9: {=u8:?}, WF10: {=u8:?}, WF14: {=u8:?}, WF18: {=u8:?}, WF2: {=u8:?}, WF22: {=u8:?}, WF26: {=u8:?}, WF30: {=u8:?}, WF34: {=u8:?}, WF38: {=u8:?}, WF42: {=u8:?}, WF46: {=u8:?}, WF6: {=u8:?}, WF11: {=u8:?}, WF15: {=u8:?}, WF19: {=u8:?}, WF23: {=u8:?}, WF27: {=u8:?}, WF3: {=u8:?}, WF31: {=u8:?}, WF35: {=u8:?}, WF39: {=u8:?}, WF43: {=u8:?}, WF47: {=u8:?}, WF7: {=u8:?} }}" , self . WF0 () , self . WF12 () , self . WF16 () , self . WF20 () , self . WF24 () , self . WF28 () , self . WF32 () , self . WF36 () , self . WF4 () , self . WF40 () , self . WF44 () , self . WF8 () , self . WF1 () , self . WF13 () , self . WF17 () , self . WF21 () , self . WF25 () , self . WF29 () , self . WF33 () , self . WF37 () , self . WF41 () , self . WF45 () , self . WF5 () , self . WF9 () , self . WF10 () , self . WF14 () , self . WF18 () , self . WF2 () , self . WF22 () , self . WF26 () , self . WF30 () , self . WF34 () , self . WF38 () , self . WF42 () , self . WF46 () , self . WF6 () , self . WF11 () , self . WF15 () , self . WF19 () , self . WF23 () , self . WF27 () , self . WF3 () , self . WF31 () , self . WF35 () , self . WF39 () , self . WF43 () , self . WF47 () , self . WF7 ())
         }
     }
 }

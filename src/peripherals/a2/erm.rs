@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct ERM {
     ptr: *mut u8,
@@ -69,6 +69,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CORR_ERR_CNT0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CORR_ERR_CNT0 {{ COUNT: {=u8:?} }}", self.COUNT())
+        }
+    }
     #[doc = "ERM Memory 1 Correctable Error Count Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -95,6 +101,12 @@ pub mod regs {
             f.debug_struct("CORR_ERR_CNT1")
                 .field("COUNT", &self.COUNT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CORR_ERR_CNT1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CORR_ERR_CNT1 {{ COUNT: {=u8:?} }}", self.COUNT())
         }
     }
     #[doc = "ERM Configuration Register 0"]
@@ -155,6 +167,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CR0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CR0 {{ ENCIE1: {=bool:?}, ESCIE1: {=bool:?}, ENCIE0: {=bool:?}, ESCIE0: {=bool:?} }}" , self . ENCIE1 () , self . ESCIE1 () , self . ENCIE0 () , self . ESCIE0 ())
+        }
+    }
     #[doc = "ERM Status Register 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -213,6 +231,19 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SR0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SR0 {{ NCE1: {=bool:?}, SBC1: {=bool:?}, NCE0: {=bool:?}, SBC0: {=bool:?} }}",
+                self.NCE1(),
+                self.SBC1(),
+                self.NCE0(),
+                self.SBC0()
+            )
+        }
+    }
     #[doc = "ERM Memory 0 Syndrome Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -239,6 +270,12 @@ pub mod regs {
             f.debug_struct("SYN0")
                 .field("SYNDROME", &self.SYNDROME())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SYN0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SYN0 {{ SYNDROME: {=u8:?} }}", self.SYNDROME())
         }
     }
 }

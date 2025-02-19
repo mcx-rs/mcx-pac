@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct USBPHY {
     ptr: *mut u8,
@@ -337,6 +337,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ANACTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ANACTRL {{ LVI_EN: {=bool:?}, PFD_CLK_SEL: {=u8:?}, DEV_PULLDOWN: {=bool:?} }}",
+                self.LVI_EN(),
+                self.PFD_CLK_SEL(),
+                self.DEV_PULLDOWN()
+            )
+        }
+    }
     #[doc = "Analog Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -383,6 +395,12 @@ pub mod regs {
                 .field("PFD_CLK_SEL", &self.PFD_CLK_SEL())
                 .field("DEV_PULLDOWN", &self.DEV_PULLDOWN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ANACTRL_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ANACTRL_CLR {{ LVI_EN: {=bool:?}, PFD_CLK_SEL: {=u8:?}, DEV_PULLDOWN: {=bool:?} }}" , self . LVI_EN () , self . PFD_CLK_SEL () , self . DEV_PULLDOWN ())
         }
     }
     #[doc = "Analog Control"]
@@ -433,6 +451,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ANACTRL_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ANACTRL_SET {{ LVI_EN: {=bool:?}, PFD_CLK_SEL: {=u8:?}, DEV_PULLDOWN: {=bool:?} }}" , self . LVI_EN () , self . PFD_CLK_SEL () , self . DEV_PULLDOWN ())
+        }
+    }
     #[doc = "Analog Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -479,6 +503,12 @@ pub mod regs {
                 .field("PFD_CLK_SEL", &self.PFD_CLK_SEL())
                 .field("DEV_PULLDOWN", &self.DEV_PULLDOWN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ANACTRL_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ANACTRL_TOG {{ LVI_EN: {=bool:?}, PFD_CLK_SEL: {=u8:?}, DEV_PULLDOWN: {=bool:?} }}" , self . LVI_EN () , self . PFD_CLK_SEL () , self . DEV_PULLDOWN ())
         }
     }
     #[doc = "General Purpose Control"]
@@ -749,6 +779,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL {{ ENOTG_ID_CHG_IRQ: {=bool:?}, ENHOSTDISCONDETECT: {=bool:?}, ENIRQHOSTDISCON: {=bool:?}, HOSTDISCONDETECT_IRQ: {=bool:?}, ENDEVPLUGINDETECT: {=bool:?}, DEVPLUGIN_POLARITY: {=bool:?}, OTG_ID_CHG_IRQ: {=bool:?}, ENOTGIDDETECT: {=bool:?}, RESUMEIRQSTICKY: {=bool:?}, ENIRQRESUMEDETECT: {=bool:?}, RESUME_IRQ: {=bool:?}, ENIRQDEVPLUGIN: {=bool:?}, DEVPLUGIN_IRQ: {=bool:?}, DATA_ON_LRADC: {=bool:?}, ENUTMILEVEL2: {=bool:?}, ENUTMILEVEL3: {=bool:?}, ENIRQWAKEUP: {=bool:?}, WAKEUP_IRQ: {=bool:?}, AUTORESUME_EN: {=bool:?}, ENAUTOCLR_CLKGATE: {=bool:?}, ENAUTOCLR_PHY_PWD: {=bool:?}, OTG_ID_VALUE: {=bool:?}, UTMI_SUSPENDM: {=bool:?}, CLKGATE: {=bool:?}, SFTRST: {=bool:?} }}" , self . ENOTG_ID_CHG_IRQ () , self . ENHOSTDISCONDETECT () , self . ENIRQHOSTDISCON () , self . HOSTDISCONDETECT_IRQ () , self . ENDEVPLUGINDETECT () , self . DEVPLUGIN_POLARITY () , self . OTG_ID_CHG_IRQ () , self . ENOTGIDDETECT () , self . RESUMEIRQSTICKY () , self . ENIRQRESUMEDETECT () , self . RESUME_IRQ () , self . ENIRQDEVPLUGIN () , self . DEVPLUGIN_IRQ () , self . DATA_ON_LRADC () , self . ENUTMILEVEL2 () , self . ENUTMILEVEL3 () , self . ENIRQWAKEUP () , self . WAKEUP_IRQ () , self . AUTORESUME_EN () , self . ENAUTOCLR_CLKGATE () , self . ENAUTOCLR_PHY_PWD () , self . OTG_ID_VALUE () , self . UTMI_SUSPENDM () , self . CLKGATE () , self . SFTRST ())
+        }
+    }
     #[doc = "General Purpose Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1015,6 +1051,12 @@ pub mod regs {
                 .field("CLKGATE", &self.CLKGATE())
                 .field("SFTRST", &self.SFTRST())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL_CLR {{ ENOTG_ID_CHG_IRQ: {=bool:?}, ENHOSTDISCONDETECT: {=bool:?}, ENIRQHOSTDISCON: {=bool:?}, HOSTDISCONDETECT_IRQ: {=bool:?}, ENDEVPLUGINDETECT: {=bool:?}, DEVPLUGIN_POLARITY: {=bool:?}, OTG_ID_CHG_IRQ: {=bool:?}, ENOTGIDDETECT: {=bool:?}, RESUMEIRQSTICKY: {=bool:?}, ENIRQRESUMEDETECT: {=bool:?}, RESUME_IRQ: {=bool:?}, ENIRQDEVPLUGIN: {=bool:?}, DEVPLUGIN_IRQ: {=bool:?}, DATA_ON_LRADC: {=bool:?}, ENUTMILEVEL2: {=bool:?}, ENUTMILEVEL3: {=bool:?}, ENIRQWAKEUP: {=bool:?}, WAKEUP_IRQ: {=bool:?}, AUTORESUME_EN: {=bool:?}, ENAUTOCLR_CLKGATE: {=bool:?}, ENAUTOCLR_PHY_PWD: {=bool:?}, OTG_ID_VALUE: {=bool:?}, UTMI_SUSPENDM: {=bool:?}, CLKGATE: {=bool:?}, SFTRST: {=bool:?} }}" , self . ENOTG_ID_CHG_IRQ () , self . ENHOSTDISCONDETECT () , self . ENIRQHOSTDISCON () , self . HOSTDISCONDETECT_IRQ () , self . ENDEVPLUGINDETECT () , self . DEVPLUGIN_POLARITY () , self . OTG_ID_CHG_IRQ () , self . ENOTGIDDETECT () , self . RESUMEIRQSTICKY () , self . ENIRQRESUMEDETECT () , self . RESUME_IRQ () , self . ENIRQDEVPLUGIN () , self . DEVPLUGIN_IRQ () , self . DATA_ON_LRADC () , self . ENUTMILEVEL2 () , self . ENUTMILEVEL3 () , self . ENIRQWAKEUP () , self . WAKEUP_IRQ () , self . AUTORESUME_EN () , self . ENAUTOCLR_CLKGATE () , self . ENAUTOCLR_PHY_PWD () , self . OTG_ID_VALUE () , self . UTMI_SUSPENDM () , self . CLKGATE () , self . SFTRST ())
         }
     }
     #[doc = "General Purpose Control"]
@@ -1285,6 +1327,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL_SET {{ ENOTG_ID_CHG_IRQ: {=bool:?}, ENHOSTDISCONDETECT: {=bool:?}, ENIRQHOSTDISCON: {=bool:?}, HOSTDISCONDETECT_IRQ: {=bool:?}, ENDEVPLUGINDETECT: {=bool:?}, DEVPLUGIN_POLARITY: {=bool:?}, OTG_ID_CHG_IRQ: {=bool:?}, ENOTGIDDETECT: {=bool:?}, RESUMEIRQSTICKY: {=bool:?}, ENIRQRESUMEDETECT: {=bool:?}, RESUME_IRQ: {=bool:?}, ENIRQDEVPLUGIN: {=bool:?}, DEVPLUGIN_IRQ: {=bool:?}, DATA_ON_LRADC: {=bool:?}, ENUTMILEVEL2: {=bool:?}, ENUTMILEVEL3: {=bool:?}, ENIRQWAKEUP: {=bool:?}, WAKEUP_IRQ: {=bool:?}, AUTORESUME_EN: {=bool:?}, ENAUTOCLR_CLKGATE: {=bool:?}, ENAUTOCLR_PHY_PWD: {=bool:?}, OTG_ID_VALUE: {=bool:?}, UTMI_SUSPENDM: {=bool:?}, CLKGATE: {=bool:?}, SFTRST: {=bool:?} }}" , self . ENOTG_ID_CHG_IRQ () , self . ENHOSTDISCONDETECT () , self . ENIRQHOSTDISCON () , self . HOSTDISCONDETECT_IRQ () , self . ENDEVPLUGINDETECT () , self . DEVPLUGIN_POLARITY () , self . OTG_ID_CHG_IRQ () , self . ENOTGIDDETECT () , self . RESUMEIRQSTICKY () , self . ENIRQRESUMEDETECT () , self . RESUME_IRQ () , self . ENIRQDEVPLUGIN () , self . DEVPLUGIN_IRQ () , self . DATA_ON_LRADC () , self . ENUTMILEVEL2 () , self . ENUTMILEVEL3 () , self . ENIRQWAKEUP () , self . WAKEUP_IRQ () , self . AUTORESUME_EN () , self . ENAUTOCLR_CLKGATE () , self . ENAUTOCLR_PHY_PWD () , self . OTG_ID_VALUE () , self . UTMI_SUSPENDM () , self . CLKGATE () , self . SFTRST ())
+        }
+    }
     #[doc = "General Purpose Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1553,6 +1601,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL_TOG {{ ENOTG_ID_CHG_IRQ: {=bool:?}, ENHOSTDISCONDETECT: {=bool:?}, ENIRQHOSTDISCON: {=bool:?}, HOSTDISCONDETECT_IRQ: {=bool:?}, ENDEVPLUGINDETECT: {=bool:?}, DEVPLUGIN_POLARITY: {=bool:?}, OTG_ID_CHG_IRQ: {=bool:?}, ENOTGIDDETECT: {=bool:?}, RESUMEIRQSTICKY: {=bool:?}, ENIRQRESUMEDETECT: {=bool:?}, RESUME_IRQ: {=bool:?}, ENIRQDEVPLUGIN: {=bool:?}, DEVPLUGIN_IRQ: {=bool:?}, DATA_ON_LRADC: {=bool:?}, ENUTMILEVEL2: {=bool:?}, ENUTMILEVEL3: {=bool:?}, ENIRQWAKEUP: {=bool:?}, WAKEUP_IRQ: {=bool:?}, AUTORESUME_EN: {=bool:?}, ENAUTOCLR_CLKGATE: {=bool:?}, ENAUTOCLR_PHY_PWD: {=bool:?}, OTG_ID_VALUE: {=bool:?}, UTMI_SUSPENDM: {=bool:?}, CLKGATE: {=bool:?}, SFTRST: {=bool:?} }}" , self . ENOTG_ID_CHG_IRQ () , self . ENHOSTDISCONDETECT () , self . ENIRQHOSTDISCON () , self . HOSTDISCONDETECT_IRQ () , self . ENDEVPLUGINDETECT () , self . DEVPLUGIN_POLARITY () , self . OTG_ID_CHG_IRQ () , self . ENOTGIDDETECT () , self . RESUMEIRQSTICKY () , self . ENIRQRESUMEDETECT () , self . RESUME_IRQ () , self . ENIRQDEVPLUGIN () , self . DEVPLUGIN_IRQ () , self . DATA_ON_LRADC () , self . ENUTMILEVEL2 () , self . ENUTMILEVEL3 () , self . ENIRQWAKEUP () , self . WAKEUP_IRQ () , self . AUTORESUME_EN () , self . ENAUTOCLR_CLKGATE () , self . ENAUTOCLR_PHY_PWD () , self . OTG_ID_VALUE () , self . UTMI_SUSPENDM () , self . CLKGATE () , self . SFTRST ())
+        }
+    }
     #[doc = "Debug 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1599,6 +1653,12 @@ pub mod regs {
                 .field("HSTPULLDOWN", &self.HSTPULLDOWN())
                 .field("ENHSTPULLDOWN", &self.ENHSTPULLDOWN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEBUG0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DEBUG0 {{ OTGIDPIOLOCK: {=bool:?}, HSTPULLDOWN: {=u8:?}, ENHSTPULLDOWN: {=u8:?} }}" , self . OTGIDPIOLOCK () , self . HSTPULLDOWN () , self . ENHSTPULLDOWN ())
         }
     }
     #[doc = "Debug 0"]
@@ -1649,6 +1709,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEBUG0_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DEBUG0_CLR {{ OTGIDPIOLOCK: {=bool:?}, HSTPULLDOWN: {=u8:?}, ENHSTPULLDOWN: {=u8:?} }}" , self . OTGIDPIOLOCK () , self . HSTPULLDOWN () , self . ENHSTPULLDOWN ())
+        }
+    }
     #[doc = "Debug 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1695,6 +1761,12 @@ pub mod regs {
                 .field("HSTPULLDOWN", &self.HSTPULLDOWN())
                 .field("ENHSTPULLDOWN", &self.ENHSTPULLDOWN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEBUG0_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DEBUG0_SET {{ OTGIDPIOLOCK: {=bool:?}, HSTPULLDOWN: {=u8:?}, ENHSTPULLDOWN: {=u8:?} }}" , self . OTGIDPIOLOCK () , self . HSTPULLDOWN () , self . ENHSTPULLDOWN ())
         }
     }
     #[doc = "Debug 0"]
@@ -1745,6 +1817,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEBUG0_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DEBUG0_TOG {{ OTGIDPIOLOCK: {=bool:?}, HSTPULLDOWN: {=u8:?}, ENHSTPULLDOWN: {=u8:?} }}" , self . OTGIDPIOLOCK () , self . HSTPULLDOWN () , self . ENHSTPULLDOWN ())
+        }
+    }
     #[doc = "IP Block"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1774,6 +1852,16 @@ pub mod regs {
                     &self.POWER_CONTROL_SUSPEND_OPTION(),
                 )
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IP {{ POWER_CONTROL_SUSPEND_OPTION: {=bool:?} }}",
+                self.POWER_CONTROL_SUSPEND_OPTION()
+            )
         }
     }
     #[doc = "IP Block"]
@@ -1807,6 +1895,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IP_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IP_CLR {{ POWER_CONTROL_SUSPEND_OPTION: {=bool:?} }}",
+                self.POWER_CONTROL_SUSPEND_OPTION()
+            )
+        }
+    }
     #[doc = "IP Block"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1838,6 +1936,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IP_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IP_SET {{ POWER_CONTROL_SUSPEND_OPTION: {=bool:?} }}",
+                self.POWER_CONTROL_SUSPEND_OPTION()
+            )
+        }
+    }
     #[doc = "IP Block"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1867,6 +1975,16 @@ pub mod regs {
                     &self.POWER_CONTROL_SUSPEND_OPTION(),
                 )
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IP_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IP_TOG {{ POWER_CONTROL_SUSPEND_OPTION: {=bool:?} }}",
+                self.POWER_CONTROL_SUSPEND_OPTION()
+            )
         }
     }
     #[doc = "PFD A"]
@@ -1917,6 +2035,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PFDA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PFDA {{ PFD0_CLKGATE: {=bool:?}, PFD0_FRAC: {=u8:?}, PFD0_STABLE: {=bool:?} }}",
+                self.PFD0_CLKGATE(),
+                self.PFD0_FRAC(),
+                self.PFD0_STABLE()
+            )
+        }
+    }
     #[doc = "PFD A"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1963,6 +2093,12 @@ pub mod regs {
                 .field("PFD0_FRAC", &self.PFD0_FRAC())
                 .field("PFD0_STABLE", &self.PFD0_STABLE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PFDA_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PFDA_CLR {{ PFD0_CLKGATE: {=bool:?}, PFD0_FRAC: {=u8:?}, PFD0_STABLE: {=bool:?} }}" , self . PFD0_CLKGATE () , self . PFD0_FRAC () , self . PFD0_STABLE ())
         }
     }
     #[doc = "PFD A"]
@@ -2013,6 +2149,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PFDA_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PFDA_SET {{ PFD0_CLKGATE: {=bool:?}, PFD0_FRAC: {=u8:?}, PFD0_STABLE: {=bool:?} }}" , self . PFD0_CLKGATE () , self . PFD0_FRAC () , self . PFD0_STABLE ())
+        }
+    }
     #[doc = "PFD A"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2059,6 +2201,12 @@ pub mod regs {
                 .field("PFD0_FRAC", &self.PFD0_FRAC())
                 .field("PFD0_STABLE", &self.PFD0_STABLE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PFDA_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PFDA_TOG {{ PFD0_CLKGATE: {=bool:?}, PFD0_FRAC: {=u8:?}, PFD0_STABLE: {=bool:?} }}" , self . PFD0_CLKGATE () , self . PFD0_FRAC () , self . PFD0_STABLE ())
         }
     }
     #[doc = "PLL SIC"]
@@ -2179,6 +2327,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PLL_SIC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PLL_SIC {{ MISC2_CONTROL0: {=bool:?}, PLL_EN_USB_CLKS: {=bool:?}, PLL_POWER: {=bool:?}, PLL_ENABLE: {=bool:?}, PLL_BYPASS: {=bool:?}, REFBIAS_PWD_SEL: {=bool:?}, REFBIAS_PWD: {=bool:?}, PLL_REG_ENABLE: {=bool:?}, PLL_DIV_SEL: {=u8:?}, PLL_LOCK: {=bool:?} }}" , self . MISC2_CONTROL0 () , self . PLL_EN_USB_CLKS () , self . PLL_POWER () , self . PLL_ENABLE () , self . PLL_BYPASS () , self . REFBIAS_PWD_SEL () , self . REFBIAS_PWD () , self . PLL_REG_ENABLE () , self . PLL_DIV_SEL () , self . PLL_LOCK ())
+        }
+    }
     #[doc = "PLL SIC"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2295,6 +2449,12 @@ pub mod regs {
                 .field("PLL_DIV_SEL", &self.PLL_DIV_SEL())
                 .field("PLL_LOCK", &self.PLL_LOCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PLL_SIC_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PLL_SIC_CLR {{ MISC2_CONTROL0: {=bool:?}, PLL_EN_USB_CLKS: {=bool:?}, PLL_POWER: {=bool:?}, PLL_ENABLE: {=bool:?}, PLL_BYPASS: {=bool:?}, REFBIAS_PWD_SEL: {=bool:?}, REFBIAS_PWD: {=bool:?}, PLL_REG_ENABLE: {=bool:?}, PLL_DIV_SEL: {=u8:?}, PLL_LOCK: {=bool:?} }}" , self . MISC2_CONTROL0 () , self . PLL_EN_USB_CLKS () , self . PLL_POWER () , self . PLL_ENABLE () , self . PLL_BYPASS () , self . REFBIAS_PWD_SEL () , self . REFBIAS_PWD () , self . PLL_REG_ENABLE () , self . PLL_DIV_SEL () , self . PLL_LOCK ())
         }
     }
     #[doc = "PLL SIC"]
@@ -2415,6 +2575,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PLL_SIC_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PLL_SIC_SET {{ MISC2_CONTROL0: {=bool:?}, PLL_EN_USB_CLKS: {=bool:?}, PLL_POWER: {=bool:?}, PLL_ENABLE: {=bool:?}, PLL_BYPASS: {=bool:?}, REFBIAS_PWD_SEL: {=bool:?}, REFBIAS_PWD: {=bool:?}, PLL_REG_ENABLE: {=bool:?}, PLL_DIV_SEL: {=u8:?}, PLL_LOCK: {=bool:?} }}" , self . MISC2_CONTROL0 () , self . PLL_EN_USB_CLKS () , self . PLL_POWER () , self . PLL_ENABLE () , self . PLL_BYPASS () , self . REFBIAS_PWD_SEL () , self . REFBIAS_PWD () , self . PLL_REG_ENABLE () , self . PLL_DIV_SEL () , self . PLL_LOCK ())
+        }
+    }
     #[doc = "PLL SIC"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2533,6 +2699,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PLL_SIC_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PLL_SIC_TOG {{ MISC2_CONTROL0: {=bool:?}, PLL_EN_USB_CLKS: {=bool:?}, PLL_POWER: {=bool:?}, PLL_ENABLE: {=bool:?}, PLL_BYPASS: {=bool:?}, REFBIAS_PWD_SEL: {=bool:?}, REFBIAS_PWD: {=bool:?}, PLL_REG_ENABLE: {=bool:?}, PLL_DIV_SEL: {=u8:?}, PLL_LOCK: {=bool:?} }}" , self . MISC2_CONTROL0 () , self . PLL_EN_USB_CLKS () , self . PLL_POWER () , self . PLL_ENABLE () , self . PLL_BYPASS () , self . REFBIAS_PWD_SEL () , self . REFBIAS_PWD () , self . PLL_REG_ENABLE () , self . PLL_DIV_SEL () , self . PLL_LOCK ())
+        }
+    }
     #[doc = "Power Down"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2619,6 +2791,12 @@ pub mod regs {
                 .field("RXPWDDIFF", &self.RXPWDDIFF())
                 .field("RXPWDRX", &self.RXPWDRX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWD {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PWD {{ TXPWDFS: {=bool:?}, TXPWDIBIAS: {=bool:?}, TXPWDV2I: {=bool:?}, RXPWDENV: {=bool:?}, RXPWD1PT1: {=bool:?}, RXPWDDIFF: {=bool:?}, RXPWDRX: {=bool:?} }}" , self . TXPWDFS () , self . TXPWDIBIAS () , self . TXPWDV2I () , self . RXPWDENV () , self . RXPWD1PT1 () , self . RXPWDDIFF () , self . RXPWDRX ())
         }
     }
     #[doc = "Power Down"]
@@ -2709,6 +2887,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWD_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PWD_CLR {{ TXPWDFS: {=bool:?}, TXPWDIBIAS: {=bool:?}, TXPWDV2I: {=bool:?}, RXPWDENV: {=bool:?}, RXPWD1PT1: {=bool:?}, RXPWDDIFF: {=bool:?}, RXPWDRX: {=bool:?} }}" , self . TXPWDFS () , self . TXPWDIBIAS () , self . TXPWDV2I () , self . RXPWDENV () , self . RXPWD1PT1 () , self . RXPWDDIFF () , self . RXPWDRX ())
+        }
+    }
     #[doc = "Power Down"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2795,6 +2979,12 @@ pub mod regs {
                 .field("RXPWDDIFF", &self.RXPWDDIFF())
                 .field("RXPWDRX", &self.RXPWDRX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWD_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PWD_SET {{ TXPWDFS: {=bool:?}, TXPWDIBIAS: {=bool:?}, TXPWDV2I: {=bool:?}, RXPWDENV: {=bool:?}, RXPWD1PT1: {=bool:?}, RXPWDDIFF: {=bool:?}, RXPWDRX: {=bool:?} }}" , self . TXPWDFS () , self . TXPWDIBIAS () , self . TXPWDV2I () , self . RXPWDENV () , self . RXPWD1PT1 () , self . RXPWDDIFF () , self . RXPWDRX ())
         }
     }
     #[doc = "Power Down"]
@@ -2885,6 +3075,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWD_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PWD_TOG {{ TXPWDFS: {=bool:?}, TXPWDIBIAS: {=bool:?}, TXPWDV2I: {=bool:?}, RXPWDENV: {=bool:?}, RXPWD1PT1: {=bool:?}, RXPWDDIFF: {=bool:?}, RXPWDRX: {=bool:?} }}" , self . TXPWDFS () , self . TXPWDIBIAS () , self . TXPWDV2I () , self . RXPWDENV () , self . RXPWD1PT1 () , self . RXPWDDIFF () , self . RXPWDRX ())
+        }
+    }
     #[doc = "RX Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2921,6 +3117,17 @@ pub mod regs {
                 .field("ENVADJ", &self.ENVADJ())
                 .field("DISCONADJ", &self.DISCONADJ())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "RX {{ ENVADJ: {=u8:?}, DISCONADJ: {=u8:?} }}",
+                self.ENVADJ(),
+                self.DISCONADJ()
+            )
         }
     }
     #[doc = "RX Control"]
@@ -2961,6 +3168,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RX_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "RX_CLR {{ ENVADJ: {=u8:?}, DISCONADJ: {=u8:?} }}",
+                self.ENVADJ(),
+                self.DISCONADJ()
+            )
+        }
+    }
     #[doc = "RX Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2999,6 +3217,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RX_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "RX_SET {{ ENVADJ: {=u8:?}, DISCONADJ: {=u8:?} }}",
+                self.ENVADJ(),
+                self.DISCONADJ()
+            )
+        }
+    }
     #[doc = "RX Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3035,6 +3264,17 @@ pub mod regs {
                 .field("ENVADJ", &self.ENVADJ())
                 .field("DISCONADJ", &self.DISCONADJ())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RX_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "RX_TOG {{ ENVADJ: {=u8:?}, DISCONADJ: {=u8:?} }}",
+                self.ENVADJ(),
+                self.DISCONADJ()
+            )
         }
     }
     #[doc = "Status"]
@@ -3103,6 +3343,12 @@ pub mod regs {
                 .field("OTGID_STATUS", &self.OTGID_STATUS())
                 .field("RESUME_STATUS", &self.RESUME_STATUS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STATUS {{ OK_STATUS_3V: {=bool:?}, HOSTDISCONDETECT_STATUS: {=bool:?}, DEVPLUGIN_STATUS: {=bool:?}, OTGID_STATUS: {=bool:?}, RESUME_STATUS: {=bool:?} }}" , self . OK_STATUS_3V () , self . HOSTDISCONDETECT_STATUS () , self . DEVPLUGIN_STATUS () , self . OTGID_STATUS () , self . RESUME_STATUS ())
         }
     }
     #[doc = "Trim"]
@@ -3203,6 +3449,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TRIM_OVERRIDE_EN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TRIM_OVERRIDE_EN {{ DIV_SEL_OVERRIDE: {=bool:?}, TX_D_CAL_OVERRIDE: {=bool:?}, TX_CAL45DP_OVERRIDE: {=bool:?}, TX_CAL45DM_OVERRIDE: {=bool:?}, PLL_CTRL0_DIV_SEL: {=u8:?}, USBPHY_TX_D_CAL: {=u8:?}, USBPHY_TX_CAL45DP: {=u8:?}, USBPHY_TX_CAL45DN: {=u8:?} }}" , self . DIV_SEL_OVERRIDE () , self . TX_D_CAL_OVERRIDE () , self . TX_CAL45DP_OVERRIDE () , self . TX_CAL45DM_OVERRIDE () , self . PLL_CTRL0_DIV_SEL () , self . USBPHY_TX_D_CAL () , self . USBPHY_TX_CAL45DP () , self . USBPHY_TX_CAL45DN ())
+        }
+    }
     #[doc = "Trim"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3299,6 +3551,12 @@ pub mod regs {
                 .field("USBPHY_TX_CAL45DP", &self.USBPHY_TX_CAL45DP())
                 .field("USBPHY_TX_CAL45DN", &self.USBPHY_TX_CAL45DN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TRIM_OVERRIDE_EN_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TRIM_OVERRIDE_EN_CLR {{ DIV_SEL_OVERRIDE: {=bool:?}, TX_D_CAL_OVERRIDE: {=bool:?}, TX_CAL45DP_OVERRIDE: {=bool:?}, TX_CAL45DM_OVERRIDE: {=bool:?}, PLL_CTRL0_DIV_SEL: {=u8:?}, USBPHY_TX_D_CAL: {=u8:?}, USBPHY_TX_CAL45DP: {=u8:?}, USBPHY_TX_CAL45DN: {=u8:?} }}" , self . DIV_SEL_OVERRIDE () , self . TX_D_CAL_OVERRIDE () , self . TX_CAL45DP_OVERRIDE () , self . TX_CAL45DM_OVERRIDE () , self . PLL_CTRL0_DIV_SEL () , self . USBPHY_TX_D_CAL () , self . USBPHY_TX_CAL45DP () , self . USBPHY_TX_CAL45DN ())
         }
     }
     #[doc = "Trim"]
@@ -3399,6 +3657,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TRIM_OVERRIDE_EN_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TRIM_OVERRIDE_EN_SET {{ DIV_SEL_OVERRIDE: {=bool:?}, TX_D_CAL_OVERRIDE: {=bool:?}, TX_CAL45DP_OVERRIDE: {=bool:?}, TX_CAL45DM_OVERRIDE: {=bool:?}, PLL_CTRL0_DIV_SEL: {=u8:?}, USBPHY_TX_D_CAL: {=u8:?}, USBPHY_TX_CAL45DP: {=u8:?}, USBPHY_TX_CAL45DN: {=u8:?} }}" , self . DIV_SEL_OVERRIDE () , self . TX_D_CAL_OVERRIDE () , self . TX_CAL45DP_OVERRIDE () , self . TX_CAL45DM_OVERRIDE () , self . PLL_CTRL0_DIV_SEL () , self . USBPHY_TX_D_CAL () , self . USBPHY_TX_CAL45DP () , self . USBPHY_TX_CAL45DN ())
+        }
+    }
     #[doc = "Trim"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3497,6 +3761,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TRIM_OVERRIDE_EN_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TRIM_OVERRIDE_EN_TOG {{ DIV_SEL_OVERRIDE: {=bool:?}, TX_D_CAL_OVERRIDE: {=bool:?}, TX_CAL45DP_OVERRIDE: {=bool:?}, TX_CAL45DM_OVERRIDE: {=bool:?}, PLL_CTRL0_DIV_SEL: {=u8:?}, USBPHY_TX_D_CAL: {=u8:?}, USBPHY_TX_CAL45DP: {=u8:?}, USBPHY_TX_CAL45DN: {=u8:?} }}" , self . DIV_SEL_OVERRIDE () , self . TX_D_CAL_OVERRIDE () , self . TX_CAL45DP_OVERRIDE () , self . TX_CAL45DM_OVERRIDE () , self . PLL_CTRL0_DIV_SEL () , self . USBPHY_TX_D_CAL () , self . USBPHY_TX_CAL45DP () , self . USBPHY_TX_CAL45DN ())
+        }
+    }
     #[doc = "TX Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3543,6 +3813,18 @@ pub mod regs {
                 .field("TXCAL45DN", &self.TXCAL45DN())
                 .field("TXCAL45DP", &self.TXCAL45DP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TX {{ D_CAL: {=u8:?}, TXCAL45DN: {=u8:?}, TXCAL45DP: {=u8:?} }}",
+                self.D_CAL(),
+                self.TXCAL45DN(),
+                self.TXCAL45DP()
+            )
         }
     }
     #[doc = "TX Control"]
@@ -3593,6 +3875,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TX_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TX_CLR {{ D_CAL: {=u8:?}, TXCAL45DN: {=u8:?}, TXCAL45DP: {=u8:?} }}",
+                self.D_CAL(),
+                self.TXCAL45DN(),
+                self.TXCAL45DP()
+            )
+        }
+    }
     #[doc = "TX Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3641,6 +3935,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TX_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TX_SET {{ D_CAL: {=u8:?}, TXCAL45DN: {=u8:?}, TXCAL45DP: {=u8:?} }}",
+                self.D_CAL(),
+                self.TXCAL45DN(),
+                self.TXCAL45DP()
+            )
+        }
+    }
     #[doc = "TX Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3687,6 +3993,18 @@ pub mod regs {
                 .field("TXCAL45DN", &self.TXCAL45DN())
                 .field("TXCAL45DP", &self.TXCAL45DP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TX_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TX_TOG {{ D_CAL: {=u8:?}, TXCAL45DN: {=u8:?}, TXCAL45DP: {=u8:?} }}",
+                self.D_CAL(),
+                self.TXCAL45DN(),
+                self.TXCAL45DP()
+            )
         }
     }
     #[doc = "Charger Detect"]
@@ -3777,6 +4095,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_CHRG_DETECT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USB1_CHRG_DETECT {{ DETECT_SEC: {=bool:?}, PULLUP_DP: {=bool:?}, VDM_SRC_ENABLE: {=bool:?}, CHK_CONTACT: {=bool:?}, CHK_CHRG_B: {=bool:?}, EN_B: {=bool:?}, DCDSEL: {=bool:?} }}" , self . DETECT_SEC () , self . PULLUP_DP () , self . VDM_SRC_ENABLE () , self . CHK_CONTACT () , self . CHK_CHRG_B () , self . EN_B () , self . DCDSEL ())
+        }
+    }
     #[doc = "Charger Detect"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3863,6 +4187,12 @@ pub mod regs {
                 .field("EN_B", &self.EN_B())
                 .field("DCDSEL", &self.DCDSEL())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_CHRG_DETECT_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USB1_CHRG_DETECT_CLR {{ DETECT_SEC: {=bool:?}, PULLUP_DP: {=bool:?}, VDM_SRC_ENABLE: {=bool:?}, CHK_CONTACT: {=bool:?}, CHK_CHRG_B: {=bool:?}, EN_B: {=bool:?}, DCDSEL: {=bool:?} }}" , self . DETECT_SEC () , self . PULLUP_DP () , self . VDM_SRC_ENABLE () , self . CHK_CONTACT () , self . CHK_CHRG_B () , self . EN_B () , self . DCDSEL ())
         }
     }
     #[doc = "Charger Detect"]
@@ -3953,6 +4283,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_CHRG_DETECT_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USB1_CHRG_DETECT_SET {{ DETECT_SEC: {=bool:?}, PULLUP_DP: {=bool:?}, VDM_SRC_ENABLE: {=bool:?}, CHK_CONTACT: {=bool:?}, CHK_CHRG_B: {=bool:?}, EN_B: {=bool:?}, DCDSEL: {=bool:?} }}" , self . DETECT_SEC () , self . PULLUP_DP () , self . VDM_SRC_ENABLE () , self . CHK_CONTACT () , self . CHK_CHRG_B () , self . EN_B () , self . DCDSEL ())
+        }
+    }
     #[doc = "Charger Detect"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4041,6 +4377,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_CHRG_DETECT_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USB1_CHRG_DETECT_TOG {{ DETECT_SEC: {=bool:?}, PULLUP_DP: {=bool:?}, VDM_SRC_ENABLE: {=bool:?}, CHK_CONTACT: {=bool:?}, CHK_CHRG_B: {=bool:?}, EN_B: {=bool:?}, DCDSEL: {=bool:?} }}" , self . DETECT_SEC () , self . PULLUP_DP () , self . VDM_SRC_ENABLE () , self . CHK_CONTACT () , self . CHK_CHRG_B () , self . EN_B () , self . DCDSEL ())
+        }
+    }
     #[doc = "Charger Detect Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4107,6 +4449,12 @@ pub mod regs {
                 .field("DP_STATE", &self.DP_STATE())
                 .field("SECDET_DCP", &self.SECDET_DCP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_CHRG_DET_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USB1_CHRG_DET_STAT {{ PLUG_CONTACT: {=bool:?}, CHRG_DETECTED: {=bool:?}, DM_STATE: {=bool:?}, DP_STATE: {=bool:?}, SECDET_DCP: {=bool:?} }}" , self . PLUG_CONTACT () , self . CHRG_DETECTED () , self . DM_STATE () , self . DP_STATE () , self . SECDET_DCP ())
         }
     }
     #[doc = "Charger Detect Status"]
@@ -4177,6 +4525,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_CHRG_DET_STAT_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USB1_CHRG_DET_STAT_CLR {{ PLUG_CONTACT: {=bool:?}, CHRG_DETECTED: {=bool:?}, DM_STATE: {=bool:?}, DP_STATE: {=bool:?}, SECDET_DCP: {=bool:?} }}" , self . PLUG_CONTACT () , self . CHRG_DETECTED () , self . DM_STATE () , self . DP_STATE () , self . SECDET_DCP ())
+        }
+    }
     #[doc = "Charger Detect Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4245,6 +4599,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_CHRG_DET_STAT_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USB1_CHRG_DET_STAT_SET {{ PLUG_CONTACT: {=bool:?}, CHRG_DETECTED: {=bool:?}, DM_STATE: {=bool:?}, DP_STATE: {=bool:?}, SECDET_DCP: {=bool:?} }}" , self . PLUG_CONTACT () , self . CHRG_DETECTED () , self . DM_STATE () , self . DP_STATE () , self . SECDET_DCP ())
+        }
+    }
     #[doc = "Charger Detect Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4311,6 +4671,12 @@ pub mod regs {
                 .field("DP_STATE", &self.DP_STATE())
                 .field("SECDET_DCP", &self.SECDET_DCP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_CHRG_DET_STAT_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USB1_CHRG_DET_STAT_TOG {{ PLUG_CONTACT: {=bool:?}, CHRG_DETECTED: {=bool:?}, DM_STATE: {=bool:?}, DP_STATE: {=bool:?}, SECDET_DCP: {=bool:?} }}" , self . PLUG_CONTACT () , self . CHRG_DETECTED () , self . DM_STATE () , self . DP_STATE () , self . SECDET_DCP ())
         }
     }
     #[doc = "VBUS Detect"]
@@ -4481,6 +4847,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_VBUS_DETECT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USB1_VBUS_DETECT {{ VBUSVALID_THRESH: {=u8:?}, VBUS_OVERRIDE_EN: {=bool:?}, SESSEND_OVERRIDE: {=bool:?}, BVALID_OVERRIDE: {=bool:?}, AVALID_OVERRIDE: {=bool:?}, VBUSVALID_OVERRIDE: {=bool:?}, VBUSVALID_SEL: {=bool:?}, VBUS_SOURCE_SEL: {=u8:?}, ID_OVERRIDE_EN: {=bool:?}, ID_OVERRIDE: {=bool:?}, EXT_ID_OVERRIDE_EN: {=bool:?}, EXT_VBUS_OVERRIDE_EN: {=bool:?}, VBUSVALID_TO_B: {=bool:?}, VBUSVALID_PWRUP_CMPS: {=u8:?}, DISCHARGE_VBUS: {=bool:?} }}" , self . VBUSVALID_THRESH () , self . VBUS_OVERRIDE_EN () , self . SESSEND_OVERRIDE () , self . BVALID_OVERRIDE () , self . AVALID_OVERRIDE () , self . VBUSVALID_OVERRIDE () , self . VBUSVALID_SEL () , self . VBUS_SOURCE_SEL () , self . ID_OVERRIDE_EN () , self . ID_OVERRIDE () , self . EXT_ID_OVERRIDE_EN () , self . EXT_VBUS_OVERRIDE_EN () , self . VBUSVALID_TO_B () , self . VBUSVALID_PWRUP_CMPS () , self . DISCHARGE_VBUS ())
+        }
+    }
     #[doc = "VBUS Detect"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4647,6 +5019,12 @@ pub mod regs {
                 .field("VBUSVALID_PWRUP_CMPS", &self.VBUSVALID_PWRUP_CMPS())
                 .field("DISCHARGE_VBUS", &self.DISCHARGE_VBUS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_VBUS_DETECT_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USB1_VBUS_DETECT_CLR {{ VBUSVALID_THRESH: {=u8:?}, VBUS_OVERRIDE_EN: {=bool:?}, SESSEND_OVERRIDE: {=bool:?}, BVALID_OVERRIDE: {=bool:?}, AVALID_OVERRIDE: {=bool:?}, VBUSVALID_OVERRIDE: {=bool:?}, VBUSVALID_SEL: {=bool:?}, VBUS_SOURCE_SEL: {=u8:?}, ID_OVERRIDE_EN: {=bool:?}, ID_OVERRIDE: {=bool:?}, EXT_ID_OVERRIDE_EN: {=bool:?}, EXT_VBUS_OVERRIDE_EN: {=bool:?}, VBUSVALID_TO_B: {=bool:?}, VBUSVALID_PWRUP_CMPS: {=u8:?}, DISCHARGE_VBUS: {=bool:?} }}" , self . VBUSVALID_THRESH () , self . VBUS_OVERRIDE_EN () , self . SESSEND_OVERRIDE () , self . BVALID_OVERRIDE () , self . AVALID_OVERRIDE () , self . VBUSVALID_OVERRIDE () , self . VBUSVALID_SEL () , self . VBUS_SOURCE_SEL () , self . ID_OVERRIDE_EN () , self . ID_OVERRIDE () , self . EXT_ID_OVERRIDE_EN () , self . EXT_VBUS_OVERRIDE_EN () , self . VBUSVALID_TO_B () , self . VBUSVALID_PWRUP_CMPS () , self . DISCHARGE_VBUS ())
         }
     }
     #[doc = "VBUS Detect"]
@@ -4817,6 +5195,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_VBUS_DETECT_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USB1_VBUS_DETECT_SET {{ VBUSVALID_THRESH: {=u8:?}, VBUS_OVERRIDE_EN: {=bool:?}, SESSEND_OVERRIDE: {=bool:?}, BVALID_OVERRIDE: {=bool:?}, AVALID_OVERRIDE: {=bool:?}, VBUSVALID_OVERRIDE: {=bool:?}, VBUSVALID_SEL: {=bool:?}, VBUS_SOURCE_SEL: {=u8:?}, ID_OVERRIDE_EN: {=bool:?}, ID_OVERRIDE: {=bool:?}, EXT_ID_OVERRIDE_EN: {=bool:?}, EXT_VBUS_OVERRIDE_EN: {=bool:?}, VBUSVALID_TO_B: {=bool:?}, VBUSVALID_PWRUP_CMPS: {=u8:?}, DISCHARGE_VBUS: {=bool:?} }}" , self . VBUSVALID_THRESH () , self . VBUS_OVERRIDE_EN () , self . SESSEND_OVERRIDE () , self . BVALID_OVERRIDE () , self . AVALID_OVERRIDE () , self . VBUSVALID_OVERRIDE () , self . VBUSVALID_SEL () , self . VBUS_SOURCE_SEL () , self . ID_OVERRIDE_EN () , self . ID_OVERRIDE () , self . EXT_ID_OVERRIDE_EN () , self . EXT_VBUS_OVERRIDE_EN () , self . VBUSVALID_TO_B () , self . VBUSVALID_PWRUP_CMPS () , self . DISCHARGE_VBUS ())
+        }
+    }
     #[doc = "VBUS Detect"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4985,6 +5369,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_VBUS_DETECT_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USB1_VBUS_DETECT_TOG {{ VBUSVALID_THRESH: {=u8:?}, VBUS_OVERRIDE_EN: {=bool:?}, SESSEND_OVERRIDE: {=bool:?}, BVALID_OVERRIDE: {=bool:?}, AVALID_OVERRIDE: {=bool:?}, VBUSVALID_OVERRIDE: {=bool:?}, VBUSVALID_SEL: {=bool:?}, VBUS_SOURCE_SEL: {=u8:?}, ID_OVERRIDE_EN: {=bool:?}, ID_OVERRIDE: {=bool:?}, EXT_ID_OVERRIDE_EN: {=bool:?}, EXT_VBUS_OVERRIDE_EN: {=bool:?}, VBUSVALID_TO_B: {=bool:?}, VBUSVALID_PWRUP_CMPS: {=u8:?}, DISCHARGE_VBUS: {=bool:?} }}" , self . VBUSVALID_THRESH () , self . VBUS_OVERRIDE_EN () , self . SESSEND_OVERRIDE () , self . BVALID_OVERRIDE () , self . AVALID_OVERRIDE () , self . VBUSVALID_OVERRIDE () , self . VBUSVALID_SEL () , self . VBUS_SOURCE_SEL () , self . ID_OVERRIDE_EN () , self . ID_OVERRIDE () , self . EXT_ID_OVERRIDE_EN () , self . EXT_VBUS_OVERRIDE_EN () , self . VBUSVALID_TO_B () , self . VBUSVALID_PWRUP_CMPS () , self . DISCHARGE_VBUS ())
+        }
+    }
     #[doc = "VBUS Detect Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5061,6 +5451,12 @@ pub mod regs {
                 .field("VBUS_VALID_3V", &self.VBUS_VALID_3V())
                 .field("EXT_ID", &self.EXT_ID())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_VBUS_DET_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USB1_VBUS_DET_STAT {{ SESSEND: {=bool:?}, BVALID: {=bool:?}, AVALID: {=bool:?}, VBUS_VALID: {=bool:?}, VBUS_VALID_3V: {=bool:?}, EXT_ID: {=bool:?} }}" , self . SESSEND () , self . BVALID () , self . AVALID () , self . VBUS_VALID () , self . VBUS_VALID_3V () , self . EXT_ID ())
         }
     }
     #[doc = "VBUS Detect Status"]
@@ -5141,6 +5537,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_VBUS_DET_STAT_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USB1_VBUS_DET_STAT_CLR {{ SESSEND: {=bool:?}, BVALID: {=bool:?}, AVALID: {=bool:?}, VBUS_VALID: {=bool:?}, VBUS_VALID_3V: {=bool:?}, EXT_ID: {=bool:?} }}" , self . SESSEND () , self . BVALID () , self . AVALID () , self . VBUS_VALID () , self . VBUS_VALID_3V () , self . EXT_ID ())
+        }
+    }
     #[doc = "VBUS Detect Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5217,6 +5619,12 @@ pub mod regs {
                 .field("VBUS_VALID_3V", &self.VBUS_VALID_3V())
                 .field("EXT_ID", &self.EXT_ID())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_VBUS_DET_STAT_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USB1_VBUS_DET_STAT_SET {{ SESSEND: {=bool:?}, BVALID: {=bool:?}, AVALID: {=bool:?}, VBUS_VALID: {=bool:?}, VBUS_VALID_3V: {=bool:?}, EXT_ID: {=bool:?} }}" , self . SESSEND () , self . BVALID () , self . AVALID () , self . VBUS_VALID () , self . VBUS_VALID_3V () , self . EXT_ID ())
         }
     }
     #[doc = "VBUS Detect Status"]
@@ -5297,6 +5705,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USB1_VBUS_DET_STAT_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USB1_VBUS_DET_STAT_TOG {{ SESSEND: {=bool:?}, BVALID: {=bool:?}, AVALID: {=bool:?}, VBUS_VALID: {=bool:?}, VBUS_VALID_3V: {=bool:?}, EXT_ID: {=bool:?} }}" , self . SESSEND () , self . BVALID () , self . AVALID () , self . VBUS_VALID () , self . VBUS_VALID_3V () , self . EXT_ID ())
+        }
+    }
     #[doc = "Version"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5343,6 +5757,18 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERSION {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERSION {{ STEP: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.STEP(),
+                self.MINOR(),
+                self.MAJOR()
+            )
         }
     }
 }

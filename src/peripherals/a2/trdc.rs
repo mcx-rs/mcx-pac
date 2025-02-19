@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct MBC_INDEX {
     ptr: *mut u8,
@@ -16,18 +16,12 @@ impl MBC_INDEX {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn MBC_MEM_GLBCFG(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::MBC_INDEX_MBC_MEM_GLBCFG, crate::common::RW> {
+    pub const fn MBC_MEM_GLBCFG(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MBC_MEMN_GLBAC(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::MBC_INDEX_MBC_MEMN_GLBAC, crate::common::RW> {
+    pub const fn MBC_MEMN_GLBAC(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize + n * 4usize) as _) }
     }
@@ -256,6 +250,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MBC_INDEX_MBC_DOM0_MEM0_BLK_CFG_W {{ MBACSEL0: {=u8:?}, NSE0: {=bool:?}, MBACSEL1: {=u8:?}, NSE1: {=bool:?}, MBACSEL2: {=u8:?}, NSE2: {=bool:?}, MBACSEL3: {=u8:?}, NSE3: {=bool:?}, MBACSEL4: {=u8:?}, NSE4: {=bool:?}, MBACSEL5: {=u8:?}, NSE5: {=bool:?}, MBACSEL6: {=u8:?}, NSE6: {=bool:?}, MBACSEL7: {=u8:?}, NSE7: {=bool:?} }}" , self . MBACSEL0 () , self . NSE0 () , self . MBACSEL1 () , self . NSE1 () , self . MBACSEL2 () , self . NSE2 () , self . MBACSEL3 () , self . NSE3 () , self . MBACSEL4 () , self . NSE4 () , self . MBACSEL5 () , self . NSE5 () , self . MBACSEL6 () , self . NSE6 () , self . MBACSEL7 () , self . NSE7 ())
+        }
+    }
     #[doc = "MBC Memory Block Configuration Word"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -432,6 +432,12 @@ pub mod regs {
                 .field("MBACSEL7", &self.MBACSEL7())
                 .field("NSE7", &self.NSE7())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MBC_INDEX_MBC_DOM0_MEM1_BLK_CFG_W {{ MBACSEL0: {=u8:?}, NSE0: {=bool:?}, MBACSEL1: {=u8:?}, NSE1: {=bool:?}, MBACSEL2: {=u8:?}, NSE2: {=bool:?}, MBACSEL3: {=u8:?}, NSE3: {=bool:?}, MBACSEL4: {=u8:?}, NSE4: {=bool:?}, MBACSEL5: {=u8:?}, NSE5: {=bool:?}, MBACSEL6: {=u8:?}, NSE6: {=bool:?}, MBACSEL7: {=u8:?}, NSE7: {=bool:?} }}" , self . MBACSEL0 () , self . NSE0 () , self . MBACSEL1 () , self . NSE1 () , self . MBACSEL2 () , self . NSE2 () , self . MBACSEL3 () , self . NSE3 () , self . MBACSEL4 () , self . NSE4 () , self . MBACSEL5 () , self . NSE5 () , self . MBACSEL6 () , self . NSE6 () , self . MBACSEL7 () , self . NSE7 ())
         }
     }
     #[doc = "MBC Memory Block Configuration Word"]
@@ -612,6 +618,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MBC_INDEX_MBC_DOM0_MEM2_BLK_CFG_W {{ MBACSEL0: {=u8:?}, NSE0: {=bool:?}, MBACSEL1: {=u8:?}, NSE1: {=bool:?}, MBACSEL2: {=u8:?}, NSE2: {=bool:?}, MBACSEL3: {=u8:?}, NSE3: {=bool:?}, MBACSEL4: {=u8:?}, NSE4: {=bool:?}, MBACSEL5: {=u8:?}, NSE5: {=bool:?}, MBACSEL6: {=u8:?}, NSE6: {=bool:?}, MBACSEL7: {=u8:?}, NSE7: {=bool:?} }}" , self . MBACSEL0 () , self . NSE0 () , self . MBACSEL1 () , self . NSE1 () , self . MBACSEL2 () , self . NSE2 () , self . MBACSEL3 () , self . NSE3 () , self . MBACSEL4 () , self . NSE4 () , self . MBACSEL5 () , self . NSE5 () , self . MBACSEL6 () , self . NSE6 () , self . MBACSEL7 () , self . NSE7 ())
+        }
+    }
     #[doc = "MBC Global Access Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -760,6 +772,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MBC_INDEX_MBC_MEMN_GLBAC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MBC_INDEX_MBC_MEMN_GLBAC {{ NUX: {=bool:?}, NUW: {=bool:?}, NUR: {=bool:?}, NPX: {=bool:?}, NPW: {=bool:?}, NPR: {=bool:?}, SUX: {=bool:?}, SUW: {=bool:?}, SUR: {=bool:?}, SPX: {=bool:?}, SPW: {=bool:?}, SPR: {=bool:?}, LK: {=bool:?} }}" , self . NUX () , self . NUW () , self . NUR () , self . NPX () , self . NPW () , self . NPR () , self . SUX () , self . SUW () , self . SUR () , self . SPX () , self . SPW () , self . SPR () , self . LK ())
+        }
+    }
     #[doc = "MBC Global Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -806,6 +824,18 @@ pub mod regs {
                 .field("SIZE_LOG2", &self.SIZE_LOG2())
                 .field("CLRE", &self.CLRE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MBC_INDEX_MBC_MEM_GLBCFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MBC_INDEX_MBC_MEM_GLBCFG {{ NBLKS: {=u16:?}, SIZE_LOG2: {=u8:?}, CLRE: {=u8:?} }}",
+                self.NBLKS(),
+                self.SIZE_LOG2(),
+                self.CLRE()
+            )
         }
     }
 }

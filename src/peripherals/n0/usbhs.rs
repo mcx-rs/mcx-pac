@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct USBHS {
     ptr: *mut u8,
@@ -60,11 +60,11 @@ impl USBHS {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAPLENGTH(self) -> crate::common::Reg<regs::CAPLENGTH, crate::common::RW> {
+    pub const fn CAPLENGTH(self) -> crate::common::Reg<u8, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
     #[inline(always)]
-    pub const fn HCIVERSION(self) -> crate::common::Reg<regs::HCIVERSION, crate::common::RW> {
+    pub const fn HCIVERSION(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0102usize) as _) }
     }
     #[inline(always)]
@@ -76,7 +76,7 @@ impl USBHS {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
     }
     #[inline(always)]
-    pub const fn DCIVERSION(self) -> crate::common::Reg<regs::DCIVERSION, crate::common::RW> {
+    pub const fn DCIVERSION(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0120usize) as _) }
     }
     #[inline(always)]
@@ -213,6 +213,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ASYNCLISTADDR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ASYNCLISTADDR {{ ASYBASE: {=u32:?} }}", self.ASYBASE())
+        }
+    }
     #[doc = "Programmable Burst Size"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -251,32 +257,15 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "Capability Registers Length"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CAPLENGTH(pub u32);
-    impl CAPLENGTH {
-        #[inline(always)]
-        pub const fn CAPLENGTH(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_CAPLENGTH(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for CAPLENGTH {
-        #[inline(always)]
-        fn default() -> CAPLENGTH {
-            CAPLENGTH(0)
-        }
-    }
-    impl core::fmt::Debug for CAPLENGTH {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("CAPLENGTH")
-                .field("CAPLENGTH", &self.CAPLENGTH())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BURSTSIZE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "BURSTSIZE {{ RXPBURST: {=u8:?}, TXPBURST: {=u8:?} }}",
+                self.RXPBURST(),
+                self.TXPBURST()
+            )
         }
     }
     #[doc = "Configure Flag"]
@@ -305,6 +294,12 @@ pub mod regs {
             f.debug_struct("CONFIGFLAG")
                 .field("CF", &self.CF())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CONFIGFLAG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CONFIGFLAG {{ CF: {=bool:?} }}", self.CF())
         }
     }
     #[doc = "Device Controller Capability Parameters"]
@@ -355,32 +350,16 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "Device Controller Interface Version"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DCIVERSION(pub u32);
-    impl DCIVERSION {
-        #[inline(always)]
-        pub const fn DCIVERSION(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_DCIVERSION(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for DCIVERSION {
-        #[inline(always)]
-        fn default() -> DCIVERSION {
-            DCIVERSION(0)
-        }
-    }
-    impl core::fmt::Debug for DCIVERSION {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("DCIVERSION")
-                .field("DCIVERSION", &self.DCIVERSION())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DCCPARAMS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DCCPARAMS {{ DEN: {=u8:?}, DC: {=bool:?}, HC: {=bool:?} }}",
+                self.DEN(),
+                self.DC(),
+                self.HC()
+            )
         }
     }
     #[doc = "Device Address"]
@@ -421,6 +400,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DEVICEADDR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DEVICEADDR {{ USBADRA: {=bool:?}, USBADR: {=u8:?} }}",
+                self.USBADRA(),
+                self.USBADR()
+            )
+        }
+    }
     #[doc = "Endpoint Complete"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -457,6 +447,17 @@ pub mod regs {
                 .field("ERCE", &self.ERCE())
                 .field("ETCE", &self.ETCE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ENDPTCOMPLETE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ENDPTCOMPLETE {{ ERCE: {=u8:?}, ETCE: {=u8:?} }}",
+                self.ERCE(),
+                self.ETCE()
+            )
         }
     }
     #[doc = "Endpoint Control 1..Endpoint Control 7"]
@@ -597,6 +598,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ENDPTCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ENDPTCTRL {{ RXS: {=bool:?}, RXD: {=bool:?}, RXT: {=u8:?}, RXI: {=bool:?}, RXR: {=bool:?}, RXE: {=bool:?}, TXS: {=bool:?}, TXD: {=bool:?}, TXT: {=u8:?}, TXI: {=bool:?}, TXR: {=bool:?}, TXE: {=bool:?} }}" , self . RXS () , self . RXD () , self . RXT () , self . RXI () , self . RXR () , self . RXE () , self . TXS () , self . TXD () , self . TXT () , self . TXI () , self . TXR () , self . TXE ())
+        }
+    }
     #[doc = "Endpoint Control 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -675,6 +682,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ENDPTCTRL0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ENDPTCTRL0 {{ RXS: {=bool:?}, RXT: {=u8:?}, RXE: {=bool:?}, TXS: {=bool:?}, TXT: {=u8:?}, TXE: {=bool:?} }}" , self . RXS () , self . RXT () , self . RXE () , self . TXS () , self . TXT () , self . TXE ())
+        }
+    }
     #[doc = "Endpoint Flush"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -713,6 +726,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ENDPTFLUSH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ENDPTFLUSH {{ FERB: {=u8:?}, FETB: {=u8:?} }}",
+                self.FERB(),
+                self.FETB()
+            )
+        }
+    }
     #[doc = "Endpoint List Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -740,6 +764,12 @@ pub mod regs {
             f.debug_struct("ENDPTLISTADDR")
                 .field("EPBASE", &self.EPBASE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ENDPTLISTADDR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ENDPTLISTADDR {{ EPBASE: {=u32:?} }}", self.EPBASE())
         }
     }
     #[doc = "Endpoint NAK"]
@@ -780,6 +810,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ENDPTNAK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ENDPTNAK {{ EPRN: {=u8:?}, EPTN: {=u8:?} }}",
+                self.EPRN(),
+                self.EPTN()
+            )
+        }
+    }
     #[doc = "Endpoint NAK Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -816,6 +857,17 @@ pub mod regs {
                 .field("EPRNE", &self.EPRNE())
                 .field("EPTNE", &self.EPTNE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ENDPTNAKEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ENDPTNAKEN {{ EPRNE: {=u8:?}, EPTNE: {=u8:?} }}",
+                self.EPRNE(),
+                self.EPTNE()
+            )
         }
     }
     #[doc = "Endpoint Prime"]
@@ -856,6 +908,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ENDPTPRIME {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ENDPTPRIME {{ PERB: {=u8:?}, PETB: {=u8:?} }}",
+                self.PERB(),
+                self.PETB()
+            )
+        }
+    }
     #[doc = "Endpoint Setup Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -882,6 +945,16 @@ pub mod regs {
             f.debug_struct("ENDPTSETUPSTAT")
                 .field("ENDPTSETUPSTAT", &self.ENDPTSETUPSTAT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ENDPTSETUPSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ENDPTSETUPSTAT {{ ENDPTSETUPSTAT: {=u16:?} }}",
+                self.ENDPTSETUPSTAT()
+            )
         }
     }
     #[doc = "Endpoint Status"]
@@ -922,6 +995,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ENDPTSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ENDPTSTAT {{ ERBR: {=u8:?}, ETBR: {=u8:?} }}",
+                self.ERBR(),
+                self.ETBR()
+            )
+        }
+    }
     #[doc = "USB Frame Index"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -948,6 +1032,12 @@ pub mod regs {
             f.debug_struct("FRINDEX")
                 .field("FRINDEX", &self.FRINDEX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FRINDEX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FRINDEX {{ FRINDEX: {=u16:?} }}", self.FRINDEX())
         }
     }
     #[doc = "General Purpose Timer #0 Controller"]
@@ -1008,6 +1098,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GPTIMER0CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "GPTIMER0CTRL {{ GPTCNT: {=u32:?}, GPTMODE: {=bool:?}, GPTRST: {=bool:?}, GPTRUN: {=bool:?} }}" , self . GPTCNT () , self . GPTMODE () , self . GPTRST () , self . GPTRUN ())
+        }
+    }
     #[doc = "General Purpose Timer #0 Load"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1034,6 +1130,12 @@ pub mod regs {
             f.debug_struct("GPTIMER0LD")
                 .field("GPTLD", &self.GPTLD())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GPTIMER0LD {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GPTIMER0LD {{ GPTLD: {=u32:?} }}", self.GPTLD())
         }
     }
     #[doc = "General Purpose Timer #1 Controller"]
@@ -1094,6 +1196,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GPTIMER1CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "GPTIMER1CTRL {{ GPTCNT: {=u32:?}, GPTMODE: {=bool:?}, GPTRST: {=bool:?}, GPTRUN: {=bool:?} }}" , self . GPTCNT () , self . GPTMODE () , self . GPTRST () , self . GPTRUN ())
+        }
+    }
     #[doc = "General Purpose Timer #1 Load"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1120,6 +1228,12 @@ pub mod regs {
             f.debug_struct("GPTIMER1LD")
                 .field("GPTLD", &self.GPTLD())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GPTIMER1LD {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GPTIMER1LD {{ GPTLD: {=u32:?} }}", self.GPTLD())
         }
     }
     #[doc = "Host Controller Capability Parameters"]
@@ -1190,32 +1304,10 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "Host Controller Interface Version"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct HCIVERSION(pub u32);
-    impl HCIVERSION {
-        #[inline(always)]
-        pub const fn HCIVERSION(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_HCIVERSION(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for HCIVERSION {
-        #[inline(always)]
-        fn default() -> HCIVERSION {
-            HCIVERSION(0)
-        }
-    }
-    impl core::fmt::Debug for HCIVERSION {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("HCIVERSION")
-                .field("HCIVERSION", &self.HCIVERSION())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HCCPARAMS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "HCCPARAMS {{ ADC: {=bool:?}, PFL: {=bool:?}, ASP: {=bool:?}, IST: {=u8:?}, EECP: {=u8:?} }}" , self . ADC () , self . PFL () , self . ASP () , self . IST () , self . EECP ())
         }
     }
     #[doc = "Host Controller Structural Parameters"]
@@ -1306,6 +1398,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HCSPARAMS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "HCSPARAMS {{ N_PORTS: {=u8:?}, PPC: {=bool:?}, N_PCC: {=u8:?}, N_CC: {=u8:?}, PI: {=bool:?}, N_PTT: {=u8:?}, N_TT: {=u8:?} }}" , self . N_PORTS () , self . PPC () , self . N_PCC () , self . N_CC () , self . PI () , self . N_PTT () , self . N_TT ())
+        }
+    }
     #[doc = "Device Hardware Parameters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1342,6 +1440,17 @@ pub mod regs {
                 .field("DC", &self.DC())
                 .field("DEVEP", &self.DEVEP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HWDEVICE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "HWDEVICE {{ DC: {=bool:?}, DEVEP: {=u8:?} }}",
+                self.DC(),
+                self.DEVEP()
+            )
         }
     }
     #[doc = "Hardware General"]
@@ -1392,6 +1501,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HWGENERAL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "HWGENERAL {{ PHYW: {=u8:?}, PHYM: {=u8:?}, SM: {=u8:?} }}",
+                self.PHYW(),
+                self.PHYM(),
+                self.SM()
+            )
+        }
+    }
     #[doc = "Host Hardware Parameters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1428,6 +1549,17 @@ pub mod regs {
                 .field("HC", &self.HC())
                 .field("NPORT", &self.NPORT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HWHOST {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "HWHOST {{ HC: {=bool:?}, NPORT: {=u8:?} }}",
+                self.HC(),
+                self.NPORT()
+            )
         }
     }
     #[doc = "RX Buffer Hardware Parameters"]
@@ -1468,6 +1600,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HWRXBUF {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "HWRXBUF {{ RXBURST: {=u8:?}, RXADD: {=u8:?} }}",
+                self.RXBURST(),
+                self.RXADD()
+            )
+        }
+    }
     #[doc = "TX Buffer Hardware Parameters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1504,6 +1647,17 @@ pub mod regs {
                 .field("TXBURST", &self.TXBURST())
                 .field("TXCHANADD", &self.TXCHANADD())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HWTXBUF {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "HWTXBUF {{ TXBURST: {=u8:?}, TXCHANADD: {=u8:?} }}",
+                self.TXBURST(),
+                self.TXCHANADD()
+            )
         }
     }
     #[doc = "Identification"]
@@ -1552,6 +1706,18 @@ pub mod regs {
                 .field("NID", &self.NID())
                 .field("REVISION", &self.REVISION())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ID {{ ID: {=u8:?}, NID: {=u8:?}, REVISION: {=u8:?} }}",
+                self.ID(),
+                self.NID(),
+                self.REVISION()
+            )
         }
     }
     #[doc = "On-The-Go Status & Control"]
@@ -1832,6 +1998,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OTGSC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "OTGSC {{ VD: {=bool:?}, VC: {=bool:?}, OT: {=bool:?}, DP: {=bool:?}, IDPU: {=bool:?}, ID: {=bool:?}, AVV: {=bool:?}, ASV: {=bool:?}, BSV: {=bool:?}, BSE: {=bool:?}, TOG_1MS: {=bool:?}, DPS: {=bool:?}, IDIS: {=bool:?}, AVVIS: {=bool:?}, ASVIS: {=bool:?}, BSVIS: {=bool:?}, BSEIS: {=bool:?}, STATUS_1MS: {=bool:?}, DPIS: {=bool:?}, IDIE: {=bool:?}, AVVIE: {=bool:?}, ASVIE: {=bool:?}, BSVIE: {=bool:?}, BSEIE: {=bool:?}, EN_1MS: {=bool:?}, DPIE: {=bool:?} }}" , self . VD () , self . VC () , self . OT () , self . DP () , self . IDPU () , self . ID () , self . AVV () , self . ASV () , self . BSV () , self . BSE () , self . TOG_1MS () , self . DPS () , self . IDIS () , self . AVVIS () , self . ASVIS () , self . BSVIS () , self . BSEIS () , self . STATUS_1MS () , self . DPIS () , self . IDIE () , self . AVVIE () , self . ASVIE () , self . BSVIE () , self . BSEIE () , self . EN_1MS () , self . DPIE ())
+        }
+    }
     #[doc = "Frame List Base Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1859,6 +2031,16 @@ pub mod regs {
             f.debug_struct("PERIODICLISTBASE")
                 .field("BASEADR", &self.BASEADR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PERIODICLISTBASE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PERIODICLISTBASE {{ BASEADR: {=u32:?} }}",
+                self.BASEADR()
+            )
         }
     }
     #[doc = "Port Status & Control"]
@@ -2129,6 +2311,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PORTSC1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PORTSC1 {{ CCS: {=bool:?}, CSC: {=bool:?}, PE: {=bool:?}, PEC: {=bool:?}, OCA: {=bool:?}, OCC: {=bool:?}, FPR: {=bool:?}, SUSP: {=bool:?}, PR: {=bool:?}, HSP: {=bool:?}, LS: {=u8:?}, PP: {=bool:?}, PO: {=bool:?}, PIC: {=u8:?}, PTC: {=u8:?}, WKCN: {=bool:?}, WKDC: {=bool:?}, WKOC: {=bool:?}, PHCD: {=bool:?}, PFSC: {=bool:?}, PTS_2: {=bool:?}, PSPD: {=u8:?}, PTW: {=bool:?}, STS: {=bool:?}, PTS_1: {=u8:?} }}" , self . CCS () , self . CSC () , self . PE () , self . PEC () , self . OCA () , self . OCC () , self . FPR () , self . SUSP () , self . PR () , self . HSP () , self . LS () , self . PP () , self . PO () , self . PIC () , self . PTC () , self . WKCN () , self . WKDC () , self . WKOC () , self . PHCD () , self . PFSC () , self . PTS_2 () , self . PSPD () , self . PTW () , self . STS () , self . PTS_1 ())
+        }
+    }
     #[doc = "System Bus Config"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2155,6 +2343,12 @@ pub mod regs {
             f.debug_struct("SBUSCFG")
                 .field("AHBBRST", &self.AHBBRST())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SBUSCFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SBUSCFG {{ AHBBRST: {=u8:?} }}", self.AHBBRST())
         }
     }
     #[doc = "TX FIFO Fill Tuning"]
@@ -2203,6 +2397,18 @@ pub mod regs {
                 .field("TXSCHHEALTH", &self.TXSCHHEALTH())
                 .field("TXFIFOTHRES", &self.TXFIFOTHRES())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TXFILLTUNING {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TXFILLTUNING {{ TXSCHOH: {=u8:?}, TXSCHHEALTH: {=u8:?}, TXFIFOTHRES: {=u8:?} }}",
+                self.TXSCHOH(),
+                self.TXSCHHEALTH(),
+                self.TXFIFOTHRES()
+            )
         }
     }
     #[doc = "USB Command"]
@@ -2341,6 +2547,12 @@ pub mod regs {
                 .field("FS_2", &self.FS_2())
                 .field("ITC", &self.ITC())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USBCMD {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USBCMD {{ RS: {=bool:?}, RST: {=bool:?}, FS_1: {=u8:?}, PSE: {=bool:?}, ASE: {=bool:?}, IAA: {=bool:?}, ASP: {=u8:?}, ASPE: {=bool:?}, SUTW: {=bool:?}, ATDTW: {=bool:?}, FS_2: {=bool:?}, ITC: {=u8:?} }}" , self . RS () , self . RST () , self . FS_1 () , self . PSE () , self . ASE () , self . IAA () , self . ASP () , self . ASPE () , self . SUTW () , self . ATDTW () , self . FS_2 () , self . ITC ())
         }
     }
     #[doc = "Interrupt Enable"]
@@ -2501,6 +2713,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USBINTR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USBINTR {{ UE: {=bool:?}, UEE: {=bool:?}, PCE: {=bool:?}, FRE: {=bool:?}, SEE: {=bool:?}, AAE: {=bool:?}, URE: {=bool:?}, SRE: {=bool:?}, SLE: {=bool:?}, NAKE: {=bool:?}, UAIE: {=bool:?}, UPIE: {=bool:?}, TIE0: {=bool:?}, TIE1: {=bool:?} }}" , self . UE () , self . UEE () , self . PCE () , self . FRE () , self . SEE () , self . AAE () , self . URE () , self . SRE () , self . SLE () , self . NAKE () , self . UAIE () , self . UPIE () , self . TIE0 () , self . TIE1 ())
+        }
+    }
     #[doc = "USB Device Mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2557,6 +2775,19 @@ pub mod regs {
                 .field("SLOM", &self.SLOM())
                 .field("SDIS", &self.SDIS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USBMODE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "USBMODE {{ CM: {=u8:?}, ES: {=bool:?}, SLOM: {=bool:?}, SDIS: {=bool:?} }}",
+                self.CM(),
+                self.ES(),
+                self.SLOM(),
+                self.SDIS()
+            )
         }
     }
     #[doc = "USB Status"]
@@ -2745,6 +2976,12 @@ pub mod regs {
                 .field("TI0", &self.TI0())
                 .field("TI1", &self.TI1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USBSTS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USBSTS {{ UI: {=bool:?}, UEI: {=bool:?}, PCI: {=bool:?}, FRI: {=bool:?}, SEI: {=bool:?}, AAI: {=bool:?}, URI: {=bool:?}, SRI: {=bool:?}, SLI: {=bool:?}, ULPII: {=bool:?}, HCH: {=bool:?}, RCL: {=bool:?}, PS: {=bool:?}, AS: {=bool:?}, NAKI: {=bool:?}, TI0: {=bool:?}, TI1: {=bool:?} }}" , self . UI () , self . UEI () , self . PCI () , self . FRI () , self . SEI () , self . AAI () , self . URI () , self . SRI () , self . SLI () , self . ULPII () , self . HCH () , self . RCL () , self . PS () , self . AS () , self . NAKI () , self . TI0 () , self . TI1 ())
         }
     }
 }

@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct LUT {
     ptr: *mut u8,
@@ -92,6 +92,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LUT_INP_MUX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "LUT_INP_MUX {{ LUTn_INPx: {=u8:?} }}", self.LUTn_INPx())
+        }
+    }
     #[doc = "PLU outputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -120,6 +126,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OUTPUTS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "OUTPUTS {{ OUTPUT_STATE: {=u8:?} }}",
+                self.OUTPUT_STATE()
+            )
+        }
+    }
     #[doc = "PLU output multiplexer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -146,6 +162,12 @@ pub mod regs {
             f.debug_struct("OUTPUT_MUX")
                 .field("OUTPUT", &self.OUTPUT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OUTPUT_MUX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "OUTPUT_MUX {{ OUTPUT: {=u8:?} }}", self.OUTPUT())
         }
     }
     #[doc = "Wakeup interrupt control"]
@@ -214,6 +236,12 @@ pub mod regs {
                 .field("LATCH_ENABLE", &self.LATCH_ENABLE())
                 .field("INTR_CLEAR", &self.INTR_CLEAR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WAKEINT_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "WAKEINT_CTRL {{ MASK: {=u8:?}, FILTER_MODE: {=u8:?}, FILTER_CLKSEL: {=u8:?}, LATCH_ENABLE: {=bool:?}, INTR_CLEAR: {=bool:?} }}" , self . MASK () , self . FILTER_MODE () , self . FILTER_CLKSEL () , self . LATCH_ENABLE () , self . INTR_CLEAR ())
         }
     }
 }

@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct ADC {
     ptr: *mut u8,
@@ -228,6 +228,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CFG {{ TPRICTRL: {=u8:?}, PWRSEL: {=u8:?}, REFSEL: {=u8:?}, TRES: {=bool:?}, TCMDRES: {=bool:?}, HPT_EXDI: {=bool:?}, PUDLY: {=u8:?}, PWREN: {=bool:?} }}" , self . TPRICTRL () , self . PWRSEL () , self . REFSEL () , self . TRES () , self . TCMDRES () , self . HPT_EXDI () , self . PUDLY () , self . PWREN ())
+        }
+    }
     #[doc = "Command High Buffer Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -316,6 +322,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CMD_CMDH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CMD_CMDH {{ CMPEN: {=u8:?}, WAIT_TRIG: {=bool:?}, LWI: {=bool:?}, STS: {=u8:?}, AVGS: {=u8:?}, LOOP: {=u8:?}, NEXT: {=u8:?} }}" , self . CMPEN () , self . WAIT_TRIG () , self . LWI () , self . STS () , self . AVGS () , self . LOOP () , self . NEXT ())
+        }
+    }
     #[doc = "Command Low Buffer Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -382,6 +394,12 @@ pub mod regs {
                 .field("ALTB_ADCH", &self.ALTB_ADCH())
                 .field("ALTBEN", &self.ALTBEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CMD_CMDL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CMD_CMDL {{ ADCH: {=u8:?}, CTYPE: {=u8:?}, MODE: {=bool:?}, ALTB_ADCH: {=u8:?}, ALTBEN: {=bool:?} }}" , self . ADCH () , self . CTYPE () , self . MODE () , self . ALTB_ADCH () , self . ALTBEN ())
         }
     }
     #[doc = "Control Register"]
@@ -482,6 +500,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL {{ ADCEN: {=bool:?}, RST: {=bool:?}, DOZEN: {=bool:?}, CAL_REQ: {=bool:?}, CALOFS: {=bool:?}, RSTFIFO0: {=bool:?}, RSTFIFO1: {=bool:?}, CAL_AVGS: {=u8:?} }}" , self . ADCEN () , self . RST () , self . DOZEN () , self . CAL_REQ () , self . CALOFS () , self . RSTFIFO0 () , self . RSTFIFO1 () , self . CAL_AVGS ())
+        }
+    }
     #[doc = "Compare Value Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -518,6 +542,17 @@ pub mod regs {
                 .field("CVL", &self.CVL())
                 .field("CVH", &self.CVH())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CV {{ CVL: {=u16:?}, CVH: {=u16:?} }}",
+                self.CVL(),
+                self.CVH()
+            )
         }
     }
     #[doc = "DMA Enable Register"]
@@ -558,6 +593,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DE {{ FWMDE0: {=bool:?}, FWMDE1: {=bool:?} }}",
+                self.FWMDE0(),
+                self.FWMDE1()
+            )
+        }
+    }
     #[doc = "FIFO Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -594,6 +640,17 @@ pub mod regs {
                 .field("FCOUNT", &self.FCOUNT())
                 .field("FWMARK", &self.FWMARK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FCTRL {{ FCOUNT: {=u8:?}, FWMARK: {=u8:?} }}",
+                self.FCOUNT(),
+                self.FWMARK()
+            )
         }
     }
     #[doc = "Gain Calibration Control"]
@@ -634,6 +691,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GCC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "GCC {{ GAIN_CAL: {=u16:?}, RDY: {=bool:?} }}",
+                self.GAIN_CAL(),
+                self.RDY()
+            )
+        }
+    }
     #[doc = "Gain Calculation Result"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -670,6 +738,17 @@ pub mod regs {
                 .field("GCALR", &self.GCALR())
                 .field("RDY", &self.RDY())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "GCR {{ GCALR: {=u16:?}, RDY: {=bool:?} }}",
+                self.GCALR(),
+                self.RDY()
+            )
         }
     }
     #[doc = "Interrupt Enable Register"]
@@ -750,6 +829,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IE {{ FWMIE0: {=bool:?}, FOFIE0: {=bool:?}, FWMIE1: {=bool:?}, FOFIE1: {=bool:?}, TEXC_IE: {=bool:?}, TCOMP_IE: {=u8:?} }}" , self . FWMIE0 () , self . FOFIE0 () , self . FWMIE1 () , self . FOFIE1 () , self . TEXC_IE () , self . TCOMP_IE ())
+        }
+    }
     #[doc = "Offset Trim Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -786,6 +871,17 @@ pub mod regs {
                 .field("OFSTRIM_A", &self.OFSTRIM_A())
                 .field("OFSTRIM_B", &self.OFSTRIM_B())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OFSTRIM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "OFSTRIM {{ OFSTRIM_A: {=u8:?}, OFSTRIM_B: {=u8:?} }}",
+                self.OFSTRIM_A(),
+                self.OFSTRIM_B()
+            )
         }
     }
     #[doc = "Parameter Register"]
@@ -846,6 +942,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PARAM {{ TRIG_NUM: {=u8:?}, FIFOSIZE: {=u8:?}, CV_NUM: {=u8:?}, CMD_NUM: {=u8:?} }}" , self . TRIG_NUM () , self . FIFOSIZE () , self . CV_NUM () , self . CMD_NUM ())
+        }
+    }
     #[doc = "Pause Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -882,6 +984,17 @@ pub mod regs {
                 .field("PAUSEDLY", &self.PAUSEDLY())
                 .field("PAUSEEN", &self.PAUSEEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PAUSE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PAUSE {{ PAUSEDLY: {=u16:?}, PAUSEEN: {=bool:?} }}",
+                self.PAUSEDLY(),
+                self.PAUSEEN()
+            )
         }
     }
     #[doc = "Data Result FIFO Register"]
@@ -950,6 +1063,12 @@ pub mod regs {
                 .field("CMDSRC", &self.CMDSRC())
                 .field("VALID", &self.VALID())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RESFIFO {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RESFIFO {{ D: {=u16:?}, TSRC: {=u8:?}, LOOPCNT: {=u8:?}, CMDSRC: {=u8:?}, VALID: {=bool:?} }}" , self . D () , self . TSRC () , self . LOOPCNT () , self . CMDSRC () , self . VALID ())
         }
     }
     #[doc = "Status Register"]
@@ -1070,6 +1189,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STAT {{ RDY0: {=bool:?}, FOF0: {=bool:?}, RDY1: {=bool:?}, FOF1: {=bool:?}, TEXC_INT: {=bool:?}, TCOMP_INT: {=bool:?}, CAL_RDY: {=bool:?}, ADC_ACTIVE: {=bool:?}, TRGACT: {=u8:?}, CMDACT: {=u8:?} }}" , self . RDY0 () , self . FOF0 () , self . RDY1 () , self . FOF1 () , self . TEXC_INT () , self . TCOMP_INT () , self . CAL_RDY () , self . ADC_ACTIVE () , self . TRGACT () , self . CMDACT ())
+        }
+    }
     #[doc = "Software Trigger Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1126,6 +1251,19 @@ pub mod regs {
                 .field("SWT2", &self.SWT2())
                 .field("SWT3", &self.SWT3())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SWTRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SWTRIG {{ SWT0: {=bool:?}, SWT1: {=bool:?}, SWT2: {=bool:?}, SWT3: {=bool:?} }}",
+                self.SWT0(),
+                self.SWT1(),
+                self.SWT2(),
+                self.SWT3()
+            )
         }
     }
     #[doc = "Trigger Control Register"]
@@ -1216,6 +1354,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TCTRL {{ HTEN: {=bool:?}, FIFO_SEL_A: {=bool:?}, FIFO_SEL_B: {=bool:?}, TPRI: {=u8:?}, RSYNC: {=bool:?}, TDLY: {=u8:?}, TCMD: {=u8:?} }}" , self . HTEN () , self . FIFO_SEL_A () , self . FIFO_SEL_B () , self . TPRI () , self . RSYNC () , self . TDLY () , self . TCMD ())
+        }
+    }
     #[doc = "Trigger Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1252,6 +1396,17 @@ pub mod regs {
                 .field("TEXC_NUM", &self.TEXC_NUM())
                 .field("TCOMP_FLAG", &self.TCOMP_FLAG())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TSTAT {{ TEXC_NUM: {=u8:?}, TCOMP_FLAG: {=u8:?} }}",
+                self.TEXC_NUM(),
+                self.TCOMP_FLAG()
+            )
         }
     }
     #[doc = "Version ID Register"]
@@ -1380,6 +1535,12 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "VERID {{ RES: {=bool:?}, DIFFEN: {=bool:?}, MVI: {=bool:?}, CSW: {=u8:?}, VR1RNGI: {=bool:?}, IADCKI: {=bool:?}, CALOFSI: {=bool:?}, NUM_SEC: {=bool:?}, NUM_FIFO: {=u8:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}" , self . RES () , self . DIFFEN () , self . MVI () , self . CSW () , self . VR1RNGI () , self . IADCKI () , self . CALOFSI () , self . NUM_SEC () , self . NUM_FIFO () , self . MINOR () , self . MAJOR ())
         }
     }
 }

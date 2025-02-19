@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct DEBUGMAILBOX {
     ptr: *mut u8,
@@ -109,6 +109,12 @@ pub mod regs {
                 .field("SOFT_RESET", &self.SOFT_RESET())
                 .field("CHIP_RESET_REQ", &self.CHIP_RESET_REQ())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CSW {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CSW {{ RESYNCH_REQ: {=bool:?}, REQ_PENDING: {=bool:?}, DBG_OR_ERR: {=bool:?}, AHB_OR_ERR: {=bool:?}, SOFT_RESET: {=bool:?}, CHIP_RESET_REQ: {=bool:?} }}" , self . RESYNCH_REQ () , self . REQ_PENDING () , self . DBG_OR_ERR () , self . AHB_OR_ERR () , self . SOFT_RESET () , self . CHIP_RESET_REQ ())
         }
     }
 }

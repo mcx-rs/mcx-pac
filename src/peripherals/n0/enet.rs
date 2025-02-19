@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct DMA_CH {
     ptr: *mut u8,
@@ -593,6 +593,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DMA_CH_DMA_CHX_CTRL {{ PBLx8: {=bool:?}, DSL: {=u8:?} }}",
+                self.PBLx8(),
+                self.DSL()
+            )
+        }
+    }
     #[doc = "Channeli Interrupt Enable..Channel 1 Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -741,6 +752,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_INT_EN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA_CH_DMA_CHX_INT_EN {{ TIE: {=bool:?}, TXSE: {=bool:?}, TBUE: {=bool:?}, RIE: {=bool:?}, RBUE: {=bool:?}, RSE: {=bool:?}, RWTE: {=bool:?}, ETIE: {=bool:?}, ERIE: {=bool:?}, FBEE: {=bool:?}, CDEE: {=bool:?}, AIE: {=bool:?}, NIE: {=bool:?} }}" , self . TIE () , self . TXSE () , self . TBUE () , self . RIE () , self . RBUE () , self . RSE () , self . RWTE () , self . ETIE () , self . ERIE () , self . FBEE () , self . CDEE () , self . AIE () , self . NIE ())
+        }
+    }
     #[doc = "Channel 0 Missed Frame Counter..Channel 1 Missed Frame Counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -779,6 +796,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_MISS_FRAME_CNT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DMA_CH_DMA_CHX_MISS_FRAME_CNT {{ MFC: {=u16:?}, MFCO: {=bool:?} }}",
+                self.MFC(),
+                self.MFCO()
+            )
+        }
+    }
     #[doc = "Channel 0 Rx Descriptor List Address register..Channel 1 Rx Descriptor List Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -807,6 +835,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_RXDESC_LIST_ADDR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DMA_CH_DMA_CHX_RXDESC_LIST_ADDR {{ RDESLA: {=u32:?} }}",
+                self.RDESLA()
+            )
+        }
+    }
     #[doc = "Channel 0 Rx Descriptor Tail Pointer..Channel 1 Rx Descriptor Tail Pointer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -833,6 +871,16 @@ pub mod regs {
             f.debug_struct("DMA_CH_DMA_CHX_RXDESC_TAIL_PTR")
                 .field("RDTP", &self.RDTP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_RXDESC_TAIL_PTR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DMA_CH_DMA_CHX_RXDESC_TAIL_PTR {{ RDTP: {=u32:?} }}",
+                self.RDTP()
+            )
         }
     }
     #[doc = "Channeli Receive Control..DMA Channel 1 Receive Control"]
@@ -871,6 +919,17 @@ pub mod regs {
                 .field("RDRL", &self.RDRL())
                 .field("ARBS", &self.ARBS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_RX_CONTROL2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DMA_CH_DMA_CHX_RX_CONTROL2 {{ RDRL: {=u16:?}, ARBS: {=u8:?} }}",
+                self.RDRL(),
+                self.ARBS()
+            )
         }
     }
     #[doc = "DMA Channel 0 Receive Control..DMA Channel 1 Receive Control"]
@@ -951,6 +1010,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_RX_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA_CH_DMA_CHX_RX_CTRL {{ SR: {=bool:?}, RBSZ_X_0: {=u8:?}, RBSZ_13_Y: {=u16:?}, RxPBL: {=u8:?}, ERIC: {=bool:?}, RPF: {=bool:?} }}" , self . SR () , self . RBSZ_X_0 () , self . RBSZ_13_Y () , self . RxPBL () , self . ERIC () , self . RPF ())
+        }
+    }
     #[doc = "Channel 0 Receive ERI Counter..Channel 1 Receive ERI Counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -977,6 +1042,16 @@ pub mod regs {
             f.debug_struct("DMA_CH_DMA_CHX_RX_ERI_CNT")
                 .field("ECNT", &self.ECNT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_RX_ERI_CNT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DMA_CH_DMA_CHX_RX_ERI_CNT {{ ECNT: {=u16:?} }}",
+                self.ECNT()
+            )
         }
     }
     #[doc = "Channel 0 Receive Interrupt Watchdog Timer..Channel 1 Receive Interrupt Watchdog Timer"]
@@ -1015,6 +1090,17 @@ pub mod regs {
                 .field("RWT", &self.RWT())
                 .field("RWTU", &self.RWTU())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_RX_INT_WDTIMER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DMA_CH_DMA_CHX_RX_INT_WDTIMER {{ RWT: {=u8:?}, RWTU: {=u8:?} }}",
+                self.RWT(),
+                self.RWTU()
+            )
         }
     }
     #[doc = "Channel 0 Slot Function Control and Status..Channel 1 Slot Function Control and Status"]
@@ -1073,6 +1159,12 @@ pub mod regs {
                 .field("SIV", &self.SIV())
                 .field("RSN", &self.RSN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_SLOT_FUNC_CTRL_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA_CH_DMA_CHX_SLOT_FUNC_CTRL_STAT {{ ESC: {=bool:?}, ASC: {=bool:?}, SIV: {=u16:?}, RSN: {=u8:?} }}" , self . ESC () , self . ASC () , self . SIV () , self . RSN ())
         }
     }
     #[doc = "DMA Channel 0 Status..DMA Channel 1 Status"]
@@ -1243,6 +1335,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA_CH_DMA_CHX_STAT {{ TI: {=bool:?}, TPS: {=bool:?}, TBU: {=bool:?}, RI: {=bool:?}, RBU: {=bool:?}, RPS: {=bool:?}, RWT: {=bool:?}, ETI: {=bool:?}, ERI: {=bool:?}, FBE: {=bool:?}, CDE: {=bool:?}, AIS: {=bool:?}, NIS: {=bool:?}, TEB: {=u8:?}, REB: {=u8:?} }}" , self . TI () , self . TPS () , self . TBU () , self . RI () , self . RBU () , self . RPS () , self . RWT () , self . ETI () , self . ERI () , self . FBE () , self . CDE () , self . AIS () , self . NIS () , self . TEB () , self . REB ())
+        }
+    }
     #[doc = "Channel 0 Tx Descriptor List Address register..Channel 1 Tx Descriptor List Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1269,6 +1367,16 @@ pub mod regs {
             f.debug_struct("DMA_CH_DMA_CHX_TXDESC_LIST_ADDR")
                 .field("TDESLA", &self.TDESLA())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_TXDESC_LIST_ADDR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DMA_CH_DMA_CHX_TXDESC_LIST_ADDR {{ TDESLA: {=u32:?} }}",
+                self.TDESLA()
+            )
         }
     }
     #[doc = "Channel 0 Tx Descriptor Ring Length..Channel 1 Tx Descriptor Ring Length"]
@@ -1299,6 +1407,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_TXDESC_RING_LENGTH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DMA_CH_DMA_CHX_TXDESC_RING_LENGTH {{ TDRL: {=u16:?} }}",
+                self.TDRL()
+            )
+        }
+    }
     #[doc = "Channel 0 Tx Descriptor Tail Pointer..Channel 1 Tx Descriptor Tail Pointer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1325,6 +1443,16 @@ pub mod regs {
             f.debug_struct("DMA_CH_DMA_CHX_TXDESC_TAIL_PTR")
                 .field("TDTP", &self.TDTP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_TXDESC_TAIL_PTR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DMA_CH_DMA_CHX_TXDESC_TAIL_PTR {{ TDTP: {=u32:?} }}",
+                self.TDTP()
+            )
         }
     }
     #[doc = "DMA Channel 0 Transmit Control..DMA Channel 1 Transmit Control"]
@@ -1395,6 +1523,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_CH_DMA_CHX_TX_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA_CH_DMA_CHX_TX_CTRL {{ ST: {=bool:?}, TCW: {=u8:?}, OSF: {=bool:?}, TxPBL: {=u8:?}, ETIC: {=bool:?} }}" , self . ST () , self . TCW () , self . OSF () , self . TxPBL () , self . ETIC ())
+        }
+    }
     #[doc = "DMA Debug Status 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1463,6 +1597,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_DEBUG_STATUS0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA_DEBUG_STATUS0 {{ AXWHSTS: {=bool:?}, RPS0: {=u8:?}, TPS0: {=u8:?}, RPS1: {=u8:?}, TPS1: {=u8:?} }}" , self . AXWHSTS () , self . RPS0 () , self . TPS0 () , self . RPS1 () , self . TPS1 ())
+        }
+    }
     #[doc = "DMA Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1519,6 +1659,12 @@ pub mod regs {
                 .field("MTLIS", &self.MTLIS())
                 .field("MACIS", &self.MACIS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_INTERRUPT_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA_INTERRUPT_STATUS {{ DC0IS: {=bool:?}, DC1IS: {=bool:?}, MTLIS: {=bool:?}, MACIS: {=bool:?} }}" , self . DC0IS () , self . DC1IS () , self . MTLIS () , self . MACIS ())
         }
     }
     #[doc = "DMA Bus Mode"]
@@ -1589,6 +1735,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_MODE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA_MODE {{ SWR: {=bool:?}, DA: {=bool:?}, TAA: {=u8:?}, TXPR: {=bool:?}, PR: {=u8:?} }}" , self . SWR () , self . DA () , self . TAA () , self . TXPR () , self . PR ())
+        }
+    }
     #[doc = "DMA System Bus Mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1645,6 +1797,19 @@ pub mod regs {
                 .field("MB", &self.MB())
                 .field("RB", &self.RB())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA_SYSBUS_MODE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DMA_SYSBUS_MODE {{ FB: {=bool:?}, AAL: {=bool:?}, MB: {=bool:?}, RB: {=bool:?} }}",
+                self.FB(),
+                self.AAL(),
+                self.MB(),
+                self.RB()
+            )
         }
     }
     #[doc = "Indirect Access Control"]
@@ -1715,6 +1880,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INDIR_ACCESS_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "INDIR_ACCESS_CTRL {{ OB: {=bool:?}, COM: {=bool:?}, AUTO: {=bool:?}, AOFF: {=u8:?}, MSEL: {=u8:?} }}" , self . OB () , self . COM () , self . AUTO () , self . AOFF () , self . MSEL ())
+        }
+    }
     #[doc = "MAC Address0 High"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1761,6 +1932,18 @@ pub mod regs {
                 .field("DCS", &self.DCS())
                 .field("AE", &self.AE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_ADDRESS0_HIGH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MAC_ADDRESS0_HIGH {{ ADDRHI: {=u16:?}, DCS: {=u8:?}, AE: {=bool:?} }}",
+                self.ADDRHI(),
+                self.DCS(),
+                self.AE()
+            )
         }
     }
     #[doc = "MAC Configuration"]
@@ -2011,6 +2194,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_CONFIGURATION {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_CONFIGURATION {{ RE: {=bool:?}, TE: {=bool:?}, PRELEN: {=u8:?}, DC: {=bool:?}, BL: {=u8:?}, DR: {=bool:?}, DCRS: {=bool:?}, DO: {=bool:?}, ECRSFD: {=bool:?}, LM: {=bool:?}, DM: {=bool:?}, FES: {=bool:?}, PS: {=bool:?}, JE: {=bool:?}, JD: {=bool:?}, WD: {=bool:?}, ACS: {=bool:?}, CST: {=bool:?}, S2KP: {=bool:?}, GPSLCE: {=bool:?}, IPG: {=u8:?}, IPC: {=bool:?}, SARC: {=u8:?} }}" , self . RE () , self . TE () , self . PRELEN () , self . DC () , self . BL () , self . DR () , self . DCRS () , self . DO () , self . ECRSFD () , self . LM () , self . DM () , self . FES () , self . PS () , self . JE () , self . JD () , self . WD () , self . ACS () , self . CST () , self . S2KP () , self . GPSLCE () , self . IPG () , self . IPC () , self . SARC ())
+        }
+    }
     #[doc = "CSR Software Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2037,6 +2226,12 @@ pub mod regs {
             f.debug_struct("MAC_CSR_SW_CTRL")
                 .field("RCWE", &self.RCWE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_CSR_SW_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MAC_CSR_SW_CTRL {{ RCWE: {=bool:?} }}", self.RCWE())
         }
     }
     #[doc = "MAC Debug"]
@@ -2095,6 +2290,12 @@ pub mod regs {
                 .field("TPESTS", &self.TPESTS())
                 .field("TFCSTS", &self.TFCSTS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_DEBUG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_DEBUG {{ RPESTS: {=bool:?}, RFCFCSTS: {=u8:?}, TPESTS: {=bool:?}, TFCSTS: {=u8:?} }}" , self . RPESTS () , self . RFCFCSTS () , self . TPESTS () , self . TFCSTS ())
         }
     }
     #[doc = "MAC Extended Configuration Register"]
@@ -2183,6 +2384,12 @@ pub mod regs {
                 .field("EIPGEN", &self.EIPGEN())
                 .field("EIPG", &self.EIPG())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_EXT_CONFIGURATION {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_EXT_CONFIGURATION {{ GPSL: {=u16:?}, DCRCC: {=bool:?}, SPEN: {=bool:?}, USP: {=bool:?}, PDC: {=bool:?}, EIPGEN: {=bool:?}, EIPG: {=u8:?} }}" , self . GPSL () , self . DCRCC () , self . SPEN () , self . USP () , self . PDC () , self . EIPGEN () , self . EIPG ())
         }
     }
     #[doc = "Hardware Features 0..Hardware Features 3"]
@@ -2773,6 +2980,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_HW_FEAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_HW_FEAT {{ MIISEL: {=bool:?}, NRVF: {=u8:?}, RXFIFOSIZE: {=u8:?}, RXQCNT: {=u8:?}, GMIISEL: {=bool:?}, HDSEL: {=bool:?}, PCSSEL: {=bool:?}, CBTISEL: {=bool:?}, VLHASH: {=bool:?}, DVLAN: {=bool:?}, SMASEL: {=bool:?}, SPRAM: {=bool:?}, RWKSEL: {=bool:?}, TXFIFOSIZE: {=u8:?}, TXQCNT: {=u8:?}, MGKSEL: {=bool:?}, MMCSEL: {=bool:?}, ARPOFFSEL: {=bool:?}, PDUPSEL: {=bool:?}, FRPSEL: {=bool:?}, FRPBS: {=u8:?}, OSTEN: {=bool:?}, PTOEN: {=bool:?}, RXCHCNT: {=u8:?}, TSSEL: {=bool:?}, ADVTHWORD: {=bool:?}, EEESEL: {=bool:?}, FRPES: {=u8:?}, ADDR64: {=u8:?}, TXCOESEL: {=bool:?}, DCBEN: {=bool:?}, ESTSEL: {=bool:?}, RDCSZ: {=u8:?}, RXCOESEL: {=bool:?}, ESTDEP: {=u8:?}, SPHEN: {=bool:?}, ADDMACADRSEL: {=u8:?}, TSOEN: {=bool:?}, TXCHCNT: {=u8:?}, DBGMEMA: {=bool:?}, AVSEL: {=bool:?}, ESTWID: {=u8:?}, RAVSEL: {=bool:?}, TDCSZ: {=u8:?}, MACADR32SEL: {=bool:?}, POUOST: {=bool:?}, HASHTBLSZ: {=u8:?}, MACADR64SEL: {=bool:?}, PPSOUTNUM: {=u8:?}, TSSTSSEL: {=u8:?}, FPESEL: {=bool:?}, L3L4FNUM: {=u8:?}, SAVLANINS: {=bool:?}, TBSSEL: {=bool:?}, ACTPHYSEL: {=u8:?}, ASP: {=u8:?}, AUXSNAPNUM: {=u8:?} }}" , self . MIISEL () , self . NRVF () , self . RXFIFOSIZE () , self . RXQCNT () , self . GMIISEL () , self . HDSEL () , self . PCSSEL () , self . CBTISEL () , self . VLHASH () , self . DVLAN () , self . SMASEL () , self . SPRAM () , self . RWKSEL () , self . TXFIFOSIZE () , self . TXQCNT () , self . MGKSEL () , self . MMCSEL () , self . ARPOFFSEL () , self . PDUPSEL () , self . FRPSEL () , self . FRPBS () , self . OSTEN () , self . PTOEN () , self . RXCHCNT () , self . TSSEL () , self . ADVTHWORD () , self . EEESEL () , self . FRPES () , self . ADDR64 () , self . TXCOESEL () , self . DCBEN () , self . ESTSEL () , self . RDCSZ () , self . RXCOESEL () , self . ESTDEP () , self . SPHEN () , self . ADDMACADRSEL () , self . TSOEN () , self . TXCHCNT () , self . DBGMEMA () , self . AVSEL () , self . ESTWID () , self . RAVSEL () , self . TDCSZ () , self . MACADR32SEL () , self . POUOST () , self . HASHTBLSZ () , self . MACADR64SEL () , self . PPSOUTNUM () , self . TSSTSSEL () , self . FPESEL () , self . L3L4FNUM () , self . SAVLANINS () , self . TBSSEL () , self . ACTPHYSEL () , self . ASP () , self . AUXSNAPNUM ())
+        }
+    }
     #[doc = "MAC Inner VLAN Tag Inclusion or Replacement"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2839,6 +3052,12 @@ pub mod regs {
                 .field("CSVL", &self.CSVL())
                 .field("VLTI", &self.VLTI())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_INNER_VLAN_INCL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_INNER_VLAN_INCL {{ VLT: {=u16:?}, VLC: {=u8:?}, VLP: {=bool:?}, CSVL: {=bool:?}, VLTI: {=bool:?} }}" , self . VLT () , self . VLC () , self . VLP () , self . CSVL () , self . VLTI ())
         }
     }
     #[doc = "Interrupt Enable"]
@@ -2929,6 +3148,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_INTERRUPT_ENABLE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_INTERRUPT_ENABLE {{ PHYIE: {=bool:?}, PMTIE: {=bool:?}, LPIIE: {=bool:?}, TSIE: {=bool:?}, TXSTSIE: {=bool:?}, RXSTSIE: {=bool:?}, MDIOIE: {=bool:?} }}" , self . PHYIE () , self . PMTIE () , self . LPIIE () , self . TSIE () , self . TXSTSIE () , self . RXSTSIE () , self . MDIOIE ())
+        }
+    }
     #[doc = "Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3015,6 +3240,12 @@ pub mod regs {
                 .field("RXSTSIS", &self.RXSTSIS())
                 .field("MDIOIS", &self.MDIOIS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_INTERRUPT_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_INTERRUPT_STATUS {{ PHYIS: {=bool:?}, PMTIS: {=bool:?}, LPIIS: {=bool:?}, TSIS: {=bool:?}, TXSTSIS: {=bool:?}, RXSTSIS: {=bool:?}, MDIOIS: {=bool:?} }}" , self . PHYIS () , self . PMTIS () , self . LPIIS () , self . TSIS () , self . TXSTSIS () , self . RXSTSIS () , self . MDIOIS ())
         }
     }
     #[doc = "LPI Control and Status"]
@@ -3145,6 +3376,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_LPI_CONTROL_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_LPI_CONTROL_STATUS {{ TLPIEN: {=bool:?}, TLPIEX: {=bool:?}, RLPIEN: {=bool:?}, RLPIEX: {=bool:?}, TLPIST: {=bool:?}, RLPIST: {=bool:?}, LPIEN: {=bool:?}, PLS: {=bool:?}, LPITXA: {=bool:?}, LPIATE: {=bool:?}, LPITCSE: {=bool:?} }}" , self . TLPIEN () , self . TLPIEX () , self . RLPIEN () , self . RLPIEX () , self . TLPIST () , self . RLPIST () , self . LPIEN () , self . PLS () , self . LPITXA () , self . LPIATE () , self . LPITCSE ())
+        }
+    }
     #[doc = "Tx LPI Entry Timer Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3171,6 +3408,12 @@ pub mod regs {
             f.debug_struct("MAC_LPI_ENTRY_TIMER")
                 .field("LPIET", &self.LPIET())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_LPI_ENTRY_TIMER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MAC_LPI_ENTRY_TIMER {{ LPIET: {=u32:?} }}", self.LPIET())
         }
     }
     #[doc = "LPI Timers Control"]
@@ -3209,6 +3452,17 @@ pub mod regs {
                 .field("TWT", &self.TWT())
                 .field("LST", &self.LST())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_LPI_TIMERS_CONTROL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MAC_LPI_TIMERS_CONTROL {{ TWT: {=u16:?}, LST: {=u16:?} }}",
+                self.TWT(),
+                self.LST()
+            )
         }
     }
     #[doc = "MDIO Address"]
@@ -3339,6 +3593,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_MDIO_ADDRESS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_MDIO_ADDRESS {{ GB: {=bool:?}, C45E: {=bool:?}, GOC_0: {=bool:?}, GOC_1: {=bool:?}, SKAP: {=bool:?}, CR: {=u8:?}, NTC: {=u8:?}, RDA: {=u8:?}, PA: {=u8:?}, BTB: {=bool:?}, PSE: {=bool:?} }}" , self . GB () , self . C45E () , self . GOC_0 () , self . GOC_1 () , self . SKAP () , self . CR () , self . NTC () , self . RDA () , self . PA () , self . BTB () , self . PSE ())
+        }
+    }
     #[doc = "MAC MDIO Data"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3377,6 +3637,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_MDIO_DATA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MAC_MDIO_DATA {{ GD: {=u16:?}, RA: {=u16:?} }}",
+                self.GD(),
+                self.RA()
+            )
+        }
+    }
     #[doc = "One-microsecond Reference Timer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3403,6 +3674,16 @@ pub mod regs {
             f.debug_struct("MAC_ONEUS_TIC_COUNTER")
                 .field("TIC_1US_CNTR", &self.TIC_1US_CNTR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_ONEUS_TIC_COUNTER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MAC_ONEUS_TIC_COUNTER {{ TIC_1US_CNTR: {=u16:?} }}",
+                self.TIC_1US_CNTR()
+            )
         }
     }
     #[doc = "MAC Packet Filter"]
@@ -3491,6 +3772,12 @@ pub mod regs {
                 .field("VTFE", &self.VTFE())
                 .field("RA", &self.RA())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_PACKET_FILTER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_PACKET_FILTER {{ PR: {=bool:?}, DAIF: {=bool:?}, PM: {=bool:?}, DBF: {=bool:?}, PCF: {=u8:?}, VTFE: {=bool:?}, RA: {=bool:?} }}" , self . PR () , self . DAIF () , self . PM () , self . DBF () , self . PCF () , self . VTFE () , self . RA ())
         }
     }
     #[doc = "PMT Control and Status"]
@@ -3601,6 +3888,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_PMT_CONTROL_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_PMT_CONTROL_STATUS {{ PWRDWN: {=bool:?}, MGKPKTEN: {=bool:?}, RWKPKTEN: {=bool:?}, MGKPRCVD: {=bool:?}, RWKPRCVD: {=bool:?}, GLBLUCAST: {=bool:?}, RWKPFE: {=bool:?}, RWKPTR: {=u8:?}, RWKFILTRST: {=bool:?} }}" , self . PWRDWN () , self . MGKPKTEN () , self . RWKPKTEN () , self . MGKPRCVD () , self . RWKPRCVD () , self . GLBLUCAST () , self . RWKPFE () , self . RWKPTR () , self . RWKFILTRST ())
+        }
+    }
     #[doc = "PPS Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3627,6 +3920,16 @@ pub mod regs {
             f.debug_struct("MAC_PPS_CONTROL")
                 .field("PPSCTRL_PPSCMD", &self.PPSCTRL_PPSCMD())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_PPS_CONTROL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MAC_PPS_CONTROL {{ PPSCTRL_PPSCMD: {=u8:?} }}",
+                self.PPSCTRL_PPSCMD()
+            )
         }
     }
     #[doc = "Receive Queue Control 0..Receive Queue Control 2"]
@@ -3777,6 +4080,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_RXQ_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_RXQ_CTRL {{ AVCPQ: {=u8:?}, PSRQ0: {=u8:?}, RXQ0EN: {=u8:?}, RXQ1EN: {=u8:?}, PTPQ: {=u8:?}, PSRQ1: {=u8:?}, UPQ: {=u8:?}, MCBCQ: {=u8:?}, MCBCQEN: {=bool:?}, TACPQE: {=bool:?}, TPQC: {=u8:?}, OMCBCQ: {=bool:?}, TBRQE: {=bool:?} }}" , self . AVCPQ () , self . PSRQ0 () , self . RXQ0EN () , self . RXQ1EN () , self . PTPQ () , self . PSRQ1 () , self . UPQ () , self . MCBCQ () , self . MCBCQEN () , self . TACPQE () , self . TPQC () , self . OMCBCQ () , self . TBRQE ())
+        }
+    }
     #[doc = "Receive Queue Control 4"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3855,6 +4164,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_RXQ_CTRL4 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_RXQ_CTRL4 {{ UFFQE: {=bool:?}, UFFQ: {=bool:?}, MFFQE: {=bool:?}, MFFQ: {=bool:?}, VFFQE: {=bool:?}, VFFQ: {=bool:?} }}" , self . UFFQE () , self . UFFQ () , self . MFFQE () , self . MFFQ () , self . VFFQE () , self . VFFQ ())
+        }
+    }
     #[doc = "MAC Rx Flow Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3891,6 +4206,17 @@ pub mod regs {
                 .field("RFE", &self.RFE())
                 .field("UP", &self.UP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_RX_FLOW_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MAC_RX_FLOW_CTRL {{ RFE: {=bool:?}, UP: {=bool:?} }}",
+                self.RFE(),
+                self.UP()
+            )
         }
     }
     #[doc = "Receive Transmit Status"]
@@ -3981,6 +4307,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_RX_TX_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_RX_TX_STATUS {{ TJT: {=bool:?}, NCARR: {=bool:?}, LCARR: {=bool:?}, EXDEF: {=bool:?}, LCOL: {=bool:?}, EXCOL: {=bool:?}, RWT: {=bool:?} }}" , self . TJT () , self . NCARR () , self . LCARR () , self . EXDEF () , self . LCOL () , self . EXCOL () , self . RWT ())
+        }
+    }
     #[doc = "Subsecond Increment"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4009,6 +4341,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_SUB_SECOND_INCREMENT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MAC_SUB_SECOND_INCREMENT {{ SNSINC: {=u8:?} }}",
+                self.SNSINC()
+            )
+        }
+    }
     #[doc = "System Time Nanoseconds"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4035,6 +4377,16 @@ pub mod regs {
             f.debug_struct("MAC_SYSTEM_TIME_NANOSECONDS")
                 .field("TSSS", &self.TSSS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_SYSTEM_TIME_NANOSECONDS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MAC_SYSTEM_TIME_NANOSECONDS {{ TSSS: {=u32:?} }}",
+                self.TSSS()
+            )
         }
     }
     #[doc = "System Time Nanoseconds Update"]
@@ -4073,6 +4425,17 @@ pub mod regs {
                 .field("TSSS", &self.TSSS())
                 .field("ADDSUB", &self.ADDSUB())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_SYSTEM_TIME_NANOSECONDS_UPDATE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MAC_SYSTEM_TIME_NANOSECONDS_UPDATE {{ TSSS: {=u32:?}, ADDSUB: {=bool:?} }}",
+                self.TSSS(),
+                self.ADDSUB()
+            )
         }
     }
     #[doc = "Timestamp Control"]
@@ -4283,6 +4646,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_TIMESTAMP_CONTROL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_TIMESTAMP_CONTROL {{ TSENA: {=bool:?}, TSCFUPDT: {=bool:?}, TSINIT: {=bool:?}, TSUPDT: {=bool:?}, TSTRIG: {=bool:?}, TSADDREG: {=bool:?}, TSENALL: {=bool:?}, TSCTRLSSR: {=bool:?}, TSVER2ENA: {=bool:?}, TSIPENA: {=bool:?}, TSIPV6ENA: {=bool:?}, TSIPV4ENA: {=bool:?}, TSEVNTENA: {=bool:?}, TSMSTRENA: {=bool:?}, SNAPTYPSEL: {=u8:?}, TSENMACADDR: {=bool:?}, ESTI: {=bool:?}, TXTSSTSM: {=bool:?}, AV8021ASMEN: {=bool:?} }}" , self . TSENA () , self . TSCFUPDT () , self . TSINIT () , self . TSUPDT () , self . TSTRIG () , self . TSADDREG () , self . TSENALL () , self . TSCTRLSSR () , self . TSVER2ENA () , self . TSIPENA () , self . TSIPV6ENA () , self . TSIPV4ENA () , self . TSEVNTENA () , self . TSMSTRENA () , self . SNAPTYPSEL () , self . TSENMACADDR () , self . ESTI () , self . TXTSSTSM () , self . AV8021ASMEN ())
+        }
+    }
     #[doc = "Timestamp Egress Latency"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4321,6 +4690,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_TIMESTAMP_EGRESS_LATENCY {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MAC_TIMESTAMP_EGRESS_LATENCY {{ ETLSNS: {=u8:?}, ETLNS: {=u16:?} }}",
+                self.ETLSNS(),
+                self.ETLNS()
+            )
+        }
+    }
     #[doc = "Timestamp Ingress Latency"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4357,6 +4737,17 @@ pub mod regs {
                 .field("ITLSNS", &self.ITLSNS())
                 .field("ITLNS", &self.ITLNS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_TIMESTAMP_INGRESS_LATENCY {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MAC_TIMESTAMP_INGRESS_LATENCY {{ ITLSNS: {=u8:?}, ITLNS: {=u16:?} }}",
+                self.ITLSNS(),
+                self.ITLNS()
+            )
         }
     }
     #[doc = "Timestamp Status"]
@@ -4415,6 +4806,12 @@ pub mod regs {
                 .field("TSTRGTERR0", &self.TSTRGTERR0())
                 .field("TXTSSIS", &self.TXTSSIS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_TIMESTAMP_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_TIMESTAMP_STATUS {{ TSSOVF: {=bool:?}, TSTARGT0: {=bool:?}, TSTRGTERR0: {=bool:?}, TXTSSIS: {=bool:?} }}" , self . TSSOVF () , self . TSTARGT0 () , self . TSTRGTERR0 () , self . TXTSSIS ())
         }
     }
     #[doc = "MAC Q0 Tx Flow Control"]
@@ -4485,6 +4882,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_TX_FLOW_CTRL_Q {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_TX_FLOW_CTRL_Q {{ FCB_BPA: {=bool:?}, TFE: {=bool:?}, PLT: {=u8:?}, DZPQ: {=bool:?}, PT: {=u16:?} }}" , self . FCB_BPA () , self . TFE () , self . PLT () , self . DZPQ () , self . PT ())
+        }
+    }
     #[doc = "Transmit Timestamp Status Nanoseconds"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4523,6 +4926,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_TX_TIMESTAMP_STATUS_NANOSECONDS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MAC_TX_TIMESTAMP_STATUS_NANOSECONDS {{ TXTSSLO: {=u32:?}, TXTSSMIS: {=bool:?} }}",
+                self.TXTSSLO(),
+                self.TXTSSMIS()
+            )
+        }
+    }
     #[doc = "MAC Version"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4559,6 +4973,17 @@ pub mod regs {
                 .field("SNPSVER", &self.SNPSVER())
                 .field("USERVER", &self.USERVER())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_VERSION {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MAC_VERSION {{ SNPSVER: {=u8:?}, USERVER: {=u8:?} }}",
+                self.SNPSVER(),
+                self.USERVER()
+            )
         }
     }
     #[doc = "VLAN Tag Inclusion or Replacement"]
@@ -4667,6 +5092,12 @@ pub mod regs {
                 .field("RDWR", &self.RDWR())
                 .field("BUSY", &self.BUSY())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_VLAN_INCL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_VLAN_INCL {{ VLT: {=u16:?}, VLC: {=u8:?}, VLP: {=bool:?}, CSVL: {=bool:?}, VLTI: {=bool:?}, CBTI: {=bool:?}, ADDR: {=bool:?}, RDWR: {=bool:?}, BUSY: {=bool:?} }}" , self . VLT () , self . VLC () , self . VLP () , self . CSVL () , self . VLTI () , self . CBTI () , self . ADDR () , self . RDWR () , self . BUSY ())
         }
     }
     #[doc = "MAC VLAN Tag Control"]
@@ -4807,6 +5238,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_VLAN_TAG_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAC_VLAN_TAG_CTRL {{ VL: {=u16:?}, ETV: {=bool:?}, VTIM: {=bool:?}, ESVL: {=bool:?}, ERSVLM: {=bool:?}, DOVLTC: {=bool:?}, EVLS: {=u8:?}, EVLRXS: {=bool:?}, EDVLP: {=bool:?}, ERIVLT: {=bool:?}, EIVLS: {=u8:?}, EIVLRXS: {=bool:?} }}" , self . VL () , self . ETV () , self . VTIM () , self . ESVL () , self . ERSVLM () , self . DOVLTC () , self . EVLS () , self . EVLRXS () , self . EDVLP () , self . ERIVLT () , self . EIVLS () , self . EIVLRXS ())
+        }
+    }
     #[doc = "Watchdog Timeout"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4845,6 +5282,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAC_WATCHDOG_TIMEOUT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MAC_WATCHDOG_TIMEOUT {{ WTO: {=u8:?}, PWE: {=bool:?} }}",
+                self.WTO(),
+                self.PWE()
+            )
+        }
+    }
     #[doc = "MTL Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4881,6 +5329,17 @@ pub mod regs {
                 .field("Q0IS", &self.Q0IS())
                 .field("Q1IS", &self.Q1IS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_INTERRUPT_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MTL_INTERRUPT_STATUS {{ Q0IS: {=bool:?}, Q1IS: {=bool:?} }}",
+                self.Q0IS(),
+                self.Q1IS()
+            )
         }
     }
     #[doc = "MTL Operation Mode"]
@@ -4949,6 +5408,12 @@ pub mod regs {
                 .field("CNTPRST", &self.CNTPRST())
                 .field("CNTCLR", &self.CNTCLR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_OPERATION_MODE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MTL_OPERATION_MODE {{ DTXSTS: {=bool:?}, RAA: {=bool:?}, SCHALG: {=u8:?}, CNTPRST: {=bool:?}, CNTCLR: {=bool:?} }}" , self . DTXSTS () , self . RAA () , self . SCHALG () , self . CNTPRST () , self . CNTCLR ())
         }
     }
     #[doc = "Queue 0 Interrupt Control Status..Queue 1 Interrupt Control Status"]
@@ -5029,6 +5494,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_QX_INTCTRL_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MTL_QUEUE_MTL_QX_INTCTRL_STAT {{ TXUNFIS: {=bool:?}, ABPSIS: {=bool:?}, TXUIE: {=bool:?}, ABPSIE: {=bool:?}, RXOVFIS: {=bool:?}, RXOIE: {=bool:?} }}" , self . TXUNFIS () , self . ABPSIS () , self . TXUIE () , self . ABPSIE () , self . RXOVFIS () , self . RXOIE ())
+        }
+    }
     #[doc = "Queue 0 Receive Control..Queue 1 Receive Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5065,6 +5536,17 @@ pub mod regs {
                 .field("RXQ_WEGT", &self.RXQ_WEGT())
                 .field("RXQ_FRM_ARBIT", &self.RXQ_FRM_ARBIT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_RXQX_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MTL_QUEUE_MTL_RXQX_CTRL {{ RXQ_WEGT: {=u8:?}, RXQ_FRM_ARBIT: {=bool:?} }}",
+                self.RXQ_WEGT(),
+                self.RXQ_FRM_ARBIT()
+            )
         }
     }
     #[doc = "Queue 0 Receive Debug..Queue 1 Receive Debug"]
@@ -5125,6 +5607,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_RXQX_DBG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MTL_QUEUE_MTL_RXQX_DBG {{ RWCSTS: {=bool:?}, RRCSTS: {=u8:?}, RXQSTS: {=u8:?}, PRXQ: {=u16:?} }}" , self . RWCSTS () , self . RRCSTS () , self . RXQSTS () , self . PRXQ ())
+        }
+    }
     #[doc = "Queue 0 Missed Packet and Overflow Counter..Queue 1 Missed Packet and Overflow Counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5181,6 +5669,12 @@ pub mod regs {
                 .field("MISPKTCNT", &self.MISPKTCNT())
                 .field("MISCNTOVF", &self.MISCNTOVF())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_RXQX_MISSPKT_OVRFLW_CNT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MTL_QUEUE_MTL_RXQX_MISSPKT_OVRFLW_CNT {{ OVFPKTCNT: {=u16:?}, OVFCNTOVF: {=bool:?}, MISPKTCNT: {=u16:?}, MISCNTOVF: {=bool:?} }}" , self . OVFPKTCNT () , self . OVFCNTOVF () , self . MISPKTCNT () , self . MISCNTOVF ())
         }
     }
     #[doc = "Queue 0 Receive Operation Mode..Queue 1 Receive Operation Mode"]
@@ -5259,6 +5753,12 @@ pub mod regs {
                 .field("DIS_TCP_EF", &self.DIS_TCP_EF())
                 .field("RQS", &self.RQS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_RXQX_OP_MODE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MTL_QUEUE_MTL_RXQX_OP_MODE {{ RTC: {=u8:?}, FUP: {=bool:?}, FEP: {=bool:?}, RSF: {=bool:?}, DIS_TCP_EF: {=bool:?}, RQS: {=u8:?} }}" , self . RTC () , self . FUP () , self . FEP () , self . RSF () , self . DIS_TCP_EF () , self . RQS ())
         }
     }
     #[doc = "Queue 0 Transmit Debug..Queue 1 Transmit Debug"]
@@ -5349,6 +5849,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_DBG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MTL_QUEUE_MTL_TXQX_DBG {{ TXQPAUSED: {=bool:?}, TRCSTS: {=u8:?}, TWCSTS: {=bool:?}, TXQSTS: {=bool:?}, TXSTSFSTS: {=bool:?}, PTXQ: {=u8:?}, STXSTSF: {=u8:?} }}" , self . TXQPAUSED () , self . TRCSTS () , self . TWCSTS () , self . TXQSTS () , self . TXSTSFSTS () , self . PTXQ () , self . STXSTSF ())
+        }
+    }
     #[doc = "Queue 1 ETS Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5397,6 +5903,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_ETS_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MTL_QUEUE_MTL_TXQX_ETS_CTRL {{ AVALG: {=bool:?}, CC: {=bool:?}, SLC: {=u8:?} }}",
+                self.AVALG(),
+                self.CC(),
+                self.SLC()
+            )
+        }
+    }
     #[doc = "Queue 0 ETS Status..Queue 1 ETS Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5423,6 +5941,16 @@ pub mod regs {
             f.debug_struct("MTL_QUEUE_MTL_TXQX_ETS_STAT")
                 .field("ABS", &self.ABS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_ETS_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MTL_QUEUE_MTL_TXQX_ETS_STAT {{ ABS: {=u32:?} }}",
+                self.ABS()
+            )
         }
     }
     #[doc = "Queue 1 hiCredit"]
@@ -5453,6 +5981,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_HI_CRDT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MTL_QUEUE_MTL_TXQX_HI_CRDT {{ HC: {=u32:?} }}",
+                self.HC()
+            )
+        }
+    }
     #[doc = "Queue 1 loCredit"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5479,6 +6017,16 @@ pub mod regs {
             f.debug_struct("MTL_QUEUE_MTL_TXQX_LO_CRDT")
                 .field("LC", &self.LC())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_LO_CRDT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MTL_QUEUE_MTL_TXQX_LO_CRDT {{ LC: {=u32:?} }}",
+                self.LC()
+            )
         }
     }
     #[doc = "Queue 0 Transmit Operation Mode..Queue 1 Transmit Operation Mode"]
@@ -5549,6 +6097,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_OP_MODE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MTL_QUEUE_MTL_TXQX_OP_MODE {{ FTQ: {=bool:?}, TSF: {=bool:?}, TXQEN: {=u8:?}, TTC: {=u8:?}, TQS: {=u8:?} }}" , self . FTQ () , self . TSF () , self . TXQEN () , self . TTC () , self . TQS ())
+        }
+    }
     #[doc = "Queue 0 Quantum or Weights..Queue 1 idleSlopeCredit, Quantum or Weights"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5577,6 +6131,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_QNTM_WGHT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MTL_QUEUE_MTL_TXQX_QNTM_WGHT {{ ISCQW: {=u32:?} }}",
+                self.ISCQW()
+            )
+        }
+    }
     #[doc = "Queue 1 sendSlopeCredit"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5603,6 +6167,16 @@ pub mod regs {
             f.debug_struct("MTL_QUEUE_MTL_TXQX_SNDSLP_CRDT")
                 .field("SSC", &self.SSC())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_SNDSLP_CRDT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MTL_QUEUE_MTL_TXQX_SNDSLP_CRDT {{ SSC: {=u16:?} }}",
+                self.SSC()
+            )
         }
     }
     #[doc = "Queue 0 Underflow Counter..Queue 1 Underflow Counter"]
@@ -5641,6 +6215,17 @@ pub mod regs {
                 .field("UFFRMCNT", &self.UFFRMCNT())
                 .field("UFCNTOVF", &self.UFCNTOVF())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_QUEUE_MTL_TXQX_UNDRFLW {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MTL_QUEUE_MTL_TXQX_UNDRFLW {{ UFFRMCNT: {=u16:?}, UFCNTOVF: {=bool:?} }}",
+                self.UFFRMCNT(),
+                self.UFCNTOVF()
+            )
         }
     }
     #[doc = "Receive Queue and DMA Channel Mapping 0"]
@@ -5701,6 +6286,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MTL_RXQ_DMA_MAP0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MTL_RXQ_DMA_MAP0 {{ Q0MDMACH: {=bool:?}, Q0DDMACH: {=bool:?}, Q1MDMACH: {=bool:?}, Q1DDMACH: {=bool:?} }}" , self . Q0MDMACH () , self . Q0DDMACH () , self . Q1MDMACH () , self . Q1DDMACH ())
+        }
+    }
     #[doc = "PPS0 Target Time Nanoseconds"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5727,6 +6318,16 @@ pub mod regs {
             f.debug_struct("PPS0_TARGET_TIME_NANOSECONDS")
                 .field("TTSL0", &self.TTSL0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PPS0_TARGET_TIME_NANOSECONDS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PPS0_TARGET_TIME_NANOSECONDS {{ TTSL0: {=u32:?} }}",
+                self.TTSL0()
+            )
         }
     }
 }

@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct EIM {
     ptr: *mut u8,
@@ -61,6 +61,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD0_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "EICHD0_WORD0 {{ CHKBIT_MASK: {=u8:?} }}",
+                self.CHKBIT_MASK()
+            )
+        }
+    }
     #[doc = "Error Injection Channel Enable register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -89,6 +99,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "EICHEN {{ EICH0EN: {=bool:?} }}", self.EICH0EN())
+        }
+    }
     #[doc = "Error Injection Module Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -115,6 +131,12 @@ pub mod regs {
             f.debug_struct("EIMCR")
                 .field("GEIEN", &self.GEIEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EIMCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "EIMCR {{ GEIEN: {=bool:?} }}", self.GEIEN())
         }
     }
 }

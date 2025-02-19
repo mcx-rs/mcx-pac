@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct PINT {
     ptr: *mut u8,
@@ -97,6 +97,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CIENF {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CIENF {{ CENAF: {=u8:?} }}", self.CENAF())
+        }
+    }
     #[doc = "Pin Interrupt Level (Rising-Edge Interrupt) Clear"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -125,6 +131,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CIENR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CIENR {{ CENRL: {=u8:?} }}", self.CENRL())
+        }
+    }
     #[doc = "Pin Interrupt Falling Edge"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -149,6 +161,12 @@ pub mod regs {
     impl core::fmt::Debug for FALL {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("FALL").field("FDET", &self.FDET()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FALL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FALL {{ FDET: {=u8:?} }}", self.FDET())
         }
     }
     #[doc = "Pin Interrupt Active Level or Falling-Edge Interrupt Enable"]
@@ -177,6 +195,12 @@ pub mod regs {
             f.debug_struct("IENF").field("ENAF", &self.ENAF()).finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IENF {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "IENF {{ ENAF: {=u8:?} }}", self.ENAF())
+        }
+    }
     #[doc = "Pin Interrupt Level or Rising-Edge Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -201,6 +225,12 @@ pub mod regs {
     impl core::fmt::Debug for IENR {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IENR").field("ENRL", &self.ENRL()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IENR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "IENR {{ ENRL: {=u8:?} }}", self.ENRL())
         }
     }
     #[doc = "Pin Interrupt Mode"]
@@ -231,6 +261,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ISEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ISEL {{ PMODE: {=u8:?} }}", self.PMODE())
+        }
+    }
     #[doc = "Pin Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -255,6 +291,12 @@ pub mod regs {
     impl core::fmt::Debug for IST {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IST").field("PSTAT", &self.PSTAT()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IST {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "IST {{ PSTAT: {=u8:?} }}", self.PSTAT())
         }
     }
     #[doc = "Pattern-Match Interrupt Bit Slice Configuration"]
@@ -425,6 +467,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PMCFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PMCFG {{ PROD_ENDPTS0: {=bool:?}, PROD_ENDPTS1: {=bool:?}, PROD_ENDPTS2: {=bool:?}, PROD_ENDPTS3: {=bool:?}, PROD_ENDPTS4: {=bool:?}, PROD_ENDPTS5: {=bool:?}, PROD_ENDPTS6: {=bool:?}, CFG0: {=u8:?}, CFG1: {=u8:?}, CFG2: {=u8:?}, CFG3: {=u8:?}, CFG4: {=u8:?}, CFG5: {=u8:?}, CFG6: {=u8:?}, CFG7: {=u8:?} }}" , self . PROD_ENDPTS0 () , self . PROD_ENDPTS1 () , self . PROD_ENDPTS2 () , self . PROD_ENDPTS3 () , self . PROD_ENDPTS4 () , self . PROD_ENDPTS5 () , self . PROD_ENDPTS6 () , self . CFG0 () , self . CFG1 () , self . CFG2 () , self . CFG3 () , self . CFG4 () , self . CFG5 () , self . CFG6 () , self . CFG7 ())
+        }
+    }
     #[doc = "Pattern-Match Interrupt Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -471,6 +519,18 @@ pub mod regs {
                 .field("ENA_RXEV", &self.ENA_RXEV())
                 .field("PMAT", &self.PMAT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PMCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PMCTRL {{ SEL_PMATCH: {=bool:?}, ENA_RXEV: {=bool:?}, PMAT: {=u8:?} }}",
+                self.SEL_PMATCH(),
+                self.ENA_RXEV(),
+                self.PMAT()
+            )
         }
     }
     #[doc = "Pattern-Match Interrupt Bit-Slice Source"]
@@ -571,6 +631,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PMSRC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PMSRC {{ SRC0: {=u8:?}, SRC1: {=u8:?}, SRC2: {=u8:?}, SRC3: {=u8:?}, SRC4: {=u8:?}, SRC5: {=u8:?}, SRC6: {=u8:?}, SRC7: {=u8:?} }}" , self . SRC0 () , self . SRC1 () , self . SRC2 () , self . SRC3 () , self . SRC4 () , self . SRC5 () , self . SRC6 () , self . SRC7 ())
+        }
+    }
     #[doc = "Pin Interrupt Rising Edge"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -595,6 +661,12 @@ pub mod regs {
     impl core::fmt::Debug for RISE {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RISE").field("RDET", &self.RDET()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RISE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "RISE {{ RDET: {=u8:?} }}", self.RDET())
         }
     }
     #[doc = "Pin Interrupt Active Level or Falling-Edge Interrupt Set"]
@@ -625,6 +697,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SIENF {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SIENF {{ SETENAF: {=u8:?} }}", self.SETENAF())
+        }
+    }
     #[doc = "Pin Interrupt Level or Rising-Edge Interrupt Set"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -651,6 +729,12 @@ pub mod regs {
             f.debug_struct("SIENR")
                 .field("SETENRL", &self.SETENRL())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SIENR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SIENR {{ SETENRL: {=u8:?} }}", self.SETENRL())
         }
     }
 }

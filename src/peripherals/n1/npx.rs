@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct CTX_VALID_IV_ARRAY {
     ptr: *mut u8,
@@ -100,6 +100,17 @@ pub mod regs {
                 .field("BIV_WD0", &self.BIV_WD0())
                 .field("BIV_WD1", &self.BIV_WD1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTX_VALID_IV_ARRAY_BIVCTX_WD {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CTX_VALID_IV_ARRAY_BIVCTX_WD {{ BIV_WD0: {=u32:?}, BIV_WD1: {=u32:?} }}",
+                self.BIV_WD0(),
+                self.BIV_WD1()
+            )
         }
     }
     #[doc = "Bitmap of Valid Control for Memory Context 0..Bitmap of Valid Control for Memory Context 3"]
@@ -760,6 +771,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTX_VALID_IV_ARRAY_VMAPCTX_WD {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTX_VALID_IV_ARRAY_VMAPCTX_WD {{ VAL0: {=bool:?}, VAL32: {=bool:?}, VAL1: {=bool:?}, VAL33: {=bool:?}, VAL2: {=bool:?}, VAL34: {=bool:?}, VAL3: {=bool:?}, VAL35: {=bool:?}, VAL36: {=bool:?}, VAL4: {=bool:?}, VAL37: {=bool:?}, VAL5: {=bool:?}, VAL38: {=bool:?}, VAL6: {=bool:?}, VAL39: {=bool:?}, VAL7: {=bool:?}, VAL40: {=bool:?}, VAL8: {=bool:?}, VAL41: {=bool:?}, VAL9: {=bool:?}, VAL10: {=bool:?}, VAL42: {=bool:?}, VAL11: {=bool:?}, VAL43: {=bool:?}, VAL12: {=bool:?}, VAL44: {=bool:?}, VAL13: {=bool:?}, VAL45: {=bool:?}, VAL14: {=bool:?}, VAL46: {=bool:?}, VAL15: {=bool:?}, VAL47: {=bool:?}, VAL16: {=bool:?}, VAL48: {=bool:?}, VAL17: {=bool:?}, VAL49: {=bool:?}, VAL18: {=bool:?}, VAL50: {=bool:?}, VAL19: {=bool:?}, VAL51: {=bool:?}, VAL20: {=bool:?}, VAL52: {=bool:?}, VAL21: {=bool:?}, VAL53: {=bool:?}, VAL22: {=bool:?}, VAL54: {=bool:?}, VAL23: {=bool:?}, VAL55: {=bool:?}, VAL24: {=bool:?}, VAL56: {=bool:?}, VAL25: {=bool:?}, VAL57: {=bool:?}, VAL26: {=bool:?}, VAL58: {=bool:?}, VAL27: {=bool:?}, VAL59: {=bool:?}, VAL28: {=bool:?}, VAL60: {=bool:?}, VAL29: {=bool:?}, VAL61: {=bool:?}, VAL30: {=bool:?}, VAL62: {=bool:?}, VAL31: {=bool:?}, VAL63: {=bool:?} }}" , self . VAL0 () , self . VAL32 () , self . VAL1 () , self . VAL33 () , self . VAL2 () , self . VAL34 () , self . VAL3 () , self . VAL35 () , self . VAL36 () , self . VAL4 () , self . VAL37 () , self . VAL5 () , self . VAL38 () , self . VAL6 () , self . VAL39 () , self . VAL7 () , self . VAL40 () , self . VAL8 () , self . VAL41 () , self . VAL9 () , self . VAL10 () , self . VAL42 () , self . VAL11 () , self . VAL43 () , self . VAL12 () , self . VAL44 () , self . VAL13 () , self . VAL45 () , self . VAL14 () , self . VAL46 () , self . VAL15 () , self . VAL47 () , self . VAL16 () , self . VAL48 () , self . VAL17 () , self . VAL49 () , self . VAL18 () , self . VAL50 () , self . VAL19 () , self . VAL51 () , self . VAL20 () , self . VAL52 () , self . VAL21 () , self . VAL53 () , self . VAL22 () , self . VAL54 () , self . VAL23 () , self . VAL55 () , self . VAL24 () , self . VAL56 () , self . VAL25 () , self . VAL57 () , self . VAL26 () , self . VAL58 () , self . VAL27 () , self . VAL59 () , self . VAL28 () , self . VAL60 () , self . VAL29 () , self . VAL61 () , self . VAL30 () , self . VAL62 () , self . VAL31 () , self . VAL63 ())
+        }
+    }
     #[doc = "NPX Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -858,6 +875,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for NPXCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "NPXCR {{ GEE: {=bool:?}, GDE: {=bool:?}, GLK: {=bool:?}, MLK: {=bool:?}, CTX0LK: {=bool:?}, CTX1LK: {=bool:?}, CTX2LK: {=bool:?}, CTX3LK: {=bool:?} }}" , self . GEE () , self . GDE () , self . GLK () , self . MLK () , self . CTX0LK () , self . CTX1LK () , self . CTX2LK () , self . CTX3LK ())
+        }
+    }
     #[doc = "NPX Status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -926,6 +949,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for NPXSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "NPXSR {{ NUMCTX: {=u8:?}, V0: {=bool:?}, V1: {=bool:?}, V2: {=bool:?}, V3: {=bool:?} }}" , self . NUMCTX () , self . V0 () , self . V1 () , self . V2 () , self . V3 ())
+        }
+    }
     #[doc = "Data Remap"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -972,6 +1001,18 @@ pub mod regs {
                 .field("LIM", &self.LIM())
                 .field("LIMDP", &self.LIMDP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for REMAP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "REMAP {{ REMAPLK: {=bool:?}, LIM: {=u8:?}, LIMDP: {=u8:?} }}",
+                self.REMAPLK(),
+                self.LIM(),
+                self.LIMDP()
+            )
         }
     }
 }

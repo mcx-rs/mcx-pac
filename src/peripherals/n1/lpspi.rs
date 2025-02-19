@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct LPSPI {
     ptr: *mut u8,
@@ -165,6 +165,19 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CCR {{ SCKDIV: {=u8:?}, DBT: {=u8:?}, PCSSCK: {=u8:?}, SCKPCS: {=u8:?} }}",
+                self.SCKDIV(),
+                self.DBT(),
+                self.PCSSCK(),
+                self.SCKPCS()
+            )
+        }
+    }
     #[doc = "Clock Configuration 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -221,6 +234,19 @@ pub mod regs {
                 .field("PCSPCS", &self.PCSPCS())
                 .field("SCKSCK", &self.SCKSCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CCR1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CCR1 {{ SCKSET: {=u8:?}, SCKHLD: {=u8:?}, PCSPCS: {=u8:?}, SCKSCK: {=u8:?} }}",
+                self.SCKSET(),
+                self.SCKHLD(),
+                self.PCSPCS(),
+                self.SCKSCK()
+            )
         }
     }
     #[doc = "Configuration 0"]
@@ -299,6 +325,12 @@ pub mod regs {
                 .field("CIRFIFO", &self.CIRFIFO())
                 .field("RDMO", &self.RDMO())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CFGR0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CFGR0 {{ HREN: {=bool:?}, HRPOL: {=bool:?}, HRSEL: {=bool:?}, HRDIR: {=bool:?}, CIRFIFO: {=bool:?}, RDMO: {=bool:?} }}" , self . HREN () , self . HRPOL () , self . HRSEL () , self . HRDIR () , self . CIRFIFO () , self . RDMO ())
         }
     }
     #[doc = "Configuration 1"]
@@ -419,6 +451,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CFGR1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CFGR1 {{ MASTER: {=bool:?}, SAMPLE: {=bool:?}, AUTOPCS: {=bool:?}, NOSTALL: {=bool:?}, PARTIAL: {=bool:?}, PCSPOL: {=u8:?}, MATCFG: {=u8:?}, PINCFG: {=u8:?}, OUTCFG: {=bool:?}, PCSCFG: {=bool:?} }}" , self . MASTER () , self . SAMPLE () , self . AUTOPCS () , self . NOSTALL () , self . PARTIAL () , self . PCSPOL () , self . MATCFG () , self . PINCFG () , self . OUTCFG () , self . PCSCFG ())
+        }
+    }
     #[doc = "Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -487,6 +525,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CR {{ MEN: {=bool:?}, RST: {=bool:?}, DBGEN: {=bool:?}, RTF: {=bool:?}, RRF: {=bool:?} }}" , self . MEN () , self . RST () , self . DBGEN () , self . RTF () , self . RRF ())
+        }
+    }
     #[doc = "DMA Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -535,6 +579,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DER {{ TDDE: {=bool:?}, RDDE: {=bool:?}, FCDE: {=bool:?} }}",
+                self.TDDE(),
+                self.RDDE(),
+                self.FCDE()
+            )
+        }
+    }
     #[doc = "FIFO Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -573,6 +629,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FCR {{ TXWATER: {=u8:?}, RXWATER: {=u8:?} }}",
+                self.TXWATER(),
+                self.RXWATER()
+            )
+        }
+    }
     #[doc = "FIFO Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -609,6 +676,17 @@ pub mod regs {
                 .field("TXCOUNT", &self.TXCOUNT())
                 .field("RXCOUNT", &self.RXCOUNT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FSR {{ TXCOUNT: {=u8:?}, RXCOUNT: {=u8:?} }}",
+                self.TXCOUNT(),
+                self.RXCOUNT()
+            )
         }
     }
     #[doc = "Interrupt Enable"]
@@ -709,6 +787,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IER {{ TDIE: {=bool:?}, RDIE: {=bool:?}, WCIE: {=bool:?}, FCIE: {=bool:?}, TCIE: {=bool:?}, TEIE: {=bool:?}, REIE: {=bool:?}, DMIE: {=bool:?} }}" , self . TDIE () , self . RDIE () , self . WCIE () , self . FCIE () , self . TCIE () , self . TEIE () , self . REIE () , self . DMIE ())
+        }
+    }
     #[doc = "Parameter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -757,6 +841,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PARAM {{ TXFIFO: {=u8:?}, RXFIFO: {=u8:?}, PCSNUM: {=u8:?} }}",
+                self.TXFIFO(),
+                self.RXFIFO(),
+                self.PCSNUM()
+            )
+        }
+    }
     #[doc = "Receive Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -793,6 +889,17 @@ pub mod regs {
                 .field("SOF", &self.SOF())
                 .field("RXEMPTY", &self.RXEMPTY())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "RSR {{ SOF: {=bool:?}, RXEMPTY: {=bool:?} }}",
+                self.SOF(),
+                self.RXEMPTY()
+            )
         }
     }
     #[doc = "Status"]
@@ -901,6 +1008,12 @@ pub mod regs {
                 .field("DMF", &self.DMF())
                 .field("MBF", &self.MBF())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SR {{ TDF: {=bool:?}, RDF: {=bool:?}, WCF: {=bool:?}, FCF: {=bool:?}, TCF: {=bool:?}, TEF: {=bool:?}, REF: {=bool:?}, DMF: {=bool:?}, MBF: {=bool:?} }}" , self . TDF () , self . RDF () , self . WCF () , self . FCF () , self . TCF () , self . TEF () , self . REF () , self . DMF () , self . MBF ())
         }
     }
     #[doc = "Transmit Command"]
@@ -1041,6 +1154,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TCR {{ FRAMESZ: {=u16:?}, WIDTH: {=u8:?}, TXMSK: {=bool:?}, RXMSK: {=bool:?}, CONTC: {=bool:?}, CONT: {=bool:?}, BYSW: {=bool:?}, LSBF: {=bool:?}, PCS: {=u8:?}, PRESCALE: {=u8:?}, CPHA: {=bool:?}, CPOL: {=bool:?} }}" , self . FRAMESZ () , self . WIDTH () , self . TXMSK () , self . RXMSK () , self . CONTC () , self . CONT () , self . BYSW () , self . LSBF () , self . PCS () , self . PRESCALE () , self . CPHA () , self . CPOL ())
+        }
+    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1087,6 +1206,18 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
         }
     }
 }

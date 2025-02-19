@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct CACHE64_POLSEL {
     ptr: *mut u8,
@@ -77,6 +77,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for POLSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "POLSEL {{ REG0_POLICY: {=u8:?}, REG1_POLICY: {=u8:?}, REG2_POLICY: {=u8:?} }}",
+                self.REG0_POLICY(),
+                self.REG1_POLICY(),
+                self.REG2_POLICY()
+            )
+        }
+    }
     #[doc = "Region 0 Top Boundary"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -106,6 +118,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for REG0_TOP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "REG0_TOP {{ REG0_TOP: {=u32:?} }}", self.REG0_TOP())
+        }
+    }
     #[doc = "Region 1 Top Boundary"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -133,6 +151,12 @@ pub mod regs {
             f.debug_struct("REG1_TOP")
                 .field("REG1_TOP", &self.REG1_TOP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for REG1_TOP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "REG1_TOP {{ REG1_TOP: {=u32:?} }}", self.REG1_TOP())
         }
     }
 }

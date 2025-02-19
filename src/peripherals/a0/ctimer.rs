@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct CTIMER {
     ptr: *mut u8,
@@ -210,6 +210,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CCR {{ CAP0RE: {=bool:?}, CAP0FE: {=bool:?}, CAP0I: {=bool:?}, CAP1RE: {=bool:?}, CAP1FE: {=bool:?}, CAP1I: {=bool:?}, CAP2RE: {=bool:?}, CAP2FE: {=bool:?}, CAP2I: {=bool:?}, CAP3RE: {=bool:?}, CAP3FE: {=bool:?}, CAP3I: {=bool:?} }}" , self . CAP0RE () , self . CAP0FE () , self . CAP0I () , self . CAP1RE () , self . CAP1FE () , self . CAP1I () , self . CAP2RE () , self . CAP2FE () , self . CAP2I () , self . CAP3RE () , self . CAP3FE () , self . CAP3I ())
+        }
+    }
     #[doc = "Count Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -266,6 +272,19 @@ pub mod regs {
                 .field("ENCC", &self.ENCC())
                 .field("SELCC", &self.SELCC())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CTCR {{ CTMODE: {=u8:?}, CINSEL: {=u8:?}, ENCC: {=bool:?}, SELCC: {=u8:?} }}",
+                self.CTMODE(),
+                self.CINSEL(),
+                self.ENCC(),
+                self.SELCC()
+            )
         }
     }
     #[doc = "External Match"]
@@ -366,6 +385,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EMR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "EMR {{ EM0: {=bool:?}, EM1: {=bool:?}, EM2: {=bool:?}, EM3: {=bool:?}, EMC0: {=u8:?}, EMC1: {=u8:?}, EMC2: {=u8:?}, EMC3: {=u8:?} }}" , self . EM0 () , self . EM1 () , self . EM2 () , self . EM3 () , self . EMC0 () , self . EMC1 () , self . EMC2 () , self . EMC3 ())
+        }
+    }
     #[doc = "Interrupt"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -462,6 +487,12 @@ pub mod regs {
                 .field("CR2INT", &self.CR2INT())
                 .field("CR3INT", &self.CR3INT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IR {{ MR0INT: {=bool:?}, MR1INT: {=bool:?}, MR2INT: {=bool:?}, MR3INT: {=bool:?}, CR0INT: {=bool:?}, CR1INT: {=bool:?}, CR2INT: {=bool:?}, CR3INT: {=bool:?} }}" , self . MR0INT () , self . MR1INT () , self . MR2INT () , self . MR3INT () , self . CR0INT () , self . CR1INT () , self . CR2INT () , self . CR3INT ())
         }
     }
     #[doc = "Match Control"]
@@ -642,6 +673,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MCR {{ MR0I: {=bool:?}, MR0R: {=bool:?}, MR0S: {=bool:?}, MR1I: {=bool:?}, MR1R: {=bool:?}, MR1S: {=bool:?}, MR2I: {=bool:?}, MR2R: {=bool:?}, MR2S: {=bool:?}, MR3I: {=bool:?}, MR3R: {=bool:?}, MR3S: {=bool:?}, MR0RL: {=bool:?}, MR1RL: {=bool:?}, MR2RL: {=bool:?}, MR3RL: {=bool:?} }}" , self . MR0I () , self . MR0R () , self . MR0S () , self . MR1I () , self . MR1R () , self . MR1S () , self . MR2I () , self . MR2R () , self . MR2S () , self . MR3I () , self . MR3R () , self . MR3S () , self . MR0RL () , self . MR1RL () , self . MR2RL () , self . MR3RL ())
+        }
+    }
     #[doc = "PWM Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -700,6 +737,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWMC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PWMC {{ PWMEN0: {=bool:?}, PWMEN1: {=bool:?}, PWMEN2: {=bool:?}, PWMEN3: {=bool:?} }}" , self . PWMEN0 () , self . PWMEN1 () , self . PWMEN2 () , self . PWMEN3 ())
+        }
+    }
     #[doc = "Timer Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -756,6 +799,19 @@ pub mod regs {
                 .field("AGCEN", &self.AGCEN())
                 .field("ATCEN", &self.ATCEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TCR {{ CEN: {=bool:?}, CRST: {=bool:?}, AGCEN: {=bool:?}, ATCEN: {=bool:?} }}",
+                self.CEN(),
+                self.CRST(),
+                self.AGCEN(),
+                self.ATCEN()
+            )
         }
     }
 }

@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct CACHE64_CTRL {
     ptr: *mut u8,
@@ -141,6 +141,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CCR {{ ENCACHE: {=bool:?}, ENWRBUF: {=bool:?}, FRCWT: {=bool:?}, FRCNOALLC: {=bool:?}, INVW0: {=bool:?}, PUSHW0: {=bool:?}, INVW1: {=bool:?}, PUSHW1: {=bool:?}, GO: {=bool:?} }}" , self . ENCACHE () , self . ENWRBUF () , self . FRCWT () , self . FRCNOALLC () , self . INVW0 () , self . PUSHW0 () , self . INVW1 () , self . PUSHW1 () , self . GO ())
+        }
+    }
     #[doc = "Cache Line Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -259,6 +265,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CLCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CLCR {{ LGO: {=bool:?}, CACHEADDR: {=u16:?}, WSEL: {=bool:?}, TDSEL: {=bool:?}, LCIVB: {=bool:?}, LCIMB: {=bool:?}, LCWAY: {=bool:?}, LCMD: {=u8:?}, LADSEL: {=bool:?}, LACC: {=bool:?} }}" , self . LGO () , self . CACHEADDR () , self . WSEL () , self . TDSEL () , self . LCIVB () , self . LCIMB () , self . LCWAY () , self . LCMD () , self . LADSEL () , self . LACC ())
+        }
+    }
     #[doc = "Cache Search Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -295,6 +307,17 @@ pub mod regs {
                 .field("LGO", &self.LGO())
                 .field("PHYADDR", &self.PHYADDR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CSAR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CSAR {{ LGO: {=bool:?}, PHYADDR: {=u32:?} }}",
+                self.LGO(),
+                self.PHYADDR()
+            )
         }
     }
 }

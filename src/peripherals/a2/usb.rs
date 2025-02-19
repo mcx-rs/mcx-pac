@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct ENDPOINT {
     ptr: *mut u8,
@@ -44,7 +44,7 @@ impl USB {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn REV(self) -> crate::common::Reg<regs::REV, crate::common::RW> {
+    pub const fn REV(self) -> crate::common::Reg<u8, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
     #[inline(always)]
@@ -100,7 +100,7 @@ impl USB {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x9cusize) as _) }
     }
     #[inline(always)]
-    pub const fn FRMNUML(self) -> crate::common::Reg<regs::FRMNUML, crate::common::RW> {
+    pub const fn FRMNUML(self) -> crate::common::Reg<u8, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa0usize) as _) }
     }
     #[inline(always)]
@@ -112,15 +112,15 @@ impl USB {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa8usize) as _) }
     }
     #[inline(always)]
-    pub const fn SOFTHLD(self) -> crate::common::Reg<regs::SOFTHLD, crate::common::RW> {
+    pub const fn SOFTHLD(self) -> crate::common::Reg<u8, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xacusize) as _) }
     }
     #[inline(always)]
-    pub const fn BDTPAGE2(self) -> crate::common::Reg<regs::BDTPAGE2, crate::common::RW> {
+    pub const fn BDTPAGE2(self) -> crate::common::Reg<u8, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb0usize) as _) }
     }
     #[inline(always)]
-    pub const fn BDTPAGE3(self) -> crate::common::Reg<regs::BDTPAGE3, crate::common::RW> {
+    pub const fn BDTPAGE3(self) -> crate::common::Reg<u8, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb4usize) as _) }
     }
     #[inline(always)]
@@ -145,7 +145,7 @@ impl USB {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x010cusize) as _) }
     }
     #[inline(always)]
-    pub const fn USBFRMADJUST(self) -> crate::common::Reg<regs::USBFRMADJUST, crate::common::RW> {
+    pub const fn USBFRMADJUST(self) -> crate::common::Reg<u8, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0114usize) as _) }
     }
     #[inline(always)]
@@ -205,7 +205,7 @@ pub mod regs {
     #[doc = "Peripheral Additional Information"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ADDINFO(pub u32);
+    pub struct ADDINFO(pub u8);
     impl ADDINFO {
         #[inline(always)]
         pub const fn IEHOST(&self) -> bool {
@@ -214,7 +214,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IEHOST(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
     }
     impl Default for ADDINFO {
@@ -230,10 +230,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ADDINFO {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ADDINFO {{ IEHOST: {=bool:?} }}", self.IEHOST())
+        }
+    }
     #[doc = "Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ADDR(pub u32);
+    pub struct ADDR(pub u8);
     impl ADDR {
         #[inline(always)]
         pub const fn ADDR(&self) -> u8 {
@@ -242,7 +248,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ADDR(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u8) & 0x7f) << 0usize);
         }
         #[inline(always)]
         pub const fn LSEN(&self) -> bool {
@@ -251,7 +257,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_LSEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for ADDR {
@@ -268,10 +274,21 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ADDR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ADDR {{ ADDR: {=u8:?}, LSEN: {=bool:?} }}",
+                self.ADDR(),
+                self.LSEN()
+            )
+        }
+    }
     #[doc = "BDT Page 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct BDTPAGE1(pub u32);
+    pub struct BDTPAGE1(pub u8);
     impl BDTPAGE1 {
         #[inline(always)]
         pub const fn BDTBA(&self) -> u8 {
@@ -280,7 +297,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_BDTBA(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 1usize)) | (((val as u32) & 0x7f) << 1usize);
+            self.0 = (self.0 & !(0x7f << 1usize)) | (((val as u8) & 0x7f) << 1usize);
         }
     }
     impl Default for BDTPAGE1 {
@@ -296,66 +313,16 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "BDT Page 2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct BDTPAGE2(pub u32);
-    impl BDTPAGE2 {
-        #[inline(always)]
-        pub const fn BDTBA(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_BDTBA(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for BDTPAGE2 {
-        #[inline(always)]
-        fn default() -> BDTPAGE2 {
-            BDTPAGE2(0)
-        }
-    }
-    impl core::fmt::Debug for BDTPAGE2 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("BDTPAGE2")
-                .field("BDTBA", &self.BDTBA())
-                .finish()
-        }
-    }
-    #[doc = "BDT Page 3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct BDTPAGE3(pub u32);
-    impl BDTPAGE3 {
-        #[inline(always)]
-        pub const fn BDTBA(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_BDTBA(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for BDTPAGE3 {
-        #[inline(always)]
-        fn default() -> BDTPAGE3 {
-            BDTPAGE3(0)
-        }
-    }
-    impl core::fmt::Debug for BDTPAGE3 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("BDTPAGE3")
-                .field("BDTBA", &self.BDTBA())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BDTPAGE1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "BDTPAGE1 {{ BDTBA: {=u8:?} }}", self.BDTBA())
         }
     }
     #[doc = "USB Clock Recovery Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CLK_RECOVER_CTRL(pub u32);
+    pub struct CLK_RECOVER_CTRL(pub u8);
     impl CLK_RECOVER_CTRL {
         #[inline(always)]
         pub const fn TRIM_INIT_VAL_SEL(&self) -> bool {
@@ -364,7 +331,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_TRIM_INIT_VAL_SEL(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn RESTART_IFRTRIM_EN(&self) -> bool {
@@ -373,7 +340,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_RESTART_IFRTRIM_EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn RESET_RESUME_ROUGH_EN(&self) -> bool {
@@ -382,7 +349,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_RESET_RESUME_ROUGH_EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn CLOCK_RECOVER_EN(&self) -> bool {
@@ -391,7 +358,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_CLOCK_RECOVER_EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for CLK_RECOVER_CTRL {
@@ -410,10 +377,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CLK_RECOVER_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CLK_RECOVER_CTRL {{ TRIM_INIT_VAL_SEL: {=bool:?}, RESTART_IFRTRIM_EN: {=bool:?}, RESET_RESUME_ROUGH_EN: {=bool:?}, CLOCK_RECOVER_EN: {=bool:?} }}" , self . TRIM_INIT_VAL_SEL () , self . RESTART_IFRTRIM_EN () , self . RESET_RESUME_ROUGH_EN () , self . CLOCK_RECOVER_EN ())
+        }
+    }
     #[doc = "Clock Recovery Combined Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CLK_RECOVER_INT_EN(pub u32);
+    pub struct CLK_RECOVER_INT_EN(pub u8);
     impl CLK_RECOVER_INT_EN {
         #[inline(always)]
         pub const fn OVF_ERROR_EN(&self) -> bool {
@@ -422,7 +395,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_OVF_ERROR_EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
     }
     impl Default for CLK_RECOVER_INT_EN {
@@ -438,10 +411,20 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CLK_RECOVER_INT_EN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CLK_RECOVER_INT_EN {{ OVF_ERROR_EN: {=bool:?} }}",
+                self.OVF_ERROR_EN()
+            )
+        }
+    }
     #[doc = "Clock Recovery Separated Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CLK_RECOVER_INT_STATUS(pub u32);
+    pub struct CLK_RECOVER_INT_STATUS(pub u8);
     impl CLK_RECOVER_INT_STATUS {
         #[inline(always)]
         pub const fn OVF_ERROR(&self) -> bool {
@@ -450,7 +433,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_OVF_ERROR(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
     }
     impl Default for CLK_RECOVER_INT_STATUS {
@@ -466,10 +449,20 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CLK_RECOVER_INT_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CLK_RECOVER_INT_STATUS {{ OVF_ERROR: {=bool:?} }}",
+                self.OVF_ERROR()
+            )
+        }
+    }
     #[doc = "FIRC Oscillator Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CLK_RECOVER_IRC_EN(pub u32);
+    pub struct CLK_RECOVER_IRC_EN(pub u8);
     impl CLK_RECOVER_IRC_EN {
         #[inline(always)]
         pub const fn IRC_EN(&self) -> bool {
@@ -478,7 +471,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_IRC_EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
     }
     impl Default for CLK_RECOVER_IRC_EN {
@@ -494,10 +487,20 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CLK_RECOVER_IRC_EN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CLK_RECOVER_IRC_EN {{ IRC_EN: {=bool:?} }}",
+                self.IRC_EN()
+            )
+        }
+    }
     #[doc = "USB OTG Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CONTROL(pub u32);
+    pub struct CONTROL(pub u8);
     impl CONTROL {
         #[inline(always)]
         pub const fn VBUS_SOURCE_SEL(&self) -> bool {
@@ -506,7 +509,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_VBUS_SOURCE_SEL(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn SESS_VLD(&self) -> bool {
@@ -515,7 +518,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_SESS_VLD(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn DPPULLUPNONOTG(&self) -> bool {
@@ -524,7 +527,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DPPULLUPNONOTG(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
     }
     impl Default for CONTROL {
@@ -542,10 +545,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CONTROL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CONTROL {{ VBUS_SOURCE_SEL: {=bool:?}, SESS_VLD: {=bool:?}, DPPULLUPNONOTG: {=bool:?} }}" , self . VBUS_SOURCE_SEL () , self . SESS_VLD () , self . DPPULLUPNONOTG ())
+        }
+    }
     #[doc = "Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CTL(pub u32);
+    pub struct CTL(pub u8);
     impl CTL {
         #[inline(always)]
         pub const fn USBENSOFEN(&self) -> bool {
@@ -554,7 +563,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_USBENSOFEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn ODDRST(&self) -> bool {
@@ -563,7 +572,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ODDRST(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn RESUME(&self) -> bool {
@@ -572,7 +581,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_RESUME(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn HOSTMODEEN(&self) -> bool {
@@ -581,7 +590,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_HOSTMODEEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn RESET(&self) -> bool {
@@ -590,7 +599,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_RESET(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn TXSUSPENDTOKENBUSY(&self) -> bool {
@@ -599,7 +608,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_TXSUSPENDTOKENBUSY(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn SE0(&self) -> bool {
@@ -608,7 +617,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_SE0(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn JSTATE(&self) -> bool {
@@ -617,7 +626,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_JSTATE(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for CTL {
@@ -640,10 +649,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTL {{ USBENSOFEN: {=bool:?}, ODDRST: {=bool:?}, RESUME: {=bool:?}, HOSTMODEEN: {=bool:?}, RESET: {=bool:?}, TXSUSPENDTOKENBUSY: {=bool:?}, SE0: {=bool:?}, JSTATE: {=bool:?} }}" , self . USBENSOFEN () , self . ODDRST () , self . RESUME () , self . HOSTMODEEN () , self . RESET () , self . TXSUSPENDTOKENBUSY () , self . SE0 () , self . JSTATE ())
+        }
+    }
     #[doc = "Endpoint Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ENDPOINT_ENDPT(pub u32);
+    pub struct ENDPOINT_ENDPT(pub u8);
     impl ENDPOINT_ENDPT {
         #[inline(always)]
         pub const fn EPHSHK(&self) -> bool {
@@ -652,7 +667,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_EPHSHK(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn EPSTALL(&self) -> bool {
@@ -661,7 +676,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_EPSTALL(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn EPTXEN(&self) -> bool {
@@ -670,7 +685,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_EPTXEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn EPRXEN(&self) -> bool {
@@ -679,7 +694,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_EPRXEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn EPCTLDIS(&self) -> bool {
@@ -688,7 +703,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_EPCTLDIS(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn RETRYDIS(&self) -> bool {
@@ -697,7 +712,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_RETRYDIS(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn HOSTWOHUB(&self) -> bool {
@@ -706,7 +721,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_HOSTWOHUB(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for ENDPOINT_ENDPT {
@@ -728,10 +743,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ENDPOINT_ENDPT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ENDPOINT_ENDPT {{ EPHSHK: {=bool:?}, EPSTALL: {=bool:?}, EPTXEN: {=bool:?}, EPRXEN: {=bool:?}, EPCTLDIS: {=bool:?}, RETRYDIS: {=bool:?}, HOSTWOHUB: {=bool:?} }}" , self . EPHSHK () , self . EPSTALL () , self . EPTXEN () , self . EPRXEN () , self . EPCTLDIS () , self . RETRYDIS () , self . HOSTWOHUB ())
+        }
+    }
     #[doc = "Error Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ERREN(pub u32);
+    pub struct ERREN(pub u8);
     impl ERREN {
         #[inline(always)]
         pub const fn PIDERREN(&self) -> bool {
@@ -740,7 +761,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PIDERREN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn CRC5EOFEN(&self) -> bool {
@@ -749,7 +770,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_CRC5EOFEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn CRC16EN(&self) -> bool {
@@ -758,7 +779,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_CRC16EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn DFN8EN(&self) -> bool {
@@ -767,7 +788,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DFN8EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn BTOERREN(&self) -> bool {
@@ -776,7 +797,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_BTOERREN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn DMAERREN(&self) -> bool {
@@ -785,7 +806,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DMAERREN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn OWNERREN(&self) -> bool {
@@ -794,7 +815,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_OWNERREN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn BTSERREN(&self) -> bool {
@@ -803,7 +824,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_BTSERREN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for ERREN {
@@ -826,10 +847,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ERREN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ERREN {{ PIDERREN: {=bool:?}, CRC5EOFEN: {=bool:?}, CRC16EN: {=bool:?}, DFN8EN: {=bool:?}, BTOERREN: {=bool:?}, DMAERREN: {=bool:?}, OWNERREN: {=bool:?}, BTSERREN: {=bool:?} }}" , self . PIDERREN () , self . CRC5EOFEN () , self . CRC16EN () , self . DFN8EN () , self . BTOERREN () , self . DMAERREN () , self . OWNERREN () , self . BTSERREN ())
+        }
+    }
     #[doc = "Error Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ERRSTAT(pub u32);
+    pub struct ERRSTAT(pub u8);
     impl ERRSTAT {
         #[inline(always)]
         pub const fn PIDERR(&self) -> bool {
@@ -838,7 +865,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PIDERR(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn CRC5EOF(&self) -> bool {
@@ -847,7 +874,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_CRC5EOF(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn CRC16(&self) -> bool {
@@ -856,7 +883,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_CRC16(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn DFN8(&self) -> bool {
@@ -865,7 +892,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DFN8(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn BTOERR(&self) -> bool {
@@ -874,7 +901,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_BTOERR(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn DMAERR(&self) -> bool {
@@ -883,7 +910,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DMAERR(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn OWNERR(&self) -> bool {
@@ -892,7 +919,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_OWNERR(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn BTSERR(&self) -> bool {
@@ -901,7 +928,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_BTSERR(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for ERRSTAT {
@@ -924,10 +951,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ERRSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ERRSTAT {{ PIDERR: {=bool:?}, CRC5EOF: {=bool:?}, CRC16: {=bool:?}, DFN8: {=bool:?}, BTOERR: {=bool:?}, DMAERR: {=bool:?}, OWNERR: {=bool:?}, BTSERR: {=bool:?} }}" , self . PIDERR () , self . CRC5EOF () , self . CRC16 () , self . DFN8 () , self . BTOERR () , self . DMAERR () , self . OWNERR () , self . BTSERR ())
+        }
+    }
     #[doc = "Frame Number Register High"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct FRMNUMH(pub u32);
+    pub struct FRMNUMH(pub u8);
     impl FRMNUMH {
         #[inline(always)]
         pub const fn FRM(&self) -> u8 {
@@ -936,7 +969,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_FRM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u8) & 0x07) << 0usize);
         }
     }
     impl Default for FRMNUMH {
@@ -950,36 +983,16 @@ pub mod regs {
             f.debug_struct("FRMNUMH").field("FRM", &self.FRM()).finish()
         }
     }
-    #[doc = "Frame Number Register Low"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct FRMNUML(pub u32);
-    impl FRMNUML {
-        #[inline(always)]
-        pub const fn FRM(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_FRM(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for FRMNUML {
-        #[inline(always)]
-        fn default() -> FRMNUML {
-            FRMNUML(0)
-        }
-    }
-    impl core::fmt::Debug for FRMNUML {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("FRMNUML").field("FRM", &self.FRM()).finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FRMNUMH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FRMNUMH {{ FRM: {=u8:?} }}", self.FRM())
         }
     }
     #[doc = "Peripheral ID Complement"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IDCOMP(pub u32);
+    pub struct IDCOMP(pub u8);
     impl IDCOMP {
         #[inline(always)]
         pub const fn NID(&self) -> u8 {
@@ -988,7 +1001,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_NID(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
+            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u8) & 0x3f) << 0usize);
         }
     }
     impl Default for IDCOMP {
@@ -1002,10 +1015,16 @@ pub mod regs {
             f.debug_struct("IDCOMP").field("NID", &self.NID()).finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IDCOMP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "IDCOMP {{ NID: {=u8:?} }}", self.NID())
+        }
+    }
     #[doc = "Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct INTEN(pub u32);
+    pub struct INTEN(pub u8);
     impl INTEN {
         #[inline(always)]
         pub const fn USBRSTEN(&self) -> bool {
@@ -1014,7 +1033,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_USBRSTEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn ERROREN(&self) -> bool {
@@ -1023,7 +1042,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ERROREN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn SOFTOKEN(&self) -> bool {
@@ -1032,7 +1051,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_SOFTOKEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn TOKDNEEN(&self) -> bool {
@@ -1041,7 +1060,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_TOKDNEEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn SLEEPEN(&self) -> bool {
@@ -1050,7 +1069,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_SLEEPEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn RESUMEEN(&self) -> bool {
@@ -1059,7 +1078,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_RESUMEEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn ATTACHEN(&self) -> bool {
@@ -1068,7 +1087,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ATTACHEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn STALLEN(&self) -> bool {
@@ -1077,7 +1096,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALLEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for INTEN {
@@ -1100,10 +1119,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INTEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "INTEN {{ USBRSTEN: {=bool:?}, ERROREN: {=bool:?}, SOFTOKEN: {=bool:?}, TOKDNEEN: {=bool:?}, SLEEPEN: {=bool:?}, RESUMEEN: {=bool:?}, ATTACHEN: {=bool:?}, STALLEN: {=bool:?} }}" , self . USBRSTEN () , self . ERROREN () , self . SOFTOKEN () , self . TOKDNEEN () , self . SLEEPEN () , self . RESUMEEN () , self . ATTACHEN () , self . STALLEN ())
+        }
+    }
     #[doc = "Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ISTAT(pub u32);
+    pub struct ISTAT(pub u8);
     impl ISTAT {
         #[inline(always)]
         pub const fn USBRST(&self) -> bool {
@@ -1112,7 +1137,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_USBRST(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn ERROR(&self) -> bool {
@@ -1121,7 +1146,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ERROR(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn SOFTOK(&self) -> bool {
@@ -1130,7 +1155,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_SOFTOK(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn TOKDNE(&self) -> bool {
@@ -1139,7 +1164,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_TOKDNE(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn SLEEP(&self) -> bool {
@@ -1148,7 +1173,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_SLEEP(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn RESUME(&self) -> bool {
@@ -1157,7 +1182,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_RESUME(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn ATTACH(&self) -> bool {
@@ -1166,7 +1191,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ATTACH(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn STALL(&self) -> bool {
@@ -1175,7 +1200,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for ISTAT {
@@ -1198,10 +1223,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ISTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ISTAT {{ USBRST: {=bool:?}, ERROR: {=bool:?}, SOFTOK: {=bool:?}, TOKDNE: {=bool:?}, SLEEP: {=bool:?}, RESUME: {=bool:?}, ATTACH: {=bool:?}, STALL: {=bool:?} }}" , self . USBRST () , self . ERROR () , self . SOFTOK () , self . TOKDNE () , self . SLEEP () , self . RESUME () , self . ATTACH () , self . STALL ())
+        }
+    }
     #[doc = "Miscellaneous Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MISCCTRL(pub u32);
+    pub struct MISCCTRL(pub u8);
     impl MISCCTRL {
         #[inline(always)]
         pub const fn SOFDYNTHLD(&self) -> bool {
@@ -1210,7 +1241,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_SOFDYNTHLD(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn SOFBUSSET(&self) -> bool {
@@ -1219,7 +1250,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_SOFBUSSET(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn OWNERRISODIS(&self) -> bool {
@@ -1228,7 +1259,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_OWNERRISODIS(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn VREDG_EN(&self) -> bool {
@@ -1237,7 +1268,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_VREDG_EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn VFEDG_EN(&self) -> bool {
@@ -1246,7 +1277,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_VFEDG_EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn STL_ADJ_EN(&self) -> bool {
@@ -1255,7 +1286,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STL_ADJ_EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for MISCCTRL {
@@ -1276,10 +1307,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MISCCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MISCCTRL {{ SOFDYNTHLD: {=bool:?}, SOFBUSSET: {=bool:?}, OWNERRISODIS: {=bool:?}, VREDG_EN: {=bool:?}, VFEDG_EN: {=bool:?}, STL_ADJ_EN: {=bool:?} }}" , self . SOFDYNTHLD () , self . SOFBUSSET () , self . OWNERRISODIS () , self . VREDG_EN () , self . VFEDG_EN () , self . STL_ADJ_EN ())
+        }
+    }
     #[doc = "USB OTG Observe"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct OBSERVE(pub u32);
+    pub struct OBSERVE(pub u8);
     impl OBSERVE {
         #[inline(always)]
         pub const fn DMPD(&self) -> bool {
@@ -1288,7 +1325,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DMPD(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn DPPD(&self) -> bool {
@@ -1297,7 +1334,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DPPD(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn DPPU(&self) -> bool {
@@ -1306,7 +1343,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DPPU(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for OBSERVE {
@@ -1324,10 +1361,22 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OBSERVE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "OBSERVE {{ DMPD: {=bool:?}, DPPD: {=bool:?}, DPPU: {=bool:?} }}",
+                self.DMPD(),
+                self.DPPD(),
+                self.DPPU()
+            )
+        }
+    }
     #[doc = "OTG Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct OTGCTL(pub u32);
+    pub struct OTGCTL(pub u8);
     impl OTGCTL {
         #[inline(always)]
         pub const fn OTGEN(&self) -> bool {
@@ -1336,7 +1385,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_OTGEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn DMLOW(&self) -> bool {
@@ -1345,7 +1394,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DMLOW(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn DPLOW(&self) -> bool {
@@ -1354,7 +1403,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DPLOW(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn DPHIGH(&self) -> bool {
@@ -1363,7 +1412,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DPHIGH(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for OTGCTL {
@@ -1382,10 +1431,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OTGCTL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "OTGCTL {{ OTGEN: {=bool:?}, DMLOW: {=bool:?}, DPLOW: {=bool:?}, DPHIGH: {=bool:?} }}" , self . OTGEN () , self . DMLOW () , self . DPLOW () , self . DPHIGH ())
+        }
+    }
     #[doc = "OTG Interrupt Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct OTGICR(pub u32);
+    pub struct OTGICR(pub u8);
     impl OTGICR {
         #[inline(always)]
         pub const fn LINESTATEEN(&self) -> bool {
@@ -1394,7 +1449,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_LINESTATEEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn ONEMSECEN(&self) -> bool {
@@ -1403,7 +1458,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ONEMSECEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
     }
     impl Default for OTGICR {
@@ -1420,10 +1475,21 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OTGICR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "OTGICR {{ LINESTATEEN: {=bool:?}, ONEMSECEN: {=bool:?} }}",
+                self.LINESTATEEN(),
+                self.ONEMSECEN()
+            )
+        }
+    }
     #[doc = "OTG Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct OTGISTAT(pub u32);
+    pub struct OTGISTAT(pub u8);
     impl OTGISTAT {
         #[inline(always)]
         pub const fn LINE_STATE_CHG(&self) -> bool {
@@ -1432,7 +1498,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_LINE_STATE_CHG(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn ONEMSEC(&self) -> bool {
@@ -1441,7 +1507,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ONEMSEC(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
     }
     impl Default for OTGISTAT {
@@ -1458,10 +1524,21 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OTGISTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "OTGISTAT {{ LINE_STATE_CHG: {=bool:?}, ONEMSEC: {=bool:?} }}",
+                self.LINE_STATE_CHG(),
+                self.ONEMSEC()
+            )
+        }
+    }
     #[doc = "OTG Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct OTGSTAT(pub u32);
+    pub struct OTGSTAT(pub u8);
     impl OTGSTAT {
         #[inline(always)]
         pub const fn LINESTATESTABLE(&self) -> bool {
@@ -1470,7 +1547,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_LINESTATESTABLE(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn ONEMSEC(&self) -> bool {
@@ -1479,7 +1556,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ONEMSEC(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
     }
     impl Default for OTGSTAT {
@@ -1496,10 +1573,21 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OTGSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "OTGSTAT {{ LINESTATESTABLE: {=bool:?}, ONEMSEC: {=bool:?} }}",
+                self.LINESTATESTABLE(),
+                self.ONEMSEC()
+            )
+        }
+    }
     #[doc = "Peripheral ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PERID(pub u32);
+    pub struct PERID(pub u8);
     impl PERID {
         #[inline(always)]
         pub const fn ID(&self) -> u8 {
@@ -1508,7 +1596,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ID(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
+            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u8) & 0x3f) << 0usize);
         }
     }
     impl Default for PERID {
@@ -1522,62 +1610,16 @@ pub mod regs {
             f.debug_struct("PERID").field("ID", &self.ID()).finish()
         }
     }
-    #[doc = "Peripheral Revision"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct REV(pub u32);
-    impl REV {
-        #[inline(always)]
-        pub const fn REV(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_REV(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for REV {
-        #[inline(always)]
-        fn default() -> REV {
-            REV(0)
-        }
-    }
-    impl core::fmt::Debug for REV {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("REV").field("REV", &self.REV()).finish()
-        }
-    }
-    #[doc = "SOF Threshold"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SOFTHLD(pub u32);
-    impl SOFTHLD {
-        #[inline(always)]
-        pub const fn CNT(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_CNT(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for SOFTHLD {
-        #[inline(always)]
-        fn default() -> SOFTHLD {
-            SOFTHLD(0)
-        }
-    }
-    impl core::fmt::Debug for SOFTHLD {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("SOFTHLD").field("CNT", &self.CNT()).finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PERID {{ ID: {=u8:?} }}", self.ID())
         }
     }
     #[doc = "Peripheral Mode Stall Disable for Endpoints 15 to 8 in IN Direction"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct STALL_IH_DIS(pub u32);
+    pub struct STALL_IH_DIS(pub u8);
     impl STALL_IH_DIS {
         #[inline(always)]
         pub const fn STALL_I_DIS8(&self) -> bool {
@@ -1586,7 +1628,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_I_DIS8(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn STALL_I_DIS9(&self) -> bool {
@@ -1595,7 +1637,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_I_DIS9(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn STALL_I_DIS10(&self) -> bool {
@@ -1604,7 +1646,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_I_DIS10(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn STALL_I_DIS11(&self) -> bool {
@@ -1613,7 +1655,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_I_DIS11(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn STALL_I_DIS12(&self) -> bool {
@@ -1622,7 +1664,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_I_DIS12(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn STALL_I_DIS13(&self) -> bool {
@@ -1631,7 +1673,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_I_DIS13(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn STALL_I_DIS14(&self) -> bool {
@@ -1640,7 +1682,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_I_DIS14(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn STALL_I_DIS15(&self) -> bool {
@@ -1649,7 +1691,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_I_DIS15(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for STALL_IH_DIS {
@@ -1672,10 +1714,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STALL_IH_DIS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STALL_IH_DIS {{ STALL_I_DIS8: {=bool:?}, STALL_I_DIS9: {=bool:?}, STALL_I_DIS10: {=bool:?}, STALL_I_DIS11: {=bool:?}, STALL_I_DIS12: {=bool:?}, STALL_I_DIS13: {=bool:?}, STALL_I_DIS14: {=bool:?}, STALL_I_DIS15: {=bool:?} }}" , self . STALL_I_DIS8 () , self . STALL_I_DIS9 () , self . STALL_I_DIS10 () , self . STALL_I_DIS11 () , self . STALL_I_DIS12 () , self . STALL_I_DIS13 () , self . STALL_I_DIS14 () , self . STALL_I_DIS15 ())
+        }
+    }
     #[doc = "Peripheral Mode Stall Disable for Endpoints 7 to 0 in IN Direction"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct STALL_IL_DIS(pub u32);
+    pub struct STALL_IL_DIS(pub u8);
     impl STALL_IL_DIS {
         #[inline(always)]
         pub const fn STALL_I_DIS0(&self) -> bool {
@@ -1684,7 +1732,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_I_DIS0(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn STALL_I_DIS1(&self) -> bool {
@@ -1693,7 +1741,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_I_DIS1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn STALL_I_DIS2(&self) -> bool {
@@ -1702,7 +1750,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_I_DIS2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn STALL_I_DIS3(&self) -> bool {
@@ -1711,7 +1759,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_I_DIS3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn STALL_I_DIS4(&self) -> bool {
@@ -1720,7 +1768,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_I_DIS4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn STALL_I_DIS5(&self) -> bool {
@@ -1729,7 +1777,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_I_DIS5(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn STALL_I_DIS6(&self) -> bool {
@@ -1738,7 +1786,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_I_DIS6(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn STALL_I_DIS7(&self) -> bool {
@@ -1747,7 +1795,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_I_DIS7(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for STALL_IL_DIS {
@@ -1770,10 +1818,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STALL_IL_DIS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STALL_IL_DIS {{ STALL_I_DIS0: {=bool:?}, STALL_I_DIS1: {=bool:?}, STALL_I_DIS2: {=bool:?}, STALL_I_DIS3: {=bool:?}, STALL_I_DIS4: {=bool:?}, STALL_I_DIS5: {=bool:?}, STALL_I_DIS6: {=bool:?}, STALL_I_DIS7: {=bool:?} }}" , self . STALL_I_DIS0 () , self . STALL_I_DIS1 () , self . STALL_I_DIS2 () , self . STALL_I_DIS3 () , self . STALL_I_DIS4 () , self . STALL_I_DIS5 () , self . STALL_I_DIS6 () , self . STALL_I_DIS7 ())
+        }
+    }
     #[doc = "Peripheral Mode Stall Disable for Endpoints 15 to 8 in OUT Direction"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct STALL_OH_DIS(pub u32);
+    pub struct STALL_OH_DIS(pub u8);
     impl STALL_OH_DIS {
         #[inline(always)]
         pub const fn STALL_O_DIS8(&self) -> bool {
@@ -1782,7 +1836,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_O_DIS8(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn STALL_O_DIS9(&self) -> bool {
@@ -1791,7 +1845,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_O_DIS9(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn STALL_O_DIS10(&self) -> bool {
@@ -1800,7 +1854,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_O_DIS10(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn STALL_O_DIS11(&self) -> bool {
@@ -1809,7 +1863,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_O_DIS11(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn STALL_O_DIS12(&self) -> bool {
@@ -1818,7 +1872,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_O_DIS12(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn STALL_O_DIS13(&self) -> bool {
@@ -1827,7 +1881,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_O_DIS13(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn STALL_O_DIS14(&self) -> bool {
@@ -1836,7 +1890,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_O_DIS14(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn STALL_O_DIS15(&self) -> bool {
@@ -1845,7 +1899,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_O_DIS15(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for STALL_OH_DIS {
@@ -1868,10 +1922,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STALL_OH_DIS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STALL_OH_DIS {{ STALL_O_DIS8: {=bool:?}, STALL_O_DIS9: {=bool:?}, STALL_O_DIS10: {=bool:?}, STALL_O_DIS11: {=bool:?}, STALL_O_DIS12: {=bool:?}, STALL_O_DIS13: {=bool:?}, STALL_O_DIS14: {=bool:?}, STALL_O_DIS15: {=bool:?} }}" , self . STALL_O_DIS8 () , self . STALL_O_DIS9 () , self . STALL_O_DIS10 () , self . STALL_O_DIS11 () , self . STALL_O_DIS12 () , self . STALL_O_DIS13 () , self . STALL_O_DIS14 () , self . STALL_O_DIS15 ())
+        }
+    }
     #[doc = "Peripheral Mode Stall Disable for Endpoints 7 to 0 in OUT Direction"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct STALL_OL_DIS(pub u32);
+    pub struct STALL_OL_DIS(pub u8);
     impl STALL_OL_DIS {
         #[inline(always)]
         pub const fn STALL_O_DIS0(&self) -> bool {
@@ -1880,7 +1940,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_O_DIS0(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn STALL_O_DIS1(&self) -> bool {
@@ -1889,7 +1949,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_O_DIS1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn STALL_O_DIS2(&self) -> bool {
@@ -1898,7 +1958,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_O_DIS2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn STALL_O_DIS3(&self) -> bool {
@@ -1907,7 +1967,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_O_DIS3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn STALL_O_DIS4(&self) -> bool {
@@ -1916,7 +1976,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_O_DIS4(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn STALL_O_DIS5(&self) -> bool {
@@ -1925,7 +1985,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_O_DIS5(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn STALL_O_DIS6(&self) -> bool {
@@ -1934,7 +1994,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_O_DIS6(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn STALL_O_DIS7(&self) -> bool {
@@ -1943,7 +2003,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STALL_O_DIS7(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for STALL_OL_DIS {
@@ -1966,10 +2026,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STALL_OL_DIS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STALL_OL_DIS {{ STALL_O_DIS0: {=bool:?}, STALL_O_DIS1: {=bool:?}, STALL_O_DIS2: {=bool:?}, STALL_O_DIS3: {=bool:?}, STALL_O_DIS4: {=bool:?}, STALL_O_DIS5: {=bool:?}, STALL_O_DIS6: {=bool:?}, STALL_O_DIS7: {=bool:?} }}" , self . STALL_O_DIS0 () , self . STALL_O_DIS1 () , self . STALL_O_DIS2 () , self . STALL_O_DIS3 () , self . STALL_O_DIS4 () , self . STALL_O_DIS5 () , self . STALL_O_DIS6 () , self . STALL_O_DIS7 ())
+        }
+    }
     #[doc = "Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct STAT(pub u32);
+    pub struct STAT(pub u8);
     impl STAT {
         #[inline(always)]
         pub const fn ODD(&self) -> bool {
@@ -1978,7 +2044,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ODD(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn TX(&self) -> bool {
@@ -1987,7 +2053,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_TX(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn ENDP(&self) -> u8 {
@@ -1996,7 +2062,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_ENDP(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
+            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u8) & 0x0f) << 4usize);
         }
     }
     impl Default for STAT {
@@ -2014,10 +2080,22 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "STAT {{ ODD: {=bool:?}, TX: {=bool:?}, ENDP: {=u8:?} }}",
+                self.ODD(),
+                self.TX(),
+                self.ENDP()
+            )
+        }
+    }
     #[doc = "Token"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct TOKEN(pub u32);
+    pub struct TOKEN(pub u8);
     impl TOKEN {
         #[inline(always)]
         pub const fn TOKENENDPT(&self) -> u8 {
@@ -2026,7 +2104,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_TOKENENDPT(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
         #[inline(always)]
         pub const fn TOKENPID(&self) -> u8 {
@@ -2035,7 +2113,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_TOKENPID(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
+            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u8) & 0x0f) << 4usize);
         }
     }
     impl Default for TOKEN {
@@ -2052,10 +2130,21 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TOKEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TOKEN {{ TOKENENDPT: {=u8:?}, TOKENPID: {=u8:?} }}",
+                self.TOKENENDPT(),
+                self.TOKENPID()
+            )
+        }
+    }
     #[doc = "USB Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct USBCTRL(pub u32);
+    pub struct USBCTRL(pub u8);
     impl USBCTRL {
         #[inline(always)]
         pub const fn DPDM_LANE_REVERSE(&self) -> bool {
@@ -2064,7 +2153,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DPDM_LANE_REVERSE(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn HOST_LS_EOP(&self) -> bool {
@@ -2073,7 +2162,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_HOST_LS_EOP(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn UARTSEL(&self) -> bool {
@@ -2082,7 +2171,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_UARTSEL(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn UARTCHLS(&self) -> bool {
@@ -2091,7 +2180,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_UARTCHLS(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn PDE(&self) -> bool {
@@ -2100,7 +2189,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PDE(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn SUSP(&self) -> bool {
@@ -2109,7 +2198,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_SUSP(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for USBCTRL {
@@ -2130,38 +2219,16 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "Frame Adjust"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct USBFRMADJUST(pub u32);
-    impl USBFRMADJUST {
-        #[inline(always)]
-        pub const fn ADJ(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_ADJ(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for USBFRMADJUST {
-        #[inline(always)]
-        fn default() -> USBFRMADJUST {
-            USBFRMADJUST(0)
-        }
-    }
-    impl core::fmt::Debug for USBFRMADJUST {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("USBFRMADJUST")
-                .field("ADJ", &self.ADJ())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USBCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USBCTRL {{ DPDM_LANE_REVERSE: {=bool:?}, HOST_LS_EOP: {=bool:?}, UARTSEL: {=bool:?}, UARTCHLS: {=bool:?}, PDE: {=bool:?}, SUSP: {=bool:?} }}" , self . DPDM_LANE_REVERSE () , self . HOST_LS_EOP () , self . UARTSEL () , self . UARTCHLS () , self . PDE () , self . SUSP ())
         }
     }
     #[doc = "USB Transceiver Control 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct USBTRC0(pub u32);
+    pub struct USBTRC0(pub u8);
     impl USBTRC0 {
         #[inline(always)]
         pub const fn USB_RESUME_INT(&self) -> bool {
@@ -2170,7 +2237,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_USB_RESUME_INT(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn SYNC_DET(&self) -> bool {
@@ -2179,7 +2246,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_SYNC_DET(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn USB_CLK_RECOVERY_INT(&self) -> bool {
@@ -2188,7 +2255,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_USB_CLK_RECOVERY_INT(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn VREDG_DET(&self) -> bool {
@@ -2197,7 +2264,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_VREDG_DET(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn VFEDG_DET(&self) -> bool {
@@ -2206,7 +2273,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_VFEDG_DET(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u8) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn USBRESMEN(&self) -> bool {
@@ -2215,7 +2282,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_USBRESMEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
         }
         #[inline(always)]
         pub const fn VREGIN_STS(&self) -> bool {
@@ -2224,7 +2291,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_VREGIN_STS(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u8) & 0x01) << 6usize);
         }
         #[inline(always)]
         pub const fn USBRESET(&self) -> bool {
@@ -2233,7 +2300,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_USBRESET(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u8) & 0x01) << 7usize);
         }
     }
     impl Default for USBTRC0 {
@@ -2254,6 +2321,12 @@ pub mod regs {
                 .field("VREGIN_STS", &self.VREGIN_STS())
                 .field("USBRESET", &self.USBRESET())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USBTRC0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "USBTRC0 {{ USB_RESUME_INT: {=bool:?}, SYNC_DET: {=bool:?}, USB_CLK_RECOVERY_INT: {=bool:?}, VREDG_DET: {=bool:?}, VFEDG_DET: {=bool:?}, USBRESMEN: {=bool:?}, VREGIN_STS: {=bool:?}, USBRESET: {=bool:?} }}" , self . USB_RESUME_INT () , self . SYNC_DET () , self . USB_CLK_RECOVERY_INT () , self . VREDG_DET () , self . VFEDG_DET () , self . USBRESMEN () , self . VREGIN_STS () , self . USBRESET ())
         }
     }
 }

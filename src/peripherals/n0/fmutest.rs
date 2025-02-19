@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct FMUTEST {
     ptr: *mut u8,
@@ -613,6 +613,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ATX_PIN_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ATX_PIN_CTRL {{ TM_TO_ATX: {=u8:?} }}", self.TM_TO_ATX())
+        }
+    }
     #[doc = "BIST Datadump Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -701,6 +707,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BIST_DUMP_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "BIST_DUMP_CTRL {{ BIST_DONE: {=bool:?}, BIST_FAIL: {=bool:?}, DATADUMP: {=bool:?}, DATADUMP_TRIG: {=bool:?}, DATADUMP_PATT: {=u8:?}, DATADUMP_MRGEN: {=bool:?}, DATADUMP_MRGTYPE: {=bool:?} }}" , self . BIST_DONE () , self . BIST_FAIL () , self . DATADUMP () , self . DATADUMP_TRIG () , self . DATADUMP_PATT () , self . DATADUMP_MRGEN () , self . DATADUMP_MRGTYPE ())
+        }
+    }
     #[doc = "FMU Block Select Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -739,6 +751,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "BSEL {{ SBSEL: {=u8:?}, MBSEL: {=u8:?} }}",
+                self.SBSEL(),
+                self.MBSEL()
+            )
+        }
+    }
     #[doc = "FMU Block Select Generation Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -775,6 +798,17 @@ pub mod regs {
                 .field("SBSEL_GEN", &self.SBSEL_GEN())
                 .field("MBSEL_GEN", &self.MBSEL_GEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BSEL_GEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "BSEL_GEN {{ SBSEL_GEN: {=u8:?}, MBSEL_GEN: {=u8:?} }}",
+                self.SBSEL_GEN(),
+                self.MBSEL_GEN()
+            )
         }
     }
     #[doc = "FMU Command Check Register"]
@@ -905,6 +939,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CMD_CHECK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CMD_CHECK {{ ALIGNFAIL_PHR: {=bool:?}, ALIGNFAIL_PG: {=bool:?}, ALIGNFAIL_SCR: {=bool:?}, ALIGNFAIL_BLK: {=bool:?}, ADDR_FAIL: {=bool:?}, IFR_CMD: {=bool:?}, ALL_CMD: {=bool:?}, RANGE_FAIL: {=bool:?}, SCR_ALIGN_CHK: {=bool:?}, OPTION_FAIL: {=bool:?}, ILLEGAL_CMD: {=bool:?} }}" , self . ALIGNFAIL_PHR () , self . ALIGNFAIL_PG () , self . ALIGNFAIL_SCR () , self . ALIGNFAIL_BLK () , self . ADDR_FAIL () , self . IFR_CMD () , self . ALL_CMD () , self . RANGE_FAIL () , self . SCR_ALIGN_CHK () , self . OPTION_FAIL () , self . ILLEGAL_CMD ())
+        }
+    }
     #[doc = "Erase Pulse Count Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -943,6 +983,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ERS_PULSE_CNT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ERS_PULSE_CNT {{ ERS_CNT0: {=u16:?}, ERS_CNT1: {=u16:?} }}",
+                self.ERS_CNT0(),
+                self.ERS_CNT1()
+            )
+        }
+    }
     #[doc = "Flash Command Control 0 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -971,6 +1022,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FCCOB0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FCCOB0 {{ CMDCODE: {=u8:?} }}", self.CMDCODE())
+        }
+    }
     #[doc = "Flash Command Control 1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -997,6 +1054,12 @@ pub mod regs {
             f.debug_struct("FCCOB1")
                 .field("CMDOPT", &self.CMDOPT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FCCOB1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FCCOB1 {{ CMDOPT: {=u8:?} }}", self.CMDOPT())
         }
     }
     #[doc = "Flash Configuration Register"]
@@ -1067,6 +1130,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FCNFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FCNFG {{ CCIE: {=bool:?}, ERSREQ: {=bool:?}, DFDIE: {=bool:?}, ERSIEN0: {=u8:?}, ERSIEN1: {=u8:?} }}" , self . CCIE () , self . ERSREQ () , self . DFDIE () , self . ERSIEN0 () , self . ERSIEN1 ())
+        }
+    }
     #[doc = "Flash Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1125,6 +1194,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FCTRL {{ RWSC: {=u8:?}, LSACTIVE: {=bool:?}, FDFD: {=bool:?}, ABTREQ: {=bool:?} }}" , self . RWSC () , self . LSACTIVE () , self . FDFD () , self . ABTREQ ())
+        }
+    }
     #[doc = "Flash Read Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1171,6 +1246,12 @@ pub mod regs {
                 .field("WIDE_LOAD", &self.WIDE_LOAD())
                 .field("SINGLE_RD", &self.SINGLE_RD())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLASH_RD_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FLASH_RD_CTRL {{ FLASH_RD: {=bool:?}, WIDE_LOAD: {=bool:?}, SINGLE_RD: {=bool:?} }}" , self . FLASH_RD () , self . WIDE_LOAD () , self . SINGLE_RD ())
         }
     }
     #[doc = "Flash Status Register"]
@@ -1321,6 +1402,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FSTAT {{ FAIL: {=bool:?}, CMDABT: {=bool:?}, PVIOL: {=bool:?}, ACCERR: {=bool:?}, CWSABT: {=bool:?}, CCIF: {=bool:?}, CMDPRT: {=u8:?}, CMDP: {=bool:?}, CMDDID: {=u8:?}, DFDIF: {=bool:?}, SALV_USED: {=bool:?}, PEWEN: {=u8:?}, PERDY: {=bool:?} }}" , self . FAIL () , self . CMDABT () , self . PVIOL () , self . ACCERR () , self . CWSABT () , self . CCIF () , self . CMDPRT () , self . CMDP () , self . CMDDID () , self . DFDIF () , self . SALV_USED () , self . PEWEN () , self . PERDY ())
+        }
+    }
     #[doc = "Flash Test Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1389,6 +1476,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FTEST {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FTEST {{ TMECTL: {=bool:?}, TMEWR: {=bool:?}, TME: {=bool:?}, TMODE: {=bool:?}, TMELOCK: {=bool:?} }}" , self . TMECTL () , self . TMEWR () , self . TME () , self . TMODE () , self . TMELOCK ())
+        }
+    }
     #[doc = "Maximum Pulse Count Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1435,6 +1528,12 @@ pub mod regs {
                 .field("MAX_ERS_CNT", &self.MAX_ERS_CNT())
                 .field("MAX_PGM_CNT", &self.MAX_PGM_CNT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MAX_PULSE_CNT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MAX_PULSE_CNT {{ LAST_PCNT: {=u16:?}, MAX_ERS_CNT: {=u16:?}, MAX_PGM_CNT: {=u8:?} }}" , self . LAST_PCNT () , self . MAX_ERS_CNT () , self . MAX_PGM_CNT ())
         }
     }
     #[doc = "FMU Control Register"]
@@ -1635,6 +1734,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCTL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MCTL {{ COREHLD: {=bool:?}, LSACT_EN: {=bool:?}, LSACTWREN: {=bool:?}, MASTER_REPAIR_EN: {=bool:?}, RFCMDEN: {=bool:?}, CWSABTEN: {=bool:?}, MRGRDDIS: {=bool:?}, MRGRD0: {=u8:?}, MRGRD1: {=u8:?}, ERSAACK: {=bool:?}, SCAN_OBS: {=bool:?}, BIST_CTL: {=bool:?}, SMWR_CTL: {=bool:?}, SALV_DIS: {=bool:?}, SOC_ECC_CTL: {=bool:?}, FMU_ECC_CTL: {=bool:?}, BIST_PWR_DIS: {=bool:?}, OSC_H: {=bool:?} }}" , self . COREHLD () , self . LSACT_EN () , self . LSACTWREN () , self . MASTER_REPAIR_EN () , self . RFCMDEN () , self . CWSABTEN () , self . MRGRDDIS () , self . MRGRD0 () , self . MRGRD1 () , self . ERSAACK () , self . SCAN_OBS () , self . BIST_CTL () , self . SMWR_CTL () , self . SALV_DIS () , self . SOC_ECC_CTL () , self . FMU_ECC_CTL () , self . BIST_PWR_DIS () , self . OSC_H ())
+        }
+    }
     #[doc = "Memory Map Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1693,6 +1798,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MM_CTL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MM_CTL {{ MM_SEL: {=bool:?}, MM_RD: {=bool:?}, BIST_ON: {=bool:?}, FORCE_SW_CLK: {=bool:?} }}" , self . MM_SEL () , self . MM_RD () , self . BIST_ON () , self . FORCE_SW_CLK ())
+        }
+    }
     #[doc = "FMU Memory Size Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1731,6 +1842,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MSIZE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MSIZE {{ MAXADDR0: {=u8:?}, MAXADDR1: {=u8:?} }}",
+                self.MAXADDR0(),
+                self.MAXADDR1()
+            )
+        }
+    }
     #[doc = "Parity Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1757,6 +1879,12 @@ pub mod regs {
             f.debug_struct("PARITY")
                 .field("PARITY", &self.PARITY())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARITY {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PARITY {{ PARITY: {=u16:?} }}", self.PARITY())
         }
     }
     #[doc = "Port Control Register"]
@@ -1795,6 +1923,17 @@ pub mod regs {
                 .field("BDONE_SEL", &self.BDONE_SEL())
                 .field("BSDO_SEL", &self.BSDO_SEL())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PORT_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PORT_CTRL {{ BDONE_SEL: {=u8:?}, BSDO_SEL: {=u8:?} }}",
+                self.BDONE_SEL(),
+                self.BSDO_SEL()
+            )
         }
     }
     #[doc = "Power Mode Options Register"]
@@ -1843,6 +1982,18 @@ pub mod regs {
                 .field("SLM_COUNT", &self.SLM_COUNT())
                 .field("PD_TIMER_EN", &self.PD_TIMER_EN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWR_OPT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PWR_OPT {{ PD_CDIV: {=u8:?}, SLM_COUNT: {=u16:?}, PD_TIMER_EN: {=bool:?} }}",
+                self.PD_CDIV(),
+                self.SLM_COUNT(),
+                self.PD_TIMER_EN()
+            )
         }
     }
     #[doc = "Read Path Control and Status Register"]
@@ -2013,6 +2164,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RD_PATH_CTRL_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RD_PATH_CTRL_STATUS {{ RD_CAPT: {=u8:?}, SE_SIZE: {=u8:?}, ECC_ENABLEB: {=bool:?}, MISR_EN: {=bool:?}, CPY_PAR_EN: {=bool:?}, BIST_MUX_TO_SMW: {=bool:?}, AD_SET: {=u8:?}, WR_PATH_EN: {=bool:?}, WR_PATH_ECC_EN: {=bool:?}, DBERR_REG: {=bool:?}, SBERR_REG: {=bool:?}, CPY_PHRASE_EN: {=bool:?}, SMW_ARRAY1_SMW0_SEL: {=bool:?}, BIST_ECC_EN: {=bool:?}, LAST_READ: {=bool:?} }}" , self . RD_CAPT () , self . SE_SIZE () , self . ECC_ENABLEB () , self . MISR_EN () , self . CPY_PAR_EN () , self . BIST_MUX_TO_SMW () , self . AD_SET () , self . WR_PATH_EN () , self . WR_PATH_ECC_EN () , self . DBERR_REG () , self . SBERR_REG () , self . CPY_PHRASE_EN () , self . SMW_ARRAY1_SMW0_SEL () , self . BIST_ECC_EN () , self . LAST_READ ())
+        }
+    }
     #[doc = "FMU Repair 0 Block 0 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2049,6 +2206,17 @@ pub mod regs {
                 .field("RDIS0_0", &self.RDIS0_0())
                 .field("RADR0_0", &self.RADR0_0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for REPAIR0_0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "REPAIR0_0 {{ RDIS0_0: {=bool:?}, RADR0_0: {=u8:?} }}",
+                self.RDIS0_0(),
+                self.RADR0_0()
+            )
         }
     }
     #[doc = "FMU Repair 1 Block 0 Register"]
@@ -2089,6 +2257,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for REPAIR0_1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "REPAIR0_1 {{ RDIS0_1: {=bool:?}, RADR0_1: {=u8:?} }}",
+                self.RDIS0_1(),
+                self.RADR0_1()
+            )
+        }
+    }
     #[doc = "FMU Repair 0 Block 1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2127,6 +2306,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for REPAIR1_0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "REPAIR1_0 {{ RDIS1_0: {=bool:?}, RADR1_0: {=u8:?} }}",
+                self.RDIS1_0(),
+                self.RADR1_0()
+            )
+        }
+    }
     #[doc = "FMU Repair 1 Block 1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2163,6 +2353,17 @@ pub mod regs {
                 .field("RDIS1_1", &self.RDIS1_1())
                 .field("RADR1_1", &self.RADR1_1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for REPAIR1_1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "REPAIR1_1 {{ RDIS1_1: {=bool:?}, RADR1_1: {=u8:?} }}",
+                self.RDIS1_1(),
+                self.RADR1_1()
+            )
         }
     }
     #[doc = "FMU Initialization Tracking Register"]
@@ -2313,6 +2514,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RESET_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RESET_STATUS {{ ARY_TRIM_DONE: {=bool:?}, FMU_PARM_EN: {=bool:?}, FMU_PARM_DONE: {=bool:?}, SOC_TRIM_EN: {=bool:?}, SOC_TRIM_ECC: {=bool:?}, SOC_TRIM_DONE: {=bool:?}, RPR_DONE: {=bool:?}, INIT_DONE: {=bool:?}, RST_SF_ERR: {=bool:?}, RST_DF_ERR: {=bool:?}, SOC_TRIM_DF_ERR: {=u8:?}, RST_PATCH_LD: {=bool:?}, RECALL_DATA_MISMATCH: {=bool:?} }}" , self . ARY_TRIM_DONE () , self . FMU_PARM_EN () , self . FMU_PARM_DONE () , self . SOC_TRIM_EN () , self . SOC_TRIM_ECC () , self . SOC_TRIM_DONE () , self . RPR_DONE () , self . INIT_DONE () , self . RST_SF_ERR () , self . RST_DF_ERR () , self . SOC_TRIM_DF_ERR () , self . RST_PATCH_LD () , self . RECALL_DATA_MISMATCH ())
+        }
+    }
     #[doc = "BIST Abort Loop Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2339,6 +2546,16 @@ pub mod regs {
             f.debug_struct("R_ABORT_LOOP")
                 .field("ABORT_LOOP", &self.ABORT_LOOP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_ABORT_LOOP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "R_ABORT_LOOP {{ ABORT_LOOP: {=bool:?} }}",
+                self.ABORT_LOOP()
+            )
         }
     }
     #[doc = "BIST Address Control Register"]
@@ -2399,6 +2616,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_ADR_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "R_ADR_CTRL {{ GRPSEL: {=u8:?}, XADR: {=u16:?}, YADR: {=u8:?}, PROG_ATTR: {=u8:?} }}" , self . GRPSEL () , self . XADR () , self . YADR () , self . PROG_ATTR ())
+        }
+    }
     #[doc = "BIST Address Query Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2437,6 +2660,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_ADR_QUERY {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "R_ADR_QUERY {{ YADRFAIL: {=u8:?}, XADRFAIL: {=u16:?} }}",
+                self.YADRFAIL(),
+                self.XADRFAIL()
+            )
+        }
+    }
     #[doc = "BIST Address MISR 1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2463,6 +2697,12 @@ pub mod regs {
             f.debug_struct("R_A_MISR1")
                 .field("ADRSIG1", &self.ADRSIG1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_A_MISR1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "R_A_MISR1 {{ ADRSIG1: {=u8:?} }}", self.ADRSIG1())
         }
     }
     #[doc = "BIST Loop Count Control Register"]
@@ -2523,6 +2763,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_CNT_LOOP_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "R_CNT_LOOP_CTRL {{ LOOPCNT: {=u16:?}, LOOPOPT: {=u8:?}, LOOPUNIT: {=u8:?}, LOOPDLY: {=u8:?} }}" , self . LOOPCNT () , self . LOOPOPT () , self . LOOPUNIT () , self . LOOPDLY ())
+        }
+    }
     #[doc = "BIST Control MISR 1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2549,6 +2795,12 @@ pub mod regs {
             f.debug_struct("R_C_MISR1")
                 .field("CTRLSIG1", &self.CTRLSIG1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_C_MISR1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "R_C_MISR1 {{ CTRLSIG1: {=u8:?} }}", self.CTRLSIG1())
         }
     }
     #[doc = "BIST Data Control 0 Extension Register"]
@@ -2579,6 +2831,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_DATA_CTRL0_EX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "R_DATA_CTRL0_EX {{ DATA0X: {=u8:?} }}", self.DATA0X())
+        }
+    }
     #[doc = "BIST Data Control 1 Extension Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2605,6 +2863,12 @@ pub mod regs {
             f.debug_struct("R_DATA_CTRL1_EX")
                 .field("DATA1X", &self.DATA1X())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_DATA_CTRL1_EX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "R_DATA_CTRL1_EX {{ DATA1X: {=u8:?} }}", self.DATA1X())
         }
     }
     #[doc = "BIST Data Control 2 Extension Register"]
@@ -2635,6 +2899,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_DATA_CTRL2_EX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "R_DATA_CTRL2_EX {{ DATA2X: {=u8:?} }}", self.DATA2X())
+        }
+    }
     #[doc = "BIST Data Control 3 Extension Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2661,6 +2931,12 @@ pub mod regs {
             f.debug_struct("R_DATA_CTRL3_EX")
                 .field("DATA3X", &self.DATA3X())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_DATA_CTRL3_EX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "R_DATA_CTRL3_EX {{ DATA3X: {=u8:?} }}", self.DATA3X())
         }
     }
     #[doc = "BIST DFT Control Register"]
@@ -2731,6 +3007,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_DFT_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "R_DFT_CTRL {{ DFT_XADR: {=u8:?}, DFT_YADR: {=u8:?}, DFT_DATA: {=u8:?}, CMP_MASK: {=u8:?}, DFT_DATA_SRC: {=bool:?} }}" , self . DFT_XADR () , self . DFT_YADR () , self . DFT_DATA () , self . CMP_MASK () , self . DFT_DATA_SRC ())
+        }
+    }
     #[doc = "BIST DOUT Query 1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2759,6 +3041,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_DOUT_QUERY1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "R_DOUT_QUERY1 {{ DOUT: {=u8:?} }}", self.DOUT())
+        }
+    }
     #[doc = "BIST DIN MISR 1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2785,6 +3073,12 @@ pub mod regs {
             f.debug_struct("R_D_MISR1")
                 .field("DATASIG1", &self.DATASIG1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_D_MISR1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "R_D_MISR1 {{ DATASIG1: {=u8:?} }}", self.DATASIG1())
         }
     }
     #[doc = "BIST Configuration Register"]
@@ -2903,6 +3197,12 @@ pub mod regs {
                 .field("SMWTST", &self.SMWTST())
                 .field("ECCEN", &self.ECCEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_IP_CONFIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "R_IP_CONFIG {{ IPSEL0: {=u8:?}, IPSEL1: {=u8:?}, BIST_CDIVL: {=u8:?}, CDIVS: {=u8:?}, BIST_TVFY: {=u8:?}, TSTCTL: {=u8:?}, DBGCTL: {=bool:?}, BIST_CLK_SEL: {=bool:?}, SMWTST: {=u8:?}, ECCEN: {=bool:?} }}" , self . IPSEL0 () , self . IPSEL1 () , self . BIST_CDIVL () , self . CDIVS () , self . BIST_TVFY () , self . TSTCTL () , self . DBGCTL () , self . BIST_CLK_SEL () , self . SMWTST () , self . ECCEN ())
         }
     }
     #[doc = "BIST Pin Control Register"]
@@ -3113,6 +3413,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_PIN_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "R_PIN_CTRL {{ MAS1: {=bool:?}, IFREN: {=bool:?}, IFREN1: {=bool:?}, REDEN: {=bool:?}, LVE: {=bool:?}, PV: {=bool:?}, EV: {=bool:?}, WIPGM: {=u8:?}, WHV: {=u8:?}, WMV: {=u8:?}, XE: {=bool:?}, YE: {=bool:?}, SE: {=bool:?}, ERASE: {=bool:?}, PROG: {=bool:?}, NVSTR: {=bool:?}, SLM: {=bool:?}, RECALL: {=bool:?}, HEM: {=bool:?} }}" , self . MAS1 () , self . IFREN () , self . IFREN1 () , self . REDEN () , self . LVE () , self . PV () , self . EV () , self . WIPGM () , self . WHV () , self . WMV () , self . XE () , self . YE () , self . SE () , self . ERASE () , self . PROG () , self . NVSTR () , self . SLM () , self . RECALL () , self . HEM ())
+        }
+    }
     #[doc = "BIST Repair 0 for Block 0 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3149,6 +3455,17 @@ pub mod regs {
                 .field("RDIS0_0", &self.RDIS0_0())
                 .field("RADR0_0", &self.RADR0_0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_REPAIR0_0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "R_REPAIR0_0 {{ RDIS0_0: {=bool:?}, RADR0_0: {=u8:?} }}",
+                self.RDIS0_0(),
+                self.RADR0_0()
+            )
         }
     }
     #[doc = "BIST Repair 1 Block 0 Register"]
@@ -3189,6 +3506,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_REPAIR0_1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "R_REPAIR0_1 {{ RDIS0_1: {=bool:?}, RADR0_1: {=u8:?} }}",
+                self.RDIS0_1(),
+                self.RADR0_1()
+            )
+        }
+    }
     #[doc = "BIST Repair 0 Block 1 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3225,6 +3553,17 @@ pub mod regs {
                 .field("RDIS1_0", &self.RDIS1_0())
                 .field("RADR1_0", &self.RADR1_0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_REPAIR1_0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "R_REPAIR1_0 {{ RDIS1_0: {=bool:?}, RADR1_0: {=u8:?} }}",
+                self.RDIS1_0(),
+                self.RADR1_0()
+            )
         }
     }
     #[doc = "BIST Repair 1 Block 1 Register"]
@@ -3265,6 +3604,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_REPAIR1_1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "R_REPAIR1_1 {{ RDIS1_1: {=bool:?}, RADR1_1: {=u8:?} }}",
+                self.RDIS1_1(),
+                self.RADR1_1()
+            )
+        }
+    }
     #[doc = "BIST SMW Query Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3303,6 +3653,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_SMW_QUERY {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "R_SMW_QUERY {{ SMWLOOP: {=u16:?}, SMWLAST: {=u16:?} }}",
+                self.SMWLOOP(),
+                self.SMWLAST()
+            )
+        }
+    }
     #[doc = "BIST SMW Setting 0 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3329,6 +3690,16 @@ pub mod regs {
             f.debug_struct("R_SMW_SETTING0")
                 .field("SMWPARM0", &self.SMWPARM0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_SMW_SETTING0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "R_SMW_SETTING0 {{ SMWPARM0: {=u32:?} }}",
+                self.SMWPARM0()
+            )
         }
     }
     #[doc = "BIST SMW Setting 1 Register"]
@@ -3359,6 +3730,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_SMW_SETTING1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "R_SMW_SETTING1 {{ SMWPARM1: {=u32:?} }}",
+                self.SMWPARM1()
+            )
+        }
+    }
     #[doc = "BIST SMW Setting 2 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3385,6 +3766,16 @@ pub mod regs {
             f.debug_struct("R_SMW_SETTING2")
                 .field("SMWPARM2", &self.SMWPARM2())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_SMW_SETTING2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "R_SMW_SETTING2 {{ SMWPARM2: {=u32:?} }}",
+                self.SMWPARM2()
+            )
         }
     }
     #[doc = "BIST SMW Setting 3 Register"]
@@ -3415,6 +3806,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_SMW_SETTING3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "R_SMW_SETTING3 {{ SMWPARM3: {=u32:?} }}",
+                self.SMWPARM3()
+            )
+        }
+    }
     #[doc = "BIST Test Code Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3441,6 +3842,12 @@ pub mod regs {
             f.debug_struct("R_TESTCODE")
                 .field("TESTCODE", &self.TESTCODE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_TESTCODE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "R_TESTCODE {{ TESTCODE: {=u8:?} }}", self.TESTCODE())
         }
     }
     #[doc = "BIST Test Control Register"]
@@ -3539,6 +3946,12 @@ pub mod regs {
                 .field("CMDINDEX", &self.CMDINDEX())
                 .field("DISABLE_IP1", &self.DISABLE_IP1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_TEST_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "R_TEST_CTRL {{ BUSY: {=bool:?}, DEBUG: {=bool:?}, STATUS0: {=bool:?}, STATUS1: {=bool:?}, DEBUGRUN: {=bool:?}, STARTRUN: {=bool:?}, CMDINDEX: {=u16:?}, DISABLE_IP1: {=bool:?} }}" , self . BUSY () , self . DEBUG () , self . STATUS0 () , self . STATUS1 () , self . DEBUGRUN () , self . STARTRUN () , self . CMDINDEX () , self . DISABLE_IP1 ())
         }
     }
     #[doc = "BIST Timer Control Register"]
@@ -3659,6 +4072,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_TIMER_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "R_TIMER_CTRL {{ TNVSUNIT: {=u8:?}, TNVSDLY: {=u8:?}, TNVHUNIT: {=u8:?}, TNVHDLY: {=u8:?}, TPGSUNIT: {=u8:?}, TPGSDLY: {=u8:?}, TRCVUNIT: {=u8:?}, TRCVDLY: {=u8:?}, TLVSUNIT: {=u8:?}, TLVSDLY_L: {=bool:?} }}" , self . TNVSUNIT () , self . TNVSDLY () , self . TNVHUNIT () , self . TNVHDLY () , self . TPGSUNIT () , self . TPGSDLY () , self . TRCVUNIT () , self . TRCVDLY () , self . TLVSUNIT () , self . TLVSDLY_L ())
+        }
+    }
     #[doc = "BIST Timer Control Extension Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3685,6 +4104,16 @@ pub mod regs {
             f.debug_struct("R_TIMER_CTRL_EX")
                 .field("TLVSDLY_H", &self.TLVSDLY_H())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for R_TIMER_CTRL_EX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "R_TIMER_CTRL_EX {{ TLVSDLY_H: {=u8:?} }}",
+                self.TLVSDLY_H()
+            )
         }
     }
     #[doc = "SMW Command and Wait Register"]
@@ -3733,6 +4162,18 @@ pub mod regs {
                 .field("WAIT_EN", &self.WAIT_EN())
                 .field("WAIT_AUTO_SET", &self.WAIT_AUTO_SET())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SMW_CMD_WAIT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SMW_CMD_WAIT {{ CMD: {=u8:?}, WAIT_EN: {=bool:?}, WAIT_AUTO_SET: {=bool:?} }}",
+                self.CMD(),
+                self.WAIT_EN(),
+                self.WAIT_AUTO_SET()
+            )
         }
     }
     #[doc = "SMW HB Signals Register"]
@@ -3823,6 +4264,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SMW_HB_SIGNALS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SMW_HB_SIGNALS {{ SMW_ARRAY: {=u8:?}, USER_IFREN1: {=bool:?}, USER_PV: {=bool:?}, USER_EV: {=bool:?}, USER_IFREN: {=bool:?}, USER_REDEN: {=bool:?}, USER_HEM: {=bool:?} }}" , self . SMW_ARRAY () , self . USER_IFREN1 () , self . USER_PV () , self . USER_EV () , self . USER_IFREN () , self . USER_REDEN () , self . USER_HEM ())
+        }
+    }
     #[doc = "SMW Setting Option 0 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3899,6 +4346,12 @@ pub mod regs {
                 .field("IPGM_END", &self.IPGM_END())
                 .field("IPGM_MISC", &self.IPGM_MISC())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SMW_SETTING_OPTION0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SMW_SETTING_OPTION0 {{ MV_INIT: {=u8:?}, MV_END: {=u8:?}, MV_MISC: {=u8:?}, IPGM_INIT: {=u8:?}, IPGM_END: {=u8:?}, IPGM_MISC: {=u8:?} }}" , self . MV_INIT () , self . MV_END () , self . MV_MISC () , self . IPGM_INIT () , self . IPGM_END () , self . IPGM_MISC ())
         }
     }
     #[doc = "SMW Setting Option 1 Register"]
@@ -3987,6 +4440,12 @@ pub mod regs {
                 .field("MAX_ERASE", &self.MAX_ERASE())
                 .field("MAX_PROG", &self.MAX_PROG())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SMW_SETTING_OPTION1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SMW_SETTING_OPTION1 {{ TERS_CTRL0: {=u8:?}, TPGM_CTRL: {=u8:?}, TNVS_CTRL: {=u8:?}, TNVH_CTRL: {=u8:?}, TPGS_CTRL: {=u8:?}, MAX_ERASE: {=u16:?}, MAX_PROG: {=u8:?} }}" , self . TERS_CTRL0 () , self . TPGM_CTRL () , self . TNVS_CTRL () , self . TNVH_CTRL () , self . TPGS_CTRL () , self . MAX_ERASE () , self . MAX_PROG ())
         }
     }
     #[doc = "SMW Setting Option 2 Register"]
@@ -4117,6 +4576,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SMW_SETTING_OPTION2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SMW_SETTING_OPTION2 {{ THVS_CTRL: {=u8:?}, TRCV_CTRL: {=u8:?}, XTRA_ERS: {=u8:?}, XTRA_PGM: {=u8:?}, WHV_CNTR: {=u8:?}, POST_TERS: {=u8:?}, POST_TPGM: {=u8:?}, VFY_OPT: {=u8:?}, TPGM_OPT: {=u8:?}, MASK0_OPT: {=bool:?}, DIS_PRER: {=bool:?} }}" , self . THVS_CTRL () , self . TRCV_CTRL () , self . XTRA_ERS () , self . XTRA_PGM () , self . WHV_CNTR () , self . POST_TERS () , self . POST_TPGM () , self . VFY_OPT () , self . TPGM_OPT () , self . MASK0_OPT () , self . DIS_PRER ())
+        }
+    }
     #[doc = "SMW Setting Option 3 Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4153,6 +4618,17 @@ pub mod regs {
                 .field("HEM_WHV_CNTR", &self.HEM_WHV_CNTR())
                 .field("HEM_MAX_ERS", &self.HEM_MAX_ERS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SMW_SETTING_OPTION3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SMW_SETTING_OPTION3 {{ HEM_WHV_CNTR: {=u8:?}, HEM_MAX_ERS: {=u16:?} }}",
+                self.HEM_WHV_CNTR(),
+                self.HEM_MAX_ERS()
+            )
         }
     }
     #[doc = "SMW Status Register"]
@@ -4203,6 +4679,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SMW_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SMW_STATUS {{ SMW_ERR: {=bool:?}, SMW_BUSY: {=bool:?}, BIST_BUSY: {=bool:?} }}",
+                self.SMW_ERR(),
+                self.SMW_BUSY(),
+                self.BIST_BUSY()
+            )
+        }
+    }
     #[doc = "SMW Timer Option Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4241,6 +4729,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SMW_TIMER_OPTION {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SMW_TIMER_OPTION {{ SMW_CDIVL: {=u8:?}, SMW_TVFY: {=u8:?} }}",
+                self.SMW_CDIVL(),
+                self.SMW_TVFY()
+            )
+        }
+    }
     #[doc = "User Interface Control Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4277,6 +4776,17 @@ pub mod regs {
                 .field("SET_FAIL", &self.SET_FAIL())
                 .field("DBERR", &self.DBERR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for UINT_CTL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "UINT_CTL {{ SET_FAIL: {=bool:?}, DBERR: {=bool:?} }}",
+                self.SET_FAIL(),
+                self.DBERR()
+            )
         }
     }
 }

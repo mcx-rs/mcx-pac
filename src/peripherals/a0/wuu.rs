@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct WUU {
     ptr: *mut u8,
@@ -117,6 +117,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DE {{ WUDE4: {=bool:?}, WUDE6: {=bool:?}, WUDE8: {=bool:?} }}",
+                self.WUDE4(),
+                self.WUDE6(),
+                self.WUDE8()
+            )
+        }
+    }
     #[doc = "Pin Filter DMA/Trigger Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -153,6 +165,17 @@ pub mod regs {
                 .field("FILTC1", &self.FILTC1())
                 .field("FILTC2", &self.FILTC2())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FDC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FDC {{ FILTC1: {=u8:?}, FILTC2: {=u8:?} }}",
+                self.FILTC1(),
+                self.FILTC2()
+            )
         }
     }
     #[doc = "Pin Filter"]
@@ -233,6 +256,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FILT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FILT {{ FILTSEL1: {=u8:?}, FILTE1: {=u8:?}, FILTF1: {=bool:?}, FILTSEL2: {=u8:?}, FILTE2: {=u8:?}, FILTF2: {=bool:?} }}" , self . FILTSEL1 () , self . FILTE1 () , self . FILTF1 () , self . FILTSEL2 () , self . FILTE2 () , self . FILTF2 ())
+        }
+    }
     #[doc = "Pin Filter Mode Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -269,6 +298,17 @@ pub mod regs {
                 .field("FILTM1", &self.FILTM1())
                 .field("FILTM2", &self.FILTM2())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FMC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FMC {{ FILTM1: {=bool:?}, FILTM2: {=bool:?} }}",
+                self.FILTM1(),
+                self.FILTM2()
+            )
         }
     }
     #[doc = "Module Interrupt Enable"]
@@ -329,6 +369,19 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ME {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "ME {{ WUME0: {=bool:?}, WUME2: {=bool:?}, WUME6: {=bool:?}, WUME8: {=bool:?} }}",
+                self.WUME0(),
+                self.WUME2(),
+                self.WUME6(),
+                self.WUME8()
+            )
+        }
+    }
     #[doc = "Parameter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -385,6 +438,19 @@ pub mod regs {
                 .field("MODULES", &self.MODULES())
                 .field("PINS", &self.PINS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PARAM {{ FILTERS: {=u8:?}, DMAS: {=u8:?}, MODULES: {=u8:?}, PINS: {=u8:?} }}",
+                self.FILTERS(),
+                self.DMAS(),
+                self.MODULES(),
+                self.PINS()
+            )
         }
     }
     #[doc = "Pin DMA/Trigger Configuration 1"]
@@ -565,6 +631,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PDC1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PDC1 {{ Reserved0: {=u8:?}, Reserved1: {=u8:?}, WUPDC2: {=u8:?}, Reserved3: {=u8:?}, Reserved4: {=u8:?}, Reserved5: {=u8:?}, WUPDC6: {=u8:?}, WUPDC7: {=u8:?}, WUPDC8: {=u8:?}, WUPDC9: {=u8:?}, WUPDC10: {=u8:?}, WUPDC11: {=u8:?}, WUPDC12: {=u8:?}, Reserved13: {=u8:?}, Reserved14: {=u8:?}, Reserved15: {=u8:?} }}" , self . Reserved0 () , self . Reserved1 () , self . WUPDC2 () , self . Reserved3 () , self . Reserved4 () , self . Reserved5 () , self . WUPDC6 () , self . WUPDC7 () , self . WUPDC8 () , self . WUPDC9 () , self . WUPDC10 () , self . WUPDC11 () , self . WUPDC12 () , self . Reserved13 () , self . Reserved14 () , self . Reserved15 ())
+        }
+    }
     #[doc = "Pin DMA/Trigger Configuration 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -741,6 +813,12 @@ pub mod regs {
                 .field("Reserved30", &self.Reserved30())
                 .field("WUPDC31", &self.WUPDC31())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PDC2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PDC2 {{ Reserved16: {=u8:?}, Reserved17: {=u8:?}, WUPDC18: {=u8:?}, WUPDC19: {=u8:?}, WUPDC20: {=u8:?}, Reserved21: {=u8:?}, WUPDC22: {=u8:?}, WUPDC23: {=u8:?}, WUPDC24: {=u8:?}, WUPDC25: {=u8:?}, WUPDC26: {=u8:?}, WUPDC27: {=u8:?}, WUPDC28: {=u8:?}, WUPDC29: {=u8:?}, Reserved30: {=u8:?}, WUPDC31: {=u8:?} }}" , self . Reserved16 () , self . Reserved17 () , self . WUPDC18 () , self . WUPDC19 () , self . WUPDC20 () , self . Reserved21 () , self . WUPDC22 () , self . WUPDC23 () , self . WUPDC24 () , self . WUPDC25 () , self . WUPDC26 () , self . WUPDC27 () , self . WUPDC28 () , self . WUPDC29 () , self . Reserved30 () , self . WUPDC31 ())
         }
     }
     #[doc = "Pin Enable 1"]
@@ -921,6 +999,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PE1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PE1 {{ Reserved0: {=u8:?}, Reserved1: {=u8:?}, WUPE2: {=u8:?}, Reserved3: {=u8:?}, Reserved4: {=u8:?}, Reserved5: {=u8:?}, WUPE6: {=u8:?}, WUPE7: {=u8:?}, WUPE8: {=u8:?}, WUPE9: {=u8:?}, WUPE10: {=u8:?}, WUPE11: {=u8:?}, WUPE12: {=u8:?}, Reserved13: {=u8:?}, Reserved14: {=u8:?}, Reserved15: {=u8:?} }}" , self . Reserved0 () , self . Reserved1 () , self . WUPE2 () , self . Reserved3 () , self . Reserved4 () , self . Reserved5 () , self . WUPE6 () , self . WUPE7 () , self . WUPE8 () , self . WUPE9 () , self . WUPE10 () , self . WUPE11 () , self . WUPE12 () , self . Reserved13 () , self . Reserved14 () , self . Reserved15 ())
+        }
+    }
     #[doc = "Pin Enable 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1097,6 +1181,12 @@ pub mod regs {
                 .field("Reserved30", &self.Reserved30())
                 .field("WUPE31", &self.WUPE31())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PE2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PE2 {{ Reserved16: {=u8:?}, Reserved17: {=u8:?}, WUPE18: {=u8:?}, WUPE19: {=u8:?}, WUPE20: {=u8:?}, Reserved21: {=u8:?}, WUPE22: {=u8:?}, WUPE23: {=u8:?}, WUPE24: {=u8:?}, WUPE25: {=u8:?}, WUPE26: {=u8:?}, WUPE27: {=u8:?}, WUPE28: {=u8:?}, WUPE29: {=u8:?}, Reserved30: {=u8:?}, WUPE31: {=u8:?} }}" , self . Reserved16 () , self . Reserved17 () , self . WUPE18 () , self . WUPE19 () , self . WUPE20 () , self . Reserved21 () , self . WUPE22 () , self . WUPE23 () , self . WUPE24 () , self . WUPE25 () , self . WUPE26 () , self . WUPE27 () , self . WUPE28 () , self . WUPE29 () , self . Reserved30 () , self . WUPE31 ())
         }
     }
     #[doc = "Pin Flag"]
@@ -1437,6 +1527,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PF {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PF {{ Reserved0: {=bool:?}, Reserved1: {=bool:?}, WUF2: {=bool:?}, Reserved3: {=bool:?}, Reserved4: {=bool:?}, Reserved5: {=bool:?}, WUF6: {=bool:?}, WUF7: {=bool:?}, WUF8: {=bool:?}, WUF9: {=bool:?}, WUF10: {=bool:?}, WUF11: {=bool:?}, WUF12: {=bool:?}, Reserved13: {=bool:?}, Reserved14: {=bool:?}, Reserved15: {=bool:?}, Reserved16: {=bool:?}, Reserved17: {=bool:?}, WUF18: {=bool:?}, WUF19: {=bool:?}, WUF20: {=bool:?}, Reserved21: {=bool:?}, WUF22: {=bool:?}, WUF23: {=bool:?}, WUF24: {=bool:?}, WUF25: {=bool:?}, WUF26: {=bool:?}, WUF27: {=bool:?}, WUF28: {=bool:?}, WUF29: {=bool:?}, Reserved30: {=bool:?}, WUF31: {=bool:?} }}" , self . Reserved0 () , self . Reserved1 () , self . WUF2 () , self . Reserved3 () , self . Reserved4 () , self . Reserved5 () , self . WUF6 () , self . WUF7 () , self . WUF8 () , self . WUF9 () , self . WUF10 () , self . WUF11 () , self . WUF12 () , self . Reserved13 () , self . Reserved14 () , self . Reserved15 () , self . Reserved16 () , self . Reserved17 () , self . WUF18 () , self . WUF19 () , self . WUF20 () , self . Reserved21 () , self . WUF22 () , self . WUF23 () , self . WUF24 () , self . WUF25 () , self . WUF26 () , self . WUF27 () , self . WUF28 () , self . WUF29 () , self . Reserved30 () , self . WUF31 ())
+        }
+    }
     #[doc = "Pin Mode Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1775,6 +1871,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PMC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PMC {{ Reserved0: {=bool:?}, Reserved1: {=bool:?}, WUPMC2: {=bool:?}, Reserved3: {=bool:?}, Reserved4: {=bool:?}, Reserved5: {=bool:?}, WUPMC6: {=bool:?}, WUPMC7: {=bool:?}, WUPMC8: {=bool:?}, WUPMC9: {=bool:?}, WUPMC10: {=bool:?}, WUPMC11: {=bool:?}, WUPMC12: {=bool:?}, Reserved13: {=bool:?}, Reserved14: {=bool:?}, Reserved15: {=bool:?}, Reserved16: {=bool:?}, Reserved17: {=bool:?}, WUPMC18: {=bool:?}, WUPMC19: {=bool:?}, WUPMC20: {=bool:?}, Reserved21: {=bool:?}, WUPMC22: {=bool:?}, WUPMC23: {=bool:?}, WUPMC24: {=bool:?}, WUPMC25: {=bool:?}, WUPMC26: {=bool:?}, WUPMC27: {=bool:?}, WUPMC28: {=bool:?}, WUPMC29: {=bool:?}, Reserved30: {=bool:?}, WUPMC31: {=bool:?} }}" , self . Reserved0 () , self . Reserved1 () , self . WUPMC2 () , self . Reserved3 () , self . Reserved4 () , self . Reserved5 () , self . WUPMC6 () , self . WUPMC7 () , self . WUPMC8 () , self . WUPMC9 () , self . WUPMC10 () , self . WUPMC11 () , self . WUPMC12 () , self . Reserved13 () , self . Reserved14 () , self . Reserved15 () , self . Reserved16 () , self . Reserved17 () , self . WUPMC18 () , self . WUPMC19 () , self . WUPMC20 () , self . Reserved21 () , self . WUPMC22 () , self . WUPMC23 () , self . WUPMC24 () , self . WUPMC25 () , self . WUPMC26 () , self . WUPMC27 () , self . WUPMC28 () , self . WUPMC29 () , self . Reserved30 () , self . WUPMC31 ())
+        }
+    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1821,6 +1923,18 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
         }
     }
 }

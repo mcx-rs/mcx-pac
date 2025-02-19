@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct CHANNEL {
     ptr: *mut u8,
@@ -174,6 +174,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CACFR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CHANNEL_CACFR {{ ADMASEL: {=u8:?}, HPFA: {=u8:?}, IBDLY: {=u8:?} }}",
+                self.ADMASEL(),
+                self.HPFA(),
+                self.IBDLY()
+            )
+        }
+    }
     #[doc = "Channel 0 Bias..Channel 4 Bias"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -200,6 +212,12 @@ pub mod regs {
             f.debug_struct("CHANNEL_CBIAS")
                 .field("BIAS", &self.BIAS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CBIAS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CHANNEL_CBIAS {{ BIAS: {=u32:?} }}", self.BIAS())
         }
     }
     #[doc = "Channel 0 Configuration..Channel 4 Configuration"]
@@ -320,6 +338,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CCFR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CHANNEL_CCFR {{ PFSFT: {=u8:?}, RDFMT: {=bool:?}, FIFOWMK: {=u8:?}, IBFMT: {=u8:?}, ICSEL: {=u8:?}, ICESEL: {=u8:?}, ITSEL: {=u8:?}, IBSEL: {=u8:?}, ITLVL: {=bool:?}, ZCOP: {=u8:?} }}" , self . PFSFT () , self . RDFMT () , self . FIFOWMK () , self . IBFMT () , self . ICSEL () , self . ICESEL () , self . ITSEL () , self . IBSEL () , self . ITLVL () , self . ZCOP ())
+        }
+    }
     #[doc = "Channel 0 Control..Channel 4 Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -428,6 +452,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CHANNEL_CCR {{ CHEN: {=bool:?}, PFEN: {=bool:?}, DMAEN: {=bool:?}, SCDEN: {=bool:?}, CADEN: {=bool:?}, ZCDEN: {=bool:?}, LMTEN: {=bool:?}, FIFOEN: {=bool:?}, DBGSEL: {=u8:?} }}" , self . CHEN () , self . PFEN () , self . DMAEN () , self . SCDEN () , self . CADEN () , self . ZCDEN () , self . LMTEN () , self . FIFOEN () , self . DBGSEL ())
+        }
+    }
     #[doc = "Channel 0 Data Rate..Channel 4 Data Rate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -476,6 +506,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CDR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CHANNEL_CDR {{ PFOSR: {=u16:?}, PFORD: {=u8:?}, PFCM: {=u8:?} }}",
+                self.PFOSR(),
+                self.PFORD(),
+                self.PFCM()
+            )
+        }
+    }
     #[doc = "Channel 0 High Limit..Channel 4 High Limit"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -504,6 +546,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CHILMT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CHANNEL_CHILMT {{ HILMT: {=u32:?} }}", self.HILMT())
+        }
+    }
     #[doc = "Channel 0 Low Limit..Channel 4 Low Limit"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -530,6 +578,12 @@ pub mod regs {
             f.debug_struct("CHANNEL_CLOLMT")
                 .field("LOLMT", &self.LOLMT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CLOLMT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CHANNEL_CLOLMT {{ LOLMT: {=u32:?} }}", self.LOLMT())
         }
     }
     #[doc = "Channel 0 Protection..Channel 4 Protection"]
@@ -650,6 +704,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CPROT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CHANNEL_CPROT {{ SCDLMT: {=u8:?}, SCDCM: {=bool:?}, SCDOP: {=u8:?}, LMTOP: {=u8:?}, CADLMT: {=u8:?}, CADBK: {=bool:?}, SCDBK: {=bool:?}, LLMTBK: {=bool:?}, WLMTBK: {=bool:?}, HLMTBK: {=bool:?} }}" , self . SCDLMT () , self . SCDCM () , self . SCDOP () , self . LMTOP () , self . CADLMT () , self . CADBK () , self . SCDBK () , self . LLMTBK () , self . WLMTBK () , self . HLMTBK ())
+        }
+    }
     #[doc = "Channel 0 Result Data..Channel 4 Result Data"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -676,6 +736,12 @@ pub mod regs {
             f.debug_struct("CHANNEL_CRDATA")
                 .field("RDATA", &self.RDATA())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CRDATA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CHANNEL_CRDATA {{ RDATA: {=u32:?} }}", self.RDATA())
         }
     }
     #[doc = "Channel 0 Status..Channel 4 Status"]
@@ -804,6 +870,12 @@ pub mod regs {
                 .field("CNUM", &self.CNUM())
                 .field("CNUM_OV", &self.CNUM_OV())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CHANNEL_CSR {{ FIFOAVIL: {=u8:?}, PSRDY: {=bool:?}, PFSAT: {=bool:?}, HPFSAT: {=bool:?}, SFTSAT: {=bool:?}, BIASSAT: {=bool:?}, RDRS: {=bool:?}, SRDS: {=bool:?}, DBGRS: {=u8:?}, CNUM: {=u8:?}, CNUM_OV: {=bool:?} }}" , self . FIFOAVIL () , self . PSRDY () , self . PFSAT () , self . HPFSAT () , self . SFTSAT () , self . BIASSAT () , self . RDRS () , self . SRDS () , self . DBGRS () , self . CNUM () , self . CNUM_OV ())
         }
     }
     #[doc = "Error Interrupt Enable"]
@@ -1024,6 +1096,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EIE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "EIE {{ SCDIE0: {=bool:?}, SCDIE1: {=bool:?}, SCDIE2: {=bool:?}, SCDIE3: {=bool:?}, SCDIE4: {=bool:?}, WLMTIE0: {=bool:?}, WLMTIE1: {=bool:?}, WLMTIE2: {=bool:?}, WLMTIE3: {=bool:?}, WLMTIE4: {=bool:?}, LLMTIE0: {=bool:?}, LLMTIE1: {=bool:?}, LLMTIE2: {=bool:?}, LLMTIE3: {=bool:?}, LLMTIE4: {=bool:?}, HLMTIE0: {=bool:?}, HLMTIE1: {=bool:?}, HLMTIE2: {=bool:?}, HLMTIE3: {=bool:?}, HLMTIE4: {=bool:?} }}" , self . SCDIE0 () , self . SCDIE1 () , self . SCDIE2 () , self . SCDIE3 () , self . SCDIE4 () , self . WLMTIE0 () , self . WLMTIE1 () , self . WLMTIE2 () , self . WLMTIE3 () , self . WLMTIE4 () , self . LLMTIE0 () , self . LLMTIE1 () , self . LLMTIE2 () , self . LLMTIE3 () , self . LLMTIE4 () , self . HLMTIE0 () , self . HLMTIE1 () , self . HLMTIE2 () , self . HLMTIE3 () , self . HLMTIE4 ())
+        }
+    }
     #[doc = "Error Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1240,6 +1318,12 @@ pub mod regs {
                 .field("HLMT3", &self.HLMT3())
                 .field("HLMT4", &self.HLMT4())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EIS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "EIS {{ SCD0: {=bool:?}, SCD1: {=bool:?}, SCD2: {=bool:?}, SCD3: {=bool:?}, SCD4: {=bool:?}, WLMT0: {=bool:?}, WLMT1: {=bool:?}, WLMT2: {=bool:?}, WLMT3: {=bool:?}, WLMT4: {=bool:?}, LLMT0: {=bool:?}, LLMT1: {=bool:?}, LLMT2: {=bool:?}, LLMT3: {=bool:?}, LLMT4: {=bool:?}, HLMT0: {=bool:?}, HLMT1: {=bool:?}, HLMT2: {=bool:?}, HLMT3: {=bool:?}, HLMT4: {=bool:?} }}" , self . SCD0 () , self . SCD1 () , self . SCD2 () , self . SCD3 () , self . SCD4 () , self . WLMT0 () , self . WLMT1 () , self . WLMT2 () , self . WLMT3 () , self . WLMT4 () , self . LLMT0 () , self . LLMT1 () , self . LLMT2 () , self . LLMT3 () , self . LLMT4 () , self . HLMT0 () , self . HLMT1 () , self . HLMT2 () , self . HLMT3 () , self . HLMT4 ())
         }
     }
     #[doc = "FIFO And CAD Error Interrupt Enable"]
@@ -1460,6 +1544,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIFOIE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FIFOIE {{ FUNFIE0: {=bool:?}, FUNFIE1: {=bool:?}, FUNFIE2: {=bool:?}, FUNFIE3: {=bool:?}, FUNFIE4: {=bool:?}, FOVFIE0: {=bool:?}, FOVFIE1: {=bool:?}, FOVFIE2: {=bool:?}, FOVFIE3: {=bool:?}, FOVFIE4: {=bool:?}, CADIE0: {=bool:?}, CADIE1: {=bool:?}, CADIE2: {=bool:?}, CADIE3: {=bool:?}, CADIE4: {=bool:?}, SATIE0: {=bool:?}, SATIE1: {=bool:?}, SATIE2: {=bool:?}, SATIE3: {=bool:?}, SATIE4: {=bool:?} }}" , self . FUNFIE0 () , self . FUNFIE1 () , self . FUNFIE2 () , self . FUNFIE3 () , self . FUNFIE4 () , self . FOVFIE0 () , self . FOVFIE1 () , self . FOVFIE2 () , self . FOVFIE3 () , self . FOVFIE4 () , self . CADIE0 () , self . CADIE1 () , self . CADIE2 () , self . CADIE3 () , self . CADIE4 () , self . SATIE0 () , self . SATIE1 () , self . SATIE2 () , self . SATIE3 () , self . SATIE4 ())
+        }
+    }
     #[doc = "FIFO And CAD Error Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1678,6 +1768,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FIFOIS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FIFOIS {{ FUNF0: {=bool:?}, FUNF1: {=bool:?}, FUNF2: {=bool:?}, FUNF3: {=bool:?}, FUNF4: {=bool:?}, FOVF0: {=bool:?}, FOVF1: {=bool:?}, FOVF2: {=bool:?}, FOVF3: {=bool:?}, FOVF4: {=bool:?}, CAD0: {=bool:?}, CAD1: {=bool:?}, CAD2: {=bool:?}, CAD3: {=bool:?}, CAD4: {=bool:?}, SAT0: {=bool:?}, SAT1: {=bool:?}, SAT2: {=bool:?}, SAT3: {=bool:?}, SAT4: {=bool:?} }}" , self . FUNF0 () , self . FUNF1 () , self . FUNF2 () , self . FUNF3 () , self . FUNF4 () , self . FOVF0 () , self . FOVF1 () , self . FOVF2 () , self . FOVF3 () , self . FOVF4 () , self . CAD0 () , self . CAD1 () , self . CAD2 () , self . CAD3 () , self . CAD4 () , self . SAT0 () , self . SAT1 () , self . SAT2 () , self . SAT3 () , self . SAT4 ())
+        }
+    }
     #[doc = "Main Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1824,6 +1920,12 @@ pub mod regs {
                 .field("MCLK1DIS", &self.MCLK1DIS())
                 .field("MCLK2DIS", &self.MCLK2DIS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MCR {{ STRIG0: {=bool:?}, STRIG1: {=bool:?}, STRIG2: {=bool:?}, STRIG3: {=bool:?}, STRIG4: {=bool:?}, DOZEN: {=bool:?}, RST: {=bool:?}, MEN: {=bool:?}, MCLKDIV: {=u8:?}, PRESCALE: {=u8:?}, MCLK0DIS: {=bool:?}, MCLK1DIS: {=bool:?}, MCLK2DIS: {=bool:?} }}" , self . STRIG0 () , self . STRIG1 () , self . STRIG2 () , self . STRIG3 () , self . STRIG4 () , self . DOZEN () , self . RST () , self . MEN () , self . MCLKDIV () , self . PRESCALE () , self . MCLK0DIS () , self . MCLK1DIS () , self . MCLK2DIS ())
         }
     }
     #[doc = "Normal Interrupt Enable"]
@@ -1994,6 +2096,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for NIE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "NIE {{ COCIE0: {=bool:?}, COCIE1: {=bool:?}, COCIE2: {=bool:?}, COCIE3: {=bool:?}, COCIE4: {=bool:?}, CHFIE0: {=bool:?}, CHFIE1: {=bool:?}, CHFIE2: {=bool:?}, CHFIE3: {=bool:?}, CHFIE4: {=bool:?}, ZCDIE0: {=bool:?}, ZCDIE1: {=bool:?}, ZCDIE2: {=bool:?}, ZCDIE3: {=bool:?}, ZCDIE4: {=bool:?} }}" , self . COCIE0 () , self . COCIE1 () , self . COCIE2 () , self . COCIE3 () , self . COCIE4 () , self . CHFIE0 () , self . CHFIE1 () , self . CHFIE2 () , self . CHFIE3 () , self . CHFIE4 () , self . ZCDIE0 () , self . ZCDIE1 () , self . ZCDIE2 () , self . ZCDIE3 () , self . ZCDIE4 ())
+        }
+    }
     #[doc = "Normal Interrupt Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2162,6 +2270,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for NIS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "NIS {{ COC0: {=bool:?}, COC1: {=bool:?}, COC2: {=bool:?}, COC3: {=bool:?}, COC4: {=bool:?}, CHF0: {=bool:?}, CHF1: {=bool:?}, CHF2: {=bool:?}, CHF3: {=bool:?}, CHF4: {=bool:?}, ZCD0: {=bool:?}, ZCD1: {=bool:?}, ZCD2: {=bool:?}, ZCD3: {=bool:?}, ZCD4: {=bool:?} }}" , self . COC0 () , self . COC1 () , self . COC2 () , self . COC3 () , self . COC4 () , self . CHF0 () , self . CHF1 () , self . CHF2 () , self . CHF3 () , self . CHF4 () , self . ZCD0 () , self . ZCD1 () , self . ZCD2 () , self . ZCD3 () , self . ZCD4 ())
+        }
+    }
     #[doc = "Parameters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2208,6 +2322,18 @@ pub mod regs {
                 .field("FLT_NUM", &self.FLT_NUM())
                 .field("PF_ORD_SEL", &self.PF_ORD_SEL())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAMETER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PARAMETER {{ FIFO_DEPTH: {=u8:?}, FLT_NUM: {=u8:?}, PF_ORD_SEL: {=u8:?} }}",
+                self.FIFO_DEPTH(),
+                self.FLT_NUM(),
+                self.PF_ORD_SEL()
+            )
         }
     }
     #[doc = "Status"]
@@ -2408,6 +2534,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SR {{ CIP0: {=bool:?}, CIP1: {=bool:?}, CIP2: {=bool:?}, CIP3: {=bool:?}, CIP4: {=bool:?}, CHRDY0: {=bool:?}, CHRDY1: {=bool:?}, CHRDY2: {=bool:?}, CHRDY3: {=bool:?}, CHRDY4: {=bool:?}, FIFOEMPTY0: {=bool:?}, FIFOEMPTY1: {=bool:?}, FIFOEMPTY2: {=bool:?}, FIFOEMPTY3: {=bool:?}, FIFOEMPTY4: {=bool:?}, MCLKRDY0: {=bool:?}, MCLKRDY1: {=bool:?}, MCLKRDY2: {=bool:?} }}" , self . CIP0 () , self . CIP1 () , self . CIP2 () , self . CIP3 () , self . CIP4 () , self . CHRDY0 () , self . CHRDY1 () , self . CHRDY2 () , self . CHRDY3 () , self . CHRDY4 () , self . FIFOEMPTY0 () , self . FIFOEMPTY1 () , self . FIFOEMPTY2 () , self . FIFOEMPTY3 () , self . FIFOEMPTY4 () , self . MCLKRDY0 () , self . MCLKRDY1 () , self . MCLKRDY2 ())
+        }
+    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2454,6 +2586,18 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
         }
     }
 }

@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct ITRC {
     ptr: *mut u8,
@@ -24,17 +24,23 @@ impl ITRC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn OUTX_SELY(self, n: usize) -> crate::common::Reg<u64, crate::common::RW> {
+    pub const fn OUT_SEL(self, n: usize) -> crate::common::Reg<regs::OUT_SEL, crate::common::RW> {
         assert!(n < 7usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize + n * 8usize) as _) }
     }
     #[inline(always)]
-    pub const fn OUTX_SELY(self, n: usize) -> crate::common::Reg<u64, crate::common::RW> {
+    pub const fn OUT_SEL_1(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::OUT_SEL_1, crate::common::RW> {
         assert!(n < 7usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize + n * 8usize) as _) }
     }
     #[inline(always)]
-    pub const fn OUTX_SELY(self, n: usize) -> crate::common::Reg<u64, crate::common::RW> {
+    pub const fn OUT_SEL_2(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::OUT_SEL_2, crate::common::RW> {
         assert!(n < 7usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize + n * 8usize) as _) }
     }
@@ -226,6 +232,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OUT_SEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "OUT_SEL {{ IN0_SELn: {=u8:?}, IN1_SELn: {=u8:?}, IN2_SELn: {=u8:?}, IN3_SELn: {=u8:?}, IN4_SELn: {=u8:?}, IN5_SELn: {=u8:?}, IN6_SELn: {=u8:?}, IN7_SELn: {=u8:?}, IN8_SELn: {=u8:?}, IN9_SELn: {=u8:?}, IN10_SELn: {=u8:?}, IN11_SELn: {=u8:?}, IN12_SELn: {=u8:?}, IN13_SELn: {=u8:?}, IN14_SELn: {=u8:?}, IN15_SELn: {=u8:?} }}" , self . IN0_SELn () , self . IN1_SELn () , self . IN2_SELn () , self . IN3_SELn () , self . IN4_SELn () , self . IN5_SELn () , self . IN6_SELn () , self . IN7_SELn () , self . IN8_SELn () , self . IN9_SELn () , self . IN10_SELn () , self . IN11_SELn () , self . IN12_SELn () , self . IN13_SELn () , self . IN14_SELn () , self . IN15_SELn ())
+        }
+    }
     #[doc = "Trigger Source IN16 to IN31 selector"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -404,6 +416,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OUT_SEL_1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "OUT_SEL_1 {{ IN16_SELn: {=u8:?}, IN17_SELn: {=u8:?}, IN18_SELn: {=u8:?}, IN19_SELn: {=u8:?}, IN20_SELn: {=u8:?}, IN21_SELn: {=u8:?}, IN22_SELn: {=u8:?}, IN23_SELn: {=u8:?}, IN24_SELn: {=u8:?}, IN25_SELn: {=u8:?}, IN26_SELn: {=u8:?}, IN27_SELn: {=u8:?}, IN28_SELn: {=u8:?}, IN29_SELn: {=u8:?}, IN30_SELn: {=u8:?}, IN31_SELn: {=u8:?} }}" , self . IN16_SELn () , self . IN17_SELn () , self . IN18_SELn () , self . IN19_SELn () , self . IN20_SELn () , self . IN21_SELn () , self . IN22_SELn () , self . IN23_SELn () , self . IN24_SELn () , self . IN25_SELn () , self . IN26_SELn () , self . IN27_SELn () , self . IN28_SELn () , self . IN29_SELn () , self . IN30_SELn () , self . IN31_SELn ())
+        }
+    }
     #[doc = "Trigger source IN32 to IN47 selector"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -500,6 +518,12 @@ pub mod regs {
                 .field("IN46_SELn", &self.IN46_SELn())
                 .field("IN47_SELn", &self.IN47_SELn())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OUT_SEL_2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "OUT_SEL_2 {{ IN32_SELn: {=u8:?}, IN33_SELn: {=u8:?}, IN34_SELn: {=u8:?}, IN35_SELn: {=u8:?}, IN36_SELn: {=u8:?}, IN37_SELn: {=u8:?}, IN46_SELn: {=u8:?}, IN47_SELn: {=u8:?} }}" , self . IN32_SELn () , self . IN33_SELn () , self . IN34_SELn () , self . IN35_SELn () , self . IN36_SELn () , self . IN37_SELn () , self . IN46_SELn () , self . IN47_SELn ())
         }
     }
     #[doc = "ITRC outputs and IN0 to IN15 Status"]
@@ -750,6 +774,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STATUS {{ IN0_STATUS: {=bool:?}, IN1_STATUS: {=bool:?}, IN2_STATUS: {=bool:?}, IN3_STATUS: {=bool:?}, IN4_STATUS: {=bool:?}, IN5_STATUS: {=bool:?}, IN6_STATUS: {=bool:?}, IN7_STATUS: {=bool:?}, IN8_STATUS: {=bool:?}, IN9_STATUS: {=bool:?}, IN10_STATUS: {=bool:?}, IN11_STATUS: {=bool:?}, IN112_STATUS: {=bool:?}, IN113_STATUS: {=bool:?}, IN14_STATUS: {=bool:?}, IN15_STATUS: {=bool:?}, OUT0_STATUS: {=bool:?}, OUT1_STATUS: {=bool:?}, OUT2_STATUS: {=bool:?}, OUT3_STATUS: {=bool:?}, OUT4_STATUS: {=bool:?}, OUT5_STATUS: {=bool:?}, OUT6_STATUS: {=bool:?} }}" , self . IN0_STATUS () , self . IN1_STATUS () , self . IN2_STATUS () , self . IN3_STATUS () , self . IN4_STATUS () , self . IN5_STATUS () , self . IN6_STATUS () , self . IN7_STATUS () , self . IN8_STATUS () , self . IN9_STATUS () , self . IN10_STATUS () , self . IN11_STATUS () , self . IN112_STATUS () , self . IN113_STATUS () , self . IN14_STATUS () , self . IN15_STATUS () , self . OUT0_STATUS () , self . OUT1_STATUS () , self . OUT2_STATUS () , self . OUT3_STATUS () , self . OUT4_STATUS () , self . OUT5_STATUS () , self . OUT6_STATUS ())
+        }
+    }
     #[doc = "ITRC IN16 to IN47 Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -906,6 +936,12 @@ pub mod regs {
                 .field("IN46_STATUS", &self.IN46_STATUS())
                 .field("IN47_STATUS", &self.IN47_STATUS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUS1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STATUS1 {{ IN16_STATUS: {=bool:?}, IN17_STATUS: {=bool:?}, IN18_STATUS: {=bool:?}, IN19_STATUS: {=bool:?}, IN20_STATUS: {=bool:?}, IN24_21_STATUS: {=u8:?}, IN32_25_STATUS: {=u8:?}, IN33_STATUS: {=bool:?}, IN34_STATUS: {=bool:?}, IN35_STATUS: {=bool:?}, IN36_STATUS: {=bool:?}, IN37_STATUS: {=bool:?}, IN46_STATUS: {=bool:?}, IN47_STATUS: {=bool:?} }}" , self . IN16_STATUS () , self . IN17_STATUS () , self . IN18_STATUS () , self . IN19_STATUS () , self . IN20_STATUS () , self . IN24_21_STATUS () , self . IN32_25_STATUS () , self . IN33_STATUS () , self . IN34_STATUS () , self . IN35_STATUS () , self . IN36_STATUS () , self . IN37_STATUS () , self . IN46_STATUS () , self . IN47_STATUS ())
         }
     }
 }

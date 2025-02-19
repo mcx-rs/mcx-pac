@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct PMCR {
     ptr: *mut u8,
@@ -179,32 +179,10 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "Performance Monitor Event Counter"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PMCR_PMECTR_HI(pub u32);
-    impl PMCR_PMECTR_HI {
-        #[inline(always)]
-        pub const fn ECTR(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_ECTR(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for PMCR_PMECTR_HI {
-        #[inline(always)]
-        fn default() -> PMCR_PMECTR_HI {
-            PMCR_PMECTR_HI(0)
-        }
-    }
-    impl core::fmt::Debug for PMCR_PMECTR_HI {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("PMCR_PMECTR_HI")
-                .field("ECTR", &self.ECTR())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PMCR_PMCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PMCR_PMCR {{ MENB: {=bool:?}, SSC: {=u8:?}, CMODE: {=u8:?}, RECTR1: {=bool:?}, RECTR2: {=bool:?}, RECTR3: {=bool:?}, SELEVT1: {=u8:?}, SELEVT2: {=u8:?}, SELEVT3: {=u8:?} }}" , self . MENB () , self . SSC () , self . CMODE () , self . RECTR1 () , self . RECTR2 () , self . RECTR3 () , self . SELEVT1 () , self . SELEVT2 () , self . SELEVT3 ())
         }
     }
 }

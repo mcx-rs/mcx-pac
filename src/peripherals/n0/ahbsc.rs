@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct AHBSC {
     ptr: *mut u8,
@@ -52,7 +52,10 @@ impl AHBSC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn RAMX_MEM_RULE(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn RAMX_MEM_RULE(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::RAMX_MEM_RULE, crate::common::RW> {
         assert!(n < 3usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize + n * 4usize) as _) }
     }
@@ -330,7 +333,10 @@ impl AHBSC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e00usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn SEC_VIO_MISC_INFO(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SEC_VIO_MISC_INFO(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::SEC_VIO_MISC_INFO, crate::common::RW> {
         assert!(n < 32usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e80usize + n * 4usize) as _) }
     }
@@ -341,7 +347,10 @@ impl AHBSC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0f00usize) as _) }
     }
     #[inline(always)]
-    pub const fn SEC_GPIO_MASK(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SEC_GPIO_MASK(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::SEC_GPIO_MASK, crate::common::RW> {
         assert!(n < 2usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0f80usize + n * 4usize) as _) }
     }
@@ -551,6 +560,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE0 {{ eDMA0_CH15: {=u8:?}, SCT0: {=u8:?}, LP_FLEXCOMM0: {=u8:?}, LP_FLEXCOMM1: {=u8:?}, LP_FLEXCOMM2: {=u8:?}, LP_FLEXCOMM3: {=u8:?}, GPIO0_ALIAS0: {=u8:?} }}" , self . eDMA0_CH15 () , self . SCT0 () , self . LP_FLEXCOMM0 () , self . LP_FLEXCOMM1 () , self . LP_FLEXCOMM2 () , self . LP_FLEXCOMM3 () , self . GPIO0_ALIAS0 ())
+        }
+    }
     #[doc = "AHB Peripheral 0 Slave Port 12 Slave Rule 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -649,6 +664,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE1 {{ GPIO0_ALIAS1: {=u8:?}, GPIO1_ALIAS0: {=u8:?}, GPIO1_ALIAS1: {=u8:?}, GPIO2_ALIAS0: {=u8:?}, GPIO2_ALIAS1: {=u8:?}, GPIO3_ALIAS0: {=u8:?}, GPIO3_ALIAS1: {=u8:?}, GPIO4_ALIAS0: {=u8:?} }}" , self . GPIO0_ALIAS1 () , self . GPIO1_ALIAS0 () , self . GPIO1_ALIAS1 () , self . GPIO2_ALIAS0 () , self . GPIO2_ALIAS1 () , self . GPIO3_ALIAS0 () , self . GPIO3_ALIAS1 () , self . GPIO4_ALIAS0 ())
+        }
+    }
     #[doc = "AHB Peripheral 0 Slave Port 12 Slave Rule 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -675,6 +696,16 @@ pub mod regs {
             f.debug_struct("AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2")
                 .field("GPIO4_ALIAS1", &self.GPIO4_ALIAS1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "AHB_PERIPHERAL0_SLAVE_PORT_P12_SLAVE_RULE2 {{ GPIO4_ALIAS1: {=u8:?} }}",
+                self.GPIO4_ALIAS1()
+            )
         }
     }
     #[doc = "AHB Peripheral 1 Slave Port 13 Slave Rule 0"]
@@ -763,6 +794,12 @@ pub mod regs {
                 .field("FLEXCOMM5", &self.FLEXCOMM5())
                 .field("FLEXCOMM6", &self.FLEXCOMM6())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE0 {{ eDMA1_CH15: {=u8:?}, SEMA42: {=u8:?}, MAILBOX: {=u8:?}, PKC_RAM: {=u8:?}, FLEXCOMM4: {=u8:?}, FLEXCOMM5: {=u8:?}, FLEXCOMM6: {=u8:?} }}" , self . eDMA1_CH15 () , self . SEMA42 () , self . MAILBOX () , self . PKC_RAM () , self . FLEXCOMM4 () , self . FLEXCOMM5 () , self . FLEXCOMM6 ())
         }
     }
     #[doc = "AHB Peripheral 1 Slave Port 13 Slave Rule 1"]
@@ -863,6 +900,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE1 {{ FLEXCOMM7: {=u8:?}, FLEXCOMM8: {=u8:?}, FLEXCOMM9: {=u8:?}, USB_FS_OTG_RAM: {=u8:?}, CDOG0: {=u8:?}, CDOG1: {=u8:?}, DEBUG_MAILBOX: {=u8:?}, NPU: {=u8:?} }}" , self . FLEXCOMM7 () , self . FLEXCOMM8 () , self . FLEXCOMM9 () , self . USB_FS_OTG_RAM () , self . CDOG0 () , self . CDOG1 () , self . DEBUG_MAILBOX () , self . NPU ())
+        }
+    }
     #[doc = "AHB Peripheral 1 Slave Port 13 Slave Rule 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -889,6 +932,16 @@ pub mod regs {
             f.debug_struct("AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE2")
                 .field("POWERQUAD", &self.POWERQUAD())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "AHB_PERIPHERAL1_SLAVE_PORT_P13_SLAVE_RULE2 {{ POWERQUAD: {=u8:?} }}",
+                self.POWERQUAD()
+            )
         }
     }
     #[doc = "AHB Secure Control Peripheral Rule 0"]
@@ -947,6 +1000,12 @@ pub mod regs {
                 .field("RULE2", &self.RULE2())
                 .field("RULE3", &self.RULE3())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHB_SECURE_CTRL_PERIPHERAL_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AHB_SECURE_CTRL_PERIPHERAL_RULE0 {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 ())
         }
     }
     #[doc = "AIPS Bridge Group 0 Memory Rule 0"]
@@ -1047,6 +1106,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP0_MEM_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AIPS_BRIDGE_GROUP0_MEM_RULE0 {{ GPIO5_ALIAS0: {=u8:?}, GPIO5_ALIAS1: {=u8:?}, PORT5: {=u8:?}, FMU0: {=u8:?}, SCG0: {=u8:?}, SPC0: {=u8:?}, WUU0: {=u8:?}, TRO0: {=u8:?} }}" , self . GPIO5_ALIAS0 () , self . GPIO5_ALIAS1 () , self . PORT5 () , self . FMU0 () , self . SCG0 () , self . SPC0 () , self . WUU0 () , self . TRO0 ())
+        }
+    }
     #[doc = "AIPS Bridge Group 0 Memory Rule 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1103,6 +1168,12 @@ pub mod regs {
                 .field("RTC", &self.RTC())
                 .field("FMU_TEST", &self.FMU_TEST())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP0_MEM_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AIPS_BRIDGE_GROUP0_MEM_RULE1 {{ LPTMR0: {=u8:?}, LPTMR1: {=u8:?}, RTC: {=u8:?}, FMU_TEST: {=u8:?} }}" , self . LPTMR0 () , self . LPTMR1 () , self . RTC () , self . FMU_TEST ())
         }
     }
     #[doc = "AIPS Bridge Group 0 Memory Rule 2"]
@@ -1203,6 +1274,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP0_MEM_RULE2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AIPS_BRIDGE_GROUP0_MEM_RULE2 {{ TSI: {=u8:?}, CMP0: {=u8:?}, CMP1: {=u8:?}, CMP2: {=u8:?}, ELS: {=u8:?}, ELS_ALIAS1: {=u8:?}, ELS_ALIAS2: {=u8:?}, ELS_ALIAS3: {=u8:?} }}" , self . TSI () , self . CMP0 () , self . CMP1 () , self . CMP2 () , self . ELS () , self . ELS_ALIAS1 () , self . ELS_ALIAS2 () , self . ELS_ALIAS3 ())
+        }
+    }
     #[doc = "AIPS Bridge Group 0 Memory Rule 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1279,6 +1356,12 @@ pub mod regs {
                 .field("ERM0", &self.ERM0())
                 .field("INTM0", &self.INTM0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP0_MEM_RULE3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AIPS_BRIDGE_GROUP0_MEM_RULE3 {{ DIGTMP: {=u8:?}, VBAT: {=u8:?}, TRNG: {=u8:?}, EIM0: {=u8:?}, ERM0: {=u8:?}, INTM0: {=u8:?} }}" , self . DIGTMP () , self . VBAT () , self . TRNG () , self . EIM0 () , self . ERM0 () , self . INTM0 ())
         }
     }
     #[doc = "AIPS Bridge Group 1 Rule 0"]
@@ -1379,6 +1462,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP1_MEM_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AIPS_BRIDGE_GROUP1_MEM_RULE0 {{ eDMA0_MP: {=u8:?}, eDMA0_CH0: {=u8:?}, eDMA0_CH1: {=u8:?}, eDMA0_CH2: {=u8:?}, eDMA0_CH3: {=u8:?}, eDMA0_CH4: {=u8:?}, eDMA0_CH5: {=u8:?}, eDMA0_CH6: {=u8:?} }}" , self . eDMA0_MP () , self . eDMA0_CH0 () , self . eDMA0_CH1 () , self . eDMA0_CH2 () , self . eDMA0_CH3 () , self . eDMA0_CH4 () , self . eDMA0_CH5 () , self . eDMA0_CH6 ())
+        }
+    }
     #[doc = "AIPS Bridge Group 1 Rule 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1475,6 +1564,12 @@ pub mod regs {
                 .field("eDMA0_CH13", &self.eDMA0_CH13())
                 .field("eDMA0_CH14", &self.eDMA0_CH14())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP1_MEM_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AIPS_BRIDGE_GROUP1_MEM_RULE1 {{ eDMA0_CH7: {=u8:?}, eDMA0_CH8: {=u8:?}, eDMA0_CH9: {=u8:?}, eDMA0_CH10: {=u8:?}, eDMA0_CH11: {=u8:?}, eDMA0_CH12: {=u8:?}, eDMA0_CH13: {=u8:?}, eDMA0_CH14: {=u8:?} }}" , self . eDMA0_CH7 () , self . eDMA0_CH8 () , self . eDMA0_CH9 () , self . eDMA0_CH10 () , self . eDMA0_CH11 () , self . eDMA0_CH12 () , self . eDMA0_CH13 () , self . eDMA0_CH14 ())
         }
     }
     #[doc = "AIPS Bridge Group 2 Rule 0"]
@@ -1575,6 +1670,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP2_MEM_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AIPS_BRIDGE_GROUP2_MEM_RULE0 {{ eDMA1_MP: {=u8:?}, eDMA1_CH0: {=u8:?}, eDMA1_CH1: {=u8:?}, eDMA1_CH2: {=u8:?}, eDMA1_CH3: {=u8:?}, eDMA1_CH4: {=u8:?}, eDMA1_CH5: {=u8:?}, eDMA1_CH6: {=u8:?} }}" , self . eDMA1_MP () , self . eDMA1_CH0 () , self . eDMA1_CH1 () , self . eDMA1_CH2 () , self . eDMA1_CH3 () , self . eDMA1_CH4 () , self . eDMA1_CH5 () , self . eDMA1_CH6 ())
+        }
+    }
     #[doc = "AIPS Bridge Group 2 Memory Rule 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1673,6 +1774,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP2_MEM_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AIPS_BRIDGE_GROUP2_MEM_RULE1 {{ eDMA1_CH7: {=u8:?}, eDMA1_CH8: {=u8:?}, eDMA1_CH9: {=u8:?}, eDMA1_CH10: {=u8:?}, eDMA1_CH11: {=u8:?}, eDMA1_CH12: {=u8:?}, eDMA1_CH13: {=u8:?}, eDMA1_CH14: {=u8:?} }}" , self . eDMA1_CH7 () , self . eDMA1_CH8 () , self . eDMA1_CH9 () , self . eDMA1_CH10 () , self . eDMA1_CH11 () , self . eDMA1_CH12 () , self . eDMA1_CH13 () , self . eDMA1_CH14 ())
+        }
+    }
     #[doc = "AIPS Bridge Group 3 Rule 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1739,6 +1846,12 @@ pub mod regs {
                 .field("SFA", &self.SFA())
                 .field("MBC", &self.MBC())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP3_MEM_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AIPS_BRIDGE_GROUP3_MEM_RULE0 {{ EWM0: {=u8:?}, LPCAC: {=u8:?}, FLEXSPI_CMX: {=u8:?}, SFA: {=u8:?}, MBC: {=u8:?} }}" , self . EWM0 () , self . LPCAC () , self . FLEXSPI_CMX () , self . SFA () , self . MBC ())
         }
     }
     #[doc = "AIPS Bridge Group 3 Memory Rule 1"]
@@ -1817,6 +1930,12 @@ pub mod regs {
                 .field("PWM", &self.PWM())
                 .field("ENC", &self.ENC())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP3_MEM_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AIPS_BRIDGE_GROUP3_MEM_RULE1 {{ FLEXSPI: {=u8:?}, OTPC: {=u8:?}, CRC: {=u8:?}, NPX: {=u8:?}, PWM: {=u8:?}, ENC: {=u8:?} }}" , self . FLEXSPI () , self . OTPC () , self . CRC () , self . NPX () , self . PWM () , self . ENC ())
         }
     }
     #[doc = "AIPS Bridge Group 3 Rule 2"]
@@ -1907,6 +2026,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP3_MEM_RULE2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AIPS_BRIDGE_GROUP3_MEM_RULE2 {{ PWM1: {=u8:?}, ENC1: {=u8:?}, EVTG: {=u8:?}, CAN0_RULE0: {=u8:?}, CAN0_RULE1: {=u8:?}, CAN0_RULE2: {=u8:?}, CAN0_RULE3: {=u8:?} }}" , self . PWM1 () , self . ENC1 () , self . EVTG () , self . CAN0_RULE0 () , self . CAN0_RULE1 () , self . CAN0_RULE2 () , self . CAN0_RULE3 ())
+        }
+    }
     #[doc = "AIPS Bridge Group 3 Rule 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1985,6 +2110,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP3_MEM_RULE3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AIPS_BRIDGE_GROUP3_MEM_RULE3 {{ CAN1_RULE0: {=u8:?}, CAN1_RULE1: {=u8:?}, CAN1_RULE2: {=u8:?}, CAN1_RULE3: {=u8:?}, USBDCD: {=u8:?}, USBFS: {=u8:?} }}" , self . CAN1_RULE0 () , self . CAN1_RULE1 () , self . CAN1_RULE2 () , self . CAN1_RULE3 () , self . USBDCD () , self . USBFS ())
+        }
+    }
     #[doc = "AIPS Bridge Group 4 Rule 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2061,6 +2192,12 @@ pub mod regs {
                 .field("SAI0", &self.SAI0())
                 .field("SAI1", &self.SAI1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP4_MEM_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AIPS_BRIDGE_GROUP4_MEM_RULE0 {{ ENET: {=u8:?}, EMVSIM0: {=u8:?}, EMVSIM1: {=u8:?}, FLEXIO: {=u8:?}, SAI0: {=u8:?}, SAI1: {=u8:?} }}" , self . ENET () , self . EMVSIM0 () , self . EMVSIM1 () , self . FLEXIO () , self . SAI0 () , self . SAI1 ())
         }
     }
     #[doc = "AIPS Bridge Group 4 Rule 1"]
@@ -2161,6 +2298,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP4_MEM_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AIPS_BRIDGE_GROUP4_MEM_RULE1 {{ SINC0: {=u8:?}, uSDHC0: {=u8:?}, USBHSPHY: {=u8:?}, USBHS: {=u8:?}, MICD: {=u8:?}, ADC0: {=u8:?}, ADC1: {=u8:?}, DAC0: {=u8:?} }}" , self . SINC0 () , self . uSDHC0 () , self . USBHSPHY () , self . USBHS () , self . MICD () , self . ADC0 () , self . ADC1 () , self . DAC0 ())
+        }
+    }
     #[doc = "AIPS Bridge Group 4 Rule 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2259,6 +2402,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP4_MEM_RULE2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AIPS_BRIDGE_GROUP4_MEM_RULE2 {{ OPAMP0: {=u8:?}, VREF: {=u8:?}, DAC: {=u8:?}, OPAMP1: {=u8:?}, HPDAC0: {=u8:?}, OPAMP2: {=u8:?}, PORT0: {=u8:?}, PORT1: {=u8:?} }}" , self . OPAMP0 () , self . VREF () , self . DAC () , self . OPAMP1 () , self . HPDAC0 () , self . OPAMP2 () , self . PORT0 () , self . PORT1 ())
+        }
+    }
     #[doc = "AIPS Bridge Group 4 Rule 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2327,6 +2476,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AIPS_BRIDGE_GROUP4_MEM_RULE3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AIPS_BRIDGE_GROUP4_MEM_RULE3 {{ PORT2: {=u8:?}, PORT3: {=u8:?}, PORT4: {=u8:?}, MTR0: {=u8:?}, ATX0: {=u8:?} }}" , self . PORT2 () , self . PORT3 () , self . PORT4 () , self . MTR0 () , self . ATX0 ())
+        }
+    }
     #[doc = "APB Bridge Group 0 Memory Rule 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2373,6 +2528,12 @@ pub mod regs {
                 .field("PINT0", &self.PINT0())
                 .field("INPUTMUX", &self.INPUTMUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for APB_PERIPHERAL_GROUP0_MEM_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "APB_PERIPHERAL_GROUP0_MEM_RULE0 {{ SYSCON: {=u8:?}, PINT0: {=u8:?}, INPUTMUX: {=u8:?} }}" , self . SYSCON () , self . PINT0 () , self . INPUTMUX ())
         }
     }
     #[doc = "APB Bridge Group 0 Memory Rule 1"]
@@ -2431,6 +2592,12 @@ pub mod regs {
                 .field("CTIMER2", &self.CTIMER2())
                 .field("CTIMER3", &self.CTIMER3())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for APB_PERIPHERAL_GROUP0_MEM_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "APB_PERIPHERAL_GROUP0_MEM_RULE1 {{ CTIMER0: {=u8:?}, CTIMER1: {=u8:?}, CTIMER2: {=u8:?}, CTIMER3: {=u8:?} }}" , self . CTIMER0 () , self . CTIMER1 () , self . CTIMER2 () , self . CTIMER3 ())
         }
     }
     #[doc = "APB Bridge Group 0 Rule 2"]
@@ -2521,6 +2688,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for APB_PERIPHERAL_GROUP0_MEM_RULE2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "APB_PERIPHERAL_GROUP0_MEM_RULE2 {{ CTIMER4: {=u8:?}, FREQME0: {=u8:?}, UTCIK0: {=u8:?}, MRT0: {=u8:?}, OSTIMER0: {=u8:?}, WWDT0: {=u8:?}, WWDT1: {=u8:?} }}" , self . CTIMER4 () , self . FREQME0 () , self . UTCIK0 () , self . MRT0 () , self . OSTIMER0 () , self . WWDT0 () , self . WWDT1 ())
+        }
+    }
     #[doc = "APB Bridge Group 0 Memory Rule 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2547,6 +2720,16 @@ pub mod regs {
             f.debug_struct("APB_PERIPHERAL_GROUP0_MEM_RULE3")
                 .field("CACHE64_POLSEL0", &self.CACHE64_POLSEL0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for APB_PERIPHERAL_GROUP0_MEM_RULE3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "APB_PERIPHERAL_GROUP0_MEM_RULE3 {{ CACHE64_POLSEL0: {=u8:?} }}",
+                self.CACHE64_POLSEL0()
+            )
         }
     }
     #[doc = "APB Bridge Group 1 Memory Rule 0"]
@@ -2605,6 +2788,12 @@ pub mod regs {
                 .field("GDET", &self.GDET())
                 .field("ITRC", &self.ITRC())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for APB_PERIPHERAL_GROUP1_MEM_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "APB_PERIPHERAL_GROUP1_MEM_RULE0 {{ I3C0: {=u8:?}, I3C1: {=u8:?}, GDET: {=u8:?}, ITRC: {=u8:?} }}" , self . I3C0 () , self . I3C1 () , self . GDET () , self . ITRC ())
         }
     }
     #[doc = "APB Bridge Group 1 Memory Rule 1"]
@@ -2675,6 +2864,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for APB_PERIPHERAL_GROUP1_MEM_RULE1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "APB_PERIPHERAL_GROUP1_MEM_RULE1 {{ PKC: {=u8:?}, PUF_ALIAS0: {=u8:?}, PUF_ALIAS1: {=u8:?}, PUF_ALIAS2: {=u8:?}, PUF_ALIAS3: {=u8:?} }}" , self . PKC () , self . PUF_ALIAS0 () , self . PUF_ALIAS1 () , self . PUF_ALIAS2 () , self . PUF_ALIAS3 ())
+        }
+    }
     #[doc = "APB Bridge Group 1 Memory Rule 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2731,6 +2926,12 @@ pub mod regs {
                 .field("SMARTDMA", &self.SMARTDMA())
                 .field("PLU", &self.PLU())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for APB_PERIPHERAL_GROUP1_MEM_RULE2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "APB_PERIPHERAL_GROUP1_MEM_RULE2 {{ SM3: {=u8:?}, COOLFLUX: {=u8:?}, SMARTDMA: {=u8:?}, PLU: {=u8:?} }}" , self . SM3 () , self . COOLFLUX () , self . SMARTDMA () , self . PLU ())
         }
     }
     #[doc = "Miscellaneous CPU0 Control Signals"]
@@ -2811,6 +3012,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CPU0_LOCK_REG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CPU0_LOCK_REG {{ LOCK_NS_VTOR: {=u8:?}, LOCK_NS_MPU: {=u8:?}, LOCK_S_VTAIRCR: {=u8:?}, LOCK_S_MPU: {=u8:?}, LOCK_SAU: {=u8:?}, CM33_LOCK_REG_LOCK: {=u8:?} }}" , self . LOCK_NS_VTOR () , self . LOCK_NS_MPU () , self . LOCK_S_VTAIRCR () , self . LOCK_S_MPU () , self . LOCK_SAU () , self . CM33_LOCK_REG_LOCK ())
+        }
+    }
     #[doc = "Miscellaneous CPU1 Control Signals"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2847,6 +3054,17 @@ pub mod regs {
                 .field("LOCK_NS_VTOR", &self.LOCK_NS_VTOR())
                 .field("LOCK_NS_MPU", &self.LOCK_NS_MPU())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CPU1_LOCK_REG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CPU1_LOCK_REG {{ LOCK_NS_VTOR: {=u8:?}, LOCK_NS_MPU: {=u8:?} }}",
+                self.LOCK_NS_VTOR(),
+                self.LOCK_NS_MPU()
+            )
         }
     }
     #[doc = "Flash Memory Rule"]
@@ -2947,6 +3165,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLASH00_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FLASH00_MEM_RULE {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?}, RULE6: {=u8:?}, RULE7: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 () , self . RULE6 () , self . RULE7 ())
+        }
+    }
     #[doc = "Flash Memory Rule"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3045,6 +3269,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLASH01_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FLASH01_MEM_RULE {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?}, RULE6: {=u8:?}, RULE7: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 () , self . RULE6 () , self . RULE7 ())
+        }
+    }
     #[doc = "Flash Memory Rule"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3101,6 +3331,12 @@ pub mod regs {
                 .field("RULE2", &self.RULE2())
                 .field("RULE3", &self.RULE3())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLASH02_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FLASH02_MEM_RULE {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 ())
         }
     }
     #[doc = "Flash Memory Rule"]
@@ -3201,6 +3437,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLASH03_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FLASH03_MEM_RULE {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?}, RULE6: {=u8:?}, RULE7: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 () , self . RULE6 () , self . RULE7 ())
+        }
+    }
     #[doc = "FLEXSPI0 Region 0 Memory Rule"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3299,6 +3541,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXSPI0_REGION0_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FLEXSPI0_REGION0_MEM_RULE {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?}, RULE6: {=u8:?}, RULE7: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 () , self . RULE6 () , self . RULE7 ())
+        }
+    }
     #[doc = "FLEXSPI0 Region 1 Memory Rule 0..FLEXSPI0 Region 6 Memory Rule 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3375,6 +3623,12 @@ pub mod regs {
                 .field("RULE4", &self.RULE4())
                 .field("RULE5", &self.RULE5())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXSPI0_REGION1_6_MEM_RULE_FLEXSPI0_REGION_MEM_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FLEXSPI0_REGION1_6_MEM_RULE_FLEXSPI0_REGION_MEM_RULE0 {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 ())
         }
     }
     #[doc = "FLEXSPI0 Region 7 Memory Rule"]
@@ -3475,6 +3729,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXSPI0_REGION7_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FLEXSPI0_REGION7_MEM_RULE {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?}, RULE6: {=u8:?}, RULE7: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 () , self . RULE6 () , self . RULE7 ())
+        }
+    }
     #[doc = "FLEXSPI0 Region 8 Memory Rule 0..FLEXSPI0 Region 13 Memory Rule 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3551,6 +3811,12 @@ pub mod regs {
                 .field("RULE4", &self.RULE4())
                 .field("RULE5", &self.RULE5())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXSPI0_REGION8_13_MEM_RULE_FLEXSPI0_REGION_MEM_RULE0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FLEXSPI0_REGION8_13_MEM_RULE_FLEXSPI0_REGION_MEM_RULE0 {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 ())
         }
     }
     #[doc = "Master Secure Level"]
@@ -3704,6 +3970,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MASTER_SEC_ANTI_POL_REG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MASTER_SEC_ANTI_POL_REG {{ CPU1: {=u8:?}, SMARTDMA: {=u8:?}, eDMA0: {=u8:?}, eDMA1: {=u8:?}, PKC: {=u8:?}, PQ: {=u8:?}, NPUO: {=u8:?}, COOLFLUXI: {=u8:?}, USB_FS: {=u8:?}, ETHERNET: {=u8:?}, USB_HS: {=u8:?}, USDHC: {=u8:?}, MASTER_SEC_LEVEL_ANTIPOL_LOCK: {=u8:?} }}" , self . CPU1 () , self . SMARTDMA () , self . eDMA0 () , self . eDMA1 () , self . PKC () , self . PQ () , self . NPUO () , self . COOLFLUXI () , self . USB_FS () , self . ETHERNET () , self . USB_HS () , self . USDHC () , self . MASTER_SEC_LEVEL_ANTIPOL_LOCK ())
+        }
+    }
     #[doc = "Master Secure Level"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3852,6 +4124,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MASTER_SEC_LEVEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MASTER_SEC_LEVEL {{ CPU1: {=u8:?}, SMARTDMA: {=u8:?}, eDMA0: {=u8:?}, eDMA1: {=u8:?}, PKC: {=u8:?}, PQ: {=u8:?}, NPUO: {=u8:?}, COOLFLUXI: {=u8:?}, USB_FS: {=u8:?}, ETHERNET: {=u8:?}, USB_HS: {=u8:?}, USDHC: {=u8:?}, MASTER_SEC_LEVEL_LOCK: {=u8:?} }}" , self . CPU1 () , self . SMARTDMA () , self . eDMA0 () , self . eDMA1 () , self . PKC () , self . PQ () , self . NPUO () , self . COOLFLUXI () , self . USB_FS () , self . ETHERNET () , self . USB_HS () , self . USDHC () , self . MASTER_SEC_LEVEL_LOCK ())
+        }
+    }
     #[doc = "Secure Control Duplicate"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3940,6 +4218,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MISC_CTRL_DP_REG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MISC_CTRL_DP_REG {{ WRITE_LOCK: {=u8:?}, ENABLE_SECURE_CHECKING: {=u8:?}, ENABLE_S_PRIV_CHECK: {=u8:?}, ENABLE_NS_PRIV_CHECK: {=u8:?}, DISABLE_VIOLATION_ABORT: {=u8:?}, DISABLE_STRICT_MODE: {=u8:?}, IDAU_ALL_NS: {=u8:?} }}" , self . WRITE_LOCK () , self . ENABLE_SECURE_CHECKING () , self . ENABLE_S_PRIV_CHECK () , self . ENABLE_NS_PRIV_CHECK () , self . DISABLE_VIOLATION_ABORT () , self . DISABLE_STRICT_MODE () , self . IDAU_ALL_NS ())
+        }
+    }
     #[doc = "Secure Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4026,6 +4310,12 @@ pub mod regs {
                 .field("DISABLE_STRICT_MODE", &self.DISABLE_STRICT_MODE())
                 .field("IDAU_ALL_NS", &self.IDAU_ALL_NS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MISC_CTRL_REG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MISC_CTRL_REG {{ WRITE_LOCK: {=u8:?}, ENABLE_SECURE_CHECKING: {=u8:?}, ENABLE_S_PRIV_CHECK: {=u8:?}, ENABLE_NS_PRIV_CHECK: {=u8:?}, DISABLE_VIOLATION_ABORT: {=u8:?}, DISABLE_STRICT_MODE: {=u8:?}, IDAU_ALL_NS: {=u8:?} }}" , self . WRITE_LOCK () , self . ENABLE_SECURE_CHECKING () , self . ENABLE_S_PRIV_CHECK () , self . ENABLE_NS_PRIV_CHECK () , self . DISABLE_VIOLATION_ABORT () , self . DISABLE_STRICT_MODE () , self . IDAU_ALL_NS ())
         }
     }
     #[doc = "RAMA Memory Rule 0"]
@@ -4126,6 +4416,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAMA_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RAMA_MEM_RULE {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?}, RULE6: {=u8:?}, RULE7: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 () , self . RULE6 () , self . RULE7 ())
+        }
+    }
     #[doc = "RAMB Memory Rule"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4222,6 +4518,12 @@ pub mod regs {
                 .field("RULE6", &self.RULE6())
                 .field("RULE7", &self.RULE7())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAMB_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RAMB_MEM_RULE {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?}, RULE6: {=u8:?}, RULE7: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 () , self . RULE6 () , self . RULE7 ())
         }
     }
     #[doc = "RAMC Memory Rule"]
@@ -4322,6 +4624,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAMC_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RAMC_MEM_RULE {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?}, RULE6: {=u8:?}, RULE7: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 () , self . RULE6 () , self . RULE7 ())
+        }
+    }
     #[doc = "RAMD Memory Rule"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4418,6 +4726,12 @@ pub mod regs {
                 .field("RULE6", &self.RULE6())
                 .field("RULE7", &self.RULE7())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAMD_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RAMD_MEM_RULE {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?}, RULE6: {=u8:?}, RULE7: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 () , self . RULE6 () , self . RULE7 ())
         }
     }
     #[doc = "RAME Memory Rule"]
@@ -4518,6 +4832,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAME_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RAME_MEM_RULE {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?}, RULE6: {=u8:?}, RULE7: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 () , self . RULE6 () , self . RULE7 ())
+        }
+    }
     #[doc = "RAMF Memory Rule"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4614,6 +4934,12 @@ pub mod regs {
                 .field("RULE6", &self.RULE6())
                 .field("RULE7", &self.RULE7())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAMF_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RAMF_MEM_RULE {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?}, RULE6: {=u8:?}, RULE7: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 () , self . RULE6 () , self . RULE7 ())
         }
     }
     #[doc = "RAMG Memory Rule"]
@@ -4714,6 +5040,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAMG_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RAMG_MEM_RULE {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?}, RULE6: {=u8:?}, RULE7: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 () , self . RULE6 () , self . RULE7 ())
+        }
+    }
     #[doc = "RAMH Memory Rule"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4810,6 +5142,12 @@ pub mod regs {
                 .field("RULE6", &self.RULE6())
                 .field("RULE7", &self.RULE7())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAMH_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RAMH_MEM_RULE {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?}, RULE6: {=u8:?}, RULE7: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 () , self . RULE6 () , self . RULE7 ())
         }
     }
     #[doc = "RAMX Memory Rule"]
@@ -4910,6 +5248,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RAMX_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RAMX_MEM_RULE {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?}, RULE6: {=u8:?}, RULE7: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 () , self . RULE6 () , self . RULE7 ())
+        }
+    }
     #[doc = "ROM Memory Rule"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5006,6 +5350,12 @@ pub mod regs {
                 .field("RULE6", &self.RULE6())
                 .field("RULE7", &self.RULE7())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ROM_MEM_RULE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "ROM_MEM_RULE {{ RULE0: {=u8:?}, RULE1: {=u8:?}, RULE2: {=u8:?}, RULE3: {=u8:?}, RULE4: {=u8:?}, RULE5: {=u8:?}, RULE6: {=u8:?}, RULE7: {=u8:?} }}" , self . RULE0 () , self . RULE1 () , self . RULE2 () , self . RULE3 () , self . RULE4 () , self . RULE5 () , self . RULE6 () , self . RULE7 ())
         }
     }
     #[doc = "Secure Interrupt Mask 0 for CPU1"]
@@ -5346,6 +5696,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SEC_CPU1_INT_MASK0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SEC_CPU1_INT_MASK0 {{ INT0_MASK: {=bool:?}, INT1_MASK: {=bool:?}, INT2_MASK: {=bool:?}, INT3_MASK: {=bool:?}, INT4_MASK: {=bool:?}, INT5_MASK: {=bool:?}, INT6_MASK: {=bool:?}, INT7_MASK: {=bool:?}, INT8_MASK: {=bool:?}, INT9_MASK: {=bool:?}, INT10_MASK: {=bool:?}, INT11_MASK: {=bool:?}, INT12_MASK: {=bool:?}, INT13_MASK: {=bool:?}, INT14_MASK: {=bool:?}, INT15_MASK: {=bool:?}, INT16_MASK: {=bool:?}, INT17_MASK: {=bool:?}, INT18_MASK: {=bool:?}, INT19_MASK: {=bool:?}, INT20_MASK: {=bool:?}, INT21_MASK: {=bool:?}, INT22_MASK: {=bool:?}, INT23_MASK: {=bool:?}, INT24_MASK: {=bool:?}, INT25_MASK: {=bool:?}, INT26_MASK: {=bool:?}, INT27_MASK: {=bool:?}, INT28_MASK: {=bool:?}, INT29_MASK: {=bool:?}, INT30_MASK: {=bool:?}, INT31_MASK: {=bool:?} }}" , self . INT0_MASK () , self . INT1_MASK () , self . INT2_MASK () , self . INT3_MASK () , self . INT4_MASK () , self . INT5_MASK () , self . INT6_MASK () , self . INT7_MASK () , self . INT8_MASK () , self . INT9_MASK () , self . INT10_MASK () , self . INT11_MASK () , self . INT12_MASK () , self . INT13_MASK () , self . INT14_MASK () , self . INT15_MASK () , self . INT16_MASK () , self . INT17_MASK () , self . INT18_MASK () , self . INT19_MASK () , self . INT20_MASK () , self . INT21_MASK () , self . INT22_MASK () , self . INT23_MASK () , self . INT24_MASK () , self . INT25_MASK () , self . INT26_MASK () , self . INT27_MASK () , self . INT28_MASK () , self . INT29_MASK () , self . INT30_MASK () , self . INT31_MASK ())
+        }
+    }
     #[doc = "Secure Interrupt Mask 1 for CPU1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5682,6 +6038,12 @@ pub mod regs {
                 .field("INT62_MASK", &self.INT62_MASK())
                 .field("INT63_MASK", &self.INT63_MASK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SEC_CPU1_INT_MASK1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SEC_CPU1_INT_MASK1 {{ INT32_MASK: {=bool:?}, INT33_MASK: {=bool:?}, INT34_MASK: {=bool:?}, INT35_MASK: {=bool:?}, INT36_MASK: {=bool:?}, INT37_MASK: {=bool:?}, INT38_MASK: {=bool:?}, INT39_MASK: {=bool:?}, INT40_MASK: {=bool:?}, INT41_MASK: {=bool:?}, INT42_MASK: {=bool:?}, INT43_MASK: {=bool:?}, INT44_MASK: {=bool:?}, INT45_MASK: {=bool:?}, INT46_MASK: {=bool:?}, INT47_MASK: {=bool:?}, INT48_MASK: {=bool:?}, INT49_MASK: {=bool:?}, INT50_MASK: {=bool:?}, INT51_MASK: {=bool:?}, INT52_MASK: {=bool:?}, INT53_MASK: {=bool:?}, INT54_MASK: {=bool:?}, INT55_MASK: {=bool:?}, INT56_MASK: {=bool:?}, INT57_MASK: {=bool:?}, INT58_MASK: {=bool:?}, INT59_MASK: {=bool:?}, INT60_MASK: {=bool:?}, INT61_MASK: {=bool:?}, INT62_MASK: {=bool:?}, INT63_MASK: {=bool:?} }}" , self . INT32_MASK () , self . INT33_MASK () , self . INT34_MASK () , self . INT35_MASK () , self . INT36_MASK () , self . INT37_MASK () , self . INT38_MASK () , self . INT39_MASK () , self . INT40_MASK () , self . INT41_MASK () , self . INT42_MASK () , self . INT43_MASK () , self . INT44_MASK () , self . INT45_MASK () , self . INT46_MASK () , self . INT47_MASK () , self . INT48_MASK () , self . INT49_MASK () , self . INT50_MASK () , self . INT51_MASK () , self . INT52_MASK () , self . INT53_MASK () , self . INT54_MASK () , self . INT55_MASK () , self . INT56_MASK () , self . INT57_MASK () , self . INT58_MASK () , self . INT59_MASK () , self . INT60_MASK () , self . INT61_MASK () , self . INT62_MASK () , self . INT63_MASK ())
         }
     }
     #[doc = "Secure Interrupt Mask 2 for CPU1"]
@@ -6022,6 +6384,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SEC_CPU1_INT_MASK2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SEC_CPU1_INT_MASK2 {{ INT64_MASK: {=bool:?}, INT65_MASK: {=bool:?}, INT66_MASK: {=bool:?}, INT67_MASK: {=bool:?}, INT68_MASK: {=bool:?}, INT69_MASK: {=bool:?}, INT70_MASK: {=bool:?}, INT71_MASK: {=bool:?}, INT72_MASK: {=bool:?}, INT73_MASK: {=bool:?}, INT74_MASK: {=bool:?}, INT75_MASK: {=bool:?}, INT76_MASK: {=bool:?}, INT77_MASK: {=bool:?}, INT78_MASK: {=bool:?}, INT79_MASK: {=bool:?}, INT80_MASK: {=bool:?}, INT81_MASK: {=bool:?}, INT82_MASK: {=bool:?}, INT83_MASK: {=bool:?}, INT84_MASK: {=bool:?}, INT85_MASK: {=bool:?}, INT86_MASK: {=bool:?}, INT87_MASK: {=bool:?}, INT88_MASK: {=bool:?}, INT89_MASK: {=bool:?}, INT90_MASK: {=bool:?}, INT91_MASK: {=bool:?}, INT92_MASK: {=bool:?}, INT93_MASK: {=bool:?}, INT94_MASK: {=bool:?}, INT95_MASK: {=bool:?} }}" , self . INT64_MASK () , self . INT65_MASK () , self . INT66_MASK () , self . INT67_MASK () , self . INT68_MASK () , self . INT69_MASK () , self . INT70_MASK () , self . INT71_MASK () , self . INT72_MASK () , self . INT73_MASK () , self . INT74_MASK () , self . INT75_MASK () , self . INT76_MASK () , self . INT77_MASK () , self . INT78_MASK () , self . INT79_MASK () , self . INT80_MASK () , self . INT81_MASK () , self . INT82_MASK () , self . INT83_MASK () , self . INT84_MASK () , self . INT85_MASK () , self . INT86_MASK () , self . INT87_MASK () , self . INT88_MASK () , self . INT89_MASK () , self . INT90_MASK () , self . INT91_MASK () , self . INT92_MASK () , self . INT93_MASK () , self . INT94_MASK () , self . INT95_MASK ())
+        }
+    }
     #[doc = "Secure Interrupt Mask 3 for CPU1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6360,6 +6728,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SEC_CPU1_INT_MASK3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SEC_CPU1_INT_MASK3 {{ INT96_MASK: {=bool:?}, INT97_MASK: {=bool:?}, INT98_MASK: {=bool:?}, INT99_MASK: {=bool:?}, INT100_MASK: {=bool:?}, INT101_MASK: {=bool:?}, INT102_MASK: {=bool:?}, INT103_MASK: {=bool:?}, INT104_MASK: {=bool:?}, INT105_MASK: {=bool:?}, INT106_MASK: {=bool:?}, INT107_MASK: {=bool:?}, INT108_MASK: {=bool:?}, INT109_MASK: {=bool:?}, INT110_MASK: {=bool:?}, INT111_MASK: {=bool:?}, INT112_MASK: {=bool:?}, INT113_MASK: {=bool:?}, INT114_MASK: {=bool:?}, INT115_MASK: {=bool:?}, INT116_MASK: {=bool:?}, INT117_MASK: {=bool:?}, INT118_MASK: {=bool:?}, INT119_MASK: {=bool:?}, INT120_MASK: {=bool:?}, INT121_MASK: {=bool:?}, INT122_MASK: {=bool:?}, INT123_MASK: {=bool:?}, INT124_MASK: {=bool:?}, INT125_MASK: {=bool:?}, INT126_MASK: {=bool:?}, INT127_MASK: {=bool:?} }}" , self . INT96_MASK () , self . INT97_MASK () , self . INT98_MASK () , self . INT99_MASK () , self . INT100_MASK () , self . INT101_MASK () , self . INT102_MASK () , self . INT103_MASK () , self . INT104_MASK () , self . INT105_MASK () , self . INT106_MASK () , self . INT107_MASK () , self . INT108_MASK () , self . INT109_MASK () , self . INT110_MASK () , self . INT111_MASK () , self . INT112_MASK () , self . INT113_MASK () , self . INT114_MASK () , self . INT115_MASK () , self . INT116_MASK () , self . INT117_MASK () , self . INT118_MASK () , self . INT119_MASK () , self . INT120_MASK () , self . INT121_MASK () , self . INT122_MASK () , self . INT123_MASK () , self . INT124_MASK () , self . INT125_MASK () , self . INT126_MASK () , self . INT127_MASK ())
+        }
+    }
     #[doc = "Secure Interrupt Mask 4 for CPU1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6696,6 +7070,12 @@ pub mod regs {
                 .field("INT158_MASK", &self.INT158_MASK())
                 .field("INT159_MASK", &self.INT159_MASK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SEC_CPU1_INT_MASK4 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SEC_CPU1_INT_MASK4 {{ INT128_MASK: {=bool:?}, INT129_MASK: {=bool:?}, INT130_MASK: {=bool:?}, INT131_MASK: {=bool:?}, INT132_MASK: {=bool:?}, INT133_MASK: {=bool:?}, INT134_MASK: {=bool:?}, INT135_MASK: {=bool:?}, INT136_MASK: {=bool:?}, INT137_MASK: {=bool:?}, INT138_MASK: {=bool:?}, INT139_MASK: {=bool:?}, INT140_MASK: {=bool:?}, INT141_MASK: {=bool:?}, INT142_MASK: {=bool:?}, INT143_MASK: {=bool:?}, INT144_MASK: {=bool:?}, INT145_MASK: {=bool:?}, INT146_MASK: {=bool:?}, INT147_MASK: {=bool:?}, INT148_MASK: {=bool:?}, INT149_MASK: {=bool:?}, INT150_MASK: {=bool:?}, INT151_MASK: {=bool:?}, INT152_MASK: {=bool:?}, INT153_MASK: {=bool:?}, INT154_MASK: {=bool:?}, INT155_MASK: {=bool:?}, INT156_MASK: {=bool:?}, INT157_MASK: {=bool:?}, INT158_MASK: {=bool:?}, INT159_MASK: {=bool:?} }}" , self . INT128_MASK () , self . INT129_MASK () , self . INT130_MASK () , self . INT131_MASK () , self . INT132_MASK () , self . INT133_MASK () , self . INT134_MASK () , self . INT135_MASK () , self . INT136_MASK () , self . INT137_MASK () , self . INT138_MASK () , self . INT139_MASK () , self . INT140_MASK () , self . INT141_MASK () , self . INT142_MASK () , self . INT143_MASK () , self . INT144_MASK () , self . INT145_MASK () , self . INT146_MASK () , self . INT147_MASK () , self . INT148_MASK () , self . INT149_MASK () , self . INT150_MASK () , self . INT151_MASK () , self . INT152_MASK () , self . INT153_MASK () , self . INT154_MASK () , self . INT155_MASK () , self . INT156_MASK () , self . INT157_MASK () , self . INT158_MASK () , self . INT159_MASK ())
         }
     }
     #[doc = "GPIO Mask for Port 0..GPIO Mask for Port 1"]
@@ -7356,6 +7736,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SEC_GPIO_MASK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SEC_GPIO_MASK {{ PIO0_PIN0_SEC_MASK: {=bool:?}, PIO1_PIN0_SEC_MASK: {=bool:?}, PIO0_PIN1_SEC_MASK: {=bool:?}, PIO1_PIN1_SEC_MASK: {=bool:?}, PIO0_PIN2_SEC_MASK: {=bool:?}, PIO1_PIN2_SEC_MASK: {=bool:?}, PIO0_PIN3_SEC_MASK: {=bool:?}, PIO1_PIN3_SEC_MASK: {=bool:?}, PIO0_PIN4_SEC_MASK: {=bool:?}, PIO1_PIN4_SEC_MASK: {=bool:?}, PIO0_PIN5_SEC_MASK: {=bool:?}, PIO1_PIN5_SEC_MASK: {=bool:?}, PIO0_PIN6_SEC_MASK: {=bool:?}, PIO1_PIN6_SEC_MASK: {=bool:?}, PIO0_PIN7_SEC_MASK: {=bool:?}, PIO1_PIN7_SEC_MASK: {=bool:?}, PIO0_PIN8_SEC_MASK: {=bool:?}, PIO1_PIN8_SEC_MASK: {=bool:?}, PIO0_PIN9_SEC_MASK: {=bool:?}, PIO1_PIN9_SEC_MASK: {=bool:?}, PIO0_PIN10_SEC_MASK: {=bool:?}, PIO1_PIN10_SEC_MASK: {=bool:?}, PIO0_PIN11_SEC_MASK: {=bool:?}, PIO1_PIN11_SEC_MASK: {=bool:?}, PIO0_PIN12_SEC_MASK: {=bool:?}, PIO1_PIN12_SEC_MASK: {=bool:?}, PIO0_PIN13_SEC_MASK: {=bool:?}, PIO1_PIN13_SEC_MASK: {=bool:?}, PIO0_PIN14_SEC_MASK: {=bool:?}, PIO1_PIN14_SEC_MASK: {=bool:?}, PIO0_PIN15_SEC_MASK: {=bool:?}, PIO1_PIN15_SEC_MASK: {=bool:?}, PIO0_PIN16_SEC_MASK: {=bool:?}, PIO1_PIN16_SEC_MASK: {=bool:?}, PIO0_PIN17_SEC_MASK: {=bool:?}, PIO1_PIN17_SEC_MASK: {=bool:?}, PIO0_PIN18_SEC_MASK: {=bool:?}, PIO1_PIN18_SEC_MASK: {=bool:?}, PIO0_PIN19_SEC_MASK: {=bool:?}, PIO1_PIN19_SEC_MASK: {=bool:?}, PIO0_PIN20_SEC_MASK: {=bool:?}, PIO1_PIN20_SEC_MASK: {=bool:?}, PIO0_PIN21_SEC_MASK: {=bool:?}, PIO1_PIN21_SEC_MASK: {=bool:?}, PIO0_PIN22_SEC_MASK: {=bool:?}, PIO1_PIN22_SEC_MASK: {=bool:?}, PIO0_PIN23_SEC_MASK: {=bool:?}, PIO1_PIN23_SEC_MASK: {=bool:?}, PIO0_PIN24_SEC_MASK: {=bool:?}, PIO1_PIN24_SEC_MASK: {=bool:?}, PIO0_PIN25_SEC_MASK: {=bool:?}, PIO1_PIN25_SEC_MASK: {=bool:?}, PIO0_PIN26_SEC_MASK: {=bool:?}, PIO1_PIN26_SEC_MASK: {=bool:?}, PIO0_PIN27_SEC_MASK: {=bool:?}, PIO1_PIN27_SEC_MASK: {=bool:?}, PIO0_PIN28_SEC_MASK: {=bool:?}, PIO1_PIN28_SEC_MASK: {=bool:?}, PIO0_PIN29_SEC_MASK: {=bool:?}, PIO1_PIN29_SEC_MASK: {=bool:?}, PIO0_PIN30_SEC_MASK: {=bool:?}, PIO1_PIN30_SEC_MASK: {=bool:?}, PIO0_PIN31_SEC_MASK: {=bool:?}, PIO1_PIN31_SEC_MASK: {=bool:?} }}" , self . PIO0_PIN0_SEC_MASK () , self . PIO1_PIN0_SEC_MASK () , self . PIO0_PIN1_SEC_MASK () , self . PIO1_PIN1_SEC_MASK () , self . PIO0_PIN2_SEC_MASK () , self . PIO1_PIN2_SEC_MASK () , self . PIO0_PIN3_SEC_MASK () , self . PIO1_PIN3_SEC_MASK () , self . PIO0_PIN4_SEC_MASK () , self . PIO1_PIN4_SEC_MASK () , self . PIO0_PIN5_SEC_MASK () , self . PIO1_PIN5_SEC_MASK () , self . PIO0_PIN6_SEC_MASK () , self . PIO1_PIN6_SEC_MASK () , self . PIO0_PIN7_SEC_MASK () , self . PIO1_PIN7_SEC_MASK () , self . PIO0_PIN8_SEC_MASK () , self . PIO1_PIN8_SEC_MASK () , self . PIO0_PIN9_SEC_MASK () , self . PIO1_PIN9_SEC_MASK () , self . PIO0_PIN10_SEC_MASK () , self . PIO1_PIN10_SEC_MASK () , self . PIO0_PIN11_SEC_MASK () , self . PIO1_PIN11_SEC_MASK () , self . PIO0_PIN12_SEC_MASK () , self . PIO1_PIN12_SEC_MASK () , self . PIO0_PIN13_SEC_MASK () , self . PIO1_PIN13_SEC_MASK () , self . PIO0_PIN14_SEC_MASK () , self . PIO1_PIN14_SEC_MASK () , self . PIO0_PIN15_SEC_MASK () , self . PIO1_PIN15_SEC_MASK () , self . PIO0_PIN16_SEC_MASK () , self . PIO1_PIN16_SEC_MASK () , self . PIO0_PIN17_SEC_MASK () , self . PIO1_PIN17_SEC_MASK () , self . PIO0_PIN18_SEC_MASK () , self . PIO1_PIN18_SEC_MASK () , self . PIO0_PIN19_SEC_MASK () , self . PIO1_PIN19_SEC_MASK () , self . PIO0_PIN20_SEC_MASK () , self . PIO1_PIN20_SEC_MASK () , self . PIO0_PIN21_SEC_MASK () , self . PIO1_PIN21_SEC_MASK () , self . PIO0_PIN22_SEC_MASK () , self . PIO1_PIN22_SEC_MASK () , self . PIO0_PIN23_SEC_MASK () , self . PIO1_PIN23_SEC_MASK () , self . PIO0_PIN24_SEC_MASK () , self . PIO1_PIN24_SEC_MASK () , self . PIO0_PIN25_SEC_MASK () , self . PIO1_PIN25_SEC_MASK () , self . PIO0_PIN26_SEC_MASK () , self . PIO1_PIN26_SEC_MASK () , self . PIO0_PIN27_SEC_MASK () , self . PIO1_PIN27_SEC_MASK () , self . PIO0_PIN28_SEC_MASK () , self . PIO1_PIN28_SEC_MASK () , self . PIO0_PIN29_SEC_MASK () , self . PIO1_PIN29_SEC_MASK () , self . PIO0_PIN30_SEC_MASK () , self . PIO1_PIN30_SEC_MASK () , self . PIO0_PIN31_SEC_MASK () , self . PIO1_PIN31_SEC_MASK ())
+        }
+    }
     #[doc = "Secure Mask Lock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7442,6 +7828,12 @@ pub mod regs {
                 .field("SEC_CPU1_INT_MASK3_LOCK", &self.SEC_CPU1_INT_MASK3_LOCK())
                 .field("SEC_CPU1_INT_MASK4_LOCK", &self.SEC_CPU1_INT_MASK4_LOCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SEC_GP_REG_LOCK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SEC_GP_REG_LOCK {{ SEC_GPIO_MASK0_LOCK: {=u8:?}, SEC_GPIO_MASK1_LOCK: {=u8:?}, SEC_CPU1_INT_MASK0_LOCK: {=u8:?}, SEC_CPU1_INT_MASK1_LOCK: {=u8:?}, SEC_CPU1_INT_MASK2_LOCK: {=u8:?}, SEC_CPU1_INT_MASK3_LOCK: {=u8:?}, SEC_CPU1_INT_MASK4_LOCK: {=u8:?} }}" , self . SEC_GPIO_MASK0_LOCK () , self . SEC_GPIO_MASK1_LOCK () , self . SEC_CPU1_INT_MASK0_LOCK () , self . SEC_CPU1_INT_MASK1_LOCK () , self . SEC_CPU1_INT_MASK2_LOCK () , self . SEC_CPU1_INT_MASK3_LOCK () , self . SEC_CPU1_INT_MASK4_LOCK ())
         }
     }
     #[doc = "Security Violation Info Validity for Address"]
@@ -7652,6 +8044,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SEC_VIO_INFO_VALID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SEC_VIO_INFO_VALID {{ VIO_INFO_VALID0: {=bool:?}, VIO_INFO_VALID1: {=bool:?}, VIO_INFO_VALID2: {=bool:?}, VIO_INFO_VALID3: {=bool:?}, VIO_INFO_VALID4: {=bool:?}, VIO_INFO_VALID5: {=bool:?}, VIO_INFO_VALID6: {=bool:?}, VIO_INFO_VALID7: {=bool:?}, VIO_INFO_VALID8: {=bool:?}, VIO_INFO_VALID9: {=bool:?}, VIO_INFO_VALID10: {=bool:?}, VIO_INFO_VALID11: {=bool:?}, VIO_INFO_VALID12: {=bool:?}, VIO_INFO_VALID13: {=bool:?}, VIO_INFO_VALID14: {=bool:?}, VIO_INFO_VALID15: {=bool:?}, VIO_INFO_VALID16: {=bool:?}, VIO_INFO_VALID17: {=bool:?}, VIO_INFO_VALID18: {=bool:?} }}" , self . VIO_INFO_VALID0 () , self . VIO_INFO_VALID1 () , self . VIO_INFO_VALID2 () , self . VIO_INFO_VALID3 () , self . VIO_INFO_VALID4 () , self . VIO_INFO_VALID5 () , self . VIO_INFO_VALID6 () , self . VIO_INFO_VALID7 () , self . VIO_INFO_VALID8 () , self . VIO_INFO_VALID9 () , self . VIO_INFO_VALID10 () , self . VIO_INFO_VALID11 () , self . VIO_INFO_VALID12 () , self . VIO_INFO_VALID13 () , self . VIO_INFO_VALID14 () , self . VIO_INFO_VALID15 () , self . VIO_INFO_VALID16 () , self . VIO_INFO_VALID17 () , self . VIO_INFO_VALID18 ())
+        }
+    }
     #[doc = "Security Violation Miscellaneous Information at Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7711,6 +8109,12 @@ pub mod regs {
                 )
                 .field("SEC_VIO_INFO_MASTER", &self.SEC_VIO_INFO_MASTER())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SEC_VIO_MISC_INFO {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SEC_VIO_MISC_INFO {{ SEC_VIO_INFO_WRITE: {=bool:?}, SEC_VIO_INFO_DATA_ACCESS: {=bool:?}, SEC_VIO_INFO_MASTER_SEC_LEVEL: {=u8:?}, SEC_VIO_INFO_MASTER: {=u8:?} }}" , self . SEC_VIO_INFO_WRITE () , self . SEC_VIO_INFO_DATA_ACCESS () , self . SEC_VIO_INFO_MASTER_SEC_LEVEL () , self . SEC_VIO_INFO_MASTER ())
         }
     }
 }

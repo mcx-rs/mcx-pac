@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct MRCC {
     ptr: *mut u8,
@@ -561,6 +561,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_ADC_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_ADC_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "ADCx clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -587,6 +593,12 @@ pub mod regs {
             f.debug_struct("MRCC_ADC_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_ADC_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_ADC_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "CLKOUT clock divider control"]
@@ -647,6 +659,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CLKOUT_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_CLKOUT_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "CLKOUT clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -673,6 +691,12 @@ pub mod regs {
             f.debug_struct("MRCC_CLKOUT_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CLKOUT_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_CLKOUT_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "CMP0_FUNC clock divider control"]
@@ -733,6 +757,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CMP0_FUNC_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_CMP0_FUNC_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "CMP0_RR clock divider control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -791,6 +821,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CMP0_RR_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_CMP0_RR_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "CMP0_RR clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -817,6 +853,12 @@ pub mod regs {
             f.debug_struct("MRCC_CMP0_RR_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CMP0_RR_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_CMP0_RR_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "CMP1_FUNC clock divider control"]
@@ -877,6 +919,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CMP1_FUNC_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_CMP1_FUNC_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "CMP1_RR clock divider control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -935,6 +983,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CMP1_RR_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_CMP1_RR_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "CMP1_RR clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -961,6 +1015,12 @@ pub mod regs {
             f.debug_struct("MRCC_CMP1_RR_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CMP1_RR_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_CMP1_RR_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "CMP2_FUNC clock divider control"]
@@ -1021,6 +1081,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CMP2_FUNC_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_CMP2_FUNC_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "CMP2_RR clock divider control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1079,6 +1145,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CMP2_RR_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_CMP2_RR_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "CMP2_RR clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1105,6 +1177,12 @@ pub mod regs {
             f.debug_struct("MRCC_CMP2_RR_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CMP2_RR_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_CMP2_RR_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "CTIMER0 clock divider control"]
@@ -1165,6 +1243,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CTIMER0_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_CTIMER0_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "CTIMER0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1191,6 +1275,12 @@ pub mod regs {
             f.debug_struct("MRCC_CTIMER0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CTIMER0_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_CTIMER0_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "CTIMER1 clock divider control"]
@@ -1251,6 +1341,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CTIMER1_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_CTIMER1_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "CTIMER1 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1277,6 +1373,12 @@ pub mod regs {
             f.debug_struct("MRCC_CTIMER1_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CTIMER1_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_CTIMER1_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "CTIMER2 clock divider control"]
@@ -1337,6 +1439,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CTIMER2_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_CTIMER2_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "CTIMER2 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1363,6 +1471,12 @@ pub mod regs {
             f.debug_struct("MRCC_CTIMER2_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CTIMER2_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_CTIMER2_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "CTIMER3 clock divider control"]
@@ -1423,6 +1537,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CTIMER3_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_CTIMER3_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "CTIMER3 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1449,6 +1569,12 @@ pub mod regs {
             f.debug_struct("MRCC_CTIMER3_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CTIMER3_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_CTIMER3_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "CTIMER4 clock divider control"]
@@ -1509,6 +1635,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CTIMER4_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_CTIMER4_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "CTIMER4 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1535,6 +1667,12 @@ pub mod regs {
             f.debug_struct("MRCC_CTIMER4_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_CTIMER4_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_CTIMER4_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "DAC0 clock divider control"]
@@ -1595,6 +1733,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_DAC0_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_DAC0_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "DAC0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1621,6 +1765,12 @@ pub mod regs {
             f.debug_struct("MRCC_DAC0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_DAC0_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_DAC0_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "DBG_TRACE clock divider control"]
@@ -1681,6 +1831,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_DBG_TRACE_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_DBG_TRACE_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "DBG_TRACE clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1707,6 +1863,12 @@ pub mod regs {
             f.debug_struct("MRCC_DBG_TRACE_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_DBG_TRACE_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_DBG_TRACE_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "FLEXCAN0 clock divider control"]
@@ -1767,6 +1929,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_FLEXCAN0_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_FLEXCAN0_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "FLEXCAN0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1793,6 +1961,12 @@ pub mod regs {
             f.debug_struct("MRCC_FLEXCAN0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_FLEXCAN0_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_FLEXCAN0_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "FLEXCAN1 clock divider control"]
@@ -1853,6 +2027,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_FLEXCAN1_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_FLEXCAN1_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "FLEXCAN1 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1879,6 +2059,12 @@ pub mod regs {
             f.debug_struct("MRCC_FLEXCAN1_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_FLEXCAN1_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_FLEXCAN1_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "FLEXIO0 clock divider control"]
@@ -1939,6 +2125,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_FLEXIO0_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_FLEXIO0_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "FLEXIO0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1965,6 +2157,12 @@ pub mod regs {
             f.debug_struct("MRCC_FLEXIO0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_FLEXIO0_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_FLEXIO0_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "Control Automatic Clock Gating 0"]
@@ -2305,6 +2503,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_GLB_ACC0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_GLB_ACC0 {{ INPUTMUX0: {=bool:?}, I3C0: {=bool:?}, CTIMER0: {=bool:?}, CTIMER1: {=bool:?}, CTIMER2: {=bool:?}, CTIMER3: {=bool:?}, CTIMER4: {=bool:?}, FREQME: {=bool:?}, UTICK0: {=bool:?}, WWDT0: {=bool:?}, SMARTDMA0: {=bool:?}, DMA0: {=bool:?}, AOI0: {=bool:?}, CRC0: {=bool:?}, EIM0: {=bool:?}, ERM0: {=bool:?}, FMC: {=bool:?}, AOI1: {=bool:?}, FLEXIO0: {=bool:?}, LPI2C0: {=bool:?}, LPI2C1: {=bool:?}, LPSPI0: {=bool:?}, LPSPI1: {=bool:?}, LPUART0: {=bool:?}, LPUART1: {=bool:?}, LPUART2: {=bool:?}, LPUART3: {=bool:?}, LPUART4: {=bool:?}, USB0: {=bool:?}, QDC0: {=bool:?}, QDC1: {=bool:?}, FLEXPWM0: {=bool:?} }}" , self . INPUTMUX0 () , self . I3C0 () , self . CTIMER0 () , self . CTIMER1 () , self . CTIMER2 () , self . CTIMER3 () , self . CTIMER4 () , self . FREQME () , self . UTICK0 () , self . WWDT0 () , self . SMARTDMA0 () , self . DMA0 () , self . AOI0 () , self . CRC0 () , self . EIM0 () , self . ERM0 () , self . FMC () , self . AOI1 () , self . FLEXIO0 () , self . LPI2C0 () , self . LPI2C1 () , self . LPSPI0 () , self . LPSPI1 () , self . LPUART0 () , self . LPUART1 () , self . LPUART2 () , self . LPUART3 () , self . LPUART4 () , self . USB0 () , self . QDC0 () , self . QDC1 () , self . FLEXPWM0 ())
+        }
+    }
     #[doc = "Control Automatic Clock Gating 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2613,6 +2817,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_GLB_ACC1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_GLB_ACC1 {{ FLEXPWM1: {=bool:?}, OSTIMER0: {=bool:?}, ADC0: {=bool:?}, ADC1: {=bool:?}, CMP0: {=bool:?}, CMP1: {=bool:?}, CMP2: {=bool:?}, DAC0: {=bool:?}, OPAMP0: {=bool:?}, OPAMP1: {=bool:?}, OPAMP2: {=bool:?}, OPAMP3: {=bool:?}, PORT0: {=bool:?}, PORT1: {=bool:?}, PORT2: {=bool:?}, PORT3: {=bool:?}, PORT4: {=bool:?}, SLCD0: {=bool:?}, FLEXCAN0: {=bool:?}, FLEXCAN1: {=bool:?}, LPI2C2: {=bool:?}, LPI2C3: {=bool:?}, LPUART5: {=bool:?}, PKC0: {=bool:?}, SGI0: {=bool:?}, TRNG0: {=bool:?}, UDF0: {=bool:?}, ADC2: {=bool:?}, ADC3: {=bool:?} }}" , self . FLEXPWM1 () , self . OSTIMER0 () , self . ADC0 () , self . ADC1 () , self . CMP0 () , self . CMP1 () , self . CMP2 () , self . DAC0 () , self . OPAMP0 () , self . OPAMP1 () , self . OPAMP2 () , self . OPAMP3 () , self . PORT0 () , self . PORT1 () , self . PORT2 () , self . PORT3 () , self . PORT4 () , self . SLCD0 () , self . FLEXCAN0 () , self . FLEXCAN1 () , self . LPI2C2 () , self . LPI2C3 () , self . LPUART5 () , self . PKC0 () , self . SGI0 () , self . TRNG0 () , self . UDF0 () , self . ADC2 () , self . ADC3 ())
+        }
+    }
     #[doc = "Control Automatic Clock Gating 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2729,6 +2939,12 @@ pub mod regs {
                 .field("MAU0", &self.MAU0())
                 .field("ROMC", &self.ROMC())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_GLB_ACC2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_GLB_ACC2 {{ RAMA: {=bool:?}, RAMB: {=bool:?}, RAMC: {=bool:?}, GPIO0: {=bool:?}, GPIO1: {=bool:?}, GPIO2: {=bool:?}, GPIO3: {=bool:?}, GPIO4: {=bool:?}, MAU0: {=bool:?}, ROMC: {=bool:?} }}" , self . RAMA () , self . RAMB () , self . RAMC () , self . GPIO0 () , self . GPIO1 () , self . GPIO2 () , self . GPIO3 () , self . GPIO4 () , self . MAU0 () , self . ROMC ())
         }
     }
     #[doc = "AHB Clock Control 0"]
@@ -3069,6 +3285,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_GLB_CC0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_GLB_CC0 {{ INPUTMUX0: {=bool:?}, I3C0: {=bool:?}, CTIMER0: {=bool:?}, CTIMER1: {=bool:?}, CTIMER2: {=bool:?}, CTIMER3: {=bool:?}, CTIMER4: {=bool:?}, FREQME: {=bool:?}, UTICK0: {=bool:?}, WWDT0: {=bool:?}, SMARTDMA0: {=bool:?}, DMA0: {=bool:?}, AOI0: {=bool:?}, CRC0: {=bool:?}, EIM0: {=bool:?}, ERM0: {=bool:?}, FMC: {=bool:?}, AOI1: {=bool:?}, FLEXIO0: {=bool:?}, LPI2C0: {=bool:?}, LPI2C1: {=bool:?}, LPSPI0: {=bool:?}, LPSPI1: {=bool:?}, LPUART0: {=bool:?}, LPUART1: {=bool:?}, LPUART2: {=bool:?}, LPUART3: {=bool:?}, LPUART4: {=bool:?}, USB0: {=bool:?}, QDC0: {=bool:?}, QDC1: {=bool:?}, FLEXPWM0: {=bool:?} }}" , self . INPUTMUX0 () , self . I3C0 () , self . CTIMER0 () , self . CTIMER1 () , self . CTIMER2 () , self . CTIMER3 () , self . CTIMER4 () , self . FREQME () , self . UTICK0 () , self . WWDT0 () , self . SMARTDMA0 () , self . DMA0 () , self . AOI0 () , self . CRC0 () , self . EIM0 () , self . ERM0 () , self . FMC () , self . AOI1 () , self . FLEXIO0 () , self . LPI2C0 () , self . LPI2C1 () , self . LPSPI0 () , self . LPSPI1 () , self . LPUART0 () , self . LPUART1 () , self . LPUART2 () , self . LPUART3 () , self . LPUART4 () , self . USB0 () , self . QDC0 () , self . QDC1 () , self . FLEXPWM0 ())
+        }
+    }
     #[doc = "AHB Clock Control 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3387,6 +3609,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_GLB_CC1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_GLB_CC1 {{ FLEXPWM1: {=bool:?}, OSTIMER0: {=bool:?}, ADC0: {=bool:?}, ADC1: {=bool:?}, CMP0: {=bool:?}, CMP1: {=bool:?}, CMP2: {=bool:?}, DAC0: {=bool:?}, OPAMP0: {=bool:?}, OPAMP1: {=bool:?}, OPAMP2: {=bool:?}, OPAMP3: {=bool:?}, PORT0: {=bool:?}, PORT1: {=bool:?}, PORT2: {=bool:?}, PORT3: {=bool:?}, PORT4: {=bool:?}, SLCD0: {=bool:?}, FLEXCAN0: {=bool:?}, FLEXCAN1: {=bool:?}, LPI2C2: {=bool:?}, LPI2C3: {=bool:?}, LPUART5: {=bool:?}, TDET0: {=bool:?}, PKC0: {=bool:?}, SGI0: {=bool:?}, TRNG0: {=bool:?}, UDF0: {=bool:?}, ADC2: {=bool:?}, ADC3: {=bool:?} }}" , self . FLEXPWM1 () , self . OSTIMER0 () , self . ADC0 () , self . ADC1 () , self . CMP0 () , self . CMP1 () , self . CMP2 () , self . DAC0 () , self . OPAMP0 () , self . OPAMP1 () , self . OPAMP2 () , self . OPAMP3 () , self . PORT0 () , self . PORT1 () , self . PORT2 () , self . PORT3 () , self . PORT4 () , self . SLCD0 () , self . FLEXCAN0 () , self . FLEXCAN1 () , self . LPI2C2 () , self . LPI2C3 () , self . LPUART5 () , self . TDET0 () , self . PKC0 () , self . SGI0 () , self . TRNG0 () , self . UDF0 () , self . ADC2 () , self . ADC3 ())
+        }
+    }
     #[doc = "AHB Clock Control 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3503,6 +3731,12 @@ pub mod regs {
                 .field("MAU0", &self.MAU0())
                 .field("ROMC", &self.ROMC())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_GLB_CC2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_GLB_CC2 {{ RAMA: {=bool:?}, RAMB: {=bool:?}, RAMC: {=bool:?}, GPIO0: {=bool:?}, GPIO1: {=bool:?}, GPIO2: {=bool:?}, GPIO3: {=bool:?}, GPIO4: {=bool:?}, MAU0: {=bool:?}, ROMC: {=bool:?} }}" , self . RAMA () , self . RAMB () , self . RAMC () , self . GPIO0 () , self . GPIO1 () , self . GPIO2 () , self . GPIO3 () , self . GPIO4 () , self . MAU0 () , self . ROMC ())
         }
     }
     #[doc = "Peripheral Reset Control 0"]
@@ -3823,6 +4057,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_GLB_RST0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_GLB_RST0 {{ INPUTMUX0: {=bool:?}, I3C0: {=bool:?}, CTIMER0: {=bool:?}, CTIMER1: {=bool:?}, CTIMER2: {=bool:?}, CTIMER3: {=bool:?}, CTIMER4: {=bool:?}, FREQME: {=bool:?}, UTICK0: {=bool:?}, SMARTDMA0: {=bool:?}, DMA0: {=bool:?}, AOI0: {=bool:?}, CRC0: {=bool:?}, EIM0: {=bool:?}, ERM0: {=bool:?}, AOI1: {=bool:?}, FLEXIO0: {=bool:?}, LPI2C0: {=bool:?}, LPI2C1: {=bool:?}, LPSPI0: {=bool:?}, LPSPI1: {=bool:?}, LPUART0: {=bool:?}, LPUART1: {=bool:?}, LPUART2: {=bool:?}, LPUART3: {=bool:?}, LPUART4: {=bool:?}, USB0: {=bool:?}, QDC0: {=bool:?}, QDC1: {=bool:?}, FLEXPWM0: {=bool:?} }}" , self . INPUTMUX0 () , self . I3C0 () , self . CTIMER0 () , self . CTIMER1 () , self . CTIMER2 () , self . CTIMER3 () , self . CTIMER4 () , self . FREQME () , self . UTICK0 () , self . SMARTDMA0 () , self . DMA0 () , self . AOI0 () , self . CRC0 () , self . EIM0 () , self . ERM0 () , self . AOI1 () , self . FLEXIO0 () , self . LPI2C0 () , self . LPI2C1 () , self . LPSPI0 () , self . LPSPI1 () , self . LPUART0 () , self . LPUART1 () , self . LPUART2 () , self . LPUART3 () , self . LPUART4 () , self . USB0 () , self . QDC0 () , self . QDC1 () , self . FLEXPWM0 ())
+        }
+    }
     #[doc = "Peripheral Reset Control 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4101,6 +4341,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_GLB_RST1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_GLB_RST1 {{ FLEXPWM1: {=bool:?}, OSTIMER0: {=bool:?}, ADC0: {=bool:?}, ADC1: {=bool:?}, CMP1: {=bool:?}, CMP2: {=bool:?}, DAC0: {=bool:?}, OPAMP0: {=bool:?}, OPAMP1: {=bool:?}, OPAMP2: {=bool:?}, OPAMP3: {=bool:?}, PORT0: {=bool:?}, PORT1: {=bool:?}, PORT2: {=bool:?}, PORT3: {=bool:?}, PORT4: {=bool:?}, SLCD0: {=bool:?}, FLEXCAN0: {=bool:?}, FLEXCAN1: {=bool:?}, LPI2C2: {=bool:?}, LPI2C3: {=bool:?}, LPUART5: {=bool:?}, PKC0: {=bool:?}, TRNG0: {=bool:?}, ADC2: {=bool:?}, ADC3: {=bool:?} }}" , self . FLEXPWM1 () , self . OSTIMER0 () , self . ADC0 () , self . ADC1 () , self . CMP1 () , self . CMP2 () , self . DAC0 () , self . OPAMP0 () , self . OPAMP1 () , self . OPAMP2 () , self . OPAMP3 () , self . PORT0 () , self . PORT1 () , self . PORT2 () , self . PORT3 () , self . PORT4 () , self . SLCD0 () , self . FLEXCAN0 () , self . FLEXCAN1 () , self . LPI2C2 () , self . LPI2C3 () , self . LPUART5 () , self . PKC0 () , self . TRNG0 () , self . ADC2 () , self . ADC3 ())
+        }
+    }
     #[doc = "Peripheral Reset Control 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4179,6 +4425,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_GLB_RST2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_GLB_RST2 {{ GPIO0: {=bool:?}, GPIO1: {=bool:?}, GPIO2: {=bool:?}, GPIO3: {=bool:?}, GPIO4: {=bool:?}, MAU0: {=bool:?} }}" , self . GPIO0 () , self . GPIO1 () , self . GPIO2 () , self . GPIO3 () , self . GPIO4 () , self . MAU0 ())
+        }
+    }
     #[doc = "I3C0_FCLK clock divider control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4237,6 +4489,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_I3C0_FCLK_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_I3C0_FCLK_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "I3C0_FCLK clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4263,6 +4521,12 @@ pub mod regs {
             f.debug_struct("MRCC_I3C0_FCLK_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_I3C0_FCLK_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_I3C0_FCLK_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "LPI2C0 clock divider control"]
@@ -4323,6 +4587,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPI2C0_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_LPI2C0_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "LPI2C0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4349,6 +4619,12 @@ pub mod regs {
             f.debug_struct("MRCC_LPI2C0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPI2C0_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_LPI2C0_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "LPI2C1 clock divider control"]
@@ -4409,6 +4685,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPI2C1_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_LPI2C1_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "LPI2C1 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4435,6 +4717,12 @@ pub mod regs {
             f.debug_struct("MRCC_LPI2C1_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPI2C1_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_LPI2C1_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "LPI2C2 clock divider control"]
@@ -4495,6 +4783,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPI2C2_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_LPI2C2_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "LPI2C2 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4521,6 +4815,12 @@ pub mod regs {
             f.debug_struct("MRCC_LPI2C2_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPI2C2_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_LPI2C2_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "LPI2C3 clock divider control"]
@@ -4581,6 +4881,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPI2C3_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_LPI2C3_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "LPI2C3 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4607,6 +4913,12 @@ pub mod regs {
             f.debug_struct("MRCC_LPI2C3_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPI2C3_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_LPI2C3_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "LPSPI0 clock divider control"]
@@ -4667,6 +4979,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPSPI0_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_LPSPI0_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "LPSPI0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4693,6 +5011,12 @@ pub mod regs {
             f.debug_struct("MRCC_LPSPI0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPSPI0_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_LPSPI0_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "LPSPI1 clock divider control"]
@@ -4753,6 +5077,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPSPI1_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_LPSPI1_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "LPSPI1 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4779,6 +5109,12 @@ pub mod regs {
             f.debug_struct("MRCC_LPSPI1_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPSPI1_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_LPSPI1_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "LPTMR0 clock divider control"]
@@ -4839,6 +5175,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPTMR0_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_LPTMR0_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "LPTMR0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4865,6 +5207,12 @@ pub mod regs {
             f.debug_struct("MRCC_LPTMR0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPTMR0_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_LPTMR0_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "LPUART0 clock divider control"]
@@ -4925,6 +5273,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPUART0_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_LPUART0_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "LPUART0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4951,6 +5305,12 @@ pub mod regs {
             f.debug_struct("MRCC_LPUART0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPUART0_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_LPUART0_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "LPUART1 clock divider control"]
@@ -5011,6 +5371,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPUART1_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_LPUART1_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "LPUART1 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5037,6 +5403,12 @@ pub mod regs {
             f.debug_struct("MRCC_LPUART1_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPUART1_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_LPUART1_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "LPUART2 clock divider control"]
@@ -5097,6 +5469,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPUART2_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_LPUART2_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "LPUART2 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5123,6 +5501,12 @@ pub mod regs {
             f.debug_struct("MRCC_LPUART2_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPUART2_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_LPUART2_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "LPUART3 clock divider control"]
@@ -5183,6 +5567,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPUART3_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_LPUART3_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "LPUART3 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5209,6 +5599,12 @@ pub mod regs {
             f.debug_struct("MRCC_LPUART3_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPUART3_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_LPUART3_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "LPUART4 clock divider control"]
@@ -5269,6 +5665,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPUART4_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_LPUART4_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "LPUART4 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5295,6 +5697,12 @@ pub mod regs {
             f.debug_struct("MRCC_LPUART4_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPUART4_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_LPUART4_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "LPUART5 clock divider control"]
@@ -5355,6 +5763,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPUART5_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_LPUART5_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "LPUART5 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5383,6 +5797,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_LPUART5_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_LPUART5_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
+        }
+    }
     #[doc = "OSTIMER0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5409,6 +5829,12 @@ pub mod regs {
             f.debug_struct("MRCC_OSTIMER0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_OSTIMER0_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_OSTIMER0_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "SYSTICK clock divider control"]
@@ -5469,6 +5895,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_SYSTICK_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_SYSTICK_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "SYSTICK clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5495,6 +5927,12 @@ pub mod regs {
             f.debug_struct("MRCC_SYSTICK_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_SYSTICK_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_SYSTICK_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "USB0 clock divider control"]
@@ -5555,6 +5993,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_USB0_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_USB0_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
+        }
+    }
     #[doc = "USB0 clock selection control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5581,6 +6025,12 @@ pub mod regs {
             f.debug_struct("MRCC_USB0_CLKSEL")
                 .field("MUX", &self.MUX())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_USB0_CLKSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MRCC_USB0_CLKSEL {{ MUX: {=u8:?} }}", self.MUX())
         }
     }
     #[doc = "WWDT0 clock divider control"]
@@ -5639,6 +6089,12 @@ pub mod regs {
                 .field("HALT", &self.HALT())
                 .field("UNSTAB", &self.UNSTAB())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MRCC_WWDT0_CLKDIV {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MRCC_WWDT0_CLKDIV {{ DIV: {=u8:?}, RESET: {=bool:?}, HALT: {=bool:?}, UNSTAB: {=bool:?} }}" , self . DIV () , self . RESET () , self . HALT () , self . UNSTAB ())
         }
     }
 }

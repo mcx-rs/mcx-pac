@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct TDET {
     ptr: *mut u8,
@@ -126,6 +126,12 @@ pub mod regs {
                 .field("DISTAM", &self.DISTAM())
                 .field("DPR", &self.DPR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CR {{ SWR: {=bool:?}, DEN: {=bool:?}, TFSR: {=bool:?}, UM: {=bool:?}, DISTAM: {=bool:?}, DPR: {=u16:?} }}" , self . SWR () , self . DEN () , self . TFSR () , self . UM () , self . DISTAM () , self . DPR ())
         }
     }
     #[doc = "Interrupt Enable"]
@@ -326,6 +332,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IER {{ DTIE: {=bool:?}, TIIE0: {=bool:?}, TIIE1: {=bool:?}, TIIE2: {=bool:?}, TIIE3: {=bool:?}, TIIE4: {=bool:?}, TIIE5: {=bool:?}, TIIE6: {=bool:?}, TIIE7: {=bool:?}, TIIE8: {=bool:?}, TIIE9: {=bool:?}, TIIE10: {=bool:?}, TPIE0: {=bool:?}, TPIE1: {=bool:?}, TPIE2: {=bool:?}, TPIE3: {=bool:?}, TPIE4: {=bool:?}, TPIE5: {=bool:?} }}" , self . DTIE () , self . TIIE0 () , self . TIIE1 () , self . TIIE2 () , self . TIIE3 () , self . TIIE4 () , self . TIIE5 () , self . TIIE6 () , self . TIIE7 () , self . TIIE8 () , self . TIIE9 () , self . TIIE10 () , self . TPIE0 () , self . TPIE1 () , self . TPIE2 () , self . TPIE3 () , self . TPIE4 () , self . TPIE5 ())
+        }
+    }
     #[doc = "Lock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -474,6 +486,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "LR {{ CRL: {=bool:?}, SRL: {=bool:?}, LRL: {=bool:?}, IEL: {=bool:?}, TSL: {=bool:?}, TEL: {=bool:?}, PPL: {=bool:?}, GFL0: {=bool:?}, GFL1: {=bool:?}, GFL2: {=bool:?}, GFL3: {=bool:?}, GFL4: {=bool:?}, GFL5: {=bool:?} }}" , self . CRL () , self . SRL () , self . LRL () , self . IEL () , self . TSL () , self . TEL () , self . PPL () , self . GFL0 () , self . GFL1 () , self . GFL2 () , self . GFL3 () , self . GFL4 () , self . GFL5 ())
+        }
+    }
     #[doc = "Pin Glitch Filter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -590,6 +608,12 @@ pub mod regs {
                 .field("TPF", &self.TPF())
                 .field("IBE", &self.IBE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PGFR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PGFR {{ GFW: {=u8:?}, GFP: {=bool:?}, GFE: {=bool:?}, TPSW: {=u8:?}, TPSF: {=u8:?}, TPE: {=bool:?}, TPS: {=bool:?}, TPV: {=bool:?}, TPF: {=bool:?}, IBE: {=bool:?} }}" , self . GFW () , self . GFP () , self . GFE () , self . TPSW () , self . TPSF () , self . TPE () , self . TPS () , self . TPV () , self . TPF () , self . IBE ())
         }
     }
     #[doc = "Pin Polarity"]
@@ -728,6 +752,12 @@ pub mod regs {
                 .field("TPID4", &self.TPID4())
                 .field("TPID5", &self.TPID5())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PPR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PPR {{ TPP0: {=bool:?}, TPP1: {=bool:?}, TPP2: {=bool:?}, TPP3: {=bool:?}, TPP4: {=bool:?}, TPP5: {=bool:?}, TPID0: {=bool:?}, TPID1: {=bool:?}, TPID2: {=bool:?}, TPID3: {=bool:?}, TPID4: {=bool:?}, TPID5: {=bool:?} }}" , self . TPP0 () , self . TPP1 () , self . TPP2 () , self . TPP3 () , self . TPP4 () , self . TPP5 () , self . TPID0 () , self . TPID1 () , self . TPID2 () , self . TPID3 () , self . TPID4 () , self . TPID5 ())
         }
     }
     #[doc = "Status"]
@@ -938,6 +968,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SR {{ DTF: {=bool:?}, TAF: {=bool:?}, TIF0: {=bool:?}, TIF1: {=bool:?}, TIF2: {=bool:?}, TIF3: {=bool:?}, TIF4: {=bool:?}, TIF5: {=bool:?}, TIF6: {=bool:?}, TIF7: {=bool:?}, TIF8: {=bool:?}, TIF9: {=bool:?}, TIF10: {=bool:?}, TPF0: {=bool:?}, TPF1: {=bool:?}, TPF2: {=bool:?}, TPF3: {=bool:?}, TPF4: {=bool:?}, TPF5: {=bool:?} }}" , self . DTF () , self . TAF () , self . TIF0 () , self . TIF1 () , self . TIF2 () , self . TIF3 () , self . TIF4 () , self . TIF5 () , self . TIF6 () , self . TIF7 () , self . TIF8 () , self . TIF9 () , self . TIF10 () , self . TPF0 () , self . TPF1 () , self . TPF2 () , self . TPF3 () , self . TPF4 () , self . TPF5 ())
+        }
+    }
     #[doc = "Tamper Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1124,6 +1160,12 @@ pub mod regs {
                 .field("TPE4", &self.TPE4())
                 .field("TPE5", &self.TPE5())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TER {{ TIE0: {=bool:?}, TIE1: {=bool:?}, TIE2: {=bool:?}, TIE3: {=bool:?}, TIE4: {=bool:?}, TIE5: {=bool:?}, TIE6: {=bool:?}, TIE7: {=bool:?}, TIE8: {=bool:?}, TIE9: {=bool:?}, TIE10: {=bool:?}, TPE0: {=bool:?}, TPE1: {=bool:?}, TPE2: {=bool:?}, TPE3: {=bool:?}, TPE4: {=bool:?}, TPE5: {=bool:?} }}" , self . TIE0 () , self . TIE1 () , self . TIE2 () , self . TIE3 () , self . TIE4 () , self . TIE5 () , self . TIE6 () , self . TIE7 () , self . TIE8 () , self . TIE9 () , self . TIE10 () , self . TPE0 () , self . TPE1 () , self . TPE2 () , self . TPE3 () , self . TPE4 () , self . TPE5 ())
         }
     }
 }

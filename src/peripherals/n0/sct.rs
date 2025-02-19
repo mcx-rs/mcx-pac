@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct EV {
     ptr: *mut u8,
@@ -72,11 +72,15 @@ impl SCT {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn CTRLL(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn CTRLL(
+        self,
+    ) -> crate::common::Reg<regs::CTRL_ACCESS16BIT_CTRLL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
     #[inline(always)]
-    pub const fn CTRLH(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn CTRLH(
+        self,
+    ) -> crate::common::Reg<regs::CTRL_ACCESS16BIT_CTRLH, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06usize) as _) }
     }
     #[inline(always)]
@@ -164,11 +168,15 @@ impl SCT {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[inline(always)]
-    pub const fn REGMODEL(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn REGMODEL(
+        self,
+    ) -> crate::common::Reg<regs::REGMODE_ACCESS16BIT_REGMODEL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
     #[inline(always)]
-    pub const fn REGMODEH(self) -> crate::common::Reg<u16, crate::common::RW> {
+    pub const fn REGMODEH(
+        self,
+    ) -> crate::common::Reg<regs::REGMODE_ACCESS16BIT_REGMODEH, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4eusize) as _) }
     }
     #[inline(always)]
@@ -208,12 +216,12 @@ impl SCT {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xfcusize) as _) }
     }
     #[inline(always)]
-    pub const fn MergeUnion(self, n: usize) -> crate::common::Reg<regs::CAP, crate::common::RW> {
+    pub const fn CAP(self, n: usize) -> crate::common::Reg<regs::CAP, crate::common::RW> {
         assert!(n < 16usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MergeUnion(self, n: usize) -> crate::common::Reg<regs::MATCH, crate::common::RW> {
+    pub const fn MATCH(self, n: usize) -> crate::common::Reg<regs::MATCH, crate::common::RW> {
         assert!(n < 16usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize + n * 4usize) as _) }
     }
@@ -223,15 +231,12 @@ impl SCT {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0140usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MergeUnion(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAPCTRL(self, n: usize) -> crate::common::Reg<regs::CAPCTRL, crate::common::RW> {
         assert!(n < 16usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn MergeUnion(
-        self,
-        n: usize,
-    ) -> crate::common::Reg<regs::MATCHREL, crate::common::RW> {
+    pub const fn MATCHREL(self, n: usize) -> crate::common::Reg<regs::MATCHREL, crate::common::RW> {
         assert!(n < 16usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize + n * 4usize) as _) }
     }
@@ -293,6 +298,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CAP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CAP {{ CAPn_L: {=u16:?}, CAPn_H: {=u16:?} }}",
+                self.CAPn_L(),
+                self.CAPn_H()
+            )
+        }
+    }
     #[doc = "Capture Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -331,116 +347,15 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "SCT_CAPCTRLH register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CAPCTRL_ACCESS16BIT_CAPCTRLH(pub u32);
-    impl CAPCTRL_ACCESS16BIT_CAPCTRLH {
-        #[inline(always)]
-        pub const fn CAPCTRLH(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_CAPCTRLH(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for CAPCTRL_ACCESS16BIT_CAPCTRLH {
-        #[inline(always)]
-        fn default() -> CAPCTRL_ACCESS16BIT_CAPCTRLH {
-            CAPCTRL_ACCESS16BIT_CAPCTRLH(0)
-        }
-    }
-    impl core::fmt::Debug for CAPCTRL_ACCESS16BIT_CAPCTRLH {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("CAPCTRL_ACCESS16BIT_CAPCTRLH")
-                .field("CAPCTRLH", &self.CAPCTRLH())
-                .finish()
-        }
-    }
-    #[doc = "SCT_CAPCTRLL register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CAPCTRL_ACCESS16BIT_CAPCTRLL(pub u32);
-    impl CAPCTRL_ACCESS16BIT_CAPCTRLL {
-        #[inline(always)]
-        pub const fn CAPCTRLL(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_CAPCTRLL(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for CAPCTRL_ACCESS16BIT_CAPCTRLL {
-        #[inline(always)]
-        fn default() -> CAPCTRL_ACCESS16BIT_CAPCTRLL {
-            CAPCTRL_ACCESS16BIT_CAPCTRLL(0)
-        }
-    }
-    impl core::fmt::Debug for CAPCTRL_ACCESS16BIT_CAPCTRLL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("CAPCTRL_ACCESS16BIT_CAPCTRLL")
-                .field("CAPCTRLL", &self.CAPCTRLL())
-                .finish()
-        }
-    }
-    #[doc = "SCT_CAPH register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CAP_ACCESS16BIT_CAPH(pub u32);
-    impl CAP_ACCESS16BIT_CAPH {
-        #[inline(always)]
-        pub const fn CAPH(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_CAPH(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for CAP_ACCESS16BIT_CAPH {
-        #[inline(always)]
-        fn default() -> CAP_ACCESS16BIT_CAPH {
-            CAP_ACCESS16BIT_CAPH(0)
-        }
-    }
-    impl core::fmt::Debug for CAP_ACCESS16BIT_CAPH {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("CAP_ACCESS16BIT_CAPH")
-                .field("CAPH", &self.CAPH())
-                .finish()
-        }
-    }
-    #[doc = "SCT_CAPL register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CAP_ACCESS16BIT_CAPL(pub u32);
-    impl CAP_ACCESS16BIT_CAPL {
-        #[inline(always)]
-        pub const fn CAPL(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_CAPL(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for CAP_ACCESS16BIT_CAPL {
-        #[inline(always)]
-        fn default() -> CAP_ACCESS16BIT_CAPL {
-            CAP_ACCESS16BIT_CAPL(0)
-        }
-    }
-    impl core::fmt::Debug for CAP_ACCESS16BIT_CAPL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("CAP_ACCESS16BIT_CAPL")
-                .field("CAPL", &self.CAPL())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CAPCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CAPCTRL {{ CAPCONn_L: {=u16:?}, CAPCONn_H: {=u16:?} }}",
+                self.CAPCONn_L(),
+                self.CAPCONn_H()
+            )
         }
     }
     #[doc = "Conflict Interrupt Enable"]
@@ -561,6 +476,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CONEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CONEN {{ NCEN0: {=bool:?}, NCEN1: {=bool:?}, NCEN2: {=bool:?}, NCEN3: {=bool:?}, NCEN4: {=bool:?}, NCEN5: {=bool:?}, NCEN6: {=bool:?}, NCEN7: {=bool:?}, NCEN8: {=bool:?}, NCEN9: {=bool:?} }}" , self . NCEN0 () , self . NCEN1 () , self . NCEN2 () , self . NCEN3 () , self . NCEN4 () , self . NCEN5 () , self . NCEN6 () , self . NCEN7 () , self . NCEN8 () , self . NCEN9 ())
+        }
+    }
     #[doc = "SCT Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -657,6 +578,12 @@ pub mod regs {
                 .field("AUTOLIMIT_L", &self.AUTOLIMIT_L())
                 .field("AUTOLIMIT_H", &self.AUTOLIMIT_H())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CONFIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CONFIG {{ UNIFY: {=bool:?}, CLKMODE: {=u8:?}, CKSEL: {=u8:?}, NORELOAD_L: {=bool:?}, NORELOAD_H: {=bool:?}, INSYNC: {=u8:?}, AUTOLIMIT_L: {=bool:?}, AUTOLIMIT_H: {=bool:?} }}" , self . UNIFY () , self . CLKMODE () , self . CKSEL () , self . NORELOAD_L () , self . NORELOAD_H () , self . INSYNC () , self . AUTOLIMIT_L () , self . AUTOLIMIT_H ())
         }
     }
     #[doc = "Conflict Flag"]
@@ -797,6 +724,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CONFLAG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CONFLAG {{ NCFLAG0: {=bool:?}, NCFLAG1: {=bool:?}, NCFLAG2: {=bool:?}, NCFLAG3: {=bool:?}, NCFLAG4: {=bool:?}, NCFLAG5: {=bool:?}, NCFLAG6: {=bool:?}, NCFLAG7: {=bool:?}, NCFLAG8: {=bool:?}, NCFLAG9: {=bool:?}, BUSERRL: {=bool:?}, BUSERRH: {=bool:?} }}" , self . NCFLAG0 () , self . NCFLAG1 () , self . NCFLAG2 () , self . NCFLAG3 () , self . NCFLAG4 () , self . NCFLAG5 () , self . NCFLAG6 () , self . NCFLAG7 () , self . NCFLAG8 () , self . NCFLAG9 () , self . BUSERRL () , self . BUSERRH ())
+        }
+    }
     #[doc = "Counter Value"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -835,60 +768,15 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "SCT_COUNTH register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct COUNT_ACCESS16BIT_COUNTH(pub u32);
-    impl COUNT_ACCESS16BIT_COUNTH {
-        #[inline(always)]
-        pub const fn COUNTH(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_COUNTH(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for COUNT_ACCESS16BIT_COUNTH {
-        #[inline(always)]
-        fn default() -> COUNT_ACCESS16BIT_COUNTH {
-            COUNT_ACCESS16BIT_COUNTH(0)
-        }
-    }
-    impl core::fmt::Debug for COUNT_ACCESS16BIT_COUNTH {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("COUNT_ACCESS16BIT_COUNTH")
-                .field("COUNTH", &self.COUNTH())
-                .finish()
-        }
-    }
-    #[doc = "SCT_COUNTL register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct COUNT_ACCESS16BIT_COUNTL(pub u32);
-    impl COUNT_ACCESS16BIT_COUNTL {
-        #[inline(always)]
-        pub const fn COUNTL(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_COUNTL(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for COUNT_ACCESS16BIT_COUNTL {
-        #[inline(always)]
-        fn default() -> COUNT_ACCESS16BIT_COUNTL {
-            COUNT_ACCESS16BIT_COUNTL(0)
-        }
-    }
-    impl core::fmt::Debug for COUNT_ACCESS16BIT_COUNTL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("COUNT_ACCESS16BIT_COUNTL")
-                .field("COUNTL", &self.COUNTL())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for COUNT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "COUNT {{ CTR_L: {=u16:?}, CTR_H: {=u16:?} }}",
+                self.CTR_L(),
+                self.CTR_H()
+            )
         }
     }
     #[doc = "SCT Control"]
@@ -1029,10 +917,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL {{ DOWN_L: {=bool:?}, STOP_L: {=bool:?}, HALT_L: {=bool:?}, CLRCTR_L: {=bool:?}, BIDIR_L: {=bool:?}, PRE_L: {=u8:?}, DOWN_H: {=bool:?}, STOP_H: {=bool:?}, HALT_H: {=bool:?}, CLRCTR_H: {=bool:?}, BIDIR_H: {=bool:?}, PRE_H: {=u8:?} }}" , self . DOWN_L () , self . STOP_L () , self . HALT_L () , self . CLRCTR_L () , self . BIDIR_L () , self . PRE_L () , self . DOWN_H () , self . STOP_H () , self . HALT_H () , self . CLRCTR_H () , self . BIDIR_H () , self . PRE_H ())
+        }
+    }
     #[doc = "SCT_CTRLH register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CTRL_ACCESS16BIT_CTRLH(pub u32);
+    pub struct CTRL_ACCESS16BIT_CTRLH(pub u16);
     impl CTRL_ACCESS16BIT_CTRLH {
         #[inline(always)]
         pub const fn DOWN_H(&self) -> bool {
@@ -1041,7 +935,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DOWN_H(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn STOP_H(&self) -> bool {
@@ -1050,7 +944,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STOP_H(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn HALT_H(&self) -> bool {
@@ -1059,7 +953,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_HALT_H(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn CLRCTR_H(&self) -> bool {
@@ -1068,7 +962,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_CLRCTR_H(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u16) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn BIDIR_H(&self) -> bool {
@@ -1077,7 +971,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_BIDIR_H(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn PRE_H(&self) -> u8 {
@@ -1086,7 +980,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PRE_H(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 5usize)) | (((val as u32) & 0xff) << 5usize);
+            self.0 = (self.0 & !(0xff << 5usize)) | (((val as u16) & 0xff) << 5usize);
         }
     }
     impl Default for CTRL_ACCESS16BIT_CTRLH {
@@ -1107,10 +1001,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_ACCESS16BIT_CTRLH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL_ACCESS16BIT_CTRLH {{ DOWN_H: {=bool:?}, STOP_H: {=bool:?}, HALT_H: {=bool:?}, CLRCTR_H: {=bool:?}, BIDIR_H: {=bool:?}, PRE_H: {=u8:?} }}" , self . DOWN_H () , self . STOP_H () , self . HALT_H () , self . CLRCTR_H () , self . BIDIR_H () , self . PRE_H ())
+        }
+    }
     #[doc = "SCT_CTRLL register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CTRL_ACCESS16BIT_CTRLL(pub u32);
+    pub struct CTRL_ACCESS16BIT_CTRLL(pub u16);
     impl CTRL_ACCESS16BIT_CTRLL {
         #[inline(always)]
         pub const fn DOWN_L(&self) -> bool {
@@ -1119,7 +1019,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_DOWN_L(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
         }
         #[inline(always)]
         pub const fn STOP_L(&self) -> bool {
@@ -1128,7 +1028,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_STOP_L(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
         }
         #[inline(always)]
         pub const fn HALT_L(&self) -> bool {
@@ -1137,7 +1037,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_HALT_L(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
         }
         #[inline(always)]
         pub const fn CLRCTR_L(&self) -> bool {
@@ -1146,7 +1046,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_CLRCTR_L(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u16) & 0x01) << 3usize);
         }
         #[inline(always)]
         pub const fn BIDIR_L(&self) -> bool {
@@ -1155,7 +1055,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_BIDIR_L(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
         }
         #[inline(always)]
         pub const fn PRE_L(&self) -> u8 {
@@ -1164,7 +1064,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_PRE_L(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 5usize)) | (((val as u32) & 0xff) << 5usize);
+            self.0 = (self.0 & !(0xff << 5usize)) | (((val as u16) & 0xff) << 5usize);
         }
     }
     impl Default for CTRL_ACCESS16BIT_CTRLL {
@@ -1183,6 +1083,12 @@ pub mod regs {
                 .field("BIDIR_L", &self.BIDIR_L())
                 .field("PRE_L", &self.PRE_L())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL_ACCESS16BIT_CTRLL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL_ACCESS16BIT_CTRLL {{ DOWN_L: {=bool:?}, STOP_L: {=bool:?}, HALT_L: {=bool:?}, CLRCTR_L: {=bool:?}, BIDIR_L: {=bool:?}, PRE_L: {=u8:?} }}" , self . DOWN_L () , self . STOP_L () , self . HALT_L () , self . CLRCTR_L () , self . BIDIR_L () , self . PRE_L ())
         }
     }
     #[doc = "Dither Condition"]
@@ -1221,6 +1127,17 @@ pub mod regs {
                 .field("DITHER_L", &self.DITHER_L())
                 .field("DITHER_H", &self.DITHER_H())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DITHER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DITHER {{ DITHER_L: {=u16:?}, DITHER_H: {=u16:?} }}",
+                self.DITHER_L(),
+                self.DITHER_H()
+            )
         }
     }
     #[doc = "DMA Request 0"]
@@ -1421,6 +1338,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMAREQ0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMAREQ0 {{ DEV_0: {=bool:?}, DEV_1: {=bool:?}, DEV_2: {=bool:?}, DEV_3: {=bool:?}, DEV_4: {=bool:?}, DEV_5: {=bool:?}, DEV_6: {=bool:?}, DEV_7: {=bool:?}, DEV_8: {=bool:?}, DEV_9: {=bool:?}, DEV_10: {=bool:?}, DEV_11: {=bool:?}, DEV_12: {=bool:?}, DEV_13: {=bool:?}, DEV_14: {=bool:?}, DEV_15: {=bool:?}, DRL0: {=bool:?}, DRQ0: {=bool:?} }}" , self . DEV_0 () , self . DEV_1 () , self . DEV_2 () , self . DEV_3 () , self . DEV_4 () , self . DEV_5 () , self . DEV_6 () , self . DEV_7 () , self . DEV_8 () , self . DEV_9 () , self . DEV_10 () , self . DEV_11 () , self . DEV_12 () , self . DEV_13 () , self . DEV_14 () , self . DEV_15 () , self . DRL0 () , self . DRQ0 ())
+        }
+    }
     #[doc = "DMA Request 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1619,6 +1542,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMAREQ1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMAREQ1 {{ DEV_0: {=bool:?}, DEV_1: {=bool:?}, DEV_2: {=bool:?}, DEV_3: {=bool:?}, DEV_4: {=bool:?}, DEV_5: {=bool:?}, DEV_6: {=bool:?}, DEV_7: {=bool:?}, DEV_8: {=bool:?}, DEV_9: {=bool:?}, DEV_10: {=bool:?}, DEV_11: {=bool:?}, DEV_12: {=bool:?}, DEV_13: {=bool:?}, DEV_14: {=bool:?}, DEV_15: {=bool:?}, DRL1: {=bool:?}, DRQ1: {=bool:?} }}" , self . DEV_0 () , self . DEV_1 () , self . DEV_2 () , self . DEV_3 () , self . DEV_4 () , self . DEV_5 () , self . DEV_6 () , self . DEV_7 () , self . DEV_8 () , self . DEV_9 () , self . DEV_10 () , self . DEV_11 () , self . DEV_12 () , self . DEV_13 () , self . DEV_14 () , self . DEV_15 () , self . DRL1 () , self . DRQ1 ())
+        }
+    }
     #[doc = "Event Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1795,6 +1724,12 @@ pub mod regs {
                 .field("IEN14", &self.IEN14())
                 .field("IEN15", &self.IEN15())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EVEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "EVEN {{ IEN0: {=bool:?}, IEN1: {=bool:?}, IEN2: {=bool:?}, IEN3: {=bool:?}, IEN4: {=bool:?}, IEN5: {=bool:?}, IEN6: {=bool:?}, IEN7: {=bool:?}, IEN8: {=bool:?}, IEN9: {=bool:?}, IEN10: {=bool:?}, IEN11: {=bool:?}, IEN12: {=bool:?}, IEN13: {=bool:?}, IEN14: {=bool:?}, IEN15: {=bool:?} }}" , self . IEN0 () , self . IEN1 () , self . IEN2 () , self . IEN3 () , self . IEN4 () , self . IEN5 () , self . IEN6 () , self . IEN7 () , self . IEN8 () , self . IEN9 () , self . IEN10 () , self . IEN11 () , self . IEN12 () , self . IEN13 () , self . IEN14 () , self . IEN15 ())
         }
     }
     #[doc = "Event Flag"]
@@ -1975,6 +1910,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EVFLAG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "EVFLAG {{ FLAG0: {=bool:?}, FLAG1: {=bool:?}, FLAG2: {=bool:?}, FLAG3: {=bool:?}, FLAG4: {=bool:?}, FLAG5: {=bool:?}, FLAG6: {=bool:?}, FLAG7: {=bool:?}, FLAG8: {=bool:?}, FLAG9: {=bool:?}, FLAG10: {=bool:?}, FLAG11: {=bool:?}, FLAG12: {=bool:?}, FLAG13: {=bool:?}, FLAG14: {=bool:?}, FLAG15: {=bool:?} }}" , self . FLAG0 () , self . FLAG1 () , self . FLAG2 () , self . FLAG3 () , self . FLAG4 () , self . FLAG5 () , self . FLAG6 () , self . FLAG7 () , self . FLAG8 () , self . FLAG9 () , self . FLAG10 () , self . FLAG11 () , self . FLAG12 () , self . FLAG13 () , self . FLAG14 () , self . FLAG15 ())
+        }
+    }
     #[doc = "Event n Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2093,6 +2034,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EV_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "EV_CTRL {{ MATCHSEL: {=u8:?}, HEVENT: {=bool:?}, OUTSEL: {=bool:?}, IOSEL: {=u8:?}, IOCOND: {=u8:?}, COMBMODE: {=u8:?}, STATELD: {=bool:?}, STATEV: {=u8:?}, MATCHMEM: {=bool:?}, DIRECTION: {=u8:?} }}" , self . MATCHSEL () , self . HEVENT () , self . OUTSEL () , self . IOSEL () , self . IOCOND () , self . COMBMODE () , self . STATELD () , self . STATEV () , self . MATCHMEM () , self . DIRECTION ())
+        }
+    }
     #[doc = "Fractional Match"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2129,6 +2076,17 @@ pub mod regs {
                 .field("FRACMAT_L", &self.FRACMAT_L())
                 .field("FRACMAT_H", &self.FRACMAT_H())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FRACMAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FRACMAT {{ FRACMAT_L: {=u8:?}, FRACMAT_H: {=u8:?} }}",
+                self.FRACMAT_L(),
+                self.FRACMAT_H()
+            )
         }
     }
     #[doc = "Fractional Match Reload"]
@@ -2169,6 +2127,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FRACMATREL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FRACMATREL {{ RELFRAC_L: {=u8:?}, RELFRAC_H: {=u8:?} }}",
+                self.RELFRAC_L(),
+                self.RELFRAC_H()
+            )
+        }
+    }
     #[doc = "Halt Event Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2207,60 +2176,15 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "SCT_HALTH register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct HALT_ACCESS16BIT_HALTH(pub u32);
-    impl HALT_ACCESS16BIT_HALTH {
-        #[inline(always)]
-        pub const fn HALTH(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_HALTH(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for HALT_ACCESS16BIT_HALTH {
-        #[inline(always)]
-        fn default() -> HALT_ACCESS16BIT_HALTH {
-            HALT_ACCESS16BIT_HALTH(0)
-        }
-    }
-    impl core::fmt::Debug for HALT_ACCESS16BIT_HALTH {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("HALT_ACCESS16BIT_HALTH")
-                .field("HALTH", &self.HALTH())
-                .finish()
-        }
-    }
-    #[doc = "SCT_HALTL register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct HALT_ACCESS16BIT_HALTL(pub u32);
-    impl HALT_ACCESS16BIT_HALTL {
-        #[inline(always)]
-        pub const fn HALTL(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_HALTL(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for HALT_ACCESS16BIT_HALTL {
-        #[inline(always)]
-        fn default() -> HALT_ACCESS16BIT_HALTL {
-            HALT_ACCESS16BIT_HALTL(0)
-        }
-    }
-    impl core::fmt::Debug for HALT_ACCESS16BIT_HALTL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("HALT_ACCESS16BIT_HALTL")
-                .field("HALTL", &self.HALTL())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HALT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "HALT {{ HALTMSK_L: {=u16:?}, HALTMSK_H: {=u16:?} }}",
+                self.HALTMSK_L(),
+                self.HALTMSK_H()
+            )
         }
     }
     #[doc = "Input State"]
@@ -2601,6 +2525,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INPUT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "INPUT {{ AIN0: {=bool:?}, AIN1: {=bool:?}, AIN2: {=bool:?}, AIN3: {=bool:?}, AIN4: {=bool:?}, AIN5: {=bool:?}, AIN6: {=bool:?}, AIN7: {=bool:?}, AIN8: {=bool:?}, AIN9: {=bool:?}, AIN10: {=bool:?}, AIN11: {=bool:?}, AIN12: {=bool:?}, AIN13: {=bool:?}, AIN14: {=bool:?}, AIN15: {=bool:?}, SIN0: {=bool:?}, SIN1: {=bool:?}, SIN2: {=bool:?}, SIN3: {=bool:?}, SIN4: {=bool:?}, SIN5: {=bool:?}, SIN6: {=bool:?}, SIN7: {=bool:?}, SIN8: {=bool:?}, SIN9: {=bool:?}, SIN10: {=bool:?}, SIN11: {=bool:?}, SIN12: {=bool:?}, SIN13: {=bool:?}, SIN14: {=bool:?}, SIN15: {=bool:?} }}" , self . AIN0 () , self . AIN1 () , self . AIN2 () , self . AIN3 () , self . AIN4 () , self . AIN5 () , self . AIN6 () , self . AIN7 () , self . AIN8 () , self . AIN9 () , self . AIN10 () , self . AIN11 () , self . AIN12 () , self . AIN13 () , self . AIN14 () , self . AIN15 () , self . SIN0 () , self . SIN1 () , self . SIN2 () , self . SIN3 () , self . SIN4 () , self . SIN5 () , self . SIN6 () , self . SIN7 () , self . SIN8 () , self . SIN9 () , self . SIN10 () , self . SIN11 () , self . SIN12 () , self . SIN13 () , self . SIN14 () , self . SIN15 ())
+        }
+    }
     #[doc = "SCT Limit Event Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2639,60 +2569,15 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "SCT_LIMITH register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct LIMIT_ACCESS16BIT_LIMITH(pub u32);
-    impl LIMIT_ACCESS16BIT_LIMITH {
-        #[inline(always)]
-        pub const fn LIMITH(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_LIMITH(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for LIMIT_ACCESS16BIT_LIMITH {
-        #[inline(always)]
-        fn default() -> LIMIT_ACCESS16BIT_LIMITH {
-            LIMIT_ACCESS16BIT_LIMITH(0)
-        }
-    }
-    impl core::fmt::Debug for LIMIT_ACCESS16BIT_LIMITH {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("LIMIT_ACCESS16BIT_LIMITH")
-                .field("LIMITH", &self.LIMITH())
-                .finish()
-        }
-    }
-    #[doc = "SCT_LIMITL register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct LIMIT_ACCESS16BIT_LIMITL(pub u32);
-    impl LIMIT_ACCESS16BIT_LIMITL {
-        #[inline(always)]
-        pub const fn LIMITL(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_LIMITL(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for LIMIT_ACCESS16BIT_LIMITL {
-        #[inline(always)]
-        fn default() -> LIMIT_ACCESS16BIT_LIMITL {
-            LIMIT_ACCESS16BIT_LIMITL(0)
-        }
-    }
-    impl core::fmt::Debug for LIMIT_ACCESS16BIT_LIMITL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("LIMIT_ACCESS16BIT_LIMITL")
-                .field("LIMITL", &self.LIMITL())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LIMIT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "LIMIT {{ LIMMSK_L: {=u16:?}, LIMMSK_H: {=u16:?} }}",
+                self.LIMMSK_L(),
+                self.LIMMSK_H()
+            )
         }
     }
     #[doc = "Match Value"]
@@ -2733,6 +2618,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MATCH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MATCH {{ MATCHn_L: {=u16:?}, MATCHn_H: {=u16:?} }}",
+                self.MATCHn_L(),
+                self.MATCHn_H()
+            )
+        }
+    }
     #[doc = "Match Reload Value"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2771,116 +2667,15 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "SCT_MATCHRELH register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MATCHREL_ACCESS16BIT_MATCHRELH(pub u32);
-    impl MATCHREL_ACCESS16BIT_MATCHRELH {
-        #[inline(always)]
-        pub const fn MATCHRELH(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_MATCHRELH(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for MATCHREL_ACCESS16BIT_MATCHRELH {
-        #[inline(always)]
-        fn default() -> MATCHREL_ACCESS16BIT_MATCHRELH {
-            MATCHREL_ACCESS16BIT_MATCHRELH(0)
-        }
-    }
-    impl core::fmt::Debug for MATCHREL_ACCESS16BIT_MATCHRELH {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("MATCHREL_ACCESS16BIT_MATCHRELH")
-                .field("MATCHRELH", &self.MATCHRELH())
-                .finish()
-        }
-    }
-    #[doc = "SCT_MATCHRELL register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MATCHREL_ACCESS16BIT_MATCHRELL(pub u32);
-    impl MATCHREL_ACCESS16BIT_MATCHRELL {
-        #[inline(always)]
-        pub const fn MATCHRELL(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_MATCHRELL(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for MATCHREL_ACCESS16BIT_MATCHRELL {
-        #[inline(always)]
-        fn default() -> MATCHREL_ACCESS16BIT_MATCHRELL {
-            MATCHREL_ACCESS16BIT_MATCHRELL(0)
-        }
-    }
-    impl core::fmt::Debug for MATCHREL_ACCESS16BIT_MATCHRELL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("MATCHREL_ACCESS16BIT_MATCHRELL")
-                .field("MATCHRELL", &self.MATCHRELL())
-                .finish()
-        }
-    }
-    #[doc = "SCT_MATCHH register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MATCH_ACCESS16BIT_MATCHH(pub u32);
-    impl MATCH_ACCESS16BIT_MATCHH {
-        #[inline(always)]
-        pub const fn MATCHH(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_MATCHH(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for MATCH_ACCESS16BIT_MATCHH {
-        #[inline(always)]
-        fn default() -> MATCH_ACCESS16BIT_MATCHH {
-            MATCH_ACCESS16BIT_MATCHH(0)
-        }
-    }
-    impl core::fmt::Debug for MATCH_ACCESS16BIT_MATCHH {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("MATCH_ACCESS16BIT_MATCHH")
-                .field("MATCHH", &self.MATCHH())
-                .finish()
-        }
-    }
-    #[doc = "SCT_MATCHL register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MATCH_ACCESS16BIT_MATCHL(pub u32);
-    impl MATCH_ACCESS16BIT_MATCHL {
-        #[inline(always)]
-        pub const fn MATCHL(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_MATCHL(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for MATCH_ACCESS16BIT_MATCHL {
-        #[inline(always)]
-        fn default() -> MATCH_ACCESS16BIT_MATCHL {
-            MATCH_ACCESS16BIT_MATCHL(0)
-        }
-    }
-    impl core::fmt::Debug for MATCH_ACCESS16BIT_MATCHL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("MATCH_ACCESS16BIT_MATCHL")
-                .field("MATCHL", &self.MATCHL())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MATCHREL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MATCHREL {{ RELOADn_L: {=u16:?}, RELOADn_H: {=u16:?} }}",
+                self.RELOADn_L(),
+                self.RELOADn_H()
+            )
         }
     }
     #[doc = "Output State"]
@@ -3001,6 +2796,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OUTPUT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "OUTPUT {{ OUT0: {=bool:?}, OUT1: {=bool:?}, OUT2: {=bool:?}, OUT3: {=bool:?}, OUT4: {=bool:?}, OUT5: {=bool:?}, OUT6: {=bool:?}, OUT7: {=bool:?}, OUT8: {=bool:?}, OUT9: {=bool:?} }}" , self . OUT0 () , self . OUT1 () , self . OUT2 () , self . OUT3 () , self . OUT4 () , self . OUT5 () , self . OUT6 () , self . OUT7 () , self . OUT8 () , self . OUT9 ())
+        }
+    }
     #[doc = "Output Counter Direction Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3119,6 +2920,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OUTPUTDIRCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "OUTPUTDIRCTRL {{ SETCLR0: {=u8:?}, SETCLR1: {=u8:?}, SETCLR2: {=u8:?}, SETCLR3: {=u8:?}, SETCLR4: {=u8:?}, SETCLR5: {=u8:?}, SETCLR6: {=u8:?}, SETCLR7: {=u8:?}, SETCLR8: {=u8:?}, SETCLR9: {=u8:?} }}" , self . SETCLR0 () , self . SETCLR1 () , self . SETCLR2 () , self . SETCLR3 () , self . SETCLR4 () , self . SETCLR5 () , self . SETCLR6 () , self . SETCLR7 () , self . SETCLR8 () , self . SETCLR9 ())
+        }
+    }
     #[doc = "Output n Clear"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3145,6 +2952,12 @@ pub mod regs {
             f.debug_struct("OUT_CLR").field("CLR", &self.CLR()).finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OUT_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "OUT_CLR {{ CLR: {=u16:?} }}", self.CLR())
+        }
+    }
     #[doc = "Output n Set"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3169,6 +2982,12 @@ pub mod regs {
     impl core::fmt::Debug for OUT_SET {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("OUT_SET").field("SET", &self.SET()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OUT_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "OUT_SET {{ SET: {=u16:?} }}", self.SET())
         }
     }
     #[doc = "Match and Capture Register Mode"]
@@ -3529,10 +3348,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for REGMODE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "REGMODE {{ REGMOD_L: {=u16:?}, REGMOD_L0: {=bool:?}, REGMOD_L1: {=bool:?}, REGMOD_L2: {=bool:?}, REGMOD_L3: {=bool:?}, REGMOD_L4: {=bool:?}, REGMOD_L5: {=bool:?}, REGMOD_L6: {=bool:?}, REGMOD_L7: {=bool:?}, REGMOD_L8: {=bool:?}, REGMOD_L9: {=bool:?}, REGMOD_L10: {=bool:?}, REGMOD_L11: {=bool:?}, REGMOD_L12: {=bool:?}, REGMOD_L13: {=bool:?}, REGMOD_L14: {=bool:?}, REGMOD_L15: {=bool:?}, REGMOD_H: {=u16:?}, REGMOD_H0: {=bool:?}, REGMOD_H1: {=bool:?}, REGMOD_H2: {=bool:?}, REGMOD_H3: {=bool:?}, REGMOD_H4: {=bool:?}, REGMOD_H5: {=bool:?}, REGMOD_H6: {=bool:?}, REGMOD_H7: {=bool:?}, REGMOD_H8: {=bool:?}, REGMOD_H9: {=bool:?}, REGMOD_H10: {=bool:?}, REGMOD_H11: {=bool:?}, REGMOD_H12: {=bool:?}, REGMOD_H13: {=bool:?}, REGMOD_H14: {=bool:?}, REGMOD_H15: {=bool:?} }}" , self . REGMOD_L () , self . REGMOD_L0 () , self . REGMOD_L1 () , self . REGMOD_L2 () , self . REGMOD_L3 () , self . REGMOD_L4 () , self . REGMOD_L5 () , self . REGMOD_L6 () , self . REGMOD_L7 () , self . REGMOD_L8 () , self . REGMOD_L9 () , self . REGMOD_L10 () , self . REGMOD_L11 () , self . REGMOD_L12 () , self . REGMOD_L13 () , self . REGMOD_L14 () , self . REGMOD_L15 () , self . REGMOD_H () , self . REGMOD_H0 () , self . REGMOD_H1 () , self . REGMOD_H2 () , self . REGMOD_H3 () , self . REGMOD_H4 () , self . REGMOD_H5 () , self . REGMOD_H6 () , self . REGMOD_H7 () , self . REGMOD_H8 () , self . REGMOD_H9 () , self . REGMOD_H10 () , self . REGMOD_H11 () , self . REGMOD_H12 () , self . REGMOD_H13 () , self . REGMOD_H14 () , self . REGMOD_H15 ())
+        }
+    }
     #[doc = "SCT_REGMODEH register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct REGMODE_ACCESS16BIT_REGMODEH(pub u32);
+    pub struct REGMODE_ACCESS16BIT_REGMODEH(pub u16);
     impl REGMODE_ACCESS16BIT_REGMODEH {
         #[inline(always)]
         pub const fn REGMODEH(&self) -> u16 {
@@ -3541,7 +3366,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_REGMODEH(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u16) & 0xffff) << 0usize);
         }
         #[inline(always)]
         pub const fn REGMOD_L(&self) -> u16 {
@@ -3550,7 +3375,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_REGMOD_L(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u16) & 0xffff) << 0usize);
         }
         #[inline(always)]
         pub const fn REGMOD_H(&self) -> u16 {
@@ -3559,7 +3384,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_REGMOD_H(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
+            self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u16) & 0xffff) << 16usize);
         }
     }
     impl Default for REGMODE_ACCESS16BIT_REGMODEH {
@@ -3577,10 +3402,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for REGMODE_ACCESS16BIT_REGMODEH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "REGMODE_ACCESS16BIT_REGMODEH {{ REGMODEH: {=u16:?}, REGMOD_L: {=u16:?}, REGMOD_H: {=u16:?} }}" , self . REGMODEH () , self . REGMOD_L () , self . REGMOD_H ())
+        }
+    }
     #[doc = "SCT_REGMODEL register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct REGMODE_ACCESS16BIT_REGMODEL(pub u32);
+    pub struct REGMODE_ACCESS16BIT_REGMODEL(pub u16);
     impl REGMODE_ACCESS16BIT_REGMODEL {
         #[inline(always)]
         pub const fn REGMODEL(&self) -> u16 {
@@ -3589,7 +3420,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_REGMODEL(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u16) & 0xffff) << 0usize);
         }
         #[inline(always)]
         pub const fn REGMOD_L(&self) -> u16 {
@@ -3598,7 +3429,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_REGMOD_L(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u16) & 0xffff) << 0usize);
         }
         #[inline(always)]
         pub const fn REGMOD_H(&self) -> u16 {
@@ -3607,7 +3438,7 @@ pub mod regs {
         }
         #[inline(always)]
         pub fn set_REGMOD_H(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
+            self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u16) & 0xffff) << 16usize);
         }
     }
     impl Default for REGMODE_ACCESS16BIT_REGMODEL {
@@ -3623,6 +3454,12 @@ pub mod regs {
                 .field("REGMOD_L", &self.REGMOD_L())
                 .field("REGMOD_H", &self.REGMOD_H())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for REGMODE_ACCESS16BIT_REGMODEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "REGMODE_ACCESS16BIT_REGMODEL {{ REGMODEL: {=u16:?}, REGMOD_L: {=u16:?}, REGMOD_H: {=u16:?} }}" , self . REGMODEL () , self . REGMOD_L () , self . REGMOD_H ())
         }
     }
     #[doc = "Output Conflict Resolution"]
@@ -3743,6 +3580,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RES {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RES {{ O0RES: {=u8:?}, O1RES: {=u8:?}, O2RES: {=u8:?}, O3RES: {=u8:?}, O4RES: {=u8:?}, O5RES: {=u8:?}, O6RES: {=u8:?}, O7RES: {=u8:?}, O8RES: {=u8:?}, O9RES: {=u8:?} }}" , self . O0RES () , self . O1RES () , self . O2RES () , self . O3RES () , self . O4RES () , self . O5RES () , self . O6RES () , self . O7RES () , self . O8RES () , self . O9RES ())
+        }
+    }
     #[doc = "Start Event Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3781,60 +3624,15 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "SCT_STARTH register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct START_ACCESS16BIT_STARTH(pub u32);
-    impl START_ACCESS16BIT_STARTH {
-        #[inline(always)]
-        pub const fn STARTH(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_STARTH(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for START_ACCESS16BIT_STARTH {
-        #[inline(always)]
-        fn default() -> START_ACCESS16BIT_STARTH {
-            START_ACCESS16BIT_STARTH(0)
-        }
-    }
-    impl core::fmt::Debug for START_ACCESS16BIT_STARTH {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("START_ACCESS16BIT_STARTH")
-                .field("STARTH", &self.STARTH())
-                .finish()
-        }
-    }
-    #[doc = "SCT_STARTL register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct START_ACCESS16BIT_STARTL(pub u32);
-    impl START_ACCESS16BIT_STARTL {
-        #[inline(always)]
-        pub const fn STARTL(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_STARTL(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for START_ACCESS16BIT_STARTL {
-        #[inline(always)]
-        fn default() -> START_ACCESS16BIT_STARTL {
-            START_ACCESS16BIT_STARTL(0)
-        }
-    }
-    impl core::fmt::Debug for START_ACCESS16BIT_STARTL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("START_ACCESS16BIT_STARTL")
-                .field("STARTL", &self.STARTL())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for START {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "START {{ STARTMSK_L: {=u16:?}, STARTMSK_H: {=u16:?} }}",
+                self.STARTMSK_L(),
+                self.STARTMSK_H()
+            )
         }
     }
     #[doc = "State Variable"]
@@ -3875,60 +3673,15 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "SCT_STATEH register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct STATE_ACCESS16BIT_STATEH(pub u32);
-    impl STATE_ACCESS16BIT_STATEH {
-        #[inline(always)]
-        pub const fn STATEH(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_STATEH(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for STATE_ACCESS16BIT_STATEH {
-        #[inline(always)]
-        fn default() -> STATE_ACCESS16BIT_STATEH {
-            STATE_ACCESS16BIT_STATEH(0)
-        }
-    }
-    impl core::fmt::Debug for STATE_ACCESS16BIT_STATEH {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("STATE_ACCESS16BIT_STATEH")
-                .field("STATEH", &self.STATEH())
-                .finish()
-        }
-    }
-    #[doc = "SCT_STATEL register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct STATE_ACCESS16BIT_STATEL(pub u32);
-    impl STATE_ACCESS16BIT_STATEL {
-        #[inline(always)]
-        pub const fn STATEL(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_STATEL(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for STATE_ACCESS16BIT_STATEL {
-        #[inline(always)]
-        fn default() -> STATE_ACCESS16BIT_STATEL {
-            STATE_ACCESS16BIT_STATEL(0)
-        }
-    }
-    impl core::fmt::Debug for STATE_ACCESS16BIT_STATEL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("STATE_ACCESS16BIT_STATEL")
-                .field("STATEL", &self.STATEL())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "STATE {{ STATE_L: {=u8:?}, STATE_H: {=u8:?} }}",
+                self.STATE_L(),
+                self.STATE_H()
+            )
         }
     }
     #[doc = "Stop Event Select"]
@@ -3969,60 +3722,15 @@ pub mod regs {
                 .finish()
         }
     }
-    #[doc = "SCT_STOPH register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct STOP_ACCESS16BIT_STOPH(pub u32);
-    impl STOP_ACCESS16BIT_STOPH {
-        #[inline(always)]
-        pub const fn STOPH(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_STOPH(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for STOP_ACCESS16BIT_STOPH {
-        #[inline(always)]
-        fn default() -> STOP_ACCESS16BIT_STOPH {
-            STOP_ACCESS16BIT_STOPH(0)
-        }
-    }
-    impl core::fmt::Debug for STOP_ACCESS16BIT_STOPH {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("STOP_ACCESS16BIT_STOPH")
-                .field("STOPH", &self.STOPH())
-                .finish()
-        }
-    }
-    #[doc = "SCT_STOPL register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct STOP_ACCESS16BIT_STOPL(pub u32);
-    impl STOP_ACCESS16BIT_STOPL {
-        #[inline(always)]
-        pub const fn STOPL(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_STOPL(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-    }
-    impl Default for STOP_ACCESS16BIT_STOPL {
-        #[inline(always)]
-        fn default() -> STOP_ACCESS16BIT_STOPL {
-            STOP_ACCESS16BIT_STOPL(0)
-        }
-    }
-    impl core::fmt::Debug for STOP_ACCESS16BIT_STOPL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("STOP_ACCESS16BIT_STOPL")
-                .field("STOPL", &self.STOPL())
-                .finish()
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STOP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "STOP {{ STOPMSK_L: {=u16:?}, STOPMSK_H: {=u16:?} }}",
+                self.STOPMSK_L(),
+                self.STOPMSK_H()
+            )
         }
     }
 }

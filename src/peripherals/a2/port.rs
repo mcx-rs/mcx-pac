@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct PORT {
     ptr: *mut u8,
@@ -84,6 +84,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CALIB0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CALIB0 {{ NCAL: {=u8:?}, PCAL: {=u8:?} }}",
+                self.NCAL(),
+                self.PCAL()
+            )
+        }
+    }
     #[doc = "Calibration 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -122,6 +133,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CALIB1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CALIB1 {{ NCAL: {=u8:?}, PCAL: {=u8:?} }}",
+                self.NCAL(),
+                self.PCAL()
+            )
+        }
+    }
     #[doc = "Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -148,6 +170,12 @@ pub mod regs {
             f.debug_struct("CONFIG")
                 .field("RANGE", &self.RANGE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CONFIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CONFIG {{ RANGE: {=bool:?} }}", self.RANGE())
         }
     }
     #[doc = "Global Pin Control High"]
@@ -338,6 +366,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GPCHR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "GPCHR {{ GPWD: {=u16:?}, GPWE16: {=bool:?}, GPWE17: {=bool:?}, GPWE18: {=bool:?}, GPWE19: {=bool:?}, GPWE20: {=bool:?}, GPWE21: {=bool:?}, GPWE22: {=bool:?}, GPWE23: {=bool:?}, GPWE24: {=bool:?}, GPWE25: {=bool:?}, GPWE26: {=bool:?}, GPWE27: {=bool:?}, GPWE28: {=bool:?}, GPWE29: {=bool:?}, GPWE30: {=bool:?}, GPWE31: {=bool:?} }}" , self . GPWD () , self . GPWE16 () , self . GPWE17 () , self . GPWE18 () , self . GPWE19 () , self . GPWE20 () , self . GPWE21 () , self . GPWE22 () , self . GPWE23 () , self . GPWE24 () , self . GPWE25 () , self . GPWE26 () , self . GPWE27 () , self . GPWE28 () , self . GPWE29 () , self . GPWE30 () , self . GPWE31 ())
+        }
+    }
     #[doc = "Global Pin Control Low"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -526,6 +560,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GPCLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "GPCLR {{ GPWD: {=u16:?}, GPWE0: {=bool:?}, GPWE1: {=bool:?}, GPWE2: {=bool:?}, GPWE3: {=bool:?}, GPWE4: {=bool:?}, GPWE5: {=bool:?}, GPWE6: {=bool:?}, GPWE7: {=bool:?}, GPWE8: {=bool:?}, GPWE9: {=bool:?}, GPWE10: {=bool:?}, GPWE11: {=bool:?}, GPWE12: {=bool:?}, GPWE13: {=bool:?}, GPWE14: {=bool:?}, GPWE15: {=bool:?} }}" , self . GPWD () , self . GPWE0 () , self . GPWE1 () , self . GPWE2 () , self . GPWE3 () , self . GPWE4 () , self . GPWE5 () , self . GPWE6 () , self . GPWE7 () , self . GPWE8 () , self . GPWE9 () , self . GPWE10 () , self . GPWE11 () , self . GPWE12 () , self . GPWE13 () , self . GPWE14 () , self . GPWE15 ())
+        }
+    }
     #[doc = "Pin Control 0..Pin Control 31"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -664,6 +704,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PCR {{ PS: {=bool:?}, PE: {=bool:?}, PV: {=bool:?}, SRE: {=bool:?}, PFE: {=bool:?}, ODE: {=bool:?}, DSE: {=bool:?}, DSE1: {=bool:?}, MUX: {=u8:?}, IBE: {=bool:?}, INV: {=bool:?}, LK: {=bool:?} }}" , self . PS () , self . PE () , self . PV () , self . SRE () , self . PFE () , self . ODE () , self . DSE () , self . DSE1 () , self . MUX () , self . IBE () , self . INV () , self . LK ())
+        }
+    }
     #[doc = "Version ID"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -710,6 +756,18 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
         }
     }
 }

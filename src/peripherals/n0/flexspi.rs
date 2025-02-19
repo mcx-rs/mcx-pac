@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct FLEXSPI {
     ptr: *mut u8,
@@ -227,7 +227,10 @@ impl FLEXSPI {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x045cusize) as _) }
     }
     #[inline(always)]
-    pub const fn IPEDCTXCTRL(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn IPEDCTXCTRL(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::IPEDCTXCTRL, crate::common::RW> {
         assert!(n < 2usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0500usize + n * 4usize) as _) }
     }
@@ -430,6 +433,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBBUFREGIONEND0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "AHBBUFREGIONEND0 {{ END_ADDRESS: {=u32:?} }}",
+                self.END_ADDRESS()
+            )
+        }
+    }
     #[doc = "Receive Buffer Region 1 End Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -457,6 +470,16 @@ pub mod regs {
             f.debug_struct("AHBBUFREGIONEND1")
                 .field("END_ADDRESS", &self.END_ADDRESS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBBUFREGIONEND1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "AHBBUFREGIONEND1 {{ END_ADDRESS: {=u32:?} }}",
+                self.END_ADDRESS()
+            )
         }
     }
     #[doc = "Receive Buffer Region 2 End Address"]
@@ -488,6 +511,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBBUFREGIONEND2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "AHBBUFREGIONEND2 {{ END_ADDRESS: {=u32:?} }}",
+                self.END_ADDRESS()
+            )
+        }
+    }
     #[doc = "Receive Buffer Region 3 End Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -515,6 +548,16 @@ pub mod regs {
             f.debug_struct("AHBBUFREGIONEND3")
                 .field("END_ADDRESS", &self.END_ADDRESS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBBUFREGIONEND3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "AHBBUFREGIONEND3 {{ END_ADDRESS: {=u32:?} }}",
+                self.END_ADDRESS()
+            )
         }
     }
     #[doc = "Receive Buffer Start Address of Region 0"]
@@ -546,6 +589,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBBUFREGIONSTART0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "AHBBUFREGIONSTART0 {{ START_ADDRESS: {=u32:?} }}",
+                self.START_ADDRESS()
+            )
+        }
+    }
     #[doc = "Receive Buffer Start Address of Region 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -573,6 +626,16 @@ pub mod regs {
             f.debug_struct("AHBBUFREGIONSTART1")
                 .field("START_ADDRESS", &self.START_ADDRESS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBBUFREGIONSTART1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "AHBBUFREGIONSTART1 {{ START_ADDRESS: {=u32:?} }}",
+                self.START_ADDRESS()
+            )
         }
     }
     #[doc = "Receive Buffer Start Address of Region 2"]
@@ -604,6 +667,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBBUFREGIONSTART2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "AHBBUFREGIONSTART2 {{ START_ADDRESS: {=u32:?} }}",
+                self.START_ADDRESS()
+            )
+        }
+    }
     #[doc = "Receive Buffer Start Address of Region 3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -631,6 +704,16 @@ pub mod regs {
             f.debug_struct("AHBBUFREGIONSTART3")
                 .field("START_ADDRESS", &self.START_ADDRESS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBBUFREGIONSTART3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "AHBBUFREGIONSTART3 {{ START_ADDRESS: {=u32:?} }}",
+                self.START_ADDRESS()
+            )
         }
     }
     #[doc = "AHB Bus Control"]
@@ -761,6 +844,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AHBCR {{ APAREN: {=bool:?}, CLRAHBRXBUF: {=bool:?}, CLRAHBTXBUF: {=bool:?}, CACHABLEEN: {=bool:?}, BUFFERABLEEN: {=bool:?}, PREFETCHEN: {=bool:?}, READADDROPT: {=bool:?}, RESUMEDISABLE: {=bool:?}, READSZALIGN: {=bool:?}, ALIGNMENT: {=u8:?}, AFLASHBASE: {=u8:?} }}" , self . APAREN () , self . CLRAHBRXBUF () , self . CLRAHBTXBUF () , self . CACHABLEEN () , self . BUFFERABLEEN () , self . PREFETCHEN () , self . READADDROPT () , self . RESUMEDISABLE () , self . READSZALIGN () , self . ALIGNMENT () , self . AFLASHBASE ())
+        }
+    }
     #[doc = "AHB Receive Buffer 0 Control 0..AHB Receive Buffer 7 Control 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -829,6 +918,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBRXBUFCR0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "AHBRXBUFCR0 {{ BUFSZ: {=u8:?}, MSTRID: {=u8:?}, PRIORITY: {=u8:?}, REGIONEN: {=bool:?}, PREFETCHEN: {=bool:?} }}" , self . BUFSZ () , self . MSTRID () , self . PRIORITY () , self . REGIONEN () , self . PREFETCHEN ())
+        }
+    }
     #[doc = "AHB Suspend Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -875,6 +970,18 @@ pub mod regs {
                 .field("BUFID", &self.BUFID())
                 .field("DATLFT", &self.DATLFT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for AHBSPNDSTS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "AHBSPNDSTS {{ ACTIVE: {=bool:?}, BUFID: {=u8:?}, DATLFT: {=u16:?} }}",
+                self.ACTIVE(),
+                self.BUFID(),
+                self.DATLFT()
+            )
         }
     }
     #[doc = "DLL Control 0"]
@@ -955,6 +1062,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DLLCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DLLCR {{ DLLEN: {=bool:?}, DLLRESET: {=bool:?}, SLVDLYTARGET: {=u8:?}, OVRDEN: {=bool:?}, OVRDVAL: {=u8:?}, REFPHASEGAP: {=u8:?} }}" , self . DLLEN () , self . DLLRESET () , self . SLVDLYTARGET () , self . OVRDEN () , self . OVRDVAL () , self . REFPHASEGAP ())
+        }
+    }
     #[doc = "Flash Control 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1011,6 +1124,12 @@ pub mod regs {
                 .field("SPLITWREN", &self.SPLITWREN())
                 .field("SPLITRDEN", &self.SPLITRDEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLSHCR0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FLSHCR0 {{ FLSHSZ: {=u32:?}, ADDRSHIFT: {=bool:?}, SPLITWREN: {=bool:?}, SPLITRDEN: {=bool:?} }}" , self . FLSHSZ () , self . ADDRSHIFT () , self . SPLITWREN () , self . SPLITRDEN ())
         }
     }
     #[doc = "Flash Control 1"]
@@ -1089,6 +1208,12 @@ pub mod regs {
                 .field("CSINTERVALUNIT", &self.CSINTERVALUNIT())
                 .field("CSINTERVAL", &self.CSINTERVAL())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLSHCR1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FLSHCR1 {{ TCSS: {=u8:?}, TCSH: {=u8:?}, WA: {=bool:?}, CAS: {=u8:?}, CSINTERVALUNIT: {=bool:?}, CSINTERVAL: {=u16:?} }}" , self . TCSS () , self . TCSH () , self . WA () , self . CAS () , self . CSINTERVALUNIT () , self . CSINTERVAL ())
         }
     }
     #[doc = "Flash Control 2"]
@@ -1179,6 +1304,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLSHCR2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "FLSHCR2 {{ ARDSEQID: {=u8:?}, ARDSEQNUM: {=u8:?}, AWRSEQID: {=u8:?}, AWRSEQNUM: {=u8:?}, AWRWAIT: {=u16:?}, AWRWAITUNIT: {=u8:?}, CLRINSTRPTR: {=bool:?} }}" , self . ARDSEQID () , self . ARDSEQNUM () , self . AWRSEQID () , self . AWRSEQNUM () , self . AWRWAIT () , self . AWRWAITUNIT () , self . CLRINSTRPTR ())
+        }
+    }
     #[doc = "Flash Control 4"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1227,6 +1358,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLSHCR4 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FLSHCR4 {{ WMOPT1: {=bool:?}, WMENA: {=bool:?}, WMENB: {=bool:?} }}",
+                self.WMOPT1(),
+                self.WMENA(),
+                self.WMENB()
+            )
+        }
+    }
     #[doc = "HADDR REMAP END ADDR"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1256,6 +1399,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HADDREND {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "HADDREND {{ ENDSTART: {=u32:?} }}", self.ENDSTART())
+        }
+    }
     #[doc = "HADDR Remap Offset"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1283,6 +1432,16 @@ pub mod regs {
             f.debug_struct("HADDROFFSET")
                 .field("ADDROFFSET", &self.ADDROFFSET())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HADDROFFSET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "HADDROFFSET {{ ADDROFFSET: {=u32:?} }}",
+                self.ADDROFFSET()
+            )
         }
     }
     #[doc = "HADDR REMAP Start Address"]
@@ -1322,6 +1481,17 @@ pub mod regs {
                 .field("REMAPEN", &self.REMAPEN())
                 .field("ADDRSTART", &self.ADDRSTART())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HADDRSTART {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "HADDRSTART {{ REMAPEN: {=bool:?}, ADDRSTART: {=u32:?} }}",
+                self.REMAPEN(),
+                self.ADDRSTART()
+            )
         }
     }
     #[doc = "Interrupt Enable"]
@@ -1482,6 +1652,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INTEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "INTEN {{ IPCMDDONEEN: {=bool:?}, IPCMDGEEN: {=bool:?}, AHBCMDGEEN: {=bool:?}, IPCMDERREN: {=bool:?}, AHBCMDERREN: {=bool:?}, IPRXWAEN: {=bool:?}, IPTXWEEN: {=bool:?}, DATALEARNFAILEN: {=bool:?}, SCKSTOPBYRDEN: {=bool:?}, SCKSTOPBYWREN: {=bool:?}, AHBBUSTIMEOUTEN: {=bool:?}, SEQTIMEOUTEN: {=bool:?}, IPCMDSECUREVIOEN: {=bool:?}, AHBGCMERREN: {=bool:?} }}" , self . IPCMDDONEEN () , self . IPCMDGEEN () , self . AHBCMDGEEN () , self . IPCMDERREN () , self . AHBCMDERREN () , self . IPRXWAEN () , self . IPTXWEEN () , self . DATALEARNFAILEN () , self . SCKSTOPBYRDEN () , self . SCKSTOPBYWREN () , self . AHBBUSTIMEOUTEN () , self . SEQTIMEOUTEN () , self . IPCMDSECUREVIOEN () , self . AHBGCMERREN ())
+        }
+    }
     #[doc = "Interrupt"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1640,6 +1816,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INTR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "INTR {{ IPCMDDONE: {=bool:?}, IPCMDGE: {=bool:?}, AHBCMDGE: {=bool:?}, IPCMDERR: {=bool:?}, AHBCMDERR: {=bool:?}, IPRXWA: {=bool:?}, IPTXWE: {=bool:?}, DATALEARNFAIL: {=bool:?}, SCKSTOPBYRD: {=bool:?}, SCKSTOPBYWR: {=bool:?}, AHBBUSTIMEOUT: {=bool:?}, SEQTIMEOUT: {=bool:?}, IPCMDSECUREVIO: {=bool:?}, AHBGCMERR: {=bool:?} }}" , self . IPCMDDONE () , self . IPCMDGE () , self . AHBCMDGE () , self . IPCMDERR () , self . AHBCMDERR () , self . IPRXWA () , self . IPTXWE () , self . DATALEARNFAIL () , self . SCKSTOPBYRD () , self . SCKSTOPBYWR () , self . AHBBUSTIMEOUT () , self . SEQTIMEOUT () , self . IPCMDSECUREVIO () , self . AHBGCMERR ())
+        }
+    }
     #[doc = "IP Command"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1664,6 +1846,12 @@ pub mod regs {
     impl core::fmt::Debug for IPCMD {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IPCMD").field("TRG", &self.TRG()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPCMD {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "IPCMD {{ TRG: {=bool:?} }}", self.TRG())
         }
     }
     #[doc = "IP Control 1"]
@@ -1724,6 +1912,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPCR1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IPCR1 {{ IDATSZ: {=u16:?}, ISEQID: {=u8:?}, ISEQNUM: {=u8:?}, IPAREN: {=bool:?} }}" , self . IDATSZ () , self . ISEQID () , self . ISEQNUM () , self . IPAREN ())
+        }
+    }
     #[doc = "IP Control 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1770,6 +1964,12 @@ pub mod regs {
                 .field("IPBLKAHBACK", &self.IPBLKAHBACK())
                 .field("IPBLKALLAHB", &self.IPBLKALLAHB())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPCR2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IPCR2 {{ IPBLKAHBREQ: {=bool:?}, IPBLKAHBACK: {=bool:?}, IPBLKALLAHB: {=bool:?} }}" , self . IPBLKAHBREQ () , self . IPBLKAHBACK () , self . IPBLKALLAHB ())
         }
     }
     #[doc = "IPED Function Control"]
@@ -1890,6 +2090,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IPEDCTRL {{ CONFIG: {=bool:?}, IPED_EN: {=bool:?}, IPWR_EN: {=bool:?}, AHBWR_EN: {=bool:?}, AHBRD_EN: {=bool:?}, IPGCMWR: {=bool:?}, AHGCMWR: {=bool:?}, AHBGCMRD: {=bool:?}, IPED_PROTECT: {=bool:?}, IPED_SWRESET: {=bool:?} }}" , self . CONFIG () , self . IPED_EN () , self . IPWR_EN () , self . AHBWR_EN () , self . AHBRD_EN () , self . IPGCMWR () , self . AHGCMWR () , self . AHBGCMRD () , self . IPED_PROTECT () , self . IPED_SWRESET ())
+        }
+    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1916,6 +2122,16 @@ pub mod regs {
             f.debug_struct("IPEDCTX0END")
                 .field("end_address", &self.end_address())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX0END {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IPEDCTX0END {{ end_address: {=u32:?} }}",
+                self.end_address()
+            )
         }
     }
     #[doc = "Start Address of Region"]
@@ -1966,6 +2182,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX0START {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IPEDCTX0START {{ GCM: {=bool:?}, ahbbuserror_dis: {=bool:?}, start_address: {=u32:?} }}" , self . GCM () , self . ahbbuserror_dis () , self . start_address ())
+        }
+    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1992,6 +2214,16 @@ pub mod regs {
             f.debug_struct("IPEDCTX1END")
                 .field("end_address", &self.end_address())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX1END {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IPEDCTX1END {{ end_address: {=u32:?} }}",
+                self.end_address()
+            )
         }
     }
     #[doc = "Start Address of Region"]
@@ -2042,6 +2274,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX1START {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IPEDCTX1START {{ GCM: {=bool:?}, ahbbuserror_dis: {=bool:?}, start_address: {=u32:?} }}" , self . GCM () , self . ahbbuserror_dis () , self . start_address ())
+        }
+    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2068,6 +2306,16 @@ pub mod regs {
             f.debug_struct("IPEDCTX2END")
                 .field("end_address", &self.end_address())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX2END {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IPEDCTX2END {{ end_address: {=u32:?} }}",
+                self.end_address()
+            )
         }
     }
     #[doc = "Start Address of Region"]
@@ -2118,6 +2366,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX2START {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IPEDCTX2START {{ GCM: {=bool:?}, ahbbuserror_dis: {=bool:?}, start_address: {=u32:?} }}" , self . GCM () , self . ahbbuserror_dis () , self . start_address ())
+        }
+    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2144,6 +2398,16 @@ pub mod regs {
             f.debug_struct("IPEDCTX3END")
                 .field("end_address", &self.end_address())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX3END {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IPEDCTX3END {{ end_address: {=u32:?} }}",
+                self.end_address()
+            )
         }
     }
     #[doc = "Start Address of Region"]
@@ -2194,6 +2458,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX3START {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IPEDCTX3START {{ GCM: {=bool:?}, ahbbuserror_dis: {=bool:?}, start_address: {=u32:?} }}" , self . GCM () , self . ahbbuserror_dis () , self . start_address ())
+        }
+    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2220,6 +2490,16 @@ pub mod regs {
             f.debug_struct("IPEDCTX4END")
                 .field("end_address", &self.end_address())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX4END {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IPEDCTX4END {{ end_address: {=u32:?} }}",
+                self.end_address()
+            )
         }
     }
     #[doc = "Start Address of Region"]
@@ -2270,6 +2550,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX4START {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IPEDCTX4START {{ GCM: {=bool:?}, ahbbuserror_dis: {=bool:?}, start_address: {=u32:?} }}" , self . GCM () , self . ahbbuserror_dis () , self . start_address ())
+        }
+    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2296,6 +2582,16 @@ pub mod regs {
             f.debug_struct("IPEDCTX5END")
                 .field("end_address", &self.end_address())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX5END {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IPEDCTX5END {{ end_address: {=u32:?} }}",
+                self.end_address()
+            )
         }
     }
     #[doc = "Start Address of Region"]
@@ -2346,6 +2642,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX5START {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IPEDCTX5START {{ GCM: {=bool:?}, ahbbuserror_dis: {=bool:?}, start_address: {=u32:?} }}" , self . GCM () , self . ahbbuserror_dis () , self . start_address ())
+        }
+    }
     #[doc = "End Address of Region"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2372,6 +2674,16 @@ pub mod regs {
             f.debug_struct("IPEDCTX6END")
                 .field("end_address", &self.end_address())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX6END {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IPEDCTX6END {{ end_address: {=u32:?} }}",
+                self.end_address()
+            )
         }
     }
     #[doc = "Start Address of Region"]
@@ -2420,6 +2732,12 @@ pub mod regs {
                 .field("ahbbuserror_dis", &self.ahbbuserror_dis())
                 .field("start_address", &self.start_address())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTX6START {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IPEDCTX6START {{ GCM: {=bool:?}, ahbbuserror_dis: {=bool:?}, start_address: {=u32:?} }}" , self . GCM () , self . ahbbuserror_dis () , self . start_address ())
         }
     }
     #[doc = "IPED context control 0..IPED context control 1"]
@@ -2580,6 +2898,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPEDCTXCTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IPEDCTXCTRL {{ CTX0_FREEZE0: {=u8:?}, CTX0_FREEZE1: {=u8:?}, CTX1_FREEZE0: {=u8:?}, CTX1_FREEZE1: {=u8:?}, CTX2_FREEZE0: {=u8:?}, CTX2_FREEZE1: {=u8:?}, CTX3_FREEZE0: {=u8:?}, CTX3_FREEZE1: {=u8:?}, CTX4_FREEZE0: {=u8:?}, CTX4_FREEZE1: {=u8:?}, CTX5_FREEZE0: {=u8:?}, CTX5_FREEZE1: {=u8:?}, CTX6_FREEZE0: {=u8:?}, CTX6_FREEZE1: {=u8:?} }}" , self . CTX0_FREEZE0 () , self . CTX0_FREEZE1 () , self . CTX1_FREEZE0 () , self . CTX1_FREEZE1 () , self . CTX2_FREEZE0 () , self . CTX2_FREEZE1 () , self . CTX3_FREEZE0 () , self . CTX3_FREEZE1 () , self . CTX4_FREEZE0 () , self . CTX4_FREEZE1 () , self . CTX5_FREEZE0 () , self . CTX5_FREEZE1 () , self . CTX6_FREEZE0 () , self . CTX6_FREEZE1 ())
+        }
+    }
     #[doc = "IP Receive FIFO Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2628,6 +2952,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPRXFCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IPRXFCR {{ CLRIPRXF: {=bool:?}, RXDMAEN: {=bool:?}, RXWMRK: {=u8:?} }}",
+                self.CLRIPRXF(),
+                self.RXDMAEN(),
+                self.RXWMRK()
+            )
+        }
+    }
     #[doc = "IP Receive FIFO Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2666,6 +3002,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPRXFSTS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IPRXFSTS {{ FILL: {=u8:?}, RDCNTR: {=u16:?} }}",
+                self.FILL(),
+                self.RDCNTR()
+            )
+        }
+    }
     #[doc = "IPS Nonsecure Region 0 End Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2693,6 +3040,16 @@ pub mod regs {
             f.debug_struct("IPSNSZEND0")
                 .field("end_address", &self.end_address())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPSNSZEND0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IPSNSZEND0 {{ end_address: {=u32:?} }}",
+                self.end_address()
+            )
         }
     }
     #[doc = "IPS Nonsecure Region 1 End Address"]
@@ -2724,6 +3081,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPSNSZEND1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IPSNSZEND1 {{ end_address: {=u32:?} }}",
+                self.end_address()
+            )
+        }
+    }
     #[doc = "IPS Nonsecure Region 0 Start Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2753,6 +3120,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPSNSZSTART0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IPSNSZSTART0 {{ start_address: {=u32:?} }}",
+                self.start_address()
+            )
+        }
+    }
     #[doc = "IPS Nonsecure Region 1 Start Address"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2780,6 +3157,16 @@ pub mod regs {
             f.debug_struct("IPSNSZSTART1")
                 .field("start_address", &self.start_address())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPSNSZSTART1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IPSNSZSTART1 {{ start_address: {=u32:?} }}",
+                self.start_address()
+            )
         }
     }
     #[doc = "IP Transmit FIFO Control"]
@@ -2830,6 +3217,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPTXFCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IPTXFCR {{ CLRIPTXF: {=bool:?}, TXDMAEN: {=bool:?}, TXWMRK: {=u8:?} }}",
+                self.CLRIPTXF(),
+                self.TXDMAEN(),
+                self.TXWMRK()
+            )
+        }
+    }
     #[doc = "IP Transmit FIFO Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2866,6 +3265,17 @@ pub mod regs {
                 .field("FILL", &self.FILL())
                 .field("WRCNTR", &self.WRCNTR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IPTXFSTS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IPTXFSTS {{ FILL: {=u8:?}, WRCNTR: {=u16:?} }}",
+                self.FILL(),
+                self.WRCNTR()
+            )
         }
     }
     #[doc = "Lookup Table 0..Lookup Table 63"]
@@ -2946,6 +3356,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LUT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "LUT {{ OPERAND0: {=u8:?}, NUM_PADS0: {=u8:?}, OPCODE0: {=u8:?}, OPERAND1: {=u8:?}, NUM_PADS1: {=u8:?}, OPCODE1: {=u8:?} }}" , self . OPERAND0 () , self . NUM_PADS0 () , self . OPCODE0 () , self . OPERAND1 () , self . NUM_PADS1 () , self . OPCODE1 ())
+        }
+    }
     #[doc = "LUT Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2992,6 +3408,18 @@ pub mod regs {
                 .field("UNLOCK", &self.UNLOCK())
                 .field("PROTECT", &self.PROTECT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LUTCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "LUTCR {{ LOCK: {=bool:?}, UNLOCK: {=bool:?}, PROTECT: {=bool:?} }}",
+                self.LOCK(),
+                self.UNLOCK(),
+                self.PROTECT()
+            )
         }
     }
     #[doc = "Module Control 0"]
@@ -3142,6 +3570,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCR0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MCR0 {{ SWRESET: {=bool:?}, MDIS: {=bool:?}, RXCLKSRC: {=u8:?}, ARDFEN: {=bool:?}, ATDFEN: {=bool:?}, SERCLKDIV: {=u8:?}, HSEN: {=bool:?}, DOZEEN: {=bool:?}, COMBINATIONEN: {=bool:?}, SCKFREERUNEN: {=bool:?}, LEARNEN: {=bool:?}, IPGRANTWAIT: {=u8:?}, AHBGRANTWAIT: {=u8:?} }}" , self . SWRESET () , self . MDIS () , self . RXCLKSRC () , self . ARDFEN () , self . ATDFEN () , self . SERCLKDIV () , self . HSEN () , self . DOZEEN () , self . COMBINATIONEN () , self . SCKFREERUNEN () , self . LEARNEN () , self . IPGRANTWAIT () , self . AHBGRANTWAIT ())
+        }
+    }
     #[doc = "Module Control 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3178,6 +3612,17 @@ pub mod regs {
                 .field("AHBBUSWAIT", &self.AHBBUSWAIT())
                 .field("SEQWAIT", &self.SEQWAIT())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCR1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MCR1 {{ AHBBUSWAIT: {=u16:?}, SEQWAIT: {=u16:?} }}",
+                self.AHBBUSWAIT(),
+                self.SEQWAIT()
+            )
         }
     }
     #[doc = "Module Control 2"]
@@ -3268,6 +3713,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MCR2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MCR2 {{ CLRAHBBUFOPT: {=bool:?}, CLRLEARNPHASE: {=bool:?}, SAMEDEVICEEN: {=bool:?}, SCKBDIFFOPT: {=bool:?}, RXCLKSRC_B: {=u8:?}, RX_CLK_SRC_DIFF: {=bool:?}, RESUMEWAIT: {=u8:?} }}" , self . CLRAHBBUFOPT () , self . CLRLEARNPHASE () , self . SAMEDEVICEEN () , self . SCKBDIFFOPT () , self . RXCLKSRC_B () , self . RX_CLK_SRC_DIFF () , self . RESUMEWAIT ())
+        }
+    }
     #[doc = "Status 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3336,6 +3787,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STS0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STS0 {{ SEQIDLE: {=bool:?}, ARBIDLE: {=bool:?}, ARBCMDSRC: {=u8:?}, DATALEARNPHASEA: {=u8:?}, DATALEARNPHASEB: {=u8:?} }}" , self . SEQIDLE () , self . ARBIDLE () , self . ARBCMDSRC () , self . DATALEARNPHASEA () , self . DATALEARNPHASEB ())
+        }
+    }
     #[doc = "Status 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3392,6 +3849,12 @@ pub mod regs {
                 .field("IPCMDERRID", &self.IPCMDERRID())
                 .field("IPCMDERRCODE", &self.IPCMDERRCODE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STS1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STS1 {{ AHBCMDERRID: {=u8:?}, AHBCMDERRCODE: {=u8:?}, IPCMDERRID: {=u8:?}, IPCMDERRCODE: {=u8:?} }}" , self . AHBCMDERRID () , self . AHBCMDERRCODE () , self . IPCMDERRID () , self . IPCMDERRCODE ())
         }
     }
     #[doc = "Status 2"]
@@ -3490,6 +3953,12 @@ pub mod regs {
                 .field("BSLVSEL", &self.BSLVSEL())
                 .field("BREFSEL", &self.BREFSEL())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STS2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STS2 {{ ASLVLOCK: {=bool:?}, AREFLOCK: {=bool:?}, ASLVSEL: {=u8:?}, AREFSEL: {=u8:?}, BSLVLOCK: {=bool:?}, BREFLOCK: {=bool:?}, BSLVSEL: {=u8:?}, BREFSEL: {=u8:?} }}" , self . ASLVLOCK () , self . AREFLOCK () , self . ASLVSEL () , self . AREFSEL () , self . BSLVLOCK () , self . BREFLOCK () , self . BSLVSEL () , self . BREFSEL ())
         }
     }
 }

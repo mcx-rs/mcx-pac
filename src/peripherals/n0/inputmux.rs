@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct INPUTMUX {
     ptr: *mut u8,
@@ -16,7 +16,10 @@ impl INPUTMUX {
         self.ptr as _
     }
     #[inline(always)]
-    pub const fn SCT0_INMUX(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SCT0_INMUX(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::SCT0_INMUX, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 4usize) as _) }
     }
@@ -81,12 +84,15 @@ impl INPUTMUX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x70usize) as _) }
     }
     #[inline(always)]
-    pub const fn SMARTDMAARCHB_INMUX(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SMARTDMAARCHB_INMUX(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::SMARTDMAARCHB_INMUX, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa0usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn PINTSEL(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn PINTSEL(self, n: usize) -> crate::common::Reg<regs::PINTSEL, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize + n * 4usize) as _) }
     }
@@ -143,12 +149,18 @@ impl INPUTMUX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0260usize) as _) }
     }
     #[inline(always)]
-    pub const fn ADC0_TRIG(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ADC0_TRIG(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::ADC0_TRIG, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0280usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn ADC1_TRIG(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn ADC1_TRIG(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::ADC1_TRIG, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02c0usize + n * 4usize) as _) }
     }
@@ -170,12 +182,18 @@ impl INPUTMUX {
         unsafe { QDCN::from_ptr(self.ptr.add(0x0360usize + n * 32usize) as _) }
     }
     #[inline(always)]
-    pub const fn FLEXPWM0_SM_EXTSYNC(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FLEXPWM0_SM_EXTSYNC(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::FLEXPWM0_SM_EXTSYNC, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03a0usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn FLEXPWM0_SM_EXTA(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FLEXPWM0_SM_EXTA(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::FLEXPWM0_SM_EXTA, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03b0usize + n * 4usize) as _) }
     }
@@ -186,17 +204,26 @@ impl INPUTMUX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03c0usize) as _) }
     }
     #[inline(always)]
-    pub const fn FLEXPWM0_FAULT(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FLEXPWM0_FAULT(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::FLEXPWM0_FAULT, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03c4usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn FLEXPWM1_SM_EXTSYNC(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FLEXPWM1_SM_EXTSYNC(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::FLEXPWM1_SM_EXTSYNC, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e0usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn FLEXPWM1_SM_EXTA(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FLEXPWM1_SM_EXTA(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::FLEXPWM1_SM_EXTA, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f0usize + n * 4usize) as _) }
     }
@@ -223,7 +250,10 @@ impl INPUTMUX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0424usize) as _) }
     }
     #[inline(always)]
-    pub const fn EVTG_TRIG(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EVTG_TRIG(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::EVTG_TRIG, crate::common::RW> {
         assert!(n < 16usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0440usize + n * 4usize) as _) }
     }
@@ -236,7 +266,7 @@ impl INPUTMUX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04a0usize) as _) }
     }
     #[inline(always)]
-    pub const fn EXT_TRIG(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn EXT_TRIG(self, n: usize) -> crate::common::Reg<regs::EXT_TRIG, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04c0usize + n * 4usize) as _) }
     }
@@ -249,12 +279,18 @@ impl INPUTMUX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0500usize) as _) }
     }
     #[inline(always)]
-    pub const fn SINC_FILTER_CH(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn SINC_FILTER_CH(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::SINC_FILTER_CH, crate::common::RW> {
         assert!(n < 5usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0520usize + n * 4usize) as _) }
     }
     #[inline(always)]
-    pub const fn OPAMP_TRIG(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn OPAMP_TRIG(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::OPAMP_TRIG, crate::common::RW> {
         assert!(n < 3usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0580usize + n * 4usize) as _) }
     }
@@ -319,7 +355,10 @@ impl INPUTMUX {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06c0usize) as _) }
     }
     #[inline(always)]
-    pub const fn FLEXIO_TRIG(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn FLEXIO_TRIG(
+        self,
+        n: usize,
+    ) -> crate::common::Reg<regs::FLEXIO_TRIG, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x06e0usize + n * 4usize) as _) }
     }
@@ -569,6 +608,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ADC0_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ADC0_TRIG {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "ADC Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -595,6 +640,12 @@ pub mod regs {
             f.debug_struct("ADC1_TRIG")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ADC1_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ADC1_TRIG {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
         }
     }
     #[doc = "CMP0 Input Connections"]
@@ -625,6 +676,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CMP0_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CMP0_TRIG {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "CMP1 Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -651,6 +708,12 @@ pub mod regs {
             f.debug_struct("CMP1_TRIG")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CMP1_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CMP1_TRIG {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
         }
     }
     #[doc = "CMP2 Input Connections"]
@@ -681,6 +744,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CMP2_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CMP2_TRIG {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -707,6 +776,12 @@ pub mod regs {
             f.debug_struct("CTIMER0CAP0")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER0CAP0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER0CAP0 {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -737,6 +812,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER0CAP1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER0CAP1 {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -763,6 +844,12 @@ pub mod regs {
             f.debug_struct("CTIMER0CAP2")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER0CAP2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER0CAP2 {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -793,6 +880,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER0CAP3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER0CAP3 {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -819,6 +912,12 @@ pub mod regs {
             f.debug_struct("CTIMER1CAP0")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER1CAP0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER1CAP0 {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -849,6 +948,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER1CAP1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER1CAP1 {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -875,6 +980,12 @@ pub mod regs {
             f.debug_struct("CTIMER1CAP2")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER1CAP2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER1CAP2 {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -905,6 +1016,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER1CAP3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER1CAP3 {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -931,6 +1048,12 @@ pub mod regs {
             f.debug_struct("CTIMER2CAP0")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER2CAP0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER2CAP0 {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -961,6 +1084,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER2CAP1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER2CAP1 {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -987,6 +1116,12 @@ pub mod regs {
             f.debug_struct("CTIMER2CAP2")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER2CAP2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER2CAP2 {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -1017,6 +1152,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER2CAP3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER2CAP3 {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1043,6 +1184,12 @@ pub mod regs {
             f.debug_struct("CTIMER3CAP0")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER3CAP0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER3CAP0 {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -1073,6 +1220,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER3CAP1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER3CAP1 {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1099,6 +1252,12 @@ pub mod regs {
             f.debug_struct("CTIMER3CAP2")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER3CAP2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER3CAP2 {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -1129,6 +1288,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER3CAP3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER3CAP3 {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1155,6 +1320,12 @@ pub mod regs {
             f.debug_struct("CTIMER4CAP0")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER4CAP0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER4CAP0 {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -1185,6 +1356,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER4CAP1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER4CAP1 {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Capture Select Register for CTIMER Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1211,6 +1388,12 @@ pub mod regs {
             f.debug_struct("CTIMER4CAP2")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER4CAP2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER4CAP2 {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Capture Select Register for CTIMER Inputs"]
@@ -1241,6 +1424,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTIMER4CAP3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CTIMER4CAP3 {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "DAC0 Trigger Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1267,6 +1456,12 @@ pub mod regs {
             f.debug_struct("DAC0_TRIG")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DAC0_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "DAC0_TRIG {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
         }
     }
     #[doc = "DAC1 Trigger Inputs"]
@@ -1297,6 +1492,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DAC1_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "DAC1_TRIG {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "DAC2 Trigger Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1323,6 +1524,12 @@ pub mod regs {
             f.debug_struct("DAC2_TRIG")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DAC2_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "DAC2_TRIG {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
         }
     }
     #[doc = "DMA0 Request Enable0"]
@@ -1653,6 +1860,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA0_REQ_ENABLE0 {{ REQ1_EN0: {=bool:?}, REQ2_EN0: {=bool:?}, REQ3_EN0: {=bool:?}, REQ4_EN0: {=bool:?}, REQ5_EN0: {=bool:?}, REQ6_EN0: {=bool:?}, REQ7_EN0: {=bool:?}, REQ8_EN0: {=bool:?}, REQ9_EN0: {=bool:?}, REQ10_EN0: {=bool:?}, REQ11_EN0: {=bool:?}, REQ12_EN0: {=bool:?}, REQ13_EN0: {=bool:?}, REQ14_EN0: {=bool:?}, REQ15_EN0: {=bool:?}, REQ16_EN0: {=bool:?}, REQ17_EN0: {=bool:?}, REQ18_EN0: {=bool:?}, REQ19_EN0: {=bool:?}, REQ20_EN0: {=bool:?}, REQ21_EN0: {=bool:?}, REQ22_EN0: {=bool:?}, REQ23_EN0: {=bool:?}, REQ24_EN0: {=bool:?}, REQ25_EN0: {=bool:?}, REQ26_EN0: {=bool:?}, REQ27_EN0: {=bool:?}, REQ28_EN0: {=bool:?}, REQ29_EN0: {=bool:?}, REQ30_EN0: {=bool:?}, REQ31_EN0: {=bool:?} }}" , self . REQ1_EN0 () , self . REQ2_EN0 () , self . REQ3_EN0 () , self . REQ4_EN0 () , self . REQ5_EN0 () , self . REQ6_EN0 () , self . REQ7_EN0 () , self . REQ8_EN0 () , self . REQ9_EN0 () , self . REQ10_EN0 () , self . REQ11_EN0 () , self . REQ12_EN0 () , self . REQ13_EN0 () , self . REQ14_EN0 () , self . REQ15_EN0 () , self . REQ16_EN0 () , self . REQ17_EN0 () , self . REQ18_EN0 () , self . REQ19_EN0 () , self . REQ20_EN0 () , self . REQ21_EN0 () , self . REQ22_EN0 () , self . REQ23_EN0 () , self . REQ24_EN0 () , self . REQ25_EN0 () , self . REQ26_EN0 () , self . REQ27_EN0 () , self . REQ28_EN0 () , self . REQ29_EN0 () , self . REQ30_EN0 () , self . REQ31_EN0 ())
+        }
+    }
     #[doc = "DMA0 Request Enable0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1979,6 +2192,12 @@ pub mod regs {
                 .field("REQ30_EN0", &self.REQ30_EN0())
                 .field("REQ31_EN0", &self.REQ31_EN0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE0_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA0_REQ_ENABLE0_CLR {{ REQ1_EN0: {=bool:?}, REQ2_EN0: {=bool:?}, REQ3_EN0: {=bool:?}, REQ4_EN0: {=bool:?}, REQ5_EN0: {=bool:?}, REQ6_EN0: {=bool:?}, REQ7_EN0: {=bool:?}, REQ8_EN0: {=bool:?}, REQ9_EN0: {=bool:?}, REQ10_EN0: {=bool:?}, REQ11_EN0: {=bool:?}, REQ12_EN0: {=bool:?}, REQ13_EN0: {=bool:?}, REQ14_EN0: {=bool:?}, REQ15_EN0: {=bool:?}, REQ16_EN0: {=bool:?}, REQ17_EN0: {=bool:?}, REQ18_EN0: {=bool:?}, REQ19_EN0: {=bool:?}, REQ20_EN0: {=bool:?}, REQ21_EN0: {=bool:?}, REQ22_EN0: {=bool:?}, REQ23_EN0: {=bool:?}, REQ24_EN0: {=bool:?}, REQ25_EN0: {=bool:?}, REQ26_EN0: {=bool:?}, REQ27_EN0: {=bool:?}, REQ28_EN0: {=bool:?}, REQ29_EN0: {=bool:?}, REQ30_EN0: {=bool:?}, REQ31_EN0: {=bool:?} }}" , self . REQ1_EN0 () , self . REQ2_EN0 () , self . REQ3_EN0 () , self . REQ4_EN0 () , self . REQ5_EN0 () , self . REQ6_EN0 () , self . REQ7_EN0 () , self . REQ8_EN0 () , self . REQ9_EN0 () , self . REQ10_EN0 () , self . REQ11_EN0 () , self . REQ12_EN0 () , self . REQ13_EN0 () , self . REQ14_EN0 () , self . REQ15_EN0 () , self . REQ16_EN0 () , self . REQ17_EN0 () , self . REQ18_EN0 () , self . REQ19_EN0 () , self . REQ20_EN0 () , self . REQ21_EN0 () , self . REQ22_EN0 () , self . REQ23_EN0 () , self . REQ24_EN0 () , self . REQ25_EN0 () , self . REQ26_EN0 () , self . REQ27_EN0 () , self . REQ28_EN0 () , self . REQ29_EN0 () , self . REQ30_EN0 () , self . REQ31_EN0 ())
         }
     }
     #[doc = "DMA0 Request Enable0"]
@@ -2309,6 +2528,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE0_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA0_REQ_ENABLE0_SET {{ REQ1_EN0: {=bool:?}, REQ2_EN0: {=bool:?}, REQ3_EN0: {=bool:?}, REQ4_EN0: {=bool:?}, REQ5_EN0: {=bool:?}, REQ6_EN0: {=bool:?}, REQ7_EN0: {=bool:?}, REQ8_EN0: {=bool:?}, REQ9_EN0: {=bool:?}, REQ10_EN0: {=bool:?}, REQ11_EN0: {=bool:?}, REQ12_EN0: {=bool:?}, REQ13_EN0: {=bool:?}, REQ14_EN0: {=bool:?}, REQ15_EN0: {=bool:?}, REQ16_EN0: {=bool:?}, REQ17_EN0: {=bool:?}, REQ18_EN0: {=bool:?}, REQ19_EN0: {=bool:?}, REQ20_EN0: {=bool:?}, REQ21_EN0: {=bool:?}, REQ22_EN0: {=bool:?}, REQ23_EN0: {=bool:?}, REQ24_EN0: {=bool:?}, REQ25_EN0: {=bool:?}, REQ26_EN0: {=bool:?}, REQ27_EN0: {=bool:?}, REQ28_EN0: {=bool:?}, REQ29_EN0: {=bool:?}, REQ30_EN0: {=bool:?}, REQ31_EN0: {=bool:?} }}" , self . REQ1_EN0 () , self . REQ2_EN0 () , self . REQ3_EN0 () , self . REQ4_EN0 () , self . REQ5_EN0 () , self . REQ6_EN0 () , self . REQ7_EN0 () , self . REQ8_EN0 () , self . REQ9_EN0 () , self . REQ10_EN0 () , self . REQ11_EN0 () , self . REQ12_EN0 () , self . REQ13_EN0 () , self . REQ14_EN0 () , self . REQ15_EN0 () , self . REQ16_EN0 () , self . REQ17_EN0 () , self . REQ18_EN0 () , self . REQ19_EN0 () , self . REQ20_EN0 () , self . REQ21_EN0 () , self . REQ22_EN0 () , self . REQ23_EN0 () , self . REQ24_EN0 () , self . REQ25_EN0 () , self . REQ26_EN0 () , self . REQ27_EN0 () , self . REQ28_EN0 () , self . REQ29_EN0 () , self . REQ30_EN0 () , self . REQ31_EN0 ())
+        }
+    }
     #[doc = "DMA0 Request Enable0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2637,6 +2862,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE0_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA0_REQ_ENABLE0_TOG {{ REQ1_EN0: {=bool:?}, REQ2_EN0: {=bool:?}, REQ3_EN0: {=bool:?}, REQ4_EN0: {=bool:?}, REQ5_EN0: {=bool:?}, REQ6_EN0: {=bool:?}, REQ7_EN0: {=bool:?}, REQ8_EN0: {=bool:?}, REQ9_EN0: {=bool:?}, REQ10_EN0: {=bool:?}, REQ11_EN0: {=bool:?}, REQ12_EN0: {=bool:?}, REQ13_EN0: {=bool:?}, REQ14_EN0: {=bool:?}, REQ15_EN0: {=bool:?}, REQ16_EN0: {=bool:?}, REQ17_EN0: {=bool:?}, REQ18_EN0: {=bool:?}, REQ19_EN0: {=bool:?}, REQ20_EN0: {=bool:?}, REQ21_EN0: {=bool:?}, REQ22_EN0: {=bool:?}, REQ23_EN0: {=bool:?}, REQ24_EN0: {=bool:?}, REQ25_EN0: {=bool:?}, REQ26_EN0: {=bool:?}, REQ27_EN0: {=bool:?}, REQ28_EN0: {=bool:?}, REQ29_EN0: {=bool:?}, REQ30_EN0: {=bool:?}, REQ31_EN0: {=bool:?} }}" , self . REQ1_EN0 () , self . REQ2_EN0 () , self . REQ3_EN0 () , self . REQ4_EN0 () , self . REQ5_EN0 () , self . REQ6_EN0 () , self . REQ7_EN0 () , self . REQ8_EN0 () , self . REQ9_EN0 () , self . REQ10_EN0 () , self . REQ11_EN0 () , self . REQ12_EN0 () , self . REQ13_EN0 () , self . REQ14_EN0 () , self . REQ15_EN0 () , self . REQ16_EN0 () , self . REQ17_EN0 () , self . REQ18_EN0 () , self . REQ19_EN0 () , self . REQ20_EN0 () , self . REQ21_EN0 () , self . REQ22_EN0 () , self . REQ23_EN0 () , self . REQ24_EN0 () , self . REQ25_EN0 () , self . REQ26_EN0 () , self . REQ27_EN0 () , self . REQ28_EN0 () , self . REQ29_EN0 () , self . REQ30_EN0 () , self . REQ31_EN0 ())
+        }
+    }
     #[doc = "DMA0 Request Enable1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2953,6 +3184,12 @@ pub mod regs {
                 .field("REQ62_EN0", &self.REQ62_EN0())
                 .field("REQ63_EN0", &self.REQ63_EN0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA0_REQ_ENABLE1 {{ REQ32_EN0: {=bool:?}, REQ33_EN0: {=bool:?}, REQ34_EN0: {=bool:?}, REQ35_EN0: {=bool:?}, REQ36_EN0: {=bool:?}, REQ37_EN0: {=bool:?}, REQ38_EN0: {=bool:?}, REQ39_EN0: {=bool:?}, REQ40_EN0: {=bool:?}, REQ41_EN0: {=bool:?}, REQ42_EN0: {=bool:?}, REQ43_EN0: {=bool:?}, REQ44_EN0: {=bool:?}, REQ45_EN0: {=bool:?}, REQ46_EN0: {=bool:?}, REQ47_EN0: {=bool:?}, REQ48_EN0: {=bool:?}, REQ49_EN0: {=bool:?}, REQ50_EN0: {=bool:?}, REQ51_EN0: {=bool:?}, REQ52_EN0: {=bool:?}, REQ53_EN0: {=bool:?}, REQ54_EN0: {=bool:?}, REQ57_EN0: {=bool:?}, REQ58_EN0: {=bool:?}, REQ59_EN0: {=bool:?}, REQ60_EN0: {=bool:?}, REQ61_EN0: {=bool:?}, REQ62_EN0: {=bool:?}, REQ63_EN0: {=bool:?} }}" , self . REQ32_EN0 () , self . REQ33_EN0 () , self . REQ34_EN0 () , self . REQ35_EN0 () , self . REQ36_EN0 () , self . REQ37_EN0 () , self . REQ38_EN0 () , self . REQ39_EN0 () , self . REQ40_EN0 () , self . REQ41_EN0 () , self . REQ42_EN0 () , self . REQ43_EN0 () , self . REQ44_EN0 () , self . REQ45_EN0 () , self . REQ46_EN0 () , self . REQ47_EN0 () , self . REQ48_EN0 () , self . REQ49_EN0 () , self . REQ50_EN0 () , self . REQ51_EN0 () , self . REQ52_EN0 () , self . REQ53_EN0 () , self . REQ54_EN0 () , self . REQ57_EN0 () , self . REQ58_EN0 () , self . REQ59_EN0 () , self . REQ60_EN0 () , self . REQ61_EN0 () , self . REQ62_EN0 () , self . REQ63_EN0 ())
         }
     }
     #[doc = "DMA0 Request Enable1"]
@@ -3273,6 +3510,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE1_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA0_REQ_ENABLE1_CLR {{ REQ32_EN0: {=bool:?}, REQ33_EN0: {=bool:?}, REQ34_EN0: {=bool:?}, REQ35_EN0: {=bool:?}, REQ36_EN0: {=bool:?}, REQ37_EN0: {=bool:?}, REQ38_EN0: {=bool:?}, REQ39_EN0: {=bool:?}, REQ40_EN0: {=bool:?}, REQ41_EN0: {=bool:?}, REQ42_EN0: {=bool:?}, REQ43_EN0: {=bool:?}, REQ44_EN0: {=bool:?}, REQ45_EN0: {=bool:?}, REQ46_EN0: {=bool:?}, REQ47_EN0: {=bool:?}, REQ48_EN0: {=bool:?}, REQ49_EN0: {=bool:?}, REQ50_EN0: {=bool:?}, REQ51_EN0: {=bool:?}, REQ52_EN0: {=bool:?}, REQ53_EN0: {=bool:?}, REQ54_EN0: {=bool:?}, REQ57_EN0: {=bool:?}, REQ58_EN0: {=bool:?}, REQ59_EN0: {=bool:?}, REQ60_EN0: {=bool:?}, REQ61_EN0: {=bool:?}, REQ62_EN0: {=bool:?}, REQ63_EN0: {=bool:?} }}" , self . REQ32_EN0 () , self . REQ33_EN0 () , self . REQ34_EN0 () , self . REQ35_EN0 () , self . REQ36_EN0 () , self . REQ37_EN0 () , self . REQ38_EN0 () , self . REQ39_EN0 () , self . REQ40_EN0 () , self . REQ41_EN0 () , self . REQ42_EN0 () , self . REQ43_EN0 () , self . REQ44_EN0 () , self . REQ45_EN0 () , self . REQ46_EN0 () , self . REQ47_EN0 () , self . REQ48_EN0 () , self . REQ49_EN0 () , self . REQ50_EN0 () , self . REQ51_EN0 () , self . REQ52_EN0 () , self . REQ53_EN0 () , self . REQ54_EN0 () , self . REQ57_EN0 () , self . REQ58_EN0 () , self . REQ59_EN0 () , self . REQ60_EN0 () , self . REQ61_EN0 () , self . REQ62_EN0 () , self . REQ63_EN0 ())
+        }
+    }
     #[doc = "DMA0 Request Enable1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3589,6 +3832,12 @@ pub mod regs {
                 .field("REQ62_EN0", &self.REQ62_EN0())
                 .field("REQ63_EN0", &self.REQ63_EN0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE1_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA0_REQ_ENABLE1_SET {{ REQ32_EN0: {=bool:?}, REQ33_EN0: {=bool:?}, REQ34_EN0: {=bool:?}, REQ35_EN0: {=bool:?}, REQ36_EN0: {=bool:?}, REQ37_EN0: {=bool:?}, REQ38_EN0: {=bool:?}, REQ39_EN0: {=bool:?}, REQ40_EN0: {=bool:?}, REQ41_EN0: {=bool:?}, REQ42_EN0: {=bool:?}, REQ43_EN0: {=bool:?}, REQ44_EN0: {=bool:?}, REQ45_EN0: {=bool:?}, REQ46_EN0: {=bool:?}, REQ47_EN0: {=bool:?}, REQ48_EN0: {=bool:?}, REQ49_EN0: {=bool:?}, REQ50_EN0: {=bool:?}, REQ51_EN0: {=bool:?}, REQ52_EN0: {=bool:?}, REQ53_EN0: {=bool:?}, REQ54_EN0: {=bool:?}, REQ57_EN0: {=bool:?}, REQ58_EN0: {=bool:?}, REQ59_EN0: {=bool:?}, REQ60_EN0: {=bool:?}, REQ61_EN0: {=bool:?}, REQ62_EN0: {=bool:?}, REQ63_EN0: {=bool:?} }}" , self . REQ32_EN0 () , self . REQ33_EN0 () , self . REQ34_EN0 () , self . REQ35_EN0 () , self . REQ36_EN0 () , self . REQ37_EN0 () , self . REQ38_EN0 () , self . REQ39_EN0 () , self . REQ40_EN0 () , self . REQ41_EN0 () , self . REQ42_EN0 () , self . REQ43_EN0 () , self . REQ44_EN0 () , self . REQ45_EN0 () , self . REQ46_EN0 () , self . REQ47_EN0 () , self . REQ48_EN0 () , self . REQ49_EN0 () , self . REQ50_EN0 () , self . REQ51_EN0 () , self . REQ52_EN0 () , self . REQ53_EN0 () , self . REQ54_EN0 () , self . REQ57_EN0 () , self . REQ58_EN0 () , self . REQ59_EN0 () , self . REQ60_EN0 () , self . REQ61_EN0 () , self . REQ62_EN0 () , self . REQ63_EN0 ())
         }
     }
     #[doc = "DMA0 Request Enable1"]
@@ -3909,6 +4158,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE1_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA0_REQ_ENABLE1_TOG {{ REQ32_EN0: {=bool:?}, REQ33_EN0: {=bool:?}, REQ34_EN0: {=bool:?}, REQ35_EN0: {=bool:?}, REQ36_EN0: {=bool:?}, REQ37_EN0: {=bool:?}, REQ38_EN0: {=bool:?}, REQ39_EN0: {=bool:?}, REQ40_EN0: {=bool:?}, REQ41_EN0: {=bool:?}, REQ42_EN0: {=bool:?}, REQ43_EN0: {=bool:?}, REQ44_EN0: {=bool:?}, REQ45_EN0: {=bool:?}, REQ46_EN0: {=bool:?}, REQ47_EN0: {=bool:?}, REQ48_EN0: {=bool:?}, REQ49_EN0: {=bool:?}, REQ50_EN0: {=bool:?}, REQ51_EN0: {=bool:?}, REQ52_EN0: {=bool:?}, REQ53_EN0: {=bool:?}, REQ54_EN0: {=bool:?}, REQ57_EN0: {=bool:?}, REQ58_EN0: {=bool:?}, REQ59_EN0: {=bool:?}, REQ60_EN0: {=bool:?}, REQ61_EN0: {=bool:?}, REQ62_EN0: {=bool:?}, REQ63_EN0: {=bool:?} }}" , self . REQ32_EN0 () , self . REQ33_EN0 () , self . REQ34_EN0 () , self . REQ35_EN0 () , self . REQ36_EN0 () , self . REQ37_EN0 () , self . REQ38_EN0 () , self . REQ39_EN0 () , self . REQ40_EN0 () , self . REQ41_EN0 () , self . REQ42_EN0 () , self . REQ43_EN0 () , self . REQ44_EN0 () , self . REQ45_EN0 () , self . REQ46_EN0 () , self . REQ47_EN0 () , self . REQ48_EN0 () , self . REQ49_EN0 () , self . REQ50_EN0 () , self . REQ51_EN0 () , self . REQ52_EN0 () , self . REQ53_EN0 () , self . REQ54_EN0 () , self . REQ57_EN0 () , self . REQ58_EN0 () , self . REQ59_EN0 () , self . REQ60_EN0 () , self . REQ61_EN0 () , self . REQ62_EN0 () , self . REQ63_EN0 ())
+        }
+    }
     #[doc = "DMA0 Request Enable2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4225,6 +4480,12 @@ pub mod regs {
                 .field("REQ94_EN0", &self.REQ94_EN0())
                 .field("REQ95_EN0", &self.REQ95_EN0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA0_REQ_ENABLE2 {{ REQ64_EN0: {=bool:?}, REQ65_EN0: {=bool:?}, REQ66_EN0: {=bool:?}, REQ67_EN0: {=bool:?}, REQ68_EN0: {=bool:?}, REQ69_EN0: {=bool:?}, REQ70_EN0: {=bool:?}, REQ71_EN0: {=bool:?}, REQ72_EN0: {=bool:?}, REQ73_EN0: {=bool:?}, REQ74_EN0: {=bool:?}, REQ75_EN0: {=bool:?}, REQ76_EN0: {=bool:?}, REQ77_EN0: {=bool:?}, REQ78_EN0: {=bool:?}, REQ79_EN0: {=bool:?}, REQ80_EN0: {=bool:?}, REQ81_EN0: {=bool:?}, REQ82_EN0: {=bool:?}, REQ83_EN0: {=bool:?}, REQ84_EN0: {=bool:?}, REQ85_EN0: {=bool:?}, REQ86_EN0: {=bool:?}, REQ87_EN0: {=bool:?}, REQ88_EN0: {=bool:?}, REQ91_EN0: {=bool:?}, REQ92_EN0: {=bool:?}, REQ93_EN0: {=bool:?}, REQ94_EN0: {=bool:?}, REQ95_EN0: {=bool:?} }}" , self . REQ64_EN0 () , self . REQ65_EN0 () , self . REQ66_EN0 () , self . REQ67_EN0 () , self . REQ68_EN0 () , self . REQ69_EN0 () , self . REQ70_EN0 () , self . REQ71_EN0 () , self . REQ72_EN0 () , self . REQ73_EN0 () , self . REQ74_EN0 () , self . REQ75_EN0 () , self . REQ76_EN0 () , self . REQ77_EN0 () , self . REQ78_EN0 () , self . REQ79_EN0 () , self . REQ80_EN0 () , self . REQ81_EN0 () , self . REQ82_EN0 () , self . REQ83_EN0 () , self . REQ84_EN0 () , self . REQ85_EN0 () , self . REQ86_EN0 () , self . REQ87_EN0 () , self . REQ88_EN0 () , self . REQ91_EN0 () , self . REQ92_EN0 () , self . REQ93_EN0 () , self . REQ94_EN0 () , self . REQ95_EN0 ())
         }
     }
     #[doc = "DMA0 Request Enable2"]
@@ -4545,6 +4806,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE2_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA0_REQ_ENABLE2_CLR {{ REQ64_EN0: {=bool:?}, REQ65_EN0: {=bool:?}, REQ66_EN0: {=bool:?}, REQ67_EN0: {=bool:?}, REQ68_EN0: {=bool:?}, REQ69_EN0: {=bool:?}, REQ70_EN0: {=bool:?}, REQ71_EN0: {=bool:?}, REQ72_EN0: {=bool:?}, REQ73_EN0: {=bool:?}, REQ74_EN0: {=bool:?}, REQ75_EN0: {=bool:?}, REQ76_EN0: {=bool:?}, REQ77_EN0: {=bool:?}, REQ78_EN0: {=bool:?}, REQ79_EN0: {=bool:?}, REQ80_EN0: {=bool:?}, REQ81_EN0: {=bool:?}, REQ82_EN0: {=bool:?}, REQ83_EN0: {=bool:?}, REQ84_EN0: {=bool:?}, REQ85_EN0: {=bool:?}, REQ86_EN0: {=bool:?}, REQ87_EN0: {=bool:?}, REQ88_EN0: {=bool:?}, REQ91_EN0: {=bool:?}, REQ92_EN0: {=bool:?}, REQ93_EN0: {=bool:?}, REQ94_EN0: {=bool:?}, REQ95_EN0: {=bool:?} }}" , self . REQ64_EN0 () , self . REQ65_EN0 () , self . REQ66_EN0 () , self . REQ67_EN0 () , self . REQ68_EN0 () , self . REQ69_EN0 () , self . REQ70_EN0 () , self . REQ71_EN0 () , self . REQ72_EN0 () , self . REQ73_EN0 () , self . REQ74_EN0 () , self . REQ75_EN0 () , self . REQ76_EN0 () , self . REQ77_EN0 () , self . REQ78_EN0 () , self . REQ79_EN0 () , self . REQ80_EN0 () , self . REQ81_EN0 () , self . REQ82_EN0 () , self . REQ83_EN0 () , self . REQ84_EN0 () , self . REQ85_EN0 () , self . REQ86_EN0 () , self . REQ87_EN0 () , self . REQ88_EN0 () , self . REQ91_EN0 () , self . REQ92_EN0 () , self . REQ93_EN0 () , self . REQ94_EN0 () , self . REQ95_EN0 ())
+        }
+    }
     #[doc = "DMA0 Request Enable2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4861,6 +5128,12 @@ pub mod regs {
                 .field("REQ94_EN0", &self.REQ94_EN0())
                 .field("REQ95_EN0", &self.REQ95_EN0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE2_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA0_REQ_ENABLE2_SET {{ REQ64_EN0: {=bool:?}, REQ65_EN0: {=bool:?}, REQ66_EN0: {=bool:?}, REQ67_EN0: {=bool:?}, REQ68_EN0: {=bool:?}, REQ69_EN0: {=bool:?}, REQ70_EN0: {=bool:?}, REQ71_EN0: {=bool:?}, REQ72_EN0: {=bool:?}, REQ73_EN0: {=bool:?}, REQ74_EN0: {=bool:?}, REQ75_EN0: {=bool:?}, REQ76_EN0: {=bool:?}, REQ77_EN0: {=bool:?}, REQ78_EN0: {=bool:?}, REQ79_EN0: {=bool:?}, REQ80_EN0: {=bool:?}, REQ81_EN0: {=bool:?}, REQ82_EN0: {=bool:?}, REQ83_EN0: {=bool:?}, REQ84_EN0: {=bool:?}, REQ85_EN0: {=bool:?}, REQ86_EN0: {=bool:?}, REQ87_EN0: {=bool:?}, REQ88_EN0: {=bool:?}, REQ91_EN0: {=bool:?}, REQ92_EN0: {=bool:?}, REQ93_EN0: {=bool:?}, REQ94_EN0: {=bool:?}, REQ95_EN0: {=bool:?} }}" , self . REQ64_EN0 () , self . REQ65_EN0 () , self . REQ66_EN0 () , self . REQ67_EN0 () , self . REQ68_EN0 () , self . REQ69_EN0 () , self . REQ70_EN0 () , self . REQ71_EN0 () , self . REQ72_EN0 () , self . REQ73_EN0 () , self . REQ74_EN0 () , self . REQ75_EN0 () , self . REQ76_EN0 () , self . REQ77_EN0 () , self . REQ78_EN0 () , self . REQ79_EN0 () , self . REQ80_EN0 () , self . REQ81_EN0 () , self . REQ82_EN0 () , self . REQ83_EN0 () , self . REQ84_EN0 () , self . REQ85_EN0 () , self . REQ86_EN0 () , self . REQ87_EN0 () , self . REQ88_EN0 () , self . REQ91_EN0 () , self . REQ92_EN0 () , self . REQ93_EN0 () , self . REQ94_EN0 () , self . REQ95_EN0 ())
         }
     }
     #[doc = "DMA0 Request Enable2"]
@@ -5181,6 +5454,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE2_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA0_REQ_ENABLE2_TOG {{ REQ64_EN0: {=bool:?}, REQ65_EN0: {=bool:?}, REQ66_EN0: {=bool:?}, REQ67_EN0: {=bool:?}, REQ68_EN0: {=bool:?}, REQ69_EN0: {=bool:?}, REQ70_EN0: {=bool:?}, REQ71_EN0: {=bool:?}, REQ72_EN0: {=bool:?}, REQ73_EN0: {=bool:?}, REQ74_EN0: {=bool:?}, REQ75_EN0: {=bool:?}, REQ76_EN0: {=bool:?}, REQ77_EN0: {=bool:?}, REQ78_EN0: {=bool:?}, REQ79_EN0: {=bool:?}, REQ80_EN0: {=bool:?}, REQ81_EN0: {=bool:?}, REQ82_EN0: {=bool:?}, REQ83_EN0: {=bool:?}, REQ84_EN0: {=bool:?}, REQ85_EN0: {=bool:?}, REQ86_EN0: {=bool:?}, REQ87_EN0: {=bool:?}, REQ88_EN0: {=bool:?}, REQ91_EN0: {=bool:?}, REQ92_EN0: {=bool:?}, REQ93_EN0: {=bool:?}, REQ94_EN0: {=bool:?}, REQ95_EN0: {=bool:?} }}" , self . REQ64_EN0 () , self . REQ65_EN0 () , self . REQ66_EN0 () , self . REQ67_EN0 () , self . REQ68_EN0 () , self . REQ69_EN0 () , self . REQ70_EN0 () , self . REQ71_EN0 () , self . REQ72_EN0 () , self . REQ73_EN0 () , self . REQ74_EN0 () , self . REQ75_EN0 () , self . REQ76_EN0 () , self . REQ77_EN0 () , self . REQ78_EN0 () , self . REQ79_EN0 () , self . REQ80_EN0 () , self . REQ81_EN0 () , self . REQ82_EN0 () , self . REQ83_EN0 () , self . REQ84_EN0 () , self . REQ85_EN0 () , self . REQ86_EN0 () , self . REQ87_EN0 () , self . REQ88_EN0 () , self . REQ91_EN0 () , self . REQ92_EN0 () , self . REQ93_EN0 () , self . REQ94_EN0 () , self . REQ95_EN0 ())
+        }
+    }
     #[doc = "DMA0 Request Enable3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -5457,6 +5736,12 @@ pub mod regs {
                 .field("REQ120_EN0", &self.REQ120_EN0())
                 .field("REQ121_EN0", &self.REQ121_EN0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA0_REQ_ENABLE3 {{ REQ96_EN0: {=bool:?}, REQ97_EN0: {=bool:?}, REQ98_EN0: {=bool:?}, REQ99_EN0: {=bool:?}, REQ100_EN0: {=bool:?}, REQ101_EN0: {=bool:?}, REQ102_EN0: {=bool:?}, REQ103_EN0: {=bool:?}, REQ104_EN0: {=bool:?}, REQ105_EN0: {=bool:?}, REQ106_EN0: {=bool:?}, REQ107_EN0: {=bool:?}, REQ108_EN0: {=bool:?}, REQ109_EN0: {=bool:?}, REQ110_EN0: {=bool:?}, REQ111_EN0: {=bool:?}, REQ112_EN0: {=bool:?}, REQ113_EN0: {=bool:?}, REQ114_EN0: {=bool:?}, REQ115_EN0: {=bool:?}, REQ116_EN0: {=bool:?}, REQ117_EN0: {=bool:?}, REQ118_EN0: {=bool:?}, REQ119_EN0: {=bool:?}, REQ120_EN0: {=bool:?}, REQ121_EN0: {=bool:?} }}" , self . REQ96_EN0 () , self . REQ97_EN0 () , self . REQ98_EN0 () , self . REQ99_EN0 () , self . REQ100_EN0 () , self . REQ101_EN0 () , self . REQ102_EN0 () , self . REQ103_EN0 () , self . REQ104_EN0 () , self . REQ105_EN0 () , self . REQ106_EN0 () , self . REQ107_EN0 () , self . REQ108_EN0 () , self . REQ109_EN0 () , self . REQ110_EN0 () , self . REQ111_EN0 () , self . REQ112_EN0 () , self . REQ113_EN0 () , self . REQ114_EN0 () , self . REQ115_EN0 () , self . REQ116_EN0 () , self . REQ117_EN0 () , self . REQ118_EN0 () , self . REQ119_EN0 () , self . REQ120_EN0 () , self . REQ121_EN0 ())
         }
     }
     #[doc = "DMA0 Request Enable3"]
@@ -5737,6 +6022,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE3_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA0_REQ_ENABLE3_CLR {{ REQ96_EN0: {=bool:?}, REQ97_EN0: {=bool:?}, REQ98_EN0: {=bool:?}, REQ99_EN0: {=bool:?}, REQ100_EN0: {=bool:?}, REQ101_EN0: {=bool:?}, REQ102_EN0: {=bool:?}, REQ103_EN0: {=bool:?}, REQ104_EN0: {=bool:?}, REQ105_EN0: {=bool:?}, REQ106_EN0: {=bool:?}, REQ107_EN0: {=bool:?}, REQ108_EN0: {=bool:?}, REQ109_EN0: {=bool:?}, REQ110_EN0: {=bool:?}, REQ111_EN0: {=bool:?}, REQ112_EN0: {=bool:?}, REQ113_EN0: {=bool:?}, REQ114_EN0: {=bool:?}, REQ115_EN0: {=bool:?}, REQ116_EN0: {=bool:?}, REQ117_EN0: {=bool:?}, REQ118_EN0: {=bool:?}, REQ119_EN0: {=bool:?}, REQ120_EN0: {=bool:?}, REQ121_EN0: {=bool:?} }}" , self . REQ96_EN0 () , self . REQ97_EN0 () , self . REQ98_EN0 () , self . REQ99_EN0 () , self . REQ100_EN0 () , self . REQ101_EN0 () , self . REQ102_EN0 () , self . REQ103_EN0 () , self . REQ104_EN0 () , self . REQ105_EN0 () , self . REQ106_EN0 () , self . REQ107_EN0 () , self . REQ108_EN0 () , self . REQ109_EN0 () , self . REQ110_EN0 () , self . REQ111_EN0 () , self . REQ112_EN0 () , self . REQ113_EN0 () , self . REQ114_EN0 () , self . REQ115_EN0 () , self . REQ116_EN0 () , self . REQ117_EN0 () , self . REQ118_EN0 () , self . REQ119_EN0 () , self . REQ120_EN0 () , self . REQ121_EN0 ())
+        }
+    }
     #[doc = "DMA0 Request Enable3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6013,6 +6304,12 @@ pub mod regs {
                 .field("REQ120_EN0", &self.REQ120_EN0())
                 .field("REQ121_EN0", &self.REQ121_EN0())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA0_REQ_ENABLE3_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA0_REQ_ENABLE3_SET {{ REQ96_EN0: {=bool:?}, REQ97_EN0: {=bool:?}, REQ98_EN0: {=bool:?}, REQ99_EN0: {=bool:?}, REQ100_EN0: {=bool:?}, REQ101_EN0: {=bool:?}, REQ102_EN0: {=bool:?}, REQ103_EN0: {=bool:?}, REQ104_EN0: {=bool:?}, REQ105_EN0: {=bool:?}, REQ106_EN0: {=bool:?}, REQ107_EN0: {=bool:?}, REQ108_EN0: {=bool:?}, REQ109_EN0: {=bool:?}, REQ110_EN0: {=bool:?}, REQ111_EN0: {=bool:?}, REQ112_EN0: {=bool:?}, REQ113_EN0: {=bool:?}, REQ114_EN0: {=bool:?}, REQ115_EN0: {=bool:?}, REQ116_EN0: {=bool:?}, REQ117_EN0: {=bool:?}, REQ118_EN0: {=bool:?}, REQ119_EN0: {=bool:?}, REQ120_EN0: {=bool:?}, REQ121_EN0: {=bool:?} }}" , self . REQ96_EN0 () , self . REQ97_EN0 () , self . REQ98_EN0 () , self . REQ99_EN0 () , self . REQ100_EN0 () , self . REQ101_EN0 () , self . REQ102_EN0 () , self . REQ103_EN0 () , self . REQ104_EN0 () , self . REQ105_EN0 () , self . REQ106_EN0 () , self . REQ107_EN0 () , self . REQ108_EN0 () , self . REQ109_EN0 () , self . REQ110_EN0 () , self . REQ111_EN0 () , self . REQ112_EN0 () , self . REQ113_EN0 () , self . REQ114_EN0 () , self . REQ115_EN0 () , self . REQ116_EN0 () , self . REQ117_EN0 () , self . REQ118_EN0 () , self . REQ119_EN0 () , self . REQ120_EN0 () , self . REQ121_EN0 ())
         }
     }
     #[doc = "DMA1 Request Enable0"]
@@ -6343,6 +6640,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA1_REQ_ENABLE0 {{ REQ1_EN1: {=bool:?}, REQ2_EN1: {=bool:?}, REQ3_EN1: {=bool:?}, REQ4_EN1: {=bool:?}, REQ5_EN1: {=bool:?}, REQ6_EN1: {=bool:?}, REQ7_EN1: {=bool:?}, REQ8_EN1: {=bool:?}, REQ9_EN1: {=bool:?}, REQ10_EN1: {=bool:?}, REQ11_EN1: {=bool:?}, REQ12_EN1: {=bool:?}, REQ13_EN1: {=bool:?}, REQ14_EN1: {=bool:?}, REQ15_EN1: {=bool:?}, REQ16_EN1: {=bool:?}, REQ17_EN1: {=bool:?}, REQ18_EN1: {=bool:?}, REQ19_EN1: {=bool:?}, REQ20_EN1: {=bool:?}, REQ21_EN1: {=bool:?}, REQ22_EN1: {=bool:?}, REQ23_EN1: {=bool:?}, REQ24_EN1: {=bool:?}, REQ25_EN1: {=bool:?}, REQ26_EN1: {=bool:?}, REQ27_EN1: {=bool:?}, REQ28_EN1: {=bool:?}, REQ29_EN1: {=bool:?}, REQ30_EN1: {=bool:?}, REQ31_EN1: {=bool:?} }}" , self . REQ1_EN1 () , self . REQ2_EN1 () , self . REQ3_EN1 () , self . REQ4_EN1 () , self . REQ5_EN1 () , self . REQ6_EN1 () , self . REQ7_EN1 () , self . REQ8_EN1 () , self . REQ9_EN1 () , self . REQ10_EN1 () , self . REQ11_EN1 () , self . REQ12_EN1 () , self . REQ13_EN1 () , self . REQ14_EN1 () , self . REQ15_EN1 () , self . REQ16_EN1 () , self . REQ17_EN1 () , self . REQ18_EN1 () , self . REQ19_EN1 () , self . REQ20_EN1 () , self . REQ21_EN1 () , self . REQ22_EN1 () , self . REQ23_EN1 () , self . REQ24_EN1 () , self . REQ25_EN1 () , self . REQ26_EN1 () , self . REQ27_EN1 () , self . REQ28_EN1 () , self . REQ29_EN1 () , self . REQ30_EN1 () , self . REQ31_EN1 ())
+        }
+    }
     #[doc = "DMA1 Request Enable0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -6669,6 +6972,12 @@ pub mod regs {
                 .field("REQ30_EN1", &self.REQ30_EN1())
                 .field("REQ31_EN1", &self.REQ31_EN1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE0_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA1_REQ_ENABLE0_CLR {{ REQ1_EN1: {=bool:?}, REQ2_EN1: {=bool:?}, REQ3_EN1: {=bool:?}, REQ4_EN1: {=bool:?}, REQ5_EN1: {=bool:?}, REQ6_EN1: {=bool:?}, REQ7_EN1: {=bool:?}, REQ8_EN1: {=bool:?}, REQ9_EN1: {=bool:?}, REQ10_EN1: {=bool:?}, REQ11_EN1: {=bool:?}, REQ12_EN1: {=bool:?}, REQ13_EN1: {=bool:?}, REQ14_EN1: {=bool:?}, REQ15_EN1: {=bool:?}, REQ16_EN1: {=bool:?}, REQ17_EN1: {=bool:?}, REQ18_EN1: {=bool:?}, REQ19_EN1: {=bool:?}, REQ20_EN1: {=bool:?}, REQ21_EN1: {=bool:?}, REQ22_EN1: {=bool:?}, REQ23_EN1: {=bool:?}, REQ24_EN1: {=bool:?}, REQ25_EN1: {=bool:?}, REQ26_EN1: {=bool:?}, REQ27_EN1: {=bool:?}, REQ28_EN1: {=bool:?}, REQ29_EN1: {=bool:?}, REQ30_EN1: {=bool:?}, REQ31_EN1: {=bool:?} }}" , self . REQ1_EN1 () , self . REQ2_EN1 () , self . REQ3_EN1 () , self . REQ4_EN1 () , self . REQ5_EN1 () , self . REQ6_EN1 () , self . REQ7_EN1 () , self . REQ8_EN1 () , self . REQ9_EN1 () , self . REQ10_EN1 () , self . REQ11_EN1 () , self . REQ12_EN1 () , self . REQ13_EN1 () , self . REQ14_EN1 () , self . REQ15_EN1 () , self . REQ16_EN1 () , self . REQ17_EN1 () , self . REQ18_EN1 () , self . REQ19_EN1 () , self . REQ20_EN1 () , self . REQ21_EN1 () , self . REQ22_EN1 () , self . REQ23_EN1 () , self . REQ24_EN1 () , self . REQ25_EN1 () , self . REQ26_EN1 () , self . REQ27_EN1 () , self . REQ28_EN1 () , self . REQ29_EN1 () , self . REQ30_EN1 () , self . REQ31_EN1 ())
         }
     }
     #[doc = "DMA1 Request Enable0"]
@@ -6999,6 +7308,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE0_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA1_REQ_ENABLE0_SET {{ REQ1_EN1: {=bool:?}, REQ2_EN1: {=bool:?}, REQ3_EN1: {=bool:?}, REQ4_EN1: {=bool:?}, REQ5_EN1: {=bool:?}, REQ6_EN1: {=bool:?}, REQ7_EN1: {=bool:?}, REQ8_EN1: {=bool:?}, REQ9_EN1: {=bool:?}, REQ10_EN1: {=bool:?}, REQ11_EN1: {=bool:?}, REQ12_EN1: {=bool:?}, REQ13_EN1: {=bool:?}, REQ14_EN1: {=bool:?}, REQ15_EN1: {=bool:?}, REQ16_EN1: {=bool:?}, REQ17_EN1: {=bool:?}, REQ18_EN1: {=bool:?}, REQ19_EN1: {=bool:?}, REQ20_EN1: {=bool:?}, REQ21_EN1: {=bool:?}, REQ22_EN1: {=bool:?}, REQ23_EN1: {=bool:?}, REQ24_EN1: {=bool:?}, REQ25_EN1: {=bool:?}, REQ26_EN1: {=bool:?}, REQ27_EN1: {=bool:?}, REQ28_EN1: {=bool:?}, REQ29_EN1: {=bool:?}, REQ30_EN1: {=bool:?}, REQ31_EN1: {=bool:?} }}" , self . REQ1_EN1 () , self . REQ2_EN1 () , self . REQ3_EN1 () , self . REQ4_EN1 () , self . REQ5_EN1 () , self . REQ6_EN1 () , self . REQ7_EN1 () , self . REQ8_EN1 () , self . REQ9_EN1 () , self . REQ10_EN1 () , self . REQ11_EN1 () , self . REQ12_EN1 () , self . REQ13_EN1 () , self . REQ14_EN1 () , self . REQ15_EN1 () , self . REQ16_EN1 () , self . REQ17_EN1 () , self . REQ18_EN1 () , self . REQ19_EN1 () , self . REQ20_EN1 () , self . REQ21_EN1 () , self . REQ22_EN1 () , self . REQ23_EN1 () , self . REQ24_EN1 () , self . REQ25_EN1 () , self . REQ26_EN1 () , self . REQ27_EN1 () , self . REQ28_EN1 () , self . REQ29_EN1 () , self . REQ30_EN1 () , self . REQ31_EN1 ())
+        }
+    }
     #[doc = "DMA1 Request Enable0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7327,6 +7642,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE0_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA1_REQ_ENABLE0_TOG {{ REQ1_EN1: {=bool:?}, REQ2_EN1: {=bool:?}, REQ3_EN1: {=bool:?}, REQ4_EN1: {=bool:?}, REQ5_EN1: {=bool:?}, REQ6_EN1: {=bool:?}, REQ7_EN1: {=bool:?}, REQ8_EN1: {=bool:?}, REQ9_EN1: {=bool:?}, REQ10_EN1: {=bool:?}, REQ11_EN1: {=bool:?}, REQ12_EN1: {=bool:?}, REQ13_EN1: {=bool:?}, REQ14_EN1: {=bool:?}, REQ15_EN1: {=bool:?}, REQ16_EN1: {=bool:?}, REQ17_EN1: {=bool:?}, REQ18_EN1: {=bool:?}, REQ19_EN1: {=bool:?}, REQ20_EN1: {=bool:?}, REQ21_EN1: {=bool:?}, REQ22_EN1: {=bool:?}, REQ23_EN1: {=bool:?}, REQ24_EN1: {=bool:?}, REQ25_EN1: {=bool:?}, REQ26_EN1: {=bool:?}, REQ27_EN1: {=bool:?}, REQ28_EN1: {=bool:?}, REQ29_EN1: {=bool:?}, REQ30_EN1: {=bool:?}, REQ31_EN1: {=bool:?} }}" , self . REQ1_EN1 () , self . REQ2_EN1 () , self . REQ3_EN1 () , self . REQ4_EN1 () , self . REQ5_EN1 () , self . REQ6_EN1 () , self . REQ7_EN1 () , self . REQ8_EN1 () , self . REQ9_EN1 () , self . REQ10_EN1 () , self . REQ11_EN1 () , self . REQ12_EN1 () , self . REQ13_EN1 () , self . REQ14_EN1 () , self . REQ15_EN1 () , self . REQ16_EN1 () , self . REQ17_EN1 () , self . REQ18_EN1 () , self . REQ19_EN1 () , self . REQ20_EN1 () , self . REQ21_EN1 () , self . REQ22_EN1 () , self . REQ23_EN1 () , self . REQ24_EN1 () , self . REQ25_EN1 () , self . REQ26_EN1 () , self . REQ27_EN1 () , self . REQ28_EN1 () , self . REQ29_EN1 () , self . REQ30_EN1 () , self . REQ31_EN1 ())
+        }
+    }
     #[doc = "DMA1 Request Enable1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7643,6 +7964,12 @@ pub mod regs {
                 .field("REQ62_EN1", &self.REQ62_EN1())
                 .field("REQ63_EN1", &self.REQ63_EN1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA1_REQ_ENABLE1 {{ REQ32_EN1: {=bool:?}, REQ33_EN1: {=bool:?}, REQ34_EN1: {=bool:?}, REQ35_EN1: {=bool:?}, REQ36_EN1: {=bool:?}, REQ37_EN1: {=bool:?}, REQ38_EN1: {=bool:?}, REQ39_EN1: {=bool:?}, REQ40_EN1: {=bool:?}, REQ41_EN1: {=bool:?}, REQ42_EN1: {=bool:?}, REQ43_EN1: {=bool:?}, REQ44_EN1: {=bool:?}, REQ45_EN1: {=bool:?}, REQ46_EN1: {=bool:?}, REQ47_EN1: {=bool:?}, REQ48_EN1: {=bool:?}, REQ49_EN1: {=bool:?}, REQ50_EN1: {=bool:?}, REQ51_EN1: {=bool:?}, REQ52_EN1: {=bool:?}, REQ53_EN1: {=bool:?}, REQ54_EN1: {=bool:?}, REQ57_EN1: {=bool:?}, REQ58_EN1: {=bool:?}, REQ59_EN1: {=bool:?}, REQ60_EN1: {=bool:?}, REQ61_EN1: {=bool:?}, REQ62_EN1: {=bool:?}, REQ63_EN1: {=bool:?} }}" , self . REQ32_EN1 () , self . REQ33_EN1 () , self . REQ34_EN1 () , self . REQ35_EN1 () , self . REQ36_EN1 () , self . REQ37_EN1 () , self . REQ38_EN1 () , self . REQ39_EN1 () , self . REQ40_EN1 () , self . REQ41_EN1 () , self . REQ42_EN1 () , self . REQ43_EN1 () , self . REQ44_EN1 () , self . REQ45_EN1 () , self . REQ46_EN1 () , self . REQ47_EN1 () , self . REQ48_EN1 () , self . REQ49_EN1 () , self . REQ50_EN1 () , self . REQ51_EN1 () , self . REQ52_EN1 () , self . REQ53_EN1 () , self . REQ54_EN1 () , self . REQ57_EN1 () , self . REQ58_EN1 () , self . REQ59_EN1 () , self . REQ60_EN1 () , self . REQ61_EN1 () , self . REQ62_EN1 () , self . REQ63_EN1 ())
         }
     }
     #[doc = "DMA1 Request Enable1"]
@@ -7963,6 +8290,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE1_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA1_REQ_ENABLE1_CLR {{ REQ32_EN1: {=bool:?}, REQ33_EN1: {=bool:?}, REQ34_EN1: {=bool:?}, REQ35_EN1: {=bool:?}, REQ36_EN1: {=bool:?}, REQ37_EN1: {=bool:?}, REQ38_EN1: {=bool:?}, REQ39_EN1: {=bool:?}, REQ40_EN1: {=bool:?}, REQ41_EN1: {=bool:?}, REQ42_EN1: {=bool:?}, REQ43_EN1: {=bool:?}, REQ44_EN1: {=bool:?}, REQ45_EN1: {=bool:?}, REQ46_EN1: {=bool:?}, REQ47_EN1: {=bool:?}, REQ48_EN1: {=bool:?}, REQ49_EN1: {=bool:?}, REQ50_EN1: {=bool:?}, REQ51_EN1: {=bool:?}, REQ52_EN1: {=bool:?}, REQ53_EN1: {=bool:?}, REQ54_EN1: {=bool:?}, REQ57_EN1: {=bool:?}, REQ58_EN1: {=bool:?}, REQ59_EN1: {=bool:?}, REQ60_EN1: {=bool:?}, REQ61_EN1: {=bool:?}, REQ62_EN1: {=bool:?}, REQ63_EN1: {=bool:?} }}" , self . REQ32_EN1 () , self . REQ33_EN1 () , self . REQ34_EN1 () , self . REQ35_EN1 () , self . REQ36_EN1 () , self . REQ37_EN1 () , self . REQ38_EN1 () , self . REQ39_EN1 () , self . REQ40_EN1 () , self . REQ41_EN1 () , self . REQ42_EN1 () , self . REQ43_EN1 () , self . REQ44_EN1 () , self . REQ45_EN1 () , self . REQ46_EN1 () , self . REQ47_EN1 () , self . REQ48_EN1 () , self . REQ49_EN1 () , self . REQ50_EN1 () , self . REQ51_EN1 () , self . REQ52_EN1 () , self . REQ53_EN1 () , self . REQ54_EN1 () , self . REQ57_EN1 () , self . REQ58_EN1 () , self . REQ59_EN1 () , self . REQ60_EN1 () , self . REQ61_EN1 () , self . REQ62_EN1 () , self . REQ63_EN1 ())
+        }
+    }
     #[doc = "DMA1 Request Enable1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8279,6 +8612,12 @@ pub mod regs {
                 .field("REQ62_EN1", &self.REQ62_EN1())
                 .field("REQ63_EN1", &self.REQ63_EN1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE1_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA1_REQ_ENABLE1_SET {{ REQ32_EN1: {=bool:?}, REQ33_EN1: {=bool:?}, REQ34_EN1: {=bool:?}, REQ35_EN1: {=bool:?}, REQ36_EN1: {=bool:?}, REQ37_EN1: {=bool:?}, REQ38_EN1: {=bool:?}, REQ39_EN1: {=bool:?}, REQ40_EN1: {=bool:?}, REQ41_EN1: {=bool:?}, REQ42_EN1: {=bool:?}, REQ43_EN1: {=bool:?}, REQ44_EN1: {=bool:?}, REQ45_EN1: {=bool:?}, REQ46_EN1: {=bool:?}, REQ47_EN1: {=bool:?}, REQ48_EN1: {=bool:?}, REQ49_EN1: {=bool:?}, REQ50_EN1: {=bool:?}, REQ51_EN1: {=bool:?}, REQ52_EN1: {=bool:?}, REQ53_EN1: {=bool:?}, REQ54_EN1: {=bool:?}, REQ57_EN1: {=bool:?}, REQ58_EN1: {=bool:?}, REQ59_EN1: {=bool:?}, REQ60_EN1: {=bool:?}, REQ61_EN1: {=bool:?}, REQ62_EN1: {=bool:?}, REQ63_EN1: {=bool:?} }}" , self . REQ32_EN1 () , self . REQ33_EN1 () , self . REQ34_EN1 () , self . REQ35_EN1 () , self . REQ36_EN1 () , self . REQ37_EN1 () , self . REQ38_EN1 () , self . REQ39_EN1 () , self . REQ40_EN1 () , self . REQ41_EN1 () , self . REQ42_EN1 () , self . REQ43_EN1 () , self . REQ44_EN1 () , self . REQ45_EN1 () , self . REQ46_EN1 () , self . REQ47_EN1 () , self . REQ48_EN1 () , self . REQ49_EN1 () , self . REQ50_EN1 () , self . REQ51_EN1 () , self . REQ52_EN1 () , self . REQ53_EN1 () , self . REQ54_EN1 () , self . REQ57_EN1 () , self . REQ58_EN1 () , self . REQ59_EN1 () , self . REQ60_EN1 () , self . REQ61_EN1 () , self . REQ62_EN1 () , self . REQ63_EN1 ())
         }
     }
     #[doc = "DMA1 Request Enable1"]
@@ -8599,6 +8938,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE1_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA1_REQ_ENABLE1_TOG {{ REQ32_EN1: {=bool:?}, REQ33_EN1: {=bool:?}, REQ34_EN1: {=bool:?}, REQ35_EN1: {=bool:?}, REQ36_EN1: {=bool:?}, REQ37_EN1: {=bool:?}, REQ38_EN1: {=bool:?}, REQ39_EN1: {=bool:?}, REQ40_EN1: {=bool:?}, REQ41_EN1: {=bool:?}, REQ42_EN1: {=bool:?}, REQ43_EN1: {=bool:?}, REQ44_EN1: {=bool:?}, REQ45_EN1: {=bool:?}, REQ46_EN1: {=bool:?}, REQ47_EN1: {=bool:?}, REQ48_EN1: {=bool:?}, REQ49_EN1: {=bool:?}, REQ50_EN1: {=bool:?}, REQ51_EN1: {=bool:?}, REQ52_EN1: {=bool:?}, REQ53_EN1: {=bool:?}, REQ54_EN1: {=bool:?}, REQ57_EN1: {=bool:?}, REQ58_EN1: {=bool:?}, REQ59_EN1: {=bool:?}, REQ60_EN1: {=bool:?}, REQ61_EN1: {=bool:?}, REQ62_EN1: {=bool:?}, REQ63_EN1: {=bool:?} }}" , self . REQ32_EN1 () , self . REQ33_EN1 () , self . REQ34_EN1 () , self . REQ35_EN1 () , self . REQ36_EN1 () , self . REQ37_EN1 () , self . REQ38_EN1 () , self . REQ39_EN1 () , self . REQ40_EN1 () , self . REQ41_EN1 () , self . REQ42_EN1 () , self . REQ43_EN1 () , self . REQ44_EN1 () , self . REQ45_EN1 () , self . REQ46_EN1 () , self . REQ47_EN1 () , self . REQ48_EN1 () , self . REQ49_EN1 () , self . REQ50_EN1 () , self . REQ51_EN1 () , self . REQ52_EN1 () , self . REQ53_EN1 () , self . REQ54_EN1 () , self . REQ57_EN1 () , self . REQ58_EN1 () , self . REQ59_EN1 () , self . REQ60_EN1 () , self . REQ61_EN1 () , self . REQ62_EN1 () , self . REQ63_EN1 ())
+        }
+    }
     #[doc = "DMA1 Request Enable2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -8915,6 +9260,12 @@ pub mod regs {
                 .field("REQ94_EN1", &self.REQ94_EN1())
                 .field("REQ95_EN1", &self.REQ95_EN1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA1_REQ_ENABLE2 {{ REQ64_EN1: {=bool:?}, REQ65_EN1: {=bool:?}, REQ66_EN1: {=bool:?}, REQ67_EN1: {=bool:?}, REQ68_EN1: {=bool:?}, REQ69_EN1: {=bool:?}, REQ70_EN1: {=bool:?}, REQ71_EN1: {=bool:?}, REQ72_EN1: {=bool:?}, REQ73_EN1: {=bool:?}, REQ74_EN1: {=bool:?}, REQ75_EN1: {=bool:?}, REQ76_EN1: {=bool:?}, REQ77_EN1: {=bool:?}, REQ78_EN1: {=bool:?}, REQ79_EN1: {=bool:?}, REQ80_EN1: {=bool:?}, REQ81_EN1: {=bool:?}, REQ82_EN1: {=bool:?}, REQ83_EN1: {=bool:?}, REQ84_EN1: {=bool:?}, REQ85_EN1: {=bool:?}, REQ86_EN1: {=bool:?}, REQ87_EN1: {=bool:?}, REQ88_EN1: {=bool:?}, REQ91_EN1: {=bool:?}, REQ92_EN1: {=bool:?}, REQ93_EN1: {=bool:?}, REQ94_EN1: {=bool:?}, REQ95_EN1: {=bool:?} }}" , self . REQ64_EN1 () , self . REQ65_EN1 () , self . REQ66_EN1 () , self . REQ67_EN1 () , self . REQ68_EN1 () , self . REQ69_EN1 () , self . REQ70_EN1 () , self . REQ71_EN1 () , self . REQ72_EN1 () , self . REQ73_EN1 () , self . REQ74_EN1 () , self . REQ75_EN1 () , self . REQ76_EN1 () , self . REQ77_EN1 () , self . REQ78_EN1 () , self . REQ79_EN1 () , self . REQ80_EN1 () , self . REQ81_EN1 () , self . REQ82_EN1 () , self . REQ83_EN1 () , self . REQ84_EN1 () , self . REQ85_EN1 () , self . REQ86_EN1 () , self . REQ87_EN1 () , self . REQ88_EN1 () , self . REQ91_EN1 () , self . REQ92_EN1 () , self . REQ93_EN1 () , self . REQ94_EN1 () , self . REQ95_EN1 ())
         }
     }
     #[doc = "DMA1 Request Enable2"]
@@ -9255,6 +9606,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE2_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA1_REQ_ENABLE2_CLR {{ REQ64_EN1: {=bool:?}, REQ65_EN1: {=bool:?}, REQ66_EN1: {=bool:?}, REQ67_EN1: {=bool:?}, REQ68_EN1: {=bool:?}, REQ69_EN1: {=bool:?}, REQ70_EN1: {=bool:?}, REQ71_EN1: {=bool:?}, REQ72_EN1: {=bool:?}, REQ73_EN1: {=bool:?}, REQ74_EN1: {=bool:?}, REQ75_EN1: {=bool:?}, REQ76_EN1: {=bool:?}, REQ77_EN1: {=bool:?}, REQ78_EN1: {=bool:?}, REQ79_EN1: {=bool:?}, REQ80_EN1: {=bool:?}, REQ81_EN1: {=bool:?}, REQ82_EN1: {=bool:?}, REQ83_EN1: {=bool:?}, REQ84_EN1: {=bool:?}, REQ85_EN1: {=bool:?}, REQ86_EN1: {=bool:?}, REQ87_EN1: {=bool:?}, REQ88_EN1: {=bool:?}, REQ89_EN1: {=bool:?}, REQ90_EN1: {=bool:?}, REQ91_EN1: {=bool:?}, REQ92_EN1: {=bool:?}, REQ93_EN1: {=bool:?}, REQ94_EN1: {=bool:?}, REQ95_EN1: {=bool:?} }}" , self . REQ64_EN1 () , self . REQ65_EN1 () , self . REQ66_EN1 () , self . REQ67_EN1 () , self . REQ68_EN1 () , self . REQ69_EN1 () , self . REQ70_EN1 () , self . REQ71_EN1 () , self . REQ72_EN1 () , self . REQ73_EN1 () , self . REQ74_EN1 () , self . REQ75_EN1 () , self . REQ76_EN1 () , self . REQ77_EN1 () , self . REQ78_EN1 () , self . REQ79_EN1 () , self . REQ80_EN1 () , self . REQ81_EN1 () , self . REQ82_EN1 () , self . REQ83_EN1 () , self . REQ84_EN1 () , self . REQ85_EN1 () , self . REQ86_EN1 () , self . REQ87_EN1 () , self . REQ88_EN1 () , self . REQ89_EN1 () , self . REQ90_EN1 () , self . REQ91_EN1 () , self . REQ92_EN1 () , self . REQ93_EN1 () , self . REQ94_EN1 () , self . REQ95_EN1 ())
+        }
+    }
     #[doc = "DMA1 Request Enable2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -9591,6 +9948,12 @@ pub mod regs {
                 .field("REQ94_EN1", &self.REQ94_EN1())
                 .field("REQ95_EN1", &self.REQ95_EN1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE2_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA1_REQ_ENABLE2_SET {{ REQ64_EN1: {=bool:?}, REQ65_EN1: {=bool:?}, REQ66_EN1: {=bool:?}, REQ67_EN1: {=bool:?}, REQ68_EN1: {=bool:?}, REQ69_EN1: {=bool:?}, REQ70_EN1: {=bool:?}, REQ71_EN1: {=bool:?}, REQ72_EN1: {=bool:?}, REQ73_EN1: {=bool:?}, REQ74_EN1: {=bool:?}, REQ75_EN1: {=bool:?}, REQ76_EN1: {=bool:?}, REQ77_EN1: {=bool:?}, REQ78_EN1: {=bool:?}, REQ79_EN1: {=bool:?}, REQ80_EN1: {=bool:?}, REQ81_EN1: {=bool:?}, REQ82_EN1: {=bool:?}, REQ83_EN1: {=bool:?}, REQ84_EN1: {=bool:?}, REQ85_EN1: {=bool:?}, REQ86_EN1: {=bool:?}, REQ87_EN1: {=bool:?}, REQ88_EN1: {=bool:?}, REQ89_EN1: {=bool:?}, REQ90_EN1: {=bool:?}, REQ91_EN1: {=bool:?}, REQ92_EN1: {=bool:?}, REQ93_EN1: {=bool:?}, REQ94_EN1: {=bool:?}, REQ95_EN1: {=bool:?} }}" , self . REQ64_EN1 () , self . REQ65_EN1 () , self . REQ66_EN1 () , self . REQ67_EN1 () , self . REQ68_EN1 () , self . REQ69_EN1 () , self . REQ70_EN1 () , self . REQ71_EN1 () , self . REQ72_EN1 () , self . REQ73_EN1 () , self . REQ74_EN1 () , self . REQ75_EN1 () , self . REQ76_EN1 () , self . REQ77_EN1 () , self . REQ78_EN1 () , self . REQ79_EN1 () , self . REQ80_EN1 () , self . REQ81_EN1 () , self . REQ82_EN1 () , self . REQ83_EN1 () , self . REQ84_EN1 () , self . REQ85_EN1 () , self . REQ86_EN1 () , self . REQ87_EN1 () , self . REQ88_EN1 () , self . REQ89_EN1 () , self . REQ90_EN1 () , self . REQ91_EN1 () , self . REQ92_EN1 () , self . REQ93_EN1 () , self . REQ94_EN1 () , self . REQ95_EN1 ())
         }
     }
     #[doc = "DMA1 Request Enable2"]
@@ -9931,6 +10294,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE2_TOG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA1_REQ_ENABLE2_TOG {{ REQ64_EN1: {=bool:?}, REQ65_EN1: {=bool:?}, REQ66_EN1: {=bool:?}, REQ67_EN1: {=bool:?}, REQ68_EN1: {=bool:?}, REQ69_EN1: {=bool:?}, REQ70_EN1: {=bool:?}, REQ71_EN1: {=bool:?}, REQ72_EN1: {=bool:?}, REQ73_EN1: {=bool:?}, REQ74_EN1: {=bool:?}, REQ75_EN1: {=bool:?}, REQ76_EN1: {=bool:?}, REQ77_EN1: {=bool:?}, REQ78_EN1: {=bool:?}, REQ79_EN1: {=bool:?}, REQ80_EN1: {=bool:?}, REQ81_EN1: {=bool:?}, REQ82_EN1: {=bool:?}, REQ83_EN1: {=bool:?}, REQ84_EN1: {=bool:?}, REQ85_EN1: {=bool:?}, REQ86_EN1: {=bool:?}, REQ87_EN1: {=bool:?}, REQ88_EN1: {=bool:?}, REQ89_EN1: {=bool:?}, REQ90_EN1: {=bool:?}, REQ91_EN1: {=bool:?}, REQ92_EN1: {=bool:?}, REQ93_EN1: {=bool:?}, REQ94_EN1: {=bool:?}, REQ95_EN1: {=bool:?} }}" , self . REQ64_EN1 () , self . REQ65_EN1 () , self . REQ66_EN1 () , self . REQ67_EN1 () , self . REQ68_EN1 () , self . REQ69_EN1 () , self . REQ70_EN1 () , self . REQ71_EN1 () , self . REQ72_EN1 () , self . REQ73_EN1 () , self . REQ74_EN1 () , self . REQ75_EN1 () , self . REQ76_EN1 () , self . REQ77_EN1 () , self . REQ78_EN1 () , self . REQ79_EN1 () , self . REQ80_EN1 () , self . REQ81_EN1 () , self . REQ82_EN1 () , self . REQ83_EN1 () , self . REQ84_EN1 () , self . REQ85_EN1 () , self . REQ86_EN1 () , self . REQ87_EN1 () , self . REQ88_EN1 () , self . REQ89_EN1 () , self . REQ90_EN1 () , self . REQ91_EN1 () , self . REQ92_EN1 () , self . REQ93_EN1 () , self . REQ94_EN1 () , self . REQ95_EN1 ())
+        }
+    }
     #[doc = "DMA1 Request Enable3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -10207,6 +10576,12 @@ pub mod regs {
                 .field("REQ120_EN1", &self.REQ120_EN1())
                 .field("REQ121_EN1", &self.REQ121_EN1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA1_REQ_ENABLE3 {{ REQ96_EN1: {=bool:?}, REQ97_EN1: {=bool:?}, REQ98_EN1: {=bool:?}, REQ99_EN1: {=bool:?}, REQ100_EN1: {=bool:?}, REQ101_EN1: {=bool:?}, REQ102_EN1: {=bool:?}, REQ103_EN1: {=bool:?}, REQ104_EN1: {=bool:?}, REQ105_EN1: {=bool:?}, REQ106_EN1: {=bool:?}, REQ107_EN1: {=bool:?}, REQ108_EN1: {=bool:?}, REQ109_EN1: {=bool:?}, REQ110_EN1: {=bool:?}, REQ111_EN1: {=bool:?}, REQ112_EN1: {=bool:?}, REQ113_EN1: {=bool:?}, REQ114_EN1: {=bool:?}, REQ115_EN1: {=bool:?}, REQ116_EN1: {=bool:?}, REQ117_EN1: {=bool:?}, REQ118_EN1: {=bool:?}, REQ119_EN1: {=bool:?}, REQ120_EN1: {=bool:?}, REQ121_EN1: {=bool:?} }}" , self . REQ96_EN1 () , self . REQ97_EN1 () , self . REQ98_EN1 () , self . REQ99_EN1 () , self . REQ100_EN1 () , self . REQ101_EN1 () , self . REQ102_EN1 () , self . REQ103_EN1 () , self . REQ104_EN1 () , self . REQ105_EN1 () , self . REQ106_EN1 () , self . REQ107_EN1 () , self . REQ108_EN1 () , self . REQ109_EN1 () , self . REQ110_EN1 () , self . REQ111_EN1 () , self . REQ112_EN1 () , self . REQ113_EN1 () , self . REQ114_EN1 () , self . REQ115_EN1 () , self . REQ116_EN1 () , self . REQ117_EN1 () , self . REQ118_EN1 () , self . REQ119_EN1 () , self . REQ120_EN1 () , self . REQ121_EN1 ())
         }
     }
     #[doc = "DMA1 Request Enable3"]
@@ -10487,6 +10862,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE3_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA1_REQ_ENABLE3_CLR {{ REQ96_EN1: {=bool:?}, REQ97_EN1: {=bool:?}, REQ98_EN1: {=bool:?}, REQ99_EN1: {=bool:?}, REQ100_EN1: {=bool:?}, REQ101_EN1: {=bool:?}, REQ102_EN1: {=bool:?}, REQ103_EN1: {=bool:?}, REQ104_EN1: {=bool:?}, REQ105_EN1: {=bool:?}, REQ106_EN1: {=bool:?}, REQ107_EN1: {=bool:?}, REQ108_EN1: {=bool:?}, REQ109_EN1: {=bool:?}, REQ110_EN1: {=bool:?}, REQ111_EN1: {=bool:?}, REQ112_EN1: {=bool:?}, REQ113_EN1: {=bool:?}, REQ114_EN1: {=bool:?}, REQ115_EN1: {=bool:?}, REQ116_EN1: {=bool:?}, REQ117_EN1: {=bool:?}, REQ118_EN1: {=bool:?}, REQ119_EN1: {=bool:?}, REQ120_EN1: {=bool:?}, REQ121_EN1: {=bool:?} }}" , self . REQ96_EN1 () , self . REQ97_EN1 () , self . REQ98_EN1 () , self . REQ99_EN1 () , self . REQ100_EN1 () , self . REQ101_EN1 () , self . REQ102_EN1 () , self . REQ103_EN1 () , self . REQ104_EN1 () , self . REQ105_EN1 () , self . REQ106_EN1 () , self . REQ107_EN1 () , self . REQ108_EN1 () , self . REQ109_EN1 () , self . REQ110_EN1 () , self . REQ111_EN1 () , self . REQ112_EN1 () , self . REQ113_EN1 () , self . REQ114_EN1 () , self . REQ115_EN1 () , self . REQ116_EN1 () , self . REQ117_EN1 () , self . REQ118_EN1 () , self . REQ119_EN1 () , self . REQ120_EN1 () , self . REQ121_EN1 ())
+        }
+    }
     #[doc = "DMA1 Request Enable3"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -10765,6 +11146,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DMA1_REQ_ENABLE3_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "DMA1_REQ_ENABLE3_SET {{ REQ96_EN1: {=bool:?}, REQ97_EN1: {=bool:?}, REQ98_EN1: {=bool:?}, REQ99_EN1: {=bool:?}, REQ100_EN1: {=bool:?}, REQ101_EN1: {=bool:?}, REQ102_EN1: {=bool:?}, REQ103_EN1: {=bool:?}, REQ104_EN1: {=bool:?}, REQ105_EN1: {=bool:?}, REQ106_EN1: {=bool:?}, REQ107_EN1: {=bool:?}, REQ108_EN1: {=bool:?}, REQ109_EN1: {=bool:?}, REQ110_EN1: {=bool:?}, REQ111_EN1: {=bool:?}, REQ112_EN1: {=bool:?}, REQ113_EN1: {=bool:?}, REQ114_EN1: {=bool:?}, REQ115_EN1: {=bool:?}, REQ116_EN1: {=bool:?}, REQ117_EN1: {=bool:?}, REQ118_EN1: {=bool:?}, REQ119_EN1: {=bool:?}, REQ120_EN1: {=bool:?}, REQ121_EN1: {=bool:?} }}" , self . REQ96_EN1 () , self . REQ97_EN1 () , self . REQ98_EN1 () , self . REQ99_EN1 () , self . REQ100_EN1 () , self . REQ101_EN1 () , self . REQ102_EN1 () , self . REQ103_EN1 () , self . REQ104_EN1 () , self . REQ105_EN1 () , self . REQ106_EN1 () , self . REQ107_EN1 () , self . REQ108_EN1 () , self . REQ109_EN1 () , self . REQ110_EN1 () , self . REQ111_EN1 () , self . REQ112_EN1 () , self . REQ113_EN1 () , self . REQ114_EN1 () , self . REQ115_EN1 () , self . REQ116_EN1 () , self . REQ117_EN1 () , self . REQ118_EN1 () , self . REQ119_EN1 () , self . REQ120_EN1 () , self . REQ121_EN1 ())
+        }
+    }
     #[doc = "EVTG Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -10791,6 +11178,12 @@ pub mod regs {
             f.debug_struct("EVTG_TRIG")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EVTG_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "EVTG_TRIG {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "EXT Trigger Connections"]
@@ -10821,6 +11214,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EXT_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "EXT_TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "LP_FLEXCOMM0 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -10847,6 +11246,12 @@ pub mod regs {
             f.debug_struct("FLEXCOMM0_TRIG")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM0_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXCOMM0_TRIG {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "LP_FLEXCOMM1 Trigger Input Connections"]
@@ -10877,6 +11282,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM1_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXCOMM1_TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "LP_FLEXCOMM2 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -10903,6 +11314,12 @@ pub mod regs {
             f.debug_struct("FLEXCOMM2_TRIG")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM2_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXCOMM2_TRIG {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "LP_FLEXCOMM3 Trigger Input Connections"]
@@ -10933,6 +11350,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM3_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXCOMM3_TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "LP_FLEXCOMM4 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -10959,6 +11382,12 @@ pub mod regs {
             f.debug_struct("FLEXCOMM4_TRIG")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM4_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXCOMM4_TRIG {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "LP_FLEXCOMM5 Trigger Input Connections"]
@@ -10989,6 +11418,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM5_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXCOMM5_TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "LP_FLEXCOMM6 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11015,6 +11450,12 @@ pub mod regs {
             f.debug_struct("FLEXCOMM6_TRIG")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM6_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXCOMM6_TRIG {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "LP_FLEXCOMM7 Trigger Input Connections"]
@@ -11045,6 +11486,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM7_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXCOMM7_TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "LP_FLEXCOMM8 Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11071,6 +11518,12 @@ pub mod regs {
             f.debug_struct("FLEXCOMM8_TRIG")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM8_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXCOMM8_TRIG {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "LP_FLEXCOMM9 Trigger Input Connections"]
@@ -11101,6 +11554,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXCOMM9_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXCOMM9_TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "FlexIO Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11127,6 +11586,12 @@ pub mod regs {
             f.debug_struct("FLEXIO_TRIG")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXIO_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXIO_TRIG {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "PWM0 External Force Trigger Connections"]
@@ -11157,6 +11622,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM0_EXTFORCE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXPWM0_EXTFORCE {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "PWM0 Fault Input Trigger Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11183,6 +11654,12 @@ pub mod regs {
             f.debug_struct("FLEXPWM0_FAULT")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM0_FAULT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXPWM0_FAULT {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
         }
     }
     #[doc = "PWM0 Input Trigger Connections"]
@@ -11213,6 +11690,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM0_SM_EXTA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXPWM0_SM_EXTA {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "PWM0 External Synchronization"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11239,6 +11722,16 @@ pub mod regs {
             f.debug_struct("FLEXPWM0_SM_EXTSYNC")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM0_SM_EXTSYNC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FLEXPWM0_SM_EXTSYNC {{ TRIGIN: {=u8:?} }}",
+                self.TRIGIN()
+            )
         }
     }
     #[doc = "PWM1 External Force Trigger Connections"]
@@ -11269,6 +11762,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM1_EXTFORCE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXPWM1_EXTFORCE {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "PWM1 Fault Input Trigger Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11295,6 +11794,12 @@ pub mod regs {
             f.debug_struct("FLEXPWM1_FAULT")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM1_FAULT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXPWM1_FAULT {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
         }
     }
     #[doc = "PWM1 Input EXTA Connections"]
@@ -11325,6 +11830,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM1_SM_EXTA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FLEXPWM1_SM_EXTA {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "PWM1 External Synchronization"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11351,6 +11862,16 @@ pub mod regs {
             f.debug_struct("FLEXPWM1_SM_EXTSYNC")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FLEXPWM1_SM_EXTSYNC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "FLEXPWM1_SM_EXTSYNC {{ TRIGIN: {=u8:?} }}",
+                self.TRIGIN()
+            )
         }
     }
     #[doc = "Selection for Frequency Measurement Reference Clock"]
@@ -11381,6 +11902,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FREQMEAS_REF {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FREQMEAS_REF {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Selection for Frequency Measurement Target Clock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11407,6 +11934,12 @@ pub mod regs {
             f.debug_struct("FREQMEAS_TAR")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FREQMEAS_TAR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FREQMEAS_TAR {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "OPAMP Trigger Input Connections"]
@@ -11437,6 +11970,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OPAMP_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "OPAMP_TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Pin Interrupt Select"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11461,6 +12000,12 @@ pub mod regs {
     impl core::fmt::Debug for PINTSEL {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("PINTSEL").field("INP", &self.INP()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PINTSEL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PINTSEL {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "PWM0 External Clock Trigger"]
@@ -11491,6 +12036,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWM0_EXT_CLK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PWM0_EXT_CLK {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
+        }
+    }
     #[doc = "PWM1 External Clock Trigger"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11517,6 +12068,12 @@ pub mod regs {
             f.debug_struct("PWM1_EXT_CLK")
                 .field("TRIGIN", &self.TRIGIN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PWM1_EXT_CLK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PWM1_EXT_CLK {{ TRIGIN: {=u8:?} }}", self.TRIGIN())
         }
     }
     #[doc = "QDC0 Input Connections..QDC1 Input Connections"]
@@ -11547,6 +12104,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDCN_QDC_HOME {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDCN_QDC_HOME {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "QDC0 Input Connections..QDC1 Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11573,6 +12136,12 @@ pub mod regs {
             f.debug_struct("QDCN_QDC_INDEX")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDCN_QDC_INDEX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDCN_QDC_INDEX {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "QDC0 Input Connections..QDC1 Input Connections"]
@@ -11603,6 +12172,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDCN_QDC_PHASEA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDCN_QDC_PHASEA {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "QDC0 Input Connections..QDC1 Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11629,6 +12204,12 @@ pub mod regs {
             f.debug_struct("QDCN_QDC_PHASEB")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDCN_QDC_PHASEB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDCN_QDC_PHASEB {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "QDC0 Trigger Input Connections..QDC1 Trigger Input Connections"]
@@ -11659,6 +12240,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for QDCN_QDC_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "QDCN_QDC_TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Inputmux Register for SCT0 Input"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11685,6 +12272,12 @@ pub mod regs {
             f.debug_struct("SCT0_INMUX")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SCT0_INMUX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SCT0_INMUX {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "SINC Filter Channel Trigger Input Connections"]
@@ -11715,6 +12308,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SINC_FILTER_CH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SINC_FILTER_CH {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Inputmux Register for SMARTDMA Arch B Inputs"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11741,6 +12340,12 @@ pub mod regs {
             f.debug_struct("SMARTDMAARCHB_INMUX")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SMARTDMAARCHB_INMUX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SMARTDMAARCHB_INMUX {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Trigger Register for CTIMER"]
@@ -11771,6 +12376,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER0TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TIMER0TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Trigger Register for CTIMER"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11797,6 +12408,12 @@ pub mod regs {
             f.debug_struct("TIMER1TRIG")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER1TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TIMER1TRIG {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Trigger Register for CTIMER"]
@@ -11827,6 +12444,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER2TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TIMER2TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "Trigger Register for CTIMER"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11853,6 +12476,12 @@ pub mod regs {
             f.debug_struct("TIMER3TRIG")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER3TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TIMER3TRIG {{ INP: {=u8:?} }}", self.INP())
         }
     }
     #[doc = "Trigger Register for CTIMER"]
@@ -11883,6 +12512,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMER4TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TIMER4TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "TSI Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11911,6 +12546,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TSI_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TSI_TRIG {{ INP: {=u8:?} }}", self.INP())
+        }
+    }
     #[doc = "USB-FS Trigger Input Connections"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -11937,6 +12578,12 @@ pub mod regs {
             f.debug_struct("USBFS_TRIG")
                 .field("INP", &self.INP())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for USBFS_TRIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "USBFS_TRIG {{ INP: {=u8:?} }}", self.INP())
         }
     }
 }

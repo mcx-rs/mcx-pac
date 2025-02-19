@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct EIM {
     ptr: *mut u8,
@@ -125,6 +125,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD0_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "EICHD0_WORD0 {{ CHKBIT_MASK: {=u8:?} }}",
+                self.CHKBIT_MASK()
+            )
+        }
+    }
     #[doc = "Error Injection Channel Descriptor 1, Word0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -151,6 +161,16 @@ pub mod regs {
             f.debug_struct("EICHD1_WORD0")
                 .field("CHKBIT_MASK", &self.CHKBIT_MASK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD1_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "EICHD1_WORD0 {{ CHKBIT_MASK: {=u8:?} }}",
+                self.CHKBIT_MASK()
+            )
         }
     }
     #[doc = "Error Injection Channel Descriptor 2, Word0"]
@@ -181,6 +201,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD2_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "EICHD2_WORD0 {{ CHKBIT_MASK: {=u8:?} }}",
+                self.CHKBIT_MASK()
+            )
+        }
+    }
     #[doc = "Error Injection Channel Descriptor 3, Word0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -207,6 +237,16 @@ pub mod regs {
             f.debug_struct("EICHD3_WORD0")
                 .field("CHKBIT_MASK", &self.CHKBIT_MASK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD3_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "EICHD3_WORD0 {{ CHKBIT_MASK: {=u8:?} }}",
+                self.CHKBIT_MASK()
+            )
         }
     }
     #[doc = "Error Injection Channel Descriptor 4, Word0"]
@@ -237,6 +277,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD4_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "EICHD4_WORD0 {{ CHKBIT_MASK: {=u8:?} }}",
+                self.CHKBIT_MASK()
+            )
+        }
+    }
     #[doc = "Error Injection Channel Descriptor 5, Word0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -263,6 +313,16 @@ pub mod regs {
             f.debug_struct("EICHD5_WORD0")
                 .field("CHKBIT_MASK", &self.CHKBIT_MASK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD5_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "EICHD5_WORD0 {{ CHKBIT_MASK: {=u8:?} }}",
+                self.CHKBIT_MASK()
+            )
         }
     }
     #[doc = "Error Injection Channel Descriptor 6, Word0"]
@@ -293,6 +353,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD6_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "EICHD6_WORD0 {{ CHKBIT_MASK: {=u8:?} }}",
+                self.CHKBIT_MASK()
+            )
+        }
+    }
     #[doc = "Error Injection Channel Descriptor 7, Word0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -321,6 +391,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD7_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "EICHD7_WORD0 {{ CHKBIT_MASK: {=bool:?} }}",
+                self.CHKBIT_MASK()
+            )
+        }
+    }
     #[doc = "Error Injection Channel Descriptor 8, Word0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -347,6 +427,16 @@ pub mod regs {
             f.debug_struct("EICHD8_WORD0")
                 .field("CHKBIT_MASK", &self.CHKBIT_MASK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHD8_WORD0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "EICHD8_WORD0 {{ CHKBIT_MASK: {=u8:?} }}",
+                self.CHKBIT_MASK()
+            )
         }
     }
     #[doc = "Error Injection Channel Enable register"]
@@ -457,6 +547,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EICHEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "EICHEN {{ EICH8EN: {=bool:?}, EICH7EN: {=bool:?}, EICH6EN: {=bool:?}, EICH5EN: {=bool:?}, EICH4EN: {=bool:?}, EICH3EN: {=bool:?}, EICH2EN: {=bool:?}, EICH1EN: {=bool:?}, EICH0EN: {=bool:?} }}" , self . EICH8EN () , self . EICH7EN () , self . EICH6EN () , self . EICH5EN () , self . EICH4EN () , self . EICH3EN () , self . EICH2EN () , self . EICH1EN () , self . EICH0EN ())
+        }
+    }
     #[doc = "Error Injection Module Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -483,6 +579,12 @@ pub mod regs {
             f.debug_struct("EIMCR")
                 .field("GEIEN", &self.GEIEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for EIMCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "EIMCR {{ GEIEN: {=bool:?} }}", self.GEIEN())
         }
     }
 }

@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct LPTMR {
     ptr: *mut u8,
@@ -131,6 +131,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CSR {{ TEN: {=bool:?}, TMS: {=bool:?}, TFC: {=bool:?}, TPP: {=bool:?}, TPS: {=u8:?}, TIE: {=bool:?}, TCF: {=bool:?}, TDRE: {=bool:?} }}" , self . TEN () , self . TMS () , self . TFC () , self . TPP () , self . TPS () , self . TIE () , self . TCF () , self . TDRE ())
+        }
+    }
     #[doc = "Prescaler and Glitch Filter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -177,6 +183,18 @@ pub mod regs {
                 .field("PBYP", &self.PBYP())
                 .field("PRESCALE", &self.PRESCALE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PSR {{ PCS: {=u8:?}, PBYP: {=bool:?}, PRESCALE: {=u8:?} }}",
+                self.PCS(),
+                self.PBYP(),
+                self.PRESCALE()
+            )
         }
     }
 }

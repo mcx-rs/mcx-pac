@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct EMVSIM {
     ptr: *mut u8,
@@ -119,6 +119,12 @@ pub mod regs {
             f.debug_struct("BGT_VAL").field("BGT", &self.BGT()).finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for BGT_VAL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "BGT_VAL {{ BGT: {=u16:?} }}", self.BGT())
+        }
+    }
     #[doc = "Clock Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -165,6 +171,18 @@ pub mod regs {
                 .field("GPCNT1_CLK_SEL", &self.GPCNT1_CLK_SEL())
                 .field("GPCNT0_CLK_SEL", &self.GPCNT0_CLK_SEL())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CLKCFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CLKCFG {{ CLK_PRSC: {=u8:?}, GPCNT1_CLK_SEL: {=u8:?}, GPCNT0_CLK_SEL: {=u8:?} }}",
+                self.CLK_PRSC(),
+                self.GPCNT1_CLK_SEL(),
+                self.GPCNT0_CLK_SEL()
+            )
         }
     }
     #[doc = "Control"]
@@ -415,6 +433,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL {{ IC: {=bool:?}, ICM: {=bool:?}, ANACK: {=bool:?}, ONACK: {=bool:?}, FLSH_RX: {=bool:?}, FLSH_TX: {=bool:?}, SW_RST: {=bool:?}, KILL_CLOCKS: {=bool:?}, DOZE_EN: {=bool:?}, STOP_EN: {=bool:?}, RCV_EN: {=bool:?}, XMT_EN: {=bool:?}, RCVR_11: {=bool:?}, RX_DMA_EN: {=bool:?}, TX_DMA_EN: {=bool:?}, INV_CRC_VAL: {=bool:?}, CRC_OUT_FLIP: {=bool:?}, CRC_IN_FLIP: {=bool:?}, CWT_EN: {=bool:?}, LRC_EN: {=bool:?}, CRC_EN: {=bool:?}, XMT_CRC_LRC: {=bool:?}, BWT_EN: {=bool:?} }}" , self . IC () , self . ICM () , self . ANACK () , self . ONACK () , self . FLSH_RX () , self . FLSH_TX () , self . SW_RST () , self . KILL_CLOCKS () , self . DOZE_EN () , self . STOP_EN () , self . RCV_EN () , self . XMT_EN () , self . RCVR_11 () , self . RX_DMA_EN () , self . TX_DMA_EN () , self . INV_CRC_VAL () , self . CRC_OUT_FLIP () , self . CRC_IN_FLIP () , self . CWT_EN () , self . LRC_EN () , self . CRC_EN () , self . XMT_CRC_LRC () , self . BWT_EN ())
+        }
+    }
     #[doc = "Character Wait Time Value"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -439,6 +463,12 @@ pub mod regs {
     impl core::fmt::Debug for CWT_VAL {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CWT_VAL").field("CWT", &self.CWT()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CWT_VAL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CWT_VAL {{ CWT: {=u16:?} }}", self.CWT())
         }
     }
     #[doc = "Baud Rate Divisor"]
@@ -469,6 +499,16 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DIVISOR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DIVISOR {{ DIVISOR_VALUE: {=u16:?} }}",
+                self.DIVISOR_VALUE()
+            )
+        }
+    }
     #[doc = "General Purpose Counter 0 Timeout Value"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -497,6 +537,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GPCNT0_VAL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GPCNT0_VAL {{ GPCNT0: {=u16:?} }}", self.GPCNT0())
+        }
+    }
     #[doc = "General Purpose Counter 1 Timeout Value"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -523,6 +569,12 @@ pub mod regs {
             f.debug_struct("GPCNT1_VAL")
                 .field("GPCNT1", &self.GPCNT1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for GPCNT1_VAL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "GPCNT1_VAL {{ GPCNT1: {=u16:?} }}", self.GPCNT1())
         }
     }
     #[doc = "Interrupt Mask"]
@@ -703,6 +755,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INT_MASK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "INT_MASK {{ RDT_IM: {=bool:?}, TC_IM: {=bool:?}, RFO_IM: {=bool:?}, ETC_IM: {=bool:?}, TFE_IM: {=bool:?}, TNACK_IM: {=bool:?}, TFF_IM: {=bool:?}, TDT_IM: {=bool:?}, GPCNT0_IM: {=bool:?}, CWT_ERR_IM: {=bool:?}, RNACK_IM: {=bool:?}, BWT_ERR_IM: {=bool:?}, BGT_ERR_IM: {=bool:?}, GPCNT1_IM: {=bool:?}, RX_DATA_IM: {=bool:?}, PEF_IM: {=bool:?} }}" , self . RDT_IM () , self . TC_IM () , self . RFO_IM () , self . ETC_IM () , self . TFE_IM () , self . TNACK_IM () , self . TFF_IM () , self . TDT_IM () , self . GPCNT0_IM () , self . CWT_ERR_IM () , self . RNACK_IM () , self . BWT_ERR_IM () , self . BGT_ERR_IM () , self . GPCNT1_IM () , self . RX_DATA_IM () , self . PEF_IM ())
+        }
+    }
     #[doc = "Parameters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -739,6 +797,17 @@ pub mod regs {
                 .field("RX_FIFO_DEPTH", &self.RX_FIFO_DEPTH())
                 .field("TX_FIFO_DEPTH", &self.TX_FIFO_DEPTH())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PARAM {{ RX_FIFO_DEPTH: {=u8:?}, TX_FIFO_DEPTH: {=u8:?} }}",
+                self.RX_FIFO_DEPTH(),
+                self.TX_FIFO_DEPTH()
+            )
         }
     }
     #[doc = "Port Control and Status"]
@@ -869,6 +938,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PCSR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "PCSR {{ SAPD: {=bool:?}, SVCC_EN: {=bool:?}, VCCENP: {=bool:?}, SRST: {=bool:?}, SCEN: {=bool:?}, SCSP: {=bool:?}, SPD: {=bool:?}, SPDIM: {=bool:?}, SPDIF: {=bool:?}, SPDP: {=bool:?}, SPDES: {=bool:?} }}" , self . SAPD () , self . SVCC_EN () , self . VCCENP () , self . SRST () , self . SCEN () , self . SCSP () , self . SPD () , self . SPDIM () , self . SPDIF () , self . SPDP () , self . SPDES ())
+        }
+    }
     #[doc = "Receive Data Read Buffer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -895,6 +970,12 @@ pub mod regs {
             f.debug_struct("RX_BUF")
                 .field("RX_BYTE", &self.RX_BYTE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RX_BUF {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "RX_BUF {{ RX_BYTE: {=u8:?} }}", self.RX_BYTE())
         }
     }
     #[doc = "Receive Status"]
@@ -1045,6 +1126,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RX_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RX_STATUS {{ RFO: {=bool:?}, RX_DATA: {=bool:?}, RDTF: {=bool:?}, LRC_OK: {=bool:?}, CRC_OK: {=bool:?}, CWT_ERR: {=bool:?}, RTE: {=bool:?}, BWT_ERR: {=bool:?}, BGT_ERR: {=bool:?}, PEF: {=bool:?}, FEF: {=bool:?}, RX_WPTR: {=u8:?}, RX_CNT: {=u8:?} }}" , self . RFO () , self . RX_DATA () , self . RDTF () , self . LRC_OK () , self . CRC_OK () , self . CWT_ERR () , self . RTE () , self . BWT_ERR () , self . BGT_ERR () , self . PEF () , self . FEF () , self . RX_WPTR () , self . RX_CNT ())
+        }
+    }
     #[doc = "Receiver Threshold"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1083,6 +1170,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RX_THD {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "RX_THD {{ RDT: {=u8:?}, RNCK_THD: {=u8:?} }}",
+                self.RDT(),
+                self.RNCK_THD()
+            )
+        }
+    }
     #[doc = "Transmit Data Buffer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1111,6 +1209,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TX_BUF {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TX_BUF {{ TX_BYTE: {=u8:?} }}", self.TX_BYTE())
+        }
+    }
     #[doc = "Transmitter Guard ETU Value"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1137,6 +1241,12 @@ pub mod regs {
             f.debug_struct("TX_GETU")
                 .field("GETU", &self.GETU())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TX_GETU {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TX_GETU {{ GETU: {=u8:?} }}", self.GETU())
         }
     }
     #[doc = "Transmitter Status"]
@@ -1257,6 +1367,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TX_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TX_STATUS {{ TNTE: {=bool:?}, TFE: {=bool:?}, ETCF: {=bool:?}, TCF: {=bool:?}, TFF: {=bool:?}, TDTF: {=bool:?}, GPCNT0_TO: {=bool:?}, GPCNT1_TO: {=bool:?}, TX_RPTR: {=u8:?}, TX_CNT: {=u8:?} }}" , self . TNTE () , self . TFE () , self . ETCF () , self . TCF () , self . TFF () , self . TDTF () , self . GPCNT0_TO () , self . GPCNT1_TO () , self . TX_RPTR () , self . TX_CNT ())
+        }
+    }
     #[doc = "Transmitter Threshold"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1293,6 +1409,17 @@ pub mod regs {
                 .field("TDT", &self.TDT())
                 .field("TNCK_THD", &self.TNCK_THD())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TX_THD {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TX_THD {{ TDT: {=u8:?}, TNCK_THD: {=u8:?} }}",
+                self.TDT(),
+                self.TNCK_THD()
+            )
         }
     }
 }

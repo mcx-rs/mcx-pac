@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct VBAT {
     ptr: *mut u8,
@@ -262,6 +262,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FROCLKE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FROCLKE {{ CLKE: {=u8:?} }}", self.CLKE())
+        }
+    }
     #[doc = "FRO16K Control A"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -288,6 +294,12 @@ pub mod regs {
             f.debug_struct("FROCTLA")
                 .field("FRO_EN", &self.FRO_EN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FROCTLA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FROCTLA {{ FRO_EN: {=bool:?} }}", self.FRO_EN())
         }
     }
     #[doc = "FRO16K Control B"]
@@ -318,6 +330,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FROCTLB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FROCTLB {{ INVERSE: {=bool:?} }}", self.INVERSE())
+        }
+    }
     #[doc = "FRO16K Lock A"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -346,6 +364,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FROLCKA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FROLCKA {{ LOCK: {=bool:?} }}", self.LOCK())
+        }
+    }
     #[doc = "FRO16K Lock B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -372,6 +396,12 @@ pub mod regs {
             f.debug_struct("FROLCKB")
                 .field("LOCK", &self.LOCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for FROLCKB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "FROLCKB {{ LOCK: {=bool:?} }}", self.LOCK())
         }
     }
     #[doc = "Interrupt Enable A"]
@@ -552,6 +582,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IRQENA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IRQENA {{ POR_DET: {=bool:?}, WAKEUP_FLAG: {=bool:?}, TIMER0_FLAG: {=bool:?}, TIMER1_FLAG: {=bool:?}, LDO_RDY: {=bool:?}, OSC_RDY: {=bool:?}, CLOCK_DET: {=bool:?}, CONFIG_DET: {=bool:?}, VOLT_DET: {=bool:?}, TEMP_DET: {=bool:?}, LIGHT_DET: {=bool:?}, SEC0_DET: {=bool:?}, IRQ0_DET: {=bool:?}, IRQ1_DET: {=bool:?}, IRQ2_DET: {=bool:?}, IRQ3_DET: {=bool:?} }}" , self . POR_DET () , self . WAKEUP_FLAG () , self . TIMER0_FLAG () , self . TIMER1_FLAG () , self . LDO_RDY () , self . OSC_RDY () , self . CLOCK_DET () , self . CONFIG_DET () , self . VOLT_DET () , self . TEMP_DET () , self . LIGHT_DET () , self . SEC0_DET () , self . IRQ0_DET () , self . IRQ1_DET () , self . IRQ2_DET () , self . IRQ3_DET ())
+        }
+    }
     #[doc = "Interrupt Enable B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -578,6 +614,12 @@ pub mod regs {
             f.debug_struct("IRQENB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IRQENB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "IRQENB {{ INVERSE: {=u32:?} }}", self.INVERSE())
         }
     }
     #[doc = "LDO_RAM Control A"]
@@ -628,6 +670,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LDOCTLA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "LDOCTLA {{ BG_EN: {=bool:?}, LDO_EN: {=bool:?}, REFRESH_EN: {=bool:?} }}",
+                self.BG_EN(),
+                self.LDO_EN(),
+                self.REFRESH_EN()
+            )
+        }
+    }
     #[doc = "LDO_RAM Control B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -654,6 +708,12 @@ pub mod regs {
             f.debug_struct("LDOCTLB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LDOCTLB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "LDOCTLB {{ INVERSE: {=u8:?} }}", self.INVERSE())
         }
     }
     #[doc = "LDO_RAM Lock A"]
@@ -684,6 +744,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LDOLCKA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "LDOLCKA {{ LOCK: {=bool:?} }}", self.LOCK())
+        }
+    }
     #[doc = "LDO_RAM Lock B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -710,6 +776,12 @@ pub mod regs {
             f.debug_struct("LDOLCKB")
                 .field("LOCK", &self.LOCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LDOLCKB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "LDOLCKB {{ LOCK: {=bool:?} }}", self.LOCK())
         }
     }
     #[doc = "RAM Control"]
@@ -790,6 +862,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LDORAMC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "LDORAMC {{ ISO: {=bool:?}, SWI: {=bool:?}, RET0: {=bool:?}, RET1: {=bool:?}, RET2: {=bool:?}, RET3: {=bool:?} }}" , self . ISO () , self . SWI () , self . RET0 () , self . RET1 () , self . RET2 () , self . RET3 ())
+        }
+    }
     #[doc = "Bandgap Timer 0"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -826,6 +904,17 @@ pub mod regs {
                 .field("TIMCFG", &self.TIMCFG())
                 .field("TIMEN", &self.TIMEN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LDOTIMER0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "LDOTIMER0 {{ TIMCFG: {=u8:?}, TIMEN: {=bool:?} }}",
+                self.TIMCFG(),
+                self.TIMEN()
+            )
         }
     }
     #[doc = "Bandgap Timer 1"]
@@ -866,6 +955,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LDOTIMER1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "LDOTIMER1 {{ TIMCFG: {=u32:?}, TIMEN: {=bool:?} }}",
+                self.TIMCFG(),
+                self.TIMEN()
+            )
+        }
+    }
     #[doc = "Lock A"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -892,6 +992,12 @@ pub mod regs {
             f.debug_struct("LOCKA").field("LOCK", &self.LOCK()).finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LOCKA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "LOCKA {{ LOCK: {=bool:?} }}", self.LOCK())
+        }
+    }
     #[doc = "Lock B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -916,6 +1022,12 @@ pub mod regs {
     impl core::fmt::Debug for LOCKB {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("LOCKB").field("LOCK", &self.LOCK()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LOCKB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "LOCKB {{ LOCK: {=bool:?} }}", self.LOCK())
         }
     }
     #[doc = "CLKMON Configuration A"]
@@ -966,6 +1078,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MONCFGA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MONCFGA {{ FREQ_TRIM: {=u8:?}, DIVIDE_TRIM: {=bool:?}, RSVD_TRIM: {=u8:?} }}",
+                self.FREQ_TRIM(),
+                self.DIVIDE_TRIM(),
+                self.RSVD_TRIM()
+            )
+        }
+    }
     #[doc = "CLKMON Configuration B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -992,6 +1116,12 @@ pub mod regs {
             f.debug_struct("MONCFGB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MONCFGB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MONCFGB {{ INVERSE: {=u8:?} }}", self.INVERSE())
         }
     }
     #[doc = "CLKMON Control A"]
@@ -1022,6 +1152,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MONCTLA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MONCTLA {{ MON_EN: {=bool:?} }}", self.MON_EN())
+        }
+    }
     #[doc = "CLKMON Control B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1048,6 +1184,12 @@ pub mod regs {
             f.debug_struct("MONCTLB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MONCTLB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MONCTLB {{ INVERSE: {=bool:?} }}", self.INVERSE())
         }
     }
     #[doc = "CLKMON Lock A"]
@@ -1078,6 +1220,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MONLCKA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MONLCKA {{ LOCK: {=bool:?} }}", self.LOCK())
+        }
+    }
     #[doc = "CLKMON Lock B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1104,6 +1252,12 @@ pub mod regs {
             f.debug_struct("MONLCKB")
                 .field("LOCK", &self.LOCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MONLCKB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MONLCKB {{ LOCK: {=bool:?} }}", self.LOCK())
         }
     }
     #[doc = "Oscillator Configuration A"]
@@ -1174,6 +1328,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OSCCFGA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "OSCCFGA {{ CMP_TRIM: {=u8:?}, CAP2_TRIM: {=bool:?}, DLY_TRIM: {=u8:?}, CAP_TRIM: {=u8:?}, INIT_TRIM: {=u8:?} }}" , self . CMP_TRIM () , self . CAP2_TRIM () , self . DLY_TRIM () , self . CAP_TRIM () , self . INIT_TRIM ())
+        }
+    }
     #[doc = "Oscillator Configuration B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1202,6 +1362,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OSCCFGB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "OSCCFGB {{ INVERSE: {=u16:?} }}", self.INVERSE())
+        }
+    }
     #[doc = "Oscillator Clock Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1228,6 +1394,12 @@ pub mod regs {
             f.debug_struct("OSCCLKE")
                 .field("CLKE", &self.CLKE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OSCCLKE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "OSCCLKE {{ CLKE: {=u8:?} }}", self.CLKE())
         }
     }
     #[doc = "Oscillator Control A"]
@@ -1328,6 +1500,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OSCCTLA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "OSCCTLA {{ OSC_EN: {=bool:?}, OSC_BYP_EN: {=bool:?}, COARSE_AMP_GAIN: {=u8:?}, CAP_SEL_EN: {=bool:?}, EXTAL_CAP_SEL: {=u8:?}, XTAL_CAP_SEL: {=u8:?}, MODE_EN: {=u8:?}, SUPPLY_DET: {=u8:?} }}" , self . OSC_EN () , self . OSC_BYP_EN () , self . COARSE_AMP_GAIN () , self . CAP_SEL_EN () , self . EXTAL_CAP_SEL () , self . XTAL_CAP_SEL () , self . MODE_EN () , self . SUPPLY_DET ())
+        }
+    }
     #[doc = "Oscillator Control B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1354,6 +1532,12 @@ pub mod regs {
             f.debug_struct("OSCCTLB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OSCCTLB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "OSCCTLB {{ INVERSE: {=u32:?} }}", self.INVERSE())
         }
     }
     #[doc = "Oscillator Lock A"]
@@ -1384,6 +1568,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OSCLCKA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "OSCLCKA {{ LOCK: {=bool:?} }}", self.LOCK())
+        }
+    }
     #[doc = "Oscillator Lock B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1410,6 +1600,12 @@ pub mod regs {
             f.debug_struct("OSCLCKB")
                 .field("LOCK", &self.LOCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OSCLCKB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "OSCLCKB {{ LOCK: {=bool:?} }}", self.LOCK())
         }
     }
     #[doc = "Status A"]
@@ -1590,6 +1786,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUSA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "STATUSA {{ POR_DET: {=bool:?}, WAKEUP_FLAG: {=bool:?}, TIMER0_FLAG: {=bool:?}, TIMER1_FLAG: {=bool:?}, LDO_RDY: {=bool:?}, OSC_RDY: {=bool:?}, CLOCK_DET: {=bool:?}, CONFIG_DET: {=bool:?}, VOLT_DET: {=bool:?}, TEMP_DET: {=bool:?}, LIGHT_DET: {=bool:?}, SEC0_DET: {=bool:?}, IRQ0_DET: {=bool:?}, IRQ1_DET: {=bool:?}, IRQ2_DET: {=bool:?}, IRQ3_DET: {=bool:?} }}" , self . POR_DET () , self . WAKEUP_FLAG () , self . TIMER0_FLAG () , self . TIMER1_FLAG () , self . LDO_RDY () , self . OSC_RDY () , self . CLOCK_DET () , self . CONFIG_DET () , self . VOLT_DET () , self . TEMP_DET () , self . LIGHT_DET () , self . SEC0_DET () , self . IRQ0_DET () , self . IRQ1_DET () , self . IRQ2_DET () , self . IRQ3_DET ())
+        }
+    }
     #[doc = "Status B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1616,6 +1818,12 @@ pub mod regs {
             f.debug_struct("STATUSB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for STATUSB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "STATUSB {{ INVERSE: {=u32:?} }}", self.INVERSE())
         }
     }
     #[doc = "Switch Control A"]
@@ -1656,6 +1864,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SWICTLA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SWICTLA {{ SWI_EN: {=bool:?}, LP_EN: {=bool:?} }}",
+                self.SWI_EN(),
+                self.LP_EN()
+            )
+        }
+    }
     #[doc = "Switch Control B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1682,6 +1901,12 @@ pub mod regs {
             f.debug_struct("SWICTLB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SWICTLB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SWICTLB {{ INVERSE: {=u8:?} }}", self.INVERSE())
         }
     }
     #[doc = "Switch Lock A"]
@@ -1712,6 +1937,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SWILCKA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SWILCKA {{ LOCK: {=bool:?} }}", self.LOCK())
+        }
+    }
     #[doc = "Switch Lock B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1738,6 +1969,12 @@ pub mod regs {
             f.debug_struct("SWILCKB")
                 .field("LOCK", &self.LOCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SWILCKB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SWILCKB {{ LOCK: {=bool:?} }}", self.LOCK())
         }
     }
     #[doc = "TAMPER Control A"]
@@ -1788,6 +2025,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TAMCTLA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "TAMCTLA {{ VOLT_EN: {=bool:?}, TEMP_EN: {=bool:?}, LIGHT_EN: {=bool:?} }}",
+                self.VOLT_EN(),
+                self.TEMP_EN(),
+                self.LIGHT_EN()
+            )
+        }
+    }
     #[doc = "TAMPER Control B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1814,6 +2063,12 @@ pub mod regs {
             f.debug_struct("TAMCTLB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TAMCTLB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TAMCTLB {{ INVERSE: {=u8:?} }}", self.INVERSE())
         }
     }
     #[doc = "TAMPER Lock A"]
@@ -1844,6 +2099,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TAMLCKA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TAMLCKA {{ LOCK: {=bool:?} }}", self.LOCK())
+        }
+    }
     #[doc = "TAMPER Lock B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1870,6 +2131,12 @@ pub mod regs {
             f.debug_struct("TAMLCKB")
                 .field("LOCK", &self.LOCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TAMLCKB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TAMLCKB {{ LOCK: {=bool:?} }}", self.LOCK())
         }
     }
     #[doc = "Tamper Enable A"]
@@ -1960,6 +2227,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TAMPERA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TAMPERA {{ POR_DET: {=bool:?}, CLOCK_DET: {=bool:?}, CONFIG_DET: {=bool:?}, VOLT_DET: {=bool:?}, TEMP_DET: {=bool:?}, LIGHT_DET: {=bool:?}, SEC0_DET: {=bool:?} }}" , self . POR_DET () , self . CLOCK_DET () , self . CONFIG_DET () , self . VOLT_DET () , self . TEMP_DET () , self . LIGHT_DET () , self . SEC0_DET ())
+        }
+    }
     #[doc = "Tamper Enable B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1986,6 +2259,12 @@ pub mod regs {
             f.debug_struct("TAMPERB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TAMPERB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TAMPERB {{ INVERSE: {=u16:?} }}", self.INVERSE())
         }
     }
     #[doc = "Version ID"]
@@ -2036,6 +2315,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
+        }
+    }
     #[doc = "Wake-up Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2060,6 +2351,12 @@ pub mod regs {
     impl core::fmt::Debug for WAKECFG {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("WAKECFG").field("OUT", &self.OUT()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WAKECFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "WAKECFG {{ OUT: {=bool:?} }}", self.OUT())
         }
     }
     #[doc = "Wake-up Enable A"]
@@ -2240,6 +2537,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WAKENA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "WAKENA {{ POR_DET: {=bool:?}, WAKEUP_FLAG: {=bool:?}, TIMER0_FLAG: {=bool:?}, TIMER1_FLAG: {=bool:?}, LDO_RDY: {=bool:?}, OSC_RDY: {=bool:?}, CLOCK_DET: {=bool:?}, CONFIG_DET: {=bool:?}, VOLT_DET: {=bool:?}, TEMP_DET: {=bool:?}, LIGHT_DET: {=bool:?}, SEC0_DET: {=bool:?}, IRQ0_DET: {=bool:?}, IRQ1_DET: {=bool:?}, IRQ2_DET: {=bool:?}, IRQ3_DET: {=bool:?} }}" , self . POR_DET () , self . WAKEUP_FLAG () , self . TIMER0_FLAG () , self . TIMER1_FLAG () , self . LDO_RDY () , self . OSC_RDY () , self . CLOCK_DET () , self . CONFIG_DET () , self . VOLT_DET () , self . TEMP_DET () , self . LIGHT_DET () , self . SEC0_DET () , self . IRQ0_DET () , self . IRQ1_DET () , self . IRQ2_DET () , self . IRQ3_DET ())
+        }
+    }
     #[doc = "Wake-up Enable B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2266,6 +2569,12 @@ pub mod regs {
             f.debug_struct("WAKENB")
                 .field("INVERSE", &self.INVERSE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WAKENB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "WAKENB {{ INVERSE: {=u32:?} }}", self.INVERSE())
         }
     }
     #[doc = "Wakeup Lock A"]
@@ -2296,6 +2605,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WAKLCKA {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "WAKLCKA {{ LOCK: {=bool:?} }}", self.LOCK())
+        }
+    }
     #[doc = "Wakeup Lock B"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2322,6 +2637,12 @@ pub mod regs {
             f.debug_struct("WAKLCKB")
                 .field("LOCK", &self.LOCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WAKLCKB {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "WAKLCKB {{ LOCK: {=bool:?} }}", self.LOCK())
         }
     }
 }

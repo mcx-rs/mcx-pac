@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct BSP32 {
     ptr: *mut u8,
@@ -107,6 +107,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CF_GATING_OVERRIDE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CF_GATING_OVERRIDE {{ val: {=bool:?} }}", self.val())
+        }
+    }
     #[doc = "Interrupt status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -135,6 +141,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for INTERRUPTS_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "INTERRUPTS_STATUS {{ val: {=bool:?} }}", self.val())
+        }
+    }
     #[doc = "CoolFlux BSP32 IVT register 0 content"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -159,6 +171,12 @@ pub mod regs {
     impl core::fmt::Debug for IVT0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IVT0").field("val", &self.val()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IVT0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "IVT0 {{ val: {=u32:?} }}", self.val())
         }
     }
     #[doc = "CoolFlux BSP32 IVT register 1 content"]
@@ -187,6 +205,12 @@ pub mod regs {
             f.debug_struct("IVT1").field("val", &self.val()).finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IVT1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "IVT1 {{ val: {=u32:?} }}", self.val())
+        }
+    }
     #[doc = "CoolFlux BSP32 IVT register 2 content"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -213,6 +237,12 @@ pub mod regs {
             f.debug_struct("IVT2").field("val", &self.val()).finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IVT2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "IVT2 {{ val: {=u32:?} }}", self.val())
+        }
+    }
     #[doc = "CoolFlux BSP32 IVT register 3 content"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -237,6 +267,12 @@ pub mod regs {
     impl core::fmt::Debug for IVT3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IVT3").field("val", &self.val()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IVT3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "IVT3 {{ val: {=u32:?} }}", self.val())
         }
     }
     #[doc = "CoolFlux BSP32 IVT disable register"]
@@ -267,6 +303,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IVT_DISABLE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "IVT_DISABLE {{ val: {=bool:?} }}", self.val())
+        }
+    }
     #[doc = "CoolFlux BSP32 IVT offset register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -293,6 +335,12 @@ pub mod regs {
             f.debug_struct("IVT_OFFSET")
                 .field("val", &self.val())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IVT_OFFSET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "IVT_OFFSET {{ val: {=u32:?} }}", self.val())
         }
     }
     #[doc = "Offset address register for mailbox peripheral"]
@@ -323,6 +371,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OFFSET_MAILBOX {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "OFFSET_MAILBOX {{ val: {=u32:?} }}", self.val())
+        }
+    }
     #[doc = "Offset address register for program memory"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -349,6 +403,12 @@ pub mod regs {
             f.debug_struct("OFFSET_PMEM")
                 .field("val", &self.val())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OFFSET_PMEM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "OFFSET_PMEM {{ val: {=u8:?} }}", self.val())
         }
     }
     #[doc = "Offset address register for X-data memory"]
@@ -379,6 +439,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OFFSET_XMEM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "OFFSET_XMEM {{ val: {=u8:?} }}", self.val())
+        }
+    }
     #[doc = "Offset address register for Y-data memory"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -407,6 +473,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for OFFSET_YMEM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "OFFSET_YMEM {{ val: {=u8:?} }}", self.val())
+        }
+    }
     #[doc = "CoolFlux BSP32 sleep mode register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -433,6 +505,12 @@ pub mod regs {
             f.debug_struct("SLEEP_MODE")
                 .field("val", &self.val())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SLEEP_MODE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SLEEP_MODE {{ val: {=bool:?} }}", self.val())
         }
     }
 }

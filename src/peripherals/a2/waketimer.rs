@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct WAKETIMER {
     ptr: *mut u8,
@@ -83,6 +83,12 @@ pub mod regs {
                 .field("OSC_DIV_ENA", &self.OSC_DIV_ENA())
                 .field("INTR_EN", &self.INTR_EN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for WAKE_TIMER_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "WAKE_TIMER_CTRL {{ WAKE_FLAG: {=bool:?}, CLR_WAKE_TIMER: {=bool:?}, OSC_DIV_ENA: {=bool:?}, INTR_EN: {=bool:?} }}" , self . WAKE_FLAG () , self . CLR_WAKE_TIMER () , self . OSC_DIV_ENA () , self . INTR_EN ())
         }
     }
 }

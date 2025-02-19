@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct OTPC {
     ptr: *mut u8,
@@ -197,6 +197,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for LOCK {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "LOCK {{ NXP_PART_CFG_LOCK: {=u8:?}, NXP_EXT_LOCK: {=u8:?}, BOOT_CFG_LOCK: {=u8:?}, PRINCE_CFG_LOCK: {=u8:?}, OSCAA_KEY_LOCK: {=u8:?}, CUST_LOCK0: {=u8:?}, CUST_LOCK1: {=u8:?}, CUST_LOCK2: {=u8:?}, CUST_LOCK3: {=u8:?} }}" , self . NXP_PART_CFG_LOCK () , self . NXP_EXT_LOCK () , self . BOOT_CFG_LOCK () , self . PRINCE_CFG_LOCK () , self . OSCAA_KEY_LOCK () , self . CUST_LOCK0 () , self . CUST_LOCK1 () , self . CUST_LOCK2 () , self . CUST_LOCK3 ())
+        }
+    }
     #[doc = "Parameters"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -223,6 +229,12 @@ pub mod regs {
             f.debug_struct("PARAM")
                 .field("NUM_FUSE", &self.NUM_FUSE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "PARAM {{ NUM_FUSE: {=u16:?} }}", self.NUM_FUSE())
         }
     }
     #[doc = "Power Control"]
@@ -273,6 +285,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PCR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PCR {{ HVREQ: {=bool:?}, LVREQ: {=bool:?}, PDREQ: {=bool:?} }}",
+                self.HVREQ(),
+                self.LVREQ(),
+                self.PDREQ()
+            )
+        }
+    }
     #[doc = "Reload Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -299,6 +323,16 @@ pub mod regs {
             f.debug_struct("RLC")
                 .field("RELOAD_SHADOWS", &self.RELOAD_SHADOWS())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RLC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "RLC {{ RELOAD_SHADOWS: {=bool:?} }}",
+                self.RELOAD_SHADOWS()
+            )
         }
     }
     #[doc = "Read and Write Control"]
@@ -367,6 +401,12 @@ pub mod regs {
                 .field("READ_UPDATE", &self.READ_UPDATE())
                 .field("WR_UNLOCK", &self.WR_UNLOCK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for RWC {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "RWC {{ ADDR: {=u8:?}, WR_ALL1S: {=bool:?}, READ_EFUSE: {=bool:?}, READ_UPDATE: {=bool:?}, WR_UNLOCK: {=u16:?} }}" , self . ADDR () , self . WR_ALL1S () , self . READ_EFUSE () , self . READ_UPDATE () , self . WR_UNLOCK ())
         }
     }
     #[doc = "Status"]
@@ -547,6 +587,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SR {{ BUSY: {=bool:?}, ERROR: {=bool:?}, ECC_SF: {=bool:?}, ECC_DF: {=bool:?}, TRI_F: {=bool:?}, RD_FUSE_LOCK: {=bool:?}, WR_FUSE_LOCK: {=bool:?}, RD_REG_LOCK: {=bool:?}, WR_REG_LOCK: {=bool:?}, WR_REG_BUSY: {=bool:?}, WR_POWER_OFF: {=bool:?}, FSM: {=bool:?}, FLC: {=bool:?}, ADC: {=bool:?}, IRC: {=bool:?}, FSC: {=bool:?} }}" , self . BUSY () , self . ERROR () , self . ECC_SF () , self . ECC_DF () , self . TRI_F () , self . RD_FUSE_LOCK () , self . WR_FUSE_LOCK () , self . RD_REG_LOCK () , self . WR_REG_LOCK () , self . WR_REG_BUSY () , self . WR_POWER_OFF () , self . FSM () , self . FLC () , self . ADC () , self . IRC () , self . FSC ())
+        }
+    }
     #[doc = "Timing1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -615,6 +661,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMING1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TIMING1 {{ TADDR: {=u8:?}, TRELAX: {=u8:?}, TRD: {=u8:?}, TPS: {=u8:?}, TPD: {=u8:?} }}" , self . TADDR () , self . TRELAX () , self . TRD () , self . TPS () , self . TPD ())
+        }
+    }
     #[doc = "Timing2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -641,6 +693,12 @@ pub mod regs {
             f.debug_struct("TIMING2")
                 .field("TPGM", &self.TPGM())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMING2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TIMING2 {{ TPGM: {=u16:?} }}", self.TPGM())
         }
     }
     #[doc = "Version ID"]
@@ -689,6 +747,18 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
         }
     }
 }

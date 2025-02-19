@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct SGI {
     ptr: *mut u8,
@@ -409,6 +409,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_ACCESS_ERR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SGI_ACCESS_ERR {{ apb_notav: {=bool:?}, apb_wrgmd: {=bool:?}, accerr_rsvd1: {=u8:?}, apb_master: {=u8:?}, accerr_rsvd2: {=u32:?} }}" , self . apb_notav () , self . apb_wrgmd () , self . accerr_rsvd1 () , self . apb_master () , self . accerr_rsvd2 ())
+        }
+    }
     #[doc = "Clear Access Error"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -445,6 +451,17 @@ pub mod regs {
                 .field("err_clr", &self.err_clr())
                 .field("accerrc_rsvd", &self.accerrc_rsvd())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_ACCESS_ERR_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SGI_ACCESS_ERR_CLR {{ err_clr: {=bool:?}, accerrc_rsvd: {=u32:?} }}",
+                self.err_clr(),
+                self.accerrc_rsvd()
+            )
         }
     }
     #[doc = "SGI Auto Mode Control register"]
@@ -503,6 +520,12 @@ pub mod regs {
                 .field("ofe", &self.ofe())
                 .field("auto_dma_rsvd2", &self.auto_dma_rsvd2())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_AUTO_DMA_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SGI_AUTO_DMA_CTRL {{ ife: {=bool:?}, auto_dma_rsvd1: {=u8:?}, ofe: {=bool:?}, auto_dma_rsvd2: {=u32:?} }}" , self . ife () , self . auto_dma_rsvd1 () , self . ofe () , self . auto_dma_rsvd2 ())
         }
     }
     #[doc = "SGI Auto Mode Control register"]
@@ -591,6 +614,12 @@ pub mod regs {
                 .field("cmd", &self.cmd())
                 .field("auto_mode_rsvd3", &self.auto_mode_rsvd3())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_AUTO_MODE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SGI_AUTO_MODE {{ auto_mode_en: {=bool:?}, auto_mode_stop: {=bool:?}, auto_mode_rsvd1: {=u8:?}, incr_mode: {=u8:?}, auto_mode_rsvd2: {=u8:?}, cmd: {=u8:?}, auto_mode_rsvd3: {=u16:?} }}" , self . auto_mode_en () , self . auto_mode_stop () , self . auto_mode_rsvd1 () , self . incr_mode () , self . auto_mode_rsvd2 () , self . cmd () , self . auto_mode_rsvd3 ())
         }
     }
     #[doc = "SHA Configuration Reg"]
@@ -861,6 +890,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_CONFIG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SGI_CONFIG {{ row: {=bool:?}, china: {=bool:?}, cc: {=bool:?}, has_aes: {=bool:?}, has_des: {=bool:?}, has_sha: {=bool:?}, has_movem: {=bool:?}, has_cmac: {=bool:?}, has_gfmul: {=bool:?}, internal_prng: {=bool:?}, key_digest: {=bool:?}, count_size: {=bool:?}, configc_rsvd: {=bool:?}, fa: {=bool:?}, configb2_rsvd: {=bool:?}, bus_width: {=bool:?}, num_datin: {=u8:?}, num_key: {=u8:?}, edc: {=bool:?}, configb_rsvd: {=u8:?}, sha_256_only: {=bool:?}, spb_support: {=bool:?}, spb_masking: {=bool:?}, sfr_sw_mask: {=bool:?}, configa_rsvd: {=u8:?} }}" , self . row () , self . china () , self . cc () , self . has_aes () , self . has_des () , self . has_sha () , self . has_movem () , self . has_cmac () , self . has_gfmul () , self . internal_prng () , self . key_digest () , self . count_size () , self . configc_rsvd () , self . fa () , self . configb2_rsvd () , self . bus_width () , self . num_datin () , self . num_key () , self . edc () , self . configb_rsvd () , self . sha_256_only () , self . spb_support () , self . spb_masking () , self . sfr_sw_mask () , self . configa_rsvd ())
+        }
+    }
     #[doc = "SHA Configuration 2 Reg"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -949,6 +984,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_CONFIG2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SGI_CONFIG2 {{ aes_used: {=u8:?}, aes_num_sboxes: {=u8:?}, aes_keysize: {=u8:?}, config2b_rsvd: {=u8:?}, des_used: {=u8:?}, des_num_sboxes: {=u8:?}, config2a_rsvd: {=u8:?} }}" , self . aes_used () , self . aes_num_sboxes () , self . aes_keysize () , self . config2b_rsvd () , self . des_used () , self . des_num_sboxes () , self . config2a_rsvd ())
+        }
+    }
     #[doc = "Calculation counter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -985,6 +1026,17 @@ pub mod regs {
                 .field("count", &self.count())
                 .field("count_rsvd", &self.count_rsvd())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_COUNT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SGI_COUNT {{ count: {=u16:?}, count_rsvd: {=u16:?} }}",
+                self.count(),
+                self.count_rsvd()
+            )
         }
     }
     #[doc = "SGI Control register"]
@@ -1163,6 +1215,12 @@ pub mod regs {
                 .field("aes_sel", &self.aes_sel())
                 .field("ctrl_rsvd", &self.ctrl_rsvd())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SGI_CTRL {{ start: {=bool:?}, decrypt: {=bool:?}, aeskeysz: {=u8:?}, crypto_op: {=u8:?}, insel: {=u8:?}, outsel: {=u8:?}, datout_res: {=u8:?}, aes_en: {=bool:?}, des_en: {=bool:?}, gcm_en: {=bool:?}, prng_en: {=bool:?}, inkeysel: {=u8:?}, tdeskey: {=bool:?}, aes_no_kl: {=bool:?}, aes_sel: {=bool:?}, ctrl_rsvd: {=u8:?} }}" , self . start () , self . decrypt () , self . aeskeysz () , self . crypto_op () , self . insel () , self . outsel () , self . datout_res () , self . aes_en () , self . des_en () , self . gcm_en () , self . prng_en () , self . inkeysel () , self . tdeskey () , self . aes_no_kl () , self . aes_sel () , self . ctrl_rsvd ())
         }
     }
     #[doc = "SGI Control register 2"]
@@ -1363,6 +1421,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_CTRL2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SGI_CTRL2 {{ flush: {=bool:?}, key_flush: {=bool:?}, datin_flush: {=bool:?}, incr: {=bool:?}, xorwr: {=bool:?}, flushwr: {=bool:?}, incr_cin: {=bool:?}, ctrl2_rsvd3: {=bool:?}, smasken: {=bool:?}, smaskstep: {=bool:?}, smasksw: {=bool:?}, ctrl2_rsvd2: {=bool:?}, movem: {=u8:?}, keyres: {=u8:?}, rkey: {=bool:?}, bytes_order: {=bool:?}, gcm_inxor: {=bool:?}, ctrl2_rsvd1: {=u8:?} }}" , self . flush () , self . key_flush () , self . datin_flush () , self . incr () , self . xorwr () , self . flushwr () , self . incr_cin () , self . ctrl2_rsvd3 () , self . smasken () , self . smaskstep () , self . smasksw () , self . ctrl2_rsvd2 () , self . movem () , self . keyres () , self . rkey () , self . bytes_order () , self . gcm_inxor () , self . ctrl2_rsvd1 ())
+        }
+    }
     #[doc = "Configuration of dummy controls"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1421,6 +1485,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_DUMMY_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SGI_DUMMY_CTRL {{ ddctrl: {=u16:?}, dmyctl_rsvd2: {=u8:?}, adctrl: {=u16:?}, dmyctl_rsvd1: {=u8:?} }}" , self . ddctrl () , self . dmyctl_rsvd2 () , self . adctrl () , self . dmyctl_rsvd1 ())
+        }
+    }
     #[doc = "Interrupt enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1457,6 +1527,17 @@ pub mod regs {
                 .field("int_en", &self.int_en())
                 .field("int_ena_rsvd", &self.int_ena_rsvd())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_INT_ENABLE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SGI_INT_ENABLE {{ int_en: {=bool:?}, int_ena_rsvd: {=u32:?} }}",
+                self.int_en(),
+                self.int_ena_rsvd()
+            )
         }
     }
     #[doc = "Interrupt status"]
@@ -1497,6 +1578,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_INT_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SGI_INT_STATUS {{ int_pdone: {=bool:?}, intst_rsvd: {=u32:?} }}",
+                self.int_pdone(),
+                self.intst_rsvd()
+            )
+        }
+    }
     #[doc = "Interrupt status clear"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1535,6 +1627,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_INT_STATUS_CLR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SGI_INT_STATUS_CLR {{ int_clr: {=bool:?}, int_stsc_rsvd: {=u32:?} }}",
+                self.int_clr(),
+                self.int_stsc_rsvd()
+            )
+        }
+    }
     #[doc = "Interrupt status set"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1571,6 +1674,17 @@ pub mod regs {
                 .field("int_set", &self.int_set())
                 .field("int_stss_rsvd", &self.int_stss_rsvd())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_INT_STATUS_SET {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SGI_INT_STATUS_SET {{ int_set: {=bool:?}, int_stss_rsvd: {=u32:?} }}",
+                self.int_set(),
+                self.int_stss_rsvd()
+            )
         }
     }
     #[doc = "SHA Control Register"]
@@ -1689,6 +1803,12 @@ pub mod regs {
                 .field("no_auto_init", &self.no_auto_init())
                 .field("sha2ctl_rsvd", &self.sha2ctl_rsvd())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_SHA2_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SGI_SHA2_CTRL {{ sha2_en: {=bool:?}, sha2_mode: {=bool:?}, sha2_size: {=u8:?}, sha2_low_lim: {=u8:?}, sha2_high_lim: {=u8:?}, sha2_count_en: {=bool:?}, hash_reload: {=bool:?}, sha2_stop: {=bool:?}, no_auto_init: {=bool:?}, sha2ctl_rsvd: {=u16:?} }}" , self . sha2_en () , self . sha2_mode () , self . sha2_size () , self . sha2_low_lim () , self . sha2_high_lim () , self . sha2_count_en () , self . hash_reload () , self . sha2_stop () , self . no_auto_init () , self . sha2ctl_rsvd ())
         }
     }
     #[doc = "Status register"]
@@ -1839,6 +1959,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_STATUS {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SGI_STATUS {{ busy: {=bool:?}, oflow: {=bool:?}, prng_rdy: {=bool:?}, error: {=u8:?}, sha2_busy: {=bool:?}, irq: {=bool:?}, sha_fifo_full: {=bool:?}, sha_fifo_level: {=u8:?}, sha_error: {=bool:?}, key_read_err: {=bool:?}, key_unwrap_err: {=bool:?}, status_rsvd3: {=bool:?}, status_rsvd: {=u16:?} }}" , self . busy () , self . oflow () , self . prng_rdy () , self . error () , self . sha2_busy () , self . irq () , self . sha_fifo_full () , self . sha_fifo_level () , self . sha_error () , self . key_read_err () , self . key_unwrap_err () , self . status_rsvd3 () , self . status_rsvd ())
+        }
+    }
     #[doc = "SGI Version"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1915,6 +2041,12 @@ pub mod regs {
                 .field("milestone", &self.milestone())
                 .field("version_rsvd_1", &self.version_rsvd_1())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SGI_VERSION {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SGI_VERSION {{ z: {=u8:?}, y2: {=u8:?}, y1: {=u8:?}, x: {=u8:?}, milestone: {=u8:?}, version_rsvd_1: {=u16:?} }}" , self . z () , self . y2 () , self . y1 () , self . x () , self . milestone () , self . version_rsvd_1 ())
         }
     }
 }

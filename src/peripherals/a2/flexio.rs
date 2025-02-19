@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct FLEXIO {
     ptr: *mut u8,
@@ -260,6 +260,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "CTRL {{ FLEXEN: {=bool:?}, SWRST: {=bool:?}, FASTACC: {=bool:?}, DBGE: {=bool:?}, DOZEN: {=bool:?} }}" , self . FLEXEN () , self . SWRST () , self . FASTACC () , self . DBGE () , self . DOZEN ())
+        }
+    }
     #[doc = "Parameter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -316,6 +322,19 @@ pub mod regs {
                 .field("PIN", &self.PIN())
                 .field("TRIGGER", &self.TRIGGER())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for PARAM {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "PARAM {{ SHIFTER: {=u8:?}, TIMER: {=u8:?}, PIN: {=u8:?}, TRIGGER: {=u8:?} }}",
+                self.SHIFTER(),
+                self.TIMER(),
+                self.PIN(),
+                self.TRIGGER()
+            )
         }
     }
     #[doc = "Shifter Configuration"]
@@ -396,6 +415,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SHIFTCFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SHIFTCFG {{ SSTART: {=u8:?}, SSTOP: {=u8:?}, INSRC: {=bool:?}, LATST: {=bool:?}, SSIZE: {=bool:?}, PWIDTH: {=u8:?} }}" , self . SSTART () , self . SSTOP () , self . INSRC () , self . LATST () , self . SSIZE () , self . PWIDTH ())
+        }
+    }
     #[doc = "Shifter Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -474,6 +499,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SHIFTCTL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "SHIFTCTL {{ SMOD: {=u8:?}, PINPOL: {=bool:?}, PINSEL: {=u8:?}, PINCFG: {=u8:?}, TIMPOL: {=bool:?}, TIMSEL: {=u8:?} }}" , self . SMOD () , self . PINPOL () , self . PINSEL () , self . PINCFG () , self . TIMPOL () , self . TIMSEL ())
+        }
+    }
     #[doc = "Shifter Error Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -500,6 +531,12 @@ pub mod regs {
             f.debug_struct("SHIFTEIEN")
                 .field("SEIE", &self.SEIE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SHIFTEIEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SHIFTEIEN {{ SEIE: {=u8:?} }}", self.SEIE())
         }
     }
     #[doc = "Shifter Error"]
@@ -530,6 +567,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SHIFTERR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SHIFTERR {{ SEF: {=u8:?} }}", self.SEF())
+        }
+    }
     #[doc = "Shifter Status DMA Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -556,6 +599,12 @@ pub mod regs {
             f.debug_struct("SHIFTSDEN")
                 .field("SSDE", &self.SSDE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SHIFTSDEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SHIFTSDEN {{ SSDE: {=u8:?} }}", self.SSDE())
         }
     }
     #[doc = "Shifter Status Interrupt Enable"]
@@ -586,6 +635,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SHIFTSIEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SHIFTSIEN {{ SSIE: {=u8:?} }}", self.SSIE())
+        }
+    }
     #[doc = "Shifter Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -614,6 +669,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SHIFTSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SHIFTSTAT {{ SSF: {=u8:?} }}", self.SSF())
+        }
+    }
     #[doc = "Shifter State"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -640,6 +701,12 @@ pub mod regs {
             f.debug_struct("SHIFTSTATE")
                 .field("STATE", &self.STATE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SHIFTSTATE {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "SHIFTSTATE {{ STATE: {=u8:?} }}", self.STATE())
         }
     }
     #[doc = "Timer Configuration"]
@@ -730,6 +797,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMCFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TIMCFG {{ TSTART: {=bool:?}, TSTOP: {=u8:?}, TIMENA: {=u8:?}, TIMDIS: {=u8:?}, TIMRST: {=u8:?}, TIMDEC: {=u8:?}, TIMOUT: {=u8:?} }}" , self . TSTART () , self . TSTOP () , self . TIMENA () , self . TIMDIS () , self . TIMRST () , self . TIMDEC () , self . TIMOUT ())
+        }
+    }
     #[doc = "Timer Compare"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -754,6 +827,12 @@ pub mod regs {
     impl core::fmt::Debug for TIMCMP {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TIMCMP").field("CMP", &self.CMP()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMCMP {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TIMCMP {{ CMP: {=u16:?} }}", self.CMP())
         }
     }
     #[doc = "Timer Control"]
@@ -864,6 +943,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMCTL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "TIMCTL {{ TIMOD: {=u8:?}, ONETIM: {=bool:?}, PININS: {=bool:?}, PINPOL: {=bool:?}, PINSEL: {=u8:?}, PINCFG: {=u8:?}, TRGSRC: {=bool:?}, TRGPOL: {=bool:?}, TRGSEL: {=u8:?} }}" , self . TIMOD () , self . ONETIM () , self . PININS () , self . PINPOL () , self . PINSEL () , self . PINCFG () , self . TRGSRC () , self . TRGPOL () , self . TRGSEL ())
+        }
+    }
     #[doc = "Timer Status DMA Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -890,6 +975,12 @@ pub mod regs {
             f.debug_struct("TIMERSDEN")
                 .field("TSDE", &self.TSDE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMERSDEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TIMERSDEN {{ TSDE: {=u8:?} }}", self.TSDE())
         }
     }
     #[doc = "Timer Interrupt Enable"]
@@ -920,6 +1011,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMIEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TIMIEN {{ TEIE: {=u8:?} }}", self.TEIE())
+        }
+    }
     #[doc = "Timer Status Flag"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -944,6 +1041,12 @@ pub mod regs {
     impl core::fmt::Debug for TIMSTAT {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TIMSTAT").field("TSF", &self.TSF()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TIMSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TIMSTAT {{ TSF: {=u8:?} }}", self.TSF())
         }
     }
     #[doc = "Trigger Status"]
@@ -974,6 +1077,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TRGSTAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TRGSTAT {{ ETSF: {=u8:?} }}", self.ETSF())
+        }
+    }
     #[doc = "External Trigger Interrupt Enable"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1000,6 +1109,12 @@ pub mod regs {
             f.debug_struct("TRIGIEN")
                 .field("TRIE", &self.TRIE())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for TRIGIEN {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "TRIGIEN {{ TRIE: {=u8:?} }}", self.TRIE())
         }
     }
     #[doc = "Version ID"]
@@ -1048,6 +1163,18 @@ pub mod regs {
                 .field("MINOR", &self.MINOR())
                 .field("MAJOR", &self.MAJOR())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for VERID {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "VERID {{ FEATURE: {=u16:?}, MINOR: {=u8:?}, MAJOR: {=u8:?} }}",
+                self.FEATURE(),
+                self.MINOR(),
+                self.MAJOR()
+            )
         }
     }
 }

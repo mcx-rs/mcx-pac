@@ -1,5 +1,5 @@
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (d5ec99b 2024-12-16))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct CHANNEL {
     ptr: *mut u8,
@@ -104,6 +104,17 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_CTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CHANNEL_CTRL {{ INTEN: {=bool:?}, MODE: {=u8:?} }}",
+                self.INTEN(),
+                self.MODE()
+            )
+        }
+    }
     #[doc = "Time Interval Value"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -140,6 +151,17 @@ pub mod regs {
                 .field("IVALUE", &self.IVALUE())
                 .field("LOAD", &self.LOAD())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_INTVAL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CHANNEL_INTVAL {{ IVALUE: {=u32:?}, LOAD: {=bool:?} }}",
+                self.IVALUE(),
+                self.LOAD()
+            )
         }
     }
     #[doc = "Status"]
@@ -190,6 +212,18 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_STAT {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "CHANNEL_STAT {{ INTFLAG: {=bool:?}, RUN: {=bool:?}, INUSE: {=bool:?} }}",
+                self.INTFLAG(),
+                self.RUN(),
+                self.INUSE()
+            )
+        }
+    }
     #[doc = "Timer"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -218,6 +252,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CHANNEL_TIMER {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CHANNEL_TIMER {{ VALUE: {=u32:?} }}", self.VALUE())
+        }
+    }
     #[doc = "Idle Channel"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -244,6 +284,12 @@ pub mod regs {
             f.debug_struct("IDLE_CH")
                 .field("CHAN", &self.CHAN())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IDLE_CH {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "IDLE_CH {{ CHAN: {=u8:?} }}", self.CHAN())
         }
     }
     #[doc = "Global Interrupt Flag"]
@@ -304,6 +350,12 @@ pub mod regs {
                 .finish()
         }
     }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IRQ_FLAG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "IRQ_FLAG {{ GFLAG0: {=bool:?}, GFLAG1: {=bool:?}, GFLAG2: {=bool:?}, GFLAG3: {=bool:?} }}" , self . GFLAG0 () , self . GFLAG1 () , self . GFLAG2 () , self . GFLAG3 ())
+        }
+    }
     #[doc = "Module Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -350,6 +402,18 @@ pub mod regs {
                 .field("NOB", &self.NOB())
                 .field("MULTITASK", &self.MULTITASK())
                 .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MODCFG {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MODCFG {{ NOC: {=u8:?}, NOB: {=u8:?}, MULTITASK: {=bool:?} }}",
+                self.NOC(),
+                self.NOB(),
+                self.MULTITASK()
+            )
         }
     }
 }
