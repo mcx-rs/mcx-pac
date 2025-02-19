@@ -1,0 +1,381 @@
+nvic_priority_bits: 3
+peripherals:
+- name: ADC0
+  base_address: 1074458624
+  block: adc::ADC
+- name: ADC1
+  base_address: 1074462720
+  block: adc::ADC
+- name: AOI0
+  base_address: 1074302976
+  block: aoi::AOI
+- name: AOI1
+  base_address: 1074360320
+  block: aoi::AOI
+- name: CAN0
+  base_address: 1074577408
+  block: can::CAN
+- name: CDOG
+  base_address: 1074790400
+  block: cdog::CDOG
+- name: CMC
+  base_address: 1074311168
+  block: cmc::CMC
+- name: CRC0
+  base_address: 1074307072
+  block: crc::CRC
+- name: CTIMER0
+  base_address: 1073758208
+  block: ctimer::CTIMER
+- name: CTIMER1
+  base_address: 1073762304
+  block: ctimer::CTIMER
+- name: CTIMER2
+  base_address: 1073766400
+  block: ctimer::CTIMER
+- name: CTIMER3
+  base_address: 1073770496
+  block: ctimer::CTIMER
+- name: CTIMER4
+  base_address: 1073774592
+  block: ctimer::CTIMER
+- name: DBGMAILBOX
+  base_address: 1074794496
+  block: debugmailbox::DEBUGMAILBOX
+- name: DMA0
+  base_address: 1074266112
+  block: dma::DMA
+- name: EIM0
+  base_address: 1074315264
+  block: eim::EIM
+- name: QDC0
+  base_address: 1074425856
+  block: eqdc::EQDC
+- name: ERM0
+  base_address: 1074319360
+  block: erm::ERM
+- name: FLEXIO0
+  base_address: 1074368512
+  block: flexio::FLEXIO
+- name: FMC0
+  base_address: 1074348032
+  block: fmc::FMC
+- name: FMU0
+  base_address: 1074352128
+  block: fmu::FMU
+- name: FMU0TEST
+  base_address: 1074356224
+  block: fmutest::FMUTEST
+- name: FREQME0
+  base_address: 1073778688
+  block: freqme::FREQME
+- name: GLIKEY0
+  base_address: 1074339072
+  block: glikey::GLIKEY
+- name: GPIO0
+  base_address: 1074798592
+  block: gpio::GPIO
+- name: GPIO1
+  base_address: 1074802688
+  block: gpio::GPIO
+- name: GPIO2
+  base_address: 1074806784
+  block: gpio::GPIO
+- name: GPIO3
+  base_address: 1074810880
+  block: gpio::GPIO
+- name: GPIO4
+  base_address: 1074814976
+  block: gpio::GPIO
+- name: I3C0
+  base_address: 1073750016
+  block: i3c::I3C
+- name: INPUTMUX0
+  base_address: 1073745920
+  block: inputmux::INPUTMUX
+- name: CMP0
+  base_address: 1074466816
+  block: lpcmp::LPCMP
+- name: CMP1
+  base_address: 1074470912
+  block: lpcmp::LPCMP
+- name: LPI2C0
+  base_address: 1074372608
+  block: lpi2c::LPI2C
+- name: LPI2C1
+  base_address: 1074376704
+  block: lpi2c::LPI2C
+- name: LPI2C2
+  base_address: 1074610176
+  block: lpi2c::LPI2C
+- name: LPI2C3
+  base_address: 1074614272
+  block: lpi2c::LPI2C
+- name: LPSPI0
+  base_address: 1074380800
+  block: lpspi::LPSPI
+- name: LPSPI1
+  base_address: 1074384896
+  block: lpspi::LPSPI
+- name: LPTMR0
+  base_address: 1074442240
+  block: lptmr::LPTMR
+- name: LPUART0
+  base_address: 1074393088
+  block: lpuart::LPUART
+- name: LPUART1
+  base_address: 1074397184
+  block: lpuart::LPUART
+- name: LPUART2
+  base_address: 1074401280
+  block: lpuart::LPUART
+- name: LPUART3
+  base_address: 1074405376
+  block: lpuart::LPUART
+- name: LPUART4
+  base_address: 1074409472
+  block: lpuart::LPUART
+- name: MRCC0
+  base_address: 1074335744
+  block: mrcc::MRCC
+- name: OSTIMER0
+  base_address: 1074450432
+  block: ostimer::OSTIMER
+- name: PORT0
+  base_address: 1074511872
+  block: port::PORT
+- name: PORT1
+  base_address: 1074515968
+  block: port::PORT
+- name: PORT2
+  base_address: 1074520064
+  block: port::PORT
+- name: PORT3
+  base_address: 1074524160
+  block: port::PORT
+- name: PORT4
+  base_address: 1074528256
+  block: port::PORT
+- name: FLEXPWM0
+  base_address: 1074434048
+  block: pwm::PWM
+- name: SCG0
+  base_address: 1074327552
+  block: scg::SCG
+- name: SPC0
+  base_address: 1074331648
+  block: spc::SPC
+- name: SYSCON
+  base_address: 1074335744
+  block: syscon::SYSCON
+- name: MBC0
+  base_address: 1074323456
+  block: trdc::TRDC
+- name: USB0
+  base_address: 1074413568
+  block: usb::USB
+- name: UTICK0
+  base_address: 1073786880
+  block: utick::UTICK
+- name: VBAT0
+  base_address: 1074343936
+  block: vbat::VBAT
+- name: WAKETIMER0
+  base_address: 1074454528
+  block: waketimer::WAKETIMER
+- name: WUU0
+  base_address: 1074339840
+  block: wuu::WUU
+- name: WWDT0
+  base_address: 1073790976
+  block: wwdt::WWDT
+interrupts:
+- name: CMC
+  description: Core Mode Controller interrupt
+  value: 1
+- name: DMA_CH0
+  description: DMA3_0_CH0 error or transfer complete
+  value: 2
+- name: DMA_CH1
+  description: DMA3_0_CH1 error or transfer complete
+  value: 3
+- name: DMA_CH2
+  description: DMA3_0_CH2 error or transfer complete
+  value: 4
+- name: DMA_CH3
+  description: DMA3_0_CH3 error or transfer complete
+  value: 5
+- name: DMA_CH4
+  description: DMA3_0_CH4 error or transfer complete
+  value: 6
+- name: DMA_CH5
+  description: DMA3_0_CH5 error or transfer complete
+  value: 7
+- name: DMA_CH6
+  description: DMA3_0_CH6 error or transfer complete
+  value: 8
+- name: DMA_CH7
+  description: DMA3_0_CH7 error or transfer complete
+  value: 9
+- name: ERM0_SINGLE_BIT
+  description: ERM Single Bit error interrupt
+  value: 10
+- name: ERM0_MULTI_BIT
+  description: ERM Multi Bit error interrupt
+  value: 11
+- name: FMU0
+  description: Flash Management Unit interrupt
+  value: 12
+- name: GLIKEY0
+  description: GLIKEY Interrupt
+  value: 13
+- name: MBC0
+  description: MBC secure violation interrupt
+  value: 14
+- name: SCG0
+  description: System Clock Generator interrupt
+  value: 15
+- name: SPC0
+  description: System Power Controller interrupt
+  value: 16
+- name: VBAT0
+  description: VBAT interrupt
+  value: 17
+- name: WUU0
+  description: Wake Up Unit interrupt
+  value: 18
+- name: CAN0
+  description: Controller Area Network 0 interrupt
+  value: 19
+- name: FLEXIO
+  description: Flexible Input/Output interrupt
+  value: 23
+- name: I3C0
+  description: Improved Inter Integrated Circuit interrupt 0
+  value: 24
+- name: LPI2C0
+  description: Low-Power Inter Integrated Circuit interrupt
+  value: 26
+- name: LPI2C1
+  description: Low-Power Inter Integrated Circuit interrupt
+  value: 27
+- name: LPSPI0
+  description: Low-Power Serial Peripheral Interface interrupt
+  value: 28
+- name: LPSPI1
+  description: Low-Power Serial Peripheral Interface interrupt
+  value: 29
+- name: LPUART0
+  description: Low-Power Universal Asynchronous Receive/Transmit interrupt
+  value: 31
+- name: LPUART1
+  description: Low-Power Universal Asynchronous Receive/Transmit interrupt
+  value: 32
+- name: LPUART2
+  description: Low-Power Universal Asynchronous Receive/Transmit interrupt
+  value: 33
+- name: LPUART3
+  description: Low-Power Universal Asynchronous Receive/Transmit interrupt
+  value: 34
+- name: LPUART4
+  description: Low-Power Universal Asynchronous Receive/Transmit interrupt
+  value: 35
+- name: USB0
+  description: Universal Serial Bus - Full Speed interrupt
+  value: 36
+- name: CDOG0
+  description: Code Watchdog Timer 0 interrupt
+  value: 38
+- name: CTIMER0
+  description: Standard counter/timer 0 interrupt
+  value: 39
+- name: CTIMER1
+  description: Standard counter/timer 1 interrupt
+  value: 40
+- name: CTIMER2
+  description: Standard counter/timer 2 interrupt
+  value: 41
+- name: CTIMER3
+  description: Standard counter/timer 3 interrupt
+  value: 42
+- name: CTIMER4
+  description: Standard counter/timer 4 interrupt
+  value: 43
+- name: FLEXPWM0_RELOAD_ERROR
+  description: FlexPWM0_reload_error interrupt
+  value: 44
+- name: FLEXPWM0_FAULT
+  description: FlexPWM0_fault interrupt
+  value: 45
+- name: FLEXPWM0_SUBMODULE0
+  description: FlexPWM0 Submodule 0 capture/compare/reload interrupt
+  value: 46
+- name: FLEXPWM0_SUBMODULE1
+  description: FlexPWM0 Submodule 1 capture/compare/reload interrupt
+  value: 47
+- name: FLEXPWM0_SUBMODULE2
+  description: FlexPWM0 Submodule 2 capture/compare/reload interrupt
+  value: 48
+- name: QDC0_COMPARE
+  description: Compare
+  value: 50
+- name: QDC0_HOME
+  description: Home
+  value: 51
+- name: QDC0_WATCHDOG
+  description: Watchdog / Simultaneous A and B Change
+  value: 52
+- name: QDC0_INDEX
+  description: Index / Roll Over / Roll Under
+  value: 53
+- name: FREQME0
+  description: Frequency Measurement interrupt
+  value: 54
+- name: LPTMR0
+  description: Low Power Timer 0 interrupt
+  value: 55
+- name: OS_EVENT
+  description: OS event timer interrupt
+  value: 57
+- name: WAKETIMER0
+  description: Wake Timer Interrupt
+  value: 58
+- name: UTICK0
+  description: Micro-Tick Timer interrupt
+  value: 59
+- name: WWDT0
+  description: Windowed Watchdog Timer 0 interrupt
+  value: 60
+- name: ADC0
+  description: Analog-to-Digital Converter interrupt
+  value: 62
+- name: ADC1
+  description: Analog-to-Digital Converter interrupt
+  value: 63
+- name: CMP0
+  description: Comparator interrupt
+  value: 64
+- name: CMP1
+  description: Comparator interrupt
+  value: 65
+- name: GPIO0
+  description: General Purpose Input/Output interrupt 0
+  value: 71
+- name: GPIO1
+  description: General Purpose Input/Output interrupt 1
+  value: 72
+- name: GPIO2
+  description: General Purpose Input/Output interrupt 2
+  value: 73
+- name: GPIO3
+  description: General Purpose Input/Output interrupt 3
+  value: 74
+- name: GPIO4
+  description: General Purpose Input/Output interrupt 4
+  value: 75
+- name: LPI2C2
+  description: Low-Power Inter Integrated Circuit interrupt
+  value: 77
+- name: LPI2C3
+  description: Low-Power Inter Integrated Circuit interrupt
+  value: 78
