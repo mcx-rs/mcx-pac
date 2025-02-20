@@ -1,0 +1,54 @@
+name: Check Rust
+
+on: [push, pull_request]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install a stable toolchain with rustfmt
+        run: rustup toolchain install stable --no-self-update --profile minimal --component rustfmt
+      - name: Check formatting
+        run: cargo fmt --all -- --check
+
+  build-pacs:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        device:
+          - "mcxa132"
+          - "mcxa133"
+          - "mcxa142"
+          - "mcxa143"
+          - "mcxa152"
+          - "mcxa153"
+          - "mcxa144"
+          - "mcxa145"
+          - "mcxa146"
+          - "mcxa154"
+          - "mcxa155"
+          - "mcxa156"
+          - "mcxa165"
+          - "mcxa166"
+          - "mcxa175"
+          - "mcxa176"
+          - "mcxa255"
+          - "mcxa256"
+          - "mcxa275"
+          - "mcxa276"
+          - "mcxn546_cm33_core0"
+          - "mcxn546_cm33_core1"
+          - "mcxn547_cm33_core0"
+          - "mcxn547_cm33_core1"
+          - "mcxn946_cm33_core0"
+          - "mcxn946_cm33_core1"
+          - "mcxn947_cm33_core0"
+          - "mcxn947_cm33_core1"
+          - "mcxn235"
+          - "mcxn236"
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustup toolchain install stable --no-self-update --profile minimal --target thumbv8m.main-none-eabihf
+      - name: Build for device ${{ matrix.device }}
+        run: cargo build --verbose --features rt,defmt,${{ matrix.device }} --target thumbv8m.main-none-eabihf
