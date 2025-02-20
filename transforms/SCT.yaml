@@ -1,0 +1,6 @@
+transforms:
+- !DeleteRegisters
+  block: SCT
+  from: (CTRL|REGMODE)(L|H)
+- !DeleteFieldsets
+  from: regs::(CTRL|REGMODE)_ACCESS16BIT_.*
