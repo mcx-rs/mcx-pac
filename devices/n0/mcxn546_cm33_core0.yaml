@@ -649,7 +649,7 @@ interrupts:
 - name: PLU
   description: Programmable Logic Unit interrupt
   value: 70
-- name: Freqme
+- name: FREQME
   description: Frequency Measurement interrupt
   value: 71
 - name: SEC_VIO
