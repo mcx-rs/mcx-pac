@@ -19,9 +19,16 @@ defmt = { version = "0.3.10", optional = true }
 [dev-dependencies]
 panic-halt = "1"
 
+[build-dependencies]
+serde = { version = "1.0.219", features = ["derive"] }
+serde_yaml = "0.9.34"
+proc-macro2 = "1.0.95"
+quote = "1.0.40"
+
 [features]
 rt = ["cortex-m-rt/device"]
 defmt = ["dep:defmt"]
+metadata = []
 
 _device_selected = []
 mcxa132 = ["_device_selected"]
