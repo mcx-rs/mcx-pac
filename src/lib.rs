@@ -10,6 +10,17 @@ use core::marker::PhantomData;
 
 pub use device::*;
 
+#[cfg(feature = "metadata")]
+pub(crate) mod _metadata;
+
+#[cfg(feature = "metadata")]
+pub mod metadata {
+    #![allow(dead_code)]
+    #![allow(unused_imports)]
+
+    include!(concat!(env!("OUT_DIR"), "/_generated_metadata.rs"));
+}
+
 pub struct Instance<T, const N: u8> {
     _t: PhantomData<T>,
 }
