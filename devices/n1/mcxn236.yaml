@@ -562,7 +562,7 @@ interrupts:
 - name: SEC_HYPERVISOR_CALL
   description: AHB Secure Controller hypervisor call interrupt
   value: 68
-- name: Freqme
+- name: FREQME
   description: Frequency Measurement interrupt
   value: 71
 - name: SEC_VIO
