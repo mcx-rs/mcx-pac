@@ -15,11 +15,11 @@ peripherals:
 - name: CAN0
   base_address: 1074577408
   block: can::CAN
+- name: CAN1
+  base_address: 1074593792
+  block: can::CAN
 - name: CDOG0
   base_address: 1074790400
-  block: cdog::CDOG
-- name: CDOG1
-  base_address: 1074819072
   block: cdog::CDOG
 - name: CMC
   base_address: 1074311168
@@ -99,6 +99,9 @@ peripherals:
 - name: INPUTMUX0
   base_address: 1073745920
   block: inputmux::INPUTMUX
+- name: LCD0
+  base_address: 1074536448
+  block: lcd::LCD
 - name: CMP0
   base_address: 1074466816
   block: lpcmp::LPCMP
@@ -144,6 +147,9 @@ peripherals:
 - name: LPUART4
   base_address: 1074409472
   block: lpuart::LPUART
+- name: LPUART5
+  base_address: 1074634752
+  block: lpuart::LPUART
 - name: MRCC0
   base_address: 1074335744
   block: mrcc::MRCC
@@ -153,9 +159,6 @@ peripherals:
 - name: OSTIMER0
   base_address: 1074450432
   block: ostimer::OSTIMER
-- name: PKC0
-  base_address: 1074700288
-  block: pkc::PKC
 - name: PORT0
   base_address: 1074511872
   block: port::PORT
@@ -183,9 +186,6 @@ peripherals:
 - name: SCG0
   base_address: 1074327552
   block: scg::SCG
-- name: SGI0
-  base_address: 1074704384
-  block: sgi::SGI
 - name: SMARTDMA0
   base_address: 1073799168
   block: smartdma::SMARTDMA
@@ -198,9 +198,6 @@ peripherals:
 - name: MBC0
   base_address: 1074323456
   block: trdc::TRDC
-- name: TRNG0
-  base_address: 1074708480
-  block: trng::TRNG
 - name: UDF0
   base_address: 1074712576
   block: udf::UDF
@@ -280,6 +277,9 @@ interrupts:
 - name: CAN0
   description: Controller Area Network 0 interrupt
   value: 19
+- name: CAN1
+  description: Controller Area Network 1 interrupt
+  value: 20
 - name: FLEXIO
   description: Flexible Input/Output interrupt
   value: 23
@@ -448,30 +448,21 @@ interrupts:
 - name: EQDC1_INDEX
   description: Index / Roll Over / Roll Under
   value: 88
+- name: LPUART5
+  description: Low-Power Universal Asynchronous Receive/Transmit interrupt
+  value: 95
 - name: MAU
   description: MAU interrupt
   value: 107
 - name: SMARTDMA
   description: SmartDMA interrupt
   value: 108
-- name: CDOG1
-  description: Code Watchdog Timer 1 interrupt
-  value: 109
-- name: PKC
-  description: PKC interrupt
-  value: 110
-- name: SGI
-  description: SGI interrupt
-  value: 111
-- name: TRNG0
-  description: True Random Number Generator interrupt
-  value: 113
-- name: SECURE_ERR
-  description: 'Secure IP Error interrupt. It OR SGI, PKC, TRNG error together. '
-  value: 114
 - name: RTC
   description: RTC alarm interrupt
   value: 119
 - name: RTC_1HZ
   description: RTC 1Hz interrupt
   value: 120
+- name: LCD
+  description: SLCD frame start interrupt
+  value: 121

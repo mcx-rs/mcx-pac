@@ -114,12 +114,6 @@ block/USB:
   - name: USBFRMADJUST
     byte_offset: 276
     bit_size: 8
-  - name: KEEP_ALIVE_CTRL_RSVD
-    byte_offset: 292
-    bit_size: 8
-  - name: KEEP_ALIVE_WKCTRL_RSVD
-    byte_offset: 296
-    bit_size: 8
   - name: MISCCTRL
     byte_offset: 300
     bit_size: 8

@@ -6,12 +6,6 @@ peripherals:
 - name: ADC1
   base_address: 1074462720
   block: adc::ADC
-- name: ADC2
-  base_address: 1074724864
-  block: adc::ADC
-- name: ADC3
-  base_address: 1074728960
-  block: adc::ADC
 - name: AOI0
   base_address: 1074302976
   block: aoi::AOI
@@ -20,9 +14,6 @@ peripherals:
   block: aoi::AOI
 - name: CAN0
   base_address: 1074577408
-  block: can::CAN
-- name: CAN1
-  base_address: 1074593792
   block: can::CAN
 - name: CDOG0
   base_address: 1074790400
@@ -51,6 +42,9 @@ peripherals:
 - name: DBGMAILBOX
   base_address: 1074794496
   block: debugmailbox::DEBUGMAILBOX
+- name: TDET0
+  base_address: 1074696192
+  block: digtmp::DIGTMP
 - name: DMA0
   base_address: 1074266112
   block: dma::DMA
@@ -108,9 +102,6 @@ peripherals:
 - name: CMP1
   base_address: 1074470912
   block: lpcmp::LPCMP
-- name: CMP2
-  base_address: 1074475008
-  block: lpcmp::LPCMP
 - name: DAC0
   base_address: 1074479104
   block: lpdac::LPDAC
@@ -150,26 +141,11 @@ peripherals:
 - name: LPUART4
   base_address: 1074409472
   block: lpuart::LPUART
-- name: LPUART5
-  base_address: 1074634752
-  block: lpuart::LPUART
-- name: MAU0
-  base_address: 1074823168
-  block: mau::MAU
 - name: MRCC0
   base_address: 1074335744
   block: mrcc::MRCC
 - name: OPAMP0
   base_address: 1074491392
-  block: opamp::OPAMP
-- name: OPAMP1
-  base_address: 1074495488
-  block: opamp::OPAMP
-- name: OPAMP2
-  base_address: 1074499584
-  block: opamp::OPAMP
-- name: OPAMP3
-  base_address: 1074503680
   block: opamp::OPAMP
 - name: OSTIMER0
   base_address: 1074450432
@@ -201,9 +177,6 @@ peripherals:
 - name: SCG0
   base_address: 1074327552
   block: scg::SCG
-- name: SLCD0
-  base_address: 1074536448
-  block: slcd::SLCD
 - name: SMARTDMA0
   base_address: 1073799168
   block: smartdma::SMARTDMA
@@ -295,9 +268,6 @@ interrupts:
 - name: CAN0
   description: Controller Area Network 0 interrupt
   value: 19
-- name: CAN1
-  description: Controller Area Network 1 interrupt
-  value: 20
 - name: FLEXIO
   description: Flexible Input/Output interrupt
   value: 23
@@ -412,9 +382,6 @@ interrupts:
 - name: CMP1
   description: Comparator 1 interrupt
   value: 65
-- name: CMP2
-  description: Comparator 2 interrupt
-  value: 66
 - name: DAC0
   description: Digital-to-Analog Converter 0 - General Purpose interrupt
   value: 67
@@ -469,39 +436,15 @@ interrupts:
 - name: EQDC1_INDEX
   description: Index / Roll Over / Roll Under
   value: 88
-- name: LPUART5
-  description: Low-Power Universal Asynchronous Receive/Transmit interrupt
-  value: 95
 - name: MAU
   description: MAU interrupt
   value: 107
 - name: SMARTDMA
   description: SmartDMA interrupt
   value: 108
-- name: CDOG1
-  description: Code Watchdog Timer 1 interrupt
-  value: 109
-- name: PKC
-  description: PKC interrupt
-  value: 110
-- name: SGI
-  description: SGI interrupt
-  value: 111
-- name: TRNG0
-  description: True Random Number Generator interrupt
-  value: 113
-- name: ADC2
-  description: Analog-to-Digital Converter 2 interrupt
-  value: 116
-- name: ADC3
-  description: Analog-to-Digital Converter 3 interrupt
-  value: 117
 - name: RTC
   description: RTC alarm interrupt
   value: 119
 - name: RTC_1HZ
   description: RTC 1Hz interrupt
   value: 120
-- name: SLCD
-  description: SLCD frame start interrupt
-  value: 121

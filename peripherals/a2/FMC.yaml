@@ -3,6 +3,53 @@ block/FMC:
   - name: REMAP
     byte_offset: 32
     fieldset: regs::REMAP
+  - name: FCCR
+    byte_offset: 1024
+    fieldset: regs::FCCR
+  - name: FCAR
+    byte_offset: 1028
+    fieldset: regs::FCAR
+  - name: FCTG
+    byte_offset: 1036
+    fieldset: regs::FCTG
+  - name: FCLN0
+    byte_offset: 1056
+  - name: FCLN1
+    byte_offset: 1060
+  - name: FCLN2
+    byte_offset: 1064
+  - name: FCLN3
+    byte_offset: 1068
+fieldset/regs::FCAR:
+  description: Flash Cache Access Register
+  fields:
+  - name: CACHES_WAY_NUM
+    bit_offset: 0
+    bit_size: 2
+  - name: CACHES_SET_NUM
+    bit_offset: 4
+    bit_size: 1
+  - name: TYPE
+    bit_offset: 30
+    bit_size: 2
+fieldset/regs::FCCR:
+  description: Flash Cache Control Register
+  fields:
+  - name: WAY_LOCK
+    bit_offset: 0
+    bit_size: 4
+  - name: LOCK
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::FCTG:
+  description: Flash Cache Tag
+  fields:
+  - name: VALID
+    bit_offset: 0
+    bit_size: 1
+  - name: ADDRESS
+    bit_offset: 6
+    bit_size: 18
 fieldset/regs::REMAP:
   description: Data Remap
   fields:

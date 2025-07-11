@@ -45,9 +45,6 @@ fieldset/regs::MOD:
   - name: LOCK
     bit_offset: 5
     bit_size: 1
-  - name: DEBUG_EN
-    bit_offset: 6
-    bit_size: 1
 fieldset/regs::TC:
   description: Timer Constant
   fields:

@@ -1,0 +1,325 @@
+block/DIGTMP:
+  items:
+  - name: CR
+    byte_offset: 16
+    fieldset: regs::CR
+  - name: SR
+    byte_offset: 20
+    fieldset: regs::SR
+  - name: LR
+    byte_offset: 24
+    fieldset: regs::LR
+  - name: IER
+    byte_offset: 28
+    fieldset: regs::IER
+  - name: TSR
+    byte_offset: 32
+  - name: TER
+    byte_offset: 36
+    fieldset: regs::TER
+  - name: PPR
+    byte_offset: 44
+    fieldset: regs::PPR
+  - name: PGFR
+    array:
+      len: 6
+      stride: 4
+    byte_offset: 64
+    fieldset: regs::PGFR
+fieldset/regs::CR:
+  description: Control
+  fields:
+  - name: SWR
+    bit_offset: 0
+    bit_size: 1
+  - name: DEN
+    bit_offset: 1
+    bit_size: 1
+  - name: TFSR
+    bit_offset: 2
+    bit_size: 1
+  - name: UM
+    bit_offset: 3
+    bit_size: 1
+  - name: DISTAM
+    bit_offset: 8
+    bit_size: 1
+  - name: DPR
+    bit_offset: 17
+    bit_size: 15
+fieldset/regs::IER:
+  description: Interrupt Enable
+  fields:
+  - name: DTIE
+    bit_offset: 0
+    bit_size: 1
+  - name: TIIE0
+    bit_offset: 2
+    bit_size: 1
+  - name: TIIE1
+    bit_offset: 3
+    bit_size: 1
+  - name: TIIE2
+    bit_offset: 4
+    bit_size: 1
+  - name: TIIE3
+    bit_offset: 5
+    bit_size: 1
+  - name: TIIE4
+    bit_offset: 6
+    bit_size: 1
+  - name: TIIE5
+    bit_offset: 7
+    bit_size: 1
+  - name: TIIE6
+    bit_offset: 8
+    bit_size: 1
+  - name: TIIE7
+    bit_offset: 9
+    bit_size: 1
+  - name: TIIE8
+    bit_offset: 10
+    bit_size: 1
+  - name: TIIE9
+    bit_offset: 11
+    bit_size: 1
+  - name: TIIE10
+    bit_offset: 12
+    bit_size: 1
+  - name: TPIE0
+    bit_offset: 16
+    bit_size: 1
+  - name: TPIE1
+    bit_offset: 17
+    bit_size: 1
+  - name: TPIE2
+    bit_offset: 18
+    bit_size: 1
+  - name: TPIE3
+    bit_offset: 19
+    bit_size: 1
+  - name: TPIE4
+    bit_offset: 20
+    bit_size: 1
+  - name: TPIE5
+    bit_offset: 21
+    bit_size: 1
+fieldset/regs::LR:
+  description: Lock
+  fields:
+  - name: CRL
+    bit_offset: 4
+    bit_size: 1
+  - name: SRL
+    bit_offset: 5
+    bit_size: 1
+  - name: LRL
+    bit_offset: 6
+    bit_size: 1
+  - name: IEL
+    bit_offset: 7
+    bit_size: 1
+  - name: TSL
+    bit_offset: 8
+    bit_size: 1
+  - name: TEL
+    bit_offset: 9
+    bit_size: 1
+  - name: PPL
+    bit_offset: 11
+    bit_size: 1
+  - name: GFL0
+    bit_offset: 16
+    bit_size: 1
+  - name: GFL1
+    bit_offset: 17
+    bit_size: 1
+  - name: GFL2
+    bit_offset: 18
+    bit_size: 1
+  - name: GFL3
+    bit_offset: 19
+    bit_size: 1
+  - name: GFL4
+    bit_offset: 20
+    bit_size: 1
+  - name: GFL5
+    bit_offset: 21
+    bit_size: 1
+fieldset/regs::PGFR:
+  description: Pin Glitch Filter
+  fields:
+  - name: GFW
+    bit_offset: 0
+    bit_size: 6
+  - name: GFP
+    bit_offset: 6
+    bit_size: 1
+  - name: GFE
+    bit_offset: 7
+    bit_size: 1
+  - name: TPSW
+    bit_offset: 8
+    bit_size: 2
+  - name: TPSF
+    bit_offset: 10
+    bit_size: 2
+  - name: TPE
+    bit_offset: 24
+    bit_size: 1
+  - name: TPS
+    bit_offset: 25
+    bit_size: 1
+fieldset/regs::PPR:
+  description: Pin Polarity
+  fields:
+  - name: TPP0
+    bit_offset: 0
+    bit_size: 1
+  - name: TPP1
+    bit_offset: 1
+    bit_size: 1
+  - name: TPP2
+    bit_offset: 2
+    bit_size: 1
+  - name: TPP3
+    bit_offset: 3
+    bit_size: 1
+  - name: TPP4
+    bit_offset: 4
+    bit_size: 1
+  - name: TPP5
+    bit_offset: 5
+    bit_size: 1
+  - name: TPID0
+    bit_offset: 16
+    bit_size: 1
+  - name: TPID1
+    bit_offset: 17
+    bit_size: 1
+  - name: TPID2
+    bit_offset: 18
+    bit_size: 1
+  - name: TPID3
+    bit_offset: 19
+    bit_size: 1
+  - name: TPID4
+    bit_offset: 20
+    bit_size: 1
+  - name: TPID5
+    bit_offset: 21
+    bit_size: 1
+fieldset/regs::SR:
+  description: Status
+  fields:
+  - name: DTF
+    bit_offset: 0
+    bit_size: 1
+  - name: TAF
+    bit_offset: 1
+    bit_size: 1
+  - name: TIF0
+    bit_offset: 2
+    bit_size: 1
+  - name: TIF1
+    bit_offset: 3
+    bit_size: 1
+  - name: TIF2
+    bit_offset: 4
+    bit_size: 1
+  - name: TIF3
+    bit_offset: 5
+    bit_size: 1
+  - name: TIF4
+    bit_offset: 6
+    bit_size: 1
+  - name: TIF5
+    bit_offset: 7
+    bit_size: 1
+  - name: TIF6
+    bit_offset: 8
+    bit_size: 1
+  - name: TIF7
+    bit_offset: 9
+    bit_size: 1
+  - name: TIF8
+    bit_offset: 10
+    bit_size: 1
+  - name: TIF9
+    bit_offset: 11
+    bit_size: 1
+  - name: TIF10
+    bit_offset: 12
+    bit_size: 1
+  - name: TPF0
+    bit_offset: 16
+    bit_size: 1
+  - name: TPF1
+    bit_offset: 17
+    bit_size: 1
+  - name: TPF2
+    bit_offset: 18
+    bit_size: 1
+  - name: TPF3
+    bit_offset: 19
+    bit_size: 1
+  - name: TPF4
+    bit_offset: 20
+    bit_size: 1
+  - name: TPF5
+    bit_offset: 21
+    bit_size: 1
+fieldset/regs::TER:
+  description: Tamper Enable
+  fields:
+  - name: TIE0
+    bit_offset: 2
+    bit_size: 1
+  - name: TIE1
+    bit_offset: 3
+    bit_size: 1
+  - name: TIE2
+    bit_offset: 4
+    bit_size: 1
+  - name: TIE3
+    bit_offset: 5
+    bit_size: 1
+  - name: TIE4
+    bit_offset: 6
+    bit_size: 1
+  - name: TIE5
+    bit_offset: 7
+    bit_size: 1
+  - name: TIE6
+    bit_offset: 8
+    bit_size: 1
+  - name: TIE7
+    bit_offset: 9
+    bit_size: 1
+  - name: TIE8
+    bit_offset: 10
+    bit_size: 1
+  - name: TIE9
+    bit_offset: 11
+    bit_size: 1
+  - name: TIE10
+    bit_offset: 12
+    bit_size: 1
+  - name: TPE0
+    bit_offset: 16
+    bit_size: 1
+  - name: TPE1
+    bit_offset: 17
+    bit_size: 1
+  - name: TPE2
+    bit_offset: 18
+    bit_size: 1
+  - name: TPE3
+    bit_offset: 19
+    bit_size: 1
+  - name: TPE4
+    bit_offset: 20
+    bit_size: 1
+  - name: TPE5
+    bit_offset: 21
+    bit_size: 1

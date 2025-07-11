@@ -663,9 +663,6 @@ fieldset/regs::MRCC_GLB_ACC0:
   - name: ERM0
     bit_offset: 15
     bit_size: 1
-  - name: FMC
-    bit_offset: 16
-    bit_size: 1
   - name: AOI1
     bit_offset: 17
     bit_size: 1
@@ -884,9 +881,6 @@ fieldset/regs::MRCC_GLB_CC0:
     bit_size: 1
   - name: ERM0
     bit_offset: 15
-    bit_size: 1
-  - name: FMC
-    bit_offset: 16
     bit_size: 1
   - name: AOI1
     bit_offset: 17

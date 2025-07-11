@@ -73,18 +73,9 @@ block/SYSCON:
   - name: BINARY_CODE_MSB
     byte_offset: 2924
     fieldset: regs::BINARY_CODE_MSB
-  - name: ELS_UDF
-    byte_offset: 3600
-    fieldset: regs::ELS_UDF
   - name: MSFCFG
     byte_offset: 3612
     fieldset: regs::MSFCFG
-  - name: ELS_UID
-    array:
-      len: 4
-      stride: 4
-    byte_offset: 3616
-    fieldset: regs::ELS_UID
   - name: ROP_STATE
     byte_offset: 3644
   - name: SRAM_XEN
@@ -300,33 +291,6 @@ fieldset/regs::ELS_OTP_LC_STATE_DP:
   - name: OTP_LC_STATE_DP
     bit_offset: 0
     bit_size: 8
-fieldset/regs::ELS_UDF:
-  description: UDF Control
-  fields:
-  - name: KEY_SEL
-    bit_offset: 0
-    bit_size: 2
-  - name: UID_HIDDEN
-    bit_offset: 24
-    bit_size: 4
-  - name: UDF_HIDDEN
-    bit_offset: 28
-    bit_size: 4
-fieldset/regs::ELS_UID:
-  description: Device UID 0..Device UID 3
-  fields:
-  - name: UID0
-    bit_offset: 0
-    bit_size: 32
-  - name: UID1
-    bit_offset: 0
-    bit_size: 32
-  - name: UID2
-    bit_offset: 0
-    bit_size: 32
-  - name: UID3
-    bit_offset: 0
-    bit_size: 32
 fieldset/regs::FROHFDIV:
   description: FRO_HF_DIV Clock Divider
   fields:
@@ -519,10 +483,10 @@ fieldset/regs::REMAP:
   - name: CPU0_SBUS
     bit_offset: 2
     bit_size: 2
-  - name: SmartDMA_D
+  - name: SmartDMA_I
     bit_offset: 4
     bit_size: 2
-  - name: SmartDMA_I
+  - name: SmartDMA_D
     bit_offset: 6
     bit_size: 2
   - name: DMA0
@@ -620,12 +584,6 @@ fieldset/regs::SMARTDMAINT:
     bit_size: 1
   - name: INT21
     bit_offset: 21
-    bit_size: 1
-  - name: INT22
-    bit_offset: 22
-    bit_size: 1
-  - name: INT23
-    bit_offset: 23
     bit_size: 1
 fieldset/regs::SRAM_XEN:
   description: RAM XEN Control

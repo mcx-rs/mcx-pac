@@ -15,6 +15,9 @@ peripherals:
 - name: CAN0
   base_address: 1074577408
   block: can::CAN
+- name: CAN1
+  base_address: 1074593792
+  block: can::CAN
 - name: CDOG0
   base_address: 1074790400
   block: cdog::CDOG
@@ -99,6 +102,9 @@ peripherals:
 - name: INPUTMUX0
   base_address: 1073745920
   block: inputmux::INPUTMUX
+- name: LCD0
+  base_address: 1074536448
+  block: lcd::LCD
 - name: CMP0
   base_address: 1074466816
   block: lpcmp::LPCMP
@@ -143,6 +149,9 @@ peripherals:
   block: lpuart::LPUART
 - name: LPUART4
   base_address: 1074409472
+  block: lpuart::LPUART
+- name: LPUART5
+  base_address: 1074634752
   block: lpuart::LPUART
 - name: MRCC0
   base_address: 1074335744
@@ -280,6 +289,9 @@ interrupts:
 - name: CAN0
   description: Controller Area Network 0 interrupt
   value: 19
+- name: CAN1
+  description: Controller Area Network 1 interrupt
+  value: 20
 - name: FLEXIO
   description: Flexible Input/Output interrupt
   value: 23
@@ -448,6 +460,9 @@ interrupts:
 - name: EQDC1_INDEX
   description: Index / Roll Over / Roll Under
   value: 88
+- name: LPUART5
+  description: Low-Power Universal Asynchronous Receive/Transmit interrupt
+  value: 95
 - name: MAU
   description: MAU interrupt
   value: 107
@@ -475,3 +490,6 @@ interrupts:
 - name: RTC_1HZ
   description: RTC 1Hz interrupt
   value: 120
+- name: LCD
+  description: SLCD frame start interrupt
+  value: 121

@@ -10,18 +10,6 @@ block/SMARTDMA:
     byte_offset: 40
   - name: SP
     byte_offset: 44
-  - name: BREAK_ADDR
-    byte_offset: 48
-    fieldset: regs::BREAK_ADDR
-  - name: BREAK_VECT
-    byte_offset: 52
-    fieldset: regs::BREAK_VECT
-  - name: EMER_VECT
-    byte_offset: 56
-    fieldset: regs::EMER_VECT
-  - name: EMER_SEL
-    byte_offset: 60
-    fieldset: regs::EMER_SEL
   - name: ARM2EZH
     byte_offset: 64
     fieldset: regs::ARM2EZH
@@ -45,18 +33,6 @@ fieldset/regs::BOOTADR:
   - name: ADDR
     bit_offset: 2
     bit_size: 30
-fieldset/regs::BREAK_ADDR:
-  description: Breakpoint Address
-  fields:
-  - name: ADDR
-    bit_offset: 2
-    bit_size: 30
-fieldset/regs::BREAK_VECT:
-  description: Breakpoint Vector
-  fields:
-  - name: VEC
-    bit_offset: 2
-    bit_size: 30
 fieldset/regs::CTRL:
   description: Control
   fields:
@@ -78,21 +54,6 @@ fieldset/regs::CTRL:
   - name: WKEY
     bit_offset: 16
     bit_size: 16
-fieldset/regs::EMER_SEL:
-  description: Emergency Select
-  fields:
-  - name: EN
-    bit_offset: 8
-    bit_size: 1
-  - name: RQ
-    bit_offset: 9
-    bit_size: 1
-fieldset/regs::EMER_VECT:
-  description: Emergency Vector
-  fields:
-  - name: VEC
-    bit_offset: 2
-    bit_size: 30
 fieldset/regs::PENDTRAP:
   description: Pending Trap Control
   fields:

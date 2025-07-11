@@ -15,9 +15,6 @@ peripherals:
 - name: CAN0
   base_address: 1074577408
   block: can::CAN
-- name: CAN1
-  base_address: 1074593792
-  block: can::CAN
 - name: CDOG0
   base_address: 1074790400
   block: cdog::CDOG
@@ -48,6 +45,9 @@ peripherals:
 - name: DBGMAILBOX
   base_address: 1074794496
   block: debugmailbox::DEBUGMAILBOX
+- name: TDET0
+  base_address: 1074696192
+  block: digtmp::DIGTMP
 - name: DMA0
   base_address: 1074266112
   block: dma::DMA
@@ -144,9 +144,6 @@ peripherals:
 - name: LPUART4
   base_address: 1074409472
   block: lpuart::LPUART
-- name: MAU0
-  base_address: 1074823168
-  block: mau::MAU
 - name: MRCC0
   base_address: 1074335744
   block: mrcc::MRCC
@@ -198,9 +195,6 @@ peripherals:
 - name: SYSCON
   base_address: 1074335744
   block: syscon::SYSCON
-- name: TDET0
-  base_address: 1074696192
-  block: tdet::TDET
 - name: MBC0
   base_address: 1074323456
   block: trdc::TRDC
@@ -286,9 +280,6 @@ interrupts:
 - name: CAN0
   description: Controller Area Network 0 interrupt
   value: 19
-- name: CAN1
-  description: Controller Area Network 1 interrupt
-  value: 20
 - name: FLEXIO
   description: Flexible Input/Output interrupt
   value: 23
@@ -403,9 +394,6 @@ interrupts:
 - name: CMP1
   description: Comparator 1 interrupt
   value: 65
-- name: CMP2
-  description: Comparator 2 interrupt
-  value: 66
 - name: DAC0
   description: Digital-to-Analog Converter 0 - General Purpose interrupt
   value: 67
@@ -460,9 +448,6 @@ interrupts:
 - name: EQDC1_INDEX
   description: Index / Roll Over / Roll Under
   value: 88
-- name: LPUART5
-  description: Low-Power Universal Asynchronous Receive/Transmit interrupt
-  value: 95
 - name: MAU
   description: MAU interrupt
   value: 107
@@ -481,18 +466,12 @@ interrupts:
 - name: TRNG0
   description: True Random Number Generator interrupt
   value: 113
-- name: ADC2
-  description: Analog-to-Digital Converter 2 interrupt
-  value: 116
-- name: ADC3
-  description: Analog-to-Digital Converter 3 interrupt
-  value: 117
+- name: SECURE_ERR
+  description: 'Secure IP Error interrupt. It OR SGI, PKC, TRNG error together. '
+  value: 114
 - name: RTC
   description: RTC alarm interrupt
   value: 119
 - name: RTC_1HZ
   description: RTC 1Hz interrupt
   value: 120
-- name: SLCD
-  description: SLCD frame start interrupt
-  value: 121

@@ -6,6 +6,9 @@ block/SPC:
   - name: SC
     byte_offset: 16
     fieldset: regs::SC
+  - name: CNTRL
+    byte_offset: 20
+    fieldset: regs::CNTRL
   - name: LPREQ_CFG
     byte_offset: 28
     fieldset: regs::LPREQ_CFG
@@ -66,9 +69,6 @@ fieldset/regs::ACTIVE_CFG:
   - name: BGMODE
     bit_offset: 20
     bit_size: 2
-  - name: VDD_VD_DISABLE
-    bit_offset: 23
-    bit_size: 1
   - name: CORE_LVDE
     bit_offset: 24
     bit_size: 1
@@ -84,6 +84,12 @@ fieldset/regs::ACTIVE_VDELAY:
   - name: ACTIVE_VDELAY
     bit_offset: 0
     bit_size: 16
+fieldset/regs::CNTRL:
+  description: SPC Regulator Control
+  fields:
+  - name: CORELDO_EN
+    bit_offset: 0
+    bit_size: 1
 fieldset/regs::EVD_CFG:
   description: External Voltage Domain Configuration
   fields:
@@ -144,9 +150,6 @@ fieldset/regs::LP_CFG:
 fieldset/regs::PD_STATUS:
   description: SPC Power Domain Mode Status
   fields:
-  - name: PWR_REQ_STATUS
-    bit_offset: 0
-    bit_size: 1
   - name: PD_LP_REQ
     bit_offset: 4
     bit_size: 1
@@ -233,6 +236,9 @@ fieldset/regs::VD_SYS_CFG:
     bit_size: 1
   - name: HVDIE
     bit_offset: 3
+    bit_size: 1
+  - name: LVSEL
+    bit_offset: 8
     bit_size: 1
   - name: LOCK
     bit_offset: 16

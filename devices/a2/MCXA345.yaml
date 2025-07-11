@@ -6,6 +6,12 @@ peripherals:
 - name: ADC1
   base_address: 1074462720
   block: adc::ADC
+- name: ADC2
+  base_address: 1074724864
+  block: adc::ADC
+- name: ADC3
+  base_address: 1074728960
+  block: adc::ADC
 - name: AOI0
   base_address: 1074302976
   block: aoi::AOI
@@ -17,9 +23,6 @@ peripherals:
   block: can::CAN
 - name: CDOG0
   base_address: 1074790400
-  block: cdog::CDOG
-- name: CDOG1
-  base_address: 1074819072
   block: cdog::CDOG
 - name: CMC
   base_address: 1074311168
@@ -63,9 +66,6 @@ peripherals:
 - name: ERM0
   base_address: 1074319360
   block: erm::ERM
-- name: FLEXIO0
-  base_address: 1074368512
-  block: flexio::FLEXIO
 - name: FMC0
   base_address: 1074348032
   block: fmc::FMC
@@ -93,9 +93,6 @@ peripherals:
 - name: GPIO4
   base_address: 1074814976
   block: gpio::GPIO
-- name: I3C0
-  base_address: 1073750016
-  block: i3c::I3C
 - name: INPUTMUX0
   base_address: 1073745920
   block: inputmux::INPUTMUX
@@ -104,6 +101,9 @@ peripherals:
   block: lpcmp::LPCMP
 - name: CMP1
   base_address: 1074470912
+  block: lpcmp::LPCMP
+- name: CMP2
+  base_address: 1074475008
   block: lpcmp::LPCMP
 - name: DAC0
   base_address: 1074479104
@@ -144,18 +144,30 @@ peripherals:
 - name: LPUART4
   base_address: 1074409472
   block: lpuart::LPUART
+- name: LPUART5
+  base_address: 1074634752
+  block: lpuart::LPUART
+- name: MAU0
+  base_address: 1074823168
+  block: mau::MAU
 - name: MRCC0
   base_address: 1074335744
   block: mrcc::MRCC
 - name: OPAMP0
   base_address: 1074491392
   block: opamp::OPAMP
+- name: OPAMP1
+  base_address: 1074495488
+  block: opamp::OPAMP
+- name: OPAMP2
+  base_address: 1074499584
+  block: opamp::OPAMP
+- name: OPAMP3
+  base_address: 1074503680
+  block: opamp::OPAMP
 - name: OSTIMER0
   base_address: 1074450432
   block: ostimer::OSTIMER
-- name: PKC0
-  base_address: 1074700288
-  block: pkc::PKC
 - name: PORT0
   base_address: 1074511872
   block: port::PORT
@@ -183,9 +195,6 @@ peripherals:
 - name: SCG0
   base_address: 1074327552
   block: scg::SCG
-- name: SGI0
-  base_address: 1074704384
-  block: sgi::SGI
 - name: SMARTDMA0
   base_address: 1073799168
   block: smartdma::SMARTDMA
@@ -198,15 +207,6 @@ peripherals:
 - name: MBC0
   base_address: 1074323456
   block: trdc::TRDC
-- name: TRNG0
-  base_address: 1074708480
-  block: trng::TRNG
-- name: UDF0
-  base_address: 1074712576
-  block: udf::UDF
-- name: USB0
-  base_address: 1074413568
-  block: usb::USB
 - name: UTICK0
   base_address: 1073786880
   block: utick::UTICK
@@ -280,12 +280,6 @@ interrupts:
 - name: CAN0
   description: Controller Area Network 0 interrupt
   value: 19
-- name: FLEXIO
-  description: Flexible Input/Output interrupt
-  value: 23
-- name: I3C0
-  description: Improved Inter Integrated Circuit interrupt 0
-  value: 24
 - name: LPI2C0
   description: Low-Power Inter Integrated Circuit 0 interrupt
   value: 26
@@ -313,9 +307,6 @@ interrupts:
 - name: LPUART4
   description: Low-Power Universal Asynchronous Receive/Transmit 4 interrupt
   value: 35
-- name: USB0
-  description: Universal Serial Bus - Full Speed interrupt
-  value: 36
 - name: CDOG0
   description: Code Watchdog Timer 0 interrupt
   value: 38
@@ -394,6 +385,9 @@ interrupts:
 - name: CMP1
   description: Comparator 1 interrupt
   value: 65
+- name: CMP2
+  description: Comparator 2 interrupt
+  value: 66
 - name: DAC0
   description: Digital-to-Analog Converter 0 - General Purpose interrupt
   value: 67
@@ -448,27 +442,21 @@ interrupts:
 - name: EQDC1_INDEX
   description: Index / Roll Over / Roll Under
   value: 88
+- name: LPUART5
+  description: Low-Power Universal Asynchronous Receive/Transmit interrupt
+  value: 95
 - name: MAU
   description: MAU interrupt
   value: 107
 - name: SMARTDMA
   description: SmartDMA interrupt
   value: 108
-- name: CDOG1
-  description: Code Watchdog Timer 1 interrupt
-  value: 109
-- name: PKC
-  description: PKC interrupt
-  value: 110
-- name: SGI
-  description: SGI interrupt
-  value: 111
-- name: TRNG0
-  description: True Random Number Generator interrupt
-  value: 113
-- name: SECURE_ERR
-  description: 'Secure IP Error interrupt. It OR SGI, PKC, TRNG error together. '
-  value: 114
+- name: ADC2
+  description: Analog-to-Digital Converter 2 interrupt
+  value: 116
+- name: ADC3
+  description: Analog-to-Digital Converter 3 interrupt
+  value: 117
 - name: RTC
   description: RTC alarm interrupt
   value: 119

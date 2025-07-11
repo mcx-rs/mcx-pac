@@ -83,7 +83,7 @@ block/TRNG:
     fieldset: regs::STATUS
   - name: ENT
     array:
-      len: 1
+      len: 8
       stride: 4
     byte_offset: 64
   - name: PKRCNT10

@@ -77,19 +77,19 @@ block/SCG:
     byte_offset: 2048
     fieldset: regs::LDOCSR
 fieldset/regs::CSR:
-  description: Clock Status Register
+  description: Clock Status
   fields:
   - name: SCS
     bit_offset: 24
     bit_size: 3
 fieldset/regs::FIRCCFG:
-  description: FIRC Configuration Register
+  description: FIRC Configuration
   fields:
   - name: FREQ_SEL
     bit_offset: 1
     bit_size: 3
 fieldset/regs::FIRCCSR:
-  description: FIRC Control Status Register
+  description: FIRC Control Status
   fields:
   - name: FIRCEN
     bit_offset: 0
@@ -125,7 +125,7 @@ fieldset/regs::FIRCCSR:
     bit_offset: 31
     bit_size: 1
 fieldset/regs::FIRCTRIM:
-  description: FIRC Trim Register
+  description: FIRC Trim
   fields:
   - name: TRIMFINE
     bit_offset: 0
@@ -140,7 +140,7 @@ fieldset/regs::FIRCTRIM:
     bit_offset: 24
     bit_size: 6
 fieldset/regs::LDOCSR:
-  description: LDO Control and Status Register
+  description: LDO Control and Status
   fields:
   - name: LDOEN
     bit_offset: 0
@@ -155,7 +155,7 @@ fieldset/regs::LDOCSR:
     bit_offset: 31
     bit_size: 1
 fieldset/regs::PARAM:
-  description: Parameter Register
+  description: Parameter
   fields:
   - name: SOSCCLKPRES
     bit_offset: 1
@@ -173,13 +173,13 @@ fieldset/regs::PARAM:
     bit_offset: 6
     bit_size: 1
 fieldset/regs::RCCR:
-  description: Run Clock Control Register
+  description: Run Clock Control
   fields:
   - name: SCS
     bit_offset: 24
     bit_size: 3
 fieldset/regs::ROSCCSR:
-  description: ROSC Control Status Register
+  description: ROSC Control Status
   fields:
   - name: LK
     bit_offset: 23
@@ -194,7 +194,7 @@ fieldset/regs::ROSCCSR:
     bit_offset: 26
     bit_size: 1
 fieldset/regs::SIRCCSR:
-  description: SIRC Control Status Register
+  description: SIRC Control Status
   fields:
   - name: SIRCSTEN
     bit_offset: 1
@@ -230,7 +230,7 @@ fieldset/regs::SIRCCSR:
     bit_offset: 27
     bit_size: 1
 fieldset/regs::SIRCSTAT:
-  description: SIRC Auto-trimming Status Register
+  description: SIRC Auto-trimming Status
   fields:
   - name: CCOTRIM
     bit_offset: 0
@@ -239,7 +239,7 @@ fieldset/regs::SIRCSTAT:
     bit_offset: 8
     bit_size: 6
 fieldset/regs::SIRCTCFG:
-  description: SIRC Trim Configuration Register
+  description: SIRC Trim Configuration
   fields:
   - name: TRIMSRC
     bit_offset: 0
@@ -248,7 +248,7 @@ fieldset/regs::SIRCTCFG:
     bit_offset: 16
     bit_size: 7
 fieldset/regs::SIRCTRIM:
-  description: SIRC Trim Register
+  description: SIRC Trim
   fields:
   - name: CCOTRIM
     bit_offset: 0
@@ -263,7 +263,7 @@ fieldset/regs::SIRCTRIM:
     bit_offset: 24
     bit_size: 5
 fieldset/regs::SOSCCFG:
-  description: SOSC Configuration Register
+  description: SOSC Configuration
   fields:
   - name: EREFS
     bit_offset: 2
@@ -272,7 +272,7 @@ fieldset/regs::SOSCCFG:
     bit_offset: 4
     bit_size: 2
 fieldset/regs::SOSCCSR:
-  description: SOSC Control Status Register
+  description: SOSC Control Status
   fields:
   - name: SOSCEN
     bit_offset: 0
@@ -301,11 +301,8 @@ fieldset/regs::SOSCCSR:
   - name: SOSCVLD_IE
     bit_offset: 30
     bit_size: 1
-  - name: SOSC_SAFE_EN
-    bit_offset: 31
-    bit_size: 1
 fieldset/regs::SPLLCSR:
-  description: SPLL Control Status Register
+  description: SPLL Control Status
   fields:
   - name: SPLLPWREN
     bit_offset: 0
@@ -341,7 +338,7 @@ fieldset/regs::SPLLCSR:
     bit_offset: 30
     bit_size: 1
 fieldset/regs::SPLLCTRL:
-  description: SPLL Control Register
+  description: SPLL Control
   fields:
   - name: SELR
     bit_offset: 0
@@ -374,13 +371,13 @@ fieldset/regs::SPLLCTRL:
     bit_offset: 25
     bit_size: 2
 fieldset/regs::SPLLLOCK_CNFG:
-  description: SPLL LOCK Configuration Register
+  description: SPLL LOCK Configuration
   fields:
   - name: LOCK_TIME
     bit_offset: 0
     bit_size: 17
 fieldset/regs::SPLLMDIV:
-  description: SPLL M Divider Register
+  description: SPLL M Divider
   fields:
   - name: MDIV
     bit_offset: 0
@@ -389,7 +386,7 @@ fieldset/regs::SPLLMDIV:
     bit_offset: 31
     bit_size: 1
 fieldset/regs::SPLLNDIV:
-  description: SPLL N Divider Register
+  description: SPLL N Divider
   fields:
   - name: NDIV
     bit_offset: 0
@@ -398,7 +395,7 @@ fieldset/regs::SPLLNDIV:
     bit_offset: 31
     bit_size: 1
 fieldset/regs::SPLLPDIV:
-  description: SPLL P Divider Register
+  description: SPLL P Divider
   fields:
   - name: PDIV
     bit_offset: 0
@@ -407,7 +404,7 @@ fieldset/regs::SPLLPDIV:
     bit_offset: 31
     bit_size: 1
 fieldset/regs::SPLLSSCG1:
-  description: SPLL Spread Spectrum Control 1 Register
+  description: SPLL Spread Spectrum Control 1
   fields:
   - name: SS_MDIV_MSB
     bit_offset: 0
@@ -434,13 +431,13 @@ fieldset/regs::SPLLSSCG1:
     bit_offset: 31
     bit_size: 1
 fieldset/regs::SPLLSSCGSTAT:
-  description: SPLL SSCG Status Register
+  description: SPLL SSCG Status
   fields:
   - name: SS_MDIV_ACK
     bit_offset: 0
     bit_size: 1
 fieldset/regs::SPLLSTAT:
-  description: SPLL Status Register
+  description: SPLL Status
   fields:
   - name: NDIVACK
     bit_offset: 1
@@ -455,7 +452,7 @@ fieldset/regs::SPLLSTAT:
     bit_offset: 4
     bit_size: 1
 fieldset/regs::TRIM_LOCK:
-  description: Trim Lock register
+  description: Trim Lock
   fields:
   - name: TRIM_UNLOCK
     bit_offset: 0
