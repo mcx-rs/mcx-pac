@@ -24,6 +24,10 @@ impl SPC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
     #[inline(always)]
+    pub const fn CNTRL(self) -> crate::common::Reg<regs::CNTRL, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+    }
+    #[inline(always)]
     pub const fn LPREQ_CFG(self) -> crate::common::Reg<regs::LPREQ_CFG, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
@@ -130,15 +134,6 @@ pub mod regs {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val as u32) & 0x03) << 20usize);
         }
         #[inline(always)]
-        pub const fn VDD_VD_DISABLE(&self) -> bool {
-            let val = (self.0 >> 23usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_VDD_VD_DISABLE(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
-        }
-        #[inline(always)]
         pub const fn CORE_LVDE(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
             val != 0
@@ -178,7 +173,6 @@ pub mod regs {
                 .field("CORELDO_VDD_DS", &self.CORELDO_VDD_DS())
                 .field("CORELDO_VDD_LVL", &self.CORELDO_VDD_LVL())
                 .field("BGMODE", &self.BGMODE())
-                .field("VDD_VD_DISABLE", &self.VDD_VD_DISABLE())
                 .field("CORE_LVDE", &self.CORE_LVDE())
                 .field("SYS_LVDE", &self.SYS_LVDE())
                 .field("SYS_HVDE", &self.SYS_HVDE())
@@ -188,7 +182,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for ACTIVE_CFG {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "ACTIVE_CFG {{ CORELDO_VDD_DS: {=bool:?}, CORELDO_VDD_LVL: {=u8:?}, BGMODE: {=u8:?}, VDD_VD_DISABLE: {=bool:?}, CORE_LVDE: {=bool:?}, SYS_LVDE: {=bool:?}, SYS_HVDE: {=bool:?} }}" , self . CORELDO_VDD_DS () , self . CORELDO_VDD_LVL () , self . BGMODE () , self . VDD_VD_DISABLE () , self . CORE_LVDE () , self . SYS_LVDE () , self . SYS_HVDE ())
+            defmt :: write ! (f , "ACTIVE_CFG {{ CORELDO_VDD_DS: {=bool:?}, CORELDO_VDD_LVL: {=u8:?}, BGMODE: {=u8:?}, CORE_LVDE: {=bool:?}, SYS_LVDE: {=bool:?}, SYS_HVDE: {=bool:?} }}" , self . CORELDO_VDD_DS () , self . CORELDO_VDD_LVL () , self . BGMODE () , self . CORE_LVDE () , self . SYS_LVDE () , self . SYS_HVDE ())
         }
     }
     #[doc = "Active Voltage Trim Delay"]
@@ -227,6 +221,40 @@ pub mod regs {
                 "ACTIVE_VDELAY {{ ACTIVE_VDELAY: {=u16:?} }}",
                 self.ACTIVE_VDELAY()
             )
+        }
+    }
+    #[doc = "SPC Regulator Control"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct CNTRL(pub u32);
+    impl CNTRL {
+        #[inline(always)]
+        pub const fn CORELDO_EN(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[inline(always)]
+        pub fn set_CORELDO_EN(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+    }
+    impl Default for CNTRL {
+        #[inline(always)]
+        fn default() -> CNTRL {
+            CNTRL(0)
+        }
+    }
+    impl core::fmt::Debug for CNTRL {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CNTRL")
+                .field("CORELDO_EN", &self.CORELDO_EN())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CNTRL {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CNTRL {{ CORELDO_EN: {=bool:?} }}", self.CORELDO_EN())
         }
     }
     #[doc = "External Voltage Domain Configuration"]
@@ -497,15 +525,6 @@ pub mod regs {
     pub struct PD_STATUS(pub u32);
     impl PD_STATUS {
         #[inline(always)]
-        pub const fn PWR_REQ_STATUS(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_PWR_REQ_STATUS(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[inline(always)]
         pub const fn PD_LP_REQ(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
@@ -533,7 +552,6 @@ pub mod regs {
     impl core::fmt::Debug for PD_STATUS {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("PD_STATUS")
-                .field("PWR_REQ_STATUS", &self.PWR_REQ_STATUS())
                 .field("PD_LP_REQ", &self.PD_LP_REQ())
                 .field("LP_MODE", &self.LP_MODE())
                 .finish()
@@ -544,8 +562,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "PD_STATUS {{ PWR_REQ_STATUS: {=bool:?}, PD_LP_REQ: {=bool:?}, LP_MODE: {=u8:?} }}",
-                self.PWR_REQ_STATUS(),
+                "PD_STATUS {{ PD_LP_REQ: {=bool:?}, LP_MODE: {=u8:?} }}",
                 self.PD_LP_REQ(),
                 self.LP_MODE()
             )
@@ -918,6 +935,15 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[inline(always)]
+        pub const fn LVSEL(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[inline(always)]
+        pub fn set_LVSEL(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[inline(always)]
         pub const fn LOCK(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
@@ -940,6 +966,7 @@ pub mod regs {
                 .field("LVDIE", &self.LVDIE())
                 .field("HVDRE", &self.HVDRE())
                 .field("HVDIE", &self.HVDIE())
+                .field("LVSEL", &self.LVSEL())
                 .field("LOCK", &self.LOCK())
                 .finish()
         }
@@ -947,7 +974,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for VD_SYS_CFG {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "VD_SYS_CFG {{ LVDRE: {=bool:?}, LVDIE: {=bool:?}, HVDRE: {=bool:?}, HVDIE: {=bool:?}, LOCK: {=bool:?} }}" , self . LVDRE () , self . LVDIE () , self . HVDRE () , self . HVDIE () , self . LOCK ())
+            defmt :: write ! (f , "VD_SYS_CFG {{ LVDRE: {=bool:?}, LVDIE: {=bool:?}, HVDRE: {=bool:?}, HVDIE: {=bool:?}, LVSEL: {=bool:?}, LOCK: {=bool:?} }}" , self . LVDRE () , self . LVDIE () , self . HVDRE () , self . HVDIE () , self . LVSEL () , self . LOCK ())
         }
     }
     #[doc = "Version ID"]

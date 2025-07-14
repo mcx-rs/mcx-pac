@@ -149,14 +149,6 @@ impl USB {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0114usize) as _) }
     }
     #[inline(always)]
-    pub const fn KEEP_ALIVE_CTRL_RSVD(self) -> crate::common::Reg<u8, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0124usize) as _) }
-    }
-    #[inline(always)]
-    pub const fn KEEP_ALIVE_WKCTRL_RSVD(self) -> crate::common::Reg<u8, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0128usize) as _) }
-    }
-    #[inline(always)]
     pub const fn MISCCTRL(self) -> crate::common::Reg<regs::MISCCTRL, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x012cusize) as _) }
     }

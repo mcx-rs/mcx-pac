@@ -927,12 +927,6 @@ fieldset/regs::MCR0:
   - name: RXCLKSRC
     bit_offset: 4
     bit_size: 2
-  - name: ARDFEN
-    bit_offset: 6
-    bit_size: 1
-  - name: ATDFEN
-    bit_offset: 7
-    bit_size: 1
   - name: SERCLKDIV
     bit_offset: 8
     bit_size: 3

@@ -132,15 +132,6 @@ pub mod regs {
         pub fn set_LOCK(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
-        #[inline(always)]
-        pub const fn DEBUG_EN(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_DEBUG_EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
     }
     impl Default for MOD {
         #[inline(always)]
@@ -157,14 +148,13 @@ pub mod regs {
                 .field("WDINT", &self.WDINT())
                 .field("WDPROTECT", &self.WDPROTECT())
                 .field("LOCK", &self.LOCK())
-                .field("DEBUG_EN", &self.DEBUG_EN())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for MOD {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MOD {{ WDEN: {=bool:?}, WDRESET: {=bool:?}, WDTOF: {=bool:?}, WDINT: {=bool:?}, WDPROTECT: {=bool:?}, LOCK: {=bool:?}, DEBUG_EN: {=bool:?} }}" , self . WDEN () , self . WDRESET () , self . WDTOF () , self . WDINT () , self . WDPROTECT () , self . LOCK () , self . DEBUG_EN ())
+            defmt :: write ! (f , "MOD {{ WDEN: {=bool:?}, WDRESET: {=bool:?}, WDTOF: {=bool:?}, WDINT: {=bool:?}, WDPROTECT: {=bool:?}, LOCK: {=bool:?} }}" , self . WDEN () , self . WDRESET () , self . WDTOF () , self . WDINT () , self . WDPROTECT () , self . LOCK ())
         }
     }
     #[doc = "Timer Constant"]

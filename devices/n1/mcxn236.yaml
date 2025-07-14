@@ -96,35 +96,35 @@ peripherals:
 - name: GPIO0
   base_address: 1074356224
   block: gpio::GPIO
-- name: GPIO0_ALIAS1
-  base_address: 1074360320
-  block: gpio::GPIO
 - name: GPIO1
   base_address: 1074364416
-  block: gpio::GPIO
-- name: GPIO1_ALIAS1
-  base_address: 1074368512
   block: gpio::GPIO
 - name: GPIO2
   base_address: 1074372608
   block: gpio::GPIO
-- name: GPIO2_ALIAS1
-  base_address: 1074376704
-  block: gpio::GPIO
 - name: GPIO3
   base_address: 1074380800
-  block: gpio::GPIO
-- name: GPIO3_ALIAS1
-  base_address: 1074384896
   block: gpio::GPIO
 - name: GPIO4
   base_address: 1074388992
   block: gpio::GPIO
-- name: GPIO4_ALIAS1
-  base_address: 1074393088
-  block: gpio::GPIO
 - name: GPIO5
   base_address: 1074003968
+  block: gpio::GPIO
+- name: GPIO0_ALIAS1
+  base_address: 1074360320
+  block: gpio::GPIO
+- name: GPIO1_ALIAS1
+  base_address: 1074368512
+  block: gpio::GPIO
+- name: GPIO2_ALIAS1
+  base_address: 1074376704
+  block: gpio::GPIO
+- name: GPIO3_ALIAS1
+  base_address: 1074384896
+  block: gpio::GPIO
+- name: GPIO4_ALIAS1
+  base_address: 1074393088
   block: gpio::GPIO
 - name: GPIO5_ALIAS1
   base_address: 1074008064
@@ -358,7 +358,7 @@ peripherals:
   base_address: 1074835456
   block: usbhs::USBHS
 - name: USBHS1_PHY_DCD
-  base_address: 1074831360
+  base_address: 1074833408
   block: usbhsdcd::USBHSDCD
 - name: USBHS1__USBNC
   base_address: 1074835968
@@ -521,7 +521,7 @@ interrupts:
   description: Pin Interrupt Pattern Match Interrupt
   value: 47
 - name: PDM_EVENT
-  description: Microphone Interface interrupt
+  description: 'Microphone Interface interrupt '
   value: 48
 - name: USB0_DCD
   description: Universal Serial Bus - Device Charge Detect interrupt
@@ -557,12 +557,12 @@ interrupts:
   description: USBHS DCD or USBHS Phy interrupt
   value: 66
 - name: USB1_HS
-  description: USB High Speed OTG Controller interrupt
+  description: 'USB High Speed OTG Controller interrupt '
   value: 67
 - name: SEC_HYPERVISOR_CALL
   description: AHB Secure Controller hypervisor call interrupt
   value: 68
-- name: FREQME
+- name: Freqme
   description: Frequency Measurement interrupt
   value: 71
 - name: SEC_VIO

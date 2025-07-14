@@ -347,49 +347,31 @@ pub mod regs {
     pub struct SGI_ACCESS_ERR(pub u32);
     impl SGI_ACCESS_ERR {
         #[inline(always)]
-        pub const fn apb_notav(&self) -> bool {
+        pub const fn APB_NOTAV(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_apb_notav(&mut self, val: bool) {
+        pub fn set_APB_NOTAV(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[inline(always)]
-        pub const fn apb_wrgmd(&self) -> bool {
+        pub const fn APB_WRGMD(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_apb_wrgmd(&mut self, val: bool) {
+        pub fn set_APB_WRGMD(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[inline(always)]
-        pub const fn accerr_rsvd1(&self) -> u8 {
-            let val = (self.0 >> 2usize) & 0x03;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_accerr_rsvd1(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
-        }
-        #[inline(always)]
-        pub const fn apb_master(&self) -> u8 {
+        pub const fn APB_MASTER(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_apb_master(&mut self, val: u8) {
+        pub fn set_APB_MASTER(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
-        }
-        #[inline(always)]
-        pub const fn accerr_rsvd2(&self) -> u32 {
-            let val = (self.0 >> 8usize) & 0x00ff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_accerr_rsvd2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0x00ff_ffff << 8usize)) | (((val as u32) & 0x00ff_ffff) << 8usize);
         }
     }
     impl Default for SGI_ACCESS_ERR {
@@ -401,18 +383,16 @@ pub mod regs {
     impl core::fmt::Debug for SGI_ACCESS_ERR {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_ACCESS_ERR")
-                .field("apb_notav", &self.apb_notav())
-                .field("apb_wrgmd", &self.apb_wrgmd())
-                .field("accerr_rsvd1", &self.accerr_rsvd1())
-                .field("apb_master", &self.apb_master())
-                .field("accerr_rsvd2", &self.accerr_rsvd2())
+                .field("APB_NOTAV", &self.APB_NOTAV())
+                .field("APB_WRGMD", &self.APB_WRGMD())
+                .field("APB_MASTER", &self.APB_MASTER())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SGI_ACCESS_ERR {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "SGI_ACCESS_ERR {{ apb_notav: {=bool:?}, apb_wrgmd: {=bool:?}, accerr_rsvd1: {=u8:?}, apb_master: {=u8:?}, accerr_rsvd2: {=u32:?} }}" , self . apb_notav () , self . apb_wrgmd () , self . accerr_rsvd1 () , self . apb_master () , self . accerr_rsvd2 ())
+            defmt :: write ! (f , "SGI_ACCESS_ERR {{ APB_NOTAV: {=bool:?}, APB_WRGMD: {=bool:?}, APB_MASTER: {=u8:?} }}" , self . APB_NOTAV () , self . APB_WRGMD () , self . APB_MASTER ())
         }
     }
     #[doc = "Clear Access Error"]
@@ -421,22 +401,13 @@ pub mod regs {
     pub struct SGI_ACCESS_ERR_CLR(pub u32);
     impl SGI_ACCESS_ERR_CLR {
         #[inline(always)]
-        pub const fn err_clr(&self) -> bool {
+        pub const fn ERR_CLR(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_err_clr(&mut self, val: bool) {
+        pub fn set_ERR_CLR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[inline(always)]
-        pub const fn accerrc_rsvd(&self) -> u32 {
-            let val = (self.0 >> 1usize) & 0x7fff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_accerrc_rsvd(&mut self, val: u32) {
-            self.0 = (self.0 & !(0x7fff_ffff << 1usize)) | (((val as u32) & 0x7fff_ffff) << 1usize);
         }
     }
     impl Default for SGI_ACCESS_ERR_CLR {
@@ -448,8 +419,7 @@ pub mod regs {
     impl core::fmt::Debug for SGI_ACCESS_ERR_CLR {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_ACCESS_ERR_CLR")
-                .field("err_clr", &self.err_clr())
-                .field("accerrc_rsvd", &self.accerrc_rsvd())
+                .field("ERR_CLR", &self.ERR_CLR())
                 .finish()
         }
     }
@@ -458,9 +428,8 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "SGI_ACCESS_ERR_CLR {{ err_clr: {=bool:?}, accerrc_rsvd: {=u32:?} }}",
-                self.err_clr(),
-                self.accerrc_rsvd()
+                "SGI_ACCESS_ERR_CLR {{ ERR_CLR: {=bool:?} }}",
+                self.ERR_CLR()
             )
         }
     }
@@ -470,40 +439,22 @@ pub mod regs {
     pub struct SGI_AUTO_DMA_CTRL(pub u32);
     impl SGI_AUTO_DMA_CTRL {
         #[inline(always)]
-        pub const fn ife(&self) -> bool {
+        pub const fn IFE(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_ife(&mut self, val: bool) {
+        pub fn set_IFE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[inline(always)]
-        pub const fn auto_dma_rsvd1(&self) -> u8 {
-            let val = (self.0 >> 1usize) & 0x7f;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_auto_dma_rsvd1(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 1usize)) | (((val as u32) & 0x7f) << 1usize);
-        }
-        #[inline(always)]
-        pub const fn ofe(&self) -> bool {
+        pub const fn OFE(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_ofe(&mut self, val: bool) {
+        pub fn set_OFE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[inline(always)]
-        pub const fn auto_dma_rsvd2(&self) -> u32 {
-            let val = (self.0 >> 9usize) & 0x007f_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_auto_dma_rsvd2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0x007f_ffff << 9usize)) | (((val as u32) & 0x007f_ffff) << 9usize);
         }
     }
     impl Default for SGI_AUTO_DMA_CTRL {
@@ -515,17 +466,20 @@ pub mod regs {
     impl core::fmt::Debug for SGI_AUTO_DMA_CTRL {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_AUTO_DMA_CTRL")
-                .field("ife", &self.ife())
-                .field("auto_dma_rsvd1", &self.auto_dma_rsvd1())
-                .field("ofe", &self.ofe())
-                .field("auto_dma_rsvd2", &self.auto_dma_rsvd2())
+                .field("IFE", &self.IFE())
+                .field("OFE", &self.OFE())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SGI_AUTO_DMA_CTRL {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "SGI_AUTO_DMA_CTRL {{ ife: {=bool:?}, auto_dma_rsvd1: {=u8:?}, ofe: {=bool:?}, auto_dma_rsvd2: {=u32:?} }}" , self . ife () , self . auto_dma_rsvd1 () , self . ofe () , self . auto_dma_rsvd2 ())
+            defmt::write!(
+                f,
+                "SGI_AUTO_DMA_CTRL {{ IFE: {=bool:?}, OFE: {=bool:?} }}",
+                self.IFE(),
+                self.OFE()
+            )
         }
     }
     #[doc = "SGI Auto Mode Control register"]
@@ -534,67 +488,40 @@ pub mod regs {
     pub struct SGI_AUTO_MODE(pub u32);
     impl SGI_AUTO_MODE {
         #[inline(always)]
-        pub const fn auto_mode_en(&self) -> bool {
+        pub const fn AUTO_MODE_EN(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_auto_mode_en(&mut self, val: bool) {
+        pub fn set_AUTO_MODE_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[inline(always)]
-        pub const fn auto_mode_stop(&self) -> bool {
+        pub const fn AUTO_MODE_STOP(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_auto_mode_stop(&mut self, val: bool) {
+        pub fn set_AUTO_MODE_STOP(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[inline(always)]
-        pub const fn auto_mode_rsvd1(&self) -> u8 {
-            let val = (self.0 >> 2usize) & 0x03;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_auto_mode_rsvd1(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
-        }
-        #[inline(always)]
-        pub const fn incr_mode(&self) -> u8 {
+        pub const fn INCR_MODE(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_incr_mode(&mut self, val: u8) {
+        pub fn set_INCR_MODE(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
         #[inline(always)]
-        pub const fn auto_mode_rsvd2(&self) -> u8 {
-            let val = (self.0 >> 6usize) & 0x03;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_auto_mode_rsvd2(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
-        }
-        #[inline(always)]
-        pub const fn cmd(&self) -> u8 {
+        pub const fn CMD(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_cmd(&mut self, val: u8) {
+        pub fn set_CMD(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
-        }
-        #[inline(always)]
-        pub const fn auto_mode_rsvd3(&self) -> u16 {
-            let val = (self.0 >> 16usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_auto_mode_rsvd3(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
     impl Default for SGI_AUTO_MODE {
@@ -606,20 +533,17 @@ pub mod regs {
     impl core::fmt::Debug for SGI_AUTO_MODE {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_AUTO_MODE")
-                .field("auto_mode_en", &self.auto_mode_en())
-                .field("auto_mode_stop", &self.auto_mode_stop())
-                .field("auto_mode_rsvd1", &self.auto_mode_rsvd1())
-                .field("incr_mode", &self.incr_mode())
-                .field("auto_mode_rsvd2", &self.auto_mode_rsvd2())
-                .field("cmd", &self.cmd())
-                .field("auto_mode_rsvd3", &self.auto_mode_rsvd3())
+                .field("AUTO_MODE_EN", &self.AUTO_MODE_EN())
+                .field("AUTO_MODE_STOP", &self.AUTO_MODE_STOP())
+                .field("INCR_MODE", &self.INCR_MODE())
+                .field("CMD", &self.CMD())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SGI_AUTO_MODE {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "SGI_AUTO_MODE {{ auto_mode_en: {=bool:?}, auto_mode_stop: {=bool:?}, auto_mode_rsvd1: {=u8:?}, incr_mode: {=u8:?}, auto_mode_rsvd2: {=u8:?}, cmd: {=u8:?}, auto_mode_rsvd3: {=u16:?} }}" , self . auto_mode_en () , self . auto_mode_stop () , self . auto_mode_rsvd1 () , self . incr_mode () , self . auto_mode_rsvd2 () , self . cmd () , self . auto_mode_rsvd3 ())
+            defmt :: write ! (f , "SGI_AUTO_MODE {{ AUTO_MODE_EN: {=bool:?}, AUTO_MODE_STOP: {=bool:?}, INCR_MODE: {=u8:?}, CMD: {=u8:?} }}" , self . AUTO_MODE_EN () , self . AUTO_MODE_STOP () , self . INCR_MODE () , self . CMD ())
         }
     }
     #[doc = "SHA Configuration Reg"]
@@ -628,229 +552,193 @@ pub mod regs {
     pub struct SGI_CONFIG(pub u32);
     impl SGI_CONFIG {
         #[inline(always)]
-        pub const fn row(&self) -> bool {
+        pub const fn ROW(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_row(&mut self, val: bool) {
+        pub fn set_ROW(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[inline(always)]
-        pub const fn china(&self) -> bool {
+        pub const fn CHINA(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_china(&mut self, val: bool) {
+        pub fn set_CHINA(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[inline(always)]
-        pub const fn cc(&self) -> bool {
+        pub const fn CC(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_cc(&mut self, val: bool) {
+        pub fn set_CC(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[inline(always)]
-        pub const fn has_aes(&self) -> bool {
+        pub const fn HAS_AES(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_has_aes(&mut self, val: bool) {
+        pub fn set_HAS_AES(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[inline(always)]
-        pub const fn has_des(&self) -> bool {
+        pub const fn HAS_DES(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_has_des(&mut self, val: bool) {
+        pub fn set_HAS_DES(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[inline(always)]
-        pub const fn has_sha(&self) -> bool {
+        pub const fn HAS_SHA(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_has_sha(&mut self, val: bool) {
+        pub fn set_HAS_SHA(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[inline(always)]
-        pub const fn has_movem(&self) -> bool {
+        pub const fn HAS_MOVEM(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_has_movem(&mut self, val: bool) {
+        pub fn set_HAS_MOVEM(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[inline(always)]
-        pub const fn has_cmac(&self) -> bool {
+        pub const fn HAS_CMAC(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_has_cmac(&mut self, val: bool) {
+        pub fn set_HAS_CMAC(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[inline(always)]
-        pub const fn has_gfmul(&self) -> bool {
+        pub const fn HAS_GFMUL(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_has_gfmul(&mut self, val: bool) {
+        pub fn set_HAS_GFMUL(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[inline(always)]
-        pub const fn internal_prng(&self) -> bool {
+        pub const fn INTERNAL_PRNG(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_internal_prng(&mut self, val: bool) {
+        pub fn set_INTERNAL_PRNG(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[inline(always)]
-        pub const fn key_digest(&self) -> bool {
+        pub const fn KEY_DIGEST(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_key_digest(&mut self, val: bool) {
+        pub fn set_KEY_DIGEST(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[inline(always)]
-        pub const fn count_size(&self) -> bool {
+        pub const fn COUNT_SIZE(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_count_size(&mut self, val: bool) {
+        pub fn set_COUNT_SIZE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[inline(always)]
-        pub const fn configc_rsvd(&self) -> bool {
-            let val = (self.0 >> 12usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_configc_rsvd(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
-        }
-        #[inline(always)]
-        pub const fn fa(&self) -> bool {
+        pub const fn FA(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_fa(&mut self, val: bool) {
+        pub fn set_FA(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[inline(always)]
-        pub const fn configb2_rsvd(&self) -> bool {
-            let val = (self.0 >> 14usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_configb2_rsvd(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
-        }
-        #[inline(always)]
-        pub const fn bus_width(&self) -> bool {
+        pub const fn BUS_WIDTH(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_bus_width(&mut self, val: bool) {
+        pub fn set_BUS_WIDTH(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[inline(always)]
-        pub const fn num_datin(&self) -> u8 {
+        pub const fn NUM_DATIN(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_num_datin(&mut self, val: u8) {
+        pub fn set_NUM_DATIN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
         }
         #[inline(always)]
-        pub const fn num_key(&self) -> u8 {
+        pub const fn NUM_KEY(&self) -> u8 {
             let val = (self.0 >> 18usize) & 0x07;
             val as u8
         }
         #[inline(always)]
-        pub fn set_num_key(&mut self, val: u8) {
+        pub fn set_NUM_KEY(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 18usize)) | (((val as u32) & 0x07) << 18usize);
         }
         #[inline(always)]
-        pub const fn edc(&self) -> bool {
+        pub const fn EDC(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_edc(&mut self, val: bool) {
+        pub fn set_EDC(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[inline(always)]
-        pub const fn configb_rsvd(&self) -> u8 {
-            let val = (self.0 >> 22usize) & 0x03;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_configb_rsvd(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 22usize)) | (((val as u32) & 0x03) << 22usize);
-        }
-        #[inline(always)]
-        pub const fn sha_256_only(&self) -> bool {
+        pub const fn SHA_256_ONLY(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_sha_256_only(&mut self, val: bool) {
+        pub fn set_SHA_256_ONLY(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[inline(always)]
-        pub const fn spb_support(&self) -> bool {
+        pub const fn SPB_SUPPORT(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_spb_support(&mut self, val: bool) {
+        pub fn set_SPB_SUPPORT(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[inline(always)]
-        pub const fn spb_masking(&self) -> bool {
+        pub const fn SPB_MASKING(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_spb_masking(&mut self, val: bool) {
+        pub fn set_SPB_MASKING(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[inline(always)]
-        pub const fn sfr_sw_mask(&self) -> bool {
+        pub const fn SFR_SW_MASK(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_sfr_sw_mask(&mut self, val: bool) {
+        pub fn set_SFR_SW_MASK(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
-        }
-        #[inline(always)]
-        pub const fn configa_rsvd(&self) -> u8 {
-            let val = (self.0 >> 28usize) & 0x0f;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_configa_rsvd(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 28usize)) | (((val as u32) & 0x0f) << 28usize);
         }
     }
     impl Default for SGI_CONFIG {
@@ -862,38 +750,34 @@ pub mod regs {
     impl core::fmt::Debug for SGI_CONFIG {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_CONFIG")
-                .field("row", &self.row())
-                .field("china", &self.china())
-                .field("cc", &self.cc())
-                .field("has_aes", &self.has_aes())
-                .field("has_des", &self.has_des())
-                .field("has_sha", &self.has_sha())
-                .field("has_movem", &self.has_movem())
-                .field("has_cmac", &self.has_cmac())
-                .field("has_gfmul", &self.has_gfmul())
-                .field("internal_prng", &self.internal_prng())
-                .field("key_digest", &self.key_digest())
-                .field("count_size", &self.count_size())
-                .field("configc_rsvd", &self.configc_rsvd())
-                .field("fa", &self.fa())
-                .field("configb2_rsvd", &self.configb2_rsvd())
-                .field("bus_width", &self.bus_width())
-                .field("num_datin", &self.num_datin())
-                .field("num_key", &self.num_key())
-                .field("edc", &self.edc())
-                .field("configb_rsvd", &self.configb_rsvd())
-                .field("sha_256_only", &self.sha_256_only())
-                .field("spb_support", &self.spb_support())
-                .field("spb_masking", &self.spb_masking())
-                .field("sfr_sw_mask", &self.sfr_sw_mask())
-                .field("configa_rsvd", &self.configa_rsvd())
+                .field("ROW", &self.ROW())
+                .field("CHINA", &self.CHINA())
+                .field("CC", &self.CC())
+                .field("HAS_AES", &self.HAS_AES())
+                .field("HAS_DES", &self.HAS_DES())
+                .field("HAS_SHA", &self.HAS_SHA())
+                .field("HAS_MOVEM", &self.HAS_MOVEM())
+                .field("HAS_CMAC", &self.HAS_CMAC())
+                .field("HAS_GFMUL", &self.HAS_GFMUL())
+                .field("INTERNAL_PRNG", &self.INTERNAL_PRNG())
+                .field("KEY_DIGEST", &self.KEY_DIGEST())
+                .field("COUNT_SIZE", &self.COUNT_SIZE())
+                .field("FA", &self.FA())
+                .field("BUS_WIDTH", &self.BUS_WIDTH())
+                .field("NUM_DATIN", &self.NUM_DATIN())
+                .field("NUM_KEY", &self.NUM_KEY())
+                .field("EDC", &self.EDC())
+                .field("SHA_256_ONLY", &self.SHA_256_ONLY())
+                .field("SPB_SUPPORT", &self.SPB_SUPPORT())
+                .field("SPB_MASKING", &self.SPB_MASKING())
+                .field("SFR_SW_MASK", &self.SFR_SW_MASK())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SGI_CONFIG {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "SGI_CONFIG {{ row: {=bool:?}, china: {=bool:?}, cc: {=bool:?}, has_aes: {=bool:?}, has_des: {=bool:?}, has_sha: {=bool:?}, has_movem: {=bool:?}, has_cmac: {=bool:?}, has_gfmul: {=bool:?}, internal_prng: {=bool:?}, key_digest: {=bool:?}, count_size: {=bool:?}, configc_rsvd: {=bool:?}, fa: {=bool:?}, configb2_rsvd: {=bool:?}, bus_width: {=bool:?}, num_datin: {=u8:?}, num_key: {=u8:?}, edc: {=bool:?}, configb_rsvd: {=u8:?}, sha_256_only: {=bool:?}, spb_support: {=bool:?}, spb_masking: {=bool:?}, sfr_sw_mask: {=bool:?}, configa_rsvd: {=u8:?} }}" , self . row () , self . china () , self . cc () , self . has_aes () , self . has_des () , self . has_sha () , self . has_movem () , self . has_cmac () , self . has_gfmul () , self . internal_prng () , self . key_digest () , self . count_size () , self . configc_rsvd () , self . fa () , self . configb2_rsvd () , self . bus_width () , self . num_datin () , self . num_key () , self . edc () , self . configb_rsvd () , self . sha_256_only () , self . spb_support () , self . spb_masking () , self . sfr_sw_mask () , self . configa_rsvd ())
+            defmt :: write ! (f , "SGI_CONFIG {{ ROW: {=bool:?}, CHINA: {=bool:?}, CC: {=bool:?}, HAS_AES: {=bool:?}, HAS_DES: {=bool:?}, HAS_SHA: {=bool:?}, HAS_MOVEM: {=bool:?}, HAS_CMAC: {=bool:?}, HAS_GFMUL: {=bool:?}, INTERNAL_PRNG: {=bool:?}, KEY_DIGEST: {=bool:?}, COUNT_SIZE: {=bool:?}, FA: {=bool:?}, BUS_WIDTH: {=bool:?}, NUM_DATIN: {=u8:?}, NUM_KEY: {=u8:?}, EDC: {=bool:?}, SHA_256_ONLY: {=bool:?}, SPB_SUPPORT: {=bool:?}, SPB_MASKING: {=bool:?}, SFR_SW_MASK: {=bool:?} }}" , self . ROW () , self . CHINA () , self . CC () , self . HAS_AES () , self . HAS_DES () , self . HAS_SHA () , self . HAS_MOVEM () , self . HAS_CMAC () , self . HAS_GFMUL () , self . INTERNAL_PRNG () , self . KEY_DIGEST () , self . COUNT_SIZE () , self . FA () , self . BUS_WIDTH () , self . NUM_DATIN () , self . NUM_KEY () , self . EDC () , self . SHA_256_ONLY () , self . SPB_SUPPORT () , self . SPB_MASKING () , self . SFR_SW_MASK ())
         }
     }
     #[doc = "SHA Configuration 2 Reg"]
@@ -902,67 +786,49 @@ pub mod regs {
     pub struct SGI_CONFIG2(pub u32);
     impl SGI_CONFIG2 {
         #[inline(always)]
-        pub const fn aes_used(&self) -> u8 {
+        pub const fn AES_USED(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_aes_used(&mut self, val: u8) {
+        pub fn set_AES_USED(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[inline(always)]
-        pub const fn aes_num_sboxes(&self) -> u8 {
+        pub const fn AES_NUM_SBOXES(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x1f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_aes_num_sboxes(&mut self, val: u8) {
+        pub fn set_AES_NUM_SBOXES(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 4usize)) | (((val as u32) & 0x1f) << 4usize);
         }
         #[inline(always)]
-        pub const fn aes_keysize(&self) -> u8 {
+        pub const fn AES_KEYSIZE(&self) -> u8 {
             let val = (self.0 >> 9usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_aes_keysize(&mut self, val: u8) {
+        pub fn set_AES_KEYSIZE(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 9usize)) | (((val as u32) & 0x03) << 9usize);
         }
         #[inline(always)]
-        pub const fn config2b_rsvd(&self) -> u8 {
-            let val = (self.0 >> 11usize) & 0x1f;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_config2b_rsvd(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 11usize)) | (((val as u32) & 0x1f) << 11usize);
-        }
-        #[inline(always)]
-        pub const fn des_used(&self) -> u8 {
+        pub const fn DES_USED(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_des_used(&mut self, val: u8) {
+        pub fn set_DES_USED(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 16usize)) | (((val as u32) & 0x0f) << 16usize);
         }
         #[inline(always)]
-        pub const fn des_num_sboxes(&self) -> u8 {
+        pub const fn DES_NUM_SBOXES(&self) -> u8 {
             let val = (self.0 >> 20usize) & 0x1f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_des_num_sboxes(&mut self, val: u8) {
+        pub fn set_DES_NUM_SBOXES(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 20usize)) | (((val as u32) & 0x1f) << 20usize);
-        }
-        #[inline(always)]
-        pub const fn config2a_rsvd(&self) -> u8 {
-            let val = (self.0 >> 25usize) & 0x7f;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_config2a_rsvd(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 25usize)) | (((val as u32) & 0x7f) << 25usize);
         }
     }
     impl Default for SGI_CONFIG2 {
@@ -974,20 +840,18 @@ pub mod regs {
     impl core::fmt::Debug for SGI_CONFIG2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_CONFIG2")
-                .field("aes_used", &self.aes_used())
-                .field("aes_num_sboxes", &self.aes_num_sboxes())
-                .field("aes_keysize", &self.aes_keysize())
-                .field("config2b_rsvd", &self.config2b_rsvd())
-                .field("des_used", &self.des_used())
-                .field("des_num_sboxes", &self.des_num_sboxes())
-                .field("config2a_rsvd", &self.config2a_rsvd())
+                .field("AES_USED", &self.AES_USED())
+                .field("AES_NUM_SBOXES", &self.AES_NUM_SBOXES())
+                .field("AES_KEYSIZE", &self.AES_KEYSIZE())
+                .field("DES_USED", &self.DES_USED())
+                .field("DES_NUM_SBOXES", &self.DES_NUM_SBOXES())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SGI_CONFIG2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "SGI_CONFIG2 {{ aes_used: {=u8:?}, aes_num_sboxes: {=u8:?}, aes_keysize: {=u8:?}, config2b_rsvd: {=u8:?}, des_used: {=u8:?}, des_num_sboxes: {=u8:?}, config2a_rsvd: {=u8:?} }}" , self . aes_used () , self . aes_num_sboxes () , self . aes_keysize () , self . config2b_rsvd () , self . des_used () , self . des_num_sboxes () , self . config2a_rsvd ())
+            defmt :: write ! (f , "SGI_CONFIG2 {{ AES_USED: {=u8:?}, AES_NUM_SBOXES: {=u8:?}, AES_KEYSIZE: {=u8:?}, DES_USED: {=u8:?}, DES_NUM_SBOXES: {=u8:?} }}" , self . AES_USED () , self . AES_NUM_SBOXES () , self . AES_KEYSIZE () , self . DES_USED () , self . DES_NUM_SBOXES ())
         }
     }
     #[doc = "Calculation counter"]
@@ -996,22 +860,13 @@ pub mod regs {
     pub struct SGI_COUNT(pub u32);
     impl SGI_COUNT {
         #[inline(always)]
-        pub const fn count(&self) -> u16 {
+        pub const fn COUNT(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_count(&mut self, val: u16) {
+        pub fn set_COUNT(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
-        }
-        #[inline(always)]
-        pub const fn count_rsvd(&self) -> u16 {
-            let val = (self.0 >> 16usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_count_rsvd(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
     impl Default for SGI_COUNT {
@@ -1023,20 +878,14 @@ pub mod regs {
     impl core::fmt::Debug for SGI_COUNT {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_COUNT")
-                .field("count", &self.count())
-                .field("count_rsvd", &self.count_rsvd())
+                .field("COUNT", &self.COUNT())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SGI_COUNT {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "SGI_COUNT {{ count: {=u16:?}, count_rsvd: {=u16:?} }}",
-                self.count(),
-                self.count_rsvd()
-            )
+            defmt::write!(f, "SGI_COUNT {{ COUNT: {=u16:?} }}", self.COUNT())
         }
     }
     #[doc = "SGI Control register"]
@@ -1045,148 +894,139 @@ pub mod regs {
     pub struct SGI_CTRL(pub u32);
     impl SGI_CTRL {
         #[inline(always)]
-        pub const fn start(&self) -> bool {
+        pub const fn START(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_start(&mut self, val: bool) {
+        pub fn set_START(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[inline(always)]
-        pub const fn decrypt(&self) -> bool {
+        pub const fn DECRYPT(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_decrypt(&mut self, val: bool) {
+        pub fn set_DECRYPT(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[inline(always)]
-        pub const fn aeskeysz(&self) -> u8 {
+        pub const fn AESKEYSZ(&self) -> u8 {
             let val = (self.0 >> 2usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_aeskeysz(&mut self, val: u8) {
+        pub fn set_AESKEYSZ(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
         }
         #[inline(always)]
-        pub const fn crypto_op(&self) -> u8 {
+        pub const fn CRYPTO_OP(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x07;
             val as u8
         }
         #[inline(always)]
-        pub fn set_crypto_op(&mut self, val: u8) {
+        pub fn set_CRYPTO_OP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
         }
         #[inline(always)]
-        pub const fn insel(&self) -> u8 {
+        pub const fn INSEL(&self) -> u8 {
             let val = (self.0 >> 7usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_insel(&mut self, val: u8) {
+        pub fn set_INSEL(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 7usize)) | (((val as u32) & 0x0f) << 7usize);
         }
         #[inline(always)]
-        pub const fn outsel(&self) -> u8 {
+        pub const fn OUTSEL(&self) -> u8 {
             let val = (self.0 >> 11usize) & 0x07;
             val as u8
         }
         #[inline(always)]
-        pub fn set_outsel(&mut self, val: u8) {
+        pub fn set_OUTSEL(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 11usize)) | (((val as u32) & 0x07) << 11usize);
         }
         #[inline(always)]
-        pub const fn datout_res(&self) -> u8 {
+        pub const fn DATOUT_RES(&self) -> u8 {
             let val = (self.0 >> 14usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_datout_res(&mut self, val: u8) {
+        pub fn set_DATOUT_RES(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u32) & 0x03) << 14usize);
         }
         #[inline(always)]
-        pub const fn aes_en(&self) -> bool {
+        pub const fn AES_EN(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_aes_en(&mut self, val: bool) {
+        pub fn set_AES_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[inline(always)]
-        pub const fn des_en(&self) -> bool {
+        pub const fn DES_EN(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_des_en(&mut self, val: bool) {
+        pub fn set_DES_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[inline(always)]
-        pub const fn gcm_en(&self) -> bool {
+        pub const fn GCM_EN(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_gcm_en(&mut self, val: bool) {
+        pub fn set_GCM_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[inline(always)]
-        pub const fn prng_en(&self) -> bool {
+        pub const fn PRNG_EN(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_prng_en(&mut self, val: bool) {
+        pub fn set_PRNG_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[inline(always)]
-        pub const fn inkeysel(&self) -> u8 {
+        pub const fn INKEYSEL(&self) -> u8 {
             let val = (self.0 >> 20usize) & 0x1f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_inkeysel(&mut self, val: u8) {
+        pub fn set_INKEYSEL(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 20usize)) | (((val as u32) & 0x1f) << 20usize);
         }
         #[inline(always)]
-        pub const fn tdeskey(&self) -> bool {
+        pub const fn TDESKEY(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_tdeskey(&mut self, val: bool) {
+        pub fn set_TDESKEY(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[inline(always)]
-        pub const fn aes_no_kl(&self) -> bool {
+        pub const fn AES_NO_KL(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_aes_no_kl(&mut self, val: bool) {
+        pub fn set_AES_NO_KL(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[inline(always)]
-        pub const fn aes_sel(&self) -> bool {
+        pub const fn AES_SEL(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_aes_sel(&mut self, val: bool) {
+        pub fn set_AES_SEL(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
-        }
-        #[inline(always)]
-        pub const fn ctrl_rsvd(&self) -> u8 {
-            let val = (self.0 >> 28usize) & 0x0f;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_ctrl_rsvd(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 28usize)) | (((val as u32) & 0x0f) << 28usize);
         }
     }
     impl Default for SGI_CTRL {
@@ -1198,29 +1038,28 @@ pub mod regs {
     impl core::fmt::Debug for SGI_CTRL {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_CTRL")
-                .field("start", &self.start())
-                .field("decrypt", &self.decrypt())
-                .field("aeskeysz", &self.aeskeysz())
-                .field("crypto_op", &self.crypto_op())
-                .field("insel", &self.insel())
-                .field("outsel", &self.outsel())
-                .field("datout_res", &self.datout_res())
-                .field("aes_en", &self.aes_en())
-                .field("des_en", &self.des_en())
-                .field("gcm_en", &self.gcm_en())
-                .field("prng_en", &self.prng_en())
-                .field("inkeysel", &self.inkeysel())
-                .field("tdeskey", &self.tdeskey())
-                .field("aes_no_kl", &self.aes_no_kl())
-                .field("aes_sel", &self.aes_sel())
-                .field("ctrl_rsvd", &self.ctrl_rsvd())
+                .field("START", &self.START())
+                .field("DECRYPT", &self.DECRYPT())
+                .field("AESKEYSZ", &self.AESKEYSZ())
+                .field("CRYPTO_OP", &self.CRYPTO_OP())
+                .field("INSEL", &self.INSEL())
+                .field("OUTSEL", &self.OUTSEL())
+                .field("DATOUT_RES", &self.DATOUT_RES())
+                .field("AES_EN", &self.AES_EN())
+                .field("DES_EN", &self.DES_EN())
+                .field("GCM_EN", &self.GCM_EN())
+                .field("PRNG_EN", &self.PRNG_EN())
+                .field("INKEYSEL", &self.INKEYSEL())
+                .field("TDESKEY", &self.TDESKEY())
+                .field("AES_NO_KL", &self.AES_NO_KL())
+                .field("AES_SEL", &self.AES_SEL())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SGI_CTRL {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "SGI_CTRL {{ start: {=bool:?}, decrypt: {=bool:?}, aeskeysz: {=u8:?}, crypto_op: {=u8:?}, insel: {=u8:?}, outsel: {=u8:?}, datout_res: {=u8:?}, aes_en: {=bool:?}, des_en: {=bool:?}, gcm_en: {=bool:?}, prng_en: {=bool:?}, inkeysel: {=u8:?}, tdeskey: {=bool:?}, aes_no_kl: {=bool:?}, aes_sel: {=bool:?}, ctrl_rsvd: {=u8:?} }}" , self . start () , self . decrypt () , self . aeskeysz () , self . crypto_op () , self . insel () , self . outsel () , self . datout_res () , self . aes_en () , self . des_en () , self . gcm_en () , self . prng_en () , self . inkeysel () , self . tdeskey () , self . aes_no_kl () , self . aes_sel () , self . ctrl_rsvd ())
+            defmt :: write ! (f , "SGI_CTRL {{ START: {=bool:?}, DECRYPT: {=bool:?}, AESKEYSZ: {=u8:?}, CRYPTO_OP: {=u8:?}, INSEL: {=u8:?}, OUTSEL: {=u8:?}, DATOUT_RES: {=u8:?}, AES_EN: {=bool:?}, DES_EN: {=bool:?}, GCM_EN: {=bool:?}, PRNG_EN: {=bool:?}, INKEYSEL: {=u8:?}, TDESKEY: {=bool:?}, AES_NO_KL: {=bool:?}, AES_SEL: {=bool:?} }}" , self . START () , self . DECRYPT () , self . AESKEYSZ () , self . CRYPTO_OP () , self . INSEL () , self . OUTSEL () , self . DATOUT_RES () , self . AES_EN () , self . DES_EN () , self . GCM_EN () , self . PRNG_EN () , self . INKEYSEL () , self . TDESKEY () , self . AES_NO_KL () , self . AES_SEL ())
         }
     }
     #[doc = "SGI Control register 2"]
@@ -1229,166 +1068,139 @@ pub mod regs {
     pub struct SGI_CTRL2(pub u32);
     impl SGI_CTRL2 {
         #[inline(always)]
-        pub const fn flush(&self) -> bool {
+        pub const fn FLUSH(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_flush(&mut self, val: bool) {
+        pub fn set_FLUSH(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[inline(always)]
-        pub const fn key_flush(&self) -> bool {
+        pub const fn KEY_FLUSH(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_key_flush(&mut self, val: bool) {
+        pub fn set_KEY_FLUSH(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[inline(always)]
-        pub const fn datin_flush(&self) -> bool {
+        pub const fn DATIN_FLUSH(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_datin_flush(&mut self, val: bool) {
+        pub fn set_DATIN_FLUSH(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[inline(always)]
-        pub const fn incr(&self) -> bool {
+        pub const fn INCR(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_incr(&mut self, val: bool) {
+        pub fn set_INCR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[inline(always)]
-        pub const fn xorwr(&self) -> bool {
+        pub const fn XORWR(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_xorwr(&mut self, val: bool) {
+        pub fn set_XORWR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[inline(always)]
-        pub const fn flushwr(&self) -> bool {
+        pub const fn FLUSHWR(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_flushwr(&mut self, val: bool) {
+        pub fn set_FLUSHWR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[inline(always)]
-        pub const fn incr_cin(&self) -> bool {
+        pub const fn INCR_CIN(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_incr_cin(&mut self, val: bool) {
+        pub fn set_INCR_CIN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[inline(always)]
-        pub const fn ctrl2_rsvd3(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_ctrl2_rsvd3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[inline(always)]
-        pub const fn smasken(&self) -> bool {
+        pub const fn SMASKEN(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_smasken(&mut self, val: bool) {
+        pub fn set_SMASKEN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[inline(always)]
-        pub const fn smaskstep(&self) -> bool {
+        pub const fn SMASKSTEP(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_smaskstep(&mut self, val: bool) {
+        pub fn set_SMASKSTEP(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[inline(always)]
-        pub const fn smasksw(&self) -> bool {
+        pub const fn SMASKSW(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_smasksw(&mut self, val: bool) {
+        pub fn set_SMASKSW(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[inline(always)]
-        pub const fn ctrl2_rsvd2(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_ctrl2_rsvd2(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-        }
-        #[inline(always)]
-        pub const fn movem(&self) -> u8 {
+        pub const fn MOVEM(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_movem(&mut self, val: u8) {
+        pub fn set_MOVEM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 12usize)) | (((val as u32) & 0x0f) << 12usize);
         }
         #[inline(always)]
-        pub const fn keyres(&self) -> u8 {
+        pub const fn KEYRES(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x1f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_keyres(&mut self, val: u8) {
+        pub fn set_KEYRES(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
         }
         #[inline(always)]
-        pub const fn rkey(&self) -> bool {
+        pub const fn RKEY(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_rkey(&mut self, val: bool) {
+        pub fn set_RKEY(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[inline(always)]
-        pub const fn bytes_order(&self) -> bool {
+        pub const fn BYTES_ORDER(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_bytes_order(&mut self, val: bool) {
+        pub fn set_BYTES_ORDER(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[inline(always)]
-        pub const fn gcm_inxor(&self) -> bool {
+        pub const fn GCM_INXOR(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_gcm_inxor(&mut self, val: bool) {
+        pub fn set_GCM_INXOR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
-        }
-        #[inline(always)]
-        pub const fn ctrl2_rsvd1(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0xff;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_ctrl2_rsvd1(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 24usize)) | (((val as u32) & 0xff) << 24usize);
         }
     }
     impl Default for SGI_CTRL2 {
@@ -1400,31 +1212,28 @@ pub mod regs {
     impl core::fmt::Debug for SGI_CTRL2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_CTRL2")
-                .field("flush", &self.flush())
-                .field("key_flush", &self.key_flush())
-                .field("datin_flush", &self.datin_flush())
-                .field("incr", &self.incr())
-                .field("xorwr", &self.xorwr())
-                .field("flushwr", &self.flushwr())
-                .field("incr_cin", &self.incr_cin())
-                .field("ctrl2_rsvd3", &self.ctrl2_rsvd3())
-                .field("smasken", &self.smasken())
-                .field("smaskstep", &self.smaskstep())
-                .field("smasksw", &self.smasksw())
-                .field("ctrl2_rsvd2", &self.ctrl2_rsvd2())
-                .field("movem", &self.movem())
-                .field("keyres", &self.keyres())
-                .field("rkey", &self.rkey())
-                .field("bytes_order", &self.bytes_order())
-                .field("gcm_inxor", &self.gcm_inxor())
-                .field("ctrl2_rsvd1", &self.ctrl2_rsvd1())
+                .field("FLUSH", &self.FLUSH())
+                .field("KEY_FLUSH", &self.KEY_FLUSH())
+                .field("DATIN_FLUSH", &self.DATIN_FLUSH())
+                .field("INCR", &self.INCR())
+                .field("XORWR", &self.XORWR())
+                .field("FLUSHWR", &self.FLUSHWR())
+                .field("INCR_CIN", &self.INCR_CIN())
+                .field("SMASKEN", &self.SMASKEN())
+                .field("SMASKSTEP", &self.SMASKSTEP())
+                .field("SMASKSW", &self.SMASKSW())
+                .field("MOVEM", &self.MOVEM())
+                .field("KEYRES", &self.KEYRES())
+                .field("RKEY", &self.RKEY())
+                .field("BYTES_ORDER", &self.BYTES_ORDER())
+                .field("GCM_INXOR", &self.GCM_INXOR())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SGI_CTRL2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "SGI_CTRL2 {{ flush: {=bool:?}, key_flush: {=bool:?}, datin_flush: {=bool:?}, incr: {=bool:?}, xorwr: {=bool:?}, flushwr: {=bool:?}, incr_cin: {=bool:?}, ctrl2_rsvd3: {=bool:?}, smasken: {=bool:?}, smaskstep: {=bool:?}, smasksw: {=bool:?}, ctrl2_rsvd2: {=bool:?}, movem: {=u8:?}, keyres: {=u8:?}, rkey: {=bool:?}, bytes_order: {=bool:?}, gcm_inxor: {=bool:?}, ctrl2_rsvd1: {=u8:?} }}" , self . flush () , self . key_flush () , self . datin_flush () , self . incr () , self . xorwr () , self . flushwr () , self . incr_cin () , self . ctrl2_rsvd3 () , self . smasken () , self . smaskstep () , self . smasksw () , self . ctrl2_rsvd2 () , self . movem () , self . keyres () , self . rkey () , self . bytes_order () , self . gcm_inxor () , self . ctrl2_rsvd1 ())
+            defmt :: write ! (f , "SGI_CTRL2 {{ FLUSH: {=bool:?}, KEY_FLUSH: {=bool:?}, DATIN_FLUSH: {=bool:?}, INCR: {=bool:?}, XORWR: {=bool:?}, FLUSHWR: {=bool:?}, INCR_CIN: {=bool:?}, SMASKEN: {=bool:?}, SMASKSTEP: {=bool:?}, SMASKSW: {=bool:?}, MOVEM: {=u8:?}, KEYRES: {=u8:?}, RKEY: {=bool:?}, BYTES_ORDER: {=bool:?}, GCM_INXOR: {=bool:?} }}" , self . FLUSH () , self . KEY_FLUSH () , self . DATIN_FLUSH () , self . INCR () , self . XORWR () , self . FLUSHWR () , self . INCR_CIN () , self . SMASKEN () , self . SMASKSTEP () , self . SMASKSW () , self . MOVEM () , self . KEYRES () , self . RKEY () , self . BYTES_ORDER () , self . GCM_INXOR ())
         }
     }
     #[doc = "Configuration of dummy controls"]
@@ -1433,40 +1242,22 @@ pub mod regs {
     pub struct SGI_DUMMY_CTRL(pub u32);
     impl SGI_DUMMY_CTRL {
         #[inline(always)]
-        pub const fn ddctrl(&self) -> u16 {
+        pub const fn DDCTRL(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x03ff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_ddctrl(&mut self, val: u16) {
+        pub fn set_DDCTRL(&mut self, val: u16) {
             self.0 = (self.0 & !(0x03ff << 0usize)) | (((val as u32) & 0x03ff) << 0usize);
         }
         #[inline(always)]
-        pub const fn dmyctl_rsvd2(&self) -> u8 {
-            let val = (self.0 >> 10usize) & 0x3f;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_dmyctl_rsvd2(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 10usize)) | (((val as u32) & 0x3f) << 10usize);
-        }
-        #[inline(always)]
-        pub const fn adctrl(&self) -> u16 {
+        pub const fn ADCTRL(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0x03ff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_adctrl(&mut self, val: u16) {
+        pub fn set_ADCTRL(&mut self, val: u16) {
             self.0 = (self.0 & !(0x03ff << 16usize)) | (((val as u32) & 0x03ff) << 16usize);
-        }
-        #[inline(always)]
-        pub const fn dmyctl_rsvd1(&self) -> u8 {
-            let val = (self.0 >> 26usize) & 0x3f;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_dmyctl_rsvd1(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 26usize)) | (((val as u32) & 0x3f) << 26usize);
         }
     }
     impl Default for SGI_DUMMY_CTRL {
@@ -1478,17 +1269,20 @@ pub mod regs {
     impl core::fmt::Debug for SGI_DUMMY_CTRL {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_DUMMY_CTRL")
-                .field("ddctrl", &self.ddctrl())
-                .field("dmyctl_rsvd2", &self.dmyctl_rsvd2())
-                .field("adctrl", &self.adctrl())
-                .field("dmyctl_rsvd1", &self.dmyctl_rsvd1())
+                .field("DDCTRL", &self.DDCTRL())
+                .field("ADCTRL", &self.ADCTRL())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SGI_DUMMY_CTRL {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "SGI_DUMMY_CTRL {{ ddctrl: {=u16:?}, dmyctl_rsvd2: {=u8:?}, adctrl: {=u16:?}, dmyctl_rsvd1: {=u8:?} }}" , self . ddctrl () , self . dmyctl_rsvd2 () , self . adctrl () , self . dmyctl_rsvd1 ())
+            defmt::write!(
+                f,
+                "SGI_DUMMY_CTRL {{ DDCTRL: {=u16:?}, ADCTRL: {=u16:?} }}",
+                self.DDCTRL(),
+                self.ADCTRL()
+            )
         }
     }
     #[doc = "Interrupt enable"]
@@ -1497,22 +1291,13 @@ pub mod regs {
     pub struct SGI_INT_ENABLE(pub u32);
     impl SGI_INT_ENABLE {
         #[inline(always)]
-        pub const fn int_en(&self) -> bool {
+        pub const fn INT_EN(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_int_en(&mut self, val: bool) {
+        pub fn set_INT_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[inline(always)]
-        pub const fn int_ena_rsvd(&self) -> u32 {
-            let val = (self.0 >> 1usize) & 0x7fff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_int_ena_rsvd(&mut self, val: u32) {
-            self.0 = (self.0 & !(0x7fff_ffff << 1usize)) | (((val as u32) & 0x7fff_ffff) << 1usize);
         }
     }
     impl Default for SGI_INT_ENABLE {
@@ -1524,20 +1309,14 @@ pub mod regs {
     impl core::fmt::Debug for SGI_INT_ENABLE {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_INT_ENABLE")
-                .field("int_en", &self.int_en())
-                .field("int_ena_rsvd", &self.int_ena_rsvd())
+                .field("INT_EN", &self.INT_EN())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SGI_INT_ENABLE {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "SGI_INT_ENABLE {{ int_en: {=bool:?}, int_ena_rsvd: {=u32:?} }}",
-                self.int_en(),
-                self.int_ena_rsvd()
-            )
+            defmt::write!(f, "SGI_INT_ENABLE {{ INT_EN: {=bool:?} }}", self.INT_EN())
         }
     }
     #[doc = "Interrupt status"]
@@ -1546,22 +1325,13 @@ pub mod regs {
     pub struct SGI_INT_STATUS(pub u32);
     impl SGI_INT_STATUS {
         #[inline(always)]
-        pub const fn int_pdone(&self) -> bool {
+        pub const fn INT_PDONE(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_int_pdone(&mut self, val: bool) {
+        pub fn set_INT_PDONE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[inline(always)]
-        pub const fn intst_rsvd(&self) -> u32 {
-            let val = (self.0 >> 1usize) & 0x7fff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_intst_rsvd(&mut self, val: u32) {
-            self.0 = (self.0 & !(0x7fff_ffff << 1usize)) | (((val as u32) & 0x7fff_ffff) << 1usize);
         }
     }
     impl Default for SGI_INT_STATUS {
@@ -1573,8 +1343,7 @@ pub mod regs {
     impl core::fmt::Debug for SGI_INT_STATUS {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_INT_STATUS")
-                .field("int_pdone", &self.int_pdone())
-                .field("intst_rsvd", &self.intst_rsvd())
+                .field("INT_PDONE", &self.INT_PDONE())
                 .finish()
         }
     }
@@ -1583,9 +1352,8 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "SGI_INT_STATUS {{ int_pdone: {=bool:?}, intst_rsvd: {=u32:?} }}",
-                self.int_pdone(),
-                self.intst_rsvd()
+                "SGI_INT_STATUS {{ INT_PDONE: {=bool:?} }}",
+                self.INT_PDONE()
             )
         }
     }
@@ -1595,22 +1363,13 @@ pub mod regs {
     pub struct SGI_INT_STATUS_CLR(pub u32);
     impl SGI_INT_STATUS_CLR {
         #[inline(always)]
-        pub const fn int_clr(&self) -> bool {
+        pub const fn INT_CLR(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_int_clr(&mut self, val: bool) {
+        pub fn set_INT_CLR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[inline(always)]
-        pub const fn int_stsc_rsvd(&self) -> u32 {
-            let val = (self.0 >> 1usize) & 0x7fff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_int_stsc_rsvd(&mut self, val: u32) {
-            self.0 = (self.0 & !(0x7fff_ffff << 1usize)) | (((val as u32) & 0x7fff_ffff) << 1usize);
         }
     }
     impl Default for SGI_INT_STATUS_CLR {
@@ -1622,8 +1381,7 @@ pub mod regs {
     impl core::fmt::Debug for SGI_INT_STATUS_CLR {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_INT_STATUS_CLR")
-                .field("int_clr", &self.int_clr())
-                .field("int_stsc_rsvd", &self.int_stsc_rsvd())
+                .field("INT_CLR", &self.INT_CLR())
                 .finish()
         }
     }
@@ -1632,9 +1390,8 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "SGI_INT_STATUS_CLR {{ int_clr: {=bool:?}, int_stsc_rsvd: {=u32:?} }}",
-                self.int_clr(),
-                self.int_stsc_rsvd()
+                "SGI_INT_STATUS_CLR {{ INT_CLR: {=bool:?} }}",
+                self.INT_CLR()
             )
         }
     }
@@ -1644,22 +1401,13 @@ pub mod regs {
     pub struct SGI_INT_STATUS_SET(pub u32);
     impl SGI_INT_STATUS_SET {
         #[inline(always)]
-        pub const fn int_set(&self) -> bool {
+        pub const fn INT_SET(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_int_set(&mut self, val: bool) {
+        pub fn set_INT_SET(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[inline(always)]
-        pub const fn int_stss_rsvd(&self) -> u32 {
-            let val = (self.0 >> 1usize) & 0x7fff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_int_stss_rsvd(&mut self, val: u32) {
-            self.0 = (self.0 & !(0x7fff_ffff << 1usize)) | (((val as u32) & 0x7fff_ffff) << 1usize);
         }
     }
     impl Default for SGI_INT_STATUS_SET {
@@ -1671,8 +1419,7 @@ pub mod regs {
     impl core::fmt::Debug for SGI_INT_STATUS_SET {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_INT_STATUS_SET")
-                .field("int_set", &self.int_set())
-                .field("int_stss_rsvd", &self.int_stss_rsvd())
+                .field("INT_SET", &self.INT_SET())
                 .finish()
         }
     }
@@ -1681,9 +1428,8 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "SGI_INT_STATUS_SET {{ int_set: {=bool:?}, int_stss_rsvd: {=u32:?} }}",
-                self.int_set(),
-                self.int_stss_rsvd()
+                "SGI_INT_STATUS_SET {{ INT_SET: {=bool:?} }}",
+                self.INT_SET()
             )
         }
     }
@@ -1693,94 +1439,85 @@ pub mod regs {
     pub struct SGI_SHA2_CTRL(pub u32);
     impl SGI_SHA2_CTRL {
         #[inline(always)]
-        pub const fn sha2_en(&self) -> bool {
+        pub const fn SHA2_EN(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_sha2_en(&mut self, val: bool) {
+        pub fn set_SHA2_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[inline(always)]
-        pub const fn sha2_mode(&self) -> bool {
+        pub const fn SHA2_MODE(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_sha2_mode(&mut self, val: bool) {
+        pub fn set_SHA2_MODE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[inline(always)]
-        pub const fn sha2_size(&self) -> u8 {
+        pub const fn SHA2_SIZE(&self) -> u8 {
             let val = (self.0 >> 2usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_sha2_size(&mut self, val: u8) {
+        pub fn set_SHA2_SIZE(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
         }
         #[inline(always)]
-        pub const fn sha2_low_lim(&self) -> u8 {
+        pub const fn SHA2_LOW_LIM(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_sha2_low_lim(&mut self, val: u8) {
+        pub fn set_SHA2_LOW_LIM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
         #[inline(always)]
-        pub const fn sha2_high_lim(&self) -> u8 {
+        pub const fn SHA2_HIGH_LIM(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_sha2_high_lim(&mut self, val: u8) {
+        pub fn set_SHA2_HIGH_LIM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
         #[inline(always)]
-        pub const fn sha2_count_en(&self) -> bool {
+        pub const fn SHA2_COUNT_EN(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_sha2_count_en(&mut self, val: bool) {
+        pub fn set_SHA2_COUNT_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[inline(always)]
-        pub const fn hash_reload(&self) -> bool {
+        pub const fn HASH_RELOAD(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_hash_reload(&mut self, val: bool) {
+        pub fn set_HASH_RELOAD(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[inline(always)]
-        pub const fn sha2_stop(&self) -> bool {
+        pub const fn SHA2_STOP(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_sha2_stop(&mut self, val: bool) {
+        pub fn set_SHA2_STOP(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[inline(always)]
-        pub const fn no_auto_init(&self) -> bool {
+        pub const fn NO_AUTO_INIT(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_no_auto_init(&mut self, val: bool) {
+        pub fn set_NO_AUTO_INIT(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
-        }
-        #[inline(always)]
-        pub const fn sha2ctl_rsvd(&self) -> u16 {
-            let val = (self.0 >> 16usize) & 0xffff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_sha2ctl_rsvd(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
     impl Default for SGI_SHA2_CTRL {
@@ -1792,23 +1529,22 @@ pub mod regs {
     impl core::fmt::Debug for SGI_SHA2_CTRL {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_SHA2_CTRL")
-                .field("sha2_en", &self.sha2_en())
-                .field("sha2_mode", &self.sha2_mode())
-                .field("sha2_size", &self.sha2_size())
-                .field("sha2_low_lim", &self.sha2_low_lim())
-                .field("sha2_high_lim", &self.sha2_high_lim())
-                .field("sha2_count_en", &self.sha2_count_en())
-                .field("hash_reload", &self.hash_reload())
-                .field("sha2_stop", &self.sha2_stop())
-                .field("no_auto_init", &self.no_auto_init())
-                .field("sha2ctl_rsvd", &self.sha2ctl_rsvd())
+                .field("SHA2_EN", &self.SHA2_EN())
+                .field("SHA2_MODE", &self.SHA2_MODE())
+                .field("SHA2_SIZE", &self.SHA2_SIZE())
+                .field("SHA2_LOW_LIM", &self.SHA2_LOW_LIM())
+                .field("SHA2_HIGH_LIM", &self.SHA2_HIGH_LIM())
+                .field("SHA2_COUNT_EN", &self.SHA2_COUNT_EN())
+                .field("HASH_RELOAD", &self.HASH_RELOAD())
+                .field("SHA2_STOP", &self.SHA2_STOP())
+                .field("NO_AUTO_INIT", &self.NO_AUTO_INIT())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SGI_SHA2_CTRL {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "SGI_SHA2_CTRL {{ sha2_en: {=bool:?}, sha2_mode: {=bool:?}, sha2_size: {=u8:?}, sha2_low_lim: {=u8:?}, sha2_high_lim: {=u8:?}, sha2_count_en: {=bool:?}, hash_reload: {=bool:?}, sha2_stop: {=bool:?}, no_auto_init: {=bool:?}, sha2ctl_rsvd: {=u16:?} }}" , self . sha2_en () , self . sha2_mode () , self . sha2_size () , self . sha2_low_lim () , self . sha2_high_lim () , self . sha2_count_en () , self . hash_reload () , self . sha2_stop () , self . no_auto_init () , self . sha2ctl_rsvd ())
+            defmt :: write ! (f , "SGI_SHA2_CTRL {{ SHA2_EN: {=bool:?}, SHA2_MODE: {=bool:?}, SHA2_SIZE: {=u8:?}, SHA2_LOW_LIM: {=u8:?}, SHA2_HIGH_LIM: {=u8:?}, SHA2_COUNT_EN: {=bool:?}, HASH_RELOAD: {=bool:?}, SHA2_STOP: {=bool:?}, NO_AUTO_INIT: {=bool:?} }}" , self . SHA2_EN () , self . SHA2_MODE () , self . SHA2_SIZE () , self . SHA2_LOW_LIM () , self . SHA2_HIGH_LIM () , self . SHA2_COUNT_EN () , self . HASH_RELOAD () , self . SHA2_STOP () , self . NO_AUTO_INIT ())
         }
     }
     #[doc = "Status register"]
@@ -1817,121 +1553,103 @@ pub mod regs {
     pub struct SGI_STATUS(pub u32);
     impl SGI_STATUS {
         #[inline(always)]
-        pub const fn busy(&self) -> bool {
+        pub const fn BUSY(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_busy(&mut self, val: bool) {
+        pub fn set_BUSY(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[inline(always)]
-        pub const fn oflow(&self) -> bool {
+        pub const fn OFLOW(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_oflow(&mut self, val: bool) {
+        pub fn set_OFLOW(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[inline(always)]
-        pub const fn prng_rdy(&self) -> bool {
+        pub const fn PRNG_RDY(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_prng_rdy(&mut self, val: bool) {
+        pub fn set_PRNG_RDY(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[inline(always)]
-        pub const fn error(&self) -> u8 {
+        pub const fn ERROR(&self) -> u8 {
             let val = (self.0 >> 3usize) & 0x07;
             val as u8
         }
         #[inline(always)]
-        pub fn set_error(&mut self, val: u8) {
+        pub fn set_ERROR(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 3usize)) | (((val as u32) & 0x07) << 3usize);
         }
         #[inline(always)]
-        pub const fn sha2_busy(&self) -> bool {
+        pub const fn SHA2_BUSY(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_sha2_busy(&mut self, val: bool) {
+        pub fn set_SHA2_BUSY(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[inline(always)]
-        pub const fn irq(&self) -> bool {
+        pub const fn IRQ(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_irq(&mut self, val: bool) {
+        pub fn set_IRQ(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[inline(always)]
-        pub const fn sha_fifo_full(&self) -> bool {
+        pub const fn SHA_FIFO_FULL(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_sha_fifo_full(&mut self, val: bool) {
+        pub fn set_SHA_FIFO_FULL(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[inline(always)]
-        pub const fn sha_fifo_level(&self) -> u8 {
+        pub const fn SHA_FIFO_LEVEL(&self) -> u8 {
             let val = (self.0 >> 9usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_sha_fifo_level(&mut self, val: u8) {
+        pub fn set_SHA_FIFO_LEVEL(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 9usize)) | (((val as u32) & 0x3f) << 9usize);
         }
         #[inline(always)]
-        pub const fn sha_error(&self) -> bool {
+        pub const fn SHA_ERROR(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_sha_error(&mut self, val: bool) {
+        pub fn set_SHA_ERROR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[inline(always)]
-        pub const fn key_read_err(&self) -> bool {
+        pub const fn KEY_READ_ERR(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_key_read_err(&mut self, val: bool) {
+        pub fn set_KEY_READ_ERR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[inline(always)]
-        pub const fn key_unwrap_err(&self) -> bool {
+        pub const fn KEY_UNWRAP_ERR(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_key_unwrap_err(&mut self, val: bool) {
+        pub fn set_KEY_UNWRAP_ERR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
-        }
-        #[inline(always)]
-        pub const fn status_rsvd3(&self) -> bool {
-            let val = (self.0 >> 18usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_status_rsvd3(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
-        }
-        #[inline(always)]
-        pub const fn status_rsvd(&self) -> u16 {
-            let val = (self.0 >> 19usize) & 0x1fff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_status_rsvd(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x1fff << 19usize)) | (((val as u32) & 0x1fff) << 19usize);
         }
     }
     impl Default for SGI_STATUS {
@@ -1943,26 +1661,24 @@ pub mod regs {
     impl core::fmt::Debug for SGI_STATUS {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_STATUS")
-                .field("busy", &self.busy())
-                .field("oflow", &self.oflow())
-                .field("prng_rdy", &self.prng_rdy())
-                .field("error", &self.error())
-                .field("sha2_busy", &self.sha2_busy())
-                .field("irq", &self.irq())
-                .field("sha_fifo_full", &self.sha_fifo_full())
-                .field("sha_fifo_level", &self.sha_fifo_level())
-                .field("sha_error", &self.sha_error())
-                .field("key_read_err", &self.key_read_err())
-                .field("key_unwrap_err", &self.key_unwrap_err())
-                .field("status_rsvd3", &self.status_rsvd3())
-                .field("status_rsvd", &self.status_rsvd())
+                .field("BUSY", &self.BUSY())
+                .field("OFLOW", &self.OFLOW())
+                .field("PRNG_RDY", &self.PRNG_RDY())
+                .field("ERROR", &self.ERROR())
+                .field("SHA2_BUSY", &self.SHA2_BUSY())
+                .field("IRQ", &self.IRQ())
+                .field("SHA_FIFO_FULL", &self.SHA_FIFO_FULL())
+                .field("SHA_FIFO_LEVEL", &self.SHA_FIFO_LEVEL())
+                .field("SHA_ERROR", &self.SHA_ERROR())
+                .field("KEY_READ_ERR", &self.KEY_READ_ERR())
+                .field("KEY_UNWRAP_ERR", &self.KEY_UNWRAP_ERR())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SGI_STATUS {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "SGI_STATUS {{ busy: {=bool:?}, oflow: {=bool:?}, prng_rdy: {=bool:?}, error: {=u8:?}, sha2_busy: {=bool:?}, irq: {=bool:?}, sha_fifo_full: {=bool:?}, sha_fifo_level: {=u8:?}, sha_error: {=bool:?}, key_read_err: {=bool:?}, key_unwrap_err: {=bool:?}, status_rsvd3: {=bool:?}, status_rsvd: {=u16:?} }}" , self . busy () , self . oflow () , self . prng_rdy () , self . error () , self . sha2_busy () , self . irq () , self . sha_fifo_full () , self . sha_fifo_level () , self . sha_error () , self . key_read_err () , self . key_unwrap_err () , self . status_rsvd3 () , self . status_rsvd ())
+            defmt :: write ! (f , "SGI_STATUS {{ BUSY: {=bool:?}, OFLOW: {=bool:?}, PRNG_RDY: {=bool:?}, ERROR: {=u8:?}, SHA2_BUSY: {=bool:?}, IRQ: {=bool:?}, SHA_FIFO_FULL: {=bool:?}, SHA_FIFO_LEVEL: {=u8:?}, SHA_ERROR: {=bool:?}, KEY_READ_ERR: {=bool:?}, KEY_UNWRAP_ERR: {=bool:?} }}" , self . BUSY () , self . OFLOW () , self . PRNG_RDY () , self . ERROR () , self . SHA2_BUSY () , self . IRQ () , self . SHA_FIFO_FULL () , self . SHA_FIFO_LEVEL () , self . SHA_ERROR () , self . KEY_READ_ERR () , self . KEY_UNWRAP_ERR ())
         }
     }
     #[doc = "SGI Version"]
@@ -1971,58 +1687,49 @@ pub mod regs {
     pub struct SGI_VERSION(pub u32);
     impl SGI_VERSION {
         #[inline(always)]
-        pub const fn z(&self) -> u8 {
+        pub const fn Z(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_z(&mut self, val: u8) {
+        pub fn set_Z(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[inline(always)]
-        pub const fn y2(&self) -> u8 {
+        pub const fn Y2(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_y2(&mut self, val: u8) {
+        pub fn set_Y2(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
         #[inline(always)]
-        pub const fn y1(&self) -> u8 {
+        pub const fn Y1(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_y1(&mut self, val: u8) {
+        pub fn set_Y1(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
         #[inline(always)]
-        pub const fn x(&self) -> u8 {
+        pub const fn X(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_x(&mut self, val: u8) {
+        pub fn set_X(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 12usize)) | (((val as u32) & 0x0f) << 12usize);
         }
         #[inline(always)]
-        pub const fn milestone(&self) -> u8 {
+        pub const fn MILESTONE(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_milestone(&mut self, val: u8) {
+        pub fn set_MILESTONE(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
-        }
-        #[inline(always)]
-        pub const fn version_rsvd_1(&self) -> u16 {
-            let val = (self.0 >> 18usize) & 0x3fff;
-            val as u16
-        }
-        #[inline(always)]
-        pub fn set_version_rsvd_1(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x3fff << 18usize)) | (((val as u32) & 0x3fff) << 18usize);
         }
     }
     impl Default for SGI_VERSION {
@@ -2034,19 +1741,18 @@ pub mod regs {
     impl core::fmt::Debug for SGI_VERSION {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SGI_VERSION")
-                .field("z", &self.z())
-                .field("y2", &self.y2())
-                .field("y1", &self.y1())
-                .field("x", &self.x())
-                .field("milestone", &self.milestone())
-                .field("version_rsvd_1", &self.version_rsvd_1())
+                .field("Z", &self.Z())
+                .field("Y2", &self.Y2())
+                .field("Y1", &self.Y1())
+                .field("X", &self.X())
+                .field("MILESTONE", &self.MILESTONE())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SGI_VERSION {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "SGI_VERSION {{ z: {=u8:?}, y2: {=u8:?}, y1: {=u8:?}, x: {=u8:?}, milestone: {=u8:?}, version_rsvd_1: {=u16:?} }}" , self . z () , self . y2 () , self . y1 () , self . x () , self . milestone () , self . version_rsvd_1 ())
+            defmt :: write ! (f , "SGI_VERSION {{ Z: {=u8:?}, Y2: {=u8:?}, Y1: {=u8:?}, X: {=u8:?}, MILESTONE: {=u8:?} }}" , self . Z () , self . Y2 () , self . Y1 () , self . X () , self . MILESTONE ())
         }
     }
 }

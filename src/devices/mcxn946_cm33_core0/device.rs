@@ -96,8 +96,6 @@ pub enum Interrupt {
     ADC1 = 46,
     #[doc = "47 - Pin Interrupt Pattern Match Interrupt"]
     PINT0 = 47,
-    #[doc = "48 - Microphone Interface interrupt"]
-    PDM_EVENT = 48,
     #[doc = "50 - Universal Serial Bus - Full Speed interrupt"]
     USB0_FS = 50,
     #[doc = "51 - Universal Serial Bus - Device Charge Detect interrupt"]
@@ -120,8 +118,6 @@ pub enum Interrupt {
     SAI0 = 59,
     #[doc = "60 - Serial Audio Interface 1 interrupt"]
     SAI1 = 60,
-    #[doc = "61 - Ultra Secured Digital Host Controller interrupt"]
-    USDHC0 = 61,
     #[doc = "62 - Controller Area Network 0 interrupt"]
     CAN0 = 62,
     #[doc = "63 - Controller Area Network 1 interrupt"]
@@ -194,14 +190,6 @@ pub enum Interrupt {
     VBAT0 = 99,
     #[doc = "100 - External Watchdog Monitor interrupt"]
     EWM0 = 100,
-    #[doc = "101 - TSI End of Scan interrupt"]
-    TSI_END_OF_SCAN = 101,
-    #[doc = "102 - TSI Out of Scan interrupt"]
-    TSI_OUT_OF_SCAN = 102,
-    #[doc = "103 - EMVSIM0 interrupt"]
-    EMVSIM0 = 103,
-    #[doc = "104 - EMVSIM1 interrupt"]
-    EMVSIM1 = 104,
     #[doc = "105 - Flexible Input/Output interrupt"]
     FLEXIO = 105,
     #[doc = "106 - Digital-to-Analog Converter 0 - General Purpose interrupt"]
@@ -358,7 +346,6 @@ mod _vectors {
         fn ADC0();
         fn ADC1();
         fn PINT0();
-        fn PDM_EVENT();
         fn USB0_FS();
         fn USB0_DCD();
         fn RTC();
@@ -370,7 +357,6 @@ mod _vectors {
         fn FLEXSPI0();
         fn SAI0();
         fn SAI1();
-        fn USDHC0();
         fn CAN0();
         fn CAN1();
         fn USB1_HS_PHY();
@@ -407,10 +393,6 @@ mod _vectors {
         fn GDET();
         fn VBAT0();
         fn EWM0();
-        fn TSI_END_OF_SCAN();
-        fn TSI_OUT_OF_SCAN();
-        fn EMVSIM0();
-        fn EMVSIM1();
         fn FLEXIO();
         fn DAC0();
         fn DAC1();
@@ -568,9 +550,7 @@ mod _vectors {
         Vector { _handler: ADC0 },
         Vector { _handler: ADC1 },
         Vector { _handler: PINT0 },
-        Vector {
-            _handler: PDM_EVENT,
-        },
+        Vector { _reserved: 0 },
         Vector { _reserved: 0 },
         Vector { _handler: USB0_FS },
         Vector { _handler: USB0_DCD },
@@ -583,7 +563,7 @@ mod _vectors {
         Vector { _handler: FLEXSPI0 },
         Vector { _handler: SAI0 },
         Vector { _handler: SAI1 },
-        Vector { _handler: USDHC0 },
+        Vector { _reserved: 0 },
         Vector { _handler: CAN0 },
         Vector { _handler: CAN1 },
         Vector { _reserved: 0 },
@@ -659,14 +639,10 @@ mod _vectors {
         Vector { _handler: GDET },
         Vector { _handler: VBAT0 },
         Vector { _handler: EWM0 },
-        Vector {
-            _handler: TSI_END_OF_SCAN,
-        },
-        Vector {
-            _handler: TSI_OUT_OF_SCAN,
-        },
-        Vector { _handler: EMVSIM0 },
-        Vector { _handler: EMVSIM1 },
+        Vector { _reserved: 0 },
+        Vector { _reserved: 0 },
+        Vector { _reserved: 0 },
+        Vector { _reserved: 0 },
         Vector { _handler: FLEXIO },
         Vector { _handler: DAC0 },
         Vector { _handler: DAC1 },

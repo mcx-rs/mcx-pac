@@ -32,22 +32,6 @@ impl SMARTDMA {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[inline(always)]
-    pub const fn BREAK_ADDR(self) -> crate::common::Reg<regs::BREAK_ADDR, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
-    }
-    #[inline(always)]
-    pub const fn BREAK_VECT(self) -> crate::common::Reg<regs::BREAK_VECT, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
-    }
-    #[inline(always)]
-    pub const fn EMER_VECT(self) -> crate::common::Reg<regs::EMER_VECT, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
-    }
-    #[inline(always)]
-    pub const fn EMER_SEL(self) -> crate::common::Reg<regs::EMER_SEL, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
-    }
-    #[inline(always)]
     pub const fn ARM2EZH(self) -> crate::common::Reg<regs::ARM2EZH, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
     }
@@ -144,74 +128,6 @@ pub mod regs {
             defmt::write!(f, "BOOTADR {{ ADDR: {=u32:?} }}", self.ADDR())
         }
     }
-    #[doc = "Breakpoint Address"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct BREAK_ADDR(pub u32);
-    impl BREAK_ADDR {
-        #[inline(always)]
-        pub const fn ADDR(&self) -> u32 {
-            let val = (self.0 >> 2usize) & 0x3fff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_ADDR(&mut self, val: u32) {
-            self.0 = (self.0 & !(0x3fff_ffff << 2usize)) | (((val as u32) & 0x3fff_ffff) << 2usize);
-        }
-    }
-    impl Default for BREAK_ADDR {
-        #[inline(always)]
-        fn default() -> BREAK_ADDR {
-            BREAK_ADDR(0)
-        }
-    }
-    impl core::fmt::Debug for BREAK_ADDR {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("BREAK_ADDR")
-                .field("ADDR", &self.ADDR())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for BREAK_ADDR {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "BREAK_ADDR {{ ADDR: {=u32:?} }}", self.ADDR())
-        }
-    }
-    #[doc = "Breakpoint Vector"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct BREAK_VECT(pub u32);
-    impl BREAK_VECT {
-        #[inline(always)]
-        pub const fn VEC(&self) -> u32 {
-            let val = (self.0 >> 2usize) & 0x3fff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_VEC(&mut self, val: u32) {
-            self.0 = (self.0 & !(0x3fff_ffff << 2usize)) | (((val as u32) & 0x3fff_ffff) << 2usize);
-        }
-    }
-    impl Default for BREAK_VECT {
-        #[inline(always)]
-        fn default() -> BREAK_VECT {
-            BREAK_VECT(0)
-        }
-    }
-    impl core::fmt::Debug for BREAK_VECT {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("BREAK_VECT")
-                .field("VEC", &self.VEC())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for BREAK_VECT {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "BREAK_VECT {{ VEC: {=u32:?} }}", self.VEC())
-        }
-    }
     #[doc = "Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -294,89 +210,6 @@ pub mod regs {
     impl defmt::Format for CTRL {
         fn format(&self, f: defmt::Formatter) {
             defmt :: write ! (f , "CTRL {{ START: {=bool:?}, EXF: {=bool:?}, ERRDIS: {=bool:?}, BUFEN: {=bool:?}, SYNCEN: {=bool:?}, WKEY: {=u16:?} }}" , self . START () , self . EXF () , self . ERRDIS () , self . BUFEN () , self . SYNCEN () , self . WKEY ())
-        }
-    }
-    #[doc = "Emergency Select"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EMER_SEL(pub u32);
-    impl EMER_SEL {
-        #[inline(always)]
-        pub const fn EN(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[inline(always)]
-        pub const fn RQ(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_RQ(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-        }
-    }
-    impl Default for EMER_SEL {
-        #[inline(always)]
-        fn default() -> EMER_SEL {
-            EMER_SEL(0)
-        }
-    }
-    impl core::fmt::Debug for EMER_SEL {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("EMER_SEL")
-                .field("EN", &self.EN())
-                .field("RQ", &self.RQ())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for EMER_SEL {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "EMER_SEL {{ EN: {=bool:?}, RQ: {=bool:?} }}",
-                self.EN(),
-                self.RQ()
-            )
-        }
-    }
-    #[doc = "Emergency Vector"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct EMER_VECT(pub u32);
-    impl EMER_VECT {
-        #[inline(always)]
-        pub const fn VEC(&self) -> u32 {
-            let val = (self.0 >> 2usize) & 0x3fff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_VEC(&mut self, val: u32) {
-            self.0 = (self.0 & !(0x3fff_ffff << 2usize)) | (((val as u32) & 0x3fff_ffff) << 2usize);
-        }
-    }
-    impl Default for EMER_VECT {
-        #[inline(always)]
-        fn default() -> EMER_VECT {
-            EMER_VECT(0)
-        }
-    }
-    impl core::fmt::Debug for EMER_VECT {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("EMER_VECT")
-                .field("VEC", &self.VEC())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for EMER_VECT {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "EMER_VECT {{ VEC: {=u32:?} }}", self.VEC())
         }
     }
     #[doc = "Pending Trap Control"]

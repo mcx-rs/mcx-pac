@@ -111,35 +111,35 @@ peripherals:
 - name: GPIO0
   base_address: 1074356224
   block: gpio::GPIO
-- name: GPIO0_ALIAS1
-  base_address: 1074360320
-  block: gpio::GPIO
 - name: GPIO1
   base_address: 1074364416
-  block: gpio::GPIO
-- name: GPIO1_ALIAS1
-  base_address: 1074368512
   block: gpio::GPIO
 - name: GPIO2
   base_address: 1074372608
   block: gpio::GPIO
-- name: GPIO2_ALIAS1
-  base_address: 1074376704
-  block: gpio::GPIO
 - name: GPIO3
   base_address: 1074380800
-  block: gpio::GPIO
-- name: GPIO3_ALIAS1
-  base_address: 1074384896
   block: gpio::GPIO
 - name: GPIO4
   base_address: 1074388992
   block: gpio::GPIO
-- name: GPIO4_ALIAS1
-  base_address: 1074393088
-  block: gpio::GPIO
 - name: GPIO5
   base_address: 1074003968
+  block: gpio::GPIO
+- name: GPIO0_ALIAS1
+  base_address: 1074360320
+  block: gpio::GPIO
+- name: GPIO1_ALIAS1
+  base_address: 1074368512
+  block: gpio::GPIO
+- name: GPIO2_ALIAS1
+  base_address: 1074376704
+  block: gpio::GPIO
+- name: GPIO3_ALIAS1
+  base_address: 1074384896
+  block: gpio::GPIO
+- name: GPIO4_ALIAS1
+  base_address: 1074393088
   block: gpio::GPIO
 - name: GPIO5_ALIAS1
   base_address: 1074008064
@@ -613,9 +613,6 @@ interrupts:
 - name: PINT0
   description: Pin Interrupt Pattern Match Interrupt
   value: 47
-- name: PDM_EVENT
-  description: Microphone Interface interrupt
-  value: 48
 - name: USB0_FS
   description: Universal Serial Bus - Full Speed interrupt
   value: 50
@@ -649,9 +646,6 @@ interrupts:
 - name: SAI1
   description: Serial Audio Interface 1 interrupt
   value: 60
-- name: USDHC0
-  description: Ultra Secured Digital Host Controller interrupt
-  value: 61
 - name: CAN0
   description: Controller Area Network 0 interrupt
   value: 62
@@ -760,18 +754,6 @@ interrupts:
 - name: EWM0
   description: External Watchdog Monitor interrupt
   value: 100
-- name: TSI_END_OF_SCAN
-  description: TSI End of Scan interrupt
-  value: 101
-- name: TSI_OUT_OF_SCAN
-  description: TSI Out of Scan interrupt
-  value: 102
-- name: EMVSIM0
-  description: EMVSIM0 interrupt
-  value: 103
-- name: EMVSIM1
-  description: EMVSIM1 interrupt
-  value: 104
 - name: FLEXIO
   description: Flexible Input/Output interrupt
   value: 105

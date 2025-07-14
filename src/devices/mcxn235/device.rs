@@ -2333,7 +2333,7 @@ pub mod usbhsdcd {
     mod _block;
     pub use _block::*;
     pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x4010_a000usize];
+    pub const ADDRESSES: [usize; LEN] = [0x4010_a800usize];
     pub type Instance<const N: u8> = crate::Instance<USBHSDCD, N>;
     impl<const N: u8> Instance<N> {
         const CHECK: () = assert!((N as usize) < LEN);

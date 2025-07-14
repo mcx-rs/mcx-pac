@@ -3455,24 +3455,6 @@ pub mod regs {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
         #[inline(always)]
-        pub const fn ARDFEN(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_ARDFEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[inline(always)]
-        pub const fn ATDFEN(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_ATDFEN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[inline(always)]
         pub const fn SERCLKDIV(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x07;
             val as u8
@@ -3557,8 +3539,6 @@ pub mod regs {
                 .field("SWRESET", &self.SWRESET())
                 .field("MDIS", &self.MDIS())
                 .field("RXCLKSRC", &self.RXCLKSRC())
-                .field("ARDFEN", &self.ARDFEN())
-                .field("ATDFEN", &self.ATDFEN())
                 .field("SERCLKDIV", &self.SERCLKDIV())
                 .field("HSEN", &self.HSEN())
                 .field("DOZEEN", &self.DOZEEN())
@@ -3573,7 +3553,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MCR0 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MCR0 {{ SWRESET: {=bool:?}, MDIS: {=bool:?}, RXCLKSRC: {=u8:?}, ARDFEN: {=bool:?}, ATDFEN: {=bool:?}, SERCLKDIV: {=u8:?}, HSEN: {=bool:?}, DOZEEN: {=bool:?}, COMBINATIONEN: {=bool:?}, SCKFREERUNEN: {=bool:?}, LEARNEN: {=bool:?}, IPGRANTWAIT: {=u8:?}, AHBGRANTWAIT: {=u8:?} }}" , self . SWRESET () , self . MDIS () , self . RXCLKSRC () , self . ARDFEN () , self . ATDFEN () , self . SERCLKDIV () , self . HSEN () , self . DOZEEN () , self . COMBINATIONEN () , self . SCKFREERUNEN () , self . LEARNEN () , self . IPGRANTWAIT () , self . AHBGRANTWAIT ())
+            defmt :: write ! (f , "MCR0 {{ SWRESET: {=bool:?}, MDIS: {=bool:?}, RXCLKSRC: {=u8:?}, SERCLKDIV: {=u8:?}, HSEN: {=bool:?}, DOZEEN: {=bool:?}, COMBINATIONEN: {=bool:?}, SCKFREERUNEN: {=bool:?}, LEARNEN: {=bool:?}, IPGRANTWAIT: {=u8:?}, AHBGRANTWAIT: {=u8:?} }}" , self . SWRESET () , self . MDIS () , self . RXCLKSRC () , self . SERCLKDIV () , self . HSEN () , self . DOZEEN () , self . COMBINATIONEN () , self . SCKFREERUNEN () , self . LEARNEN () , self . IPGRANTWAIT () , self . AHBGRANTWAIT ())
         }
     }
     #[doc = "Module Control 1"]

@@ -111,35 +111,35 @@ peripherals:
 - name: GPIO0
   base_address: 1074356224
   block: gpio::GPIO
-- name: GPIO0_ALIAS1
-  base_address: 1074360320
-  block: gpio::GPIO
 - name: GPIO1
   base_address: 1074364416
-  block: gpio::GPIO
-- name: GPIO1_ALIAS1
-  base_address: 1074368512
   block: gpio::GPIO
 - name: GPIO2
   base_address: 1074372608
   block: gpio::GPIO
-- name: GPIO2_ALIAS1
-  base_address: 1074376704
-  block: gpio::GPIO
 - name: GPIO3
   base_address: 1074380800
-  block: gpio::GPIO
-- name: GPIO3_ALIAS1
-  base_address: 1074384896
   block: gpio::GPIO
 - name: GPIO4
   base_address: 1074388992
   block: gpio::GPIO
-- name: GPIO4_ALIAS1
-  base_address: 1074393088
-  block: gpio::GPIO
 - name: GPIO5
   base_address: 1074003968
+  block: gpio::GPIO
+- name: GPIO0_ALIAS1
+  base_address: 1074360320
+  block: gpio::GPIO
+- name: GPIO1_ALIAS1
+  base_address: 1074368512
+  block: gpio::GPIO
+- name: GPIO2_ALIAS1
+  base_address: 1074376704
+  block: gpio::GPIO
+- name: GPIO3_ALIAS1
+  base_address: 1074384896
+  block: gpio::GPIO
+- name: GPIO4_ALIAS1
+  base_address: 1074393088
   block: gpio::GPIO
 - name: GPIO5_ALIAS1
   base_address: 1074008064

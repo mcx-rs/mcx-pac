@@ -125,7 +125,7 @@ impl TRNG {
     }
     #[inline(always)]
     pub const fn ENT(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
-        assert!(n < 1usize);
+        assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize + n * 4usize) as _) }
     }
     #[inline(always)]

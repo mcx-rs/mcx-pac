@@ -97,7 +97,7 @@ impl ADC {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0300usize) as _) }
     }
     #[inline(always)]
-    pub const fn CAL_GAR(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn CAL_GAR(self, n: usize) -> crate::common::Reg<regs::CAL_GAR, crate::common::RW> {
         assert!(n < 33usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0400usize + n * 4usize) as _) }
     }
@@ -131,6 +131,40 @@ impl CMD {
     }
 }
 pub mod regs {
+    #[doc = "Calibration General A-Side Registers"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct CAL_GAR(pub u32);
+    impl CAL_GAR {
+        #[inline(always)]
+        pub const fn CAL_GAR_VAL(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[inline(always)]
+        pub fn set_CAL_GAR_VAL(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for CAL_GAR {
+        #[inline(always)]
+        fn default() -> CAL_GAR {
+            CAL_GAR(0)
+        }
+    }
+    impl core::fmt::Debug for CAL_GAR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("CAL_GAR")
+                .field("CAL_GAR_VAL", &self.CAL_GAR_VAL())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for CAL_GAR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "CAL_GAR {{ CAL_GAR_VAL: {=u16:?} }}", self.CAL_GAR_VAL())
+        }
+    }
     #[doc = "Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]

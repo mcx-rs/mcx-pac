@@ -122,17 +122,8 @@ impl SYSCON {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0b6cusize) as _) }
     }
     #[inline(always)]
-    pub const fn ELS_UDF(self) -> crate::common::Reg<regs::ELS_UDF, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e10usize) as _) }
-    }
-    #[inline(always)]
     pub const fn MSFCFG(self) -> crate::common::Reg<regs::MSFCFG, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e1cusize) as _) }
-    }
-    #[inline(always)]
-    pub const fn ELS_UID(self, n: usize) -> crate::common::Reg<regs::ELS_UID, crate::common::RW> {
-        assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e20usize + n * 4usize) as _) }
     }
     #[inline(always)]
     pub const fn ROP_STATE(self) -> crate::common::Reg<u32, crate::common::RW> {
@@ -1052,137 +1043,6 @@ pub mod regs {
             )
         }
     }
-    #[doc = "UDF Control"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_UDF(pub u32);
-    impl ELS_UDF {
-        #[inline(always)]
-        pub const fn KEY_SEL(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x03;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_KEY_SEL(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
-        }
-        #[inline(always)]
-        pub const fn UID_HIDDEN(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x0f;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_UID_HIDDEN(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 24usize)) | (((val as u32) & 0x0f) << 24usize);
-        }
-        #[inline(always)]
-        pub const fn UDF_HIDDEN(&self) -> u8 {
-            let val = (self.0 >> 28usize) & 0x0f;
-            val as u8
-        }
-        #[inline(always)]
-        pub fn set_UDF_HIDDEN(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 28usize)) | (((val as u32) & 0x0f) << 28usize);
-        }
-    }
-    impl Default for ELS_UDF {
-        #[inline(always)]
-        fn default() -> ELS_UDF {
-            ELS_UDF(0)
-        }
-    }
-    impl core::fmt::Debug for ELS_UDF {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("ELS_UDF")
-                .field("KEY_SEL", &self.KEY_SEL())
-                .field("UID_HIDDEN", &self.UID_HIDDEN())
-                .field("UDF_HIDDEN", &self.UDF_HIDDEN())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_UDF {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "ELS_UDF {{ KEY_SEL: {=u8:?}, UID_HIDDEN: {=u8:?}, UDF_HIDDEN: {=u8:?} }}",
-                self.KEY_SEL(),
-                self.UID_HIDDEN(),
-                self.UDF_HIDDEN()
-            )
-        }
-    }
-    #[doc = "Device UID 0..Device UID 3"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct ELS_UID(pub u32);
-    impl ELS_UID {
-        #[inline(always)]
-        pub const fn UID0(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_UID0(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-        #[inline(always)]
-        pub const fn UID1(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_UID1(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-        #[inline(always)]
-        pub const fn UID2(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_UID2(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-        #[inline(always)]
-        pub const fn UID3(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[inline(always)]
-        pub fn set_UID3(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for ELS_UID {
-        #[inline(always)]
-        fn default() -> ELS_UID {
-            ELS_UID(0)
-        }
-    }
-    impl core::fmt::Debug for ELS_UID {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("ELS_UID")
-                .field("UID0", &self.UID0())
-                .field("UID1", &self.UID1())
-                .field("UID2", &self.UID2())
-                .field("UID3", &self.UID3())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for ELS_UID {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "ELS_UID {{ UID0: {=u32:?}, UID1: {=u32:?}, UID2: {=u32:?}, UID3: {=u32:?} }}",
-                self.UID0(),
-                self.UID1(),
-                self.UID2(),
-                self.UID3()
-            )
-        }
-    }
     #[doc = "FRO_HF_DIV Clock Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -2033,21 +1893,21 @@ pub mod regs {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
         }
         #[inline(always)]
-        pub const fn SmartDMA_D(&self) -> u8 {
+        pub const fn SmartDMA_I(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_SmartDMA_D(&mut self, val: u8) {
+        pub fn set_SmartDMA_I(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
         #[inline(always)]
-        pub const fn SmartDMA_I(&self) -> u8 {
+        pub const fn SmartDMA_D(&self) -> u8 {
             let val = (self.0 >> 6usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_SmartDMA_I(&mut self, val: u8) {
+        pub fn set_SmartDMA_D(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
         }
         #[inline(always)]
@@ -2097,8 +1957,8 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("REMAP")
                 .field("CPU0_SBUS", &self.CPU0_SBUS())
-                .field("SmartDMA_D", &self.SmartDMA_D())
                 .field("SmartDMA_I", &self.SmartDMA_I())
+                .field("SmartDMA_D", &self.SmartDMA_D())
                 .field("DMA0", &self.DMA0())
                 .field("PKC", &self.PKC())
                 .field("USB0", &self.USB0())
@@ -2109,7 +1969,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for REMAP {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "REMAP {{ CPU0_SBUS: {=u8:?}, SmartDMA_D: {=u8:?}, SmartDMA_I: {=u8:?}, DMA0: {=u8:?}, PKC: {=u8:?}, USB0: {=u8:?}, LOCK: {=bool:?} }}" , self . CPU0_SBUS () , self . SmartDMA_D () , self . SmartDMA_I () , self . DMA0 () , self . PKC () , self . USB0 () , self . LOCK ())
+            defmt :: write ! (f , "REMAP {{ CPU0_SBUS: {=u8:?}, SmartDMA_I: {=u8:?}, SmartDMA_D: {=u8:?}, DMA0: {=u8:?}, PKC: {=u8:?}, USB0: {=u8:?}, LOCK: {=bool:?} }}" , self . CPU0_SBUS () , self . SmartDMA_I () , self . SmartDMA_D () , self . DMA0 () , self . PKC () , self . USB0 () , self . LOCK ())
         }
     }
     #[doc = "SLOW_CLK Clock Divider"]
@@ -2379,24 +2239,6 @@ pub mod regs {
         pub fn set_INT21(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
-        #[inline(always)]
-        pub const fn INT22(&self) -> bool {
-            let val = (self.0 >> 22usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_INT22(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
-        }
-        #[inline(always)]
-        pub const fn INT23(&self) -> bool {
-            let val = (self.0 >> 23usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_INT23(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
-        }
     }
     impl Default for SMARTDMAINT {
         #[inline(always)]
@@ -2429,15 +2271,13 @@ pub mod regs {
                 .field("INT19", &self.INT19())
                 .field("INT20", &self.INT20())
                 .field("INT21", &self.INT21())
-                .field("INT22", &self.INT22())
-                .field("INT23", &self.INT23())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SMARTDMAINT {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "SMARTDMAINT {{ INT0: {=bool:?}, INT1: {=bool:?}, INT2: {=bool:?}, INT3: {=bool:?}, INT4: {=bool:?}, INT5: {=bool:?}, INT6: {=bool:?}, INT7: {=bool:?}, INT8: {=bool:?}, INT9: {=bool:?}, INT10: {=bool:?}, INT11: {=bool:?}, INT12: {=bool:?}, INT13: {=bool:?}, INT14: {=bool:?}, INT15: {=bool:?}, INT16: {=bool:?}, INT17: {=bool:?}, INT18: {=bool:?}, INT19: {=bool:?}, INT20: {=bool:?}, INT21: {=bool:?}, INT22: {=bool:?}, INT23: {=bool:?} }}" , self . INT0 () , self . INT1 () , self . INT2 () , self . INT3 () , self . INT4 () , self . INT5 () , self . INT6 () , self . INT7 () , self . INT8 () , self . INT9 () , self . INT10 () , self . INT11 () , self . INT12 () , self . INT13 () , self . INT14 () , self . INT15 () , self . INT16 () , self . INT17 () , self . INT18 () , self . INT19 () , self . INT20 () , self . INT21 () , self . INT22 () , self . INT23 ())
+            defmt :: write ! (f , "SMARTDMAINT {{ INT0: {=bool:?}, INT1: {=bool:?}, INT2: {=bool:?}, INT3: {=bool:?}, INT4: {=bool:?}, INT5: {=bool:?}, INT6: {=bool:?}, INT7: {=bool:?}, INT8: {=bool:?}, INT9: {=bool:?}, INT10: {=bool:?}, INT11: {=bool:?}, INT12: {=bool:?}, INT13: {=bool:?}, INT14: {=bool:?}, INT15: {=bool:?}, INT16: {=bool:?}, INT17: {=bool:?}, INT18: {=bool:?}, INT19: {=bool:?}, INT20: {=bool:?}, INT21: {=bool:?} }}" , self . INT0 () , self . INT1 () , self . INT2 () , self . INT3 () , self . INT4 () , self . INT5 () , self . INT6 () , self . INT7 () , self . INT8 () , self . INT9 () , self . INT10 () , self . INT11 () , self . INT12 () , self . INT13 () , self . INT14 () , self . INT15 () , self . INT16 () , self . INT17 () , self . INT18 () , self . INT19 () , self . INT20 () , self . INT21 ())
         }
     }
     #[doc = "RAM XEN Control"]

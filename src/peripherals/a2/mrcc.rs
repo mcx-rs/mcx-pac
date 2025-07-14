@@ -2315,15 +2315,6 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[inline(always)]
-        pub const fn FMC(&self) -> bool {
-            let val = (self.0 >> 16usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_FMC(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
-        }
-        #[inline(always)]
         pub const fn AOI1(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
             val != 0
@@ -2484,7 +2475,6 @@ pub mod regs {
                 .field("CRC0", &self.CRC0())
                 .field("EIM0", &self.EIM0())
                 .field("ERM0", &self.ERM0())
-                .field("FMC", &self.FMC())
                 .field("AOI1", &self.AOI1())
                 .field("FLEXIO0", &self.FLEXIO0())
                 .field("LPI2C0", &self.LPI2C0())
@@ -2506,7 +2496,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MRCC_GLB_ACC0 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MRCC_GLB_ACC0 {{ INPUTMUX0: {=bool:?}, I3C0: {=bool:?}, CTIMER0: {=bool:?}, CTIMER1: {=bool:?}, CTIMER2: {=bool:?}, CTIMER3: {=bool:?}, CTIMER4: {=bool:?}, FREQME: {=bool:?}, UTICK0: {=bool:?}, WWDT0: {=bool:?}, SMARTDMA0: {=bool:?}, DMA0: {=bool:?}, AOI0: {=bool:?}, CRC0: {=bool:?}, EIM0: {=bool:?}, ERM0: {=bool:?}, FMC: {=bool:?}, AOI1: {=bool:?}, FLEXIO0: {=bool:?}, LPI2C0: {=bool:?}, LPI2C1: {=bool:?}, LPSPI0: {=bool:?}, LPSPI1: {=bool:?}, LPUART0: {=bool:?}, LPUART1: {=bool:?}, LPUART2: {=bool:?}, LPUART3: {=bool:?}, LPUART4: {=bool:?}, USB0: {=bool:?}, QDC0: {=bool:?}, QDC1: {=bool:?}, FLEXPWM0: {=bool:?} }}" , self . INPUTMUX0 () , self . I3C0 () , self . CTIMER0 () , self . CTIMER1 () , self . CTIMER2 () , self . CTIMER3 () , self . CTIMER4 () , self . FREQME () , self . UTICK0 () , self . WWDT0 () , self . SMARTDMA0 () , self . DMA0 () , self . AOI0 () , self . CRC0 () , self . EIM0 () , self . ERM0 () , self . FMC () , self . AOI1 () , self . FLEXIO0 () , self . LPI2C0 () , self . LPI2C1 () , self . LPSPI0 () , self . LPSPI1 () , self . LPUART0 () , self . LPUART1 () , self . LPUART2 () , self . LPUART3 () , self . LPUART4 () , self . USB0 () , self . QDC0 () , self . QDC1 () , self . FLEXPWM0 ())
+            defmt :: write ! (f , "MRCC_GLB_ACC0 {{ INPUTMUX0: {=bool:?}, I3C0: {=bool:?}, CTIMER0: {=bool:?}, CTIMER1: {=bool:?}, CTIMER2: {=bool:?}, CTIMER3: {=bool:?}, CTIMER4: {=bool:?}, FREQME: {=bool:?}, UTICK0: {=bool:?}, WWDT0: {=bool:?}, SMARTDMA0: {=bool:?}, DMA0: {=bool:?}, AOI0: {=bool:?}, CRC0: {=bool:?}, EIM0: {=bool:?}, ERM0: {=bool:?}, AOI1: {=bool:?}, FLEXIO0: {=bool:?}, LPI2C0: {=bool:?}, LPI2C1: {=bool:?}, LPSPI0: {=bool:?}, LPSPI1: {=bool:?}, LPUART0: {=bool:?}, LPUART1: {=bool:?}, LPUART2: {=bool:?}, LPUART3: {=bool:?}, LPUART4: {=bool:?}, USB0: {=bool:?}, QDC0: {=bool:?}, QDC1: {=bool:?}, FLEXPWM0: {=bool:?} }}" , self . INPUTMUX0 () , self . I3C0 () , self . CTIMER0 () , self . CTIMER1 () , self . CTIMER2 () , self . CTIMER3 () , self . CTIMER4 () , self . FREQME () , self . UTICK0 () , self . WWDT0 () , self . SMARTDMA0 () , self . DMA0 () , self . AOI0 () , self . CRC0 () , self . EIM0 () , self . ERM0 () , self . AOI1 () , self . FLEXIO0 () , self . LPI2C0 () , self . LPI2C1 () , self . LPSPI0 () , self . LPSPI1 () , self . LPUART0 () , self . LPUART1 () , self . LPUART2 () , self . LPUART3 () , self . LPUART4 () , self . USB0 () , self . QDC0 () , self . QDC1 () , self . FLEXPWM0 ())
         }
     }
     #[doc = "Control Automatic Clock Gating 1"]
@@ -3097,15 +3087,6 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[inline(always)]
-        pub const fn FMC(&self) -> bool {
-            let val = (self.0 >> 16usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_FMC(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
-        }
-        #[inline(always)]
         pub const fn AOI1(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
             val != 0
@@ -3266,7 +3247,6 @@ pub mod regs {
                 .field("CRC0", &self.CRC0())
                 .field("EIM0", &self.EIM0())
                 .field("ERM0", &self.ERM0())
-                .field("FMC", &self.FMC())
                 .field("AOI1", &self.AOI1())
                 .field("FLEXIO0", &self.FLEXIO0())
                 .field("LPI2C0", &self.LPI2C0())
@@ -3288,7 +3268,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MRCC_GLB_CC0 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MRCC_GLB_CC0 {{ INPUTMUX0: {=bool:?}, I3C0: {=bool:?}, CTIMER0: {=bool:?}, CTIMER1: {=bool:?}, CTIMER2: {=bool:?}, CTIMER3: {=bool:?}, CTIMER4: {=bool:?}, FREQME: {=bool:?}, UTICK0: {=bool:?}, WWDT0: {=bool:?}, SMARTDMA0: {=bool:?}, DMA0: {=bool:?}, AOI0: {=bool:?}, CRC0: {=bool:?}, EIM0: {=bool:?}, ERM0: {=bool:?}, FMC: {=bool:?}, AOI1: {=bool:?}, FLEXIO0: {=bool:?}, LPI2C0: {=bool:?}, LPI2C1: {=bool:?}, LPSPI0: {=bool:?}, LPSPI1: {=bool:?}, LPUART0: {=bool:?}, LPUART1: {=bool:?}, LPUART2: {=bool:?}, LPUART3: {=bool:?}, LPUART4: {=bool:?}, USB0: {=bool:?}, QDC0: {=bool:?}, QDC1: {=bool:?}, FLEXPWM0: {=bool:?} }}" , self . INPUTMUX0 () , self . I3C0 () , self . CTIMER0 () , self . CTIMER1 () , self . CTIMER2 () , self . CTIMER3 () , self . CTIMER4 () , self . FREQME () , self . UTICK0 () , self . WWDT0 () , self . SMARTDMA0 () , self . DMA0 () , self . AOI0 () , self . CRC0 () , self . EIM0 () , self . ERM0 () , self . FMC () , self . AOI1 () , self . FLEXIO0 () , self . LPI2C0 () , self . LPI2C1 () , self . LPSPI0 () , self . LPSPI1 () , self . LPUART0 () , self . LPUART1 () , self . LPUART2 () , self . LPUART3 () , self . LPUART4 () , self . USB0 () , self . QDC0 () , self . QDC1 () , self . FLEXPWM0 ())
+            defmt :: write ! (f , "MRCC_GLB_CC0 {{ INPUTMUX0: {=bool:?}, I3C0: {=bool:?}, CTIMER0: {=bool:?}, CTIMER1: {=bool:?}, CTIMER2: {=bool:?}, CTIMER3: {=bool:?}, CTIMER4: {=bool:?}, FREQME: {=bool:?}, UTICK0: {=bool:?}, WWDT0: {=bool:?}, SMARTDMA0: {=bool:?}, DMA0: {=bool:?}, AOI0: {=bool:?}, CRC0: {=bool:?}, EIM0: {=bool:?}, ERM0: {=bool:?}, AOI1: {=bool:?}, FLEXIO0: {=bool:?}, LPI2C0: {=bool:?}, LPI2C1: {=bool:?}, LPSPI0: {=bool:?}, LPSPI1: {=bool:?}, LPUART0: {=bool:?}, LPUART1: {=bool:?}, LPUART2: {=bool:?}, LPUART3: {=bool:?}, LPUART4: {=bool:?}, USB0: {=bool:?}, QDC0: {=bool:?}, QDC1: {=bool:?}, FLEXPWM0: {=bool:?} }}" , self . INPUTMUX0 () , self . I3C0 () , self . CTIMER0 () , self . CTIMER1 () , self . CTIMER2 () , self . CTIMER3 () , self . CTIMER4 () , self . FREQME () , self . UTICK0 () , self . WWDT0 () , self . SMARTDMA0 () , self . DMA0 () , self . AOI0 () , self . CRC0 () , self . EIM0 () , self . ERM0 () , self . AOI1 () , self . FLEXIO0 () , self . LPI2C0 () , self . LPI2C1 () , self . LPSPI0 () , self . LPSPI1 () , self . LPUART0 () , self . LPUART1 () , self . LPUART2 () , self . LPUART3 () , self . LPUART4 () , self . USB0 () , self . QDC0 () , self . QDC1 () , self . FLEXPWM0 ())
         }
     }
     #[doc = "AHB Clock Control 1"]

@@ -121,7 +121,7 @@ impl SCG {
     }
 }
 pub mod regs {
-    #[doc = "Clock Status Register"]
+    #[doc = "Clock Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CSR(pub u32);
@@ -153,7 +153,7 @@ pub mod regs {
             defmt::write!(f, "CSR {{ SCS: {=u8:?} }}", self.SCS())
         }
     }
-    #[doc = "FIRC Configuration Register"]
+    #[doc = "FIRC Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCCFG(pub u32);
@@ -187,7 +187,7 @@ pub mod regs {
             defmt::write!(f, "FIRCCFG {{ FREQ_SEL: {=u8:?} }}", self.FREQ_SEL())
         }
     }
-    #[doc = "FIRC Control Status Register"]
+    #[doc = "FIRC Control Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCCSR(pub u32);
@@ -321,7 +321,7 @@ pub mod regs {
             defmt :: write ! (f , "FIRCCSR {{ FIRCEN: {=bool:?}, FIRCSTEN: {=bool:?}, FIRC_SCLK_PERIPH_EN: {=bool:?}, FIRC_FCLK_PERIPH_EN: {=bool:?}, LK: {=bool:?}, FIRCVLD: {=bool:?}, FIRCSEL: {=bool:?}, FIRCERR: {=bool:?}, FIRCERR_IE: {=bool:?}, FIRCACC_IE: {=bool:?}, FIRCACC: {=bool:?} }}" , self . FIRCEN () , self . FIRCSTEN () , self . FIRC_SCLK_PERIPH_EN () , self . FIRC_FCLK_PERIPH_EN () , self . LK () , self . FIRCVLD () , self . FIRCSEL () , self . FIRCERR () , self . FIRCERR_IE () , self . FIRCACC_IE () , self . FIRCACC ())
         }
     }
-    #[doc = "FIRC Trim Register"]
+    #[doc = "FIRC Trim"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCTRIM(pub u32);
@@ -385,7 +385,7 @@ pub mod regs {
             defmt :: write ! (f , "FIRCTRIM {{ TRIMFINE: {=u8:?}, TRIMCOAR: {=u8:?}, TRIMTEMP: {=u8:?}, TRIMSTART: {=u8:?} }}" , self . TRIMFINE () , self . TRIMCOAR () , self . TRIMTEMP () , self . TRIMSTART ())
         }
     }
-    #[doc = "LDO Control and Status Register"]
+    #[doc = "LDO Control and Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct LDOCSR(pub u32);
@@ -449,7 +449,7 @@ pub mod regs {
             defmt :: write ! (f , "LDOCSR {{ LDOEN: {=bool:?}, VOUT_SEL: {=u8:?}, LDOBYPASS: {=bool:?}, VOUT_OK: {=bool:?} }}" , self . LDOEN () , self . VOUT_SEL () , self . LDOBYPASS () , self . VOUT_OK ())
         }
     }
-    #[doc = "Parameter Register"]
+    #[doc = "Parameter"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct PARAM(pub u32);
@@ -523,7 +523,7 @@ pub mod regs {
             defmt :: write ! (f , "PARAM {{ SOSCCLKPRES: {=bool:?}, SIRCCLKPRES: {=bool:?}, FIRCCLKPRES: {=bool:?}, ROSCCLKPRES: {=bool:?}, SPLLCLKPRES: {=bool:?} }}" , self . SOSCCLKPRES () , self . SIRCCLKPRES () , self . FIRCCLKPRES () , self . ROSCCLKPRES () , self . SPLLCLKPRES ())
         }
     }
-    #[doc = "Run Clock Control Register"]
+    #[doc = "Run Clock Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct RCCR(pub u32);
@@ -555,7 +555,7 @@ pub mod regs {
             defmt::write!(f, "RCCR {{ SCS: {=u8:?} }}", self.SCS())
         }
     }
-    #[doc = "ROSC Control Status Register"]
+    #[doc = "ROSC Control Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct ROSCCSR(pub u32);
@@ -619,7 +619,7 @@ pub mod regs {
             defmt :: write ! (f , "ROSCCSR {{ LK: {=bool:?}, ROSCVLD: {=bool:?}, ROSCSEL: {=bool:?}, ROSCERR: {=bool:?} }}" , self . LK () , self . ROSCVLD () , self . ROSCSEL () , self . ROSCERR ())
         }
     }
-    #[doc = "SIRC Control Status Register"]
+    #[doc = "SIRC Control Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SIRCCSR(pub u32);
@@ -753,7 +753,7 @@ pub mod regs {
             defmt :: write ! (f , "SIRCCSR {{ SIRCSTEN: {=bool:?}, SIRC_CLK_PERIPH_EN: {=bool:?}, SIRCTREN: {=bool:?}, SIRCTRUP: {=bool:?}, TRIM_LOCK: {=bool:?}, COARSE_TRIM_BYPASS: {=bool:?}, LK: {=bool:?}, SIRCVLD: {=bool:?}, SIRCSEL: {=bool:?}, SIRCERR: {=bool:?}, SIRCERR_IE: {=bool:?} }}" , self . SIRCSTEN () , self . SIRC_CLK_PERIPH_EN () , self . SIRCTREN () , self . SIRCTRUP () , self . TRIM_LOCK () , self . COARSE_TRIM_BYPASS () , self . LK () , self . SIRCVLD () , self . SIRCSEL () , self . SIRCERR () , self . SIRCERR_IE ())
         }
     }
-    #[doc = "SIRC Auto-trimming Status Register"]
+    #[doc = "SIRC Auto-trimming Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SIRCSTAT(pub u32);
@@ -802,7 +802,7 @@ pub mod regs {
             )
         }
     }
-    #[doc = "SIRC Trim Configuration Register"]
+    #[doc = "SIRC Trim Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SIRCTCFG(pub u32);
@@ -851,7 +851,7 @@ pub mod regs {
             )
         }
     }
-    #[doc = "SIRC Trim Register"]
+    #[doc = "SIRC Trim"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SIRCTRIM(pub u32);
@@ -915,7 +915,7 @@ pub mod regs {
             defmt :: write ! (f , "SIRCTRIM {{ CCOTRIM: {=u8:?}, CLTRIM: {=u8:?}, TCTRIM: {=u8:?}, FVCHTRIM: {=u8:?} }}" , self . CCOTRIM () , self . CLTRIM () , self . TCTRIM () , self . FVCHTRIM ())
         }
     }
-    #[doc = "SOSC Configuration Register"]
+    #[doc = "SOSC Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SOSCCFG(pub u32);
@@ -964,7 +964,7 @@ pub mod regs {
             )
         }
     }
-    #[doc = "SOSC Control Status Register"]
+    #[doc = "SOSC Control Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SOSCCSR(pub u32);
@@ -1050,15 +1050,6 @@ pub mod regs {
         pub fn set_SOSCVLD_IE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
-        #[inline(always)]
-        pub const fn SOSC_SAFE_EN(&self) -> bool {
-            let val = (self.0 >> 31usize) & 0x01;
-            val != 0
-        }
-        #[inline(always)]
-        pub fn set_SOSC_SAFE_EN(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
-        }
     }
     impl Default for SOSCCSR {
         #[inline(always)]
@@ -1078,17 +1069,16 @@ pub mod regs {
                 .field("SOSCSEL", &self.SOSCSEL())
                 .field("SOSCERR", &self.SOSCERR())
                 .field("SOSCVLD_IE", &self.SOSCVLD_IE())
-                .field("SOSC_SAFE_EN", &self.SOSC_SAFE_EN())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SOSCCSR {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "SOSCCSR {{ SOSCEN: {=bool:?}, SOSCSTEN: {=bool:?}, SOSCCM: {=bool:?}, SOSCCMRE: {=bool:?}, LK: {=bool:?}, SOSCVLD: {=bool:?}, SOSCSEL: {=bool:?}, SOSCERR: {=bool:?}, SOSCVLD_IE: {=bool:?}, SOSC_SAFE_EN: {=bool:?} }}" , self . SOSCEN () , self . SOSCSTEN () , self . SOSCCM () , self . SOSCCMRE () , self . LK () , self . SOSCVLD () , self . SOSCSEL () , self . SOSCERR () , self . SOSCVLD_IE () , self . SOSC_SAFE_EN ())
+            defmt :: write ! (f , "SOSCCSR {{ SOSCEN: {=bool:?}, SOSCSTEN: {=bool:?}, SOSCCM: {=bool:?}, SOSCCMRE: {=bool:?}, LK: {=bool:?}, SOSCVLD: {=bool:?}, SOSCSEL: {=bool:?}, SOSCERR: {=bool:?}, SOSCVLD_IE: {=bool:?} }}" , self . SOSCEN () , self . SOSCSTEN () , self . SOSCCM () , self . SOSCCMRE () , self . LK () , self . SOSCVLD () , self . SOSCSEL () , self . SOSCERR () , self . SOSCVLD_IE ())
         }
     }
-    #[doc = "SPLL Control Status Register"]
+    #[doc = "SPLL Control Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SPLLCSR(pub u32);
@@ -1222,7 +1212,7 @@ pub mod regs {
             defmt :: write ! (f , "SPLLCSR {{ SPLLPWREN: {=bool:?}, SPLLCLKEN: {=bool:?}, SPLLSTEN: {=bool:?}, FRM_CLOCKSTABLE: {=bool:?}, SPLLCM: {=bool:?}, SPLLCMRE: {=bool:?}, LK: {=bool:?}, SPLL_LOCK: {=bool:?}, SPLLSEL: {=bool:?}, SPLLERR: {=bool:?}, SPLL_LOCK_IE: {=bool:?} }}" , self . SPLLPWREN () , self . SPLLCLKEN () , self . SPLLSTEN () , self . FRM_CLOCKSTABLE () , self . SPLLCM () , self . SPLLCMRE () , self . LK () , self . SPLL_LOCK () , self . SPLLSEL () , self . SPLLERR () , self . SPLL_LOCK_IE ())
         }
     }
-    #[doc = "SPLL Control Register"]
+    #[doc = "SPLL Control"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SPLLCTRL(pub u32);
@@ -1346,7 +1336,7 @@ pub mod regs {
             defmt :: write ! (f , "SPLLCTRL {{ SELR: {=u8:?}, SELI: {=u8:?}, SELP: {=u8:?}, BYPASSPOSTDIV2: {=bool:?}, LIMUPOFF: {=bool:?}, BANDDIRECT: {=bool:?}, BYPASSPREDIV: {=bool:?}, BYPASSPOSTDIV: {=bool:?}, FRM: {=bool:?}, SOURCE: {=u8:?} }}" , self . SELR () , self . SELI () , self . SELP () , self . BYPASSPOSTDIV2 () , self . LIMUPOFF () , self . BANDDIRECT () , self . BYPASSPREDIV () , self . BYPASSPOSTDIV () , self . FRM () , self . SOURCE ())
         }
     }
-    #[doc = "SPLL LOCK Configuration Register"]
+    #[doc = "SPLL LOCK Configuration"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SPLLLOCK_CNFG(pub u32);
@@ -1384,7 +1374,7 @@ pub mod regs {
             )
         }
     }
-    #[doc = "SPLL M Divider Register"]
+    #[doc = "SPLL M Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SPLLMDIV(pub u32);
@@ -1433,7 +1423,7 @@ pub mod regs {
             )
         }
     }
-    #[doc = "SPLL N Divider Register"]
+    #[doc = "SPLL N Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SPLLNDIV(pub u32);
@@ -1482,7 +1472,7 @@ pub mod regs {
             )
         }
     }
-    #[doc = "SPLL P Divider Register"]
+    #[doc = "SPLL P Divider"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SPLLPDIV(pub u32);
@@ -1531,7 +1521,7 @@ pub mod regs {
             )
         }
     }
-    #[doc = "SPLL Spread Spectrum Control 1 Register"]
+    #[doc = "SPLL Spread Spectrum Control 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SPLLSSCG1(pub u32);
@@ -1635,7 +1625,7 @@ pub mod regs {
             defmt :: write ! (f , "SPLLSSCG1 {{ SS_MDIV_MSB: {=bool:?}, SS_MDIV_REQ: {=bool:?}, MF: {=u8:?}, MR: {=u8:?}, MC: {=u8:?}, DITHER: {=bool:?}, SEL_SS_MDIV: {=bool:?}, SS_PD: {=bool:?} }}" , self . SS_MDIV_MSB () , self . SS_MDIV_REQ () , self . MF () , self . MR () , self . MC () , self . DITHER () , self . SEL_SS_MDIV () , self . SS_PD ())
         }
     }
-    #[doc = "SPLL SSCG Status Register"]
+    #[doc = "SPLL SSCG Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SPLLSSCGSTAT(pub u32);
@@ -1673,7 +1663,7 @@ pub mod regs {
             )
         }
     }
-    #[doc = "SPLL Status Register"]
+    #[doc = "SPLL Status"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SPLLSTAT(pub u32);
@@ -1737,7 +1727,7 @@ pub mod regs {
             defmt :: write ! (f , "SPLLSTAT {{ NDIVACK: {=bool:?}, MDIVACK: {=bool:?}, PDIVACK: {=bool:?}, FRMDET: {=bool:?} }}" , self . NDIVACK () , self . MDIVACK () , self . PDIVACK () , self . FRMDET ())
         }
     }
-    #[doc = "Trim Lock register"]
+    #[doc = "Trim Lock"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct TRIM_LOCK(pub u32);

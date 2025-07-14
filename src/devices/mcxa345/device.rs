@@ -38,12 +38,6 @@ pub enum Interrupt {
     WUU0 = 18,
     #[doc = "19 - Controller Area Network 0 interrupt"]
     CAN0 = 19,
-    #[doc = "20 - Controller Area Network 1 interrupt"]
-    CAN1 = 20,
-    #[doc = "23 - Flexible Input/Output interrupt"]
-    FLEXIO = 23,
-    #[doc = "24 - Improved Inter Integrated Circuit interrupt 0"]
-    I3C0 = 24,
     #[doc = "26 - Low-Power Inter Integrated Circuit 0 interrupt"]
     LPI2C0 = 26,
     #[doc = "27 - Low-Power Inter Integrated Circuit 1 interrupt"]
@@ -62,8 +56,6 @@ pub enum Interrupt {
     LPUART3 = 34,
     #[doc = "35 - Low-Power Universal Asynchronous Receive/Transmit 4 interrupt"]
     LPUART4 = 35,
-    #[doc = "36 - Universal Serial Bus - Full Speed interrupt"]
-    USB0 = 36,
     #[doc = "38 - Code Watchdog Timer 0 interrupt"]
     CDOG0 = 38,
     #[doc = "39 - Standard counter/timer 0 interrupt"]
@@ -160,14 +152,6 @@ pub enum Interrupt {
     MAU = 107,
     #[doc = "108 - SmartDMA interrupt"]
     SMARTDMA = 108,
-    #[doc = "109 - Code Watchdog Timer 1 interrupt"]
-    CDOG1 = 109,
-    #[doc = "110 - PKC interrupt"]
-    PKC = 110,
-    #[doc = "111 - SGI interrupt"]
-    SGI = 111,
-    #[doc = "113 - True Random Number Generator interrupt"]
-    TRNG0 = 113,
     #[doc = "116 - Analog-to-Digital Converter 2 interrupt"]
     ADC2 = 116,
     #[doc = "117 - Analog-to-Digital Converter 3 interrupt"]
@@ -176,8 +160,6 @@ pub enum Interrupt {
     RTC = 119,
     #[doc = "120 - RTC 1Hz interrupt"]
     RTC_1HZ = 120,
-    #[doc = "121 - SLCD frame start interrupt"]
-    SLCD = 121,
 }
 unsafe impl cortex_m::interrupt::InterruptNumber for Interrupt {
     #[inline(always)]
@@ -207,9 +189,6 @@ mod _vectors {
         fn TDET();
         fn WUU0();
         fn CAN0();
-        fn CAN1();
-        fn FLEXIO();
-        fn I3C0();
         fn LPI2C0();
         fn LPI2C1();
         fn LPSPI0();
@@ -219,7 +198,6 @@ mod _vectors {
         fn LPUART2();
         fn LPUART3();
         fn LPUART4();
-        fn USB0();
         fn CDOG0();
         fn CTIMER0();
         fn CTIMER1();
@@ -268,15 +246,10 @@ mod _vectors {
         fn LPUART5();
         fn MAU();
         fn SMARTDMA();
-        fn CDOG1();
-        fn PKC();
-        fn SGI();
-        fn TRNG0();
         fn ADC2();
         fn ADC3();
         fn RTC();
         fn RTC_1HZ();
-        fn SLCD();
     }
     pub union Vector {
         _handler: unsafe extern "C" fn(),
@@ -284,7 +257,7 @@ mod _vectors {
     }
     #[link_section = ".vector_table.interrupts"]
     #[no_mangle]
-    pub static __INTERRUPTS: [Vector; 122] = [
+    pub static __INTERRUPTS: [Vector; 121] = [
         Vector { _reserved: 0 },
         Vector { _handler: CMC },
         Vector { _handler: DMA_CH0 },
@@ -309,11 +282,11 @@ mod _vectors {
         Vector { _handler: TDET },
         Vector { _handler: WUU0 },
         Vector { _handler: CAN0 },
-        Vector { _handler: CAN1 },
         Vector { _reserved: 0 },
         Vector { _reserved: 0 },
-        Vector { _handler: FLEXIO },
-        Vector { _handler: I3C0 },
+        Vector { _reserved: 0 },
+        Vector { _reserved: 0 },
+        Vector { _reserved: 0 },
         Vector { _reserved: 0 },
         Vector { _handler: LPI2C0 },
         Vector { _handler: LPI2C1 },
@@ -325,7 +298,7 @@ mod _vectors {
         Vector { _handler: LPUART2 },
         Vector { _handler: LPUART3 },
         Vector { _handler: LPUART4 },
-        Vector { _handler: USB0 },
+        Vector { _reserved: 0 },
         Vector { _reserved: 0 },
         Vector { _handler: CDOG0 },
         Vector { _handler: CTIMER0 },
@@ -440,11 +413,11 @@ mod _vectors {
         Vector { _reserved: 0 },
         Vector { _handler: MAU },
         Vector { _handler: SMARTDMA },
-        Vector { _handler: CDOG1 },
-        Vector { _handler: PKC },
-        Vector { _handler: SGI },
         Vector { _reserved: 0 },
-        Vector { _handler: TRNG0 },
+        Vector { _reserved: 0 },
+        Vector { _reserved: 0 },
+        Vector { _reserved: 0 },
+        Vector { _reserved: 0 },
         Vector { _reserved: 0 },
         Vector { _reserved: 0 },
         Vector { _handler: ADC2 },
@@ -452,7 +425,6 @@ mod _vectors {
         Vector { _reserved: 0 },
         Vector { _handler: RTC },
         Vector { _handler: RTC_1HZ },
-        Vector { _handler: SLCD },
     ];
 }
 #[path = "../../peripherals/a2"]
@@ -719,6 +691,37 @@ pub mod debugmailbox {
     pub mod instances {
         use super::Instance;
         pub type DBGMAILBOX = Instance<0u8>;
+    }
+    pub use instances::*;
+}
+#[path = "../../peripherals/a2"]
+pub mod digtmp {
+    use core::marker::PhantomData;
+    #[path = "digtmp.rs"]
+    mod _block;
+    pub use _block::*;
+    pub const LEN: usize = 1usize;
+    pub const ADDRESSES: [usize; LEN] = [0x400e_9000usize];
+    pub type Instance<const N: u8> = crate::Instance<DIGTMP, N>;
+    impl<const N: u8> Instance<N> {
+        const CHECK: () = assert!((N as usize) < LEN);
+        #[inline(always)]
+        pub const unsafe fn instance() -> Self {
+            Self { _t: PhantomData }
+        }
+        #[inline(always)]
+        pub const fn regs(&self) -> DIGTMP {
+            unsafe { DIGTMP::from_ptr(self.address() as _) }
+        }
+        #[inline(always)]
+        pub const fn address(&self) -> usize {
+            let _ = Self::CHECK;
+            ADDRESSES[N as usize]
+        }
+    }
+    pub mod instances {
+        use super::Instance;
+        pub type TDET0 = Instance<0u8>;
     }
     pub use instances::*;
 }
@@ -1640,37 +1643,6 @@ pub mod trdc {
     pub mod instances {
         use super::Instance;
         pub type MBC0 = Instance<0u8>;
-    }
-    pub use instances::*;
-}
-#[path = "../../peripherals/a2"]
-pub mod udf {
-    use core::marker::PhantomData;
-    #[path = "udf.rs"]
-    mod _block;
-    pub use _block::*;
-    pub const LEN: usize = 1usize;
-    pub const ADDRESSES: [usize; LEN] = [0x400e_d000usize];
-    pub type Instance<const N: u8> = crate::Instance<UDF, N>;
-    impl<const N: u8> Instance<N> {
-        const CHECK: () = assert!((N as usize) < LEN);
-        #[inline(always)]
-        pub const unsafe fn instance() -> Self {
-            Self { _t: PhantomData }
-        }
-        #[inline(always)]
-        pub const fn regs(&self) -> UDF {
-            unsafe { UDF::from_ptr(self.address() as _) }
-        }
-        #[inline(always)]
-        pub const fn address(&self) -> usize {
-            let _ = Self::CHECK;
-            ADDRESSES[N as usize]
-        }
-    }
-    pub mod instances {
-        use super::Instance;
-        pub type UDF0 = Instance<0u8>;
     }
     pub use instances::*;
 }
