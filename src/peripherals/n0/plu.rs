@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct LUT {
     ptr: *mut u8,
@@ -69,13 +71,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct LUT_INP_MUX(pub u32);
     impl LUT_INP_MUX {
+        #[must_use]
         #[inline(always)]
         pub const fn LUTn_INPx(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_LUTn_INPx(&mut self, val: u8) {
+        pub const fn set_LUTn_INPx(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -103,13 +106,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct OUTPUTS(pub u32);
     impl OUTPUTS {
+        #[must_use]
         #[inline(always)]
         pub const fn OUTPUT_STATE(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_OUTPUT_STATE(&mut self, val: u8) {
+        pub const fn set_OUTPUT_STATE(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -141,13 +145,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct OUTPUT_MUX(pub u32);
     impl OUTPUT_MUX {
+        #[must_use]
         #[inline(always)]
         pub const fn OUTPUT(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x1f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_OUTPUT(&mut self, val: u8) {
+        pub const fn set_OUTPUT(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
         }
     }
@@ -175,49 +180,54 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct WAKEINT_CTRL(pub u32);
     impl WAKEINT_CTRL {
+        #[must_use]
         #[inline(always)]
         pub const fn MASK(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_MASK(&mut self, val: u8) {
+        pub const fn set_MASK(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FILTER_MODE(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_FILTER_MODE(&mut self, val: u8) {
+        pub const fn set_FILTER_MODE(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FILTER_CLKSEL(&self) -> u8 {
             let val = (self.0 >> 10usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_FILTER_CLKSEL(&mut self, val: u8) {
+        pub const fn set_FILTER_CLKSEL(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LATCH_ENABLE(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LATCH_ENABLE(&mut self, val: bool) {
+        pub const fn set_LATCH_ENABLE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn INTR_CLEAR(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_INTR_CLEAR(&mut self, val: bool) {
+        pub const fn set_INTR_CLEAR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
     }

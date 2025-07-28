@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct DM {
     ptr: *mut u8,
@@ -38,58 +40,64 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CSW(pub u32);
     impl CSW {
+        #[must_use]
         #[inline(always)]
         pub const fn RESYNCH_REQ(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_RESYNCH_REQ(&mut self, val: bool) {
+        pub const fn set_RESYNCH_REQ(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn REQ_PENDING(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_REQ_PENDING(&mut self, val: bool) {
+        pub const fn set_REQ_PENDING(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn DBG_OR_ERR(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_DBG_OR_ERR(&mut self, val: bool) {
+        pub const fn set_DBG_OR_ERR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn AHB_OR_ERR(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_AHB_OR_ERR(&mut self, val: bool) {
+        pub const fn set_AHB_OR_ERR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SOFT_RESET(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SOFT_RESET(&mut self, val: bool) {
+        pub const fn set_SOFT_RESET(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn CHIP_RESET_REQ(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_CHIP_RESET_REQ(&mut self, val: bool) {
+        pub const fn set_CHIP_RESET_REQ(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
     }

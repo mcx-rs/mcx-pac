@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct INTM {
     ptr: *mut u8,
@@ -69,13 +71,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct INTM_IACK(pub u32);
     impl INTM_IACK {
+        #[must_use]
         #[inline(always)]
         pub const fn IRQ(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x03ff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_IRQ(&mut self, val: u16) {
+        pub const fn set_IRQ(&mut self, val: u16) {
             self.0 = (self.0 & !(0x03ff << 0usize)) | (((val as u32) & 0x03ff) << 0usize);
         }
     }
@@ -103,13 +106,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct INTM_MM(pub u32);
     impl INTM_MM {
+        #[must_use]
         #[inline(always)]
         pub const fn MM(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_MM(&mut self, val: bool) {
+        pub const fn set_MM(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -135,13 +139,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct MON_INTM_IRQSEL(pub u32);
     impl MON_INTM_IRQSEL {
+        #[must_use]
         #[inline(always)]
         pub const fn IRQ(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x03ff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_IRQ(&mut self, val: u16) {
+        pub const fn set_IRQ(&mut self, val: u16) {
             self.0 = (self.0 & !(0x03ff << 0usize)) | (((val as u32) & 0x03ff) << 0usize);
         }
     }
@@ -169,13 +174,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct MON_INTM_LATENCY(pub u32);
     impl MON_INTM_LATENCY {
+        #[must_use]
         #[inline(always)]
         pub const fn LAT(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x00ff_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_LAT(&mut self, val: u32) {
+        pub const fn set_LAT(&mut self, val: u32) {
             self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
         }
     }
@@ -203,13 +209,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct MON_INTM_STATUS(pub u32);
     impl MON_INTM_STATUS {
+        #[must_use]
         #[inline(always)]
         pub const fn STATUS(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_STATUS(&mut self, val: bool) {
+        pub const fn set_STATUS(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -237,13 +244,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct MON_INTM_TIMER(pub u32);
     impl MON_INTM_TIMER {
+        #[must_use]
         #[inline(always)]
         pub const fn TIMER(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x00ff_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_TIMER(&mut self, val: u32) {
+        pub const fn set_TIMER(&mut self, val: u32) {
             self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
         }
     }

@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct CACHE64_CTRL {
     ptr: *mut u8,
@@ -38,85 +40,94 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CCR(pub u32);
     impl CCR {
+        #[must_use]
         #[inline(always)]
         pub const fn ENCACHE(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_ENCACHE(&mut self, val: bool) {
+        pub const fn set_ENCACHE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn ENWRBUF(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_ENWRBUF(&mut self, val: bool) {
+        pub const fn set_ENWRBUF(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FRCWT(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_FRCWT(&mut self, val: bool) {
+        pub const fn set_FRCWT(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FRCNOALLC(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_FRCNOALLC(&mut self, val: bool) {
+        pub const fn set_FRCNOALLC(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn INVW0(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_INVW0(&mut self, val: bool) {
+        pub const fn set_INVW0(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PUSHW0(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_PUSHW0(&mut self, val: bool) {
+        pub const fn set_PUSHW0(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn INVW1(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_INVW1(&mut self, val: bool) {
+        pub const fn set_INVW1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PUSHW1(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_PUSHW1(&mut self, val: bool) {
+        pub const fn set_PUSHW1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn GO(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_GO(&mut self, val: bool) {
+        pub const fn set_GO(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -152,94 +163,104 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CLCR(pub u32);
     impl CLCR {
+        #[must_use]
         #[inline(always)]
         pub const fn LGO(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LGO(&mut self, val: bool) {
+        pub const fn set_LGO(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn CACHEADDR(&self) -> u16 {
             let val = (self.0 >> 2usize) & 0x07ff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_CACHEADDR(&mut self, val: u16) {
+        pub const fn set_CACHEADDR(&mut self, val: u16) {
             self.0 = (self.0 & !(0x07ff << 2usize)) | (((val as u32) & 0x07ff) << 2usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn WSEL(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_WSEL(&mut self, val: bool) {
+        pub const fn set_WSEL(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn TDSEL(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_TDSEL(&mut self, val: bool) {
+        pub const fn set_TDSEL(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LCIVB(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LCIVB(&mut self, val: bool) {
+        pub const fn set_LCIVB(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LCIMB(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LCIMB(&mut self, val: bool) {
+        pub const fn set_LCIMB(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LCWAY(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LCWAY(&mut self, val: bool) {
+        pub const fn set_LCWAY(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LCMD(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_LCMD(&mut self, val: u8) {
+        pub const fn set_LCMD(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 24usize)) | (((val as u32) & 0x03) << 24usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LADSEL(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LADSEL(&mut self, val: bool) {
+        pub const fn set_LADSEL(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LACC(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LACC(&mut self, val: bool) {
+        pub const fn set_LACC(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
     }
@@ -276,22 +297,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CSAR(pub u32);
     impl CSAR {
+        #[must_use]
         #[inline(always)]
         pub const fn LGO(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LGO(&mut self, val: bool) {
+        pub const fn set_LGO(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PHYADDR(&self) -> u32 {
             let val = (self.0 >> 1usize) & 0x7fff_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_PHYADDR(&mut self, val: u32) {
+        pub const fn set_PHYADDR(&mut self, val: u32) {
             self.0 = (self.0 & !(0x7fff_ffff << 1usize)) | (((val as u32) & 0x7fff_ffff) << 1usize);
         }
     }

@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct CHANNEL {
     ptr: *mut u8,
@@ -71,22 +73,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CHANNEL_CTRL(pub u32);
     impl CHANNEL_CTRL {
+        #[must_use]
         #[inline(always)]
         pub const fn INTEN(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_INTEN(&mut self, val: bool) {
+        pub const fn set_INTEN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn MODE(&self) -> u8 {
             let val = (self.0 >> 1usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_MODE(&mut self, val: u8) {
+        pub const fn set_MODE(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 1usize)) | (((val as u32) & 0x03) << 1usize);
         }
     }
@@ -120,22 +124,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CHANNEL_INTVAL(pub u32);
     impl CHANNEL_INTVAL {
+        #[must_use]
         #[inline(always)]
         pub const fn IVALUE(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x00ff_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_IVALUE(&mut self, val: u32) {
+        pub const fn set_IVALUE(&mut self, val: u32) {
             self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LOAD(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LOAD(&mut self, val: bool) {
+        pub const fn set_LOAD(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -169,31 +175,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CHANNEL_STAT(pub u32);
     impl CHANNEL_STAT {
+        #[must_use]
         #[inline(always)]
         pub const fn INTFLAG(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_INTFLAG(&mut self, val: bool) {
+        pub const fn set_INTFLAG(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn RUN(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_RUN(&mut self, val: bool) {
+        pub const fn set_RUN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn INUSE(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_INUSE(&mut self, val: bool) {
+        pub const fn set_INUSE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
     }
@@ -229,13 +238,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CHANNEL_TIMER(pub u32);
     impl CHANNEL_TIMER {
+        #[must_use]
         #[inline(always)]
         pub const fn VALUE(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x00ff_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_VALUE(&mut self, val: u32) {
+        pub const fn set_VALUE(&mut self, val: u32) {
             self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
         }
     }
@@ -263,13 +273,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct IDLE_CH(pub u32);
     impl IDLE_CH {
+        #[must_use]
         #[inline(always)]
         pub const fn CHAN(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CHAN(&mut self, val: u8) {
+        pub const fn set_CHAN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
     }
@@ -297,40 +308,44 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct IRQ_FLAG(pub u32);
     impl IRQ_FLAG {
+        #[must_use]
         #[inline(always)]
         pub const fn GFLAG0(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_GFLAG0(&mut self, val: bool) {
+        pub const fn set_GFLAG0(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn GFLAG1(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_GFLAG1(&mut self, val: bool) {
+        pub const fn set_GFLAG1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn GFLAG2(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_GFLAG2(&mut self, val: bool) {
+        pub const fn set_GFLAG2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn GFLAG3(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_GFLAG3(&mut self, val: bool) {
+        pub const fn set_GFLAG3(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
@@ -361,31 +376,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct MODCFG(pub u32);
     impl MODCFG {
+        #[must_use]
         #[inline(always)]
         pub const fn NOC(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_NOC(&mut self, val: u8) {
+        pub const fn set_NOC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn NOB(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x1f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_NOB(&mut self, val: u8) {
+        pub const fn set_NOB(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 4usize)) | (((val as u32) & 0x1f) << 4usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn MULTITASK(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_MULTITASK(&mut self, val: bool) {
+        pub const fn set_MULTITASK(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }

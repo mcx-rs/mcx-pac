@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct CACHE64_POLSEL {
     ptr: *mut u8,
@@ -34,31 +36,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct POLSEL(pub u32);
     impl POLSEL {
+        #[must_use]
         #[inline(always)]
         pub const fn REG0_POLICY(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_REG0_POLICY(&mut self, val: u8) {
+        pub const fn set_REG0_POLICY(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn REG1_POLICY(&self) -> u8 {
             let val = (self.0 >> 2usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_REG1_POLICY(&mut self, val: u8) {
+        pub const fn set_REG1_POLICY(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn REG2_POLICY(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_REG2_POLICY(&mut self, val: u8) {
+        pub const fn set_REG2_POLICY(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
     }
@@ -94,13 +99,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct REG0_TOP(pub u32);
     impl REG0_TOP {
+        #[must_use]
         #[inline(always)]
         pub const fn REG0_TOP(&self) -> u32 {
             let val = (self.0 >> 10usize) & 0x0007_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_REG0_TOP(&mut self, val: u32) {
+        pub const fn set_REG0_TOP(&mut self, val: u32) {
             self.0 =
                 (self.0 & !(0x0007_ffff << 10usize)) | (((val as u32) & 0x0007_ffff) << 10usize);
         }
@@ -129,13 +135,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct REG1_TOP(pub u32);
     impl REG1_TOP {
+        #[must_use]
         #[inline(always)]
         pub const fn REG1_TOP(&self) -> u32 {
             let val = (self.0 >> 10usize) & 0x0007_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_REG1_TOP(&mut self, val: u32) {
+        pub const fn set_REG1_TOP(&mut self, val: u32) {
             self.0 =
                 (self.0 & !(0x0007_ffff << 10usize)) | (((val as u32) & 0x0007_ffff) << 10usize);
         }

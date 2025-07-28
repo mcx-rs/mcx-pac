@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct OSTIMER {
     ptr: *mut u8,
@@ -50,13 +52,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CAPTURE_H(pub u32);
     impl CAPTURE_H {
+        #[must_use]
         #[inline(always)]
         pub const fn CAPTURE_VALUE(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x03ff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_CAPTURE_VALUE(&mut self, val: u16) {
+        pub const fn set_CAPTURE_VALUE(&mut self, val: u16) {
             self.0 = (self.0 & !(0x03ff << 0usize)) | (((val as u32) & 0x03ff) << 0usize);
         }
     }
@@ -88,13 +91,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EVTIMERH(pub u32);
     impl EVTIMERH {
+        #[must_use]
         #[inline(always)]
         pub const fn EVTIMER_COUNT_VALUE(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x03ff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_EVTIMER_COUNT_VALUE(&mut self, val: u16) {
+        pub const fn set_EVTIMER_COUNT_VALUE(&mut self, val: u16) {
             self.0 = (self.0 & !(0x03ff << 0usize)) | (((val as u32) & 0x03ff) << 0usize);
         }
     }
@@ -126,13 +130,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct MATCH_H(pub u32);
     impl MATCH_H {
+        #[must_use]
         #[inline(always)]
         pub const fn MATCH_VALUE(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x03ff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_MATCH_VALUE(&mut self, val: u16) {
+        pub const fn set_MATCH_VALUE(&mut self, val: u16) {
             self.0 = (self.0 & !(0x03ff << 0usize)) | (((val as u32) & 0x03ff) << 0usize);
         }
     }
@@ -160,31 +165,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct OSEVENT_CTRL(pub u32);
     impl OSEVENT_CTRL {
+        #[must_use]
         #[inline(always)]
         pub const fn OSTIMER_INTRFLAG(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_OSTIMER_INTRFLAG(&mut self, val: bool) {
+        pub const fn set_OSTIMER_INTRFLAG(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn OSTIMER_INTENA(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_OSTIMER_INTENA(&mut self, val: bool) {
+        pub const fn set_OSTIMER_INTENA(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn MATCH_WR_RDY(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_MATCH_WR_RDY(&mut self, val: bool) {
+        pub const fn set_MATCH_WR_RDY(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
     }

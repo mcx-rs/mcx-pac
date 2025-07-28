@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct INPUTMUX {
     ptr: *mut u8,
@@ -230,13 +232,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct ADC0_TRIG(pub u32);
     impl ADC0_TRIG {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIGIN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIGIN(&mut self, val: u8) {
+        pub const fn set_TRIGIN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -264,13 +267,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct AOI0_MUX(pub u32);
     impl AOI0_MUX {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -298,13 +302,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CMP0_TRIG(pub u32);
     impl CMP0_TRIG {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIGIN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIGIN(&mut self, val: u8) {
+        pub const fn set_TRIGIN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -332,13 +337,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CMP1_TRIG(pub u32);
     impl CMP1_TRIG {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIGIN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIGIN(&mut self, val: u8) {
+        pub const fn set_TRIGIN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -366,13 +372,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CTIMER0CAP(pub u32);
     impl CTIMER0CAP {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
     }
@@ -400,13 +407,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CTIMER1CAP(pub u32);
     impl CTIMER1CAP {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
     }
@@ -434,13 +442,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CTIMER2CAP(pub u32);
     impl CTIMER2CAP {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
     }
@@ -468,13 +477,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EXT_TRIG(pub u32);
     impl EXT_TRIG {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x1f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
         }
     }
@@ -502,13 +512,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EXT_TRIG6(pub u32);
     impl EXT_TRIG6 {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x1f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
         }
     }
@@ -536,13 +547,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FLEXPWM0_FAULT0(pub u32);
     impl FLEXPWM0_FAULT0 {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIGIN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIGIN(&mut self, val: u8) {
+        pub const fn set_TRIGIN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -570,13 +582,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FLEXPWM0_FAULT1(pub u32);
     impl FLEXPWM0_FAULT1 {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIGIN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIGIN(&mut self, val: u8) {
+        pub const fn set_TRIGIN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -604,13 +617,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FLEXPWM0_FAULT2(pub u32);
     impl FLEXPWM0_FAULT2 {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIGIN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIGIN(&mut self, val: u8) {
+        pub const fn set_TRIGIN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -638,13 +652,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FLEXPWM0_FAULT3(pub u32);
     impl FLEXPWM0_FAULT3 {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIGIN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIGIN(&mut self, val: u8) {
+        pub const fn set_TRIGIN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -672,13 +687,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FLEXPWM0_FORCE(pub u32);
     impl FLEXPWM0_FORCE {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIGIN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIGIN(&mut self, val: u8) {
+        pub const fn set_TRIGIN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -706,13 +722,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FLEXPWM0_SM0_EXTA0(pub u32);
     impl FLEXPWM0_SM0_EXTA0 {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIGIN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIGIN(&mut self, val: u8) {
+        pub const fn set_TRIGIN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -740,13 +757,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FLEXPWM0_SM0_EXTSYNC0(pub u32);
     impl FLEXPWM0_SM0_EXTSYNC0 {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIGIN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIGIN(&mut self, val: u8) {
+        pub const fn set_TRIGIN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -778,13 +796,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FLEXPWM0_SM1_EXTA1(pub u32);
     impl FLEXPWM0_SM1_EXTA1 {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIGIN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIGIN(&mut self, val: u8) {
+        pub const fn set_TRIGIN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -812,13 +831,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FLEXPWM0_SM1_EXTSYNC1(pub u32);
     impl FLEXPWM0_SM1_EXTSYNC1 {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIGIN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIGIN(&mut self, val: u8) {
+        pub const fn set_TRIGIN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -850,13 +870,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FLEXPWM0_SM2_EXTA2(pub u32);
     impl FLEXPWM0_SM2_EXTA2 {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIGIN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIGIN(&mut self, val: u8) {
+        pub const fn set_TRIGIN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -884,13 +905,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FLEXPWM0_SM2_EXTSYNC2(pub u32);
     impl FLEXPWM0_SM2_EXTSYNC2 {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIGIN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIGIN(&mut self, val: u8) {
+        pub const fn set_TRIGIN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -922,13 +944,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FREQMEAS_REF(pub u32);
     impl FREQMEAS_REF {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x1f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
         }
     }
@@ -956,13 +979,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FREQMEAS_TAR(pub u32);
     impl FREQMEAS_TAR {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x1f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
         }
     }
@@ -990,13 +1014,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct LPI2C0_TRIG(pub u32);
     impl LPI2C0_TRIG {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -1024,13 +1049,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct LPSPI0_TRIG(pub u32);
     impl LPSPI0_TRIG {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -1058,13 +1084,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct LPSPI1_TRIG(pub u32);
     impl LPSPI1_TRIG {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -1092,13 +1119,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct LPUART0r(pub u32);
     impl LPUART0r {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -1126,13 +1154,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct LPUART1r(pub u32);
     impl LPUART1r {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -1160,13 +1189,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct LPUART2r(pub u32);
     impl LPUART2r {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -1194,13 +1224,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct PWM0_EXT_CLK(pub u32);
     impl PWM0_EXT_CLK {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIGIN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIGIN(&mut self, val: u8) {
+        pub const fn set_TRIGIN(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
     }
@@ -1228,13 +1259,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct QDC0_HOME(pub u32);
     impl QDC0_HOME {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -1262,13 +1294,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct QDC0_ICAP1(pub u32);
     impl QDC0_ICAP1 {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -1296,13 +1329,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct QDC0_ICAP2(pub u32);
     impl QDC0_ICAP2 {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -1330,13 +1364,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct QDC0_ICAP3(pub u32);
     impl QDC0_ICAP3 {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -1364,13 +1399,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct QDC0_INDEX(pub u32);
     impl QDC0_INDEX {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -1398,13 +1434,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct QDC0_PHASEA(pub u32);
     impl QDC0_PHASEA {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -1432,13 +1469,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct QDC0_PHASEB(pub u32);
     impl QDC0_PHASEB {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -1466,13 +1504,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct QDC0_TRIG(pub u32);
     impl QDC0_TRIG {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -1500,13 +1539,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct TIMER0TRIG(pub u32);
     impl TIMER0TRIG {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
     }
@@ -1534,13 +1574,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct TIMER1TRIG(pub u32);
     impl TIMER1TRIG {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
     }
@@ -1568,13 +1609,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct TIMER2TRIG(pub u32);
     impl TIMER2TRIG {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
     }
@@ -1602,13 +1644,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct USBFS_TRIG(pub u32);
     impl USBFS_TRIG {
+        #[must_use]
         #[inline(always)]
         pub const fn INP(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INP(&mut self, val: u8) {
+        pub const fn set_INP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
     }

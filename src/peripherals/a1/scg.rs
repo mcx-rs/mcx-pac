@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct SCG {
     ptr: *mut u8,
@@ -134,13 +136,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CSR(pub u32);
     impl CSR {
+        #[must_use]
         #[inline(always)]
         pub const fn SCS(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x07;
             val as u8
         }
         #[inline(always)]
-        pub fn set_SCS(&mut self, val: u8) {
+        pub const fn set_SCS(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 24usize)) | (((val as u32) & 0x07) << 24usize);
         }
     }
@@ -166,31 +169,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCATC1(pub u32);
     impl FIRCATC1 {
+        #[must_use]
         #[inline(always)]
         pub const fn IDEALC_SOSC(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_IDEALC_SOSC(&mut self, val: u16) {
+        pub const fn set_IDEALC_SOSC(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SAMCYC_SOSC(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_SAMCYC_SOSC(&mut self, val: u8) {
+        pub const fn set_SAMCYC_SOSC(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SETCYC_SOSC(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_SETCYC_SOSC(&mut self, val: u8) {
+        pub const fn set_SETCYC_SOSC(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 24usize)) | (((val as u32) & 0xff) << 24usize);
         }
     }
@@ -226,13 +232,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCATC10(pub u32);
     impl FIRCATC10 {
+        #[must_use]
         #[inline(always)]
         pub const fn FINEMAXC_SOF(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x000f_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_FINEMAXC_SOF(&mut self, val: u32) {
+        pub const fn set_FINEMAXC_SOF(&mut self, val: u32) {
             self.0 = (self.0 & !(0x000f_ffff << 0usize)) | (((val as u32) & 0x000f_ffff) << 0usize);
         }
     }
@@ -264,13 +271,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCATC11(pub u32);
     impl FIRCATC11 {
+        #[must_use]
         #[inline(always)]
         pub const fn FINEMINC_SOF(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x000f_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_FINEMINC_SOF(&mut self, val: u32) {
+        pub const fn set_FINEMINC_SOF(&mut self, val: u32) {
             self.0 = (self.0 & !(0x000f_ffff << 0usize)) | (((val as u32) & 0x000f_ffff) << 0usize);
         }
     }
@@ -302,22 +310,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCATC2(pub u32);
     impl FIRCATC2 {
+        #[must_use]
         #[inline(always)]
         pub const fn COARMINC_SOSC(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_COARMINC_SOSC(&mut self, val: u16) {
+        pub const fn set_COARMINC_SOSC(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn COARMAXC_SOSC(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0xffff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_COARMAXC_SOSC(&mut self, val: u16) {
+        pub const fn set_COARMAXC_SOSC(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
@@ -351,22 +361,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCATC3(pub u32);
     impl FIRCATC3 {
+        #[must_use]
         #[inline(always)]
         pub const fn FINEMINC_SOSC(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_FINEMINC_SOSC(&mut self, val: u16) {
+        pub const fn set_FINEMINC_SOSC(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FINEMAXC_SOSC(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0xffff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_FINEMAXC_SOSC(&mut self, val: u16) {
+        pub const fn set_FINEMAXC_SOSC(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
@@ -400,31 +412,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCATC4(pub u32);
     impl FIRCATC4 {
+        #[must_use]
         #[inline(always)]
         pub const fn IDEALC_ROSC(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_IDEALC_ROSC(&mut self, val: u16) {
+        pub const fn set_IDEALC_ROSC(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SETCYC_ROSC(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_SETCYC_ROSC(&mut self, val: u8) {
+        pub const fn set_SETCYC_ROSC(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SAMCYC_ROSC(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_SAMCYC_ROSC(&mut self, val: u8) {
+        pub const fn set_SAMCYC_ROSC(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 24usize)) | (((val as u32) & 0xff) << 24usize);
         }
     }
@@ -460,22 +475,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCATC5(pub u32);
     impl FIRCATC5 {
+        #[must_use]
         #[inline(always)]
         pub const fn COARMINC_ROSC(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_COARMINC_ROSC(&mut self, val: u16) {
+        pub const fn set_COARMINC_ROSC(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn COARMAXC_ROSC(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0xffff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_COARMAXC_ROSC(&mut self, val: u16) {
+        pub const fn set_COARMAXC_ROSC(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
@@ -509,22 +526,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCATC6(pub u32);
     impl FIRCATC6 {
+        #[must_use]
         #[inline(always)]
         pub const fn FINEMINC_ROSC(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_FINEMINC_ROSC(&mut self, val: u16) {
+        pub const fn set_FINEMINC_ROSC(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FINEMAXC_ROSC(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0xffff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_FINEMAXC_ROSC(&mut self, val: u16) {
+        pub const fn set_FINEMAXC_ROSC(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
@@ -558,31 +577,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCATC7(pub u32);
     impl FIRCATC7 {
+        #[must_use]
         #[inline(always)]
         pub const fn IDEALC_SOF(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x000f_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_IDEALC_SOF(&mut self, val: u32) {
+        pub const fn set_IDEALC_SOF(&mut self, val: u32) {
             self.0 = (self.0 & !(0x000f_ffff << 0usize)) | (((val as u32) & 0x000f_ffff) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SETCYC_SOF(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_SETCYC_SOF(&mut self, val: u8) {
+        pub const fn set_SETCYC_SOF(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 24usize)) | (((val as u32) & 0x0f) << 24usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SAMCYC_SOF(&self) -> u8 {
             let val = (self.0 >> 28usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_SAMCYC_SOF(&mut self, val: u8) {
+        pub const fn set_SAMCYC_SOF(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 28usize)) | (((val as u32) & 0x0f) << 28usize);
         }
     }
@@ -618,13 +640,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCATC8(pub u32);
     impl FIRCATC8 {
+        #[must_use]
         #[inline(always)]
         pub const fn COARMAXC_SOF(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x000f_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_COARMAXC_SOF(&mut self, val: u32) {
+        pub const fn set_COARMAXC_SOF(&mut self, val: u32) {
             self.0 = (self.0 & !(0x000f_ffff << 0usize)) | (((val as u32) & 0x000f_ffff) << 0usize);
         }
     }
@@ -656,13 +679,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCATC9(pub u32);
     impl FIRCATC9 {
+        #[must_use]
         #[inline(always)]
         pub const fn COARMINC_SOF(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x000f_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_COARMINC_SOF(&mut self, val: u32) {
+        pub const fn set_COARMINC_SOF(&mut self, val: u32) {
             self.0 = (self.0 & !(0x000f_ffff << 0usize)) | (((val as u32) & 0x000f_ffff) << 0usize);
         }
     }
@@ -694,13 +718,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCCFG(pub u32);
     impl FIRCCFG {
+        #[must_use]
         #[inline(always)]
         pub const fn FREQ_SEL(&self) -> u8 {
             let val = (self.0 >> 1usize) & 0x07;
             val as u8
         }
         #[inline(always)]
-        pub fn set_FREQ_SEL(&mut self, val: u8) {
+        pub const fn set_FREQ_SEL(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 1usize)) | (((val as u32) & 0x07) << 1usize);
         }
     }
@@ -728,139 +753,154 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCCSR(pub u32);
     impl FIRCCSR {
+        #[must_use]
         #[inline(always)]
         pub const fn FIRCEN(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_FIRCEN(&mut self, val: bool) {
+        pub const fn set_FIRCEN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FIRCSTEN(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_FIRCSTEN(&mut self, val: bool) {
+        pub const fn set_FIRCSTEN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FIRC_SCLK_PERIPH_EN(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_FIRC_SCLK_PERIPH_EN(&mut self, val: bool) {
+        pub const fn set_FIRC_SCLK_PERIPH_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FIRC_FCLK_PERIPH_EN(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_FIRC_FCLK_PERIPH_EN(&mut self, val: bool) {
+        pub const fn set_FIRC_FCLK_PERIPH_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FIRCTREN(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_FIRCTREN(&mut self, val: bool) {
+        pub const fn set_FIRCTREN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FIRCTRUP(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_FIRCTRUP(&mut self, val: bool) {
+        pub const fn set_FIRCTRUP(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn TRIM_LOCK(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_TRIM_LOCK(&mut self, val: bool) {
+        pub const fn set_TRIM_LOCK(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn COARSE_TRIM_BYPASS(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_COARSE_TRIM_BYPASS(&mut self, val: bool) {
+        pub const fn set_COARSE_TRIM_BYPASS(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LK(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LK(&mut self, val: bool) {
+        pub const fn set_LK(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FIRCVLD(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_FIRCVLD(&mut self, val: bool) {
+        pub const fn set_FIRCVLD(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FIRCSEL(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_FIRCSEL(&mut self, val: bool) {
+        pub const fn set_FIRCSEL(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FIRCERR(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_FIRCERR(&mut self, val: bool) {
+        pub const fn set_FIRCERR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FIRCERR_IE(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_FIRCERR_IE(&mut self, val: bool) {
+        pub const fn set_FIRCERR_IE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FIRCACC_IE(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_FIRCACC_IE(&mut self, val: bool) {
+        pub const fn set_FIRCACC_IE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FIRCACC(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_FIRCACC(&mut self, val: bool) {
+        pub const fn set_FIRCACC(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -902,22 +942,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCSTAT(pub u32);
     impl FIRCSTAT {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIMFINE(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIMFINE(&mut self, val: u8) {
+        pub const fn set_TRIMFINE(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn TRIMCOAR(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIMCOAR(&mut self, val: u8) {
+        pub const fn set_TRIMCOAR(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 8usize)) | (((val as u32) & 0x3f) << 8usize);
         }
     }
@@ -951,22 +993,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCTCFG(pub u32);
     impl FIRCTCFG {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIMSRC(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIMSRC(&mut self, val: u8) {
+        pub const fn set_TRIMSRC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn TRIMDIV(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIMDIV(&mut self, val: u8) {
+        pub const fn set_TRIMDIV(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
         }
     }
@@ -1000,40 +1044,44 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FIRCTRIM(pub u32);
     impl FIRCTRIM {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIMFINE(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIMFINE(&mut self, val: u8) {
+        pub const fn set_TRIMFINE(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn TRIMCOAR(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIMCOAR(&mut self, val: u8) {
+        pub const fn set_TRIMCOAR(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 8usize)) | (((val as u32) & 0x3f) << 8usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn TRIMTEMP(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIMTEMP(&mut self, val: u8) {
+        pub const fn set_TRIMTEMP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 16usize)) | (((val as u32) & 0x0f) << 16usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn TRIMSTART(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIMSTART(&mut self, val: u8) {
+        pub const fn set_TRIMSTART(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 24usize)) | (((val as u32) & 0x3f) << 24usize);
         }
     }
@@ -1064,40 +1112,44 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct PARAM(pub u32);
     impl PARAM {
+        #[must_use]
         #[inline(always)]
         pub const fn SOSCCLKPRES(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SOSCCLKPRES(&mut self, val: bool) {
+        pub const fn set_SOSCCLKPRES(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SIRCCLKPRES(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SIRCCLKPRES(&mut self, val: bool) {
+        pub const fn set_SIRCCLKPRES(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FIRCCLKPRES(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_FIRCCLKPRES(&mut self, val: bool) {
+        pub const fn set_FIRCCLKPRES(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn ROSCCLKPRES(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_ROSCCLKPRES(&mut self, val: bool) {
+        pub const fn set_ROSCCLKPRES(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
     }
@@ -1128,13 +1180,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct RCCR(pub u32);
     impl RCCR {
+        #[must_use]
         #[inline(always)]
         pub const fn SCS(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x07;
             val as u8
         }
         #[inline(always)]
-        pub fn set_SCS(&mut self, val: u8) {
+        pub const fn set_SCS(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 24usize)) | (((val as u32) & 0x07) << 24usize);
         }
     }
@@ -1160,40 +1213,44 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct ROSCCSR(pub u32);
     impl ROSCCSR {
+        #[must_use]
         #[inline(always)]
         pub const fn LK(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LK(&mut self, val: bool) {
+        pub const fn set_LK(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn ROSCVLD(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_ROSCVLD(&mut self, val: bool) {
+        pub const fn set_ROSCVLD(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn ROSCSEL(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_ROSCSEL(&mut self, val: bool) {
+        pub const fn set_ROSCSEL(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn ROSCERR(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_ROSCERR(&mut self, val: bool) {
+        pub const fn set_ROSCERR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
     }
@@ -1224,103 +1281,114 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SIRCCSR(pub u32);
     impl SIRCCSR {
+        #[must_use]
         #[inline(always)]
         pub const fn SIRCSTEN(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SIRCSTEN(&mut self, val: bool) {
+        pub const fn set_SIRCSTEN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SIRC_CLK_PERIPH_EN(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SIRC_CLK_PERIPH_EN(&mut self, val: bool) {
+        pub const fn set_SIRC_CLK_PERIPH_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SIRCTREN(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SIRCTREN(&mut self, val: bool) {
+        pub const fn set_SIRCTREN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SIRCTRUP(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SIRCTRUP(&mut self, val: bool) {
+        pub const fn set_SIRCTRUP(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn TRIM_LOCK(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_TRIM_LOCK(&mut self, val: bool) {
+        pub const fn set_TRIM_LOCK(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn COARSE_TRIM_BYPASS(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_COARSE_TRIM_BYPASS(&mut self, val: bool) {
+        pub const fn set_COARSE_TRIM_BYPASS(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LK(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LK(&mut self, val: bool) {
+        pub const fn set_LK(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SIRCVLD(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SIRCVLD(&mut self, val: bool) {
+        pub const fn set_SIRCVLD(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SIRCSEL(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SIRCSEL(&mut self, val: bool) {
+        pub const fn set_SIRCSEL(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SIRCERR(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SIRCERR(&mut self, val: bool) {
+        pub const fn set_SIRCERR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SIRCERR_IE(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SIRCERR_IE(&mut self, val: bool) {
+        pub const fn set_SIRCERR_IE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
     }
@@ -1358,22 +1426,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SIRCSTAT(pub u32);
     impl SIRCSTAT {
+        #[must_use]
         #[inline(always)]
         pub const fn CCOTRIM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CCOTRIM(&mut self, val: u8) {
+        pub const fn set_CCOTRIM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn CLTRIM(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CLTRIM(&mut self, val: u8) {
+        pub const fn set_CLTRIM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 8usize)) | (((val as u32) & 0x3f) << 8usize);
         }
     }
@@ -1407,22 +1477,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SIRCTCFG(pub u32);
     impl SIRCTCFG {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIMSRC(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIMSRC(&mut self, val: u8) {
+        pub const fn set_TRIMSRC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn TRIMDIV(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TRIMDIV(&mut self, val: u8) {
+        pub const fn set_TRIMDIV(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
         }
     }
@@ -1456,40 +1528,44 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SIRCTRIM(pub u32);
     impl SIRCTRIM {
+        #[must_use]
         #[inline(always)]
         pub const fn CCOTRIM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CCOTRIM(&mut self, val: u8) {
+        pub const fn set_CCOTRIM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn CLTRIM(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CLTRIM(&mut self, val: u8) {
+        pub const fn set_CLTRIM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 8usize)) | (((val as u32) & 0x3f) << 8usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn TCTRIM(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x1f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TCTRIM(&mut self, val: u8) {
+        pub const fn set_TCTRIM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FVCHTRIM(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x1f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_FVCHTRIM(&mut self, val: u8) {
+        pub const fn set_FVCHTRIM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 24usize)) | (((val as u32) & 0x1f) << 24usize);
         }
     }
@@ -1520,22 +1596,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SOSCCFG(pub u32);
     impl SOSCCFG {
+        #[must_use]
         #[inline(always)]
         pub const fn EREFS(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EREFS(&mut self, val: bool) {
+        pub const fn set_EREFS(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn RANGE(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_RANGE(&mut self, val: u8) {
+        pub const fn set_RANGE(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
     }
@@ -1569,94 +1647,104 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SOSCCSR(pub u32);
     impl SOSCCSR {
+        #[must_use]
         #[inline(always)]
         pub const fn SOSCEN(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SOSCEN(&mut self, val: bool) {
+        pub const fn set_SOSCEN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SOSCSTEN(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SOSCSTEN(&mut self, val: bool) {
+        pub const fn set_SOSCSTEN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SOSCCM(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SOSCCM(&mut self, val: bool) {
+        pub const fn set_SOSCCM(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SOSCCMRE(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SOSCCMRE(&mut self, val: bool) {
+        pub const fn set_SOSCCMRE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LK(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LK(&mut self, val: bool) {
+        pub const fn set_LK(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SOSCVLD(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SOSCVLD(&mut self, val: bool) {
+        pub const fn set_SOSCVLD(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SOSCSEL(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SOSCSEL(&mut self, val: bool) {
+        pub const fn set_SOSCSEL(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SOSCERR(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SOSCERR(&mut self, val: bool) {
+        pub const fn set_SOSCERR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SOSCVLD_IE(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SOSCVLD_IE(&mut self, val: bool) {
+        pub const fn set_SOSCVLD_IE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SOSC_SAFE_EN(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_SOSC_SAFE_EN(&mut self, val: bool) {
+        pub const fn set_SOSC_SAFE_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -1693,31 +1781,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct TRIM_LOCK(pub u32);
     impl TRIM_LOCK {
+        #[must_use]
         #[inline(always)]
         pub const fn TRIM_UNLOCK(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_TRIM_UNLOCK(&mut self, val: bool) {
+        pub const fn set_TRIM_UNLOCK(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn IFR_DISABLE(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_IFR_DISABLE(&mut self, val: bool) {
+        pub const fn set_IFR_DISABLE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn TRIM_LOCK_KEY(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0xffff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_TRIM_LOCK_KEY(&mut self, val: u16) {
+        pub const fn set_TRIM_LOCK_KEY(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }

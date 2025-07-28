@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct POWERQUAD {
     ptr: *mut u8,
@@ -112,31 +114,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CONTROL(pub u32);
     impl CONTROL {
+        #[must_use]
         #[inline(always)]
         pub const fn DECODE_OPCODE(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_DECODE_OPCODE(&mut self, val: u8) {
+        pub const fn set_DECODE_OPCODE(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn DECODE_MACHINE(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_DECODE_MACHINE(&mut self, val: u8) {
+        pub const fn set_DECODE_MACHINE(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn INST_BUSY(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_INST_BUSY(&mut self, val: bool) {
+        pub const fn set_INST_BUSY(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -166,40 +171,44 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CPPRE(pub u32);
     impl CPPRE {
+        #[must_use]
         #[inline(always)]
         pub const fn CPPRE_IN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CPPRE_IN(&mut self, val: u8) {
+        pub const fn set_CPPRE_IN(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn CPPRE_OUT(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CPPRE_OUT(&mut self, val: u8) {
+        pub const fn set_CPPRE_OUT(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn CPPRE_SAT(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_CPPRE_SAT(&mut self, val: bool) {
+        pub const fn set_CPPRE_SAT(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn CPPRE_SAT8(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_CPPRE_SAT8(&mut self, val: bool) {
+        pub const fn set_CPPRE_SAT8(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
     }
@@ -230,13 +239,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CURSORY(pub u32);
     impl CURSORY {
+        #[must_use]
         #[inline(always)]
         pub const fn CURSORY(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_CURSORY(&mut self, val: bool) {
+        pub const fn set_CURSORY(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -264,49 +274,54 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct ERRSTAT(pub u32);
     impl ERRSTAT {
+        #[must_use]
         #[inline(always)]
         pub const fn OVERFLOW(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_OVERFLOW(&mut self, val: bool) {
+        pub const fn set_OVERFLOW(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn NAN(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_NAN(&mut self, val: bool) {
+        pub const fn set_NAN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn FIXEDOVERFLOW(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_FIXEDOVERFLOW(&mut self, val: bool) {
+        pub const fn set_FIXEDOVERFLOW(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn UNDERFLOW(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_UNDERFLOW(&mut self, val: bool) {
+        pub const fn set_UNDERFLOW(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn BUSERROR(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_BUSERROR(&mut self, val: bool) {
+        pub const fn set_BUSERROR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
     }
@@ -338,58 +353,64 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EVENTEN(pub u32);
     impl EVENTEN {
+        #[must_use]
         #[inline(always)]
         pub const fn EVENT_OFLOW(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EVENT_OFLOW(&mut self, val: bool) {
+        pub const fn set_EVENT_OFLOW(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn EVENT_NAN(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EVENT_NAN(&mut self, val: bool) {
+        pub const fn set_EVENT_NAN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn EVENT_FIXED(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EVENT_FIXED(&mut self, val: bool) {
+        pub const fn set_EVENT_FIXED(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn EVENT_UFLOW(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EVENT_UFLOW(&mut self, val: bool) {
+        pub const fn set_EVENT_UFLOW(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn EVENT_BERR(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EVENT_BERR(&mut self, val: bool) {
+        pub const fn set_EVENT_BERR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn EVENT_COMP(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EVENT_COMP(&mut self, val: bool) {
+        pub const fn set_EVENT_COMP(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
@@ -422,31 +443,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct INAFORMAT(pub u32);
     impl INAFORMAT {
+        #[must_use]
         #[inline(always)]
         pub const fn INA_FORMATINT(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INA_FORMATINT(&mut self, val: u8) {
+        pub const fn set_INA_FORMATINT(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn INA_FORMATEXT(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INA_FORMATEXT(&mut self, val: u8) {
+        pub const fn set_INA_FORMATEXT(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn INA_SCALER(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INA_SCALER(&mut self, val: u8) {
+        pub const fn set_INA_SCALER(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
     }
@@ -476,31 +500,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct INBFORMAT(pub u32);
     impl INBFORMAT {
+        #[must_use]
         #[inline(always)]
         pub const fn INB_FORMATINT(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INB_FORMATINT(&mut self, val: u8) {
+        pub const fn set_INB_FORMATINT(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn INB_FORMATEXT(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INB_FORMATEXT(&mut self, val: u8) {
+        pub const fn set_INB_FORMATEXT(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn INB_SCALER(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_INB_SCALER(&mut self, val: u8) {
+        pub const fn set_INB_SCALER(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
     }
@@ -530,58 +557,64 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct INTREN(pub u32);
     impl INTREN {
+        #[must_use]
         #[inline(always)]
         pub const fn INTR_OFLOW(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_INTR_OFLOW(&mut self, val: bool) {
+        pub const fn set_INTR_OFLOW(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn INTR_NAN(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_INTR_NAN(&mut self, val: bool) {
+        pub const fn set_INTR_NAN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn INTR_FIXED(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_INTR_FIXED(&mut self, val: bool) {
+        pub const fn set_INTR_FIXED(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn INTR_UFLOW(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_INTR_UFLOW(&mut self, val: bool) {
+        pub const fn set_INTR_UFLOW(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn INTR_BERR(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_INTR_BERR(&mut self, val: bool) {
+        pub const fn set_INTR_BERR(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn INTR_COMP(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_INTR_COMP(&mut self, val: bool) {
+        pub const fn set_INTR_COMP(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
@@ -614,13 +647,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct INTRSTAT(pub u32);
     impl INTRSTAT {
+        #[must_use]
         #[inline(always)]
         pub const fn INTR_STAT(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_INTR_STAT(&mut self, val: bool) {
+        pub const fn set_INTR_STAT(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -648,31 +682,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct OUTFORMAT(pub u32);
     impl OUTFORMAT {
+        #[must_use]
         #[inline(always)]
         pub const fn OUT_FORMATINT(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_OUT_FORMATINT(&mut self, val: u8) {
+        pub const fn set_OUT_FORMATINT(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn OUT_FORMATEXT(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_OUT_FORMATEXT(&mut self, val: u8) {
+        pub const fn set_OUT_FORMATEXT(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn OUT_SCALER(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_OUT_SCALER(&mut self, val: u8) {
+        pub const fn set_OUT_SCALER(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
     }
@@ -702,31 +739,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct TMPFORMAT(pub u32);
     impl TMPFORMAT {
+        #[must_use]
         #[inline(always)]
         pub const fn TMP_FORMATINT(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TMP_FORMATINT(&mut self, val: u8) {
+        pub const fn set_TMP_FORMATINT(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn TMP_FORMATEXT(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TMP_FORMATEXT(&mut self, val: u8) {
+        pub const fn set_TMP_FORMATEXT(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn TMP_SCALER(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TMP_SCALER(&mut self, val: u8) {
+        pub const fn set_TMP_SCALER(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
     }

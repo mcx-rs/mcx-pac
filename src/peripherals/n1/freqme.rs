@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct FREQME {
     ptr: *mut u8,
@@ -42,103 +44,114 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CTRLSTAT(pub u32);
     impl CTRLSTAT {
+        #[must_use]
         #[inline(always)]
         pub const fn REF_SCALE(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x1f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_REF_SCALE(&mut self, val: u8) {
+        pub const fn set_REF_SCALE(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PULSE_MODE(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_PULSE_MODE(&mut self, val: bool) {
+        pub const fn set_PULSE_MODE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PULSE_POL(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_PULSE_POL(&mut self, val: bool) {
+        pub const fn set_PULSE_POL(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LT_MIN_INT_EN(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LT_MIN_INT_EN(&mut self, val: bool) {
+        pub const fn set_LT_MIN_INT_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn GT_MAX_INT_EN(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_GT_MAX_INT_EN(&mut self, val: bool) {
+        pub const fn set_GT_MAX_INT_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn RESULT_READY_INT_EN(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_RESULT_READY_INT_EN(&mut self, val: bool) {
+        pub const fn set_RESULT_READY_INT_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LT_MIN_STAT(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LT_MIN_STAT(&mut self, val: bool) {
+        pub const fn set_LT_MIN_STAT(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn GT_MAX_STAT(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_GT_MAX_STAT(&mut self, val: bool) {
+        pub const fn set_GT_MAX_STAT(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn RESULT_READY_STAT(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_RESULT_READY_STAT(&mut self, val: bool) {
+        pub const fn set_RESULT_READY_STAT(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn CONTINUOUS_MODE_EN(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_CONTINUOUS_MODE_EN(&mut self, val: bool) {
+        pub const fn set_CONTINUOUS_MODE_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn MEASURE_IN_PROGRESS(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_MEASURE_IN_PROGRESS(&mut self, val: bool) {
+        pub const fn set_MEASURE_IN_PROGRESS(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -176,22 +189,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CTRL_R(pub u32);
     impl CTRL_R {
+        #[must_use]
         #[inline(always)]
         pub const fn RESULT(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x7fff_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_RESULT(&mut self, val: u32) {
+        pub const fn set_RESULT(&mut self, val: u32) {
             self.0 = (self.0 & !(0x7fff_ffff << 0usize)) | (((val as u32) & 0x7fff_ffff) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn MEASURE_IN_PROGRESS(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_MEASURE_IN_PROGRESS(&mut self, val: bool) {
+        pub const fn set_MEASURE_IN_PROGRESS(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -225,76 +240,84 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CTRL_W(pub u32);
     impl CTRL_W {
+        #[must_use]
         #[inline(always)]
         pub const fn REF_SCALE(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x1f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_REF_SCALE(&mut self, val: u8) {
+        pub const fn set_REF_SCALE(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PULSE_MODE(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_PULSE_MODE(&mut self, val: bool) {
+        pub const fn set_PULSE_MODE(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PULSE_POL(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_PULSE_POL(&mut self, val: bool) {
+        pub const fn set_PULSE_POL(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LT_MIN_INT_EN(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LT_MIN_INT_EN(&mut self, val: bool) {
+        pub const fn set_LT_MIN_INT_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn GT_MAX_INT_EN(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_GT_MAX_INT_EN(&mut self, val: bool) {
+        pub const fn set_GT_MAX_INT_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn RESULT_READY_INT_EN(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_RESULT_READY_INT_EN(&mut self, val: bool) {
+        pub const fn set_RESULT_READY_INT_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn CONTINUOUS_MODE_EN(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_CONTINUOUS_MODE_EN(&mut self, val: bool) {
+        pub const fn set_CONTINUOUS_MODE_EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn MEASURE_IN_PROGRESS(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_MEASURE_IN_PROGRESS(&mut self, val: bool) {
+        pub const fn set_MEASURE_IN_PROGRESS(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -329,13 +352,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct MAX(pub u32);
     impl MAX {
+        #[must_use]
         #[inline(always)]
         pub const fn MAX_VALUE(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x7fff_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_MAX_VALUE(&mut self, val: u32) {
+        pub const fn set_MAX_VALUE(&mut self, val: u32) {
             self.0 = (self.0 & !(0x7fff_ffff << 0usize)) | (((val as u32) & 0x7fff_ffff) << 0usize);
         }
     }
@@ -363,13 +387,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct MIN(pub u32);
     impl MIN {
+        #[must_use]
         #[inline(always)]
         pub const fn MIN_VALUE(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x7fff_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_MIN_VALUE(&mut self, val: u32) {
+        pub const fn set_MIN_VALUE(&mut self, val: u32) {
             self.0 = (self.0 & !(0x7fff_ffff << 0usize)) | (((val as u32) & 0x7fff_ffff) << 0usize);
         }
     }

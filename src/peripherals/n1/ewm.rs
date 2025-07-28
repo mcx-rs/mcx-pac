@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct EWM {
     ptr: *mut u8,
@@ -46,13 +48,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CLKCTRL(pub u8);
     impl CLKCTRL {
+        #[must_use]
         #[inline(always)]
         pub const fn CLKSEL(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CLKSEL(&mut self, val: u8) {
+        pub const fn set_CLKSEL(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u8) & 0x03) << 0usize);
         }
     }
@@ -80,40 +83,44 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CTRL(pub u8);
     impl CTRL {
+        #[must_use]
         #[inline(always)]
         pub const fn EWMEN(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EWMEN(&mut self, val: bool) {
+        pub const fn set_EWMEN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn ASSIN(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_ASSIN(&mut self, val: bool) {
+        pub const fn set_ASSIN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn INEN(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_INEN(&mut self, val: bool) {
+        pub const fn set_INEN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn INTEN(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_INTEN(&mut self, val: bool) {
+        pub const fn set_INTEN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
     }

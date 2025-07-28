@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct BSP32 {
     ptr: *mut u8,
@@ -84,13 +86,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct CF_GATING_OVERRIDE(pub u32);
     impl CF_GATING_OVERRIDE {
+        #[must_use]
         #[inline(always)]
         pub const fn val(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_val(&mut self, val: bool) {
+        pub const fn set_val(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -118,13 +121,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct INTERRUPTS_STATUS(pub u32);
     impl INTERRUPTS_STATUS {
+        #[must_use]
         #[inline(always)]
         pub const fn val(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_val(&mut self, val: bool) {
+        pub const fn set_val(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -152,13 +156,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct IVT0(pub u32);
     impl IVT0 {
+        #[must_use]
         #[inline(always)]
         pub const fn val(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x00ff_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_val(&mut self, val: u32) {
+        pub const fn set_val(&mut self, val: u32) {
             self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
         }
     }
@@ -184,13 +189,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct IVT1(pub u32);
     impl IVT1 {
+        #[must_use]
         #[inline(always)]
         pub const fn val(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x00ff_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_val(&mut self, val: u32) {
+        pub const fn set_val(&mut self, val: u32) {
             self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
         }
     }
@@ -216,13 +222,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct IVT2(pub u32);
     impl IVT2 {
+        #[must_use]
         #[inline(always)]
         pub const fn val(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x00ff_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_val(&mut self, val: u32) {
+        pub const fn set_val(&mut self, val: u32) {
             self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
         }
     }
@@ -248,13 +255,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct IVT3(pub u32);
     impl IVT3 {
+        #[must_use]
         #[inline(always)]
         pub const fn val(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x00ff_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_val(&mut self, val: u32) {
+        pub const fn set_val(&mut self, val: u32) {
             self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
         }
     }
@@ -280,13 +288,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct IVT_DISABLE(pub u32);
     impl IVT_DISABLE {
+        #[must_use]
         #[inline(always)]
         pub const fn val(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_val(&mut self, val: bool) {
+        pub const fn set_val(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -314,13 +323,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct IVT_OFFSET(pub u32);
     impl IVT_OFFSET {
+        #[must_use]
         #[inline(always)]
         pub const fn val(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x00ff_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_val(&mut self, val: u32) {
+        pub const fn set_val(&mut self, val: u32) {
             self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
         }
     }
@@ -348,13 +358,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct OFFSET_MAILBOX(pub u32);
     impl OFFSET_MAILBOX {
+        #[must_use]
         #[inline(always)]
         pub const fn val(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x00ff_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_val(&mut self, val: u32) {
+        pub const fn set_val(&mut self, val: u32) {
             self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
         }
     }
@@ -382,13 +393,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct OFFSET_PMEM(pub u32);
     impl OFFSET_PMEM {
+        #[must_use]
         #[inline(always)]
         pub const fn val(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_val(&mut self, val: u8) {
+        pub const fn set_val(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -416,13 +428,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct OFFSET_XMEM(pub u32);
     impl OFFSET_XMEM {
+        #[must_use]
         #[inline(always)]
         pub const fn val(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_val(&mut self, val: u8) {
+        pub const fn set_val(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -450,13 +463,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct OFFSET_YMEM(pub u32);
     impl OFFSET_YMEM {
+        #[must_use]
         #[inline(always)]
         pub const fn val(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_val(&mut self, val: u8) {
+        pub const fn set_val(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -484,13 +498,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SLEEP_MODE(pub u32);
     impl SLEEP_MODE {
+        #[must_use]
         #[inline(always)]
         pub const fn val(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_val(&mut self, val: bool) {
+        pub const fn set_val(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }

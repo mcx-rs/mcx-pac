@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct EIM {
     ptr: *mut u8,
@@ -38,13 +40,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EICHD0_WORD0(pub u32);
     impl EICHD0_WORD0 {
+        #[must_use]
         #[inline(always)]
         pub const fn CHKBIT_MASK(&self) -> u8 {
             let val = (self.0 >> 25usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CHKBIT_MASK(&mut self, val: u8) {
+        pub const fn set_CHKBIT_MASK(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 25usize)) | (((val as u32) & 0x7f) << 25usize);
         }
     }
@@ -76,13 +79,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EICHEN(pub u32);
     impl EICHEN {
+        #[must_use]
         #[inline(always)]
         pub const fn EICH0EN(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EICH0EN(&mut self, val: bool) {
+        pub const fn set_EICH0EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -110,13 +114,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EIMCR(pub u32);
     impl EIMCR {
+        #[must_use]
         #[inline(always)]
         pub const fn GEIEN(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_GEIEN(&mut self, val: bool) {
+        pub const fn set_GEIEN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }

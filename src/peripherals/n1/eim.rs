@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct EIM {
     ptr: *mut u8,
@@ -102,13 +104,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EICHD0_WORD0(pub u32);
     impl EICHD0_WORD0 {
+        #[must_use]
         #[inline(always)]
         pub const fn CHKBIT_MASK(&self) -> u8 {
             let val = (self.0 >> 25usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CHKBIT_MASK(&mut self, val: u8) {
+        pub const fn set_CHKBIT_MASK(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 25usize)) | (((val as u32) & 0x7f) << 25usize);
         }
     }
@@ -140,13 +143,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EICHD1_WORD0(pub u32);
     impl EICHD1_WORD0 {
+        #[must_use]
         #[inline(always)]
         pub const fn CHKBIT_MASK(&self) -> u8 {
             let val = (self.0 >> 25usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CHKBIT_MASK(&mut self, val: u8) {
+        pub const fn set_CHKBIT_MASK(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 25usize)) | (((val as u32) & 0x7f) << 25usize);
         }
     }
@@ -178,13 +182,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EICHD2_WORD0(pub u32);
     impl EICHD2_WORD0 {
+        #[must_use]
         #[inline(always)]
         pub const fn CHKBIT_MASK(&self) -> u8 {
             let val = (self.0 >> 25usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CHKBIT_MASK(&mut self, val: u8) {
+        pub const fn set_CHKBIT_MASK(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 25usize)) | (((val as u32) & 0x7f) << 25usize);
         }
     }
@@ -216,13 +221,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EICHD3_WORD0(pub u32);
     impl EICHD3_WORD0 {
+        #[must_use]
         #[inline(always)]
         pub const fn CHKBIT_MASK(&self) -> u8 {
             let val = (self.0 >> 25usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CHKBIT_MASK(&mut self, val: u8) {
+        pub const fn set_CHKBIT_MASK(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 25usize)) | (((val as u32) & 0x7f) << 25usize);
         }
     }
@@ -254,13 +260,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EICHD4_WORD0(pub u32);
     impl EICHD4_WORD0 {
+        #[must_use]
         #[inline(always)]
         pub const fn CHKBIT_MASK(&self) -> u8 {
             let val = (self.0 >> 25usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CHKBIT_MASK(&mut self, val: u8) {
+        pub const fn set_CHKBIT_MASK(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 25usize)) | (((val as u32) & 0x7f) << 25usize);
         }
     }
@@ -292,13 +299,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EICHD5_WORD0(pub u32);
     impl EICHD5_WORD0 {
+        #[must_use]
         #[inline(always)]
         pub const fn CHKBIT_MASK(&self) -> u8 {
             let val = (self.0 >> 25usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CHKBIT_MASK(&mut self, val: u8) {
+        pub const fn set_CHKBIT_MASK(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 25usize)) | (((val as u32) & 0x7f) << 25usize);
         }
     }
@@ -330,13 +338,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EICHD6_WORD0(pub u32);
     impl EICHD6_WORD0 {
+        #[must_use]
         #[inline(always)]
         pub const fn CHKBIT_MASK(&self) -> u8 {
             let val = (self.0 >> 25usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CHKBIT_MASK(&mut self, val: u8) {
+        pub const fn set_CHKBIT_MASK(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 25usize)) | (((val as u32) & 0x7f) << 25usize);
         }
     }
@@ -368,13 +377,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EICHD7_WORD0(pub u32);
     impl EICHD7_WORD0 {
+        #[must_use]
         #[inline(always)]
         pub const fn CHKBIT_MASK(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_CHKBIT_MASK(&mut self, val: bool) {
+        pub const fn set_CHKBIT_MASK(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -406,13 +416,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EICHD8_WORD0(pub u32);
     impl EICHD8_WORD0 {
+        #[must_use]
         #[inline(always)]
         pub const fn CHKBIT_MASK(&self) -> u8 {
             let val = (self.0 >> 28usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CHKBIT_MASK(&mut self, val: u8) {
+        pub const fn set_CHKBIT_MASK(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 28usize)) | (((val as u32) & 0x0f) << 28usize);
         }
     }
@@ -444,85 +455,94 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EICHEN(pub u32);
     impl EICHEN {
+        #[must_use]
         #[inline(always)]
         pub const fn EICH8EN(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EICH8EN(&mut self, val: bool) {
+        pub const fn set_EICH8EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn EICH7EN(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EICH7EN(&mut self, val: bool) {
+        pub const fn set_EICH7EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn EICH6EN(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EICH6EN(&mut self, val: bool) {
+        pub const fn set_EICH6EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn EICH5EN(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EICH5EN(&mut self, val: bool) {
+        pub const fn set_EICH5EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn EICH4EN(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EICH4EN(&mut self, val: bool) {
+        pub const fn set_EICH4EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn EICH3EN(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EICH3EN(&mut self, val: bool) {
+        pub const fn set_EICH3EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn EICH2EN(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EICH2EN(&mut self, val: bool) {
+        pub const fn set_EICH2EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn EICH1EN(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EICH1EN(&mut self, val: bool) {
+        pub const fn set_EICH1EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn EICH0EN(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_EICH0EN(&mut self, val: bool) {
+        pub const fn set_EICH0EN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -558,13 +578,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct EIMCR(pub u32);
     impl EIMCR {
+        #[must_use]
         #[inline(always)]
         pub const fn GEIEN(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_GEIEN(&mut self, val: bool) {
+        pub const fn set_GEIEN(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }

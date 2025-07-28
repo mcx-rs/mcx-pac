@@ -6,10 +6,9 @@
 pub mod common;
 
 mod device;
-use core::marker::PhantomData;
-
 pub use device::*;
 
+use core::marker::PhantomData;
 pub struct Instance<T, const N: u8> {
     _t: PhantomData<T>,
 }

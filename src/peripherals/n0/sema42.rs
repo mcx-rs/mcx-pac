@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct SEMA42 {
     ptr: *mut u8,
@@ -94,13 +96,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct GATE0(pub u8);
     impl GATE0 {
+        #[must_use]
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_GTFSM(&mut self, val: u8) {
+        pub const fn set_GTFSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
@@ -128,13 +131,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct GATE1(pub u8);
     impl GATE1 {
+        #[must_use]
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_GTFSM(&mut self, val: u8) {
+        pub const fn set_GTFSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
@@ -162,13 +166,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct GATE10(pub u8);
     impl GATE10 {
+        #[must_use]
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_GTFSM(&mut self, val: u8) {
+        pub const fn set_GTFSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
@@ -196,13 +201,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct GATE11(pub u8);
     impl GATE11 {
+        #[must_use]
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_GTFSM(&mut self, val: u8) {
+        pub const fn set_GTFSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
@@ -230,13 +236,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct GATE12(pub u8);
     impl GATE12 {
+        #[must_use]
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_GTFSM(&mut self, val: u8) {
+        pub const fn set_GTFSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
@@ -264,13 +271,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct GATE13(pub u8);
     impl GATE13 {
+        #[must_use]
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_GTFSM(&mut self, val: u8) {
+        pub const fn set_GTFSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
@@ -298,13 +306,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct GATE14(pub u8);
     impl GATE14 {
+        #[must_use]
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_GTFSM(&mut self, val: u8) {
+        pub const fn set_GTFSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
@@ -332,13 +341,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct GATE15(pub u8);
     impl GATE15 {
+        #[must_use]
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_GTFSM(&mut self, val: u8) {
+        pub const fn set_GTFSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
@@ -366,13 +376,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct GATE2(pub u8);
     impl GATE2 {
+        #[must_use]
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_GTFSM(&mut self, val: u8) {
+        pub const fn set_GTFSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
@@ -400,13 +411,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct GATE3(pub u8);
     impl GATE3 {
+        #[must_use]
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_GTFSM(&mut self, val: u8) {
+        pub const fn set_GTFSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
@@ -434,13 +446,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct GATE4(pub u8);
     impl GATE4 {
+        #[must_use]
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_GTFSM(&mut self, val: u8) {
+        pub const fn set_GTFSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
@@ -468,13 +481,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct GATE5(pub u8);
     impl GATE5 {
+        #[must_use]
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_GTFSM(&mut self, val: u8) {
+        pub const fn set_GTFSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
@@ -502,13 +516,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct GATE6(pub u8);
     impl GATE6 {
+        #[must_use]
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_GTFSM(&mut self, val: u8) {
+        pub const fn set_GTFSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
@@ -536,13 +551,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct GATE7(pub u8);
     impl GATE7 {
+        #[must_use]
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_GTFSM(&mut self, val: u8) {
+        pub const fn set_GTFSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
@@ -570,13 +586,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct GATE8(pub u8);
     impl GATE8 {
+        #[must_use]
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_GTFSM(&mut self, val: u8) {
+        pub const fn set_GTFSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
@@ -604,13 +621,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct GATE9(pub u8);
     impl GATE9 {
+        #[must_use]
         #[inline(always)]
         pub const fn GTFSM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_GTFSM(&mut self, val: u8) {
+        pub const fn set_GTFSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u8) & 0x0f) << 0usize);
         }
     }
@@ -638,31 +656,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct RSTGT_R(pub u16);
     impl RSTGT_R {
+        #[must_use]
         #[inline(always)]
         pub const fn RSTGTN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_RSTGTN(&mut self, val: u8) {
+        pub const fn set_RSTGTN(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u16) & 0xff) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn RSTGMS(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_RSTGMS(&mut self, val: u8) {
+        pub const fn set_RSTGMS(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u16) & 0x0f) << 8usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn RSTGSM(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_RSTGSM(&mut self, val: u8) {
+        pub const fn set_RSTGSM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u16) & 0x03) << 12usize);
         }
     }
@@ -698,22 +719,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct RSTGT_W(pub u16);
     impl RSTGT_W {
+        #[must_use]
         #[inline(always)]
         pub const fn RSTGTN(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_RSTGTN(&mut self, val: u8) {
+        pub const fn set_RSTGTN(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u16) & 0xff) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn RSTGDP(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
             val as u8
         }
         #[inline(always)]
-        pub fn set_RSTGDP(&mut self, val: u8) {
+        pub const fn set_RSTGDP(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u16) & 0xff) << 8usize);
         }
     }

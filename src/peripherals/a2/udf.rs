@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct UDF {
     ptr: *mut u8,
@@ -38,76 +40,84 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct UDF_CTRL(pub u32);
     impl UDF_CTRL {
+        #[must_use]
         #[inline(always)]
         pub const fn salt(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
             val as u16
         }
         #[inline(always)]
-        pub fn set_salt(&mut self, val: u16) {
+        pub const fn set_salt(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn lock(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x07;
             val as u8
         }
         #[inline(always)]
-        pub fn set_lock(&mut self, val: u8) {
+        pub const fn set_lock(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn reserved21(&self) -> u8 {
             let val = (self.0 >> 19usize) & 0x07;
             val as u8
         }
         #[inline(always)]
-        pub fn set_reserved21(&mut self, val: u8) {
+        pub const fn set_reserved21(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 19usize)) | (((val as u32) & 0x07) << 19usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn udf_en(&self) -> u8 {
             let val = (self.0 >> 22usize) & 0x07;
             val as u8
         }
         #[inline(always)]
-        pub fn set_udf_en(&mut self, val: u8) {
+        pub const fn set_udf_en(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 22usize)) | (((val as u32) & 0x07) << 22usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn reserved25(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_reserved25(&mut self, val: bool) {
+        pub const fn set_reserved25(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn reserved27(&self) -> u8 {
             let val = (self.0 >> 26usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_reserved27(&mut self, val: u8) {
+        pub const fn set_reserved27(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 26usize)) | (((val as u32) & 0x03) << 26usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn flush(&self) -> u8 {
             let val = (self.0 >> 28usize) & 0x07;
             val as u8
         }
         #[inline(always)]
-        pub fn set_flush(&mut self, val: u8) {
+        pub const fn set_flush(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 28usize)) | (((val as u32) & 0x07) << 28usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn reserved31(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_reserved31(&mut self, val: bool) {
+        pub const fn set_reserved31(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -142,31 +152,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct UDF_STATUS(pub u32);
     impl UDF_STATUS {
+        #[must_use]
         #[inline(always)]
         pub const fn o_status(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x1f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_o_status(&mut self, val: u8) {
+        pub const fn set_o_status(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn rsv(&self) -> u32 {
             let val = (self.0 >> 5usize) & 0x03ff_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_rsv(&mut self, val: u32) {
+        pub const fn set_rsv(&mut self, val: u32) {
             self.0 = (self.0 & !(0x03ff_ffff << 5usize)) | (((val as u32) & 0x03ff_ffff) << 5usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn o_wait(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_o_wait(&mut self, val: bool) {
+        pub const fn set_o_wait(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }

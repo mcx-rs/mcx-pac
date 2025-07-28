@@ -1,4 +1,3 @@
-# This manifest is generated automatically, edit this in script/generate.py
 [package]
 name = "mcx-pac"
 description = "Peripheral Access Crate for NXP MCX Series MCUs"
@@ -15,7 +14,7 @@ include = ["/src", "build.rs", "/examples", "LICENSE-MIT", "LICENSE-BSD"]
 [dependencies]
 cortex-m = "0.7"
 cortex-m-rt = { version = "0.7", optional = true }
-defmt = { version = "0.3.10", optional = true }
+defmt = { version = "0.3", optional = true }
 
 [dev-dependencies]
 panic-halt = "1"
@@ -25,20 +24,25 @@ rt = ["cortex-m-rt/device"]
 defmt = ["dep:defmt"]
 
 _device_selected = []
+
 mcxa132 = ["_device_selected"]
 mcxa133 = ["_device_selected"]
 mcxa142 = ["_device_selected"]
 mcxa143 = ["_device_selected"]
-mcxa152 = ["_device_selected"]
-mcxa153 = ["_device_selected"]
 mcxa144 = ["_device_selected"]
 mcxa145 = ["_device_selected"]
 mcxa146 = ["_device_selected"]
+mcxa152 = ["_device_selected"]
+mcxa153 = ["_device_selected"]
 mcxa154 = ["_device_selected"]
 mcxa155 = ["_device_selected"]
 mcxa156 = ["_device_selected"]
+mcxa255 = ["_device_selected"]
+mcxa256 = ["_device_selected"]
 mcxa345 = ["_device_selected"]
 mcxa346 = ["_device_selected"]
+mcxn235 = ["_device_selected"]
+mcxn236 = ["_device_selected"]
 mcxn546_cm33_core0 = ["_device_selected"]
 mcxn546_cm33_core1 = ["_device_selected"]
 mcxn547_cm33_core0 = ["_device_selected"]
@@ -47,5 +51,3 @@ mcxn946_cm33_core0 = ["_device_selected"]
 mcxn946_cm33_core1 = ["_device_selected"]
 mcxn947_cm33_core0 = ["_device_selected"]
 mcxn947_cm33_core1 = ["_device_selected"]
-mcxn235 = ["_device_selected"]
-mcxn236 = ["_device_selected"]

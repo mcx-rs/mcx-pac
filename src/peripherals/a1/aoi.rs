@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct AOI {
     ptr: *mut u8,
@@ -51,76 +53,84 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct BFCRT_BFCRT01(pub u16);
     impl BFCRT_BFCRT01 {
+        #[must_use]
         #[inline(always)]
         pub const fn PT1_DC(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_PT1_DC(&mut self, val: u8) {
+        pub const fn set_PT1_DC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u16) & 0x03) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PT1_CC(&self) -> u8 {
             let val = (self.0 >> 2usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_PT1_CC(&mut self, val: u8) {
+        pub const fn set_PT1_CC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u16) & 0x03) << 2usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PT1_BC(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_PT1_BC(&mut self, val: u8) {
+        pub const fn set_PT1_BC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u16) & 0x03) << 4usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PT1_AC(&self) -> u8 {
             let val = (self.0 >> 6usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_PT1_AC(&mut self, val: u8) {
+        pub const fn set_PT1_AC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u16) & 0x03) << 6usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PT0_DC(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_PT0_DC(&mut self, val: u8) {
+        pub const fn set_PT0_DC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u16) & 0x03) << 8usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PT0_CC(&self) -> u8 {
             let val = (self.0 >> 10usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_PT0_CC(&mut self, val: u8) {
+        pub const fn set_PT0_CC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u16) & 0x03) << 10usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PT0_BC(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_PT0_BC(&mut self, val: u8) {
+        pub const fn set_PT0_BC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u16) & 0x03) << 12usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PT0_AC(&self) -> u8 {
             let val = (self.0 >> 14usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_PT0_AC(&mut self, val: u8) {
+        pub const fn set_PT0_AC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u16) & 0x03) << 14usize);
         }
     }
@@ -155,76 +165,84 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct BFCRT_BFCRT23(pub u16);
     impl BFCRT_BFCRT23 {
+        #[must_use]
         #[inline(always)]
         pub const fn PT3_DC(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_PT3_DC(&mut self, val: u8) {
+        pub const fn set_PT3_DC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u16) & 0x03) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PT3_CC(&self) -> u8 {
             let val = (self.0 >> 2usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_PT3_CC(&mut self, val: u8) {
+        pub const fn set_PT3_CC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u16) & 0x03) << 2usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PT3_BC(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_PT3_BC(&mut self, val: u8) {
+        pub const fn set_PT3_BC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u16) & 0x03) << 4usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PT3_AC(&self) -> u8 {
             let val = (self.0 >> 6usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_PT3_AC(&mut self, val: u8) {
+        pub const fn set_PT3_AC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u16) & 0x03) << 6usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PT2_DC(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_PT2_DC(&mut self, val: u8) {
+        pub const fn set_PT2_DC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u16) & 0x03) << 8usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PT2_CC(&self) -> u8 {
             let val = (self.0 >> 10usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_PT2_CC(&mut self, val: u8) {
+        pub const fn set_PT2_CC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u16) & 0x03) << 10usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PT2_BC(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_PT2_BC(&mut self, val: u8) {
+        pub const fn set_PT2_BC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u16) & 0x03) << 12usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn PT2_AC(&self) -> u8 {
             let val = (self.0 >> 14usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_PT2_AC(&mut self, val: u8) {
+        pub const fn set_PT2_AC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u16) & 0x03) << 14usize);
         }
     }

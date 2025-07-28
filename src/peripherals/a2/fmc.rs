@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct FMC {
     ptr: *mut u8,
@@ -54,31 +56,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FCAR(pub u32);
     impl FCAR {
+        #[must_use]
         #[inline(always)]
         pub const fn CACHES_WAY_NUM(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CACHES_WAY_NUM(&mut self, val: u8) {
+        pub const fn set_CACHES_WAY_NUM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn CACHES_SET_NUM(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_CACHES_SET_NUM(&mut self, val: bool) {
+        pub const fn set_CACHES_SET_NUM(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn TYPE(&self) -> u8 {
             let val = (self.0 >> 30usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_TYPE(&mut self, val: u8) {
+        pub const fn set_TYPE(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
         }
     }
@@ -114,22 +119,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FCCR(pub u32);
     impl FCCR {
+        #[must_use]
         #[inline(always)]
         pub const fn WAY_LOCK(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_WAY_LOCK(&mut self, val: u8) {
+        pub const fn set_WAY_LOCK(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LOCK(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_LOCK(&mut self, val: bool) {
+        pub const fn set_LOCK(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -163,22 +170,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct FCTG(pub u32);
     impl FCTG {
+        #[must_use]
         #[inline(always)]
         pub const fn VALID(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_VALID(&mut self, val: bool) {
+        pub const fn set_VALID(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn ADDRESS(&self) -> u32 {
             let val = (self.0 >> 6usize) & 0x0003_ffff;
             val as u32
         }
         #[inline(always)]
-        pub fn set_ADDRESS(&mut self, val: u32) {
+        pub const fn set_ADDRESS(&mut self, val: u32) {
             self.0 = (self.0 & !(0x0003_ffff << 6usize)) | (((val as u32) & 0x0003_ffff) << 6usize);
         }
     }
@@ -212,31 +221,34 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct REMAP(pub u32);
     impl REMAP {
+        #[must_use]
         #[inline(always)]
         pub const fn REMAPLK(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_REMAPLK(&mut self, val: bool) {
+        pub const fn set_REMAPLK(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LIM(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_LIM(&mut self, val: u8) {
+        pub const fn set_LIM(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn LIMDP(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_LIMDP(&mut self, val: u8) {
+        pub const fn set_LIMDP(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 24usize)) | (((val as u32) & 0x7f) << 24usize);
         }
     }

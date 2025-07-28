@@ -521,7 +521,7 @@ interrupts:
   description: Pin Interrupt Pattern Match Interrupt
   value: 47
 - name: PDM_EVENT
-  description: 'Microphone Interface interrupt '
+  description: Microphone Interface interrupt
   value: 48
 - name: USB0_DCD
   description: Universal Serial Bus - Device Charge Detect interrupt
@@ -557,12 +557,12 @@ interrupts:
   description: USBHS DCD or USBHS Phy interrupt
   value: 66
 - name: USB1_HS
-  description: 'USB High Speed OTG Controller interrupt '
+  description: USB High Speed OTG Controller interrupt
   value: 67
 - name: SEC_HYPERVISOR_CALL
   description: AHB Secure Controller hypervisor call interrupt
   value: 68
-- name: Freqme
+- name: FREQME
   description: Frequency Measurement interrupt
   value: 71
 - name: SEC_VIO

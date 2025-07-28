@@ -1,5 +1,7 @@
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
-#![doc = "Peripheral access API (generated using chiptool v0.1.0 (0303941 2025-02-18))"]
+#![doc = "Peripheral access API (generated using chiptool v0.1.0 (6651cd0 2025-05-06))"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct PMCR {
     ptr: *mut u8,
@@ -76,85 +78,94 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct PMCR_PMCR(pub u32);
     impl PMCR_PMCR {
+        #[must_use]
         #[inline(always)]
         pub const fn MENB(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_MENB(&mut self, val: bool) {
+        pub const fn set_MENB(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SSC(&self) -> u8 {
             let val = (self.0 >> 1usize) & 0x07;
             val as u8
         }
         #[inline(always)]
-        pub fn set_SSC(&mut self, val: u8) {
+        pub const fn set_SSC(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 1usize)) | (((val as u32) & 0x07) << 1usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn CMODE(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
             val as u8
         }
         #[inline(always)]
-        pub fn set_CMODE(&mut self, val: u8) {
+        pub const fn set_CMODE(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn RECTR1(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_RECTR1(&mut self, val: bool) {
+        pub const fn set_RECTR1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn RECTR2(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_RECTR2(&mut self, val: bool) {
+        pub const fn set_RECTR2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn RECTR3(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_RECTR3(&mut self, val: bool) {
+        pub const fn set_RECTR3(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SELEVT1(&self) -> u8 {
             let val = (self.0 >> 11usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_SELEVT1(&mut self, val: u8) {
+        pub const fn set_SELEVT1(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 11usize)) | (((val as u32) & 0x7f) << 11usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SELEVT2(&self) -> u8 {
             let val = (self.0 >> 18usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_SELEVT2(&mut self, val: u8) {
+        pub const fn set_SELEVT2(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 18usize)) | (((val as u32) & 0x7f) << 18usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn SELEVT3(&self) -> u8 {
             let val = (self.0 >> 25usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_SELEVT3(&mut self, val: u8) {
+        pub const fn set_SELEVT3(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 25usize)) | (((val as u32) & 0x7f) << 25usize);
         }
     }
