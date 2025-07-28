@@ -17,36 +17,34 @@ jobs:
     strategy:
       matrix:
         device:
-          - "mcxa132"
-          - "mcxa133"
-          - "mcxa142"
-          - "mcxa143"
-          - "mcxa152"
-          - "mcxa153"
-          - "mcxa144"
-          - "mcxa145"
-          - "mcxa146"
-          - "mcxa154"
-          - "mcxa155"
-          - "mcxa156"
-          - "mcxa165"
-          - "mcxa166"
-          - "mcxa175"
-          - "mcxa176"
-          - "mcxa255"
-          - "mcxa256"
-          - "mcxa275"
-          - "mcxa276"
-          - "mcxn546_cm33_core0"
-          - "mcxn546_cm33_core1"
-          - "mcxn547_cm33_core0"
-          - "mcxn547_cm33_core1"
-          - "mcxn946_cm33_core0"
-          - "mcxn946_cm33_core1"
-          - "mcxn947_cm33_core0"
-          - "mcxn947_cm33_core1"
-          - "mcxn235"
-          - "mcxn236"
+          - mcxa132
+          - mcxa133
+          - mcxa142
+          - mcxa143
+          - mcxa144
+          - mcxa145
+          - mcxa146
+          - mcxa152
+          - mcxa153
+          - mcxa154
+          - mcxa155
+          - mcxa156
+          - mcxa255
+          - mcxa256
+          - mcxa345
+          - mcxa346
+          - mcxn235
+          - mcxn236
+          - mcxn546_cm33_core0
+          - mcxn546_cm33_core1
+          - mcxn547_cm33_core0
+          - mcxn547_cm33_core1
+          - mcxn946_cm33_core0
+          - mcxn946_cm33_core1
+          - mcxn947_cm33_core0
+          - mcxn947_cm33_core1
+          - mcxn235
+          - mcxn236
     steps:
       - uses: actions/checkout@v4
       - run: rustup toolchain install stable --no-self-update --profile minimal --target thumbv8m.main-none-eabihf
