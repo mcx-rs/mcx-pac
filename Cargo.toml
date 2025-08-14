@@ -22,9 +22,12 @@ panic-halt = "1"
 [features]
 rt = ["cortex-m-rt/device"]
 defmt = ["dep:defmt"]
+metadata = []
 
 _device_selected = []
 
+## device-features
+## {
 mcxa132 = ["_device_selected"]
 mcxa133 = ["_device_selected"]
 mcxa142 = ["_device_selected"]
@@ -51,3 +54,4 @@ mcxn946_cm33_core0 = ["_device_selected"]
 mcxn946_cm33_core1 = ["_device_selected"]
 mcxn947_cm33_core0 = ["_device_selected"]
 mcxn947_cm33_core1 = ["_device_selected"]
+## }

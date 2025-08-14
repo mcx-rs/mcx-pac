@@ -17,3 +17,9 @@ impl<T, const N: u8> Instance<T, N> {
         N
     }
 }
+
+#[cfg(feature = "metadata")]
+pub mod metadata {
+    include!("metadata.rs");
+    include!(env!("MCXPAC_METADATA_PATH"));
+}
