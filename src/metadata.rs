@@ -1,8 +1,17 @@
 #[derive(Debug)]
 pub struct Metadata {
     pub name: &'static str,
+    pub nvic_priority_bits: u8,
+    pub interrupts: &'static [Interrupt],
     pub peripherals: &'static [Peripheral],
     pub pins: &'static [Pin],
+}
+
+#[derive(Debug)]
+pub struct Interrupt {
+    pub name: &'static str,
+    pub description: &'static str,
+    pub value: u32,
 }
 
 #[derive(Debug)]
