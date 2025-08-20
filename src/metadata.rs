@@ -17,20 +17,19 @@ pub struct Interrupt {
 #[derive(Debug)]
 pub struct Peripheral {
     pub name: &'static str,
+    pub block: &'static str,
     pub address: u64,
     pub control: Option<PeripheralControl>,
     pub pins: &'static [PeripheralPin],
 }
 
 #[derive(Debug)]
-pub enum PeripheralControl {
-    MRCC {
-        reg: u8,
-        bit: u8,
-        rst: bool,
-        clk: bool,
-    },
-    SYSCON,
+pub struct PeripheralControl {
+    pub mrcc: bool,
+    pub regn: u32,
+    pub bitn: u32,
+    pub rst: bool,
+    pub clk: bool,
 }
 
 #[derive(Debug)]

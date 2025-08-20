@@ -5,7 +5,9 @@
 
 pub mod common;
 
+#[cfg(feature = "pac")]
 mod device;
+#[cfg(feature = "pac")]
 pub use device::*;
 
 use core::marker::PhantomData;
