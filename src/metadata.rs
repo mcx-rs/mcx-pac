@@ -21,6 +21,7 @@ pub struct Peripheral {
     pub address: u64,
     pub control: Option<PeripheralControl>,
     pub pins: &'static [PeripheralPin],
+    pub interrupts: &'static [PeripheralInterrupt],
 }
 
 #[derive(Debug)]
@@ -30,6 +31,11 @@ pub struct PeripheralControl {
     pub bitn: u32,
     pub rst: bool,
     pub clk: bool,
+}
+
+#[derive(Debug)]
+pub struct PeripheralInterrupt {
+    pub name: &'static str,
 }
 
 #[derive(Debug)]
